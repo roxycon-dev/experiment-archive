@@ -1,0 +1,3756 @@
+{
+  "status": "DERIVED_PIXEL_MASK_EXPORT_COMPLETE_NOT_OFFICIAL_GT",
+  "created_at": "2026-10-03T18:54:25.171242+00:00",
+  "source_root": "D:\\dataset\\best_segmentation",
+  "output_root": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks",
+  "images_copied_or_modified": false,
+  "source_labels_modified": false,
+  "training_images": 54,
+  "testing_images": 27,
+  "testing_images_excluded_from_training": true,
+  "mask_files": 324,
+  "class_order": [
+    "EX",
+    "HE",
+    "SE",
+    "MA"
+  ],
+  "polygon_mapping": {
+    "0": "MA",
+    "1": "HE",
+    "2": "EX",
+    "3": "SE"
+  },
+  "rasterization": "numpy.rint(normalized_xy * [width,height]), clipped to image; cv2.fillPoly independently for each class; values 0/255; overlaps retained",
+  "original_geometry_restored": false,
+  "official_pixel_GT_restored": false,
+  "missing_information": "Original native image geometry/transform and original pixel annotations. Cropped/resampled image information and simplified contour detail cannot be recreated by format conversion.",
+  "samples": [
+    {
+      "sid": "IDRiD_01",
+      "source_split": "training",
+      "image_path": "D:\\dataset\\best_segmentation\\images\\training\\IDRiD_01.jpg",
+      "source_image_sha256": "90040ff8234437dd11ca2a4a91850994c28e0c27476d6bad24d56c7777803ca3",
+      "source_polygon_sha256": "7dd63eebbcf6b9ba5a7fb03ab2090a98ba83b16bc5e2e035b434f327abae292f",
+      "size_wh": [
+        4194,
+        4194
+      ],
+      "masks": {
+        "EX": {
+          "path": "training/EX/IDRiD_01_EX.png",
+          "sha256": "c5c1bd3e748abf6eb172fa17d6ce9200f250e6854b747070a85d792bb2fd44b0",
+          "polygons": 106,
+          "positive_pixels": 110462,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "HE": {
+          "path": "training/HE/IDRiD_01_HE.png",
+          "sha256": "d63991a1bc9a165fe1a43a7258e68648033ecff9456e313e80978511b456bb55",
+          "polygons": 15,
+          "positive_pixels": 35027,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "SE": {
+          "path": "training/SE/IDRiD_01_SE.png",
+          "sha256": "26982457a6e103894fb84279a113dc320c189f8bf75f91b252ddad10d5f1f386",
+          "polygons": 0,
+          "positive_pixels": 0,
+          "official_completeness_verified": false,
+          "empty_note": "No user polygon for this class; not proof of an officially reviewed negative"
+        },
+        "MA": {
+          "path": "training/MA/IDRiD_01_MA.png",
+          "sha256": "608169bbe4847e6892d912d25e524e24732936c46d59a4576f5a1d28b8d037fe",
+          "polygons": 18,
+          "positive_pixels": 6905,
+          "official_completeness_verified": false,
+          "empty_note": null
+        }
+      },
+      "training_allowed_by_original_Q_MIX_protocol": false
+    },
+    {
+      "sid": "IDRiD_02",
+      "source_split": "training",
+      "image_path": "D:\\dataset\\best_segmentation\\images\\training\\IDRiD_02.jpg",
+      "source_image_sha256": "404a4fa7cc3562958f52f88282b2fe033a452c6ee4aa49ce78610e7dd61eb4b0",
+      "source_polygon_sha256": "b452165cf7f6c67751459245883e3fc5fdab4542572eee78b94ad768337fe905",
+      "size_wh": [
+        3427,
+        3427
+      ],
+      "masks": {
+        "EX": {
+          "path": "training/EX/IDRiD_02_EX.png",
+          "sha256": "4b8fc340016c5c0f4b739aa3b1192d12f9b149db513227ed6954cd7c4287e5ed",
+          "polygons": 166,
+          "positive_pixels": 133412,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "HE": {
+          "path": "training/HE/IDRiD_02_HE.png",
+          "sha256": "46e5e7cb750d48c5ef34a16954ef0a5b578d10f86222a60edcf80f367833940c",
+          "polygons": 22,
+          "positive_pixels": 17158,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "SE": {
+          "path": "training/SE/IDRiD_02_SE.png",
+          "sha256": "5bcfb65994d4a3a152e369ea78e5478646c1bca3e0824dad44d466725705d7f1",
+          "polygons": 0,
+          "positive_pixels": 0,
+          "official_completeness_verified": false,
+          "empty_note": "No user polygon for this class; not proof of an officially reviewed negative"
+        },
+        "MA": {
+          "path": "training/MA/IDRiD_02_MA.png",
+          "sha256": "9bc12e294de367d43b40540c21d03a87e50638f49f02287a075d04df03b9b6c3",
+          "polygons": 41,
+          "positive_pixels": 9456,
+          "official_completeness_verified": false,
+          "empty_note": null
+        }
+      },
+      "training_allowed_by_original_Q_MIX_protocol": false
+    },
+    {
+      "sid": "IDRiD_03",
+      "source_split": "training",
+      "image_path": "D:\\dataset\\best_segmentation\\images\\training\\IDRiD_03.jpg",
+      "source_image_sha256": "28c616b8902cfde63d1747c821bae26cbfe6c99b99715fa4071f5623a2bf48cb",
+      "source_polygon_sha256": "93630a76fe9f050e29ed718ab7d25d3794512714f04d5245ba930564309751cc",
+      "size_wh": [
+        3793,
+        3793
+      ],
+      "masks": {
+        "EX": {
+          "path": "training/EX/IDRiD_03_EX.png",
+          "sha256": "13979ddddec61348b92afd8e5cd251dd5f50a5cdbc87c615b59df63e27a5b2d0",
+          "polygons": 347,
+          "positive_pixels": 293821,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "HE": {
+          "path": "training/HE/IDRiD_03_HE.png",
+          "sha256": "98f811f23594c2048d36b65abe3c4c8665278295002065b59ed8a393925a4a45",
+          "polygons": 77,
+          "positive_pixels": 157509,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "SE": {
+          "path": "training/SE/IDRiD_03_SE.png",
+          "sha256": "90ea0f381ef15e87e3032060f0a0bd61387cc2665199e4d4fd0b8a41bd741c3d",
+          "polygons": 1,
+          "positive_pixels": 3252,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "MA": {
+          "path": "training/MA/IDRiD_03_MA.png",
+          "sha256": "e17a07d4ffe9cae679c7799f38176cc708d10241e07e9e69f975164361a7efc5",
+          "polygons": 63,
+          "positive_pixels": 11274,
+          "official_completeness_verified": false,
+          "empty_note": null
+        }
+      },
+      "training_allowed_by_original_Q_MIX_protocol": false
+    },
+    {
+      "sid": "IDRiD_04",
+      "source_split": "training",
+      "image_path": "D:\\dataset\\best_segmentation\\images\\training\\IDRiD_04.jpg",
+      "source_image_sha256": "41cbbacd2ea476994112af318a176ac24c26aff502c1445052ad0528e5f283ad",
+      "source_polygon_sha256": "6383519ec2438414afd3762bba9e11135d8d383a79082755a374ec42f84d3f65",
+      "size_wh": [
+        3802,
+        3802
+      ],
+      "masks": {
+        "EX": {
+          "path": "training/EX/IDRiD_04_EX.png",
+          "sha256": "cb5c63a340ccc16c3b727da7d07b14138e060a702b54ef31b0aab5fab6e528a2",
+          "polygons": 45,
+          "positive_pixels": 5561,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "HE": {
+          "path": "training/HE/IDRiD_04_HE.png",
+          "sha256": "98f526416de1ca73a8030c2da365577882d5b43eddd82ba2dae397f14487c748",
+          "polygons": 10,
+          "positive_pixels": 57852,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "SE": {
+          "path": "training/SE/IDRiD_04_SE.png",
+          "sha256": "16ab00c392be9ffdd6738a4409a8970b4b588171ffc34747152d80d31537cf05",
+          "polygons": 0,
+          "positive_pixels": 0,
+          "official_completeness_verified": false,
+          "empty_note": "No user polygon for this class; not proof of an officially reviewed negative"
+        },
+        "MA": {
+          "path": "training/MA/IDRiD_04_MA.png",
+          "sha256": "e41ba7cbfcb1470f92510228e7029d864680ec0c7a13aca85487b2ba58d8421e",
+          "polygons": 3,
+          "positive_pixels": 802,
+          "official_completeness_verified": false,
+          "empty_note": null
+        }
+      },
+      "training_allowed_by_original_Q_MIX_protocol": false
+    },
+    {
+      "sid": "IDRiD_05",
+      "source_split": "training",
+      "image_path": "D:\\dataset\\best_segmentation\\images\\training\\IDRiD_05.jpg",
+      "source_image_sha256": "12113ecd880d167a74ddf1eaa3ff119a4dda6e8b97b03dc532f0aef909a11ef8",
+      "source_polygon_sha256": "28940e7f8c60768594112e776497c262a4f48a18712ef747628a607e2b2eb4a9",
+      "size_wh": [
+        3747,
+        3747
+      ],
+      "masks": {
+        "EX": {
+          "path": "training/EX/IDRiD_05_EX.png",
+          "sha256": "9e7e0d19e26be7b5730dc04756f2d7119779b70c6008e167b191084848172ca8",
+          "polygons": 23,
+          "positive_pixels": 8237,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "HE": {
+          "path": "training/HE/IDRiD_05_HE.png",
+          "sha256": "3aa1ac088122274689c5997188dcc34443880d81768528cb305e271c713fe573",
+          "polygons": 6,
+          "positive_pixels": 9736,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "SE": {
+          "path": "training/SE/IDRiD_05_SE.png",
+          "sha256": "6b66de281f039069d22b4a03137f19f143fc8bc81749633d1267f261a39c202a",
+          "polygons": 0,
+          "positive_pixels": 0,
+          "official_completeness_verified": false,
+          "empty_note": "No user polygon for this class; not proof of an officially reviewed negative"
+        },
+        "MA": {
+          "path": "training/MA/IDRiD_05_MA.png",
+          "sha256": "af3a266eb9b4e2e3f0c8338d1e9a7db827a6ea9743e1a419d5683d94ef98d303",
+          "polygons": 8,
+          "positive_pixels": 3967,
+          "official_completeness_verified": false,
+          "empty_note": null
+        }
+      },
+      "training_allowed_by_original_Q_MIX_protocol": false
+    },
+    {
+      "sid": "IDRiD_06",
+      "source_split": "training",
+      "image_path": "D:\\dataset\\best_segmentation\\images\\training\\IDRiD_06.jpg",
+      "source_image_sha256": "867bb057f2b35a04ec9af20a6bf30edd6b157a7edb4257177487362c444967ac",
+      "source_polygon_sha256": "b47000b064e60a79eb488bde9adec8b8218d4202938dd00c98fa50e36da18a91",
+      "size_wh": [
+        3424,
+        3424
+      ],
+      "masks": {
+        "EX": {
+          "path": "training/EX/IDRiD_06_EX.png",
+          "sha256": "1e09dbc477cdb1d2624a0e0e021e450511bb1e11226d5b29d36135318e2e07b3",
+          "polygons": 105,
+          "positive_pixels": 58062,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "HE": {
+          "path": "training/HE/IDRiD_06_HE.png",
+          "sha256": "1587c67d28b85a562ad530c67caf4ed8f63aa58be6f2e8aff4e495df23e422e6",
+          "polygons": 12,
+          "positive_pixels": 24539,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "SE": {
+          "path": "training/SE/IDRiD_06_SE.png",
+          "sha256": "cd2dfed335e765bf728bf8f42efb4e2935f7d0529ee8dfbae5ed42a164df51d4",
+          "polygons": 0,
+          "positive_pixels": 0,
+          "official_completeness_verified": false,
+          "empty_note": "No user polygon for this class; not proof of an officially reviewed negative"
+        },
+        "MA": {
+          "path": "training/MA/IDRiD_06_MA.png",
+          "sha256": "9171ab94ac413fb6d768996605d358b305ed1dce87dd8e3a8c20abac9e823741",
+          "polygons": 35,
+          "positive_pixels": 9925,
+          "official_completeness_verified": false,
+          "empty_note": null
+        }
+      },
+      "training_allowed_by_original_Q_MIX_protocol": false
+    },
+    {
+      "sid": "IDRiD_07",
+      "source_split": "training",
+      "image_path": "D:\\dataset\\best_segmentation\\images\\training\\IDRiD_07.jpg",
+      "source_image_sha256": "1b5e4767775a238b866ffa31cbaf70326ad6424010d9cad95377ea9a98cd5c8e",
+      "source_polygon_sha256": "e4965ffb657595ca893162bc904d5f487f8d0b3c2b5eb34a5d6424b639caa5f3",
+      "size_wh": [
+        3616,
+        3616
+      ],
+      "masks": {
+        "EX": {
+          "path": "training/EX/IDRiD_07_EX.png",
+          "sha256": "1660a58bc009a06b99229449e05d5c284ed831aab5cd9ec241b77e01beb230b0",
+          "polygons": 332,
+          "positive_pixels": 163848,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "HE": {
+          "path": "training/HE/IDRiD_07_HE.png",
+          "sha256": "45384b090d346427e6e3bba8fed503b75394ea8ce8043ee459144e7d8eb4309e",
+          "polygons": 16,
+          "positive_pixels": 31259,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "SE": {
+          "path": "training/SE/IDRiD_07_SE.png",
+          "sha256": "0b3aa839e66cb17d36cb2682bb5a2517cb4d720b8f2fffaa6352275baf89e23c",
+          "polygons": 0,
+          "positive_pixels": 0,
+          "official_completeness_verified": false,
+          "empty_note": "No user polygon for this class; not proof of an officially reviewed negative"
+        },
+        "MA": {
+          "path": "training/MA/IDRiD_07_MA.png",
+          "sha256": "af19c3e228bd3365dcfe7ac7820bc44da2318a2dc0be07422d8c6f60826e0826",
+          "polygons": 43,
+          "positive_pixels": 12615,
+          "official_completeness_verified": false,
+          "empty_note": null
+        }
+      },
+      "training_allowed_by_original_Q_MIX_protocol": false
+    },
+    {
+      "sid": "IDRiD_08",
+      "source_split": "training",
+      "image_path": "D:\\dataset\\best_segmentation\\images\\training\\IDRiD_08.jpg",
+      "source_image_sha256": "d8a437fe8d223f5fb18ff9d18a22616e32f33722420424aa7c0fe9e8f93130ab",
+      "source_polygon_sha256": "1662136bd16ab15bd70fc353da78dab3677131625a9dfef4160b1cb4326b6d32",
+      "size_wh": [
+        3419,
+        3419
+      ],
+      "masks": {
+        "EX": {
+          "path": "training/EX/IDRiD_08_EX.png",
+          "sha256": "96bfdd681c842d7f88a14b13807833b7e8ace5c2485706fca2d91529bde6b1cc",
+          "polygons": 57,
+          "positive_pixels": 20074,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "HE": {
+          "path": "training/HE/IDRiD_08_HE.png",
+          "sha256": "854e78af09f73d224ce1a64c201ef37f30d2f046e092babdff0ec2898e78248d",
+          "polygons": 12,
+          "positive_pixels": 36522,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "SE": {
+          "path": "training/SE/IDRiD_08_SE.png",
+          "sha256": "37fb7928cb50a8ccc5602feb48811651aa1958976e7a8f5f5b5ec5deb110b89f",
+          "polygons": 3,
+          "positive_pixels": 37821,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "MA": {
+          "path": "training/MA/IDRiD_08_MA.png",
+          "sha256": "503dcb840edb823c2c6af99ac6e63f7ed8d8424d95432abb952286fa20e886a4",
+          "polygons": 16,
+          "positive_pixels": 4195,
+          "official_completeness_verified": false,
+          "empty_note": null
+        }
+      },
+      "training_allowed_by_original_Q_MIX_protocol": false
+    },
+    {
+      "sid": "IDRiD_09",
+      "source_split": "training",
+      "image_path": "D:\\dataset\\best_segmentation\\images\\training\\IDRiD_09.jpg",
+      "source_image_sha256": "afccc020902c319056bcc36f2d45e0a106ee8a727d0d805e834f6f6f7df7e5ef",
+      "source_polygon_sha256": "7bc8da14064ac929a10d693840678574a57fd241d5016122a87739e1f64e7c26",
+      "size_wh": [
+        3413,
+        3413
+      ],
+      "masks": {
+        "EX": {
+          "path": "training/EX/IDRiD_09_EX.png",
+          "sha256": "f80bb620431b9e0426d65f7816e8370fa394480a955ab62cc45e13b48571a5c2",
+          "polygons": 143,
+          "positive_pixels": 247543,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "HE": {
+          "path": "training/HE/IDRiD_09_HE.png",
+          "sha256": "ab8c912e2c408505466c929769dd9a124c82c0ad0e377e6eab0d2ae6764cc622",
+          "polygons": 25,
+          "positive_pixels": 82825,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "SE": {
+          "path": "training/SE/IDRiD_09_SE.png",
+          "sha256": "c4b38367c71c133677a45e5832ec92b35a78dfcee80659e8c928112fab774bea",
+          "polygons": 0,
+          "positive_pixels": 0,
+          "official_completeness_verified": false,
+          "empty_note": "No user polygon for this class; not proof of an officially reviewed negative"
+        },
+        "MA": {
+          "path": "training/MA/IDRiD_09_MA.png",
+          "sha256": "dcf2d71426df11e9f146e4066e327464e6f3de36c338caeb643573c4be02a10c",
+          "polygons": 54,
+          "positive_pixels": 34976,
+          "official_completeness_verified": false,
+          "empty_note": null
+        }
+      },
+      "training_allowed_by_original_Q_MIX_protocol": false
+    },
+    {
+      "sid": "IDRiD_10",
+      "source_split": "training",
+      "image_path": "D:\\dataset\\best_segmentation\\images\\training\\IDRiD_10.jpg",
+      "source_image_sha256": "c43e3ae3e6fddcb7f744f13f5485837ca253149300d900e012eed1c0ea5cd184",
+      "source_polygon_sha256": "8ea5f43ad99a56d024181dc6a339b80c4df9e10e759527374bb53e61164b11c2",
+      "size_wh": [
+        3414,
+        3414
+      ],
+      "masks": {
+        "EX": {
+          "path": "training/EX/IDRiD_10_EX.png",
+          "sha256": "94b37215c45f6cfc7cf8cccb9a1a0682b9dfa98aaf3ac55264e4f5562c38ac94",
+          "polygons": 418,
+          "positive_pixels": 792799,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "HE": {
+          "path": "training/HE/IDRiD_10_HE.png",
+          "sha256": "4e6f8ffce78b5d9a3760a6166cc38d6d14b05e766badc1db15a2a943086f9c2a",
+          "polygons": 32,
+          "positive_pixels": 91016,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "SE": {
+          "path": "training/SE/IDRiD_10_SE.png",
+          "sha256": "dbf0fb87effb4c801b0464d8cf196967f915a5b29c83d0e641435deb5e31c7dc",
+          "polygons": 0,
+          "positive_pixels": 0,
+          "official_completeness_verified": false,
+          "empty_note": "No user polygon for this class; not proof of an officially reviewed negative"
+        },
+        "MA": {
+          "path": "training/MA/IDRiD_10_MA.png",
+          "sha256": "0a1bbf488027ce6dc9040ecd9075bf6ea08b4b630f4c17d2f8110075c6ae094b",
+          "polygons": 89,
+          "positive_pixels": 33355,
+          "official_completeness_verified": false,
+          "empty_note": null
+        }
+      },
+      "training_allowed_by_original_Q_MIX_protocol": false
+    },
+    {
+      "sid": "IDRiD_11",
+      "source_split": "training",
+      "image_path": "D:\\dataset\\best_segmentation\\images\\training\\IDRiD_11.jpg",
+      "source_image_sha256": "83acbaa4fb83dac06dd072c56cbfde1b1e68d4fed7d494b498ad6a6e4f5444c3",
+      "source_polygon_sha256": "3fbf047141a64453dffb72349e487b64d3c95abd9ea71ce6d3b319d71be2c407",
+      "size_wh": [
+        3416,
+        3416
+      ],
+      "masks": {
+        "EX": {
+          "path": "training/EX/IDRiD_11_EX.png",
+          "sha256": "430234c3249e5ce1571bd18a50a866f12dc2a6fd2b57303f2de18b1d89a1c3f3",
+          "polygons": 472,
+          "positive_pixels": 286560,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "HE": {
+          "path": "training/HE/IDRiD_11_HE.png",
+          "sha256": "3b018a217c14b319622630846b3a04b72f8ce9cda32a3bff952647a1af8ca773",
+          "polygons": 24,
+          "positive_pixels": 55686,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "SE": {
+          "path": "training/SE/IDRiD_11_SE.png",
+          "sha256": "c694d57f9ac16ad654bc874cddb91a59b3c0d66a03bcb35c87731eccb336fb2b",
+          "polygons": 0,
+          "positive_pixels": 0,
+          "official_completeness_verified": false,
+          "empty_note": "No user polygon for this class; not proof of an officially reviewed negative"
+        },
+        "MA": {
+          "path": "training/MA/IDRiD_11_MA.png",
+          "sha256": "b1716f3f08ce721c68e8630b992260b42c4feef9f9aed3a98f5d12d778715e35",
+          "polygons": 70,
+          "positive_pixels": 21349,
+          "official_completeness_verified": false,
+          "empty_note": null
+        }
+      },
+      "training_allowed_by_original_Q_MIX_protocol": false
+    },
+    {
+      "sid": "IDRiD_12",
+      "source_split": "training",
+      "image_path": "D:\\dataset\\best_segmentation\\images\\training\\IDRiD_12.jpg",
+      "source_image_sha256": "32dc9fa1e990b41096fb722e59dfb918ae6cc6859260fe7a4fa83c49c3ffcbeb",
+      "source_polygon_sha256": "3e839832c24ff895ca8b1c72f164e4b58a77a14616fe249d53cfca71970306bb",
+      "size_wh": [
+        3804,
+        3804
+      ],
+      "masks": {
+        "EX": {
+          "path": "training/EX/IDRiD_12_EX.png",
+          "sha256": "a4e24ca8cfb3b58c63f18651d0996fb792c629b2e2643978274d120fbad6425c",
+          "polygons": 12,
+          "positive_pixels": 6476,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "HE": {
+          "path": "training/HE/IDRiD_12_HE.png",
+          "sha256": "d8e5742fafd76cfb63330783eee0a6cc6991684747666766af18d04cc6252b21",
+          "polygons": 7,
+          "positive_pixels": 26544,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "SE": {
+          "path": "training/SE/IDRiD_12_SE.png",
+          "sha256": "3e77dbf81118884ba6e939cc3c07068035b6c87f103d6a614e4555d494674b3f",
+          "polygons": 0,
+          "positive_pixels": 0,
+          "official_completeness_verified": false,
+          "empty_note": "No user polygon for this class; not proof of an officially reviewed negative"
+        },
+        "MA": {
+          "path": "training/MA/IDRiD_12_MA.png",
+          "sha256": "cc4ea42550979336764131cbe2bcd27da5e2eefe85bd136ad8543644a30a83e8",
+          "polygons": 17,
+          "positive_pixels": 3958,
+          "official_completeness_verified": false,
+          "empty_note": null
+        }
+      },
+      "training_allowed_by_original_Q_MIX_protocol": false
+    },
+    {
+      "sid": "IDRiD_13",
+      "source_split": "training",
+      "image_path": "D:\\dataset\\best_segmentation\\images\\training\\IDRiD_13.jpg",
+      "source_image_sha256": "de3c3ca144e2abdf25d71987a4119af0143b9dcb99c5e3df34317f954482aaf3",
+      "source_polygon_sha256": "01317a935008b57131a70cc54197c136d704e6ca5e956a1c19587ce7bbd82121",
+      "size_wh": [
+        3415,
+        3415
+      ],
+      "masks": {
+        "EX": {
+          "path": "training/EX/IDRiD_13_EX.png",
+          "sha256": "1b7bbf7ffc306a3851557764c222da81857915e02afc33a950aea3fa2c5a7394",
+          "polygons": 239,
+          "positive_pixels": 207361,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "HE": {
+          "path": "training/HE/IDRiD_13_HE.png",
+          "sha256": "ffed3fdcb184f947ee74e4e35b8ee45bf0838d40e684c3c28625e30c70281c1f",
+          "polygons": 36,
+          "positive_pixels": 36901,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "SE": {
+          "path": "training/SE/IDRiD_13_SE.png",
+          "sha256": "18be25ddc7536b483e9d2c76ad1d3513cc49a6ea0ec8d4e8f39b31841c5c2a40",
+          "polygons": 8,
+          "positive_pixels": 69375,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "MA": {
+          "path": "training/MA/IDRiD_13_MA.png",
+          "sha256": "a4b7257921cc35a2303cc51f4ba6c303699b9477f8e635fb5840d75e0defb912",
+          "polygons": 125,
+          "positive_pixels": 34229,
+          "official_completeness_verified": false,
+          "empty_note": null
+        }
+      },
+      "training_allowed_by_original_Q_MIX_protocol": false
+    },
+    {
+      "sid": "IDRiD_14",
+      "source_split": "training",
+      "image_path": "D:\\dataset\\best_segmentation\\images\\training\\IDRiD_14.jpg",
+      "source_image_sha256": "a816b45cc7a19d64fd73386784df4b43cf9bef01fe109c07924479164d7e89f6",
+      "source_polygon_sha256": "8cbdcd52695efc9e216dcf61c2a58ba1ed393eefa4d92790fe6eea313c3c2229",
+      "size_wh": [
+        3416,
+        3416
+      ],
+      "masks": {
+        "EX": {
+          "path": "training/EX/IDRiD_14_EX.png",
+          "sha256": "8fe784d949d6e651b7e41628d78d3fed5ee865fbbbad94b90e9359ac426cb43b",
+          "polygons": 297,
+          "positive_pixels": 162860,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "HE": {
+          "path": "training/HE/IDRiD_14_HE.png",
+          "sha256": "9acfb5b5ae231bcf8b0b50efb10f3bc59c7566c57bd7368a16e245318767660a",
+          "polygons": 36,
+          "positive_pixels": 61927,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "SE": {
+          "path": "training/SE/IDRiD_14_SE.png",
+          "sha256": "0bccb97f394dc37a34130c7bbd9954b12cae68e3fc6d642d75e761abecfbf0e3",
+          "polygons": 1,
+          "positive_pixels": 10442,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "MA": {
+          "path": "training/MA/IDRiD_14_MA.png",
+          "sha256": "09a50a0065da122037e44e53033219ef173aff023e1be3ad8b214b96ea65c39a",
+          "polygons": 97,
+          "positive_pixels": 25307,
+          "official_completeness_verified": false,
+          "empty_note": null
+        }
+      },
+      "training_allowed_by_original_Q_MIX_protocol": false
+    },
+    {
+      "sid": "IDRiD_15",
+      "source_split": "training",
+      "image_path": "D:\\dataset\\best_segmentation\\images\\training\\IDRiD_15.jpg",
+      "source_image_sha256": "2e175255f00456621a1e5e0e94358329b55ba8a7331500e21ac56a135bbc42cb",
+      "source_polygon_sha256": "dc5f76737c0531cf8cf16f40aab49da6fcf705dcb57a165246dabbe33f3bf72a",
+      "size_wh": [
+        3416,
+        3416
+      ],
+      "masks": {
+        "EX": {
+          "path": "training/EX/IDRiD_15_EX.png",
+          "sha256": "9e8e82dc3879a3ffca76b6ef31a719da69323629b274efd32be761d1e6e73c52",
+          "polygons": 37,
+          "positive_pixels": 42067,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "HE": {
+          "path": "training/HE/IDRiD_15_HE.png",
+          "sha256": "ad6ea2460e3178bf41a64cbe7c91d5aa542c02c72df2a527b321a77a83301e4c",
+          "polygons": 2,
+          "positive_pixels": 3191,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "SE": {
+          "path": "training/SE/IDRiD_15_SE.png",
+          "sha256": "c694d57f9ac16ad654bc874cddb91a59b3c0d66a03bcb35c87731eccb336fb2b",
+          "polygons": 0,
+          "positive_pixels": 0,
+          "official_completeness_verified": false,
+          "empty_note": "No user polygon for this class; not proof of an officially reviewed negative"
+        },
+        "MA": {
+          "path": "training/MA/IDRiD_15_MA.png",
+          "sha256": "9665fe10e99fdfa88dc8741497195887f6a7072fcf3dd8e42727a79868fac5f2",
+          "polygons": 7,
+          "positive_pixels": 2040,
+          "official_completeness_verified": false,
+          "empty_note": null
+        }
+      },
+      "training_allowed_by_original_Q_MIX_protocol": false
+    },
+    {
+      "sid": "IDRiD_16",
+      "source_split": "training",
+      "image_path": "D:\\dataset\\best_segmentation\\images\\training\\IDRiD_16.jpg",
+      "source_image_sha256": "1409f8914c8c5db6d236fe750361dfa7cfa8332c124753b1cc5f27520d261bde",
+      "source_polygon_sha256": "ec8ebd1aad9c03f00ba472a4885e1aac66eb6c2988a923c8c57c7b0c44b320d7",
+      "size_wh": [
+        3416,
+        3416
+      ],
+      "masks": {
+        "EX": {
+          "path": "training/EX/IDRiD_16_EX.png",
+          "sha256": "2bc0c5248cbfb524cb74263c24983286cb24dd37bc78d1c254c427c7983e7255",
+          "polygons": 75,
+          "positive_pixels": 113729,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "HE": {
+          "path": "training/HE/IDRiD_16_HE.png",
+          "sha256": "2d72f03d816f645aeb9bbbdd44ddf96d67a09810367908f8c148ce2bd1e3e49f",
+          "polygons": 3,
+          "positive_pixels": 18120,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "SE": {
+          "path": "training/SE/IDRiD_16_SE.png",
+          "sha256": "c694d57f9ac16ad654bc874cddb91a59b3c0d66a03bcb35c87731eccb336fb2b",
+          "polygons": 0,
+          "positive_pixels": 0,
+          "official_completeness_verified": false,
+          "empty_note": "No user polygon for this class; not proof of an officially reviewed negative"
+        },
+        "MA": {
+          "path": "training/MA/IDRiD_16_MA.png",
+          "sha256": "0a4dac007f1310b7e905a17b1572bff390eee75a2b839cf8253325c8d03c39a3",
+          "polygons": 10,
+          "positive_pixels": 3837,
+          "official_completeness_verified": false,
+          "empty_note": null
+        }
+      },
+      "training_allowed_by_original_Q_MIX_protocol": false
+    },
+    {
+      "sid": "IDRiD_17",
+      "source_split": "training",
+      "image_path": "D:\\dataset\\best_segmentation\\images\\training\\IDRiD_17.jpg",
+      "source_image_sha256": "2424d58d317948c794c85e572c13f759c43e8f85daff18acecbe088e8c226506",
+      "source_polygon_sha256": "f4ae418dff515e5552c1c796051f61d4c26754b0e4f50f49fdaae042a4d9f1a0",
+      "size_wh": [
+        3413,
+        3413
+      ],
+      "masks": {
+        "EX": {
+          "path": "training/EX/IDRiD_17_EX.png",
+          "sha256": "d47bc17d0f726e6848fe95416381e4caa05d694962b1ada451ce3ee8d7b78381",
+          "polygons": 234,
+          "positive_pixels": 198675,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "HE": {
+          "path": "training/HE/IDRiD_17_HE.png",
+          "sha256": "3fe0bdeeafd1928fe99e1383538f9a2e871f864e2719564cedc07b634b1cdf97",
+          "polygons": 53,
+          "positive_pixels": 1680642,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "SE": {
+          "path": "training/SE/IDRiD_17_SE.png",
+          "sha256": "bdd472a90461f6f45e0a8d9fca5ff1b536e010def59c46e7ed31927a76f5f678",
+          "polygons": 7,
+          "positive_pixels": 46753,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "MA": {
+          "path": "training/MA/IDRiD_17_MA.png",
+          "sha256": "5ca563c20e100998e7ed7563b0f92b6c3289f88bf819e0b4cb7e63451beb26d1",
+          "polygons": 39,
+          "positive_pixels": 14179,
+          "official_completeness_verified": false,
+          "empty_note": null
+        }
+      },
+      "training_allowed_by_original_Q_MIX_protocol": false
+    },
+    {
+      "sid": "IDRiD_18",
+      "source_split": "training",
+      "image_path": "D:\\dataset\\best_segmentation\\images\\training\\IDRiD_18.jpg",
+      "source_image_sha256": "8e4d37e0fed148c26238872529a5e7cf9e77df8bc66af179d2835e5db4de51ad",
+      "source_polygon_sha256": "e81d8fdec5a8476930c0abe00ed6be42ad29b63b4d3b2a7e263b485d61ae18ca",
+      "size_wh": [
+        3414,
+        3414
+      ],
+      "masks": {
+        "EX": {
+          "path": "training/EX/IDRiD_18_EX.png",
+          "sha256": "77e48cbc0ba6b98fafb0890eec10d8a74690b176345ba74f6ea504ed038c33b9",
+          "polygons": 208,
+          "positive_pixels": 105240,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "HE": {
+          "path": "training/HE/IDRiD_18_HE.png",
+          "sha256": "3385004a6b6df39803ce06834fc1ae2d46a6d4aa1527f3e46abb417a4dff973b",
+          "polygons": 53,
+          "positive_pixels": 88309,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "SE": {
+          "path": "training/SE/IDRiD_18_SE.png",
+          "sha256": "eebf106672da5d3095f2e2f7bafd958933dd22c23125fc1b23ba3fc8cc0b7596",
+          "polygons": 3,
+          "positive_pixels": 40105,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "MA": {
+          "path": "training/MA/IDRiD_18_MA.png",
+          "sha256": "3025f02e80b393f3134e6f71f92d5127be5a1ebf1b39192af606b78ac197efc7",
+          "polygons": 80,
+          "positive_pixels": 24640,
+          "official_completeness_verified": false,
+          "empty_note": null
+        }
+      },
+      "training_allowed_by_original_Q_MIX_protocol": false
+    },
+    {
+      "sid": "IDRiD_19",
+      "source_split": "training",
+      "image_path": "D:\\dataset\\best_segmentation\\images\\training\\IDRiD_19.jpg",
+      "source_image_sha256": "1454628663b21ab0da829450b48cd370b168e42b72b2427638c67ade44233198",
+      "source_polygon_sha256": "d8e8d65a61df6c6e0ebd2831c632678dae766d8962d905c8441db3af8cadf0ba",
+      "size_wh": [
+        3414,
+        3414
+      ],
+      "masks": {
+        "EX": {
+          "path": "training/EX/IDRiD_19_EX.png",
+          "sha256": "046abf291d31374422681822e81ad192a95c7b4ae4cfaa3bed1e1623cb24c5a3",
+          "polygons": 51,
+          "positive_pixels": 17161,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "HE": {
+          "path": "training/HE/IDRiD_19_HE.png",
+          "sha256": "cbdb845fccc9b1ab52058e065a19e04fef03a1a0406910212e3f10d693610277",
+          "polygons": 25,
+          "positive_pixels": 60477,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "SE": {
+          "path": "training/SE/IDRiD_19_SE.png",
+          "sha256": "efeee7908492d2a023194f4910be8acac96b89ead0a80642bfe157fd9e711fb0",
+          "polygons": 9,
+          "positive_pixels": 80168,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "MA": {
+          "path": "training/MA/IDRiD_19_MA.png",
+          "sha256": "7ab70d0128a79058a483101bd07321277f34129eb8ec30782ae2e80336c16fc7",
+          "polygons": 23,
+          "positive_pixels": 6112,
+          "official_completeness_verified": false,
+          "empty_note": null
+        }
+      },
+      "training_allowed_by_original_Q_MIX_protocol": false
+    },
+    {
+      "sid": "IDRiD_20",
+      "source_split": "training",
+      "image_path": "D:\\dataset\\best_segmentation\\images\\training\\IDRiD_20.jpg",
+      "source_image_sha256": "b37e6c6097f17946bdd2140e19dc36d4d6c7b3c020f975e0bbc71c820631ced3",
+      "source_polygon_sha256": "7698093e62a1497b77aa7c3d4ec6ca796bfbac562772a551e0f0d3be999a7732",
+      "size_wh": [
+        3416,
+        3416
+      ],
+      "masks": {
+        "EX": {
+          "path": "training/EX/IDRiD_20_EX.png",
+          "sha256": "b6aca8dc5c206a4ee830f723590c2c2eefc1d9e3e782a3209e3aad4746685f3f",
+          "polygons": 406,
+          "positive_pixels": 176620,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "HE": {
+          "path": "training/HE/IDRiD_20_HE.png",
+          "sha256": "68beabdbec92955a6c120f0a97e7fb6fc6d5699351710996958c4f4f50a9eae0",
+          "polygons": 46,
+          "positive_pixels": 66038,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "SE": {
+          "path": "training/SE/IDRiD_20_SE.png",
+          "sha256": "c694d57f9ac16ad654bc874cddb91a59b3c0d66a03bcb35c87731eccb336fb2b",
+          "polygons": 0,
+          "positive_pixels": 0,
+          "official_completeness_verified": false,
+          "empty_note": "No user polygon for this class; not proof of an officially reviewed negative"
+        },
+        "MA": {
+          "path": "training/MA/IDRiD_20_MA.png",
+          "sha256": "6c885a380cf1ed8e5eadf1fd89bbb09a6021d9db1a22a37b406d15fcedcd2fbb",
+          "polygons": 104,
+          "positive_pixels": 25963,
+          "official_completeness_verified": false,
+          "empty_note": null
+        }
+      },
+      "training_allowed_by_original_Q_MIX_protocol": false
+    },
+    {
+      "sid": "IDRiD_21",
+      "source_split": "training",
+      "image_path": "D:\\dataset\\best_segmentation\\images\\training\\IDRiD_21.jpg",
+      "source_image_sha256": "ce293370dd564cb54b528397063728986dffb53240f16a4dc204da683711a7f8",
+      "source_polygon_sha256": "5c317a46d7347f533fb1d19d9532f4558a5ec55042dd2d9d3a22bfc5b4a32691",
+      "size_wh": [
+        3416,
+        3416
+      ],
+      "masks": {
+        "EX": {
+          "path": "training/EX/IDRiD_21_EX.png",
+          "sha256": "6244692a839546eca95c10a05017c02900d6356ce985c5d296351bd95e345516",
+          "polygons": 297,
+          "positive_pixels": 188787,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "HE": {
+          "path": "training/HE/IDRiD_21_HE.png",
+          "sha256": "33c7a5631de0980c4599fee9d212eef6578c36c1c1c5f6c870db038d52a2f753",
+          "polygons": 49,
+          "positive_pixels": 100983,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "SE": {
+          "path": "training/SE/IDRiD_21_SE.png",
+          "sha256": "c694d57f9ac16ad654bc874cddb91a59b3c0d66a03bcb35c87731eccb336fb2b",
+          "polygons": 0,
+          "positive_pixels": 0,
+          "official_completeness_verified": false,
+          "empty_note": "No user polygon for this class; not proof of an officially reviewed negative"
+        },
+        "MA": {
+          "path": "training/MA/IDRiD_21_MA.png",
+          "sha256": "c5089cf30e0b6b865eeb87444d42cc0ec78f0644483611db342daa7f104216fc",
+          "polygons": 80,
+          "positive_pixels": 21554,
+          "official_completeness_verified": false,
+          "empty_note": null
+        }
+      },
+      "training_allowed_by_original_Q_MIX_protocol": false
+    },
+    {
+      "sid": "IDRiD_22",
+      "source_split": "training",
+      "image_path": "D:\\dataset\\best_segmentation\\images\\training\\IDRiD_22.jpg",
+      "source_image_sha256": "e18a7f3c34e57eab4ea09bf4a3e7d1ed53f0c998b4c54d69267d4eddea619704",
+      "source_polygon_sha256": "756527c69f46736bb559855e69b18406989fbb6a5f971981d0e38e5c35a6585b",
+      "size_wh": [
+        3418,
+        3418
+      ],
+      "masks": {
+        "EX": {
+          "path": "training/EX/IDRiD_22_EX.png",
+          "sha256": "ac9aa83a04088e4644d7aaa362f06f2c526525869064c5375b53f3eebb967f1c",
+          "polygons": 117,
+          "positive_pixels": 91977,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "HE": {
+          "path": "training/HE/IDRiD_22_HE.png",
+          "sha256": "adb748d04e1f2cdc2220c25b747e72dd8b7a4162b4ec6b6cd29bcf5747b0ad47",
+          "polygons": 31,
+          "positive_pixels": 242939,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "SE": {
+          "path": "training/SE/IDRiD_22_SE.png",
+          "sha256": "2df41147cc9dae9eccad69e39b75444b2f1602e9b86268a8014df265108fadd8",
+          "polygons": 6,
+          "positive_pixels": 105646,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "MA": {
+          "path": "training/MA/IDRiD_22_MA.png",
+          "sha256": "b651e3b29bec06f737dd03d759120080bd2ce1a14e93cc2e72af0ad7692b3728",
+          "polygons": 29,
+          "positive_pixels": 10304,
+          "official_completeness_verified": false,
+          "empty_note": null
+        }
+      },
+      "training_allowed_by_original_Q_MIX_protocol": false
+    },
+    {
+      "sid": "IDRiD_23",
+      "source_split": "training",
+      "image_path": "D:\\dataset\\best_segmentation\\images\\training\\IDRiD_23.jpg",
+      "source_image_sha256": "6e9e6f7c28a086af789c8e3b92579992d4fe27f080c307ea00c600fe0a2c502f",
+      "source_polygon_sha256": "15fc4791f1eccacfd70dd80d41347e5e38cfe2da1d96b4a8ed9303c8a666cff4",
+      "size_wh": [
+        3416,
+        3416
+      ],
+      "masks": {
+        "EX": {
+          "path": "training/EX/IDRiD_23_EX.png",
+          "sha256": "16fc341da069aa9b492876f02a44edb3c5e4958b52dc8b420f6981740dad5a70",
+          "polygons": 64,
+          "positive_pixels": 14722,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "HE": {
+          "path": "training/HE/IDRiD_23_HE.png",
+          "sha256": "69e7370132076a375ad6abf617810139872b9f863d74fc0d81f9301bb9a61786",
+          "polygons": 19,
+          "positive_pixels": 107819,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "SE": {
+          "path": "training/SE/IDRiD_23_SE.png",
+          "sha256": "356dc5e410be48be69339418cbd295ab7a92273ffa2ec503baea0064a957e13f",
+          "polygons": 5,
+          "positive_pixels": 58568,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "MA": {
+          "path": "training/MA/IDRiD_23_MA.png",
+          "sha256": "79ba2e0dd8311285de727e82e909270251d949c4b0f40efa968c59784b523c1f",
+          "polygons": 14,
+          "positive_pixels": 4499,
+          "official_completeness_verified": false,
+          "empty_note": null
+        }
+      },
+      "training_allowed_by_original_Q_MIX_protocol": false
+    },
+    {
+      "sid": "IDRiD_24",
+      "source_split": "training",
+      "image_path": "D:\\dataset\\best_segmentation\\images\\training\\IDRiD_24.jpg",
+      "source_image_sha256": "736b7502d2f812f00dc27dbf0ba5d1bdf874f35b32d2f03af8b2aeffc2d53a7b",
+      "source_polygon_sha256": "119e3c31f70a36a266b146fc7692b5b9e8b77dc681776b07c1ee010ae9cc1089",
+      "size_wh": [
+        3416,
+        3416
+      ],
+      "masks": {
+        "EX": {
+          "path": "training/EX/IDRiD_24_EX.png",
+          "sha256": "fb771fd9a0f5b469f9918bb7d2ee25136b2fadfc279bf2f5b12484d87f8f5529",
+          "polygons": 18,
+          "positive_pixels": 8191,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "HE": {
+          "path": "training/HE/IDRiD_24_HE.png",
+          "sha256": "8e50e7290a705173b436e920298c99b37fc2665f3730528a3f0856a57f646fa8",
+          "polygons": 5,
+          "positive_pixels": 26317,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "SE": {
+          "path": "training/SE/IDRiD_24_SE.png",
+          "sha256": "c694d57f9ac16ad654bc874cddb91a59b3c0d66a03bcb35c87731eccb336fb2b",
+          "polygons": 0,
+          "positive_pixels": 0,
+          "official_completeness_verified": false,
+          "empty_note": "No user polygon for this class; not proof of an officially reviewed negative"
+        },
+        "MA": {
+          "path": "training/MA/IDRiD_24_MA.png",
+          "sha256": "0713decd530f98bec90736d5bf22c1fb26ff9d9ce08f5e3cb531a4add0b52f8b",
+          "polygons": 4,
+          "positive_pixels": 1341,
+          "official_completeness_verified": false,
+          "empty_note": null
+        }
+      },
+      "training_allowed_by_original_Q_MIX_protocol": false
+    },
+    {
+      "sid": "IDRiD_25",
+      "source_split": "training",
+      "image_path": "D:\\dataset\\best_segmentation\\images\\training\\IDRiD_25.jpg",
+      "source_image_sha256": "9ed2a02ed5c23ea82f613c702fb4adf33e6eda19c185ff1a5a73130215a54d37",
+      "source_polygon_sha256": "464869dba8fc8eb2a4d7f5d97beac1c81d2c41a2f1943647f4236b3a9591bcd5",
+      "size_wh": [
+        3416,
+        3416
+      ],
+      "masks": {
+        "EX": {
+          "path": "training/EX/IDRiD_25_EX.png",
+          "sha256": "fffd44ec19ad53de8f511dbbc81cc57ca669641f6341e8709856c6f75569077a",
+          "polygons": 411,
+          "positive_pixels": 594195,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "HE": {
+          "path": "training/HE/IDRiD_25_HE.png",
+          "sha256": "a716fd9d2d1d14eaa425c5c2d90f366588960a43171845cf11a6613062dfd892",
+          "polygons": 54,
+          "positive_pixels": 326105,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "SE": {
+          "path": "training/SE/IDRiD_25_SE.png",
+          "sha256": "e65180da36f08681d491ceb13c1f1e66b9e430f4ab6af9b507035c40541094d4",
+          "polygons": 4,
+          "positive_pixels": 22569,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "MA": {
+          "path": "training/MA/IDRiD_25_MA.png",
+          "sha256": "5229d3a1784123e8a191034c5f675f3176e241ba1b1c122148dceebbc9267365",
+          "polygons": 67,
+          "positive_pixels": 23344,
+          "official_completeness_verified": false,
+          "empty_note": null
+        }
+      },
+      "training_allowed_by_original_Q_MIX_protocol": false
+    },
+    {
+      "sid": "IDRiD_26",
+      "source_split": "training",
+      "image_path": "D:\\dataset\\best_segmentation\\images\\training\\IDRiD_26.jpg",
+      "source_image_sha256": "513b4521088289e0f7c67139885e3d11f08fbfb17103cc3bfdfb950d5df2cc84",
+      "source_polygon_sha256": "439319dd20b57ed983d19b828667b3dc30547836f52773dac70e162da1e26428",
+      "size_wh": [
+        3415,
+        3415
+      ],
+      "masks": {
+        "EX": {
+          "path": "training/EX/IDRiD_26_EX.png",
+          "sha256": "c6b9173c82779f3af6e755e064b05535ca90a12b960bf77edf454a2bf0cfc59c",
+          "polygons": 5,
+          "positive_pixels": 2479,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "HE": {
+          "path": "training/HE/IDRiD_26_HE.png",
+          "sha256": "96eb63da006bdf9fec0112236a1746d54822bd7ed9ddb8b608e90916bf4975eb",
+          "polygons": 26,
+          "positive_pixels": 103035,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "SE": {
+          "path": "training/SE/IDRiD_26_SE.png",
+          "sha256": "f1e6e8a9c3d37a441df5072d10da9dea04d94b38b50784b88a020118934753a3",
+          "polygons": 0,
+          "positive_pixels": 0,
+          "official_completeness_verified": false,
+          "empty_note": "No user polygon for this class; not proof of an officially reviewed negative"
+        },
+        "MA": {
+          "path": "training/MA/IDRiD_26_MA.png",
+          "sha256": "e0471f7a9f22f9d7c9324416ca2e5b558f7e4c0f41e0f1ccd178484844146955",
+          "polygons": 62,
+          "positive_pixels": 19599,
+          "official_completeness_verified": false,
+          "empty_note": null
+        }
+      },
+      "training_allowed_by_original_Q_MIX_protocol": false
+    },
+    {
+      "sid": "IDRiD_27",
+      "source_split": "training",
+      "image_path": "D:\\dataset\\best_segmentation\\images\\training\\IDRiD_27.jpg",
+      "source_image_sha256": "fd30d6ed762b2b15d7c06de01a7ea079e00ebe58da7874ba11a7fa392e7cea64",
+      "source_polygon_sha256": "d2d78723fb570ee1840d769a7a5e3a2f1586a633c1e7b127fef8ccfa60759259",
+      "size_wh": [
+        3416,
+        3416
+      ],
+      "masks": {
+        "EX": {
+          "path": "training/EX/IDRiD_27_EX.png",
+          "sha256": "6ee66631a6a6598c1ffb6cc6cbc2bc8e8be24b6c5478d4a9cf1800d5f2fcc767",
+          "polygons": 214,
+          "positive_pixels": 68903,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "HE": {
+          "path": "training/HE/IDRiD_27_HE.png",
+          "sha256": "b4f8b330951989280591f235261eb5754a72d76729643dad023b99f04e6f9d7d",
+          "polygons": 34,
+          "positive_pixels": 64260,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "SE": {
+          "path": "training/SE/IDRiD_27_SE.png",
+          "sha256": "c694d57f9ac16ad654bc874cddb91a59b3c0d66a03bcb35c87731eccb336fb2b",
+          "polygons": 0,
+          "positive_pixels": 0,
+          "official_completeness_verified": false,
+          "empty_note": "No user polygon for this class; not proof of an officially reviewed negative"
+        },
+        "MA": {
+          "path": "training/MA/IDRiD_27_MA.png",
+          "sha256": "e7299cfab600f67f8d711cd44bc0e00f2c1ecf4ae0767d7b6421a3385f28bffc",
+          "polygons": 106,
+          "positive_pixels": 25652,
+          "official_completeness_verified": false,
+          "empty_note": null
+        }
+      },
+      "training_allowed_by_original_Q_MIX_protocol": false
+    },
+    {
+      "sid": "IDRiD_28",
+      "source_split": "training",
+      "image_path": "D:\\dataset\\best_segmentation\\images\\training\\IDRiD_28.jpg",
+      "source_image_sha256": "f4652fefcf14ed5a9bce982c2bbe45d5245c097846f331fa1f898e4f5662f411",
+      "source_polygon_sha256": "f69c8e9f872674724f8bf58470435dfeee78e7c964c62ff4aeb726527e7ff89c",
+      "size_wh": [
+        3416,
+        3416
+      ],
+      "masks": {
+        "EX": {
+          "path": "training/EX/IDRiD_28_EX.png",
+          "sha256": "2a59508d91cef4682e7e85a0c3ede2adfe9abc6a9ce97b1cc204ef5b600fc3f4",
+          "polygons": 34,
+          "positive_pixels": 4720,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "HE": {
+          "path": "training/HE/IDRiD_28_HE.png",
+          "sha256": "325c8d6f20a231b327c0ef145be4b7293ad37d62527db4853c1348d9eec0acd6",
+          "polygons": 22,
+          "positive_pixels": 31899,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "SE": {
+          "path": "training/SE/IDRiD_28_SE.png",
+          "sha256": "c694d57f9ac16ad654bc874cddb91a59b3c0d66a03bcb35c87731eccb336fb2b",
+          "polygons": 0,
+          "positive_pixels": 0,
+          "official_completeness_verified": false,
+          "empty_note": "No user polygon for this class; not proof of an officially reviewed negative"
+        },
+        "MA": {
+          "path": "training/MA/IDRiD_28_MA.png",
+          "sha256": "85f9c96734b9ee99d1fbe627794dbe93d776a11e28d0000eb3e0d0ab9f341b38",
+          "polygons": 23,
+          "positive_pixels": 4816,
+          "official_completeness_verified": false,
+          "empty_note": null
+        }
+      },
+      "training_allowed_by_original_Q_MIX_protocol": false
+    },
+    {
+      "sid": "IDRiD_29",
+      "source_split": "training",
+      "image_path": "D:\\dataset\\best_segmentation\\images\\training\\IDRiD_29.jpg",
+      "source_image_sha256": "f17f8495d25b0d750f0181a33b6e6461dc92aa83365ba1ad815d4a9289b57c02",
+      "source_polygon_sha256": "e80698ce62681f681a11d9e9171ac8f21c69548682cd63a5aac7137ae2b2d375",
+      "size_wh": [
+        3416,
+        3416
+      ],
+      "masks": {
+        "EX": {
+          "path": "training/EX/IDRiD_29_EX.png",
+          "sha256": "30dbf6745aadb77768de5ed3453e1f3c637a64b4596f14d3be7093423215d7e7",
+          "polygons": 5,
+          "positive_pixels": 2325,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "HE": {
+          "path": "training/HE/IDRiD_29_HE.png",
+          "sha256": "33a91366db5df9060301d81a28d2d5dba4ba794c3297a9fa7ee5317f2975bd57",
+          "polygons": 4,
+          "positive_pixels": 2134,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "SE": {
+          "path": "training/SE/IDRiD_29_SE.png",
+          "sha256": "c694d57f9ac16ad654bc874cddb91a59b3c0d66a03bcb35c87731eccb336fb2b",
+          "polygons": 0,
+          "positive_pixels": 0,
+          "official_completeness_verified": false,
+          "empty_note": "No user polygon for this class; not proof of an officially reviewed negative"
+        },
+        "MA": {
+          "path": "training/MA/IDRiD_29_MA.png",
+          "sha256": "93eeb250170a4f8adda280cbedd4023795cac80a4dca42aa6c03b21708d5a9d7",
+          "polygons": 26,
+          "positive_pixels": 4514,
+          "official_completeness_verified": false,
+          "empty_note": null
+        }
+      },
+      "training_allowed_by_original_Q_MIX_protocol": false
+    },
+    {
+      "sid": "IDRiD_30",
+      "source_split": "training",
+      "image_path": "D:\\dataset\\best_segmentation\\images\\training\\IDRiD_30.jpg",
+      "source_image_sha256": "037ceb31b9e9b2ad1ba2d2fedcb5b677a76e7af7701b81ac096bfbd0e0d82e06",
+      "source_polygon_sha256": "449e768b8e8b8d594475e17074a9f2bd19f39ab54c1d85d0feb14bb120397b9a",
+      "size_wh": [
+        3416,
+        3416
+      ],
+      "masks": {
+        "EX": {
+          "path": "training/EX/IDRiD_30_EX.png",
+          "sha256": "5e18981ff16681b2345ad5766f46bb4e8101bd132c7539a332f202088a8b7839",
+          "polygons": 41,
+          "positive_pixels": 22185,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "HE": {
+          "path": "training/HE/IDRiD_30_HE.png",
+          "sha256": "c3eba3eac7100f752b3aedbd91893b0a607deee450bc06487d176615052d719c",
+          "polygons": 14,
+          "positive_pixels": 52480,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "SE": {
+          "path": "training/SE/IDRiD_30_SE.png",
+          "sha256": "69a50c83751c1a1c9bc9babfafbaafdf457114167ba0920049c75ee1baa43f47",
+          "polygons": 2,
+          "positive_pixels": 14170,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "MA": {
+          "path": "training/MA/IDRiD_30_MA.png",
+          "sha256": "f50f036da4577cf2e397962a01293a1088fecb9f22b08c55e47d3d616c40e498",
+          "polygons": 22,
+          "positive_pixels": 7271,
+          "official_completeness_verified": false,
+          "empty_note": null
+        }
+      },
+      "training_allowed_by_original_Q_MIX_protocol": false
+    },
+    {
+      "sid": "IDRiD_31",
+      "source_split": "training",
+      "image_path": "D:\\dataset\\best_segmentation\\images\\training\\IDRiD_31.jpg",
+      "source_image_sha256": "f548637c8fe44e665bcf3c983d53ecdf3b62f3518ba2d9c099ed65694eaf21d9",
+      "source_polygon_sha256": "20cc9b8f87feb1b1c6736f42454c42a18dfa2e1833c6cce0afd7696bbf4bb0ec",
+      "size_wh": [
+        3418,
+        3418
+      ],
+      "masks": {
+        "EX": {
+          "path": "training/EX/IDRiD_31_EX.png",
+          "sha256": "2fe73145885b91b25da3db1e043819f326b8f106143e74cec716acd5701040b6",
+          "polygons": 102,
+          "positive_pixels": 48288,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "HE": {
+          "path": "training/HE/IDRiD_31_HE.png",
+          "sha256": "169cdaf86dcbbaa53aaac69a38addefa522f392f68d8c03551d6facf515ac658",
+          "polygons": 27,
+          "positive_pixels": 210628,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "SE": {
+          "path": "training/SE/IDRiD_31_SE.png",
+          "sha256": "8ddc3de7393ae797e966dfbbcdec7dd6fe2f7268132b42bb016a1442726b359d",
+          "polygons": 8,
+          "positive_pixels": 154032,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "MA": {
+          "path": "training/MA/IDRiD_31_MA.png",
+          "sha256": "63fae87f3c4567601434ef8a98aaa2a9dd688a66ede271817f664e6522ee932c",
+          "polygons": 28,
+          "positive_pixels": 8143,
+          "official_completeness_verified": false,
+          "empty_note": null
+        }
+      },
+      "training_allowed_by_original_Q_MIX_protocol": false
+    },
+    {
+      "sid": "IDRiD_32",
+      "source_split": "training",
+      "image_path": "D:\\dataset\\best_segmentation\\images\\training\\IDRiD_32.jpg",
+      "source_image_sha256": "28c213f84cd81f19377fb2daada3d6171c1fa9442c231c752f639a147601a6a4",
+      "source_polygon_sha256": "bcca639976d9a87c359d760c8fd25ed8a47d96c9b0a5b300331dbfea3650a12a",
+      "size_wh": [
+        3416,
+        3416
+      ],
+      "masks": {
+        "EX": {
+          "path": "training/EX/IDRiD_32_EX.png",
+          "sha256": "a922ad1b5277019911ab81507b6deb9660c65e9dd6cf50eb440c97588074a2d7",
+          "polygons": 103,
+          "positive_pixels": 82987,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "HE": {
+          "path": "training/HE/IDRiD_32_HE.png",
+          "sha256": "29456dd52422145e17116725c6a47216fab226abd150152171d9596f6f0fb460",
+          "polygons": 12,
+          "positive_pixels": 84988,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "SE": {
+          "path": "training/SE/IDRiD_32_SE.png",
+          "sha256": "e6f89c19cadb376e6afd91e5003e18f5d48b6cc2170d8cc684f1d6f27e7b5e65",
+          "polygons": 6,
+          "positive_pixels": 39299,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "MA": {
+          "path": "training/MA/IDRiD_32_MA.png",
+          "sha256": "465abdf73c3e0b692ce1358038e741268cebc663594fc91617124cb0b9647a50",
+          "polygons": 13,
+          "positive_pixels": 6037,
+          "official_completeness_verified": false,
+          "empty_note": null
+        }
+      },
+      "training_allowed_by_original_Q_MIX_protocol": false
+    },
+    {
+      "sid": "IDRiD_33",
+      "source_split": "training",
+      "image_path": "D:\\dataset\\best_segmentation\\images\\training\\IDRiD_33.jpg",
+      "source_image_sha256": "a07d9748b3c94631543f30dd255ca719a8b7d19290920a79cf12d892219405c6",
+      "source_polygon_sha256": "c852e61e860876d68051d83d011258e46ef50e40cef9a30a57e6ed47d7c47197",
+      "size_wh": [
+        3416,
+        3416
+      ],
+      "masks": {
+        "EX": {
+          "path": "training/EX/IDRiD_33_EX.png",
+          "sha256": "4f915adba0ac2c39c6baa63b12d9c5580fdaa755bd8ce42d0ad7b426d4bce4b7",
+          "polygons": 397,
+          "positive_pixels": 58005,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "HE": {
+          "path": "training/HE/IDRiD_33_HE.png",
+          "sha256": "4b6ac616a2cb5316e4a4d82bc6db11170db6d87c84ec3f22abc7f113f1d53db7",
+          "polygons": 106,
+          "positive_pixels": 323814,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "SE": {
+          "path": "training/SE/IDRiD_33_SE.png",
+          "sha256": "0aa550c37e856170b7c1d21331e28f585d539d4a2b29d91efd5697db8004e454",
+          "polygons": 1,
+          "positive_pixels": 5496,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "MA": {
+          "path": "training/MA/IDRiD_33_MA.png",
+          "sha256": "f2d045a19cdeb5c8a0dbf1250d6e685b89f414b858e6d6f0efac08987e3a412a",
+          "polygons": 126,
+          "positive_pixels": 36174,
+          "official_completeness_verified": false,
+          "empty_note": null
+        }
+      },
+      "training_allowed_by_original_Q_MIX_protocol": false
+    },
+    {
+      "sid": "IDRiD_34",
+      "source_split": "training",
+      "image_path": "D:\\dataset\\best_segmentation\\images\\training\\IDRiD_34.jpg",
+      "source_image_sha256": "01f1a9575e0ec0ec068d316b0b16a61e19d8718066b49883a3a40269cf2aafe3",
+      "source_polygon_sha256": "ac350c6a18dc7a73f90fe0b3156422ed79ca39af5d2a7a0a6b66f76e73df3548",
+      "size_wh": [
+        3416,
+        3416
+      ],
+      "masks": {
+        "EX": {
+          "path": "training/EX/IDRiD_34_EX.png",
+          "sha256": "7867d83c360dfbfb62ec82dcdcb72bd5e70625e757179dd303aa3ef2efb09002",
+          "polygons": 52,
+          "positive_pixels": 26783,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "HE": {
+          "path": "training/HE/IDRiD_34_HE.png",
+          "sha256": "3af78f32de229f141a07577ea5700ebe2bd18386a50127cd021f8b11205ea9bf",
+          "polygons": 43,
+          "positive_pixels": 406942,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "SE": {
+          "path": "training/SE/IDRiD_34_SE.png",
+          "sha256": "c694d57f9ac16ad654bc874cddb91a59b3c0d66a03bcb35c87731eccb336fb2b",
+          "polygons": 0,
+          "positive_pixels": 0,
+          "official_completeness_verified": false,
+          "empty_note": "No user polygon for this class; not proof of an officially reviewed negative"
+        },
+        "MA": {
+          "path": "training/MA/IDRiD_34_MA.png",
+          "sha256": "196a3c634fbb60c2347d616b782c5fcc17eceef60c3ca6319308a31b3079acc2",
+          "polygons": 44,
+          "positive_pixels": 12539,
+          "official_completeness_verified": false,
+          "empty_note": null
+        }
+      },
+      "training_allowed_by_original_Q_MIX_protocol": false
+    },
+    {
+      "sid": "IDRiD_35",
+      "source_split": "training",
+      "image_path": "D:\\dataset\\best_segmentation\\images\\training\\IDRiD_35.jpg",
+      "source_image_sha256": "9509df303cfd29243ac0c657ff8a50037b8f5f0569a6f27761807c17aab5e079",
+      "source_polygon_sha256": "eff0a70ccb77536a3432ffbc9765f41df793912b3163d7919ea706a8a1a1239e",
+      "size_wh": [
+        3414,
+        3414
+      ],
+      "masks": {
+        "EX": {
+          "path": "training/EX/IDRiD_35_EX.png",
+          "sha256": "d990898a43ac8c3d3729426e00f7f026ec6f80d4196858957d5bc48fdeddbe44",
+          "polygons": 49,
+          "positive_pixels": 19709,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "HE": {
+          "path": "training/HE/IDRiD_35_HE.png",
+          "sha256": "6f891928acd34f45023a0bda80125c6e7f00b1303116fcbefe6c45f9c53fb83e",
+          "polygons": 34,
+          "positive_pixels": 358335,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "SE": {
+          "path": "training/SE/IDRiD_35_SE.png",
+          "sha256": "484dde4ee95078e190031a0d90f7c50485702f470b2f10c1954ee2d32d6e8c03",
+          "polygons": 3,
+          "positive_pixels": 40093,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "MA": {
+          "path": "training/MA/IDRiD_35_MA.png",
+          "sha256": "26da9eb750fcc0712f09bc0bdf3ff336738894660cb56e5b34670ced185ad67c",
+          "polygons": 42,
+          "positive_pixels": 13985,
+          "official_completeness_verified": false,
+          "empty_note": null
+        }
+      },
+      "training_allowed_by_original_Q_MIX_protocol": false
+    },
+    {
+      "sid": "IDRiD_36",
+      "source_split": "training",
+      "image_path": "D:\\dataset\\best_segmentation\\images\\training\\IDRiD_36.jpg",
+      "source_image_sha256": "1138e1cb8a9ed4984e48722c65aa7f5652389a745f57718cface86f4fb3bfeb2",
+      "source_polygon_sha256": "d4c619c173c78955ac5d9e201044db0ed3790009f92508fef08c1bdc31d99f01",
+      "size_wh": [
+        3416,
+        3416
+      ],
+      "masks": {
+        "EX": {
+          "path": "training/EX/IDRiD_36_EX.png",
+          "sha256": "03330329db41b05d6bbf650baae9000e0e17c8d94a06ac00fb30a5d9df28087c",
+          "polygons": 43,
+          "positive_pixels": 5895,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "HE": {
+          "path": "training/HE/IDRiD_36_HE.png",
+          "sha256": "d5b48a0c99e595d52c1af88d120f0cd71b4a48f2fac11d801398f9820cdb71b4",
+          "polygons": 10,
+          "positive_pixels": 57053,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "SE": {
+          "path": "training/SE/IDRiD_36_SE.png",
+          "sha256": "c694d57f9ac16ad654bc874cddb91a59b3c0d66a03bcb35c87731eccb336fb2b",
+          "polygons": 0,
+          "positive_pixels": 0,
+          "official_completeness_verified": false,
+          "empty_note": "No user polygon for this class; not proof of an officially reviewed negative"
+        },
+        "MA": {
+          "path": "training/MA/IDRiD_36_MA.png",
+          "sha256": "23e48d66a91b8540d1e8cccd396865559507786a94e5230fd1ee0cd1f49086e0",
+          "polygons": 43,
+          "positive_pixels": 9838,
+          "official_completeness_verified": false,
+          "empty_note": null
+        }
+      },
+      "training_allowed_by_original_Q_MIX_protocol": false
+    },
+    {
+      "sid": "IDRiD_37",
+      "source_split": "training",
+      "image_path": "D:\\dataset\\best_segmentation\\images\\training\\IDRiD_37.jpg",
+      "source_image_sha256": "c46479eb81556d93ce16d38f1ce654a94b233dd2a9ed2f13c5f10907e3ca63ee",
+      "source_polygon_sha256": "05368f011dfa74a54d7faed3b159d78ab0762fccb77d1de8319651bd73cdc255",
+      "size_wh": [
+        3416,
+        3416
+      ],
+      "masks": {
+        "EX": {
+          "path": "training/EX/IDRiD_37_EX.png",
+          "sha256": "7e384c3ca3701f568b0319d468bb80a5d8722dbd06348f2c51d33e55c3bf8d5e",
+          "polygons": 59,
+          "positive_pixels": 25471,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "HE": {
+          "path": "training/HE/IDRiD_37_HE.png",
+          "sha256": "7afe0712da5a2d4c3cd96a77c659a44151b45fddd9e798626ac121888c999e39",
+          "polygons": 9,
+          "positive_pixels": 49318,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "SE": {
+          "path": "training/SE/IDRiD_37_SE.png",
+          "sha256": "c694d57f9ac16ad654bc874cddb91a59b3c0d66a03bcb35c87731eccb336fb2b",
+          "polygons": 0,
+          "positive_pixels": 0,
+          "official_completeness_verified": false,
+          "empty_note": "No user polygon for this class; not proof of an officially reviewed negative"
+        },
+        "MA": {
+          "path": "training/MA/IDRiD_37_MA.png",
+          "sha256": "4921a6c036d8ef93309e18aa9f23e8fc887a8229277a7103ba14d6c739dbd491",
+          "polygons": 27,
+          "positive_pixels": 6428,
+          "official_completeness_verified": false,
+          "empty_note": null
+        }
+      },
+      "training_allowed_by_original_Q_MIX_protocol": false
+    },
+    {
+      "sid": "IDRiD_38",
+      "source_split": "training",
+      "image_path": "D:\\dataset\\best_segmentation\\images\\training\\IDRiD_38.jpg",
+      "source_image_sha256": "d01983a7c9a797541ce3b45e54638c6af0c3154c765ff5cd122634f4b45773b0",
+      "source_polygon_sha256": "4eb7f2bfb0730001546c175ae9c72c476bb09afe1080faa1341bae23c858ff61",
+      "size_wh": [
+        3520,
+        3520
+      ],
+      "masks": {
+        "EX": {
+          "path": "training/EX/IDRiD_38_EX.png",
+          "sha256": "b7ce9ac8e85d3d5ecea9720fb591090547de0accd2c446d4a75812bae05b09c1",
+          "polygons": 74,
+          "positive_pixels": 12330,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "HE": {
+          "path": "training/HE/IDRiD_38_HE.png",
+          "sha256": "678169fc4ef41e69ce9f2d4be801e04419bfb7719d005b08c7e4beceb484232c",
+          "polygons": 5,
+          "positive_pixels": 13602,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "SE": {
+          "path": "training/SE/IDRiD_38_SE.png",
+          "sha256": "bd0ca251c223a460440526ac41bd787b4f9086860190d7825c668d25dc15fa67",
+          "polygons": 2,
+          "positive_pixels": 17931,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "MA": {
+          "path": "training/MA/IDRiD_38_MA.png",
+          "sha256": "cb41b6e7218e05f9f83938a814fae65b13461451d62e61e5f3b489d92e76c986",
+          "polygons": 34,
+          "positive_pixels": 9359,
+          "official_completeness_verified": false,
+          "empty_note": null
+        }
+      },
+      "training_allowed_by_original_Q_MIX_protocol": false
+    },
+    {
+      "sid": "IDRiD_39",
+      "source_split": "training",
+      "image_path": "D:\\dataset\\best_segmentation\\images\\training\\IDRiD_39.jpg",
+      "source_image_sha256": "64053e2490069d9a1e623658e6c94bd71fb42c3424de3b2104152601e69bf2a9",
+      "source_polygon_sha256": "52b8ab1468a4163fac2a63b25665349e18f32ddf3246971f22453c8a2f712c2e",
+      "size_wh": [
+        3414,
+        3414
+      ],
+      "masks": {
+        "EX": {
+          "path": "training/EX/IDRiD_39_EX.png",
+          "sha256": "6c18619e43b5ec0d12ec9f5e26469920ae515ad002c96b2593b186380a662f0e",
+          "polygons": 71,
+          "positive_pixels": 18619,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "HE": {
+          "path": "training/HE/IDRiD_39_HE.png",
+          "sha256": "0436a60ef111206c7b5422352bbce9e7b4469453735b6c3d0bd658b613aa451b",
+          "polygons": 80,
+          "positive_pixels": 244717,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "SE": {
+          "path": "training/SE/IDRiD_39_SE.png",
+          "sha256": "e6534f7a00fadd9e287e1d34756a8fc2975012a43bcc87e8130615fbc02c8d38",
+          "polygons": 10,
+          "positive_pixels": 84714,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "MA": {
+          "path": "training/MA/IDRiD_39_MA.png",
+          "sha256": "ab9b76a5f72d7cac868aa3800f22d3727b8743f7612ab206ce1967922a0379d3",
+          "polygons": 119,
+          "positive_pixels": 38037,
+          "official_completeness_verified": false,
+          "empty_note": null
+        }
+      },
+      "training_allowed_by_original_Q_MIX_protocol": false
+    },
+    {
+      "sid": "IDRiD_40",
+      "source_split": "training",
+      "image_path": "D:\\dataset\\best_segmentation\\images\\training\\IDRiD_40.jpg",
+      "source_image_sha256": "97049e552d5faf7dcde948c585e1a715d788845633d118ac81158183f89cfab7",
+      "source_polygon_sha256": "4bd192be12006712beabbb95c4325bbecf0f2caf018746600578f70fbe7a3d38",
+      "size_wh": [
+        3416,
+        3416
+      ],
+      "masks": {
+        "EX": {
+          "path": "training/EX/IDRiD_40_EX.png",
+          "sha256": "abda1f87bfdb97bfb71d3226e737ae76f225f8638f2f55f433890d89be161683",
+          "polygons": 19,
+          "positive_pixels": 7734,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "HE": {
+          "path": "training/HE/IDRiD_40_HE.png",
+          "sha256": "1210b1ab43f1a7141c68d14d29f4c2c775a258fc5b94a230a4584332a8cef15d",
+          "polygons": 3,
+          "positive_pixels": 3594,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "SE": {
+          "path": "training/SE/IDRiD_40_SE.png",
+          "sha256": "c694d57f9ac16ad654bc874cddb91a59b3c0d66a03bcb35c87731eccb336fb2b",
+          "polygons": 0,
+          "positive_pixels": 0,
+          "official_completeness_verified": false,
+          "empty_note": "No user polygon for this class; not proof of an officially reviewed negative"
+        },
+        "MA": {
+          "path": "training/MA/IDRiD_40_MA.png",
+          "sha256": "bbf2cabd660b36852273ac2f85628e2ae2f12854d97a2e21d5efcd2226242b7f",
+          "polygons": 35,
+          "positive_pixels": 6605,
+          "official_completeness_verified": false,
+          "empty_note": null
+        }
+      },
+      "training_allowed_by_original_Q_MIX_protocol": false
+    },
+    {
+      "sid": "IDRiD_41",
+      "source_split": "training",
+      "image_path": "D:\\dataset\\best_segmentation\\images\\training\\IDRiD_41.jpg",
+      "source_image_sha256": "776d7f0e792786b7f8a92d7a3a2aef2a83f8c7e2138345a55066fd98ca2a1cd4",
+      "source_polygon_sha256": "bab6206699c066b42c403bc47b46f6b05c9444b2905f6b4dd5238be33326b6d1",
+      "size_wh": [
+        3416,
+        3416
+      ],
+      "masks": {
+        "EX": {
+          "path": "training/EX/IDRiD_41_EX.png",
+          "sha256": "db5d2ebb794a54240ce0e5182aa76f4bff17dd54f16f92944ce15bc061f2ff13",
+          "polygons": 19,
+          "positive_pixels": 8206,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "HE": {
+          "path": "training/HE/IDRiD_41_HE.png",
+          "sha256": "26a1663b2701d09e7b0ae60c4033cefd585a3b82f4f119cb7fd4eb14ba2f3918",
+          "polygons": 4,
+          "positive_pixels": 4188,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "SE": {
+          "path": "training/SE/IDRiD_41_SE.png",
+          "sha256": "c694d57f9ac16ad654bc874cddb91a59b3c0d66a03bcb35c87731eccb336fb2b",
+          "polygons": 0,
+          "positive_pixels": 0,
+          "official_completeness_verified": false,
+          "empty_note": "No user polygon for this class; not proof of an officially reviewed negative"
+        },
+        "MA": {
+          "path": "training/MA/IDRiD_41_MA.png",
+          "sha256": "6eadd2cf96a129f42adea07eed257445b1a5948211cdad644c47b541c6867fbc",
+          "polygons": 13,
+          "positive_pixels": 5481,
+          "official_completeness_verified": false,
+          "empty_note": null
+        }
+      },
+      "training_allowed_by_original_Q_MIX_protocol": false
+    },
+    {
+      "sid": "IDRiD_42",
+      "source_split": "training",
+      "image_path": "D:\\dataset\\best_segmentation\\images\\training\\IDRiD_42.jpg",
+      "source_image_sha256": "40fc20352a4f4066e311d5ff8d870a572f0d19a99916bab87c858b9a04101339",
+      "source_polygon_sha256": "934ece3d91bba1d838f237bedd7d5832c4c750d703d1e0366745c6c39254c6f9",
+      "size_wh": [
+        3416,
+        3416
+      ],
+      "masks": {
+        "EX": {
+          "path": "training/EX/IDRiD_42_EX.png",
+          "sha256": "d419b4bbd79aed86fbc5c06a3373bdd95c9bd3256a297b27f5b6b2de3f8db851",
+          "polygons": 53,
+          "positive_pixels": 25028,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "HE": {
+          "path": "training/HE/IDRiD_42_HE.png",
+          "sha256": "325dfb28dca23a80fef068bf1297275cda98258f09b7fe585138263057f9e8bd",
+          "polygons": 4,
+          "positive_pixels": 4324,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "SE": {
+          "path": "training/SE/IDRiD_42_SE.png",
+          "sha256": "c694d57f9ac16ad654bc874cddb91a59b3c0d66a03bcb35c87731eccb336fb2b",
+          "polygons": 0,
+          "positive_pixels": 0,
+          "official_completeness_verified": false,
+          "empty_note": "No user polygon for this class; not proof of an officially reviewed negative"
+        },
+        "MA": {
+          "path": "training/MA/IDRiD_42_MA.png",
+          "sha256": "97369df326b2c246e87278db4edf948690624f33765560a936dbd75db8fd9d3c",
+          "polygons": 10,
+          "positive_pixels": 2499,
+          "official_completeness_verified": false,
+          "empty_note": null
+        }
+      },
+      "training_allowed_by_original_Q_MIX_protocol": false
+    },
+    {
+      "sid": "IDRiD_43",
+      "source_split": "training",
+      "image_path": "D:\\dataset\\best_segmentation\\images\\training\\IDRiD_43.jpg",
+      "source_image_sha256": "a01297c37240a7b3a482ed82340161b3b779c7966fee7441b169be84404848d1",
+      "source_polygon_sha256": "d035ec705a2d978cf986e9749103471064a892f582f7a9787e4a2788ad1251cf",
+      "size_wh": [
+        3416,
+        3416
+      ],
+      "masks": {
+        "EX": {
+          "path": "training/EX/IDRiD_43_EX.png",
+          "sha256": "3eb0641e92a74a6e7ca6e0e523c457e475f63e4694bc6de26785dc66f233da7a",
+          "polygons": 82,
+          "positive_pixels": 59504,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "HE": {
+          "path": "training/HE/IDRiD_43_HE.png",
+          "sha256": "c694d57f9ac16ad654bc874cddb91a59b3c0d66a03bcb35c87731eccb336fb2b",
+          "polygons": 0,
+          "positive_pixels": 0,
+          "official_completeness_verified": false,
+          "empty_note": "No user polygon for this class; not proof of an officially reviewed negative"
+        },
+        "SE": {
+          "path": "training/SE/IDRiD_43_SE.png",
+          "sha256": "c694d57f9ac16ad654bc874cddb91a59b3c0d66a03bcb35c87731eccb336fb2b",
+          "polygons": 0,
+          "positive_pixels": 0,
+          "official_completeness_verified": false,
+          "empty_note": "No user polygon for this class; not proof of an officially reviewed negative"
+        },
+        "MA": {
+          "path": "training/MA/IDRiD_43_MA.png",
+          "sha256": "098fa4544c0f10a5eb428881f06d269d62fb041b9bec0f8eea4341659e7868c5",
+          "polygons": 3,
+          "positive_pixels": 923,
+          "official_completeness_verified": false,
+          "empty_note": null
+        }
+      },
+      "training_allowed_by_original_Q_MIX_protocol": false
+    },
+    {
+      "sid": "IDRiD_44",
+      "source_split": "training",
+      "image_path": "D:\\dataset\\best_segmentation\\images\\training\\IDRiD_44.jpg",
+      "source_image_sha256": "271ed93316fb271350987012b762063b89e13e8f75a85c887ad8a9eb036919b1",
+      "source_polygon_sha256": "68c3b9099f662f9bbb4751444e5ebfdf152d00f0fdb70dc05236be294314f61a",
+      "size_wh": [
+        3416,
+        3416
+      ],
+      "masks": {
+        "EX": {
+          "path": "training/EX/IDRiD_44_EX.png",
+          "sha256": "6f83d2c22265b7613603fa22c7bd5c88f7dacbdeaa6b1624bfcf42f1a5de03cf",
+          "polygons": 74,
+          "positive_pixels": 24454,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "HE": {
+          "path": "training/HE/IDRiD_44_HE.png",
+          "sha256": "8d298c2b21bb6722b6df7c6efbb9f6d00600287488578811993f4fa1188f70cb",
+          "polygons": 4,
+          "positive_pixels": 5799,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "SE": {
+          "path": "training/SE/IDRiD_44_SE.png",
+          "sha256": "c694d57f9ac16ad654bc874cddb91a59b3c0d66a03bcb35c87731eccb336fb2b",
+          "polygons": 0,
+          "positive_pixels": 0,
+          "official_completeness_verified": false,
+          "empty_note": "No user polygon for this class; not proof of an officially reviewed negative"
+        },
+        "MA": {
+          "path": "training/MA/IDRiD_44_MA.png",
+          "sha256": "c4cce4c9b0fde404cb4dd816269d6c3d38ebdb6732a363233dedbd3e54881f89",
+          "polygons": 9,
+          "positive_pixels": 1933,
+          "official_completeness_verified": false,
+          "empty_note": null
+        }
+      },
+      "training_allowed_by_original_Q_MIX_protocol": false
+    },
+    {
+      "sid": "IDRiD_45",
+      "source_split": "training",
+      "image_path": "D:\\dataset\\best_segmentation\\images\\training\\IDRiD_45.jpg",
+      "source_image_sha256": "8bd854d8fad2e2593f23f19e953367e755007776cfbe735dd4f990d54c3a8c1b",
+      "source_polygon_sha256": "c79252e434194ed90360f39a0cb8b569b5d5d596fb2e9c05495906e0f250fe82",
+      "size_wh": [
+        3416,
+        3416
+      ],
+      "masks": {
+        "EX": {
+          "path": "training/EX/IDRiD_45_EX.png",
+          "sha256": "c6daabce3562f2e7633b5192af8d4021a18fad1a59584c0b7cf928f5f1fcef56",
+          "polygons": 168,
+          "positive_pixels": 46920,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "HE": {
+          "path": "training/HE/IDRiD_45_HE.png",
+          "sha256": "7b936b18cdc52089acf793d87918ea123e5431734b9c973c6af1107f4a919ff1",
+          "polygons": 4,
+          "positive_pixels": 13179,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "SE": {
+          "path": "training/SE/IDRiD_45_SE.png",
+          "sha256": "c694d57f9ac16ad654bc874cddb91a59b3c0d66a03bcb35c87731eccb336fb2b",
+          "polygons": 0,
+          "positive_pixels": 0,
+          "official_completeness_verified": false,
+          "empty_note": "No user polygon for this class; not proof of an officially reviewed negative"
+        },
+        "MA": {
+          "path": "training/MA/IDRiD_45_MA.png",
+          "sha256": "f7e9aebe1e5430bd4791008a58013244dbb59cfa33331f15bc5170d2ea34880a",
+          "polygons": 12,
+          "positive_pixels": 2558,
+          "official_completeness_verified": false,
+          "empty_note": null
+        }
+      },
+      "training_allowed_by_original_Q_MIX_protocol": false
+    },
+    {
+      "sid": "IDRiD_46",
+      "source_split": "training",
+      "image_path": "D:\\dataset\\best_segmentation\\images\\training\\IDRiD_46.jpg",
+      "source_image_sha256": "b114ca55570e518640c42a9984ea93b3286192d0b9c030acedf204f3e8b9123b",
+      "source_polygon_sha256": "efc23fe5530254d9ee2b82d099e5fbd0d1c154b85d5e3ed04d05dbbddc45af8d",
+      "size_wh": [
+        3416,
+        3416
+      ],
+      "masks": {
+        "EX": {
+          "path": "training/EX/IDRiD_46_EX.png",
+          "sha256": "b439afb29a5c031d69fd77ea79363a87c5e4fba5c9b85c08286b6e4b0a252cc4",
+          "polygons": 93,
+          "positive_pixels": 21086,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "HE": {
+          "path": "training/HE/IDRiD_46_HE.png",
+          "sha256": "7d087a36f42c263ebceb975d67a787104274320a6c0b1da61a010c509f16c1ac",
+          "polygons": 44,
+          "positive_pixels": 190350,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "SE": {
+          "path": "training/SE/IDRiD_46_SE.png",
+          "sha256": "185e9282ba961dae2b8546cc85563e820136d258d3834c58456f0e2e7b50233f",
+          "polygons": 6,
+          "positive_pixels": 97876,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "MA": {
+          "path": "training/MA/IDRiD_46_MA.png",
+          "sha256": "823c63edc163648c67a8c142d8015732731cee473d3d44cfcc29be86020822be",
+          "polygons": 39,
+          "positive_pixels": 11579,
+          "official_completeness_verified": false,
+          "empty_note": null
+        }
+      },
+      "training_allowed_by_original_Q_MIX_protocol": false
+    },
+    {
+      "sid": "IDRiD_47",
+      "source_split": "training",
+      "image_path": "D:\\dataset\\best_segmentation\\images\\training\\IDRiD_47.jpg",
+      "source_image_sha256": "f72fbaf19b42d97519d1c6e597155da4215c5aac1dd4784dcca5e41597e962cb",
+      "source_polygon_sha256": "38cb0d0272271f57d6b4f75f84608700e82e0898ba272134d37f3c2223d771af",
+      "size_wh": [
+        3600,
+        3600
+      ],
+      "masks": {
+        "EX": {
+          "path": "training/EX/IDRiD_47_EX.png",
+          "sha256": "2322ebf0ae5f1fafd5580dd23b001bd57b17d82c313fe02b587927b9f63f643f",
+          "polygons": 69,
+          "positive_pixels": 38650,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "HE": {
+          "path": "training/HE/IDRiD_47_HE.png",
+          "sha256": "d964cff643ce390cefdc7b0716a232eec23e83988b0153b8144e68bdc1824c01",
+          "polygons": 9,
+          "positive_pixels": 67319,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "SE": {
+          "path": "training/SE/IDRiD_47_SE.png",
+          "sha256": "be529baa88ef134209d509a31af8d5fe0cd425183f781601621c2a8f356a87ad",
+          "polygons": 1,
+          "positive_pixels": 32722,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "MA": {
+          "path": "training/MA/IDRiD_47_MA.png",
+          "sha256": "190b1f581ba472039b07175eb57de8a49aa220511d1289b00d3412cffa1c05a6",
+          "polygons": 13,
+          "positive_pixels": 3981,
+          "official_completeness_verified": false,
+          "empty_note": null
+        }
+      },
+      "training_allowed_by_original_Q_MIX_protocol": false
+    },
+    {
+      "sid": "IDRiD_48",
+      "source_split": "training",
+      "image_path": "D:\\dataset\\best_segmentation\\images\\training\\IDRiD_48.jpg",
+      "source_image_sha256": "64f23e56cfa07d967c8d80a0a80efe3803eee36c6b9ddf8e8ae9f59c3d7977f3",
+      "source_polygon_sha256": "ba6ad79b1be18455e877116b9a3a9823c329b8e3565c85a9a08567677d2cf1cb",
+      "size_wh": [
+        3624,
+        3624
+      ],
+      "masks": {
+        "EX": {
+          "path": "training/EX/IDRiD_48_EX.png",
+          "sha256": "ae3612c7e1cfc5a21a2ac72c6d55bbb68ca1938a41e53adfb6bfa56c114786f9",
+          "polygons": 256,
+          "positive_pixels": 151301,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "HE": {
+          "path": "training/HE/IDRiD_48_HE.png",
+          "sha256": "ac9b4331c373f3e6641950c39b91767b8a591344b2a63b4de109a029f27c0601",
+          "polygons": 52,
+          "positive_pixels": 129855,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "SE": {
+          "path": "training/SE/IDRiD_48_SE.png",
+          "sha256": "30e37c5ddf6ae698fa0381d648bf8fefc66d2c4c629fe88b7e1388578aac4fe0",
+          "polygons": 5,
+          "positive_pixels": 57358,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "MA": {
+          "path": "training/MA/IDRiD_48_MA.png",
+          "sha256": "6d5941d2582f29248161fcb5345c805b02bff24ea7cce1ba61e4f18c6622e162",
+          "polygons": 81,
+          "positive_pixels": 22263,
+          "official_completeness_verified": false,
+          "empty_note": null
+        }
+      },
+      "training_allowed_by_original_Q_MIX_protocol": false
+    },
+    {
+      "sid": "IDRiD_49",
+      "source_split": "training",
+      "image_path": "D:\\dataset\\best_segmentation\\images\\training\\IDRiD_49.jpg",
+      "source_image_sha256": "79f1281a5daf15163b472d637f87e96fdfa976ae55289f97fd5f2a646739c6e1",
+      "source_polygon_sha256": "092cd96d3cb96e6318681d01e2677cf0ae8b679302e4d81ace58b24e3bea2d96",
+      "size_wh": [
+        3414,
+        3414
+      ],
+      "masks": {
+        "EX": {
+          "path": "training/EX/IDRiD_49_EX.png",
+          "sha256": "f9c641b93478b723236fc43b62f4711740e053240ed44cf7eed5a8279d6d0883",
+          "polygons": 416,
+          "positive_pixels": 216908,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "HE": {
+          "path": "training/HE/IDRiD_49_HE.png",
+          "sha256": "c94646792e7f4564e3a5f853cdc7c80e9a819f8c016468a58fdd96baaeb98461",
+          "polygons": 44,
+          "positive_pixels": 173502,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "SE": {
+          "path": "training/SE/IDRiD_49_SE.png",
+          "sha256": "589a2969f7be94d8d4ac6fe1f5ffeffe97546d68ea62af1228d2c23f75d1d755",
+          "polygons": 1,
+          "positive_pixels": 41040,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "MA": {
+          "path": "training/MA/IDRiD_49_MA.png",
+          "sha256": "2f2ec94cf10008aed89741d9d274967d106e5675fca65476fcb0438299193992",
+          "polygons": 82,
+          "positive_pixels": 16505,
+          "official_completeness_verified": false,
+          "empty_note": null
+        }
+      },
+      "training_allowed_by_original_Q_MIX_protocol": false
+    },
+    {
+      "sid": "IDRiD_50",
+      "source_split": "training",
+      "image_path": "D:\\dataset\\best_segmentation\\images\\training\\IDRiD_50.jpg",
+      "source_image_sha256": "57c6bf13bc994bd40e67aba5db796eeacf6d5fdc0d1e348ee8230459469dcedc",
+      "source_polygon_sha256": "d2d8a5e4e884e78fb874ef0c025381e4ef91f84b9581b6f4eb135c75c0b60728",
+      "size_wh": [
+        3443,
+        3443
+      ],
+      "masks": {
+        "EX": {
+          "path": "training/EX/IDRiD_50_EX.png",
+          "sha256": "65a76e100df998442d544089469cbeef70bd0b3d56d95f2d18e0f86bb74ddfd5",
+          "polygons": 207,
+          "positive_pixels": 119100,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "HE": {
+          "path": "training/HE/IDRiD_50_HE.png",
+          "sha256": "a9b1623f6791708fd1dbb4f914d66c3979de6dd3bd9ad0a02e6e7708f6669526",
+          "polygons": 9,
+          "positive_pixels": 33334,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "SE": {
+          "path": "training/SE/IDRiD_50_SE.png",
+          "sha256": "c4cb9aad6c65ca6767a7d02ca27bea0da8b8e3db8e4efbee3cb95898d323a9ba",
+          "polygons": 4,
+          "positive_pixels": 35807,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "MA": {
+          "path": "training/MA/IDRiD_50_MA.png",
+          "sha256": "abe3fd3b4f7a51270e9f842268537f48f2fe8f3bbe349327174894e5a6adb9d4",
+          "polygons": 11,
+          "positive_pixels": 5126,
+          "official_completeness_verified": false,
+          "empty_note": null
+        }
+      },
+      "training_allowed_by_original_Q_MIX_protocol": false
+    },
+    {
+      "sid": "IDRiD_51",
+      "source_split": "training",
+      "image_path": "D:\\dataset\\best_segmentation\\images\\training\\IDRiD_51.jpg",
+      "source_image_sha256": "1139a3b951017b2d65f3deba6d71f47ba8f9487fd21aec4facec34b4773c4c55",
+      "source_polygon_sha256": "0a4355186e7ec5cc66a8f4d2c98a457e4462420b815fb18e4f9f0842085d37e5",
+      "size_wh": [
+        3414,
+        3414
+      ],
+      "masks": {
+        "EX": {
+          "path": "training/EX/IDRiD_51_EX.png",
+          "sha256": "d42af38e22370b0210f201b23c7dff575dac6bf09ba1d7cce79737b151ce31a5",
+          "polygons": 53,
+          "positive_pixels": 19224,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "HE": {
+          "path": "training/HE/IDRiD_51_HE.png",
+          "sha256": "f9a1fe06b91ca113e30eae7ee4bb49e7de6f351e3440fa689ef41a9df4bed991",
+          "polygons": 16,
+          "positive_pixels": 47468,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "SE": {
+          "path": "training/SE/IDRiD_51_SE.png",
+          "sha256": "c9b9ab886c9f2b690859bc76efc5b25b025d070721de44f6fd7e5640fd690f7d",
+          "polygons": 7,
+          "positive_pixels": 76326,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "MA": {
+          "path": "training/MA/IDRiD_51_MA.png",
+          "sha256": "b624ca3bc38ba7b45ebc84f46917a0aadd080411b4fac75236d196a70589c306",
+          "polygons": 46,
+          "positive_pixels": 14310,
+          "official_completeness_verified": false,
+          "empty_note": null
+        }
+      },
+      "training_allowed_by_original_Q_MIX_protocol": false
+    },
+    {
+      "sid": "IDRiD_52",
+      "source_split": "training",
+      "image_path": "D:\\dataset\\best_segmentation\\images\\training\\IDRiD_52.jpg",
+      "source_image_sha256": "9db1f0462d58893f57943223d38a2bd1741fc791154c3059f646f23a0df0bce3",
+      "source_polygon_sha256": "8f4b9f23b7897755903e74eee1d930158473ef8cbc751ec96132523d68206c06",
+      "size_wh": [
+        3413,
+        3413
+      ],
+      "masks": {
+        "EX": {
+          "path": "training/EX/IDRiD_52_EX.png",
+          "sha256": "5adca80d532408da051975172b3fcfff9192d8b1460dac65da902fa0e5ea6b50",
+          "polygons": 13,
+          "positive_pixels": 2968,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "HE": {
+          "path": "training/HE/IDRiD_52_HE.png",
+          "sha256": "857543bf23871cabe5de9b9b8c7324600b968ad9f04a38f0484a55c411fe96ce",
+          "polygons": 4,
+          "positive_pixels": 3290,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "SE": {
+          "path": "training/SE/IDRiD_52_SE.png",
+          "sha256": "6e002337772a23611c7ee04f2ead9e35d5864136ce1e60aa376d9cb151e91290",
+          "polygons": 2,
+          "positive_pixels": 9464,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "MA": {
+          "path": "training/MA/IDRiD_52_MA.png",
+          "sha256": "c09f4244251fd1ecb7d863aefc28de84434d6397bb22a5a94cd6f33f57a106bf",
+          "polygons": 23,
+          "positive_pixels": 6639,
+          "official_completeness_verified": false,
+          "empty_note": null
+        }
+      },
+      "training_allowed_by_original_Q_MIX_protocol": false
+    },
+    {
+      "sid": "IDRiD_53",
+      "source_split": "training",
+      "image_path": "D:\\dataset\\best_segmentation\\images\\training\\IDRiD_53.jpg",
+      "source_image_sha256": "9638e3751f8f82e8fcc77f5d41ffaa755ab63f10d72879506995344d2582797a",
+      "source_polygon_sha256": "25ceb063c274324277daa25bf587900a2f002e83511f0f00231fb807419b4423",
+      "size_wh": [
+        4176,
+        4176
+      ],
+      "masks": {
+        "EX": {
+          "path": "training/EX/IDRiD_53_EX.png",
+          "sha256": "d3396ea110c21e5af186612921a91956e4f5f1260944a6d038f2360921c534f5",
+          "polygons": 57,
+          "positive_pixels": 10988,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "HE": {
+          "path": "training/HE/IDRiD_53_HE.png",
+          "sha256": "5c1fbcbacd98e7c91060593b657602be7fd4114ceee0fec1cd91b7dc7419421d",
+          "polygons": 46,
+          "positive_pixels": 90317,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "SE": {
+          "path": "training/SE/IDRiD_53_SE.png",
+          "sha256": "1a84a1ccca2090c1856b232ea41d4655ff67487403c2ff46e8b4dfb182428bb8",
+          "polygons": 1,
+          "positive_pixels": 8764,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "MA": {
+          "path": "training/MA/IDRiD_53_MA.png",
+          "sha256": "3967893de3c66c51f45e4dbd3c8103cb8d2216f620984b0349676f37fac3e21b",
+          "polygons": 118,
+          "positive_pixels": 26519,
+          "official_completeness_verified": false,
+          "empty_note": null
+        }
+      },
+      "training_allowed_by_original_Q_MIX_protocol": false
+    },
+    {
+      "sid": "IDRiD_54",
+      "source_split": "training",
+      "image_path": "D:\\dataset\\best_segmentation\\images\\training\\IDRiD_54.jpg",
+      "source_image_sha256": "5a5067c0b017bb0d01644fc743d37290aea5bec30c37d25849c6c7844c6a36a1",
+      "source_polygon_sha256": "89780417249533834b14d6b824cd4e15d47df542b23f6c51d30fd3ab3f04a852",
+      "size_wh": [
+        3418,
+        3418
+      ],
+      "masks": {
+        "EX": {
+          "path": "training/EX/IDRiD_54_EX.png",
+          "sha256": "a285a4c8b38f5f5de1ac5bebed62483a8b9ab5b2feea4629cb41b2cc5db26d5a",
+          "polygons": 18,
+          "positive_pixels": 9358,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "HE": {
+          "path": "training/HE/IDRiD_54_HE.png",
+          "sha256": "8b9ca02be7b62ce2b8963635448b046dfa7a530cbfffbbbf43a85a9b43e89752",
+          "polygons": 26,
+          "positive_pixels": 38383,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "SE": {
+          "path": "training/SE/IDRiD_54_SE.png",
+          "sha256": "fdf328d4c8182382ec153984658858fa44a4334f324950879f113e0880270a40",
+          "polygons": 6,
+          "positive_pixels": 30005,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "MA": {
+          "path": "training/MA/IDRiD_54_MA.png",
+          "sha256": "55fb799c9c1bb8d0dff8bb3b7c4b0ffeb45b6814a0017b192a1807222a5d5e4a",
+          "polygons": 66,
+          "positive_pixels": 23874,
+          "official_completeness_verified": false,
+          "empty_note": null
+        }
+      },
+      "training_allowed_by_original_Q_MIX_protocol": false
+    },
+    {
+      "sid": "IDRiD_55",
+      "source_split": "testing",
+      "image_path": "D:\\dataset\\best_segmentation\\images\\testing\\IDRiD_55.jpg",
+      "source_image_sha256": "58f0eb26127aa2765f55d401a13115f82654d4feb3c90ab2db7bdf0b787d1405",
+      "source_polygon_sha256": "1e85247d99c79ed601950657f4c98ab6ccf579eb41f8c25cd878632a77c4a25c",
+      "size_wh": [
+        3416,
+        3416
+      ],
+      "masks": {
+        "EX": {
+          "path": "testing/EX/IDRiD_55_EX.png",
+          "sha256": "5361cc8daa5ced743f94c07a8aa273747d0416bee383e805c06b35fd264392c2",
+          "polygons": 388,
+          "positive_pixels": 476110,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "HE": {
+          "path": "testing/HE/IDRiD_55_HE.png",
+          "sha256": "a4fac9abc5a446651cfc57af0f713650154640be355c8a6963c0cfa8b044b24d",
+          "polygons": 10,
+          "positive_pixels": 100200,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "SE": {
+          "path": "testing/SE/IDRiD_55_SE.png",
+          "sha256": "dc0ff26e53b3adf0e8fe4400299d80951837379582ae997389d435aa3dc07df3",
+          "polygons": 2,
+          "positive_pixels": 2833,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "MA": {
+          "path": "testing/MA/IDRiD_55_MA.png",
+          "sha256": "683b16071a42e07fa6a7f305381204bfdeef1fb62dbdfb267f77f568ca3011a6",
+          "polygons": 33,
+          "positive_pixels": 10323,
+          "official_completeness_verified": false,
+          "empty_note": null
+        }
+      },
+      "training_allowed_by_original_Q_MIX_protocol": false
+    },
+    {
+      "sid": "IDRiD_56",
+      "source_split": "testing",
+      "image_path": "D:\\dataset\\best_segmentation\\images\\testing\\IDRiD_56.jpg",
+      "source_image_sha256": "0b6f90c8098fa0407aafe13868a74344baa1eb8b988def51003fe96e6206dd8e",
+      "source_polygon_sha256": "4032a5bca28fe8439e675d30951e19521732403a82209c3cb6170aa499537e9e",
+      "size_wh": [
+        3665,
+        3665
+      ],
+      "masks": {
+        "EX": {
+          "path": "testing/EX/IDRiD_56_EX.png",
+          "sha256": "ea3915a3b0f23bc468d1c6b01e4537a02513395edb8cd2fe192039b9b5cc7b75",
+          "polygons": 29,
+          "positive_pixels": 13313,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "HE": {
+          "path": "testing/HE/IDRiD_56_HE.png",
+          "sha256": "9f8f83c3183c0effd3cd33a73f602a3a5735b322832a1b8176b0dc052c90a377",
+          "polygons": 21,
+          "positive_pixels": 199709,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "SE": {
+          "path": "testing/SE/IDRiD_56_SE.png",
+          "sha256": "b1d29b6359cf9e7fd0e1538016e896a3ac3a6219c5d8d32bdae15ef6f59ab54a",
+          "polygons": 4,
+          "positive_pixels": 56632,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "MA": {
+          "path": "testing/MA/IDRiD_56_MA.png",
+          "sha256": "ac3d900f4b96fc731e77c005e2febe2bde010e3f630ca0dcaebdb038f748d167",
+          "polygons": 21,
+          "positive_pixels": 10683,
+          "official_completeness_verified": false,
+          "empty_note": null
+        }
+      },
+      "training_allowed_by_original_Q_MIX_protocol": false
+    },
+    {
+      "sid": "IDRiD_57",
+      "source_split": "testing",
+      "image_path": "D:\\dataset\\best_segmentation\\images\\testing\\IDRiD_57.jpg",
+      "source_image_sha256": "2283229f17c6d34bba9ba2910850fca38b1fcccf20367b59c75bb33bca4bbc4a",
+      "source_polygon_sha256": "f48a4e93648fda219c5f4828a877db3c598c5783ec3c4526f883e849166a9d80",
+      "size_wh": [
+        3804,
+        3804
+      ],
+      "masks": {
+        "EX": {
+          "path": "testing/EX/IDRiD_57_EX.png",
+          "sha256": "1934debfbca633202859558be7dc8fc215aab192b193137701776fbe296840be",
+          "polygons": 124,
+          "positive_pixels": 43162,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "HE": {
+          "path": "testing/HE/IDRiD_57_HE.png",
+          "sha256": "e87ad5eda1695166de5863451630913c924c282c7eb8b5940d1cf929cc9ee22e",
+          "polygons": 4,
+          "positive_pixels": 2762,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "SE": {
+          "path": "testing/SE/IDRiD_57_SE.png",
+          "sha256": "3e77dbf81118884ba6e939cc3c07068035b6c87f103d6a614e4555d494674b3f",
+          "polygons": 0,
+          "positive_pixels": 0,
+          "official_completeness_verified": false,
+          "empty_note": "No user polygon for this class; not proof of an officially reviewed negative"
+        },
+        "MA": {
+          "path": "testing/MA/IDRiD_57_MA.png",
+          "sha256": "78eee814ed8c9f171b9c55a5b3081bfd0c73c15c2a9595dfd058b9c17f077bab",
+          "polygons": 10,
+          "positive_pixels": 2101,
+          "official_completeness_verified": false,
+          "empty_note": null
+        }
+      },
+      "training_allowed_by_original_Q_MIX_protocol": false
+    },
+    {
+      "sid": "IDRiD_58",
+      "source_split": "testing",
+      "image_path": "D:\\dataset\\best_segmentation\\images\\testing\\IDRiD_58.jpg",
+      "source_image_sha256": "1fd617b88904fa30e70eee6fe333b1caf5d5fe877b175aa2d3b432fe634060ce",
+      "source_polygon_sha256": "a42bc7dcdadcc293ab8b5efb3f218f1b3c716235116407cbe1daf93868dffdfd",
+      "size_wh": [
+        3600,
+        3600
+      ],
+      "masks": {
+        "EX": {
+          "path": "testing/EX/IDRiD_58_EX.png",
+          "sha256": "2aff98eaabd8d9405f58032ad924089a48fb71ce6bb7ad4725837b6be33ce1ee",
+          "polygons": 62,
+          "positive_pixels": 67878,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "HE": {
+          "path": "testing/HE/IDRiD_58_HE.png",
+          "sha256": "cbc7f2dd24d415f0b94751443ae2a58dedb0200567630abbe8a021c752ab3f20",
+          "polygons": 14,
+          "positive_pixels": 78914,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "SE": {
+          "path": "testing/SE/IDRiD_58_SE.png",
+          "sha256": "3407b5ae8bfa7028ea728bbbf768c583e45dab2d60cd1c8d9a60c38cba2fbff0",
+          "polygons": 0,
+          "positive_pixels": 0,
+          "official_completeness_verified": false,
+          "empty_note": "No user polygon for this class; not proof of an officially reviewed negative"
+        },
+        "MA": {
+          "path": "testing/MA/IDRiD_58_MA.png",
+          "sha256": "89b913340baae2f64087d003eace780be7175aa3c8cea8fe43456a960caee4de",
+          "polygons": 22,
+          "positive_pixels": 7391,
+          "official_completeness_verified": false,
+          "empty_note": null
+        }
+      },
+      "training_allowed_by_original_Q_MIX_protocol": false
+    },
+    {
+      "sid": "IDRiD_59",
+      "source_split": "testing",
+      "image_path": "D:\\dataset\\best_segmentation\\images\\testing\\IDRiD_59.jpg",
+      "source_image_sha256": "722a5cceeb1bfd90b15332c0b443eb502cc4326959797c09d082cdd421af1612",
+      "source_polygon_sha256": "047c3eea1967262978d95e973e89775c2a193006937053c07e99901b1d60a266",
+      "size_wh": [
+        3646,
+        3646
+      ],
+      "masks": {
+        "EX": {
+          "path": "testing/EX/IDRiD_59_EX.png",
+          "sha256": "e2f6ebec91602b293be4725606917accdd9eda98537a471d74ac43a162144c06",
+          "polygons": 121,
+          "positive_pixels": 88049,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "HE": {
+          "path": "testing/HE/IDRiD_59_HE.png",
+          "sha256": "df89d7bd87f9269264287fd367512761390bcc69ed5372127cfa6bd03c2a5d84",
+          "polygons": 16,
+          "positive_pixels": 71355,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "SE": {
+          "path": "testing/SE/IDRiD_59_SE.png",
+          "sha256": "4e82b650b129a43b7b524a24ced8255e56520ecb219d86e73a2c0223b20027e7",
+          "polygons": 5,
+          "positive_pixels": 173826,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "MA": {
+          "path": "testing/MA/IDRiD_59_MA.png",
+          "sha256": "2f5d6fd5f4371b8971835e95b81cb0aa9cbbddf174a128c53d3f93ce1fc4feb9",
+          "polygons": 33,
+          "positive_pixels": 11521,
+          "official_completeness_verified": false,
+          "empty_note": null
+        }
+      },
+      "training_allowed_by_original_Q_MIX_protocol": false
+    },
+    {
+      "sid": "IDRiD_60",
+      "source_split": "testing",
+      "image_path": "D:\\dataset\\best_segmentation\\images\\testing\\IDRiD_60.jpg",
+      "source_image_sha256": "e3a58c0a3f37452566bfb71d73654fdf27e1dce207fa924463aac9b1c07166fb",
+      "source_polygon_sha256": "84ccc1cfe4589dcc675c8949bd61a5ad8695c001995e1220fb37eeb5f06418a0",
+      "size_wh": [
+        3544,
+        3544
+      ],
+      "masks": {
+        "EX": {
+          "path": "testing/EX/IDRiD_60_EX.png",
+          "sha256": "f2af3317f6270e11fbdcc15a2dd4bc5adc5c4705d67be750810f04eba3f23a60",
+          "polygons": 174,
+          "positive_pixels": 52143,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "HE": {
+          "path": "testing/HE/IDRiD_60_HE.png",
+          "sha256": "67e059fbdbb1c08dd4239688c732e4641efc88952543ee286e220aa0e843aa1b",
+          "polygons": 15,
+          "positive_pixels": 39233,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "SE": {
+          "path": "testing/SE/IDRiD_60_SE.png",
+          "sha256": "30bed52421758e49168be9b189ca56b9da1ec80812f9b261d06215aece7de23f",
+          "polygons": 6,
+          "positive_pixels": 78084,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "MA": {
+          "path": "testing/MA/IDRiD_60_MA.png",
+          "sha256": "f10cde71cf5fa17175ac70271f25bf8abc1afa4d8a5dc47133d39ccd3f057bfa",
+          "polygons": 34,
+          "positive_pixels": 10140,
+          "official_completeness_verified": false,
+          "empty_note": null
+        }
+      },
+      "training_allowed_by_original_Q_MIX_protocol": false
+    },
+    {
+      "sid": "IDRiD_61",
+      "source_split": "testing",
+      "image_path": "D:\\dataset\\best_segmentation\\images\\testing\\IDRiD_61.jpg",
+      "source_image_sha256": "dd981e9ee30d11a5cf2440d32ba96361812fe56a84c52480caddb60248c64db4",
+      "source_polygon_sha256": "f2d36dfb2b3913d5ce164e091cdef24899c10ba93e541c2181390282dd398a52",
+      "size_wh": [
+        3589,
+        3589
+      ],
+      "masks": {
+        "EX": {
+          "path": "testing/EX/IDRiD_61_EX.png",
+          "sha256": "edbcdc5a0a3171a604b9f0db24257c2fac24c4f5abff8b9cfba985a0012ad11b",
+          "polygons": 63,
+          "positive_pixels": 32592,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "HE": {
+          "path": "testing/HE/IDRiD_61_HE.png",
+          "sha256": "b4d5f3a92ca04c5d38c64e719a9f4f72b0cbe41d8be34ea057718baa11d8f11a",
+          "polygons": 51,
+          "positive_pixels": 1094416,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "SE": {
+          "path": "testing/SE/IDRiD_61_SE.png",
+          "sha256": "166de892838ea6818ca3421cab674b190ce13fc76f740406845b0fb60e591eda",
+          "polygons": 1,
+          "positive_pixels": 17279,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "MA": {
+          "path": "testing/MA/IDRiD_61_MA.png",
+          "sha256": "4c410971340ba6338a6b2042dfb5897f7f5b55fb93c8b7864c2abe49bb67e399",
+          "polygons": 29,
+          "positive_pixels": 18409,
+          "official_completeness_verified": false,
+          "empty_note": null
+        }
+      },
+      "training_allowed_by_original_Q_MIX_protocol": false
+    },
+    {
+      "sid": "IDRiD_62",
+      "source_split": "testing",
+      "image_path": "D:\\dataset\\best_segmentation\\images\\testing\\IDRiD_62.jpg",
+      "source_image_sha256": "c39d94bd76eab5662257173a74bb7229dde0139af704b1720daaf4e26bf4f1bc",
+      "source_polygon_sha256": "0daf009b258df2f7589662d77de10069b67ddf56cb16c030e0453f6f7cc33f97",
+      "size_wh": [
+        3795,
+        3795
+      ],
+      "masks": {
+        "EX": {
+          "path": "testing/EX/IDRiD_62_EX.png",
+          "sha256": "48424e108e4cc68bee99045e5f196360778c66903d4d2f9350acd2290bf3ebe3",
+          "polygons": 68,
+          "positive_pixels": 43647,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "HE": {
+          "path": "testing/HE/IDRiD_62_HE.png",
+          "sha256": "5d1f17ae475d55d6ec746463bf182d4299c060449af67044a511ba711d2a7500",
+          "polygons": 2,
+          "positive_pixels": 10865,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "SE": {
+          "path": "testing/SE/IDRiD_62_SE.png",
+          "sha256": "79c4521810cc95d7d068bba1e8ca0da4c76cdb3d625375fc11b05e408af1fb46",
+          "polygons": 0,
+          "positive_pixels": 0,
+          "official_completeness_verified": false,
+          "empty_note": "No user polygon for this class; not proof of an officially reviewed negative"
+        },
+        "MA": {
+          "path": "testing/MA/IDRiD_62_MA.png",
+          "sha256": "3137a0eda7d305016e16740d340f71a1169b8f263b72453c343e85fce26bdd03",
+          "polygons": 11,
+          "positive_pixels": 3228,
+          "official_completeness_verified": false,
+          "empty_note": null
+        }
+      },
+      "training_allowed_by_original_Q_MIX_protocol": false
+    },
+    {
+      "sid": "IDRiD_63",
+      "source_split": "testing",
+      "image_path": "D:\\dataset\\best_segmentation\\images\\testing\\IDRiD_63.jpg",
+      "source_image_sha256": "53e902eea75246b2bfc85768c3d5fe0e3395aff370b0f69454828f77229cd017",
+      "source_polygon_sha256": "f896e4cba3dc7db4c96e5091c9907b1486af3ab0d6e218109a6c3c3caf87a41d",
+      "size_wh": [
+        3626,
+        3626
+      ],
+      "masks": {
+        "EX": {
+          "path": "testing/EX/IDRiD_63_EX.png",
+          "sha256": "ce13350b541615c1a082ba61055a1912e507179bbb096ee57c4ce88969d8ae9d",
+          "polygons": 54,
+          "positive_pixels": 91071,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "HE": {
+          "path": "testing/HE/IDRiD_63_HE.png",
+          "sha256": "338739f9c7ba7d45c183b05bb60836bcfdb3a19d1668338bd2151d95f6ae16f0",
+          "polygons": 5,
+          "positive_pixels": 12346,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "SE": {
+          "path": "testing/SE/IDRiD_63_SE.png",
+          "sha256": "e5b3ebf7e10602c26594c6d87374092ddc8eee6514ace1520019b83e05c5046c",
+          "polygons": 0,
+          "positive_pixels": 0,
+          "official_completeness_verified": false,
+          "empty_note": "No user polygon for this class; not proof of an officially reviewed negative"
+        },
+        "MA": {
+          "path": "testing/MA/IDRiD_63_MA.png",
+          "sha256": "65c04bc17803951cf32780ff73206909074e95c81742ddd56dfdec3f92b963fa",
+          "polygons": 3,
+          "positive_pixels": 2138,
+          "official_completeness_verified": false,
+          "empty_note": null
+        }
+      },
+      "training_allowed_by_original_Q_MIX_protocol": false
+    },
+    {
+      "sid": "IDRiD_64",
+      "source_split": "testing",
+      "image_path": "D:\\dataset\\best_segmentation\\images\\testing\\IDRiD_64.jpg",
+      "source_image_sha256": "968578e03bbe44301ffb01bc0afe483df7f412ca9fe62fadfb16371b1ac882a4",
+      "source_polygon_sha256": "8401d56c190b93c1a8239969493debf1c39136763465062f9900c85342b12b95",
+      "size_wh": [
+        3431,
+        3431
+      ],
+      "masks": {
+        "EX": {
+          "path": "testing/EX/IDRiD_64_EX.png",
+          "sha256": "d9fdf762307a5800f2b668d6a33f4c21a7298c6a22f2f14a5a5ef0cd2e2fe777",
+          "polygons": 192,
+          "positive_pixels": 66951,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "HE": {
+          "path": "testing/HE/IDRiD_64_HE.png",
+          "sha256": "cef21fbd6ae796719cf41d1ad73a2576c51e1294fba704d029522cb6c6df6673",
+          "polygons": 8,
+          "positive_pixels": 23410,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "SE": {
+          "path": "testing/SE/IDRiD_64_SE.png",
+          "sha256": "2fd3157ec9b4d473e3fd50a9fa60d2734886137f5f367e10a591fca6eacf8a3b",
+          "polygons": 2,
+          "positive_pixels": 39577,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "MA": {
+          "path": "testing/MA/IDRiD_64_MA.png",
+          "sha256": "a3edc21d4b0024adf27f3831f21200d74671e1c8094b33a08a06fb4a51e2264b",
+          "polygons": 40,
+          "positive_pixels": 12320,
+          "official_completeness_verified": false,
+          "empty_note": null
+        }
+      },
+      "training_allowed_by_original_Q_MIX_protocol": false
+    },
+    {
+      "sid": "IDRiD_65",
+      "source_split": "testing",
+      "image_path": "D:\\dataset\\best_segmentation\\images\\testing\\IDRiD_65.jpg",
+      "source_image_sha256": "014a1b986db81cef3d4b1fdd48b1a5b04bc5186aacb168607ccba5079e63b196",
+      "source_polygon_sha256": "0c2951f655ed0842771b1e856772731c78c082d48f9ef2b4ef7c6018a90858cb",
+      "size_wh": [
+        3805,
+        3805
+      ],
+      "masks": {
+        "EX": {
+          "path": "testing/EX/IDRiD_65_EX.png",
+          "sha256": "b257e144298ab0d0cdbd39c76dbecac7982e52bf8fc103e4f9cad79609448326",
+          "polygons": 122,
+          "positive_pixels": 69984,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "HE": {
+          "path": "testing/HE/IDRiD_65_HE.png",
+          "sha256": "7f6b6296d26ebfe5161375325ae26c61e705af51764f5a68c95c6c82805acc05",
+          "polygons": 23,
+          "positive_pixels": 41869,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "SE": {
+          "path": "testing/SE/IDRiD_65_SE.png",
+          "sha256": "c55740923e1f94e3bd55a51416e3dbca757e27960e87fba94aedf3bb0ce5c017",
+          "polygons": 0,
+          "positive_pixels": 0,
+          "official_completeness_verified": false,
+          "empty_note": "No user polygon for this class; not proof of an officially reviewed negative"
+        },
+        "MA": {
+          "path": "testing/MA/IDRiD_65_MA.png",
+          "sha256": "d450ae476f9b01b1cde95890cead175ae97ad94d531823e15b2fb96ab3d79177",
+          "polygons": 67,
+          "positive_pixels": 16918,
+          "official_completeness_verified": false,
+          "empty_note": null
+        }
+      },
+      "training_allowed_by_original_Q_MIX_protocol": false
+    },
+    {
+      "sid": "IDRiD_66",
+      "source_split": "testing",
+      "image_path": "D:\\dataset\\best_segmentation\\images\\testing\\IDRiD_66.jpg",
+      "source_image_sha256": "dac64b7303885a0b933a71c218c748f790a253bd5e5c17460fd89fbebc1d79cf",
+      "source_polygon_sha256": "73f93d94a78b0d51b461e249ebd1d3e990840e3b73e3cbac57523fb1740ed478",
+      "size_wh": [
+        4033,
+        4033
+      ],
+      "masks": {
+        "EX": {
+          "path": "testing/EX/IDRiD_66_EX.png",
+          "sha256": "845650dbf36f07e79d3e3a6b52ff6caf96ef4f1ea661396249a08f8ed7c96088",
+          "polygons": 405,
+          "positive_pixels": 875884,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "HE": {
+          "path": "testing/HE/IDRiD_66_HE.png",
+          "sha256": "8b2847d091d7d0793f033594a84675f4ef8aa5a1e262564e50d916eb869814d7",
+          "polygons": 8,
+          "positive_pixels": 23973,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "SE": {
+          "path": "testing/SE/IDRiD_66_SE.png",
+          "sha256": "1e0c69f3e49062aea2e6944f3d8f0ec3e25eff820877c9a186b1508a4b541355",
+          "polygons": 0,
+          "positive_pixels": 0,
+          "official_completeness_verified": false,
+          "empty_note": "No user polygon for this class; not proof of an officially reviewed negative"
+        },
+        "MA": {
+          "path": "testing/MA/IDRiD_66_MA.png",
+          "sha256": "cbd04f37c3c8417fdede0d1dae9392c42dfd66c98b49b359adad9931d18ef6a0",
+          "polygons": 49,
+          "positive_pixels": 9133,
+          "official_completeness_verified": false,
+          "empty_note": null
+        }
+      },
+      "training_allowed_by_original_Q_MIX_protocol": false
+    },
+    {
+      "sid": "IDRiD_67",
+      "source_split": "testing",
+      "image_path": "D:\\dataset\\best_segmentation\\images\\testing\\IDRiD_67.jpg",
+      "source_image_sha256": "891993a7d8d3314635af385efa6db1d34fa84899fe5f3159137f7d985390221b",
+      "source_polygon_sha256": "7f50fc7068a020efdf7427a471334d616089cdcbfa256df6a32017fdce070b3a",
+      "size_wh": [
+        3481,
+        3481
+      ],
+      "masks": {
+        "EX": {
+          "path": "testing/EX/IDRiD_67_EX.png",
+          "sha256": "52f2721037e3e51980ae7eca36b1fcef47b1213b40dae97b11dda8c047acec8a",
+          "polygons": 40,
+          "positive_pixels": 31516,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "HE": {
+          "path": "testing/HE/IDRiD_67_HE.png",
+          "sha256": "3cc0594800c6ba558ac8bc988d55653d72a8f402a5deebf6def1d4a334be21ac",
+          "polygons": 37,
+          "positive_pixels": 321563,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "SE": {
+          "path": "testing/SE/IDRiD_67_SE.png",
+          "sha256": "b1f2341f28b3e0ca15f98b0d5165ed305174ed61733c7677195229b290519894",
+          "polygons": 4,
+          "positive_pixels": 38064,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "MA": {
+          "path": "testing/MA/IDRiD_67_MA.png",
+          "sha256": "b258e473d8896a00d492557dcf91142f44148338bcbbf41bc6e506c9e81ea278",
+          "polygons": 30,
+          "positive_pixels": 13136,
+          "official_completeness_verified": false,
+          "empty_note": null
+        }
+      },
+      "training_allowed_by_original_Q_MIX_protocol": false
+    },
+    {
+      "sid": "IDRiD_68",
+      "source_split": "testing",
+      "image_path": "D:\\dataset\\best_segmentation\\images\\testing\\IDRiD_68.jpg",
+      "source_image_sha256": "46e1f67f427696c2531411f774ad14b08cf9f72414abba78ca335f58bf7b5c6b",
+      "source_polygon_sha256": "c90b608090a2b8957d64f649bd37b242c5b337513c65e53b5fd3c6487a321809",
+      "size_wh": [
+        3507,
+        3507
+      ],
+      "masks": {
+        "EX": {
+          "path": "testing/EX/IDRiD_68_EX.png",
+          "sha256": "8e96ebea7bcd2ef79711f7eb9745606e95daa22abb0e8f3d67ec51c93408e0bd",
+          "polygons": 14,
+          "positive_pixels": 18429,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "HE": {
+          "path": "testing/HE/IDRiD_68_HE.png",
+          "sha256": "b9bb8bb6671390e4d8164e237b22c250ae4fc291c22bdf2b166d13548578cf0e",
+          "polygons": 29,
+          "positive_pixels": 291356,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "SE": {
+          "path": "testing/SE/IDRiD_68_SE.png",
+          "sha256": "c002709e98255b05fff2a877dad7b305bd211bf263c79b8f2f23e89dbd5c7a50",
+          "polygons": 4,
+          "positive_pixels": 66382,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "MA": {
+          "path": "testing/MA/IDRiD_68_MA.png",
+          "sha256": "9788a569cd0efcbd57ddc5086fbab51b052fd23472d913b899012a4de64bd086",
+          "polygons": 15,
+          "positive_pixels": 7370,
+          "official_completeness_verified": false,
+          "empty_note": null
+        }
+      },
+      "training_allowed_by_original_Q_MIX_protocol": false
+    },
+    {
+      "sid": "IDRiD_69",
+      "source_split": "testing",
+      "image_path": "D:\\dataset\\best_segmentation\\images\\testing\\IDRiD_69.jpg",
+      "source_image_sha256": "ecdb4d3227379efaab291396d9023755c59c2a27ed74c2fc2060ec5b52f502ba",
+      "source_polygon_sha256": "9dde3a20929be989a5a383f78fa13c1c4886246b6bc253eb06503fd7eafaa5d0",
+      "size_wh": [
+        3440,
+        3440
+      ],
+      "masks": {
+        "EX": {
+          "path": "testing/EX/IDRiD_69_EX.png",
+          "sha256": "0253f13862a0a11761f14c5685fd3ec80a26cf717b9bdf01e7eb438a6ab17928",
+          "polygons": 64,
+          "positive_pixels": 56028,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "HE": {
+          "path": "testing/HE/IDRiD_69_HE.png",
+          "sha256": "f5d3671124234cfcb4c9503695be877dc127b15aed3a95e1a5e2b7aac89ba815",
+          "polygons": 51,
+          "positive_pixels": 287436,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "SE": {
+          "path": "testing/SE/IDRiD_69_SE.png",
+          "sha256": "83df3f550ad102b68018cde07cb2fe3192c35ee88e0d188c3ce653c6bc333664",
+          "polygons": 0,
+          "positive_pixels": 0,
+          "official_completeness_verified": false,
+          "empty_note": "No user polygon for this class; not proof of an officially reviewed negative"
+        },
+        "MA": {
+          "path": "testing/MA/IDRiD_69_MA.png",
+          "sha256": "1d10a807dc39f457caa02b4c1f3febdfc197d55d45acd909451f2124ff474345",
+          "polygons": 43,
+          "positive_pixels": 10742,
+          "official_completeness_verified": false,
+          "empty_note": null
+        }
+      },
+      "training_allowed_by_original_Q_MIX_protocol": false
+    },
+    {
+      "sid": "IDRiD_70",
+      "source_split": "testing",
+      "image_path": "D:\\dataset\\best_segmentation\\images\\testing\\IDRiD_70.jpg",
+      "source_image_sha256": "33d945e4e77906d16b4ee83e4d62f07611cac518a438d4da5d83e6e19bf4e6f4",
+      "source_polygon_sha256": "d6dcaa5bf26a52a4f736d33a89dbb5f5fbc006dc8be5330a27d5922d58403769",
+      "size_wh": [
+        3806,
+        3806
+      ],
+      "masks": {
+        "EX": {
+          "path": "testing/EX/IDRiD_70_EX.png",
+          "sha256": "b8e192d35ebad9a2bbf9ad4d475d3dc53589749197cf63f2c1d5291f66e80473",
+          "polygons": 20,
+          "positive_pixels": 60833,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "HE": {
+          "path": "testing/HE/IDRiD_70_HE.png",
+          "sha256": "ed1081b6fbfee54709b917dcab50a9eefd10651b498c4e4aae0936d1b5a5d674",
+          "polygons": 22,
+          "positive_pixels": 99173,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "SE": {
+          "path": "testing/SE/IDRiD_70_SE.png",
+          "sha256": "72cb41df0c52e5f6ebeb070d23b0c87d7b12734d098ca66a4d8c6218691505e5",
+          "polygons": 1,
+          "positive_pixels": 21542,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "MA": {
+          "path": "testing/MA/IDRiD_70_MA.png",
+          "sha256": "d2c4bcab51fe74de1c4f1ae6313c27e546579e7db46fe20341c33dfe86fe2974",
+          "polygons": 17,
+          "positive_pixels": 8652,
+          "official_completeness_verified": false,
+          "empty_note": null
+        }
+      },
+      "training_allowed_by_original_Q_MIX_protocol": false
+    },
+    {
+      "sid": "IDRiD_71",
+      "source_split": "testing",
+      "image_path": "D:\\dataset\\best_segmentation\\images\\testing\\IDRiD_71.jpg",
+      "source_image_sha256": "8ab16fe86126abe62d5b21c8e46b8dbc1d9f2e91783a9e557b8de004c67fcd0d",
+      "source_polygon_sha256": "e4d362011dae06c86e00d97dbb4a279d4c7767935581b0bb1e86ff60a138c269",
+      "size_wh": [
+        3821,
+        3821
+      ],
+      "masks": {
+        "EX": {
+          "path": "testing/EX/IDRiD_71_EX.png",
+          "sha256": "49c7af2218cf8d1d7ac675e457f10c671b841bcf56930922d29f2e01791892d7",
+          "polygons": 393,
+          "positive_pixels": 273049,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "HE": {
+          "path": "testing/HE/IDRiD_71_HE.png",
+          "sha256": "327db6aa503d7bc5597426f1cd04df22ba3aebd4b6dfee53747fe4c8c0d2f389",
+          "polygons": 16,
+          "positive_pixels": 50303,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "SE": {
+          "path": "testing/SE/IDRiD_71_SE.png",
+          "sha256": "0e3dfed51013bcf36f49af56fab86d54bcf081cc63ad2865946e5db37b538b61",
+          "polygons": 1,
+          "positive_pixels": 17625,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "MA": {
+          "path": "testing/MA/IDRiD_71_MA.png",
+          "sha256": "a066fde9de4b1eedc347313d9866f59aeec93b654e8324eef5563f79d4beff66",
+          "polygons": 59,
+          "positive_pixels": 21122,
+          "official_completeness_verified": false,
+          "empty_note": null
+        }
+      },
+      "training_allowed_by_original_Q_MIX_protocol": false
+    },
+    {
+      "sid": "IDRiD_72",
+      "source_split": "testing",
+      "image_path": "D:\\dataset\\best_segmentation\\images\\testing\\IDRiD_72.jpg",
+      "source_image_sha256": "46abbdb232514722fa4eaa7f1bac4685f1e422a37469a2f8b944156477d7515e",
+      "source_polygon_sha256": "8223ad9c22770f31318e1a1a057497c893f6fb0586bf2c9a0a99c97ae07bb13e",
+      "size_wh": [
+        3482,
+        3482
+      ],
+      "masks": {
+        "EX": {
+          "path": "testing/EX/IDRiD_72_EX.png",
+          "sha256": "c2aa40bd83af483fa182822c0e4f7cb14407b79513c29eb92dc6115264062c92",
+          "polygons": 210,
+          "positive_pixels": 159825,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "HE": {
+          "path": "testing/HE/IDRiD_72_HE.png",
+          "sha256": "df58ead85e3fae1911b5600ba16f0f9e3eae546a70047f94d6f4762b8d3c33e0",
+          "polygons": 7,
+          "positive_pixels": 8453,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "SE": {
+          "path": "testing/SE/IDRiD_72_SE.png",
+          "sha256": "cebc05a5557f1026747cdb548e208ff1496d0be84c5c7f0be84dba6e3c532542",
+          "polygons": 1,
+          "positive_pixels": 15574,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "MA": {
+          "path": "testing/MA/IDRiD_72_MA.png",
+          "sha256": "bd78d7b0cd1946b9d2a447343ccbc19b17902e7c373624bd3a90808b28aadd30",
+          "polygons": 38,
+          "positive_pixels": 8360,
+          "official_completeness_verified": false,
+          "empty_note": null
+        }
+      },
+      "training_allowed_by_original_Q_MIX_protocol": false
+    },
+    {
+      "sid": "IDRiD_73",
+      "source_split": "testing",
+      "image_path": "D:\\dataset\\best_segmentation\\images\\testing\\IDRiD_73.jpg",
+      "source_image_sha256": "1b6a6a8527a4c1ea46c88553719b82d941d7c8a3b1c7d50f346f07c7d3aa1ac4",
+      "source_polygon_sha256": "1a482d10a1f9e72a180340aba3cb2031855a8acd288e1956516f4f65d2e1d1b0",
+      "size_wh": [
+        3808,
+        3808
+      ],
+      "masks": {
+        "EX": {
+          "path": "testing/EX/IDRiD_73_EX.png",
+          "sha256": "c4f318f933093d420b6494cfce17f2591df2fd255a33b3d75daa23d98a3de350",
+          "polygons": 20,
+          "positive_pixels": 10700,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "HE": {
+          "path": "testing/HE/IDRiD_73_HE.png",
+          "sha256": "d5a00f50795b9137c772092b906c37e81d5f905eafc3805c7e2dfa59e04a2001",
+          "polygons": 8,
+          "positive_pixels": 25335,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "SE": {
+          "path": "testing/SE/IDRiD_73_SE.png",
+          "sha256": "72dd0f9a119200e900951d335486034424104134b73c39ee2cb09d0e8bd671b8",
+          "polygons": 3,
+          "positive_pixels": 31295,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "MA": {
+          "path": "testing/MA/IDRiD_73_MA.png",
+          "sha256": "42672f37a16a7d71326fc060e7b874ac62be6c501d0c13d26ec48e663b8f848e",
+          "polygons": 31,
+          "positive_pixels": 10280,
+          "official_completeness_verified": false,
+          "empty_note": null
+        }
+      },
+      "training_allowed_by_original_Q_MIX_protocol": false
+    },
+    {
+      "sid": "IDRiD_74",
+      "source_split": "testing",
+      "image_path": "D:\\dataset\\best_segmentation\\images\\testing\\IDRiD_74.jpg",
+      "source_image_sha256": "7d9d87d048954304b299b8d3ec0ff99fe8e500ca08e659f24daacd09f8a7b91a",
+      "source_polygon_sha256": "35892f4ab4958fa70305038dce0eaecb9b5ef74b6093ed2c07ce9f510afc6daf",
+      "size_wh": [
+        3705,
+        3705
+      ],
+      "masks": {
+        "EX": {
+          "path": "testing/EX/IDRiD_74_EX.png",
+          "sha256": "f35910809dd19e631523eed781231bf69db2eec345e2e7e69e56e3706ef7812a",
+          "polygons": 113,
+          "positive_pixels": 25791,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "HE": {
+          "path": "testing/HE/IDRiD_74_HE.png",
+          "sha256": "0905b3894f90b7de508227d91bd3a80169bd9754168cae900cbed76e6c0ee4e0",
+          "polygons": 44,
+          "positive_pixels": 99523,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "SE": {
+          "path": "testing/SE/IDRiD_74_SE.png",
+          "sha256": "75cc91f556571d36311a6289572fc0b3da61f681f930a90649603008cbf13d72",
+          "polygons": 2,
+          "positive_pixels": 10994,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "MA": {
+          "path": "testing/MA/IDRiD_74_MA.png",
+          "sha256": "5c859c343eaf86cae991d59b20f07543850ecff99ed48513cc10a4741e375941",
+          "polygons": 77,
+          "positive_pixels": 17326,
+          "official_completeness_verified": false,
+          "empty_note": null
+        }
+      },
+      "training_allowed_by_original_Q_MIX_protocol": false
+    },
+    {
+      "sid": "IDRiD_75",
+      "source_split": "testing",
+      "image_path": "D:\\dataset\\best_segmentation\\images\\testing\\IDRiD_75.jpg",
+      "source_image_sha256": "eb77012cd021f0c287f179833dbfaa76f9f12f61a15cbd40a8d366064983a34b",
+      "source_polygon_sha256": "6389441d4edeb5289dd25fd4b761d317603c91d95b5f736b9dcb517d4f1ac097",
+      "size_wh": [
+        3525,
+        3525
+      ],
+      "masks": {
+        "EX": {
+          "path": "testing/EX/IDRiD_75_EX.png",
+          "sha256": "6a829e972baa040876efbdc2d68cc77e154cb569c7dcd20ed8bc03c5994366e7",
+          "polygons": 65,
+          "positive_pixels": 20257,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "HE": {
+          "path": "testing/HE/IDRiD_75_HE.png",
+          "sha256": "9d1ec8669bfb5abe6f2b19698214b6d6c8126a68f5234fd3a4e6c16ee4b07cb0",
+          "polygons": 32,
+          "positive_pixels": 143383,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "SE": {
+          "path": "testing/SE/IDRiD_75_SE.png",
+          "sha256": "bab1ebebc3459c45ab487d66f184265377a2c86da69fdd8a63cddf496c8fee5f",
+          "polygons": 2,
+          "positive_pixels": 13685,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "MA": {
+          "path": "testing/MA/IDRiD_75_MA.png",
+          "sha256": "82b0786be63e903a716102c825459580ae8492cbe9a9bdeafecc4a488a399e28",
+          "polygons": 96,
+          "positive_pixels": 25438,
+          "official_completeness_verified": false,
+          "empty_note": null
+        }
+      },
+      "training_allowed_by_original_Q_MIX_protocol": false
+    },
+    {
+      "sid": "IDRiD_76",
+      "source_split": "testing",
+      "image_path": "D:\\dataset\\best_segmentation\\images\\testing\\IDRiD_76.jpg",
+      "source_image_sha256": "bb24b7eb545aef09ff418023cbd89fe43c7478d28e3f9fd6af43d8513f129a33",
+      "source_polygon_sha256": "b812ca812231741a730621698d182edf3b7581c3fe426fe1a3a332cdf345b8ef",
+      "size_wh": [
+        3415,
+        3415
+      ],
+      "masks": {
+        "EX": {
+          "path": "testing/EX/IDRiD_76_EX.png",
+          "sha256": "83b478e044935e73bb112f765a7c99587bf4e1ff9054555ccb69372b84f9d0cf",
+          "polygons": 97,
+          "positive_pixels": 70113,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "HE": {
+          "path": "testing/HE/IDRiD_76_HE.png",
+          "sha256": "16225db0127b079364624a4ba5a08fc40b450137506928108744bab8bfe45754",
+          "polygons": 31,
+          "positive_pixels": 79576,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "SE": {
+          "path": "testing/SE/IDRiD_76_SE.png",
+          "sha256": "f1e6e8a9c3d37a441df5072d10da9dea04d94b38b50784b88a020118934753a3",
+          "polygons": 0,
+          "positive_pixels": 0,
+          "official_completeness_verified": false,
+          "empty_note": "No user polygon for this class; not proof of an officially reviewed negative"
+        },
+        "MA": {
+          "path": "testing/MA/IDRiD_76_MA.png",
+          "sha256": "2936ab5b6117b2d61e16c649f82bddb030ae34cab83f7a7b41440a53c46200c7",
+          "polygons": 75,
+          "positive_pixels": 25122,
+          "official_completeness_verified": false,
+          "empty_note": null
+        }
+      },
+      "training_allowed_by_original_Q_MIX_protocol": false
+    },
+    {
+      "sid": "IDRiD_77",
+      "source_split": "testing",
+      "image_path": "D:\\dataset\\best_segmentation\\images\\testing\\IDRiD_77.jpg",
+      "source_image_sha256": "af4152ea411d0bf0d4f41821234a7c8893e1194cbd0ecffb82ef583c09d4cf14",
+      "source_polygon_sha256": "20f471a809a1b128791933a49a80cdd2e06169a1302b517c111c0477b6ec7bc7",
+      "size_wh": [
+        3904,
+        3904
+      ],
+      "masks": {
+        "EX": {
+          "path": "testing/EX/IDRiD_77_EX.png",
+          "sha256": "0694e7cec03a5ca909a9ff1d45b8ac0d4fa2b2da5776592afd8da79ca714a233",
+          "polygons": 339,
+          "positive_pixels": 98058,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "HE": {
+          "path": "testing/HE/IDRiD_77_HE.png",
+          "sha256": "9bdd1d0f6ed5abdcf1a3562009ab4e9a3abdf0309a9d04b6b484eb69296bc74f",
+          "polygons": 18,
+          "positive_pixels": 35877,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "SE": {
+          "path": "testing/SE/IDRiD_77_SE.png",
+          "sha256": "a95cdd5b6e8e4ae277de16d00110b4668bbab3913e49416788c030699a6f2fbd",
+          "polygons": 0,
+          "positive_pixels": 0,
+          "official_completeness_verified": false,
+          "empty_note": "No user polygon for this class; not proof of an officially reviewed negative"
+        },
+        "MA": {
+          "path": "testing/MA/IDRiD_77_MA.png",
+          "sha256": "901e22f6562b9c97e1a1e5a8fc87b1464477b0748ec558e15476e80906a4a642",
+          "polygons": 65,
+          "positive_pixels": 12852,
+          "official_completeness_verified": false,
+          "empty_note": null
+        }
+      },
+      "training_allowed_by_original_Q_MIX_protocol": false
+    },
+    {
+      "sid": "IDRiD_78",
+      "source_split": "testing",
+      "image_path": "D:\\dataset\\best_segmentation\\images\\testing\\IDRiD_78.jpg",
+      "source_image_sha256": "9b7fb326dc0437229d0c77505c91862e973defc56fe9604ab1151837a2de42b8",
+      "source_polygon_sha256": "6ae2126d8231154a51035a1b2ed7ac6acdbb596dd2dac73ecb172e575edccdfb",
+      "size_wh": [
+        3545,
+        3545
+      ],
+      "masks": {
+        "EX": {
+          "path": "testing/EX/IDRiD_78_EX.png",
+          "sha256": "6a24cfd89d8450a06a1ebc96b2814066bace31368cbd5b1e1c0c8cdeeeb551b6",
+          "polygons": 185,
+          "positive_pixels": 92997,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "HE": {
+          "path": "testing/HE/IDRiD_78_HE.png",
+          "sha256": "eb9cf46ad5c99a93e4b597221a5d7029d767f087ca299035a519e4b69a4abd80",
+          "polygons": 17,
+          "positive_pixels": 64012,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "SE": {
+          "path": "testing/SE/IDRiD_78_SE.png",
+          "sha256": "a8d2319c9d4caaba93a40a151da205b2a8f32153ab0aa9c5e870246456fecea0",
+          "polygons": 0,
+          "positive_pixels": 0,
+          "official_completeness_verified": false,
+          "empty_note": "No user polygon for this class; not proof of an officially reviewed negative"
+        },
+        "MA": {
+          "path": "testing/MA/IDRiD_78_MA.png",
+          "sha256": "a7477b362ebf890dd5297f03552e2a4c6cd73309cd3490b481f56e346d96f39e",
+          "polygons": 57,
+          "positive_pixels": 14355,
+          "official_completeness_verified": false,
+          "empty_note": null
+        }
+      },
+      "training_allowed_by_original_Q_MIX_protocol": false
+    },
+    {
+      "sid": "IDRiD_79",
+      "source_split": "testing",
+      "image_path": "D:\\dataset\\best_segmentation\\images\\testing\\IDRiD_79.jpg",
+      "source_image_sha256": "86c9ab0e8ce275ddb0379d3f555fa7bbc06d0cced6ec07702c7f77c69ae99139",
+      "source_polygon_sha256": "7c6f6c338e6a1c555bbda078338cc0b77e3da43998c32438295f932056979795",
+      "size_wh": [
+        3415,
+        3415
+      ],
+      "masks": {
+        "EX": {
+          "path": "testing/EX/IDRiD_79_EX.png",
+          "sha256": "d5fd1107b912210227a8bee988d7dcde23c7cac1cfc53d90f391200206799028",
+          "polygons": 436,
+          "positive_pixels": 319141,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "HE": {
+          "path": "testing/HE/IDRiD_79_HE.png",
+          "sha256": "d80dd2eab223dfb34879bfe93d665aade01b9a4b81ef08fce8ef815a0dc0ee26",
+          "polygons": 31,
+          "positive_pixels": 112028,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "SE": {
+          "path": "testing/SE/IDRiD_79_SE.png",
+          "sha256": "f1e6e8a9c3d37a441df5072d10da9dea04d94b38b50784b88a020118934753a3",
+          "polygons": 0,
+          "positive_pixels": 0,
+          "official_completeness_verified": false,
+          "empty_note": "No user polygon for this class; not proof of an officially reviewed negative"
+        },
+        "MA": {
+          "path": "testing/MA/IDRiD_79_MA.png",
+          "sha256": "6d2df907a0f1e2299114c82830a6377a6d9551e934a73b8bd4423119b484f0bb",
+          "polygons": 79,
+          "positive_pixels": 20882,
+          "official_completeness_verified": false,
+          "empty_note": null
+        }
+      },
+      "training_allowed_by_original_Q_MIX_protocol": false
+    },
+    {
+      "sid": "IDRiD_80",
+      "source_split": "testing",
+      "image_path": "D:\\dataset\\best_segmentation\\images\\testing\\IDRiD_80.jpg",
+      "source_image_sha256": "dd34b89899209ceb0206b576fe35831cf261df845eedb737bd1b9cf1302f7a95",
+      "source_polygon_sha256": "b7e96d34b211e721884a9f50add6bee0244dc39573101199ad4dbcd897aa50d8",
+      "size_wh": [
+        3416,
+        3416
+      ],
+      "masks": {
+        "EX": {
+          "path": "testing/EX/IDRiD_80_EX.png",
+          "sha256": "10bed79f5875d6129eb59d924f140a48886fee7bfaf89d90e7e48a35cddce8f0",
+          "polygons": 18,
+          "positive_pixels": 6895,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "HE": {
+          "path": "testing/HE/IDRiD_80_HE.png",
+          "sha256": "049e17badd6b90fa1897a3c4037dd7ae8cfe435ed723305dc914d8af262d698a",
+          "polygons": 1,
+          "positive_pixels": 16627,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "SE": {
+          "path": "testing/SE/IDRiD_80_SE.png",
+          "sha256": "c694d57f9ac16ad654bc874cddb91a59b3c0d66a03bcb35c87731eccb336fb2b",
+          "polygons": 0,
+          "positive_pixels": 0,
+          "official_completeness_verified": false,
+          "empty_note": "No user polygon for this class; not proof of an officially reviewed negative"
+        },
+        "MA": {
+          "path": "testing/MA/IDRiD_80_MA.png",
+          "sha256": "2b5a257b7d6115b4b338a5210079ddcbe31458506abd3d0118c298b8e56f0b3b",
+          "polygons": 4,
+          "positive_pixels": 693,
+          "official_completeness_verified": false,
+          "empty_note": null
+        }
+      },
+      "training_allowed_by_original_Q_MIX_protocol": false
+    },
+    {
+      "sid": "IDRiD_81",
+      "source_split": "testing",
+      "image_path": "D:\\dataset\\best_segmentation\\images\\testing\\IDRiD_81.jpg",
+      "source_image_sha256": "37f423bacc591f2c9493272fbac4f2646cac7f8c358c310b1411f8bb05150340",
+      "source_polygon_sha256": "320b29fe7b2c6c8919408c951a427f8fb0976863474490b0689a3595e7d15a28",
+      "size_wh": [
+        3429,
+        3429
+      ],
+      "masks": {
+        "EX": {
+          "path": "testing/EX/IDRiD_81_EX.png",
+          "sha256": "9c0bb629e7dc3398e227ba37d3c6fa478021a233e499e9ee76205862aff54d0d",
+          "polygons": 300,
+          "positive_pixels": 317559,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "HE": {
+          "path": "testing/HE/IDRiD_81_HE.png",
+          "sha256": "17303cae3c01fdfbaa4fec64e2f0faf65f1ac269dc3114e0e57dafd51569071a",
+          "polygons": 13,
+          "positive_pixels": 45536,
+          "official_completeness_verified": false,
+          "empty_note": null
+        },
+        "SE": {
+          "path": "testing/SE/IDRiD_81_SE.png",
+          "sha256": "da1ffd77b47e9a87d8bcb515f31d2be4cb1f50d52c6c791d35f5f0d15530db4d",
+          "polygons": 0,
+          "positive_pixels": 0,
+          "official_completeness_verified": false,
+          "empty_note": "No user polygon for this class; not proof of an officially reviewed negative"
+        },
+        "MA": {
+          "path": "testing/MA/IDRiD_81_MA.png",
+          "sha256": "6bd63bfaf3e40aa3de99c0b77cf5b4ef89b376cf9cf2ea2925103da02d5fe9a4",
+          "polygons": 47,
+          "positive_pixels": 12261,
+          "official_completeness_verified": false,
+          "empty_note": null
+        }
+      },
+      "training_allowed_by_original_Q_MIX_protocol": false
+    }
+  ]
+}
