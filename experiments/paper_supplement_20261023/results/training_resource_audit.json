@@ -1,0 +1,63 @@
+{
+  "root": {
+    "files": [
+      {
+        "path": "/root/autodl-tmp/paper_supplement_20261023_run/remote_seed.zip",
+        "exists": true,
+        "bytes": 51994510
+      },
+      {
+        "path": "/root/autodl-tmp/paper_supplement_20261023_run/A_exact.zip",
+        "exists": true,
+        "bytes": 675606726
+      },
+      {
+        "path": "/root/autodl-tmp/paper_supplement_20261023_run/ddr_split613.tar",
+        "exists": true,
+        "bytes": 684257280
+      },
+      {
+        "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_ArchitectureDesign_20261008/cache_execution/inference_weights/S20_ema_inference.pth",
+        "exists": true,
+        "bytes": 405407434
+      },
+      {
+        "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_ArchitectureDesign_20261008/cache_execution/inference_weights/U0_inference.pth",
+        "exists": true,
+        "bytes": 212078424
+      },
+      {
+        "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_ArchitectureDesign_20261008/cache_execution/inference_weights/C20_ema_inference.pth",
+        "exists": true,
+        "bytes": 353261850
+      }
+    ],
+    "disk": {
+      "total": 53687091200,
+      "used": 25479786496,
+      "free": 28207304704
+    },
+    "GPU": "0, NVIDIA GeForce RTX 4080 SUPER, 7830 MiB, 32760 MiB, 97 %\n",
+    "processes": "6305, /root/miniconda3/envs/hrdecoder_q_20261003/bin/python, 7818 MiB\n"
+  },
+  "59": {
+    "disk": {
+      "total": 501809635328,
+      "used": 53799153664,
+      "free": 422444679168
+    },
+    "GPU": "0, NVIDIA GeForce RTX 2080 Ti, 6 MiB, 11264 MiB, 0 %\n1, NVIDIA GeForce RTX 2080 Ti, 6 MiB, 11264 MiB, 0 %\n2, NVIDIA GeForce RTX 2080 Ti, 9820 MiB, 11264 MiB, 79 %\n3, NVIDIA GeForce RTX 2080 Ti, 9820 MiB, 11264 MiB, 80 %\n",
+    "processes": "297057, /home/studentuser001/paper_supplement_20261023/legacy_env/bin/python, 9812 MiB\n297058, /home/studentuser001/paper_supplement_20261023/legacy_env/bin/python, 9812 MiB\n",
+    "task_directories": [
+      "legacy_env",
+      "data",
+      "logs",
+      "assets",
+      "baseline_v1"
+    ],
+    "baseline_workdir": [
+      "/home/studentuser001/paper_supplement_20261023/baseline_v1/runs/baseline_seed42/20261023_192737.log.json"
+    ],
+    "conda": "/home/studentuser001/paper_supplement_20261023/legacy_env/bin/conda"
+  }
+}

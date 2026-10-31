@@ -1,0 +1,4700 @@
+{
+  "mode": "offline arithmetic only; no model execution",
+  "checks": [
+    {
+      "check": "locked EX integer total",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "locked EX iou_pct",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "locked EX dice_pct",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "locked EX precision_pct",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "locked EX recall_pct",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "locked HE integer total",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "locked HE iou_pct",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "locked HE dice_pct",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "locked HE precision_pct",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "locked HE recall_pct",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "locked SE integer total",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "locked SE iou_pct",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "locked SE dice_pct",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "locked SE precision_pct",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "locked SE recall_pct",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "locked MA integer total",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "locked MA iou_pct",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "locked MA dice_pct",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "locked MA precision_pct",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "locked MA recall_pct",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "locked macro IoU",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "previous EX integer total",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "previous EX iou_pct",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "previous EX dice_pct",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "previous EX precision_pct",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "previous EX recall_pct",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "previous HE integer total",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "previous HE iou_pct",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "previous HE dice_pct",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "previous HE precision_pct",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "previous HE recall_pct",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "previous SE integer total",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "previous SE iou_pct",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "previous SE dice_pct",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "previous SE precision_pct",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "previous SE recall_pct",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "previous MA integer total",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "previous MA iou_pct",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "previous MA dice_pct",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "previous MA precision_pct",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "previous MA recall_pct",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "previous macro IoU",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "227 unique image identities",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "paired image bootstrap exact reproduction",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "MA correction fused EX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "MA correction fused HE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "MA correction fused SE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "MA correction fused MA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "MA correction final EX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "MA correction final HE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "MA correction final SE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "MA correction final MA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "MA correction preserves non-target integer counts",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw hash C_seed42 12000",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation original image identity count C_seed4212000",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum C_seed4212000single",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro C_seed4212000single",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4212000singleEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4212000singleHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4212000singleSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4212000singleMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum C_seed4212000fixed_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro C_seed4212000fixed_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4212000fixed_fusionEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4212000fixed_fusionHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4212000fixed_fusionSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4212000fixed_fusionMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum C_seed4212000half_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro C_seed4212000half_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4212000half_fusionEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4212000half_fusionHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4212000half_fusionSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4212000half_fusionMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum C_seed4212000p0",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro C_seed4212000p0",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4212000p0EX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4212000p0HE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4212000p0SE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4212000p0MA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw hash C_seed42 16000",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation original image identity count C_seed4216000",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum C_seed4216000single",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro C_seed4216000single",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4216000singleEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4216000singleHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4216000singleSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4216000singleMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum C_seed4216000fixed_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro C_seed4216000fixed_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4216000fixed_fusionEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4216000fixed_fusionHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4216000fixed_fusionSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4216000fixed_fusionMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum C_seed4216000half_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro C_seed4216000half_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4216000half_fusionEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4216000half_fusionHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4216000half_fusionSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4216000half_fusionMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum C_seed4216000p0",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro C_seed4216000p0",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4216000p0EX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4216000p0HE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4216000p0SE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4216000p0MA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw hash C_seed42 20000",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation original image identity count C_seed4220000",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum C_seed4220000single",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro C_seed4220000single",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4220000singleEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4220000singleHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4220000singleSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4220000singleMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum C_seed4220000fixed_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro C_seed4220000fixed_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4220000fixed_fusionEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4220000fixed_fusionHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4220000fixed_fusionSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4220000fixed_fusionMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum C_seed4220000half_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro C_seed4220000half_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4220000half_fusionEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4220000half_fusionHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4220000half_fusionSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4220000half_fusionMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum C_seed4220000p0",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro C_seed4220000p0",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4220000p0EX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4220000p0HE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4220000p0SE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4220000p0MA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw hash C_seed42 24000",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation original image identity count C_seed4224000",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum C_seed4224000single",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro C_seed4224000single",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4224000singleEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4224000singleHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4224000singleSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4224000singleMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum C_seed4224000fixed_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro C_seed4224000fixed_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4224000fixed_fusionEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4224000fixed_fusionHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4224000fixed_fusionSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4224000fixed_fusionMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum C_seed4224000half_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro C_seed4224000half_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4224000half_fusionEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4224000half_fusionHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4224000half_fusionSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4224000half_fusionMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum C_seed4224000p0",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro C_seed4224000p0",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4224000p0EX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4224000p0HE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4224000p0SE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4224000p0MA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw hash C_seed42 28000",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation original image identity count C_seed4228000",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum C_seed4228000single",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro C_seed4228000single",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4228000singleEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4228000singleHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4228000singleSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4228000singleMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum C_seed4228000fixed_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro C_seed4228000fixed_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4228000fixed_fusionEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4228000fixed_fusionHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4228000fixed_fusionSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4228000fixed_fusionMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum C_seed4228000half_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro C_seed4228000half_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4228000half_fusionEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4228000half_fusionHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4228000half_fusionSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4228000half_fusionMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum C_seed4228000p0",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro C_seed4228000p0",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4228000p0EX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4228000p0HE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4228000p0SE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4228000p0MA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw hash C_seed42 32000",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation original image identity count C_seed4232000",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum C_seed4232000single",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro C_seed4232000single",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4232000singleEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4232000singleHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4232000singleSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4232000singleMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum C_seed4232000fixed_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro C_seed4232000fixed_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4232000fixed_fusionEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4232000fixed_fusionHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4232000fixed_fusionSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4232000fixed_fusionMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum C_seed4232000half_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro C_seed4232000half_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4232000half_fusionEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4232000half_fusionHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4232000half_fusionSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4232000half_fusionMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum C_seed4232000p0",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro C_seed4232000p0",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4232000p0EX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4232000p0HE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4232000p0SE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed4232000p0MA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw hash C_seed42 4000",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation original image identity count C_seed424000",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum C_seed424000single",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro C_seed424000single",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed424000singleEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed424000singleHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed424000singleSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed424000singleMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum C_seed424000fixed_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro C_seed424000fixed_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed424000fixed_fusionEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed424000fixed_fusionHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed424000fixed_fusionSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed424000fixed_fusionMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum C_seed424000half_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro C_seed424000half_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed424000half_fusionEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed424000half_fusionHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed424000half_fusionSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed424000half_fusionMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum C_seed424000p0",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro C_seed424000p0",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed424000p0EX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed424000p0HE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed424000p0SE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed424000p0MA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw hash C_seed42 8000",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation original image identity count C_seed428000",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum C_seed428000single",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro C_seed428000single",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed428000singleEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed428000singleHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed428000singleSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed428000singleMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum C_seed428000fixed_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro C_seed428000fixed_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed428000fixed_fusionEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed428000fixed_fusionHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed428000fixed_fusionSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed428000fixed_fusionMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum C_seed428000half_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro C_seed428000half_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed428000half_fusionEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed428000half_fusionHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed428000half_fusionSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed428000half_fusionMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum C_seed428000p0",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro C_seed428000p0",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed428000p0EX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed428000p0HE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed428000p0SE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric C_seed428000p0MA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw hash S_seed42 12000",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation original image identity count S_seed4212000",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum S_seed4212000single",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro S_seed4212000single",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4212000singleEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4212000singleHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4212000singleSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4212000singleMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum S_seed4212000fixed_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro S_seed4212000fixed_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4212000fixed_fusionEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4212000fixed_fusionHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4212000fixed_fusionSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4212000fixed_fusionMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum S_seed4212000half_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro S_seed4212000half_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4212000half_fusionEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4212000half_fusionHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4212000half_fusionSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4212000half_fusionMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum S_seed4212000p0",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro S_seed4212000p0",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4212000p0EX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4212000p0HE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4212000p0SE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4212000p0MA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw hash S_seed42 16000",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation original image identity count S_seed4216000",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum S_seed4216000single",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro S_seed4216000single",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4216000singleEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4216000singleHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4216000singleSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4216000singleMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum S_seed4216000fixed_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro S_seed4216000fixed_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4216000fixed_fusionEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4216000fixed_fusionHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4216000fixed_fusionSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4216000fixed_fusionMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum S_seed4216000half_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro S_seed4216000half_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4216000half_fusionEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4216000half_fusionHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4216000half_fusionSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4216000half_fusionMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum S_seed4216000p0",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro S_seed4216000p0",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4216000p0EX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4216000p0HE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4216000p0SE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4216000p0MA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw hash S_seed42 20000",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation original image identity count S_seed4220000",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum S_seed4220000single",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro S_seed4220000single",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4220000singleEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4220000singleHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4220000singleSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4220000singleMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum S_seed4220000fixed_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro S_seed4220000fixed_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4220000fixed_fusionEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4220000fixed_fusionHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4220000fixed_fusionSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4220000fixed_fusionMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum S_seed4220000half_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro S_seed4220000half_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4220000half_fusionEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4220000half_fusionHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4220000half_fusionSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4220000half_fusionMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum S_seed4220000p0",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro S_seed4220000p0",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4220000p0EX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4220000p0HE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4220000p0SE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4220000p0MA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw hash S_seed42 24000",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation original image identity count S_seed4224000",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum S_seed4224000single",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro S_seed4224000single",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4224000singleEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4224000singleHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4224000singleSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4224000singleMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum S_seed4224000fixed_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro S_seed4224000fixed_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4224000fixed_fusionEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4224000fixed_fusionHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4224000fixed_fusionSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4224000fixed_fusionMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum S_seed4224000half_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro S_seed4224000half_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4224000half_fusionEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4224000half_fusionHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4224000half_fusionSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4224000half_fusionMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum S_seed4224000p0",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro S_seed4224000p0",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4224000p0EX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4224000p0HE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4224000p0SE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4224000p0MA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw hash S_seed42 28000",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation original image identity count S_seed4228000",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum S_seed4228000single",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro S_seed4228000single",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4228000singleEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4228000singleHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4228000singleSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4228000singleMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum S_seed4228000fixed_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro S_seed4228000fixed_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4228000fixed_fusionEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4228000fixed_fusionHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4228000fixed_fusionSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4228000fixed_fusionMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum S_seed4228000half_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro S_seed4228000half_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4228000half_fusionEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4228000half_fusionHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4228000half_fusionSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4228000half_fusionMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum S_seed4228000p0",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro S_seed4228000p0",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4228000p0EX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4228000p0HE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4228000p0SE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4228000p0MA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw hash S_seed42 32000",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation original image identity count S_seed4232000",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum S_seed4232000single",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro S_seed4232000single",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4232000singleEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4232000singleHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4232000singleSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4232000singleMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum S_seed4232000fixed_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro S_seed4232000fixed_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4232000fixed_fusionEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4232000fixed_fusionHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4232000fixed_fusionSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4232000fixed_fusionMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum S_seed4232000half_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro S_seed4232000half_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4232000half_fusionEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4232000half_fusionHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4232000half_fusionSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4232000half_fusionMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum S_seed4232000p0",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro S_seed4232000p0",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4232000p0EX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4232000p0HE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4232000p0SE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed4232000p0MA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw hash S_seed42 4000",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation original image identity count S_seed424000",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum S_seed424000single",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro S_seed424000single",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed424000singleEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed424000singleHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed424000singleSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed424000singleMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum S_seed424000fixed_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro S_seed424000fixed_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed424000fixed_fusionEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed424000fixed_fusionHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed424000fixed_fusionSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed424000fixed_fusionMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum S_seed424000half_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro S_seed424000half_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed424000half_fusionEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed424000half_fusionHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed424000half_fusionSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed424000half_fusionMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum S_seed424000p0",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro S_seed424000p0",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed424000p0EX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed424000p0HE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed424000p0SE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed424000p0MA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw hash S_seed42 8000",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation original image identity count S_seed428000",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum S_seed428000single",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro S_seed428000single",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed428000singleEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed428000singleHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed428000singleSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed428000singleMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum S_seed428000fixed_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro S_seed428000fixed_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed428000fixed_fusionEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed428000fixed_fusionHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed428000fixed_fusionSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed428000fixed_fusionMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum S_seed428000half_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro S_seed428000half_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed428000half_fusionEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed428000half_fusionHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed428000half_fusionSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed428000half_fusionMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum S_seed428000p0",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro S_seed428000p0",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed428000p0EX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed428000p0HE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed428000p0SE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric S_seed428000p0MA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw hash D_seed42 12000",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation original image identity count D_seed4212000",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum D_seed4212000single",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro D_seed4212000single",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4212000singleEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4212000singleHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4212000singleSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4212000singleMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum D_seed4212000fixed_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro D_seed4212000fixed_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4212000fixed_fusionEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4212000fixed_fusionHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4212000fixed_fusionSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4212000fixed_fusionMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum D_seed4212000half_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro D_seed4212000half_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4212000half_fusionEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4212000half_fusionHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4212000half_fusionSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4212000half_fusionMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum D_seed4212000p0",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro D_seed4212000p0",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4212000p0EX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4212000p0HE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4212000p0SE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4212000p0MA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw hash D_seed42 16000",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation original image identity count D_seed4216000",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum D_seed4216000single",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro D_seed4216000single",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4216000singleEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4216000singleHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4216000singleSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4216000singleMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum D_seed4216000fixed_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro D_seed4216000fixed_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4216000fixed_fusionEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4216000fixed_fusionHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4216000fixed_fusionSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4216000fixed_fusionMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum D_seed4216000half_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro D_seed4216000half_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4216000half_fusionEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4216000half_fusionHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4216000half_fusionSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4216000half_fusionMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum D_seed4216000p0",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro D_seed4216000p0",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4216000p0EX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4216000p0HE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4216000p0SE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4216000p0MA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw hash D_seed42 20000",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation original image identity count D_seed4220000",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum D_seed4220000single",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro D_seed4220000single",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4220000singleEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4220000singleHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4220000singleSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4220000singleMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum D_seed4220000fixed_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro D_seed4220000fixed_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4220000fixed_fusionEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4220000fixed_fusionHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4220000fixed_fusionSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4220000fixed_fusionMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum D_seed4220000half_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro D_seed4220000half_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4220000half_fusionEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4220000half_fusionHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4220000half_fusionSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4220000half_fusionMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum D_seed4220000p0",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro D_seed4220000p0",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4220000p0EX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4220000p0HE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4220000p0SE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4220000p0MA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw hash D_seed42 24000",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation original image identity count D_seed4224000",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum D_seed4224000single",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro D_seed4224000single",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4224000singleEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4224000singleHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4224000singleSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4224000singleMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum D_seed4224000fixed_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro D_seed4224000fixed_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4224000fixed_fusionEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4224000fixed_fusionHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4224000fixed_fusionSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4224000fixed_fusionMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum D_seed4224000half_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro D_seed4224000half_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4224000half_fusionEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4224000half_fusionHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4224000half_fusionSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4224000half_fusionMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum D_seed4224000p0",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro D_seed4224000p0",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4224000p0EX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4224000p0HE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4224000p0SE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4224000p0MA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw hash D_seed42 28000",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation original image identity count D_seed4228000",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum D_seed4228000single",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro D_seed4228000single",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4228000singleEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4228000singleHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4228000singleSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4228000singleMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum D_seed4228000fixed_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro D_seed4228000fixed_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4228000fixed_fusionEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4228000fixed_fusionHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4228000fixed_fusionSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4228000fixed_fusionMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum D_seed4228000half_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro D_seed4228000half_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4228000half_fusionEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4228000half_fusionHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4228000half_fusionSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4228000half_fusionMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum D_seed4228000p0",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro D_seed4228000p0",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4228000p0EX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4228000p0HE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4228000p0SE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4228000p0MA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw hash D_seed42 32000",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation original image identity count D_seed4232000",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum D_seed4232000single",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro D_seed4232000single",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4232000singleEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4232000singleHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4232000singleSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4232000singleMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum D_seed4232000fixed_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro D_seed4232000fixed_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4232000fixed_fusionEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4232000fixed_fusionHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4232000fixed_fusionSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4232000fixed_fusionMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum D_seed4232000half_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro D_seed4232000half_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4232000half_fusionEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4232000half_fusionHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4232000half_fusionSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4232000half_fusionMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum D_seed4232000p0",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro D_seed4232000p0",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4232000p0EX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4232000p0HE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4232000p0SE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed4232000p0MA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw hash D_seed42 4000",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation original image identity count D_seed424000",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum D_seed424000single",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro D_seed424000single",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed424000singleEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed424000singleHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed424000singleSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed424000singleMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum D_seed424000fixed_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro D_seed424000fixed_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed424000fixed_fusionEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed424000fixed_fusionHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed424000fixed_fusionSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed424000fixed_fusionMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum D_seed424000half_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro D_seed424000half_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed424000half_fusionEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed424000half_fusionHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed424000half_fusionSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed424000half_fusionMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum D_seed424000p0",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro D_seed424000p0",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed424000p0EX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed424000p0HE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed424000p0SE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed424000p0MA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw hash D_seed42 8000",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation original image identity count D_seed428000",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum D_seed428000single",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro D_seed428000single",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed428000singleEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed428000singleHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed428000singleSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed428000singleMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum D_seed428000fixed_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro D_seed428000fixed_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed428000fixed_fusionEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed428000fixed_fusionHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed428000fixed_fusionSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed428000fixed_fusionMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum D_seed428000half_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro D_seed428000half_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed428000half_fusionEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed428000half_fusionHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed428000half_fusionSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed428000half_fusionMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum D_seed428000p0",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro D_seed428000p0",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed428000p0EX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed428000p0HE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed428000p0SE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric D_seed428000p0MA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw hash SD_seed42 12000",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation original image identity count SD_seed4212000",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum SD_seed4212000single",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro SD_seed4212000single",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4212000singleEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4212000singleHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4212000singleSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4212000singleMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum SD_seed4212000fixed_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro SD_seed4212000fixed_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4212000fixed_fusionEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4212000fixed_fusionHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4212000fixed_fusionSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4212000fixed_fusionMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum SD_seed4212000half_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro SD_seed4212000half_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4212000half_fusionEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4212000half_fusionHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4212000half_fusionSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4212000half_fusionMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum SD_seed4212000p0",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro SD_seed4212000p0",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4212000p0EX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4212000p0HE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4212000p0SE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4212000p0MA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw hash SD_seed42 16000",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation original image identity count SD_seed4216000",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum SD_seed4216000single",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro SD_seed4216000single",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4216000singleEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4216000singleHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4216000singleSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4216000singleMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum SD_seed4216000fixed_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro SD_seed4216000fixed_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4216000fixed_fusionEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4216000fixed_fusionHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4216000fixed_fusionSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4216000fixed_fusionMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum SD_seed4216000half_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro SD_seed4216000half_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4216000half_fusionEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4216000half_fusionHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4216000half_fusionSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4216000half_fusionMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum SD_seed4216000p0",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro SD_seed4216000p0",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4216000p0EX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4216000p0HE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4216000p0SE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4216000p0MA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw hash SD_seed42 20000",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation original image identity count SD_seed4220000",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum SD_seed4220000single",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro SD_seed4220000single",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4220000singleEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4220000singleHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4220000singleSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4220000singleMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum SD_seed4220000fixed_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro SD_seed4220000fixed_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4220000fixed_fusionEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4220000fixed_fusionHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4220000fixed_fusionSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4220000fixed_fusionMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum SD_seed4220000half_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro SD_seed4220000half_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4220000half_fusionEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4220000half_fusionHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4220000half_fusionSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4220000half_fusionMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum SD_seed4220000p0",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro SD_seed4220000p0",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4220000p0EX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4220000p0HE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4220000p0SE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4220000p0MA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw hash SD_seed42 24000",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation original image identity count SD_seed4224000",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum SD_seed4224000single",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro SD_seed4224000single",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4224000singleEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4224000singleHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4224000singleSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4224000singleMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum SD_seed4224000fixed_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro SD_seed4224000fixed_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4224000fixed_fusionEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4224000fixed_fusionHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4224000fixed_fusionSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4224000fixed_fusionMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum SD_seed4224000half_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro SD_seed4224000half_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4224000half_fusionEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4224000half_fusionHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4224000half_fusionSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4224000half_fusionMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum SD_seed4224000p0",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro SD_seed4224000p0",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4224000p0EX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4224000p0HE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4224000p0SE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4224000p0MA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw hash SD_seed42 28000",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation original image identity count SD_seed4228000",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum SD_seed4228000single",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro SD_seed4228000single",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4228000singleEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4228000singleHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4228000singleSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4228000singleMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum SD_seed4228000fixed_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro SD_seed4228000fixed_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4228000fixed_fusionEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4228000fixed_fusionHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4228000fixed_fusionSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4228000fixed_fusionMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum SD_seed4228000half_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro SD_seed4228000half_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4228000half_fusionEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4228000half_fusionHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4228000half_fusionSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4228000half_fusionMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum SD_seed4228000p0",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro SD_seed4228000p0",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4228000p0EX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4228000p0HE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4228000p0SE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4228000p0MA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw hash SD_seed42 32000",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation original image identity count SD_seed4232000",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum SD_seed4232000single",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro SD_seed4232000single",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4232000singleEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4232000singleHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4232000singleSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4232000singleMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum SD_seed4232000fixed_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro SD_seed4232000fixed_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4232000fixed_fusionEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4232000fixed_fusionHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4232000fixed_fusionSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4232000fixed_fusionMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum SD_seed4232000half_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro SD_seed4232000half_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4232000half_fusionEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4232000half_fusionHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4232000half_fusionSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4232000half_fusionMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum SD_seed4232000p0",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro SD_seed4232000p0",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4232000p0EX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4232000p0HE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4232000p0SE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed4232000p0MA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw hash SD_seed42 4000",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation original image identity count SD_seed424000",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum SD_seed424000single",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro SD_seed424000single",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed424000singleEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed424000singleHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed424000singleSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed424000singleMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum SD_seed424000fixed_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro SD_seed424000fixed_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed424000fixed_fusionEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed424000fixed_fusionHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed424000fixed_fusionSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed424000fixed_fusionMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum SD_seed424000half_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro SD_seed424000half_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed424000half_fusionEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed424000half_fusionHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed424000half_fusionSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed424000half_fusionMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum SD_seed424000p0",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro SD_seed424000p0",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed424000p0EX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed424000p0HE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed424000p0SE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed424000p0MA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw hash SD_seed42 8000",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation original image identity count SD_seed428000",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum SD_seed428000single",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro SD_seed428000single",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed428000singleEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed428000singleHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed428000singleSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed428000singleMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum SD_seed428000fixed_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro SD_seed428000fixed_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed428000fixed_fusionEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed428000fixed_fusionHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed428000fixed_fusionSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed428000fixed_fusionMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum SD_seed428000half_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro SD_seed428000half_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed428000half_fusionEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed428000half_fusionHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed428000half_fusionSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed428000half_fusionMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum SD_seed428000p0",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro SD_seed428000p0",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed428000p0EX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed428000p0HE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed428000p0SE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric SD_seed428000p0MA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw hash F12_parent42 12000",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation original image identity count F12_parent4212000",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum F12_parent4212000single",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro F12_parent4212000single",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric F12_parent4212000singleEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric F12_parent4212000singleHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric F12_parent4212000singleSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric F12_parent4212000singleMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum F12_parent4212000fixed_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro F12_parent4212000fixed_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric F12_parent4212000fixed_fusionEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric F12_parent4212000fixed_fusionHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric F12_parent4212000fixed_fusionSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric F12_parent4212000fixed_fusionMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum F12_parent4212000half_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro F12_parent4212000half_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric F12_parent4212000half_fusionEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric F12_parent4212000half_fusionHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric F12_parent4212000half_fusionSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric F12_parent4212000half_fusionMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum F12_parent4212000p0",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro F12_parent4212000p0",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric F12_parent4212000p0EX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric F12_parent4212000p0HE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric F12_parent4212000p0SE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric F12_parent4212000p0MA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw hash Q_DDR16k_R42 16000",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation original image identity count Q_DDR16k_R4216000",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum Q_DDR16k_R4216000single",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro Q_DDR16k_R4216000single",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric Q_DDR16k_R4216000singleEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric Q_DDR16k_R4216000singleHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric Q_DDR16k_R4216000singleSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric Q_DDR16k_R4216000singleMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum Q_DDR16k_R4216000fixed_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro Q_DDR16k_R4216000fixed_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric Q_DDR16k_R4216000fixed_fusionEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric Q_DDR16k_R4216000fixed_fusionHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric Q_DDR16k_R4216000fixed_fusionSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric Q_DDR16k_R4216000fixed_fusionMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum Q_DDR16k_R4216000half_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro Q_DDR16k_R4216000half_fusion",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric Q_DDR16k_R4216000half_fusionEX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric Q_DDR16k_R4216000half_fusionHE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric Q_DDR16k_R4216000half_fusionSE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric Q_DDR16k_R4216000half_fusionMA",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image integer sum Q_DDR16k_R4216000p0",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "validation raw per-image macro Q_DDR16k_R4216000p0",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric Q_DDR16k_R4216000p0EX",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric Q_DDR16k_R4216000p0HE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric Q_DDR16k_R4216000p0SE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "check": "val count metric Q_DDR16k_R4216000p0MA",
+      "pass": true,
+      "detail": ""
+    }
+  ],
+  "all_pass": true,
+  "numpy_version": "2.4.1",
+  "formulas": {
+    "IoU": "TP/(TP+FP+FN)",
+    "Dice": "2TP/(2TP+FP+FN)",
+    "precision": "TP/(TP+FP)",
+    "recall": "TP/(TP+FN)",
+    "macro": "arithmetic mean of four global per-class IoUs"
+  },
+  "bootstrap": "paired image resampling with replacement; default_rng(100303), 2000 draws, np.quantile [.025,.975]; fixed model pair and selection; not patient or seed uncertainty"
+}

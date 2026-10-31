@@ -1,0 +1,18 @@
+{
+  "date_local": "2026-10-23",
+  "authority": "Direct human user messages in this chat",
+  "external_holdout_history": {
+    "question": "独立验证的历史核查：IDRiD 的 27 张测试图（IDRiD_55–81）以前是否用于任何模型的训练、挑选模型、调阈值或比较方案？现有 HRDecoder 记录写的是隔离保留，但更早项目历史尚无法核实。",
+    "answer_verbatim": "确认从未用于训练、选型或调参",
+    "cohort": "IDRiD_55 through IDRiD_81 inclusive, 27 images",
+    "evidence_limit": "Human history confirmation; not an independent audit of every historical machine or patient identity"
+  },
+  "baseline_missing": {
+    "answer_verbatim": "这个问题工作区里肯定有的你能自己找找没有就不搞了没问题的",
+    "execution": "Search workspace and archives; if original split613 seed42 u32000 absent, skip without retraining or wrong-split substitution"
+  },
+  "time_and_hardware": {
+    "instruction_verbatim": "continue   你估算那些训练超过三小时的就别再本地训练了。要是单纯验证还是少于一小时工作你就在本地搞了吧",
+    "execution": "No new training in this batch. Existing DDR inference continues locally; subsequent IDRiD batch uses a prospective first-image/area estimate with 20percent margin and a one-hour local limit. Training estimated above three hours must not run locally."
+  }
+}

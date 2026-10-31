@@ -1,0 +1,17 @@
+"""Resume existing local-only helpers outside the app process lifetime."""
+import sys,runpy,json,os
+from pathlib import Path
+ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
+from qlib.common import write_json,utc_now,sha
+role=sys.argv[1]
+entries={
+ "primary":("primary_parallel_attendant.py",ROOT,"attendant_pid.json"),
+ "second":("parallel_node2_attendant.py",ROOT/"parallel/node2","attendant_pid.json"),
+ "coordinator":("parallel_single_seed_coordinator.py",ROOT,"parallel_coordinator_pid.json")}
+helper,profile,pidfile=entries[role]
+log=profile/"reports"/("independent_"+role+"_20261005_1929.log")
+err=profile/"reports"/("independent_"+role+"_20261005_1929.err.log")
+sys.stdout=log.open("a",encoding="utf-8",buffering=1);sys.stderr=err.open("a",encoding="utf-8",buffering=1)
+write_json(profile/"reports"/pidfile,{"pid":os.getpid(),"time":utc_now(),"role":role,"helper":"reports/"+helper,"runner":"reports/independent_local_attendant_runner.py","helper_sha256":sha(ROOT/"reports"/helper),"launcher":"Win32_Process.Create with hidden startup","training_unchanged":True})
+print(json.dumps({"stage":"EXISTING_HELPER_RECOVERED","role":role,"pid":os.getpid(),"time":utc_now()}),flush=True)
+runpy.run_path(str(ROOT/"reports"/helper),run_name="__main__")

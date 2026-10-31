@@ -1,0 +1,91 @@
+{
+  "new_training": [
+    {
+      "arm": "C",
+      "seed": 2024,
+      "first_logged_update": 20,
+      "last_logged_update": 20000,
+      "logged_every_updates": 20,
+      "n_logged_records": 1000,
+      "logged_losses_and_gradient_norms_finite": true,
+      "identity_sha256": "84e002a0e838e22bdd5ed14b709035abd4232d1304bd6c9885ea338ba4985370",
+      "log_sha256": "356a2cef6ed7e006349750f02924fe9206e0c8a9a3194162764faaa0d9b8a357",
+      "parent": "68d7b5821fab1210b3336cf2a63b9de893f24fc32876f5255d7d662084b5e728",
+      "stream": "46fe334aa93b5a30c51cc5b0689c7a4adf15b294862cc3d964c7d1cf44014d29",
+      "schedule_horizon": 32000
+    },
+    {
+      "arm": "S",
+      "seed": 2024,
+      "first_logged_update": 20,
+      "last_logged_update": 20000,
+      "logged_every_updates": 20,
+      "n_logged_records": 1000,
+      "logged_losses_and_gradient_norms_finite": true,
+      "identity_sha256": "38fb7c6c2c5838ae4f49dda38f3e827605ede114088359e00f62c4bb22ecf389",
+      "log_sha256": "4db88085e8efe9bd3b6a064105068b9922d2e26a09a584f38daff3fc2ee513bc",
+      "parent": "68d7b5821fab1210b3336cf2a63b9de893f24fc32876f5255d7d662084b5e728",
+      "stream": "46fe334aa93b5a30c51cc5b0689c7a4adf15b294862cc3d964c7d1cf44014d29",
+      "schedule_horizon": 32000
+    },
+    {
+      "arm": "C",
+      "seed": 3407,
+      "first_logged_update": 20,
+      "last_logged_update": 20000,
+      "logged_every_updates": 20,
+      "n_logged_records": 1000,
+      "logged_losses_and_gradient_norms_finite": true,
+      "identity_sha256": "a086c168480be416348badd3165cc5ebc724228452bbd949e0622ad07e4590c5",
+      "log_sha256": "e67f5d834e99c2d79744842577b2efce4faf514dea189229b867d4cbc858157c",
+      "parent": "68d7b5821fab1210b3336cf2a63b9de893f24fc32876f5255d7d662084b5e728",
+      "stream": "09bcc5503a3f1e3ae46d0f4e31f004ef25f4c8fddf0ac1dd712b22b29791cc79",
+      "schedule_horizon": 32000
+    },
+    {
+      "arm": "S",
+      "seed": 3407,
+      "first_logged_update": 20,
+      "last_logged_update": 20000,
+      "logged_every_updates": 20,
+      "n_logged_records": 1000,
+      "logged_losses_and_gradient_norms_finite": true,
+      "identity_sha256": "848f2ca57654d431ede5616908bdee0d099d9db336210887bd26a61a9445a866",
+      "log_sha256": "7c4f805e17c7a0e02e3922c370fab6bf12f0318536d53e5aca5297fc19f4f94c",
+      "parent": "68d7b5821fab1210b3336cf2a63b9de893f24fc32876f5255d7d662084b5e728",
+      "stream": "09bcc5503a3f1e3ae46d0f4e31f004ef25f4c8fddf0ac1dd712b22b29791cc79",
+      "schedule_horizon": 32000
+    }
+  ],
+  "same_parent_all_runs": true,
+  "within_seed_C_S_data_stream_identical": true,
+  "only_conditional_adaptation_variance": true,
+  "original_baseline": {
+    "selected_update": 32000,
+    "historical_validation_hook_mIoU_pct": 39.390182190651146,
+    "config_export_exactly_matches_original_first_log_config": true,
+    "selected_from_all_10_original_val_nodes": {
+      "training_node": 32000,
+      "original_log_record": {
+        "mode": "val",
+        "epoch": 141,
+        "iter": 76,
+        "lr": 0.001,
+        "mIoU": 0.3939,
+        "mF1": 0.55428,
+        "mPPV": 0.62107,
+        "mS": 0.50201,
+        "mAUPR": 0.57099,
+        "mMAE": 0.00177
+      }
+    },
+    "source_full_checkpoint_hash_verified": true,
+    "source_full_SHA": "446fc7b598e9680a1470059d2aba3a6f9c2222b66658a5eccef6059b1362850f",
+    "compact_SHA": "7455a7d3f4c8ed051abc1a127ef90045f9193d7b0f57628acf5a6e9613eecfa7",
+    "original_checkpoint_tensor_checks": "Existing receipt only; this audit hashes files and does not deserialize weights"
+  },
+  "failed_baseline_attempts": {
+    "v1": "40k completed with scale_ratio reconstruction error; excluded from principal comparison",
+    "v2": "2980 updates then stopped after original recovery; not a40k result"
+  }
+}

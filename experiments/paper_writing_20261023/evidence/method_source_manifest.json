@@ -1,0 +1,1166 @@
+[
+  {
+    "path": "HRDecoder_FinalDecision_20261005/execution/final_model.py",
+    "sha256": "c2bee6580c5f6d47f74e8df9b3726d3b67c3324bcf2439c82240c7acc8192d07",
+    "lines": 118,
+    "selectors": [
+      {
+        "line": 10,
+        "text": "DECODER_MODULES = ('projections', 'downsample', 'scale_refine', 'fusion_refine', 'rgb', 'merge', 'head')"
+      },
+      {
+        "line": 13,
+        "text": "class DomainDecoder(nn.Module):"
+      },
+      {
+        "line": 14,
+        "text": "def __init__(self, parent, has_spatial):"
+      },
+      {
+        "line": 24,
+        "text": "def forward(self, rgb, layers, spatial_maps=None):"
+      },
+      {
+        "line": 49,
+        "text": "class FinalModel(nn.Module):"
+      },
+      {
+        "line": 50,
+        "text": "def __init__(self, parent, arm, seed, backend='cuda', checkpoint_blocks=False):"
+      },
+      {
+        "line": 71,
+        "text": "def set_update(self, completed):"
+      },
+      {
+        "line": 74,
+        "text": "def forward(self, rgb, source='DDR'):"
+      },
+      {
+        "line": 115,
+        "text": "def inherited_parameter_map(parent):"
+      }
+    ]
+  },
+  {
+    "path": "HRDecoder_FinalDecision_20261005/execution/spatial.py",
+    "sha256": "f152d1040359f3083b4c8ae6f29f6f195eb377b4ef7bb0f881145a678f1fe178",
+    "lines": 161,
+    "selectors": [
+      {
+        "line": 14,
+        "text": "def reference_attention(value, shapes, locations, weights):"
+      },
+      {
+        "line": 30,
+        "text": "class CUDAAttention(Function):"
+      },
+      {
+        "line": 32,
+        "text": "@torch.amp.custom_fwd(device_type='cuda', cast_inputs=torch.float32)"
+      },
+      {
+        "line": 33,
+        "text": "def forward(ctx, value, shapes, starts, locations, weights):"
+      },
+      {
+        "line": 42,
+        "text": "@torch.amp.custom_bwd(device_type='cuda')"
+      },
+      {
+        "line": 43,
+        "text": "def backward(ctx, grad):"
+      },
+      {
+        "line": 49,
+        "text": "def grid_centers(shapes, device):"
+      },
+      {
+        "line": 59,
+        "text": "class DeformAttention(nn.Module):"
+      },
+      {
+        "line": 60,
+        "text": "def __init__(self, levels, zero_output=False):"
+      },
+      {
+        "line": 86,
+        "text": "def geometry(self, query_shapes, value_shapes, device):"
+      },
+      {
+        "line": 98,
+        "text": "def forward(self, query, value_tokens, query_shapes, value_shapes, backend):"
+      },
+      {
+        "line": 121,
+        "text": "class Interaction(nn.Module):"
+      },
+      {
+        "line": 122,
+        "text": "def __init__(self):"
+      },
+      {
+        "line": 132,
+        "text": "class Spatial(nn.Module):"
+      },
+      {
+        "line": 133,
+        "text": "def __init__(self):"
+      },
+      {
+        "line": 144,
+        "text": "def prepare(self, rgb):"
+      },
+      {
+        "line": 157,
+        "text": "def unpack(fine, tokens, shapes):"
+      }
+    ]
+  },
+  {
+    "path": "HRDecoder_FinalDecision_20261005/execution/qlib/model.py",
+    "sha256": "f68a07f604248575df6db8553c554aa3d9eb718d112a9488c42780695ab9710f",
+    "lines": 97,
+    "selectors": [
+      {
+        "line": 11,
+        "text": "def conv(in_channels, out_channels, stride=1):"
+      },
+      {
+        "line": 16,
+        "text": "class ResidualRefine(nn.Module):"
+      },
+      {
+        "line": 17,
+        "text": "def __init__(self, channels=128):"
+      },
+      {
+        "line": 23,
+        "text": "def forward(self, x):"
+      },
+      {
+        "line": 27,
+        "text": "class Q(nn.Module):"
+      },
+      {
+        "line": 28,
+        "text": "def __init__(self, backbone):"
+      },
+      {
+        "line": 42,
+        "text": "def set_update(self, completed):"
+      },
+      {
+        "line": 52,
+        "text": "def forward(self, x):"
+      },
+      {
+        "line": 79,
+        "text": "def build_model(repo, checkpoint=None, expected_sha=None, allow_random_for_wiring=False):"
+      }
+    ]
+  },
+  {
+    "path": "HRDecoder_FinalDecision_20261005/execution/qlib/loss.py",
+    "sha256": "87379d9e58619f1cf89e351cda71348a38c44af233881998e7d0a830e4a4e879",
+    "lines": 23,
+    "selectors": [
+      {
+        "line": 5,
+        "text": "def masked_loss(logits, target, valid):"
+      }
+    ]
+  },
+  {
+    "path": "HRDecoder_FinalDecision_20261005/execution/qlib/geometry.py",
+    "sha256": "b0dc746c5c6611a789e781ddf36534f22c8be7a13f88b14247350363e154c5b6",
+    "lines": 88,
+    "selectors": [
+      {
+        "line": 11,
+        "text": "class Tile:"
+      },
+      {
+        "line": 20,
+        "text": "def window(self):"
+      },
+      {
+        "line": 24,
+        "text": "def tiles(h, w, center=768, halo=128):"
+      },
+      {
+        "line": 30,
+        "text": "def transform(a, row):"
+      },
+      {
+        "line": 39,
+        "text": "def transform_points(points, hw, row):"
+      },
+      {
+        "line": 59,
+        "text": "def rgb_window(rgb, tile, brightness=1., contrast=1.):"
+      },
+      {
+        "line": 74,
+        "text": "def supervision(target, valid, tile):"
+      },
+      {
+        "line": 85,
+        "text": "def center_logits(z, center=768, halo=128):"
+      }
+    ]
+  },
+  {
+    "path": "HRDecoder_FinalDecision_20261005/execution/qlib/metrics.py",
+    "sha256": "141a30a9cda67f52783dce6bcc284fb3dc1a4eb98a87de7693e50b2e628149de",
+    "lines": 37,
+    "selectors": [
+      {
+        "line": 6,
+        "text": "def counts(probability, target, valid):"
+      },
+      {
+        "line": 16,
+        "text": "def summarize(ct):"
+      },
+      {
+        "line": 26,
+        "text": "def paired_bootstrap(old, new, seed=100303, draws=2000):"
+      },
+      {
+        "line": 32,
+        "text": "def scores(a):"
+      }
+    ]
+  },
+  {
+    "path": "HRDecoder_FinalDecision_20261005/execution/engine.py",
+    "sha256": "f55a8b82e62447a6edc104f1ca99c6221cfc8928b935c8cd0ff20abbd210748d",
+    "lines": 34,
+    "selectors": [
+      {
+        "line": 8,
+        "text": "def update(model,optimizer,scheduler,ema,loaders,seed,completed,audits=None):"
+      }
+    ]
+  },
+  {
+    "path": "HRDecoder_FinalDecision_20261005/execution/schedule.py",
+    "sha256": "7d9b30305dba52adaf0a887ec57b337bf0d492817409e9c698b34c3ebd5f2cb8",
+    "lines": 77,
+    "selectors": [
+      {
+        "line": 7,
+        "text": "def optimizer_for(model, fused=True):"
+      },
+      {
+        "line": 50,
+        "text": "def factor(update):"
+      },
+      {
+        "line": 57,
+        "text": "class Schedule:"
+      },
+      {
+        "line": 58,
+        "text": "def __init__(self, optimizer):"
+      },
+      {
+        "line": 62,
+        "text": "def prepare_next(self):"
+      },
+      {
+        "line": 67,
+        "text": "def step(self):"
+      },
+      {
+        "line": 71,
+        "text": "def state_dict(self):"
+      },
+      {
+        "line": 74,
+        "text": "def load_state_dict(self, state):"
+      }
+    ]
+  },
+  {
+    "path": "HRDecoder_FinalDecision_20261005/execution/state.py",
+    "sha256": "af61eb185f2ea93459e7b329ffd9ff0aedc1294ffb283a42df9e7b3e69cf5a63",
+    "lines": 61,
+    "selectors": [
+      {
+        "line": 10,
+        "text": "class EMA:"
+      },
+      {
+        "line": 11,
+        "text": "def __init__(self, model):"
+      },
+      {
+        "line": 15,
+        "text": "@torch.no_grad()"
+      },
+      {
+        "line": 16,
+        "text": "def update(self, model):"
+      },
+      {
+        "line": 30,
+        "text": "def cursor(completed, arm):"
+      },
+      {
+        "line": 34,
+        "text": "def save(path, model, optimizer, scheduler, ema, completed, identity, next_rows):"
+      },
+      {
+        "line": 48,
+        "text": "def load(path, model, optimizer, scheduler, ema, identity, next_rows_at):"
+      }
+    ]
+  },
+  {
+    "path": "HRDecoder_FinalDecision_20261005/execution/validation.py",
+    "sha256": "4336f2d2f1175b8565af520f83c7d0ac2fc204f0f4cd197a9fbe1fea979bc5a9",
+    "lines": 83,
+    "selectors": [
+      {
+        "line": 11,
+        "text": "def compress(path,q):"
+      },
+      {
+        "line": 17,
+        "text": "def mechanism(rgb,q,g,v,sid,output):"
+      },
+      {
+        "line": 39,
+        "text": "@torch.no_grad()"
+      },
+      {
+        "line": 40,
+        "text": "def evaluate(model,dataset,runtime,output,update,keep_probability=False,locked_formula=None,p0_ram=None):"
+      },
+      {
+        "line": 75,
+        "text": "def cache_p0(dataset,runtime,limit_bytes=32*1024**3):"
+      }
+    ]
+  },
+  {
+    "path": "HRDecoder_FinalDecision_20261005/execution/experiment.py",
+    "sha256": "688fa2e9c9b597d7f753d5d2f431c2ea36c96b647547c7949ce229f3b03074a2",
+    "lines": 63,
+    "selectors": [
+      {
+        "line": 11,
+        "text": "def parent_path(runtime,seed):"
+      },
+      {
+        "line": 21,
+        "text": "def load_parent(runtime,seed,q_parent=False):"
+      },
+      {
+        "line": 36,
+        "text": "def initialize(runtime,arm,seed,device='cuda',backend='cuda'):"
+      },
+      {
+        "line": 44,
+        "text": "def rows_for(source,seed):"
+      },
+      {
+        "line": 50,
+        "text": "def next_rows(streams,completed,arm):"
+      },
+      {
+        "line": 54,
+        "text": "def val_dataset(runtime,split='val',test_authorized=False):"
+      },
+      {
+        "line": 57,
+        "text": "def identity_for(runtime_path,arm,seed,loading):"
+      }
+    ]
+  },
+  {
+    "path": "HRDecoder_FinalDecision_20261005/execution/configs/protocol.json",
+    "sha256": "e4c5cdaf55d18e86958f109cc05e7d7a25d22c03da3e8de620b81e5a8fe30a99",
+    "lines": 160,
+    "selectors": []
+  },
+  {
+    "path": "HRDecoder_FinalDecision_20261005/execution/configs/p0_identity.json",
+    "sha256": "9468a4d2a8d9a1344a21358698a427fdc5ce9950d3603ce91ea9258a15a648db",
+    "lines": 41,
+    "selectors": []
+  },
+  {
+    "path": "HRDecoder_FinalDecision_20261005/execution/reports/single_seed_parallel_amendment.json",
+    "sha256": "cae05b90a986f4d14a7c7f1e7ca25de10b9d966d905cd1ea88f5e0c2116344c3",
+    "lines": 36,
+    "selectors": []
+  },
+  {
+    "path": "HRDecoder_FinalDecision_20261005/execution/server_results/reports/final_selection_lock.json",
+    "sha256": "19f2d89edbea2662680c48f0d81619292ac1404bc1f47d0ac6c0123d1965474f",
+    "lines": 58,
+    "selectors": []
+  },
+  {
+    "path": "HRDecoder_Next_20261003/legacy/runtime.py",
+    "sha256": "64990a4f2806ab1f76b43352bdf86c2b1bef211ce8d137f8806f582b765ce6ff",
+    "lines": 902,
+    "selectors": [
+      {
+        "line": 37,
+        "text": "def inject_repo(repo):"
+      },
+      {
+        "line": 47,
+        "text": "def atomic_json(path, obj):"
+      },
+      {
+        "line": 55,
+        "text": "def load_config(repo, config_rel):"
+      },
+      {
+        "line": 69,
+        "text": "def _register_imports(cfg):"
+      },
+      {
+        "line": 95,
+        "text": "def build_model(cfg):"
+      },
+      {
+        "line": 101,
+        "text": "def resolve_repo_path(repo, p):"
+      },
+      {
+        "line": 113,
+        "text": "def _load_state(path):"
+      },
+      {
+        "line": 127,
+        "text": "def _strict_load_full(model, path):"
+      },
+      {
+        "line": 134,
+        "text": "def snapshot_state(model):"
+      },
+      {
+        "line": 138,
+        "text": "def snapshot_buffers(model):"
+      },
+      {
+        "line": 145,
+        "text": "def _authorized_param(name):"
+      },
+      {
+        "line": 151,
+        "text": "def first_update_evidence(model, ref_snapshot, bn_snapshot):"
+      },
+      {
+        "line": 213,
+        "text": "def _digest_bytes(b):"
+      },
+      {
+        "line": 217,
+        "text": "def _arr_sha(a):"
+      },
+      {
+        "line": 221,
+        "text": "def _unwrap_img(x):"
+      },
+      {
+        "line": 234,
+        "text": "def _unwrap_meta(x):"
+      },
+      {
+        "line": 249,
+        "text": "class ReferenceCache(object):"
+      },
+      {
+        "line": 262,
+        "text": "def __init__(self, cache_dir, settings, expected_count=None):"
+      },
+      {
+        "line": 272,
+        "text": "def _cfg_digest(self):"
+      },
+      {
+        "line": 276,
+        "text": "def _train_image_ids(self):"
+      },
+      {
+        "line": 289,
+        "text": "def _source_images_digest(self):"
+      },
+      {
+        "line": 301,
+        "text": "def _ref_weight_sha(self):"
+      },
+      {
+        "line": 305,
+        "text": "def complete(self):"
+      },
+      {
+        "line": 366,
+        "text": "def _fail_if(cond, what):"
+      },
+      {
+        "line": 371,
+        "text": "def get(self, stem):"
+      },
+      {
+        "line": 389,
+        "text": "def __getitem__(self, stem):"
+      },
+      {
+        "line": 392,
+        "text": "def __contains__(self, stem):"
+      },
+      {
+        "line": 401,
+        "text": "def build(self, model, image_ids, deadline, log):"
+      },
+      {
+        "line": 490,
+        "text": "def per_image_counts(prob, gt):"
+      },
+      {
+        "line": 505,
+        "text": "def global_miou(all_counts):"
+      },
+      {
+        "line": 518,
+        "text": "def evaluate_split(predict_fn, split, data_root, cfg, deadline, log,"
+      },
+      {
+        "line": 596,
+        "text": "class CorrectionHead(nn.Module):"
+      },
+      {
+        "line": 598,
+        "text": "def __init__(self):"
+      },
+      {
+        "line": 605,
+        "text": "def forward(self, f):"
+      },
+      {
+        "line": 609,
+        "text": "def load_flat_head(head_state, device='cpu'):"
+      },
+      {
+        "line": 624,
+        "text": "def _logit(p, eps=1e-4):"
+      },
+      {
+        "line": 629,
+        "text": "def member_prob(model, img, meta, flip, device):"
+      },
+      {
+        "line": 660,
+        "text": "class ChampionEnsemble(object):"
+      },
+      {
+        "line": 668,
+        "text": "def __init__(self, settings, champion_cfg, device='cuda'):"
+      },
+      {
+        "line": 735,
+        "text": "def pre_head_probs(self, img, meta):"
+      },
+      {
+        "line": 755,
+        "text": "def corrected_class_prob(self, c, pf, ps, pr, img_f, head):"
+      },
+      {
+        "line": 775,
+        "text": "def predict(self, img, meta):"
+      },
+      {
+        "line": 793,
+        "text": "def _raw_prob(self, m, img, meta, which):"
+      },
+      {
+        "line": 800,
+        "text": "def mix_probs(p_champ, p_new):"
+      },
+      {
+        "line": 807,
+        "text": "def get_rng_state():"
+      },
+      {
+        "line": 813,
+        "text": "def set_rng_state(st):"
+      },
+      {
+        "line": 823,
+        "text": "def audit_split(data_root, expected=(454, 76, 227)):"
+      },
+      {
+        "line": 870,
+        "text": "def load_image_label(data_root, split, stem):"
+      },
+      {
+        "line": 888,
+        "text": "def parse_deadline(raw):"
+      }
+    ]
+  },
+  {
+    "path": "HRDecoder_Next_20261003/vendor/champion_repo/mmseg/models/segmentors/HRDecoder.py",
+    "sha256": "a97d00407c03947363df65a035dc70e5b458f440e38c21161a247b3282c1b933",
+    "lines": 300,
+    "selectors": [
+      {
+        "line": 13,
+        "text": "def get_crop_bbox(img_size,hr_scale,divisible=1):"
+      },
+      {
+        "line": 26,
+        "text": "def crop(img, crop_bbox):"
+      },
+      {
+        "line": 40,
+        "text": "class HRDecoder(LesionEncoderDecoder):"
+      },
+      {
+        "line": 41,
+        "text": "def __init__(self,hr_settings,detail_branch=None,detail_head=None,**kwargs):"
+      },
+      {
+        "line": 57,
+        "text": "def _detail_logits(self, img, img_size):"
+      },
+      {
+        "line": 63,
+        "text": "def _init_hr_settings(self, hr_settings, kwargs):"
+      },
+      {
+        "line": 88,
+        "text": "def get_se_weighted_crop_bboxes(self, img_size, hr_scale,"
+      },
+      {
+        "line": 130,
+        "text": "def _fuse_logits(self, lr_logit, hr_logit):"
+      },
+      {
+        "line": 145,
+        "text": "def _transform_inputs(self, inputs):"
+      },
+      {
+        "line": 153,
+        "text": "def get_random_hr_scale(self):"
+      },
+      {
+        "line": 164,
+        "text": "def _resizecrop_feats(self, ori_size, feat, bbox):"
+      },
+      {
+        "line": 171,
+        "text": "def hr_forward_train(self, lr_feat, gt_semantic_seg):"
+      },
+      {
+        "line": 188,
+        "text": "def hr_slide_inference(self,ori_size, lr_feats, img_metas):"
+      },
+      {
+        "line": 210,
+        "text": "def refine_logits(self, logits, img, semantics):"
+      },
+      {
+        "line": 213,
+        "text": "def refinement_losses(self, logits, target):"
+      },
+      {
+        "line": 216,
+        "text": "def encode_decode(self, img, img_metas):"
+      },
+      {
+        "line": 235,
+        "text": "def forward_train(self,"
+      },
+      {
+        "line": 281,
+        "text": "class EfficientHRDecoder(HRDecoder):"
+      },
+      {
+        "line": 282,
+        "text": "def __init__(self, **kwargs):"
+      },
+      {
+        "line": 285,
+        "text": "def _init_hr_settings(self, hr_settings, kwargs):"
+      },
+      {
+        "line": 299,
+        "text": "def _transform_inputs(self, inputs):"
+      }
+    ]
+  },
+  {
+    "path": "HRDecoder_Next_20261003/vendor/champion_repo/mmseg/models/necks/detail_branch.py",
+    "sha256": "d71d616fc876b3753596f839e3bc05c42e355ce9e52b4e1de6298634d57e1d3e",
+    "lines": 67,
+    "selectors": [
+      {
+        "line": 15,
+        "text": "class DetailBranch(nn.Module):"
+      },
+      {
+        "line": 25,
+        "text": "def __init__(self,"
+      },
+      {
+        "line": 42,
+        "text": "def forward(self, x):"
+      },
+      {
+        "line": 47,
+        "text": "class DetailHead(nn.Module):"
+      },
+      {
+        "line": 50,
+        "text": "def __init__(self,"
+      },
+      {
+        "line": 66,
+        "text": "def forward(self, x):"
+      }
+    ]
+  },
+  {
+    "path": "HRDecoder_Next_20261003/vendor/champion_repo/hr100_refinement.py",
+    "sha256": "2d0db3056bc50bd68fd4da71f470f6e80fbf4deeb78264cbd4640dc2ab0c1b72",
+    "lines": 69,
+    "selectors": [
+      {
+        "line": 8,
+        "text": "def block(cin, cout, stride=1):"
+      },
+      {
+        "line": 13,
+        "text": "class SemanticMAResidual(nn.Module):"
+      },
+      {
+        "line": 14,
+        "text": "def __init__(self):"
+      },
+      {
+        "line": 23,
+        "text": "def forward(self, image, semantics):"
+      },
+      {
+        "line": 32,
+        "text": "def ma_hard_loss(logits, target):"
+      },
+      {
+        "line": 47,
+        "text": "class HR100Refinement(HRDecoder):"
+      },
+      {
+        "line": 48,
+        "text": "def __init__(self, semantic_refinement=True, hard_weight=0.02, freeze_bn=True, **kwargs):"
+      },
+      {
+        "line": 54,
+        "text": "def train(self, mode=True):"
+      },
+      {
+        "line": 62,
+        "text": "def refine_logits(self, logits, img, semantics):"
+      },
+      {
+        "line": 68,
+        "text": "def refinement_losses(self, logits, target):"
+      }
+    ]
+  },
+  {
+    "path": "HRDecoder_Next_20261003/vendor/champion_repo/hrplus_patch.py",
+    "sha256": "6433a8fafc950c83b1a6fd432e8c901fb843b3fbaff032454e4289fe8bdd0f37",
+    "lines": 206,
+    "selectors": [
+      {
+        "line": 24,
+        "text": "def _strict_load_state(module, path):"
+      },
+      {
+        "line": 36,
+        "text": "def _assert_config(model):"
+      },
+      {
+        "line": 43,
+        "text": "def _freeze_all_bn(model):"
+      },
+      {
+        "line": 52,
+        "text": "class HRPlusRefinement(HR100Refinement):"
+      },
+      {
+        "line": 64,
+        "text": "def __init__(self, source_checkpoint, lovasz_weight=0.0, **kwargs):"
+      },
+      {
+        "line": 91,
+        "text": "def init_weights(self):"
+      },
+      {
+        "line": 96,
+        "text": "def train(self, mode=True):"
+      },
+      {
+        "line": 103,
+        "text": "def forward_train(self, img, img_metas, gt_semantic_seg,"
+      },
+      {
+        "line": 116,
+        "text": "def _student_prob(self, img, img_meta, rescale):"
+      },
+      {
+        "line": 139,
+        "text": "def _reference_prob(self, img, img_meta, rescale):"
+      },
+      {
+        "line": 146,
+        "text": "def inference(self, img, img_meta, rescale):"
+      },
+      {
+        "line": 155,
+        "text": "class ForegroundMixedCrop(object):"
+      },
+      {
+        "line": 167,
+        "text": "def __init__(self, crop_size, fg_prob=0.5, num_fg=4, seg_fields=()):"
+      },
+      {
+        "line": 173,
+        "text": "def _seg_targets(self, results):"
+      },
+      {
+        "line": 179,
+        "text": "def __call__(self, results):"
+      },
+      {
+        "line": 203,
+        "text": "def __repr__(self):"
+      }
+    ]
+  },
+  {
+    "path": "HRDecoder_Next_20261003/vendor/champion_repo/hrplus_core.py",
+    "sha256": "4297d0fc3ffac8927e27a91531a9e9ea66280bfae6eb22a38a39fdaf780bf448",
+    "lines": 199,
+    "selectors": [
+      {
+        "line": 11,
+        "text": "def _axis_positions(total, tile, stride):"
+      },
+      {
+        "line": 22,
+        "text": "def tiled_forward(img, forward_fn, tile_size, stride, num_classes):"
+      },
+      {
+        "line": 67,
+        "text": "def blend_probs(prob_a, prob_b, weight_a=0.5):"
+      },
+      {
+        "line": 82,
+        "text": "def resize_logit(logits, size, align_corners=False):"
+      },
+      {
+        "line": 89,
+        "text": "def pad_to_size(img, gt, size, img_pad=0, seg_pad=255):"
+      },
+      {
+        "line": 106,
+        "text": "def crop_arrays(img, gt, y0, x0, h, w):"
+      },
+      {
+        "line": 111,
+        "text": "def foreground_crop_bbox(gt, crop_size, fg_prob=0.5, rng=None, num_fg=4):"
+      },
+      {
+        "line": 127,
+        "text": "def uniform():"
+      },
+      {
+        "line": 147,
+        "text": "def lovasz_grad(gt_sorted):"
+      },
+      {
+        "line": 164,
+        "text": "def lovasz_hinge_flat(logits, labels):"
+      },
+      {
+        "line": 178,
+        "text": "def multiclass_lovasz_hinge(logits, target, ignore_index=255):"
+      }
+    ]
+  },
+  {
+    "path": "HRDecoder_Next_20261003/vendor/champion_repo/ma_residual.py",
+    "sha256": "95438df2b26df31a0c29e4933afa482d44072e5be42524177586fb18c165c1ed",
+    "lines": 263,
+    "selectors": [
+      {
+        "line": 27,
+        "text": "def _block(cin, cout, stride=1):"
+      },
+      {
+        "line": 32,
+        "text": "class SemanticMAResidualV2(nn.Module):"
+      },
+      {
+        "line": 40,
+        "text": "def __init__(self, detail_ch=16, sem_ch=32, sem_in=720, base_ch=8):"
+      },
+      {
+        "line": 56,
+        "text": "def forward(self, image, semantics, base_ma):"
+      },
+      {
+        "line": 68,
+        "text": "def _load_allow_head(module, path, allow_prefix='ma_refiner.'):"
+      },
+      {
+        "line": 87,
+        "text": "def _load_student_only(module, path, allow_prefix='reference.'):"
+      },
+      {
+        "line": 110,
+        "text": "class HRPlusMAOnBase(HRPlusRefinement):"
+      },
+      {
+        "line": 120,
+        "text": "def __init__(self, source_checkpoint, reference_checkpoint=None,"
+      },
+      {
+        "line": 165,
+        "text": "def train(self, mode=True):"
+      },
+      {
+        "line": 171,
+        "text": "def frozen_base_fingerprint(self):"
+      },
+      {
+        "line": 181,
+        "text": "def refine_logits(self, logits, img, semantics):"
+      },
+      {
+        "line": 188,
+        "text": "def forward_train(self, img, img_metas, gt_semantic_seg,"
+      },
+      {
+        "line": 206,
+        "text": "class HRPlusMAResidual(HRPlusRefinement):"
+      },
+      {
+        "line": 214,
+        "text": "def __init__(self, source_checkpoint, ma_hard_weight=0.0,"
+      },
+      {
+        "line": 240,
+        "text": "def train(self, mode=True):"
+      },
+      {
+        "line": 246,
+        "text": "def frozen_base_fingerprint(self):"
+      },
+      {
+        "line": 258,
+        "text": "def refine_logits(self, logits, img, semantics):"
+      }
+    ]
+  },
+  {
+    "path": "HRDecoder_Next_20261003/vendor/champion_repo/configs/lesion/exp/hrplus_patch_dice.py",
+    "sha256": "2d687086e28533d4bb080f31c12c4abb802d5293fc4f2a463f9f0bd8f36452f9",
+    "lines": 60,
+    "selectors": []
+  },
+  {
+    "path": "HRDecoder_Next_20261003/vendor/champion_repo/configs/lesion/exp/hrplus_mares.py",
+    "sha256": "591e4786abaa35b8dfc9a6476c45a8c9eb387544c37e0d56b6a499b683e100b4",
+    "lines": 32,
+    "selectors": []
+  },
+  {
+    "path": "HRDecoder_Next_20261003/trainer/models/convnext_unet.py",
+    "sha256": "7f199310c8f866bb66094a1b9bc550bd9ca10b0ed02f7b55942579d417948dcd",
+    "lines": 353,
+    "selectors": [
+      {
+        "line": 36,
+        "text": "CONVNEXT_S_DEPTH = (3, 3, 27, 3)"
+      },
+      {
+        "line": 37,
+        "text": "CONVNEXT_S_DIMS = (96, 192, 384, 768)"
+      },
+      {
+        "line": 49,
+        "text": "class LayerNorm2d(nn.Module):"
+      },
+      {
+        "line": 55,
+        "text": "def __init__(self, dim: int, eps: float = 1e-6):"
+      },
+      {
+        "line": 61,
+        "text": "def forward(self, x: torch.Tensor) -> torch.Tensor:"
+      },
+      {
+        "line": 68,
+        "text": "class DropPath(nn.Module):"
+      },
+      {
+        "line": 71,
+        "text": "def __init__(self, p: float = 0.0):"
+      },
+      {
+        "line": 75,
+        "text": "def forward(self, x):"
+      },
+      {
+        "line": 84,
+        "text": "class ConvNeXtBlock(nn.Module):"
+      },
+      {
+        "line": 87,
+        "text": "def __init__(self, dim: int, drop_path: float = 0.0, layer_scale_init: float = 1e-6):"
+      },
+      {
+        "line": 99,
+        "text": "def forward(self, x: torch.Tensor) -> torch.Tensor:"
+      },
+      {
+        "line": 113,
+        "text": "class ConvNeXtEncoder(nn.Module):"
+      },
+      {
+        "line": 120,
+        "text": "def __init__(self, depths=CONVNEXT_S_DEPTH, dims=CONVNEXT_S_DIMS,"
+      },
+      {
+        "line": 154,
+        "text": "def forward(self, x: torch.Tensor) -> list:"
+      },
+      {
+        "line": 167,
+        "text": "def load_official_weights(self, ckpt_path: str, sha256_expected: str | None = None,"
+      },
+      {
+        "line": 190,
+        "text": "class ConvBlock(nn.Module):"
+      },
+      {
+        "line": 191,
+        "text": "def __init__(self, in_ch: int, out_ch: int):"
+      },
+      {
+        "line": 202,
+        "text": "def forward(self, x):"
+      },
+      {
+        "line": 206,
+        "text": "class UNetDecoder(nn.Module):"
+      },
+      {
+        "line": 220,
+        "text": "def __init__(self, dims=CONVNEXT_S_DIMS, num_classes: int = NUM_CLASSES,"
+      },
+      {
+        "line": 236,
+        "text": "def forward(self, feats: list) -> torch.Tensor:"
+      },
+      {
+        "line": 247,
+        "text": "def _up(x: torch.Tensor, size) -> torch.Tensor:"
+      },
+      {
+        "line": 255,
+        "text": "class ConvNeXtUNet(nn.Module):"
+      },
+      {
+        "line": 258,
+        "text": "def __init__(self, *, drop_path_rate: float = 0.1, decoder_dropout: float = 0.0,"
+      },
+      {
+        "line": 270,
+        "text": "def gradient_checkpointing(self) -> bool:"
+      },
+      {
+        "line": 274,
+        "text": "def gradient_checkpointing(self, flag: bool) -> None:"
+      },
+      {
+        "line": 277,
+        "text": "def forward(self, image: torch.Tensor) -> torch.Tensor:"
+      },
+      {
+        "line": 292,
+        "text": "def eval_forward(self, image: torch.Tensor) -> torch.Tensor:"
+      },
+      {
+        "line": 297,
+        "text": "def build_convnext_unet(cfg: dict, *, gradient_checkpointing: bool | None = None):"
+      },
+      {
+        "line": 346,
+        "text": "def _is_placeholder(v) -> bool:"
+      },
+      {
+        "line": 350,
+        "text": "def state_dict_is_official_convnext(sd_keys) -> bool:"
+      }
+    ]
+  },
+  {
+    "path": "HRDecoder_审查轮_20260916/tools/h4_post_fusion_corrector.py",
+    "sha256": "a4361c1ab10a7dc8f706416c5ffd5cbd298ce9b2302f708ad5971b19d2466fda",
+    "lines": 246,
+    "selectors": [
+      {
+        "line": 30,
+        "text": "def unwrap(x):"
+      },
+      {
+        "line": 38,
+        "text": "def as_img(x):"
+      },
+      {
+        "line": 45,
+        "text": "def as_meta(x):"
+      },
+      {
+        "line": 56,
+        "text": "def logit(p, eps=1e-4):"
+      },
+      {
+        "line": 61,
+        "text": "def soft_dice(p, g, eps=1.0):"
+      },
+      {
+        "line": 67,
+        "text": "class MACorrectorHead(nn.Module):"
+      },
+      {
+        "line": 68,
+        "text": "def __init__(self):"
+      },
+      {
+        "line": 77,
+        "text": "def forward(self, feat):"
+      },
+      {
+        "line": 81,
+        "text": "def main():"
+      },
+      {
+        "line": 126,
+        "text": "def val_eval():"
+      }
+    ]
+  }
+]

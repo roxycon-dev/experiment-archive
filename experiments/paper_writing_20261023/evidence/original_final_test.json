@@ -1,0 +1,83 @@
+{
+  "stage": "COMPLETE",
+  "lock_sha256": "3146ca1edafdffdae7bf4987524bddc502209929e5d6d5b0e7ba49f12b6bd66e",
+  "seeds": {
+    "42": {
+      "counts": [
+        [
+          1084309,
+          392193,
+          490632
+        ],
+        [
+          1623523,
+          460808,
+          1429955
+        ],
+        [
+          363816,
+          117499,
+          206702
+        ],
+        [
+          78485,
+          78341,
+          111558
+        ]
+      ],
+      "miou_pct": 45.86038383266797,
+      "per_class": {
+        "EX": {
+          "tp": 1084309,
+          "fp": 392193,
+          "fn": 490632,
+          "iou_pct": 55.121257626577545,
+          "precision": 0.7343769260048412,
+          "recall": 0.6884759492577818
+        },
+        "HE": {
+          "tp": 1623523,
+          "fp": 460808,
+          "fn": 1429955,
+          "iou_pct": 46.19780518717031,
+          "precision": 0.7789180317329637,
+          "recall": 0.5316963148252583
+        },
+        "SE": {
+          "tp": 363816,
+          "fp": 117499,
+          "fn": 206702,
+          "iou_pct": 52.87892595677142,
+          "precision": 0.7558792059254335,
+          "recall": 0.637694165652968
+        },
+        "MA": {
+          "tp": 78485,
+          "fp": 78341,
+          "fn": 111558,
+          "iou_pct": 29.243546560152616,
+          "precision": 0.5004591075459426,
+          "recall": 0.4129854822329683
+        }
+      },
+      "conditional_paired_image_bootstrap": {
+        "paired_image_percentile95_pp": [
+          -0.2625660524346422,
+          0.6519375896498986
+        ],
+        "resamples": 2000,
+        "seed": 100303,
+        "unit": "image",
+        "includes_seed_variance": false
+      }
+    }
+  },
+  "time": "2026-10-05T18:16:49.529180+00:00",
+  "test_mean_miou_pct": 45.86038383266797,
+  "seed_scope": [
+    42
+  ],
+  "single_seed_exploratory": true,
+  "deployment_seed": 42,
+  "reselection_permitted": false
+}

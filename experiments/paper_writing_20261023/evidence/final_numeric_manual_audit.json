@@ -1,0 +1,678 @@
+{
+  "audit_type": "label-aware numeric table verification plus completed human semantic review",
+  "scope": "main classwise table, MA correction table, matched spatial table, retained training table; abstract/result prose, CI, qualitative identity, and new historical configuration paragraph manually reviewed",
+  "source_records": [
+    "evidence/locked_test_source.json",
+    "evidence/ma_correction_source.json",
+    "evidence/validation_source.json",
+    "evidence/historical_baseline_source.json",
+    "evidence/revision2_training_numeric_sources.json",
+    "evidence/revision2_qualitative_provenance.json"
+  ],
+  "reviewed_tex_sha256": {
+    "paper\\main.tex": "abb37e29b21cd9e67c33bce4d0bc1f61aa76b6ac88c7ff8fd1e6d3737cbe4a1b",
+    "paper\\sections\\discussion.tex": "07f18fb2fd47eafcadf9745f7bbeebe7ef9d0a715ab35ab45b0227dfe6050efc",
+    "paper\\sections\\experiments.tex": "505879d505a86bf563a654a67e6aeddfa4bcc827247b4bc8557a42ce4ee82c12",
+    "paper\\sections\\framing.tex": "8b7c94f82eb2a69d51d339e9831fc5e2ade8459ad6002391adb432a7bb806e9d",
+    "paper\\sections\\method.tex": "122d7f8a33fc395855f160606722568f1153bec4386f04c5ad23257f41a7557a",
+    "paper\\sections\\results.tex": "78ebdfc6b2aa748ce94d64a45f898db33fb1ddc3ac928a1f8841310f4219284d",
+    "paper\\supplement.tex": "c2c56c1ec8767a486e9e36dbab840e3239c3e127cf165f5bb3a9e884e11ecd84",
+    "paper\\training_table.tex": "532a7cb2da2b217de6c0455c78ef185a3380572ccce681ce1ceef4310c032c83"
+  },
+  "checks": [
+    {
+      "check": "main EX column 0",
+      "observed": 51.56,
+      "expected": 51.56,
+      "absolute_tolerance": 0.0051,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "main EX column 1",
+      "observed": 55.1213,
+      "expected": 55.121257626577545,
+      "absolute_tolerance": 5.1e-05,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "main EX column 2",
+      "observed": 71.0686,
+      "expected": 71.0686059021912,
+      "absolute_tolerance": 5.1e-05,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "main EX column 3",
+      "observed": 73.4377,
+      "expected": 73.43769260048411,
+      "absolute_tolerance": 5.1e-05,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "main EX column 4",
+      "observed": 68.8476,
+      "expected": 68.84759492577817,
+      "absolute_tolerance": 5.1e-05,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "main HE column 0",
+      "observed": 43.13,
+      "expected": 43.13,
+      "absolute_tolerance": 0.0051,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "main HE column 1",
+      "observed": 46.1978,
+      "expected": 46.19780518717031,
+      "absolute_tolerance": 5.1e-05,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "main HE column 2",
+      "observed": 63.199,
+      "expected": 63.199040680570256,
+      "absolute_tolerance": 5.1e-05,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "main HE column 3",
+      "observed": 77.8918,
+      "expected": 77.89180317329637,
+      "absolute_tolerance": 5.1e-05,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "main HE column 4",
+      "observed": 53.1696,
+      "expected": 53.16963148252583,
+      "absolute_tolerance": 5.1e-05,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "main SE column 0",
+      "observed": 49.98,
+      "expected": 49.98,
+      "absolute_tolerance": 0.0051,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "main SE column 1",
+      "observed": 52.8789,
+      "expected": 52.87892595677142,
+      "absolute_tolerance": 5.1e-05,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "main SE column 2",
+      "observed": 69.1775,
+      "expected": 69.17752152670623,
+      "absolute_tolerance": 5.1e-05,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "main SE column 3",
+      "observed": 75.5879,
+      "expected": 75.58792059254334,
+      "absolute_tolerance": 5.1e-05,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "main SE column 4",
+      "observed": 63.7694,
+      "expected": 63.7694165652968,
+      "absolute_tolerance": 5.1e-05,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "main MA column 0",
+      "observed": 24.11,
+      "expected": 24.11,
+      "absolute_tolerance": 0.0051,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "main MA column 1",
+      "observed": 29.2435,
+      "expected": 29.243546560152616,
+      "absolute_tolerance": 5.1e-05,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "main MA column 2",
+      "observed": 45.2534,
+      "expected": 45.25339537404611,
+      "absolute_tolerance": 5.1e-05,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "main MA column 3",
+      "observed": 50.0459,
+      "expected": 50.04591075459427,
+      "absolute_tolerance": 5.1e-05,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "main MA column 4",
+      "observed": 41.2985,
+      "expected": 41.298548223296834,
+      "absolute_tolerance": 5.1e-05,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "main mIoU 0",
+      "observed": 42.2,
+      "expected": 42.2,
+      "absolute_tolerance": 5.1e-05,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "main mIoU 1",
+      "observed": 45.8604,
+      "expected": 45.86038383266797,
+      "absolute_tolerance": 5.1e-05,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "MA corrector Before column 0",
+      "observed": 24.7255,
+      "expected": 24.725471278821452,
+      "absolute_tolerance": 5.1e-05,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "MA corrector Before column 1",
+      "observed": 44.1092,
+      "expected": 44.10917224797107,
+      "absolute_tolerance": 5.1e-05,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "MA corrector Before column 2",
+      "observed": 36.0061,
+      "expected": 36.00606178601685,
+      "absolute_tolerance": 5.1e-05,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "MA corrector Before column 3",
+      "observed": 43.2289,
+      "expected": 43.228924245323746,
+      "absolute_tolerance": 5.1e-05,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "MA corrector After column 0",
+      "observed": 28.6558,
+      "expected": 28.65578854319127,
+      "absolute_tolerance": 5.1e-05,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "MA corrector After column 1",
+      "observed": 47.9141,
+      "expected": 47.914079584209155,
+      "absolute_tolerance": 5.1e-05,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "MA corrector After column 2",
+      "observed": 41.6211,
+      "expected": 41.62110680214478,
+      "absolute_tolerance": 5.1e-05,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "MA corrector After column 3",
+      "observed": 44.2115,
+      "expected": 44.2115035614162,
+      "absolute_tolerance": 5.1e-05,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "spatial Continued training column 0",
+      "observed": 41.0244,
+      "expected": 41.024372006303366,
+      "absolute_tolerance": 5.1e-05,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "spatial Continued training column 1",
+      "observed": 45.1762,
+      "expected": 45.17624314491778,
+      "absolute_tolerance": 5.1e-05,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "spatial Continued training column 2",
+      "observed": 41.1071,
+      "expected": 41.10705519331004,
+      "absolute_tolerance": 5.1e-05,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "spatial Continued training column 3",
+      "observed": 45.1949,
+      "expected": 45.1948960723997,
+      "absolute_tolerance": 5.1e-05,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "spatial Spatial adaptation column 0",
+      "observed": 42.2703,
+      "expected": 42.27032190489858,
+      "absolute_tolerance": 5.1e-05,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "spatial Spatial adaptation column 1",
+      "observed": 45.3218,
+      "expected": 45.321831227388415,
+      "absolute_tolerance": 5.1e-05,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "spatial Spatial adaptation column 2",
+      "observed": 42.1521,
+      "expected": 42.15211473497643,
+      "absolute_tolerance": 5.1e-05,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "spatial Spatial adaptation column 3",
+      "observed": 45.2922,
+      "expected": 45.29224690532848,
+      "absolute_tolerance": 5.1e-05,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "training Image-detail expert col1",
+      "observed": 2.0,
+      "expected": 2,
+      "absolute_tolerance": 0,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "training Image-detail expert col3",
+      "observed": 40000.0,
+      "expected": 40000,
+      "absolute_tolerance": 0,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "training Image-detail expert col4",
+      "observed": 36000.0,
+      "expected": 36000,
+      "absolute_tolerance": 0,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "training Image-detail expert LR0",
+      "observed": 0.005,
+      "expected": 0.005,
+      "absolute_tolerance": 1e-14,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "training Refined detail reference col1",
+      "observed": 2.0,
+      "expected": 2,
+      "absolute_tolerance": 0,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "training Refined detail reference col3",
+      "observed": 8000.0,
+      "expected": 8000,
+      "absolute_tolerance": 0,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "training Refined detail reference col4",
+      "observed": 3000.0,
+      "expected": 3000,
+      "absolute_tolerance": 0,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "training Refined detail reference LR0",
+      "observed": 0.0005,
+      "expected": 0.0005,
+      "absolute_tolerance": 1e-14,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "training Local student col1",
+      "observed": 2.0,
+      "expected": 2,
+      "absolute_tolerance": 0,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "training Local student col3",
+      "observed": 20000.0,
+      "expected": 20000,
+      "absolute_tolerance": 0,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "training Local student col4",
+      "observed": 2000.0,
+      "expected": 2000,
+      "absolute_tolerance": 0,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "training Local student LR0",
+      "observed": 0.0005,
+      "expected": 0.0005,
+      "absolute_tolerance": 1e-14,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "training Semantic MA residual col1",
+      "observed": 2.0,
+      "expected": 2,
+      "absolute_tolerance": 0,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "training Semantic MA residual col3",
+      "observed": 6000.0,
+      "expected": 6000,
+      "absolute_tolerance": 0,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "training Semantic MA residual col4",
+      "observed": 1500.0,
+      "expected": 1500,
+      "absolute_tolerance": 0,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "training Semantic MA residual LR0",
+      "observed": 0.01,
+      "expected": 0.01,
+      "absolute_tolerance": 1e-14,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "training MA post-correction col1",
+      "observed": 1.0,
+      "expected": 1,
+      "absolute_tolerance": 0,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "training MA post-correction col3",
+      "observed": 2000.0,
+      "expected": 2000,
+      "absolute_tolerance": 0,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "training MA post-correction col4",
+      "observed": 1600.0,
+      "expected": 1600,
+      "absolute_tolerance": 0,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "training MA post-correction LR0",
+      "observed": 0.001,
+      "expected": 0.001,
+      "absolute_tolerance": 1e-14,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "training ConvNeXt-S / U-Net col1",
+      "observed": 8.0,
+      "expected": 8,
+      "absolute_tolerance": 0,
+      "pass": true,
+      "note": "ConvNeXt batch reflects archived configuration, not recovered immutable original config identity"
+    },
+    {
+      "check": "training ConvNeXt-S / U-Net col3",
+      "observed": 12000.0,
+      "expected": 12000,
+      "absolute_tolerance": 0,
+      "pass": true,
+      "note": "ConvNeXt batch reflects archived configuration, not recovered immutable original config identity"
+    },
+    {
+      "check": "training ConvNeXt-S / U-Net col4",
+      "observed": 12000.0,
+      "expected": 12000,
+      "absolute_tolerance": 0,
+      "pass": true,
+      "note": "ConvNeXt batch reflects archived configuration, not recovered immutable original config identity"
+    },
+    {
+      "check": "training ConvNeXt-S / U-Net LR0",
+      "observed": 0.0001,
+      "expected": 0.0001,
+      "absolute_tolerance": 1e-14,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "training ConvNeXt-S / U-Net LR1",
+      "observed": 0.00030000000000000003,
+      "expected": 0.0003,
+      "absolute_tolerance": 1e-14,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "training DINO partial fine-tuning col1",
+      "observed": 8.0,
+      "expected": 8,
+      "absolute_tolerance": 0,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "training DINO partial fine-tuning col3",
+      "observed": 24000.0,
+      "expected": 24000,
+      "absolute_tolerance": 0,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "training DINO partial fine-tuning col4",
+      "observed": 16000.0,
+      "expected": 16000,
+      "absolute_tolerance": 0,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "training DINO partial fine-tuning LR0",
+      "observed": 4.9999999999999996e-06,
+      "expected": 5e-06,
+      "absolute_tolerance": 1e-14,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "training DINO partial fine-tuning LR1",
+      "observed": 0.00030000000000000003,
+      "expected": 0.0003,
+      "absolute_tolerance": 1e-14,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "training DINO full fine-tuning col1",
+      "observed": 8.0,
+      "expected": 8,
+      "absolute_tolerance": 0,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "training DINO full fine-tuning col3",
+      "observed": 12000.0,
+      "expected": 12000,
+      "absolute_tolerance": 0,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "training DINO full fine-tuning col4",
+      "observed": 12000.0,
+      "expected": 12000,
+      "absolute_tolerance": 0,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "training DINO full fine-tuning LR0",
+      "observed": 1e-05,
+      "expected": 1e-05,
+      "absolute_tolerance": 1e-14,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "training DINO full fine-tuning LR1",
+      "observed": 5e-05,
+      "expected": 5e-05,
+      "absolute_tolerance": 1e-14,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "training Spatial DINO adaptation col1",
+      "observed": 8.0,
+      "expected": 8,
+      "absolute_tolerance": 0,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "training Spatial DINO adaptation col3",
+      "observed": 32000.0,
+      "expected": 32000,
+      "absolute_tolerance": 0,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "training Spatial DINO adaptation col4",
+      "observed": 20000.0,
+      "expected": 20000,
+      "absolute_tolerance": 0,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "training Spatial DINO adaptation LR0",
+      "observed": 1e-05,
+      "expected": 1e-05,
+      "absolute_tolerance": 1e-14,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "training Spatial DINO adaptation LR1",
+      "observed": 5e-05,
+      "expected": 5e-05,
+      "absolute_tolerance": 1e-14,
+      "pass": true,
+      "note": ""
+    },
+    {
+      "check": "training Spatial DINO adaptation LR2",
+      "observed": 0.0001,
+      "expected": 0.0001,
+      "absolute_tolerance": 1e-14,
+      "pass": true,
+      "note": ""
+    }
+  ],
+  "all_pass": true,
+  "no_training_or_model_execution": true,
+  "known_boundaries": [
+    "Rounded historical baseline; no reconstructed baseline precision/recall/Dice.",
+    "Selected20k is inside32k schedule; one seed.",
+    "ConvNeXt micro4/effective8 is an archived configuration declaration; checkpoint confirms2 microsteps per update, not standalone actual microbatch value.",
+    "No statistical uncertainty or lesion sensitivity inferred from selected crops.",
+    "Saved correction head seed unconfirmed."
+  ],
+  "source_input_sha256": {
+    "evidence/locked_test_source.json": "8ebb5d1f4836598a8a3615e5ba7a82e9b972dff380a3504afafd53ad8df05f5b",
+    "evidence/ma_correction_source.json": "c7b28928aa3e502d8a710c29612acb868f6a71068bd89e93654c22ffbed959f2",
+    "evidence/validation_source.json": "dbd1dea13e5e1f9e0d4cc787a0c9571b7862e6d207cd5a854cb2ca952533df12",
+    "evidence/historical_baseline_source.json": "485ecb0e98412305172b07b29bfe8d221fc4f767d621c4407ee8aa6938a97a34",
+    "evidence/revision2_training_numeric_sources.json": "0ad51719edead113df7ec71b4f09c4e42d7bb086e379ee5819257f90d1d55a8c",
+    "evidence/revision2_qualitative_provenance.json": "1b02afb9664d9446323d7806bb61c71a99789977a4efb46cab4c4e4da26bd728",
+    "numeric_evidence.json": "d906f939570bd58f5df07c8d4b6a21d729135372cd9d2345e2a13fe8edc8b4cb",
+    "evidence/revision2_result_statistics.json": "412f1d4b9362ce21f267deb4c0cc90122cf56fc1794004c22f6421fdcf22d6d7",
+    "evidence/frozen_partner_source.json": "49dc7e3ebae34f637c8a07ccfb70f0bd5e6bc071782ea07a3befd7ab01a9a879"
+  },
+  "audit_script_sha256": "f13f333f7c645bc0d1278dc0229b4a95579256549f2f160cc9eb1e7f7c635f00",
+  "final_figure_only_update": "Main TeX differs from numerically audited text only by overview image filename revision2 to revision3; comparison verified by byte SHA256 after reversing that exact replacement. All numerical text unchanged."
+}

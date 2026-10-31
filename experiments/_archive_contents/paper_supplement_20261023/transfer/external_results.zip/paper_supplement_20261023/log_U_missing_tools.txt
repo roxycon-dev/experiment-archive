@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "paper_supplement_20261023/scripts/remote_cache_branch.py", line 108, in <module>
+    if __name__=='__main__':main()
+  File "paper_supplement_20261023/scripts/remote_cache_branch.py", line 63, in main
+    from trainer.eval import pad_normalized_image
+  File "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Ready_20261002/trainer/eval.py", line 28, in <module>
+    from .data.common import PAD_DIVISOR, crop_logits_to_orig, normalize_image
+  File "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Ready_20261002/trainer/data/__init__.py", line 5, in <module>
+    from .common import (  # noqa: F401
+  File "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Ready_20261002/trainer/data/common.py", line 41, in <module>
+    _cc = load_contract_common()
+  File "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Ready_20261002/trainer/data/common.py", line 30, in load_contract_common
+    raise GateError(f"找不到 tools 目录（contract_common 权威定义所在）: {tools_dir}")
+trainer.gate.GateError: 找不到 tools 目录（contract_common 权威定义所在）: /root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Ready_20261002/tools

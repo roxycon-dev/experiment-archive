@@ -1,0 +1,301 @@
+{
+  "stage": "ORIGINAL_BASELINE_SOURCE_AUDIT",
+  "generated_at": "2026-10-05T17:09:37.886215+00:00",
+  "experiment_name": "hrdecoder_fcn_hr48_ddr_2048_split613_baseline",
+  "seed": 42,
+  "code_version": "0.16.0+cfc6c88",
+  "reported_split_sizes": {
+    "train": 454,
+    "val": 76,
+    "test": 227
+  },
+  "source_files": [
+    {
+      "path": "D:\\dataset\\lesion_segmentation\\实验日志_json\\01_板块一_baseline.json",
+      "sha256": "70b5c9faddcdcf894e316ca5194b286f6f4082cd4bc70df166d4b1d826e9ada0",
+      "bytes": 85411
+    },
+    {
+      "path": "D:\\dataset\\lesion_segmentation\\01_板块一_划分统计报告_baseline_report.md",
+      "sha256": "7d6fc7eecb01900bc52f5943e2bbecb570bbea3cb46087157d10d7c60287b61d",
+      "bytes": 3670
+    },
+    {
+      "path": "D:\\dataset\\lesion_segmentation\\01_板块一_baseline实验配置.py",
+      "sha256": "553654f1879c6558fa0363794be011a67b9935728350df93465b611f50acb9a8",
+      "bytes": 1829
+    },
+    {
+      "path": "D:\\dataset\\lesion_segmentation\\01_板块一_数据集划分脚本_ddr_split.py",
+      "sha256": "bb178837880143a1c324d41230aaead14ce5db5ca49ccdd6ee93de4e43f56d73",
+      "bytes": 14657
+    }
+  ],
+  "expanded_training_configuration_from_original_log": "norm_cfg = dict(type='SyncBN', requires_grad=True)\nmodel = dict(\n    type='HRDecoder',\n    use_sigmoid=True,\n    pretrained='open-mmlab://msra/hrnetv2_w48',\n    backbone=dict(\n        type='HRNet',\n        norm_cfg=dict(type='BN', requires_grad=True),\n        norm_eval=False,\n        extra=dict(\n            stage1=dict(\n                num_modules=1,\n                num_branches=1,\n                block='BOTTLENECK',\n                num_blocks=(4, ),\n                num_channels=(64, )),\n            stage2=dict(\n                num_modules=1,\n                num_branches=2,\n                block='BASIC',\n                num_blocks=(4, 4),\n                num_channels=(48, 96)),\n            stage3=dict(\n                num_modules=4,\n                num_branches=3,\n                block='BASIC',\n                num_blocks=(4, 4, 4),\n                num_channels=(48, 96, 192)),\n            stage4=dict(\n                num_modules=3,\n                num_branches=4,\n                block='BASIC',\n                num_blocks=(4, 4, 4, 4),\n                num_channels=(48, 96, 192, 384))),\n        pretrained='open-mmlab://msra/hrnetv2_w48'),\n    hr_settings=dict(\n        hr_scale=(1024, 1024),\n        divisible=8,\n        lr_loss_weight=0,\n        hr_loss_weight=0.1,\n        fuse_mode='simple'),\n    decode_head=dict(\n        type='FCNHead',\n        in_channels=720,\n        in_index=0,\n        channels=64,\n        kernel_size=7,\n        num_convs=1,\n        compress=True,\n        concat_input=False,\n        dropout_ratio=-1,\n        num_classes=4,\n        norm_cfg=dict(type='BN', requires_grad=True),\n        align_corners=False,\n        loss_decode=dict(\n            type='BinaryLoss', loss_type='dice', loss_weight=1.0,\n            smooth=1e-05)),\n    train_cfg=dict(\n        work_dir='./work_dirs/hrdecoder_fcn_hr48_ddr_2048_split613_baseline'),\n    test_cfg=dict(mode='whole', compute_aupr=True))\ndataset_type = 'LesionDataset'\ndata_root = './data/DDR'\nimg_norm_cfg = dict(\n    mean=[81.205, 50.636, 21.216], std=[76.252, 48.798, 21.625], to_rgb=True)\nimage_scale = (2048, 2048)\ncrop_size = (2048, 2048)\npalette = [[0, 0, 0], [128, 0, 0], [0, 128, 0], [128, 128, 0], [0, 0, 128]]\nclasses = ['bg', 'EX', 'HE', 'SE', 'MA']\ntrain_pipeline = [\n    dict(type='LoadImageFromFile'),\n    dict(type='LoadAnnotations'),\n    dict(type='Resize', img_scale=(2048, 2048), ratio_range=(0.5, 2.0)),\n    dict(type='RandomCrop', crop_size=(2048, 2048), cat_max_ratio=0.75),\n    dict(type='RandomFlip', flip_ratio=0.5),\n    dict(\n        type='RandomRotate',\n        prob=1.0,\n        pad_val=0,\n        seg_pad_val=0,\n        degree=(-45, 45),\n        auto_bound=False),\n    dict(\n        type='Normalize',\n        mean=[81.205, 50.636, 21.216],\n        std=[76.252, 48.798, 21.625],\n        to_rgb=True),\n    dict(type='Pad', size=(2048, 2048), pad_val=0, seg_pad_val=0),\n    dict(type='DefaultFormatBundle'),\n    dict(type='Collect', keys=['img', 'gt_semantic_seg'])\n]\ntest_pipeline = [\n    dict(type='LoadImageFromFile'),\n    dict(\n        type='MultiScaleFlipAug',\n        img_scale=(2048, 2048),\n        flip=False,\n        transforms=[\n            dict(type='Resize', keep_ratio=False),\n            dict(\n                type='Normalize',\n                mean=[81.205, 50.636, 21.216],\n                std=[76.252, 48.798, 21.625],\n                to_rgb=True),\n            dict(type='ImageToTensor', keys=['img']),\n            dict(type='Collect', keys=['img'])\n        ])\n]\ndata = dict(\n    samples_per_gpu=2,\n    workers_per_gpu=2,\n    train=dict(\n        img_dir='images/train',\n        ann_dir='labels/train',\n        data_root='./data/DDR_split_613',\n        classes=['bg', 'EX', 'HE', 'SE', 'MA'],\n        palette=[[0, 0, 0], [128, 0, 0], [0, 128, 0], [128, 128, 0],\n                 [0, 0, 128]],\n        type='LesionDataset',\n        pipeline=[\n            dict(type='LoadImageFromFile'),\n            dict(type='LoadAnnotations'),\n            dict(\n                type='Resize', img_scale=(2048, 2048), ratio_range=(0.5, 2.0)),\n            dict(\n                type='RandomCrop', crop_size=(2048, 2048), cat_max_ratio=0.75),\n            dict(type='RandomFlip', flip_ratio=0.5),\n            dict(\n                type='RandomRotate',\n                prob=1.0,\n                pad_val=0,\n                seg_pad_val=0,\n                degree=(-45, 45),\n                auto_bound=False),\n            dict(\n                type='Normalize',\n                mean=[81.205, 50.636, 21.216],\n                std=[76.252, 48.798, 21.625],\n                to_rgb=True),\n            dict(type='Pad', size=(2048, 2048), pad_val=0, seg_pad_val=0),\n            dict(type='DefaultFormatBundle'),\n            dict(type='Collect', keys=['img', 'gt_semantic_seg'])\n        ]),\n    val=dict(\n        img_dir='images/val',\n        ann_dir='labels/val',\n        data_root='./data/DDR_split_613',\n        classes=['bg', 'EX', 'HE', 'SE', 'MA'],\n        palette=[[0, 0, 0], [128, 0, 0], [0, 128, 0], [128, 128, 0],\n                 [0, 0, 128]],\n        type='LesionDataset',\n        pipeline=[\n            dict(type='LoadImageFromFile'),\n            dict(\n                type='MultiScaleFlipAug',\n                img_scale=(2048, 2048),\n                flip=False,\n                transforms=[\n                    dict(type='Resize', keep_ratio=False),\n                    dict(\n                        type='Normalize',\n                        mean=[81.205, 50.636, 21.216],\n                        std=[76.252, 48.798, 21.625],\n                        to_rgb=True),\n                    dict(type='ImageToTensor', keys=['img']),\n                    dict(type='Collect', keys=['img'])\n                ])\n        ]),\n    test=dict(\n        img_dir='images/test',\n        ann_dir='labels/test',\n        data_root='./data/DDR_split_613',\n        classes=['bg', 'EX', 'HE', 'SE', 'MA'],\n        palette=[[0, 0, 0], [128, 0, 0], [0, 128, 0], [128, 128, 0],\n                 [0, 0, 128]],\n        type='LesionDataset',\n        pipeline=[\n            dict(type='LoadImageFromFile'),\n            dict(\n                type='MultiScaleFlipAug',\n                img_scale=(2048, 2048),\n                flip=False,\n                transforms=[\n                    dict(type='Resize', keep_ratio=False),\n                    dict(\n                        type='Normalize',\n                        mean=[81.205, 50.636, 21.216],\n                        std=[76.252, 48.798, 21.625],\n                        to_rgb=True),\n                    dict(type='ImageToTensor', keys=['img']),\n                    dict(type='Collect', keys=['img'])\n                ])\n        ]))\nlog_config = dict(\n    interval=100, hooks=[dict(type='TextLoggerHook', by_epoch=False)])\ndist_params = dict(backend='nccl')\nlog_level = 'INFO'\nload_from = None\nresume_from = None\nworkflow = [('train', 1)]\ncudnn_benchmark = True\noptimizer = dict(type='SGD', lr=0.005, momentum=0.9, weight_decay=0.0005)\noptimizer_config = dict()\nlr_config = dict(\n    policy='poly',\n    warmup='linear',\n    warmup_iters=1500,\n    warmup_ratio=1e-06,\n    power=1.0,\n    min_lr=0.0,\n    by_epoch=False)\nseed = 42\nrunner = dict(type='IterBasedRunner', max_iters=40000)\ncheckpoint_config = dict(by_epoch=False, interval=1000, max_keep_ckpts=1)\nevaluation = dict(\n    interval=4000, metric='mIoU', priority='LOW', save_best='mIoU')\nwork_dir = './work_dirs/hrdecoder_fcn_hr48_ddr_2048_split613_baseline'\ngpu_ids = range(0, 1)\n",
+  "validation_curve": [
+    {
+      "completed_training_updates": 4000,
+      "n_images": 76,
+      "miou_pct": 21.557000000000002,
+      "source_line": 42,
+      "saved_record": {
+        "mode": "val",
+        "epoch": 18,
+        "iter": 76,
+        "lr": 0.0045,
+        "mIoU": 0.21557,
+        "mF1": 0.31992,
+        "mPPV": 0.30573,
+        "mS": 0.5369,
+        "mAUPR": 0.29924,
+        "mMAE": 0.18823
+      }
+    },
+    {
+      "completed_training_updates": 8000,
+      "n_images": 76,
+      "miou_pct": 32.132,
+      "source_line": 83,
+      "saved_record": {
+        "mode": "val",
+        "epoch": 36,
+        "iter": 76,
+        "lr": 0.004,
+        "mIoU": 0.32132,
+        "mF1": 0.45288,
+        "mPPV": 0.46283,
+        "mS": 0.50678,
+        "mAUPR": 0.46903,
+        "mMAE": 0.0448
+      }
+    },
+    {
+      "completed_training_updates": 12000,
+      "n_images": 76,
+      "miou_pct": 34.479,
+      "source_line": 124,
+      "saved_record": {
+        "mode": "val",
+        "epoch": 53,
+        "iter": 76,
+        "lr": 0.0035,
+        "mIoU": 0.34479,
+        "mF1": 0.50412,
+        "mPPV": 0.50448,
+        "mS": 0.51502,
+        "mAUPR": 0.5003,
+        "mMAE": 0.00218
+      }
+    },
+    {
+      "completed_training_updates": 16000,
+      "n_images": 76,
+      "miou_pct": 38.348,
+      "source_line": 165,
+      "saved_record": {
+        "mode": "val",
+        "epoch": 71,
+        "iter": 76,
+        "lr": 0.003,
+        "mIoU": 0.38348,
+        "mF1": 0.54362,
+        "mPPV": 0.62056,
+        "mS": 0.48711,
+        "mAUPR": 0.56366,
+        "mMAE": 0.0018
+      }
+    },
+    {
+      "completed_training_updates": 20000,
+      "n_images": 76,
+      "miou_pct": 32.523,
+      "source_line": 206,
+      "saved_record": {
+        "mode": "val",
+        "epoch": 89,
+        "iter": 76,
+        "lr": 0.0025,
+        "mIoU": 0.32523,
+        "mF1": 0.47775,
+        "mPPV": 0.48482,
+        "mS": 0.50052,
+        "mAUPR": 0.48179,
+        "mMAE": 0.00263
+      }
+    },
+    {
+      "completed_training_updates": 24000,
+      "n_images": 76,
+      "miou_pct": 36.192,
+      "source_line": 247,
+      "saved_record": {
+        "mode": "val",
+        "epoch": 106,
+        "iter": 76,
+        "lr": 0.002,
+        "mIoU": 0.36192,
+        "mF1": 0.52344,
+        "mPPV": 0.56199,
+        "mS": 0.49111,
+        "mAUPR": 0.53322,
+        "mMAE": 0.00207
+      }
+    },
+    {
+      "completed_training_updates": 28000,
+      "n_images": 76,
+      "miou_pct": 37.228,
+      "source_line": 288,
+      "saved_record": {
+        "mode": "val",
+        "epoch": 124,
+        "iter": 76,
+        "lr": 0.0015,
+        "mIoU": 0.37228,
+        "mF1": 0.53445,
+        "mPPV": 0.59417,
+        "mS": 0.49323,
+        "mAUPR": 0.55473,
+        "mMAE": 0.00189
+      }
+    },
+    {
+      "completed_training_updates": 32000,
+      "n_images": 76,
+      "miou_pct": 39.39,
+      "source_line": 329,
+      "saved_record": {
+        "mode": "val",
+        "epoch": 141,
+        "iter": 76,
+        "lr": 0.001,
+        "mIoU": 0.3939,
+        "mF1": 0.55428,
+        "mPPV": 0.62107,
+        "mS": 0.50201,
+        "mAUPR": 0.57099,
+        "mMAE": 0.00177
+      }
+    },
+    {
+      "completed_training_updates": 36000,
+      "n_images": 76,
+      "miou_pct": 38.727000000000004,
+      "source_line": 370,
+      "saved_record": {
+        "mode": "val",
+        "epoch": 159,
+        "iter": 76,
+        "lr": 0.0005,
+        "mIoU": 0.38727,
+        "mF1": 0.54843,
+        "mPPV": 0.62163,
+        "mS": 0.49217,
+        "mAUPR": 0.56872,
+        "mMAE": 0.00179
+      }
+    },
+    {
+      "completed_training_updates": 40000,
+      "n_images": 76,
+      "miou_pct": 38.834999999999994,
+      "source_line": 411,
+      "saved_record": {
+        "mode": "val",
+        "epoch": 177,
+        "iter": 76,
+        "lr": 0.0,
+        "mIoU": 0.38835,
+        "mF1": 0.54954,
+        "mPPV": 0.60785,
+        "mS": 0.5026,
+        "mAUPR": 0.56722,
+        "mMAE": 0.00186
+      }
+    }
+  ],
+  "best_validation": {
+    "completed_training_updates": 32000,
+    "n_images": 76,
+    "miou_pct": 39.39,
+    "source_line": 329,
+    "saved_record": {
+      "mode": "val",
+      "epoch": 141,
+      "iter": 76,
+      "lr": 0.001,
+      "mIoU": 0.3939,
+      "mF1": 0.55428,
+      "mPPV": 0.62107,
+      "mS": 0.50201,
+      "mAUPR": 0.57099,
+      "mMAE": 0.00177
+    }
+  },
+  "historical_test": {
+    "n_images_reported": 227,
+    "miou_pct_reported": 42.2,
+    "per_class_iou_pct_reported": {
+      "EX": 51.56,
+      "HE": 43.13,
+      "SE": 49.98,
+      "MA": 24.11
+    },
+    "inference_reported": "No TTA; validation-selected best_mIoU_iter_32000.pth",
+    "source": {
+      "path": "D:\\dataset\\lesion_segmentation\\01_板块一_划分统计报告_baseline_report.md",
+      "sha256": "7d6fc7eecb01900bc52f5943e2bbecb570bbea3cb46087157d10d7c60287b61d",
+      "bytes": 3670
+    },
+    "precision": "Historical document values rounded to two decimals; use approximate baseline differences, not fabricated extra digits.",
+    "per_image_counts_found_in_this_audit": false
+  },
+  "baseline_checkpoint_found_in_this_audit": false,
+  "split_identity_and_evaluation_code_match_to_current": {
+    "documented_baseline_root": "./data/DDR_split_613",
+    "same_custom_613_split_documented_in_original_config_and_report": true,
+    "current_assignment_matches_frozen_campaign_assignment_exactly": true,
+    "assignment_sha256": "79181851e8026125bf900b6d1129ca7946b6cda56dfdb5708b27364b1173ea9f",
+    "verified_samples": [
+      {
+        "split": "train",
+        "n_images": 454,
+        "identities_match_assignment": true,
+        "all_image_and_label_SHAs_match": true
+      },
+      {
+        "split": "val",
+        "n_images": 76,
+        "identities_match_assignment": true,
+        "all_image_and_label_SHAs_match": true
+      },
+      {
+        "split": "test",
+        "n_images": 227,
+        "identities_match_assignment": true,
+        "all_image_and_label_SHAs_match": true
+      }
+    ],
+    "native_labels_contain_only_0_1_2_3_4": true,
+    "native_ignore_255_pixels": 0,
+    "metric_structure": "Both saved legacy lesion evaluator and current code use sigmoid strict >.5, original-image labels, global per-class pixel counts and macro mean of EX/HE/SE/MA; background excluded.",
+    "legacy_ignore_argument_not_applied_but_current_native_GT_has_zero_ignore_pixels": true,
+    "historical_baseline_immutable_sample_SHA_snapshot_found": false,
+    "comparison_grade": "Same named fixed split and documented metric. Current data identity audited bytewise; baseline test is a rounded historical report, not a newly reproduced baseline."
+  },
+  "no_baseline_retraining_or_reinference": true,
+  "metric_source_files": [
+    {
+      "path": "D:\\HRDecoder\\mmseg\\core\\evaluation\\lesion_metric.py",
+      "sha256": "2d8ff78ec6ffd4a2659f571c53a4206c2c97987c409c7ba2e6603a6d77ea72ab"
+    },
+    {
+      "path": "D:\\HRDecoder\\mmseg\\datasets\\lesion_dataset.py",
+      "sha256": "91eb4d8275d7b0f696d17c288bf92a58b9a4c6c14c1d982c819abb7acd0f6ed6"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\execution\\qlib\\metrics.py",
+      "sha256": "141a30a9cda67f52783dce6bcc284fb3dc1a4eb98a87de7693e50b2e628149de"
+    }
+  ]
+}

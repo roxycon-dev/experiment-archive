@@ -1,0 +1,48 @@
+{
+  "sid": "IDRiD_63",
+  "cohort": "idrid",
+  "hw": [
+    3626,
+    3626
+  ],
+  "image_sha256": "53e902eea75246b2bfc85768c3d5fe0e3395aff370b0f69454828f77229cd017",
+  "label_sha256": null,
+  "external_GT_sha256": {
+    "EX": "ce13350b541615c1a082ba61055a1912e507179bbb096ee57c4ce88969d8ae9d",
+    "HE": "338739f9c7ba7d45c183b05bb60836bcfdb3a19d1668338bd2151d95f6ae16f0",
+    "SE": "e5b3ebf7e10602c26594c6d87374092ddc8eee6514ace1520019b83e05c5046c",
+    "MA": "65c04bc17803951cf32780ff73206909074e95c81742ddd56dfdec3f92b963fa"
+  },
+  "counts": {
+    "baseline": [
+      [
+        52704,
+        6305,
+        38367
+      ],
+      [
+        2169,
+        18173,
+        10177
+      ],
+      [
+        0,
+        2009,
+        0
+      ],
+      [
+        563,
+        927,
+        1575
+      ]
+    ]
+  },
+  "mask_sha256": "a2980833e7c2d3bc943acd5ebe5ddb12f8a7b45cbc38421d283d74fb0b752108",
+  "timing": {
+    "pipeline_to_native_binary_mask_seconds": 0.5518665810013772,
+    "GPU_peak_allocated_bytes": 2159913984,
+    "includes": "image read/transform,CPU-GPU transfer,forward,original-coordinate alignment,sigmoid,threshold,return to CPU",
+    "excludes": "model startup,ground-truth reading and evaluation,result persistence"
+  },
+  "warmup": false
+}

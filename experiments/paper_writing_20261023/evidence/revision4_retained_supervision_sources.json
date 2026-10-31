@@ -1,0 +1,179 @@
+{
+  "strongest_supported_statement": "The retained predictors are documented as DDR lesion-trained, with generic ImageNet/DINO pretraining; IDRiD training images were used by unretained exploratory branches.",
+  "boundary": "Does not establish every historical runtime input or imply that the overall research project never used IDRiD training54. External27 usage history remains user-confirmed; unknown patient identity and derived coordinate/GT limitations persist.",
+  "records": [
+    {
+      "role": "actual retained HR expert checkpoint-exported config",
+      "path": "D:\\dataset\\experiment\\paper_supplement_20261023\\evidence\\historical_hr_lineage_sources\\B_weights_checkpoint_config.txt",
+      "sha256": "134c6ea3d6a3e867bd2e4e5ce63966300a67e16c20d34141e6f6a2527908917d",
+      "evidence": [
+        {
+          "line": 128,
+          "text": "data_root='/root/autodl-tmp/hr100/data/DDR_split_613',"
+        },
+        {
+          "line": 160,
+          "text": "data_root='/root/autodl-tmp/hr100/data/DDR_split_613',"
+        },
+        {
+          "line": 185,
+          "text": "data_root='/root/autodl-tmp/hr100/data/DDR_split_613',"
+        },
+        {
+          "line": 211,
+          "text": "load_from = '/root/HRDecoder/work_dirs/exp_e4_detail_split613/best_mIoU_iter_36000.pth'"
+        },
+        {
+          "line": 212,
+          "text": "resume_from = None"
+        }
+      ],
+      "IDRiD_MAPLES_TJDR_named_in_config": false
+    },
+    {
+      "role": "actual retained HR expert checkpoint-exported config",
+      "path": "D:\\dataset\\experiment\\paper_supplement_20261023\\evidence\\historical_hr_lineage_sources\\D_student_2000_checkpoint_config.txt",
+      "sha256": "4e9da90ef43cc887c5259c03c91975d2d51e87cf15980dbad762fe18e06329f9",
+      "evidence": [
+        {
+          "line": 75,
+          "text": "source_checkpoint='weights/b_weights.pth',"
+        },
+        {
+          "line": 130,
+          "text": "data_root='./data/DDR_split_613',"
+        },
+        {
+          "line": 160,
+          "text": "data_root='./data/DDR_split_613',"
+        },
+        {
+          "line": 185,
+          "text": "data_root='./data/DDR_split_613',"
+        },
+        {
+          "line": 211,
+          "text": "load_from = None"
+        },
+        {
+          "line": 212,
+          "text": "resume_from = None"
+        }
+      ],
+      "IDRiD_MAPLES_TJDR_named_in_config": false
+    },
+    {
+      "role": "actual retained HR expert checkpoint-exported config",
+      "path": "D:\\dataset\\experiment\\paper_supplement_20261023\\evidence\\historical_hr_lineage_sources\\E4_weights_checkpoint_config.txt",
+      "sha256": "aa424a05a04b50ce80fe8859750303e15d599e422a7fd3048d2697f11ca87a43",
+      "evidence": [
+        {
+          "line": 125,
+          "text": "data_root='./data/DDR_split_613',"
+        },
+        {
+          "line": 157,
+          "text": "data_root='./data/DDR_split_613',"
+        },
+        {
+          "line": 182,
+          "text": "data_root='./data/DDR_split_613',"
+        },
+        {
+          "line": 208,
+          "text": "load_from = None"
+        },
+        {
+          "line": 209,
+          "text": "resume_from = None"
+        }
+      ],
+      "IDRiD_MAPLES_TJDR_named_in_config": false
+    },
+    {
+      "role": "actual retained HR expert checkpoint-exported config",
+      "path": "D:\\dataset\\experiment\\paper_supplement_20261023\\evidence\\historical_hr_lineage_sources\\E_1500_checkpoint_config.txt",
+      "sha256": "e3dca64738fec08390040cd16d90167bde011270a54f2348ed3216fe670d7f12",
+      "evidence": [
+        {
+          "line": 75,
+          "text": "source_checkpoint='weights/b_weights.pth',"
+        },
+        {
+          "line": 131,
+          "text": "data_root='./data/DDR_split_613',"
+        },
+        {
+          "line": 161,
+          "text": "data_root='./data/DDR_split_613',"
+        },
+        {
+          "line": 186,
+          "text": "data_root='./data/DDR_split_613',"
+        },
+        {
+          "line": 212,
+          "text": "load_from = None"
+        },
+        {
+          "line": 213,
+          "text": "resume_from = None"
+        }
+      ],
+      "IDRiD_MAPLES_TJDR_named_in_config": false
+    },
+    {
+      "role": "actual retained ConvNeXt checkpoint metadata",
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\reports\\U0_historical_checkpoint_metadata.json",
+      "sha256": "f7a8708cb0306902983073c8611b7d39e3cf481c7963dff41df8420bc63ac101",
+      "fields": {
+        "arm_id": "U0",
+        "family": "convnext_unet",
+        "stage": "ddr_finetune",
+        "update": 12000,
+        "config_sha256": "9fa1c0e3dc9eb39bbbd078e016406c19dbf7eb45aaec1aa08efefc28b2ab8159",
+        "data_manifest_sha256": "c1359e112f166ef290e3bf4b4943474f5aaa75d1897b01c7d3f15664d4fbd3d4",
+        "manifest_path": "/root/HRDecoder/data/DDR_split_613"
+      }
+    },
+    {
+      "role": "retained ConvNeXt archived configuration declaration",
+      "path": "D:\\dataset\\experiment\\HRDecoder_Next_20261003\\configs\\U0_historical_native_export.yaml",
+      "sha256": "cfc66cad69dd3a3bb52e740924d12bbb7958fa77bc50507f4dd127206d40154b",
+      "evidence": [
+        "role: DDR-only control for convnext_unet family",
+        "external_pretrain_checkpoint: null",
+        "ddr_root: /root/HRDecoder/data/DDR_split_613",
+        "ddr_train_split: train"
+      ],
+      "boundary": "Original complete training config SHA not matched; a declaration plus actual DDR-finetune metadata, not an independently recovered history of every runtime input."
+    },
+    {
+      "role": "retained MA correction training source",
+      "path": "D:\\dataset\\experiment\\HRDecoder_审查轮_20260916\\tools\\h4_post_fusion_corrector.py",
+      "sha256": "a4361c1ab10a7dc8f706416c5ffd5cbd298ce9b2302f708ad5971b19d2466fda",
+      "evidence": [
+        {
+          "line": 96,
+          "text": "from mmseg.datasets import build_dataset"
+        },
+        {
+          "line": 105,
+          "text": "dtr = copy.deepcopy(cfg.data[\"train\"]); dtr.test_mode = False"
+        },
+        {
+          "line": 106,
+          "text": "ds_tr = build_dataset(dtr)"
+        },
+        {
+          "line": 107,
+          "text": "dva = copy.deepcopy(cfg.data[\"val\"]); dva.test_mode = True"
+        },
+        {
+          "line": 108,
+          "text": "ds_va = build_dataset(dva)"
+        }
+      ]
+    }
+  ]
+}

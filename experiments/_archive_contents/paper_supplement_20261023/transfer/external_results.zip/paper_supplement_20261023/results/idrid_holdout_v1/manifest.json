@@ -1,0 +1,245 @@
+{
+  "run": "idrid_holdout_v1",
+  "mode": "external",
+  "execution_host": "remote",
+  "expected_images": 27,
+  "scope": "independent_heldout_subset",
+  "sample_ids": [
+    "IDRiD_55",
+    "IDRiD_56",
+    "IDRiD_57",
+    "IDRiD_58",
+    "IDRiD_59",
+    "IDRiD_60",
+    "IDRiD_61",
+    "IDRiD_62",
+    "IDRiD_63",
+    "IDRiD_64",
+    "IDRiD_65",
+    "IDRiD_66",
+    "IDRiD_67",
+    "IDRiD_68",
+    "IDRiD_69",
+    "IDRiD_70",
+    "IDRiD_71",
+    "IDRiD_72",
+    "IDRiD_73",
+    "IDRiD_74",
+    "IDRiD_75",
+    "IDRiD_76",
+    "IDRiD_77",
+    "IDRiD_78",
+    "IDRiD_79",
+    "IDRiD_80",
+    "IDRiD_81"
+  ],
+  "cohort_sha256": "9c6bf7ffa4ac0d6f35ccd06d19b6c61cc3d3701b87f29f679e53b2c237d2051e",
+  "source_client_holdout_manifest_sha256": "06e2eb05bbc242e942249fa9a7874322a63d51f7a6d4bd74a86a76c5a8acb4aa",
+  "threshold": 0.5,
+  "strict_greater": true,
+  "new_training": false,
+  "historical_exact_replay": false,
+  "runtime_amendment_sha256": "e11ffe8d549af2939486e5f241018f2373beaab35d2840964eec9cecd7523d81",
+  "script_sha256": "bc951d1e3b0ca29930dfc2b7c9fe99a5e224584c06d29e7642ff69152bce77ae",
+  "cache_manifests": {
+    "S": {
+      "arm": "S",
+      "weight_path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_ArchitectureDesign_20261008/cache_execution/inference_weights/S20_ema_inference.pth",
+      "weight_sha256": "80c0f0250341ea65b29c23476a135d4f6020b8089e84b868b4ba185c550ec104",
+      "script_sha256": "37c95afe4f3ab1391f617dbecab5f957be612bc68cdcf95cdb235bb2559f32b0",
+      "remote_amendment_sha256": "e11ffe8d549af2939486e5f241018f2373beaab35d2840964eec9cecd7523d81",
+      "torch": "2.7.1+cu128",
+      "cuda": "12.8",
+      "GPU": "NVIDIA GeForce RTX 4080 SUPER",
+      "registered_parameters": 101288548,
+      "precision": "BF16 forward FP32 probabilities/reference sampling",
+      "external_sample_ids": [
+        "IDRiD_55",
+        "IDRiD_56",
+        "IDRiD_57",
+        "IDRiD_58",
+        "IDRiD_59",
+        "IDRiD_60",
+        "IDRiD_61",
+        "IDRiD_62",
+        "IDRiD_63",
+        "IDRiD_64",
+        "IDRiD_65",
+        "IDRiD_66",
+        "IDRiD_67",
+        "IDRiD_68",
+        "IDRiD_69",
+        "IDRiD_70",
+        "IDRiD_71",
+        "IDRiD_72",
+        "IDRiD_73",
+        "IDRiD_74",
+        "IDRiD_75",
+        "IDRiD_76",
+        "IDRiD_77",
+        "IDRiD_78",
+        "IDRiD_79",
+        "IDRiD_80",
+        "IDRiD_81"
+      ],
+      "threshold_tuning": false
+    },
+    "C": {
+      "arm": "C",
+      "weight_path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_ArchitectureDesign_20261008/cache_execution/inference_weights/C20_ema_inference.pth",
+      "weight_sha256": "2d98335dcbd97aaceaa075e2642ae19c025d7b0ba9898a1b0426c87090d3af5e",
+      "script_sha256": "37c95afe4f3ab1391f617dbecab5f957be612bc68cdcf95cdb235bb2559f32b0",
+      "remote_amendment_sha256": "e11ffe8d549af2939486e5f241018f2373beaab35d2840964eec9cecd7523d81",
+      "torch": "2.7.1+cu128",
+      "cuda": "12.8",
+      "GPU": "NVIDIA GeForce RTX 4080 SUPER",
+      "registered_parameters": 88263748,
+      "precision": "BF16 forward FP32 probabilities/reference sampling",
+      "external_sample_ids": [
+        "IDRiD_55",
+        "IDRiD_56",
+        "IDRiD_57",
+        "IDRiD_58",
+        "IDRiD_59",
+        "IDRiD_60",
+        "IDRiD_61",
+        "IDRiD_62",
+        "IDRiD_63",
+        "IDRiD_64",
+        "IDRiD_65",
+        "IDRiD_66",
+        "IDRiD_67",
+        "IDRiD_68",
+        "IDRiD_69",
+        "IDRiD_70",
+        "IDRiD_71",
+        "IDRiD_72",
+        "IDRiD_73",
+        "IDRiD_74",
+        "IDRiD_75",
+        "IDRiD_76",
+        "IDRiD_77",
+        "IDRiD_78",
+        "IDRiD_79",
+        "IDRiD_80",
+        "IDRiD_81"
+      ],
+      "threshold_tuning": false
+    },
+    "U": {
+      "arm": "U",
+      "weight_path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_ArchitectureDesign_20261008/cache_execution/inference_weights/U0_inference.pth",
+      "weight_sha256": "b37fc328bfbbe029d5bc83f781072254d95ff97f7f7b6559efb7f91d9b1c4e39",
+      "script_sha256": "37c95afe4f3ab1391f617dbecab5f957be612bc68cdcf95cdb235bb2559f32b0",
+      "remote_amendment_sha256": "e11ffe8d549af2939486e5f241018f2373beaab35d2840964eec9cecd7523d81",
+      "torch": "2.0.1+cu117",
+      "cuda": "11.7",
+      "GPU": "NVIDIA GeForce RTX 4080 SUPER",
+      "registered_parameters": 52985364,
+      "precision": "native-whole FP32",
+      "external_sample_ids": [
+        "IDRiD_55",
+        "IDRiD_56",
+        "IDRiD_57",
+        "IDRiD_58",
+        "IDRiD_59",
+        "IDRiD_60",
+        "IDRiD_61",
+        "IDRiD_62",
+        "IDRiD_63",
+        "IDRiD_64",
+        "IDRiD_65",
+        "IDRiD_66",
+        "IDRiD_67",
+        "IDRiD_68",
+        "IDRiD_69",
+        "IDRiD_70",
+        "IDRiD_71",
+        "IDRiD_72",
+        "IDRiD_73",
+        "IDRiD_74",
+        "IDRiD_75",
+        "IDRiD_76",
+        "IDRiD_77",
+        "IDRiD_78",
+        "IDRiD_79",
+        "IDRiD_80",
+        "IDRiD_81"
+      ],
+      "threshold_tuning": false
+    }
+  },
+  "exact_transport_receipt": {
+    "status": "PASS",
+    "archive_sha256": "64992291abf92fca13cacda721f02eddef0763e660179ac825c6f43848e0a0ce",
+    "files": [
+      {
+        "name": "B_weights.pth",
+        "source_file_sha256": "0b3cd72e740fc5c69242994c12cfd71a49ac892aff37d09c50bb9fb6931a8626",
+        "reconstructed_file_sha256": "fab727f5158ec9241c817a1f0cc028b49efb998b746273b010312514ae9f728f",
+        "state_tensors": 1877,
+        "all_original_tensor_bytes_verified": true
+      },
+      {
+        "name": "D_student_2000.pth",
+        "source_file_sha256": "5fe18717b62d8fc3ab4846a50c046588e2af05abbbfdb3a958f4794018b319ea",
+        "reconstructed_file_sha256": "497f2d38b81661c445d4512ba665a66c0909a08f99c5f6a3ff492305d3137c5e",
+        "state_tensors": 1877,
+        "all_original_tensor_bytes_verified": true
+      },
+      {
+        "name": "E4_weights.pth",
+        "source_file_sha256": "c5a3d0f0b990d2430e545146745bc809538bbe764979baf54f62b450785268e0",
+        "reconstructed_file_sha256": "1ffc8cbff02985e288c64fb13b1538c313c83b05de951dcdd8693ecad7026ab2",
+        "state_tensors": 1877,
+        "all_original_tensor_bytes_verified": true
+      },
+      {
+        "name": "E_1500.pth",
+        "source_file_sha256": "a18ff92b4da24d870554f17856983d4be042386cacbcaba0d4e13f3f248ed5e5",
+        "reconstructed_file_sha256": "ac59a6b8ba4d002fddcbfe4e791be250b14ed2e3686901035e11f7ac23d25eb5",
+        "state_tensors": 3774,
+        "all_original_tensor_bytes_verified": true
+      }
+    ]
+  },
+  "source_assets": {
+    "B_weights.pth": {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\best_pipeline\\weights\\B_weights.pth",
+      "sha256": "0b3cd72e740fc5c69242994c12cfd71a49ac892aff37d09c50bb9fb6931a8626"
+    },
+    "D_student_2000.pth": {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\best_pipeline\\weights\\D_student_2000.pth",
+      "sha256": "5fe18717b62d8fc3ab4846a50c046588e2af05abbbfdb3a958f4794018b319ea"
+    },
+    "E_1500.pth": {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\best_pipeline\\weights\\E_1500.pth",
+      "sha256": "a18ff92b4da24d870554f17856983d4be042386cacbcaba0d4e13f3f248ed5e5"
+    },
+    "E4_weights.pth": {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\best_pipeline\\weights\\E4_weights.pth",
+      "sha256": "c5a3d0f0b990d2430e545146745bc809538bbe764979baf54f62b450785268e0"
+    },
+    "H4_best.pth": {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\best_pipeline\\weights\\H4_best.pth",
+      "sha256": "14757e02de49f6f065d4ef82cb8b1c4ee8a6a7f3f66cb1867276993950f80c50"
+    },
+    "U0": {
+      "path": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\cache_execution\\inference_weights\\U0_inference.pth",
+      "sha256": "b37fc328bfbbe029d5bc83f781072254d95ff97f7f7b6559efb7f91d9b1c4e39"
+    },
+    "S20": {
+      "path": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\cache_execution\\inference_weights\\S20_ema_inference.pth",
+      "sha256": "80c0f0250341ea65b29c23476a135d4f6020b8089e84b868b4ba185c550ec104"
+    },
+    "C20": {
+      "path": "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\execution\\server_results\\runs\\C_seed42\\checkpoint_u20000.pth",
+      "sha256": "8a9e416ad2bee95fe3375bd5d767e9f5fa852f34ee5db2368ba9b7678f372f72"
+    }
+  },
+  "full_formula": ".75*(.75*A+.25*U)+.25*S",
+  "timing_scope": "A actual forward; U/S/C cache load and fusion; not full-system end-to-end latency",
+  "GT": "four independently valid masks in stored native coordinates, overlaps retained",
+  "legacy_torch": "2.0.1+cu117",
+  "GPU": "NVIDIA GeForce RTX 4080 SUPER"
+}

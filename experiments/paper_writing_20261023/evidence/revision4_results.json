@@ -1,0 +1,950 @@
+{
+  "evaluation_boundaries": {
+    "main_components": "Phase1 BF16/reference systems plus recovered original FP32 HRDecoder; same original image/GT coordinates; no equal-compute assertion",
+    "paired": "All six C/S endpoints uniformly re-evaluated FP32/reference; one fixed F12_seed42 parent;20k EMA inside32k schedule",
+    "external": "IDRiD-derived27 frozen cohort, user-confirmed use history, transformed square geometry; patient IDs unavailable"
+  },
+  "main": {
+    "ddr": [
+      {
+        "mIoU_pct": 42.19623779633788,
+        "EX_IoU_pct": 51.56060267683247,
+        "HE_IoU_pct": 43.12728820097811,
+        "SE_IoU_pct": 49.98760079696946,
+        "MA_IoU_pct": 24.109459510571504,
+        "MA_P_pct": 46.160475052501994,
+        "MA_R_pct": 33.541356429860606,
+        "global_counts": [
+          [
+            992753,
+            350469,
+            582188
+          ],
+          [
+            1572957,
+            593765,
+            1480521
+          ],
+          [
+            350742,
+            131140,
+            219776
+          ],
+          [
+            63743,
+            74347,
+            126300
+          ]
+        ],
+        "cohort": "ddr",
+        "model": "baseline"
+      },
+      {
+        "mIoU_pct": 45.86088631351918,
+        "EX_IoU_pct": 55.10779587009915,
+        "HE_IoU_pct": 46.20820873690813,
+        "SE_IoU_pct": 52.88237714511699,
+        "MA_IoU_pct": 29.245163501952486,
+        "MA_P_pct": 50.049100879989794,
+        "MA_R_pct": 41.299600616702534,
+        "global_counts": [
+          [
+            1084382,
+            392806,
+            490559
+          ],
+          [
+            1623762,
+            460534,
+            1429716
+          ],
+          [
+            363716,
+            117265,
+            206802
+          ],
+          [
+            78487,
+            78333,
+            111556
+          ]
+        ],
+        "cohort": "ddr",
+        "model": "full"
+      },
+      {
+        "mIoU_pct": 45.093134407312604,
+        "EX_IoU_pct": 55.10779587009915,
+        "HE_IoU_pct": 46.20820873690813,
+        "SE_IoU_pct": 52.88237714511699,
+        "MA_IoU_pct": 26.174155877126175,
+        "MA_P_pct": 47.39685093667394,
+        "MA_R_pct": 36.89059844351015,
+        "global_counts": [
+          [
+            1084382,
+            392806,
+            490559
+          ],
+          [
+            1623762,
+            460534,
+            1429716
+          ],
+          [
+            363716,
+            117265,
+            206802
+          ],
+          [
+            70108,
+            77809,
+            119935
+          ]
+        ],
+        "cohort": "ddr",
+        "model": "no_h4"
+      },
+      {
+        "mIoU_pct": 45.32153385393109,
+        "EX_IoU_pct": 54.77483902942338,
+        "HE_IoU_pct": 44.42797328092606,
+        "SE_IoU_pct": 52.88567027245183,
+        "MA_IoU_pct": 29.197652832923087,
+        "MA_P_pct": 50.15591515135961,
+        "MA_R_pct": 41.132796261898626,
+        "global_counts": [
+          [
+            1079789,
+            396382,
+            495152
+          ],
+          [
+            1564145,
+            467153,
+            1489333
+          ],
+          [
+            372148,
+            133166,
+            198370
+          ],
+          [
+            78170,
+            77684,
+            111873
+          ]
+        ],
+        "cohort": "ddr",
+        "model": "no_convnext"
+      },
+      {
+        "mIoU_pct": 45.7968590911655,
+        "EX_IoU_pct": 54.96632538651439,
+        "HE_IoU_pct": 46.25508590300652,
+        "SE_IoU_pct": 52.936949830985746,
+        "MA_IoU_pct": 29.02907524415535,
+        "MA_P_pct": 49.81789370103896,
+        "MA_R_pct": 41.025452134516925,
+        "global_counts": [
+          [
+            1080976,
+            391674,
+            493965
+          ],
+          [
+            1623529,
+            456469,
+            1429949
+          ],
+          [
+            363950,
+            116998,
+            206568
+          ],
+          [
+            77966,
+            78536,
+            112077
+          ]
+        ],
+        "cohort": "ddr",
+        "model": "matched_c20"
+      }
+    ],
+    "idrid": [
+      {
+        "mIoU_pct": 35.595664799894415,
+        "EX_IoU_pct": 50.54281995700749,
+        "HE_IoU_pct": 36.93576890407335,
+        "SE_IoU_pct": 37.45886979151371,
+        "MA_IoU_pct": 17.4452005469831,
+        "MA_P_pct": 57.470345195255234,
+        "MA_R_pct": 20.031217481789803,
+        "global_counts": [
+          [
+            2016657,
+            508022,
+            1465318
+          ],
+          [
+            1566296,
+            861361,
+            1812937
+          ],
+          [
+            267871,
+            131715,
+            315521
+          ],
+          [
+            64680,
+            47865,
+            258216
+          ]
+        ],
+        "cohort": "idrid",
+        "model": "baseline"
+      },
+      {
+        "mIoU_pct": 40.907333473596964,
+        "EX_IoU_pct": 57.80621610098492,
+        "HE_IoU_pct": 42.7989704929395,
+        "SE_IoU_pct": 41.32228098328001,
+        "MA_IoU_pct": 21.701866317183445,
+        "MA_P_pct": 65.4232721141289,
+        "MA_R_pct": 24.51346563599425,
+        "global_counts": [
+          [
+            2287270,
+            474814,
+            1194705
+          ],
+          [
+            1756180,
+            724090,
+            1623053
+          ],
+          [
+            289182,
+            116429,
+            294210
+          ],
+          [
+            79153,
+            41833,
+            243743
+          ]
+        ],
+        "cohort": "idrid",
+        "model": "full"
+      },
+      {
+        "mIoU_pct": 39.90297738523024,
+        "EX_IoU_pct": 57.80621610098492,
+        "HE_IoU_pct": 42.7989704929395,
+        "SE_IoU_pct": 41.32228098328001,
+        "MA_IoU_pct": 17.68444196371652,
+        "MA_P_pct": 67.50375826006079,
+        "MA_R_pct": 19.330062930479166,
+        "global_counts": [
+          [
+            2287270,
+            474814,
+            1194705
+          ],
+          [
+            1756180,
+            724090,
+            1623053
+          ],
+          [
+            289182,
+            116429,
+            294210
+          ],
+          [
+            62416,
+            30047,
+            260480
+          ]
+        ],
+        "cohort": "idrid",
+        "model": "no_h4"
+      },
+      {
+        "mIoU_pct": 41.212334354969414,
+        "EX_IoU_pct": 57.37587472557198,
+        "HE_IoU_pct": 43.16946721976539,
+        "SE_IoU_pct": 41.50202056127635,
+        "MA_IoU_pct": 22.801974913263944,
+        "MA_P_pct": 62.25381258060521,
+        "MA_R_pct": 26.460222486497198,
+        "global_counts": [
+          [
+            2286490,
+            503132,
+            1195485
+          ],
+          [
+            1795675,
+            780362,
+            1583558
+          ],
+          [
+            296390,
+            130766,
+            287002
+          ],
+          [
+            85439,
+            51804,
+            237457
+          ]
+        ],
+        "cohort": "idrid",
+        "model": "no_convnext"
+      },
+      {
+        "mIoU_pct": 40.287659779235064,
+        "EX_IoU_pct": 57.61186782766819,
+        "HE_IoU_pct": 41.28800218253107,
+        "SE_IoU_pct": 40.589458847161275,
+        "MA_IoU_pct": 21.66131025957973,
+        "MA_P_pct": 65.7084291570843,
+        "MA_R_pct": 24.422104950200684,
+        "global_counts": [
+          [
+            2270993,
+            459909,
+            1210982
+          ],
+          [
+            1684413,
+            700434,
+            1694820
+          ],
+          [
+            284511,
+            117556,
+            298881
+          ],
+          [
+            78858,
+            41154,
+            244038
+          ]
+        ],
+        "cohort": "idrid",
+        "model": "matched_c20"
+      }
+    ]
+  },
+  "paired_details": [
+    {
+      "seed": 42,
+      "cohort": "ddr",
+      "mode": "single",
+      "C_mIoU_pct": 40.845819595317565,
+      "S_mIoU_pct": 41.557428632770126,
+      "delta_pp": 0.7116090374525612,
+      "CI95_pp": [
+        0.001822621905834157,
+        1.4755118051260805
+      ],
+      "C_MA_IoU_pct": 20.868382420550997,
+      "S_MA_IoU_pct": 21.884350964706183
+    },
+    {
+      "seed": 42,
+      "cohort": "ddr",
+      "mode": "fixed_fusion",
+      "C_mIoU_pct": 45.7928379969905,
+      "S_mIoU_pct": 45.85801356832465,
+      "delta_pp": 0.06517557133415153,
+      "CI95_pp": [
+        -0.1950198555375431,
+        0.3267943116594069
+      ],
+      "C_MA_IoU_pct": 29.025654005925883,
+      "S_MA_IoU_pct": 29.24357541899441
+    },
+    {
+      "seed": 42,
+      "cohort": "idrid",
+      "mode": "single",
+      "C_mIoU_pct": 32.17030424702091,
+      "S_mIoU_pct": 34.05680476034661,
+      "delta_pp": 1.8865005133257,
+      "CI95_pp": [
+        -0.030671392015513974,
+        3.4675863822838133
+      ],
+      "C_MA_IoU_pct": 15.299272509771738,
+      "S_MA_IoU_pct": 15.475509341028385
+    },
+    {
+      "seed": 42,
+      "cohort": "idrid",
+      "mode": "fixed_fusion",
+      "C_mIoU_pct": 40.35095458388567,
+      "S_mIoU_pct": 40.927263301264894,
+      "delta_pp": 0.5763087173792272,
+      "CI95_pp": [
+        0.012563487355796888,
+        1.0020228804998743
+      ],
+      "C_MA_IoU_pct": 21.69232375175809,
+      "S_MA_IoU_pct": 21.732467803040688
+    },
+    {
+      "seed": 2024,
+      "cohort": "ddr",
+      "mode": "single",
+      "C_mIoU_pct": 39.74775969680219,
+      "S_mIoU_pct": 41.66757180606694,
+      "delta_pp": 1.9198121092647469,
+      "CI95_pp": [
+        1.009593723318169,
+        2.8507159320655258
+      ],
+      "C_MA_IoU_pct": 20.953505901086245,
+      "S_MA_IoU_pct": 21.367083185967054
+    },
+    {
+      "seed": 2024,
+      "cohort": "ddr",
+      "mode": "fixed_fusion",
+      "C_mIoU_pct": 45.76332631022668,
+      "S_mIoU_pct": 45.81947121725612,
+      "delta_pp": 0.056144907029441526,
+      "CI95_pp": [
+        -0.2391903849626802,
+        0.33759427508054335
+      ],
+      "C_MA_IoU_pct": 29.057918464080384,
+      "S_MA_IoU_pct": 28.992888789604976
+    },
+    {
+      "seed": 2024,
+      "cohort": "idrid",
+      "mode": "single",
+      "C_mIoU_pct": 33.47783566094758,
+      "S_mIoU_pct": 34.471137910419486,
+      "delta_pp": 0.9933022494719097,
+      "CI95_pp": [
+        -0.44751130413261375,
+        1.9541587344867932
+      ],
+      "C_MA_IoU_pct": 16.467020843188028,
+      "S_MA_IoU_pct": 15.908088064000703
+    },
+    {
+      "seed": 2024,
+      "cohort": "idrid",
+      "mode": "fixed_fusion",
+      "C_mIoU_pct": 40.60589383852716,
+      "S_mIoU_pct": 41.005866598172595,
+      "delta_pp": 0.3999727596454363,
+      "CI95_pp": [
+        -0.11749129609274274,
+        0.7806850082381479
+      ],
+      "C_MA_IoU_pct": 21.96438104885628,
+      "S_MA_IoU_pct": 21.856701711699124
+    },
+    {
+      "seed": 3407,
+      "cohort": "ddr",
+      "mode": "single",
+      "C_mIoU_pct": 41.341118365657,
+      "S_mIoU_pct": 41.32697673111203,
+      "delta_pp": -0.014141634544969861,
+      "CI95_pp": [
+        -0.8986916089474419,
+        0.8770433855431565
+      ],
+      "C_MA_IoU_pct": 21.608542594106286,
+      "S_MA_IoU_pct": 21.82781473802043
+    },
+    {
+      "seed": 3407,
+      "cohort": "ddr",
+      "mode": "fixed_fusion",
+      "C_mIoU_pct": 45.92900767143415,
+      "S_mIoU_pct": 45.832111804563816,
+      "delta_pp": -0.09689586687033369,
+      "CI95_pp": [
+        -0.3842691285016743,
+        0.17301759873838174
+      ],
+      "C_MA_IoU_pct": 29.096997466121522,
+      "S_MA_IoU_pct": 29.173870527564294
+    },
+    {
+      "seed": 3407,
+      "cohort": "idrid",
+      "mode": "single",
+      "C_mIoU_pct": 33.51309710185291,
+      "S_mIoU_pct": 34.977985996235034,
+      "delta_pp": 1.4648888943821277,
+      "CI95_pp": [
+        0.20939583040514184,
+        2.4976327155287876
+      ],
+      "C_MA_IoU_pct": 13.66539677853416,
+      "S_MA_IoU_pct": 15.738102438469499
+    },
+    {
+      "seed": 3407,
+      "cohort": "idrid",
+      "mode": "fixed_fusion",
+      "C_mIoU_pct": 40.62213702820298,
+      "S_mIoU_pct": 40.93267946411139,
+      "delta_pp": 0.3105424359084097,
+      "CI95_pp": [
+        -0.08822633050915521,
+        0.6115112566224775
+      ],
+      "C_MA_IoU_pct": 21.332072673545163,
+      "S_MA_IoU_pct": 21.709326595627815
+    }
+  ],
+  "paired_summary": [
+    {
+      "cohort": "ddr",
+      "mode": "single",
+      "n_seeds": 3,
+      "C_mIoU_pct_mean": 40.64489921925892,
+      "C_mIoU_pct_sample_SD": 0.8154598150984235,
+      "S_mIoU_pct_mean": 41.51732572331637,
+      "S_mIoU_pct_sample_SD": 0.17380285895484196,
+      "delta_pp_mean": 0.872426504057446,
+      "delta_pp_sample_SD": 0.9769549446995061
+    },
+    {
+      "cohort": "ddr",
+      "mode": "fixed_fusion",
+      "n_seeds": 3,
+      "C_mIoU_pct_mean": 45.82839065955045,
+      "C_mIoU_pct_sample_SD": 0.08837744182887305,
+      "S_mIoU_pct_mean": 45.83653219671486,
+      "S_mIoU_pct_sample_SD": 0.019647725225817012,
+      "delta_pp_mean": 0.008141537164419788,
+      "delta_pp_sample_SD": 0.09107705753490351
+    },
+    {
+      "cohort": "idrid",
+      "mode": "single",
+      "n_seeds": 3,
+      "C_mIoU_pct_mean": 33.05374566994046,
+      "C_mIoU_pct_sample_SD": 0.7652858309816514,
+      "S_mIoU_pct_mean": 34.50197622233371,
+      "S_mIoU_pct_sample_SD": 0.4613642470429641,
+      "delta_pp_mean": 1.4482305523932457,
+      "delta_pp_sample_SD": 0.446832082449571
+    },
+    {
+      "cohort": "idrid",
+      "mode": "fixed_fusion",
+      "n_seeds": 3,
+      "C_mIoU_pct_mean": 40.526328483538606,
+      "C_mIoU_pct_sample_SD": 0.15209524585705933,
+      "S_mIoU_pct_mean": 40.95526978784962,
+      "S_mIoU_pct_sample_SD": 0.0439017268013327,
+      "delta_pp_mean": 0.4289413043110244,
+      "delta_pp_sample_SD": 0.13523058650593095
+    }
+  ],
+  "MA": {
+    "ddr": [
+      {
+        "cohort": "ddr",
+        "model": "baseline",
+        "size": "all",
+        "GT": 2513,
+        "detected": 1032,
+        "detection_pct": 41.06645443692798,
+        "FP_per_image": 2.859030837004405,
+        "lesion_precision_pct": 61.39202855443189
+      },
+      {
+        "cohort": "ddr",
+        "model": "baseline",
+        "size": "small",
+        "GT": 891,
+        "detected": 211,
+        "detection_pct": 23.681257014590347,
+        "FP_per_image": null,
+        "lesion_precision_pct": null
+      },
+      {
+        "cohort": "ddr",
+        "model": "baseline",
+        "size": "medium",
+        "GT": 752,
+        "detected": 360,
+        "detection_pct": 47.87234042553192,
+        "FP_per_image": null,
+        "lesion_precision_pct": null
+      },
+      {
+        "cohort": "ddr",
+        "model": "baseline",
+        "size": "large",
+        "GT": 870,
+        "detected": 461,
+        "detection_pct": 52.98850574712644,
+        "FP_per_image": null,
+        "lesion_precision_pct": null
+      },
+      {
+        "cohort": "ddr",
+        "model": "no_h4",
+        "size": "all",
+        "GT": 2513,
+        "detected": 1209,
+        "detection_pct": 48.109828889773176,
+        "FP_per_image": 3.449339207048458,
+        "lesion_precision_pct": 60.69277108433735
+      },
+      {
+        "cohort": "ddr",
+        "model": "no_h4",
+        "size": "small",
+        "GT": 891,
+        "detected": 294,
+        "detection_pct": 32.996632996633,
+        "FP_per_image": null,
+        "lesion_precision_pct": null
+      },
+      {
+        "cohort": "ddr",
+        "model": "no_h4",
+        "size": "medium",
+        "GT": 752,
+        "detected": 415,
+        "detection_pct": 55.18617021276596,
+        "FP_per_image": null,
+        "lesion_precision_pct": null
+      },
+      {
+        "cohort": "ddr",
+        "model": "no_h4",
+        "size": "large",
+        "GT": 870,
+        "detected": 500,
+        "detection_pct": 57.47126436781609,
+        "FP_per_image": null,
+        "lesion_precision_pct": null
+      },
+      {
+        "cohort": "ddr",
+        "model": "full",
+        "size": "all",
+        "GT": 2513,
+        "detected": 1323,
+        "detection_pct": 52.646239554317546,
+        "FP_per_image": 4.20704845814978,
+        "lesion_precision_pct": 58.077260755048286
+      },
+      {
+        "cohort": "ddr",
+        "model": "full",
+        "size": "small",
+        "GT": 891,
+        "detected": 338,
+        "detection_pct": 37.93490460157127,
+        "FP_per_image": null,
+        "lesion_precision_pct": null
+      },
+      {
+        "cohort": "ddr",
+        "model": "full",
+        "size": "medium",
+        "GT": 752,
+        "detected": 445,
+        "detection_pct": 59.17553191489362,
+        "FP_per_image": null,
+        "lesion_precision_pct": null
+      },
+      {
+        "cohort": "ddr",
+        "model": "full",
+        "size": "large",
+        "GT": 870,
+        "detected": 540,
+        "detection_pct": 62.06896551724138,
+        "FP_per_image": null,
+        "lesion_precision_pct": null
+      }
+    ],
+    "idrid": [
+      {
+        "cohort": "idrid",
+        "model": "baseline",
+        "size": "all",
+        "GT": 1085,
+        "detected": 350,
+        "detection_pct": 32.25806451612903,
+        "FP_per_image": 4.925925925925926,
+        "lesion_precision_pct": 72.46376811594203
+      },
+      {
+        "cohort": "idrid",
+        "model": "baseline",
+        "size": "small",
+        "GT": 4,
+        "detected": 0,
+        "detection_pct": 0.0,
+        "FP_per_image": null,
+        "lesion_precision_pct": null
+      },
+      {
+        "cohort": "idrid",
+        "model": "baseline",
+        "size": "medium",
+        "GT": 49,
+        "detected": 3,
+        "detection_pct": 6.122448979591836,
+        "FP_per_image": null,
+        "lesion_precision_pct": null
+      },
+      {
+        "cohort": "idrid",
+        "model": "baseline",
+        "size": "large",
+        "GT": 1032,
+        "detected": 347,
+        "detection_pct": 33.62403100775194,
+        "FP_per_image": null,
+        "lesion_precision_pct": null
+      },
+      {
+        "cohort": "idrid",
+        "model": "no_h4",
+        "size": "all",
+        "GT": 1085,
+        "detected": 375,
+        "detection_pct": 34.56221198156682,
+        "FP_per_image": 4.703703703703703,
+        "lesion_precision_pct": 74.7011952191235
+      },
+      {
+        "cohort": "idrid",
+        "model": "no_h4",
+        "size": "small",
+        "GT": 4,
+        "detected": 0,
+        "detection_pct": 0.0,
+        "FP_per_image": null,
+        "lesion_precision_pct": null
+      },
+      {
+        "cohort": "idrid",
+        "model": "no_h4",
+        "size": "medium",
+        "GT": 49,
+        "detected": 6,
+        "detection_pct": 12.244897959183673,
+        "FP_per_image": null,
+        "lesion_precision_pct": null
+      },
+      {
+        "cohort": "idrid",
+        "model": "no_h4",
+        "size": "large",
+        "GT": 1032,
+        "detected": 369,
+        "detection_pct": 35.75581395348837,
+        "FP_per_image": null,
+        "lesion_precision_pct": null
+      },
+      {
+        "cohort": "idrid",
+        "model": "full",
+        "size": "all",
+        "GT": 1085,
+        "detected": 463,
+        "detection_pct": 42.672811059907836,
+        "FP_per_image": 7.555555555555555,
+        "lesion_precision_pct": 69.41529235382309
+      },
+      {
+        "cohort": "idrid",
+        "model": "full",
+        "size": "small",
+        "GT": 4,
+        "detected": 0,
+        "detection_pct": 0.0,
+        "FP_per_image": null,
+        "lesion_precision_pct": null
+      },
+      {
+        "cohort": "idrid",
+        "model": "full",
+        "size": "medium",
+        "GT": 49,
+        "detected": 7,
+        "detection_pct": 14.285714285714286,
+        "FP_per_image": null,
+        "lesion_precision_pct": null
+      },
+      {
+        "cohort": "idrid",
+        "model": "full",
+        "size": "large",
+        "GT": 1032,
+        "detected": 456,
+        "detection_pct": 44.18604651162791,
+        "FP_per_image": null,
+        "lesion_precision_pct": null
+      }
+    ]
+  },
+  "efficiency": [
+    {
+      "model": "baseline",
+      "n_images": 3,
+      "mean_seconds": 0.3196801000000005,
+      "parameters": 65572420,
+      "parameters_M": 65.57242,
+      "weights_GiB": 0.24524912051856518,
+      "single_process_allocated_GiB": 2.0115766525268555
+    },
+    {
+      "model": "full",
+      "n_images": 3,
+      "mean_seconds": 14.817730466666665,
+      "parameters": 547999320,
+      "parameters_M": 547.99932,
+      "weights_GiB": 1.8023788714781404,
+      "single_process_allocated_GiB": 3.571323871612549
+    }
+  ],
+  "component_pair_CI": {
+    "ddr": {
+      "baseline": {
+        "delta_pp": 3.6646485171812984,
+        "CI95_pp": [
+          2.8096912946579544,
+          4.6161834376074875
+        ]
+      },
+      "no_h4": {
+        "delta_pp": 0.767751906206577,
+        "CI95_pp": [
+          0.6180940928219943,
+          0.9118138786416947
+        ]
+      },
+      "no_convnext": {
+        "delta_pp": 0.5393524595880876,
+        "CI95_pp": [
+          0.14549124464653557,
+          0.9364698605897434
+        ]
+      },
+      "matched_c20": {
+        "delta_pp": 0.06402722235367975,
+        "CI95_pp": [
+          -0.18547994012029925,
+          0.31371836718146784
+        ]
+      }
+    },
+    "idrid": {
+      "baseline": {
+        "delta_pp": 5.311668673702549,
+        "CI95_pp": [
+          2.97643064689957,
+          8.206854722386408
+        ]
+      },
+      "no_h4": {
+        "delta_pp": 1.0043560883667269,
+        "CI95_pp": [
+          0.6958802164516742,
+          1.3845095314014013
+        ]
+      },
+      "no_convnext": {
+        "delta_pp": -0.3050008813724503,
+        "CI95_pp": [
+          -1.5299889192443872,
+          1.1642611189879166
+        ]
+      },
+      "matched_c20": {
+        "delta_pp": 0.6196736943619001,
+        "CI95_pp": [
+          0.04746351426411728,
+          1.0443057593824003
+        ]
+      }
+    }
+  },
+  "paired_runtime": {
+    "torch": "2.7.1+cu118",
+    "CUDA": "11.8",
+    "GPU": "NVIDIA GeForce RTX 2080 Ti",
+    "precision": "FP32;reference MSDA;TF32 disabled",
+    "helper_sha256": "143c70c61c7881b0203ebb7a053dd5df115a11588c6e6af239900be5d9a3094b"
+  },
+  "cohort_sizes": {
+    "DDR_test": 227,
+    "IDRiD_derived_holdout": 27
+  },
+  "frozen_evaluation": {
+    "bootstrap_draws": 2000,
+    "bootstrap_seed": 20261023,
+    "threshold": 0.5,
+    "adaptation_seeds": [
+      42,
+      2024,
+      3407
+    ],
+    "selected_EMA_update": 20000,
+    "learning_rate_schedule_horizon": 32000
+  },
+  "MA_comparisons": {
+    "ddr": {
+      "full_minus_without_correction_detection_pp": 4.53641066454437,
+      "detection_CI95_pp": [
+        3.5497559765075675,
+        5.534506701439772
+      ],
+      "FP_per_image_delta": 0.7577092511013217,
+      "FP_per_image_CI95": [
+        0.5506607929515415,
+        0.9779735682819384
+      ],
+      "bootstrap_draws": 2000,
+      "bootstrap_seed": 20261023
+    },
+    "idrid": {
+      "full_minus_without_correction_detection_pp": 8.110599078341018,
+      "detection_CI95_pp": [
+        5.725081663667964,
+        11.061084338991057
+      ],
+      "FP_per_image_delta": 2.851851851851852,
+      "FP_per_image_CI95": [
+        1.7037037037037037,
+        4.037037037037037
+      ],
+      "bootstrap_draws": 2000,
+      "bootstrap_seed": 20261023
+    }
+  },
+  "MA_bins": {
+    "training_images": 454,
+    "training_components": 6793,
+    "boundaries_pixels": [
+      32,
+      74
+    ],
+    "matching_IoU": 0.1,
+    "connectivity": 8
+  }
+}

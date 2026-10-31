@@ -1,0 +1,195 @@
+{
+  "schema_version": 1,
+  "status": "IMPLEMENTATION_AND_PROTOCOL_REVIEWED",
+  "tables": {
+    "baseline_components": {
+      "path": "D:\\dataset\\experiment\\paper_supplement_20261023\\results\\final_campaign\\baseline_and_components.csv",
+      "sha256": "472e3a83886e1b52723dfbf2ce49edf0185bb4e8ae933fc24be1d10e444201ee",
+      "scope": "Frozen deployment interventions; baseline legacyFP32, system stage1 mixed precision; not retrained module causality"
+    },
+    "paired_seed_effects": {
+      "path": "D:\\dataset\\experiment\\paper_supplement_20261023\\results\\final_campaign\\three_seed_pairs.csv",
+      "sha256": "652e421ab05b3936726a804df8f4f9826fc14eda975f182ce51fd9a08442c347",
+      "scope": "Unified FP32/reference paired evaluation; three adaptation seeds conditional on one F12_seed42 parent"
+    },
+    "paired_mean_sample_SD": {
+      "path": "D:\\dataset\\experiment\\paper_supplement_20261023\\results\\final_campaign\\three_seed_mean_SD.csv",
+      "sha256": "0bcce056dc2920a814e41a72bc7e64497656b60e2e3614d993c32f34fc9b538f",
+      "scope": "Sample SD over three paired point estimates, not image confidence interval"
+    },
+    "MA_operational_lesions": {
+      "path": "D:\\dataset\\experiment\\paper_supplement_20261023\\results\\final_campaign\\MA_threeway.csv",
+      "sha256": "525c1a3a3e000b26bbe3955afdd5c25145533d64cc3e228a070f7c80cd814055",
+      "scope": "8-connected one-to-one components with IoU >= .10; training pixel-area bins; preserve FP/detection/precision tradeoff"
+    },
+    "same_hardware_cost": {
+      "path": "D:\\dataset\\experiment\\paper_supplement_20261023\\results\\final_campaign\\same_hardware_efficiency.csv",
+      "sha256": "6d1ee080efa459c8e229c9554a9220aa18a633079294e13a56040553057d86ca",
+      "scope": "Three fixed images, RTX4060Laptop, one warmup excluded; implementation cost with sequential offload, not architecture lower bound"
+    }
+  },
+  "supporting_sources": {
+    "baseline_identity": {
+      "path": "D:\\dataset\\experiment\\paper_supplement_20261023\\evidence\\recovered_original_baseline_identity.json",
+      "sha256": "6cba563afbd918a4e4eb5ecb3dcd133952d7739eb71379445e569aa5e366b7f0",
+      "scope": "Traceable supporting source; see review/revision4_methods_review.md for interpretation"
+    },
+    "baseline_count_verification": {
+      "path": "D:\\dataset\\experiment\\paper_supplement_20261023\\results\\baseline_original_local\\analysis\\verified_summary.json",
+      "sha256": "ca9edf314962b9687982c2223a429aa64e07393d4eb4cca4b7fe51bd833d86b6",
+      "scope": "Traceable supporting source; see review/revision4_methods_review.md for interpretation"
+    },
+    "historical_lineage": {
+      "path": "D:\\dataset\\experiment\\paper_supplement_20261023\\evidence\\historical_hr_lineage_audit.json",
+      "sha256": "d9e7a921811653980a132cf30e5f968002212ddd0303353c1f7714164dec6e0b",
+      "scope": "Traceable supporting source; see review/revision4_methods_review.md for interpretation"
+    },
+    "constructor_audit": {
+      "path": "D:\\dataset\\experiment\\paper_supplement_20261023\\evidence\\baseline_initialization_and_constructor_audit.json",
+      "sha256": "acc6700f27924f71e7c086bba580f79f998ec84ebbf594db5e070389b748f8cd",
+      "scope": "Traceable supporting source; see review/revision4_methods_review.md for interpretation"
+    },
+    "reconstruction_v2": {
+      "path": "D:\\dataset\\experiment\\paper_supplement_20261023\\plan\\baseline_reconstruction_amendment.json",
+      "sha256": "35d16413bfc3e40e1f9f7c5981c8efcde4daac3c25a2887cc19f5e0a432f5ea2",
+      "scope": "Traceable supporting source; see review/revision4_methods_review.md for interpretation"
+    },
+    "training_protocol": {
+      "path": "D:\\dataset\\experiment\\paper_supplement_20261023\\plan\\additional_training_protocol.json",
+      "sha256": "5e9da929df1695d5a5a8052668374af9a5ef775b31ae66c5c5fefc880c255d88",
+      "scope": "Traceable supporting source; see review/revision4_methods_review.md for interpretation"
+    },
+    "runtime_protocol": {
+      "path": "D:\\dataset\\experiment\\paper_supplement_20261023\\plan\\paired_evaluation_runtime.md",
+      "sha256": "1adda5560edd53d8c6eeac42d0968b111db33bb8e94959db8fe91d082973cfbe",
+      "scope": "Traceable supporting source; see review/revision4_methods_review.md for interpretation"
+    },
+    "external_protocol": {
+      "path": "D:\\dataset\\experiment\\paper_supplement_20261023\\plan\\external_protocol.md",
+      "sha256": "1fdf62213ec183fcc7e90045098120a936595678efdc2e112d86c87be6c4b20a",
+      "scope": "Traceable supporting source; see review/revision4_methods_review.md for interpretation"
+    },
+    "lesion_implementation": {
+      "path": "D:\\dataset\\experiment\\paper_supplement_20261023\\scripts\\lesion_metrics.py",
+      "sha256": "37265b60f958b1652bbd0e709c009973d8d20c820980a3c2eec5dce232afe556",
+      "scope": "Traceable supporting source; see review/revision4_methods_review.md for interpretation"
+    },
+    "paired_aggregation": {
+      "path": "D:\\dataset\\experiment\\paper_supplement_20261023\\scripts\\analyze_recovered_training_results.py",
+      "sha256": "08925cc5feb83b96d6dc6067472c8ce500567902552497eb05050c70d2fe3509",
+      "scope": "Traceable supporting source; see review/revision4_methods_review.md for interpretation"
+    },
+    "paired_inference": {
+      "path": "D:\\dataset\\experiment\\paper_supplement_20261023\\scripts\\evaluate_paired_seed59.py",
+      "sha256": "6d0dc7d7898e5f7db44dd9bddf58f7bb4f3df69e00a6e2c23612216beb2ded7e",
+      "scope": "Traceable supporting source; see review/revision4_methods_review.md for interpretation"
+    },
+    "fixed_interventions": {
+      "path": "D:\\dataset\\experiment\\paper_supplement_20261023\\scripts\\remote_fuse_system.py",
+      "sha256": "bc951d1e3b0ca29930dfc2b7c9fe99a5e224584c06d29e7642ff69152bce77ae",
+      "scope": "Traceable supporting source; see review/revision4_methods_review.md for interpretation"
+    },
+    "baseline_profile": {
+      "path": "D:\\dataset\\experiment\\paper_supplement_20261023\\results\\baseline_original_profile_local\\summary.json",
+      "sha256": "7b94c59443b6919297743e14ffd5843b594cf63c6b0bbf8b2b18565a996eafe7",
+      "scope": "Traceable supporting source; see review/revision4_methods_review.md for interpretation"
+    },
+    "system_profile": {
+      "path": "D:\\dataset\\experiment\\paper_supplement_20261023\\results\\full_system_profile_v1\\analysis\\summary.json",
+      "sha256": "e4f6fe6c480832c1cd88fed42ca1e5521ac751dd5275105175a85eb0eb305eed",
+      "scope": "Traceable supporting source; see review/revision4_methods_review.md for interpretation"
+    },
+    "registered_MA_examples": {
+      "path": "D:\\dataset\\experiment\\paper_supplement_20261023\\results\\baseline_original_threeway\\example_provenance.json",
+      "sha256": "e81c504cab3665b8e5133f6a1f47ef3650012a22518891ec38ee7ff4c6bfd30a",
+      "scope": "Traceable supporting source; see review/revision4_methods_review.md for interpretation"
+    },
+    "MA_figure_scope": {
+      "path": "D:\\dataset\\experiment\\paper_supplement_20261023\\results\\baseline_original_threeway\\FIGURE_NOTES.md",
+      "sha256": "cc5bf93d7200e949248b81443106e20b299d90976849da5c060d940dec3c7c20",
+      "scope": "Traceable supporting source; see review/revision4_methods_review.md for interpretation"
+    }
+  },
+  "table_suggestions": [
+    {
+      "name": "Primary frozen system comparison",
+      "input": "baseline_components",
+      "group_keys": [
+        "cohort",
+        "method"
+      ],
+      "fields": [
+        "EX_IoU_pct",
+        "HE_IoU_pct",
+        "SE_IoU_pct",
+        "MA_IoU_pct",
+        "mIoU_pct"
+      ],
+      "must_include": [
+        "baseline",
+        "full",
+        "no_h4",
+        "no_convnext",
+        "matched_c20"
+      ],
+      "units": "percent",
+      "interpretation": "Frozen intervention scores, with original comparator identity and unequal total training budget disclosed"
+    },
+    {
+      "name": "Paired spatial adaptation",
+      "input": "paired_seed_effects",
+      "group_keys": [
+        "cohort",
+        "mode",
+        "seed"
+      ],
+      "fields": [
+        "C_mIoU_pct",
+        "S_mIoU_pct",
+        "S_minus_C_pp",
+        "paired_image_bootstrap_CI95_pp"
+      ],
+      "units": "percent and percentage points",
+      "interpretation": "Show all three values; mean plus sample SD separately; no independent end-to-end-seed claim"
+    },
+    {
+      "name": "MA component detection and FP",
+      "input": "MA_operational_lesions",
+      "group_keys": [
+        "cohort",
+        "method",
+        "size"
+      ],
+      "interpretation": "Use exact GT denominators, detected counts, detection rates, FP/image, lesion precision; do not infer external small-lesion robustness from four GT"
+    },
+    {
+      "name": "Measured implementation cost",
+      "input": "same_hardware_cost",
+      "group_keys": [
+        "method"
+      ],
+      "fields": [
+        "mean_seconds_per_image",
+        "registered_parameters",
+        "inference_weight_bytes",
+        "max_single_process_allocated_peak_bytes"
+      ],
+      "interpretation": "Same three images and hardware; no cold startup/model load or persistence; max single process CUDA allocated, not total VRAM"
+    }
+  ],
+  "exclusions_from_main_rankings": {
+    "baseline_v1": "Completed erroneous-scale reconstruction, not faithful baseline",
+    "baseline_v2": "Stopped2980, last completed checkpoint2000, not40k baseline",
+    "external_official_51_94": "Different training and stored-image/GT protocol; not matched comparator"
+  },
+  "runtime_score_separation": {
+    "historical_locked_full_DDR_mIoU_pct": 45.8604,
+    "stage1_frozen_components_DDR_mIoU_pct": 45.86088631351919,
+    "paired_FP32_seed42_DDR_mIoU_pct": 45.85801356832465
+  },
+  "no_convnext_formula": "(9/13)*A+(4/13)*S",
+  "primary_formula": ".75*(.75*A+.25*U)+.25*S",
+  "independence": "All three adaptation seeds condition on one F12_seed42 parent; image bootstrap is not seed/patient uncertainty",
+  "external_name": "IDRiD-derived27, DDR-trained frozen evaluation",
+  "figure_manifest": "D:\\dataset\\experiment\\paper_writing_20261023\\figures\\revision4_figure_manifest.json"
+}

@@ -1,0 +1,106 @@
+{
+  "status": "PASS",
+  "cohort_images": 27,
+  "checked": [
+    {
+      "sid": "IDRiD_55",
+      "tensor_shape": [
+        3,
+        2048,
+        2048
+      ],
+      "original_shape": [
+        3416,
+        3416,
+        3
+      ],
+      "image_shape": [
+        2048,
+        2048,
+        3
+      ],
+      "flip": false,
+      "normalization": {
+        "mean": [
+          81.20500183105469,
+          50.63600158691406,
+          21.215999603271484
+        ],
+        "std": [
+          76.25199890136719,
+          48.79800033569336,
+          21.625
+        ],
+        "to_rgb": true
+      }
+    },
+    {
+      "sid": "IDRiD_66",
+      "tensor_shape": [
+        3,
+        2048,
+        2048
+      ],
+      "original_shape": [
+        4033,
+        4033,
+        3
+      ],
+      "image_shape": [
+        2048,
+        2048,
+        3
+      ],
+      "flip": false,
+      "normalization": {
+        "mean": [
+          81.20500183105469,
+          50.63600158691406,
+          21.215999603271484
+        ],
+        "std": [
+          76.25199890136719,
+          48.79800033569336,
+          21.625
+        ],
+        "to_rgb": true
+      }
+    },
+    {
+      "sid": "IDRiD_81",
+      "tensor_shape": [
+        3,
+        2048,
+        2048
+      ],
+      "original_shape": [
+        3429,
+        3429,
+        3
+      ],
+      "image_shape": [
+        2048,
+        2048,
+        3
+      ],
+      "flip": false,
+      "normalization": {
+        "mean": [
+          81.20500183105469,
+          50.63600158691406,
+          21.215999603271484
+        ],
+        "std": [
+          76.25199890136719,
+          48.79800033569336,
+          21.625
+        ],
+        "to_rgb": true
+      }
+    }
+  ],
+  "models_loaded": false,
+  "CUDA_initialized": false,
+  "ground_truth_in_test_pipeline": false,
+  "pipeline": "[{'type': 'LoadImageFromFile'}, {'type': 'MultiScaleFlipAug', 'img_scale': (2048, 2048), 'flip': False, 'transforms': [{'type': 'Resize', 'keep_ratio': False}, {'type': 'Normalize', 'mean': [81.205, 50.636, 21.216], 'std': [76.252, 48.798, 21.625], 'to_rgb': True}, {'type': 'ImageToTensor', 'keys': ['img']}, {'type': 'Collect', 'keys': ['img']}]}]"
+}

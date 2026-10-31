@@ -1,0 +1,67 @@
+{
+  "lock_sha256": "644974f4a888835f838472199dcb623e879be2d62e73dab502394759551ceac4",
+  "n_images": 227,
+  "champion_miou": 0.4421100725782683,
+  "selected_pipeline_miou": 0.44780891451100807,
+  "delta": 0.005698841932739784,
+  "champion_per_class": [
+    0.5386102960789544,
+    0.44512116607150193,
+    0.49813386683608984,
+    0.28657496132652727
+  ],
+  "selected_pipeline_per_class": [
+    0.5459774618987617,
+    0.4520205750891327,
+    0.500837572943642,
+    0.29240004811249576
+  ],
+  "champion_counts": [
+    [
+      1058087,
+      389535,
+      516854
+    ],
+    [
+      1603987,
+      550006,
+      1449491
+    ],
+    [
+      368502,
+      169247,
+      202016
+    ],
+    [
+      79103,
+      85986,
+      110940
+    ]
+  ],
+  "selected_pipeline_counts": [
+    [
+      1072861,
+      390087,
+      502080
+    ],
+    [
+      1609384,
+      506944,
+      1444094
+    ],
+    [
+      354891,
+      138077,
+      215627
+    ],
+    [
+      80222,
+      84314,
+      109821
+    ]
+  ],
+  "deployment": "selected_pipeline",
+  "threshold": 0.5,
+  "strict_greater": true,
+  "historical_test_limitation": "This split has been viewed in prior experiments; not an independent external validation."
+}

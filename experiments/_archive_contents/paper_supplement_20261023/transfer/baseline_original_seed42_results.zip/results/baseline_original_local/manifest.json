@@ -1,0 +1,26 @@
+{
+  "scope": "Recovered historical DDR_split613 original baseline32k; DDR-trained frozen IDRiD-derived external evaluation",
+  "job": {
+    "kind": "baseline_original",
+    "checkpoint_sha256": "446fc7b598e9680a1470059d2aba3a6f9c2222b66658a5eccef6059b1362850f",
+    "weight_sha256": "7455a7d3f4c8ed051abc1a127ef90045f9193d7b0f57628acf5a6e9613eecfa7",
+    "config_sha256": "2277468e6ddbe1fcae8ed75965a2881a3b8e747d480688dacbbca0bcf35a6ceb",
+    "selected_node": 32000,
+    "selected_by": "Historical validation hook, not newly selected"
+  },
+  "torch": "1.10.0+cu113",
+  "CUDA": "11.3",
+  "GPU": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "precision": "FP32",
+  "script_sha256": "a31242499143f73e74f003a9e48302d6c7047a3723a570241f6b3f99c58b1074",
+  "threshold": 0.5,
+  "strict_greater": true,
+  "channels": [
+    "EX",
+    "HE",
+    "SE",
+    "MA"
+  ],
+  "inference": "Original2048 square whole inference, native-coordinate logit interpolation then sigmoid; no TTA",
+  "runtime_limit": "Same inference source family and all keys strictly loaded; not a claim of bitwise historical CUDA replay"
+}

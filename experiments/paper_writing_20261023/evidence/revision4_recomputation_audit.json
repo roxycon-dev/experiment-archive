@@ -1,0 +1,494 @@
+{
+  "checks": [
+    {
+      "name": "ddr original baseline",
+      "pass": true
+    },
+    {
+      "name": "ddrfullmIoU_pct",
+      "pass": true
+    },
+    {
+      "name": "ddrfullEX_IoU_pct",
+      "pass": true
+    },
+    {
+      "name": "ddrfullHE_IoU_pct",
+      "pass": true
+    },
+    {
+      "name": "ddrfullSE_IoU_pct",
+      "pass": true
+    },
+    {
+      "name": "ddrfullMA_IoU_pct",
+      "pass": true
+    },
+    {
+      "name": "ddrno_h4mIoU_pct",
+      "pass": true
+    },
+    {
+      "name": "ddrno_h4EX_IoU_pct",
+      "pass": true
+    },
+    {
+      "name": "ddrno_h4HE_IoU_pct",
+      "pass": true
+    },
+    {
+      "name": "ddrno_h4SE_IoU_pct",
+      "pass": true
+    },
+    {
+      "name": "ddrno_h4MA_IoU_pct",
+      "pass": true
+    },
+    {
+      "name": "ddrno_convnextmIoU_pct",
+      "pass": true
+    },
+    {
+      "name": "ddrno_convnextEX_IoU_pct",
+      "pass": true
+    },
+    {
+      "name": "ddrno_convnextHE_IoU_pct",
+      "pass": true
+    },
+    {
+      "name": "ddrno_convnextSE_IoU_pct",
+      "pass": true
+    },
+    {
+      "name": "ddrno_convnextMA_IoU_pct",
+      "pass": true
+    },
+    {
+      "name": "ddrmatched_c20mIoU_pct",
+      "pass": true
+    },
+    {
+      "name": "ddrmatched_c20EX_IoU_pct",
+      "pass": true
+    },
+    {
+      "name": "ddrmatched_c20HE_IoU_pct",
+      "pass": true
+    },
+    {
+      "name": "ddrmatched_c20SE_IoU_pct",
+      "pass": true
+    },
+    {
+      "name": "ddrmatched_c20MA_IoU_pct",
+      "pass": true
+    },
+    {
+      "name": "idrid original baseline",
+      "pass": true
+    },
+    {
+      "name": "idridfullmIoU_pct",
+      "pass": true
+    },
+    {
+      "name": "idridfullEX_IoU_pct",
+      "pass": true
+    },
+    {
+      "name": "idridfullHE_IoU_pct",
+      "pass": true
+    },
+    {
+      "name": "idridfullSE_IoU_pct",
+      "pass": true
+    },
+    {
+      "name": "idridfullMA_IoU_pct",
+      "pass": true
+    },
+    {
+      "name": "idridno_h4mIoU_pct",
+      "pass": true
+    },
+    {
+      "name": "idridno_h4EX_IoU_pct",
+      "pass": true
+    },
+    {
+      "name": "idridno_h4HE_IoU_pct",
+      "pass": true
+    },
+    {
+      "name": "idridno_h4SE_IoU_pct",
+      "pass": true
+    },
+    {
+      "name": "idridno_h4MA_IoU_pct",
+      "pass": true
+    },
+    {
+      "name": "idridno_convnextmIoU_pct",
+      "pass": true
+    },
+    {
+      "name": "idridno_convnextEX_IoU_pct",
+      "pass": true
+    },
+    {
+      "name": "idridno_convnextHE_IoU_pct",
+      "pass": true
+    },
+    {
+      "name": "idridno_convnextSE_IoU_pct",
+      "pass": true
+    },
+    {
+      "name": "idridno_convnextMA_IoU_pct",
+      "pass": true
+    },
+    {
+      "name": "idridmatched_c20mIoU_pct",
+      "pass": true
+    },
+    {
+      "name": "idridmatched_c20EX_IoU_pct",
+      "pass": true
+    },
+    {
+      "name": "idridmatched_c20HE_IoU_pct",
+      "pass": true
+    },
+    {
+      "name": "idridmatched_c20SE_IoU_pct",
+      "pass": true
+    },
+    {
+      "name": "idridmatched_c20MA_IoU_pct",
+      "pass": true
+    },
+    {
+      "name": "(42, 'ddr', 'single') delta",
+      "pass": true
+    },
+    {
+      "name": "(42, 'ddr', 'single') bootstrap",
+      "pass": true
+    },
+    {
+      "name": "(42, 'ddr', 'fixed_fusion') delta",
+      "pass": true
+    },
+    {
+      "name": "(42, 'ddr', 'fixed_fusion') bootstrap",
+      "pass": true
+    },
+    {
+      "name": "(42, 'idrid', 'single') delta",
+      "pass": true
+    },
+    {
+      "name": "(42, 'idrid', 'single') bootstrap",
+      "pass": true
+    },
+    {
+      "name": "(42, 'idrid', 'fixed_fusion') delta",
+      "pass": true
+    },
+    {
+      "name": "(42, 'idrid', 'fixed_fusion') bootstrap",
+      "pass": true
+    },
+    {
+      "name": "(2024, 'ddr', 'single') delta",
+      "pass": true
+    },
+    {
+      "name": "(2024, 'ddr', 'single') bootstrap",
+      "pass": true
+    },
+    {
+      "name": "(2024, 'ddr', 'fixed_fusion') delta",
+      "pass": true
+    },
+    {
+      "name": "(2024, 'ddr', 'fixed_fusion') bootstrap",
+      "pass": true
+    },
+    {
+      "name": "(2024, 'idrid', 'single') delta",
+      "pass": true
+    },
+    {
+      "name": "(2024, 'idrid', 'single') bootstrap",
+      "pass": true
+    },
+    {
+      "name": "(2024, 'idrid', 'fixed_fusion') delta",
+      "pass": true
+    },
+    {
+      "name": "(2024, 'idrid', 'fixed_fusion') bootstrap",
+      "pass": true
+    },
+    {
+      "name": "(3407, 'ddr', 'single') delta",
+      "pass": true
+    },
+    {
+      "name": "(3407, 'ddr', 'single') bootstrap",
+      "pass": true
+    },
+    {
+      "name": "(3407, 'ddr', 'fixed_fusion') delta",
+      "pass": true
+    },
+    {
+      "name": "(3407, 'ddr', 'fixed_fusion') bootstrap",
+      "pass": true
+    },
+    {
+      "name": "(3407, 'idrid', 'single') delta",
+      "pass": true
+    },
+    {
+      "name": "(3407, 'idrid', 'single') bootstrap",
+      "pass": true
+    },
+    {
+      "name": "(3407, 'idrid', 'fixed_fusion') delta",
+      "pass": true
+    },
+    {
+      "name": "(3407, 'idrid', 'fixed_fusion') bootstrap",
+      "pass": true
+    },
+    {
+      "name": "('ddr', 'baseline', 'all') detection",
+      "pass": true
+    },
+    {
+      "name": "('ddr', 'baseline', 'all') GT",
+      "pass": true
+    },
+    {
+      "name": "('ddr', 'baseline', 'small') detection",
+      "pass": true
+    },
+    {
+      "name": "('ddr', 'baseline', 'small') GT",
+      "pass": true
+    },
+    {
+      "name": "('ddr', 'baseline', 'medium') detection",
+      "pass": true
+    },
+    {
+      "name": "('ddr', 'baseline', 'medium') GT",
+      "pass": true
+    },
+    {
+      "name": "('ddr', 'baseline', 'large') detection",
+      "pass": true
+    },
+    {
+      "name": "('ddr', 'baseline', 'large') GT",
+      "pass": true
+    },
+    {
+      "name": "('ddr', 'no_h4', 'all') detection",
+      "pass": true
+    },
+    {
+      "name": "('ddr', 'no_h4', 'all') GT",
+      "pass": true
+    },
+    {
+      "name": "('ddr', 'no_h4', 'small') detection",
+      "pass": true
+    },
+    {
+      "name": "('ddr', 'no_h4', 'small') GT",
+      "pass": true
+    },
+    {
+      "name": "('ddr', 'no_h4', 'medium') detection",
+      "pass": true
+    },
+    {
+      "name": "('ddr', 'no_h4', 'medium') GT",
+      "pass": true
+    },
+    {
+      "name": "('ddr', 'no_h4', 'large') detection",
+      "pass": true
+    },
+    {
+      "name": "('ddr', 'no_h4', 'large') GT",
+      "pass": true
+    },
+    {
+      "name": "('ddr', 'full', 'all') detection",
+      "pass": true
+    },
+    {
+      "name": "('ddr', 'full', 'all') GT",
+      "pass": true
+    },
+    {
+      "name": "('ddr', 'full', 'small') detection",
+      "pass": true
+    },
+    {
+      "name": "('ddr', 'full', 'small') GT",
+      "pass": true
+    },
+    {
+      "name": "('ddr', 'full', 'medium') detection",
+      "pass": true
+    },
+    {
+      "name": "('ddr', 'full', 'medium') GT",
+      "pass": true
+    },
+    {
+      "name": "('ddr', 'full', 'large') detection",
+      "pass": true
+    },
+    {
+      "name": "('ddr', 'full', 'large') GT",
+      "pass": true
+    },
+    {
+      "name": "ddr MA detection paired bootstrap",
+      "pass": true
+    },
+    {
+      "name": "ddr MA FP paired bootstrap",
+      "pass": true
+    },
+    {
+      "name": "('idrid', 'baseline', 'all') detection",
+      "pass": true
+    },
+    {
+      "name": "('idrid', 'baseline', 'all') GT",
+      "pass": true
+    },
+    {
+      "name": "('idrid', 'baseline', 'small') detection",
+      "pass": true
+    },
+    {
+      "name": "('idrid', 'baseline', 'small') GT",
+      "pass": true
+    },
+    {
+      "name": "('idrid', 'baseline', 'medium') detection",
+      "pass": true
+    },
+    {
+      "name": "('idrid', 'baseline', 'medium') GT",
+      "pass": true
+    },
+    {
+      "name": "('idrid', 'baseline', 'large') detection",
+      "pass": true
+    },
+    {
+      "name": "('idrid', 'baseline', 'large') GT",
+      "pass": true
+    },
+    {
+      "name": "('idrid', 'no_h4', 'all') detection",
+      "pass": true
+    },
+    {
+      "name": "('idrid', 'no_h4', 'all') GT",
+      "pass": true
+    },
+    {
+      "name": "('idrid', 'no_h4', 'small') detection",
+      "pass": true
+    },
+    {
+      "name": "('idrid', 'no_h4', 'small') GT",
+      "pass": true
+    },
+    {
+      "name": "('idrid', 'no_h4', 'medium') detection",
+      "pass": true
+    },
+    {
+      "name": "('idrid', 'no_h4', 'medium') GT",
+      "pass": true
+    },
+    {
+      "name": "('idrid', 'no_h4', 'large') detection",
+      "pass": true
+    },
+    {
+      "name": "('idrid', 'no_h4', 'large') GT",
+      "pass": true
+    },
+    {
+      "name": "('idrid', 'full', 'all') detection",
+      "pass": true
+    },
+    {
+      "name": "('idrid', 'full', 'all') GT",
+      "pass": true
+    },
+    {
+      "name": "('idrid', 'full', 'small') detection",
+      "pass": true
+    },
+    {
+      "name": "('idrid', 'full', 'small') GT",
+      "pass": true
+    },
+    {
+      "name": "('idrid', 'full', 'medium') detection",
+      "pass": true
+    },
+    {
+      "name": "('idrid', 'full', 'medium') GT",
+      "pass": true
+    },
+    {
+      "name": "('idrid', 'full', 'large') detection",
+      "pass": true
+    },
+    {
+      "name": "('idrid', 'full', 'large') GT",
+      "pass": true
+    },
+    {
+      "name": "idrid MA detection paired bootstrap",
+      "pass": true
+    },
+    {
+      "name": "idrid MA FP paired bootstrap",
+      "pass": true
+    },
+    {
+      "name": "MA training area count",
+      "pass": true
+    },
+    {
+      "name": "MA train-derived boundaries",
+      "pass": true
+    },
+    {
+      "name": "baseline timing mean",
+      "pass": true
+    },
+    {
+      "name": "full timing mean",
+      "pass": true
+    }
+  ],
+  "all_pass": true,
+  "scope": "All main/paired saved per-image JSON integer totals;12 exact paired image bootstraps;sample SD;per-image lesion matching-record invariants and aggregation;training-area quantiles;latency means. Mask/GT independent audit is recorded separately."
+}

@@ -1,0 +1,27 @@
+{
+  "job": {
+    "arm": "C",
+    "seed": 42,
+    "completed": 20000,
+    "EMA_completed": 20000,
+    "parent_full_sha256": "68d7b5821fab1210b3336cf2a63b9de893f24fc32876f5255d7d662084b5e728",
+    "weight_path": "/home/studentuser001/paper_supplement_20261023/evaluation_workspace/HRDecoder_ArchitectureDesign_20261008/cache_execution/inference_weights/C20_ema_inference.pth",
+    "weight_sha256": "2d98335dcbd97aaceaa075e2642ae19c025d7b0ba9898a1b0426c87090d3af5e",
+    "source_checkpoint_sha256": "8a9e416ad2bee95fe3375bd5d767e9f5fa852f34ee5db2368ba9b7678f372f72",
+    "source": "Historical seed42 bitwise EMA export and audited matched lineage",
+    "runtime_protocol_sha256": "1adda5560edd53d8c6eeac42d0968b111db33bb8e94959db8fe91d082973cfbe"
+  },
+  "script_sha256": "6d0dc7d7898e5f7db44dd9bddf58f7bb4f3df69e00a6e2c23612216beb2ded7e",
+  "helper_sha256": "143c70c61c7881b0203ebb7a053dd5df115a11588c6e6af239900be5d9a3094b",
+  "torch": "2.7.1+cu118",
+  "CUDA": "11.8",
+  "GPU": "NVIDIA GeForce RTX 2080 Ti",
+  "precision": "FP32;reference MSDA;TF32 disabled",
+  "single_threshold": 0.5,
+  "strict_greater": true,
+  "system_formula": ".75*P0+.25*branch; P0=.75*A+.25*U",
+  "cohorts": {
+    "ddr": 227,
+    "idrid": 27
+  }
+}

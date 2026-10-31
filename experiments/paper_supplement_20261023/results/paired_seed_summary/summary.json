@@ -1,0 +1,231 @@
+{
+  "status": "COMPLETE_THREE_PAIRED_SEEDS",
+  "paired_seeds_available": [
+    42,
+    2024,
+    3407
+  ],
+  "required": [
+    42,
+    2024,
+    3407
+  ],
+  "per_seed": [
+    {
+      "seed": 42,
+      "cohort": "ddr",
+      "mode": "single",
+      "C_mIoU_pct": 40.845819595317565,
+      "S_mIoU_pct": 41.557428632770126,
+      "S_minus_C_pp": 0.7116090374525612,
+      "paired_image_bootstrap_CI95_pp": [
+        0.001822621905834157,
+        1.4755118051260805
+      ],
+      "C_MA_IoU_pct": 20.868382420550997,
+      "S_MA_IoU_pct": 21.884350964706183
+    },
+    {
+      "seed": 42,
+      "cohort": "ddr",
+      "mode": "fixed_fusion",
+      "C_mIoU_pct": 45.7928379969905,
+      "S_mIoU_pct": 45.85801356832465,
+      "S_minus_C_pp": 0.06517557133415153,
+      "paired_image_bootstrap_CI95_pp": [
+        -0.1950198555375431,
+        0.3267943116594069
+      ],
+      "C_MA_IoU_pct": 29.025654005925883,
+      "S_MA_IoU_pct": 29.24357541899441
+    },
+    {
+      "seed": 42,
+      "cohort": "idrid",
+      "mode": "single",
+      "C_mIoU_pct": 32.17030424702091,
+      "S_mIoU_pct": 34.05680476034661,
+      "S_minus_C_pp": 1.8865005133257,
+      "paired_image_bootstrap_CI95_pp": [
+        -0.030671392015513974,
+        3.4675863822838133
+      ],
+      "C_MA_IoU_pct": 15.299272509771738,
+      "S_MA_IoU_pct": 15.475509341028385
+    },
+    {
+      "seed": 42,
+      "cohort": "idrid",
+      "mode": "fixed_fusion",
+      "C_mIoU_pct": 40.35095458388567,
+      "S_mIoU_pct": 40.927263301264894,
+      "S_minus_C_pp": 0.5763087173792272,
+      "paired_image_bootstrap_CI95_pp": [
+        0.012563487355796888,
+        1.0020228804998743
+      ],
+      "C_MA_IoU_pct": 21.69232375175809,
+      "S_MA_IoU_pct": 21.732467803040688
+    },
+    {
+      "seed": 2024,
+      "cohort": "ddr",
+      "mode": "single",
+      "C_mIoU_pct": 39.74775969680219,
+      "S_mIoU_pct": 41.66757180606694,
+      "S_minus_C_pp": 1.9198121092647469,
+      "paired_image_bootstrap_CI95_pp": [
+        1.009593723318169,
+        2.8507159320655258
+      ],
+      "C_MA_IoU_pct": 20.953505901086245,
+      "S_MA_IoU_pct": 21.367083185967054
+    },
+    {
+      "seed": 2024,
+      "cohort": "ddr",
+      "mode": "fixed_fusion",
+      "C_mIoU_pct": 45.76332631022668,
+      "S_mIoU_pct": 45.81947121725612,
+      "S_minus_C_pp": 0.056144907029441526,
+      "paired_image_bootstrap_CI95_pp": [
+        -0.2391903849626802,
+        0.33759427508054335
+      ],
+      "C_MA_IoU_pct": 29.057918464080384,
+      "S_MA_IoU_pct": 28.992888789604976
+    },
+    {
+      "seed": 2024,
+      "cohort": "idrid",
+      "mode": "single",
+      "C_mIoU_pct": 33.47783566094758,
+      "S_mIoU_pct": 34.471137910419486,
+      "S_minus_C_pp": 0.9933022494719097,
+      "paired_image_bootstrap_CI95_pp": [
+        -0.44751130413261375,
+        1.9541587344867932
+      ],
+      "C_MA_IoU_pct": 16.467020843188028,
+      "S_MA_IoU_pct": 15.908088064000703
+    },
+    {
+      "seed": 2024,
+      "cohort": "idrid",
+      "mode": "fixed_fusion",
+      "C_mIoU_pct": 40.60589383852716,
+      "S_mIoU_pct": 41.005866598172595,
+      "S_minus_C_pp": 0.3999727596454363,
+      "paired_image_bootstrap_CI95_pp": [
+        -0.11749129609274274,
+        0.7806850082381479
+      ],
+      "C_MA_IoU_pct": 21.96438104885628,
+      "S_MA_IoU_pct": 21.856701711699124
+    },
+    {
+      "seed": 3407,
+      "cohort": "ddr",
+      "mode": "single",
+      "C_mIoU_pct": 41.341118365657,
+      "S_mIoU_pct": 41.32697673111203,
+      "S_minus_C_pp": -0.014141634544969861,
+      "paired_image_bootstrap_CI95_pp": [
+        -0.8986916089474419,
+        0.8770433855431565
+      ],
+      "C_MA_IoU_pct": 21.608542594106286,
+      "S_MA_IoU_pct": 21.82781473802043
+    },
+    {
+      "seed": 3407,
+      "cohort": "ddr",
+      "mode": "fixed_fusion",
+      "C_mIoU_pct": 45.92900767143415,
+      "S_mIoU_pct": 45.832111804563816,
+      "S_minus_C_pp": -0.09689586687033369,
+      "paired_image_bootstrap_CI95_pp": [
+        -0.3842691285016743,
+        0.17301759873838174
+      ],
+      "C_MA_IoU_pct": 29.096997466121522,
+      "S_MA_IoU_pct": 29.173870527564294
+    },
+    {
+      "seed": 3407,
+      "cohort": "idrid",
+      "mode": "single",
+      "C_mIoU_pct": 33.51309710185291,
+      "S_mIoU_pct": 34.977985996235034,
+      "S_minus_C_pp": 1.4648888943821277,
+      "paired_image_bootstrap_CI95_pp": [
+        0.20939583040514184,
+        2.4976327155287876
+      ],
+      "C_MA_IoU_pct": 13.66539677853416,
+      "S_MA_IoU_pct": 15.738102438469499
+    },
+    {
+      "seed": 3407,
+      "cohort": "idrid",
+      "mode": "fixed_fusion",
+      "C_mIoU_pct": 40.62213702820298,
+      "S_mIoU_pct": 40.93267946411139,
+      "S_minus_C_pp": 0.3105424359084097,
+      "paired_image_bootstrap_CI95_pp": [
+        -0.08822633050915521,
+        0.6115112566224775
+      ],
+      "C_MA_IoU_pct": 21.332072673545163,
+      "S_MA_IoU_pct": 21.709326595627815
+    }
+  ],
+  "mean_and_sample_SD": [
+    {
+      "cohort": "ddr",
+      "mode": "single",
+      "paired_seeds": 3,
+      "C_mIoU_pct_mean": 40.64489921925892,
+      "C_mIoU_pct_sample_SD": 0.8154598150984235,
+      "S_mIoU_pct_mean": 41.51732572331637,
+      "S_mIoU_pct_sample_SD": 0.17380285895484196,
+      "S_minus_C_pp_mean": 0.872426504057446,
+      "S_minus_C_pp_sample_SD": 0.9769549446995061
+    },
+    {
+      "cohort": "ddr",
+      "mode": "fixed_fusion",
+      "paired_seeds": 3,
+      "C_mIoU_pct_mean": 45.82839065955045,
+      "C_mIoU_pct_sample_SD": 0.08837744182887305,
+      "S_mIoU_pct_mean": 45.83653219671486,
+      "S_mIoU_pct_sample_SD": 0.019647725225817012,
+      "S_minus_C_pp_mean": 0.008141537164419788,
+      "S_minus_C_pp_sample_SD": 0.09107705753490351
+    },
+    {
+      "cohort": "idrid",
+      "mode": "single",
+      "paired_seeds": 3,
+      "C_mIoU_pct_mean": 33.05374566994046,
+      "C_mIoU_pct_sample_SD": 0.7652858309816514,
+      "S_mIoU_pct_mean": 34.50197622233371,
+      "S_mIoU_pct_sample_SD": 0.4613642470429641,
+      "S_minus_C_pp_mean": 1.4482305523932457,
+      "S_minus_C_pp_sample_SD": 0.446832082449571
+    },
+    {
+      "cohort": "idrid",
+      "mode": "fixed_fusion",
+      "paired_seeds": 3,
+      "C_mIoU_pct_mean": 40.526328483538606,
+      "C_mIoU_pct_sample_SD": 0.15209524585705933,
+      "S_mIoU_pct_mean": 40.95526978784962,
+      "S_mIoU_pct_sample_SD": 0.0439017268013327,
+      "S_minus_C_pp_mean": 0.4289413043110244,
+      "S_minus_C_pp_sample_SD": 0.13523058650593095
+    }
+  ],
+  "interpretation": "Adaptation variability conditional on one common F12_seed42 parent, not independent end-to-end training",
+  "CI_note": "Image bootstrap intervals do not measure seed variation; no patient identities available; no tuning after evaluation"
+}

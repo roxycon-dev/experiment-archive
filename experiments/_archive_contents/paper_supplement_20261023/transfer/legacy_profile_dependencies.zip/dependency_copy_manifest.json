@@ -1,0 +1,1300 @@
+{
+  "versions": {
+    "mmengine": "0.10.7",
+    "termcolor": "2.4.0",
+    "yapf": "0.40.1"
+  },
+  "files": [
+    {
+      "path": "mmengine-0.10.7.dist-info/INSTALLER",
+      "sha256": "ceebae7b8927a3227e5303cf5e0f1f7b34bb542ad7250ac03fbcde36ec2f1508",
+      "bytes": 4
+    },
+    {
+      "path": "mmengine-0.10.7.dist-info/LICENSE",
+      "sha256": "874b8b2e6f12306a1ff7812c068a0dbf880418b8ac1f7190382bd6c6da9f23a1",
+      "bytes": 11398
+    },
+    {
+      "path": "mmengine-0.10.7.dist-info/METADATA",
+      "sha256": "4a8a272eb35f843e8bf99bc752a4aff3258e9800458c690e6a444edc6e15e26c",
+      "bytes": 20526
+    },
+    {
+      "path": "mmengine-0.10.7.dist-info/RECORD",
+      "sha256": "151248193119b821d01d2c755df09fe62b4928e447f107f2d6f25d180f938f3d",
+      "bytes": 24041
+    },
+    {
+      "path": "mmengine-0.10.7.dist-info/REQUESTED",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "mmengine-0.10.7.dist-info/WHEEL",
+      "sha256": "b59a1e1a3b56c5645f769944ec4ddde3954f94b3509ef6ca8989f1ee0c00cbc0",
+      "bytes": 92
+    },
+    {
+      "path": "mmengine-0.10.7.dist-info/top_level.txt",
+      "sha256": "265efa9f7cc2b7dfed46cec6e292367a2d2a4f6d0b2a6d0ee9c97bd732f0b90e",
+      "bytes": 9
+    },
+    {
+      "path": "mmengine/__init__.py",
+      "sha256": "a3f87418ee8b1836c8853e3cc2da9ca9e2cbd035c3ce3466ae8b8799a1dbe02d",
+      "bytes": 222
+    },
+    {
+      "path": "mmengine/_strategy/__init__.py",
+      "sha256": "733f96c767d55566f93e96f7a87b5e69c604ab230b476c188804ddb82eb3235b",
+      "bytes": 658
+    },
+    {
+      "path": "mmengine/_strategy/base.py",
+      "sha256": "671a1be5d588e4f5a492d596ce74e0375e57f9fd759a34b66333c0461e724423",
+      "bytes": 39585
+    },
+    {
+      "path": "mmengine/_strategy/colossalai.py",
+      "sha256": "c4bcdc85137c249c9ad56e4c35bb1258ccacf67e6affc3477a2c5181c8ae1850",
+      "bytes": 23019
+    },
+    {
+      "path": "mmengine/_strategy/deepspeed.py",
+      "sha256": "29d0e00decc077c3fc3fe0263de1d077f2bca840673a95686d773ad7639ed71d",
+      "bytes": 22170
+    },
+    {
+      "path": "mmengine/_strategy/distributed.py",
+      "sha256": "d0226a48cddc5a916c2de106bb0d9d432fa8f935e05e488e5902198f5aa731f2",
+      "bytes": 4039
+    },
+    {
+      "path": "mmengine/_strategy/fsdp.py",
+      "sha256": "ccb2ce1abf56edcee1abec28760451f26ec353033b60f8e651b47ef123094f9f",
+      "bytes": 28890
+    },
+    {
+      "path": "mmengine/_strategy/single_device.py",
+      "sha256": "30329b5a7a5b3bac8a6e8ce80a449fe3d2445b6a2d9a44829c0ce83e0a4a964c",
+      "bytes": 11244
+    },
+    {
+      "path": "mmengine/_strategy/utils.py",
+      "sha256": "51f3b524c35ab359e7b6fbe6a405fca09b9a642f7b1f34843fdadad9d85bc43e",
+      "bytes": 653
+    },
+    {
+      "path": "mmengine/analysis/__init__.py",
+      "sha256": "7bd05a82bec3c10fe6f9c857732b4150d841014e5dcc8509b53078b0edadd693",
+      "bytes": 473
+    },
+    {
+      "path": "mmengine/analysis/complexity_analysis.py",
+      "sha256": "25c6034833b6ec07b35d4a594df7b3ba3a4578abe9746406baeae81964ad2ec2",
+      "bytes": 13594
+    },
+    {
+      "path": "mmengine/analysis/jit_analysis.py",
+      "sha256": "9ef99aef6231db74b39d47b10d82cd34eb22a72ac2c9ed4a8b21b4a8a6b92377",
+      "bytes": 26249
+    },
+    {
+      "path": "mmengine/analysis/jit_handles.py",
+      "sha256": "68f2f4a2ca053b7d5ef439d4fdce2447df70f2a6ff05cee47c3dd6865f1fd938",
+      "bytes": 10215
+    },
+    {
+      "path": "mmengine/analysis/print_helper.py",
+      "sha256": "b0cf390d31031a12a9b960d8f0e9dddb58d60ac05933a2b9e6c81fb2539797c0",
+      "bytes": 31115
+    },
+    {
+      "path": "mmengine/config/__init__.py",
+      "sha256": "7350ee717ae70354664cb0a738549bf601d7e38c66856072166099689279cacc",
+      "bytes": 173
+    },
+    {
+      "path": "mmengine/config/config.py",
+      "sha256": "ac8bebb5dc81aa3dcc0566b76dddd0847010b4590217b1e03b8e0250936c65b6",
+      "bytes": 74543
+    },
+    {
+      "path": "mmengine/config/lazy.py",
+      "sha256": "d7fe74c3c71e29901653427dde080b1da6be00a440b64a339ee30ae61acc3764",
+      "bytes": 8731
+    },
+    {
+      "path": "mmengine/config/utils.py",
+      "sha256": "84666c6913a6d4025a1437e6d5eee49119807920f6f7b820e8e3a054e4e72036",
+      "bytes": 18568
+    },
+    {
+      "path": "mmengine/dataset/__init__.py",
+      "sha256": "ebae834ec5a7266154629d88bab02d3041274e355306ca1b13bfe81b73a3a4e6",
+      "bytes": 595
+    },
+    {
+      "path": "mmengine/dataset/base_dataset.py",
+      "sha256": "b50f3f653990256d57d3218be886d330324a50ce231126e48db29ee1a66c0e09",
+      "bytes": 34071
+    },
+    {
+      "path": "mmengine/dataset/dataset_wrapper.py",
+      "sha256": "bf88ca7add74ce6bd336cb04422df1bd70d625fac68e003f0b21f241fcc3ad6c",
+      "bytes": 20735
+    },
+    {
+      "path": "mmengine/dataset/sampler.py",
+      "sha256": "38fc147bf4b99f76d74ee7da14ffcfae4498151d22e7ce9973c6ce8f345071db",
+      "bytes": 5650
+    },
+    {
+      "path": "mmengine/dataset/utils.py",
+      "sha256": "cd848a61aae8841d585b768ceb982ad5873f2330d8e951be02d272d68aba1f47",
+      "bytes": 6442
+    },
+    {
+      "path": "mmengine/device/__init__.py",
+      "sha256": "9bce154a4ab842b2d8c428e4e5a97e7ec3a423efab02607676cdebde8d293970",
+      "bytes": 570
+    },
+    {
+      "path": "mmengine/device/utils.py",
+      "sha256": "981c9e4d3f87f9903257afe3885a83c2173133215bb2ffb4b4c05067415e613b",
+      "bytes": 4235
+    },
+    {
+      "path": "mmengine/dist/__init__.py",
+      "sha256": "ddd18714c93979ee94a6b8d12d95469a5689ea43bf63db733a90995a6018375e",
+      "bytes": 1306
+    },
+    {
+      "path": "mmengine/dist/dist.py",
+      "sha256": "e077cb37f0e6be71e34e8b3750a9c8f76dfb371df317b407c5c5dd18ac17f484",
+      "bytes": 44625
+    },
+    {
+      "path": "mmengine/dist/utils.py",
+      "sha256": "679bb857aa6e9b2ac0319c0023bd1f17f4887d96fd2bc4364ca2ba3adcf065f9",
+      "bytes": 21864
+    },
+    {
+      "path": "mmengine/evaluator/__init__.py",
+      "sha256": "3bcdf183eab9161ab1e7a15c4fe85f47a3baac64da3013e018b9a8a142ec2897",
+      "bytes": 235
+    },
+    {
+      "path": "mmengine/evaluator/evaluator.py",
+      "sha256": "b69f3065ea669387c8944a615c9389942e204cb21ab9f567c49ddf9ff421cb9d",
+      "bytes": 5122
+    },
+    {
+      "path": "mmengine/evaluator/metric.py",
+      "sha256": "90600b9027983e56da41795194acc5ca87850ddefb4e9f38960718ad0af6283c",
+      "bytes": 7781
+    },
+    {
+      "path": "mmengine/evaluator/utils.py",
+      "sha256": "9a4dd6f48ec3532f4a28a3b9a0227bfbf9a4c294565b338359d159ff69827834",
+      "bytes": 1387
+    },
+    {
+      "path": "mmengine/fileio/__init__.py",
+      "sha256": "1d077f5edcf46282095c5f54cc8172221902b86106025011cda2a571db4e558e",
+      "bytes": 1517
+    },
+    {
+      "path": "mmengine/fileio/backends/__init__.py",
+      "sha256": "e1dafa960150946aea67d009bc331052890157391005c20d41804e6bb7dd9b24",
+      "bytes": 551
+    },
+    {
+      "path": "mmengine/fileio/backends/base.py",
+      "sha256": "4491593e447324601a0393562096562d648914eeded8bfb3a6c8bb987827c5dc",
+      "bytes": 1015
+    },
+    {
+      "path": "mmengine/fileio/backends/http_backend.py",
+      "sha256": "b6a2bd0f15304112cc565f893b417938ea2eb6fe930a9bf1330740c48f1dbc39",
+      "bytes": 2408
+    },
+    {
+      "path": "mmengine/fileio/backends/lmdb_backend.py",
+      "sha256": "207001ad6ed099e03839a57ebb2cb22a2a79cd790d383a38d0ac608812de5ed1",
+      "bytes": 2484
+    },
+    {
+      "path": "mmengine/fileio/backends/local_backend.py",
+      "sha256": "feba6d156ac1be0d324ecfd15d930bff73b76241073408d43ed8c49b25232b6a",
+      "bytes": 18135
+    },
+    {
+      "path": "mmengine/fileio/backends/memcached_backend.py",
+      "sha256": "fb6bd57bf296784f092610e2ea08af9c5917f9a18bbbda2f979f21045e1eaf2b",
+      "bytes": 1932
+    },
+    {
+      "path": "mmengine/fileio/backends/petrel_backend.py",
+      "sha256": "aaf0e47d831a63162e05d93309cb9f73fdefce8301740c904269d12779b79418",
+      "bytes": 27918
+    },
+    {
+      "path": "mmengine/fileio/backends/registry_utils.py",
+      "sha256": "c2245a2820166beb18907894c87e906188fe1028d5b4f9a228ffdc586b0c1a80",
+      "bytes": 4358
+    },
+    {
+      "path": "mmengine/fileio/file_client.py",
+      "sha256": "2bd2b4b4bc1a452ed7a522135c87280d6552c3ee711fe9c20e7dd81fd3281be7",
+      "bytes": 16964
+    },
+    {
+      "path": "mmengine/fileio/handlers/__init__.py",
+      "sha256": "c6440e7f14357fa3dca448b174222a2102091154f6c322cc91d90827d1feaf7d",
+      "bytes": 385
+    },
+    {
+      "path": "mmengine/fileio/handlers/base.py",
+      "sha256": "34d95c1aef71a747d48422e2c9c0631c933daebd4bbbbf38e0af09631de15afc",
+      "bytes": 993
+    },
+    {
+      "path": "mmengine/fileio/handlers/json_handler.py",
+      "sha256": "2cd46101562660fb04e68cb5934cc2303c4660d2d9494313be7614ef712929d3",
+      "bytes": 1068
+    },
+    {
+      "path": "mmengine/fileio/handlers/pickle_handler.py",
+      "sha256": "8933115483a876083ea46b402bac260aeb6360111f1cf9480fbc1a6ed761c14d",
+      "bytes": 753
+    },
+    {
+      "path": "mmengine/fileio/handlers/registry_utils.py",
+      "sha256": "024106216b1de117b75bfa46ab883c4b430bf5ad05f13a4c4e4a30142290f565",
+      "bytes": 1250
+    },
+    {
+      "path": "mmengine/fileio/handlers/yaml_handler.py",
+      "sha256": "faa37e5d7947249bd13ecc15b3c3efd4312c09319231f7ddc0f52ac943d1fc60",
+      "bytes": 733
+    },
+    {
+      "path": "mmengine/fileio/io.py",
+      "sha256": "46b46ca3a30e6938ec97bf5ecd4b9122ea1d47b45230fb60eaf1f800cf19189e",
+      "bytes": 31140
+    },
+    {
+      "path": "mmengine/fileio/parse.py",
+      "sha256": "7106690a50ce5c6f2d84c2dbbe8aa85590a3b0f44fbbf2e4bc0edfbf99f7ece7",
+      "bytes": 5013
+    },
+    {
+      "path": "mmengine/hooks/__init__.py",
+      "sha256": "fb523a2d5d849b25e529039cec37b22b9d8f928e4e2ca7372952beab692a8b43",
+      "bytes": 981
+    },
+    {
+      "path": "mmengine/hooks/checkpoint_hook.py",
+      "sha256": "16df1754c5a90109ebf86c7d2a7858b77df68a8191ab1b77641fbe0a11cd8a7e",
+      "bytes": 29994
+    },
+    {
+      "path": "mmengine/hooks/early_stopping_hook.py",
+      "sha256": "dd945659e9bd7a9ec10810e0b95498982e098dfe9ac7c5241f155937448acb34",
+      "bytes": 6086
+    },
+    {
+      "path": "mmengine/hooks/ema_hook.py",
+      "sha256": "edb7d228a45f91febaacfbc1c3267dc2b50ef0e8fcd16be62868cf0f6d84565d",
+      "bytes": 9702
+    },
+    {
+      "path": "mmengine/hooks/empty_cache_hook.py",
+      "sha256": "11ec0dbc42aecba17513ab30afcb7d0ce57460ef7504d779215da063382dc878",
+      "bytes": 2844
+    },
+    {
+      "path": "mmengine/hooks/hook.py",
+      "sha256": "0303cee5d195b420da58a55513105304927567627ec1397972412313c7fa5ea8",
+      "bytes": 17035
+    },
+    {
+      "path": "mmengine/hooks/iter_timer_hook.py",
+      "sha256": "43d14a5da8e1d284475e4126e12ba0e74d5fa99c38aac4fd46e54cd036826a9d",
+      "bytes": 4072
+    },
+    {
+      "path": "mmengine/hooks/logger_hook.py",
+      "sha256": "44ae644ba11250a6c5e2b28e01827d802f22d83d4541dd147cd6873038f01f15",
+      "bytes": 15459
+    },
+    {
+      "path": "mmengine/hooks/naive_visualization_hook.py",
+      "sha256": "aa9f8bc7ff6596ff3dd8eb6693aadd1841a465c1412f956a0ea60133cd3c79f3",
+      "bytes": 3505
+    },
+    {
+      "path": "mmengine/hooks/param_scheduler_hook.py",
+      "sha256": "9388b75e5b1796fbfb96acf87a38c042b3148597ad279a8a0cdcfed0f5511d7e",
+      "bytes": 4904
+    },
+    {
+      "path": "mmengine/hooks/profiler_hook.py",
+      "sha256": "a9d924101c3c210b0494486de12de802fb765566865aadf8050d1acc92ed3a96",
+      "bytes": 14669
+    },
+    {
+      "path": "mmengine/hooks/runtime_info_hook.py",
+      "sha256": "0d9ab45df2030af1146f8f24e62e0436cbeed6a71662c781e3108b4137082238",
+      "bytes": 7131
+    },
+    {
+      "path": "mmengine/hooks/sampler_seed_hook.py",
+      "sha256": "827c30f9d632e29f4a04763fab7b71e322f49110bd0d0124c4cea9a76736d379",
+      "bytes": 1465
+    },
+    {
+      "path": "mmengine/hooks/sync_buffer_hook.py",
+      "sha256": "0f709ddd82998ddcd49cf9720aebbe81de5f4b9093df7b3645ec6fc718b7baf7",
+      "bytes": 1498
+    },
+    {
+      "path": "mmengine/hooks/test_time_aug_hook.py",
+      "sha256": "46be7f481109ddeb77adc9b912977a77c505ab183c726e3190651918f016028b",
+      "bytes": 2033
+    },
+    {
+      "path": "mmengine/hub/__init__.py",
+      "sha256": "7279cd7b0e261bb1d73ea8cf44e3190f63cbecb449cef46c4877107a580faf77",
+      "bytes": 126
+    },
+    {
+      "path": "mmengine/hub/deprecated.json",
+      "sha256": "eef62efee18e112f08049ddf64cdfb04752a12f2303db87deeb91f031d3c2036",
+      "bytes": 227
+    },
+    {
+      "path": "mmengine/hub/hub.py",
+      "sha256": "c49a450bbc8de260154dea53efab15895915768f1aa48ed74269e3e432691dad",
+      "bytes": 3812
+    },
+    {
+      "path": "mmengine/hub/mmcls.json",
+      "sha256": "213d0bedcf2c7d82a8a0fc21653442bcb4bdf281aa2ce6eb3d52c21c1374c4b7",
+      "bytes": 7802
+    },
+    {
+      "path": "mmengine/hub/openmmlab.json",
+      "sha256": "cec8936c8bfbe9b394f564be0154e9293edec1ae63470c39ca6020d55f8ea7db",
+      "bytes": 5279
+    },
+    {
+      "path": "mmengine/hub/torchvision_0.12.json",
+      "sha256": "132f960080f92475ef62cf7ab76ba0e9fc283e03672a7824d009c021e78d967f",
+      "bytes": 4686
+    },
+    {
+      "path": "mmengine/infer/__init__.py",
+      "sha256": "08f5c239dce127a6247ff9fd03a782673efe849c4e124da1555fa604af82e85e",
+      "bytes": 112
+    },
+    {
+      "path": "mmengine/infer/infer.py",
+      "sha256": "2ac95d255618d666e90ff33a3ec67b10a5184b7cc398d3a829ab1d36110fdf57",
+      "bytes": 27712
+    },
+    {
+      "path": "mmengine/logging/__init__.py",
+      "sha256": "7649c2e747a6800ca5e0628e9d95dc3435a6a9949f4155579f5caecf5a5bd354",
+      "bytes": 234
+    },
+    {
+      "path": "mmengine/logging/history_buffer.py",
+      "sha256": "a1cca4a5ba106caa37782877ca70f66d3e760be6a155cd6b4ea8411d0ecbfca1",
+      "bytes": 9020
+    },
+    {
+      "path": "mmengine/logging/logger.py",
+      "sha256": "fb77f4afa802f1759b588d09f9cc04cb9f8bfcca724041e574ddc5672709efc8",
+      "bytes": 18249
+    },
+    {
+      "path": "mmengine/logging/message_hub.py",
+      "sha256": "67b4e81c2f905d0eaac07bbd5a42ec9cc3115351aa9690c7a2afdb25a2f89a48",
+      "bytes": 19043
+    },
+    {
+      "path": "mmengine/model/__init__.py",
+      "sha256": "718ba884cd46fe7e3088ca6d1b78dcfc3e621179042bb5b6a4d924ef7ed09965",
+      "bytes": 2205
+    },
+    {
+      "path": "mmengine/model/averaged_model.py",
+      "sha256": "96dfadb6c6087f47e4f73c084500ebf3ff20fa1cf110aa207691394cf8df3e20",
+      "bytes": 10890
+    },
+    {
+      "path": "mmengine/model/base_model/__init__.py",
+      "sha256": "be739803676c7d5662327525d4f33757ad4607eab37e3f2c6406e8bb35634189",
+      "bytes": 227
+    },
+    {
+      "path": "mmengine/model/base_model/base_model.py",
+      "sha256": "e1eecb1fad343d20f79d305c60f49f5bf5212f29e05c3e2db9d85f88a4102a4d",
+      "bytes": 14525
+    },
+    {
+      "path": "mmengine/model/base_model/data_preprocessor.py",
+      "sha256": "209e6c7bc65c0dd733ff86c2e60ea8c3b6a115325ea892f7816ac8965bebe0b6",
+      "bytes": 13065
+    },
+    {
+      "path": "mmengine/model/base_module.py",
+      "sha256": "ad1820dc6ca470ef5fcd07549437657aad83f70a3e6c5ca7684671cabbb45d87",
+      "bytes": 9296
+    },
+    {
+      "path": "mmengine/model/efficient_conv_bn_eval.py",
+      "sha256": "b470d7d86cf6b4c8e19d99657314207f65d41dbe0bbeaf4d72e9515a73340ede",
+      "bytes": 6296
+    },
+    {
+      "path": "mmengine/model/test_time_aug.py",
+      "sha256": "dbe6efe369f8ffd79219c71d18027c5ca4769b7be0c7624f83cd3261e3a95e57",
+      "bytes": 5523
+    },
+    {
+      "path": "mmengine/model/utils.py",
+      "sha256": "eeb81ed33f40a4bd02dd3da71bf0e2bdfe05e4f04a37a67a190ad06eef6de1ff",
+      "bytes": 10105
+    },
+    {
+      "path": "mmengine/model/weight_init.py",
+      "sha256": "63770821bc4b40a47bbee47fb2d9bb645bbc73535f12a55adc9e9d5227a809cc",
+      "bytes": 26125
+    },
+    {
+      "path": "mmengine/model/wrappers/__init__.py",
+      "sha256": "31e6fab2a1633aff620a1b890c7305c62ca76125c96335916d121d88d492551e",
+      "bytes": 618
+    },
+    {
+      "path": "mmengine/model/wrappers/distributed.py",
+      "sha256": "72b53b43b2188f99e3c0ed70cc3b32d9bb09cdda3779a3117ec803b19f3f7493",
+      "bytes": 6847
+    },
+    {
+      "path": "mmengine/model/wrappers/fully_sharded_distributed.py",
+      "sha256": "bd78a5c178081f28b07d63092a42a5e54f5d5122b34d035d643fa2ef813b2416",
+      "bytes": 21632
+    },
+    {
+      "path": "mmengine/model/wrappers/seperate_distributed.py",
+      "sha256": "8759c8755630321e99d18b58f7e6768169e78c4cd1b5bbd1dacca04896229863",
+      "bytes": 6627
+    },
+    {
+      "path": "mmengine/model/wrappers/utils.py",
+      "sha256": "729159cd2c20a146c6897705ab8dce481318c67470c54f451343ad7d202886da",
+      "bytes": 1024
+    },
+    {
+      "path": "mmengine/optim/__init__.py",
+      "sha256": "52ba816a08eb7323c085d98aa8a91d032a74d3a92336ea1360bb5d5f6f2f147a",
+      "bytes": 2047
+    },
+    {
+      "path": "mmengine/optim/optimizer/__init__.py",
+      "sha256": "d7e5d5089cf27475ee8ee7d3166a7c807754f945fe1e9ce783bbf69b354b1177",
+      "bytes": 758
+    },
+    {
+      "path": "mmengine/optim/optimizer/amp_optimizer_wrapper.py",
+      "sha256": "3343dcdc01f48f0edf06bb73cf0b0a2559142919004c99d3c3fe4c7a91c160b9",
+      "bytes": 7519
+    },
+    {
+      "path": "mmengine/optim/optimizer/apex_optimizer_wrapper.py",
+      "sha256": "130a2e845b72a57da3fb91b64ec440d3b6ecf882e705e63e2af1a8f1db2e27a4",
+      "bytes": 8998
+    },
+    {
+      "path": "mmengine/optim/optimizer/base.py",
+      "sha256": "2ffb92f38a9a114e1ec718154c087c1b9582018896d120a42212313db0a8b9fa",
+      "bytes": 4472
+    },
+    {
+      "path": "mmengine/optim/optimizer/builder.py",
+      "sha256": "e2dd7ae6cdc1faaa73307f07951f2f3119780e78492f4b4463e900905d7e62e7",
+      "bytes": 6988
+    },
+    {
+      "path": "mmengine/optim/optimizer/default_constructor.py",
+      "sha256": "1c9b2680f833e518045edb91198c481033396e1550275dfdf62674e053241a29",
+      "bytes": 15347
+    },
+    {
+      "path": "mmengine/optim/optimizer/optimizer_wrapper.py",
+      "sha256": "5cebfa663c9f7cbea1516e50e414c1a69cca4120753f0c33107831d3f561774f",
+      "bytes": 17881
+    },
+    {
+      "path": "mmengine/optim/optimizer/optimizer_wrapper_dict.py",
+      "sha256": "a41cad34c9426665b9f7ae19169deb4c9502f2bc58bf97e04d10330e38dff65c",
+      "bytes": 7669
+    },
+    {
+      "path": "mmengine/optim/optimizer/zero_optimizer.py",
+      "sha256": "0202f6307618ed871b9593a7605c38cebb80479d41d10218e83e2e766a651d33",
+      "bytes": 3537
+    },
+    {
+      "path": "mmengine/optim/scheduler/__init__.py",
+      "sha256": "07994d79f19e13cffab80ec3a09a43ebd9b8d25345150ba84dce2233b896ca73",
+      "bytes": 1835
+    },
+    {
+      "path": "mmengine/optim/scheduler/lr_scheduler.py",
+      "sha256": "32f1fc64c8a896634140854b1459921f6483115244f6796a611808f0c75459de",
+      "bytes": 18104
+    },
+    {
+      "path": "mmengine/optim/scheduler/momentum_scheduler.py",
+      "sha256": "2801923e523694cdea798552cde752582f94832fa9c53b5fd6654dc710f8d8f2",
+      "bytes": 16538
+    },
+    {
+      "path": "mmengine/optim/scheduler/param_scheduler.py",
+      "sha256": "0a6a11229b9eefc165f4c7ae76ca04010173ca2f9eeaf922962a1f3bd3fefb84",
+      "bytes": 64434
+    },
+    {
+      "path": "mmengine/registry/__init__.py",
+      "sha256": "70b8bd44e3834be83aaf31adaa53ac3f920170470c4433bdcf61f44d75998493",
+      "bytes": 1401
+    },
+    {
+      "path": "mmengine/registry/build_functions.py",
+      "sha256": "e8bb557c4a3e844f3f27ef04dc3d217a90abe2a84b00abcf5252527690779f47",
+      "bytes": 13190
+    },
+    {
+      "path": "mmengine/registry/default_scope.py",
+      "sha256": "88d1866ad0da1c3140acbc61fcfb2ccbdfe0fede354bfbdd6e06ee2dfbc2509a",
+      "bytes": 3412
+    },
+    {
+      "path": "mmengine/registry/registry.py",
+      "sha256": "40f44b6bd72b364ad700c14a8c7e878b5d2a6ba618a683a8a677d4be524d003e",
+      "bytes": 26948
+    },
+    {
+      "path": "mmengine/registry/root.py",
+      "sha256": "1ac14a25cef88ddb0ac67d376b7957242be611e304ab18450a7be4f8488cdcc4",
+      "bytes": 2444
+    },
+    {
+      "path": "mmengine/registry/utils.py",
+      "sha256": "06987d3acd7829ca1b6c3746424491cfc608148f350a30d9b58d3a8c8ef3bd80",
+      "bytes": 4308
+    },
+    {
+      "path": "mmengine/runner/__init__.py",
+      "sha256": "3fbf05f3366bebba04e3eac1e94cfb537798b6780599fe0a61a4936741ad284c",
+      "bytes": 1287
+    },
+    {
+      "path": "mmengine/runner/_flexible_runner.py",
+      "sha256": "79c887f3ccfd0cf5493d5db832a92e284e0278a0c0199b603207ca8798fc7188",
+      "bytes": 66612
+    },
+    {
+      "path": "mmengine/runner/activation_checkpointing.py",
+      "sha256": "bbe38c0990105ea14cafe657db7f1472a781ad853934b1ec853220362f16f7d2",
+      "bytes": 664
+    },
+    {
+      "path": "mmengine/runner/amp.py",
+      "sha256": "54026df79ae85d0d0a63b2f040b14b5de0bc2042dcecc86a378a4230702b5f39",
+      "bytes": 6500
+    },
+    {
+      "path": "mmengine/runner/base_loop.py",
+      "sha256": "9104fe27f16b4fac649ed5cd796f2aa403e755107356fae5b9ef08c71e45ea87",
+      "bytes": 1149
+    },
+    {
+      "path": "mmengine/runner/checkpoint.py",
+      "sha256": "ed6108c9dd8f7ea914efdd3f0dd047a35ae6741c4f12ae885b76ad493f52c321",
+      "bytes": 30359
+    },
+    {
+      "path": "mmengine/runner/log_processor.py",
+      "sha256": "f705a074bd2325a575ffb57bc2618b1101c5745f3c176573e3c8dad129537bb0",
+      "bytes": 24491
+    },
+    {
+      "path": "mmengine/runner/loops.py",
+      "sha256": "7b4c990849d0393ee609f5d0ac6577bd559a09042035b40a38e2259db5ad4d26",
+      "bytes": 20063
+    },
+    {
+      "path": "mmengine/runner/priority.py",
+      "sha256": "de6d0b2a396d4ac9cc015628aa5f9e4c55bc2070f51447b24ada0435ec28d1ea",
+      "bytes": 1657
+    },
+    {
+      "path": "mmengine/runner/runner.py",
+      "sha256": "cb045009109222e7c0cfe2bc51e9e28bc8b7121a5323310773e45d28379962e5",
+      "bytes": 103209
+    },
+    {
+      "path": "mmengine/runner/utils.py",
+      "sha256": "2649223cf04b2d4b48ee179bdc3ec93d67f6f35e2a787569339ece9b2fe3a5a3",
+      "bytes": 3918
+    },
+    {
+      "path": "mmengine/structures/__init__.py",
+      "sha256": "396e829b25ae28de5584d65a99e25eae0de6146c6b9bfea5ab42aa8c2df86c1f",
+      "bytes": 276
+    },
+    {
+      "path": "mmengine/structures/base_data_element.py",
+      "sha256": "33844060f4970603f3655b22405686f9f432e76477f935d9d8a0dd7038561c7a",
+      "bytes": 24942
+    },
+    {
+      "path": "mmengine/structures/instance_data.py",
+      "sha256": "eba32182f4fd3a7780954a54733cd71bd0748faa974b5409f39820d7c18a7b19",
+      "bytes": 13648
+    },
+    {
+      "path": "mmengine/structures/label_data.py",
+      "sha256": "4a497ca4e53017205d6b8a576a9fbc0fc5ee9cf55d0e43e52904e81fc92c2b53",
+      "bytes": 1502
+    },
+    {
+      "path": "mmengine/structures/pixel_data.py",
+      "sha256": "a287dffe3200fa7fc2b131b10b0b05575e0ecfc3d7b961d4e4c2e2409f738634",
+      "bytes": 4967
+    },
+    {
+      "path": "mmengine/testing/__init__.py",
+      "sha256": "e8f771c869b88b55593062df2ddddce9cdb8a78b29a37fc54527ea78e5221138",
+      "bytes": 591
+    },
+    {
+      "path": "mmengine/testing/_internal/__init__.py",
+      "sha256": "3d8e12fdc7839efdac830cb6482c82a709f383ec8f127c67be3d395939c97b2b",
+      "bytes": 130
+    },
+    {
+      "path": "mmengine/testing/_internal/distributed.py",
+      "sha256": "3441980b368b05bb2c44d9799b0c7b18d1c9b4b84bb99053b5ab600292c41232",
+      "bytes": 14740
+    },
+    {
+      "path": "mmengine/testing/compare.py",
+      "sha256": "8252516596ce56ff02989bd62179b698694a2a158cb5318a6a66d4ca9f1df41b",
+      "bytes": 6140
+    },
+    {
+      "path": "mmengine/testing/runner_test_case.py",
+      "sha256": "42be22bd2800c09460354d5d5f798694c0ea1ec76c6701c93763351dff653b07",
+      "bytes": 7015
+    },
+    {
+      "path": "mmengine/utils/__init__.py",
+      "sha256": "538c0bd76e2ede9370f81f4b1980dbe280088b396194e6d3a6665f1951132bd4",
+      "bytes": 1971
+    },
+    {
+      "path": "mmengine/utils/dl_utils/__init__.py",
+      "sha256": "8e275bbcb3af74bfcf475c74d2a3ef35aafe45ceb40a37a627ad41d179bda622",
+      "bytes": 597
+    },
+    {
+      "path": "mmengine/utils/dl_utils/collect_env.py",
+      "sha256": "2c05bdbeb1a16bfc72d7b020a59b020b2c333092c758a766ed2a81d447a340af",
+      "bytes": 6561
+    },
+    {
+      "path": "mmengine/utils/dl_utils/hub.py",
+      "sha256": "8db94d5126579262165fd48ad93a6af5495876e4529ca897cb4f63979e7a1234",
+      "bytes": 6111
+    },
+    {
+      "path": "mmengine/utils/dl_utils/misc.py",
+      "sha256": "6fefb820c979d61ecb83f1bb06fbf5046a3590e061d40834a8f13a314f4748f3",
+      "bytes": 3664
+    },
+    {
+      "path": "mmengine/utils/dl_utils/parrots_wrapper.py",
+      "sha256": "63b8997645a38f8d5329c509d9f44e96addd7b4e5f95a74388aa12cf86dde2bf",
+      "bytes": 4145
+    },
+    {
+      "path": "mmengine/utils/dl_utils/setup_env.py",
+      "sha256": "3cbbedccc9f0e561cf4b854c9ddaf8984c01409ae14394b9dd122802adab6745",
+      "bytes": 2602
+    },
+    {
+      "path": "mmengine/utils/dl_utils/time_counter.py",
+      "sha256": "be808995c163c880ad51b1559371297a0ca21e0f08f72845d2b53d52d87fac2f",
+      "bytes": 4692
+    },
+    {
+      "path": "mmengine/utils/dl_utils/torch_ops.py",
+      "sha256": "3fbabc41cd740d611193cc164f5c7e3720ecc2abbe7f29d051da88cb439b5e82",
+      "bytes": 979
+    },
+    {
+      "path": "mmengine/utils/dl_utils/trace.py",
+      "sha256": "dffc603dfe5186ef4d7a080d0d48025ba0ea10f771c2bca02a99c542f1fb53a9",
+      "bytes": 828
+    },
+    {
+      "path": "mmengine/utils/dl_utils/visualize.py",
+      "sha256": "546f3bf7ab1545776459bb6730b060cfcee23e6cea1b782e05e76a6910831716",
+      "bytes": 1751
+    },
+    {
+      "path": "mmengine/utils/manager.py",
+      "sha256": "0b4d75679ec181c1445168d6593c9e3ae89dab5ada0225322d616b7d0402e9d6",
+      "bytes": 5579
+    },
+    {
+      "path": "mmengine/utils/misc.py",
+      "sha256": "1a6a2ebe1f02249334c5078239053e53df793fe52623833bd1ee2841f7d58488",
+      "bytes": 17528
+    },
+    {
+      "path": "mmengine/utils/package_utils.py",
+      "sha256": "481731b41d400ef10b8df157ce82f2a1c64ca6cc586ab4e100058314df18e165",
+      "bytes": 3223
+    },
+    {
+      "path": "mmengine/utils/path.py",
+      "sha256": "81f68bdcb15a8317aa202d27aca67df40a431edf43b676d2cf8d4ecb8c53b362",
+      "bytes": 3777
+    },
+    {
+      "path": "mmengine/utils/progressbar.py",
+      "sha256": "d176f323e21d05662245e161f4390d5d97536b780ab82ce8c98bed9ab08af76c",
+      "bytes": 8720
+    },
+    {
+      "path": "mmengine/utils/progressbar_rich.py",
+      "sha256": "638f76bb5ad648d00bcf45ce02754efccdfe3ebf5084e4324148fdccb77b6f7b",
+      "bytes": 5642
+    },
+    {
+      "path": "mmengine/utils/timer.py",
+      "sha256": "a03f20fe7468be02648e081c432439f60b4c1d2959799c95a966875a05e0a4cf",
+      "bytes": 3046
+    },
+    {
+      "path": "mmengine/utils/version_utils.py",
+      "sha256": "5ed5448656b73fa4496797a53979a0ddd3299591841a69a90de337c7fa37226c",
+      "bytes": 2726
+    },
+    {
+      "path": "mmengine/version.py",
+      "sha256": "48ae78d5630040ce5574564e47803849d0a7a9d05e8349cf8d5a75057e46d420",
+      "bytes": 701
+    },
+    {
+      "path": "mmengine/visualization/__init__.py",
+      "sha256": "9c09b28f41f458b978620ee8e712f4b7060d4a8d9c1fe0f724094dfd1196f5cc",
+      "bytes": 571
+    },
+    {
+      "path": "mmengine/visualization/utils.py",
+      "sha256": "3896b8ab84e0d2e0767607bcb7af33a2de500a8b61927c4fd9cf39215a67f6b3",
+      "bytes": 8044
+    },
+    {
+      "path": "mmengine/visualization/vis_backend.py",
+      "sha256": "e6a0b0027bb97781ea4e80e248df357ce9532e313a44404a6873f12b4eb3e4e8",
+      "bytes": 53275
+    },
+    {
+      "path": "mmengine/visualization/visualizer.py",
+      "sha256": "ebfa09f56bff8a8d2620788f8fa8c6a7aed4242e876cd28732af58e8e48ad8e7",
+      "bytes": 54106
+    },
+    {
+      "path": "termcolor-2.4.0.dist-info/INSTALLER",
+      "sha256": "ceebae7b8927a3227e5303cf5e0f1f7b34bb542ad7250ac03fbcde36ec2f1508",
+      "bytes": 4
+    },
+    {
+      "path": "termcolor-2.4.0.dist-info/METADATA",
+      "sha256": "470ccce67998fa514d7de9a9053a05422761e0e099d4cafc1e7320a1d751668f",
+      "bytes": 6106
+    },
+    {
+      "path": "termcolor-2.4.0.dist-info/RECORD",
+      "sha256": "525b86205f3cbc7f5ed4358ab3624bc953ff45ecfac3dab3a6feaea2d8237ba9",
+      "bytes": 990
+    },
+    {
+      "path": "termcolor-2.4.0.dist-info/WHEEL",
+      "sha256": "f5006e1e183a14d5bb969a5ba05daf2956c2193573b05ca48114238e56a3ae10",
+      "bytes": 87
+    },
+    {
+      "path": "termcolor-2.4.0.dist-info/licenses/COPYING.txt",
+      "sha256": "e79b6bd82962c1330caaa7c42278567b08667777673f8e2371a624d5715d4c0e",
+      "bytes": 1072
+    },
+    {
+      "path": "termcolor/__init__.py",
+      "sha256": "0469c24bbbb47926f3660fffa8922b552729218265f088a3684203ec9a5cb7b3",
+      "bytes": 282
+    },
+    {
+      "path": "termcolor/__main__.py",
+      "sha256": "8fddcd3762ce094e323dc973f3993ece6ef282f9cbc4dbb4dac7b8691dbe26a6",
+      "bytes": 2657
+    },
+    {
+      "path": "termcolor/_types.py",
+      "sha256": "d144d84a8b487e9fd6ea21b53af3aa0b76c26f229e0ff854d562e072cb72dc47",
+      "bytes": 794
+    },
+    {
+      "path": "termcolor/py.typed",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "termcolor/termcolor.py",
+      "sha256": "2b5bc975f553297266791c95b23853adc1f2788b2631c8c3808f115c3edac55c",
+      "bytes": 5978
+    },
+    {
+      "path": "yapf-0.40.1.dist-info/AUTHORS",
+      "sha256": "1a3591f17972f8397d56b2aecd32cebd1a026cc372dbbf03c4ad92b9df4b702c",
+      "bytes": 307
+    },
+    {
+      "path": "yapf-0.40.1.dist-info/INSTALLER",
+      "sha256": "ceebae7b8927a3227e5303cf5e0f1f7b34bb542ad7250ac03fbcde36ec2f1508",
+      "bytes": 4
+    },
+    {
+      "path": "yapf-0.40.1.dist-info/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "bytes": 11358
+    },
+    {
+      "path": "yapf-0.40.1.dist-info/METADATA",
+      "sha256": "351988fba2625b324c1ed885c1cb0360e91d714b916488110e197f56a7041d36",
+      "bytes": 35129
+    },
+    {
+      "path": "yapf-0.40.1.dist-info/RECORD",
+      "sha256": "d00fef8410e3cc5a77cf9fe1d0e533e82deb8b6b1016e34470131c3aeecf4413",
+      "bytes": 11898
+    },
+    {
+      "path": "yapf-0.40.1.dist-info/REQUESTED",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "yapf-0.40.1.dist-info/WHEEL",
+      "sha256": "a6472d658cd44b8018567e9d27eef7ebb389662bc5d9ef1103d6ff6418e27f5f",
+      "bytes": 92
+    },
+    {
+      "path": "yapf-0.40.1.dist-info/entry_points.txt",
+      "sha256": "721694ea3f0967cce51cea5c160a2bc383fb63b2e73143276ce160bf1e698b51",
+      "bytes": 93
+    },
+    {
+      "path": "yapf-0.40.1.dist-info/top_level.txt",
+      "sha256": "d62077958c3f9cb15fe83fef77c7d377e4d94d17e9473a02e1eb942c20aebba7",
+      "bytes": 32
+    },
+    {
+      "path": "yapf/__init__.py",
+      "sha256": "3b7537ef391ad399be2408acd3c780f0714d4733bb406bcddb1549ba2a047579",
+      "bytes": 13312
+    },
+    {
+      "path": "yapf/__main__.py",
+      "sha256": "8c9e457307bab5b5f1a92b94c513b7b9e978e2d1cfe77bd549ca2396eb347013",
+      "bytes": 680
+    },
+    {
+      "path": "yapf/pyparser/__init__.py",
+      "sha256": "746451b441bb401e61544886c65e6d0563d8df734eaed3efa1f5636dc41d03bb",
+      "bytes": 596
+    },
+    {
+      "path": "yapf/pyparser/pyparser.py",
+      "sha256": "384012cca4507d4dc7cd950c4c3192122580c4ddcc0d1d15fcce11c828a7c06e",
+      "bytes": 5247
+    },
+    {
+      "path": "yapf/pyparser/pyparser_utils.py",
+      "sha256": "592e0d1edab4d47e08e539dff47a3604d67b7f821827a2a558165fbce15af7bf",
+      "bytes": 3076
+    },
+    {
+      "path": "yapf/pyparser/split_penalty_visitor.py",
+      "sha256": "1030f5e158f4bb60a5c1a8a3ec50f3c1e57b91cbb907b306263bb2e8259d83b6",
+      "bytes": 29136
+    },
+    {
+      "path": "yapf/pytree/__init__.py",
+      "sha256": "d0140706ca301b8324a9ee6aa8b0567fd907ebeac35e9220cb2b5786651e5dcc",
+      "bytes": 596
+    },
+    {
+      "path": "yapf/pytree/blank_line_calculator.py",
+      "sha256": "0f62220e024f4185d80fccfda22bc5ecd59d50c862c69eebfb8e4edb9034d27a",
+      "bytes": 6289
+    },
+    {
+      "path": "yapf/pytree/comment_splicer.py",
+      "sha256": "931e788601458381d177577f4041e99ecc0a889318e55413f195deb7d68dd11c",
+      "bytes": 15310
+    },
+    {
+      "path": "yapf/pytree/continuation_splicer.py",
+      "sha256": "9349b9b3b15651512f098b914d298e1770485cb876608606d33214b0dec6b230",
+      "bytes": 1795
+    },
+    {
+      "path": "yapf/pytree/pytree_unwrapper.py",
+      "sha256": "222de77cc554a8d435e70bf5478d237f20a883541301dd222a6bb27841648586",
+      "bytes": 15688
+    },
+    {
+      "path": "yapf/pytree/pytree_utils.py",
+      "sha256": "f0b809255123b8bbbddcbe7e7ebcb9672f88671e9dae37e5e6794b65918fe232",
+      "bytes": 10465
+    },
+    {
+      "path": "yapf/pytree/pytree_visitor.py",
+      "sha256": "0cfd6333ceab17daec0d2e8f5bd4f1ab39bc375f200b592eba228321e4169c45",
+      "bytes": 4547
+    },
+    {
+      "path": "yapf/pytree/split_penalty.py",
+      "sha256": "7616887993d9754a10ea7512c68cf67dbb5c2b3dca8ff35ab65e5287f4d068c1",
+      "bytes": 24445
+    },
+    {
+      "path": "yapf/pytree/subtype_assigner.py",
+      "sha256": "422d5b1976ec78f969243c92f1109731c4a7a21fb10ddb07e490ba2e466bad45",
+      "bytes": 19352
+    },
+    {
+      "path": "yapf/yapflib/__init__.py",
+      "sha256": "69b06a86aa8f3f5d232baa4d084b795435597d82b4bb47d0ba04e9d800b42b89",
+      "bytes": 596
+    },
+    {
+      "path": "yapf/yapflib/errors.py",
+      "sha256": "465a116c2c2cd36739b2dc2148fa991824831b5b698b92ca8dbc97e686d0fd76",
+      "bytes": 1501
+    },
+    {
+      "path": "yapf/yapflib/file_resources.py",
+      "sha256": "8a2f221ab6b2101f02e30773a6804c8093dc76e791ee4732847541f50c038337",
+      "bytes": 9614
+    },
+    {
+      "path": "yapf/yapflib/format_decision_state.py",
+      "sha256": "d334be134dc0e3baa78dff710dfce5949b417e0610ed1b558d7b584aca7916d6",
+      "bytes": 48143
+    },
+    {
+      "path": "yapf/yapflib/format_token.py",
+      "sha256": "b72896b868a7d99cacf2160fdb6c0f34bfe54d9b8ea083a3b9085f48d73e7140",
+      "bytes": 11203
+    },
+    {
+      "path": "yapf/yapflib/identify_container.py",
+      "sha256": "7eabfeac722ea6019c5c03c7d88903858ec3d05da35a7490612c0fb18f155164",
+      "bytes": 2334
+    },
+    {
+      "path": "yapf/yapflib/line_joiner.py",
+      "sha256": "1d1fe35508d1dec5fb9363dc27f77c71215fd9c84a396d7e8167f68b179961c6",
+      "bytes": 3916
+    },
+    {
+      "path": "yapf/yapflib/logical_line.py",
+      "sha256": "063febc60ae8367aff2a5a4749fc2a50fcd31a1d6243394482d95f18371f960b",
+      "bytes": 25201
+    },
+    {
+      "path": "yapf/yapflib/object_state.py",
+      "sha256": "f8938259a077e01062d733ead6b33e221f43951f50aa09b93cbd8fbd79b5dbe1",
+      "bytes": 7912
+    },
+    {
+      "path": "yapf/yapflib/reformatter.py",
+      "sha256": "047961c444d55939d2cdcf2759187d792e950ed7efe0fcf930e39fb6574387b2",
+      "bytes": 28224
+    },
+    {
+      "path": "yapf/yapflib/split_penalty.py",
+      "sha256": "b5b4d0962538f4e20b6cfb8d1a31fdc4226bf2caf6618f529849d0510b9fa35b",
+      "bytes": 1252
+    },
+    {
+      "path": "yapf/yapflib/style.py",
+      "sha256": "faccafa83f962ef7124cc4ca190263276d1f22a0be3df0249db1e0af0bdb7635",
+      "bytes": 31890
+    },
+    {
+      "path": "yapf/yapflib/subtypes.py",
+      "sha256": "039be1dc303079e12eeecd07965dbb00182d542526a3d43fcaba1077e337f55c",
+      "bytes": 1144
+    },
+    {
+      "path": "yapf/yapflib/verifier.py",
+      "sha256": "a93e6394cd63f7a8de57b630a5d09ccca5fcbca9b9d48e354c4d6690b5fc7649",
+      "bytes": 3042
+    },
+    {
+      "path": "yapf/yapflib/yapf_api.py",
+      "sha256": "e7bd95fd7599288e6bd055ebb2dc4d12e564dcb6df1600f9648bcc965f88905c",
+      "bytes": 12491
+    },
+    {
+      "path": "yapf_third_party/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "yapf_third_party/_ylib2to3/Grammar.txt",
+      "sha256": "b88c46ec8add7a6462f783ad4d4695a16da4b58c8acae5c796e58530cabc01fe",
+      "bytes": 11278
+    },
+    {
+      "path": "yapf_third_party/_ylib2to3/LICENSE",
+      "sha256": "5789881b8aeb9c91f5835f5bb7cabe84a0fecd4bb2be2f54c9e6957a78ec799d",
+      "bytes": 12762
+    },
+    {
+      "path": "yapf_third_party/_ylib2to3/PatternGrammar.txt",
+      "sha256": "ee5ba5db3b6722a0e2fbe2560ebc1c883e72328ef9c3b4da1c7c5d1cc649bce3",
+      "bytes": 793
+    },
+    {
+      "path": "yapf_third_party/_ylib2to3/__init__.py",
+      "sha256": "aa34a9c67b7c66d29a9b1cf4cc1c658f414809221b7d8858109ef64fdfa2b5a9",
+      "bytes": 73
+    },
+    {
+      "path": "yapf_third_party/_ylib2to3/fixer_util.py",
+      "sha256": "4d482b00f8e7fc0788d18217efb12ed59a745b785a3930bae4970fef87222513",
+      "bytes": 14055
+    },
+    {
+      "path": "yapf_third_party/_ylib2to3/patcomp.py",
+      "sha256": "c93763a4801ff4c724d362c359bbbc3c88bb603bfbeab0da4c36f415db7fad2a",
+      "bytes": 6374
+    },
+    {
+      "path": "yapf_third_party/_ylib2to3/pgen2/__init__.py",
+      "sha256": "ed621e4cd288e3c8cb0f627b47cf9e0a230a3daba0c9aa7ecc89b7294f6fd70c",
+      "bytes": 142
+    },
+    {
+      "path": "yapf_third_party/_ylib2to3/pgen2/conv.py",
+      "sha256": "1f016fb3c39278852cbb3c5a767ebc52748b4935ba350e701ce207c8725e29e7",
+      "bytes": 8672
+    },
+    {
+      "path": "yapf_third_party/_ylib2to3/pgen2/driver.py",
+      "sha256": "98e013c155845cae5dd8f713016897ad8542d3ed8a8844422868045a11ce66b7",
+      "bytes": 8873
+    },
+    {
+      "path": "yapf_third_party/_ylib2to3/pgen2/grammar.py",
+      "sha256": "16f6e39eea4f07b03c30a4427437e23dafc51158acc9f90d424f3a4fecd04530",
+      "bytes": 5387
+    },
+    {
+      "path": "yapf_third_party/_ylib2to3/pgen2/literals.py",
+      "sha256": "ccf2af4c4359e2fe54a57b1ff4a0ab930dd869bd394079d45928df206a42b9d2",
+      "bytes": 1407
+    },
+    {
+      "path": "yapf_third_party/_ylib2to3/pgen2/parse.py",
+      "sha256": "3a1163bc654d40fb2017a26457f547c3ffdde7917e5a37121a9f17514284d114",
+      "bytes": 13020
+    },
+    {
+      "path": "yapf_third_party/_ylib2to3/pgen2/pgen.py",
+      "sha256": "a9726222305380e343f90a8ca1b364e674d51c7597e7020b7e32e3c2ae352cb5",
+      "bytes": 12372
+    },
+    {
+      "path": "yapf_third_party/_ylib2to3/pgen2/token.py",
+      "sha256": "9624fd6b02f70882ee5096a89753b8fede06fa275d32c2373baa9104dc68b9e2",
+      "bytes": 1293
+    },
+    {
+      "path": "yapf_third_party/_ylib2to3/pgen2/tokenize.py",
+      "sha256": "a86bd271d5d42ed480e9c3943ae08d4d0ecf240dfbcd692673a2ccfa8ac0f8a2",
+      "bytes": 19037
+    },
+    {
+      "path": "yapf_third_party/_ylib2to3/pygram.py",
+      "sha256": "98bd40c13f5e4934a2a252ff36cc16490f4cad374e4e251140be933c7817a8f5",
+      "bytes": 1200
+    },
+    {
+      "path": "yapf_third_party/_ylib2to3/pytree.py",
+      "sha256": "a0f4e0138596d80ea8eca01d79089ea588bfea28026fe4ca981e53d5c3b730ee",
+      "bytes": 25579
+    },
+    {
+      "path": "yapf_third_party/yapf_diff/LICENSE",
+      "sha256": "9e45e856bedccee9f67254082ca11851d954de2fed7448c4bed19ad9aab99a91",
+      "bytes": 12262
+    },
+    {
+      "path": "yapf_third_party/yapf_diff/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "yapf_third_party/yapf_diff/yapf_diff.py",
+      "sha256": "e63bf3168275b7e18f2959df1bfeec53133a3a163287366181dbd969ad69e933",
+      "bytes": 4657
+    },
+    {
+      "path": "yapftests/__init__.py",
+      "sha256": "69b06a86aa8f3f5d232baa4d084b795435597d82b4bb47d0ba04e9d800b42b89",
+      "bytes": 596
+    },
+    {
+      "path": "yapftests/blank_line_calculator_test.py",
+      "sha256": "5d753759b731362bf5e4db0271fd0f5e4c1f117dee5a61d7276cce681b58fe1f",
+      "bytes": 9137
+    },
+    {
+      "path": "yapftests/comment_splicer_test.py",
+      "sha256": "fe433b038a4f1164bb8bb00284f47b7b4f5ffd1f0d06387e24f2ac6b9d2d2274",
+      "bytes": 10928
+    },
+    {
+      "path": "yapftests/file_resources_test.py",
+      "sha256": "6dfdcbf9c9f4353fa3e7776ea986915c7c90c61aefd9bf8a525caf7185de643b",
+      "bytes": 19173
+    },
+    {
+      "path": "yapftests/format_decision_state_test.py",
+      "sha256": "ac79adc34298d2f2d313df30a6c7f239452c6b1699e20b0b742aa3b6f8de4744",
+      "bytes": 4397
+    },
+    {
+      "path": "yapftests/format_token_test.py",
+      "sha256": "5c2737125ffd5d8567a5d03c5619df9de00872d28162f91fdd5e493fddf0d583",
+      "bytes": 3067
+    },
+    {
+      "path": "yapftests/line_joiner_test.py",
+      "sha256": "aecca057a9d0900183eb07fc33a283b67ef1ae4b1be5d30bd98e56f5dea3ec55",
+      "bytes": 2614
+    },
+    {
+      "path": "yapftests/logical_line_test.py",
+      "sha256": "7c65f1ab8ce6404f0ca699db2f82db7f364fa4be5b3488933e6994e5322f5a06",
+      "bytes": 3224
+    },
+    {
+      "path": "yapftests/main_test.py",
+      "sha256": "b781cc08b91bd32d15c8c4251355b37990d3da21b4d9769dac465e9149e911aa",
+      "bytes": 3935
+    },
+    {
+      "path": "yapftests/pytree_unwrapper_test.py",
+      "sha256": "5ba203ec44577033f9666b4c03156226e32639bd6bf8e490d0269705f0d2a347",
+      "bytes": 9287
+    },
+    {
+      "path": "yapftests/pytree_utils_test.py",
+      "sha256": "564f54bc30b3287d0fc3d3b8b782509cf4b385e11120fe8be70bc014d8d53baa",
+      "bytes": 7901
+    },
+    {
+      "path": "yapftests/pytree_visitor_test.py",
+      "sha256": "b789f5d03c1db17c3513234dd427191f0bfcca253fc4327627799c96331679db",
+      "bytes": 4035
+    },
+    {
+      "path": "yapftests/reformatter_basic_test.py",
+      "sha256": "b6d333712844a6a1814c7b0ac62d72fe19f184b119dfac47c24ffa034791f5ed",
+      "bytes": 112945
+    },
+    {
+      "path": "yapftests/reformatter_buganizer_test.py",
+      "sha256": "5c04c576ca6e2e83e92ec677b012a3a1f4af104cf0c3d0de1734fdc536df01ed",
+      "bytes": 86725
+    },
+    {
+      "path": "yapftests/reformatter_facebook_test.py",
+      "sha256": "075bd3c4dd11eda5e6648b14dc399a9d3a11d1acfe0596f7b7db61bd70d7835c",
+      "bytes": 15205
+    },
+    {
+      "path": "yapftests/reformatter_pep8_test.py",
+      "sha256": "3c02376dd5d3975212dfc59042fb196a21638e6eea7dbaba54137926c95b6365",
+      "bytes": 31151
+    },
+    {
+      "path": "yapftests/reformatter_python3_test.py",
+      "sha256": "9d0c1c03c89376facb573edb37ab1a3c110dd179681c52f09ce50698f3c393a9",
+      "bytes": 18846
+    },
+    {
+      "path": "yapftests/reformatter_style_config_test.py",
+      "sha256": "a31086c72ee0cb6c1d2a21bec2b6149334ce9139aaeadb4f1de946de3befa173",
+      "bytes": 7211
+    },
+    {
+      "path": "yapftests/split_penalty_test.py",
+      "sha256": "cf5f87a01e3dad0392a8b7654bfca871267485a4c8c06f939815ba75c2bf2dcc",
+      "bytes": 7433
+    },
+    {
+      "path": "yapftests/style_test.py",
+      "sha256": "3ddb390407a80595910298314f040e9bb417168be45ad016a419c9f1b9b3f240",
+      "bytes": 11599
+    },
+    {
+      "path": "yapftests/subtype_assigner_test.py",
+      "sha256": "f279c22c1e3a046c8e78537e2cc4459507d3ea648d0e5e09045e4cca4e2ee0a5",
+      "bytes": 17201
+    },
+    {
+      "path": "yapftests/utils.py",
+      "sha256": "4ac804c2a32c835cd3d1bb2728f54f21d52e4f381db56599ca878d3a496674a8",
+      "bytes": 2567
+    },
+    {
+      "path": "yapftests/yapf_test.py",
+      "sha256": "8359b7a51cc4f041216ed653808cee43b2dbed5bbe9eb6fb458a206a8bc44527",
+      "bytes": 63153
+    },
+    {
+      "path": "yapftests/yapf_test_helper.py",
+      "sha256": "f9e65e0bbb7815857b126a2e44df8042fbc29f9fdd21c8ce60e2daf877691546",
+      "bytes": 2910
+    }
+  ],
+  "source": "Exact pure-Python baseline legacy environment copy"
+}

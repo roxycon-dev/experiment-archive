@@ -1,0 +1,143 @@
+{
+  "sid": "IDRiD_56",
+  "warmup": false,
+  "hw": [
+    3665,
+    3665
+  ],
+  "counts": {
+    "full": [
+      [
+        8794,
+        5553,
+        4519
+      ],
+      [
+        83471,
+        35227,
+        116238
+      ],
+      [
+        36940,
+        9028,
+        19692
+      ],
+      [
+        1914,
+        401,
+        8769
+      ]
+    ],
+    "no_h4": [
+      [
+        8794,
+        5553,
+        4519
+      ],
+      [
+        83471,
+        35227,
+        116238
+      ],
+      [
+        36940,
+        9028,
+        19692
+      ],
+      [
+        1049,
+        400,
+        9634
+      ]
+    ],
+    "no_convnext": [
+      [
+        8567,
+        7712,
+        4746
+      ],
+      [
+        85954,
+        37956,
+        113755
+      ],
+      [
+        34785,
+        10100,
+        21847
+      ],
+      [
+        2038,
+        670,
+        8645
+      ]
+    ],
+    "matched_c20": [
+      [
+        8787,
+        5480,
+        4526
+      ],
+      [
+        80483,
+        37181,
+        119226
+      ],
+      [
+        37399,
+        9581,
+        19233
+      ],
+      [
+        1860,
+        383,
+        8823
+      ]
+    ]
+  },
+  "image_sha256": "0b6f90c8098fa0407aafe13868a74344baa1eb8b988def51003fe96e6206dd8e",
+  "prediction_path": "/root/autodl-tmp/paper_supplement_20261023_run/paper_supplement_20261023/results/idrid_holdout_v1/predictions/IDRiD_56.npz",
+  "mask_sha256": "15584ad8ce33d823288f47da1db68690fab4ed46a26ec86df24a59a5984e2640",
+  "timing": {
+    "A_inference_seconds": 5.153114550746977,
+    "with_cached_partners": true
+  },
+  "branch_probability_records": {
+    "S": {
+      "sid": "IDRiD_56",
+      "arm": "S",
+      "hw": [
+        3665,
+        3665
+      ],
+      "probability_sha256": "03d2c8a78d30b6ab12f494300a49e0a0a58044e05d91e27c8c5013f6872497cb",
+      "image_sha256": "0b6f90c8098fa0407aafe13868a74344baa1eb8b988def51003fe96e6206dd8e",
+      "seconds": 2.9628140116110444,
+      "GPU_peak_allocated": 1527226880
+    },
+    "C": {
+      "sid": "IDRiD_56",
+      "arm": "C",
+      "hw": [
+        3665,
+        3665
+      ],
+      "probability_sha256": "0dba5cbddd3e7173350c309c9dd41d4e6752e29cfa29a622286314836e43bde5",
+      "image_sha256": "0b6f90c8098fa0407aafe13868a74344baa1eb8b988def51003fe96e6206dd8e",
+      "seconds": 2.5030651865527034,
+      "GPU_peak_allocated": 654603264
+    },
+    "U": {
+      "sid": "IDRiD_56",
+      "arm": "U",
+      "hw": [
+        3665,
+        3665
+      ],
+      "probability_sha256": "2d95785a4439a37ffdbc8d12e37d66976692eda5e78d7edca8c7a6675a56395e",
+      "image_sha256": "0b6f90c8098fa0407aafe13868a74344baa1eb8b988def51003fe96e6206dd8e",
+      "seconds": 1.8881585048511624,
+      "GPU_peak_allocated": 3634557440
+    }
+  }
+}

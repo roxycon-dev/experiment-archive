@@ -1,0 +1,43 @@
+{
+  "sid": "20170509092532699",
+  "cohort": "ddr",
+  "hw": [
+    1728,
+    2592
+  ],
+  "image_sha256": "2bd2197f4825ff187dfc411cf45c432f4283736fad72c5e65a4080fba6fdee3b",
+  "label_sha256": "a5167c4b06167a7faf5f0a53318a19cf410570909cd381826f28b240c98843f4",
+  "external_GT_sha256": {},
+  "counts": {
+    "baseline": [
+      [
+        0,
+        109,
+        0
+      ],
+      [
+        1709,
+        771,
+        1643
+      ],
+      [
+        4338,
+        1427,
+        1062
+      ],
+      [
+        120,
+        91,
+        716
+      ]
+    ]
+  },
+  "mask_sha256": "b91c3c8ab3a13b62e01cc6801d7aeeff6faef0f74d667c8a6bc09327b071f9a1",
+  "timing": {
+    "pipeline_to_native_binary_mask_seconds": 0.35868182099511614,
+    "GPU_peak_allocated_bytes": 2159913984,
+    "includes": "image read/transform,CPU-GPU transfer,forward,original-coordinate alignment,sigmoid,threshold,return to CPU",
+    "excludes": "model startup,ground-truth reading and evaluation,result persistence"
+  },
+  "warmup": false
+}

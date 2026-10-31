@@ -1,0 +1,621 @@
+{
+  "scope": "numeric extraction from actual retained recipes, configuration ancestry and checkpoint metadata; no execution",
+  "records": [
+    {
+      "value": 2.0,
+      "original_source": "D:\\dataset\\experiment\\HRDecoder_Next_20261003\\vendor\\champion_repo\\configs\\lesion\\exp\\baseline_split613.py",
+      "original_sha256": "b1bc3a6fb349d4e04f33ea4c8325852e5859b9ac46ddc04c922909e409040d08",
+      "location": "line 36, samples_per_gpu",
+      "exact_excerpt": "samples_per_gpu=2,",
+      "role": "inherited initial-detail and historical baseline schedule; E4 inherits this config"
+    },
+    {
+      "value": 0.005,
+      "original_source": "D:\\dataset\\experiment\\HRDecoder_Next_20261003\\vendor\\champion_repo\\configs\\lesion\\exp\\baseline_split613.py",
+      "original_sha256": "b1bc3a6fb349d4e04f33ea4c8325852e5859b9ac46ddc04c922909e409040d08",
+      "location": "line 52, lr",
+      "exact_excerpt": "optimizer = dict(type='SGD', lr=0.005, momentum=0.9, weight_decay=0.0005)",
+      "role": "inherited initial-detail and historical baseline schedule; E4 inherits this config"
+    },
+    {
+      "value": 0.9,
+      "original_source": "D:\\dataset\\experiment\\HRDecoder_Next_20261003\\vendor\\champion_repo\\configs\\lesion\\exp\\baseline_split613.py",
+      "original_sha256": "b1bc3a6fb349d4e04f33ea4c8325852e5859b9ac46ddc04c922909e409040d08",
+      "location": "line 52, momentum",
+      "exact_excerpt": "optimizer = dict(type='SGD', lr=0.005, momentum=0.9, weight_decay=0.0005)",
+      "role": "inherited initial-detail and historical baseline schedule; E4 inherits this config"
+    },
+    {
+      "value": 0.0005,
+      "original_source": "D:\\dataset\\experiment\\HRDecoder_Next_20261003\\vendor\\champion_repo\\configs\\lesion\\exp\\baseline_split613.py",
+      "original_sha256": "b1bc3a6fb349d4e04f33ea4c8325852e5859b9ac46ddc04c922909e409040d08",
+      "location": "line 52, weight_decay",
+      "exact_excerpt": "optimizer = dict(type='SGD', lr=0.005, momentum=0.9, weight_decay=0.0005)",
+      "role": "inherited initial-detail and historical baseline schedule; E4 inherits this config"
+    },
+    {
+      "value": 40000.0,
+      "original_source": "D:\\dataset\\experiment\\HRDecoder_Next_20261003\\vendor\\champion_repo\\configs\\lesion\\exp\\baseline_split613.py",
+      "original_sha256": "b1bc3a6fb349d4e04f33ea4c8325852e5859b9ac46ddc04c922909e409040d08",
+      "location": "line 55, max_iters",
+      "exact_excerpt": "runner = dict(type='IterBasedRunner', max_iters=40000)",
+      "role": "inherited initial-detail and historical baseline schedule; E4 inherits this config"
+    },
+    {
+      "value": 1500.0,
+      "original_source": "D:\\dataset\\experiment\\HRDecoder_Next_20261003\\vendor\\champion_repo\\configs\\_base_\\schedules\\poly10warm.py",
+      "original_sha256": "a2f1b73af6838d9ce751de68804f641691272e5d17ab08327f862360f9beb7b6",
+      "location": "line 11, warmup_iters",
+      "exact_excerpt": "warmup_iters=1500,",
+      "role": "initial-detail inherited warmup"
+    },
+    {
+      "value": 1e-06,
+      "original_source": "D:\\dataset\\experiment\\HRDecoder_Next_20261003\\vendor\\champion_repo\\configs\\_base_\\schedules\\poly10warm.py",
+      "original_sha256": "a2f1b73af6838d9ce751de68804f641691272e5d17ab08327f862360f9beb7b6",
+      "location": "line 12, warmup_ratio",
+      "exact_excerpt": "warmup_ratio=1e-6,",
+      "role": "initial-detail inherited warmup"
+    },
+    {
+      "value": 1.0,
+      "original_source": "D:\\dataset\\experiment\\HRDecoder_Next_20261003\\vendor\\champion_repo\\configs\\_base_\\schedules\\poly10warm.py",
+      "original_sha256": "a2f1b73af6838d9ce751de68804f641691272e5d17ab08327f862360f9beb7b6",
+      "location": "line 13, power",
+      "exact_excerpt": "power=1.0,",
+      "role": "initial-detail inherited warmup"
+    },
+    {
+      "value": 0.0,
+      "original_source": "D:\\dataset\\experiment\\HRDecoder_Next_20261003\\vendor\\champion_repo\\configs\\_base_\\schedules\\poly10warm.py",
+      "original_sha256": "a2f1b73af6838d9ce751de68804f641691272e5d17ab08327f862360f9beb7b6",
+      "location": "line 14, min_lr",
+      "exact_excerpt": "min_lr=0.0,",
+      "role": "initial-detail inherited warmup"
+    },
+    {
+      "value": 0.0005,
+      "original_source": "D:\\dataset\\experiment\\HRDecoder_Next_20261003\\vendor\\champion_repo\\configs\\lesion\\exp\\hr100_a.py",
+      "original_sha256": "f60a545f6120464275edd60f1e9e504291e676e3a5e6b0df7eba3071af83f45a",
+      "location": "line 12, lr",
+      "exact_excerpt": "optimizer = dict(type='SGD', lr=0.0005, momentum=0.9, weight_decay=0.0005)",
+      "role": "refined B inherits A numerical settings but B overrides semantic_refinement=False"
+    },
+    {
+      "value": 0.9,
+      "original_source": "D:\\dataset\\experiment\\HRDecoder_Next_20261003\\vendor\\champion_repo\\configs\\lesion\\exp\\hr100_a.py",
+      "original_sha256": "f60a545f6120464275edd60f1e9e504291e676e3a5e6b0df7eba3071af83f45a",
+      "location": "line 12, momentum",
+      "exact_excerpt": "optimizer = dict(type='SGD', lr=0.0005, momentum=0.9, weight_decay=0.0005)",
+      "role": "refined B inherits A numerical settings but B overrides semantic_refinement=False"
+    },
+    {
+      "value": 0.0005,
+      "original_source": "D:\\dataset\\experiment\\HRDecoder_Next_20261003\\vendor\\champion_repo\\configs\\lesion\\exp\\hr100_a.py",
+      "original_sha256": "f60a545f6120464275edd60f1e9e504291e676e3a5e6b0df7eba3071af83f45a",
+      "location": "line 12, weight_decay",
+      "exact_excerpt": "optimizer = dict(type='SGD', lr=0.0005, momentum=0.9, weight_decay=0.0005)",
+      "role": "refined B inherits A numerical settings but B overrides semantic_refinement=False"
+    },
+    {
+      "value": 5.0,
+      "original_source": "D:\\dataset\\experiment\\HRDecoder_Next_20261003\\vendor\\champion_repo\\configs\\lesion\\exp\\hr100_a.py",
+      "original_sha256": "f60a545f6120464275edd60f1e9e504291e676e3a5e6b0df7eba3071af83f45a",
+      "location": "line 13, max_norm",
+      "exact_excerpt": "optimizer_config = dict(grad_clip=dict(max_norm=5.0, norm_type=2))",
+      "role": "refined B inherits A numerical settings but B overrides semantic_refinement=False"
+    },
+    {
+      "value": 200.0,
+      "original_source": "D:\\dataset\\experiment\\HRDecoder_Next_20261003\\vendor\\champion_repo\\configs\\lesion\\exp\\hr100_a.py",
+      "original_sha256": "f60a545f6120464275edd60f1e9e504291e676e3a5e6b0df7eba3071af83f45a",
+      "location": "line 14, warmup_iters",
+      "exact_excerpt": "lr_config = dict(policy='poly', warmup='linear', warmup_iters=200, warmup_ratio=0.1, power=1.0, min_lr=0.00005, by_epoch=False)",
+      "role": "refined B inherits A numerical settings but B overrides semantic_refinement=False"
+    },
+    {
+      "value": 0.1,
+      "original_source": "D:\\dataset\\experiment\\HRDecoder_Next_20261003\\vendor\\champion_repo\\configs\\lesion\\exp\\hr100_a.py",
+      "original_sha256": "f60a545f6120464275edd60f1e9e504291e676e3a5e6b0df7eba3071af83f45a",
+      "location": "line 14, warmup_ratio",
+      "exact_excerpt": "lr_config = dict(policy='poly', warmup='linear', warmup_iters=200, warmup_ratio=0.1, power=1.0, min_lr=0.00005, by_epoch=False)",
+      "role": "refined B inherits A numerical settings but B overrides semantic_refinement=False"
+    },
+    {
+      "value": 1.0,
+      "original_source": "D:\\dataset\\experiment\\HRDecoder_Next_20261003\\vendor\\champion_repo\\configs\\lesion\\exp\\hr100_a.py",
+      "original_sha256": "f60a545f6120464275edd60f1e9e504291e676e3a5e6b0df7eba3071af83f45a",
+      "location": "line 14, power",
+      "exact_excerpt": "lr_config = dict(policy='poly', warmup='linear', warmup_iters=200, warmup_ratio=0.1, power=1.0, min_lr=0.00005, by_epoch=False)",
+      "role": "refined B inherits A numerical settings but B overrides semantic_refinement=False"
+    },
+    {
+      "value": 5e-05,
+      "original_source": "D:\\dataset\\experiment\\HRDecoder_Next_20261003\\vendor\\champion_repo\\configs\\lesion\\exp\\hr100_a.py",
+      "original_sha256": "f60a545f6120464275edd60f1e9e504291e676e3a5e6b0df7eba3071af83f45a",
+      "location": "line 14, min_lr",
+      "exact_excerpt": "lr_config = dict(policy='poly', warmup='linear', warmup_iters=200, warmup_ratio=0.1, power=1.0, min_lr=0.00005, by_epoch=False)",
+      "role": "refined B inherits A numerical settings but B overrides semantic_refinement=False"
+    },
+    {
+      "value": 8000.0,
+      "original_source": "D:\\dataset\\experiment\\HRDecoder_Next_20261003\\vendor\\champion_repo\\configs\\lesion\\exp\\hr100_a.py",
+      "original_sha256": "f60a545f6120464275edd60f1e9e504291e676e3a5e6b0df7eba3071af83f45a",
+      "location": "line 15, max_iters",
+      "exact_excerpt": "runner = dict(type='IterBasedRunner', max_iters=8000)",
+      "role": "refined B inherits A numerical settings but B overrides semantic_refinement=False"
+    },
+    {
+      "value": 2.0,
+      "original_source": "D:\\dataset\\experiment\\HRDecoder_Next_20261003\\vendor\\champion_repo\\configs\\lesion\\exp\\hrplus_patch_dice.py",
+      "original_sha256": "2d687086e28533d4bb080f31c12c4abb802d5293fc4f2a463f9f0bd8f36452f9",
+      "location": "line 38, samples_per_gpu",
+      "exact_excerpt": "samples_per_gpu=2,",
+      "role": "retained local student"
+    },
+    {
+      "value": 0.0005,
+      "original_source": "D:\\dataset\\experiment\\HRDecoder_Next_20261003\\vendor\\champion_repo\\configs\\lesion\\exp\\hrplus_patch_dice.py",
+      "original_sha256": "2d687086e28533d4bb080f31c12c4abb802d5293fc4f2a463f9f0bd8f36452f9",
+      "location": "line 50, lr",
+      "exact_excerpt": "optimizer = dict(type='SGD', lr=0.0005, momentum=0.9, weight_decay=0.0005)",
+      "role": "retained local student"
+    },
+    {
+      "value": 0.9,
+      "original_source": "D:\\dataset\\experiment\\HRDecoder_Next_20261003\\vendor\\champion_repo\\configs\\lesion\\exp\\hrplus_patch_dice.py",
+      "original_sha256": "2d687086e28533d4bb080f31c12c4abb802d5293fc4f2a463f9f0bd8f36452f9",
+      "location": "line 50, momentum",
+      "exact_excerpt": "optimizer = dict(type='SGD', lr=0.0005, momentum=0.9, weight_decay=0.0005)",
+      "role": "retained local student"
+    },
+    {
+      "value": 0.0005,
+      "original_source": "D:\\dataset\\experiment\\HRDecoder_Next_20261003\\vendor\\champion_repo\\configs\\lesion\\exp\\hrplus_patch_dice.py",
+      "original_sha256": "2d687086e28533d4bb080f31c12c4abb802d5293fc4f2a463f9f0bd8f36452f9",
+      "location": "line 50, weight_decay",
+      "exact_excerpt": "optimizer = dict(type='SGD', lr=0.0005, momentum=0.9, weight_decay=0.0005)",
+      "role": "retained local student"
+    },
+    {
+      "value": 5.0,
+      "original_source": "D:\\dataset\\experiment\\HRDecoder_Next_20261003\\vendor\\champion_repo\\configs\\lesion\\exp\\hrplus_patch_dice.py",
+      "original_sha256": "2d687086e28533d4bb080f31c12c4abb802d5293fc4f2a463f9f0bd8f36452f9",
+      "location": "line 51, max_norm",
+      "exact_excerpt": "optimizer_config = dict(grad_clip=dict(max_norm=5.0, norm_type=2))",
+      "role": "retained local student"
+    },
+    {
+      "value": 200.0,
+      "original_source": "D:\\dataset\\experiment\\HRDecoder_Next_20261003\\vendor\\champion_repo\\configs\\lesion\\exp\\hrplus_patch_dice.py",
+      "original_sha256": "2d687086e28533d4bb080f31c12c4abb802d5293fc4f2a463f9f0bd8f36452f9",
+      "location": "line 52, warmup_iters",
+      "exact_excerpt": "lr_config = dict(policy='poly', warmup='linear', warmup_iters=200,",
+      "role": "retained local student"
+    },
+    {
+      "value": 0.1,
+      "original_source": "D:\\dataset\\experiment\\HRDecoder_Next_20261003\\vendor\\champion_repo\\configs\\lesion\\exp\\hrplus_patch_dice.py",
+      "original_sha256": "2d687086e28533d4bb080f31c12c4abb802d5293fc4f2a463f9f0bd8f36452f9",
+      "location": "line 53, warmup_ratio",
+      "exact_excerpt": "warmup_ratio=0.1, power=1.0, min_lr=0.00005, by_epoch=False)",
+      "role": "retained local student"
+    },
+    {
+      "value": 1.0,
+      "original_source": "D:\\dataset\\experiment\\HRDecoder_Next_20261003\\vendor\\champion_repo\\configs\\lesion\\exp\\hrplus_patch_dice.py",
+      "original_sha256": "2d687086e28533d4bb080f31c12c4abb802d5293fc4f2a463f9f0bd8f36452f9",
+      "location": "line 53, power",
+      "exact_excerpt": "warmup_ratio=0.1, power=1.0, min_lr=0.00005, by_epoch=False)",
+      "role": "retained local student"
+    },
+    {
+      "value": 5e-05,
+      "original_source": "D:\\dataset\\experiment\\HRDecoder_Next_20261003\\vendor\\champion_repo\\configs\\lesion\\exp\\hrplus_patch_dice.py",
+      "original_sha256": "2d687086e28533d4bb080f31c12c4abb802d5293fc4f2a463f9f0bd8f36452f9",
+      "location": "line 53, min_lr",
+      "exact_excerpt": "warmup_ratio=0.1, power=1.0, min_lr=0.00005, by_epoch=False)",
+      "role": "retained local student"
+    },
+    {
+      "value": 20000.0,
+      "original_source": "D:\\dataset\\experiment\\HRDecoder_Next_20261003\\vendor\\champion_repo\\configs\\lesion\\exp\\hrplus_patch_dice.py",
+      "original_sha256": "2d687086e28533d4bb080f31c12c4abb802d5293fc4f2a463f9f0bd8f36452f9",
+      "location": "line 54, max_iters",
+      "exact_excerpt": "runner = dict(type='IterBasedRunner', max_iters=20000)",
+      "role": "retained local student"
+    },
+    {
+      "value": 2.0,
+      "original_source": "D:\\dataset\\experiment\\HRDecoder_Next_20261003\\vendor\\champion_repo\\configs\\lesion\\exp\\hrplus_mares.py",
+      "original_sha256": "591e4786abaa35b8dfc9a6476c45a8c9eb387544c37e0d56b6a499b683e100b4",
+      "location": "line 17, samples_per_gpu",
+      "exact_excerpt": "samples_per_gpu=2,",
+      "role": "retained semantic MA residual expert"
+    },
+    {
+      "value": 0.01,
+      "original_source": "D:\\dataset\\experiment\\HRDecoder_Next_20261003\\vendor\\champion_repo\\configs\\lesion\\exp\\hrplus_mares.py",
+      "original_sha256": "591e4786abaa35b8dfc9a6476c45a8c9eb387544c37e0d56b6a499b683e100b4",
+      "location": "line 22, lr",
+      "exact_excerpt": "optimizer = dict(type='SGD', lr=0.01, momentum=0.9, weight_decay=0.0005)",
+      "role": "retained semantic MA residual expert"
+    },
+    {
+      "value": 0.9,
+      "original_source": "D:\\dataset\\experiment\\HRDecoder_Next_20261003\\vendor\\champion_repo\\configs\\lesion\\exp\\hrplus_mares.py",
+      "original_sha256": "591e4786abaa35b8dfc9a6476c45a8c9eb387544c37e0d56b6a499b683e100b4",
+      "location": "line 22, momentum",
+      "exact_excerpt": "optimizer = dict(type='SGD', lr=0.01, momentum=0.9, weight_decay=0.0005)",
+      "role": "retained semantic MA residual expert"
+    },
+    {
+      "value": 0.0005,
+      "original_source": "D:\\dataset\\experiment\\HRDecoder_Next_20261003\\vendor\\champion_repo\\configs\\lesion\\exp\\hrplus_mares.py",
+      "original_sha256": "591e4786abaa35b8dfc9a6476c45a8c9eb387544c37e0d56b6a499b683e100b4",
+      "location": "line 22, weight_decay",
+      "exact_excerpt": "optimizer = dict(type='SGD', lr=0.01, momentum=0.9, weight_decay=0.0005)",
+      "role": "retained semantic MA residual expert"
+    },
+    {
+      "value": 5.0,
+      "original_source": "D:\\dataset\\experiment\\HRDecoder_Next_20261003\\vendor\\champion_repo\\configs\\lesion\\exp\\hrplus_mares.py",
+      "original_sha256": "591e4786abaa35b8dfc9a6476c45a8c9eb387544c37e0d56b6a499b683e100b4",
+      "location": "line 23, max_norm",
+      "exact_excerpt": "optimizer_config = dict(grad_clip=dict(max_norm=5.0, norm_type=2))",
+      "role": "retained semantic MA residual expert"
+    },
+    {
+      "value": 300.0,
+      "original_source": "D:\\dataset\\experiment\\HRDecoder_Next_20261003\\vendor\\champion_repo\\configs\\lesion\\exp\\hrplus_mares.py",
+      "original_sha256": "591e4786abaa35b8dfc9a6476c45a8c9eb387544c37e0d56b6a499b683e100b4",
+      "location": "line 24, warmup_iters",
+      "exact_excerpt": "lr_config = dict(policy='poly', warmup='linear', warmup_iters=300,",
+      "role": "retained semantic MA residual expert"
+    },
+    {
+      "value": 0.1,
+      "original_source": "D:\\dataset\\experiment\\HRDecoder_Next_20261003\\vendor\\champion_repo\\configs\\lesion\\exp\\hrplus_mares.py",
+      "original_sha256": "591e4786abaa35b8dfc9a6476c45a8c9eb387544c37e0d56b6a499b683e100b4",
+      "location": "line 25, warmup_ratio",
+      "exact_excerpt": "warmup_ratio=0.1, power=1.0, min_lr=0.0001, by_epoch=False)",
+      "role": "retained semantic MA residual expert"
+    },
+    {
+      "value": 1.0,
+      "original_source": "D:\\dataset\\experiment\\HRDecoder_Next_20261003\\vendor\\champion_repo\\configs\\lesion\\exp\\hrplus_mares.py",
+      "original_sha256": "591e4786abaa35b8dfc9a6476c45a8c9eb387544c37e0d56b6a499b683e100b4",
+      "location": "line 25, power",
+      "exact_excerpt": "warmup_ratio=0.1, power=1.0, min_lr=0.0001, by_epoch=False)",
+      "role": "retained semantic MA residual expert"
+    },
+    {
+      "value": 0.0001,
+      "original_source": "D:\\dataset\\experiment\\HRDecoder_Next_20261003\\vendor\\champion_repo\\configs\\lesion\\exp\\hrplus_mares.py",
+      "original_sha256": "591e4786abaa35b8dfc9a6476c45a8c9eb387544c37e0d56b6a499b683e100b4",
+      "location": "line 25, min_lr",
+      "exact_excerpt": "warmup_ratio=0.1, power=1.0, min_lr=0.0001, by_epoch=False)",
+      "role": "retained semantic MA residual expert"
+    },
+    {
+      "value": 6000.0,
+      "original_source": "D:\\dataset\\experiment\\HRDecoder_Next_20261003\\vendor\\champion_repo\\configs\\lesion\\exp\\hrplus_mares.py",
+      "original_sha256": "591e4786abaa35b8dfc9a6476c45a8c9eb387544c37e0d56b6a499b683e100b4",
+      "location": "line 26, max_iters",
+      "exact_excerpt": "runner = dict(type='IterBasedRunner', max_iters=6000)",
+      "role": "retained semantic MA residual expert"
+    },
+    {
+      "value": 2000.0,
+      "original_source": "D:\\dataset\\experiment\\paper_writing_20261023\\evidence\\ma_correction_source.json",
+      "original_sha256": "c7b28928aa3e502d8a710c29612acb868f6a71068bd89e93654c22ffbed959f2",
+      "location": "/models/0/ckpt",
+      "exact_excerpt": "/root/autodl-tmp/hrplus/D_0913_retry/best_mIoU_iter_2000.pth",
+      "role": "retained checkpoint update parsed from immutable historical test recipe filename"
+    },
+    {
+      "value": 1500.0,
+      "original_source": "D:\\dataset\\experiment\\paper_writing_20261023\\evidence\\ma_correction_source.json",
+      "original_sha256": "c7b28928aa3e502d8a710c29612acb868f6a71068bd89e93654c22ffbed959f2",
+      "location": "/models/1/ckpt",
+      "exact_excerpt": "/root/autodl-tmp/hrplus/results/E_0916/best_mIoU_iter_1500.pth",
+      "role": "retained checkpoint update parsed from immutable historical test recipe filename"
+    },
+    {
+      "value": 3000.0,
+      "original_source": "D:\\dataset\\experiment\\paper_writing_20261023\\evidence\\ma_correction_source.json",
+      "original_sha256": "c7b28928aa3e502d8a710c29612acb868f6a71068bd89e93654c22ffbed959f2",
+      "location": "/models/2/ckpt",
+      "exact_excerpt": "/root/autodl-tmp/hr100/trial_b/best_mIoU_iter_3000.pth",
+      "role": "retained checkpoint update parsed from immutable historical test recipe filename"
+    },
+    {
+      "value": 36000.0,
+      "original_source": "D:\\dataset\\experiment\\paper_writing_20261023\\evidence\\ma_correction_source.json",
+      "original_sha256": "c7b28928aa3e502d8a710c29612acb868f6a71068bd89e93654c22ffbed959f2",
+      "location": "/models/3/ckpt",
+      "exact_excerpt": "/root/HRDecoder/work_dirs/exp_e4_detail_split613/best_mIoU_iter_36000.pth",
+      "role": "retained checkpoint update parsed from immutable historical test recipe filename"
+    },
+    {
+      "value": 2000.0,
+      "original_source": "D:\\dataset\\experiment\\HRDecoder_审查轮_20260916\\audit_runs\\audit_20260916_A\\experiments\\h4_post_fusion_corrector.json",
+      "original_sha256": "b205bb6f6cb4a27469b8bb42437b29181875160f1947bbf28d09b05af930c6cd",
+      "location": "/iters",
+      "exact_excerpt": "2000",
+      "role": "actual bounded MA post-correction run; actual run length overrides script default"
+    },
+    {
+      "value": 0.001,
+      "original_source": "D:\\dataset\\experiment\\HRDecoder_审查轮_20260916\\audit_runs\\audit_20260916_A\\experiments\\h4_post_fusion_corrector.json",
+      "original_sha256": "b205bb6f6cb4a27469b8bb42437b29181875160f1947bbf28d09b05af930c6cd",
+      "location": "/lr",
+      "exact_excerpt": "0.001",
+      "role": "actual bounded MA post-correction run; actual run length overrides script default"
+    },
+    {
+      "value": 1600.0,
+      "original_source": "D:\\dataset\\experiment\\HRDecoder_审查轮_20260916\\audit_runs\\audit_20260916_A\\experiments\\h4_post_fusion_corrector.json",
+      "original_sha256": "b205bb6f6cb4a27469b8bb42437b29181875160f1947bbf28d09b05af930c6cd",
+      "location": "/best/step",
+      "exact_excerpt": "1600",
+      "role": "actual bounded MA post-correction run; actual run length overrides script default"
+    },
+    {
+      "value": 12000.0,
+      "original_source": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\reports\\U0_historical_checkpoint_metadata.json",
+      "original_sha256": "f7a8708cb0306902983073c8611b7d39e3cf481c7963dff41df8420bc63ac101",
+      "location": "/update",
+      "exact_excerpt": "12000",
+      "role": "historical ConvNeXt checkpoint metadata; RNG deliberately omitted; micro_step is not microbatch size"
+    },
+    {
+      "value": 24000.0,
+      "original_source": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\reports\\U0_historical_checkpoint_metadata.json",
+      "original_sha256": "f7a8708cb0306902983073c8611b7d39e3cf481c7963dff41df8420bc63ac101",
+      "location": "/micro_step",
+      "exact_excerpt": "24000",
+      "role": "historical ConvNeXt checkpoint metadata; RNG deliberately omitted; micro_step is not microbatch size"
+    },
+    {
+      "value": 12000.0,
+      "original_source": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\reports\\U0_historical_checkpoint_metadata.json",
+      "original_sha256": "f7a8708cb0306902983073c8611b7d39e3cf481c7963dff41df8420bc63ac101",
+      "location": "/total_updates",
+      "exact_excerpt": "12000",
+      "role": "historical ConvNeXt checkpoint metadata; RNG deliberately omitted; micro_step is not microbatch size"
+    },
+    {
+      "value": 0.0001,
+      "original_source": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\reports\\U0_historical_checkpoint_metadata.json",
+      "original_sha256": "f7a8708cb0306902983073c8611b7d39e3cf481c7963dff41df8420bc63ac101",
+      "location": "/scheduler_state/base_lrs/backbone",
+      "exact_excerpt": "0.0001",
+      "role": "historical ConvNeXt checkpoint metadata; RNG deliberately omitted; micro_step is not microbatch size"
+    },
+    {
+      "value": 0.0003,
+      "original_source": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\reports\\U0_historical_checkpoint_metadata.json",
+      "original_sha256": "f7a8708cb0306902983073c8611b7d39e3cf481c7963dff41df8420bc63ac101",
+      "location": "/scheduler_state/base_lrs/decoder",
+      "exact_excerpt": "0.0003",
+      "role": "historical ConvNeXt checkpoint metadata; RNG deliberately omitted; micro_step is not microbatch size"
+    },
+    {
+      "value": 12000.0,
+      "original_source": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\reports\\U0_historical_checkpoint_metadata.json",
+      "original_sha256": "f7a8708cb0306902983073c8611b7d39e3cf481c7963dff41df8420bc63ac101",
+      "location": "/scheduler_state/total_updates",
+      "exact_excerpt": "12000",
+      "role": "historical ConvNeXt checkpoint metadata; RNG deliberately omitted; micro_step is not microbatch size"
+    },
+    {
+      "value": 600.0,
+      "original_source": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\reports\\U0_historical_checkpoint_metadata.json",
+      "original_sha256": "f7a8708cb0306902983073c8611b7d39e3cf481c7963dff41df8420bc63ac101",
+      "location": "/scheduler_state/warmup_updates",
+      "exact_excerpt": "600",
+      "role": "historical ConvNeXt checkpoint metadata; RNG deliberately omitted; micro_step is not microbatch size"
+    },
+    {
+      "value": 0.01,
+      "original_source": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\reports\\U0_historical_checkpoint_metadata.json",
+      "original_sha256": "f7a8708cb0306902983073c8611b7d39e3cf481c7963dff41df8420bc63ac101",
+      "location": "/scheduler_state/cosine_min_ratio",
+      "exact_excerpt": "0.01",
+      "role": "historical ConvNeXt checkpoint metadata; RNG deliberately omitted; micro_step is not microbatch size"
+    },
+    {
+      "value": 8.0,
+      "original_source": "D:\\dataset\\experiment\\HRDecoder_Next_20261003\\configs\\U0_historical_native_export.yaml",
+      "original_sha256": "cfc66cad69dd3a3bb52e740924d12bbb7958fa77bc50507f4dd127206d40154b",
+      "location": "line 50, effective_batch",
+      "exact_excerpt": "effective_batch: 8",
+      "role": "archived ConvNeXt export configuration declaration; original checkpoint configSHA not matched; not independently recovered actual microbatch metadata"
+    },
+    {
+      "value": 4.0,
+      "original_source": "D:\\dataset\\experiment\\HRDecoder_Next_20261003\\configs\\U0_historical_native_export.yaml",
+      "original_sha256": "cfc66cad69dd3a3bb52e740924d12bbb7958fa77bc50507f4dd127206d40154b",
+      "location": "line 51, micro_batch",
+      "exact_excerpt": "micro_batch: 4",
+      "role": "archived ConvNeXt export configuration declaration; original checkpoint configSHA not matched; not independently recovered actual microbatch metadata"
+    },
+    {
+      "value": 2.0,
+      "original_source": "D:\\dataset\\experiment\\HRDecoder_Next_20261003\\configs\\U0_historical_native_export.yaml",
+      "original_sha256": "cfc66cad69dd3a3bb52e740924d12bbb7958fa77bc50507f4dd127206d40154b",
+      "location": "line 52, grad_accum",
+      "exact_excerpt": "grad_accum: 2",
+      "role": "archived ConvNeXt export configuration declaration; original checkpoint configSHA not matched; not independently recovered actual microbatch metadata"
+    },
+    {
+      "value": 2.0,
+      "original_source": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\server_results\\configs\\protocol.json",
+      "original_sha256": "ad83409138bdf23ddcb2273112b3c79c54d8ad51731f2cfd817ff6f0addde46f",
+      "location": "/optimization/micro_batch",
+      "exact_excerpt": "2",
+      "role": "Q DDR partial-finetuning settings; retained16k uses24k learning-rate horizon"
+    },
+    {
+      "value": 4.0,
+      "original_source": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\server_results\\configs\\protocol.json",
+      "original_sha256": "ad83409138bdf23ddcb2273112b3c79c54d8ad51731f2cfd817ff6f0addde46f",
+      "location": "/optimization/accumulation",
+      "exact_excerpt": "4",
+      "role": "Q DDR partial-finetuning settings; retained16k uses24k learning-rate horizon"
+    },
+    {
+      "value": 2000.0,
+      "original_source": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\server_results\\configs\\protocol.json",
+      "original_sha256": "ad83409138bdf23ddcb2273112b3c79c54d8ad51731f2cfd817ff6f0addde46f",
+      "location": "/optimization/frozen_updates",
+      "exact_excerpt": "2000",
+      "role": "Q DDR partial-finetuning settings; retained16k uses24k learning-rate horizon"
+    },
+    {
+      "value": 0.0003,
+      "original_source": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\server_results\\configs\\protocol.json",
+      "original_sha256": "ad83409138bdf23ddcb2273112b3c79c54d8ad51731f2cfd817ff6f0addde46f",
+      "location": "/optimization/head_lr",
+      "exact_excerpt": "0.0003",
+      "role": "Q DDR partial-finetuning settings; retained16k uses24k learning-rate horizon"
+    },
+    {
+      "value": 5e-06,
+      "original_source": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\server_results\\configs\\protocol.json",
+      "original_sha256": "ad83409138bdf23ddcb2273112b3c79c54d8ad51731f2cfd817ff6f0addde46f",
+      "location": "/optimization/backbone_lr",
+      "exact_excerpt": "5e-06",
+      "role": "Q DDR partial-finetuning settings; retained16k uses24k learning-rate horizon"
+    },
+    {
+      "value": 0.01,
+      "original_source": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\server_results\\configs\\protocol.json",
+      "original_sha256": "ad83409138bdf23ddcb2273112b3c79c54d8ad51731f2cfd817ff6f0addde46f",
+      "location": "/optimization/weight_decay",
+      "exact_excerpt": "0.01",
+      "role": "Q DDR partial-finetuning settings; retained16k uses24k learning-rate horizon"
+    },
+    {
+      "value": 1.0,
+      "original_source": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\server_results\\configs\\protocol.json",
+      "original_sha256": "ad83409138bdf23ddcb2273112b3c79c54d8ad51731f2cfd817ff6f0addde46f",
+      "location": "/optimization/clip_norm",
+      "exact_excerpt": "1.0",
+      "role": "Q DDR partial-finetuning settings; retained16k uses24k learning-rate horizon"
+    },
+    {
+      "value": 200.0,
+      "original_source": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\server_results\\configs\\protocol.json",
+      "original_sha256": "ad83409138bdf23ddcb2273112b3c79c54d8ad51731f2cfd817ff6f0addde46f",
+      "location": "/optimization/head_warmup",
+      "exact_excerpt": "200",
+      "role": "Q DDR partial-finetuning settings; retained16k uses24k learning-rate horizon"
+    },
+    {
+      "value": 500.0,
+      "original_source": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\server_results\\configs\\protocol.json",
+      "original_sha256": "ad83409138bdf23ddcb2273112b3c79c54d8ad51731f2cfd817ff6f0addde46f",
+      "location": "/optimization/backbone_warmup",
+      "exact_excerpt": "500",
+      "role": "Q DDR partial-finetuning settings; retained16k uses24k learning-rate horizon"
+    },
+    {
+      "value": 24000.0,
+      "original_source": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\server_results\\configs\\protocol.json",
+      "original_sha256": "ad83409138bdf23ddcb2273112b3c79c54d8ad51731f2cfd817ff6f0addde46f",
+      "location": "/optimization/schedule_horizon",
+      "exact_excerpt": "24000",
+      "role": "Q DDR partial-finetuning settings; retained16k uses24k learning-rate horizon"
+    },
+    {
+      "value": 0.01,
+      "original_source": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\server_results\\configs\\protocol.json",
+      "original_sha256": "ad83409138bdf23ddcb2273112b3c79c54d8ad51731f2cfd817ff6f0addde46f",
+      "location": "/optimization/lr_floor_ratio",
+      "exact_excerpt": "0.01",
+      "role": "Q DDR partial-finetuning settings; retained16k uses24k learning-rate horizon"
+    },
+    {
+      "value": 16000.0,
+      "original_source": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\server_results\\configs\\protocol.json",
+      "original_sha256": "ad83409138bdf23ddcb2273112b3c79c54d8ad51731f2cfd817ff6f0addde46f",
+      "location": "/experiment/base_endpoint",
+      "exact_excerpt": "16000",
+      "role": "Q DDR partial-finetuning settings; retained16k uses24k learning-rate horizon"
+    },
+    {
+      "value": 16000.0,
+      "original_source": "D:\\dataset\\experiment\\HRDecoder_NextPlan_20261004\\execution\\server_results\\runs\\F12_seed42\\initialization.json",
+      "original_sha256": "f5bdb78da130a721f3804d6f6deddea0ed3e213ed71853893ea74cca9b768ece",
+      "location": "/checkpoint_completed",
+      "exact_excerpt": "16000",
+      "role": "actual F12 initial checkpoint completed update"
+    },
+    {
+      "value": 12000.0,
+      "original_source": "D:\\dataset\\experiment\\HRDecoder_NextPlan_20261004\\execution\\configs\\protocol.json",
+      "original_sha256": "388480f0d6560c0722d0762e80f83525c3a6bdf5295025e1bbee16f827e8f169",
+      "location": "/F4_F12/new_stage_updates",
+      "exact_excerpt": "12000",
+      "role": "F12 stage protocol; actual saved endpoint established separately"
+    },
+    {
+      "value": 200.0,
+      "original_source": "D:\\dataset\\experiment\\HRDecoder_NextPlan_20261004\\execution\\configs\\protocol.json",
+      "original_sha256": "388480f0d6560c0722d0762e80f83525c3a6bdf5295025e1bbee16f827e8f169",
+      "location": "/F4_F12/warmup_updates",
+      "exact_excerpt": "200",
+      "role": "F12 stage protocol; actual saved endpoint established separately"
+    },
+    {
+      "value": 1e-05,
+      "original_source": "D:\\dataset\\experiment\\HRDecoder_NextPlan_20261004\\execution\\configs\\protocol.json",
+      "original_sha256": "388480f0d6560c0722d0762e80f83525c3a6bdf5295025e1bbee16f827e8f169",
+      "location": "/F4_F12/final_norm_peak_lr",
+      "exact_excerpt": "1e-05",
+      "role": "F12 stage protocol; actual saved endpoint established separately"
+    },
+    {
+      "value": 5e-05,
+      "original_source": "D:\\dataset\\experiment\\HRDecoder_NextPlan_20261004\\execution\\configs\\protocol.json",
+      "original_sha256": "388480f0d6560c0722d0762e80f83525c3a6bdf5295025e1bbee16f827e8f169",
+      "location": "/F4_F12/head_peak_lr",
+      "exact_excerpt": "5e-05",
+      "role": "F12 stage protocol; actual saved endpoint established separately"
+    },
+    {
+      "value": 0.01,
+      "original_source": "D:\\dataset\\experiment\\HRDecoder_NextPlan_20261004\\execution\\configs\\protocol.json",
+      "original_sha256": "388480f0d6560c0722d0762e80f83525c3a6bdf5295025e1bbee16f827e8f169",
+      "location": "/F4_F12/weight_decay",
+      "exact_excerpt": "0.01",
+      "role": "F12 stage protocol; actual saved endpoint established separately"
+    },
+    {
+      "value": 1.0,
+      "original_source": "D:\\dataset\\experiment\\HRDecoder_NextPlan_20261004\\execution\\configs\\protocol.json",
+      "original_sha256": "388480f0d6560c0722d0762e80f83525c3a6bdf5295025e1bbee16f827e8f169",
+      "location": "/F4_F12/clip_norm",
+      "exact_excerpt": "1.0",
+      "role": "F12 stage protocol; actual saved endpoint established separately"
+    },
+    {
+      "value": 2.0,
+      "original_source": "D:\\dataset\\experiment\\HRDecoder_NextPlan_20261004\\execution\\configs\\protocol.json",
+      "original_sha256": "388480f0d6560c0722d0762e80f83525c3a6bdf5295025e1bbee16f827e8f169",
+      "location": "/F4_F12/resources/micro_batch",
+      "exact_excerpt": "2",
+      "role": "F12 stage protocol; actual saved endpoint established separately"
+    },
+    {
+      "value": 4.0,
+      "original_source": "D:\\dataset\\experiment\\HRDecoder_NextPlan_20261004\\execution\\configs\\protocol.json",
+      "original_sha256": "388480f0d6560c0722d0762e80f83525c3a6bdf5295025e1bbee16f827e8f169",
+      "location": "/F4_F12/resources/accumulation",
+      "exact_excerpt": "4",
+      "role": "F12 stage protocol; actual saved endpoint established separately"
+    }
+  ]
+}

@@ -1,0 +1,287 @@
+{
+  "source_svg": "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\结题报告\\figures\\F11_predeclared_validation_cases.svg",
+  "source_svg_sha256": "1a399696990e92a66c690d0834a00f83798da114722e76265f21868969a70602",
+  "source_matches_20261005_delivery_manifest": true,
+  "source_generation_script": "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\结题报告\\analysis\\build_scientific_figures.py",
+  "source_script_sha256": "69c6d2e13d284889fb71c9b60ab5a2cf9a6bc37a042f2c9907a71d562c46e588",
+  "plan_source": "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\execution\\reports\\publication_server_evidence_plan.json",
+  "plan_sha256": "b6bf72ae6cffbfc3264893a6521f8e7098f25db3094a265b241707db9bca2154",
+  "derivation_source": "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\execution\\server_results\\reports\\publication_server_evidence\\derivation.json",
+  "derivation_sha256": "848b56133d8cc77b4966d6ecb48ffc473895b325af8efc550c08733fe0a80f70",
+  "current_validation_metrics_sha256_matches_plan": true,
+  "new_inference_or_training": false,
+  "new_model_or_case_selection": false,
+  "source_raster_resolution": [
+    206,
+    206
+  ],
+  "rendering_policy": "Lossless extraction of original SVG embedded PNG panels and exact reproduction of its scale(1,-1) display transform; new whitespace/labels only. Nearest-neighbor presentation; no recoloring, redrawing or AI modification. Native 768x768 ROI was downsampled in archived source figure; original prediction pixels cannot be reconstructed from this panel.",
+  "cases": [
+    {
+      "sid": "007-3727-200",
+      "split": "validation",
+      "roi_xyxy_original_pixels": [
+        1142,
+        895,
+        1910,
+        1663
+      ],
+      "selection_rule": "largest_MA_false_negative_pixel_reduction",
+      "selection_is_illustrative_not_random": true,
+      "rgb_source": "D:\\HRDecoder\\data\\DDR_split_613\\images\\val\\007-3727-200.jpg",
+      "rgb_sha256_current": "e11ad4c3d7c50012da14ecdbcc05c43ac18a196a93bd63ba44627ec146df4c0f",
+      "ground_truth_source": "D:\\HRDecoder\\data\\DDR_split_613\\labels\\val\\007-3727-200.png",
+      "ground_truth_sha256_matches_plan": true,
+      "spatial_model": "S_seed42 EMA @20000; recorded selected endpoint",
+      "spatial_full_probability_record": {
+        "sid": "007-3727-200",
+        "sha256": "b45ab53225dba3c768fffe3970162aa0792e05fb1509edee4906f75a0167f618",
+        "bytes": 80933779,
+        "dtype": "float32",
+        "shape": [
+          4,
+          2935,
+          2960
+        ]
+      },
+      "partner_crop_record": {
+        "path": "reports/publication_server_evidence/val_p0_crops/007-3727-200.npz",
+        "sha256": "a85d58a54391f364c4f2a1a984e2b6611bc78b405bf8e5aaeaded95fd188cfcf",
+        "bytes": 8384265,
+        "dtype": "float32",
+        "shape": [
+          4,
+          768,
+          768
+        ],
+        "sid": "007-3727-200",
+        "crop_xyxy": [
+          1142,
+          895,
+          1910,
+          1663
+        ],
+        "source_files": [
+          {
+            "component": "champion",
+            "path": "/root/autodl-tmp/HRDecoder_Ready_20261002/cache/val/champion/007-3727-200.npz",
+            "bytes": 122614009,
+            "sha256": "86f69e9e75366d6199f03166038cb096635c87a492ad0ae1d65a887e06838430"
+          },
+          {
+            "component": "U0",
+            "path": "/root/autodl-tmp/HRDecoder_Ready_20261002/cache/val/U0/007-3727-200.npz",
+            "bytes": 123755531,
+            "sha256": "a94b4f559299cf6e71e3b73a80f298888b78028842394ede2991e6f3f26633e7"
+          }
+        ]
+      },
+      "spatial_npz_currently_available": false,
+      "partner_npz_currently_available": false,
+      "complete_formula": ".75*P0+.25*S_seed42_EMA_u20000",
+      "threshold": "strict > .5",
+      "raw_probabilities_not_loaded_in_this_revision": true
+    },
+    {
+      "sid": "007-5470-300",
+      "split": "validation",
+      "roi_xyxy_original_pixels": [
+        627,
+        0,
+        1395,
+        768
+      ],
+      "selection_rule": "largest_MA_false_negative_pixel_increase",
+      "selection_is_illustrative_not_random": true,
+      "rgb_source": "D:\\HRDecoder\\data\\DDR_split_613\\images\\val\\007-5470-300.jpg",
+      "rgb_sha256_current": "08944145319cc1cf5bf5c94c0a5f0673b14d835256e647c169f5ad739f66dfa1",
+      "ground_truth_source": "D:\\HRDecoder\\data\\DDR_split_613\\labels\\val\\007-5470-300.png",
+      "ground_truth_sha256_matches_plan": true,
+      "spatial_model": "S_seed42 EMA @20000; recorded selected endpoint",
+      "spatial_full_probability_record": {
+        "sid": "007-5470-300",
+        "sha256": "178bb4466f5c9d9e80a3f1b0d01cf724017eb85744a85974b07c469d7b36ce03",
+        "bytes": 32952442,
+        "dtype": "float32",
+        "shape": [
+          4,
+          1728,
+          2592
+        ]
+      },
+      "partner_crop_record": {
+        "path": "reports/publication_server_evidence/val_p0_crops/007-5470-300.npz",
+        "sha256": "f23e4fa0c18367529e76f658bf91c3891480911db90249bf5e891027255a3e9c",
+        "bytes": 8375068,
+        "dtype": "float32",
+        "shape": [
+          4,
+          768,
+          768
+        ],
+        "sid": "007-5470-300",
+        "crop_xyxy": [
+          627,
+          0,
+          1395,
+          768
+        ],
+        "source_files": [
+          {
+            "component": "champion",
+            "path": "/root/autodl-tmp/HRDecoder_Ready_20261002/cache/val/champion/007-5470-300.npz",
+            "bytes": 59851356,
+            "sha256": "a08528ed2afa20e4ca054ec85904d6d2176ff5bc0025d7e72176aff0d1f859f6"
+          },
+          {
+            "component": "U0",
+            "path": "/root/autodl-tmp/HRDecoder_Ready_20261002/cache/val/U0/007-5470-300.npz",
+            "bytes": 62417665,
+            "sha256": "9be943383708be09999e393ca3fd73152caaafd60ef68d057d551d9035fb2a46"
+          }
+        ]
+      },
+      "spatial_npz_currently_available": false,
+      "partner_npz_currently_available": false,
+      "complete_formula": ".75*P0+.25*S_seed42_EMA_u20000",
+      "threshold": "strict > .5",
+      "raw_probabilities_not_loaded_in_this_revision": true
+    }
+  ],
+  "panels": [
+    {
+      "sid": "007-3727-200",
+      "panel": "rgb",
+      "svg_image_index": 0,
+      "local_panel": "figures/qualitative_panels/007-3727-200_rgb.png",
+      "embedded_png_sha256": "45e222d79f5ddd5d35830800147bfe5da5b19be90e3b8910f5c5e8df8822ce7c",
+      "encoded_rgb_pixel_sha256": "22ba96ebb8c1f72e000dd77571bd40d929ed2cb7b1beb0a9a199bc6578ec2db8",
+      "display_rgb_pixel_sha256": "2a609482664873dd5f48594353e0e3331248533bde314b0802f9883465ac1cde",
+      "width": 206,
+      "height": 206,
+      "pixel_change": "Exact embedded PNG bytes retained; display reproduces SVG scale(1,-1) by lossless row reversal; no sample values changed"
+    },
+    {
+      "sid": "007-3727-200",
+      "panel": "gt",
+      "svg_image_index": 1,
+      "local_panel": "figures/qualitative_panels/007-3727-200_gt.png",
+      "embedded_png_sha256": "7c8817e4928fc4fc258ca4f2ac505219a799659125b15888f233085736b34373",
+      "encoded_rgb_pixel_sha256": "7594962d8792114d4d94176b03b365ef060bfab1b3e6bf2a25499855295615f7",
+      "display_rgb_pixel_sha256": "5ac3b5a362b804a714c6b91419f47b297d85c22ae5ef7a07153b52c3a32e2e0d",
+      "width": 206,
+      "height": 206,
+      "pixel_change": "Exact embedded PNG bytes retained; display reproduces SVG scale(1,-1) by lossless row reversal; no sample values changed"
+    },
+    {
+      "sid": "007-3727-200",
+      "panel": "partner",
+      "svg_image_index": 2,
+      "local_panel": "figures/qualitative_panels/007-3727-200_partner.png",
+      "embedded_png_sha256": "cfeaafc6c2e5477e6c6f4ffc4c41abf7e646bc64700c458c73292981878378cd",
+      "encoded_rgb_pixel_sha256": "696f58a3024dae931252769cca70a776de73c56a92c16bde6c5fc3617e1e441a",
+      "display_rgb_pixel_sha256": "6c1bf69b6b93a0156f3e5bbe3cfa62c95be6537eae9262e7ca973705224b1b77",
+      "width": 206,
+      "height": 206,
+      "pixel_change": "Exact embedded PNG bytes retained; display reproduces SVG scale(1,-1) by lossless row reversal; no sample values changed"
+    },
+    {
+      "sid": "007-3727-200",
+      "panel": "spatial",
+      "svg_image_index": 3,
+      "local_panel": "figures/qualitative_panels/007-3727-200_spatial.png",
+      "embedded_png_sha256": "1e8cbe87574c4fc89e994f07a76291f07487924436aba04a5a869ea4c148502f",
+      "encoded_rgb_pixel_sha256": "f65eef2a096fc8531aec821a5bb240e8edb2167eee6de653b1853f118428dbda",
+      "display_rgb_pixel_sha256": "58accb1183c73919f70ca4f63fe3b29b2d75247d816a6a6a813624cab2fceb52",
+      "width": 206,
+      "height": 206,
+      "pixel_change": "Exact embedded PNG bytes retained; display reproduces SVG scale(1,-1) by lossless row reversal; no sample values changed"
+    },
+    {
+      "sid": "007-3727-200",
+      "panel": "complete",
+      "svg_image_index": 4,
+      "local_panel": "figures/qualitative_panels/007-3727-200_complete.png",
+      "embedded_png_sha256": "1be3f0e0e07c4f256e01461554f999d60766dc90133b83d50e8c11b2e4ce65d8",
+      "encoded_rgb_pixel_sha256": "b802a617797c4d6d4ae057e80ed1d6236a5949bba0e3345b350fc1c1678c7c49",
+      "display_rgb_pixel_sha256": "c0ce3da4146eb21770ff52843175bf52dc86e51efaa609c1fb38db0dc6ec0cca",
+      "width": 206,
+      "height": 206,
+      "pixel_change": "Exact embedded PNG bytes retained; display reproduces SVG scale(1,-1) by lossless row reversal; no sample values changed"
+    },
+    {
+      "sid": "007-5470-300",
+      "panel": "rgb",
+      "svg_image_index": 5,
+      "local_panel": "figures/qualitative_panels/007-5470-300_rgb.png",
+      "embedded_png_sha256": "840c7604e1934f97cd96b969871869c050fa3989f4b60e31ccd46dde227fcfd6",
+      "encoded_rgb_pixel_sha256": "d729c9db0bc22350884d40fb534fffc7b9889bc0a466d8301e5855ddd8340134",
+      "display_rgb_pixel_sha256": "d2218215e83ee441c2744e3cf7b1e021ff7d9f516a39f0e2e87045d75156c144",
+      "width": 206,
+      "height": 206,
+      "pixel_change": "Exact embedded PNG bytes retained; display reproduces SVG scale(1,-1) by lossless row reversal; no sample values changed"
+    },
+    {
+      "sid": "007-5470-300",
+      "panel": "gt",
+      "svg_image_index": 6,
+      "local_panel": "figures/qualitative_panels/007-5470-300_gt.png",
+      "embedded_png_sha256": "dfa15d020a1b14b7452be890e5be70975abf45048917360f7193eb884bb5db32",
+      "encoded_rgb_pixel_sha256": "e3aebcfa4b01508adaf0dc5c604da7b04b6905a85082f6008fdca0eb873b6cfd",
+      "display_rgb_pixel_sha256": "a896ccd25674d89a865f8b611767b35c49a5183d8a8c5de9798051c28b9c0037",
+      "width": 206,
+      "height": 206,
+      "pixel_change": "Exact embedded PNG bytes retained; display reproduces SVG scale(1,-1) by lossless row reversal; no sample values changed"
+    },
+    {
+      "sid": "007-5470-300",
+      "panel": "partner",
+      "svg_image_index": 7,
+      "local_panel": "figures/qualitative_panels/007-5470-300_partner.png",
+      "embedded_png_sha256": "dbe7f81df783539fb944db4a58e8f7325b1bcb6cdfdbbccd4e49458e6e5e5bf2",
+      "encoded_rgb_pixel_sha256": "be6f4721ac3be4e7c34378c3464d2ae8eb37352ed95c470e3cb6e627f1204926",
+      "display_rgb_pixel_sha256": "2602acc5180c3fd73e764ca398a6738a8f3a46fd6872af20dd716dccd42d2fc7",
+      "width": 206,
+      "height": 206,
+      "pixel_change": "Exact embedded PNG bytes retained; display reproduces SVG scale(1,-1) by lossless row reversal; no sample values changed"
+    },
+    {
+      "sid": "007-5470-300",
+      "panel": "spatial",
+      "svg_image_index": 8,
+      "local_panel": "figures/qualitative_panels/007-5470-300_spatial.png",
+      "embedded_png_sha256": "0984642d619afa21445e3d74589f7ae9fb09f30ebd7cbd6540ea07241d70525b",
+      "encoded_rgb_pixel_sha256": "38587377e4034a8e1a41810573e4fcfc56aa03e7a00784c389bc0ab66400bbe3",
+      "display_rgb_pixel_sha256": "f71166f22ebe98b5e79002d16736cc327e8d00c61c451032f1bb7aa9ffb8a9e0",
+      "width": 206,
+      "height": 206,
+      "pixel_change": "Exact embedded PNG bytes retained; display reproduces SVG scale(1,-1) by lossless row reversal; no sample values changed"
+    },
+    {
+      "sid": "007-5470-300",
+      "panel": "complete",
+      "svg_image_index": 9,
+      "local_panel": "figures/qualitative_panels/007-5470-300_complete.png",
+      "embedded_png_sha256": "0d96e7339fbbaa5883407b0cbb8e55eb66d9d2a34f86a5e7bafc2949513c18f7",
+      "encoded_rgb_pixel_sha256": "ec7713ae66705b2e4886ae8599c8c65a970c8c496f3259ad5ac3af75f161d24f",
+      "display_rgb_pixel_sha256": "2638314cf4fac9bfa411fc74e8be3a468a99ce9d8a585ae60c2b575b9bfe9d62",
+      "width": 206,
+      "height": 206,
+      "pixel_change": "Exact embedded PNG bytes retained; display reproduces SVG scale(1,-1) by lossless row reversal; no sample values changed"
+    }
+  ],
+  "outputs": {
+    "png": {
+      "path": "figures/qualitative_validation.png",
+      "sha256": "8bf765708bfdb0e5b00257dbc6e16ab31eab2a295d6d9312750f52eca0cbdd6c"
+    },
+    "pdf": {
+      "path": "figures/qualitative_validation.pdf",
+      "sha256": "5717e9e3c870222fbba47c722be2498744cfc3c4cea9a817905ad78450e6489d"
+    },
+    "svg": {
+      "path": "figures/qualitative_validation.svg",
+      "sha256": "47322ba1130de3217f17445c6a651e045b846157fee5dd6f8d12fdd0d0fd9818"
+    }
+  }
+}

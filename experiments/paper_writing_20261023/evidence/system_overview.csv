@@ -1,0 +1,8 @@
+system,split,miou_pct,EX_iou_pct,HE_iou_pct,SE_iou_pct,MA_iou_pct,source,interpretation
+Original HRDecoder,test,42.2,51.56,43.13,49.98,24.11,evidence/historical_baseline_source.json,rounded historical report; not matched reproduction
+Four-member HRDecoder mixture fused,test,43.228924245323746,53.86111922725695,44.51296131641197,49.81614515880462,24.725471278821452,evidence/ma_correction_source.json,"paired correction comparison, historical test reused"
+Four-member HRDecoder mixture final,test,44.2115035614162,53.86111922725695,44.51296131641197,49.81614515880462,28.655788543191267,evidence/ma_correction_source.json,"paired correction comparison, historical test reused"
+MA-corrected HRDecoder frozen re-export,test,44.21100725782683,53.86102960789544,44.51211660715019,49.81338668360898,28.657496132652728,evidence/frozen_partner_source.json,later export; distinct integer counts from correction audit
+Frozen HRDecoder-ConvNeXt partner,test,44.78089145110081,54.597746189876176,45.20205750891327,50.0837572943642,29.240004811249577,evidence/frozen_partner_source.json,"system addition, not isolated architecture effect"
+Pre-spatial system,test,45.72155710642771,55.141077660610044,45.94732976173852,52.63673828108495,29.161082722277307,evidence/locked_test_source.json,single-seed system comparison; test historically reused
+Locked complete system,test,45.86038383266797,55.121257626577545,46.19780518717031,52.87892595677142,29.243546560152616,evidence/locked_test_source.json,single-seed system comparison; test historically reused
