@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "scope": "full W48, FP32 CUDA, 128 grid; no SGD",
+  "records": [
+    {
+      "checkpointing": false,
+      "loss": 2.6122100353240967,
+      "nonzero_gradient_parameters": 1003
+    },
+    {
+      "checkpointing": true,
+      "loss": 2.6122100353240967,
+      "nonzero_gradient_parameters": 1003
+    }
+  ],
+  "selected_gradient_parity": [
+    "backbone.net.conv1.weight",
+    "backbone.net.stage2.0.branches.0.0.conv1.weight",
+    "backbone.net.stage4.2.branches.3.3.conv2.weight",
+    "decoder.readout.weight"
+  ],
+  "all_BN_buffers_unchanged": true,
+  "initialization": {
+    "file_sha256": "d2186c55782308392ae14cf179ac4840143b09abdbba81aa3f9274c795ebc960",
+    "verified_backbone_tensors": 1830,
+    "ignored_classification_tensors": 126,
+    "fusion_bilinear_modules": 31,
+    "timm_version": "1.0.27"
+  },
+  "parameters": 65569364,
+  "decoder_parameters": 244244
+}

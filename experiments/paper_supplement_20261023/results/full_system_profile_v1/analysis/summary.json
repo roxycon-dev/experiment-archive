@@ -1,0 +1,78 @@
+{
+  "status": "COMPLETE",
+  "mode": "full_system_efficiency",
+  "hardware": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "registered_parameters": {
+    "registered_parameters_per_instantiated_module": {
+      "D": 131221202,
+      "E": 131279643,
+      "B": 65610601,
+      "E4": 65610601,
+      "H4": 3361,
+      "U0": 52985364,
+      "S": 101288548
+    },
+    "full_system_total_registered_parameters": 547999320,
+    "note": "Includes registered auxiliary modules and separately instantiated reference copies; not FLOPs or unique learned scalar count",
+    "weight_artifact_bytes_full": 1935289577
+  },
+  "profile_samples": [
+    "007-1774-100",
+    "007-1782-100",
+    "007-1829-100"
+  ],
+  "image_shapes": [
+    [
+      1728,
+      2592
+    ],
+    [
+      1728,
+      2592
+    ],
+    [
+      1934,
+      1956
+    ]
+  ],
+  "batch_size": 1,
+  "warmup_images_excluded": 1,
+  "pipeline_to_fused_mask_seconds": {
+    "per_image": [
+      14.928955099999996,
+      15.153450300000003,
+      14.370785999999995
+    ],
+    "mean": 14.817730466666665,
+    "median": 14.928955099999996,
+    "min": 14.370785999999995,
+    "max": 15.153450300000003
+  },
+  "through_counts_and_persistence_seconds": {
+    "per_image": [
+      15.055487900000003,
+      15.28394329999999,
+      14.491404799999998
+    ],
+    "mean": 14.943611999999996
+  },
+  "max_single_process_allocated_peak_bytes": 3834679808,
+  "allocated_peak_method": "Maximum across sequential A/U/S stages; no concurrent resident GPU parameters; driver contexts and other apps excluded",
+  "includes": "image read/transform, all four experts and horizontal TTA, MA head, U whole-native FP32, S BF16 reference-MSDA tiles, CPU-GPU transfers, IPC, alignment and fusion",
+  "excludes": "checkpoint/model startup, warmup, training, GT reading/scoring and compressed result persistence (shown separately)",
+  "timing_limitations": "Three fixed validation images only, single laptop GPU, no multi-GPU throughput measurement; registered parameters include copied references and auxiliary modules",
+  "sampled_GPU_total_memory": {
+    "maximum_MiB": 7162.0,
+    "minimum_MiB": 2195.0,
+    "sampling_interval_ms": 200,
+    "samples": 349,
+    "scope": "Whole GPU including both inference processes, contexts, driver and other apps; sampled maximum can miss sub-200ms peaks; starts with A already loaded"
+  },
+  "DDR227_recorded_A_U_S_stage_sum_seconds": {
+    "n_images": 227,
+    "mean": 15.272639174008589,
+    "median": 12.914161299987654,
+    "p95": 27.36965458999499,
+    "scope": "Observed A+U+S stage times from the four-row run across heterogeneous native sizes; C forward omitted, C parameters still resident in that run. Excludes orchestration/fusion/persistence; not end-to-end latency."
+  }
+}

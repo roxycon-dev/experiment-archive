@@ -1,0 +1,424 @@
+{
+  "round_id": "HRDecoder-Ready-20261002",
+  "status": "complete",
+  "data_split": {
+    "train": 454,
+    "val": 76,
+    "test": 227
+  },
+  "recipe": "p_final=0.75*p_champion+0.25*p_U0; all four channels; p>0.5",
+  "active_candidate": "historical U0",
+  "inactive_new_candidates": [
+    "U1",
+    "H1",
+    "A0"
+  ],
+  "validation": {
+    "oof_base_miou": 0.42669122905238266,
+    "selected_oof_miou": 0.43248254929747065,
+    "locked_val_miou": 0.43487703221036567,
+    "selected_mode": "global_fallback"
+  },
+  "final_test": {
+    "lock_sha256": "644974f4a888835f838472199dcb623e879be2d62e73dab502394759551ceac4",
+    "n_images": 227,
+    "champion_miou": 0.4421100725782683,
+    "selected_pipeline_miou": 0.44780891451100807,
+    "delta": 0.005698841932739784,
+    "champion_per_class": [
+      0.5386102960789544,
+      0.44512116607150193,
+      0.49813386683608984,
+      0.28657496132652727
+    ],
+    "selected_pipeline_per_class": [
+      0.5459774618987617,
+      0.4520205750891327,
+      0.500837572943642,
+      0.29240004811249576
+    ],
+    "champion_counts": [
+      [
+        1058087,
+        389535,
+        516854
+      ],
+      [
+        1603987,
+        550006,
+        1449491
+      ],
+      [
+        368502,
+        169247,
+        202016
+      ],
+      [
+        79103,
+        85986,
+        110940
+      ]
+    ],
+    "selected_pipeline_counts": [
+      [
+        1072861,
+        390087,
+        502080
+      ],
+      [
+        1609384,
+        506944,
+        1444094
+      ],
+      [
+        354891,
+        138077,
+        215627
+      ],
+      [
+        80222,
+        84314,
+        109821
+      ]
+    ],
+    "deployment": "selected_pipeline",
+    "threshold": 0.5,
+    "strict_greater": true,
+    "historical_test_limitation": "This split has been viewed in prior experiments; not an independent external validation."
+  },
+  "stage_records": [
+    {
+      "id": "20261002-U1_external_pretrain",
+      "status": "complete",
+      "updates_done": 2400,
+      "best": {
+        "mIoU_lesion4": 0.27160511927790537,
+        "update": 2400
+      },
+      "elapsed_seconds": 1399.5731031559408,
+      "stage": "external_pretrain",
+      "checkpoint_local": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\U1_external_pretrain\\ckpt_best.pth",
+      "checkpoint_server_removed": true,
+      "source_summary": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\U1_external_pretrain\\completion_summary.json",
+      "note": ""
+    },
+    {
+      "id": "20261002-U1_ddr_finetune",
+      "status": "complete",
+      "updates_done": 12000,
+      "best": {
+        "mIoU_lesion4": 0.3669342309981436,
+        "update": 12000
+      },
+      "elapsed_seconds": 6029.805540608009,
+      "stage": "ddr_finetune",
+      "checkpoint_local": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\U1_ddr_finetune\\ckpt_best.pth",
+      "checkpoint_server_removed": true,
+      "source_summary": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\U1_ddr_finetune\\completion_summary.json",
+      "note": ""
+    },
+    {
+      "id": "20261002-H1_external_pretrain",
+      "status": "complete",
+      "updates_done": 2400,
+      "best": {
+        "mIoU_lesion4": 0.42999768710592823,
+        "update": 2400
+      },
+      "elapsed_seconds": 3762.144079893944,
+      "stage": "external_pretrain",
+      "checkpoint_local": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\H1_external_pretrain\\ckpt_best.pth",
+      "checkpoint_server_removed": true,
+      "source_summary": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\H1_external_pretrain\\completion_summary.json",
+      "note": ""
+    },
+    {
+      "id": "20261002-H1_ddr_finetune",
+      "status": "stopped",
+      "updates_done": 12000,
+      "best": {
+        "mIoU_lesion4": 0.3559504929505182,
+        "update": 9000
+      },
+      "elapsed_seconds": 16609.185342184966,
+      "stage": "ddr_finetune",
+      "checkpoint_local": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\H1_ddr_finetune\\ckpt_best.pth",
+      "checkpoint_server_removed": true,
+      "source_summary": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\H1_ddr_finetune\\completion_summary.json",
+      "note": "H1 DDR completed the full 12000-update budget despite status stopped"
+    },
+    {
+      "id": "20261002-A0_ddr_finetune",
+      "status": "stopped",
+      "updates_done": 6197,
+      "best": {
+        "mIoU_lesion4": 0.09678075116594265,
+        "update": 6000
+      },
+      "elapsed_seconds": 8965.399070524029,
+      "stage": "ddr_finetune",
+      "checkpoint_local": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\A0_ddr_finetune\\ckpt_best.pth",
+      "checkpoint_server_removed": true,
+      "source_summary": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\A0_ddr_finetune\\completion_summary.json",
+      "note": ""
+    }
+  ],
+  "original_lock_sha256": "644974f4a888835f838472199dcb623e879be2d62e73dab502394759551ceac4",
+  "wall_seconds": 43816.18393397331,
+  "training_stage_seconds": 36766.10713636689,
+  "local_best_pipeline": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\best_pipeline",
+  "local_full_evidence": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\reports\\finish",
+  "server_cleanup": {
+    "status": "complete",
+    "authorization": "User explicitly requested deleting unused server model weights on 2026-10-02",
+    "started_epoch": 1790954270.0857952,
+    "deleted": [
+      {
+        "path": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/U1_external_pretrain/ckpt_best.pth",
+        "bytes": 636327027,
+        "reason": "Completed unselected stage; full best checkpoint SHA-verified locally; unused last released under user cleanup instruction",
+        "local_best_backup": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\U1_external_pretrain\\ckpt_best.pth",
+        "expected_sha256": "08db330000591ce7942e4d70b06017849ff0f3c03fa4e60edb7801a064da351a",
+        "sha256": "08db330000591ce7942e4d70b06017849ff0f3c03fa4e60edb7801a064da351a",
+        "preflight_mtime_ns": 1790908341682951202
+      },
+      {
+        "path": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/U1_external_pretrain/ckpt_last.pth",
+        "bytes": 636327027,
+        "reason": "Completed unselected stage; full best checkpoint SHA-verified locally; unused last released under user cleanup instruction",
+        "local_best_backup": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\U1_external_pretrain\\ckpt_best.pth",
+        "sha256": "3d556069b2b4c3e97fb5283ff62ffbca4f2309a0fbc35e4730b3ac03dedd3357",
+        "preflight_mtime_ns": 1790908342707022751
+      },
+      {
+        "path": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/U1_ddr_finetune/ckpt_last.pth",
+        "bytes": 636326899,
+        "reason": "Completed unselected stage; full best checkpoint SHA-verified locally; unused last released under user cleanup instruction",
+        "local_best_backup": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\U1_ddr_finetune\\ckpt_best.pth",
+        "sha256": "23639d0e90fdaf619a10576d712ad76e09f05121e986785670df92171e615339",
+        "preflight_mtime_ns": 1790914379766558315
+      },
+      {
+        "path": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/U1_ddr_finetune/ckpt_best.pth",
+        "bytes": 636326899,
+        "reason": "Completed unselected stage; full best checkpoint SHA-verified locally; unused last released under user cleanup instruction",
+        "local_best_backup": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\U1_ddr_finetune\\ckpt_best.pth",
+        "expected_sha256": "ec5a680803f6687ebd3c7af35a30de1a92e5d5062085947762fddea3241d3b72",
+        "sha256": "ec5a680803f6687ebd3c7af35a30de1a92e5d5062085947762fddea3241d3b72",
+        "preflight_mtime_ns": 1790914378810514549
+      },
+      {
+        "path": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/H1_external_pretrain/ckpt_best.pth",
+        "bytes": 812859935,
+        "reason": "Completed unselected stage; full best checkpoint SHA-verified locally; unused last released under user cleanup instruction",
+        "local_best_backup": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\H1_external_pretrain\\ckpt_best.pth",
+        "expected_sha256": "3aa43faa5ad38f0c6409ba8b518cb8783d319f5b8a5e4b8dce7ccfd25cfaf408",
+        "sha256": "3aa43faa5ad38f0c6409ba8b518cb8783d319f5b8a5e4b8dce7ccfd25cfaf408",
+        "preflight_mtime_ns": 1790918156627019898
+      },
+      {
+        "path": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/H1_external_pretrain/ckpt_last.pth",
+        "bytes": 812859935,
+        "reason": "Completed unselected stage; full best checkpoint SHA-verified locally; unused last released under user cleanup instruction",
+        "local_best_backup": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\H1_external_pretrain\\ckpt_best.pth",
+        "sha256": "acfe9565f42395ade5f6a0758f45a070f4c9207d5d3e60e3880ae800a254250b",
+        "preflight_mtime_ns": 1790918158371146911
+      },
+      {
+        "path": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/H1_ddr_finetune/ckpt_last.pth",
+        "bytes": 812859871,
+        "reason": "Completed unselected stage; full best checkpoint SHA-verified locally; unused last released under user cleanup instruction",
+        "local_best_backup": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\H1_ddr_finetune\\ckpt_best.pth",
+        "sha256": "33d5afbade908ed79ba215822991ce67a8b7d31b001c5ef6885cbb231255ca3d",
+        "preflight_mtime_ns": 1790934930156167423
+      },
+      {
+        "path": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/H1_ddr_finetune/ckpt_best.pth",
+        "bytes": 812859871,
+        "reason": "Completed unselected stage; full best checkpoint SHA-verified locally; unused last released under user cleanup instruction",
+        "local_best_backup": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\H1_ddr_finetune\\ckpt_best.pth",
+        "expected_sha256": "74fcd879ea96cbc29b1200bbba4d58166c837e87389b09e5a3860f4f2467438b",
+        "sha256": "74fcd879ea96cbc29b1200bbba4d58166c837e87389b09e5a3860f4f2467438b",
+        "preflight_mtime_ns": 1790930784397179835
+      },
+      {
+        "path": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/A0_ddr_finetune/ckpt_last.pth",
+        "bytes": 307229269,
+        "reason": "Completed unselected stage; full best checkpoint SHA-verified locally; unused last released under user cleanup instruction",
+        "local_best_backup": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\A0_ddr_finetune\\ckpt_best.pth",
+        "sha256": "3a6075b594328a0bb9fcd7638a49fed5b9ecb05a8f131b52a0958d42f50ff4fb",
+        "preflight_mtime_ns": 1790943900481233451
+      },
+      {
+        "path": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/A0_ddr_finetune/ckpt_best.pth",
+        "bytes": 307230421,
+        "reason": "Completed unselected stage; full best checkpoint SHA-verified locally; unused last released under user cleanup instruction",
+        "local_best_backup": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\A0_ddr_finetune\\ckpt_best.pth",
+        "expected_sha256": "f28019907d51c330b88800b55f81a61b6a5cca0d7387eacb591828ba314debd6",
+        "sha256": "f28019907d51c330b88800b55f81a61b6a5cca0d7387eacb591828ba314debd6",
+        "preflight_mtime_ns": 1790943618477920525
+      },
+      {
+        "path": "/root/HRDecoder/work_dirs/exp_combo2_split613/best_mIoU_iter_12000.pth",
+        "bytes": 526478242,
+        "reason": "Historical unselected checkpoint; current champion uses separate verified assets; preserve configs/logs and official pretrained baseline",
+        "local_best_backup": null,
+        "sha256": "2d1edc4713dedee371fd4e37c3f44af991184a60dc2aebc6693588edf05e72bd",
+        "preflight_mtime_ns": 1787020504402384207
+      },
+      {
+        "path": "/root/HRDecoder/work_dirs/exp_combo2_split613/iter_25000.pth",
+        "bytes": 526478242,
+        "reason": "Historical unselected checkpoint; current champion uses separate verified assets; preserve configs/logs and official pretrained baseline",
+        "local_best_backup": null,
+        "sha256": "c956244b53a002b05134387b46466255a85e9f60573925ee3f3fc30a563b5e13",
+        "preflight_mtime_ns": 1787028839380527042
+      },
+      {
+        "path": "/root/HRDecoder/work_dirs/exp_combo_split613/best_mIoU_iter_32000.pth",
+        "bytes": 526178583,
+        "reason": "Historical unselected checkpoint; current champion uses separate verified assets; preserve configs/logs and official pretrained baseline",
+        "local_best_backup": null,
+        "sha256": "8071bdff26499b714fd2ebd77b4d69cf0c5c9d38d3c9d45700c5bbad7f6fc013",
+        "preflight_mtime_ns": 1786991241093971333
+      },
+      {
+        "path": "/root/HRDecoder/work_dirs/exp_combo_split613/best_mIoU_iter_4000.pth",
+        "bytes": 526178519,
+        "reason": "Historical unselected checkpoint; current champion uses separate verified assets; preserve configs/logs and official pretrained baseline",
+        "local_best_backup": null,
+        "sha256": "2cf4ab2c86cfa25079854a88a469abf845fdebb51ce9e59371139ca0097f4122",
+        "preflight_mtime_ns": 1786973539127171589
+      },
+      {
+        "path": "/root/HRDecoder/work_dirs/exp_combo_split613/iter_40000.pth",
+        "bytes": 526178583,
+        "reason": "Historical unselected checkpoint; current champion uses separate verified assets; preserve configs/logs and official pretrained baseline",
+        "local_best_backup": null,
+        "sha256": "ec13b7562aeb7ca2cb75eebcef0e1ea197b446f0e53457320fc2ebf89dc9d198",
+        "preflight_mtime_ns": 1786996157404706959
+      },
+      {
+        "path": "/root/HRDecoder/work_dirs/exp_combo_v2_split613/best_mIoU_iter_16000.pth",
+        "bytes": 526178583,
+        "reason": "Historical unselected checkpoint; current champion uses separate verified assets; preserve configs/logs and official pretrained baseline",
+        "local_best_backup": null,
+        "sha256": "bef3bee007689f1e8736cfb6cb20b3a6380fd86d830668741d7ea95c54ed066b",
+        "preflight_mtime_ns": 1787007830409881237
+      },
+      {
+        "path": "/root/HRDecoder/work_dirs/exp_combo_v2_split613/iter_23000.pth",
+        "bytes": 526178583,
+        "reason": "Historical unselected checkpoint; current champion uses separate verified assets; preserve configs/logs and official pretrained baseline",
+        "local_best_backup": null,
+        "sha256": "59420cb5632fd3a886f6241bf6cf94af4d8b29a593642a4b5f4cb341e424a3b3",
+        "preflight_mtime_ns": 1787012190213950775
+      },
+      {
+        "path": "/root/HRDecoder/work_dirs/exp_e1_cedice_split613/best_mIoU_iter_12000.pth",
+        "bytes": 525854922,
+        "reason": "Historical unselected checkpoint; current champion uses separate verified assets; preserve configs/logs and official pretrained baseline",
+        "local_best_backup": null,
+        "sha256": "edd71bd105515baff9201891249e00e685d5324ba56abc4af13e60cb29bff4c3",
+        "preflight_mtime_ns": 1786943651609442072
+      },
+      {
+        "path": "/root/HRDecoder/work_dirs/exp_e1_cedice_split613/iter_40000.pth",
+        "bytes": 525854922,
+        "reason": "Historical unselected checkpoint; current champion uses separate verified assets; preserve configs/logs and official pretrained baseline",
+        "local_best_backup": null,
+        "sha256": "7cc57a8d8742b00cf4701fd732ac1ae46ac282be0febb6439289eee63703d991",
+        "preflight_mtime_ns": 1786961371440037667
+      },
+      {
+        "path": "/root/HRDecoder/work_dirs/exp_e4_detail_split613/best_mIoU_iter_36000.pth",
+        "bytes": 526178519,
+        "reason": "Historical unselected checkpoint; current champion uses separate verified assets; preserve configs/logs and official pretrained baseline",
+        "local_best_backup": null,
+        "sha256": "ef63779928a1267c5b7e9050bf82ddb3ed88b62d830a9275d7018fd90272e112",
+        "preflight_mtime_ns": 1786932389116819341
+      },
+      {
+        "path": "/root/HRDecoder/work_dirs/exp_e4_detail_split613/iter_40000.pth",
+        "bytes": 526178519,
+        "reason": "Historical unselected checkpoint; current champion uses separate verified assets; preserve configs/logs and official pretrained baseline",
+        "local_best_backup": null,
+        "sha256": "97292a046ea4b37685480360ecf6dc02705bc1c8c0557b42c909c898967d77da",
+        "preflight_mtime_ns": 1786934800137265527
+      }
+    ],
+    "retained": [
+      {
+        "path": "/root/HRDecoder/hrdecoder_ddr_iter_40000.pth",
+        "bytes": 525855050,
+        "sha256": "baf9038cd6215f5851a01513ef4db4fbd8237252a0b951f1c47b4b15156a4661"
+      },
+      {
+        "path": "/root/autodl-tmp/HRDecoder_Ready_20261002/assets/U0_historical_best.pth",
+        "bytes": 636326835,
+        "sha256": "98d98a5d02dc2615062c3c31cd15d061daf3d7ab41cb8f25cd90b062cd53bb34"
+      },
+      {
+        "path": "/root/autodl-tmp/HRDecoder_Ready_20261002/assets/champion/B_weights.pth",
+        "bytes": 263479238,
+        "sha256": "0b3cd72e740fc5c69242994c12cfd71a49ac892aff37d09c50bb9fb6931a8626"
+      },
+      {
+        "path": "/root/autodl-tmp/HRDecoder_Ready_20261002/assets/champion/D_student_2000.pth",
+        "bytes": 263419124,
+        "sha256": "5fe18717b62d8fc3ab4846a50c046588e2af05abbbfdb3a958f4794018b319ea"
+      },
+      {
+        "path": "/root/autodl-tmp/HRDecoder_Ready_20261002/assets/champion/E4_weights.pth",
+        "bytes": 263477167,
+        "sha256": "c5a3d0f0b990d2430e545146745bc809538bbe764979baf54f62b450785268e0"
+      },
+      {
+        "path": "/root/autodl-tmp/HRDecoder_Ready_20261002/assets/champion/E_1500.pth",
+        "bytes": 527412743,
+        "sha256": "a18ff92b4da24d870554f17856983d4be042386cacbcaba0d4e13f3f248ed5e5"
+      },
+      {
+        "path": "/root/autodl-tmp/HRDecoder_Ready_20261002/assets/champion/H4_best.pth",
+        "bytes": 15447,
+        "sha256": "14757e02de49f6f065d4ef82cb8b1c4ee8a6a7f3f66cb1867276993950f80c50"
+      },
+      {
+        "path": "/root/autodl-tmp/HRDecoder_Ready_20261002/assets/convnext_small_1k_224_ema.pth",
+        "bytes": 201005191,
+        "sha256": "fe969be0ad46c62ace0981c933ff47af59b9753365d71466efa6896571a879ad"
+      },
+      {
+        "path": "/root/autodl-tmp/HRDecoder_Ready_20261002/assets/hrnetv2_w48-d2186c55.pth",
+        "bytes": 310659148,
+        "sha256": "d2186c55782308392ae14cf179ac4840143b09abdbba81aa3f9274c795ebc960"
+      }
+    ],
+    "planned_count": 21,
+    "planned_bytes": 12199123371,
+    "disk_free_before": {
+      "/root/autodl-tmp": 15163441152,
+      "/root/HRDecoder": 8468205568
+    },
+    "completed_epoch": 1790954273.5867887,
+    "deleted_count": 21,
+    "deleted_bytes": 12199123371,
+    "disk_free_after": {
+      "/root/autodl-tmp": 21574668288,
+      "/root/HRDecoder": 14256156672
+    },
+    "disk_available_gain": {
+      "/root/autodl-tmp": 6411227136,
+      "/root/HRDecoder": 5787951104
+    },
+    "no_experiment_or_test_rerun": true,
+    "logs_configs_data_preserved": true
+  },
+  "limitations": [
+    "IDRiD supervision is rasterized polygon labels; 48 train/6 dev, official pixel masks unavailable",
+    "MAPLES/MESSIDOR original images unavailable",
+    "Checkpoint selected on val; fusion cross-fit is not independent outer validation",
+    "Historical test split has been viewed in prior experiments"
+  ],
+  "generated_at_cst": "2026-10-02 23:21:22"
+}

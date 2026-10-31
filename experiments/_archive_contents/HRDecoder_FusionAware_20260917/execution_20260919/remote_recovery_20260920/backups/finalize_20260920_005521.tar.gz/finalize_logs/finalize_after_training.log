@@ -1,0 +1,91 @@
+[2026-09-20 00:15:48] finalize_after_training starting; pid=2819
+[2026-09-20 00:15:48] TRAIN_PID=1231
+[2026-09-20 00:15:48] BASE_DIR=/root/autodl-tmp/hr_exec_20260919/runs
+[2026-09-20 00:15:48] SETTINGS=/root/autodl-tmp/hr_exec_20260919/full_eval_settings.json
+[2026-09-20 00:15:48] BACKUP_DIR=/root/autodl-tmp/hr_exec_20260919/backups
+[2026-09-20 00:15:48] finalize log: /root/autodl-tmp/hr_exec_20260919/runs/finalize_after_training_20260920_001548.log
+[2026-09-20 00:15:48] waiting for training PID 1231 to exit (poll every 30s)
+[2026-09-20 00:15:48] training cmdline: /root/miniconda3/bin/python phase_cs.py --settings ../cs_settings.json --run-dir ../runs/cs4000_v2 --mode train --arms C S --steps 4000 --seed 42 
+[2026-09-20 00:25:18] still waiting for training PID 1231 (20 polls)
+[2026-09-20 00:35:18] still waiting for training PID 1231 (40 polls)
+[2026-09-20 00:41:18] training PID 1231 has exited
+[2026-09-20 00:41:18] checking training artifacts under /root/autodl-tmp/hr_exec_20260919/runs/cs4000_v2
+[2026-09-20 00:41:18] training artifacts complete: 10/10 files present, summaries valid
+[2026-09-20 00:41:18] starting val evaluation of 4 candidates (strictly serial, one GPU process at a time)
+[2026-09-20 00:41:18] fixed champion cache dir: /root/autodl-tmp/hr_exec_20260919/runs/champ_prob_cache_val (run 1 builds it, runs 2-4 reuse it; 
+[2026-09-20 00:41:18] NOTE: it is bound to this exact settings JSON -- delete it if settings ever change)
+[2026-09-20 00:41:18] === eval 1/4: candidate=C_step_2000 arm=C out=/root/autodl-tmp/hr_exec_20260919/runs/evalcand_val/C_step_2000
+[2026-09-20 00:41:22] split audit OK; val stems = 76
+[2026-09-20 00:41:27] candidate C_step_2000 loaded: arm=C steps=2000 seed=42
+[HRPlusMAResidual] 可训练 0.058M / 冻结 131.221M
+[2026-09-20 00:41:33] champion built: members=['D', 'E', 'B', 'E4'] head=/root/autodl-tmp/hr_exec_20260919/assets/H4_best.pth
+/root/miniconda3/lib/python3.8/site-packages/mmcv/__init__.py:20: UserWarning: On January 1, 2023, MMCV will release v2.0.0, in which it will remove components related to the training process and add a data transformation module. In addition, it will rename the package names mmcv to mmcv-lite and mmcv-full to mmcv. See https://github.com/open-mmlab/mmcv/blob/master/docs/en/compatibility.md for more details.
+  warnings.warn(
+2026-09-20 00:41:34,505 - mmseg - INFO - Loaded 76 images from /root/autodl-tmp/hr_exec_20260919/data/DDR_split_613/images/val
+[2026-09-20 00:41:36] champion cache mode: build (/root/autodl-tmp/hr_exec_20260919/runs/champ_prob_cache_val)
+[2026-09-20 00:44:00] eval val 25/76 (143.8s)
+[2026-09-20 00:46:17] eval val 50/76 (280.6s)
+[2026-09-20 00:48:31] eval val 75/76 (415.3s)
+[2026-09-20 00:48:37] eval val 76/76 (420.7s)
+[2026-09-20 00:48:37] champion cache finalized: 76 entries
+[2026-09-20 00:48:37] val champion mIoU 0.426694
+[2026-09-20 00:48:37] val cand_C_step_2000 mIoU 0.397974
+[2026-09-20 00:48:37] val mix_C_step_2000 mIoU 0.428657
+[2026-09-20 00:48:38] DONE split=val mious={'champion': 0.426694, 'cand_C_step_2000': 0.397974, 'mix_C_step_2000': 0.428657}
+[2026-09-20 00:48:39] === eval 1/4 OK: C_step_2000
+[2026-09-20 00:48:39] === eval 2/4: candidate=C_step_4000 arm=C out=/root/autodl-tmp/hr_exec_20260919/runs/evalcand_val/C_step_4000
+[2026-09-20 00:48:42] split audit OK; val stems = 76
+[2026-09-20 00:48:48] candidate C_step_4000 loaded: arm=C steps=4000 seed=42
+[HRPlusMAResidual] 可训练 0.058M / 冻结 131.221M
+[2026-09-20 00:48:53] champion built: members=['D', 'E', 'B', 'E4'] head=/root/autodl-tmp/hr_exec_20260919/assets/H4_best.pth
+/root/miniconda3/lib/python3.8/site-packages/mmcv/__init__.py:20: UserWarning: On January 1, 2023, MMCV will release v2.0.0, in which it will remove components related to the training process and add a data transformation module. In addition, it will rename the package names mmcv to mmcv-lite and mmcv-full to mmcv. See https://github.com/open-mmlab/mmcv/blob/master/docs/en/compatibility.md for more details.
+  warnings.warn(
+2026-09-20 00:48:54,715 - mmseg - INFO - Loaded 76 images from /root/autodl-tmp/hr_exec_20260919/data/DDR_split_613/images/val
+[2026-09-20 00:49:06] champion cache mode: reuse (/root/autodl-tmp/hr_exec_20260919/runs/champ_prob_cache_val)
+[2026-09-20 00:49:45] eval val 25/76 (48.7s)
+[2026-09-20 00:50:19] eval val 50/76 (83.2s)
+[2026-09-20 00:50:53] eval val 75/76 (116.6s)
+[2026-09-20 00:50:54] eval val 76/76 (117.9s)
+[2026-09-20 00:50:54] val champion mIoU 0.426694
+[2026-09-20 00:50:54] val cand_C_step_4000 mIoU 0.391729
+[2026-09-20 00:50:54] val mix_C_step_4000 mIoU 0.425644
+[2026-09-20 00:50:55] DONE split=val mious={'champion': 0.426694, 'cand_C_step_4000': 0.391729, 'mix_C_step_4000': 0.425644}
+[2026-09-20 00:50:56] === eval 2/4 OK: C_step_4000
+[2026-09-20 00:50:56] === eval 3/4: candidate=S_step_2000 arm=S out=/root/autodl-tmp/hr_exec_20260919/runs/evalcand_val/S_step_2000
+[2026-09-20 00:50:59] split audit OK; val stems = 76
+[2026-09-20 00:51:05] candidate S_step_2000 loaded: arm=S steps=2000 seed=42
+[HRPlusMAResidual] 可训练 0.058M / 冻结 131.221M
+[2026-09-20 00:51:10] champion built: members=['D', 'E', 'B', 'E4'] head=/root/autodl-tmp/hr_exec_20260919/assets/H4_best.pth
+/root/miniconda3/lib/python3.8/site-packages/mmcv/__init__.py:20: UserWarning: On January 1, 2023, MMCV will release v2.0.0, in which it will remove components related to the training process and add a data transformation module. In addition, it will rename the package names mmcv to mmcv-lite and mmcv-full to mmcv. See https://github.com/open-mmlab/mmcv/blob/master/docs/en/compatibility.md for more details.
+  warnings.warn(
+2026-09-20 00:51:11,675 - mmseg - INFO - Loaded 76 images from /root/autodl-tmp/hr_exec_20260919/data/DDR_split_613/images/val
+[2026-09-20 00:51:22] champion cache mode: reuse (/root/autodl-tmp/hr_exec_20260919/runs/champ_prob_cache_val)
+[2026-09-20 00:51:59] eval val 25/76 (45.6s)
+[2026-09-20 00:52:32] eval val 50/76 (79.3s)
+[2026-09-20 00:53:05] eval val 75/76 (111.8s)
+[2026-09-20 00:53:06] eval val 76/76 (113.0s)
+[2026-09-20 00:53:06] val champion mIoU 0.426694
+[2026-09-20 00:53:06] val cand_S_step_2000 mIoU 0.386455
+[2026-09-20 00:53:06] val mix_S_step_2000 mIoU 0.425175
+[2026-09-20 00:53:07] DONE split=val mious={'champion': 0.426694, 'cand_S_step_2000': 0.386455, 'mix_S_step_2000': 0.425175}
+[2026-09-20 00:53:08] === eval 3/4 OK: S_step_2000
+[2026-09-20 00:53:08] === eval 4/4: candidate=S_step_4000 arm=S out=/root/autodl-tmp/hr_exec_20260919/runs/evalcand_val/S_step_4000
+[2026-09-20 00:53:11] split audit OK; val stems = 76
+[2026-09-20 00:53:17] candidate S_step_4000 loaded: arm=S steps=4000 seed=42
+[HRPlusMAResidual] 可训练 0.058M / 冻结 131.221M
+[2026-09-20 00:53:22] champion built: members=['D', 'E', 'B', 'E4'] head=/root/autodl-tmp/hr_exec_20260919/assets/H4_best.pth
+/root/miniconda3/lib/python3.8/site-packages/mmcv/__init__.py:20: UserWarning: On January 1, 2023, MMCV will release v2.0.0, in which it will remove components related to the training process and add a data transformation module. In addition, it will rename the package names mmcv to mmcv-lite and mmcv-full to mmcv. See https://github.com/open-mmlab/mmcv/blob/master/docs/en/compatibility.md for more details.
+  warnings.warn(
+2026-09-20 00:53:23,740 - mmseg - INFO - Loaded 76 images from /root/autodl-tmp/hr_exec_20260919/data/DDR_split_613/images/val
+[2026-09-20 00:53:33] champion cache mode: reuse (/root/autodl-tmp/hr_exec_20260919/runs/champ_prob_cache_val)
+[2026-09-20 00:54:12] eval val 25/76 (46.5s)
+[2026-09-20 00:54:46] eval val 50/76 (80.4s)
+[2026-09-20 00:55:18] eval val 75/76 (113.1s)
+[2026-09-20 00:55:20] eval val 76/76 (114.3s)
+[2026-09-20 00:55:20] val champion mIoU 0.426694
+[2026-09-20 00:55:20] val cand_S_step_4000 mIoU 0.398320
+[2026-09-20 00:55:20] val mix_S_step_4000 mIoU 0.425452
+[2026-09-20 00:55:21] DONE split=val mious={'champion': 0.426694, 'cand_S_step_4000': 0.39832, 'mix_S_step_4000': 0.425452}
+[2026-09-20 00:55:21] === eval 4/4 OK: S_step_4000
+[2026-09-20 00:55:21] all 4 val evaluations succeeded
+[2026-09-20 00:55:21] packaging raw outputs and training logs into /root/autodl-tmp/hr_exec_20260919/backups

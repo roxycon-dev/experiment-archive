@@ -1,0 +1,204 @@
+{
+  "status": "PREVIEW_NOT_FINAL",
+  "split": "val",
+  "n_images": 1,
+  "pixel_table": [
+    {
+      "method": "full",
+      "description": "Full system",
+      "n_images": 1,
+      "miou_pct": 12.837837837837837,
+      "EX_IoU_pct": 0.0,
+      "HE_IoU_pct": 0.0,
+      "SE_IoU_pct": 0.0,
+      "MA_IoU_pct": 51.35135135135135,
+      "MA_precision_pct": 56.43564356435643,
+      "MA_recall_pct": 85.07462686567165,
+      "miou_ci_low_pct": 12.837837837837837,
+      "miou_ci_high_pct": 12.837837837837837,
+      "full_minus_row_pp": 0.0
+    },
+    {
+      "method": "no_h4",
+      "description": "Without H4",
+      "n_images": 1,
+      "miou_pct": 11.065573770491802,
+      "EX_IoU_pct": 0.0,
+      "HE_IoU_pct": 0.0,
+      "SE_IoU_pct": 0.0,
+      "MA_IoU_pct": 44.26229508196721,
+      "MA_precision_pct": 49.54128440366973,
+      "MA_recall_pct": 80.59701492537313,
+      "miou_ci_low_pct": 11.065573770491802,
+      "miou_ci_high_pct": 11.065573770491802,
+      "full_minus_row_pp": 1.7722640673460344
+    },
+    {
+      "method": "no_convnext",
+      "description": "Without ConvNeXt",
+      "n_images": 1,
+      "miou_pct": 13.531553398058252,
+      "EX_IoU_pct": 0.0,
+      "HE_IoU_pct": 0.0,
+      "SE_IoU_pct": 0.0,
+      "MA_IoU_pct": 54.12621359223301,
+      "MA_precision_pct": 60.76294277929155,
+      "MA_recall_pct": 83.2089552238806,
+      "miou_ci_low_pct": 13.531553398058252,
+      "miou_ci_high_pct": 13.531553398058252,
+      "full_minus_row_pp": -0.693715560220415
+    },
+    {
+      "method": "matched_c20",
+      "description": "Replace S20 with C20",
+      "n_images": 1,
+      "miou_pct": 12.925170068027212,
+      "EX_IoU_pct": 0.0,
+      "HE_IoU_pct": 0.0,
+      "SE_IoU_pct": 0.0,
+      "MA_IoU_pct": 51.70068027210885,
+      "MA_precision_pct": 56.85785536159601,
+      "MA_recall_pct": 85.07462686567165,
+      "miou_ci_low_pct": 12.925170068027212,
+      "miou_ci_high_pct": 12.925170068027212,
+      "full_minus_row_pp": -0.08733223018937508
+    }
+  ],
+  "pixel_comparisons": {
+    "no_h4": {
+      "full_minus_row_pp": 1.7722640673460344,
+      "paired_image_ci95_pp": [
+        1.7722640673460344,
+        1.7722640673460344
+      ]
+    },
+    "no_convnext": {
+      "full_minus_row_pp": -0.693715560220415,
+      "paired_image_ci95_pp": [
+        -0.693715560220415,
+        -0.693715560220415
+      ]
+    },
+    "matched_c20": {
+      "full_minus_row_pp": -0.08733223018937508,
+      "paired_image_ci95_pp": [
+        -0.08733223018937508,
+        -0.08733223018937508
+      ]
+    }
+  },
+  "lesion_table": [
+    {
+      "method": "full",
+      "n_images": 1,
+      "gt_lesions": 10,
+      "pred_lesions": 9,
+      "detected_lesions": 8,
+      "false_lesions": 1,
+      "missed_lesions": 2,
+      "detection_pct": 80.0,
+      "FP_per_image": 1.0,
+      "lesion_precision_pct": 88.88888888888889,
+      "detection_ci95_pct": [
+        80.0,
+        80.0
+      ],
+      "FP_per_image_ci95": [
+        1.0,
+        1.0
+      ],
+      "size_groups": {
+        "small": {
+          "gt": 6,
+          "detected": 4,
+          "detection_pct": 66.66666666666666,
+          "ci95_pct": [
+            66.66666666666666,
+            66.66666666666666
+          ]
+        },
+        "medium": {
+          "gt": 3,
+          "detected": 3,
+          "detection_pct": 100.0,
+          "ci95_pct": [
+            100.0,
+            100.0
+          ]
+        },
+        "large": {
+          "gt": 1,
+          "detected": 1,
+          "detection_pct": 100.0,
+          "ci95_pct": [
+            100.0,
+            100.0
+          ]
+        }
+      }
+    },
+    {
+      "method": "no_h4",
+      "n_images": 1,
+      "gt_lesions": 10,
+      "pred_lesions": 9,
+      "detected_lesions": 8,
+      "false_lesions": 1,
+      "missed_lesions": 2,
+      "detection_pct": 80.0,
+      "FP_per_image": 1.0,
+      "lesion_precision_pct": 88.88888888888889,
+      "detection_ci95_pct": [
+        80.0,
+        80.0
+      ],
+      "FP_per_image_ci95": [
+        1.0,
+        1.0
+      ],
+      "size_groups": {
+        "small": {
+          "gt": 6,
+          "detected": 4,
+          "detection_pct": 66.66666666666666,
+          "ci95_pct": [
+            66.66666666666666,
+            66.66666666666666
+          ]
+        },
+        "medium": {
+          "gt": 3,
+          "detected": 3,
+          "detection_pct": 100.0,
+          "ci95_pct": [
+            100.0,
+            100.0
+          ]
+        },
+        "large": {
+          "gt": 1,
+          "detected": 1,
+          "detection_pct": 100.0,
+          "ci95_pct": [
+            100.0,
+            100.0
+          ]
+        }
+      }
+    }
+  ],
+  "bins_pixels": [
+    32,
+    74
+  ],
+  "matching": "8-connected, IoU>=0.10, maximum-cardinality then maximum-IoU, one-to-one",
+  "bootstrap": {
+    "unit": "image",
+    "draws": 2000,
+    "seed": 20261023,
+    "training_seed_variance_included": false
+  },
+  "baseline": "UNAVAILABLE: historical split613 seed42 u32000 checkpoint not recovered; no new baseline training",
+  "independent_generalization": "NOT_ESTABLISHED",
+  "runtime": "new local replay; see manifest and runtime amendment"
+}

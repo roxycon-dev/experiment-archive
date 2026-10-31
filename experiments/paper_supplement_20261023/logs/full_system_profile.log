@@ -1,0 +1,10 @@
+C:\Users\GuanXingRen\Miniconda3\envs\M2MRF-Lesion-Segmentation\lib\site-packages\mmcv\__init__.py:20: UserWarning: On January 1, 2023, MMCV will release v2.0.0, in which it will remove components related to the training process and add a data transformation module. In addition, it will rename the package names mmcv to mmcv-lite and mmcv-full to mmcv. See https://github.com/open-mmlab/mmcv/blob/master/docs/en/compatibility.md for more details.
+  warnings.warn(
+2026-10-23 18:07:39,555 - mmseg - INFO - Loaded 76 images from D:\HRDecoder\data\DDR_split_613\images/val
+[HRPlusMAResidual] 可训练 0.058M / 冻结 131.221M
+{"stage": "RUNNING", "mode": "profile", "completed": 1, "expected": 4, "last_sid": "007-1774-100", "warmup": true, "elapsed_seconds": 33.949025999999996}
+{"stage": "RUNNING", "mode": "profile", "completed": 2, "expected": 4, "last_sid": "007-1774-100", "warmup": false, "elapsed_seconds": 49.020937999999994}
+{"stage": "RUNNING", "mode": "profile", "completed": 3, "expected": 4, "last_sid": "007-1782-100", "warmup": false, "elapsed_seconds": 64.31714790000001}
+{"stage": "RUNNING", "mode": "profile", "completed": 4, "expected": 4, "last_sid": "007-1829-100", "warmup": false, "elapsed_seconds": 78.8202091}
+C:\Users\GuanXingRen\Miniconda3\envs\M2MRF-Lesion-Segmentation\lib\site-packages\torch\nn\functional.py:3631: UserWarning: Default upsampling behavior when mode=bilinear is changed to align_corners=False since 0.4.0. Please specify align_corners=True if the old behavior is desired. See the documentation of nn.Upsample for details.
+  warnings.warn(

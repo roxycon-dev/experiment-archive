@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "full_shared_FP32_cache_images": 454,
+  "cache_bytes": 103079190214,
+  "same_real_2048_image_label_valid_A_U_S_bits": true,
+  "CPU_benchmarks": [
+    {
+      "workers": 8,
+      "prefetch_factor": 1,
+      "measured_batches": 35,
+      "mean_CPU_batch_seconds": 0.6012557436312947,
+      "median_CPU_batch_seconds": 0.08448325097560883,
+      "p90_CPU_batch_seconds": 1.8277814015746117,
+      "peak_cgroup_memory_bytes": 110584164352,
+      "GPU_or_optimizer_used": false
+    },
+    {
+      "workers": 12,
+      "prefetch_factor": 1,
+      "measured_batches": 35,
+      "mean_CPU_batch_seconds": 0.41170060804912023,
+      "median_CPU_batch_seconds": 0.00031235814094543457,
+      "p90_CPU_batch_seconds": 1.934660591185093,
+      "peak_cgroup_memory_bytes": 114046554112,
+      "GPU_or_optimizer_used": false
+    }
+  ],
+  "selected_workers": 12,
+  "prefetch_factor": 1,
+  "memory_safety_headroom_bytes": 14802464768,
+  "not_a_GPU_optimality_proof": true
+}

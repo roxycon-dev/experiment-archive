@@ -1,0 +1,123 @@
+{
+  "status": "PASS_RECOVERED_PROJECT_CHECKPOINT_INVENTORY",
+  "checked_at": "2026-10-24T01:48:41.753026+00:00",
+  "source_root": "C:\\Users\\GuanXingRen\\Downloads\\Compressed\\工程文件",
+  "checkpoints": [
+    {
+      "path": "C:\\Users\\GuanXingRen\\Downloads\\Compressed\\工程文件\\server_checkpoints\\01_板块一_baseline_best_iter32000.pth",
+      "bytes": 525855050,
+      "sha256": "446fc7b598e9680a1470059d2aba3a6f9c2222b66658a5eccef6059b1362850f",
+      "exp_name": "hrdecoder_fcn_hr48_ddr_2048_split613_baseline",
+      "zero_based_metadata_iter": 31999,
+      "best_val_score": 0.39390182190651146,
+      "initialization_lines": [
+        "    pretrained='open-mmlab://msra/hrnetv2_w48',",
+        "        pretrained='open-mmlab://msra/hrnetv2_w48'),",
+        "load_from = None",
+        "resume_from = None"
+      ]
+    },
+    {
+      "path": "C:\\Users\\GuanXingRen\\Downloads\\Compressed\\工程文件\\server_checkpoints\\02_板块二_实验2_copyPaste_best_iter32000.pth",
+      "bytes": 525855498,
+      "sha256": "ddc9ce75cda57c47d3cb9655acf10e0ddf471a05d8b9b68d455d9577e027aa2b",
+      "exp_name": "hrdecoder_fcn_hr48_ddr_2048_split613_se_copypaste",
+      "zero_based_metadata_iter": 31999,
+      "best_val_score": 0.3969527228425342,
+      "initialization_lines": [
+        "    pretrained='open-mmlab://msra/hrnetv2_w48',",
+        "        pretrained='open-mmlab://msra/hrnetv2_w48'),",
+        "load_from = None",
+        "resume_from = 'work_dirs/hrdecoder_fcn_hr48_ddr_2048_split613_se_copypaste/iter_2000.pth'"
+      ]
+    },
+    {
+      "path": "C:\\Users\\GuanXingRen\\Downloads\\Compressed\\工程文件\\server_checkpoints\\02_板块二_实验3_滑窗_best_iter20000.pth",
+      "bytes": 525855114,
+      "sha256": "35d31ed2f12bfde6e004271d3a6cfceab207b76fe02bb14389e582377538dfe6",
+      "exp_name": "hrdecoder_fcn_hr48_ddr_2048_split613_se_slide",
+      "zero_based_metadata_iter": 19999,
+      "best_val_score": 0.39641265751678434,
+      "initialization_lines": [
+        "    pretrained='open-mmlab://msra/hrnetv2_w48',",
+        "        pretrained='open-mmlab://msra/hrnetv2_w48'),",
+        "load_from = None",
+        "resume_from = None"
+      ]
+    },
+    {
+      "path": "C:\\Users\\GuanXingRen\\Downloads\\Compressed\\工程文件\\server_checkpoints\\02_板块二_实验4_组合_best_iter40000.pth",
+      "bytes": 525855562,
+      "sha256": "74e3ad4cbaeee1482ec8dc72880c371acf1ca12c443cbac95a22e086983d8547",
+      "exp_name": "hrdecoder_fcn_hr48_ddr_2048_split613_se_copypaste_slide",
+      "zero_based_metadata_iter": 39999,
+      "best_val_score": 0.4039036485312627,
+      "initialization_lines": [
+        "    pretrained='open-mmlab://msra/hrnetv2_w48',",
+        "        pretrained='open-mmlab://msra/hrnetv2_w48'),",
+        "load_from = None",
+        "resume_from = None"
+      ]
+    },
+    {
+      "path": "C:\\Users\\GuanXingRen\\Downloads\\Compressed\\工程文件\\server_checkpoints\\03_板块三_1.5x_best_iter20000.pth",
+      "bytes": 525855114,
+      "sha256": "1adaba5ed6e896c56f6d503bc64f60299889ce40e22dbc14d7bce013d881bac5",
+      "exp_name": "hrdecoder_fcn_hr48_ddr_2048_split613_sew15",
+      "zero_based_metadata_iter": 19999,
+      "best_val_score": 0.3897384237155859,
+      "initialization_lines": [
+        "    pretrained='open-mmlab://msra/hrnetv2_w48',",
+        "        pretrained='open-mmlab://msra/hrnetv2_w48'),",
+        "load_from = None",
+        "resume_from = None"
+      ]
+    },
+    {
+      "path": "C:\\Users\\GuanXingRen\\Downloads\\Compressed\\工程文件\\server_checkpoints\\03_板块三_2x_best_iter20000.pth",
+      "bytes": 525855114,
+      "sha256": "e7a385d2046bb902c178354d2f80c8ab55a1aaf4f7cfb96435f17b6e0921ecd0",
+      "exp_name": "hrdecoder_fcn_hr48_ddr_2048_split613_sew20",
+      "zero_based_metadata_iter": 19999,
+      "best_val_score": 0.4090132532829346,
+      "initialization_lines": [
+        "    pretrained='open-mmlab://msra/hrnetv2_w48',",
+        "        pretrained='open-mmlab://msra/hrnetv2_w48'),",
+        "load_from = None",
+        "resume_from = None"
+      ]
+    },
+    {
+      "path": "C:\\Users\\GuanXingRen\\Downloads\\Compressed\\工程文件\\server_checkpoints\\03_板块三_3x_best_iter20000.pth",
+      "bytes": 525855114,
+      "sha256": "dc97e3aa0d9165fbe526c35e73c56f9f879a4fda042f7781858bc2912fae0260",
+      "exp_name": "hrdecoder_fcn_hr48_ddr_2048_split613_sew30",
+      "zero_based_metadata_iter": 19999,
+      "best_val_score": 0.394690239309883,
+      "initialization_lines": [
+        "    pretrained='open-mmlab://msra/hrnetv2_w48',",
+        "        pretrained='open-mmlab://msra/hrnetv2_w48'),",
+        "load_from = None",
+        "resume_from = None"
+      ]
+    },
+    {
+      "path": "C:\\Users\\GuanXingRen\\Downloads\\Compressed\\工程文件\\server_checkpoints\\03_板块三_自适应_best_iter40000.pth",
+      "bytes": 525855178,
+      "sha256": "6f6801ab4d00debe29def33a48cf2dcf467abbf5de6d1d093d850801b4b26650",
+      "exp_name": "hrdecoder_fcn_hr48_ddr_2048_split613_sew_adaptive",
+      "zero_based_metadata_iter": 39999,
+      "best_val_score": 0.3808806260977554,
+      "initialization_lines": [
+        "    pretrained='open-mmlab://msra/hrnetv2_w48',",
+        "        pretrained='open-mmlab://msra/hrnetv2_w48'),",
+        "load_from = None",
+        "resume_from = None"
+      ]
+    }
+  ],
+  "primary_baseline_sha256": "446fc7b598e9680a1470059d2aba3a6f9c2222b66658a5eccef6059b1362850f",
+  "all_nonbaseline_variants_not_used_for_new_selection": true,
+  "training_or_test_evaluation_of_other_variants_performed": false,
+  "limits": "Metadata does not establish original baseline task-weight initialization for a descendant when load_from is None; a resume path may refer to the same run, not the baseline."
+}

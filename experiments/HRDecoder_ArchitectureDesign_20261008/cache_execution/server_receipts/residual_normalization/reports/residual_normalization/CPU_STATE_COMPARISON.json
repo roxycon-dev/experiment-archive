@@ -1,0 +1,55 @@
+{
+  "status": "CPU_CHECKPOINT_COMPARISON_COMPLETE",
+  "parent_completed": 8000,
+  "probe_updates": 500,
+  "model_state_comparison": {
+    "base.": {
+      "tensor_count": 1844,
+      "differing_tensors": 1537,
+      "different_elements": 65581025,
+      "total_elements": 65657079,
+      "maximum_absolute_difference": 0.407482385635376,
+      "first10_differing_names": [
+        "base.backbone.conv1.weight",
+        "base.backbone.bn1.weight",
+        "base.backbone.bn1.bias",
+        "base.backbone.bn1.running_mean",
+        "base.backbone.bn1.running_var",
+        "base.backbone.conv2.weight",
+        "base.backbone.bn2.weight",
+        "base.backbone.bn2.bias",
+        "base.backbone.bn2.running_mean",
+        "base.backbone.bn2.running_var"
+      ]
+    },
+    "private.": {
+      "tensor_count": 196,
+      "differing_tensors": 196,
+      "different_elements": 6413751,
+      "total_elements": 6415232,
+      "maximum_absolute_difference": 0.024239979684352875,
+      "first10_differing_names": [
+        "private.local.p_r.conv.weight",
+        "private.local.p_r.norm.norm.weight",
+        "private.local.p_r.norm.norm.bias",
+        "private.local.l4_blocks.0.dw.weight",
+        "private.local.l4_blocks.0.norm.norm.weight",
+        "private.local.l4_blocks.0.norm.norm.bias",
+        "private.local.l4_blocks.0.expand.weight",
+        "private.local.l4_blocks.0.project.weight",
+        "private.local.l4_blocks.1.dw.weight",
+        "private.local.l4_blocks.1.norm.norm.weight"
+      ]
+    }
+  },
+  "final_RNG_comparison": {
+    "python_equal": true,
+    "numpy_equal": true,
+    "torch_CPU_equal": true,
+    "torch_CUDA_state_bytes_equal_without_CUDA_execution": true
+  },
+  "GPU_execution": false,
+  "checkpoint_download": false,
+  "test_accessed": false,
+  "root_cause_of_provider_divergence_proven": false
+}

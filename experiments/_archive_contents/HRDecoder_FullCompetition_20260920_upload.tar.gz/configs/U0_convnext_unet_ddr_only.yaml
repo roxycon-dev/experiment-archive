@@ -1,0 +1,124 @@
+# ==========================================================================
+# U0 — ConvNeXt-Small + U-Net decoder，DDR-only 对照臂（锁定意图配置 / locked intent）
+# 结构族 convnext_unet 的控制臂；外部预训练不存在于此臂。
+# 与 U1 共享全部 DDR 日程/seed/采样/loss/指标/初始化（equivalence_lock）。
+# ==========================================================================
+schema_version: "1.0"
+arm_id: U0
+role: "DDR-only control for convnext_unet family"
+status: locked-intent
+
+structure:
+  family: convnext_unet
+  paired_group: convnext_unet          # U0/U1 同组
+  definition_ref: "主方案第三节；DP-UNet 仅借鉴结构思想，不声称复现其官方源码"
+  encoder: convnext_small              # 官方自然图像预训练；版本 REQUIRED
+  encoder_weights_source: REQUIRED     # facebookresearch/ConvNeXt 官方权重 URL/版本
+  encoder_weights_file: REQUIRED
+  encoder_weights_sha256: REQUIRED
+  training_entry: train.py            # 统一训练入口（--stage ddr_finetune）
+  library: builtin                    # v1 用本工作区纯 torch ConvNeXt-S（消除不可离线核实的 smp 依赖）
+  library_version: REQUIRED
+  decoder: unet                        # 四级特征逐级连接，解码恢复到输入分辨率
+  output_heads: 4                      # 四个独立 logits（通道序 EX/HE/SE/MA）
+  detail_branch: false                 # v1 未实现且无 shape test ⇒ U0/U1 一律 false；
+                                       # 配置不得声称 true 而代码无实现
+  full_input_resolution_decode: true   # 不允许只在低分辨率分类后大倍率插值
+
+initialization:
+  imagenet_weights:
+    source: REQUIRED
+    file: REQUIRED
+    sha256: REQUIRED
+  external_pretrain_checkpoint: null   # U0 绝不允许外部预训练权重
+
+data:
+  ddr_root: "D:/HRDecoder/data/DDR_split_613"
+  ddr_train_split: train
+  ddr_val_split: val
+  ddr_test_split: test
+  channel_order: [EX, HE, SE, MA]
+  input_fov: 2048
+  train_crop: 1024
+  ddr_normalization:                    # ConvNeXt 归一化按其官方预处理；实测编码器接口后锁定
+    mean: REQUIRED
+    std: REQUIRED
+
+ddr_finetune_stage:
+  seed: 42
+  updates: 12000
+  effective_batch: 8
+  micro_batch: REQUIRED
+  grad_accum: REQUIRED
+  eval_progress_points: [0.25, 0.5, 0.75, 1.0]
+  optimizer: adamw
+  weight_decay: 1.0e-2
+  warmup_ratio: 0.05
+  lr_schedule: cosine
+  cosine_min_ratio: 0.01
+  backbone_lr: 1.0e-4
+  decoder_lr: 3.0e-4
+  augmentation:
+    resize_ratio_range: [0.5, 2.0]
+    random_crop_cat_max_ratio: 0.75
+    flip_ratio: 0.5
+    rotate_degrees: [-45, 45]
+    photometric: light
+  sampling: random_plus_foreground_mixed
+  norm_policy: layernorm_native        # ConvNeXt 用其正常 LayerNorm；不套用小 batch BN 策略
+  mixed_precision: true
+  gradient_checkpointing: REQUIRED
+
+loss:
+  type: binary_per_class
+  recipe: ce_dice                      # 与 H 臂同一 Dice 定义，先隔离数据/架构因素
+  smooth: 1.0e-5
+  per_class_valid_masking: true       # trainer.loss 已实现 valid=0 整类屏蔽（缺类绝不当阴性）
+  ce_weight: 1.0
+  dice_weight: 1.0
+
+metrics:
+  protocol: whole_image_accumulated_counts
+  threshold: 0.5
+  primary: mIoU_lesion4
+  reported: [mF1, mPPV, mRecall, mAUPR]
+
+checkpoint_selection:
+  allowed_splits: [val]
+  test_forbidden: true
+
+test_usage:
+  train_on_test: forbidden
+  select_checkpoint_on_test: forbidden
+  final_single_eval: allowed_only_after_full_lock
+
+equivalence_lock:
+  identical_with: U1
+  fields:
+    - data
+    - ddr_finetune_stage
+    - loss
+    - metrics
+    - checkpoint_selection
+    - test_usage
+    - structure.family
+    - structure.paired_group
+    - structure.encoder
+    - structure.detail_branch
+    - structure.library
+    - structure.encoder_weights_source   # 编码器初始化字段规范：纳入配对锁（与 initialization.imagenet_weights 同权重）
+    - structure.encoder_weights_file
+    - structure.encoder_weights_sha256
+    - initialization.imagenet_weights
+
+notes: >
+  U0 回答"异构特征和解码路径能否提供增量"。ConvNeXt 归一化统计在首次工程验证后
+  一次性填写；填写前 preflight 保持 FAIL。
+
+  相对上一版锁定意图的两处修正（U0/U1 同步，equivalence_lock 仍要求逐字段一致）：
+  1) structure.library 由 segmentation_models_pytorch 改为 builtin：v1 使用本工作区
+     纯 torch 的 ConvNeXt-S 编码器实现，不引入无法离线核实的第三方分割库依赖；
+     "库支持某组合" != "该组合已验证"，故不保留一个不可构建的声明。
+  2) structure.detail_branch 由 true 改为 false：v1 没有实现该支路，也没有 shape test；
+     按"配置不得声称 true 而代码无实现"的约束统一置 false。若后续实现并补 shape test，
+     再把两臂一起改回 true 并重跑 preflight。

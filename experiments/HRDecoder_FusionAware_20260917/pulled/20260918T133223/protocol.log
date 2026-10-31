@@ -1,0 +1,49 @@
+[2026-09-18 13:17:19] round6: ledger deadline 2026-09-18T11:17:15+00:00 (6.00h left)
+[2026-09-18 13:17:21] smoke: champion
+[2026-09-18 13:17:33] disk: 5.9G free (need 2.0G) at /root/autodl-tmp
+[2026-09-18 13:17:37] smoke gate1: pre_head_probs OK (4, 1944, 2592)
+[2026-09-18 13:18:33] round6: ledger deadline 2026-09-18T11:17:15+00:00 (5.98h left)
+[2026-09-18 13:18:35] smoke: champion
+[2026-09-18 13:18:46] disk: 5.9G free (need 2.0G) at /root/autodl-tmp
+[2026-09-18 13:18:50] smoke gate1: pre_head_probs OK (4, 1944, 2592)
+[2026-09-18 13:19:01] feature cache COMPLETE HE/train: 3 entries (10s)
+[2026-09-18 13:19:38] round6: ledger deadline 2026-09-18T11:17:15+00:00 (5.96h left)
+[2026-09-18 13:19:40] smoke: champion
+[2026-09-18 13:19:53] disk: 5.8G free (need 2.0G) at /root/autodl-tmp
+[2026-09-18 13:19:57] smoke gate1: pre_head_probs OK (4, 1944, 2592)
+[2026-09-18 13:19:58] feature cache present: /root/autodl-tmp/hrplus/glm/runs/r6/smoke/featcache_r6/HE/train (3 entries)
+[2026-09-18 13:19:58] smoke gate1b: feature cache entry OK img(3, 1934, 1956) fields(3, 1934, 1956)
+[2026-09-18 13:20:49] round6: ledger deadline 2026-09-18T11:17:15+00:00 (5.94h left)
+[2026-09-18 13:20:51] smoke: champion
+[2026-09-18 13:21:02] disk: 5.8G free (need 2.0G) at /root/autodl-tmp
+[2026-09-18 13:21:06] smoke gate1: pre_head_probs OK (4, 1944, 2592)
+[2026-09-18 13:21:07] feature cache present: /root/autodl-tmp/hrplus/glm/runs/r6/smoke/featcache_r6/HE/train (3 entries)
+[2026-09-18 13:21:07] smoke gate1b: feature cache entry OK img(3, 1934, 1956) fields(3, 1934, 1956)
+[2026-09-18 13:21:07] smoke gate2: head identity OK
+[2026-09-18 13:21:08] smoke gate3: head 5 steps OK (loss 0.9484)
+[2026-09-18 13:21:53] round6: ledger deadline 2026-09-18T11:17:15+00:00 (5.92h left)
+[2026-09-18 13:21:55] smoke: champion
+[2026-09-18 13:22:07] disk: 5.8G free (need 2.0G) at /root/autodl-tmp
+[2026-09-18 13:22:11] smoke gate1: pre_head_probs OK (4, 1944, 2592)
+[2026-09-18 13:22:12] feature cache present: /root/autodl-tmp/hrplus/glm/runs/r6/smoke/featcache_r6/HE/train (3 entries)
+[2026-09-18 13:22:12] smoke gate1b: feature cache entry OK img(3, 1934, 1956) fields(3, 1934, 1956)
+[2026-09-18 13:22:12] smoke gate2: head identity OK
+[2026-09-18 13:22:12] smoke gate3: head 5 steps OK (loss 0.9529)
+[2026-09-18 13:22:35] expert patch plan: 454 train images, 338 with MA-positive windows
+[2026-09-18 13:22:35] smoke gate4: expert 5 steps OK (loss 1.2795)
+[2026-09-18 13:22:37] smoke gate5: expert sliding window OK (1934, 1956)
+[2026-09-18 13:22:37] SMOKE OK (6 gates; smoke cache removed)
+[2026-09-18 13:22:44] round6: ledger deadline 2026-09-18T11:17:15+00:00 (5.91h left)
+[2026-09-18 13:22:46] P0: split audit OK (454/76/227)
+[2026-09-18 13:24:32] eval val 25/76 (92.5s)
+[2026-09-18 13:26:02] eval val 50/76 (183.1s)
+[2026-09-18 13:27:31] eval val 75/76 (272.5s)
+[2026-09-18 13:27:34] P0: pristine champion val mIoU 0.4267 {'EX': 0.4577, 'HE': 0.4376, 'SE': 0.5518, 'MA': 0.2597} (277s; r5 ref 0.4267)
+[2026-09-18 13:29:08] eval test 25/227 (88.4s)
+[2026-09-18 13:30:36] eval test 50/227 (176.3s)
+[2026-09-18 13:32:02] eval test 75/227 (262.1s)
+[2026-09-18 13:33:33] eval test 100/227 (353.3s)
+[2026-09-18 13:35:06] eval test 125/227 (445.7s)
+[2026-09-18 13:36:35] eval test 150/227 (534.6s)
+[2026-09-18 13:38:03] eval test 175/227 (623.4s)
+[2026-09-18 13:39:34] eval test 200/227 (714.0s)

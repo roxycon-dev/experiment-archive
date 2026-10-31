@@ -1,0 +1,33 @@
+{
+  "created_at": "2026-09-12T15:55:17.111198+00:00",
+  "baseline_report_test": 42.2,
+  "last_exploratory_test": 42.35,
+  "target_test": 45.35,
+  "validation_gate": 42.4,
+  "gate_consecutive_points": 2,
+  "split_counts": {
+    "train": 454,
+    "val": 76,
+    "test": 227
+  },
+  "threshold": 0.5,
+  "background_in_mean": false,
+  "TTA": false,
+  "fusion_weights": [
+    0.5,
+    0.5
+  ],
+  "candidates": [
+    "D_dice",
+    "L_dice_plus_0.1_binary_lovasz"
+  ],
+  "primary_seed": 42,
+  "confirmation_seed": 2026,
+  "test_access": "only after validation decision and final checkpoint hash lock",
+  "new_budget_rmb": 91.95,
+  "max_new_card_hours": 44,
+  "max_session_hours": 12,
+  "hourly_rmb": 1.98,
+  "servers": 1,
+  "status": "LOCAL_PREPARATION_COMPLETE_AWAITING_ONE_SERVER_GPU_PREFLIGHT"
+}

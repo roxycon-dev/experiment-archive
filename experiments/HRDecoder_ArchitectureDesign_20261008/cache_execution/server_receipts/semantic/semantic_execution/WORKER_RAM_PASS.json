@@ -1,0 +1,42 @@
+{
+  "status": "PASS",
+  "torch": "2.0.1+cu117",
+  "spawned_worker_RAM_pid": 39434,
+  "three_training_map_checks": [
+    {
+      "member": "A",
+      "sid": "007-1824-100",
+      "shape": [
+        4,
+        1934,
+        1956
+      ],
+      "format": "npy",
+      "bitwise_equal": true
+    },
+    {
+      "member": "U",
+      "sid": "007-1811-100",
+      "shape": [
+        4,
+        1934,
+        1956
+      ],
+      "format": "npy",
+      "bitwise_equal": true
+    },
+    {
+      "member": "S",
+      "sid": "007-1811-100",
+      "shape": [
+        4,
+        1934,
+        1956
+      ],
+      "format": "npz",
+      "bitwise_equal": true
+    }
+  ],
+  "full_data_cache_hash_rescan": false,
+  "GPU_work": false
+}

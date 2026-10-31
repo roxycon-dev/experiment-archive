@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "ops/continue_campaign.py", line 118, in <module>
+    if __name__=='__main__':main()
+  File "ops/continue_campaign.py", line 75, in main
+    command('M',['run_campaign.py','--stage','M'])
+  File "ops/continue_campaign.py", line 21, in command
+    raise RuntimeError(stage+' failed; inspection required, no final test or shutdown')
+RuntimeError: M failed; inspection required, no final test or shutdown

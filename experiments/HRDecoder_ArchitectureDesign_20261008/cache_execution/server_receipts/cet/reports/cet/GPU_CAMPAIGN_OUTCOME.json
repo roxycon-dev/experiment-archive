@@ -1,0 +1,129 @@
+{
+  "status": "COMPLETE",
+  "exit_code": 0,
+  "time_unix": 1791523831.5022159,
+  "start_unix": 1791481620.3973002,
+  "completion": {
+    "status": "COMPLETE",
+    "completed": 40000,
+    "identity_SHA": "435bd9619a6f141d5598ae078e5f170c3201fd82dc0b87f05ae0897abf3b9460",
+    "primary_checkpoint": "last.pt",
+    "secondary_checkpoint": "best_val.pt",
+    "durable_checkpoint_loaded_and_verified": true,
+    "final_validation_images": 76,
+    "no_test_selection": true,
+    "shutdown_authorized": false
+  },
+  "final_validation": {
+    "mIoU_percent": 38.31375888746443,
+    "IoU_percent": [
+      44.48779237366265,
+      37.367407370856206,
+      50.87373791430304,
+      20.52609789103582
+    ],
+    "precision_percent": [
+      56.24392351733823,
+      50.45289919271959,
+      64.3823370055987,
+      26.412333919072573
+    ],
+    "recall_percent": [
+      68.03471766109703,
+      59.02901012004074,
+      70.799984111537,
+      47.94469141504532
+    ],
+    "counts": [
+      [
+        197847,
+        153919,
+        92956
+      ],
+      [
+        711845,
+        699065,
+        494079
+      ],
+      [
+        142594,
+        78886,
+        58810
+      ],
+      [
+        33218,
+        92549,
+        36066
+      ]
+    ],
+    "class_order": [
+      "EX",
+      "HE",
+      "SE",
+      "MA"
+    ],
+    "undefined_precision_convention": "zero when TP+FP=0; inspect counts",
+    "images": 76,
+    "threshold": "strictly > .5",
+    "base_head_metrics": {
+      "mIoU_percent": 38.53638039120965,
+      "IoU_percent": [
+        44.908169205172044,
+        37.9930966469428,
+        50.31529709673449,
+        20.92895861598925
+      ],
+      "precision_percent": [
+        57.381009552032516,
+        51.990936293279866,
+        63.30405539945574,
+        27.25229334970058
+      ],
+      "recall_percent": [
+        67.38410539093476,
+        58.52591042221567,
+        71.03334591169987,
+        47.423647595404425
+      ],
+      "counts": [
+        [
+          195955,
+          145543,
+          94848
+        ],
+        [
+          705778,
+          651724,
+          500146
+        ],
+        [
+          143064,
+          82931,
+          58340
+        ],
+        [
+          32857,
+          87709,
+          36427
+        ]
+      ],
+      "class_order": [
+        "EX",
+        "HE",
+        "SE",
+        "MA"
+      ],
+      "undefined_precision_convention": "zero when TP+FP=0; inspect counts",
+      "images": 76,
+      "threshold": "strictly > .5"
+    },
+    "seconds": 32.07360449433327,
+    "deployment_inference_verified": true,
+    "teacher_or_GT_input": false,
+    "completed": 40000
+  },
+  "shutdown_command_issued": false,
+  "server_kept_running": true,
+  "checkpoint_download_requested": false,
+  "own_RAM_owner_termination_requested": false
+}

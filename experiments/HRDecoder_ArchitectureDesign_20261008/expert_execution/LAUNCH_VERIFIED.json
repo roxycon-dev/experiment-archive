@@ -1,0 +1,70 @@
+{
+  "status": "PASS",
+  "identity_SHA": "4fa9d6cf18c806475d4877c34154ed15cb8e45500efe7f1e79e8dabd767758c9",
+  "own_training_pid": 36273,
+  "own_controller_pid": 36083,
+  "actual_progress": {
+    "status": "TRAINING",
+    "completed": 150,
+    "expected": 40000,
+    "saved_update": 0,
+    "best_val_mIoU": null,
+    "time_unix": 1791562043.287171
+  },
+  "GPU_smoke_PASS": true,
+  "server_CPU_PASS": true,
+  "measured_nonzero_KD_smoke_seconds": 0.9263440333306789,
+  "estimated_screen_beijing": "2026-10-10T01:16:24.229401+08:00",
+  "runtime_observation": {
+    "server_online": true,
+    "checked_at_unix": 1791562053.764605,
+    "shutdown_command_issued": false,
+    "external_processes_controlled": false,
+    "GPU_CAMPAIGN_RUNNING.json": {
+      "status": "FRESH_SCREEN_RUNNING",
+      "pid": 36273,
+      "controller_pid": 36083,
+      "identity_SHA": "4fa9d6cf18c806475d4877c34154ed15cb8e45500efe7f1e79e8dabd767758c9",
+      "start_unix": 1791561878.8532677,
+      "canvas": 2048,
+      "batch": 2,
+      "screen_updates": 4000,
+      "max_conditional_updates": 40000,
+      "shutdown_after_completion": false,
+      "shutdown_after_failure": false,
+      "further_revisions_user_authorized": true
+    },
+    "DEADLINE_GATE.json": {
+      "status": "PASS",
+      "measured_screen_estimate_seconds": 4305.376133322716,
+      "checked_unix": 1791561878.852232,
+      "original_deadline_unix": 1791568800,
+      "reserve_seconds": 180,
+      "full40k_conditional_on_screen": true
+    },
+    "own_process_checks": {
+      "pid": {
+        "pid": 36273,
+        "alive": true,
+        "cmdline": "/root/miniconda3/bin/python -u train.py --train ",
+        "matches_current_task": true
+      },
+      "controller_pid": {
+        "pid": 36083,
+        "alive": true,
+        "cmdline": "/root/miniconda3/bin/python controller.py ",
+        "matches_current_task": true
+      }
+    },
+    "own_RAM": {
+      "pid": 25079,
+      "bytes": 103079171144,
+      "alive": true,
+      "matches_own_RAM": true
+    },
+    "GPU_status": "utilization.gpu [%], memory.used [MiB], power.draw [W]\n95 %, 17839 MiB, 314.21 W\n"
+  },
+  "checked_at": "2026-10-10T00:07:18.494350+08:00",
+  "server_kept_running": true,
+  "external_diagnostics_controlled": false
+}

@@ -1,0 +1,78 @@
+{
+  "time": "2026-10-05T11:33:03.846124+00:00",
+  "helpers": {
+    "primary": {
+      "pid": 17736,
+      "alive": true,
+      "state": {
+        "stage": "WAITING",
+        "time": "2026-10-05T11:19:01.947957+00:00"
+      },
+      "progress": {
+        "stage": "TRANSFERRING",
+        "full": false,
+        "verified_files": 5334,
+        "expected_files": 6423,
+        "verified_bytes": 264472923,
+        "expected_bytes": 269312848,
+        "updated_at": "2026-10-05T11:33:03.823894+00:00"
+      },
+      "pool": {
+        "stage": "POOL_COMPLETED",
+        "time": "2026-10-05T11:19:01.919798+00:00",
+        "receiver_connections_opened": 2,
+        "files_received": 5,
+        "seconds": 25.13090980000561,
+        "negotiated_compression": [
+          "zlib@openssh.com",
+          "zlib@openssh.com"
+        ],
+        "max_file_receivers": 2,
+        "original_mirror_sha256": "28492fcdbd64ae0e08145274af70368726275e2bdc52dbc99fa9177b6c0e366b",
+        "all_original_SHA_and_custody_gates_used": true
+      },
+      "error_tail": []
+    },
+    "second": {
+      "pid": 31360,
+      "alive": true,
+      "state": {
+        "stage": "WAITING",
+        "time": "2026-10-05T11:32:04.270571+00:00"
+      },
+      "progress": {
+        "stage": "TRANSFERRING",
+        "full": false,
+        "verified_files": 485,
+        "expected_files": 2882,
+        "verified_bytes": 177449395,
+        "expected_bytes": 188510652,
+        "updated_at": "2026-10-05T11:33:03.822398+00:00"
+      },
+      "pool": {
+        "stage": "POOL_COMPLETED",
+        "time": "2026-10-05T11:32:04.103229+00:00",
+        "receiver_connections_opened": 2,
+        "files_received": 6,
+        "seconds": 102.91079160000663,
+        "negotiated_compression": [
+          "zlib@openssh.com",
+          "zlib@openssh.com"
+        ],
+        "max_file_receivers": 2,
+        "original_mirror_sha256": "28492fcdbd64ae0e08145274af70368726275e2bdc52dbc99fa9177b6c0e366b",
+        "all_original_SHA_and_custody_gates_used": true
+      },
+      "error_tail": []
+    },
+    "coordinator": {
+      "pid": 32432,
+      "alive": true,
+      "state": {
+        "stage": "WAITING_SD_COMPLETE_SHA_CUSTODY",
+        "time": "2026-10-05T11:32:48.721713+00:00"
+      },
+      "error_tail": []
+    }
+  }
+}

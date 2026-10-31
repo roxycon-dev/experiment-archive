@@ -1,0 +1,77 @@
+Traceback (most recent call last):
+  File "D:\dataset\experiment\HRDecoder_FinalDecision_20261005\execution\ops\launch_when_ready.py", line 42, in main
+    if current['early'] and not current['early_alive'] and (current['gate'] or {}).get('status')!='PASS':raise RuntimeError('Required early GPU gate failed: '+str(current['early_tail']))
+                                                                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Required early GPU gate failed: s/gpu_acceptance.py", line 103, in small_model_gates
+    compare_snapshot(continuous[1],resumed[1],atol=1e-9,rtol=1e-6)
+  File "/root/autodl-tmp/HRDecoder_FinalDecision_20261005/tests/gpu_acceptance.py", line 58, in compare_snapshot
+    eq(a,b)
+  File "/root/autodl-tmp/HRDecoder_FinalDecision_20261005/tests/gpu_acceptance.py", line 55, in eq
+    elif isinstance(x,dict):assert x.keys()==y.keys();[eq(x[k],y[k]) for k in x]
+                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/HRDecoder_FinalDecision_20261005/tests/gpu_acceptance.py", line 55, in <listcomp>
+    elif isinstance(x,dict):assert x.keys()==y.keys();[eq(x[k],y[k]) for k in x]
+                                                       ^^^^^^^^^^^^^
+  File "/root/autodl-tmp/HRDecoder_FinalDecision_20261005/tests/gpu_acceptance.py", line 55, in eq
+    elif isinstance(x,dict):assert x.keys()==y.keys();[eq(x[k],y[k]) for k in x]
+                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/HRDecoder_FinalDecision_20261005/tests/gpu_acceptance.py", line 55, in <listcomp>
+    elif isinstance(x,dict):assert x.keys()==y.keys();[eq(x[k],y[k]) for k in x]
+                                                       ^^^^^^^^^^^^^
+  File "/root/autodl-tmp/HRDecoder_FinalDecision_20261005/tests/gpu_acceptance.py", line 55, in eq
+    elif isinstance(x,dict):assert x.keys()==y.keys();[eq(x[k],y[k]) for k in x]
+                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/HRDecoder_FinalDecision_20261005/tests/gpu_acceptance.py", line 55, in <listcomp>
+    elif isinstance(x,dict):assert x.keys()==y.keys();[eq(x[k],y[k]) for k in x]
+                                                       ^^^^^^^^^^^^^
+  File "/root/autodl-tmp/HRDecoder_FinalDecision_20261005/tests/gpu_acceptance.py", line 52, in eq
+    if atol or rtol:torch.testing.assert_close(x,y,atol=atol,rtol=rtol)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/torch/testing/_comparison.py", line 1519, in assert_close
+    raise error_metas[0].to_error(msg)
+AssertionError: Tensor-likes are not close!
+
+Mismatched elements: 300 / 589824 (0.1%)
+Greatest absolute difference: 6.867776392027736e-07 at index (274, 0, 0, 4) (up to 1e-09 allowed)
+Greatest relative difference: 0.22280052304267883 at index (274, 1, 13, 8) (up to 1e-06 allowed)
+
+Traceback (most recent call last):
+  File "D:\dataset\experiment\HRDecoder_FinalDecision_20261005\execution\ops\launch_when_ready.py", line 56, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "D:\dataset\experiment\HRDecoder_FinalDecision_20261005\execution\ops\launch_when_ready.py", line 42, in main
+    if current['early'] and not current['early_alive'] and (current['gate'] or {}).get('status')!='PASS':raise RuntimeError('Required early GPU gate failed: '+str(current['early_tail']))
+                                                                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Required early GPU gate failed: s/gpu_acceptance.py", line 103, in small_model_gates
+    compare_snapshot(continuous[1],resumed[1],atol=1e-9,rtol=1e-6)
+  File "/root/autodl-tmp/HRDecoder_FinalDecision_20261005/tests/gpu_acceptance.py", line 58, in compare_snapshot
+    eq(a,b)
+  File "/root/autodl-tmp/HRDecoder_FinalDecision_20261005/tests/gpu_acceptance.py", line 55, in eq
+    elif isinstance(x,dict):assert x.keys()==y.keys();[eq(x[k],y[k]) for k in x]
+                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/HRDecoder_FinalDecision_20261005/tests/gpu_acceptance.py", line 55, in <listcomp>
+    elif isinstance(x,dict):assert x.keys()==y.keys();[eq(x[k],y[k]) for k in x]
+                                                       ^^^^^^^^^^^^^
+  File "/root/autodl-tmp/HRDecoder_FinalDecision_20261005/tests/gpu_acceptance.py", line 55, in eq
+    elif isinstance(x,dict):assert x.keys()==y.keys();[eq(x[k],y[k]) for k in x]
+                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/HRDecoder_FinalDecision_20261005/tests/gpu_acceptance.py", line 55, in <listcomp>
+    elif isinstance(x,dict):assert x.keys()==y.keys();[eq(x[k],y[k]) for k in x]
+                                                       ^^^^^^^^^^^^^
+  File "/root/autodl-tmp/HRDecoder_FinalDecision_20261005/tests/gpu_acceptance.py", line 55, in eq
+    elif isinstance(x,dict):assert x.keys()==y.keys();[eq(x[k],y[k]) for k in x]
+                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/HRDecoder_FinalDecision_20261005/tests/gpu_acceptance.py", line 55, in <listcomp>
+    elif isinstance(x,dict):assert x.keys()==y.keys();[eq(x[k],y[k]) for k in x]
+                                                       ^^^^^^^^^^^^^
+  File "/root/autodl-tmp/HRDecoder_FinalDecision_20261005/tests/gpu_acceptance.py", line 52, in eq
+    if atol or rtol:torch.testing.assert_close(x,y,atol=atol,rtol=rtol)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/torch/testing/_comparison.py", line 1519, in assert_close
+    raise error_metas[0].to_error(msg)
+AssertionError: Tensor-likes are not close!
+
+Mismatched elements: 300 / 589824 (0.1%)
+Greatest absolute difference: 6.867776392027736e-07 at index (274, 0, 0, 4) (up to 1e-09 allowed)
+Greatest relative difference: 0.22280052304267883 at index (274, 1, 13, 8) (up to 1e-06 allowed)
+

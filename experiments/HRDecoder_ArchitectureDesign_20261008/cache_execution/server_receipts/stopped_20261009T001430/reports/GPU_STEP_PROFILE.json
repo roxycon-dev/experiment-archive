@@ -1,0 +1,1344 @@
+{
+  "status": "RECORDED",
+  "formal_steps_retained": true,
+  "active_steps": 4,
+  "rows": [
+    {
+      "name": "ProfilerStep*",
+      "count": 4,
+      "self_CPU_us": 7281,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "DATA_WAIT",
+      "count": 4,
+      "self_CPU_us": 201,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::record_stream",
+      "count": 24,
+      "self_CPU_us": 60,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::to",
+      "count": 6220,
+      "self_CPU_us": 35226,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "TRAIN_STEP",
+      "count": 4,
+      "self_CPU_us": 2519239,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "Optimizer.zero_grad#SGD.zero_grad",
+      "count": 4,
+      "self_CPU_us": 9591,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::upsample_bilinear2d",
+      "count": 372,
+      "self_CPU_us": 6676,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::conv2d",
+      "count": 3024,
+      "self_CPU_us": 10844,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::_to_copy",
+      "count": 6068,
+      "self_CPU_us": 33241,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::empty_strided",
+      "count": 11736,
+      "self_CPU_us": 19028,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::copy_",
+      "count": 7944,
+      "self_CPU_us": 356244,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::convolution",
+      "count": 1524,
+      "self_CPU_us": 4281,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::_convolution",
+      "count": 1524,
+      "self_CPU_us": 6507,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::cudnn_convolution",
+      "count": 1464,
+      "self_CPU_us": 50011,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::add_",
+      "count": 3512,
+      "self_CPU_us": 233816,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::batch_norm",
+      "count": 1244,
+      "self_CPU_us": 3668,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::_batch_norm_impl_index",
+      "count": 1244,
+      "self_CPU_us": 7128,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::empty",
+      "count": 16960,
+      "self_CPU_us": 17746,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::native_batch_norm",
+      "count": 1244,
+      "self_CPU_us": 44235,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::empty_like",
+      "count": 6436,
+      "self_CPU_us": 7122,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::reshape",
+      "count": 5712,
+      "self_CPU_us": 8510,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::_reshape_alias",
+      "count": 5532,
+      "self_CPU_us": 1052,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::view",
+      "count": 2920,
+      "self_CPU_us": 673,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::relu_",
+      "count": 928,
+      "self_CPU_us": 4436,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::clamp_min_",
+      "count": 932,
+      "self_CPU_us": 5002,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::add",
+      "count": 460,
+      "self_CPU_us": 13162,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::relu",
+      "count": 168,
+      "self_CPU_us": 695,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::clamp_min",
+      "count": 200,
+      "self_CPU_us": 2305,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::cat",
+      "count": 88,
+      "self_CPU_us": 3603,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::sum",
+      "count": 147,
+      "self_CPU_us": 5435,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::as_strided",
+      "count": 11461,
+      "self_CPU_us": 2494,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::mul",
+      "count": 4624,
+      "self_CPU_us": 128886,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::slice",
+      "count": 584,
+      "self_CPU_us": 1233,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::sigmoid",
+      "count": 12,
+      "self_CPU_us": 241,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::select",
+      "count": 72,
+      "self_CPU_us": 204,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::eq",
+      "count": 4412,
+      "self_CPU_us": 121630,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::stack",
+      "count": 56,
+      "self_CPU_us": 5854,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::expand_as",
+      "count": 20,
+      "self_CPU_us": 41,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::expand",
+      "count": 140,
+      "self_CPU_us": 596,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::square",
+      "count": 16,
+      "self_CPU_us": 88,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::pow",
+      "count": 32,
+      "self_CPU_us": 603,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::result_type",
+      "count": 17388,
+      "self_CPU_us": 336,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::div",
+      "count": 180,
+      "self_CPU_us": 3095,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::rsub",
+      "count": 16,
+      "self_CPU_us": 103,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::sub",
+      "count": 32,
+      "self_CPU_us": 651,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::gt",
+      "count": 20,
+      "self_CPU_us": 550,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::zeros_like",
+      "count": 48,
+      "self_CPU_us": 149,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::zero_",
+      "count": 564,
+      "self_CPU_us": 7072,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::fill_",
+      "count": 600,
+      "self_CPU_us": 54841,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::where",
+      "count": 60,
+      "self_CPU_us": 1966,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::resize_",
+      "count": 4740,
+      "self_CPU_us": 3461,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::clone",
+      "count": 1404,
+      "self_CPU_us": 3451,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::unbind",
+      "count": 20,
+      "self_CPU_us": 227,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::pixel_unshuffle",
+      "count": 16,
+      "self_CPU_us": 272,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::permute",
+      "count": 880,
+      "self_CPU_us": 2099,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::layer_norm",
+      "count": 312,
+      "self_CPU_us": 1408,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::native_layer_norm",
+      "count": 168,
+      "self_CPU_us": 4407,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::contiguous",
+      "count": 1164,
+      "self_CPU_us": 2541,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::gelu",
+      "count": 152,
+      "self_CPU_us": 1653,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::_conv_depthwise2d",
+      "count": 60,
+      "self_CPU_us": 911,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::adaptive_avg_pool2d",
+      "count": 8,
+      "self_CPU_us": 21,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::_adaptive_avg_pool2d",
+      "count": 8,
+      "self_CPU_us": 134,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::arange",
+      "count": 24,
+      "self_CPU_us": 185,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::scalar_tensor",
+      "count": 24,
+      "self_CPU_us": 164,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::meshgrid",
+      "count": 4,
+      "self_CPU_us": 66,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::unsqueeze",
+      "count": 4456,
+      "self_CPU_us": 1441,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::sin",
+      "count": 8,
+      "self_CPU_us": 123,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::cos",
+      "count": 8,
+      "self_CPU_us": 120,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::flatten",
+      "count": 12,
+      "self_CPU_us": 59,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::transpose",
+      "count": 824,
+      "self_CPU_us": 857,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::linear",
+      "count": 128,
+      "self_CPU_us": 999,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::t",
+      "count": 576,
+      "self_CPU_us": 948,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::matmul",
+      "count": 114,
+      "self_CPU_us": 814,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::mm",
+      "count": 320,
+      "self_CPU_us": 8031,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::_unsafe_view",
+      "count": 288,
+      "self_CPU_us": 417,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::bmm",
+      "count": 160,
+      "self_CPU_us": 2361,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::softmax",
+      "count": 17,
+      "self_CPU_us": 128,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::_softmax",
+      "count": 16,
+      "self_CPU_us": 255,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::pixel_shuffle",
+      "count": 12,
+      "self_CPU_us": 107,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::narrow",
+      "count": 96,
+      "self_CPU_us": 214,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::detach",
+      "count": 5052,
+      "self_CPU_us": 6891,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "detach",
+      "count": 5052,
+      "self_CPU_us": 3143,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::xlogy",
+      "count": 8,
+      "self_CPU_us": 111,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::neg",
+      "count": 32,
+      "self_CPU_us": 2448,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::binary_cross_entropy_with_logits",
+      "count": 4,
+      "self_CPU_us": 185,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::sub_",
+      "count": 8,
+      "self_CPU_us": 415,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::mul_",
+      "count": 8,
+      "self_CPU_us": 73,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::exp_",
+      "count": 8,
+      "self_CPU_us": 72,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::log_",
+      "count": 4,
+      "self_CPU_us": 53,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::abs",
+      "count": 8647,
+      "self_CPU_us": 140547,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::broadcast_tensors",
+      "count": 8,
+      "self_CPU_us": 5,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::smooth_l1_loss",
+      "count": 8,
+      "self_CPU_us": 114,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::isfinite",
+      "count": 4380,
+      "self_CPU_us": 34761,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::ne",
+      "count": 4380,
+      "self_CPU_us": 130097,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::is_nonzero",
+      "count": 12,
+      "self_CPU_us": 40,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::item",
+      "count": 28,
+      "self_CPU_us": 119,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::_local_scalar_dense",
+      "count": 28,
+      "self_CPU_us": 448071,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::ones_like",
+      "count": 8,
+      "self_CPU_us": 74,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "autograd::engine::evaluate_function: MulBackward0",
+      "count": 68,
+      "self_CPU_us": 539,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "MulBackward0",
+      "count": 68,
+      "self_CPU_us": 293,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "autograd::engine::evaluate_function: AddBackward0",
+      "count": 1108,
+      "self_CPU_us": 4091,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "AddBackward0",
+      "count": 1108,
+      "self_CPU_us": 167,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "autograd::engine::evaluate_function: DivBackward0",
+      "count": 88,
+      "self_CPU_us": 443,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "DivBackward0",
+      "count": 88,
+      "self_CPU_us": 378,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "autograd::engine::evaluate_function: SumBackward0",
+      "count": 20,
+      "self_CPU_us": 84,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "SumBackward0",
+      "count": 20,
+      "self_CPU_us": 83,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "autograd::engine::evaluate_function: WhereBackward0",
+      "count": 20,
+      "self_CPU_us": 181,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "WhereBackward0",
+      "count": 20,
+      "self_CPU_us": 157,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "autograd::engine::evaluate_function: SumBackward1",
+      "count": 28,
+      "self_CPU_us": 108,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "SumBackward1",
+      "count": 28,
+      "self_CPU_us": 639,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "autograd::engine::evaluate_function: SmoothL1LossBackward0",
+      "count": 8,
+      "self_CPU_us": 150,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "SmoothL1LossBackward0",
+      "count": 8,
+      "self_CPU_us": 87,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::smooth_l1_loss_backward",
+      "count": 16,
+      "self_CPU_us": 334,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "autograd::engine::evaluate_function: ToCopyBackward0",
+      "count": 3248,
+      "self_CPU_us": -53292,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "ToCopyBackward0",
+      "count": 3248,
+      "self_CPU_us": 30567,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "autograd::engine::evaluate_function: PixelShuffleBackward0",
+      "count": 12,
+      "self_CPU_us": 22,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "PixelShuffleBackward0",
+      "count": 12,
+      "self_CPU_us": 72,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "autograd::engine::evaluate_function: ConvolutionBackward0",
+      "count": 1772,
+      "self_CPU_us": -8034,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "ConvolutionBackward0",
+      "count": 1772,
+      "self_CPU_us": 35177,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::convolution_backward",
+      "count": 1772,
+      "self_CPU_us": 978715,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "autograd::engine::evaluate_function: torch::autograd::AccumulateGrad",
+      "count": 5012,
+      "self_CPU_us": 9209,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "autograd::engine::evaluate_function: GeluBackward0",
+      "count": 296,
+      "self_CPU_us": 1216,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "GeluBackward0",
+      "count": 296,
+      "self_CPU_us": 650,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::gelu_backward",
+      "count": 296,
+      "self_CPU_us": 3012,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "autograd::engine::evaluate_function: CloneBackward0",
+      "count": 396,
+      "self_CPU_us": 867,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "CloneBackward0",
+      "count": 396,
+      "self_CPU_us": 48,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "autograd::engine::evaluate_function: PermuteBackward0",
+      "count": 560,
+      "self_CPU_us": 1420,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "PermuteBackward0",
+      "count": 560,
+      "self_CPU_us": 766,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "autograd::engine::evaluate_function: NativeLayerNormBackward0",
+      "count": 328,
+      "self_CPU_us": 2093,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "NativeLayerNormBackward0",
+      "count": 328,
+      "self_CPU_us": 1649,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::native_layer_norm_backward",
+      "count": 328,
+      "self_CPU_us": 5308,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "autograd::engine::evaluate_function: UpsampleBilinear2DBackward0",
+      "count": 356,
+      "self_CPU_us": -11875,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "UpsampleBilinear2DBackward0",
+      "count": 356,
+      "self_CPU_us": 13621,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::upsample_bilinear2d_backward",
+      "count": 356,
+      "self_CPU_us": 20537,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "autograd::engine::evaluate_function: ReshapeAliasBackward0",
+      "count": 180,
+      "self_CPU_us": 418,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "ReshapeAliasBackward0",
+      "count": 180,
+      "self_CPU_us": 251,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "autograd::engine::evaluate_function: TransposeBackward0",
+      "count": 80,
+      "self_CPU_us": 151,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "TransposeBackward0",
+      "count": 80,
+      "self_CPU_us": 155,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "autograd::engine::evaluate_function: UnsafeViewBackward0",
+      "count": 320,
+      "self_CPU_us": 546,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "UnsafeViewBackward0",
+      "count": 320,
+      "self_CPU_us": 700,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "autograd::engine::evaluate_function: MmBackward0",
+      "count": 128,
+      "self_CPU_us": 810,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "MmBackward0",
+      "count": 128,
+      "self_CPU_us": 1080,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "autograd::engine::evaluate_function: TBackward0",
+      "count": 128,
+      "self_CPU_us": 296,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "TBackward0",
+      "count": 128,
+      "self_CPU_us": 158,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "autograd::engine::evaluate_function: BmmBackward0",
+      "count": 64,
+      "self_CPU_us": 362,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "BmmBackward0",
+      "count": 64,
+      "self_CPU_us": 407,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "autograd::engine::evaluate_function: ExpandBackward0",
+      "count": 128,
+      "self_CPU_us": 243,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "ExpandBackward0",
+      "count": 128,
+      "self_CPU_us": 12,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "autograd::engine::evaluate_function: SoftmaxBackward0",
+      "count": 32,
+      "self_CPU_us": 78,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "SoftmaxBackward0",
+      "count": 32,
+      "self_CPU_us": 202,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::_softmax_backward_data",
+      "count": 32,
+      "self_CPU_us": 443,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "autograd::engine::evaluate_function: UnbindBackward0",
+      "count": 36,
+      "self_CPU_us": 190,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "UnbindBackward0",
+      "count": 36,
+      "self_CPU_us": 90,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "autograd::engine::evaluate_function: ViewBackward0",
+      "count": 32,
+      "self_CPU_us": 13,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "ViewBackward0",
+      "count": 32,
+      "self_CPU_us": 128,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "autograd::engine::evaluate_function: SubBackward0",
+      "count": 4,
+      "self_CPU_us": 18,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "SubBackward0",
+      "count": 4,
+      "self_CPU_us": 2,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "autograd::engine::evaluate_function: BinaryCrossEntropyWithLogitsBackward0",
+      "count": 4,
+      "self_CPU_us": 47,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "BinaryCrossEntropyWithLogitsBackward0",
+      "count": 4,
+      "self_CPU_us": 72,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "autograd::engine::evaluate_function: RsubBackward1",
+      "count": 8,
+      "self_CPU_us": 25,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "RsubBackward1",
+      "count": 8,
+      "self_CPU_us": 27,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "autograd::engine::evaluate_function: PowBackward0",
+      "count": 8,
+      "self_CPU_us": 34,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "PowBackward0",
+      "count": 8,
+      "self_CPU_us": 87,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "autograd::engine::evaluate_function: SigmoidBackward0",
+      "count": 8,
+      "self_CPU_us": 49,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "SigmoidBackward0",
+      "count": 8,
+      "self_CPU_us": 82,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::sigmoid_backward",
+      "count": 8,
+      "self_CPU_us": 3477,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "torch::autograd::AccumulateGrad",
+      "count": 4372,
+      "self_CPU_us": 5625,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "autograd::engine::evaluate_function: CatBackward0",
+      "count": 20,
+      "self_CPU_us": 130,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "CatBackward0",
+      "count": 20,
+      "self_CPU_us": 122,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "autograd::engine::evaluate_function: AdaptiveAvgPool2DBackward0",
+      "count": 4,
+      "self_CPU_us": 16,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "AdaptiveAvgPool2DBackward0",
+      "count": 4,
+      "self_CPU_us": 43,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::_adaptive_avg_pool2d_backward",
+      "count": 4,
+      "self_CPU_us": 60,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "autograd::engine::evaluate_function: torch::autograd::CopySlices",
+      "count": 16,
+      "self_CPU_us": 116,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "torch::autograd::CopySlices",
+      "count": 16,
+      "self_CPU_us": 134,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::new_empty_strided",
+      "count": 16,
+      "self_CPU_us": 26,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "torch::autograd::CopyBackwards",
+      "count": 16,
+      "self_CPU_us": 61,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "autograd::engine::evaluate_function: SliceBackward0",
+      "count": 160,
+      "self_CPU_us": -8125,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "SliceBackward0",
+      "count": 160,
+      "self_CPU_us": 8539,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::slice_backward",
+      "count": 160,
+      "self_CPU_us": -1300,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::zeros",
+      "count": 160,
+      "self_CPU_us": -2204,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "autograd::engine::evaluate_function: ReluBackward0",
+      "count": 1096,
+      "self_CPU_us": -284,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "ReluBackward0",
+      "count": 1096,
+      "self_CPU_us": 8608,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::threshold_backward",
+      "count": 1096,
+      "self_CPU_us": 137912,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "autograd::engine::evaluate_function: NativeBatchNormBackward0",
+      "count": 1244,
+      "self_CPU_us": 8775,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "NativeBatchNormBackward0",
+      "count": 1244,
+      "self_CPU_us": 9137,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::native_batch_norm_backward",
+      "count": 1244,
+      "self_CPU_us": 391321,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::all",
+      "count": 4376,
+      "self_CPU_us": 152914,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "Optimizer.step#SGD.step",
+      "count": 4,
+      "self_CPU_us": 37703,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::_foreach_add",
+      "count": 4,
+      "self_CPU_us": 10949,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::_foreach_mul_",
+      "count": 4,
+      "self_CPU_us": 3052,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    },
+    {
+      "name": "aten::_foreach_add_",
+      "count": 8,
+      "self_CPU_us": 6809,
+      "self_CUDA_us": 0,
+      "total_CUDA_us": 0
+    }
+  ]
+}

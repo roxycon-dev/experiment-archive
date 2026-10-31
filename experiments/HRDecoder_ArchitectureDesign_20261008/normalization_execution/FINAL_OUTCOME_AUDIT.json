@@ -1,0 +1,107 @@
+{
+  "status": "GOAL_NOT_ACHIEVED",
+  "goal_achieved": false,
+  "diagnostic_execution_status": "COMPLETE_VERIFIED",
+  "diagnostic_execution_checks": {
+    "control_identity": true,
+    "control_small_sources_match": true,
+    "control_parent_model_optimizer_RNG_loaded": true,
+    "control_full_shape_smoke_PASS": true,
+    "control_500_complete_before_deadline": true,
+    "gt_stratified_identity": true,
+    "gt_stratified_small_sources_match": true,
+    "gt_stratified_parent_model_optimizer_RNG_loaded": true,
+    "gt_stratified_full_shape_smoke_PASS": true,
+    "gt_stratified_500_complete_before_deadline": true,
+    "same_immutable_parent_inode": true,
+    "all6_val_counts_verified_and_reported": true,
+    "actual_server_online_no_shutdown_or_external_control": true,
+    "own_training_controller_workers_RAM_ended": true,
+    "not_misrepresented_as_fresh_screen_or_test": true
+  },
+  "causal_interpretation": "NOT_ESTABLISHED_PROVIDER_TRAJECTORY_DIVERGED",
+  "root_cause_of_provider_divergence_proven": false,
+  "warm_probe_is_not_fresh40000_endpoint": true,
+  "new_fresh40k_val_mIoU": null,
+  "locked_independent227_test_mIoU": null,
+  "val_target": 45.32183122738841,
+  "test_target": 45.860383832668,
+  "test_not_run_reason": "Fresh candidate screens rejected; no qualifying fixed40k model",
+  "deadline_extension_activated": false,
+  "deadline_UTC_plus_8": "2026-10-10T02:00:00+08:00",
+  "terminal_receipt": {
+    "status": "COMPLETE",
+    "checked_at_unix": 1791569432.761081,
+    "server_online": true,
+    "own_controller_training_workers_session_empty": true,
+    "own_session_id": 37655,
+    "own_RAM_pid": 25079,
+    "own_RAM_process_ended": true,
+    "released_owned_memfd_bytes": 103079171144,
+    "teacher_disk_cache_and_valid_checkpoints_preserved": true,
+    "checkpoint_download": false,
+    "shutdown_command_issued": false,
+    "external_diagnostics_controlled": false,
+    "GPU_status": "utilization.gpu [%], memory.used [MiB], power.draw [W]\n0 %, 1 MiB, 19.52 W\n",
+    "goal_achieved": false,
+    "no_new_GPU_work_after_deadline": true,
+    "cpu_state_comparison": {
+      "status": "CPU_CHECKPOINT_COMPARISON_COMPLETE",
+      "parent_completed": 8000,
+      "probe_updates": 500,
+      "model_state_comparison": {
+        "base.": {
+          "tensor_count": 1844,
+          "differing_tensors": 1537,
+          "different_elements": 65581025,
+          "total_elements": 65657079,
+          "maximum_absolute_difference": 0.407482385635376,
+          "first10_differing_names": [
+            "base.backbone.conv1.weight",
+            "base.backbone.bn1.weight",
+            "base.backbone.bn1.bias",
+            "base.backbone.bn1.running_mean",
+            "base.backbone.bn1.running_var",
+            "base.backbone.conv2.weight",
+            "base.backbone.bn2.weight",
+            "base.backbone.bn2.bias",
+            "base.backbone.bn2.running_mean",
+            "base.backbone.bn2.running_var"
+          ]
+        },
+        "private.": {
+          "tensor_count": 196,
+          "differing_tensors": 196,
+          "different_elements": 6413751,
+          "total_elements": 6415232,
+          "maximum_absolute_difference": 0.024239979684352875,
+          "first10_differing_names": [
+            "private.local.p_r.conv.weight",
+            "private.local.p_r.norm.norm.weight",
+            "private.local.p_r.norm.norm.bias",
+            "private.local.l4_blocks.0.dw.weight",
+            "private.local.l4_blocks.0.norm.norm.weight",
+            "private.local.l4_blocks.0.norm.norm.bias",
+            "private.local.l4_blocks.0.expand.weight",
+            "private.local.l4_blocks.0.project.weight",
+            "private.local.l4_blocks.1.dw.weight",
+            "private.local.l4_blocks.1.norm.norm.weight"
+          ]
+        }
+      },
+      "final_RNG_comparison": {
+        "python_equal": true,
+        "numpy_equal": true,
+        "torch_CPU_equal": true,
+        "torch_CUDA_state_bytes_equal_without_CUDA_execution": true
+      },
+      "GPU_execution": false,
+      "checkpoint_download": false,
+      "test_accessed": false,
+      "root_cause_of_provider_divergence_proven": false
+    }
+  },
+  "checkpoint_download": false,
+  "data_cache_hash_rescan": false,
+  "audited_at": "2026-10-10T02:14:56.102768+08:00"
+}

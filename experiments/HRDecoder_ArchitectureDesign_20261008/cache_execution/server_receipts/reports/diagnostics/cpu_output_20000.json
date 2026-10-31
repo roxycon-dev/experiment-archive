@@ -1,0 +1,154 @@
+{
+  "status": "COMPLETE",
+  "time_unix": 1791474689.8080468,
+  "checkpoint_update": 20000,
+  "device": "CPU",
+  "dtype": "FP32",
+  "canvas": 2048,
+  "validation_sid": "007-1774-100",
+  "seconds": 13.149079717695713,
+  "GT_positive_pixels": [
+    0,
+    0,
+    0,
+    268
+  ],
+  "original_resolution_probabilities": [
+    {
+      "class": "EX",
+      "finite": true,
+      "min": 1.0577796971666942e-10,
+      "max": 2.013780658671749e-06,
+      "pixels_above_0p5": 0
+    },
+    {
+      "class": "HE",
+      "finite": true,
+      "min": 1.8735392586677335e-05,
+      "max": 0.17402242124080658,
+      "pixels_above_0p5": 0
+    },
+    {
+      "class": "SE",
+      "finite": true,
+      "min": 2.974501894792425e-11,
+      "max": 4.3042962261097273e-07,
+      "pixels_above_0p5": 0
+    },
+    {
+      "class": "MA",
+      "finite": true,
+      "min": 4.695371899288148e-06,
+      "max": 0.9917187690734863,
+      "pixels_above_0p5": 418
+    }
+  ],
+  "components": {
+    "base_logits": [
+      {
+        "class": "EX",
+        "finite": true,
+        "min": -20.972732543945312,
+        "mean": -15.405072212219238,
+        "max": -11.09873104095459,
+        "positive_logit_pixels": 0
+      },
+      {
+        "class": "HE",
+        "finite": true,
+        "min": -10.480928421020508,
+        "mean": -8.56138801574707,
+        "max": -1.18497896194458,
+        "positive_logit_pixels": 0
+      },
+      {
+        "class": "SE",
+        "finite": true,
+        "min": -21.8974552154541,
+        "mean": -16.44327163696289,
+        "max": -12.289491653442383,
+        "positive_logit_pixels": 0
+      },
+      {
+        "class": "MA",
+        "finite": true,
+        "min": -11.303882598876953,
+        "mean": -9.542374610900879,
+        "max": 5.617776870727539,
+        "positive_logit_pixels": 543
+      }
+    ],
+    "residual": [
+      {
+        "class": "EX",
+        "finite": true,
+        "min": -2.195819616317749,
+        "mean": -2.1231701374053955,
+        "max": -1.2875369787216187,
+        "positive_logit_pixels": 0
+      },
+      {
+        "class": "HE",
+        "finite": true,
+        "min": -0.4125880002975464,
+        "mean": -0.3801566958427429,
+        "max": -0.18274307250976562,
+        "positive_logit_pixels": 0
+      },
+      {
+        "class": "SE",
+        "finite": true,
+        "min": -2.60414457321167,
+        "mean": -2.5230889320373535,
+        "max": -1.5561262369155884,
+        "positive_logit_pixels": 0
+      },
+      {
+        "class": "MA",
+        "finite": true,
+        "min": -0.985261082649231,
+        "mean": -0.8670116066932678,
+        "max": -0.47247982025146484,
+        "positive_logit_pixels": 0
+      }
+    ],
+    "logits": [
+      {
+        "class": "EX",
+        "finite": true,
+        "min": -23.02044105529785,
+        "mean": -17.528242111206055,
+        "max": -13.048099517822266,
+        "positive_logit_pixels": 0
+      },
+      {
+        "class": "HE",
+        "finite": true,
+        "min": -10.888731002807617,
+        "mean": -8.941544532775879,
+        "max": -1.5242407321929932,
+        "positive_logit_pixels": 0
+      },
+      {
+        "class": "SE",
+        "finite": true,
+        "min": -24.304576873779297,
+        "mean": -18.96636199951172,
+        "max": -14.6225004196167,
+        "positive_logit_pixels": 0
+      },
+      {
+        "class": "MA",
+        "finite": true,
+        "min": -12.286334991455078,
+        "mean": -10.409385681152344,
+        "max": 4.8718109130859375,
+        "positive_logit_pixels": 398
+      }
+    ]
+  },
+  "formal_SGD_updates": 0,
+  "training_protocol_changed": false,
+  "no_data_or_cache_hashes_recomputed": true,
+  "limitation": "One FP32 CPU image is a numerical diagnostic, not a replacement for the 76-image BF16 GPU validation."
+}

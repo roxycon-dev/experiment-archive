@@ -1,0 +1,166 @@
+```python
+# storage_preflight.py
+"""Prep-only storage gate: estimate cache (image byte spans) + checkpoints vs free disk. No writes except --out-json."""
+import argparse, json, os, shutil, sys
+from pathlib import Path
+
+def image_bytes(data_root: Path) -> int:
+    from PIL import Image
+    total = 0
+    n = 0
+    for p in sorted(Path(data_root).rglob("*")):
+        if p.suffix.lower() not in (".png", ".jpg", ".jpeg", ".bmp", ".tif", ".tiff"):
+            continue
+        with Image.open(p) as im:
+            w, h = im.size  # header only; PIL lazy-loads
+        total += w * h * 16  # reference HWC float32 x4 channels
+        n += 1
+    return total, n
+
+def check_storage(data_root, cache_dir, run_dir, student_ckpt, reference_ckpt,
+                  num_checkpoints=24, headroom_frac=0.20, headroom_gib=2.0):
+    cache_dir = Path(cache_dir); run_dir = Path(run_dir)
+    missing = []
+    for p, label in ((data_root, "data-root"), (student_ckpt, "student-checkpoint"),
+                     (reference_ckpt, "reference-checkpoint")):
+        if not Path(p).exists():
+            missing.append(label)
+    if missing:
+        return {"status": "block", "reason": f"missing inputs: {missing}"}
+
+    img_bytes, n_imgs = image_bytes(data_root)
+    student_sz = Path(student_ckpt).stat().st_size
+    ref_sz = Path(reference_ckpt).stat().st_size
+    per_ckpt = 2 * (student_sz + ref_sz)  # student+reference, conservative
+    ckpt_bytes = per_ckpt * num_checkpoints
+
+    required = img_bytes + ckpt_bytes
+    required *= 1.0 + headroom_frac
+    required += int(headroom_gib * (1 << 30))
+
+    def free_for(d: Path) -> int:
+        d = Path(d).resolve()
+        while not d.exists():
+            d = d.parent  # nearest existing parent
+        return shutil.disk_usage(str(d)).free, str(d)
+
+    cache_free, cache_fs = free_for(cache_dir)
+    run_free, run_fs = free_for(run_dir)
+    same_fs = os.stat(cache_fs).st_dev == os.stat(run_fs).st_dev
+
+    if same_fs:
+        free = min(cache_free, run_free)
+        ok = required <= free
+    else:
+        # cache holds image spans; run holds checkpoints
+        ok = (img_bytes <= cache_free) and (ckpt_bytes <= run_free)
+        free = cache_free + run_free
+
+    return {
+        "status": "ok" if ok else "block",
+        "images": {"count": n_imgs, "bytes": img_bytes},
+        "checkpoints": {"per_ckpt_bytes": per_ckpt, "count": num_checkpoints, "bytes": ckpt_bytes},
+        "required_bytes": int(required),
+        "free_bytes": int(free),
+        "same_filesystem": same_fs,
+        "cache_free_bytes": int(cache_free), "run_free_bytes": int(run_free),
+    }
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--data-root", required=True)
+    ap.add_argument("--cache-dir", required=True)
+    ap.add_argument("--run-dir", required=True)
+    ap.add_argument("--student-checkpoint", required=True)
+    ap.add_argument("--reference-checkpoint", required=True)
+    ap.add_argument("--out-json", required=True)
+    a = ap.parse_args()
+
+    report = check_storage(a.data_root, a.cache_dir, a.run_dir,
+                           a.student_checkpoint, a.reference_checkpoint)
+    out = Path(a.out_json)
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(json.dumps(report, indent=2))
+    sys.exit(0 if report["status"] == "ok" else 2)
+
+if __name__ == "__main__":
+    main()
+```
+
+```python
+# tests/test_storage.py
+import json, struct, tempfile, unittest
+from pathlib import Path
+from unittest import mock
+
+import storage_preflight as sp
+
+def make_png(path, w, h):
+    # minimal synthetic PNG header (PIL reads dims from IHDR only)
+    ihdr = struct.pack(">IIBBBBB", w, h, 8, 2, 0, 0, 0)
+    body = b"\x89PNG\r\n\x1a\n" + b"\x00\x00\x00\rIHDR" + ihdr
+    path.write_bytes(body)
+
+class TestStoragePreflight(unittest.TestCase):
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        root = Path(self.tmp.name)
+        self.data = root / "data"; self.data.mkdir()
+        make_png(self.data / "a.png", 4, 4)  # 4*4*16 = 256 B
+        self.student = root / "student.bin"; self.student.write_bytes(b"x" * 100)
+        self.ref = root / "ref.bin"; self.ref.write_bytes(b"y" * 50)
+        self.cache = root / "cache"; self.run = root / "run"
+        self.out = root / "report.json"
+
+    def tearDown(self):
+        self.tmp.cleanup()
+
+    def _call(self, cache_free, run_free, cache=None, run=None):
+        ret = mock.Mock()
+        ret.free = cache_free; ret.total = 1 << 40; ret.used = 0
+        with mock.patch("shutil.disk_usage", return_value=ret), \
+             mock.patch("os.stat") as st:
+            st.return_value.st_dev = 1 if cache is None or run is None else (1, 2)[cache is not None and run is not None and 0]
+            return sp.check_storage(self.data, cache or self.cache, run or self.run,
+                                    self.student, self.ref)
+
+    def test_ok_small(self):
+        r = self._call(cache_free=1 << 30, run_free=1 << 30)
+        self.assertEqual(r["status"], "ok")
+        self.assertEqual(r["images"]["count"], 1)
+        self.assertEqual(r["images"]["bytes"], 256)
+        self.assertEqual(r["checkpoints"]["per_ckpt_bytes"], 2 * 150)
+
+    def test_block_tiny_free(self):
+        r = self._call(cache_free=10, run_free=10)
+        self.assertEqual(r["status"], "block")
+
+    def test_missing_inputs_block(self):
+        r = sp.check_storage(self.data, self.cache, self.run,
+                             self.student, self.tmp.name + "/nope.bin")
+        self.assertEqual(r["status"], "block")
+        self.assertIn("missing", r["reason"])
+
+    def test_headroom_applied(self):
+        r = self._call(cache_free=(1 << 40), run_free=(1 << 40))
+        base = 256 + 24 * 300
+        self.assertEqual(r["required_bytes"], int(base * 1.2) + 2 * (1 << 30))
+
+    def test_cli_writes_only_out_json(self):
+        import subprocess, sys
+        before = sorted(str(p) for p in Path(self.tmp.name).rglob("*") if p.is_file())
+        cp = subprocess.run([sys.executable, "storage_preflight.py",
+                             "--data-root", str(self.data), "--cache-dir", str(self.cache),
+                             "--run-dir", str(self.run), "--student-checkpoint", str(self.student),
+                             "--reference-checkpoint", str(self.ref), "--out-json", str(self.out)],
+                            capture_output=True)
+        after = sorted(str(p) for p in Path(self.tmp.name).rglob("*") if p.is_file())
+        self.assertEqual(set(after) - set(before), {str(self.out)})
+        self.assertIn(cp.returncode, (0, 2))
+        json.loads(self.out.read_text())
+
+if __name__ == "__main__":
+    unittest.main()
+```
+
+Notes: the gate reads only PNG headers via PIL's lazy `Image.open` (never pixel data), never reads labels, never writes outside `--out-json`'s parent, exits 2 on missing inputs or insufficient space, and handles split filesystems by checking cache (image spans) and run (checkpoints) components separately.

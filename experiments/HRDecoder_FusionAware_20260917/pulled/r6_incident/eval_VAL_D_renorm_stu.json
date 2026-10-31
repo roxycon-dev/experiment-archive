@@ -1,0 +1,40 @@
+{
+  "models": [
+    {
+      "config": "configs/lesion/exp/hrplus_patch_dice.py",
+      "ckpt": "/root/autodl-tmp/hrplus/results/E_0916/d_renorm_student.pth",
+      "weight": 1.0
+    }
+  ],
+  "load_report": [
+    {
+      "ckpt": "d_renorm_student.pth",
+      "missing": [
+        "s",
+        "t",
+        "a",
+        "t",
+        "e",
+        "_",
+        "d",
+        "i"
+      ],
+      "unexpected": "meta"
+    }
+  ],
+  "flip_tta": false,
+  "split": "val",
+  "n_images": 76,
+  "mIoU": 0.40362810563112006,
+  "mF1": 0.564664989539087,
+  "mPPV": 0.5829623808710737,
+  "mS": 0.5534336647384811,
+  "mAUPR": 0.5738889705827679,
+  "per_class_iou": {
+    "bg": "nan",
+    "EX": "43.90",
+    "HE": "41.77",
+    "SE": "53.96",
+    "MA": "21.83"
+  }
+}

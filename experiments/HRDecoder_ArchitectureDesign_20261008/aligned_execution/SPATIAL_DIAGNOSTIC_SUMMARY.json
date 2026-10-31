@@ -1,0 +1,131 @@
+{
+  "status": "COMPLETE",
+  "train_batches": 8,
+  "SGD_updates": 0,
+  "classes": [
+    {
+      "name": "EX",
+      "residual_mean": -0.4065306819975376,
+      "residual_std": 0.3583050034940243,
+      "full_vs_mean_hard_disagreement_fraction": 0.00043084452294591243,
+      "full_vs_no_semantic_hard_disagreement_fraction": 0.00024259921154654441,
+      "residual_GTpositive_mean": 0.33888023160398006,
+      "residual_GTnegative_mean": -0.40739502012729645,
+      "counts": {
+        "base": [
+          34690,
+          27744,
+          14913
+        ],
+        "final": [
+          36416,
+          33760,
+          13187
+        ],
+        "mean_residual": [
+          31681,
+          19306,
+          17922
+        ],
+        "no_semantic": [
+          33969,
+          25155,
+          15634
+        ]
+      }
+    },
+    {
+      "name": "HE",
+      "residual_mean": -0.08931403188034892,
+      "residual_std": 0.1342004183679819,
+      "full_vs_mean_hard_disagreement_fraction": 0.00041812268749733314,
+      "full_vs_no_semantic_hard_disagreement_fraction": 0.0004582920605940357,
+      "residual_GTpositive_mean": 0.2420386034063995,
+      "residual_GTnegative_mean": -0.09367227647453547,
+      "counts": {
+        "base": [
+          212264,
+          66779,
+          35238
+        ],
+        "final": [
+          213655,
+          77061,
+          33847
+        ],
+        "mean_residual": [
+          211401,
+          62543,
+          36101
+        ],
+        "no_semantic": [
+          211171,
+          61237,
+          36331
+        ]
+      }
+    },
+    {
+      "name": "SE",
+      "residual_mean": -0.691069707274437,
+      "residual_std": 0.3981076665222645,
+      "full_vs_mean_hard_disagreement_fraction": 0.0006269771690548527,
+      "full_vs_no_semantic_hard_disagreement_fraction": 0.00024742896726695864,
+      "residual_GTpositive_mean": 0.35790929694970447,
+      "residual_GTnegative_mean": -0.6920359432697296,
+      "counts": {
+        "base": [
+          38253,
+          63697,
+          17166
+        ],
+        "final": [
+          39278,
+          70582,
+          16141
+        ],
+        "mean_residual": [
+          34409,
+          44059,
+          21010
+        ],
+        "no_semantic": [
+          37758,
+          59710,
+          17661
+        ]
+      }
+    },
+    {
+      "name": "MA",
+      "residual_mean": -0.6288620233535767,
+      "residual_std": 0.4823158532381058,
+      "full_vs_mean_hard_disagreement_fraction": 9.745106413123273e-05,
+      "full_vs_no_semantic_hard_disagreement_fraction": 4.4007532411998665e-05,
+      "residual_GTpositive_mean": 0.1250094206382831,
+      "residual_GTnegative_mean": -0.628999225795269,
+      "counts": {
+        "base": [
+          2795,
+          4907,
+          4643
+        ],
+        "final": [
+          2914,
+          5370,
+          4524
+        ],
+        "mean_residual": [
+          2062,
+          2471,
+          5376
+        ],
+        "no_semantic": [
+          2596,
+          3995,
+          4842
+        ]
+      }
+    }
+  ]
+}

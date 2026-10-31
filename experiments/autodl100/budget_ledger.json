@@ -1,0 +1,86 @@
+{
+  "limit_rmb": 100,
+  "hourly_rmb": 1.98,
+  "runtime_cap_card_hours": 45,
+  "account_balance_before": 103.85,
+  "sessions": [
+    {
+      "instance": "cb6a4f850d-6aa7b741",
+      "host": "connect.nmb1.seetacloud.com",
+      "port": 37047,
+      "rate_rmb_hour": 1.98,
+      "conservative_start": "2026-09-11T23:48:00+08:00",
+      "first_connection": "2026-09-11T23:52:20+08:00",
+      "initial_guard_deadline_unix": 1789143824.734802,
+      "status": "OFF confirmed in AutoDL UI after manual stop; automatic invocation failed with Exec format error",
+      "stage1_deadline": "2026-09-12T05:48:00+08:00",
+      "stage1_cost_upper_rmb": 11.88,
+      "conservative_end": "2026-09-11T19:04:19.157898+00:00",
+      "runtime_cost_estimate_rmb": 6.48
+    },
+    {
+      "instance": "e20e41a3dd-6d272744",
+      "status": "Stopped by assistant; AutoDL UI verified 已关机 at 2026-09-12 00:28",
+      "purpose": "User-started second GPU; not used",
+      "actual_start": "unknown; reconcile billing",
+      "shutdown_requested": "2026-09-12T00:27:36+08:00",
+      "provisional_budget_reserve_rmb": 2.0
+    },
+    {
+      "instance": "cb6a4f850d-6aa7b741",
+      "purpose": "validation-selected classwise ensemble, no training",
+      "conservative_start": "2026-09-11T19:18:26.267689+00:00",
+      "deadline": "2026-09-12T03:45:00+08:00",
+      "rate_rmb_hour": 1.98,
+      "status": "OFF verified in AutoDL UI; bash-based shutdown succeeded",
+      "cost_upper_rmb": 0.99,
+      "evaluation_complete_at": "2026-09-11T19:26:44.059076+00:00",
+      "cost_estimate_rmb": 0.27,
+      "conservative_end": "2026-09-11T19:27:24.817010+00:00"
+    },
+    {
+      "instance": "cb6a4f850d-6aa7b741",
+      "purpose": "fixed50/50 probability mean validation only",
+      "conservative_start": "2026-09-11T19:40:00.999620+00:00",
+      "deadline": "2026-09-12T04:00:00+08:00",
+      "rate_rmb_hour": 1.98,
+      "cost_upper_rmb": 0.7,
+      "status": "validation39.54 completed; OFF verified in AutoDL",
+      "conservative_end": "2026-09-11T19:45:58.029540+00:00"
+    },
+    {
+      "instance": "cb6a4f850d-6aa7b741",
+      "purpose": "fixed50/50 probability mean test after passed validation gate",
+      "conservative_start": "2026-09-11T19:45:58.029545+00:00",
+      "deadline": "2026-09-12T04:00:00+08:00",
+      "rate_rmb_hour": 1.98,
+      "cost_upper_rmb": 0.5,
+      "status": "OFF verified in AutoDL UI; test42.35 backed up",
+      "conservative_end": "2026-09-11T19:52:26.050336+00:00"
+    }
+  ],
+  "status": "Completed: fixed equal probability mean test42.35 exceeds reported baseline42.20 by0.15pp; all4 instances OFF verified",
+  "account_balance_observed_20260912_0028": 103.2,
+  "monitor": {
+    "local_log_sync_seconds": 60,
+    "heartbeat_minutes": 10,
+    "automation_id": "hrdecoder-100",
+    "status": "PAUSED after completion"
+  },
+  "latest_monitor": {
+    "checked_at": "2026-09-11T19:26:44.059076+00:00",
+    "phase": "stage2 ensemble finished",
+    "ensemble_val": 39.9,
+    "ensemble_test": 41.82,
+    "decision": "Reject validation class routing; HE ranking reverses between val/test. Do NOT pick a new class mapping from test. Further proposals must use validation and fixed rules; preserve full exploratory test history.",
+    "total_estimate_rmb": 7.77,
+    "active_instances": []
+  },
+  "account_balance_after_stage1": 96.35,
+  "stage1_balance_difference_rmb": 7.5,
+  "stage1_balance_difference_note": "103.85 minus96.35; whole account balance change, includes idle instance; verify billing if other account activity exists",
+  "account_balance_after_stage2": 96.02,
+  "account_balance_difference_to_date_rmb": 8.05,
+  "account_balance_final": 95.8,
+  "final_checked_at": "2026-09-11T19:52:26.050336+00:00"
+}

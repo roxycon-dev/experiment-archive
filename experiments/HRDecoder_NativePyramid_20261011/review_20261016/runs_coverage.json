@@ -1,0 +1,191 @@
+{
+  "root": "D:\\dataset\\experiment",
+  "review_dir": "D:\\dataset\\experiment\\HRDecoder_NativePyramid_20261011\\review_20261016",
+  "source_inventory": "runs_file_hash_inventory.json",
+  "raw_textlike_inventory_count": 5526,
+  "raw_logs": {
+    "physical_files": 517,
+    "physical_log_artifacts_scanned_full_line_by_line": 517,
+    "unique_logs_by_sha": 334,
+    "unique_log_lines_scanned": 285801,
+    "structured_log_event_rows": 82559,
+    "event_output": "runs_log_events.jsonl",
+    "registry": "runs_log_registry.json"
+  },
+  "raw_json": {
+    "physical_files": 3942,
+    "unique_by_sha": 2638,
+    "valid_unique_parsed": 2634,
+    "invalid_unique": 4,
+    "metric_node_rows": 123081,
+    "output": "runs_json_metric_nodes.jsonl",
+    "recovered_as_jsonl_files": 3,
+    "recovered_as_jsonl_records": 1829,
+    "invalid_standard_json_unique_groups_after_salvage": 1,
+    "empty_placeholder_physical_copies": 22,
+    "parse_notes": [
+      "Three nonempty .log.json files were invalid as one-document JSON but parsed as JSONL: D_0913_retry=1011 objects (1000 train, 10 validation, 1 environment/header); trial_a=409 (400 train, 8 validation, 1 environment/header); trial_b=409 (400 train, 8 validation, 1 environment/header).",
+      "One unique invalid standard-JSON SHA is the empty byte string, repeated by 22 physical placeholder files. No values or run outcomes can be inferred from these files.",
+      "Metric node row count covers ordinary JSON parsing only; recovered JSONL records are indexed separately."
+    ]
+  },
+  "raw_jsonl": {
+    "physical_files": 69,
+    "scan_source": "runs_jsonl_audit.json",
+    "note": "all physical valid lines previously parsed; duplicates grouped by SHA in runs_file_hash_inventory.json",
+    "exact_sha_unique_groups": 41,
+    "complete_jsonl_records": 4483322,
+    "plus_recovered_log_json_records": 1829,
+    "effective_jsonl_physical_files_including_salvage": 72,
+    "effective_unique_sha_groups_including_salvage": 44,
+    "effective_records_including_salvage": 4485151
+  },
+  "raw_csv": {
+    "physical_files": 68,
+    "unique_by_sha": 63,
+    "structured_rows": 50940,
+    "output": "runs_csv_rows.jsonl",
+    "registry": "runs_csv_registry.json",
+    "headerless_files": 11
+  },
+  "raw_yaml": {
+    "physical_files": 205,
+    "unique_by_sha": 95,
+    "safe_parsed": 95,
+    "output": "runs_yaml_inventory.json"
+  },
+  "python_config_candidates": 114,
+  "python_config_output": "runs_python_config_inventory.json",
+  "curated_validation": {
+    "source": "HRDecoder_ArchitectureDesign_20261008/final_report/validation_metrics.csv",
+    "source_rows": 136,
+    "nodes": 34,
+    "runs": 11,
+    "outputs": [
+      "runs_validation_nodes.csv",
+      "runs_experiment_table.csv",
+      "runs_protocol_catalog.json"
+    ]
+  },
+  "duplicate_reduction": {
+    "unique_text_hash_groups": 3813,
+    "physical_copies_excess": 1713,
+    "duplicate_groups_by_ext": {
+      ".cfg": 0,
+      ".csv": 5,
+      ".err": 1,
+      ".json": 877,
+      ".jsonl": 16,
+      ".log": 63,
+      ".md": 70,
+      ".out": 0,
+      ".rst": 2,
+      ".source": 0,
+      ".toml": 0,
+      ".txt": 5,
+      ".yaml": 8,
+      ".yml": 48
+    },
+    "excess_copies_by_ext": {
+      ".cfg": 0,
+      ".csv": 5,
+      ".err": 8,
+      ".json": 1304,
+      ".jsonl": 28,
+      ".log": 175,
+      ".md": 75,
+      ".out": 0,
+      ".rst": 2,
+      ".source": 0,
+      ".toml": 0,
+      ".txt": 6,
+      ".yaml": 15,
+      ".yml": 95
+    }
+  },
+  "limits": [
+    "No model checkpoints executed or deserialized. No raw image/mask pixels were read.",
+    "JSON and CSV files were parsed structurally after exact-content deduplication; JSONL physical copies were parsed by prior inventory scan and are SHA-indexed.",
+    "Logs were fully scanned line by line after exact-content deduplication, with structured metric/lifecycle extraction; no assertion that every narrative line was manually interpreted.",
+    "YAML used safe_load only. Python config candidates used AST parsing only, never import/execution.",
+    "Some empty/truncated JSON records are listed as parse failures and must not be treated as absent runs or inferred outcomes.",
+    "JSON files with .log.json suffix are salvaged as JSONL where possible; the empty SHA group remains genuinely empty.",
+    "Training curves and per-class counts are machine-parsed throughout; human interpretation is curated for the key W48 runs, final product comparison, and failure probes. Logs were not manually paraphrased line by line.",
+    "Delegation text review is path/hash tracked; 59 complete documents were fully read by the two assigned reviewers. The remaining response file was read through its physical EOF but is itself truncated mid-expression, so missing continuation cannot be reconstructed."
+  ],
+  "raw_log_extensions": {
+    "out": 3,
+    "total": 517,
+    "err": 12,
+    "unique_lines_scanned": 285801,
+    "structured_event_rows": 82559,
+    "physical_lines_scanned": 337720,
+    "log": 502
+  },
+  "raw_configuration_coverage": {
+    "misc": {
+      "manually_read": 4,
+      "toml": 2,
+      "unparsed_candidate_run_configs_remaining": 0,
+      "cfg": 2
+    },
+    "yaml_yml": {
+      "unique_SHA": 95,
+      "safe_load_success": 95,
+      "physical": 205
+    },
+    "python": {
+      "executed": 0,
+      "AST_parsed": 114
+    },
+    "json": {
+      "empty_invalid_SHA_groups": 1,
+      "valid_as_document": 2634,
+      "log_json_recovered_as_jsonl": 3,
+      "unique_SHA": 2638,
+      "physical": 3942
+    },
+    "csv": {
+      "structured_rows": 50940,
+      "unique_SHA": 63,
+      "headerless_telemetry": 11,
+      "physical": 68
+    }
+  },
+  "archive_scope": {
+    "archives_in_inventory": 35,
+    "all_members_extracted": 0,
+    "source_archives": "Covered by source_research_luna for source-member review; source artifacts are not evidence that an implementation ran.",
+    "notes": [
+      "The 35 archive inventory includes large dataset/asset bundles, source patches, code snapshots, reports, and a small H0 metadata tar. Listing/hash inventory was performed; complete member interpretation is limited to the assigned machine/text material.",
+      "The H0 metadata tar was streamed only for text members (train.log, evaluation JSON/CSV, stop code), not weights.",
+      "No unsafe pickle/model checkpoint was loaded or executed.",
+      "No raw DDR/IDRiD image or mask pixel content was read."
+    ],
+    "raw_image_or_mask_pixel_reads": 0,
+    "checkpoint_or_pickle_deserialization": 0
+  },
+  "delegation_review": {
+    "bytes": 993631,
+    "shared_SHA_duplicates_in_prior_markdown": 0,
+    "remaining_physical_unread": 0,
+    "own_status_file": "runs_delegation_read_status_historical.csv",
+    "unique_SHA_text_files": 60,
+    "this_reviewer": {
+      "machine_full_manual_partial": 0,
+      "manual_full": 30
+    },
+    "sibling": {
+      "physically_truncated_at_EOF": 1,
+      "manual_full": 29
+    },
+    "excluded": "HRDecoder_Next_20261003/ops/ssh_public_key.txt was excluded and never read.",
+    "sibling_status_file": "delegation_coverage_remaining.csv"
+  },
+  "practical_remaining": [
+    "All 30 delegation texts assigned to this reviewer were read in full. implementation_model_response.txt is source/design evidence, not proof of execution; repair_tests_prompt.txt is a test-patch request with embedded test/source text, not proof tests ran.",
+    "One sibling-owned response file is physically truncated mid-Python expression and cannot be reconstructed; its bytes/hash were inventoried and its readable text was reviewed.",
+    "Large dataset/asset archives were not unpacked for image pixels; no run-result/config/log coverage remains outside the structured inventories, subject to source/archive-member limits above.",
+    "No new test inference/evaluation was performed; historical test measurements are cited only as recorded artifacts/reports."
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "mapping": {
+    "/root/autodl-tmp/HRDecoder_Ready_20261002/vendor/champion_repo": "/root/autodl-tmp/HRDecoder_Next_20261003/vendor/champion_repo",
+    "/root/autodl-tmp/HRDecoder_Ready_20261002/assets/champion/H4_best.pth": "/root/autodl-tmp/HRDecoder_Next_20261003/assets/H4_best.pth",
+    "/root/autodl-tmp/HRDecoder_Ready_20261002/assets/champion/D_student_2000.pth": "/root/autodl-tmp/HRDecoder_Next_20261003/assets/D_student_2000.pth",
+    "/root/autodl-tmp/HRDecoder_Ready_20261002/assets/champion/E_1500.pth": "/root/autodl-tmp/HRDecoder_Next_20261003/assets/E_1500.pth",
+    "/root/autodl-tmp/HRDecoder_Ready_20261002/assets/champion/B_weights.pth": "/root/autodl-tmp/HRDecoder_Next_20261003/assets/B_weights.pth",
+    "/root/autodl-tmp/HRDecoder_Ready_20261002/assets/champion/E4_weights.pth": "/root/autodl-tmp/HRDecoder_Next_20261003/assets/E4_weights.pth"
+  },
+  "reused_original_checkpoints": {
+    "U0": {
+      "path": "/root/autodl-tmp/HRDecoder_Ready_20261002/assets/U0_historical_best.pth",
+      "original_sha256": "98d98a5d02dc2615062c3c31cd15d061daf3d7ab41cb8f25cd90b062cd53bb34",
+      "prepared_sha256": "b491899a784892b85b81a22a455dde18dcce31e02698a248d385c67e4e17bdf6",
+      "proof": "Original source checkpoint SHA equals source of locally tensor-verified compact variant"
+    },
+    "U0_highres": {
+      "path": "/root/autodl-tmp/HRDecoder_Ready_20261002/round2_highres/work_dirs/U0_highres/ckpt_best.pth",
+      "original_sha256": "622184c13f794938e79592cdb71b3628d2ea9d658be55fd7a9dfee29aee77cc1",
+      "prepared_sha256": "445c45af1abf2dee66e13ab5ed6c9599047e4dd5b519e9aac5f2ff696849f34d",
+      "proof": "Original source checkpoint SHA equals source of locally tensor-verified compact variant"
+    }
+  },
+  "original_lock_sha256": "644974f4a888835f838472199dcb623e879be2d62e73dab502394759551ceac4",
+  "historical_lock_preserved": true
+}

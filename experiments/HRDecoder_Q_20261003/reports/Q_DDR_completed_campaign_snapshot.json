@@ -1,0 +1,99 @@
+{
+  "arms": [
+    "Q_DDR"
+  ],
+  "common_endpoint": 16000,
+  "architecture_stopped": false,
+  "discovery_complete": true,
+  "promotion_signals": [
+    {
+      "arm": "Q_DDR",
+      "formula": "fixed_fusion",
+      "nodes": [
+        12000,
+        16000
+      ]
+    }
+  ],
+  "review_seed_authorized": true,
+  "automatic_extra_experiments": false,
+  "statuses": {
+    "Q_DDR_seed42": {
+      "stage": "COMPLETE",
+      "completed": 16000,
+      "endpoint": 16000,
+      "total_seconds_this_invocation": 8352.324739255011,
+      "identity_sha256": "b3e4cea88c5eeda8923a9c3950c0f67e74f02c28057730f2dd2d19154c500396",
+      "updated_at": "2026-10-03T15:23:51.631883+00:00"
+    },
+    "Q_DDR_seed2024": {
+      "stage": "COMPLETE",
+      "completed": 16000,
+      "endpoint": 16000,
+      "total_seconds_this_invocation": 8445.277330346406,
+      "identity_sha256": "c25584777fd2ded929bce248f6fc0e05d954ce9ba200f62d3066dbad41cdd252",
+      "updated_at": "2026-10-03T17:49:17.609674+00:00"
+    }
+  },
+  "updated_at": "2026-10-03T18:35:25.534124+00:00",
+  "selection": {
+    "selected": {
+      "arm": "Q_DDR",
+      "update": 16000,
+      "formula": "fixed_fusion",
+      "seed_scores_pct": [
+        44.35569233853838,
+        44.21734429280863
+      ],
+      "mean_val_pct": 44.286518315673504,
+      "test_eligible": true,
+      "deployment_seed": 42,
+      "candidate_count": 4
+    },
+    "all_candidates": [
+      {
+        "arm": "Q_DDR",
+        "update": 16000,
+        "formula": "fixed_fusion",
+        "seed_scores_pct": [
+          44.35569233853838,
+          44.21734429280863
+        ],
+        "mean_val_pct": 44.286518315673504
+      },
+      {
+        "arm": "Q_DDR",
+        "update": 12000,
+        "formula": "fixed_fusion",
+        "seed_scores_pct": [
+          44.27597579085049,
+          44.17298119164855
+        ],
+        "mean_val_pct": 44.22447849124952
+      },
+      {
+        "arm": "Q_DDR",
+        "update": 16000,
+        "formula": "single",
+        "seed_scores_pct": [
+          37.893718646800664,
+          37.295592060779256
+        ],
+        "mean_val_pct": 37.59465535378996
+      },
+      {
+        "arm": "Q_DDR",
+        "update": 12000,
+        "formula": "single",
+        "seed_scores_pct": [
+          37.84096064019035,
+          37.11565733429797
+        ],
+        "mean_val_pct": 37.47830898724416
+      }
+    ],
+    "common_endpoint": 16000,
+    "test_selection_forbidden": true
+  },
+  "next_action": "FREEZE_SELECTION_THEN_FINAL_TEST"
+}

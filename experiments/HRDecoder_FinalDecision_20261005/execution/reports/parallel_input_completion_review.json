@@ -1,0 +1,20 @@
+{
+  "stage": "DATA_READY_OLD_DEPENDENCY_THREAD_ERROR_SUPERSEDED",
+  "data": {
+    "stage": "ALL896_TRAIN_FILES_SHA_VERIFIED",
+    "files": 896,
+    "test_downloaded": false,
+    "free_disk_bytes": 19405787136
+  },
+  "current_dependency_proof": {
+    "stage": "PROVEN_STACK_IMPORT_VERIFIED_FRESH_PROCESS",
+    "reason_previous_check_failed": "qlib.common imported numpy2 before pip replaced binaries in the same interpreter; fresh interpreter verified",
+    "formal_updates_before_repair": 0,
+    "time": "2026-10-05T04:22:35.646900+00:00"
+  },
+  "old_exit_143_reason": "The unpinned pip resolver was deliberately terminated before replacing Torch; exact proven stack was installed and verified by a separate fresh process",
+  "transfer_repeated": false,
+  "current_driver_pid": 3295,
+  "GPU_gate_continues": true,
+  "time": "2026-10-05T05:12:16.798795+00:00"
+}

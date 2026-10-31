@@ -1,0 +1,22 @@
+{
+  "time_unix": 1791546270.5069368,
+  "server_online": true,
+  "STAGING_STATUS.json": {
+    "status": "WAITING_FOR_DURABLE_20K",
+    "controller_pid": 30376,
+    "parent_training_pid": 25190,
+    "parent_controller_pid": 25187,
+    "time_unix": 1791546116.533721,
+    "server_shutdown": false,
+    "external_diagnostics_controlled": false
+  },
+  "staging_controller_cmdline": "/root/miniconda3/bin/python -u /root/autodl-tmp/HRDecoder_v3_20261008/sacd_micro_execution/controller.py ",
+  "parent_progress": {
+    "status": "TRAINING",
+    "completed": 19950,
+    "expected": 40000,
+    "saved_update": 19000,
+    "best_val_mIoU": 36.85382300060759,
+    "time_unix": 1791546245.0468025
+  }
+}

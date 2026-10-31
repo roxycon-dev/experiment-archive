@@ -1,0 +1,33 @@
+{
+  "stage": "COMPLETE",
+  "phase": "COMPLETE",
+  "pid": 15940,
+  "lock_sha256": "26e5852194aca66bb02062ac79b2f0f8026e33652a95133140a3824bffb38905",
+  "runner_sha256": "e115ffa9eaed5f5f5efb9069ba1cebd945ef3b17bf2f6b8002893cf2516defb2",
+  "started_at": "2026-10-03T17:54:55.906239+00:00",
+  "automatic_restart": false,
+  "updated_at": "2026-10-03T18:11:43.170394+00:00",
+  "completed_at": "2026-10-03T18:24:38.441067+00:00",
+  "summary": {
+    "status": "COMPLETE",
+    "lock_sha256": "26e5852194aca66bb02062ac79b2f0f8026e33652a95133140a3824bffb38905",
+    "formula": "fixed_fusion",
+    "update": 16000,
+    "deployment_seed": 42,
+    "seed_scores_pct": [
+      45.72155710642771,
+      45.677066093957414
+    ],
+    "mean_test_pct": 45.69931160019256,
+    "range_test_pct": [
+      45.677066093957414,
+      45.72155710642771
+    ],
+    "target_test_pct": 47.2115,
+    "both_seeds_target_met": false,
+    "mean_target_met": false,
+    "selection_changed_after_test": false,
+    "historical_limitation": "DDR val and test have been used in previous experiments; exploratory continuation.",
+    "completed_at": "2026-10-03T18:24:37.758210+00:00"
+  }
+}

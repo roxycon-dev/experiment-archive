@@ -1,0 +1,32 @@
+{
+  "stage": "LOCAL_ASSETS_PREPARED",
+  "created_at": "2026-10-04T08:13:10.881913+00:00",
+  "changed_entries": 29,
+  "affected_windows": {
+    "42": {
+      "counts": {
+        "SE": 10761,
+        "HE": 354
+      },
+      "stream_sha256": "7a0e4a655726f4ec76a9d46abec508132bb5c4999846d4d48181838faa1fddf8",
+      "affected_window_file_sha256": "6807554c9944b6864674cd71e54575fb81dee9625d16e9aec1c1714ad9e995f2"
+    },
+    "2024": {
+      "counts": {
+        "SE": 10762,
+        "HE": 336
+      },
+      "stream_sha256": "288eb05725024f807a85ca028ad2d356650063d098d8e219f5b4ed06fcaac0cd",
+      "affected_window_file_sha256": "79ff9805e10f43d1d1d34554eb7a40f90b9bbb72e50552738b25caf569750bf5"
+    }
+  },
+  "formal_gpu_started": false,
+  "test_read": false,
+  "initialization_evidence": "Reconstruct original seed->official pretrained->Q head from verified historical source; no archived u0 tensor digest exists. GPU gate must compare independently reconstructed state fingerprints before claiming strict pairing.",
+  "new_F_stream": "Archived DDR stream positions12001..24000 as a fixed new 12k stage, same for F4/F12. Repeated windows permitted; no disjoint/new-image claim.",
+  "gpu_gate_required": [
+    "E_NEG original initialization reconstruction",
+    "F4/F12 each100 full effective updates plus full76val",
+    "freeze shared micro scheme before formal F runs"
+  ]
+}

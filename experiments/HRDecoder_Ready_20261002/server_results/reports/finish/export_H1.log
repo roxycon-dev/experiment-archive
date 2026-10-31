@@ -1,0 +1,72 @@
+/root/miniconda3/lib/python3.8/site-packages/torch/_utils.py:776: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  return self.fget.__get__(instance, owner)()
+/root/miniconda3/lib/python3.8/site-packages/mmcv/__init__.py:20: UserWarning: On January 1, 2023, MMCV will release v2.0.0, in which it will remove components related to the training process and add a data transformation module. In addition, it will rename the package names mmcv to mmcv-lite and mmcv-full to mmcv. See https://github.com/open-mmlab/mmcv/blob/master/docs/en/compatibility.md for more details.
+  warnings.warn(
+export 10/76
+export 20/76
+export 30/76
+export 40/76
+export 50/76
+export 60/76
+export 70/76
+{
+  "protocol": "whole_image_accumulated_counts",
+  "threshold": 0.5,
+  "n_images": 76,
+  "per_class": {
+    "EX": {
+      "iou": 0.39612504294057027,
+      "f1": 0.5674635591468756,
+      "ppv": 0.5425340714834622,
+      "recall": 0.5947944140878877,
+      "aupr": 0.447784262657443,
+      "tp": 172968,
+      "fp": 145847,
+      "fn": 117835,
+      "gt_positive_pixels": 290803
+    },
+    "HE": {
+      "iou": 0.430978874080356,
+      "f1": 0.6023553273731344,
+      "ppv": 0.6189692872123821,
+      "recall": 0.5866099356178333,
+      "aupr": 0.5476539992297995,
+      "tp": 707407,
+      "fp": 435472,
+      "fn": 498517,
+      "gt_positive_pixels": 1205924
+    },
+    "SE": {
+      "iou": 0.4210959241651206,
+      "f1": 0.5926354681687095,
+      "ppv": 0.6091480450587872,
+      "recall": 0.5769944986196898,
+      "aupr": 0.4454218633558198,
+      "tp": 116209,
+      "fp": 74564,
+      "fn": 85195,
+      "gt_positive_pixels": 201404
+    },
+    "MA": {
+      "iou": 0.17560213061602595,
+      "f1": 0.29874415168677665,
+      "ppv": 0.2914304539402342,
+      "recall": 0.30643438600542694,
+      "aupr": 0.14634679068397347,
+      "tp": 21231,
+      "fp": 51620,
+      "fn": 48053,
+      "gt_positive_pixels": 69284
+    }
+  },
+  "mIoU_lesion4": 0.3559504929505182,
+  "mF1": 0.5152996265938741,
+  "mPPV": 0.5155204644237165,
+  "mRecall": 0.5162083085827094,
+  "mAUPR": 0.39680172898175897,
+  "excluded_classes": {
+    "iou": [],
+    "aupr": []
+  },
+  "aupr_note": "256-bin histogram approximation of PR curve"
+}

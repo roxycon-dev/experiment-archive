@@ -1,0 +1,40 @@
+{
+  "status": "PASS_FINAL_REPORT_REVIEW",
+  "reviewed_at_UTC": "2026-10-24T09:33:39.562228+00:00",
+  "method": "Read the actual Chinese report, all five CSV files, and all seven TeX tables; independently matched CSV rows to audited source JSON and mIoU arithmetic; compiled real tables with MiKTeX; Poppler-rendered all seven pages at120dpi and actually inspected each with view_image; matched paired outcome values against extracted PDF text",
+  "reviewed_outputs_sha256": {
+    "results\\final_campaign\\baseline_and_components.csv": "472e3a83886e1b52723dfbf2ce49edf0185bb4e8ae933fc24be1d10e444201ee",
+    "results\\final_campaign\\MA_threeway.csv": "525c1a3a3e000b26bbe3955afdd5c25145533d64cc3e228a070f7c80cd814055",
+    "results\\final_campaign\\numeric_table_sources.json": "c2f0e3045b1b48dfbfa0fa0a3e07b9ff85a6095d9cd93f3706daa8c38af4f337",
+    "results\\final_campaign\\paper_tables.pdf": "9dd45fb9755b540435438c87d7ad09c2a82caef6dfc9cb9f0387ae869b64caa0",
+    "results\\final_campaign\\paper_tables.tex": "146e41d748d706b15b4ad6cb911c3bfa46d86eaab4ac2870d581462607485a05",
+    "results\\final_campaign\\same_hardware_efficiency.csv": "6d1ee080efa459c8e229c9554a9220aa18a633079294e13a56040553057d86ca",
+    "results\\final_campaign\\three_seed_mean_SD.csv": "0bcce056dc2920a814e41a72bc7e64497656b60e2e3614d993c32f34fc9b538f",
+    "results\\final_campaign\\three_seed_pairs.csv": "652e421ab05b3936726a804df8f4f9826fc14eda975f182ce51fd9a08442c347",
+    "论文补充实验结果.md": "5bdc0d86f0ecadac0682f69240df51bdf3804b552a6eeb1709dbcca017aa8561"
+  },
+  "numeric_review_receipt_sha256": "ea4a0c1ddc5de477a0c2a589a4caabf80e205d9f6cfddb566966d7050285bf17",
+  "rendered_pages_actually_viewed_sha256": {
+    "results\\final_tables_pdf\\page-1.png": "7d075272921c793dafd1032b319a2e4bf261849396d518299bee9c6a64f4efa0",
+    "results\\final_tables_pdf\\page-2.png": "3d18ed913fba9ca0ee9b69adc1da020da08f8794f9d42823c978ee14dc6fce12",
+    "results\\final_tables_pdf\\page-3.png": "31ccdb5df6012aa9280738cc018afe4b02c9bc28a83a2eb96589c218ccdafbc2",
+    "results\\final_tables_pdf\\page-4.png": "bdaad015966ead18b370a93206d7a3ba2eb26542469b04fb477612aa8adf5e1f",
+    "results\\final_tables_pdf\\page-5.png": "d6926c630d13a06ff99ccb55b151a83cb167ad71ec8aab253b1dd4e0419dd198",
+    "results\\final_tables_pdf\\page-6.png": "5c26766090a1db44a2424c32d262ceb1b05cf3e1cac1cb09609c0e567cc1129b",
+    "results\\final_tables_pdf\\page-7.png": "241901be5f619bee34013012472e5092aa72ba8cf08f1cc949f58e5a98df9372"
+  },
+  "PDF_source_tex_sha256": "146e41d748d706b15b4ad6cb911c3bfa46d86eaab4ac2870d581462607485a05",
+  "PDF_wrapper_sha256": "099d80d0c151cef3f55f06cc499df605e4f518382892ab90d7eecc1abb5a30ed",
+  "pdf_pages": 7,
+  "PDF_QA": "All seven final pages legible; no clipped text, overlapping rows or missing glyphs; baseline42.20/full45.86 and external35.60/40.91; negative DDR3407/near-zero mean and MA FP counts verified",
+  "typesetting_note": "Local MiKTeX lacked booktabs; standalone PDF wrapper uses standard LaTeX horizontal-rule fallback, leaving the exported publication TeX and all data unchanged. No package installation or global environment change. Original blocking compiler process was task-specific and stopped; successful PDF was actually compiled and inspected.",
+  "scientific_review": [
+    "DDR fixed-fusion differences+0.0652,+0.0561,-0.0969pp; mean+0.0081 SD0.0911; all3 image intervals containzero; no stable DDR fusion improvement claim",
+    "External fixed fusion mean+0.4289 SD0.1352pp;3 positive point estimates but2 CI containzero; conditional parent only",
+    "H4 increases detections and FP; no claim that recall alone proves benefit; 4 external small GT all missed; no robust small-external inference",
+    "Original baseline42.1962 matches42.20 rounding; SE~0.01pp historical runtime difference retained; v1/v2excluded as primary",
+    "DDR-only trained -> IDRiD-derived27 frozen external; not IDRiD-domain51.94 reproduction; original GT/patient ID/geometric limits retained",
+    "No invented original32k->E4 weight inheritance; raw recorded E4/B/D/E lineage stated",
+    "Actual full system~46.35x baseline latency on same3val/4060 disclosed; all wasted training attempts disclosed"
+  ]
+}

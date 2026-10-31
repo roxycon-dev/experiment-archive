@@ -1,0 +1,26 @@
+{
+  "U0_inference.pth": {
+    "source_path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\best_pipeline\\weights\\U0_historical_best.pth",
+    "source_sha256": "98d98a5d02dc2615062c3c31cd15d061daf3d7ab41cb8f25cd90b062cd53bb34",
+    "source_state_key": "model_state",
+    "inference_file_sha256": "b37fc328bfbbe029d5bc83f781072254d95ff97f7f7b6559efb7f91d9b1c4e39",
+    "source_bytes": 636326835,
+    "inference_bytes": 212078424,
+    "tensor_count": 390,
+    "all_tensors_bitwise_equal": true,
+    "source_completed": 12000,
+    "source_ema_completed": null
+  },
+  "S20_ema_inference.pth": {
+    "source_path": "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\execution\\server_results\\runs\\S_seed42\\checkpoint_u20000.pth",
+    "source_sha256": "c933256b07556689a7fd199dd80e50d4d0c27eb6b9ea782713d95ec51e6d8d62",
+    "source_state_key": "ema",
+    "inference_file_sha256": "80c0f0250341ea65b29c23476a135d4f6020b8089e84b868b4ba185c550ec104",
+    "source_bytes": 1621379373,
+    "inference_bytes": 405407434,
+    "tensor_count": 390,
+    "all_tensors_bitwise_equal": true,
+    "source_completed": 20000,
+    "source_ema_completed": 20000
+  }
+}

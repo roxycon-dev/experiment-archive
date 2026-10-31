@@ -1,0 +1,25 @@
+{
+  "host": "connect.nmb2.seetacloud.com",
+  "port": 27443,
+  "username": "root",
+  "password_storage": "Conversation and transient process environment only; not saved to files",
+  "remote_base": "/root/autodl-tmp/nativepyramid_sp_v3_20261016",
+  "source_sha256": "d3032fc8b20f30a058adbcf3e6bc5a3485b83adafe9b7cdce0682a2d55d7f627",
+  "controller_pid": 2160,
+  "controller_version": 3,
+  "preflight_directory": "preflight_attempt03",
+  "formal_output_directory": "run_seed42_launch02",
+  "workers": 8,
+  "data_worker_process_context": "spawn",
+  "shutdown_policy": "Only after confirmed formal SGD start and successful task completion; all failures and PAUSED preserve instance",
+  "previous_attempts": {
+    "preflight_attempt01": "FAILED numerical parity, zero real-data diagnostic SGD and zero formal SGD",
+    "preflight_attempt02": "PASS, 256 crop plus 8 real-2048 discarded updates; formal input-loader initialization stalled before first batch, zero formal SGD",
+    "zero_step_stop": "SIGINT could not unwind forked workers; SIGTERM only verified process group 1752, all owned workers exited; instance preserved"
+  },
+  "input_benchmark_CPU_only": {
+    "four_workers_seconds_per_batch": 0.43161176092689857,
+    "eight_workers_seconds_per_batch": 0.18966280261520296,
+    "SGD_updates": 0
+  }
+}

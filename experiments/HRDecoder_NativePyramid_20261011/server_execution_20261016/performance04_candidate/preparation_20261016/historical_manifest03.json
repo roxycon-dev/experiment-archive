@@ -1,0 +1,51 @@
+{
+  "version": 3,
+  "date": "2026-10-16",
+  "source_sha256": "d3032fc8b20f30a058adbcf3e6bc5a3485b83adafe9b7cdce0682a2d55d7f627",
+  "status": "STATIC_PREPARATION_COMPLETE_SERVER_PREFLIGHT_PENDING",
+  "formal_updates": 0,
+  "test_accessed": false,
+  "files": {
+    "00_最终架构方案.md": "71d4179359dc8a631f51f313b1f38a850ab071feb6d8cd7e4a3d60989b7bfec6",
+    "02_v3_最终架构设计_20261016.md": "9247fd2d2a6b54fcc3467cd92a7c726d606c62da9739b50b704e9f7237e7865b",
+    "README.md": "38dda25aec114c1cfebc0ffca8a18f3b9e56168bf68528ea343c929ee7a5558e",
+    "USER_SCOPE_AND_STOP.json": "4cf74f07097ab7e82ed4f159bcadfca2dd980084fa94c0ccf6d808f9803c5669",
+    "data.py": "479cd6d3922f81fc17744551b30ba422ee003c15eb97e71823aad506943424ed",
+    "evaluate.py": "e74af903c70e060b7e238f57c7d561e7ca2f205fb8e8977ac4eecccbbf9b0312",
+    "losses.py": "7fbca98e62f6db79627217acab773065f157bfa36f41558278ab07038a657482",
+    "metrics.py": "bf1101bf38c64b5888f70c8d3979fd29efc30904e81a5bdbcf16701eef7925a8",
+    "model.py": "2a718c08f205099a13f305b2b6b0379e17a19660bd3ebaa0fe3150734a40723f",
+    "monitoring.py": "d16259d167cf119623500fc825c9077119e0687bdfa407924662c1ecb3923488",
+    "preparation_20261016/data_identity.json": "7c53b86bcb27ccd121042f667cc58e39b98716a8c477bfd1f1657fa126575719",
+    "preparation_20261016/review_final.md": "0a5803a09718b6a87feac04a38774883116321cc8490a2da20660f463db066ac",
+    "preparation_20261016/review_initial.md": "044656a9cec963c5a8e19933f460e139ef7da83eeb260347818295a9d4258d66",
+    "preparation_20261016/spec_reaudit_architecture.md": "230addfa0aa1a4c1dc617a1921b70c19c625beba297128f1e7809237fb382f56",
+    "preparation_20261016/spec_reaudit_execution.md": "f8386c1393d2498c9233ad35869de99b77398b72ee7c13c47b42f82c3f4a9676",
+    "preparation_20261016/static_checks_spawn03/static_checks.json": "c00a6b7c799279197419ac70a28f180d2fc4609ae97242f7f0fafea577c33bad",
+    "preparation_20261016/static_checks_spawn03/unit_tests.json": "d94ab844faa8610f832afa1f6a93749db6399c16ad68696aa9717a6a85abaffb",
+    "preparation_20261016/static_checks_spawn03/unit_tests.txt": "4f958967ca63f9e7feeb2c6e7788d36396ce686dbf3bd3c72fb6c8533c4309e4",
+    "preparation_20261016/严格方案对照_20261016.md": "5130006d12da208dd3621d58548842289084a02a8eefa0a58dd0d3f36337c481",
+    "preparation_20261016/准备完成与服务器交接.md": "7182ec5ed7e815f84684284b7c0dae79c02cc277d567237570048f1975aecef3",
+    "preparation_20261016/数值执行修订_20261017.md": "b04831b6a6f8f78dc90024372e823826bba68b4585b3e2c57b175657bd9a6340",
+    "preparation_20261016/数据管线执行修订_20261017.md": "14287c0e542ecabb5c95e58b48bd8e4f2c2796220326e5e9e2f7804e766e41e2",
+    "prepare_delivery.py": "ed9ada29e439cda505076fc971d0ba9f008c407bf06f258f5e8a5d99dcffbc33",
+    "protocol.json": "de6171d8a0186166b0e1aca25d5d5391b8c8f6344ad70ff79840793c0121deee",
+    "requirements.txt": "88cafddfe4c5cdc04fa8e4b85be5c1b73f7237f2fb69fbed0753b1daf7de1f46",
+    "run_checks.ps1": "d94a8ddb642454360e283861af6634b427ebd4d31a26f3c055862fe4b7a431bd",
+    "test_model_v3.py": "d665f680282d1bdd0c1d193a4e39f8ec2930c8423132bd9cb8bf5e8dd895dc68",
+    "test_train_v3.py": "772aebf8a2fd0fc0903628f5dba53e5579dcded194e93a3c2caaf92fa8adb745",
+    "tests.py": "b565e23a40ebeb759016d0d57a01a22a0cbca78458216888e9b6ac6f9f18d1ba",
+    "train.py": "51f97445a60701e3afa7ae1f7d6de467b9309ddd11e605f9c27176db75402055",
+    "verify.py": "32509c3de5d6f662c0806c17d070edf2e0642f8c268446ade751cdfc230d6f8f"
+  },
+  "external_assets": {
+    "pretrained_sha256": "d2186c55782308392ae14cf179ac4840143b09abdbba81aa3f9274c795ebc960",
+    "data": "accepted fused-label DDR_split_613, train454/val76/test227"
+  },
+  "excludes": [
+    "pretrained weight bytes",
+    "image/label data",
+    "legacy v1 evidence",
+    "training outputs"
+  ]
+}

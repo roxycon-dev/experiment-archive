@@ -1,0 +1,50 @@
+{
+  "updated_at_utc": "2026-10-04T07:00:10.680511+00:00",
+  "authority": "Direct user instruction in this conversation, 2026-10-04 Asia/Shanghai",
+  "instruction_verbatim": "这个任务做完后不要关机啊，吧原方案完全做完后再关机",
+  "supersedes": "Shutdown after the currently running Q_DDR-only stage",
+  "shutdown_after_q_ddr_only": false,
+  "shutdown_allowed_now": false,
+  "shutdown_authorized_after_original_plan_complete": true,
+  "original_plan_sources": [
+    "D:/dataset/experiment/HRDecoder_Breakthrough_Plan_20261003/01_成熟突破方案.md",
+    "D:/dataset/experiment/HRDecoder_Breakthrough_Plan_20261003/02_执行与验收规范.md"
+  ],
+  "completion_gate": [
+    "All applicable original-plan work completed and acceptance recorded",
+    "No unresolved required external-supervision task treated as completed",
+    "All necessary results recovered locally and SHA verified",
+    "Dependency audit and authorized deferred cleanup completed",
+    "Only then request shutdown and verify platform OFF"
+  ],
+  "preserve": [
+    "Frozen core training protocol, run identities and final Q_DDR selection",
+    "Original technical pause, severe failure, extension and promotion gates",
+    "No threshold, TTA, loss, model or extra-seed search",
+    "No test-driven re-selection or repeated tests for optimization",
+    "Needed and ambiguous assets until the whole applicable scope is closed"
+  ],
+  "remaining_data_dependency": null,
+  "late_external_arm": "Freeze a prospective continuation protocol before training; disclose that Q_DDR selection/test started before official external originals were available. Do not rewrite the existing lock or call a later test a first untouched test.",
+  "automatic_shutdown_job_found": false,
+  "automation_id": "hrdecoder-q",
+  "monitor_minutes": 45,
+  "latest_instruction_verbatim": "我要去睡觉了，今晚不要让服务器空转哈",
+  "temporary_stop_authorized_by_latest_no_idle_instruction": true,
+  "temporary_stop_condition": "No runnable authorized GPU task; required official external data/access missing; completed results recovered and SHA verified",
+  "temporary_stop_is_original_plan_completion": false,
+  "temporary_stop_reason": "No stop dispatched. New authorized data acquisition enables original-plan continuation.",
+  "resume_condition": "External supervision passes acceptance and prospective continuation is frozen",
+  "retain_original_plan_todos": true,
+  "retain_all_useful_assets": true,
+  "latest_data_instruction": "这是messidor idrid我那个bestseg就是，虽然格式不同但完全没裁剪过保证可用",
+  "external_source_override": "reports/external_source_user_override.json",
+  "updated_at": "2026-10-03T19:26:43.620373+00:00",
+  "scientific_scope_complete": true,
+  "remaining_required_action": null,
+  "delivery_manifest": "reports/original_plan_delivery_manifest.json",
+  "shutdown_dispatched": true,
+  "platform_OFF_verified": true,
+  "original_plan_complete": true,
+  "platform_OFF_evidence": "reports/platform_OFF_user_confirmation.json"
+}

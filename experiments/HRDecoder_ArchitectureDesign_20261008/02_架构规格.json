@@ -1,0 +1,232 @@
+{
+  "name": "HRDecoder local-global private representation candidate",
+  "version": 3,
+  "date": "2026-10-08",
+  "status": "v3_observed_EX_SE_zero_detection_at_20k_superseded_by_CET_research_proposal",
+  "new_parameters_total": 6419648,
+  "new_parameters_by_group": {
+    "L": 2918816,
+    "G": 3459872,
+    "contrast": 4224,
+    "fusion": 36736
+  },
+  "new_forward_MAC_2048_batch1": {
+    "conv_linear": 42549116928,
+    "attention_QK_AV": 2147483648,
+    "total": 44696600576
+  },
+  "MAC_scope": "analytic shapes, small-CPU Conv/Linear hooks checked; excludes original model and non-MAC operations, no GPU speed claim",
+  "normative_document": "05_v3_机制重构与反驳审查.md",
+  "classes": [
+    "EX",
+    "HE",
+    "SE",
+    "MA"
+  ],
+  "initialization": {
+    "original": "same ImageNet HRNet-W48 initialization procedure and original HRDecoder head RNG as baseline",
+    "exact_pretrained_file_sha256": null,
+    "historical_B0_tensor_identity_verified": false,
+    "new_parameters": "random, independent RNG; zero only final fusion output weight and bias",
+    "additional_pretrained_backbones": 0,
+    "student_task_weights": false
+  },
+  "teacher": {
+    "A": "locked old D/E/B/E4 system including its existing H4",
+    "U": "locked historical ConvNeXt-S U0",
+    "S": "locked S_seed42 update20000 EMA DINOv3 spatial model",
+    "P0": "0.75*A+0.25*U",
+    "final_T": "0.75*P0+0.25*S",
+    "final_weights_A_U_S": [
+      0.5625,
+      0.1875,
+      0.25
+    ],
+    "contrasts": [
+      "U-A",
+      "S-P0"
+    ],
+    "allowed_cache_split": "custom_train_454_only",
+    "cache_status": "complete train targets not found; export and preflight required",
+    "cache_dtype": "float32",
+    "cache_coordinates": "original image probability, shared student geometry",
+    "cache_three_targets_native_bytes": 112635312960,
+    "cache_is_OOF": false,
+    "additional_feature_cache_required": false,
+    "inference_teacher": false,
+    "historical_test_miou_percent": 45.8603838
+  },
+  "input": {
+    "canvas_hw": [
+      2048,
+      2048
+    ],
+    "backbone_hw": [
+      1024,
+      1024
+    ],
+    "feature_channels": [
+      48,
+      96,
+      192,
+      384
+    ],
+    "feature_canvas_strides": [
+      8,
+      16,
+      32,
+      64
+    ],
+    "raw_rearrangement": "PixelUnshuffle4, RGB3 to48 channels on512 grid",
+    "rgb_mean": [
+      81.205,
+      50.636,
+      21.216
+    ],
+    "rgb_std": [
+      76.252,
+      48.798,
+      21.625
+    ],
+    "student_images_and_augmentation": "same two image IDs and original baseline augmentation parameters per global batch",
+    "align_corners": false,
+    "recovers_information_lost_before_2048": false
+  },
+  "original_path": {
+    "backbone_instances": 1,
+    "backbone_forward_calls_per_batch": 1,
+    "API_change": "retain native F1-F4 before original concatenation; expose z0 and HR crop outputs/coordinates",
+    "decoder_operators": "original LR/HR fusion and random HR crops",
+    "HR_aux_weight": 0.1,
+    "BN_behavior": "original baseline throughout"
+  },
+  "operators": {
+    "P": "1x1 Conv no bias -> per-pixel ChannelLN eps1e-5 affine -> GELU",
+    "Down": "3x3 stride2 Conv no bias -> ChannelLN -> GELU",
+    "B_c_k_e": "identity + DWConv k no bias -> ChannelLN -> 1x1 c to e*c no bias -> GELU -> 1x1 e*c to c no bias",
+    "resize": "bilinear align_corners=false",
+    "all_padding": "same spatial size for odd-kernel stride1 convolutions"
+  },
+  "local_private_path": {
+    "L4": {
+      "channels": 32,
+      "operation": "P48to32(R), B(32,3,2)x2"
+    },
+    "L8": {
+      "channels": 64,
+      "operation": "Down32to64(L4)+P48to64(F1), B(64,7,4)"
+    },
+    "L16": {
+      "channels": 128,
+      "operation": "Down64to128(L8)+P96to128(F2), B(128,7,4)"
+    },
+    "L32": {
+      "channels": 256,
+      "operation": "Down128to256(L16)+P192to256(F3), B(256,7,4)x4"
+    },
+    "decoder": [
+      "Up(P256to128)+L16, B(128,3,2)",
+      "Up(P128to64)+L8, B(64,3,2)",
+      "Up(P64to32)+L4, B(32,3,2)"
+    ],
+    "output": "H_L:32 channels at canvas stride4"
+  },
+  "global_private_path": {
+    "token_grid": "same spatial shape as F4,32x32 on2048 canvas",
+    "token_input": "P576to256(concat(avgpool_F3,F4))+P48to256(avgpool_R)",
+    "position": "fixed 2D sincos; each axis128 channels/64 frequency pairs; frequency10000^(-2i/128); integer grid positions",
+    "transformer_blocks": 4,
+    "dimension": 256,
+    "attention_heads": 8,
+    "head_dimension": 32,
+    "attention_scale": "1/sqrt(32)",
+    "mlp_expansion": 4,
+    "normalization": "two pre-LN affine epsilon1e-5 per block",
+    "linear_bias": false,
+    "dropout": 0,
+    "decoder": [
+      "Up(P256to128)+P96to128(F2), B(128,3,2)",
+      "Up(P128to64)+P48to64(F1), B(64,3,2)",
+      "Up(P64to32)+private_P48to32(R), B(32,3,2)"
+    ],
+    "output": "H_G:32 channels at canvas stride4",
+    "DINO_pretrained_knowledge_claim": false
+  },
+  "signed_readouts": {
+    "each": "1x1 Conv32to64 bias=true, nonzero standard initialization",
+    "target_outputs": "PixelShuffle4 of each packed readout; four signed class differences, no sigmoid or tanh",
+    "inputs_to_final_classifier": "packed64-channel readouts retained at inference",
+    "private_parameters": true,
+    "targets_are_deployed_segmentation_probabilities": false
+  },
+  "fusion": {
+    "input": "concat H_L32,H_G32,B_U64,B_S64,R48 =240 channels",
+    "layers": "P240to64, B(64,3,2), Conv1x1_64to64_bias_true_zero_init, PixelShuffle4",
+    "output": "z=z0+four_class_logit_residual",
+    "intermediate_segmentation_KD_targets": [],
+    "fixed_probability_weights": false,
+    "student_H4": false,
+    "restoration": "resize final logits to original shape then sigmoid and strict>0.5"
+  },
+  "loss": {
+    "task": "masked squared Dice(sigmoid(z),Y) +0.1 HR_aux_Dice +lambdaK BernoulliKL(final_T||sigmoid(z))",
+    "dice_smooth": 1e-05,
+    "temperature": 1,
+    "KD_reduction": "mean valid pixels per image/class, then mean valid image/classes",
+    "teacher_GT_confidence_weighting": false,
+    "signed_auxiliary": "average U/S of per image/class sum[v*(1+4*abs(d))*SmoothL1(pred-d,beta0.1)] / sum[v*(1+4*abs(d))]",
+    "auxiliary_weights_detached": true,
+    "empty_support": "differentiable zero, exclude from valid image/class average",
+    "shared_original_and_fusion_gradients": "task only",
+    "private_gradients": "task +lambdaD auxiliary",
+    "routing_implementation": "autograd.grad(lambdaD*aux,private_params,retain_graph=True); task.backward(); add auxiliary grads only to private params; one optimizer.step",
+    "detach_all_private_input_features": false,
+    "lambdaK": "0 through1500, ramp to0.5 at4000, hold through32000, decay to0.1 at40000",
+    "lambdaD": "0.2*lambdaK",
+    "empirically_validated_new_hyperparameters": false
+  },
+  "training": {
+    "global_batches": 40000,
+    "optimizer_updates": 40000,
+    "images_per_batch": 2,
+    "optimizer": "SGD for all student parameters",
+    "lr": 0.005,
+    "momentum": 0.9,
+    "weight_decay": 0.0005,
+    "warmup_updates": 1500,
+    "warmup_ratio": 1e-06,
+    "lr_policy": "baseline polynomial power1 min_lr0 iteration convention",
+    "additional_training_stage": false,
+    "equal_FLOPs_claim": false,
+    "student_EMA": false,
+    "TTA": false,
+    "validation_interval": 4000,
+    "primary_endpoint": 40000,
+    "secondary_selection": "best scheduled validation, full checkpoint"
+  },
+  "validity_and_protocol": {
+    "valid": "valid label AND independent geometric source support",
+    "includes_HR_crops": true,
+    "matched_controls_share_mask_correction": true,
+    "train_validation_test_counts": [
+      454,
+      76,
+      227
+    ],
+    "official_split_teacher_reuse_allowed": false,
+    "historical_test_is_new_blind_holdout": false,
+    "historical_baseline_42_20_reproduced_this_turn": false,
+    "accuracy_prediction_interval": null,
+    "novelty_proven": false,
+    "training_authorized_or_executed_by_this_design": false
+  },
+  "checks": {
+    "objectives": "evidence/v3_objective_checks.json",
+    "new_modules": "evidence/v3_module_checks.json",
+    "full_HRNet_integration_verified": false,
+    "GPU_resources_measured": false,
+    "teacher_train_signed_energy_measured": false
+  },
+  "superseded_by": "research_v5/01_CET_架构规格.json",
+  "diagnostic_report": "diagnosis_v4/00_诊断结论与v4方案.md"
+}

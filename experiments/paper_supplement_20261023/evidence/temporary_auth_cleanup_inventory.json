@@ -1,0 +1,40 @@
+{
+  "status": "READ_ONLY_CLEANUP_INVENTORY_NOT_EXECUTED",
+  "checked_at_UTC": "2026-10-24T06:11:17.440132+00:00",
+  "root": {
+    "authorized_keys_path": "/root/.ssh/authorized_keys",
+    "entries": [
+      {
+        "line_number": 2,
+        "full_line_sha256": "713bd43634c17070c594759e46cf4c05a5bb60ceda2d595166983f6174ac3f93",
+        "key_fingerprint_SHA256": "5Q9GtXNCfY8k8X+y9F6+RSpyWXYgfBrhbHmadLLz51k",
+        "comment": "(unrelated entry preserved)",
+        "expiry": null,
+        "current_task_tagged": false
+      },
+      {
+        "line_number": 3,
+        "full_line_sha256": "70f8d44cc436afa3f05646392fdd8f8d01c586fb46827d56023c6d03234888d2",
+        "key_fingerprint_SHA256": "MyrKxQlMzI3PfZAd6VzPGMm5WB2AP/OrPJ6+I/F/3ks",
+        "comment": "paper_supplement_reverse_only_20261023",
+        "expiry": "20261027180000",
+        "current_task_tagged": true
+      }
+    ]
+  },
+  "59": {
+    "authorized_keys_path": "/home/studentuser001/.ssh/authorized_keys",
+    "entries": [
+      {
+        "line_number": 2,
+        "full_line_sha256": "280dc1f5ffc142f9131c44ce995b52abfdb5412f129770831e38efbe1de2b991",
+        "key_fingerprint_SHA256": "5W4VoTigT3p+0MjYLVtxf1aC3Y+P5cZFViam1x1tSJc",
+        "comment": "paper_supplement_transfer_20261023",
+        "expiry": "20261027180000",
+        "current_task_tagged": true
+      }
+    ]
+  },
+  "cleanup_performed": false,
+  "cleanup_requires": "All experiment evidence and final report genuinely complete; remove only exact confirmed current-task authorization lines; keep servers on"
+}

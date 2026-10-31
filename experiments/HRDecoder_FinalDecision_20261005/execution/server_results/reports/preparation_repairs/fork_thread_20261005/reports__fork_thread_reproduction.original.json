@@ -1,0 +1,14 @@
+{
+  "default": {
+    "status": "EXIT",
+    "returncode": 0,
+    "seconds": 1.7285020749550313,
+    "output": "parent_torch_threads 64\nprimed 4194304.0\nforked\nBATCH_READY torch.Size([2, 3, 64, 64])\n"
+  },
+  "one": {
+    "status": "EXIT",
+    "returncode": 0,
+    "seconds": 1.8374888650141656,
+    "output": "parent_torch_threads 1\nprimed 4194304.0\nforked\nBATCH_READY torch.Size([2, 3, 64, 64])\n"
+  }
+}

@@ -1,0 +1,158 @@
+schema_version: '1.0'
+arm_id: U0
+role: round2_highres_validation_only
+status: locked-intent
+structure:
+  family: convnext_unet
+  paired_group: convnext_unet
+  definition_ref: 主方案第三节；DP-UNet 仅借鉴结构思想，不声称复现其官方源码
+  encoder: convnext_small
+  encoder_weights_source: https://dl.fbaipublicfiles.com/convnext/convnext_small_1k_224_ema.pth
+  encoder_weights_file: /root/autodl-tmp/HRDecoder_Ready_20261002/assets/convnext_small_1k_224_ema.pth
+  encoder_weights_sha256: fe969be0ad46c62ace0981c933ff47af59b9753365d71466efa6896571a879ad
+  training_entry: train.py
+  library: builtin
+  library_version: builtin-source-20261002
+  decoder: unet
+  output_heads: 4
+  detail_branch: false
+  full_input_resolution_decode: true
+initialization:
+  imagenet_weights:
+    source: https://dl.fbaipublicfiles.com/convnext/convnext_small_1k_224_ema.pth
+    file: /root/autodl-tmp/HRDecoder_Ready_20261002/assets/convnext_small_1k_224_ema.pth
+    sha256: fe969be0ad46c62ace0981c933ff47af59b9753365d71466efa6896571a879ad
+  external_pretrain_checkpoint: null
+  ddr_warm_start_checkpoint:
+    file: /root/autodl-tmp/HRDecoder_Ready_20261002/assets/U0_historical_best.pth
+    sha256: 98d98a5d02dc2615062c3c31cd15d061daf3d7ab41cb8f25cd90b062cd53bb34
+data:
+  ddr_root: /root/HRDecoder/data/DDR_split_613
+  ddr_train_split: train
+  ddr_val_split: val
+  ddr_test_split: test
+  channel_order:
+  - EX
+  - HE
+  - SE
+  - MA
+  input_fov: 2048
+  train_crop: 1024
+  ddr_normalization:
+    mean:
+    - 123.675
+    - 116.28
+    - 103.53
+    std:
+    - 58.395
+    - 57.12
+    - 57.375
+ddr_finetune_stage:
+  seed: 42
+  updates: 4000
+  effective_batch: 8
+  micro_batch: 4
+  grad_accum: 2
+  eval_progress_points:
+  - 0.25
+  - 0.5
+  - 1.0
+  optimizer: adamw
+  weight_decay: 0.01
+  warmup_ratio: 0.05
+  lr_schedule: cosine
+  cosine_min_ratio: 0.01
+  backbone_lr: 2.0e-05
+  decoder_lr: 5.9999999999999995e-05
+  augmentation:
+    resize_ratio_range:
+    - 0.5
+    - 2.0
+    random_crop_cat_max_ratio: 0.75
+    flip_ratio: 0.5
+    rotate_degrees:
+    - -45
+    - 45
+    photometric: light
+    resize_long_sides:
+    - 2048
+    - 2560
+  sampling: random_plus_foreground_mixed
+  norm_policy: layernorm_native
+  mixed_precision: true
+  gradient_checkpointing: false
+  log_every: 100
+  num_workers: 4
+  periodic_save_updates: 1000
+  screening:
+    enabled: true
+    mode: paired_continuation
+    min_progress: 0.5
+    reference_fusion_miou: 0.43487703221036567
+  checkpoint_primary: fixed_fusion_miou
+loss:
+  type: binary_per_class
+  recipe: ce_dice
+  smooth: 1.0e-05
+  per_class_valid_masking: true
+  ce_weight: 1.0
+  dice_weight: 1.0
+metrics:
+  protocol: whole_image_accumulated_counts
+  threshold: 0.5
+  primary: mIoU_lesion4
+  reported:
+  - mF1
+  - mPPV
+  - mRecall
+  - mAUPR
+  eval_mode: whole_image
+  window_size: null
+  window_stride: null
+  fixed_fusion_probe:
+    champion_cache: /root/autodl-tmp/HRDecoder_Ready_20261002/cache/val/champion
+    baseline_u0_cache: /root/autodl-tmp/HRDecoder_Ready_20261002/cache/val/U0
+    baseline_lock: /root/autodl-tmp/HRDecoder_Ready_20261002/reports/finish/deployment_lock.json
+    baseline_lock_sha256: 644974f4a888835f838472199dcb623e879be2d62e73dab502394759551ceac4
+    baseline_counts_cache: /root/autodl-tmp/HRDecoder_Ready_20261002/round2_highres/cache/baseline_counts.json
+checkpoint_selection:
+  allowed_splits:
+  - val
+  test_forbidden: true
+test_usage:
+  train_on_test: forbidden
+  select_checkpoint_on_test: forbidden
+  final_single_eval: allowed_only_after_full_lock
+equivalence_lock:
+  identical_with: U1
+  fields:
+  - data
+  - ddr_finetune_stage
+  - loss
+  - metrics
+  - checkpoint_selection
+  - test_usage
+  - structure.family
+  - structure.paired_group
+  - structure.encoder
+  - structure.detail_branch
+  - structure.library
+  - structure.encoder_weights_source
+  - structure.encoder_weights_file
+  - structure.encoder_weights_sha256
+  - initialization.imagenet_weights
+notes: "U0 回答\"异构特征和解码路径能否提供增量\"。ConvNeXt 归一化统计在首次工程验证后 一次性填写；填写前 preflight 保持 FAIL。\n\
+  相对上一版锁定意图的两处修正（U0/U1 同步，equivalence_lock 仍要求逐字段一致）： 1) structure.library 由 segmentation_models_pytorch\
+  \ 改为 builtin：v1 使用本工作区\n   纯 torch 的 ConvNeXt-S 编码器实现，不引入无法离线核实的第三方分割库依赖；\n   \"\
+  库支持某组合\" != \"该组合已验证\"，故不保留一个不可构建的声明。\n2) structure.detail_branch 由 true 改为 false：v1\
+  \ 没有实现该支路，也没有 shape test；\n   按\"配置不得声称 true 而代码无实现\"的约束统一置 false。若后续实现并补 shape\
+  \ test，\n   再把两臂一起改回 true 并重跑 preflight。\n"
+execution_revision: '20261002: fp32 loss, real transfer, source sampling, explicit
+  geometry'
+execution_fast_kernels: true
+historical_comparison: 'descriptive_only: historical controls used an earlier implementation'
+exploration_status: historical controls reused; no matched causal claim for external
+  pretraining
+historical_export_repair: Restore BOTH historical native-resolution and WHOLE IMAGE
+  inference. Recorded historical evaluator and independently verified mask contract
+  specify no TTA and no sliding window.

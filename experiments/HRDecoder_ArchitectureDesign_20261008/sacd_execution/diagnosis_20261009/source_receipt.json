@@ -1,0 +1,53 @@
+{
+  "checked_at": "2026-10-09T19:02:49.371725+08:00",
+  "purpose": "User-requested degradation diagnosis; actual imported original source only",
+  "files": [
+    {
+      "path": "mmseg/models/segmentors/HRDecoder.py",
+      "bytes": 13919,
+      "server_source_SHA256": "a97d00407c03947363df65a035dc70e5b458f440e38c21161a247b3282c1b933",
+      "local_HRDecoder_same": false
+    },
+    {
+      "path": "configs/lesion/exp/baseline_split613.py",
+      "bytes": 1779,
+      "server_source_SHA256": "b1bc3a6fb349d4e04f33ea4c8325852e5859b9ac46ddc04c922909e409040d08",
+      "local_HRDecoder_same": false
+    },
+    {
+      "path": "configs/_base_/models/hrdecoder_fcn_hr48.py",
+      "bytes": 436,
+      "server_source_SHA256": "dac527439c9226955e2c3e772f74638af61a203020883fd96ceb7a0dd5b2b7bf",
+      "local_HRDecoder_same": true
+    },
+    {
+      "path": "configs/_base_/models/hrdecoder_fcn_hr18.py",
+      "bytes": 1933,
+      "server_source_SHA256": "76e807d9c7f16bc4a76fd8d89230613350115f606dc287904c2c10d7c84463b1",
+      "local_HRDecoder_same": true
+    },
+    {
+      "path": "mmseg/models/losses/binary_loss.py",
+      "bytes": 9042,
+      "server_source_SHA256": "a56634a14dccf92ce004c9a87684ef53c6d66d8705ff49b5ab7c184a4e5e903c",
+      "local_HRDecoder_same": true
+    },
+    {
+      "path": "mmseg/models/decode_heads/fcn_head.py",
+      "bytes": 4666,
+      "server_source_SHA256": "71da7bd06c5501126020e3b9eb433eaaa1d3271238085f0e03dd46a558a13b6f",
+      "local_HRDecoder_same": true
+    },
+    {
+      "path": "mmseg/models/decode_heads/decode_head.py",
+      "bytes": 9867,
+      "server_source_SHA256": "7761148740342da86df5ff6cdbbe404dbb0e27c0144a9ffc14f2ea5e8fbbf198",
+      "local_HRDecoder_same": true
+    }
+  ],
+  "training_modified": false,
+  "GPU_probe": false,
+  "checkpoint_download": false,
+  "data_cache_hash_rescan": false,
+  "external_diagnostics_touched": false
+}

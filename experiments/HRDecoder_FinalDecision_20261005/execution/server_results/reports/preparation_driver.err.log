@@ -1,0 +1,61 @@
+Traceback (most recent call last):
+  File "D:\dataset\experiment\HRDecoder_FinalDecision_20261005\execution\ops\launch_when_ready.py", line 42, in main
+    if current['early'] and not current['early_alive'] and (current['gate'] or {}).get('status')!='PASS':raise RuntimeError('Required early GPU gate failed: '+str(current['early_tail']))
+                                                                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Required early GPU gate failed:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         ^
+/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/torch/include/ATen/core/TensorBody.h:247:1: note: declared here
+  247 |   T * data() const {
+      | ^ ~~
+[4/4] c++ vision.o ms_deform_attn_cpu.o ms_deform_attn_cuda.cuda.o -shared -L/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/torch/lib -lc10 -lc10_cuda -ltorch_cpu -ltorch_cuda -ltorch -ltorch_python -L/root/miniconda3/envs/hrdecoder_q_20261003/lib -lcudart -o MultiScaleDeformableAttention.so
+Loading extension module MultiScaleDeformableAttention...
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/root/autodl-tmp/HRDecoder_FinalDecision_20261005/tests/gpu_acceptance.py", line 115, in early
+    result['model_gates']=small_model_gates(runtime)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/HRDecoder_FinalDecision_20261005/tests/gpu_acceptance.py", line 81, in small_model_gates
+    before=model.backbone.blocks[-1].attn.qkv.weight.clone();step(1);assert not torch.equal(before,model.backbone.blocks[-1].attn.qkv.weight)
+                                                             ^^^^^^^
+  File "/root/autodl-tmp/HRDecoder_FinalDecision_20261005/tests/gpu_acceptance.py", line 71, in step
+    with forward_rng(seed,'DDR',u,0),torch.autocast('cuda',dtype=torch.bfloat16):z=model(x)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/contextlib.py", line 301, in helper
+    return _GeneratorContextManager(func, args, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/contextlib.py", line 105, in __init__
+    self.gen = func(*args, **kwds)
+               ^^^^^^^^^^^^^^^^^^^
+TypeError: forward_rng() missing 1 required positional argument: 'device'
+
+Traceback (most recent call last):
+  File "D:\dataset\experiment\HRDecoder_FinalDecision_20261005\execution\ops\launch_when_ready.py", line 56, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "D:\dataset\experiment\HRDecoder_FinalDecision_20261005\execution\ops\launch_when_ready.py", line 42, in main
+    if current['early'] and not current['early_alive'] and (current['gate'] or {}).get('status')!='PASS':raise RuntimeError('Required early GPU gate failed: '+str(current['early_tail']))
+                                                                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Required early GPU gate failed:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         ^
+/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/torch/include/ATen/core/TensorBody.h:247:1: note: declared here
+  247 |   T * data() const {
+      | ^ ~~
+[4/4] c++ vision.o ms_deform_attn_cpu.o ms_deform_attn_cuda.cuda.o -shared -L/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/torch/lib -lc10 -lc10_cuda -ltorch_cpu -ltorch_cuda -ltorch -ltorch_python -L/root/miniconda3/envs/hrdecoder_q_20261003/lib -lcudart -o MultiScaleDeformableAttention.so
+Loading extension module MultiScaleDeformableAttention...
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/root/autodl-tmp/HRDecoder_FinalDecision_20261005/tests/gpu_acceptance.py", line 115, in early
+    result['model_gates']=small_model_gates(runtime)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/HRDecoder_FinalDecision_20261005/tests/gpu_acceptance.py", line 81, in small_model_gates
+    before=model.backbone.blocks[-1].attn.qkv.weight.clone();step(1);assert not torch.equal(before,model.backbone.blocks[-1].attn.qkv.weight)
+                                                             ^^^^^^^
+  File "/root/autodl-tmp/HRDecoder_FinalDecision_20261005/tests/gpu_acceptance.py", line 71, in step
+    with forward_rng(seed,'DDR',u,0),torch.autocast('cuda',dtype=torch.bfloat16):z=model(x)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/contextlib.py", line 301, in helper
+    return _GeneratorContextManager(func, args, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/contextlib.py", line 105, in __init__
+    self.gen = func(*args, **kwds)
+               ^^^^^^^^^^^^^^^^^^^
+TypeError: forward_rng() missing 1 required positional argument: 'device'
+

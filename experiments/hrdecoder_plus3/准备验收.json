@@ -1,0 +1,13 @@
+{
+  "date": "2026-09-12T16:02:10.358471+00:00",
+  "core_and_actual_crop_tests_passed": 27,
+  "linux_guard_dryrun_tests_passed": 11,
+  "config_inheritance_review": "passed; D/L only lovasz weight differs; val/test separate; no pretrain downloads",
+  "python38_syntax": "passed",
+  "initial_checkpoint_sha256": "0b3cd72e740fc5c69242994c12cfd71a49ac892aff37d09c50bb9fb6931a8626",
+  "gpu_smoke": "NOT RUN; required after server starts",
+  "full_framework_integration": "NOT RUN locally: mmcv1.7.1 not installed; smoke tool prepared",
+  "server_started_this_round": false,
+  "implementation_provider": "智谱glm / glm-5.3-flash",
+  "supervisor_review": "required corrections applied; no original experimental results overwritten"
+}

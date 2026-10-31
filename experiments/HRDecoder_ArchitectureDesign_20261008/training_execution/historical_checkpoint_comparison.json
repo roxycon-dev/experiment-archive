@@ -1,0 +1,1070 @@
+{
+  "current_step": 4000,
+  "current_mIoU": 29.485856338036392,
+  "early_same_stage": [
+    {
+      "name": "原HRDecoder baseline",
+      "historical_4k_mIoU": 21.557000000000002,
+      "v3_minus_historical_pp": 7.92885633803639,
+      "source": "C:\\Users\\GuanXingRen\\AppData\\experment\\fundus-seg-2026\\hrdecoder-experiments\\week1\\logs\\01_板块一_baseline.json",
+      "source_line": 42,
+      "protocol_facts": {
+        "DDR_split_613": true,
+        "square_validation": true,
+        "sigmoid": true,
+        "samples_per_gpu_2": true,
+        "SGD": true,
+        "40k_schedule": true,
+        "fp16_in_config": false
+      }
+    },
+    {
+      "name": "E4 detail",
+      "historical_4k_mIoU": 21.92,
+      "v3_minus_historical_pp": 7.56585633803639,
+      "source": "C:\\Users\\GuanXingRen\\AppData\\experment\\fundus-seg-2026\\hrdecoder-experiments\\week2\\logs\\e4_detail_20260817_034605.log.json",
+      "source_line": 42,
+      "protocol_facts": {
+        "DDR_split_613": true,
+        "square_validation": true,
+        "sigmoid": true,
+        "samples_per_gpu_2": true,
+        "SGD": true,
+        "40k_schedule": true,
+        "fp16_in_config": false
+      }
+    },
+    {
+      "name": "E4v2",
+      "historical_4k_mIoU": 21.132,
+      "v3_minus_historical_pp": 8.35385633803639,
+      "source": "C:\\Users\\GuanXingRen\\AppData\\experment\\fundus-seg-2026\\hrdecoder-experiments\\week2\\logs\\e4v2_20260818_051249.log.json",
+      "source_line": 42,
+      "protocol_facts": {
+        "DDR_split_613": true,
+        "square_validation": true,
+        "sigmoid": true,
+        "samples_per_gpu_2": true,
+        "SGD": true,
+        "40k_schedule": true,
+        "fp16_in_config": false
+      }
+    },
+    {
+      "name": "CE+Dice",
+      "historical_4k_mIoU": 31.161,
+      "v3_minus_historical_pp": -1.6751436619636095,
+      "source": "C:\\Users\\GuanXingRen\\AppData\\experment\\fundus-seg-2026\\hrdecoder-experiments\\week2\\logs\\e1_cedice_20260817_105140.log.json",
+      "source_line": 42,
+      "protocol_facts": {
+        "DDR_split_613": true,
+        "square_validation": true,
+        "sigmoid": true,
+        "samples_per_gpu_2": true,
+        "SGD": true,
+        "40k_schedule": true,
+        "fp16_in_config": false
+      }
+    },
+    {
+      "name": "E2+E3",
+      "historical_4k_mIoU": 18.673000000000002,
+      "v3_minus_historical_pp": 10.81285633803639,
+      "source": "C:\\Users\\GuanXingRen\\AppData\\experment\\fundus-seg-2026\\hrdecoder-experiments\\week2\\logs\\e2e3_20260817_220954.log.json",
+      "source_line": 42,
+      "protocol_facts": {
+        "DDR_split_613": true,
+        "square_validation": true,
+        "sigmoid": true,
+        "samples_per_gpu_2": true,
+        "SGD": true,
+        "40k_schedule": true,
+        "fp16_in_config": false
+      }
+    },
+    {
+      "name": "combo",
+      "historical_4k_mIoU": 35.666,
+      "v3_minus_historical_pp": -6.180143661963605,
+      "source": "C:\\Users\\GuanXingRen\\AppData\\experment\\fundus-seg-2026\\hrdecoder-experiments\\week2\\logs\\combo_20260817_204954.log.json",
+      "source_line": 42,
+      "protocol_facts": {
+        "DDR_split_613": true,
+        "square_validation": true,
+        "sigmoid": true,
+        "samples_per_gpu_2": true,
+        "SGD": true,
+        "40k_schedule": true,
+        "fp16_in_config": false
+      }
+    },
+    {
+      "name": "combo_v2",
+      "historical_4k_mIoU": 33.839000000000006,
+      "v3_minus_historical_pp": -4.353143661963614,
+      "source": "C:\\Users\\GuanXingRen\\AppData\\experment\\fundus-seg-2026\\hrdecoder-experiments\\week2\\logs\\combo_v2_20260818_040002.log.json",
+      "source_line": 42,
+      "protocol_facts": {
+        "DDR_split_613": true,
+        "square_validation": true,
+        "sigmoid": true,
+        "samples_per_gpu_2": true,
+        "SGD": true,
+        "40k_schedule": true,
+        "fp16_in_config": false
+      }
+    },
+    {
+      "name": "combo2",
+      "historical_4k_mIoU": 18.054000000000002,
+      "v3_minus_historical_pp": 11.43185633803639,
+      "source": "C:\\Users\\GuanXingRen\\AppData\\experment\\fundus-seg-2026\\hrdecoder-experiments\\week2\\logs\\combo2_20260818_082631.log.json",
+      "source_line": 42,
+      "protocol_facts": {
+        "DDR_split_613": true,
+        "square_validation": true,
+        "sigmoid": true,
+        "samples_per_gpu_2": true,
+        "SGD": true,
+        "40k_schedule": true,
+        "fp16_in_config": false
+      }
+    }
+  ],
+  "baseline_history": [
+    {
+      "step": 4000,
+      "line": 42,
+      "mIoU": 21.557000000000002,
+      "mF1": 31.991999999999997,
+      "mPPV": 30.573,
+      "mS": 53.690000000000005
+    },
+    {
+      "step": 8000,
+      "line": 83,
+      "mIoU": 32.132,
+      "mF1": 45.288000000000004,
+      "mPPV": 46.283,
+      "mS": 50.678
+    },
+    {
+      "step": 12000,
+      "line": 124,
+      "mIoU": 34.479,
+      "mF1": 50.412,
+      "mPPV": 50.44800000000001,
+      "mS": 51.502
+    },
+    {
+      "step": 16000,
+      "line": 165,
+      "mIoU": 38.348,
+      "mF1": 54.362,
+      "mPPV": 62.056,
+      "mS": 48.711
+    },
+    {
+      "step": 20000,
+      "line": 206,
+      "mIoU": 32.523,
+      "mF1": 47.775,
+      "mPPV": 48.482,
+      "mS": 50.052
+    },
+    {
+      "step": 24000,
+      "line": 247,
+      "mIoU": 36.192,
+      "mF1": 52.344,
+      "mPPV": 56.199,
+      "mS": 49.111
+    },
+    {
+      "step": 28000,
+      "line": 288,
+      "mIoU": 37.228,
+      "mF1": 53.445,
+      "mPPV": 59.416999999999994,
+      "mS": 49.323
+    },
+    {
+      "step": 32000,
+      "line": 329,
+      "mIoU": 39.39,
+      "mF1": 55.428,
+      "mPPV": 62.107,
+      "mS": 50.20099999999999
+    },
+    {
+      "step": 36000,
+      "line": 370,
+      "mIoU": 38.727000000000004,
+      "mF1": 54.842999999999996,
+      "mPPV": 62.163000000000004,
+      "mS": 49.217
+    },
+    {
+      "step": 40000,
+      "line": 411,
+      "mIoU": 38.834999999999994,
+      "mF1": 54.954,
+      "mPPV": 60.785,
+      "mS": 50.260000000000005
+    }
+  ],
+  "historical_source_metadata": [
+    {
+      "path": "C:\\Users\\GuanXingRen\\AppData\\experment\\fundus-seg-2026\\hrdecoder-experiments\\week1\\logs\\01_板块一_baseline.json",
+      "seed": 42,
+      "validation": [
+        {
+          "step": 4000,
+          "line": 42,
+          "mIoU": 21.557000000000002,
+          "mF1": 31.991999999999997,
+          "mPPV": 30.573,
+          "mS": 53.690000000000005
+        },
+        {
+          "step": 8000,
+          "line": 83,
+          "mIoU": 32.132,
+          "mF1": 45.288000000000004,
+          "mPPV": 46.283,
+          "mS": 50.678
+        },
+        {
+          "step": 12000,
+          "line": 124,
+          "mIoU": 34.479,
+          "mF1": 50.412,
+          "mPPV": 50.44800000000001,
+          "mS": 51.502
+        },
+        {
+          "step": 16000,
+          "line": 165,
+          "mIoU": 38.348,
+          "mF1": 54.362,
+          "mPPV": 62.056,
+          "mS": 48.711
+        },
+        {
+          "step": 20000,
+          "line": 206,
+          "mIoU": 32.523,
+          "mF1": 47.775,
+          "mPPV": 48.482,
+          "mS": 50.052
+        },
+        {
+          "step": 24000,
+          "line": 247,
+          "mIoU": 36.192,
+          "mF1": 52.344,
+          "mPPV": 56.199,
+          "mS": 49.111
+        },
+        {
+          "step": 28000,
+          "line": 288,
+          "mIoU": 37.228,
+          "mF1": 53.445,
+          "mPPV": 59.416999999999994,
+          "mS": 49.323
+        },
+        {
+          "step": 32000,
+          "line": 329,
+          "mIoU": 39.39,
+          "mF1": 55.428,
+          "mPPV": 62.107,
+          "mS": 50.20099999999999
+        },
+        {
+          "step": 36000,
+          "line": 370,
+          "mIoU": 38.727000000000004,
+          "mF1": 54.842999999999996,
+          "mPPV": 62.163000000000004,
+          "mS": 49.217
+        },
+        {
+          "step": 40000,
+          "line": 411,
+          "mIoU": 38.834999999999994,
+          "mF1": 54.954,
+          "mPPV": 60.785,
+          "mS": 50.260000000000005
+        }
+      ],
+      "initialization_config": [
+        "pretrained='open-mmlab://msra/hrnetv2_w48',",
+        "pretrained='open-mmlab://msra/hrnetv2_w48'),",
+        "load_from = None",
+        "resume_from = None",
+        "seed = 42"
+      ],
+      "config_facts": {
+        "DDR_split_613": true,
+        "square_validation": true,
+        "sigmoid": true,
+        "samples_per_gpu_2": true,
+        "SGD": true,
+        "40k_schedule": true,
+        "fp16_in_config": false
+      },
+      "name": "原HRDecoder baseline"
+    },
+    {
+      "path": "C:\\Users\\GuanXingRen\\AppData\\experment\\fundus-seg-2026\\hrdecoder-experiments\\week2\\logs\\e4_detail_20260817_034605.log.json",
+      "seed": 42,
+      "validation": [
+        {
+          "step": 4000,
+          "line": 42,
+          "mIoU": 21.92,
+          "mF1": 32.249,
+          "mPPV": 32.638,
+          "mS": 47.459
+        },
+        {
+          "step": 8000,
+          "line": 83,
+          "mIoU": 34.272999999999996,
+          "mF1": 49.952999999999996,
+          "mPPV": 50.434,
+          "mS": 50.824999999999996
+        },
+        {
+          "step": 12000,
+          "line": 124,
+          "mIoU": 35.937999999999995,
+          "mF1": 51.929,
+          "mPPV": 54.901999999999994,
+          "mS": 50.51
+        },
+        {
+          "step": 16000,
+          "line": 165,
+          "mIoU": 38.182,
+          "mF1": 54.31399999999999,
+          "mPPV": 61.111000000000004,
+          "mS": 49.381
+        },
+        {
+          "step": 20000,
+          "line": 206,
+          "mIoU": 31.892,
+          "mF1": 47.459,
+          "mPPV": 48.825,
+          "mS": 48.109
+        },
+        {
+          "step": 24000,
+          "line": 247,
+          "mIoU": 38.025999999999996,
+          "mF1": 53.888000000000005,
+          "mPPV": 59.288,
+          "mS": 49.471
+        },
+        {
+          "step": 28000,
+          "line": 288,
+          "mIoU": 38.379999999999995,
+          "mF1": 54.400999999999996,
+          "mPPV": 61.873999999999995,
+          "mS": 48.922
+        },
+        {
+          "step": 32000,
+          "line": 329,
+          "mIoU": 37.336999999999996,
+          "mF1": 53.381,
+          "mPPV": 55.652,
+          "mS": 51.470000000000006
+        },
+        {
+          "step": 36000,
+          "line": 370,
+          "mIoU": 38.766,
+          "mF1": 54.974000000000004,
+          "mPPV": 56.977999999999994,
+          "mS": 53.347
+        },
+        {
+          "step": 40000,
+          "line": 411,
+          "mIoU": 38.042,
+          "mF1": 54.26499999999999,
+          "mPPV": 56.413999999999994,
+          "mS": 52.554
+        }
+      ],
+      "initialization_config": [
+        "pretrained='open-mmlab://msra/hrnetv2_w48',",
+        "pretrained='open-mmlab://msra/hrnetv2_w48'),",
+        "load_from = None",
+        "resume_from = None",
+        "seed = 42"
+      ],
+      "config_facts": {
+        "DDR_split_613": true,
+        "square_validation": true,
+        "sigmoid": true,
+        "samples_per_gpu_2": true,
+        "SGD": true,
+        "40k_schedule": true,
+        "fp16_in_config": false
+      },
+      "name": "E4 detail"
+    },
+    {
+      "path": "C:\\Users\\GuanXingRen\\AppData\\experment\\fundus-seg-2026\\hrdecoder-experiments\\week2\\logs\\e4v2_20260818_051249.log.json",
+      "seed": 42,
+      "validation": [
+        {
+          "step": 4000,
+          "line": 42,
+          "mIoU": 21.132,
+          "mF1": 31.861,
+          "mPPV": 31.430999999999997,
+          "mS": 53.184
+        },
+        {
+          "step": 8000,
+          "line": 83,
+          "mIoU": 34.487,
+          "mF1": 50.376,
+          "mPPV": 53.456,
+          "mS": 49.324
+        },
+        {
+          "step": 12000,
+          "line": 124,
+          "mIoU": 34.684,
+          "mF1": 50.608,
+          "mPPV": 48.809000000000005,
+          "mS": 54.022999999999996
+        },
+        {
+          "step": 16000,
+          "line": 165,
+          "mIoU": 37.339,
+          "mF1": 53.565,
+          "mPPV": 60.5,
+          "mS": 48.221000000000004
+        },
+        {
+          "step": 20000,
+          "line": 206,
+          "mIoU": 36.453,
+          "mF1": 52.483999999999995,
+          "mPPV": 60.29600000000001,
+          "mS": 48.153
+        },
+        {
+          "step": 24000,
+          "line": 247,
+          "mIoU": 37.327,
+          "mF1": 53.433,
+          "mPPV": 57.786,
+          "mS": 49.763000000000005
+        },
+        {
+          "step": 28000,
+          "line": 288,
+          "mIoU": 36.363,
+          "mF1": 52.334,
+          "mPPV": 63.951,
+          "mS": 44.662
+        },
+        {
+          "step": 32000,
+          "line": 329,
+          "mIoU": 37.393,
+          "mF1": 53.412000000000006,
+          "mPPV": 61.272999999999996,
+          "mS": 47.558
+        },
+        {
+          "step": 36000,
+          "line": 370,
+          "mIoU": 38.667,
+          "mF1": 54.82599999999999,
+          "mPPV": 59.073,
+          "mS": 51.275000000000006
+        },
+        {
+          "step": 40000,
+          "line": 411,
+          "mIoU": 38.499,
+          "mF1": 54.674,
+          "mPPV": 59.51,
+          "mS": 50.638000000000005
+        }
+      ],
+      "initialization_config": [
+        "pretrained='open-mmlab://msra/hrnetv2_w48',",
+        "pretrained='open-mmlab://msra/hrnetv2_w48'),",
+        "load_from = None",
+        "resume_from = None",
+        "seed = 42"
+      ],
+      "config_facts": {
+        "DDR_split_613": true,
+        "square_validation": true,
+        "sigmoid": true,
+        "samples_per_gpu_2": true,
+        "SGD": true,
+        "40k_schedule": true,
+        "fp16_in_config": false
+      },
+      "name": "E4v2"
+    },
+    {
+      "path": "C:\\Users\\GuanXingRen\\AppData\\experment\\fundus-seg-2026\\hrdecoder-experiments\\week2\\logs\\e1_cedice_20260817_105140.log.json",
+      "seed": 42,
+      "validation": [
+        {
+          "step": 4000,
+          "line": 42,
+          "mIoU": 31.161,
+          "mF1": 46.93,
+          "mPPV": 46.819,
+          "mS": 50.512
+        },
+        {
+          "step": 8000,
+          "line": 83,
+          "mIoU": 34.88,
+          "mF1": 50.99,
+          "mPPV": 47.336,
+          "mS": 56.215
+        },
+        {
+          "step": 12000,
+          "line": 124,
+          "mIoU": 39.97,
+          "mF1": 56.033,
+          "mPPV": 55.616,
+          "mS": 56.53399999999999
+        },
+        {
+          "step": 16000,
+          "line": 165,
+          "mIoU": 36.876,
+          "mF1": 52.92,
+          "mPPV": 56.627,
+          "mS": 50.198
+        },
+        {
+          "step": 20000,
+          "line": 206,
+          "mIoU": 37.974999999999994,
+          "mF1": 54.049,
+          "mPPV": 54.044000000000004,
+          "mS": 54.629000000000005
+        },
+        {
+          "step": 24000,
+          "line": 247,
+          "mIoU": 38.966,
+          "mF1": 55.013,
+          "mPPV": 59.116,
+          "mS": 51.632
+        },
+        {
+          "step": 28000,
+          "line": 288,
+          "mIoU": 39.096,
+          "mF1": 55.13400000000001,
+          "mPPV": 58.56400000000001,
+          "mS": 52.400000000000006
+        },
+        {
+          "step": 32000,
+          "line": 329,
+          "mIoU": 38.017,
+          "mF1": 53.862,
+          "mPPV": 61.162000000000006,
+          "mS": 48.277
+        },
+        {
+          "step": 36000,
+          "line": 370,
+          "mIoU": 39.106,
+          "mF1": 55.138,
+          "mPPV": 59.648,
+          "mS": 51.358000000000004
+        },
+        {
+          "step": 40000,
+          "line": 411,
+          "mIoU": 38.978,
+          "mF1": 55.025,
+          "mPPV": 58.528999999999996,
+          "mS": 52.092000000000006
+        }
+      ],
+      "initialization_config": [
+        "pretrained='open-mmlab://msra/hrnetv2_w48',",
+        "pretrained='open-mmlab://msra/hrnetv2_w48'),",
+        "load_from = None",
+        "resume_from = None",
+        "seed = 42"
+      ],
+      "config_facts": {
+        "DDR_split_613": true,
+        "square_validation": true,
+        "sigmoid": true,
+        "samples_per_gpu_2": true,
+        "SGD": true,
+        "40k_schedule": true,
+        "fp16_in_config": false
+      },
+      "name": "CE+Dice"
+    },
+    {
+      "path": "C:\\Users\\GuanXingRen\\AppData\\experment\\fundus-seg-2026\\hrdecoder-experiments\\week2\\logs\\e2e3_20260817_220954.log.json",
+      "seed": 42,
+      "validation": [
+        {
+          "step": 4000,
+          "line": 42,
+          "mIoU": 18.673000000000002,
+          "mF1": 28.116999999999997,
+          "mPPV": 32.188,
+          "mS": 26.86
+        },
+        {
+          "step": 8000,
+          "line": 83,
+          "mIoU": 27.741,
+          "mF1": 40.644999999999996,
+          "mPPV": 49.781,
+          "mS": 37.505
+        },
+        {
+          "step": 12000,
+          "line": 124,
+          "mIoU": 30.645,
+          "mF1": 46.184,
+          "mPPV": 47.022999999999996,
+          "mS": 50.318
+        },
+        {
+          "step": 16000,
+          "line": 165,
+          "mIoU": 35.545,
+          "mF1": 51.526,
+          "mPPV": 56.312,
+          "mS": 48.705999999999996
+        },
+        {
+          "step": 20000,
+          "line": 206,
+          "mIoU": 39.206,
+          "mF1": 55.352999999999994,
+          "mPPV": 61.338,
+          "mS": 50.864
+        },
+        {
+          "step": 24000,
+          "line": 247,
+          "mIoU": 33.064,
+          "mF1": 48.253,
+          "mPPV": 47.587,
+          "mS": 52.081
+        },
+        {
+          "step": 28000,
+          "line": 288,
+          "mIoU": 37.547999999999995,
+          "mF1": 53.607000000000006,
+          "mPPV": 60.046,
+          "mS": 48.969
+        },
+        {
+          "step": 32000,
+          "line": 329,
+          "mIoU": 37.513999999999996,
+          "mF1": 53.675,
+          "mPPV": 56.635000000000005,
+          "mS": 51.071999999999996
+        },
+        {
+          "step": 36000,
+          "line": 370,
+          "mIoU": 37.925,
+          "mF1": 53.867,
+          "mPPV": 58.30800000000001,
+          "mS": 50.169
+        },
+        {
+          "step": 40000,
+          "line": 411,
+          "mIoU": 38.279999999999994,
+          "mF1": 54.217999999999996,
+          "mPPV": 56.957,
+          "mS": 51.766999999999996
+        }
+      ],
+      "initialization_config": [
+        "pretrained='open-mmlab://msra/hrnetv2_w48',",
+        "pretrained='open-mmlab://msra/hrnetv2_w48'),",
+        "load_from = None",
+        "resume_from = None",
+        "seed = 42"
+      ],
+      "config_facts": {
+        "DDR_split_613": true,
+        "square_validation": true,
+        "sigmoid": true,
+        "samples_per_gpu_2": true,
+        "SGD": true,
+        "40k_schedule": true,
+        "fp16_in_config": false
+      },
+      "name": "E2+E3"
+    },
+    {
+      "path": "C:\\Users\\GuanXingRen\\AppData\\experment\\fundus-seg-2026\\hrdecoder-experiments\\week2\\logs\\combo_20260817_204954.log.json",
+      "seed": 42,
+      "validation": [
+        {
+          "step": 4000,
+          "line": 42,
+          "mIoU": 35.666,
+          "mF1": 51.768,
+          "mPPV": 48.661,
+          "mS": 55.811
+        }
+      ],
+      "initialization_config": [
+        "pretrained='open-mmlab://msra/hrnetv2_w48',",
+        "pretrained='open-mmlab://msra/hrnetv2_w48'),",
+        "load_from = None",
+        "resume_from = None",
+        "seed = 42"
+      ],
+      "config_facts": {
+        "DDR_split_613": true,
+        "square_validation": true,
+        "sigmoid": true,
+        "samples_per_gpu_2": true,
+        "SGD": true,
+        "40k_schedule": true,
+        "fp16_in_config": false
+      },
+      "name": "combo"
+    },
+    {
+      "path": "C:\\Users\\GuanXingRen\\AppData\\experment\\fundus-seg-2026\\hrdecoder-experiments\\week2\\logs\\combo_v2_20260818_040002.log.json",
+      "seed": 42,
+      "validation": [
+        {
+          "step": 4000,
+          "line": 42,
+          "mIoU": 33.839000000000006,
+          "mF1": 49.718,
+          "mPPV": 50.91,
+          "mS": 49.753
+        },
+        {
+          "step": 8000,
+          "line": 83,
+          "mIoU": 36.701,
+          "mF1": 52.886,
+          "mPPV": 57.176,
+          "mS": 49.883
+        },
+        {
+          "step": 12000,
+          "line": 124,
+          "mIoU": 34.075,
+          "mF1": 50.249,
+          "mPPV": 59.108000000000004,
+          "mS": 44.395
+        },
+        {
+          "step": 16000,
+          "line": 165,
+          "mIoU": 37.782,
+          "mF1": 53.893,
+          "mPPV": 57.903000000000006,
+          "mS": 50.468999999999994
+        },
+        {
+          "step": 20000,
+          "line": 206,
+          "mIoU": 36.071999999999996,
+          "mF1": 52.132,
+          "mPPV": 53.223,
+          "mS": 51.113
+        }
+      ],
+      "initialization_config": [
+        "pretrained='open-mmlab://msra/hrnetv2_w48',",
+        "pretrained='open-mmlab://msra/hrnetv2_w48'),",
+        "load_from = None",
+        "resume_from = None",
+        "seed = 42"
+      ],
+      "config_facts": {
+        "DDR_split_613": true,
+        "square_validation": true,
+        "sigmoid": true,
+        "samples_per_gpu_2": true,
+        "SGD": true,
+        "40k_schedule": true,
+        "fp16_in_config": false
+      },
+      "name": "combo_v2"
+    },
+    {
+      "path": "C:\\Users\\GuanXingRen\\AppData\\experment\\fundus-seg-2026\\hrdecoder-experiments\\week2\\logs\\combo2_20260818_082631.log.json",
+      "seed": 42,
+      "validation": [
+        {
+          "step": 4000,
+          "line": 42,
+          "mIoU": 18.054000000000002,
+          "mF1": 26.745,
+          "mPPV": 34.821999999999996,
+          "mS": 26.090000000000003
+        },
+        {
+          "step": 8000,
+          "line": 83,
+          "mIoU": 32.054,
+          "mF1": 46.836,
+          "mPPV": 51.274,
+          "mS": 45.472
+        },
+        {
+          "step": 12000,
+          "line": 124,
+          "mIoU": 37.089,
+          "mF1": 53.172,
+          "mPPV": 60.356,
+          "mS": 48.33
+        },
+        {
+          "step": 16000,
+          "line": 165,
+          "mIoU": 33.774,
+          "mF1": 49.479,
+          "mPPV": 68.72399999999999,
+          "mS": 39.259
+        },
+        {
+          "step": 20000,
+          "line": 206,
+          "mIoU": 35.817,
+          "mF1": 51.832,
+          "mPPV": 64.532,
+          "mS": 43.395
+        },
+        {
+          "step": 24000,
+          "line": 247,
+          "mIoU": 37.057,
+          "mF1": 52.846000000000004,
+          "mPPV": 63.123,
+          "mS": 45.556999999999995
+        }
+      ],
+      "initialization_config": [
+        "pretrained='open-mmlab://msra/hrnetv2_w48',",
+        "pretrained='open-mmlab://msra/hrnetv2_w48'),",
+        "load_from = None",
+        "resume_from = None",
+        "seed = 42"
+      ],
+      "config_facts": {
+        "DDR_split_613": true,
+        "square_validation": true,
+        "sigmoid": true,
+        "samples_per_gpu_2": true,
+        "SGD": true,
+        "40k_schedule": true,
+        "fp16_in_config": false
+      },
+      "name": "combo2"
+    }
+  ],
+  "baseline_best": {
+    "step": 32000,
+    "line": 329,
+    "mIoU": 39.39,
+    "mF1": 55.428,
+    "mPPV": 62.107,
+    "mS": 50.20099999999999
+  },
+  "baseline_fixed40k": {
+    "step": 40000,
+    "line": 411,
+    "mIoU": 38.834999999999994,
+    "mF1": 54.954,
+    "mPPV": 60.785,
+    "mS": 50.260000000000005
+  },
+  "current_macro_precision": 48.95186024853873,
+  "current_macro_recall": 46.22610196385089,
+  "baseline_macro_precision_4k": 30.573,
+  "baseline_macro_recall_4k": 53.690000000000005,
+  "different_protocol_context": [
+    {
+      "name": "Q_DDR_seed42",
+      "step": 4000,
+      "mIoU": 35.031476956088774,
+      "v3_minus_historical_pp": -5.545620618052382,
+      "per_class_IoU": [
+        42.46123027561094,
+        36.360837268764705,
+        43.669007176415924,
+        17.634833103563523
+      ],
+      "GT_positive_counts_match": true,
+      "source": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\reports\\paired_validation_all_nodes_24k.json",
+      "comparability": "Same DDR val labels/counts, native sliding-window DINOv3 pretrained model, batch8; context only, not paired v3 comparison"
+    },
+    {
+      "name": "Q_DDR_seed2024",
+      "step": 4000,
+      "mIoU": 37.63707346834319,
+      "v3_minus_historical_pp": -8.151217130306797,
+      "per_class_IoU": [
+        44.581639955173294,
+        40.155148764201826,
+        47.42232721435144,
+        18.3891779396462
+      ],
+      "GT_positive_counts_match": true,
+      "source": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\reports\\paired_validation_all_nodes_24k.json",
+      "comparability": "Same DDR val labels/counts, native sliding-window DINOv3 pretrained model, batch8; context only, not paired v3 comparison"
+    },
+    {
+      "name": "Q_MIX_seed42",
+      "step": 4000,
+      "mIoU": 34.58751038539255,
+      "v3_minus_historical_pp": -5.101654047356156,
+      "per_class_IoU": [
+        41.05155464614563,
+        37.975138897184166,
+        42.05272629233338,
+        17.270621705907026
+      ],
+      "GT_positive_counts_match": true,
+      "source": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\reports\\paired_validation_all_nodes_24k.json",
+      "comparability": "Same DDR val labels/counts, native sliding-window DINOv3 pretrained model, batch8; context only, not paired v3 comparison"
+    },
+    {
+      "name": "Q_MIX_seed2024",
+      "step": 4000,
+      "mIoU": 34.45749693699355,
+      "v3_minus_historical_pp": -4.971640598957158,
+      "per_class_IoU": [
+        42.33176857039686,
+        38.748590180928616,
+        39.869722046954045,
+        16.87990694969468
+      ],
+      "GT_positive_counts_match": true,
+      "source": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\reports\\paired_validation_all_nodes_24k.json",
+      "comparability": "Same DDR val labels/counts, native sliding-window DINOv3 pretrained model, batch8; context only, not paired v3 comparison"
+    },
+    {
+      "name": "C_seed42",
+      "step": 4000,
+      "mIoU": 40.725021496593996,
+      "v3_minus_historical_pp": -11.239165158557604,
+      "per_class_IoU": [
+        46.78612143011577,
+        38.879703856392304,
+        56.78881761521314,
+        20.44544308465477
+      ],
+      "GT_positive_counts_match": true,
+      "source": "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\execution\\server_results\\runs\\C_seed42\\val_u4000\\metrics.json",
+      "comparability": "Continuation from Q/F12 trained parent; 4k additional updates, not from ImageNet; native sliding windows/batch8"
+    },
+    {
+      "name": "S_seed42",
+      "step": 4000,
+      "mIoU": 41.28424748145035,
+      "v3_minus_historical_pp": -11.798391143413959,
+      "per_class_IoU": [
+        46.65977911325175,
+        39.92766731435718,
+        57.434956123358624,
+        21.114587374833867
+      ],
+      "GT_positive_counts_match": true,
+      "source": "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\execution\\server_results\\runs\\S_seed42\\val_u4000\\metrics.json",
+      "comparability": "Continuation from Q/F12 trained parent; 4k additional updates, not from ImageNet; native sliding windows/batch8"
+    },
+    {
+      "name": "D_seed42",
+      "step": 4000,
+      "mIoU": 40.845137169176596,
+      "v3_minus_historical_pp": -11.359280831140204,
+      "per_class_IoU": [
+        46.66826391809034,
+        40.12887220193838,
+        55.92361450421238,
+        20.65979805246525
+      ],
+      "GT_positive_counts_match": true,
+      "source": "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\execution\\server_results\\runs\\D_seed42\\val_u4000\\metrics.json",
+      "comparability": "Continuation from Q/F12 trained parent; 4k additional updates, not from ImageNet; native sliding windows/batch8"
+    },
+    {
+      "name": "SD_seed42",
+      "step": 4000,
+      "mIoU": 39.65700941327202,
+      "v3_minus_historical_pp": -10.17115307523563,
+      "per_class_IoU": [
+        45.830301025471385,
+        34.28613575667428,
+        57.5749413599991,
+        20.936659510943322
+      ],
+      "GT_positive_counts_match": true,
+      "source": "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\execution\\server_results\\runs\\SD_seed42\\val_u4000\\metrics.json",
+      "comparability": "Continuation from Q/F12 trained parent; 4k additional updates, not from ImageNet; native sliding windows/batch8"
+    }
+  ],
+  "current_GT_positive_counts": [
+    290803,
+    1205924,
+    201404,
+    69284
+  ],
+  "current_data_identity_top_level_keys": [
+    "status",
+    "classes",
+    "splits",
+    "test_label_pixel_access",
+    "assignment_sha256",
+    "created_at",
+    "sha256"
+  ],
+  "historical_val_IDs_match": true,
+  "historical_assignment_GT_positive_counts": [
+    292046,
+    1207733,
+    201420,
+    69284
+  ],
+  "historical_assignment_GT_matches": false,
+  "historical_saved_label_identities_match": 76,
+  "file_hashes_recomputed": false,
+  "limitations": [
+    "Historical metrics are rounded training logs, not a new paired baseline run",
+    "v3 BF16, KD, architecture, valid masks and exposure RNG differ; early gain is not causal or endpoint proof",
+    "Do not compare validation score with test score or continuation step with total from-start step"
+  ]
+}

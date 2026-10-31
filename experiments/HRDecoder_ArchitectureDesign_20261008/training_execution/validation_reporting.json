@@ -1,0 +1,52 @@
+{
+  "reported_steps": [
+    4000,
+    8000,
+    12000,
+    16000,
+    20000
+  ],
+  "report_every_validation": true,
+  "validation_steps": [
+    4000,
+    8000,
+    12000,
+    16000,
+    20000,
+    24000,
+    28000,
+    32000,
+    36000,
+    40000
+  ],
+  "validation_images": 76,
+  "class_order": [
+    "EX",
+    "HE",
+    "SE",
+    "MA"
+  ],
+  "primary_result": "40000 fixed endpoint",
+  "report_metrics": [
+    "mIoU",
+    "per_class_IoU",
+    "per_class_precision",
+    "per_class_recall",
+    "delta_percentage_points",
+    "best_val_step"
+  ],
+  "last_reported_at": "2026-10-09T00:00:48+08:00",
+  "available_steps": [
+    4000,
+    8000,
+    12000,
+    16000,
+    20000
+  ],
+  "last_checked_at": "2026-10-09T00:16:51.586136+08:00",
+  "check_interval_minutes": 45,
+  "run_status": "STOPPED_BY_USER",
+  "monitoring_status": "PAUSED",
+  "stopped_at": "2026-10-09T00:14:30.397893+08:00",
+  "fixed_40000_endpoint_completed": false
+}

@@ -1,0 +1,15 @@
+[HRPlusMAResidual] 可训练 0.058M / 冻结 131.221M
+/root/miniconda3/lib/python3.8/site-packages/mmcv/__init__.py:20: UserWarning: On January 1, 2023, MMCV will release v2.0.0, in which it will remove components related to the training process and add a data transformation module. In addition, it will rename the package names mmcv to mmcv-lite and mmcv-full to mmcv. See https://github.com/open-mmlab/mmcv/blob/master/docs/en/compatibility.md for more details.
+  warnings.warn(
+2026-09-20 23:29:58,428 - mmseg - INFO - Loaded 76 images from /root/autodl-tmp/hr_exec_20260919/data/DDR_split_613/images/val
+[eval] 10/76 45.5s
+[eval] 20/76 88.8s
+[eval] 30/76 133.6s
+[eval] 40/76 176.0s
+[eval] 50/76 218.5s
+[eval] 60/76 262.6s
+[eval] 70/76 304.3s
+[eval] 76/76 329.4s
+[eval] champion mIoU=0.426694 (MA 0.259672 HE 0.437583)  refined mIoU=0.426694 (MA 0.25967231303383037 HE 0.43758256131196327)
+[eval] bitwise: EX/SE changed=0  outside-candidate changed=0  accepted=True
+[eval] wrote /root/autodl-tmp/HRDecoder_FullCompetition_20260920/refiner_v1/logs/eval_refiner.json

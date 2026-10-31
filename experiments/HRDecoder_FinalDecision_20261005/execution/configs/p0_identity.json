@@ -1,0 +1,41 @@
+{
+  "champion": {
+    "head": "D:\\dataset\\experiment\\HRDecoder_Next_20261003\\assets\\H4_best.pth",
+    "members": [
+      {
+        "name": "D",
+        "config": "configs/lesion/exp/hrplus_patch_dice.py",
+        "checkpoint": "D:\\dataset\\experiment\\HRDecoder_Next_20261003\\assets\\D_student_2000.pth",
+        "load": "student_only",
+        "weight": 3
+      },
+      {
+        "name": "E",
+        "config": "configs/lesion/exp/hrplus_mares.py",
+        "checkpoint": "D:\\dataset\\experiment\\HRDecoder_Next_20261003\\assets\\E_1500.pth",
+        "load": "full",
+        "weight": 2
+      },
+      {
+        "name": "B",
+        "config": "configs/lesion/exp/hr100_b.py",
+        "checkpoint": "D:\\dataset\\experiment\\HRDecoder_Next_20261003\\assets\\B_weights.pth",
+        "load": "full",
+        "weight": 1
+      },
+      {
+        "name": "E4",
+        "config": "configs/lesion/exp/e4_detail_split613.py",
+        "checkpoint": "D:\\dataset\\experiment\\HRDecoder_Next_20261003\\assets\\E4_weights.pth",
+        "load": "full",
+        "weight": 1
+      }
+    ]
+  },
+  "historical_lock_sha256": "644974f4a888835f838472199dcb623e879be2d62e73dab502394759551ceac4",
+  "champion_config_sha256": "a251c5406f05f503c24ab6323e94ed2fbcc2fa8a032cd3e90c25696314c6b633",
+  "p0": "0.75*C+0.25*U0_historical_native_whole",
+  "q_fusion": "0.5625*C+0.1875*U0_historical_native_whole+0.25*Q",
+  "H4_is_a_learned_residual_head_not_a_scalar_weight": true,
+  "p0_acceptance_sha256": "f1281c5cf03b2c07b9aa1ceb0ff3910b7e1d1df256e612fa740f9b5236370ea4"
+}

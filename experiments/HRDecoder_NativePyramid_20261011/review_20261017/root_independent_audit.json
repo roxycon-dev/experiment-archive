@@ -1,0 +1,227 @@
+{
+  "reviewer": "root independent source, log and arithmetic review",
+  "date": "2026-10-17",
+  "no_model_execution_no_training_no_new_pixel_evaluation": true,
+  "matched_validation_ids": 76,
+  "per_image_gt_totals_match": true,
+  "v3_miou_percent": 39.42555100502814,
+  "target_miou_percent": 45.321831227388415,
+  "gap_pp": 5.896280222360275,
+  "baseline_reported_40k_miou_percent": [
+    38.834999999999994
+  ],
+  "remove_all_fp_on_absent_class_images_only": {
+    "iou_percent": {
+      "EX": 48.52112801760519,
+      "HE": 41.031927477134914,
+      "SE": 52.30706021016285,
+      "MA": 23.23390082952359
+    },
+    "miou_percent": 41.273504133606636,
+    "scope": "conditional algebraic upper bound when predictions on all class-positive images stay unchanged; no model prediction edited"
+  },
+  "per_class": {
+    "EX": {
+      "v3_iou_percent": 46.621126625977915,
+      "target_iou_percent": 50.37020374756766,
+      "gap_pp": 3.7490771215897425,
+      "v3_counts": [
+        190279,
+        117336,
+        100524
+      ],
+      "target_counts": [
+        185859,
+        78183,
+        104944
+      ],
+      "target_minus_v3_tp": -4420,
+      "target_minus_v3_fp": -39153,
+      "required_delta_tp_minus_target_iou_times_delta_fp": 15301.445873285149,
+      "required_fp_removal_if_tp_unchanged": 30377.97097261902,
+      "absent_class_images": 30,
+      "v3_fp_on_absent_images": 15982,
+      "target_fp_on_absent_images": 11340,
+      "v3_fp_on_positive_images": 101354,
+      "target_fp_on_positive_images": 66843,
+      "v3_fp_absent_share": 0.1362071316560987
+    },
+    "HE": {
+      "v3_iou_percent": 40.94398000685459,
+      "target_iou_percent": 45.04046701127168,
+      "gap_pp": 4.096487004417092,
+      "v3_counts": [
+        691699,
+        483455,
+        514225
+      ],
+      "target_counts": [
+        695246,
+        337679,
+        510678
+      ],
+      "target_minus_v3_tp": 3547,
+      "target_minus_v3_fp": -145776,
+      "required_delta_tp_minus_target_iou_times_delta_fp": 69205.19119035138,
+      "required_fp_removal_if_tp_unchanged": 153651.1403690204,
+      "absent_class_images": 13,
+      "v3_fp_on_absent_images": 3621,
+      "target_fp_on_absent_images": 1827,
+      "v3_fp_on_positive_images": 479834,
+      "target_fp_on_positive_images": 335852,
+      "v3_fp_absent_share": 0.007489838764724741
+    },
+    "SE": {
+      "v3_iou_percent": 49.63904106621716,
+      "target_iou_percent": 59.841783899335645,
+      "gap_pp": 10.202742833118485,
+      "v3_counts": [
+        126037,
+        52503,
+        75367
+      ],
+      "target_counts": [
+        140247,
+        32959,
+        61157
+      ],
+      "target_minus_v3_tp": 14210,
+      "target_minus_v3_fp": -19544,
+      "required_delta_tp_minus_target_iou_times_delta_fp": 25905.478245286155,
+      "required_fp_removal_if_tp_unchanged": 43289.94985989004,
+      "absent_class_images": 52,
+      "v3_fp_on_absent_images": 12951,
+      "target_fp_on_absent_images": 4752,
+      "v3_fp_on_positive_images": 39552,
+      "target_fp_on_positive_images": 28207,
+      "v3_fp_absent_share": 0.24667161876464203
+    },
+    "MA": {
+      "v3_iou_percent": 20.498056321062908,
+      "target_iou_percent": 26.03487025137867,
+      "gap_pp": 5.536813930315763,
+      "v3_counts": [
+        22463,
+        40302,
+        46821
+      ],
+      "target_counts": [
+        26296,
+        31719,
+        42988
+      ],
+      "target_minus_v3_tp": 3833,
+      "target_minus_v3_fp": -8583,
+      "required_delta_tp_minus_target_iou_times_delta_fp": 6067.572913675831,
+      "required_fp_removal_if_tp_unchanged": 23305.56232887131,
+      "absent_class_images": 17,
+      "v3_fp_on_absent_images": 12904,
+      "target_fp_on_absent_images": 11440,
+      "v3_fp_on_positive_images": 27398,
+      "target_fp_on_positive_images": 20279,
+      "v3_fp_absent_share": 0.3201826212098655
+    }
+  },
+  "full_log_scan": {
+    "rows": 40000,
+    "continuous_executed_updates_1_to_40000": true,
+    "finite_logged_loss_and_global_gradient_values": true,
+    "projected_sha256": "a72d77846ace86e429fd4120689ed814aa67668e6dd627c9274216835a5ac3a9",
+    "first_2000_mean_loss": 1.1472009578596334,
+    "last_2000_mean_loss": 0.4502932926835347,
+    "clipping_trigger_rate": 0.2677,
+    "clip_coefficient_mean": 0.9224501965045269,
+    "clip_coefficient_median": 1.0,
+    "mean_positive_pixels_by_class": {
+      "EX": 19706.1958,
+      "HE": 30431.57295,
+      "SE": 5026.7965,
+      "MA": 1902.340125
+    },
+    "zero_positive_update_rate_by_class": {
+      "EX": 0.1227,
+      "HE": 0.04545,
+      "SE": 0.49175,
+      "MA": 0.071275
+    },
+    "direct_weight_gradient_median_scale_by_class": [
+      [
+        0.0826573334634304,
+        0.09409782290458679,
+        0.03768022172152996,
+        0.13266530632972717
+      ],
+      [
+        0.08814828842878342,
+        0.10692789033055305,
+        0.06108572892844677,
+        0.11722476780414581
+      ],
+      [
+        0.08648377284407616,
+        0.1267322227358818,
+        0.05809685401618481,
+        0.11809118464589119
+      ],
+      [
+        0.0852896086871624,
+        0.12441180646419525,
+        0.060756927356123924,
+        0.11501558870077133
+      ]
+    ],
+    "scope": "all 40000 local projected rows; omitted per-parameter maps not reviewed; remote raw not reread in this audit"
+  },
+  "algebra": {
+    "dice_lower_iou_worse_counterexample": {
+      "labels": [
+        1,
+        0
+      ],
+      "before_p": [
+        0.51,
+        0.49
+      ],
+      "after_p": [
+        0.49,
+        0.01
+      ],
+      "before_loss": 0.32008852094040163,
+      "after_loss": 0.2098031784939648,
+      "before_iou": 1,
+      "after_iou": 0
+    },
+    "empty_class_constant_p_half_2048_all_valid": {
+      "per_logit_derivative_before_image_class_averaging": 2.2737367543889523e-18,
+      "shared_bias_derivative_before_image_class_averaging": 9.5367431638806e-12,
+      "scope": "illustrative algebra, not measured logits or training gradient"
+    },
+    "empty_aux_crop_construction": {
+      "canvas_hw": [
+        2048,
+        2048
+      ],
+      "valid_support_yx": [
+        0,
+        768,
+        0,
+        1024
+      ],
+      "permitted_crop_yx": [
+        1024,
+        1792,
+        1024,
+        1792
+      ],
+      "crop_size": 768,
+      "crop_is_all_ignore": true,
+      "scope": "admissible padding/crop geometry, not a measured frequency"
+    }
+  },
+  "saved_input_hashes": {
+    "D:\\dataset\\experiment\\HRDecoder_NativePyramid_20261011\\server_execution_20261016\\completion_20261017\\final_validation.json": "9000d4f96c39240b7092dfa382c97c00323861cfb8f3e27fa9f8009c5428f08c",
+    "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\execution\\server_results\\runs\\S_seed42\\val_u20000\\metrics.json": "41d492ec19114055da41c90bfbf3dc6d692afb2e191483fe348d4b6d4e4fd441",
+    "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\结题报告\\evidence\\original_HRDecoder_baseline_evidence.json": "485ecb0e98412305172b07b29bfe8d221fc4f767d621c4407ee8aa6938a97a34",
+    "D:\\dataset\\experiment\\HRDecoder_NativePyramid_20261011\\review_20261017\\recovered_logs\\train_metrics_all40000.manifest.json": "b85f0958abe6f3de87524e697b0b6f36f2a71f49325a02d01539bd1b89e8dea8"
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "identity_SHA": "8f6fd8dfc7a032f335511168a4ae831f4c9a69f5aaaf00876842c11dc20c11cf",
+  "identity": {
+    "protocol": {
+      "design_version": 6,
+      "name": "HRDecoder-SACD",
+      "seed": 42,
+      "private_seed": 20261008,
+      "canvas": 2048,
+      "updates": 40000,
+      "global_batch": 2,
+      "precision": "BF16 network; FP32 probabilities/losses",
+      "optimizer": {
+        "type": "SGD",
+        "lr": 0.005,
+        "momentum": 0.9,
+        "weight_decay": 0.0005
+      },
+      "lr": {
+        "type": "poly",
+        "power": 1,
+        "warmup": 1500,
+        "warmup_ratio": 1e-06
+      },
+      "lambda_k": [
+        [
+          0,
+          0
+        ],
+        [
+          1500,
+          0
+        ],
+        [
+          4000,
+          0.5
+        ],
+        [
+          32000,
+          0.5
+        ],
+        [
+          40000,
+          0.1
+        ]
+      ],
+      "lambda_action": ".25*lambda_k",
+      "GT": ".75G(final)+.25G(base)+.1G(HRcrop)",
+      "KD": "K(final,T_star)+.25K(base,T); GT-consistent, all-valid denominator",
+      "action": "student-error aligned categorical KL; detached current base reference; fixed3 region denominator; active-valid sample/class macro",
+      "readout": "four independent 128->32 nonlinear action readouts; shared L/G; .98/.01/.01 zero-weight initialization",
+      "gradient_route": "task all; action only L/G/head",
+      "inference": "resize base and action logits separately, then transport",
+      "classes": [
+        "EX",
+        "HE",
+        "SE",
+        "MA"
+      ],
+      "threshold": "strictly > .5",
+      "validation_images": 76,
+      "validation_interval": 4000,
+      "student_TTA": false,
+      "inference_teacher": false,
+      "inference_online_H4": false,
+      "train_probabilities_in_sample": true,
+      "OOF": false,
+      "test_selection": false,
+      "shutdown_after_completion": false,
+      "data_cache_hash_rescan": false
+    },
+    "code": {
+      "baseline.py": "3e19781d2172a7b211f80994739b387d3235c966dd9c81b2f777e1b3c33b2aa9",
+      "model.py": "0857c0f1a6ac29e49adf8cb39d62ee7a7c115384de40f07147c85d171ff561bf",
+      "private_modules.py": "08541136cd72e039a02f145adba9410b404f6852bc226ab716639e43cc82ec60",
+      "stable_objectives.py": "bf79135d2f756b4abcad655beee9ed24f7bde738f62588a5532917e4b881e3ae",
+      "fast_objectives.py": "b90c236dc6727b746e6e7e424f417479a10670d27a8c9c196b357f72a69684c6",
+      "objectives.py": "9f67cf16211f3abc10d79521dd27d6783026a62db0d15a0287fe0bc4a3cd60d1",
+      "data.py": "6145eb862cf75b895767ad627b4bac9ae6a417feacd92c909a4771765bce6545",
+      "loader.py": "353674fbe260e9232540283bd4198b0b24642950309edfdbc3ecb7475d498533",
+      "train.py": "a3d1b20b06fe52ee3c0ec5867945577b640b87cf550c02100d3bb07fe1a6ed39"
+    },
+    "spec_SHA": "d3a5b582d8e6106a4b9dc5802fd3ae1ec02b700098d90f2938be32c233a335fd",
+    "ImageNet_W48_SHA": "d2186c55782308392ae14cf179ac4840143b09abdbba81aa3f9274c795ebc960",
+    "data_identity_SHA": "7c53b86bcb27ccd121042f667cc58e39b98716a8c477bfd1f1657fa126575719",
+    "cache_identity": {
+      "A": "0674eb8fd875187e92bc4369e6fc41eb906339acb1f2057bd1d2dcd6c6933ec1",
+      "U": "1696b6eed682e116e98b6630bd429bd49986c24323010215fa8a0b4364952aa5",
+      "S": "b9f9886b393b14c2a25863d56fdbc1f6667bfab1200410d83fd0eb223471207a"
+    },
+    "torch": "2.0.1+cu117"
+  },
+  "baseline_initial_state_SHA": "e180ed1738b5cde6797e60a124aaf75b3cc78309463bb358a240cbddf0480f00",
+  "initialization": "fresh ImageNet seed42; no task checkpoint"
+}

@@ -1,0 +1,27 @@
+{
+  "time": "2026-10-05T16:21:54.873481+00:00",
+  "primary": {
+    "boundary": {
+      "stage": "ARMED_AFTER_D42_BOUNDARY",
+      "pid": 44281,
+      "time": "2026-10-05T04:11:34.270609+00:00"
+    },
+    "boundary_pid": 44281,
+    "boundary_alive": true,
+    "SD_import": {
+      "stage": "FULL_RUN_IMPORT_VERIFIED",
+      "run": "SD_seed42",
+      "source_instance": "connect.nmb1.seetacloud.com:40920",
+      "destination_instance": "connect.nmb2.seetacloud.com:36431",
+      "all_binaries_in_authentic_foreign_SHA_custody": true,
+      "no_duplicate_training": true,
+      "metadata_file_count": 3841
+    },
+    "SD_status": {
+      "stage": "COMPLETE",
+      "completed": 32000,
+      "endpoint": 32000,
+      "updated_at": "2026-10-05T15:24:29.839699+00:00"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "training_endpoint": 40000,
+  "endpoint_zero_based_metadata_iter": 39999,
+  "original_MMCV_iteration_semantics_verified": true,
+  "selected_by_original_validation_hook": true,
+  "selected_node": 16000,
+  "all10predeclared_validation_nodes": true,
+  "artifacts": {
+    "baseline_best_u16000": {
+      "sha256": "02bb7a4a28120b565516d287160985135a84dc6142cc09929d2d975330a21372",
+      "state_tensors": 1844,
+      "optimizer_tensors": 923
+    },
+    "baseline_endpoint_u40000": {
+      "sha256": "256035ecfc6e7f7197b142104ed2195869d3766ffa342a7bdab2a2e625e3d40e",
+      "state_tensors": 1844,
+      "optimizer_tensors": 923
+    }
+  },
+  "identity": "New baseline reproduction, not historical42.20 model recovery",
+  "CPU_only": true
+}

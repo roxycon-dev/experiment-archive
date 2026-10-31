@@ -1,0 +1,9 @@
+{
+  "stage": "EXACT_CWD_OWNER_GUARD_RECOVERED",
+  "pid": 76720,
+  "source_sha256": "efd7397ef22e4d355fd80531c3269c94b69a50a09591225c3e58e33ae02590f2",
+  "reason": "Original owner uses a relative script path; verify the actual/proc cwd plus exact script and atomic ownerPID instead of requiring an absolute argv path. Original guard failed before any process signal.",
+  "no_training_or_test_restart": true,
+  "original_finalizer_pid": 44281,
+  "time": "2026-10-05T17:19:59.738542+00:00"
+}

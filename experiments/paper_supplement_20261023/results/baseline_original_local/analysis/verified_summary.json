@@ -1,0 +1,200 @@
+{
+  "status": "PASS_LOCAL_MASK_AND_GT_SHA_RECOUNT",
+  "name": "baseline_original_seed42",
+  "source_archive_sha256": "599f0e8fa6ff9103e644a33052f762aa134508ab085fe853d345f822c33d3a1e",
+  "model_checkpoint_SHA_from_run": "7455a7d3f4c8ed051abc1a127ef90045f9193d7b0f57628acf5a6e9613eecfa7",
+  "cohorts": {
+    "val": {
+      "baseline": {
+        "mIoU_pct": 39.392558128584724,
+        "EX_IoU_pct": 43.96164366562046,
+        "HE_IoU_pct": 42.35987638353777,
+        "SE_IoU_pct": 51.1706299541093,
+        "MA_IoU_pct": 20.0780825110714,
+        "MA_pixel_precision_pct": 38.033040214871775,
+        "MA_pixel_recall_pct": 29.839501183534438,
+        "global_counts": [
+          [
+            170041,
+            95991,
+            120762
+          ],
+          [
+            622292,
+            263136,
+            583632
+          ],
+          [
+            122656,
+            38296,
+            78748
+          ],
+          [
+            20674,
+            33684,
+            48610
+          ]
+        ]
+      },
+      "MA_lesion": {
+        "TP": 408,
+        "FP": 278,
+        "FN": 666,
+        "detection_pct": 37.988826815642454,
+        "false_positives_per_image": 3.6578947368421053,
+        "lesion_precision_pct": 59.475218658892125,
+        "size_groups": {
+          "small": {
+            "gt": 419,
+            "detected": 107,
+            "detection_pct": 25.53699284009546
+          },
+          "medium": {
+            "gt": 363,
+            "detected": 160,
+            "detection_pct": 44.0771349862259
+          },
+          "large": {
+            "gt": 292,
+            "detected": 141,
+            "detection_pct": 48.28767123287671
+          }
+        },
+        "size_boundaries_pixels": [
+          32,
+          74
+        ],
+        "matching": "8-connectivity;IoU>=.10;maximum cardinality then IoU;one-to-one"
+      }
+    },
+    "ddr": {
+      "baseline": {
+        "mIoU_pct": 42.19623779633788,
+        "EX_IoU_pct": 51.56060267683247,
+        "HE_IoU_pct": 43.12728820097811,
+        "SE_IoU_pct": 49.98760079696946,
+        "MA_IoU_pct": 24.109459510571504,
+        "MA_pixel_precision_pct": 46.160475052501994,
+        "MA_pixel_recall_pct": 33.541356429860606,
+        "global_counts": [
+          [
+            992753,
+            350469,
+            582188
+          ],
+          [
+            1572957,
+            593765,
+            1480521
+          ],
+          [
+            350742,
+            131140,
+            219776
+          ],
+          [
+            63743,
+            74347,
+            126300
+          ]
+        ]
+      },
+      "MA_lesion": {
+        "TP": 1032,
+        "FP": 649,
+        "FN": 1481,
+        "detection_pct": 41.06645443692798,
+        "false_positives_per_image": 2.859030837004405,
+        "lesion_precision_pct": 61.39202855443189,
+        "size_groups": {
+          "small": {
+            "gt": 891,
+            "detected": 211,
+            "detection_pct": 23.681257014590347
+          },
+          "medium": {
+            "gt": 752,
+            "detected": 360,
+            "detection_pct": 47.87234042553192
+          },
+          "large": {
+            "gt": 870,
+            "detected": 461,
+            "detection_pct": 52.98850574712644
+          }
+        },
+        "size_boundaries_pixels": [
+          32,
+          74
+        ],
+        "matching": "8-connectivity;IoU>=.10;maximum cardinality then IoU;one-to-one"
+      }
+    },
+    "idrid": {
+      "baseline": {
+        "mIoU_pct": 35.595664799894415,
+        "EX_IoU_pct": 50.54281995700749,
+        "HE_IoU_pct": 36.93576890407335,
+        "SE_IoU_pct": 37.45886979151371,
+        "MA_IoU_pct": 17.4452005469831,
+        "MA_pixel_precision_pct": 57.470345195255234,
+        "MA_pixel_recall_pct": 20.031217481789803,
+        "global_counts": [
+          [
+            2016657,
+            508022,
+            1465318
+          ],
+          [
+            1566296,
+            861361,
+            1812937
+          ],
+          [
+            267871,
+            131715,
+            315521
+          ],
+          [
+            64680,
+            47865,
+            258216
+          ]
+        ]
+      },
+      "MA_lesion": {
+        "TP": 350,
+        "FP": 133,
+        "FN": 735,
+        "detection_pct": 32.25806451612903,
+        "false_positives_per_image": 4.925925925925926,
+        "lesion_precision_pct": 72.46376811594203,
+        "size_groups": {
+          "small": {
+            "gt": 4,
+            "detected": 0,
+            "detection_pct": 0.0
+          },
+          "medium": {
+            "gt": 49,
+            "detected": 3,
+            "detection_pct": 6.122448979591836
+          },
+          "large": {
+            "gt": 1032,
+            "detected": 347,
+            "detection_pct": 33.62403100775194
+          }
+        },
+        "size_boundaries_pixels": [
+          32,
+          74
+        ],
+        "matching": "8-connectivity;IoU>=.10;maximum cardinality then IoU;one-to-one"
+      }
+    }
+  },
+  "P0_per_image_SHA": null,
+  "model_bytes_local_backup": "SEPARATE_PENDING",
+  "raw_probabilities_local_backup": false
+}

@@ -1,0 +1,40 @@
+{
+  "models": [
+    {
+      "config": "configs/lesion/exp/hrplus_patch_dice.py",
+      "ckpt": "/root/autodl-tmp/hrplus/results/E_0916/d_renorm_all.pth",
+      "weight": 1.0
+    }
+  ],
+  "load_report": [
+    {
+      "ckpt": "d_renorm_all.pth",
+      "missing": [
+        "s",
+        "t",
+        "a",
+        "t",
+        "e",
+        "_",
+        "d",
+        "i"
+      ],
+      "unexpected": "meta"
+    }
+  ],
+  "flip_tta": false,
+  "split": "val",
+  "n_images": 76,
+  "mIoU": 0.25285620078560833,
+  "mF1": 0.38407346909431905,
+  "mPPV": 0.7417993007001257,
+  "mS": 0.28247058134208425,
+  "mAUPR": 0.5370646428927377,
+  "per_class_iou": {
+    "bg": "nan",
+    "EX": "32.52",
+    "HE": "29.45",
+    "SE": "36.05",
+    "MA": "3.12"
+  }
+}

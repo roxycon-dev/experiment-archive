@@ -1,0 +1,23 @@
+{
+  "status": "stopped",
+  "stop_reason": "paired_no_gain_or_learning",
+  "elapsed_seconds": 780.6715540440055,
+  "stage": "ddr_finetune",
+  "mode": "formal",
+  "updates_done": 2000,
+  "micro_steps": 4008,
+  "best": {
+    "mIoU_lesion4": 0.3908638255464669,
+    "update": 1000,
+    "selection_score": 0.43366298706385487,
+    "selection_metric": "fixed_fusion_miou"
+  },
+  "config_file_sha256": "17c15fd8ffd2bc6534080467bc6bfe4821f5250ba158d90a867ee1f7669381b8",
+  "resume_warnings": [],
+  "checkpoints": {
+    "last": "/root/autodl-tmp/HRDecoder_Ready_20261002/round2_highres/work_dirs/U0_continuation2048/ckpt_last.pth",
+    "best": "/root/autodl-tmp/HRDecoder_Ready_20261002/round2_highres/work_dirs/U0_continuation2048/ckpt_best.pth",
+    "final": "/root/autodl-tmp/HRDecoder_Ready_20261002/round2_highres/work_dirs/U0_continuation2048/ckpt_final.pth"
+  },
+  "generated_at": "2026-10-02T16:13:59.627164+00:00"
+}

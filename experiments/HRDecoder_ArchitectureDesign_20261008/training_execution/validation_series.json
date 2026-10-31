@@ -1,0 +1,328 @@
+{
+  "validation_images": 76,
+  "records": [
+    {
+      "step": 4000,
+      "mIoU_percent": 29.485856338036392,
+      "classes": [
+        {
+          "name": "EX",
+          "counts": [
+            152842,
+            100406,
+            137961
+          ],
+          "IoU_percent": 39.069142069839906,
+          "precision_percent": 60.35269775082133,
+          "recall_percent": 52.55860496624864,
+          "Dice_F1_percent": 56.18664426680587
+        },
+        {
+          "name": "HE",
+          "counts": [
+            500309,
+            172869,
+            705615
+          ],
+          "IoU_percent": 36.286012476129486,
+          "precision_percent": 74.32046204718515,
+          "recall_percent": 41.48760618413764,
+          "Dice_F1_percent": 53.24979697749244
+        },
+        {
+          "name": "SE",
+          "counts": [
+            135516,
+            290314,
+            65888
+          ],
+          "IoU_percent": 27.5596988517809,
+          "precision_percent": 31.823967310898716,
+          "recall_percent": 67.28565470397807,
+          "Dice_F1_percent": 43.2106677890548
+        },
+        {
+          "name": "MA",
+          "counts": [
+            16332,
+            39389,
+            52952
+          ],
+          "IoU_percent": 15.028571954395295,
+          "precision_percent": 29.310313885249727,
+          "recall_percent": 23.572542001039203,
+          "Dice_F1_percent": 26.130154793808245
+        }
+      ],
+      "counts_verified": true,
+      "mIoU_delta_pp": null,
+      "class_IoU_delta_pp": null,
+      "source": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\cache_execution\\server_receipts\\training_runs\\v3\\val_04000.json",
+      "historical_baseline_mIoU_percent": 21.557000000000002,
+      "v3_minus_historical_baseline_pp": 7.92885633803639
+    },
+    {
+      "step": 8000,
+      "mIoU_percent": 37.988196754202605,
+      "classes": [
+        {
+          "name": "EX",
+          "counts": [
+            147288,
+            95934,
+            143515
+          ],
+          "IoU_percent": 38.084796644748245,
+          "precision_percent": 60.557021979919575,
+          "recall_percent": 50.64872095542343,
+          "Dice_F1_percent": 55.16146247834839
+        },
+        {
+          "name": "HE",
+          "counts": [
+            683875,
+            311787,
+            522049
+          ],
+          "IoU_percent": 45.05963256509309,
+          "precision_percent": 68.68545751469877,
+          "recall_percent": 56.7096268089863,
+          "Dice_F1_percent": 62.12566758691235
+        },
+        {
+          "name": "SE",
+          "counts": [
+            116412,
+            36242,
+            84992
+          ],
+          "IoU_percent": 48.985465776827716,
+          "precision_percent": 76.25872889016992,
+          "recall_percent": 57.80024229906059,
+          "Dice_F1_percent": 65.758717498263
+        },
+        {
+          "name": "MA",
+          "counts": [
+            25228,
+            57983,
+            44056
+          ],
+          "IoU_percent": 19.822892030141357,
+          "precision_percent": 30.318106981048174,
+          "recall_percent": 36.412447318284165,
+          "Dice_F1_percent": 33.08698645857241
+        }
+      ],
+      "counts_verified": true,
+      "mIoU_delta_pp": 8.502340416166213,
+      "class_IoU_delta_pp": [
+        -0.9843454250916608,
+        8.773620088963604,
+        21.425766925046815,
+        4.794320075746063
+      ],
+      "source": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\cache_execution\\server_receipts\\training_runs\\v3\\val_08000.json",
+      "historical_baseline_mIoU_percent": 32.132,
+      "v3_minus_historical_baseline_pp": 5.856196754202607
+    },
+    {
+      "step": 12000,
+      "mIoU_percent": 36.913396173373584,
+      "classes": [
+        {
+          "name": "EX",
+          "counts": [
+            155709,
+            86222,
+            135094
+          ],
+          "IoU_percent": 41.2993833300179,
+          "precision_percent": 64.36091282225097,
+          "recall_percent": 53.54449575829685,
+          "Dice_F1_percent": 58.4565655655543
+        },
+        {
+          "name": "HE",
+          "counts": [
+            632766,
+            409961,
+            573158
+          ],
+          "IoU_percent": 39.15909857446538,
+          "precision_percent": 60.68376478215295,
+          "recall_percent": 52.471465863520415,
+          "Dice_F1_percent": 56.27960941915842
+        },
+        {
+          "name": "SE",
+          "counts": [
+            109257,
+            33627,
+            92147
+          ],
+          "IoU_percent": 46.486208202322246,
+          "precision_percent": 76.4655244813975,
+          "recall_percent": 54.24768127743243,
+          "Dice_F1_percent": 63.46837531369086
+        },
+        {
+          "name": "MA",
+          "counts": [
+            22938,
+            41480,
+            46346
+          ],
+          "IoU_percent": 20.708894586688817,
+          "precision_percent": 35.60805985904561,
+          "recall_percent": 33.10721090006351,
+          "Dice_F1_percent": 34.312126968930905
+        }
+      ],
+      "counts_verified": true,
+      "mIoU_delta_pp": -1.0748005808290202,
+      "class_IoU_delta_pp": [
+        3.2145866852696585,
+        -5.900533990627707,
+        -2.499257574505471,
+        0.8860025565474601
+      ],
+      "source": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\cache_execution\\server_receipts\\training_runs\\v3\\val_12000.json",
+      "historical_baseline_mIoU_percent": 34.479,
+      "v3_minus_historical_baseline_pp": 2.4343961733735853
+    },
+    {
+      "step": 16000,
+      "mIoU_percent": 34.984864878912056,
+      "classes": [
+        {
+          "name": "EX",
+          "counts": [
+            173200,
+            124952,
+            117603
+          ],
+          "IoU_percent": 41.659150220682854,
+          "precision_percent": 58.09117497115566,
+          "recall_percent": 59.55922050322727,
+          "Dice_F1_percent": 58.81603857680129
+        },
+        {
+          "name": "HE",
+          "counts": [
+            594859,
+            328153,
+            611065
+          ],
+          "IoU_percent": 38.7763456462746,
+          "precision_percent": 64.44759114724403,
+          "recall_percent": 49.32806710870668,
+          "Dice_F1_percent": 55.88322053833464
+        },
+        {
+          "name": "SE",
+          "counts": [
+            92601,
+            28730,
+            108803
+          ],
+          "IoU_percent": 40.23786141986842,
+          "precision_percent": 76.32097320552867,
+          "recall_percent": 45.97773629123553,
+          "Dice_F1_percent": 57.38516120036562
+        },
+        {
+          "name": "MA",
+          "counts": [
+            29969,
+            86269,
+            39315
+          ],
+          "IoU_percent": 19.26610222882233,
+          "precision_percent": 25.782446360054372,
+          "recall_percent": 43.255297038277234,
+          "Dice_F1_percent": 32.30775864856998
+        }
+      ],
+      "counts_verified": true,
+      "mIoU_delta_pp": -1.9285312944615285,
+      "class_IoU_delta_pp": [
+        0.35976689066495027,
+        -0.3827529281907829,
+        -6.248346782453822,
+        -1.4427923578664874
+      ],
+      "source": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\cache_execution\\server_receipts\\training_runs\\v3\\val_16000.json",
+      "historical_baseline_mIoU_percent": 38.348,
+      "v3_minus_historical_baseline_pp": -3.363135121087943
+    },
+    {
+      "step": 20000,
+      "mIoU_percent": 15.050912466184402,
+      "classes": [
+        {
+          "name": "EX",
+          "counts": [
+            0,
+            0,
+            290803
+          ],
+          "IoU_percent": 0.0,
+          "precision_percent": 0.0,
+          "recall_percent": 0.0,
+          "Dice_F1_percent": 0.0
+        },
+        {
+          "name": "HE",
+          "counts": [
+            579594,
+            179170,
+            626330
+          ],
+          "IoU_percent": 41.84510220966953,
+          "precision_percent": 76.386597150102,
+          "recall_percent": 48.062232777521636,
+          "Dice_F1_percent": 59.00112384256432
+        },
+        {
+          "name": "SE",
+          "counts": [
+            0,
+            0,
+            201404
+          ],
+          "IoU_percent": 0.0,
+          "precision_percent": 0.0,
+          "recall_percent": 0.0,
+          "Dice_F1_percent": 0.0
+        },
+        {
+          "name": "MA",
+          "counts": [
+            19416,
+            36476,
+            49868
+          ],
+          "IoU_percent": 18.358547655068076,
+          "precision_percent": 34.738424103628425,
+          "recall_percent": 28.02378615553375,
+          "Dice_F1_percent": 31.021921135041865
+        }
+      ],
+      "counts_verified": true,
+      "mIoU_delta_pp": -19.933952412727656,
+      "class_IoU_delta_pp": [
+        -41.659150220682854,
+        3.0687565633949276,
+        -40.23786141986842,
+        -0.9075545737542541
+      ],
+      "source": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\cache_execution\\server_receipts\\training_runs\\v3\\val_20000.json",
+      "historical_baseline_mIoU_percent": 32.523,
+      "v3_minus_historical_baseline_pp": -17.472087533815603
+    }
+  ],
+  "best_val_step": 8000,
+  "best_val_mIoU": 37.988196754202605,
+  "unreported_steps": []
+}

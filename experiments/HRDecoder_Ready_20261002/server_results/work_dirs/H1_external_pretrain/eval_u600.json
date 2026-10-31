@@ -1,0 +1,73 @@
+{
+  "protocol": "whole_image_accumulated_counts",
+  "threshold": 0.5,
+  "n_images": 6,
+  "per_class": {
+    "EX": {
+      "iou": 0.39051626377750404,
+      "f1": 0.5616852876162984,
+      "ppv": 0.7878392613196833,
+      "recall": 0.4364109214985948,
+      "aupr": 0.5681059879106256,
+      "tp": 191467,
+      "fp": 51561,
+      "fn": 247264,
+      "gt_positive_pixels": 438731
+    },
+    "HE": {
+      "iou": 0.20780237370728388,
+      "f1": 0.34409995911739394,
+      "ppv": 0.5209023736661011,
+      "recall": 0.25690304626012395,
+      "aupr": 0.25173733957030286,
+      "tp": 525628,
+      "fp": 483444,
+      "fn": 1520389,
+      "gt_positive_pixels": 2046017
+    },
+    "SE": {
+      "iou": 0.36786317180732037,
+      "f1": 0.5378654523189959,
+      "ppv": 0.48261091630148806,
+      "recall": 0.6074081276570459,
+      "aupr": 0.5450818032076892,
+      "tp": 112444,
+      "fp": 120547,
+      "fn": 72677,
+      "gt_positive_pixels": 185121
+    },
+    "MA": {
+      "iou": 0.08339882376309449,
+      "f1": 0.15395775209246712,
+      "ppv": 0.11011151399055893,
+      "recall": 0.2558281233442831,
+      "aupr": 0.08212667303340965,
+      "tp": 9657,
+      "fp": 78045,
+      "fn": 28091,
+      "gt_positive_pixels": 37748
+    }
+  },
+  "mIoU_lesion4": 0.2623951582638007,
+  "mF1": 0.39940211278628884,
+  "mPPV": 0.4753660163194578,
+  "mRecall": 0.38913755469001193,
+  "mAUPR": 0.3617629509305068,
+  "excluded_classes": {
+    "iou": [],
+    "aupr": []
+  },
+  "aupr_note": "256-bin histogram approximation of PR curve",
+  "split": "external_train_derived_dev",
+  "mode": "formal",
+  "eval_images": 6,
+  "resize_to": [
+    2048,
+    2048
+  ],
+  "dataset_size": 6,
+  "eval_inference": "whole_image",
+  "update": 600,
+  "stage": "external_pretrain",
+  "generated_at": "2026-10-02T04:29:19.025859+00:00"
+}

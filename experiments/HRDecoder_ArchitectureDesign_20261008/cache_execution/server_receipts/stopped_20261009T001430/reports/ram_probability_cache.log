@@ -1,0 +1,42 @@
+Traceback (most recent call last):
+  File "ram_probability_cache.py", line 77, in <module>
+    if __name__ == "__main__": main()
+  File "ram_probability_cache.py", line 61, in main
+    mapping.update(future.result())
+  File "/root/miniconda3/lib/python3.8/concurrent/futures/_base.py", line 437, in result
+    return self.__get_result()
+  File "/root/miniconda3/lib/python3.8/concurrent/futures/_base.py", line 389, in __get_result
+    raise self._exception
+  File "/root/miniconda3/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "ram_probability_cache.py", line 39, in extract
+    descriptor = os.memfd_create("HRDecoder-"+member+"-"+row["sid"], os.MFD_CLOEXEC)
+AttributeError: module 'os' has no attribute 'memfd_create'
+Traceback (most recent call last):
+  File "/root/autodl-tmp/HRDecoder_v3_20261008/training_execution/ram_probability_cache.py", line 97, in <module>
+    if __name__ == "__main__": main()
+                               ^^^^^^
+  File "/root/autodl-tmp/HRDecoder_v3_20261008/training_execution/ram_probability_cache.py", line 30, in main
+    assert used < budget, "Decoded cache plus required runtime margin does not fit"
+           ^^^^^^^^^^^^^
+AssertionError: Decoded cache plus required runtime margin does not fit
+Traceback (most recent call last):
+  File "/root/autodl-tmp/HRDecoder_v3_20261008/training_execution/ram_probability_cache.py", line 102, in <module>
+    if __name__ == "__main__": main()
+                               ^^^^^^
+  File "/root/autodl-tmp/HRDecoder_v3_20261008/training_execution/ram_probability_cache.py", line 66, in main
+    mapping.update(future.result())
+                   ^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/HRDecoder_v3_20261008/training_execution/ram_probability_cache.py", line 44, in extract
+    descriptor = os.memfd_create("HRDecoder-"+member+"-"+row["sid"], os.MFD_CLOEXEC)
+                 ^^^^^^^^^^^^^^^
+AttributeError: module 'os' has no attribute 'memfd_create'
+{"status": "READY", "pid": 3200, "selected_images": 454, "total_images": 454, "budget_bytes": 119322193920, "bytes": 112635487296, "source_probabilities_unchanged": true, "storage": "shared memfd, read-only mmap in workers", "hash_rescan": false, "seconds": 296.6097583770752}

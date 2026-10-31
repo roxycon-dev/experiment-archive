@@ -1,0 +1,43 @@
+{
+  "config": "configs/lesion/exp/hrplus_maond.py",
+  "checks": {
+    "1_only_head_trainable": {
+      "trainable_count": 20,
+      "frozen_count": 1882,
+      "violations": [],
+      "pass": true
+    },
+    "2_identity_at_init": {
+      "max_abs_diff": 0.0,
+      "pass": true
+    },
+    "losses": {
+      "names": [
+        "loss_seg"
+      ],
+      "values": {
+        "loss_seg": 0.7711479067802429
+      },
+      "finite": true
+    },
+    "3_frozen_base_unchanged": {
+      "before": "13a153b9d1d96e3d",
+      "after": "13a153b9d1d96e3d",
+      "pass": true
+    },
+    "5_grad_flow": {
+      "head_grad_sum": 0.09126433217898011,
+      "base_grad_sum": 0,
+      "pass": true
+    },
+    "4_other_classes_untouched": {
+      "max_diff_EX_HE_SE": 0.0,
+      "max_diff_MA": 1.0281801223754883e-05,
+      "pass": true
+    }
+  },
+  "status": "success",
+  "versions": {
+    "torch": "2.0.1+cu117"
+  }
+}

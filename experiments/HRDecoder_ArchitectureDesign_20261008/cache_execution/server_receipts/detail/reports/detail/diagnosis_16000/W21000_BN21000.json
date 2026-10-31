@@ -1,0 +1,118 @@
+{
+  "mIoU_percent": 16.366459521659177,
+  "IoU_percent": [
+    0.0,
+    44.16202627565236,
+    0.0,
+    21.303811810984342
+  ],
+  "precision_percent": [
+    0.0,
+    72.65231609179061,
+    0.0,
+    29.617190750757892
+  ],
+  "recall_percent": [
+    0.0,
+    52.96693655653259,
+    0.0,
+    43.14849027192425
+  ],
+  "counts": [
+    [
+      0,
+      0,
+      290803
+    ],
+    [
+      638741,
+      240434,
+      567183
+    ],
+    [
+      0,
+      0,
+      201404
+    ],
+    [
+      29895,
+      71043,
+      39389
+    ]
+  ],
+  "class_order": [
+    "EX",
+    "HE",
+    "SE",
+    "MA"
+  ],
+  "undefined_precision_convention": "zero when TP+FP=0; inspect counts",
+  "images": 76,
+  "threshold": "strictly > .5",
+  "base_head_metrics": {
+    "mIoU_percent": 16.2384993409418,
+    "IoU_percent": [
+      0.0,
+      43.78071925472304,
+      0.0,
+      21.173278109044166
+    ],
+    "precision_percent": [
+      0.0,
+      72.8483114411868,
+      0.0,
+      29.531578370733357
+    ],
+    "recall_percent": [
+      0.0,
+      52.31780775571263,
+      0.0,
+      42.79487327521505
+    ],
+    "counts": [
+      [
+        0,
+        0,
+        290803
+      ],
+      [
+        630913,
+        235151,
+        575011
+      ],
+      [
+        0,
+        0,
+        201404
+      ],
+      [
+        29650,
+        70751,
+        39634
+      ]
+    ],
+    "class_order": [
+      "EX",
+      "HE",
+      "SE",
+      "MA"
+    ],
+    "undefined_precision_convention": "zero when TP+FP=0; inspect counts",
+    "images": 76,
+    "threshold": "strictly > .5"
+  },
+  "seconds": 32.978906504809856,
+  "deployment_inference_verified": true,
+  "teacher_or_GT_input": false,
+  "arm": "W21000_BN21000",
+  "weight_step": 21000,
+  "bn_buffer_step": 21000,
+  "identity_SHA": "046abab773f7cb7a9e4f0a0f9cc44c4ad32d48431b971f22720dc8bd7936168a",
+  "diagnostic_only": true,
+  "formal_updates": 0,
+  "test_accessed": false,
+  "swapped_buffers_only": true,
+  "affine_parameters_follow_weights": true,
+  "time_unix": 1791600741.8706172,
+  "wall_seconds": 32.98608922958374
+}

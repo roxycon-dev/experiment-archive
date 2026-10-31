@@ -1,0 +1,549 @@
+{
+  "formal_updates": 0,
+  "checkpoint": 20000,
+  "classifier_row_comparison": [
+    {
+      "class": "EX",
+      "cosine_8k_20k": 0.9916514754295349,
+      "mean_weight_8k": -0.1949860006570816,
+      "mean_weight_20k": -0.36031919717788696
+    },
+    {
+      "class": "HE",
+      "cosine_8k_20k": 0.9938747882843018,
+      "mean_weight_8k": -0.19296139478683472,
+      "mean_weight_20k": -0.19423241913318634
+    },
+    {
+      "class": "SE",
+      "cosine_8k_20k": 0.9827418327331543,
+      "mean_weight_8k": -0.17915195226669312,
+      "mean_weight_20k": -0.4054761528968811
+    },
+    {
+      "class": "MA",
+      "cosine_8k_20k": 0.997087299823761,
+      "mean_weight_8k": -0.21356329321861267,
+      "mean_weight_20k": -0.2251216620206833
+    }
+  ],
+  "records": [
+    {
+      "mode": "original_20k",
+      "split": "train",
+      "sid": "007-3396-200",
+      "classes": [
+        {
+          "class": "EX",
+          "max_probability": 1.0041416317108087e-05,
+          "counts": [
+            0,
+            0,
+            796
+          ]
+        },
+        {
+          "class": "HE",
+          "max_probability": 0.9994242191314697,
+          "counts": [
+            16040,
+            5261,
+            7481
+          ]
+        },
+        {
+          "class": "SE",
+          "max_probability": 1.5645416624465724e-06,
+          "counts": [
+            0,
+            0,
+            1672
+          ]
+        },
+        {
+          "class": "MA",
+          "max_probability": 0.9789047837257385,
+          "counts": [
+            68,
+            155,
+            491
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "original_20k",
+      "split": "train",
+      "sid": "007-3448-200",
+      "classes": [
+        {
+          "class": "EX",
+          "max_probability": 2.6363279630459147e-06,
+          "counts": [
+            0,
+            0,
+            7722
+          ]
+        },
+        {
+          "class": "HE",
+          "max_probability": 0.9899203777313232,
+          "counts": [
+            2268,
+            1000,
+            3935
+          ]
+        },
+        {
+          "class": "SE",
+          "max_probability": 2.4398471509812225e-07,
+          "counts": [
+            0,
+            0,
+            756
+          ]
+        },
+        {
+          "class": "MA",
+          "max_probability": 0.9936001300811768,
+          "counts": [
+            190,
+            107,
+            210
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "original_20k",
+      "split": "val",
+      "sid": "007-3873-200",
+      "classes": [
+        {
+          "class": "EX",
+          "max_probability": 3.6771757550013717e-06,
+          "counts": [
+            0,
+            0,
+            580
+          ]
+        },
+        {
+          "class": "HE",
+          "max_probability": 0.9993728995323181,
+          "counts": [
+            3509,
+            2493,
+            811
+          ]
+        },
+        {
+          "class": "SE",
+          "max_probability": 4.4216375272299047e-07,
+          "counts": [
+            0,
+            0,
+            1168
+          ]
+        },
+        {
+          "class": "MA",
+          "max_probability": 0.9775230288505554,
+          "counts": [
+            67,
+            292,
+            149
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "original_20k",
+      "split": "val",
+      "sid": "007-4960-300",
+      "classes": [
+        {
+          "class": "EX",
+          "max_probability": 0.00011011749302269891,
+          "counts": [
+            0,
+            0,
+            6615
+          ]
+        },
+        {
+          "class": "HE",
+          "max_probability": 0.998056173324585,
+          "counts": [
+            3260,
+            2304,
+            3672
+          ]
+        },
+        {
+          "class": "SE",
+          "max_probability": 4.1267213646278833e-07,
+          "counts": [
+            0,
+            0,
+            3262
+          ]
+        },
+        {
+          "class": "MA",
+          "max_probability": 0.9766197800636292,
+          "counts": [
+            81,
+            51,
+            307
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "EX_SE_classifier_rows_from_8k",
+      "split": "train",
+      "sid": "007-3396-200",
+      "classes": [
+        {
+          "class": "EX",
+          "max_probability": 0.001184077002108097,
+          "counts": [
+            0,
+            0,
+            796
+          ]
+        },
+        {
+          "class": "HE",
+          "max_probability": 0.9994242191314697,
+          "counts": [
+            16040,
+            5261,
+            7481
+          ]
+        },
+        {
+          "class": "SE",
+          "max_probability": 0.000909338821657002,
+          "counts": [
+            0,
+            0,
+            1672
+          ]
+        },
+        {
+          "class": "MA",
+          "max_probability": 0.9789047837257385,
+          "counts": [
+            68,
+            155,
+            491
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "EX_SE_classifier_rows_from_8k",
+      "split": "train",
+      "sid": "007-3448-200",
+      "classes": [
+        {
+          "class": "EX",
+          "max_probability": 0.0005750801647081971,
+          "counts": [
+            0,
+            0,
+            7722
+          ]
+        },
+        {
+          "class": "HE",
+          "max_probability": 0.9899203777313232,
+          "counts": [
+            2268,
+            1000,
+            3935
+          ]
+        },
+        {
+          "class": "SE",
+          "max_probability": 0.00036273457226343453,
+          "counts": [
+            0,
+            0,
+            756
+          ]
+        },
+        {
+          "class": "MA",
+          "max_probability": 0.9936001300811768,
+          "counts": [
+            190,
+            107,
+            210
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "EX_SE_classifier_rows_from_8k",
+      "split": "val",
+      "sid": "007-3873-200",
+      "classes": [
+        {
+          "class": "EX",
+          "max_probability": 0.0008595793624408543,
+          "counts": [
+            0,
+            0,
+            580
+          ]
+        },
+        {
+          "class": "HE",
+          "max_probability": 0.9993728995323181,
+          "counts": [
+            3509,
+            2493,
+            811
+          ]
+        },
+        {
+          "class": "SE",
+          "max_probability": 0.0005521996645256877,
+          "counts": [
+            0,
+            0,
+            1168
+          ]
+        },
+        {
+          "class": "MA",
+          "max_probability": 0.9775230288505554,
+          "counts": [
+            67,
+            292,
+            149
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "EX_SE_classifier_rows_from_8k",
+      "split": "val",
+      "sid": "007-4960-300",
+      "classes": [
+        {
+          "class": "EX",
+          "max_probability": 0.009133362211287022,
+          "counts": [
+            0,
+            0,
+            6615
+          ]
+        },
+        {
+          "class": "HE",
+          "max_probability": 0.998056173324585,
+          "counts": [
+            3260,
+            2304,
+            3672
+          ]
+        },
+        {
+          "class": "SE",
+          "max_probability": 0.00039962452137842774,
+          "counts": [
+            0,
+            0,
+            3262
+          ]
+        },
+        {
+          "class": "MA",
+          "max_probability": 0.9766197800636292,
+          "counts": [
+            81,
+            51,
+            307
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "whole_decoder_from_8k",
+      "split": "train",
+      "sid": "007-3396-200",
+      "classes": [
+        {
+          "class": "EX",
+          "max_probability": 0.004795924760401249,
+          "counts": [
+            0,
+            0,
+            796
+          ]
+        },
+        {
+          "class": "HE",
+          "max_probability": 0.9988792538642883,
+          "counts": [
+            15329,
+            3956,
+            8192
+          ]
+        },
+        {
+          "class": "SE",
+          "max_probability": 0.0028908352833241224,
+          "counts": [
+            0,
+            0,
+            1672
+          ]
+        },
+        {
+          "class": "MA",
+          "max_probability": 0.9286956787109375,
+          "counts": [
+            39,
+            13,
+            520
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "whole_decoder_from_8k",
+      "split": "train",
+      "sid": "007-3448-200",
+      "classes": [
+        {
+          "class": "EX",
+          "max_probability": 0.003192577278241515,
+          "counts": [
+            0,
+            0,
+            7722
+          ]
+        },
+        {
+          "class": "HE",
+          "max_probability": 0.9857187867164612,
+          "counts": [
+            2020,
+            665,
+            4183
+          ]
+        },
+        {
+          "class": "SE",
+          "max_probability": 0.0026312710251659155,
+          "counts": [
+            0,
+            0,
+            756
+          ]
+        },
+        {
+          "class": "MA",
+          "max_probability": 0.9628392457962036,
+          "counts": [
+            158,
+            40,
+            242
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "whole_decoder_from_8k",
+      "split": "val",
+      "sid": "007-3873-200",
+      "classes": [
+        {
+          "class": "EX",
+          "max_probability": 0.0036693455185741186,
+          "counts": [
+            0,
+            0,
+            580
+          ]
+        },
+        {
+          "class": "HE",
+          "max_probability": 0.9986044764518738,
+          "counts": [
+            3167,
+            1531,
+            1153
+          ]
+        },
+        {
+          "class": "SE",
+          "max_probability": 0.002442539669573307,
+          "counts": [
+            0,
+            0,
+            1168
+          ]
+        },
+        {
+          "class": "MA",
+          "max_probability": 0.9183223843574524,
+          "counts": [
+            49,
+            108,
+            167
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "whole_decoder_from_8k",
+      "split": "val",
+      "sid": "007-4960-300",
+      "classes": [
+        {
+          "class": "EX",
+          "max_probability": 0.27905330061912537,
+          "counts": [
+            0,
+            0,
+            6615
+          ]
+        },
+        {
+          "class": "HE",
+          "max_probability": 0.9955869913101196,
+          "counts": [
+            3045,
+            1722,
+            3887
+          ]
+        },
+        {
+          "class": "SE",
+          "max_probability": 0.011224782094359398,
+          "counts": [
+            0,
+            0,
+            3262
+          ]
+        },
+        {
+          "class": "MA",
+          "max_probability": 0.9370385408401489,
+          "counts": [
+            71,
+            21,
+            317
+          ]
+        }
+      ]
+    }
+  ],
+  "limitation": "Hybrid checkpoints are mechanistic interventions only; no full-val accuracy claim."
+}

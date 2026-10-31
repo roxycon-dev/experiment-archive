@@ -1,0 +1,21 @@
+{
+  "status": "stopped",
+  "stop_reason": "operator_stop_at_update_boundary",
+  "elapsed_seconds": 8965.399070524029,
+  "stage": "ddr_finetune",
+  "mode": "formal",
+  "updates_done": 6197,
+  "micro_steps": 6200,
+  "best": {
+    "mIoU_lesion4": 0.09678075116594265,
+    "update": 6000
+  },
+  "config_file_sha256": "6ae617369dbd53a8c609fffd08a329c928c8e8bf2b31c5f08e5de3f443dd5535",
+  "resume_warnings": [],
+  "checkpoints": {
+    "last": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/A0_ddr_finetune/ckpt_last.pth",
+    "best": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/A0_ddr_finetune/ckpt_best.pth",
+    "final": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/A0_ddr_finetune/ckpt_final.pth"
+  },
+  "generated_at": "2026-10-02T12:25:01.611528+00:00"
+}

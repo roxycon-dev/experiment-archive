@@ -1,0 +1,22 @@
+{
+  "status": "SCREEN_REJECTED",
+  "completed": 4000,
+  "fixed40k_completed": false,
+  "test_run": false,
+  "goal_achieved": false,
+  "mIoU": 31.67949228529926,
+  "best_val_step": 4000,
+  "failed_criteria": [
+    "private_net_gain_at_least1pp",
+    "no_class_IoU_loss_over2pp"
+  ],
+  "durable4k_checkpoint_preserved": true,
+  "server_kept_running": true,
+  "own_training_and_workers_ended": true,
+  "RAM_retained": 39434,
+  "next_run": "aligned",
+  "next_actual_train_PID": 57901,
+  "next_CPU_GPU_gates_PASS": true,
+  "next_verified_formal_updates": 150,
+  "foundation4k_handoff_deleted": true
+}

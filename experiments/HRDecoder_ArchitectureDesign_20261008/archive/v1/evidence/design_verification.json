@@ -1,0 +1,79 @@
+{
+  "scope": "design arithmetic and existing ID-list readback only; no model execution",
+  "new_parameters_analytical": {
+    "L": 26004,
+    "C": 58372,
+    "H4": 3361,
+    "total": 87737
+  },
+  "new_convolution_MAC_per_image": {
+    "L_2048": 5939134464,
+    "C_2048": 328466432,
+    "H4_per_output_pixel": 3328,
+    "total_if_output_2048": 20226244608
+  },
+  "three_teacher_train_caches_454_2048_FP32_GiB": 85.125,
+  "scalar_float64_identity_max_abs_error": 0.0,
+  "mean_difference_inverse_max_abs_error_10000_synthetic_samples": 2.220446049250313e-16,
+  "synthetic_OR_counterexample_IoU": {
+    "A": 0.5,
+    "OR": 0.4,
+    "probability_blend": 1.0
+  },
+  "custom_official_image_ID_intersections": {
+    "train": {
+      "train": 232,
+      "valid": 80,
+      "test": 142
+    },
+    "val": {
+      "train": 45,
+      "valid": 11,
+      "test": 20
+    },
+    "test": {
+      "train": 106,
+      "valid": 58,
+      "test": 63
+    }
+  },
+  "main_updates": 40000,
+  "H4_updates_within_main_updates": 1600,
+  "training_or_inference_performed": false,
+  "GPU_checks_performed": false,
+  "actual_model_parameter_count_measured": false,
+  "source_hashes": {
+    "HRDecoder_FinalDecision_20261005/最佳模型技术报告/HRDecoder最佳模型训练与改进报告.md": {
+      "bytes": 24430,
+      "sha256": "aaf4d0f4cec8de3a6c95de2e888517356a829101e14353873a28ac4018efe00e"
+    },
+    "HRDecoder_FinalDecision_20261005/结题报告/HRDecoder项目结题报告.md": {
+      "bytes": 73748,
+      "sha256": "40df4cc358f62ec09930e6168a410a6ca7cce55daab8652bac68f44159496e61"
+    },
+    "HRDecoder_FinalDecision_20261005/结题报告/evidence/original_HRDecoder_baseline_evidence.json": {
+      "bytes": 16488,
+      "sha256": "485ecb0e98412305172b07b29bfe8d221fc4f767d621c4407ee8aa6938a97a34"
+    },
+    "HRDecoder_FinalDecision_20261005/结题报告/evidence/final_locked_test_evidence.json": {
+      "bytes": 187249,
+      "sha256": "8ebb5d1f4836598a8a3615e5ba7a82e9b972dff380a3504afafd53ad8df05f5b"
+    },
+    "_全实验档案_20260920/02_HRDecoder逐实验事实档案.md": {
+      "bytes": 36203,
+      "sha256": "1f262cc31982afc1578f636a04f285b46b68465dbca6f0d13885ed4b86a0786e"
+    },
+    "HRDecoder_审查轮_20260916/tools/h4_post_fusion_corrector.py": {
+      "bytes": 9739,
+      "sha256": "a4361c1ab10a7dc8f706416c5ffd5cbd298ce9b2302f708ad5971b19d2466fda"
+    },
+    "autodl100/work/HRDecoder/mmseg/models/segmentors/HRDecoder.py": {
+      "bytes": 13919,
+      "sha256": "a97d00407c03947363df65a035dc70e5b458f440e38c21161a247b3282c1b933"
+    },
+    "HRDecoder_重新诊断与三点提升方案_20260926/04_审查修正与证据链.md": {
+      "bytes": 6241,
+      "sha256": "70ba75fecccda26df771128d704a5223f0c4599d5e1762dba26ed6845f6cf9af"
+    }
+  }
+}

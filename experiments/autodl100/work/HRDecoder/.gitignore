@@ -1,0 +1,23 @@
+node_modules/
+build/
+dist/
+coverage/
+.DS_Store
+*.log
+.env*
+!.env.example
+
+# heavy artifacts (never commit)
+*.pth
+*.zip
+*.whl
+.ipynb_checkpoints/
+data/
+outputs/
+work_dirs/
+.claude/
+
+
+__pycache__/
+*.pyc
+

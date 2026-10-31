@@ -1,0 +1,42 @@
+[train] objective = L = 30.0*focal_bce(alpha=0.75,gamma=2) + 1.0*soft_dice (frozen at 2026-09-21)
+[train] stage=stage2_main images=454/454 patches=10608 roles={'background': 908, 'candidate_neg_fp': 613, 'candidate_neg_plain': 2544, 'candidate_pos': 6543}
+[train] refiner trainable params=25394 (non-refiner trainable=0)
+[train] identity guard OK: refiner == champion bitwise at init (max|d|=0.0e+00, batch=16)
+[train] ep=1 step=1 lr=3.00e-06 loss=1.1813 focal=0.0238 dice=0.4668 focal_share=0.605 gnorm=95.89 5.4s
+[train] ep=1 step=20 lr=6.00e-05 loss=0.9573 focal=0.0141 dice=0.5332 focal_share=0.443 gnorm=16.61 18.2s
+[train] ep=1 step=40 lr=1.20e-04 loss=0.7592 focal=0.0059 dice=0.5808 focal_share=0.235 gnorm=54.98 30.6s
+[train] ep=1 step=60 lr=1.80e-04 loss=0.7091 focal=0.0132 dice=0.3125 focal_share=0.559 gnorm=18.43 43.8s
+[train] ep=1 step=80 lr=2.40e-04 loss=0.9206 focal=0.0132 dice=0.5237 focal_share=0.431 gnorm=34.30 58.5s
+[train] ep=1 step=100 lr=3.00e-04 loss=0.9130 focal=0.0087 dice=0.6519 focal_share=0.286 gnorm=134.20 71.3s
+[train] ep=1 step=120 lr=3.00e-04 loss=0.5581 focal=0.0054 dice=0.3952 focal_share=0.292 gnorm=6.09 85.0s
+[train] ep=1 step=140 lr=3.00e-04 loss=0.7325 focal=0.0061 dice=0.5491 focal_share=0.250 gnorm=3.61 99.5s
+[train] ep=1 step=160 lr=3.00e-04 loss=1.0282 focal=0.0203 dice=0.4178 focal_share=0.594 gnorm=40.67 111.5s
+[train] ep=1 step=180 lr=3.00e-04 loss=0.8572 focal=0.0046 dice=0.7199 focal_share=0.160 gnorm=4.55 125.5s
+[train] ep=1 step=200 lr=3.00e-04 loss=0.9059 focal=0.0156 dice=0.4379 focal_share=0.517 gnorm=27.03 140.1s
+[train] ep=1 step=220 lr=3.00e-04 loss=1.6694 focal=0.0391 dice=0.4966 focal_share=0.703 gnorm=120.38 153.2s
+[train] ep=1 step=240 lr=3.00e-04 loss=0.7334 focal=0.0089 dice=0.4669 focal_share=0.363 gnorm=3.78 168.2s
+[train] ep=1 step=260 lr=3.00e-04 loss=0.5041 focal=0.0059 dice=0.3265 focal_share=0.352 gnorm=5.14 182.6s
+[train] ep=1 step=280 lr=3.00e-04 loss=0.6860 focal=0.0091 dice=0.4123 focal_share=0.399 gnorm=24.17 194.3s
+[train] ep=1 step=300 lr=3.00e-04 loss=1.0302 focal=0.0171 dice=0.5184 focal_share=0.497 gnorm=9.28 206.9s
+[train] ep=1 step=320 lr=3.00e-04 loss=0.5508 focal=0.0054 dice=0.3876 focal_share=0.296 gnorm=6.84 221.4s
+[train] ep=1 step=340 lr=3.00e-04 loss=0.6494 focal=0.0047 dice=0.5096 focal_share=0.215 gnorm=19.22 234.6s
+[train] ep=1 step=360 lr=3.00e-04 loss=0.6015 focal=0.0050 dice=0.4510 focal_share=0.250 gnorm=2.25 247.1s
+[train] ep=1 step=380 lr=3.00e-04 loss=0.5725 focal=0.0069 dice=0.3647 focal_share=0.363 gnorm=1.73 261.8s
+[train] ep=1 step=400 lr=3.00e-04 loss=0.5934 focal=0.0093 dice=0.3135 focal_share=0.472 gnorm=3.73 275.9s
+[train] ep=1 step=420 lr=3.00e-04 loss=0.5846 focal=0.0046 dice=0.4479 focal_share=0.234 gnorm=2.79 290.5s
+[train] ep=1 step=440 lr=3.00e-04 loss=0.8270 focal=0.0049 dice=0.6808 focal_share=0.177 gnorm=3.40 303.2s
+[train] ep=1 step=460 lr=3.00e-04 loss=0.6401 focal=0.0019 dice=0.5818 focal_share=0.091 gnorm=4.62 317.1s
+[train] ep=1 step=480 lr=3.00e-04 loss=0.4901 focal=0.0023 dice=0.4212 focal_share=0.141 gnorm=4.90 331.1s
+[train] ep=1 step=500 lr=3.00e-04 loss=0.6070 focal=0.0106 dice=0.2899 focal_share=0.522 gnorm=5.41 343.9s
+[train] ep=1 step=520 lr=3.00e-04 loss=0.7929 focal=0.0120 dice=0.4315 focal_share=0.456 gnorm=2.20 356.2s
+[train] ep=1 step=540 lr=3.00e-04 loss=0.4204 focal=0.0017 dice=0.3687 focal_share=0.123 gnorm=5.02 369.0s
+[train] ep=1 step=560 lr=3.00e-04 loss=0.9575 focal=0.0135 dice=0.5515 focal_share=0.424 gnorm=13.02 385.1s
+[train] ep=1 step=580 lr=3.00e-04 loss=0.8053 focal=0.0096 dice=0.5162 focal_share=0.359 gnorm=1.52 397.3s
+[train] ep=1 step=600 lr=3.00e-04 loss=0.5075 focal=0.0013 dice=0.4688 focal_share=0.076 gnorm=6.22 412.2s
+[train] ep=1 step=620 lr=2.99e-04 loss=0.6339 focal=0.0059 dice=0.4579 focal_share=0.278 gnorm=1.90 424.9s
+[train] ep=1 step=640 lr=2.99e-04 loss=0.7542 focal=0.0083 dice=0.5048 focal_share=0.331 gnorm=4.55 438.8s
+[train] ep=1 step=660 lr=2.99e-04 loss=0.7774 focal=0.0129 dice=0.3918 focal_share=0.496 gnorm=17.36 454.8s
+[train] ep=2 step=680 lr=2.99e-04 loss=0.8239 focal=0.0027 dice=0.7427 focal_share=0.099 gnorm=2.44 470.2s
+[train] ep=2 step=700 lr=2.99e-04 loss=0.6535 focal=0.0058 dice=0.4807 focal_share=0.264 gnorm=2.37 485.6s
+[train] wrote /root/autodl-tmp/s2probe/epoch_full/refiner_last.pth
+[train] NOTE: this entry point does not select on val; the supervisor runs eval_refiner.py on every pre-registered node and selects with the frozen rule.

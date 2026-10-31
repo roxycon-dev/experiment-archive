@@ -1,0 +1,27 @@
+[diag] cache        : /root/autodl-tmp/HRDecoder_FullCompetition_20260920/refiner_v1/patch_cache/index_val.json
+[diag] split=val images=76 candidate_patches=1599 ctx=32 max_patch=768
+[diag] candidate tiles exactly 512x512 : 34 / 1599 (2.1%)
+[diag] candidate windows exactly 576x576 : 34 / 1599 (2.1%)
+[diag] distinct CANDIDATE window shapes = 892   tile shapes = 888
+[diag] candidate window shapes by count (top 12):
+         576x576   x34
+         120x122   x17
+         116x118   x16
+         119x121   x15
+         121x124   x15
+         116x116   x15
+         121x125   x14
+         115x115   x14
+         119x122   x13
+         123x127   x13
+         118x119   x13
+         122x125   x13
+[diag] per-image distinct CANDIDATE window shapes: min=2 max=51 mean=19.89
+[diag] images where >1 candidate window shape occurs: 76 / 76
+[diag] => one image mixes 2..51 candidate patch shapes, so the shipped eval path (np.stack(patches)) raises ValueError: all input arrays must have the same shape.
+[diag] first images (stem, n_cand, distinct shapes):
+        007-1774-100     n_cand=11 distinct=9  [(114, 117), (117, 121), (119, 121), (119, 122), (120, 124), (121, 122), (122, 124), (123, 127), (124, 124)]
+        007-1782-100     n_cand=7 distinct=7  [(117, 117), (117, 126), (121, 124), (123, 132), (129, 125), (129, 137), (136, 165)]
+        007-1829-100     n_cand=4 distinct=4  [(120, 120), (124, 124), (130, 129), (141, 157)]
+
+[remote_exit=0]

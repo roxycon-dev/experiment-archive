@@ -1,0 +1,24 @@
+{
+  "status": "AUTHORIZED_LAST_ARCHITECTURE",
+  "recorded_at": "2026-10-10T16:07:34.934548+08:00",
+  "active_run": "iou",
+  "identity_SHA": "49ee0537d2802450284844a32405a6da0116ee9b77c2ab519aa9f985d15d47d4",
+  "human_instructions": [
+    "最后一次架构更新跑完就关机吧，然后写完整报告",
+    "和之前一样没达到继续训练的阈值线就停下来不做了"
+  ],
+  "last_architecture": true,
+  "new_architecture_or_fresh_run_allowed": false,
+  "registered_screen_unchanged": true,
+  "if_screen_pass": "Continue same fresh run to fixed40000; retain registered critical-collapse protection",
+  "if_screen_reject": "Stop; archive; report; shutdown; no redesign or new training",
+  "if_terminal_failure_or_critical_stop": "Preserve receipts/checkpoints, stop own work, archive and report; do not start new architecture",
+  "shutdown_authorized_after_terminal_archive": true,
+  "shutdown_scope": "Entire server after this final task reaches terminal state; latest human authorization supersedes keep-online preference",
+  "external_diagnostic_process_control_allowed": false,
+  "checkpoint_download": false,
+  "data_cache_hash_rescan": false,
+  "archive_before_shutdown": true,
+  "final_report_required": true,
+  "success_claim_requires_both_fixed40k_val_and_locked40k_test_targets": true
+}

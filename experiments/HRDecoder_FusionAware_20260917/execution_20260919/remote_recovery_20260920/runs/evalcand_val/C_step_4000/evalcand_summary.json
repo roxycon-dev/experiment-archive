@@ -1,0 +1,210 @@
+{
+  "script": "/root/autodl-tmp/hr_exec_20260919/code/eval_candidates.py",
+  "created": "2026-09-20T00:50:54",
+  "split": "val",
+  "n_images": 76,
+  "mix": {
+    "champion": 0.75,
+    "candidate": 0.25,
+    "weight_scan": false
+  },
+  "champion_pipeline": {
+    "head": "/root/autodl-tmp/hr_exec_20260919/assets/H4_best.pth",
+    "members": [
+      {
+        "name": "D",
+        "config": "configs/lesion/exp/hrplus_patch_dice.py",
+        "checkpoint": "/root/autodl-tmp/hr_exec_20260919/assets/D_student_2000.pth",
+        "load": "student_only",
+        "weight": 3
+      },
+      {
+        "name": "E",
+        "config": "configs/lesion/exp/hrplus_mares.py",
+        "checkpoint": "/root/autodl-tmp/hr_exec_20260919/assets/E_1500.pth",
+        "load": "full",
+        "weight": 2
+      },
+      {
+        "name": "B",
+        "config": "configs/lesion/exp/hr100_b.py",
+        "checkpoint": "/root/autodl-tmp/hr_exec_20260919/assets/B_weights.pth",
+        "load": "full",
+        "weight": 1
+      },
+      {
+        "name": "E4",
+        "config": "configs/lesion/exp/e4_detail_split613.py",
+        "checkpoint": "/root/autodl-tmp/hr_exec_20260919/assets/E4_weights.pth",
+        "load": "full",
+        "weight": 1
+      }
+    ]
+  },
+  "candidates": [
+    {
+      "path": "/root/autodl-tmp/hr_exec_20260919/runs/cs4000_v2/C_step_4000.pth",
+      "sha256": "f8bd7583e56ccbb2f951958cc8198389f879f7b84cad608429466efb95a9fb64",
+      "arm": "C",
+      "steps": 4000,
+      "seed": 42
+    }
+  ],
+  "champion_cache": {
+    "dir": "/root/autodl-tmp/hr_exec_20260919/runs/champ_prob_cache_val",
+    "mode": "reuse",
+    "identity": "8c554aceaa4d281fa5f6e5566a8a0fd188c92b7125f6525ff8b601a9dad1632b",
+    "hits": 76
+  },
+  "hashes": {
+    "weights": {
+      "champion_head": "14757e02de49f6f065d4ef82cb8b1c4ee8a6a7f3f66cb1867276993950f80c50",
+      "config": "2d687086e28533d4bb080f31c12c4abb802d5293fc4f2a463f9f0bd8f36452f9",
+      "member_B_cfg": "556e7c2f1557c6658f6233f1fe1601b8d0b1c8382cc6bdaaaf108a712da3ed54",
+      "member_B_ckpt": "0b3cd72e740fc5c69242994c12cfd71a49ac892aff37d09c50bb9fb6931a8626",
+      "member_D_cfg": "2d687086e28533d4bb080f31c12c4abb802d5293fc4f2a463f9f0bd8f36452f9",
+      "member_D_ckpt": "5fe18717b62d8fc3ab4846a50c046588e2af05abbbfdb3a958f4794018b319ea",
+      "member_E4_cfg": "65b2c5eb88db2790c1e00dbcb6e18deaf8fc6abc5bf3f148be9ae70d2f06fc1c",
+      "member_E4_ckpt": "c5a3d0f0b990d2430e545146745bc809538bbe764979baf54f62b450785268e0",
+      "member_E_cfg": "591e4786abaa35b8dfc9a6476c45a8c9eb387544c37e0d56b6a499b683e100b4",
+      "member_E_ckpt": "a18ff92b4da24d870554f17856983d4be042386cacbcaba0d4e13f3f248ed5e5",
+      "reference_checkpoint": "0b3cd72e740fc5c69242994c12cfd71a49ac892aff37d09c50bb9fb6931a8626",
+      "student_checkpoint": "5fe18717b62d8fc3ab4846a50c046588e2af05abbbfdb3a958f4794018b319ea"
+    },
+    "candidate_checkpoints": {
+      "C_step_4000": "f8bd7583e56ccbb2f951958cc8198389f879f7b84cad608429466efb95a9fb64"
+    },
+    "config": {
+      "file": "2d687086e28533d4bb080f31c12c4abb802d5293fc4f2a463f9f0bd8f36452f9",
+      "text_sha256": "55eea38d0fafd74e35aac24703bc3c72000e198a8d33e251512a49eafc5c8663"
+    },
+    "split_manifest_sha256": "48b14fe56cb351fb0700ed58fa1035fa02773f4369ebccc6625ae76dfbc62a7e"
+  },
+  "split_stems": {
+    "val": [
+      "007-1774-100",
+      "007-1782-100",
+      "007-1829-100",
+      "007-1900-100",
+      "007-2167-100",
+      "007-2210-100",
+      "007-2345-100",
+      "007-2369-100",
+      "007-2371-100",
+      "007-2460-100",
+      "007-2525-100",
+      "007-2697-100",
+      "007-2704-100",
+      "007-2769-100",
+      "007-2809-100",
+      "007-2983-100",
+      "007-3413-200",
+      "007-3414-200",
+      "007-3420-200",
+      "007-3500-200",
+      "007-3541-200",
+      "007-3567-200",
+      "007-3628-200",
+      "007-3727-200",
+      "007-3873-200",
+      "007-3921-200",
+      "007-4007-200",
+      "007-4033-200",
+      "007-4034-200",
+      "007-4035-200",
+      "007-4145-200",
+      "007-4171-200",
+      "007-4203-200",
+      "007-4224-200",
+      "007-4479-200",
+      "007-4482-200",
+      "007-4548-200",
+      "007-4576-200",
+      "007-4743-200",
+      "007-4960-300",
+      "007-4980-300",
+      "007-5063-300",
+      "007-5172-300",
+      "007-5269-300",
+      "007-5434-300",
+      "007-5443-300",
+      "007-5470-300",
+      "007-5474-300",
+      "007-5504-300",
+      "007-5506-300",
+      "007-5672-300",
+      "007-5869-300",
+      "007-5938-300",
+      "007-6054-300",
+      "007-6148-300",
+      "007-6220-300",
+      "007-6519-400",
+      "007-6520-400",
+      "007-6551-400",
+      "007-6577-400",
+      "007-6686-400",
+      "007-6722-400",
+      "007-6734-400",
+      "007-6811-400",
+      "007-6815-400",
+      "007-6847-400",
+      "007-6894-400",
+      "007-6912-400",
+      "20170503161702100",
+      "20170503161702278",
+      "20170509100155767",
+      "20170510152714920",
+      "20170518142454730",
+      "20170522100404106",
+      "20170609154552424",
+      "20170629163635747"
+    ]
+  },
+  "results": {
+    "champion": {
+      "miou": 0.42669428454584546,
+      "per_class": {
+        "EX": 0.45771525507464833,
+        "HE": 0.43758256131196327,
+        "SE": 0.5518070087629399,
+        "MA": 0.25967231303383037
+      }
+    },
+    "cand_C_step_4000": {
+      "miou": 0.3917287791891635,
+      "per_class": {
+        "EX": 0.4389660252907657,
+        "HE": 0.3953877962469085,
+        "SE": 0.5068666895383048,
+        "MA": 0.22569460568067487
+      }
+    },
+    "mix_C_step_4000": {
+      "miou": 0.4256441671094296,
+      "per_class": {
+        "EX": 0.45840588636357876,
+        "HE": 0.42783805864286106,
+        "SE": 0.5561700452666798,
+        "MA": 0.26016267816459865
+      }
+    }
+  },
+  "locked_candidate": null,
+  "argv": [
+    "/root/autodl-tmp/hr_exec_20260919/code/eval_candidates.py",
+    "--settings",
+    "/root/autodl-tmp/hr_exec_20260919/full_eval_settings.json",
+    "--out-dir",
+    "/root/autodl-tmp/hr_exec_20260919/runs/evalcand_val/C_step_4000",
+    "--prefix",
+    "evalcand",
+    "--split",
+    "val",
+    "--candidate",
+    "C_step_4000=/root/autodl-tmp/hr_exec_20260919/runs/cs4000_v2/C_step_4000.pth",
+    "--candidate-arm",
+    "C_step_4000=C",
+    "--champion-cache-dir",
+    "/root/autodl-tmp/hr_exec_20260919/runs/champ_prob_cache_val"
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "status": "PASS",
+  "reviewed_at": "2026-10-23T22:08:23.439846+00:00",
+  "method": "Actual visual inspection with view_image of three original-resolution contact sheets, covering all9original example panels",
+  "selection_changed": false,
+  "figures": [
+    {
+      "path": "D:\\dataset\\experiment\\paper_supplement_20261023\\results\\baseline_threeway\\figures\\still_missed_007-1975-100_1.png",
+      "sha256": "5c1a54ffd240f2610c68bb63bfc93a05a15bf5780037ca17f7053604fd32ea2b",
+      "sid": "007-1975-100",
+      "component_id": 1,
+      "category": "still_missed"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\paper_supplement_20261023\\results\\baseline_threeway\\figures\\still_missed_007-2112-100_1.png",
+      "sha256": "0da5a7d1c65932d3c95afa09335b3323c1360c7ca317b794a3ba26bc245f1f81",
+      "sid": "007-2112-100",
+      "component_id": 1,
+      "category": "still_missed"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\paper_supplement_20261023\\results\\baseline_threeway\\figures\\still_missed_007-2112-100_3.png",
+      "sha256": "896cf858bd4ea1808a5a9265c257481a3787c54f7907171929547c4f081a872c",
+      "sid": "007-2112-100",
+      "component_id": 3,
+      "category": "still_missed"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\paper_supplement_20261023\\results\\baseline_threeway\\figures\\recovered_007-2125-100_3.png",
+      "sha256": "e0e0bb8e31f61c1843f0304b09e5d17c6eb928abf1fd8db2fd15dfb321d38edf",
+      "sid": "007-2125-100",
+      "component_id": 3,
+      "category": "recovered"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\paper_supplement_20261023\\results\\baseline_threeway\\figures\\recovered_007-2160-100_2.png",
+      "sha256": "92a7e3794f7dfb25e804ea0f6b9ff7dbfe8611f90f3f014bb7df3b895a9922e1",
+      "sid": "007-2160-100",
+      "component_id": 2,
+      "category": "recovered"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\paper_supplement_20261023\\results\\baseline_threeway\\figures\\new_fp_007-2160-100_5.png",
+      "sha256": "8a16c607ac5fa59821d39ca974d086f76d5f97e57bb80b256c588f814c555017",
+      "sid": "007-2160-100",
+      "component_id": 5,
+      "category": "new_fp"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\paper_supplement_20261023\\results\\baseline_threeway\\figures\\new_fp_007-2160-100_6.png",
+      "sha256": "ff3cdaa3d3bfeecda3b0ae03dd0ed50b01357f107ab2059563597e3764350d4d",
+      "sid": "007-2160-100",
+      "component_id": 6,
+      "category": "new_fp"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\paper_supplement_20261023\\results\\baseline_threeway\\figures\\recovered_007-2232-100_24.png",
+      "sha256": "64eb21f73e4d2b99602bffc2ab15aa13a342fb66dd8803606ed87879209aec77",
+      "sid": "007-2232-100",
+      "component_id": 24,
+      "category": "recovered"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\paper_supplement_20261023\\results\\baseline_threeway\\figures\\new_fp_007-2232-100_3.png",
+      "sha256": "a3be1038e04a104ad5346a5669698f9e10a1c80401aa431dc063d2663c6edf49",
+      "sid": "007-2232-100",
+      "component_id": 3,
+      "category": "new_fp"
+    }
+  ],
+  "checks": [
+    "All five columns aligned to same crop",
+    "Ground truth and predictions in distinct colors",
+    "White target boxes visible",
+    "Titles and panels not clipped",
+    "All3recovered,3still_missed,3new_fp retained"
+  ],
+  "interpretation_notes": [
+    "Categories are defined by the original full-vs-noH4 comparison; baseline was added after fixed selection",
+    "An unmatched predicted component can be close to a GT component with IoU below0.10; a crop labelednew_fp need not be empty of all GT",
+    "RepeatedSID rows concern distinct component IDs, preserved in provenance"
+  ]
+}

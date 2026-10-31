@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "D:\dataset\experiment\HRDecoder_Ready_20261002\campaign\shutdown_after_complete.py", line 283, in <module>
+    main()
+    ~~~~^^
+  File "D:\dataset\experiment\HRDecoder_Ready_20261002\campaign\shutdown_after_complete.py", line 267, in main
+    raise ValueError('Remote guard rejected shutdown: '+stderr[-1800:])
+ValueError: Remote guard rejected shutdown: Traceback (most recent call last):
+  File "<string>", line 36, in <module>
+  File "/root/miniconda3/lib/python3.8/subprocess.py", line 493, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "/root/miniconda3/lib/python3.8/subprocess.py", line 858, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/root/miniconda3/lib/python3.8/subprocess.py", line 1704, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+OSError: [Errno 8] Exec format error: '/usr/bin/shutdown'
+

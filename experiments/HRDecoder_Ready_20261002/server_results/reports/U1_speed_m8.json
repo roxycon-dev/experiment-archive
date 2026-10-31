@@ -1,0 +1,65 @@
+{
+  "family": "convnext_unet",
+  "stage": "external_pretrain",
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "torch": "2.0.1+cu117",
+  "peak_allocated_mb": 22315.08740234375,
+  "timings_seconds": [
+    9.991270138998516,
+    0.47019343997817487,
+    0.4602865440538153,
+    0.4610716600436717,
+    0.46512890502344817,
+    0.4611315040383488,
+    4.4336084419628605,
+    0.46231620002072304
+  ],
+  "effective_batch": 8,
+  "micro_batch": 8,
+  "data_wait_seconds": [
+    4.352190574049018,
+    8.850602898746729e-05,
+    6.466207560151815e-05,
+    5.418399814516306e-05,
+    0.0001283719902858138,
+    8.556898683309555e-05,
+    3.964671949041076,
+    7.324700709432364e-05
+  ],
+  "workers": 4,
+  "fast_kernels": true,
+  "grad_accum": 1,
+  "parameter_delta": {
+    "encoder.downsample_layers.0.0.weight": 9.000301361083984e-06,
+    "decoder.c4.block.0.weight": 2.7097761631011963e-05
+  },
+  "last_loss": {
+    "loss_bce": 0.7158845663070679,
+    "loss_dice": 0.982758641242981,
+    "loss_total": 1.6986432075500488,
+    "active_classes": 4,
+    "valid_pixels_per_class": [
+      7363607,
+      7363607,
+      7363607,
+      7363607
+    ]
+  },
+  "n_train": 48,
+  "n_dev": 6,
+  "weight_report": {
+    "label": "convnext_encoder_official",
+    "missing": [],
+    "unexpected": [
+      "norm.weight",
+      "norm.bias",
+      "head.weight",
+      "head.bias"
+    ],
+    "loaded_keys": 340,
+    "total_ckpt_keys": 344,
+    "remapped": {}
+  },
+  "calibration_only": true,
+  "checkpoint_saved": false
+}

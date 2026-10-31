@@ -1,0 +1,79 @@
+{
+  "last_manual_checked_at": "2026-10-10T04:19:23.171681+08:00",
+  "last_routine_checked_at": "2026-10-10T10:12:23.270411+08:00",
+  "main_45min_automation": "hrdecoder-4",
+  "one_screen_handoff_automation": null,
+  "one_screen_handoff_delete_after_check": true,
+  "ETA": {
+    "status": "FORMAL_POST1500_NONZERO_AUX100_BATCH_STEADY",
+    "performance_completed_update": 2240,
+    "steady_window": [
+      2141,
+      2240
+    ],
+    "mean_batch_seconds": 1.054115680232644,
+    "mean_data_wait_seconds": 2.5853365659713745e-05,
+    "estimated4k_CST_with90s_reserve": "2026-10-10T05:29:26.954943+08:00",
+    "conditional40k_finish_CST_with10min_reserve": "2026-10-10T16:10:25.119431+08:00",
+    "full40k_condition": "registered4k PASS",
+    "major_ETA_change": false,
+    "accuracy_guaranteed": false
+  },
+  "actual_latest_progress": {
+    "status": "TRAINING",
+    "completed": 19850,
+    "expected": 40000,
+    "saved_update": 19000,
+    "best_val_mIoU": 36.73584859847754,
+    "time_unix": 1791598340.9575803
+  },
+  "next_main_routine_CST": "2026-10-10T10:57:23.270411+08:00",
+  "one_screen_handoff_deleted": true,
+  "phase": "FULL_40K_RUNNING_AFTER_SCREEN_PASS",
+  "actual_latest_manual_check": "2026-10-10T05:32:22.502373+08:00",
+  "conditional40k_CST_with10min_reserve": "2026-10-10T16:11:16.993641+08:00",
+  "skip_duplicate_05_41_poll": true,
+  "latest_full40k_CST_with10min_reserve": "2026-10-10T16:20:46.030641+08:00",
+  "next_fullval8k_CST": "2026-10-10T06:39:52.830734+08:00",
+  "latest_logged_loss_finite": true,
+  "major_ETA_change": false,
+  "next_fullval12k_CST": "2026-10-10T07:52:24.716920+08:00",
+  "latest_ETA_analysis": {
+    "checked_at": "2026-10-10T10:12:23.270411+08:00",
+    "performance_completed_update": 19860,
+    "window_batches": 100,
+    "mean_batch_seconds": 1.067257222905755,
+    "mean_data_wait_seconds": 5.017310380935669e-05,
+    "nonzero_KD_phase": true,
+    "lambda_K": 0.5,
+    "estimated_fixed40k_training_and_final_val_CST_with10min_reserve": "2026-10-10T16:20:46.030641+08:00",
+    "estimated_next_fullval20k_CST_with90s_reserve": "2026-10-10T10:16:30.886183+08:00",
+    "prediction_not_completion": true,
+    "test_time_not_included": true,
+    "significant_ETA_change": false
+  },
+  "next_fullval16k_CST": "2026-10-10T09:04:28.612242+08:00",
+  "next_fullval20k_CST": "2026-10-10T10:16:30.886183+08:00",
+  "validation_risk": {
+    "status": "SINGLE_FULLVAL_COLLAPSE_UNDER_DIAGNOSIS",
+    "validation_step": 16000,
+    "mIoU": 13.074769744480871,
+    "delta_mIoU_pp": -23.661078853996667,
+    "SE_predicted_positive_pixels": 0,
+    "base_head_mIoU": 12.792119724348606,
+    "first_abnormal_fullval_not_persistent_pattern": true,
+    "CPU_checkpoint_probe": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\detail_execution\\diagnosis_16000\\CHECKPOINT_CPU_DIAGNOSTIC.json",
+    "CPU_probe_steps": [
+      12000,
+      17000
+    ],
+    "exact16k_checkpoint_available": false,
+    "model_optimizer_nonfinite_detected": false,
+    "registered_source_mismatch": false,
+    "BN_causal_evidence": false,
+    "next_fullval_to_observe": 20000,
+    "training_modified": false,
+    "server_shutdown": false,
+    "test_accessed": false
+  }
+}

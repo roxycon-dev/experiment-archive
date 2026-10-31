@@ -1,0 +1,921 @@
+{
+  "status": "COMPLETE",
+  "deleted_files": [
+    {
+      "path": "runs/Q_DDR_seed42/val_u20000/007-1774-100.npz",
+      "bytes": 29045023,
+      "sha256": "9b07e38acb7f704b25affe0d8862ec2d443cf70c9a886a48217449afef63de9e",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u20000/007-1900-100.npz",
+      "bytes": 28047686,
+      "sha256": "58ea339b985f356847632cdb4c62e2dc2dc9a4d241b7b39b05f2bff9d82148cc",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u20000/007-1829-100.npz",
+      "bytes": 35307001,
+      "sha256": "801d87b659f55f10abbc146b4f2bfdd4f363d73dc2eb6b1b6895d7c8b5d8e5c1",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u20000/007-1782-100.npz",
+      "bytes": 29029759,
+      "sha256": "be93f003fb9024e32bea7dcff21cd55bf09701dd5a76961ee6fa9eb70b76bd90",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u20000/007-2369-100.npz",
+      "bytes": 29376748,
+      "sha256": "47cb2f3ba0f2ea7a8341342e63cc4bfecd172df7ac4df65c5a6eba113c994725",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u20000/007-2371-100.npz",
+      "bytes": 29253585,
+      "sha256": "91cb7d837e646a9270fa64eff00de14f855e4a65b1b974191ac6781ee5e208b5",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u20000/007-2167-100.npz",
+      "bytes": 75771701,
+      "sha256": "dee06d14866c01f705c61b288165a2bcb7c4ce802b46e2ad95bae3700bb2a913",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u20000/007-2345-100.npz",
+      "bytes": 107214744,
+      "sha256": "f1e98accfaa62d598ea0805c65b009ad4e7ae067b7653b12312fd8459147f9c2",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u20000/007-2697-100.npz",
+      "bytes": 60928929,
+      "sha256": "da2bd193000075f3d0bc8f89a794b5498d98f54928adcfeb866d1136b81d7f86",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u20000/007-2525-100.npz",
+      "bytes": 32081100,
+      "sha256": "42994c03083110406a5918c98f313d79d190efad831cba9d98e527e404f0587f",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u20000/007-2769-100.npz",
+      "bytes": 28852666,
+      "sha256": "e5960222455c1baf732ff4d5351a2ec200cf24f351b3c2f02b2a4af519612aca",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u20000/007-2210-100.npz",
+      "bytes": 76619173,
+      "sha256": "a5f4b89e532ef21c2cf1868006322f624833e080ec5ee1f2e6619865cf98a30e",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u20000/007-2704-100.npz",
+      "bytes": 60610874,
+      "sha256": "aa2644125f39ea395e21161fe73c1d821d35a19992ea6cf8b47cf830735404cf",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u20000/007-2809-100.npz",
+      "bytes": 29015713,
+      "sha256": "5e90fe147e6cb19ea4944dd2e9f15e8f8a3d2e5b88ae695e7f97389ce19deaab",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u20000/007-2983-100.npz",
+      "bytes": 65681996,
+      "sha256": "3219f751e9b722fbc79705a51d4ed32e46c508696f1bccf9a3f1304c8b227b3a",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u20000/007-3413-200.npz",
+      "bytes": 25997735,
+      "sha256": "374fdcd41f55b46f961c16f497397b446a4e0b1daa9ac5721cb46f19b128c861",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u20000/007-2460-100.npz",
+      "bytes": 40601431,
+      "sha256": "f0004f74843c66b61d113db11de4b814fff177e5ba5a810cd0ad7b1dd98dc6ae",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u20000/007-3414-200.npz",
+      "bytes": 28944103,
+      "sha256": "7bc0b79c04448e9462e926587d489361aeb1272c9006ee7457ddf2d03970fa77",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u20000/007-3420-200.npz",
+      "bytes": 28725700,
+      "sha256": "27a05d6a176fb5849c473d4d233516e5bc68bac88b4f4d5afb308b65471351f6",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u20000/007-3500-200.npz",
+      "bytes": 28754734,
+      "sha256": "c0a8805281beacdfe8e4b360a22363cadcf225340eba83c96ba0936da47b1ba3",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u20000/007-3567-200.npz",
+      "bytes": 60621770,
+      "sha256": "c1db305e5dd8696de71204ff392612d4e47ad09637c989bcbbd89e93b0813fb9",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u20000/007-3541-200.npz",
+      "bytes": 58913135,
+      "sha256": "009bca0e0610cb893290001dfaf6d22766920ba9237e32ad8eddb7238898f056",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u20000/007-3628-200.npz",
+      "bytes": 50238966,
+      "sha256": "557f076334fb274292afd3e319eb20fe3368e1865209603c6b2950897aa74a31",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u20000/007-3921-200.npz",
+      "bytes": 24144246,
+      "sha256": "daab202cab7e432ee28dd74a3de1b86b584633d7b1035af983b0cfa2e3a45341",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u20000/007-4007-200.npz",
+      "bytes": 41345360,
+      "sha256": "272831282e1ec8e26dd8f090e31baac39838759332505f239f2ed528e077e3fb",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u20000/007-3727-200.npz",
+      "bytes": 76540630,
+      "sha256": "ddd930fa6bcfd5f6d79449a6acf08cf1e4017584a4b46ec153747cee646fe22f",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u20000/007-3873-200.npz",
+      "bytes": 29928462,
+      "sha256": "8af3d354b8e51d1cc971294343c68214a3878b28772ed0b666b6ddd3e2e6712f",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u20000/007-4034-200.npz",
+      "bytes": 59263451,
+      "sha256": "4e776a44681e57031afaeffa30bfbf1dc9fcbd44d3a27314172876a4af0e10b8",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u20000/007-4145-200.npz",
+      "bytes": 34704887,
+      "sha256": "4ff3b52323cffe487a006e54bb1da01061907ace741b8c5fd80ef6bb55bb3cd7",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u20000/007-4035-200.npz",
+      "bytes": 56646342,
+      "sha256": "d06d32142a10173719462a885c9dbfdff6fce136c4696743a272922842e327e9",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u20000/007-4224-200.npz",
+      "bytes": 29194177,
+      "sha256": "25c806455c2bf607401186d28cdd034e13e3e7581c75e2e45f9ec25d868c0dc2",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u20000/007-4171-200.npz",
+      "bytes": 31863853,
+      "sha256": "5a437b60cbaa7e58a2c919bd7d28187dd4ad40e66ecb1362d17cc60beb22168b",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u20000/007-4203-200.npz",
+      "bytes": 29819809,
+      "sha256": "1fc902cbfc08190ef523afbd79272d7c7405daa647cecbba063e5736d462eb82",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u20000/007-4033-200.npz",
+      "bytes": 57089537,
+      "sha256": "8090d92837d46d8f54db39b58f9642758925efbfb41c31198301d6333dc382ee",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u20000/007-4576-200.npz",
+      "bytes": 28261108,
+      "sha256": "c30d41585f4a999a63df48f718da6f6d9f22b759685b262f441cb37e24fdef89",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u20000/007-4482-200.npz",
+      "bytes": 38988285,
+      "sha256": "3fc6eca4a67f4120233b24a986d1ad47020f8e447327d8b98495cd896e831327",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u20000/007-4743-200.npz",
+      "bytes": 33407784,
+      "sha256": "643c98755ea5adc631a1b726e8db5d8750705b72cee0e8d51c38466ad3bdcc92",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u20000/007-4479-200.npz",
+      "bytes": 59147177,
+      "sha256": "777400b50211fbbd402eb2835217f70298d243fc38fbc1372237048c88904b84",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u20000/007-4548-200.npz",
+      "bytes": 50953509,
+      "sha256": "a305692564bf2303b803a9d9906e938a9c9632a98750dd1a4d9e66918b34eed5",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u20000/007-5063-300.npz",
+      "bytes": 28190959,
+      "sha256": "ea0b775cea8cf9002fa4d4e04a47bdbf3068474811eab38806cb87485b6a414d",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u20000/007-5172-300.npz",
+      "bytes": 32086845,
+      "sha256": "34e70e8284042460e042aac7cd851a4811c75f9f0b8c64af6b73573d882e2730",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u20000/007-4980-300.npz",
+      "bytes": 60163788,
+      "sha256": "1f2347051b170323e79ca83989e80780e0474a7559955f8f1bbd7d99a9cc594c",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u20000/007-5269-300.npz",
+      "bytes": 33812954,
+      "sha256": "5a3de49d7dc1b215418255ca2489637cbb60431e209d5c7d3763560b14381f51",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u20000/007-4960-300.npz",
+      "bytes": 28083847,
+      "sha256": "458de8326d6861638ec6da156d28ec32fde70756c2b57d10bca4c7750c748203",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u20000/007-5443-300.npz",
+      "bytes": 30739925,
+      "sha256": "6eb03aeb7584be572b6491c00a0d14bd42e6ae7351a1c2e06aaeeefecbe40d03",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u20000/007-5470-300.npz",
+      "bytes": 30638812,
+      "sha256": "33e56328da689c676e1a4d0025b12fd1478b6505cc23535f64e56a1e5435c2fe",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u20000/007-5434-300.npz",
+      "bytes": 29562963,
+      "sha256": "0bfd1a4dce7f2ccb773b3d6a45478c8cb854cc213ba453d364a09ea94a758870",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u20000/007-5474-300.npz",
+      "bytes": 29532537,
+      "sha256": "86f09cc9b3cc2d9526082723e188286e2e39be51c225352cbd40fdfbc000f3b8",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u20000/007-5869-300.npz",
+      "bytes": 29018746,
+      "sha256": "99e1e58c097ed2403c0f720b74ab20c8c685a218ddc5429af45e953c13fd6cd6",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u20000/007-5938-300.npz",
+      "bytes": 33541117,
+      "sha256": "95c0900830a111b9bc74708970a4ab0901c002180c26dbfab30b96bcf6e34c87",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u20000/007-5504-300.npz",
+      "bytes": 40796401,
+      "sha256": "7cfdd9022667bfe7c749ffb884b2887cb83614c78a51f022193021b01d13d13c",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u20000/007-6148-300.npz",
+      "bytes": 32920334,
+      "sha256": "ab16ada83fb4572c9d046a803ccae1a93a8b7a31cb73cdca2f9e8f612f547916",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u20000/007-5506-300.npz",
+      "bytes": 41356083,
+      "sha256": "5a030eee5fe2fd0c5fcee324b0c6907489a510429a78c716efe6b657d621ef25",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u20000/007-6054-300.npz",
+      "bytes": 67629374,
+      "sha256": "505ecf0602b34c503ce9ec0b3417e0e116af153a51e381bcac5f6cd5039cf1d2",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u20000/007-6520-400.npz",
+      "bytes": 34211377,
+      "sha256": "329b5e516dc150ec4437936ff29b6657e9fded249f64a7fc52a7f0ec08fd08fc",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u20000/007-5672-300.npz",
+      "bytes": 61625908,
+      "sha256": "cca749aa31c7dfb06649227df1acd637da9c80947aa54a3a592a1ef6b8433b89",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u20000/007-6519-400.npz",
+      "bytes": 35452401,
+      "sha256": "c09ca2a5b7812cb4c3f4f0f473f7684f953aa506c94a858615a6291df56f5bcd",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u20000/007-6686-400.npz",
+      "bytes": 18370997,
+      "sha256": "dcd2be6bcd0d2430096097af70789bd63bb60c3829bdec8ca7b765e1eee4066a",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u20000/007-6551-400.npz",
+      "bytes": 30179544,
+      "sha256": "8d4f3e533389a117e2a472239adeb4e22f2a28eecf99027c30e0b549c10d40cb",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u20000/007-6577-400.npz",
+      "bytes": 31458719,
+      "sha256": "1a25dbdbf20fd704b12c1d1464dc25ea19e1485e0c8e8664321d74e41dcfc56b",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u20000/007-6220-300.npz",
+      "bytes": 54534239,
+      "sha256": "d91279aea9571607a51e3e26d79bbebf1c9eddf146baeff8d1cd216bc6cf0922",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u20000/007-6722-400.npz",
+      "bytes": 18528727,
+      "sha256": "4959aec82fb52866e40f33d0ea241fb088995539829b16b0add638ff2fb7c3c1",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u20000/007-6815-400.npz",
+      "bytes": 29769353,
+      "sha256": "3b82dfb9be234901e992dc00969ca226bdc26843ab8cf05752d05b6909b9a700",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u20000/007-6811-400.npz",
+      "bytes": 29989773,
+      "sha256": "1328c9cb7560e3d9f7fa32a27a47a0694edf9f04db21067ea563eb320cd541c8",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u20000/007-6734-400.npz",
+      "bytes": 64874388,
+      "sha256": "8e94a374c6ea6a40fafe90d58c24e3aabb12400f2c09bbcf08bf663eb7150c20",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u20000/007-6847-400.npz",
+      "bytes": 30487882,
+      "sha256": "d24381b61cd69dd1d4bd6346d7fe75f6c34854f6f5d665311e807668ef4e751e",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u20000/007-6894-400.npz",
+      "bytes": 36823575,
+      "sha256": "449e991867ccfdc19fc6a23b783a53fbc5d1b021307d2313e1db1f3994c597da",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u20000/007-6912-400.npz",
+      "bytes": 26316182,
+      "sha256": "38ccf4141ef00ae22a475f803c1a0fd65cc040a10c195de95abc8e0bdbdacb75",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u20000/20170503161702100.npz",
+      "bytes": 28734124,
+      "sha256": "d6bd2043dc5ae927d57aba796f72b63074bd9b9210e32d9210eb980afef2d0dc",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u20000/20170503161702278.npz",
+      "bytes": 28558655,
+      "sha256": "32d6633fa37e68a27f59d4acd37fb2d42a29e8e451278f84e97da773ca3c01e5",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u20000/20170509100155767.npz",
+      "bytes": 22090128,
+      "sha256": "b22f6d59840ac1e72f81a92c3b1eea093380e00d5510f4effc2c9d66c68f8c71",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u20000/20170518142454730.npz",
+      "bytes": 28630827,
+      "sha256": "85cd65bb85b13cb258b77ac3e63e56a516b51cac5a86e3f11715471e1e555a4d",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u20000/20170522100404106.npz",
+      "bytes": 33238791,
+      "sha256": "237ca388a538bcd2d208e1960e4764ae967b1f2520bd3d434fd63c2fe13c1d3f",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u20000/20170609154552424.npz",
+      "bytes": 38164286,
+      "sha256": "069859512377394fbdbafefe793586bf5d21282e00462b54367276102daf5462",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u20000/20170510152714920.npz",
+      "bytes": 30298165,
+      "sha256": "315a20d7af8070ced74498a6363e69e5caa15e36f38740486d12639be31258cb",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u20000/20170629163635747.npz",
+      "bytes": 30862554,
+      "sha256": "2f0dc0b95b35839d6c859759b9dfe3fe3968ffe6b199e3feb9beaea4d716ad46",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u24000/007-1900-100.npz",
+      "bytes": 27951686,
+      "sha256": "5c4e07aae8cbc63bad0ae8f4305520ae74c30a5d87c03643aa979ff835df358c",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u24000/007-1774-100.npz",
+      "bytes": 29167517,
+      "sha256": "c14ec872276da2ec117b5a00cbf97c1a3bf94b6dde8dc0ee875ba44975b6192a",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u24000/007-1782-100.npz",
+      "bytes": 29088036,
+      "sha256": "e5b31344c6272cbfaab4b06b289e0e919f9ac067663adcc185670a0ba58d3e4f",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u24000/007-1829-100.npz",
+      "bytes": 35448088,
+      "sha256": "707dcd3775ee900297225abe13e734d03f907ece7f54c567a3ec2c460dd8aeea",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u24000/007-2167-100.npz",
+      "bytes": 75688914,
+      "sha256": "f02824c19791cfbbf0dd6794d18e8e99badbb1424ea57d3d400a92887fd60ed0",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u24000/007-2210-100.npz",
+      "bytes": 76660827,
+      "sha256": "3ba266815b77da8c3ef8256238276968bc5e0aeedc745199208a1eeba8977e40",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u24000/007-2371-100.npz",
+      "bytes": 29355997,
+      "sha256": "9f3bdbfdad9014ecd1dd9a4f9a166ff3e8206f8380e3e977c9c2e9531f38413c",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u24000/007-2369-100.npz",
+      "bytes": 29478207,
+      "sha256": "bb445ced9939d6793d8f5bcadf99bded426937d57605bb6fb8191666f102ced2",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u24000/007-2525-100.npz",
+      "bytes": 32116056,
+      "sha256": "9476f1cac2912dcdd760721e75a2132cd01d59bcf9a7063666f6588796d61786",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u24000/007-2460-100.npz",
+      "bytes": 40651249,
+      "sha256": "c6fbf354b15e4b12b17dabef963b012eb6f7c4e5f267bae839bcb895ff12b0a0",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u24000/007-2697-100.npz",
+      "bytes": 60859510,
+      "sha256": "e9d1d5a4847ea947afed73f353eff09c97a0469b1d3b7f6330207cb5930f04bf",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u24000/007-2704-100.npz",
+      "bytes": 60914488,
+      "sha256": "d6b6fa555c27af77d4856bc21597b2afd3d5c4dda0a7050872e921b5e09e5c1a",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u24000/007-2769-100.npz",
+      "bytes": 28858978,
+      "sha256": "be8613fd53215e8cdb67d60d27535537f309e98865a11f560d390851e0de9710",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u24000/007-2345-100.npz",
+      "bytes": 107514454,
+      "sha256": "e373c798488a7bb3fe580bfbdac8f9d73b74363712f54a16400a39f82f90da85",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u24000/007-2809-100.npz",
+      "bytes": 29053747,
+      "sha256": "44425fea3cef6dff4e0f7bff69cae2f04d0a83c460c0a8ba2a0ece303a20bd29",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u24000/007-3413-200.npz",
+      "bytes": 25846195,
+      "sha256": "fd1f44ce669274158e9f47e4a1aa98c42c84d1617087723e11b2b86dc4e0742f",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u24000/007-3414-200.npz",
+      "bytes": 29221650,
+      "sha256": "b1a02a0ee67ba5e10aba42b0bee22595273ba0e0423e3c7a936ab9a615b9a4a0",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u24000/007-3420-200.npz",
+      "bytes": 28688037,
+      "sha256": "9dd57a52bb074ab63d662d6d5e73216392714df9b88430eae5425d5c281d8e1e",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u24000/007-3500-200.npz",
+      "bytes": 28820916,
+      "sha256": "63933be9dfdcc36790c5270b618b747e4eba8c27b1ee242a8c9ce3684f50849e",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u24000/007-2983-100.npz",
+      "bytes": 65874214,
+      "sha256": "15514ae336392b64d4f4de34bf2a3d79655520290f1b7c32ec0086cf9778e311",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u24000/007-3567-200.npz",
+      "bytes": 60627471,
+      "sha256": "3f11a2b5d80c4c7b15f1a9be35a1fb31ed9b0ea9ed7cb05d05b447b01aba20d4",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u24000/007-3628-200.npz",
+      "bytes": 50345533,
+      "sha256": "83cc57c20850febc8fdad3620251bcbb6eaf9526e6b238772bbd16058ed1d064",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u24000/007-3873-200.npz",
+      "bytes": 29932265,
+      "sha256": "93fcbdca63e2d218283efee00d823f7e2978b6c43990819d0804c72f7d3e6e20",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u24000/007-3541-200.npz",
+      "bytes": 59148117,
+      "sha256": "38a997973034f599eb5a75566b77ec8d31cee04871ca5e1e433b0bb2b5a9debf",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u24000/007-3921-200.npz",
+      "bytes": 23969186,
+      "sha256": "54a152af0a15b228d8b047a5f14560731a3c03d7c5d2dba0e413f5ee970620d5",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u24000/007-3727-200.npz",
+      "bytes": 76797567,
+      "sha256": "573c43c11faed6277010528b9d66951109342dd0ab07654c89ecd2f7da5eb3fb",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u24000/007-4033-200.npz",
+      "bytes": 57325174,
+      "sha256": "f55a7e4c3b2ee78546c6bf5417c804f918587f7736ed7874bea67edf840e7790",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u24000/007-4007-200.npz",
+      "bytes": 41039523,
+      "sha256": "af1e2d3fbf8e14a463451f839119919455837cc9b6bb1ac3ba53149e5b89d983",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u24000/007-4034-200.npz",
+      "bytes": 59224249,
+      "sha256": "d257a468b20dd0aab72ca43e4273d5f9b2419f55f10c39c7db8946bc0e737399",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u24000/007-4035-200.npz",
+      "bytes": 57348493,
+      "sha256": "495a5820b7d8814e0f420d34af36b070104e8fd229b3d894118d489787f66e5a",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u24000/007-4145-200.npz",
+      "bytes": 34771906,
+      "sha256": "85e9adcc97d8be9e2599e705a60bdc3d02d240c88d466a7f1a9d420c9a8b96a3",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u24000/007-4171-200.npz",
+      "bytes": 31879864,
+      "sha256": "8e6a86a25ab474ff700d4ded885bd816b0ba6a98695b74fa1bcf5117c2643305",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u24000/007-4224-200.npz",
+      "bytes": 29127415,
+      "sha256": "c6e650add4adf1c5913c62086fb9da3f4ce18875a28be325366617d334b7d05f",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u24000/007-4203-200.npz",
+      "bytes": 29575001,
+      "sha256": "eb377f7cfa3a526fa0a8d11e70213423240407d6f16ea7d7371a81f65aacdd38",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u24000/007-4479-200.npz",
+      "bytes": 59600620,
+      "sha256": "3219ec8621a6b990a44964055e7231a08f08973cb7a4f0b2aa9f7d4d1ae04281",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u24000/007-4576-200.npz",
+      "bytes": 28117880,
+      "sha256": "ca52a9640c7ef42fa568f9fbf849eaab1bdc508a7f8c8581f4a3cb161833ec83",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u24000/007-4743-200.npz",
+      "bytes": 33425630,
+      "sha256": "8a2360f3a1cdaffad1c4836b7a5f227bdcdf4a07f13ae72b16d00f610dfe59fc",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u24000/007-4482-200.npz",
+      "bytes": 39188838,
+      "sha256": "20aa2eebb38dde9357ab084afc224154f02ad616b7201f2fefb18c4c401f10fd",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u24000/007-4548-200.npz",
+      "bytes": 51534170,
+      "sha256": "a9f50dc0e2204c661b98a08a3c95624fd574c49e74f04acc41905cbeabfad11e",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u24000/007-4960-300.npz",
+      "bytes": 28045449,
+      "sha256": "af6daea268c08f6cb3485a700586223b9ae0e3379701888d80c510774c14dd4f",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u24000/007-5172-300.npz",
+      "bytes": 32082519,
+      "sha256": "bfdc891e9672766f9d9dbf2d1c9a644e37125af8e5fec1543a73df472b5aee82",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u24000/007-5063-300.npz",
+      "bytes": 28098992,
+      "sha256": "21f8bf83eaf75592978129fa2fff3a5460e21285e91816b5d08e43f7e5afe6ef",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u24000/007-5434-300.npz",
+      "bytes": 29675355,
+      "sha256": "0040315638726ceafe6cef53007f7794222b394208e224e0da0baf32fb7acd6c",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u24000/007-5443-300.npz",
+      "bytes": 30738958,
+      "sha256": "bc8270da89255c2c1f2d603cec046964159b55b6f03e80102d4a419b249df02c",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u24000/007-5269-300.npz",
+      "bytes": 34034035,
+      "sha256": "ba2ab2f886f5e930567a0d30024fc1bc05a3b3248af4797129acb7c7a1f99b05",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u24000/007-5474-300.npz",
+      "bytes": 29451393,
+      "sha256": "fea90936a373c8840566c053fed6ecb1c4dc5d7b744b9b5fb55aef26f0ebd206",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u24000/007-5470-300.npz",
+      "bytes": 30664314,
+      "sha256": "d9d9a7fda50f0766b3a9b6ccaa3e4419ba9de148b578e26b51066cad33832921",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u24000/007-4980-300.npz",
+      "bytes": 60295857,
+      "sha256": "17744185a1c04b224f33def5ab7a054d63e606867fc4acc6ad6b19bff79a94dd",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u24000/007-5869-300.npz",
+      "bytes": 29078760,
+      "sha256": "8cacd809165cc2197ff43417683776aa51226e3b37e1fca43cc4f15b132b5ead",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u24000/007-5504-300.npz",
+      "bytes": 40788549,
+      "sha256": "befa6910be8d12a649934c26adeb0884b407b8916160ab51e73ffb66d666ae4b",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u24000/007-5506-300.npz",
+      "bytes": 41532423,
+      "sha256": "9ffcc0143589e48a55cd88e063534a2ca74fd04c4a73a7a9ee516ef4b40a5c8c",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u24000/007-5938-300.npz",
+      "bytes": 33527175,
+      "sha256": "ad8c4caac17e5f68788b2f7a727cb919730d27bb58b46727cf0926053c7a3070",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u24000/007-6148-300.npz",
+      "bytes": 33038592,
+      "sha256": "867356bd3db1e9caea3b517913d81dd71240afb3a7b2b4787b6c47315ff6ad88",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u24000/007-6220-300.npz",
+      "bytes": 55371065,
+      "sha256": "b361b7a866f0d856e7c32819375a065a826ba70c5bf5fb05149c83e7ff73d058",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u24000/007-6054-300.npz",
+      "bytes": 67786122,
+      "sha256": "7cd089b5726a2506a73ee49bb6c64d4c9e608afc87f77e6374fcd64a8980c2c5",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u24000/007-5672-300.npz",
+      "bytes": 61671185,
+      "sha256": "486e522d42e33c4c2f56c7c3ad70140a11eb586d41b25452a791ccceeda39335",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u24000/007-6519-400.npz",
+      "bytes": 35293192,
+      "sha256": "90752fdf4cff0f5827e91d7f18e2d53d378cb4176e25d72be6a3c6d868248aaf",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u24000/007-6551-400.npz",
+      "bytes": 30283367,
+      "sha256": "bdbd697a9924f6da5c0e5438f90e04e50f3652d2dbce4ddaedaac0e54412de1a",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u24000/007-6577-400.npz",
+      "bytes": 31368448,
+      "sha256": "f49e0433eae25e84d3ee00ab38e93cf0fb740ed03359b88bc9ae568d076ec3de",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u24000/007-6722-400.npz",
+      "bytes": 18525415,
+      "sha256": "ef9422256b0ff57d50a35ca045f52c9b430d16d9e153478fc3f97b8d56abc39e",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u24000/007-6520-400.npz",
+      "bytes": 34112164,
+      "sha256": "81aa7c19d5bd1e2df2cd1360db06957d68c1fa257c8da68f19b41bee3a0d50ec",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u24000/007-6686-400.npz",
+      "bytes": 18425183,
+      "sha256": "8d3cde2259c067e714028d3c0d3247c8ad678014ccbd714cc80e7680756472e7",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u24000/007-6815-400.npz",
+      "bytes": 29856113,
+      "sha256": "4436f1236e0e085228d56f98b65e99b67ffb732d69e3987366545588b29565ea",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u24000/007-6811-400.npz",
+      "bytes": 29926321,
+      "sha256": "56ae2fcfb4c3dcf2790addde14fcd8cd341287ba7f5a9b97aad60a36ee01edf7",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u24000/007-6847-400.npz",
+      "bytes": 30438002,
+      "sha256": "4c41b8bd1b92d234269e4a8e7154936e844077cc96e03f93288a7d4c3e234a78",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u24000/007-6894-400.npz",
+      "bytes": 36759070,
+      "sha256": "1b17c592d532a214dc19e2f161bc77309afcccef80c7c4c3be15b7d47c3d9084",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u24000/20170503161702100.npz",
+      "bytes": 29025319,
+      "sha256": "dd04a626b6c92998bf75e86ac6358b20d999593ec993756c636d3ad852d2ae11",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u24000/20170509100155767.npz",
+      "bytes": 22154257,
+      "sha256": "0feec3b5adcd3857c448deb01d67d79668daaada613bc7859e084b2c35a74171",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u24000/007-6912-400.npz",
+      "bytes": 26261420,
+      "sha256": "3208b84e8b5d1fd742c5654594798462cfd4b9deca49d6ac3519fd03572d582a",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u24000/007-6734-400.npz",
+      "bytes": 64994946,
+      "sha256": "a6fcaee6479f9b23b9d36999d3af1ac3ac4a457e895a21dae08e783c84c00b4d",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u24000/20170503161702278.npz",
+      "bytes": 28785605,
+      "sha256": "8d056b1dfbef9d7378b639ddbea2065c93bc77b6060e7fcbce6fa007571b75ba",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u24000/20170518142454730.npz",
+      "bytes": 28534611,
+      "sha256": "8132e5794d626b9d4f7d89d9a5f212f2ced25731566b55dff164e10349096361",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u24000/20170510152714920.npz",
+      "bytes": 30103183,
+      "sha256": "bd2a178bd36f25b1e09e1d29dc0deecf9f4a2516d15bd968d28bfd553dadba91",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u24000/20170522100404106.npz",
+      "bytes": 33271586,
+      "sha256": "5f929429a301fbf6aaf1f55934ba5072722aaf969fb1678e41766a34d6635087",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u24000/20170629163635747.npz",
+      "bytes": 30839646,
+      "sha256": "4b055bd807c14173bebdc038ef5139dc2846596c8e57d649a78c67c3144cef38",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u24000/20170609154552424.npz",
+      "bytes": 38212263,
+      "sha256": "97eab0cd1a009bcc57925598f73445cd33c0f942baae01fe0779406608b38539",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    }
+  ],
+  "deleted_bytes": 6029496691,
+  "each_local_and_remote_SHA_verified": true,
+  "local_files_deleted": false,
+  "completed_at": "2026-10-03T23:52:58.855361+00:00"
+}

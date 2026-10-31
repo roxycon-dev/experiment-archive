@@ -1,0 +1,598 @@
+{
+  "adapter": {
+    "source": "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/adapter/training_runs/adapter/protocol.json",
+    "identity_SHA": "4948bd7a9a745f32abf0679a5bf8026e943569392de78c086e87c0138d683fed",
+    "baseline_initial_state_SHA": "e180ed1738b5cde6797e60a124aaf75b3cc78309463bb358a240cbddf0480f00",
+    "resume_from_own_update": 1000,
+    "name": "HRDecoder-DirectMultiscaleAdapter",
+    "seed": 42,
+    "private_seed": 20261008,
+    "canvas": 2048,
+    "updates": 40000,
+    "global_batch": 2,
+    "optimizer": {
+      "type": "SGD",
+      "lr": 0.005,
+      "private_lr_multiplier": 4,
+      "momentum": 0.9,
+      "weight_decay": 0.0005
+    },
+    "lr": {
+      "type": "poly",
+      "power": 1,
+      "warmup": 1500,
+      "warmup_ratio": 1E-06
+    },
+    "lambda_k": [
+      [
+        0,
+        0
+      ],
+      [
+        1500,
+        0
+      ],
+      [
+        4000,
+        0.5
+      ],
+      [
+        32000,
+        0.5
+      ],
+      [
+        40000,
+        0.1
+      ]
+    ],
+    "lambda_action": null,
+    "GT": "base original-formula Dice + .1 HRcrop Dice; private Dice + .25 ordinary all-valid BCE",
+    "KD": "private only fixed GT-consistent train teacher T*, all-valid normalization; no moving student targets",
+    "readout": "W48 F1-F4 project32/sum; RGB16+probability16; DW7-LN-e2 blocks64x2; zero64->64/pixelshuffle4",
+    "gradient_route": "all four HRNet feature inputs and p0 detached; final=z0.float().detach()+r.float(); no private gradient into base",
+    "mask": "Existing geometry-valid and ignore255 masking retained; not claiming every original training detail identical",
+    "initialization": "fresh ImageNet W48 seed42; no warm task weights",
+    "screen_updates": 4000
+  },
+  "aligned": {
+    "source": "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/aligned/training_runs/aligned/protocol.json",
+    "identity_SHA": "637a5e77db60fecb85c569b7bbbb9cdececdef317e8a62136f49a1f9ef1a5f04",
+    "baseline_initial_state_SHA": "e180ed1738b5cde6797e60a124aaf75b3cc78309463bb358a240cbddf0480f00",
+    "resume_from_own_update": null,
+    "name": "HRDecoder-ClassBalancedCorrection",
+    "seed": 42,
+    "private_seed": 20261008,
+    "canvas": 2048,
+    "updates": 40000,
+    "global_batch": 2,
+    "optimizer": {
+      "type": "SGD",
+      "lr": 0.005,
+      "private_lr_multiplier": 4,
+      "momentum": 0.9,
+      "weight_decay": 0.0005
+    },
+    "lr": {
+      "type": "poly",
+      "power": 1,
+      "warmup": 1500,
+      "warmup_ratio": 1E-06
+    },
+    "lambda_k": [
+      [
+        0,
+        0
+      ],
+      [
+        1500,
+        0
+      ],
+      [
+        4000,
+        0.5
+      ],
+      [
+        32000,
+        0.5
+      ],
+      [
+        40000,
+        0.1
+      ]
+    ],
+    "lambda_action": null,
+    "GT": "base original Dice + .25 GT-stratified balanced BCE + .1 HRcrop original Dice; private original Dice + .25 fullGT positive/negative balanced BCE",
+    "KD": "base fixed GT-consistent teacher KL normalized by fullGTpositive/negative counts at .5*lambda_K; private fixed GT-consistent teacher fullGT positive/negative stratified KL at lambda_K; teacher input only during training",
+    "readout": "W48 F1-F4 project32/sum; RGB/probability pixelunshuffle2->16 each at1/2; DW13-LN-e2 blocks64x2; zero64->16/pixelshuffle2",
+    "gradient_route": "private feature/logit inputs detach; explicit base GT and base teacher KL train HRNet; private GT/KD cannot change base",
+    "mask": "Existing geometry-valid and ignore255 masking retained; not claiming every original training detail identical",
+    "initialization": "fresh ImageNet W48 seed42; no warm task weights",
+    "screen_updates": 4000
+  },
+  "cet": {
+    "source": "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/cet/training_runs/cet/protocol.json",
+    "identity_SHA": "435bd9619a6f141d5598ae078e5f170c3201fd82dc0b87f05ae0897abf3b9460",
+    "baseline_initial_state_SHA": "e180ed1738b5cde6797e60a124aaf75b3cc78309463bb358a240cbddf0480f00",
+    "resume_from_own_update": null,
+    "name": "HRDecoder-CET",
+    "seed": 42,
+    "private_seed": 20261008,
+    "canvas": 2048,
+    "updates": 40000,
+    "global_batch": 2,
+    "optimizer": {
+      "type": "SGD",
+      "lr": 0.005,
+      "momentum": 0.9,
+      "weight_decay": 0.0005
+    },
+    "lr": {
+      "type": "poly",
+      "power": 1,
+      "warmup": 1500,
+      "warmup_ratio": 1E-06
+    },
+    "lambda_k": [
+      [
+        0,
+        0
+      ],
+      [
+        1500,
+        0
+      ],
+      [
+        4000,
+        0.5
+      ],
+      [
+        32000,
+        0.5
+      ],
+      [
+        40000,
+        0.1
+      ]
+    ],
+    "lambda_action": ".25*lambda_k",
+    "GT": ".75G(final)+.25G(base)+.1G(HRcrop)",
+    "KD": "K(final,T_star)+.25K(base,T); GT-consistent, all-valid denominator",
+    "readout": null,
+    "gradient_route": "task all; action only L/G/head",
+    "mask": null,
+    "initialization": null,
+    "screen_updates": null
+  },
+  "detail": {
+    "source": "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/detail/training_runs/detail/protocol.json",
+    "identity_SHA": "046abab773f7cb7a9e4f0a0f9cc44c4ad32d48431b971f22720dc8bd7936168a",
+    "baseline_initial_state_SHA": "e180ed1738b5cde6797e60a124aaf75b3cc78309463bb358a240cbddf0480f00",
+    "resume_from_own_update": null,
+    "name": "HRDecoder-HalfResolutionAdapter",
+    "seed": 42,
+    "private_seed": 20261008,
+    "canvas": 2048,
+    "updates": 40000,
+    "global_batch": 2,
+    "optimizer": {
+      "type": "SGD",
+      "lr": 0.005,
+      "private_lr_multiplier": 4,
+      "momentum": 0.9,
+      "weight_decay": 0.0005
+    },
+    "lr": {
+      "type": "poly",
+      "power": 1,
+      "warmup": 1500,
+      "warmup_ratio": 1E-06
+    },
+    "lambda_k": [
+      [
+        0,
+        0
+      ],
+      [
+        1500,
+        0
+      ],
+      [
+        4000,
+        0.5
+      ],
+      [
+        32000,
+        0.5
+      ],
+      [
+        40000,
+        0.1
+      ]
+    ],
+    "lambda_action": null,
+    "GT": "base original-formula Dice + .1 HRcrop Dice; private Dice + .25 ordinary all-valid BCE",
+    "KD": "private only fixed GT-consistent train teacher T*, all-valid normalization; no moving student targets",
+    "readout": "W48 F1-F4 project32/sum; RGB/probability pixelunshuffle2->16 each at1/2; DW13-LN-e2 blocks64x2; zero64->16/pixelshuffle2",
+    "gradient_route": "all four HRNet feature inputs and p0 detached; final=z0.float().detach()+r.float(); no private gradient into base",
+    "mask": "Existing geometry-valid and ignore255 masking retained; not claiming every original training detail identical",
+    "initialization": "fresh ImageNet W48 seed42; no warm task weights",
+    "screen_updates": 4000
+  },
+  "expert": {
+    "source": "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/expert/training_runs/expert/protocol.json",
+    "identity_SHA": "4fa9d6cf18c806475d4877c34154ed15cb8e45500efe7f1e79e8dabd767758c9",
+    "baseline_initial_state_SHA": "e180ed1738b5cde6797e60a124aaf75b3cc78309463bb358a240cbddf0480f00",
+    "resume_from_own_update": null,
+    "name": "HRDecoder-PrivateExpert",
+    "seed": 42,
+    "private_seed": 20261008,
+    "canvas": 2048,
+    "updates": 40000,
+    "global_batch": 2,
+    "optimizer": {
+      "type": "SGD",
+      "lr": 0.005,
+      "momentum": 0.9,
+      "weight_decay": 0.0005
+    },
+    "lr": {
+      "type": "poly",
+      "power": 1,
+      "warmup": 1500,
+      "warmup_ratio": 1E-06
+    },
+    "lambda_k": [
+      [
+        0,
+        0
+      ],
+      [
+        1500,
+        0
+      ],
+      [
+        4000,
+        0.5
+      ],
+      [
+        32000,
+        0.5
+      ],
+      [
+        40000,
+        0.1
+      ]
+    ],
+    "lambda_action": null,
+    "GT": "base original-formula Dice + .1 HRcrop; private standalone Dice + .5 fused Dice; no ordinary BCE",
+    "KD": "private standalone fixed GT-consistent T* KL; positive/negative GT strata independently normalized at fixed .5/.5",
+    "readout": "four independent private segmentation logits zero initialized; four learned per-class convex logit fusion weights initialized .5",
+    "gradient_route": "features and p0 detached; final=alpha*base.float().detach()+(1-alpha)*private.float(); base supervised independently",
+    "mask": "Existing geometry-valid and ignore255 masking retained; not claiming every original training detail identical",
+    "initialization": "fresh ImageNet W48 seed42; no warm task weights",
+    "screen_updates": 4000
+  },
+  "foundation": {
+    "source": "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/foundation/training_runs/foundation/protocol.json",
+    "identity_SHA": "cc3a215c3e867779f4c5e2a6feedb5921c95b4cf48bfc9fe610003216be73bf8",
+    "baseline_initial_state_SHA": "e180ed1738b5cde6797e60a124aaf75b3cc78309463bb358a240cbddf0480f00",
+    "resume_from_own_update": null,
+    "name": "HRDecoder-FoundationDistill",
+    "seed": 42,
+    "private_seed": 20261008,
+    "canvas": 2048,
+    "updates": 40000,
+    "global_batch": 2,
+    "optimizer": {
+      "type": "SGD",
+      "lr": 0.005,
+      "private_lr_multiplier": 4,
+      "momentum": 0.9,
+      "weight_decay": 0.0005
+    },
+    "lr": {
+      "type": "poly",
+      "power": 1,
+      "warmup": 1500,
+      "warmup_ratio": 1E-06
+    },
+    "lambda_k": [
+      [
+        0,
+        0
+      ],
+      [
+        1500,
+        0
+      ],
+      [
+        4000,
+        0.5
+      ],
+      [
+        32000,
+        0.5
+      ],
+      [
+        40000,
+        0.1
+      ]
+    ],
+    "lambda_action": null,
+    "GT": "base original Dice + .25 GT-stratified balanced BCE + .1 HRcrop original Dice; private original Dice + .25 ordinary all-valid BCE",
+    "KD": "base fixed GT-consistent teacher KL normalized by fullGTpositive/negative counts at .5*lambda_K; private fixed teacher all-valid KL at lambda_K; teacher input only during training",
+    "readout": "W48 F1-F4 project32/sum; RGB/probability pixelunshuffle2->16 each at1/2; DW13-LN-e2 blocks64x2; zero64->16/pixelshuffle2",
+    "gradient_route": "private feature/logit inputs detach; explicit base GT and base teacher KL train HRNet; private GT/KD cannot change base",
+    "mask": "Existing geometry-valid and ignore255 masking retained; not claiming every original training detail identical",
+    "initialization": "fresh ImageNet W48 seed42; no warm task weights",
+    "screen_updates": 4000
+  },
+  "iou": {
+    "source": "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/iou/training_runs/iou/protocol.json",
+    "identity_SHA": "49ee0537d2802450284844a32405a6da0116ee9b77c2ab519aa9f985d15d47d4",
+    "baseline_initial_state_SHA": "e180ed1738b5cde6797e60a124aaf75b3cc78309463bb358a240cbddf0480f00",
+    "resume_from_own_update": null,
+    "name": "HRDecoder-IoUCorrection",
+    "seed": 42,
+    "private_seed": 20261008,
+    "canvas": 2048,
+    "updates": 40000,
+    "global_batch": 2,
+    "optimizer": {
+      "type": "SGD",
+      "lr": 0.005,
+      "private_lr_multiplier": 4,
+      "momentum": 0.9,
+      "weight_decay": 0.0005
+    },
+    "lr": {
+      "type": "poly",
+      "power": 1,
+      "warmup": 1500,
+      "warmup_ratio": 1E-06
+    },
+    "lambda_k": [
+      [
+        0,
+        0
+      ],
+      [
+        1500,
+        0
+      ],
+      [
+        4000,
+        0.5
+      ],
+      [
+        32000,
+        0.5
+      ],
+      [
+        40000,
+        0.1
+      ]
+    ],
+    "lambda_action": null,
+    "GT": "base original Dice + .25 GT-stratified balanced BCE + .1 HRcrop original Dice; private per-image/class exact active-margin Lovasz hinge + .25 fullGT positive/negative balanced BCE",
+    "KD": "base fixed GT-consistent teacher KL normalized by fullGTpositive/negative counts at .5*lambda_K; private fixed GT-consistent teacher fullGT positive/negative stratified KL at lambda_K; teacher input only during training",
+    "readout": "W48 F1-F4 project64/concat256;1x1to128/DW3e2x2/project64 at1/8; RGBunshuffle2to32+mix96to64+DW13e2x2 at1/2; rawdetachlogitunshuffle16 bypass; zero80to16/shuffle2",
+    "gradient_route": "private feature/logit inputs detach; explicit base GT and base teacher KL train HRNet; private GT/KD cannot change base",
+    "mask": "Existing geometry-valid and ignore255 masking retained; not claiming every original training detail identical",
+    "initialization": "fresh ImageNet W48 seed42; no warm task weights",
+    "screen_updates": 4000
+  },
+  "residual": {
+    "source": "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/residual/training_runs/residual/protocol.json",
+    "identity_SHA": "96cd1bc0ce79e9e5f5f8247958f868a4e00023f072bc6fea920092ad5a5003ec",
+    "baseline_initial_state_SHA": "e180ed1738b5cde6797e60a124aaf75b3cc78309463bb358a240cbddf0480f00",
+    "resume_from_own_update": null,
+    "name": "HRDecoder-DecoupledResidual",
+    "seed": 42,
+    "private_seed": 20261008,
+    "canvas": 2048,
+    "updates": 40000,
+    "global_batch": 2,
+    "optimizer": {
+      "type": "SGD",
+      "lr": 0.005,
+      "momentum": 0.9,
+      "weight_decay": 0.0005
+    },
+    "lr": {
+      "type": "poly",
+      "power": 1,
+      "warmup": 1500,
+      "warmup_ratio": 1E-06
+    },
+    "lambda_k": [
+      [
+        0,
+        0
+      ],
+      [
+        1500,
+        0
+      ],
+      [
+        4000,
+        0.5
+      ],
+      [
+        32000,
+        0.5
+      ],
+      [
+        40000,
+        0.1
+      ]
+    ],
+    "lambda_action": null,
+    "GT": "base original-formula Dice + .1 HRcrop Dice; private Dice + .25 ordinary all-valid BCE",
+    "KD": "private only fixed GT-consistent train teacher T*, all-valid normalization; no moving student targets",
+    "readout": "four independent continuous residual readouts conv32->16+pixelshuffle4; exactly zero initialized",
+    "gradient_route": "all four HRNet feature inputs and p0 detached; final=z0.float().detach()+r.float(); no private gradient into base",
+    "mask": "Existing geometry-valid and ignore255 masking retained; not claiming every original training detail identical",
+    "initialization": "fresh ImageNet W48 seed42; no warm task weights",
+    "screen_updates": 8000
+  },
+  "sacd": {
+    "source": "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/sacd/training_runs/sacd/protocol.json",
+    "identity_SHA": "8f6fd8dfc7a032f335511168a4ae831f4c9a69f5aaaf00876842c11dc20c11cf",
+    "baseline_initial_state_SHA": "e180ed1738b5cde6797e60a124aaf75b3cc78309463bb358a240cbddf0480f00",
+    "resume_from_own_update": null,
+    "name": "HRDecoder-SACD",
+    "seed": 42,
+    "private_seed": 20261008,
+    "canvas": 2048,
+    "updates": 40000,
+    "global_batch": 2,
+    "optimizer": {
+      "type": "SGD",
+      "lr": 0.005,
+      "momentum": 0.9,
+      "weight_decay": 0.0005
+    },
+    "lr": {
+      "type": "poly",
+      "power": 1,
+      "warmup": 1500,
+      "warmup_ratio": 1E-06
+    },
+    "lambda_k": [
+      [
+        0,
+        0
+      ],
+      [
+        1500,
+        0
+      ],
+      [
+        4000,
+        0.5
+      ],
+      [
+        32000,
+        0.5
+      ],
+      [
+        40000,
+        0.1
+      ]
+    ],
+    "lambda_action": ".25*lambda_k",
+    "GT": ".75G(final)+.25G(base)+.1G(HRcrop)",
+    "KD": "K(final,T_star)+.25K(base,T); GT-consistent, all-valid denominator",
+    "readout": "four independent 128->32 nonlinear action readouts; shared L/G; .98/.01/.01 zero-weight initialization",
+    "gradient_route": "task all; action only L/G/head",
+    "mask": null,
+    "initialization": null,
+    "screen_updates": null
+  },
+  "semantic": {
+    "source": "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/semantic/training_runs/semantic/protocol.json",
+    "identity_SHA": "9e21de915c24dc3c16322cc39babb53cdc3754271b07e5f27ef22b10b43ddf43",
+    "baseline_initial_state_SHA": "e180ed1738b5cde6797e60a124aaf75b3cc78309463bb358a240cbddf0480f00",
+    "resume_from_own_update": null,
+    "name": "HRDecoder-ScalePreservingCorrection",
+    "seed": 42,
+    "private_seed": 20261008,
+    "canvas": 2048,
+    "updates": 40000,
+    "global_batch": 2,
+    "optimizer": {
+      "type": "SGD",
+      "lr": 0.005,
+      "private_lr_multiplier": 4,
+      "momentum": 0.9,
+      "weight_decay": 0.0005
+    },
+    "lr": {
+      "type": "poly",
+      "power": 1,
+      "warmup": 1500,
+      "warmup_ratio": 1E-06
+    },
+    "lambda_k": [
+      [
+        0,
+        0
+      ],
+      [
+        1500,
+        0
+      ],
+      [
+        4000,
+        0.5
+      ],
+      [
+        32000,
+        0.5
+      ],
+      [
+        40000,
+        0.1
+      ]
+    ],
+    "lambda_action": null,
+    "GT": "base original Dice + .25 GT-stratified balanced BCE + .1 HRcrop original Dice; private original Dice + .25 fullGT positive/negative balanced BCE",
+    "KD": "base fixed GT-consistent teacher KL normalized by fullGTpositive/negative counts at .5*lambda_K; private fixed GT-consistent teacher fullGT positive/negative stratified KL at lambda_K; teacher input only during training",
+    "readout": "W48 F1-F4 project64/concat256;1x1to128/DW3e2x2/project64 at1/8; RGBunshuffle2to32+mix96to64+DW13e2x2 at1/2; rawdetachlogitunshuffle16 bypass; zero80to16/shuffle2",
+    "gradient_route": "private feature/logit inputs detach; explicit base GT and base teacher KL train HRNet; private GT/KD cannot change base",
+    "mask": "Existing geometry-valid and ignore255 masking retained; not claiming every original training detail identical",
+    "initialization": "fresh ImageNet W48 seed42; no warm task weights",
+    "screen_updates": 4000
+  },
+  "v3": {
+    "source": "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/stopped_20261009T001430/training_runs/v3/protocol.json",
+    "identity_SHA": "a42c0c6bbb0449e9bc8e04ed106158062697bc5272554937b4e8048abc55bff3",
+    "name": "Older ArchitectureDesign run labeled v3 (distinct from 2026-10-16 NativePyramid proposal)",
+    "seed": 42,
+    "private_seed": 20261008,
+    "canvas": 2048,
+    "updates": 40000,
+    "global_batch": 2,
+    "optimizer": {
+      "type": "SGD",
+      "lr": 0.005,
+      "momentum": 0.9,
+      "weight_decay": 0.0005
+    },
+    "lr": {
+      "type": "poly",
+      "power": 1,
+      "warmup": 1500,
+      "warmup_ratio": 1E-06
+    },
+    "lambda_k": [
+      [
+        0,
+        0
+      ],
+      [
+        1500,
+        0
+      ],
+      [
+        4000,
+        0.5
+      ],
+      [
+        32000,
+        0.5
+      ],
+      [
+        40000,
+        0.1
+      ]
+    ],
+    "GT": null,
+    "KD": null,
+    "readout": null,
+    "gradient_route": null,
+    "initialization": null,
+    "interpretation_note": "This run arm was stopped at 21,930 updates after 20k validation collapse; do not name-match it to the current candidate."
+  }
+}

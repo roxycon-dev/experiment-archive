@@ -1,0 +1,52 @@
+{
+  "status": "PASS",
+  "checked_at": "2026-10-09T19:05:26.977598+08:00",
+  "torch": "2.6.0+cu124",
+  "device": "CPU",
+  "dtype": "float64",
+  "synthetic_canvas": 64,
+  "batch": 2,
+  "synthetic_nonzero_readout": true,
+  "actual_trained_checkpoint_used": false,
+  "forward_and_loss_bitwise_equal": true,
+  "private_parameter_gradients_bitwise_equal": true,
+  "direct_z0_gradient_preserved_bitwise": true,
+  "private_feature_gradient_cut": true,
+  "old_feature_gradient_norms": [
+    0.00011669128734923608,
+    7.087696182282423e-05,
+    3.060940039532734e-05,
+    3.882315108069969e-05
+  ],
+  "positive_action_targets_keep_on_off_at_p0499_p0501": [
+    [
+      0.19960081577301025,
+      0.8003991842269897,
+      0.0
+    ],
+    [
+      1.0,
+      0.0,
+      0.0
+    ]
+  ],
+  "negative_action_targets_keep_on_off_at_p0499_p0501": [
+    [
+      1.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.19960081577301025,
+      0.0,
+      0.8003991842269897
+    ]
+  ],
+  "patch_SHA256": "bf170ef132a49366e1b20917d75e46088f819df47b8cb1f26f9a5d312cf6490b",
+  "formal_training_changed": false,
+  "GPU_used": false,
+  "checkpoint_download": false,
+  "accuracy_validated": false,
+  "causal_degradation_root_cause_proven": false,
+  "limitations": "Synthetic private-branch gradient property only. Requires separately authorized fresh full-budget experiment; direct z0 coupling and moving targets remain."
+}

@@ -1,0 +1,43 @@
+{
+  "vendor": "zcode",
+  "model": "zhipu/glm-5.3-flash",
+  "text": "��β������ɡ�ȫ�����̲�ִ�У��޷���������ѵ����δ��װ������\n\n## ִ�н��\n\n**����**��`tests/run_contract_smoke.py` �Ѵ����� 9 ����ͨ��������������Ҫ��ȱ���飺TBD ������py_compile ���衢��ʵ������ʽ preflight����ȫ�����롣\n\n**preflight �޸���2 �� fail-closed ȱ�ڣ�`tools/preflight_contract.py`��**\n1. `check_initialization:393` �� U �� `encoder_weights_file`/`sha256` ȱ��һʱԭ��**��Ĭ����**��ϣУ�飻��Ϊ����������ɶ��ṩ����\n2. `preflight_contract.py:716` �� H1/U1 manifest ͬ�ļ��Ƚϼ� `os.path.normcase`���޸� Windows ��Сд·�����С�\n\n**���ԣ�12/12 ͨ����rc=0��** �� `tests/run_contract_smoke.py` ���� 3 ������\n- **P0** py_compile��tools/*.py��5��+ tests/*.py��1��ȫ���ɱ��루.pyc �� `tests/_tmp/pyc`�����������ƣ�\n- **N4b** ��ʽģʽ TBD ռλ�� �� rc=1\n- **R1** ��ʵ������ʽ preflight �� rc=1����ȷ blocker �����˳�\n\n���� 9 �������ϳ� train-only ���� ��2����Բ�һ�� ��2��official test й©��REQUIRED��ȱ image/mask��valid_mode=none �� mask���ع�ȫ����\n\n**py_compile ˫����**��`python -m py_compile tools/*.py tests/*.py` �� OK��\n\n**��ʵ������ʽ preflight**���������У���ʵ�˳��� **1**����60 �� blocker ȫ��Ϊ REQUIRED ռλ����������λ JSON ·������10 ����������ʽ��¼����ʵ DDR split 454/76/227 �ı۶��뻥�⡢���ռλ�����󡪡�բ����ȷ fail closed��\n\n**����������**��\n- `docs/PREFLIGHT_TEST_REPORT.md` �� 12 ��������R1 ϸ�ڡ��޸���¼\n- `docs/IMPLEMENTATION_STATUS.md` �� ���״̬��60 �� blocker ����������嵥���˳�����Լ\n\n��ʵ������ռλ����training_entry��Ȩ�� sha256���ⲿ manifest���������Σ�����ǰ���� FAIL �������Ϊ������������Ϊ����ǰ������ɵ����",
+  "usage": {
+    "source": "provider",
+    "modelRequestCount": 25,
+    "inputTokens": 1913995,
+    "outputTokens": 18102,
+    "totalTokens": 1932097,
+    "cacheReadTokens": 1820224,
+    "cacheWriteTokens": 0,
+    "reasoningTokens": 10027,
+    "webFetchRequests": 0,
+    "webSearchRequests": 0
+  },
+  "raw": {
+    "sessionId": "sess_ac51d527-8c40-4d2e-ac95-ff7aece8e894",
+    "traceId": "440cf635-4943-4531-a9e5-e943e270daf4",
+    "turnId": "turn_7b93d134-0a95-4c77-b2cc-eea6992e51a3",
+    "response": "��β������ɡ�ȫ�����̲�ִ�У��޷���������ѵ����δ��װ������\n\n## ִ�н��\n\n**����**��`tests/run_contract_smoke.py` �Ѵ����� 9 ����ͨ��������������Ҫ��ȱ���飺TBD ������py_compile ���衢��ʵ������ʽ preflight����ȫ�����롣\n\n**preflight �޸���2 �� fail-closed ȱ�ڣ�`tools/preflight_contract.py`��**\n1. `check_initialization:393` �� U �� `encoder_weights_file`/`sha256` ȱ��һʱԭ��**��Ĭ����**��ϣУ�飻��Ϊ����������ɶ��ṩ����\n2. `preflight_contract.py:716` �� H1/U1 manifest ͬ�ļ��Ƚϼ� `os.path.normcase`���޸� Windows ��Сд·�����С�\n\n**���ԣ�12/12 ͨ����rc=0��** �� `tests/run_contract_smoke.py` ���� 3 ������\n- **P0** py_compile��tools/*.py��5��+ tests/*.py��1��ȫ���ɱ��루.pyc �� `tests/_tmp/pyc`�����������ƣ�\n- **N4b** ��ʽģʽ TBD ռλ�� �� rc=1\n- **R1** ��ʵ������ʽ preflight �� rc=1����ȷ blocker �����˳�\n\n���� 9 �������ϳ� train-only ���� ��2����Բ�һ�� ��2��official test й©��REQUIRED��ȱ image/mask��valid_mode=none �� mask���ع�ȫ����\n\n**py_compile ˫����**��`python -m py_compile tools/*.py tests/*.py` �� OK��\n\n**��ʵ������ʽ preflight**���������У���ʵ�˳��� **1**����60 �� blocker ȫ��Ϊ REQUIRED ռλ����������λ JSON ·������10 ����������ʽ��¼����ʵ DDR split 454/76/227 �ı۶��뻥�⡢���ռλ�����󡪡�բ����ȷ fail closed��\n\n**����������**��\n- `docs/PREFLIGHT_TEST_REPORT.md` �� 12 ��������R1 ϸ�ڡ��޸���¼\n- `docs/IMPLEMENTATION_STATUS.md` �� ���״̬��60 �� blocker ����������嵥���˳�����Լ\n\n��ʵ������ռλ����training_entry��Ȩ�� sha256���ⲿ manifest���������Σ�����ǰ���� FAIL �������Ϊ������������Ϊ����ǰ������ɵ����",
+    "usage": {
+      "source": "provider",
+      "modelRequestCount": 25,
+      "inputTokens": 1913995,
+      "outputTokens": 18102,
+      "totalTokens": 1932097,
+      "cacheReadTokens": 1820224,
+      "cacheWriteTokens": 0,
+      "reasoningTokens": 10027,
+      "webFetchRequests": 0,
+      "webSearchRequests": 0
+    },
+    "eventCount": 11856,
+    "projection": {
+      "status": "idle",
+      "turnCount": 1,
+      "totalTokenCount": 1932097,
+      "contextUsed": 89934,
+      "contextWindow": 200000
+    }
+  }
+}

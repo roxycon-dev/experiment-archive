@@ -1,0 +1,13 @@
+你是代码审查与收尾执行者，模型为 WorkBuddy DeepSeek v4.1 Flash。直接在 D:\dataset\experiment\HRDecoder_FullCompetition_20260920 工作。智谱上一轮已写入 trainer/ 下的 gate.py、loss.py、metrics.py、checkpoint.py、optim.py、data/*、models/weight_loading.py、models/convnext_unet.py，但因 30 分钟超时未完成。请先审查现有代码，再补齐并实际测试；禁止连接服务器、训练真实数据、修改 D:\HRDecoder。
+
+必须完成：
+1. 找出并修复现有实现中会影响科学有效性或运行的 bug，尤其：EX/HE/SE/MA 类序、DDR 标签解码、external valid mask、masked BCE+Dice 归一、全无效类梯度、p>0.5、TP/FP/FN 累计、scheduler 按 optimizer update、checkpoint 恢复一致性。
+2. 补齐单一 train.py 与 trainer/engine.py、config loader。支持 external_pretrain 和 ddr_finetune；CLI 硬拒绝 test 作为训练/选点 split；gradient accumulation 以 optimizer update 计数；checkpoint 包含模型/optimizer/scheduler/scaler/update/seed/config hash/manifest hash。
+3. 实现 trainer/models/hrdecoder_adapter.py：复用 D:\HRDecoder 的单个学生 HRDecoder/HRNet+decoder，绕开 reference、融合与 MA residual head。若旧仓库环境在 Windows 无法导入，必须给 DEPENDENCY_BLOCKED，不能用假模型冒充。ImageNet 权重加载不允许静默部分加载，必须输出 missing/unexpected 并由配置决定是否接受。
+4. 审查 convnext_unet.py 的 detail_branch：若已真正融合且有 shape test则保留；否则把 U0/U1 配置都改为 false。模型输出严格 N×4×H×W logits。
+5. 验证路径必须整图/滑窗还原后累计指标；若尚未实现，正式训练入口 fail closed。禁止 crop 指标冒充 val。
+6. 新建 tools/preflight_training.py 与 tests/run_training_smoke.py。用合成 fake model/data 覆盖：一次 forward/backward、valid=none 不产生梯度、参数组互斥完整、梯度累积和 scheduler 更新次数、checkpoint roundtrip、断点后 update 连续、指标手算一致、test split 被拒绝、正式模式无整图 evaluator 被拒绝。真实 H/U 依赖无法满足时标记 DEPENDENCY_BLOCKED，不计 PASS。
+7. 更新四 YAML 的 structure.training_entry 为 train.py；把本机 readiness 与 GPU calibration 分开：LOCAL_READY 允许 micro_batch/grad_accum/checkpointing 待校准，但正式训练仍要求这些字段已填写。不要降低原 contract 的正式模式闸门。
+8. 写 docs/TRAINING_OBJECTIVE.md 和 docs/TRAINING_IMPLEMENTATION_STATUS.md。运行 py_compile、旧 12/12 contract smoke、新 training smoke。修到公共核心测试通过。
+
+最后只报告：审查修复、文件、实际测试、依赖阻塞、是否可进入短时 GPU 校准、五个最高风险。不要声称指标会必涨。

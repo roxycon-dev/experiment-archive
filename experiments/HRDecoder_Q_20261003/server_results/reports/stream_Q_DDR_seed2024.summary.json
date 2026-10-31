@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "arm": "Q_DDR",
+  "seed": 2024,
+  "updates": 24000,
+  "windows": 192000,
+  "rows_sha256": "331afc77644eb77dfcf4ee36ba9e4c6fc8442aba316167f24070f8acbe23c3db",
+  "file_sha256": "097d6d2401a6541dd97e914ff4929abb86d73edb0cbcbce66ae35b015f0bb90f",
+  "data_identity_sha256": "a0a69afd241d96a6a239f6745b13d0bd9129652ea25d607b354ecb0314bd2b76",
+  "exposures": {
+    "16000": {
+      "DDR": 128000
+    },
+    "24000": {
+      "DDR": 192000
+    }
+  },
+  "foreground_positive_images": {
+    "DDR": {
+      "EX": 303,
+      "HE": 366,
+      "SE": 143,
+      "MA": 338
+    }
+  }
+}

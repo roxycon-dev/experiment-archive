@@ -1,0 +1,20 @@
+{
+  "status": "complete",
+  "stop_reason": null,
+  "elapsed_seconds": 6029.805540608009,
+  "stage": "ddr_finetune",
+  "mode": "formal",
+  "updates_done": 12000,
+  "micro_steps": 24016,
+  "best": {
+    "mIoU_lesion4": 0.3669342309981436,
+    "update": 12000
+  },
+  "resume_warnings": [],
+  "checkpoints": {
+    "last": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/U1_ddr_finetune/ckpt_last.pth",
+    "best": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/U1_ddr_finetune/ckpt_best.pth",
+    "final": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/U1_ddr_finetune/ckpt_final.pth"
+  },
+  "generated_at": "2026-10-02T04:13:01.074989+00:00"
+}

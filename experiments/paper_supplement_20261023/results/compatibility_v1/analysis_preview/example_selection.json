@@ -1,0 +1,40 @@
+{
+  "rule": "first three by sid and component ID per preregistered outcome",
+  "examples": [
+    {
+      "category": "still_missed",
+      "sid": "007-1774-100",
+      "component_id": 1,
+      "crop_xyxy": [
+        1304,
+        284,
+        1434,
+        414
+      ],
+      "area_pixels": 4,
+      "figure": "D:\\dataset\\experiment\\paper_supplement_20261023\\results\\compatibility_v1\\analysis_preview\\figures\\still_missed_007-1774-100_1.png",
+      "image_sha256": "7714411398671092bf447824296ce8aaf8addec3d9cde7794e0b67e1dc37c99f",
+      "mask_archive_sha256": "9a85b0569a7a08b9a8736f13fd717411a00085e019c2b07cfef550bc06e09e10"
+    },
+    {
+      "category": "still_missed",
+      "sid": "007-1774-100",
+      "component_id": 6,
+      "crop_xyxy": [
+        694,
+        826,
+        824,
+        956
+      ],
+      "area_pixels": 4,
+      "figure": "D:\\dataset\\experiment\\paper_supplement_20261023\\results\\compatibility_v1\\analysis_preview\\figures\\still_missed_007-1774-100_6.png",
+      "image_sha256": "7714411398671092bf447824296ce8aaf8addec3d9cde7794e0b67e1dc37c99f",
+      "mask_archive_sha256": "9a85b0569a7a08b9a8736f13fd717411a00085e019c2b07cfef550bc06e09e10"
+    }
+  ],
+  "category_counts_selected": {
+    "recovered": 0,
+    "still_missed": 2,
+    "new_fp": 0
+  }
+}

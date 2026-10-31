@@ -1,0 +1,31 @@
+{
+  "status": "success",
+  "config": "/root/autodl-tmp/hrplus/repo/configs/lesion/exp/hrplus_patch_dice.py",
+  "steps": 3,
+  "seconds": 2.186,
+  "peak_allocated_mb": 10632.13,
+  "losses_finite": true,
+  "reference_frozen": true,
+  "student_matches_checkpoint": true,
+  "reference_matches_b_weights": true,
+  "val": {
+    "ori_shape": [
+      1728,
+      2592
+    ],
+    "prob_shape": [
+      4,
+      1728,
+      2592
+    ],
+    "use_sigmoid": true,
+    "compute_aupr": true,
+    "prob_min": 7.475269967471831e-07,
+    "prob_max": 0.9853838682174683
+  },
+  "versions": {
+    "mmcv": "1.7.1",
+    "mmseg": "0.16.0",
+    "torch": "2.0.1+cu117"
+  }
+}

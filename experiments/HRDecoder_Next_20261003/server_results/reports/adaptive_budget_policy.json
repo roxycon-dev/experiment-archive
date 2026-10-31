@@ -1,0 +1,14 @@
+{
+  "version": "adaptive-cost-gate-2000-v1",
+  "declared_at": 1791020584.3922906,
+  "source_sha256": "0dc17cf13e331d2d5a12a4b28fe67db75422547f0c078305b95e543a8d9f50d4",
+  "minimum_gap": 0.01,
+  "trend_epsilon": 0.0001,
+  "bootstrap_samples": 2000,
+  "bootstrap_seed": 7303,
+  "applies_to": "Both complete 76-image M0/M1 nodes at 2000; unchanged training/data/optimizer",
+  "action": "Jointly stop at 2000 only if both historical bests are at least 1pp below old deployment, neither rises from 1k, and both image-bootstrap 95% upper bounds vs old are below zero; otherwise retain original 4k/8k rule",
+  "authority": "User explicitly permits adaptive changes and requires fastest useful experiment, stopping unpromising directions",
+  "interpretation": "Budget decision, not a convergence or general architecture claim",
+  "declared_before_M1_2000_complete": true
+}

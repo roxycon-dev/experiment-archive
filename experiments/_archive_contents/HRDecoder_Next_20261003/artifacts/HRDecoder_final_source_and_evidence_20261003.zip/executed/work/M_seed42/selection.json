@@ -1,0 +1,93 @@
+{
+  "identity": {
+    "protocol_sha256": "4c2f9c7f04a5278ee18363c5674e8af9b3fee7c0721fe52734edc0b1668fc682",
+    "stream_sha256": "7b9db5f18516ba3d7b44996a132edb9c68daf9424edb5c1ff53bac064ad568bc",
+    "geometry_sha256": "833639ceb11a130f31410840feb653f619c4d84b1d87aae1e75073ae730512b1",
+    "seed": 42
+  },
+  "winner": {
+    "update": 1000,
+    "output": "fixed_half",
+    "score": 0.42355241147194167,
+    "arm": "M0"
+  },
+  "second_seed_gate": false,
+  "engineering_gain_threshold": 0.005,
+  "histories": [
+    "/root/autodl-tmp/HRDecoder_Next_20261003/work/M_seed42/M0/history.json",
+    "/root/autodl-tmp/HRDecoder_Next_20261003/work/M_seed42/M1/history.json"
+  ],
+  "adaptive_stop": {
+    "status": "PAIRED_COST_STOP_AT_2000",
+    "time": 1791020885.2765894,
+    "evidence": {
+      "M0": {
+        "best": {
+          "update": 1000,
+          "output": "fixed_half",
+          "score": 0.42355241147194167,
+          "arm": "M0"
+        },
+        "current": 0.4220268051908416,
+        "recent_delta": -0.0015256062811000448,
+        "image_uncertainty_vs_old": {
+          "delta_mean": -0.013600627538161707,
+          "percentile95": [
+            -0.029332225786987576,
+            -0.0001748885711931698
+          ],
+          "repetitions": 2000,
+          "seed": 7303,
+          "note": "Resamples paired images; this does not estimate training-seed variability"
+        },
+        "qualifies": true
+      },
+      "M1": {
+        "best": {
+          "update": 1000,
+          "output": "fixed_half",
+          "score": 0.4234589432855201,
+          "arm": "M1"
+        },
+        "current": 0.4216427759713359,
+        "recent_delta": -0.0018161673141841583,
+        "image_uncertainty_vs_old": {
+          "delta_mean": -0.013902237660544176,
+          "percentile95": [
+            -0.029213990088001955,
+            -0.000359001804895224
+          ],
+          "repetitions": 2000,
+          "seed": 7303,
+          "note": "Resamples paired images; this does not estimate training-seed variability"
+        },
+        "qualifies": true
+      }
+    },
+    "checkpoints": {
+      "M0": {
+        "update": 2000,
+        "stream_cursor": 16000,
+        "amp_skips": 1,
+        "last_sha256": "562a5ddabe596161db7e4957afb70fc1c13904bebb38173c2e24b977d138e915",
+        "best_sha256": "564732d8122f97b1a4e105fc5a222a3c8b09ac05e5a5ed9c940a1a7744c61808",
+        "best_update": 1000
+      },
+      "M1": {
+        "update": 2000,
+        "stream_cursor": 16000,
+        "amp_skips": 1,
+        "last_sha256": "e34e1fbd23b627d01273a4c914541f17f24da983a00416019ba95e6f7a6d1f4e",
+        "best_sha256": "72c67bf2ad027e94766957582a65d98aef7d0b707334bbbb766095c3b2ae596f",
+        "best_update": 1000
+      }
+    },
+    "policy_sha256": "9af6c01b36f6004a8e5501bd0bcb34e41c9f3c48aa4fb0240b87e7a54b51b68e",
+    "original_planned_updates": 8000,
+    "actual_matched_updates": 2000,
+    "not_a_convergence_claim": true,
+    "old_source_unchanged": true,
+    "reason": "Both complete arms remain over 1 percentage point below old deployment; no recent rise; paired-image 95% upper bounds below old deployment",
+    "discarded_unscored_partial_segment": "The paused process may have begun constructing the next segment. No later complete result is used; preserved last checkpoints are both exactly 2000."
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "title": "v4 objective CPU synthetic checks",
+  "device": "cpu",
+  "torch_version": "2.6.0+cu124",
+  "python_version": "3.13.11",
+  "training_started": false,
+  "checkpoint_or_dataset_loaded": false,
+  "checks_passed": 10,
+  "checks_total": 10,
+  "results": [
+    {
+      "name": "extreme_logits_finite_and_differentiable",
+      "status": "PASS",
+      "gt_loss_at_logits_pm1000": 93.75,
+      "trusted_kl_at_logits_pm1000": 12.459367752075195,
+      "mixture_logits_range": [
+        -0.7884572744369507,
+        0.7884572744369507
+      ],
+      "all_losses_and_gradients_finite": true
+    },
+    {
+      "name": "missed_positive_gets_recovery_gradient",
+      "status": "PASS",
+      "new_loss_gradient_at_positive_z_minus20": -0.0625,
+      "dice_only_gradient_at_positive_z_minus20": -1.0305665210097459e-09,
+      "absolute_gradient_ratio": 60646254.9731993,
+      "gradient_descent_direction": "increase positive logit"
+    },
+    {
+      "name": "fully_labeled_empty_class_has_negative_supervision",
+      "status": "PASS",
+      "loss": 0.5317320227622986,
+      "expected_0_25_softplus_2": 0.5317320227622986,
+      "all_logit_gradients_positive": true
+    },
+    {
+      "name": "all_invalid_returns_backwardable_graph_zero",
+      "status": "PASS",
+      "gt_loss": 0.0,
+      "trusted_kl": 0.0,
+      "zero_gradients": true
+    },
+    {
+      "name": "ignore_and_zero_valid_pixels_have_no_effect",
+      "status": "PASS",
+      "gt_loss_abs_delta": 0.0,
+      "trusted_kl_abs_delta": 0.0
+    },
+    {
+      "name": "wrong_teacher_hard_decisions_are_excluded",
+      "status": "PASS",
+      "loss": 0.0,
+      "all_teacher_decisions_wrong": true,
+      "student_gradient_zero": true
+    },
+    {
+      "name": "correct_teacher_wrong_student_receives_detached_kl",
+      "status": "PASS",
+      "loss": 0.41163334250450134,
+      "expected_one_trusted_pixel_over_two_valid_then_four_classes": 0.41163334250450134,
+      "gradient_at_wrong_student_positive_gt": -0.11025171726942062,
+      "teacher_receives_gradient": false
+    },
+    {
+      "name": "mixture_matches_probability_algebra_and_anchor_lower_bound",
+      "status": "PASS",
+      "max_abs_logit_error_vs_direct": 8.881784197001252e-16,
+      "minimum_anchor_lower_bound_gap": 0.02712589225784648
+    },
+    {
+      "name": "mixture_initialization_equivalence_and_zero_aux_non_equivalence",
+      "status": "PASS",
+      "equal_source_max_abs_error": 1.1920928955078125e-07,
+      "zero_aux_matches_probability_formula_max_abs_error": 2.980232238769531e-07,
+      "zero_aux_vs_anchor_max_abs_difference": 1.8768478631973267,
+      "fixed_weights": [
+        0.5625,
+        0.1875,
+        0.25
+      ]
+    },
+    {
+      "name": "custom_mixture_weights_are_validated",
+      "status": "PASS",
+      "unit_anchor_weight_max_abs_error": 5.960464477539063e-08,
+      "rejects_nonunit_sum_and_negative_weight": true
+    }
+  ]
+}

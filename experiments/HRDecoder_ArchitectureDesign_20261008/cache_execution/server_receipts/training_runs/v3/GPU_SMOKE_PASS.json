@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "identity_SHA": "a42c0c6bbb0449e9bc8e04ed106158062697bc5272554937b4e8048abc55bff3",
+  "batch": 2,
+  "canvas": 2048,
+  "single_HRNet_forward": true,
+  "measured_backbone_calls": 1,
+  "device": "NVIDIA GeForce RTX 4090",
+  "losses": {
+    "dice": 0.9984757900238037,
+    "hr_dice": 0.9995206594467163,
+    "kl": 0.7092893123626709,
+    "signed_aux": 0.39756399393081665,
+    "lambda_k": 0.5,
+    "lambda_d": 0.1
+  },
+  "peak_allocated_bytes": 14720192512,
+  "peak_reserved_bytes": 15219032064,
+  "seconds": 13.521824359893799,
+  "formal_updates": 0,
+  "probe_optimizer_step_discarded": true
+}

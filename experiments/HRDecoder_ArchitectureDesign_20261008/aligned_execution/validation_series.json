@@ -1,0 +1,244 @@
+{
+  "checked_at": "2026-10-10T13:59:46.484699+08:00",
+  "run": "aligned",
+  "records": [
+    {
+      "step": 4000,
+      "mIoU": 31.78233972917561,
+      "classes": [
+        {
+          "name": "EX",
+          "counts": [
+            191872,
+            296516,
+            98931
+          ],
+          "IoU": 32.66912870177876,
+          "precision": 39.28679656338813,
+          "recall": 65.98006210389852,
+          "precision_undefined": false
+        },
+        {
+          "name": "HE",
+          "counts": [
+            687787,
+            365215,
+            518137
+          ],
+          "IoU": 43.77633042016015,
+          "precision": 65.31678002510917,
+          "recall": 57.03402536146557,
+          "precision_undefined": false
+        },
+        {
+          "name": "SE",
+          "counts": [
+            143579,
+            249235,
+            57825
+          ],
+          "IoU": 31.861201538260115,
+          "precision": 36.55139582601435,
+          "recall": 71.28905086294215,
+          "precision_undefined": false
+        },
+        {
+          "name": "MA",
+          "counts": [
+            22380,
+            49615,
+            46904
+          ],
+          "IoU": 18.82269825650342,
+          "precision": 31.085492048058892,
+          "recall": 32.301830148374805,
+          "precision_undefined": false
+        }
+      ],
+      "counts_verified": true,
+      "base_head_mIoU": 32.43627163932891,
+      "base_head_metrics": {
+        "mIoU_percent": 32.43627163932891,
+        "IoU_percent": [
+          34.305737833018576,
+          43.38286788506219,
+          33.97081878647958,
+          18.08566205275529
+        ],
+        "precision_percent": [
+          43.12488165120242,
+          68.25612057437795,
+          40.174786521939716,
+          31.306038185078584
+        ],
+        "recall_percent": [
+          62.652035914347515,
+          54.34820104749553,
+          68.7483863279776,
+          29.985277986259458
+        ],
+        "counts": [
+          [
+            182194,
+            240286,
+            108609
+          ],
+          [
+            655398,
+            304806,
+            550526
+          ],
+          [
+            138462,
+            206187,
+            62942
+          ],
+          [
+            20775,
+            45586,
+            48509
+          ]
+        ],
+        "class_order": [
+          "EX",
+          "HE",
+          "SE",
+          "MA"
+        ],
+        "undefined_precision_convention": "zero when TP+FP=0; inspect counts",
+        "images": 76,
+        "threshold": "strictly > .5"
+      },
+      "delta_mIoU_pp": null,
+      "delta_class_IoU_pp": null,
+      "versus_original_HRDecoder_pp": 10.225339729175609,
+      "versus_CET_same_step_pp": 2.729595601166899,
+      "versus_original_SACD_same_step_pp": 3.956690709337078,
+      "versus_residual_same_step_pp": 2.306527401056613,
+      "versus_adapter_same_step_pp": 1.338133030062469,
+      "versus_detail_same_step_pp": -0.2514798479974161,
+      "versus_foundation_same_step_pp": 0.10284744387634959
+    }
+  ],
+  "counts_verified": true,
+  "best_val": {
+    "step": 4000,
+    "mIoU": 31.78233972917561,
+    "classes": [
+      {
+        "name": "EX",
+        "counts": [
+          191872,
+          296516,
+          98931
+        ],
+        "IoU": 32.66912870177876,
+        "precision": 39.28679656338813,
+        "recall": 65.98006210389852,
+        "precision_undefined": false
+      },
+      {
+        "name": "HE",
+        "counts": [
+          687787,
+          365215,
+          518137
+        ],
+        "IoU": 43.77633042016015,
+        "precision": 65.31678002510917,
+        "recall": 57.03402536146557,
+        "precision_undefined": false
+      },
+      {
+        "name": "SE",
+        "counts": [
+          143579,
+          249235,
+          57825
+        ],
+        "IoU": 31.861201538260115,
+        "precision": 36.55139582601435,
+        "recall": 71.28905086294215,
+        "precision_undefined": false
+      },
+      {
+        "name": "MA",
+        "counts": [
+          22380,
+          49615,
+          46904
+        ],
+        "IoU": 18.82269825650342,
+        "precision": 31.085492048058892,
+        "recall": 32.301830148374805,
+        "precision_undefined": false
+      }
+    ],
+    "counts_verified": true,
+    "base_head_mIoU": 32.43627163932891,
+    "base_head_metrics": {
+      "mIoU_percent": 32.43627163932891,
+      "IoU_percent": [
+        34.305737833018576,
+        43.38286788506219,
+        33.97081878647958,
+        18.08566205275529
+      ],
+      "precision_percent": [
+        43.12488165120242,
+        68.25612057437795,
+        40.174786521939716,
+        31.306038185078584
+      ],
+      "recall_percent": [
+        62.652035914347515,
+        54.34820104749553,
+        68.7483863279776,
+        29.985277986259458
+      ],
+      "counts": [
+        [
+          182194,
+          240286,
+          108609
+        ],
+        [
+          655398,
+          304806,
+          550526
+        ],
+        [
+          138462,
+          206187,
+          62942
+        ],
+        [
+          20775,
+          45586,
+          48509
+        ]
+      ],
+      "class_order": [
+        "EX",
+        "HE",
+        "SE",
+        "MA"
+      ],
+      "undefined_precision_convention": "zero when TP+FP=0; inspect counts",
+      "images": 76,
+      "threshold": "strictly > .5"
+    },
+    "delta_mIoU_pp": null,
+    "delta_class_IoU_pp": null,
+    "versus_original_HRDecoder_pp": 10.225339729175609,
+    "versus_CET_same_step_pp": 2.729595601166899,
+    "versus_original_SACD_same_step_pp": 3.956690709337078,
+    "versus_residual_same_step_pp": 2.306527401056613,
+    "versus_adapter_same_step_pp": 1.338133030062469,
+    "versus_detail_same_step_pp": -0.2514798479974161,
+    "versus_foundation_same_step_pp": 0.10284744387634959
+  },
+  "unreported_steps": [],
+  "primary_endpoint": 40000,
+  "test_for_selection": false
+}

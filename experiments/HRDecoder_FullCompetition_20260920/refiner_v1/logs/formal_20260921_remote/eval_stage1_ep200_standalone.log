@@ -1,0 +1,19 @@
+[HRPlusMAResidual] 可训练 0.058M / 冻结 131.221M
+/root/miniconda3/lib/python3.8/site-packages/mmcv/__init__.py:20: UserWarning: On January 1, 2023, MMCV will release v2.0.0, in which it will remove components related to the training process and add a data transformation module. In addition, it will rename the package names mmcv to mmcv-lite and mmcv-full to mmcv. See https://github.com/open-mmlab/mmcv/blob/master/docs/en/compatibility.md for more details.
+  warnings.warn(
+2026-09-21 07:47:27,338 - mmseg - INFO - Loaded 76 images from /root/autodl-tmp/hr_exec_20260919/data/DDR_split_613/images/val
+[eval] loaded /root/autodl-tmp/HRDecoder_FullCompetition_20260920/refiner_v1/runs/formal_20260921/stage1/nodes/node_ep200.pth (stage=stage1_overfit step=2200)
+[eval] 10/76 48.9s
+[eval] 20/76 95.2s
+[eval] 30/76 145.6s
+[eval] 40/76 191.2s
+[eval] 50/76 237.6s
+[eval] 60/76 286.1s
+[eval] 70/76 332.0s
+[eval] 76/76 359.2s
+/root/miniconda3/lib/python3.8/site-packages/torch/_utils.py:776: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  return self.fget.__get__(instance, owner)()
+[eval] champion mIoU=0.426694 (MA 0.259672 HE 0.437583)  refined mIoU=0.419112 (MA 0.2563502037396702 HE 0.4105759612443474)
+[eval] bitwise: EX/SE changed=0  outside-candidate changed=0  non-finite refined=0  accepted=True
+[eval] patches: shape-bucketed exact windows (no padding)  tiles=1599 images_with_tiles=76 buckets=1512 max_bucket=14 max_shapes/image=51 max_window=576 forwards=1514
+[eval] wrote /root/autodl-tmp/HRDecoder_FullCompetition_20260920/refiner_v1/runs/formal_20260921/tmp/eval_stage1_ep200_standalone.json

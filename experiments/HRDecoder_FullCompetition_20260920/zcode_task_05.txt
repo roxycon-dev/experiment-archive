@@ -1,0 +1,22 @@
+在 D:\dataset\experiment\HRDecoder_FullCompetition_20260920 内实现下一阶段：可上传服务器的独立训练入口与共享训练核心。使用现有 D:\HRDecoder 只读参考，禁止修改它；禁止连接服务器或训练真实数据。必须落盘、运行 CPU 合成测试，不要只写方案。
+
+目标：H0/H1/U0/U1 共享同一个数据、loss、指标、checkpoint 与训练循环；旧 frozen reference、旧融合包装和旧 MA residual head 不能进入新模型。第一版先把公共核心和 H 结构适配做实，U 结构可以提供严格接口与明确 blocker，但若时间允许一并实现。
+
+要求：
+1. 新建 trainer/ 包和 train.py。配置从现有 YAML 加载；支持 external_pretrain 与 ddr_finetune 两阶段；阶段数据只能来自配置允许 split。checkpoint 记录模型/优化器/scheduler/scaler/update/seed/config SHA256/数据 manifest SHA256，并支持断点恢复。
+2. Dataset：
+   - DDR 读取固定 DDR_split_613，必须依据现有真实目录和标签语义，不猜路径；输出四通道 EX/HE/SE/MA target 与四通道 valid=1。
+   - external 从统一 JSONL 读取，valid_mode none/full/file 正确生成逐类 valid mask；共享几何增强；缺类不当阴性。
+   - test split 在训练 CLI 层硬拒绝。
+3. Loss：四类独立 logits；masked BCE + masked soft Dice，先按每类有效像素归一，再等权平均有效类别；全无效类别不产生梯度且不引入 NaN。阈值前只 sigmoid 一次。将具体数学定义写 docs/TRAINING_OBJECTIVE.md。
+4. Metrics：按整图像素累计每类 TP/FP/FN，p>0.5，mIoU 只平均四类；保存 JSON/CSV。验证不得用 crop 指标冒充整图指标。若第一版整图滑窗尚未实现，正式模式必须 fail closed，不能静默 resize。
+5. 模型：
+   - H：从 D:\HRDecoder 抽取/复用单个 HRDecoder-W48 学生所需类，但新工作区保存 adapter/补丁，不复制旧 reference；支持 ImageNet 初始化 strict/显式 missing-unexpected 报告，禁止静默部分加载。
+   - U：ConvNeXt-S + 逐级 U-Net decoder 四 logits；依赖版本和权重来源从配置；不可用时给明确 preflight blocker。细节支路要么完整实现并有 shape test，要么把 configs U0/U1 的 detail_branch 改为 false，两臂一致，不允许配置声称 true 但代码无实现。
+6. 优化：参数组区分 backbone/decoder LR；HRNet BN 统计冻结但 affine 可训练；ConvNeXt LayerNorm 正常；梯度累积以 optimizer update 计数，scheduler 也按 update；AMP/clip/seed/determinism 明确。
+7. 新建 tools/preflight_training.py：CPU 检查 import、模型构建、参数分组、一次前向/反向、valid 掩蔽、BN 策略、checkpoint roundtrip、同 seed 可重复；GPU-only microbatch/checkpointing 标成 CALIBRATION_REQUIRED。它不应要求真实外部数据即可验证 H0/U0 的模型和核心。
+8. tests/run_training_smoke.py 使用小型 fake model + 合成数据覆盖公共循环；若真实 H/U 依赖本机环境无法加载，明确区分 DEPENDENCY_BLOCKED，不把它算 PASS。不得下载权重、不得联网。
+9. 更新 configs 的 training_entry 为新入口；把 preflight_contract 拆成 readiness=LOCAL_READY 与 calibration=GPU_REQUIRED 两层，不能因 GPU 参数未填就阻止短时校准开机，但绝不能允许正式训练。
+10. 运行 py_compile 和所有不需 GPU/网络的测试；写 docs/TRAINING_IMPLEMENTATION_STATUS.md，列出真实通过、依赖阻塞、GPU 校准命令、五个高风险点。
+
+实现优先级：数据/valid loss/指标/训练状态 > H 模型适配 > U 模型。发现旧仓库类序或标签格式与现有审计文档冲突时，以代码和真实目录为准，记录冲突，禁止擅自统一。

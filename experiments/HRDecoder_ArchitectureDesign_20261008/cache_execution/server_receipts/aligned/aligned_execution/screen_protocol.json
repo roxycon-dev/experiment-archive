@@ -1,0 +1,40 @@
+{
+  "kind": "registered fresh4k screen; same fresh run conditional40k",
+  "screen_updates": 4000,
+  "registered_before_results": true,
+  "criteria": {
+    "4k_mIoU_at_least": 30.475812328119,
+    "final_minus_base_4k_pp_at_least": 1.0,
+    "max_class_IoU_loss_final_vs_base_pp": 2.0,
+    "all_classes_nonzero": true,
+    "HE_MA_reject_if_FN_growth_over": 1.05,
+    "HE_MA_requires_FP_ratio_when_FN_grows_at_most": 0.95
+  },
+  "warm_probe_can_pass_this_screen": false,
+  "test_used": false,
+  "old_failed_gates_modified": false,
+  "user_latest_available_server_statement": "服务器还开着 一直空转；快开始",
+  "no_old_checkpoint_initialization": true,
+  "accuracy_guaranteed": false,
+  "candidate": "HRDecoder-ClassBalancedCorrection",
+  "predecessor_rejected": {
+    "mIoU4k": 30.444206699113142,
+    "failed_only": "4k absolute floor",
+    "private_gain_pp": 3.635997894339006
+  },
+  "architecture_hypothesis": "Prevent persistent negative-logit saturation and improve semantic distillation; exact initial collapse trigger and final fresh accuracy not established",
+  "predecessor_terminated": {
+    "name": "detail",
+    "reason": "persistent EX/SE collapse at16k and20k",
+    "val20k": 15.203819416035657,
+    "best12k": 36.73584859847754
+  },
+  "critical_collapse_stop_registered": {
+    "after_update_at_least": 8000,
+    "mIoU_drop_from_best_at_least_pp": 15.0,
+    "or_drop_at_least_pp": 8.0,
+    "with_previous_class_IoU_at_least": 5.0,
+    "and_current_class_IoU_zero": true,
+    "action": "save own current checkpoint and stop before another update; not an overfitting claim"
+  }
+}

@@ -1,0 +1,390 @@
+{
+  "checked_at": "2026-10-03T18:35:25.823611+00:00",
+  "campaign": {
+    "arms": [
+      "Q_DDR"
+    ],
+    "common_endpoint": 16000,
+    "architecture_stopped": false,
+    "discovery_complete": true,
+    "promotion_signals": [
+      {
+        "arm": "Q_DDR",
+        "formula": "fixed_fusion",
+        "nodes": [
+          12000,
+          16000
+        ]
+      }
+    ],
+    "review_seed_authorized": true,
+    "automatic_extra_experiments": false,
+    "statuses": {
+      "Q_DDR_seed42": {
+        "stage": "COMPLETE",
+        "completed": 16000,
+        "endpoint": 16000,
+        "total_seconds_this_invocation": 8352.324739255011,
+        "identity_sha256": "b3e4cea88c5eeda8923a9c3950c0f67e74f02c28057730f2dd2d19154c500396",
+        "updated_at": "2026-10-03T15:23:51.631883+00:00"
+      },
+      "Q_DDR_seed2024": {
+        "stage": "COMPLETE",
+        "completed": 16000,
+        "endpoint": 16000,
+        "total_seconds_this_invocation": 8445.277330346406,
+        "identity_sha256": "c25584777fd2ded929bce248f6fc0e05d954ce9ba200f62d3066dbad41cdd252",
+        "updated_at": "2026-10-03T17:49:17.609674+00:00"
+      }
+    },
+    "updated_at": "2026-10-03T18:35:25.534124+00:00",
+    "selection": {
+      "selected": {
+        "arm": "Q_DDR",
+        "update": 16000,
+        "formula": "fixed_fusion",
+        "seed_scores_pct": [
+          44.35569233853838,
+          44.21734429280863
+        ],
+        "mean_val_pct": 44.286518315673504,
+        "test_eligible": true,
+        "deployment_seed": 42,
+        "candidate_count": 4
+      },
+      "all_candidates": [
+        {
+          "arm": "Q_DDR",
+          "update": 16000,
+          "formula": "fixed_fusion",
+          "seed_scores_pct": [
+            44.35569233853838,
+            44.21734429280863
+          ],
+          "mean_val_pct": 44.286518315673504
+        },
+        {
+          "arm": "Q_DDR",
+          "update": 12000,
+          "formula": "fixed_fusion",
+          "seed_scores_pct": [
+            44.27597579085049,
+            44.17298119164855
+          ],
+          "mean_val_pct": 44.22447849124952
+        },
+        {
+          "arm": "Q_DDR",
+          "update": 16000,
+          "formula": "single",
+          "seed_scores_pct": [
+            37.893718646800664,
+            37.295592060779256
+          ],
+          "mean_val_pct": 37.59465535378996
+        },
+        {
+          "arm": "Q_DDR",
+          "update": 12000,
+          "formula": "single",
+          "seed_scores_pct": [
+            37.84096064019035,
+            37.11565733429797
+          ],
+          "mean_val_pct": 37.47830898724416
+        }
+      ],
+      "common_endpoint": 16000,
+      "test_selection_forbidden": true
+    },
+    "next_action": "FREEZE_SELECTION_THEN_FINAL_TEST"
+  },
+  "runs": {
+    "Q_DDR_seed2024": {
+      "state": {
+        "stage": "COMPLETE",
+        "completed": 16000,
+        "endpoint": 16000,
+        "total_seconds_this_invocation": 8445.277330346406,
+        "identity_sha256": "c25584777fd2ded929bce248f6fc0e05d954ce9ba200f62d3066dbad41cdd252",
+        "updated_at": "2026-10-03T17:49:17.609674+00:00"
+      },
+      "nodes": {
+        "12000": {
+          "single": 37.11565733429797,
+          "fixed_fusion": 44.17298119164855,
+          "p0": 43.48770322103657
+        },
+        "16000": {
+          "single": 37.295592060779256,
+          "fixed_fusion": 44.21734429280863,
+          "p0": 43.48770322103657
+        },
+        "2000": {
+          "single": 35.42463386480332,
+          "fixed_fusion": 44.43563873251606,
+          "p0": 43.48770322103657
+        },
+        "4000": {
+          "single": 37.63707346834319,
+          "fixed_fusion": 44.507101898442755,
+          "p0": 43.48770322103657
+        },
+        "8000": {
+          "single": 36.607757652129116,
+          "fixed_fusion": 44.16367170632812,
+          "p0": 43.48770322103657
+        }
+      }
+    },
+    "Q_DDR_seed42": {
+      "state": {
+        "stage": "COMPLETE",
+        "completed": 16000,
+        "endpoint": 16000,
+        "total_seconds_this_invocation": 8352.324739255011,
+        "identity_sha256": "b3e4cea88c5eeda8923a9c3950c0f67e74f02c28057730f2dd2d19154c500396",
+        "updated_at": "2026-10-03T15:23:51.631883+00:00"
+      },
+      "nodes": {
+        "12000": {
+          "single": 37.84096064019035,
+          "fixed_fusion": 44.27597579085049,
+          "p0": 43.48770322103657
+        },
+        "16000": {
+          "single": 37.893718646800664,
+          "fixed_fusion": 44.35569233853838,
+          "p0": 43.48770322103657
+        },
+        "2000": {
+          "single": 35.51567864133265,
+          "fixed_fusion": 44.0278677666611,
+          "p0": 43.48770322103657
+        },
+        "4000": {
+          "single": 35.031476956088774,
+          "fixed_fusion": 43.67389762521389,
+          "p0": 43.48770322103657
+        },
+        "8000": {
+          "single": 36.34260083842402,
+          "fixed_fusion": 44.298975488652474,
+          "p0": 43.48770322103657
+        }
+      }
+    }
+  },
+  "storage": {
+    "/root/autodl-tmp": {
+      "mounted": true,
+      "available_bytes": 2706874368
+    }
+  },
+  "formal_pid": 10191,
+  "formal_process_alive": false,
+  "recent_logs": {
+    "Q_DDR_seed2024": [
+      "Q_DDR seed2024 update15960: loss=0.19718 seconds=0.372",
+      "Q_DDR seed2024 update15980: loss=0.16331 seconds=0.497",
+      "Q_DDR seed2024 update16000: loss=0.19109 seconds=0.363"
+    ],
+    "Q_DDR_seed42": [
+      "Q_DDR seed42 update15960: loss=0.19081 seconds=0.356",
+      "Q_DDR seed42 update15980: loss=0.23188 seconds=0.355",
+      "Q_DDR seed42 update16000: loss=0.19611 seconds=0.604"
+    ]
+  },
+  "final_evaluation": {
+    "state": {
+      "stage": "COMPLETE",
+      "phase": "COMPLETE",
+      "pid": 15940,
+      "lock_sha256": "26e5852194aca66bb02062ac79b2f0f8026e33652a95133140a3824bffb38905",
+      "runner_sha256": "e115ffa9eaed5f5f5efb9069ba1cebd945ef3b17bf2f6b8002893cf2516defb2",
+      "started_at": "2026-10-03T17:54:55.906239+00:00",
+      "automatic_restart": false,
+      "updated_at": "2026-10-03T18:11:43.170394+00:00",
+      "completed_at": "2026-10-03T18:24:38.441067+00:00",
+      "summary": {
+        "status": "COMPLETE",
+        "lock_sha256": "26e5852194aca66bb02062ac79b2f0f8026e33652a95133140a3824bffb38905",
+        "formula": "fixed_fusion",
+        "update": 16000,
+        "deployment_seed": 42,
+        "seed_scores_pct": [
+          45.72155710642771,
+          45.677066093957414
+        ],
+        "mean_test_pct": 45.69931160019256,
+        "range_test_pct": [
+          45.677066093957414,
+          45.72155710642771
+        ],
+        "target_test_pct": 47.2115,
+        "both_seeds_target_met": false,
+        "mean_target_met": false,
+        "selection_changed_after_test": false,
+        "historical_limitation": "DDR val and test have been used in previous experiments; exploratory continuation.",
+        "completed_at": "2026-10-03T18:24:37.758210+00:00"
+      }
+    },
+    "process_alive": false,
+    "phases": {
+      "p0_manifest": {
+        "status": "COMPLETE",
+        "completed_images": 227,
+        "lock_sha256": "26e5852194aca66bb02062ac79b2f0f8026e33652a95133140a3824bffb38905",
+        "selected": null
+      },
+      "seed42": {
+        "status": "COMPLETE",
+        "completed_images": 227,
+        "lock_sha256": "26e5852194aca66bb02062ac79b2f0f8026e33652a95133140a3824bffb38905",
+        "selected": {
+          "counts": [
+            [
+              1084196,
+              391281,
+              490745
+            ],
+            [
+              1618888,
+              469878,
+              1434590
+            ],
+            [
+              373724,
+              139488,
+              196794
+            ],
+            [
+              80293,
+              85300,
+              109750
+            ]
+          ],
+          "miou_pct": 45.72155710642771,
+          "per_class": {
+            "EX": {
+              "tp": 1084196,
+              "fp": 391281,
+              "fn": 490745,
+              "iou_pct": 55.14107766061004,
+              "precision": 0.7348105053484398,
+              "recall": 0.6884042005383059
+            },
+            "HE": {
+              "tp": 1618888,
+              "fp": 469878,
+              "fn": 1434590,
+              "iou_pct": 45.94732976173852,
+              "precision": 0.7750451702105454,
+              "recall": 0.5301783736447422
+            },
+            "SE": {
+              "tp": 373724,
+              "fp": 139488,
+              "fn": 196794,
+              "iou_pct": 52.63673828108495,
+              "precision": 0.7282058876253867,
+              "recall": 0.6550608394476598
+            },
+            "MA": {
+              "tp": 80293,
+              "fp": 85300,
+              "fn": 109750,
+              "iou_pct": 29.161082722277303,
+              "precision": 0.48488160731431884,
+              "recall": 0.42249911862052275
+            }
+          }
+        }
+      },
+      "seed2024": {
+        "status": "COMPLETE",
+        "completed_images": 227,
+        "lock_sha256": "26e5852194aca66bb02062ac79b2f0f8026e33652a95133140a3824bffb38905",
+        "selected": {
+          "counts": [
+            [
+              1081345,
+              384444,
+              493596
+            ],
+            [
+              1606016,
+              477795,
+              1447462
+            ],
+            [
+              367731,
+              122719,
+              202787
+            ],
+            [
+              77668,
+              77824,
+              112375
+            ]
+          ],
+          "miou_pct": 45.677066093957414,
+          "per_class": {
+            "EX": {
+              "tp": 1081345,
+              "fp": 384444,
+              "fn": 493596,
+              "iou_pct": 55.18797990185696,
+              "precision": 0.7377221414541929,
+              "recall": 0.6865939739964863
+            },
+            "HE": {
+              "tp": 1606016,
+              "fp": 477795,
+              "fn": 1447462,
+              "iou_pct": 45.47980289261125,
+              "precision": 0.7707109713884801,
+              "recall": 0.5259628528517317
+            },
+            "SE": {
+              "tp": 367731,
+              "fp": 122719,
+              "fn": 202787,
+              "iou_pct": 53.0454952635246,
+              "precision": 0.7497828524824142,
+              "recall": 0.6445563505445928
+            },
+            "MA": {
+              "tp": 77668,
+              "fp": 77824,
+              "fn": 112375,
+              "iou_pct": 28.994986317836833,
+              "precision": 0.4994983664754457,
+              "recall": 0.4086864551706719
+            }
+          }
+        }
+      },
+      "summary": {
+        "status": "COMPLETE",
+        "completed_images": 0,
+        "lock_sha256": "26e5852194aca66bb02062ac79b2f0f8026e33652a95133140a3824bffb38905",
+        "selected": null
+      }
+    },
+    "recent_log": [
+      "Locked formula seed2024 test 217/227",
+      "Locked formula seed2024 test 218/227",
+      "Locked formula seed2024 test 219/227",
+      "Locked formula seed2024 test 220/227",
+      "Locked formula seed2024 test 221/227",
+      "Locked formula seed2024 test 222/227",
+      "Locked formula seed2024 test 223/227",
+      "Locked formula seed2024 test 224/227",
+      "Locked formula seed2024 test 225/227",
+      "Locked formula seed2024 test 226/227",
+      "Locked formula seed2024 test 227/227",
+      "{\"status\": \"COMPLETE\", \"lock_sha256\": \"26e5852194aca66bb02062ac79b2f0f8026e33652a95133140a3824bffb38905\", \"formula\": \"fixed_fusion\", \"update\": 16000, \"deployment_seed\": 42, \"seed_scores_pct\": [45.72155710642771, 45.677066093957414], \"mean_test_pct\": 45.69931160019256, \"range_test_pct\": [45.677066093957414, 45.72155710642771], \"target_test_pct\": 47.2115, \"both_seeds_target_met\": false, \"mean_target_met\": false, \"selection_changed_after_test\": false, \"historical_limitation\": \"DDR val and test have been used in previous experiments; exploratory continuation.\", \"completed_at\": \"2026-10-03T18:24:37.758210+00:00\"}"
+    ]
+  }
+}

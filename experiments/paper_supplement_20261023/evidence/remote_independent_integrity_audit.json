@@ -1,0 +1,757 @@
+{
+  "status": "PASS",
+  "images": 27,
+  "probability_files": 81,
+  "methods": [
+    "full",
+    "no_h4",
+    "no_convnext",
+    "matched_c20"
+  ],
+  "cached_probabilities": [
+    {
+      "sid": "IDRiD_55",
+      "arm": "S",
+      "sha256": "5129131160148c80b605ceb24bbce465d246c8a0bbc71c09cb0f130750904163",
+      "min": 7.951399963750252e-32,
+      "max": 1.0,
+      "finite": true
+    },
+    {
+      "sid": "IDRiD_55",
+      "arm": "C",
+      "sha256": "66afd2327add5ee274d92b403b7a82d2d64584762bbfd00f7f9ea2fbdef51248",
+      "min": 1.4367885248476443e-32,
+      "max": 1.0,
+      "finite": true
+    },
+    {
+      "sid": "IDRiD_55",
+      "arm": "U",
+      "sha256": "f9b1d9387cbb0fd416659484f72a91e481f9e3c461a24aee437debae10afd7f1",
+      "min": 0.0,
+      "max": 1.0,
+      "finite": true
+    },
+    {
+      "sid": "IDRiD_56",
+      "arm": "S",
+      "sha256": "03d2c8a78d30b6ab12f494300a49e0a0a58044e05d91e27c8c5013f6872497cb",
+      "min": 3.958768895929851e-33,
+      "max": 1.0,
+      "finite": true
+    },
+    {
+      "sid": "IDRiD_56",
+      "arm": "C",
+      "sha256": "0dba5cbddd3e7173350c309c9dd41d4e6752e29cfa29a622286314836e43bde5",
+      "min": 5.64856590246589e-33,
+      "max": 1.0,
+      "finite": true
+    },
+    {
+      "sid": "IDRiD_56",
+      "arm": "U",
+      "sha256": "2d95785a4439a37ffdbc8d12e37d66976692eda5e78d7edca8c7a6675a56395e",
+      "min": 3.3085421069500853e-09,
+      "max": 1.0,
+      "finite": true
+    },
+    {
+      "sid": "IDRiD_57",
+      "arm": "S",
+      "sha256": "2155d52aff4cf9121f64e137228c323cd5d1a814b89de404feba78db92c37124",
+      "min": 4.831475003763518e-33,
+      "max": 1.0,
+      "finite": true
+    },
+    {
+      "sid": "IDRiD_57",
+      "arm": "C",
+      "sha256": "52a56026e351c1933abd3b5bf58715c9c72e675c3f34bc68ef9ab8812497f749",
+      "min": 1.188992905101085e-31,
+      "max": 1.0,
+      "finite": true
+    },
+    {
+      "sid": "IDRiD_57",
+      "arm": "U",
+      "sha256": "c5883de7f726a68bfe45d7c33b141dd65ee00ba14d60c1dda1fcba7bf957825a",
+      "min": 0.0,
+      "max": 1.0,
+      "finite": true
+    },
+    {
+      "sid": "IDRiD_58",
+      "arm": "S",
+      "sha256": "49a410c4aea03681cbca13a21684888ea350483ea20b68733b182285ee4c1244",
+      "min": 4.413689727574008e-37,
+      "max": 1.0,
+      "finite": true
+    },
+    {
+      "sid": "IDRiD_58",
+      "arm": "C",
+      "sha256": "990fd4a08ea3ba35225d2ccddc96d4d6af7406317ccf4f156798c6d75eda0ed7",
+      "min": 3.576449276558487e-33,
+      "max": 1.0,
+      "finite": true
+    },
+    {
+      "sid": "IDRiD_58",
+      "arm": "U",
+      "sha256": "2799674c854ca4ae3eed11895824ce48d1a94ab3f4fcc7291e83de0a1ea828fe",
+      "min": 1.2555616268894454e-11,
+      "max": 1.0,
+      "finite": true
+    },
+    {
+      "sid": "IDRiD_59",
+      "arm": "S",
+      "sha256": "994a296257ebf3dbe14efbe1a4769446444d2997e48d720d42f10934b50632a3",
+      "min": 2.5969992156699755e-31,
+      "max": 1.0,
+      "finite": true
+    },
+    {
+      "sid": "IDRiD_59",
+      "arm": "C",
+      "sha256": "2df853cd0be82abb86d40fd832e130b963d50aa9351eee28655c95698ae76aa4",
+      "min": 3.237853051186721e-32,
+      "max": 1.0,
+      "finite": true
+    },
+    {
+      "sid": "IDRiD_59",
+      "arm": "U",
+      "sha256": "a09dd4dbd637e4459891a2e8b98957b6aafb594a88dc1e5012bdb81023892160",
+      "min": 0.0,
+      "max": 1.0,
+      "finite": true
+    },
+    {
+      "sid": "IDRiD_60",
+      "arm": "S",
+      "sha256": "dba5059c0ad8f127d4b144a818564dc8e7a2d37e9cef33764d0274eb69f02ccb",
+      "min": 1.7566929206733972e-33,
+      "max": 1.0,
+      "finite": true
+    },
+    {
+      "sid": "IDRiD_60",
+      "arm": "C",
+      "sha256": "38f4ce5f0160e91bcdbdc5791b33fc1caab0cfc4b5d07627e1fe41314e610bd5",
+      "min": 8.042726838196322e-34,
+      "max": 1.0,
+      "finite": true
+    },
+    {
+      "sid": "IDRiD_60",
+      "arm": "U",
+      "sha256": "0b4607bd04bf6e21d2fbc22897eec809a823bd30734d05337ed2e4d41ffb97e5",
+      "min": 0.0,
+      "max": 1.0,
+      "finite": true
+    },
+    {
+      "sid": "IDRiD_61",
+      "arm": "S",
+      "sha256": "ad80aaae21ba901f5be479a044d2fce15ece39e40013103c1b72c3ef2e2f565d",
+      "min": 2.1875455596938137e-29,
+      "max": 1.0,
+      "finite": true
+    },
+    {
+      "sid": "IDRiD_61",
+      "arm": "C",
+      "sha256": "85bae85d3f9a5f16a259bbb7b0d76cd1df2fd235af242389218ad79d9038d51f",
+      "min": 2.847105246053189e-30,
+      "max": 1.0,
+      "finite": true
+    },
+    {
+      "sid": "IDRiD_61",
+      "arm": "U",
+      "sha256": "804144b269dcb6ef1db954426825d0fb0f7f93d675fc3b988ffe845fdf09ac23",
+      "min": 1.9322069988447765e-07,
+      "max": 1.0,
+      "finite": true
+    },
+    {
+      "sid": "IDRiD_62",
+      "arm": "S",
+      "sha256": "328cced717a432e401290916193577e423afbf39d84ba0cb5a88065f4002b0ea",
+      "min": 1.7320631959215898e-36,
+      "max": 1.0,
+      "finite": true
+    },
+    {
+      "sid": "IDRiD_62",
+      "arm": "C",
+      "sha256": "691e42a755b166e1a11a4c01671c55954c8aa0dcfa4d31a8d1dd8cc39c78e626",
+      "min": 3.674495469568399e-35,
+      "max": 1.0,
+      "finite": true
+    },
+    {
+      "sid": "IDRiD_62",
+      "arm": "U",
+      "sha256": "6c7cfc0a25f6595dfcc633f60a3dd833950946bf67966cb058ddc19c51de2093",
+      "min": 1.3424272603569111e-15,
+      "max": 1.0,
+      "finite": true
+    },
+    {
+      "sid": "IDRiD_63",
+      "arm": "S",
+      "sha256": "769a5a17aedc3eb50575cea6094ac800eb7fbd4a87f8ff877d3935c947dffb35",
+      "min": 1.4035054308616682e-32,
+      "max": 1.0,
+      "finite": true
+    },
+    {
+      "sid": "IDRiD_63",
+      "arm": "C",
+      "sha256": "2c96693bc7ff9b3e73464e7d414b1a5e319708ad06f0ce4f321b508a45a2681d",
+      "min": 1.838229414177471e-30,
+      "max": 1.0,
+      "finite": true
+    },
+    {
+      "sid": "IDRiD_63",
+      "arm": "U",
+      "sha256": "85b8bb18823c7ae5472354f796401f3c2bb454766bc1931fa2416b8e6688c0b1",
+      "min": 4.639267485798126e-13,
+      "max": 1.0,
+      "finite": true
+    },
+    {
+      "sid": "IDRiD_64",
+      "arm": "S",
+      "sha256": "a17fa692c4a4c254d5737896119aaa2200ad682e41b8a6053331f5b3b4349fa6",
+      "min": 4.372754496402444e-34,
+      "max": 1.0,
+      "finite": true
+    },
+    {
+      "sid": "IDRiD_64",
+      "arm": "C",
+      "sha256": "1480b10e3c4f5771c32bc58875f14ff75afea16a7cb31607540bc34e478e7254",
+      "min": 3.412672056762233e-33,
+      "max": 1.0,
+      "finite": true
+    },
+    {
+      "sid": "IDRiD_64",
+      "arm": "U",
+      "sha256": "3a083e1b19afc81548c2783b2a0b9e23ae4d0661e418ecd18126e64d8f99aec3",
+      "min": 3.691522185590018e-13,
+      "max": 1.0,
+      "finite": true
+    },
+    {
+      "sid": "IDRiD_65",
+      "arm": "S",
+      "sha256": "9a19e0a388203b8023fac977d1b7fcba1fa50d9f87641ddf5c5f9cb0136f7a40",
+      "min": 1.323236541976379e-34,
+      "max": 1.0,
+      "finite": true
+    },
+    {
+      "sid": "IDRiD_65",
+      "arm": "C",
+      "sha256": "be15f6bd84779732b1f48e215b08eb717ea3a5fcd462c32fd3061e01c37f74ec",
+      "min": 2.1737917444657463e-32,
+      "max": 1.0,
+      "finite": true
+    },
+    {
+      "sid": "IDRiD_65",
+      "arm": "U",
+      "sha256": "2e1715b89f908b86f68010adfd7be2ce83340879c749c27d48e865dcae17c5c6",
+      "min": 0.0,
+      "max": 1.0,
+      "finite": true
+    },
+    {
+      "sid": "IDRiD_66",
+      "arm": "S",
+      "sha256": "68ff3dc6b6fa864fb749aa8fcc1e30e652f0116bd08b1e190496dbcee2148afb",
+      "min": 5.399631004614774e-34,
+      "max": 1.0,
+      "finite": true
+    },
+    {
+      "sid": "IDRiD_66",
+      "arm": "C",
+      "sha256": "06942c5e4791e02ff750d6da0eada83ca058fe23cdfc99acb58992e5b3a89153",
+      "min": 6.070969144516325e-34,
+      "max": 1.0,
+      "finite": true
+    },
+    {
+      "sid": "IDRiD_66",
+      "arm": "U",
+      "sha256": "28b42381380167f7d7fdedadde9f75655f5d5cafb2538d3f8525544498b34b59",
+      "min": 2.7717244727787696e-16,
+      "max": 1.0,
+      "finite": true
+    },
+    {
+      "sid": "IDRiD_67",
+      "arm": "S",
+      "sha256": "15e96979f0ff613a2d5023dcebf49eb8e9dbcac0d5f1e9115d20df9e8c31af5a",
+      "min": 1.6929506374741048e-32,
+      "max": 1.0,
+      "finite": true
+    },
+    {
+      "sid": "IDRiD_67",
+      "arm": "C",
+      "sha256": "b0a76b8d5cc663f328162ab9bbc0354e3fa32e6df099afa1343269e42fb8b599",
+      "min": 1.0455040101524248e-29,
+      "max": 1.0,
+      "finite": true
+    },
+    {
+      "sid": "IDRiD_67",
+      "arm": "U",
+      "sha256": "46e955099df659979c68efa5ed767127911a874d4fe72eb6468bc7e29a2f062b",
+      "min": 6.110317652676097e-22,
+      "max": 1.0,
+      "finite": true
+    },
+    {
+      "sid": "IDRiD_68",
+      "arm": "S",
+      "sha256": "5fcd65fa828dba562a60672ec9229baf888428f0df43e758abc86242e4f77542",
+      "min": 5.476412829915967e-31,
+      "max": 1.0,
+      "finite": true
+    },
+    {
+      "sid": "IDRiD_68",
+      "arm": "C",
+      "sha256": "9b3866d1901da85b4a29ab6130cd64f301d6d3a6e2476e87cecc332c9a1380cf",
+      "min": 4.166235508551605e-31,
+      "max": 1.0,
+      "finite": true
+    },
+    {
+      "sid": "IDRiD_68",
+      "arm": "U",
+      "sha256": "ee574d47a90101c126d4ce9b414c30cd6d65616cd0edcb60632e240b16ec4be3",
+      "min": 1.7716695310809882e-07,
+      "max": 1.0,
+      "finite": true
+    },
+    {
+      "sid": "IDRiD_69",
+      "arm": "S",
+      "sha256": "56c94a52a7e977489b8dbc5af5390cf7afbfaf5d80b1aba58c9b79e51593ebd7",
+      "min": 2.1601242636131297e-35,
+      "max": 1.0,
+      "finite": true
+    },
+    {
+      "sid": "IDRiD_69",
+      "arm": "C",
+      "sha256": "a96f55081d0eb90363e0c618be72fc60cc0ce9add2f9a5fdc9536f98885cffb8",
+      "min": 1.715999326628845e-33,
+      "max": 1.0,
+      "finite": true
+    },
+    {
+      "sid": "IDRiD_69",
+      "arm": "U",
+      "sha256": "9e178fdcc725397582682a3a6fb7427f7cce68622113850cf8708c36e04f3bec",
+      "min": 2.0558855950980615e-08,
+      "max": 1.0,
+      "finite": true
+    },
+    {
+      "sid": "IDRiD_70",
+      "arm": "S",
+      "sha256": "16aabb4309064fb9cf4b8d8d5b4400092bcc2c47ea79c9dafdb8b63ef8c2f4af",
+      "min": 1.5382117753742244e-33,
+      "max": 1.0,
+      "finite": true
+    },
+    {
+      "sid": "IDRiD_70",
+      "arm": "C",
+      "sha256": "4d726d9a7cf2b766ba78789e06de11436f322bfc1957b2fca039267a54c176f3",
+      "min": 4.323101174213329e-32,
+      "max": 1.0,
+      "finite": true
+    },
+    {
+      "sid": "IDRiD_70",
+      "arm": "U",
+      "sha256": "1639cd20f96f54d34f298de39029c0d8dcefb1c91bf0bbe66a69808261330d85",
+      "min": 0.0,
+      "max": 1.0,
+      "finite": true
+    },
+    {
+      "sid": "IDRiD_71",
+      "arm": "S",
+      "sha256": "e1e8d095133686eb356332150d863d4dc7a9f299e2b3f24ad2cbc3bbed186b41",
+      "min": 1.2599893209780003e-35,
+      "max": 1.0,
+      "finite": true
+    },
+    {
+      "sid": "IDRiD_71",
+      "arm": "C",
+      "sha256": "2e107287112406f2332af53102a8ab09ff9d5f681d0918057b23cee8c65c8ead",
+      "min": 9.113603110150387e-34,
+      "max": 1.0,
+      "finite": true
+    },
+    {
+      "sid": "IDRiD_71",
+      "arm": "U",
+      "sha256": "462cdcdcb095768792aac3811637d25f96b65344436c1f1c3125d328ef74819e",
+      "min": 1.5601603342574322e-10,
+      "max": 1.0,
+      "finite": true
+    },
+    {
+      "sid": "IDRiD_72",
+      "arm": "S",
+      "sha256": "b881b3595f784a94fa99553defa1723ab3cf9592ae3e043a7f43375f110e307d",
+      "min": 1.797278169100864e-37,
+      "max": 1.0,
+      "finite": true
+    },
+    {
+      "sid": "IDRiD_72",
+      "arm": "C",
+      "sha256": "ccefb7ce5bc8719b3abcb1ec66cfe7df5049127eac158a7c0d19f4fda82168b9",
+      "min": 2.8394298502712005e-35,
+      "max": 1.0,
+      "finite": true
+    },
+    {
+      "sid": "IDRiD_72",
+      "arm": "U",
+      "sha256": "17419309d8304da8967737a69c92be806947c41136c802c6536717ce652c8a0e",
+      "min": 0.0,
+      "max": 1.0,
+      "finite": true
+    },
+    {
+      "sid": "IDRiD_73",
+      "arm": "S",
+      "sha256": "61d9ceef3010a2e8e1803c9fb3eddeabd7814a73efb1fa6d7ec381f95ab469fc",
+      "min": 6.9228355889135155e-31,
+      "max": 1.0,
+      "finite": true
+    },
+    {
+      "sid": "IDRiD_73",
+      "arm": "C",
+      "sha256": "b478f11a2352d202c7a914f4e1dbf624545f70b0f8967df845ad87d968f3bb94",
+      "min": 2.1829513139967887e-30,
+      "max": 1.0,
+      "finite": true
+    },
+    {
+      "sid": "IDRiD_73",
+      "arm": "U",
+      "sha256": "904375efbfcd6fa70ab035a005b24b5e761a6679d16b571bcc3b646d74e58f21",
+      "min": 0.0,
+      "max": 1.0,
+      "finite": true
+    },
+    {
+      "sid": "IDRiD_74",
+      "arm": "S",
+      "sha256": "d008fc14f1bfe3182136fd06de64557e93b4b8328aadc546896bed2fe709ccba",
+      "min": 1.4792836925545262e-33,
+      "max": 1.0,
+      "finite": true
+    },
+    {
+      "sid": "IDRiD_74",
+      "arm": "C",
+      "sha256": "b0a3b1f3d7da0cc13dad9168719101f7d14df92454495c4eb3d2f83d99d641f0",
+      "min": 1.2554518439072041e-33,
+      "max": 1.0,
+      "finite": true
+    },
+    {
+      "sid": "IDRiD_74",
+      "arm": "U",
+      "sha256": "da7d793f8150c06eb4913cfc01e1a60633ec06f05f525562440020b490bc531c",
+      "min": 0.0,
+      "max": 1.0,
+      "finite": true
+    },
+    {
+      "sid": "IDRiD_75",
+      "arm": "S",
+      "sha256": "7400f5df02753d8474af18b7fd2f9bd43e4582a3a6db25bc734ebed49fde2ef6",
+      "min": 1.1039424798854752e-31,
+      "max": 1.0,
+      "finite": true
+    },
+    {
+      "sid": "IDRiD_75",
+      "arm": "C",
+      "sha256": "aa815fabb59da4c681ae7325751856d7a4873ffed7ba9f44173f86f19b01de55",
+      "min": 3.7480868801418955e-33,
+      "max": 1.0,
+      "finite": true
+    },
+    {
+      "sid": "IDRiD_75",
+      "arm": "U",
+      "sha256": "8f69c3a75d980fc9cba661da4b46dcfb5ecd7c289f11a3b25624ec87aa73d0a2",
+      "min": 6.706288996349841e-11,
+      "max": 1.0,
+      "finite": true
+    },
+    {
+      "sid": "IDRiD_76",
+      "arm": "S",
+      "sha256": "5d3de708e483941773a45326fc1306b50ebe19d7bbc713346c760f621b7fecc0",
+      "min": 4.8576916616731615e-36,
+      "max": 1.0,
+      "finite": true
+    },
+    {
+      "sid": "IDRiD_76",
+      "arm": "C",
+      "sha256": "7bd30c1af4369c76b49e85555e83e14d8662b2b7f441e82653ccb8684f3cbbb9",
+      "min": 2.5621172671652567e-30,
+      "max": 1.0,
+      "finite": true
+    },
+    {
+      "sid": "IDRiD_76",
+      "arm": "U",
+      "sha256": "127b826b97925fd867a7c4eca6682f47372bcf329e5533c54b09c3544af258e6",
+      "min": 5.423742279625113e-27,
+      "max": 1.0,
+      "finite": true
+    },
+    {
+      "sid": "IDRiD_77",
+      "arm": "S",
+      "sha256": "5ba172d2689c60cf971934364c94f81be7ff9564bbfe85a62b203e317e2c33b8",
+      "min": 1.0677305388686697e-32,
+      "max": 1.0,
+      "finite": true
+    },
+    {
+      "sid": "IDRiD_77",
+      "arm": "C",
+      "sha256": "bbc5fd909a5c7521ec06c265bd4b8f73bbcdd8e6a90812095a29fec01d26a578",
+      "min": 4.822767382423008e-32,
+      "max": 1.0,
+      "finite": true
+    },
+    {
+      "sid": "IDRiD_77",
+      "arm": "U",
+      "sha256": "4e4629556057d0890b028d32be971711c547d45c7090132d47b1cbc82837feb6",
+      "min": 0.0,
+      "max": 1.0,
+      "finite": true
+    },
+    {
+      "sid": "IDRiD_78",
+      "arm": "S",
+      "sha256": "0fe1b6104dc8e3c53f22f61baeaa7a1ca44b81aa746ecf91706864f558cd3c67",
+      "min": 6.322317875247051e-37,
+      "max": 1.0,
+      "finite": true
+    },
+    {
+      "sid": "IDRiD_78",
+      "arm": "C",
+      "sha256": "27271b9d77da61ddda6724ea5d3889068ee7b9fc0148bfbc0a16e3aff9c09173",
+      "min": 3.7033145962064786e-35,
+      "max": 1.0,
+      "finite": true
+    },
+    {
+      "sid": "IDRiD_78",
+      "arm": "U",
+      "sha256": "a1217742514d68df3d69918bd7790edf9828d79f90145c3dddbd49c0eb0cc17e",
+      "min": 0.0,
+      "max": 1.0,
+      "finite": true
+    },
+    {
+      "sid": "IDRiD_79",
+      "arm": "S",
+      "sha256": "ab55377b73c3cb6d8366ee72c6c0c6668ea29ee515c72191e5eee5a1be4b8bbd",
+      "min": 8.076615972988544e-32,
+      "max": 1.0,
+      "finite": true
+    },
+    {
+      "sid": "IDRiD_79",
+      "arm": "C",
+      "sha256": "4524c84f96b6d5ef80194bf600d291f7dd1b720901ed53d22612e03d4a25a5b8",
+      "min": 8.446444128172498e-33,
+      "max": 1.0,
+      "finite": true
+    },
+    {
+      "sid": "IDRiD_79",
+      "arm": "U",
+      "sha256": "94d6b8e006145a1281414a1eb92a1720a4421076c3bc0df9559f318a6007e86a",
+      "min": 7.667869811323058e-11,
+      "max": 1.0,
+      "finite": true
+    },
+    {
+      "sid": "IDRiD_80",
+      "arm": "S",
+      "sha256": "3caf0e362d2273a3f8683b2cdf6e087df94034d6b991043e53025328d86f2b45",
+      "min": 7.033953565263977e-29,
+      "max": 1.0,
+      "finite": true
+    },
+    {
+      "sid": "IDRiD_80",
+      "arm": "C",
+      "sha256": "299dd8ab28e9811ec7d8dff9e671384dc96bdc7806276e0064a4ce8d5660a4d0",
+      "min": 2.9909131590719956e-27,
+      "max": 1.0,
+      "finite": true
+    },
+    {
+      "sid": "IDRiD_80",
+      "arm": "U",
+      "sha256": "1389f19c1280db9923b552b44142e0ed752c1dbebaca9b6746d15d0c1372e7e4",
+      "min": 0.0,
+      "max": 1.0,
+      "finite": true
+    },
+    {
+      "sid": "IDRiD_81",
+      "arm": "S",
+      "sha256": "0bf14d8de4953e3a453c2c1fd62520c74e00c80870448b43d270a93a32463720",
+      "min": 3.323596564328497e-27,
+      "max": 1.0,
+      "finite": true
+    },
+    {
+      "sid": "IDRiD_81",
+      "arm": "C",
+      "sha256": "c813af3ab917f832a80c470609eafef179bd81ffaa2add2974e5bc975392f6ce",
+      "min": 9.335298413326433e-30,
+      "max": 1.0,
+      "finite": true
+    },
+    {
+      "sid": "IDRiD_81",
+      "arm": "U",
+      "sha256": "cf27da167e10a73df994f63be38873f757b4d4652129e549b36a368e8c7f5c01",
+      "min": 9.413853025016725e-14,
+      "max": 1.0,
+      "finite": true
+    }
+  ],
+  "independent_GPU_integer_counts": {
+    "full": [
+      [
+        2287270,
+        474814,
+        1194705
+      ],
+      [
+        1756180,
+        724090,
+        1623053
+      ],
+      [
+        289182,
+        116429,
+        294210
+      ],
+      [
+        79153,
+        41833,
+        243743
+      ]
+    ],
+    "no_h4": [
+      [
+        2287270,
+        474814,
+        1194705
+      ],
+      [
+        1756180,
+        724090,
+        1623053
+      ],
+      [
+        289182,
+        116429,
+        294210
+      ],
+      [
+        62416,
+        30047,
+        260480
+      ]
+    ],
+    "no_convnext": [
+      [
+        2286490,
+        503132,
+        1195485
+      ],
+      [
+        1795675,
+        780362,
+        1583558
+      ],
+      [
+        296390,
+        130766,
+        287002
+      ],
+      [
+        85439,
+        51804,
+        237457
+      ]
+    ],
+    "matched_c20": [
+      [
+        2270993,
+        459909,
+        1210982
+      ],
+      [
+        1684413,
+        700434,
+        1694820
+      ],
+      [
+        284511,
+        117556,
+        298881
+      ],
+      [
+        78858,
+        41154,
+        244038
+      ]
+    ]
+  },
+  "seconds": 64.46911588590592,
+  "GPU": "NVIDIA GeForce RTX 4080 SUPER",
+  "torch": "2.7.1+cu128",
+  "new_training": false,
+  "prediction_or_configuration_changes": false,
+  "purpose": "Post-inference integrity audit; not an additional model experiment or performance benchmark"
+}

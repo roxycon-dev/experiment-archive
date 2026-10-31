@@ -1,0 +1,16 @@
+{
+  "models": [
+    {
+      "config": "configs/lesion/exp/hrplus_patch_dice.py",
+      "ckpt": "/root/autodl-tmp/hrplus/D_0913_retry/best_mIoU_iter_2000.pth",
+      "weight": 1.0
+    }
+  ],
+  "flip_tta": false,
+  "split": "test",
+  "mIoU": 0.42576397633218704,
+  "mF1": 0.588015937876559,
+  "mPPV": 0.6373547780660449,
+  "mS": 0.5507857204870107,
+  "mAUPR": 0.6067197061023922
+}

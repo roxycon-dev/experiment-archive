@@ -1,0 +1,24 @@
+/root/miniconda3/lib/python3.8/site-packages/mmcv/__init__.py:20: UserWarning: On January 1, 2023, MMCV will release v2.0.0, in which it will remove components related to the training process and add a data transformation module. In addition, it will rename the package names mmcv to mmcv-lite and mmcv-full to mmcv. See https://github.com/open-mmlab/mmcv/blob/master/docs/en/compatibility.md for more details.
+  warnings.warn(
+[HRPlusMAResidual] 可训练 0.058M / 冻结 131.221M
+2026-09-21 01:07:25,078 - mmseg - INFO - Loaded 76 images from /root/autodl-tmp/hr_exec_20260919/data/DDR_split_613/images/val
+/root/miniconda3/lib/python3.8/site-packages/torch/_utils.py:776: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  return self.fget.__get__(instance, owner)()
+[eval] loaded /root/autodl-tmp/HRDecoder_FullCompetition_20260920/refiner_v1/runs/formal_20260921/stage1/nodes/node_ep200.pth (stage=stage1_overfit step=2200)
+Traceback (most recent call last):
+  File "/root/autodl-tmp/HRDecoder_FullCompetition_20260920/refiner_v1/eval_refiner.py", line 234, in <module>
+    sys.exit(main())
+  File "/root/autodl-tmp/HRDecoder_FullCompetition_20260920/refiner_v1/eval_refiner.py", line 171, in main
+    refined = A.assemble(p4, tiles, np.stack(patches))
+  File "<__array_function__ internals>", line 200, in stack
+  File "/root/miniconda3/lib/python3.8/site-packages/numpy/core/shape_base.py", line 464, in stack
+    raise ValueError('all input arrays must have the same shape')
+ValueError: all input arrays must have the same shape
+/root/miniconda3/lib/python3.8/site-packages/mmcv/__init__.py:20: UserWarning: On January 1, 2023, MMCV will release v2.0.0, in which it will remove components related to the training process and add a data transformation module. In addition, it will rename the package names mmcv to mmcv-lite and mmcv-full to mmcv. See https://github.com/open-mmlab/mmcv/blob/master/docs/en/compatibility.md for more details.
+  warnings.warn(
+[HRPlusMAResidual] 可训练 0.058M / 冻结 131.221M
+2026-09-21 07:59:25,553 - mmseg - INFO - Loaded 76 images from /root/autodl-tmp/hr_exec_20260919/data/DDR_split_613/images/val
+/root/miniconda3/lib/python3.8/site-packages/torch/_utils.py:776: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  return self.fget.__get__(instance, owner)()
+[eval] loaded /root/autodl-tmp/HRDecoder_FullCompetition_20260920/refiner_v1/runs/formal_20260921/stage1/nodes/node_ep200.pth (stage=stage1_overfit step=2200)
+[eval] 10/76 49.2s

@@ -1,0 +1,337 @@
+{
+  "stage": "D_TRAINING_SD_FULL_SHA_IMPORTED_WAITING_PRIMARY",
+  "heartbeat_trigger": "2026-10-05T16:09:36.727Z",
+  "observed_at": "2026-10-05T16:23:30.485354+00:00",
+  "atomic_states": {
+    "primary": {
+      "driver": {
+        "stage": "CAMPAIGN",
+        "pid": 18787,
+        "time": "2026-10-04T21:16:20.663409+00:00"
+      },
+      "campaign": {
+        "stage": "RUNNING",
+        "current_run": "D_seed42",
+        "queue": [
+          [
+            "C",
+            42
+          ],
+          [
+            "S",
+            42
+          ],
+          [
+            "D",
+            42
+          ],
+          [
+            "SD",
+            42
+          ],
+          [
+            "PARENT_F12",
+            2024
+          ],
+          [
+            "C",
+            2024
+          ],
+          [
+            "S",
+            2024
+          ],
+          [
+            "D",
+            2024
+          ],
+          [
+            "SD",
+            2024
+          ]
+        ],
+        "updated_at": "2026-10-05T10:09:41.031997+00:00"
+      },
+      "runs": {
+        "C_seed42": {
+          "stage": "COMPLETE",
+          "completed": 32000,
+          "endpoint": 32000,
+          "updated_at": "2026-10-05T02:31:24.012530+00:00"
+        },
+        "S_seed42": {
+          "stage": "COMPLETE",
+          "completed": 32000,
+          "endpoint": 32000,
+          "updated_at": "2026-10-05T10:09:39.504955+00:00"
+        },
+        "D_seed42": {
+          "stage": "TRAINING",
+          "completed": 28760,
+          "endpoint": 32000,
+          "updated_at": "2026-10-05T16:21:41.361820+00:00",
+          "recent": {
+            "loss": 0.10252819210290909,
+            "grad_norm": 0.4233227074146271,
+            "seconds": 0.5415145771112293,
+            "data_wait_seconds": 0.0012521122116595507,
+            "peak_gpu_bytes": 11004799488
+          }
+        },
+        "SD_seed42": {
+          "stage": "COMPLETE",
+          "completed": 32000,
+          "endpoint": 32000,
+          "updated_at": "2026-10-05T15:24:29.839699+00:00"
+        }
+      },
+      "free_disk_bytes": 26691444736,
+      "observed_at": "2026-10-05T16:21:51.392653+00:00"
+    },
+    "second": {
+      "driver": {
+        "stage": "PARALLEL_ASSIGNED_RUNS_COMPLETE_WAITING_FOR_GLOBAL",
+        "pid": 3295,
+        "time": "2026-10-05T15:24:31.169924+00:00"
+      },
+      "campaign": {
+        "stage": "PARALLEL_ASSIGNED_RUNS_COMPLETE_WAITING_FOR_GLOBAL",
+        "current_run": "SD_seed42",
+        "queue": [
+          [
+            "SD",
+            42
+          ]
+        ],
+        "time": "2026-10-05T15:24:31.169620+00:00"
+      },
+      "runs": {
+        "SD_seed42": {
+          "stage": "COMPLETE",
+          "completed": 32000,
+          "endpoint": 32000,
+          "updated_at": "2026-10-05T15:24:29.839699+00:00"
+        }
+      },
+      "free_disk_bytes": 19384684544,
+      "observed_at": "2026-10-05T16:21:52.928521+00:00"
+    },
+    "authorized_seed_scope": [
+      42
+    ],
+    "assigned_runs": {
+      "primary": [
+        "C_seed42",
+        "S_seed42",
+        "D_seed42"
+      ],
+      "second": [
+        "SD_seed42"
+      ]
+    },
+    "old_primary_loaded_queue_is_superseded_by_boundary_amendment": true,
+    "time": "2026-10-05T16:21:52.930307+00:00"
+  },
+  "local_helpers": {
+    "primary": {
+      "attendant_pid.json": {
+        "pid": 30004,
+        "time": "2026-10-05T12:35:04.195410+00:00",
+        "role": "primary",
+        "helper": "reports/primary_parallel_attendant.py",
+        "runner": "reports/independent_local_attendant_runner.py",
+        "helper_sha256": "f76acf364bdcd56adc290c73ab7d47c9f6641bb817d1b0262b96483d8831578e",
+        "launcher": "Win32_Process.Create with hidden startup and CREATE_BREAKAWAY_FROM_JOB; WMI service parent and no kill-on-close job verified",
+        "training_unchanged": true
+      },
+      "attendant_state.json": {
+        "stage": "WAITING",
+        "time": "2026-10-05T16:20:18.357925+00:00"
+      },
+      "persistent_receiver_state.json": {
+        "stage": "POOL_COMPLETED",
+        "time": "2026-10-05T16:20:18.208322+00:00",
+        "receiver_connections_opened": 2,
+        "files_received": 256,
+        "seconds": 328.37196100000074,
+        "negotiated_compression": [
+          "zlib@openssh.com",
+          "zlib@openssh.com"
+        ],
+        "max_file_receivers": 2,
+        "original_mirror_sha256": "28492fcdbd64ae0e08145274af70368726275e2bdc52dbc99fa9177b6c0e366b",
+        "all_original_SHA_and_custody_gates_used": true
+      },
+      "transfer_progress.json": {
+        "stage": "TRANSFERRING",
+        "full": false,
+        "verified_files": 3829,
+        "expected_files": 11860,
+        "verified_bytes": 259397888,
+        "expected_bytes": 295563253,
+        "updated_at": "2026-10-05T16:23:30.430419+00:00"
+      },
+      "mirror.lock": {
+        "pid": 30004,
+        "time": "2026-10-05T16:20:51.780907+00:00"
+      }
+    },
+    "second": {
+      "attendant_pid.json": {
+        "pid": 31456,
+        "time": "2026-10-05T12:35:04.208839+00:00",
+        "role": "second",
+        "helper": "reports/parallel_node2_attendant.py",
+        "runner": "reports/independent_local_attendant_runner.py",
+        "helper_sha256": "037d0a4db1838ae991ace0d4c200a84b7ab1b6fc6d5ac1ae58ca0acc5ed7b2a5",
+        "launcher": "Win32_Process.Create with hidden startup and CREATE_BREAKAWAY_FROM_JOB; WMI service parent and no kill-on-close job verified",
+        "training_unchanged": true
+      },
+      "attendant_state.json": {
+        "stage": "WAITING",
+        "time": "2026-10-05T16:22:36.430667+00:00"
+      },
+      "persistent_receiver_state.json": {
+        "stage": "POOL_COMPLETED",
+        "time": "2026-10-05T16:22:36.278163+00:00",
+        "receiver_connections_opened": 0,
+        "files_received": 0,
+        "seconds": 125.03428859999985,
+        "negotiated_compression": [],
+        "max_file_receivers": 2,
+        "original_mirror_sha256": "28492fcdbd64ae0e08145274af70368726275e2bdc52dbc99fa9177b6c0e366b",
+        "all_original_SHA_and_custody_gates_used": true
+      },
+      "transfer_progress.json": {
+        "stage": "TRANSFERRING",
+        "full": false,
+        "verified_files": 449,
+        "expected_files": 3929,
+        "verified_bytes": 177407688,
+        "expected_bytes": 193319495,
+        "updated_at": "2026-10-05T16:23:30.397361+00:00"
+      },
+      "mirror.lock": {
+        "pid": 31456,
+        "time": "2026-10-05T16:23:09.863230+00:00"
+      }
+    },
+    "processes": [
+      {
+        "ProcessId": 30004,
+        "ParentProcessId": 7344,
+        "CommandLine": "\"C:\\Users\\GuanXingRen\\Miniconda3\\python.exe\" -u \"D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\execution\\reports\\independent_local_attendant_runner.py\" primary",
+        "CreationDate": "2026-10-05T20:35:04.02055+08:00",
+        "KernelModeTime": 44884218750,
+        "UserModeTime": 16298281250,
+        "ReadTransferCount": 21432176814,
+        "WriteTransferCount": 4762839795
+      },
+      {
+        "ProcessId": 31456,
+        "ParentProcessId": 7344,
+        "CommandLine": "\"C:\\Users\\GuanXingRen\\Miniconda3\\python.exe\" -u \"D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\execution\\reports\\independent_local_attendant_runner.py\" second",
+        "CreationDate": "2026-10-05T20:35:04.052515+08:00",
+        "KernelModeTime": 9036250000,
+        "UserModeTime": 5038281250,
+        "ReadTransferCount": 23785989737,
+        "WriteTransferCount": 9745888533
+      },
+      {
+        "ProcessId": 15752,
+        "ParentProcessId": 7344,
+        "CommandLine": "\"C:\\Users\\GuanXingRen\\Miniconda3\\python.exe\" -u \"D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\execution\\reports\\independent_local_attendant_runner.py\" coordinator",
+        "CreationDate": "2026-10-05T20:35:04.080522+08:00",
+        "KernelModeTime": 3117812500,
+        "UserModeTime": 2623281250,
+        "ReadTransferCount": 231929766801,
+        "WriteTransferCount": 44605671
+      }
+    ]
+  },
+  "coordinator_state": {
+    "stage": "SD_IMPORTED_WAITING_PRIMARY",
+    "time": "2026-10-05T16:21:41.692732+00:00"
+  },
+  "closure_barrier_evidence": {
+    "time": "2026-10-05T16:21:54.873481+00:00",
+    "primary": {
+      "boundary": {
+        "stage": "ARMED_AFTER_D42_BOUNDARY",
+        "pid": 44281,
+        "time": "2026-10-05T04:11:34.270609+00:00"
+      },
+      "boundary_pid": 44281,
+      "boundary_alive": true,
+      "SD_import": {
+        "stage": "FULL_RUN_IMPORT_VERIFIED",
+        "run": "SD_seed42",
+        "source_instance": "connect.nmb1.seetacloud.com:40920",
+        "destination_instance": "connect.nmb2.seetacloud.com:36431",
+        "all_binaries_in_authentic_foreign_SHA_custody": true,
+        "no_duplicate_training": true,
+        "metadata_file_count": 3841
+      },
+      "SD_status": {
+        "stage": "COMPLETE",
+        "completed": 32000,
+        "endpoint": 32000,
+        "updated_at": "2026-10-05T15:24:29.839699+00:00"
+      }
+    }
+  },
+  "custody": {
+    "D20": {
+      "path": "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\execution\\reports\\storage_offload\\D_seed42_u20000.json",
+      "sha256": "065f746970399c5354f98a9174826a257fe494b872fb4259941d6790442a4239",
+      "stage": "LOCAL_SHA_VERIFIED_REMOTE_RELEASED",
+      "files": 77,
+      "bytes": 4579157149
+    },
+    "SD20": {
+      "path": "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\execution\\parallel\\node2\\reports\\storage_offload\\SD_seed42_u20000.json",
+      "sha256": "84035e313e0ad908d41a68f139259b94983b06387b3c61edc0deab9b4ccdaac4",
+      "stage": "LOCAL_SHA_VERIFIED_REMOTE_RELEASED",
+      "files": 77,
+      "bytes": 4836423640,
+      "canonical_same_physical_files": 77
+    },
+    "SD32": {
+      "path": "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\execution\\parallel\\node2\\reports\\storage_offload\\SD_seed42_u32000.json",
+      "sha256": "76ecb2e6c00d445866c0a3eb4f47e29bbb38d2e0cb1c14fb319f550b0f1124a2",
+      "stage": "LOCAL_SHA_VERIFIED_REMOTE_RELEASED",
+      "files": 77,
+      "bytes": 4877851708,
+      "canonical_same_physical_files": 77
+    }
+  },
+  "D_latest_saved_validation": {
+    "update": 28000,
+    "source_sha256": "0fbb7cb102b53f01a55685e5948eb7cc44cb228c2c03dd54f8a3cc422daf63c4",
+    "scores": {
+      "single": 41.659218351297014,
+      "fixed_fusion": 45.11387111788246,
+      "half_fusion": 43.417056249858426,
+      "p0": 43.48770322103657
+    }
+  },
+  "D_two_consecutive_combined_collapse": false,
+  "both_disks_above_8GiB": true,
+  "coordinator_observation": "Earlier state was stale during active hashing/import. Read counters advanced; all154 files are hardlinks and fresh official FULL_RUN_IMPORT_VERIFIED arrived16:16UTC with3841metadata identities. No intervention/restart was necessary.",
+  "report_preparation": {
+    "derived_saved_validation": "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\结题报告\\evidence\\four_arm_saved_validation.json",
+    "source_sha256": "edc5af770613abc78decbc599717b18e11ca71bf290387c69b7a8b8da1b81515",
+    "records": 33,
+    "all_available_saved_counts_and_scores_exact": true,
+    "not_final_outcome": true
+  },
+  "primary_report_hold_authorized": true,
+  "primary_report_release_written": false,
+  "new_training_or_frozen_source_edit": false,
+  "new_test_started": false,
+  "healthy_receivers_not_duplicated": true,
+  "manual_cleanup": false,
+  "shutdown_dispatched_this_turn": false,
+  "notification": "DONT_NOTIFY",
+  "reason": "Only routine recovery/import and healthy training progressed; no user action needed."
+}

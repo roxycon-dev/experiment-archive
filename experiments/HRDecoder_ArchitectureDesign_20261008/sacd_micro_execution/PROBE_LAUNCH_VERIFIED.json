@@ -1,0 +1,59 @@
+{
+  "time_unix": 1791546968.0022507,
+  "server_online": true,
+  "STAGING_STATUS.json": {
+    "status": "PAIRED_PROBE_RUNNING",
+    "arm": "control",
+    "pid": 31205,
+    "controller_pid": 31202,
+    "loader_recovery": true,
+    "time_unix": 1791546777.5553086
+  },
+  "control/GPU_SMOKE_PASS.json": {
+    "status": "PASS",
+    "arm": "control",
+    "identity_SHA": "58056baf70f90f0b947f5cc4de77e0d676ab637c8e36805ac1738fe5d67b8ec9",
+    "canvas": 2048,
+    "batch": 2,
+    "discarded_optimizer_steps": 3,
+    "formal_updates": 0,
+    "finite_losses_and_all_gradients": true,
+    "backbone_calls": 3,
+    "private_nonzero_gradients": {
+      "local": true,
+      "global": true,
+      "head": true
+    },
+    "step_seconds": [
+      7.3889854699373245,
+      1.0825143158435822,
+      1.0734240040183067
+    ],
+    "device": "NVIDIA GeForce RTX 4090",
+    "accuracy_validated": false
+  },
+  "control/progress.json": {
+    "status": "DIAGNOSTIC_TRAINING",
+    "arm": "control",
+    "probe_updates": 100,
+    "parent_completed": 20000,
+    "expected_probe_updates": 500,
+    "identity_SHA": "58056baf70f90f0b947f5cc4de77e0d676ab637c8e36805ac1738fe5d67b8ec9",
+    "losses": {
+      "gt_final": 0.3189181685447693,
+      "gt_base": 0.3000843822956085,
+      "gt_hr_crop": 0.1866738349199295,
+      "kl_final": 0.0035720039159059525,
+      "kl_base": 0.0035561886616051197,
+      "action_kl": 0.5461434721946716,
+      "lambda_k": 0.5,
+      "lambda_action": 0.125,
+      "task_loss": 0.33510762453079224,
+      "weighted_action_loss": 0.06826793402433395
+    },
+    "time_unix": 1791546949.4837427,
+    "mean_compute_seconds": 1.0894461413472891
+  },
+  "control/log_tail": " mmcv - INFO - \ndecode_head.conv_seg.weight - torch.Size([4, 64, 1, 1]): \nNormalInit: mean=0, std=0.01, bias=0 \n \n2026-10-09 19:53:03,552 - mmcv - INFO - \ndecode_head.conv_seg.bias - torch.Size([4]): \nNormalInit: mean=0, std=0.01, bias=0 \n \n2026-10-09 19:53:03,552 - mmcv - INFO - \ndecode_head.convs.0.conv.weight - torch.Size([64, 720, 1, 1]): \nThe value is the same before and after calling `init_weights` of HRDecoder  \n \n2026-10-09 19:53:03,552 - mmcv - INFO - \ndecode_head.convs.0.bn.weight - torch.Size([64]): \nThe value is the same before and after calling `init_weights` of HRDecoder  \n \n2026-10-09 19:53:03,552 - mmcv - INFO - \ndecode_head.convs.0.bn.bias - torch.Size([64]): \nThe value is the same before and after calling `init_weights` of HRDecoder  \n \n2026-10-09 19:53:03,552 - mmcv - INFO - \ndecode_head.convs.1.conv.weight - torch.Size([64, 64, 7, 7]): \nThe value is the same before and after calling `init_weights` of HRDecoder  \n \n2026-10-09 19:53:03,553 - mmcv - INFO - \ndecode_head.convs.1.bn.weight - torch.Size([64]): \nThe value is the same before and after calling `init_weights` of HRDecoder  \n \n2026-10-09 19:53:03,553 - mmcv - INFO - \ndecode_head.convs.1.bn.bias - torch.Size([64]): \nThe value is the same before and after calling `init_weights` of HRDecoder  \n \n{\"arm\": \"control\", \"discarded_smoke_step\": 1, \"losses\": {\"gt_final\": 0.26256823539733887, \"gt_base\": 0.26400792598724365, \"gt_hr_crop\": 0.30530858039855957, \"kl_final\": 0.004309520591050386, \"kl_base\": 0.003771635005250573, \"action_kl\": 0.5067269206047058, \"lambda_k\": 0.5, \"lambda_action\": 0.125, \"task_loss\": 0.2960852384567261, \"weighted_action_loss\": 0.06334086507558823}, \"seconds\": 7.3889854699373245}\n{\"arm\": \"control\", \"discarded_smoke_step\": 2, \"losses\": {\"gt_final\": 0.2742135226726532, \"gt_base\": 0.27290236949920654, \"gt_hr_crop\": 0.24665994942188263, \"kl_final\": 0.0023051989264786243, \"kl_base\": 0.0016915674787014723, \"action_kl\": 0.458671897649765, \"lambda_k\": 0.5, \"lambda_action\": 0.125, \"task_loss\": 0.29991576075553894, \"weighted_action_loss\": 0.05733398720622063}, \"seconds\": 1.0825143158435822}\n{\"arm\": \"control\", \"discarded_smoke_step\": 3, \"losses\": {\"gt_final\": 0.33585578203201294, \"gt_base\": 0.33391308784484863, \"gt_hr_crop\": 0.3300860524177551, \"kl_final\": 0.001677508931607008, \"kl_base\": 0.00090065598487854, \"action_kl\": 0.6016405820846558, \"lambda_k\": 0.5, \"lambda_action\": 0.125, \"task_loss\": 0.3693300783634186, \"weighted_action_loss\": 0.07520507276058197}, \"seconds\": 1.0734240040183067}\n{\"status\": \"DIAGNOSTIC_TRAINING\", \"arm\": \"control\", \"probe_updates\": 25, \"parent_completed\": 20000, \"expected_probe_updates\": 500, \"identity_SHA\": \"58056baf70f90f0b947f5cc4de77e0d676ab637c8e36805ac1738fe5d67b8ec9\", \"losses\": {\"gt_final\": 0.2765699028968811, \"gt_base\": 0.2623526453971863, \"gt_hr_crop\": 0.28959619998931885, \"kl_final\": 0.004141501151025295, \"kl_base\": 0.002736861351877451, \"action_kl\": 0.3913341462612152, \"lambda_k\": 0.5, \"lambda_action\": 0.125, \"task_loss\": 0.3043880760669708, \"weighted_action_loss\": 0.0489167682826519}, \"time_unix\": 1791546867.9788322, \"mean_compute_seconds\": 1.099399119913578}\n{\"status\": \"DIAGNOSTIC_TRAINING\", \"arm\": \"control\", \"probe_updates\": 50, \"parent_completed\": 20000, \"expected_probe_updates\": 500, \"identity_SHA\": \"58056baf70f90f0b947f5cc4de77e0d676ab637c8e36805ac1738fe5d67b8ec9\", \"losses\": {\"gt_final\": 0.2330739051103592, \"gt_base\": 0.21846792101860046, \"gt_hr_crop\": 0.21622811257839203, \"kl_final\": 0.0016946109244599938, \"kl_base\": 0.0009055677801370621, \"action_kl\": 0.3823937475681305, \"lambda_k\": 0.5, \"lambda_action\": 0.125, \"task_loss\": 0.2520057260990143, \"weighted_action_loss\": 0.04779921844601631}, \"time_unix\": 1791546895.2279549, \"mean_compute_seconds\": 1.0943941108882427}\n{\"status\": \"DIAGNOSTIC_TRAINING\", \"arm\": \"control\", \"probe_updates\": 75, \"parent_completed\": 20000, \"expected_probe_updates\": 500, \"identity_SHA\": \"58056baf70f90f0b947f5cc4de77e0d676ab637c8e36805ac1738fe5d67b8ec9\", \"losses\": {\"gt_final\": 0.45644912123680115, \"gt_base\": 0.4180152416229248, \"gt_hr_crop\": 0.40989166498184204, \"kl_final\": 0.0060372427105903625, \"kl_base\": 0.004181939642876387, \"action_kl\": 0.590316891670227, \"lambda_k\": 0.5, \"lambda_action\": 0.125, \"task_loss\": 0.49137115478515625, \"weighted_action_loss\": 0.07378961145877838}, \"time_unix\": 1791546922.3631403, \"mean_compute_seconds\": 1.091190206905206}\n{\"status\": \"DIAGNOSTIC_TRAINING\", \"arm\": \"control\", \"probe_updates\": 100, \"parent_completed\": 20000, \"expected_probe_updates\": 500, \"identity_SHA\": \"58056baf70f90f0b947f5cc4de77e0d676ab637c8e36805ac1738fe5d67b8ec9\", \"losses\": {\"gt_final\": 0.3189181685447693, \"gt_base\": 0.3000843822956085, \"gt_hr_crop\": 0.1866738349199295, \"kl_final\": 0.0035720039159059525, \"kl_base\": 0.0035561886616051197, \"action_kl\": 0.5461434721946716, \"lambda_k\": 0.5, \"lambda_action\": 0.125, \"task_loss\": 0.33510762453079224, \"weighted_action_loss\": 0.06826793402433395}, \"time_unix\": 1791546949.4837427, \"mean_compute_seconds\": 1.0894461413472891}\n",
+  "GPU_status": "utilization.gpu [%], memory.used [MiB], power.draw [W]\n95 %, 22015 MiB, 305.75 W\n"
+}

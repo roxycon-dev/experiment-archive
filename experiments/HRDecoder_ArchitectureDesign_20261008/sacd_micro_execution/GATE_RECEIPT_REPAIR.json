@@ -1,0 +1,42 @@
+{
+  "status": "REJECTED",
+  "purpose": "Allow or reject one fresh8k screen, not certify40k accuracy",
+  "gate_registered_before_results": true,
+  "decisions": {
+    "same_initial_val_counts_both_heads_and_parent": false,
+    "nonnegative_gain_at250": false,
+    "gain_at500_at_least1pp": true,
+    "HE_FP_ratio_at_most_point8": true,
+    "HE_recall_loss_at_most2pp": false,
+    "no_class_IoU_loss_over2pp": true
+  },
+  "gain_at250_pp": -1.3179598548828082,
+  "gain_at500_pp": 2.494001224730951,
+  "initial_mIoU_difference_modified_minus_control_pp": -0.00507195725644749,
+  "initial_count_equality_required_not_relaxed": true,
+  "HE_false_positive_ratio": 0.7520772241410781,
+  "HE_recall_loss_pp": 5.077931942643154,
+  "class_IoU_loss_pp": [
+    -10.125778467074916,
+    0.9846687867580215,
+    -0.940390565144412,
+    0.10549534653750214
+  ],
+  "class_order": [
+    "EX",
+    "HE",
+    "SE",
+    "MA"
+  ],
+  "full_val_counts_verified": true,
+  "test_accessed": false,
+  "goal_achieved": false,
+  "time_unix": 1791550514.8339105,
+  "server_kept_running": true,
+  "external_diagnostics_controlled": false,
+  "parent_checkpoint_preserved": true,
+  "loader_startup_recovery_recorded": true,
+  "reference_file_deployment_repair": true,
+  "no_optimizer_updates_during_gate_repair": true,
+  "gate_code_SHA256": "49680b210e0916c574238b01043fb3ac1fd79e2c8a468bb90812a542e95bb537"
+}

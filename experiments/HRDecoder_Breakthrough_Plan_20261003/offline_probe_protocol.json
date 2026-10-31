@@ -1,0 +1,21 @@
+{
+  "split": "val",
+  "n_images": 76,
+  "threshold": 0.5,
+  "strict_greater": true,
+  "candidate_formulas": {
+    "M0_25": "0.75*C+0.25*M0@1000",
+    "M1_25": "0.75*C+0.25*M1@1000"
+  },
+  "scope": "Retrospective planning diagnostic, not a new frozen test winner; no alpha search",
+  "oracle": "GT chooses the correct thresholded binary expert at each pixel if available; NOT deployable and NOT a cap on a new model",
+  "experts_for_oracle": [
+    "P0",
+    "C",
+    "M0",
+    "M1",
+    "H1"
+  ],
+  "cuda": false,
+  "test_read": false
+}

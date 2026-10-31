@@ -1,0 +1,60 @@
+{
+  "time": 1791022650.4545677,
+  "remote_time": 1791022651.4150083,
+  "stage": {
+    "stage": "experiments",
+    "status": "complete",
+    "time": 1791022033.8231132
+  },
+  "progress": {
+    "work/M_seed42/M1": {
+      "update": 2000,
+      "target": 2000,
+      "stream_cursor": 16000,
+      "amp_skips": 1,
+      "center_foreground_draws": [
+        3725,
+        5060,
+        1437,
+        4718
+      ],
+      "draws_counted": 8000,
+      "frozen_global_cache": {
+        "hits": 28440,
+        "misses": 3576,
+        "entries": 3576,
+        "bytes": 45024280576,
+        "storage": "bounded_RAM_exact_float32",
+        "input_identity": "SHA256 of actual augmented normalized full input"
+      },
+      "seconds_this_segment": 1157.3348672389984
+    },
+    "work/M_seed42/M0": {
+      "update": 2000,
+      "target": 2000,
+      "stream_cursor": 16000,
+      "amp_skips": 1,
+      "center_foreground_draws": [
+        3725,
+        5060,
+        1437,
+        4718
+      ],
+      "draws_counted": 8000,
+      "frozen_global_cache": {
+        "hits": 20432,
+        "misses": 3576,
+        "entries": 3576,
+        "bytes": 45024280576,
+        "storage": "bounded_RAM_exact_float32",
+        "input_identity": "SHA256 of actual augmented normalized full input"
+      },
+      "seconds_this_segment": 1093.3634622097015
+    }
+  },
+  "gpu": "0 %, 1 MiB",
+  "status": "connected",
+  "memory_current": 43252674560,
+  "memory_events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\n",
+  "disk": "Filesystem      Size  Used Avail Use% Mounted on\nshm              60G   24G   37G  39% /dev/shm\n/dev/md0         50G   49G  1.2G  98% /root/autodl-tmp\n"
+}

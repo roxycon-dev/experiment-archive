@@ -1,0 +1,122 @@
+{
+  "schema": "hrdecoder-refiner-eval/v1",
+  "split": "val",
+  "n_images": 76,
+  "n_candidate_tiles": 1599,
+  "candidate": {
+    "threshold": 0.1,
+    "dilate": 0,
+    "margin": 24
+  },
+  "ckpt": "/root/autodl-tmp/HRDecoder_FullCompetition_20260920/refiner_v1/runs/formal_20260921/stage1/nodes/node_ep200.pth",
+  "refiner_applied": true,
+  "champion": {
+    "mIoU": 0.42669428454584546,
+    "per_class": {
+      "EX": 0.45771525507464833,
+      "HE": 0.43758256131196327,
+      "SE": 0.5518070087629399,
+      "MA": 0.25967231303383037
+    },
+    "counts": {
+      "EX": [
+        181588,
+        105924,
+        109215
+      ],
+      "HE": [
+        704581,
+        404243,
+        501343
+      ],
+      "SE": [
+        138913,
+        50338,
+        62491
+      ],
+      "MA": [
+        27149,
+        35267,
+        42135
+      ]
+    }
+  },
+  "refined": {
+    "mIoU": 0.4191121072054015,
+    "per_class": {
+      "EX": 0.45771525507464833,
+      "HE": 0.4105759612443474,
+      "SE": 0.5518070087629399,
+      "MA": 0.2563502037396702
+    },
+    "counts": {
+      "EX": [
+        181588,
+        105924,
+        109215
+      ],
+      "HE": [
+        595974,
+        245632,
+        609950
+      ],
+      "SE": [
+        138913,
+        50338,
+        62491
+      ],
+      "MA": [
+        26926,
+        35752,
+        42358
+      ]
+    }
+  },
+  "delta": {
+    "mIoU": -0.007582177340443974,
+    "per_class": {
+      "EX": 0.0,
+      "HE": -0.02700660006761585,
+      "SE": 0.0,
+      "MA": -0.003322109294160158
+    }
+  },
+  "bitwise_checks": {
+    "ex_se_changed": 0,
+    "outside_cand_changed": 0,
+    "n_pixels": 401111888,
+    "n_candidate_px": 19525679,
+    "images": 76,
+    "nonfinite_refined": 0
+  },
+  "patch_protocol": {
+    "mode": "shape-bucketed exact windows (no padding)",
+    "images_with_tiles": 76,
+    "n_buckets_total": 1512,
+    "max_bucket_size": 14,
+    "max_distinct_shapes_per_image": 51,
+    "max_window": 576,
+    "n_forward_total": 1514,
+    "batch_cap": 8
+  },
+  "elapsed_s": 358.10562443733215,
+  "contract_selfcheck": {
+    "expected": {
+      "mIoU": 0.42669428454584546,
+      "MA": 0.259672,
+      "HE": 0.437583
+    },
+    "observed": {
+      "mIoU": 0.42669428454584546,
+      "MA": 0.25967231303383037,
+      "HE": 0.43758256131196327
+    },
+    "abs_diff": {
+      "mIoU": 0.0,
+      "MA": 3.1303383035696797e-07,
+      "HE": 4.3868803673019485e-07
+    },
+    "pass": true
+  },
+  "accepted": true
+}

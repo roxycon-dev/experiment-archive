@@ -1,0 +1,212 @@
+# delegation/repair_ops.py
+"""Bounded one-shot patch (authored by GLM). Run once in currentroot. No shell/network/deletes."""
+from pathlib import Path
+import sys
+
+ROOT = Path.cwd()
+assert (ROOT / "ops.py").exists(), "run in currentroot (D:/dataset/experiment/HRDecoder_FusionAware_20260917)"
+
+def load(name: str) -> str:
+    return (ROOT / name).read_text(encoding="utf-8")
+
+def save(name: str, text: str) -> None:
+    (ROOT / name).write_text(text, encoding="utf-8")
+
+def repl(name: str, old: str, new: str, count: int = 1) -> None:
+    text = load(name)
+    found = text.count(old)
+    assert found == count, f"{name}: expected {count} occurrence(s) of pattern, found {found}: {old[:70]!r}"
+    save(name, text.replace(old, new))
+    print(f"[patched] {name}: {old.strip().splitlines()[0][:60]}")
+
+# ---------------- ops.py ----------------
+
+# 1. choose_checkpoint: tie-break to EARLIEST step.
+repl("ops.py",
+"""        if best is None or m > best[1]:
+            best = (step, m)""",
+"""        if best is None or m > best[1] or (m == best[1] and step < best[0]):
+            best = (step, m)""")
+
+# 2. choose_steps: train_seconds_per_step must be > 0; NaN/inf already rejected by _finite.
+repl("ops.py",
+"""    if t < 0 or e < 0 or o < 0:
+        raise ValueError("choose_steps arguments must be nonnegative")""",
+"""    if t <= 0:
+        raise ValueError("train_seconds_per_step must be > 0")
+    if e < 0 or o < 0:
+        raise ValueError("eval_seconds/overhead_seconds must be nonnegative")""")
+
+# ---------------- asset_inventory.py ----------------
+
+# 3. split_assignment.json: unwrap {"images": {...}} wrapper and accept direct
+#    string mapping {"img.jpg": "train"} in addition to {"img.jpg": {"split": ...}}.
+repl("asset_inventory.py",
+"""        raw = json_load_safe(assign_path)
+        if isinstance(raw, dict):
+            for fname, meta in raw.items():
+                if isinstance(meta, dict) and "split" in meta:
+                    assignment[str(fname)] = str(meta["split"])""",
+"""        raw = json_load_safe(assign_path)
+        if isinstance(raw, dict) and isinstance(raw.get("images"), dict):
+            raw = raw["images"]  # unwrap wrapper {"images": {fname: ...}}
+        if isinstance(raw, dict):
+            for fname, meta in raw.items():
+                if isinstance(meta, dict) and "split" in meta:
+                    assignment[str(fname)] = str(meta["split"])
+                elif isinstance(meta, str):  # direct mapping: "img.jpg": "train"
+                    assignment[str(fname)] = meta""")
+
+# Note: labels check already uses labels/<split>/<stem>.png directly (not EX/HE/SE/MA
+# subfolders), and cross-split comparison already uses filename stems — verified, no change.
+assert 'os.path.join(data_root, "labels", split, st + ".png")' in load("asset_inventory.py")
+assert '"cross_split_stem_overlaps"' in load("asset_inventory.py")
+# E remote assets keep their REMOTE_ASSET_PENDING flag (verified present):
+assert '"status": "REMOTE_ASSET_PENDING", "blocks_champion": True' in load("asset_inventory.py")
+
+# ---------------- storage_preflight.py ----------------
+
+# 4. image_bytes: scan images/train directly (no rglob over the whole data root,
+#    no labels/test traversal).
+text = load("storage_preflight.py")
+start = text.index("def image_bytes")
+end = text.index("def check_storage")
+new_image_bytes = '''def image_bytes(data_root: Path, split: str = "train") -> tuple:
+    """Estimate cache bytes from images/<split> only (no recursive scan of data_root)."""
+    from PIL import Image
+    total = 0
+    n = 0
+    img_dir = Path(data_root) / "images" / split
+    if not img_dir.is_dir():
+        raise FileNotFoundError(f"missing image directory: {img_dir}")
+    for p in sorted(img_dir.iterdir()):
+        if not p.is_file():
+            continue
+        if p.suffix.lower() not in (".png", ".jpg", ".jpeg", ".bmp", ".tif", ".tiff"):
+            continue
+        with Image.open(p) as im:
+            w, h = im.size  # header only; PIL lazy-loads
+        total += w * h * 16  # reference HWC float32 x4 channels
+        n += 1
+    return total, n
+
+
+'''
+save("storage_preflight.py", text[:start] + new_image_bytes + text[end:])
+print("[patched] storage_preflight.py: image_bytes -> images/train direct scan")
+
+# 5. check_storage: expected_count parameter (production default 454; tests may pass tiny).
+repl("storage_preflight.py",
+"""def check_storage(data_root, cache_dir, run_dir, student_ckpt, reference_ckpt,
+                  num_checkpoints=24, headroom_frac=0.20, headroom_gib=2.0):""",
+"""def check_storage(data_root, cache_dir, run_dir, student_ckpt, reference_ckpt,
+                  num_checkpoints=24, headroom_frac=0.20, headroom_gib=2.0,
+                  expected_count=454):""")
+
+# 6. ok requires real image count >= expected_count; report both fields.
+repl("storage_preflight.py",
+"""        free = cache_free + run_free
+
+    return {
+        "status": "ok" if ok else "block",
+        "images": {"count": n_imgs, "bytes": img_bytes},""",
+"""        free = cache_free + run_free
+
+    ok = ok and n_imgs >= expected_count
+    return {
+        "status": "ok" if ok else "block",
+        "images": {"count": n_imgs, "bytes": img_bytes,
+                   "expected_count": expected_count,
+                   "expected_count_met": n_imgs >= expected_count},""")
+
+# 7. main: --expected-count flag (default 454) forwarded to check_storage.
+repl("storage_preflight.py",
+"""    ap.add_argument("--out-json", required=True)""",
+"""    ap.add_argument("--out-json", required=True)
+    ap.add_argument("--expected-count", type=int, default=454,
+                    help="minimum image count in images/train for status ok (production: 454)")""")
+
+repl("storage_preflight.py",
+"""    report = check_storage(a.data_root, a.cache_dir, a.run_dir,
+                           a.student_checkpoint, a.reference_checkpoint)""",
+"""    report = check_storage(a.data_root, a.cache_dir, a.run_dir,
+                           a.student_checkpoint, a.reference_checkpoint,
+                           expected_count=a.expected_count)""")
+
+# same_filesystem via st_dev of nearest existing parent — already correct in source; verified:
+assert "st_dev" in load("storage_preflight.py") and "while not d.exists()" in load("storage_preflight.py")
+
+# ---------------- run_guarded.sh: whole-file rewrite (safe Linux-only) ----------------
+
+RUN_GUARDED = r'''#!/usr/bin/env bash
+# run_guarded.sh — deadline-guarded run. Linux-only real shutdown.
+# Generated by repair_ops.py (GLM). Usage: run_guarded.sh <settings-file> <run-dir> <backup-dir>
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$SCRIPT_DIR"
+
+SETTINGS_FILE="${1:?usage: run_guarded.sh <settings-file> <run-dir> <backup-dir>}"
+RUN_DIR="${2:?usage: run_guarded.sh <settings-file> <run-dir> <backup-dir>}"
+BACKUP_DIR="${3:?usage: run_guarded.sh <settings-file> <run-dir> <backup-dir>}"
+
+mkdir -p "$RUN_DIR"
+RUN_DIR="$(cd "$RUN_DIR" && pwd)"
+
+shutdown_now() {
+  # checked retry: attempt real shutdown up to 3 times, 5s apart
+  local i
+  for i in 1 2 3; do
+    if shutdown -h now; then return 0; fi
+    sleep 5
+  done
+  return 1
+}
+
+# Fail closed: malformed/missing ledger must attempt shutdown, not crash open.
+DEADLINE_EPOCH="$(RUN_DIR="$RUN_DIR" SCRIPT_DIR="$SCRIPT_DIR" python3 - <<'PY'
+import os, sys
+sys.path.insert(0, os.environ["SCRIPT_DIR"])
+import ops
+print(int(ops.deadline_of(ops.load_ledger(os.environ["RUN_DIR"])).timestamp()))
+PY
+)" || {
+  echo "[fail-closed] malformed or missing ledger; attempting shutdown" >&2
+  shutdown_now || true
+  exit 5
+}
+
+on_exit() {
+  rc=$?
+  # Bounded tar backup of run_dir into a SEPARATE backup_dir, reserving 10s
+  # before the global deadline. The watchdog is NEVER killed from here.
+  local now remain cap
+  now="$(date +%s)"
+  remain=$(( DEADLINE_EPOCH - now - 10 ))
+  if [ "$remain" -gt 0 ]; then
+    cap=600
+    if [ "$cap" -gt "$remain" ]; then cap="$remain"; fi
+    mkdir -p "$BACKUP_DIR"
+    timeout "$cap" tar -cf "$BACKUP_DIR/run_backup_$(date +%Y%m%dT%H%M%S).tar" \
+      -C "$(dirname "$RUN_DIR")" "$(basename "$RUN_DIR")" \
+      || echo "[backup] bounded backup exited early (rc=$?); continuing shutdown"
+  else
+    echo "[backup] skipped: no time remaining before deadline"
+  fi
+  return "$rc"
+}
+trap on_exit EXIT
+
+# Watchdog: nohup, background, installed before the workload; never killed by this script.
+nohup python3 "$SCRIPT_DIR/ops.py" watchdog --run-dir "$RUN_DIR" \
+  >"$RUN_DIR/watchdog.log" 2>&1 &
+echo "watchdog pid=$!"
+
+python3 "$SCRIPT_DIR/run_protocol.py" --settings "$SETTINGS_FILE" --run-dir "$RUN_DIR"
+'''
+
+save("run_guarded.sh", RUN_GUARDED)
+print("[rewritten] run_guarded.sh (trap before ledger check, absolute SCRIPT_DIR, "
+      "3 required args, bounded EXIT tar backup, watchdog never killed)")
+
+print("[done] all patches applied.")

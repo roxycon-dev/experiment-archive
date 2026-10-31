@@ -1,0 +1,41 @@
+{
+  "models": [
+    {
+      "config": "configs/lesion/exp/hrplus_patch_dice.py",
+      "ckpt": "/root/autodl-tmp/hrplus/D_0913_retry/best_mIoU_iter_2000.pth",
+      "weight": 1.0
+    },
+    {
+      "config": "configs/lesion/exp/hrplus_mares.py",
+      "ckpt": "/root/autodl-tmp/hrplus/results/E_0916/best_mIoU_iter_1500.pth",
+      "weight": 1.0
+    }
+  ],
+  "load_report": [
+    {
+      "ckpt": "best_mIoU_iter_2000.pth",
+      "missing": [],
+      "unexpected": []
+    },
+    {
+      "ckpt": "best_mIoU_iter_1500.pth",
+      "missing": [],
+      "unexpected": []
+    }
+  ],
+  "flip_tta": true,
+  "split": "test",
+  "n_images": 227,
+  "mIoU": 0.4318330992676182,
+  "mF1": 0.5945187034653054,
+  "mPPV": 0.6462358691991859,
+  "mS": 0.5539493748920179,
+  "mAUPR": 0.6106914989852645,
+  "per_class_iou": {
+    "bg": "nan",
+    "EX": "54.06",
+    "HE": "44.34",
+    "SE": "49.02",
+    "MA": "25.31"
+  }
+}

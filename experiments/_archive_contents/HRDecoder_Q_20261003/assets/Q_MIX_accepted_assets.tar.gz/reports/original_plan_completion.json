@@ -1,0 +1,71 @@
+{
+  "updated_at_utc": "2026-10-03T18:58:28.973140+00:00",
+  "original_plan_complete": false,
+  "shutdown_allowed": false,
+  "scope_override": "reports/execution_scope_override.json",
+  "tasks": {
+    "pretraining_and_gpu_acceptance": {
+      "state": "COMPLETE",
+      "repeat_not_required": true
+    },
+    "Q_DDR_discovery_and_review": {
+      "state": "COMPLETE",
+      "seeds": [
+        42,
+        2024
+      ],
+      "endpoint": 16000
+    },
+    "locked_Q_DDR_final_evaluation": {
+      "state": "COMPLETE_LOCAL_SHA_VERIFIED",
+      "lock": "reports/final_selection.json",
+      "selection_changes_forbidden": true,
+      "receipt": "reports/final_evidence_backup_receipt.json",
+      "seed_scores_pct": [
+        45.72155710642771,
+        45.677066093957414
+      ]
+    },
+    "official_external_supervision": {
+      "state": "ACQUISITION_AND_ACCEPTANCE_IN_PROGRESS",
+      "readiness_evidence": "reports/external_readiness.json",
+      "local_user_asset": "D:/dataset/best_segmentation",
+      "local_asset_quality": "User-authorized stored image/polygon source; no official GT restoration claimed",
+      "user_override": "reports/external_source_user_override.json"
+    },
+    "Q_MIX_paired_experiment": {
+      "state": "PENDING_DATA_AND_PROSPECTIVE_CONTINUATION_PROTOCOL",
+      "preserve_original_comparison_and_cost_gates": true
+    },
+    "original_plan_final_reports_and_local_SHA_backup": {
+      "state": "PENDING"
+    },
+    "dependency_audit_and_deferred_cleanup": {
+      "state": "DEFERRED_UNTIL_APPLICABLE_ORIGINAL_SCOPE_COMPLETE"
+    },
+    "server_shutdown_and_OFF_verification": {
+      "state": "DEFERRED_ORIGINAL_PLAN_CONTINUATION",
+      "reason": "No shutdown dispatched; new user data access is actionable"
+    },
+    "Q_DDR_training_backups": {
+      "state": "COMPLETE_SHA_VERIFIED",
+      "receipts": [
+        "reports/run_backup_Q_DDR_seed42.json",
+        "reports/run_backup_Q_DDR_seed2024.json"
+      ]
+    },
+    "Q_DDR_stage_report": {
+      "state": "COMPLETE",
+      "report": "reports/Q_DDR_两种子阶段结果_20261004.md",
+      "receipt": "reports/Q_DDR_stage_report_receipt.json"
+    }
+  },
+  "optional_research_not_automatically_added": [
+    "Third seed",
+    "Other model or loss search",
+    "Paper ablations before confirmed gain",
+    "External evaluation without proof of unused holdout identity"
+  ],
+  "temporary_stop_for_no_idle": true,
+  "updated_at": "2026-10-03T19:26:43.620373+00:00"
+}

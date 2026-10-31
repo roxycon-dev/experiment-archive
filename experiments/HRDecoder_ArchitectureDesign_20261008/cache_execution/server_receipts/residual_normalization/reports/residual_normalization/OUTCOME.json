@@ -1,0 +1,688 @@
+{
+  "status": "COMPLETE",
+  "time_unix": 1791568046.7897003,
+  "values": {
+    "control": {
+      "0": {
+        "mIoU_percent": 37.20991397146011,
+        "IoU_percent": [
+          34.881253718243656,
+          47.018388983487135,
+          46.46106432850074,
+          20.478948855608927
+        ],
+        "precision_percent": [
+          50.479252052534406,
+          69.01059694083783,
+          78.69615404409872,
+          30.982888221253756
+        ],
+        "recall_percent": [
+          53.02627551985365,
+          59.60276103635055,
+          53.145419157514254,
+          37.65804514750881
+        ],
+        "counts": [
+          [
+            154202,
+            151274,
+            136601
+          ],
+          [
+            718764,
+            322763,
+            487160
+          ],
+          [
+            107037,
+            28976,
+            94367
+          ],
+          [
+            26091,
+            58120,
+            43193
+          ]
+        ],
+        "class_order": [
+          "EX",
+          "HE",
+          "SE",
+          "MA"
+        ],
+        "undefined_precision_convention": "zero when TP+FP=0; inspect counts",
+        "images": 76,
+        "threshold": "strictly > .5",
+        "base_head_metrics": {
+          "mIoU_percent": 36.935235976625606,
+          "IoU_percent": [
+            34.60750699776297,
+            46.88034560314242,
+            46.49356172885049,
+            19.759529576746555
+          ],
+          "precision_percent": [
+            49.99139361698673,
+            69.66365630709394,
+            78.68816335524625,
+            30.608869524432542
+          ],
+          "recall_percent": [
+            52.932397533725585,
+            58.905950955449924,
+            53.19159500307838,
+            35.79325674037296
+          ],
+          "counts": [
+            [
+              153929,
+              153982,
+              136874
+            ],
+            [
+              710361,
+              309340,
+              495563
+            ],
+            [
+              107130,
+              29015,
+              94274
+            ],
+            [
+              24799,
+              56220,
+              44485
+            ]
+          ],
+          "class_order": [
+            "EX",
+            "HE",
+            "SE",
+            "MA"
+          ],
+          "undefined_precision_convention": "zero when TP+FP=0; inspect counts",
+          "images": 76,
+          "threshold": "strictly > .5"
+        },
+        "seconds": 26.74443120509386,
+        "deployment_inference_verified": true,
+        "teacher_or_GT_input": false,
+        "parent_completed": 8000,
+        "probe_updates": 0,
+        "identity_SHA": "a61b2d550a5530b7941f44eb66e6f37ea33d646587048245620ffe9e948e8225",
+        "arm": "control"
+      },
+      "250": {
+        "mIoU_percent": 33.34538080811538,
+        "IoU_percent": [
+          34.868130283279136,
+          39.29113566324402,
+          40.92752431240621,
+          18.294732973532156
+        ],
+        "precision_percent": [
+          51.86946125604266,
+          67.57020711808589,
+          77.48596133777271,
+          25.71606237443796
+        ],
+        "recall_percent": [
+          51.545548017042464,
+          48.42237155907006,
+          46.45141109411928,
+          38.79827954506091
+        ],
+        "counts": [
+          [
+            149896,
+            139091,
+            140907
+          ],
+          [
+            583937,
+            280256,
+            621987
+          ],
+          [
+            93555,
+            27183,
+            107849
+          ],
+          [
+            26881,
+            77649,
+            42403
+          ]
+        ],
+        "class_order": [
+          "EX",
+          "HE",
+          "SE",
+          "MA"
+        ],
+        "undefined_precision_convention": "zero when TP+FP=0; inspect counts",
+        "images": 76,
+        "threshold": "strictly > .5",
+        "base_head_metrics": {
+          "mIoU_percent": 33.06593057415248,
+          "IoU_percent": [
+            34.60562348671105,
+            39.06653317113491,
+            40.78613842281143,
+            17.805427215952516
+          ],
+          "precision_percent": [
+            51.82635002480315,
+            68.02354158734799,
+            77.74545454545455,
+            25.400271103864213
+          ],
+          "recall_percent": [
+            51.01563601475914,
+            47.85475701619671,
+            46.177335107545034,
+            37.323191501645404
+          ],
+          "counts": [
+            [
+              148355,
+              137899,
+              142448
+            ],
+            [
+              577092,
+              271279,
+              628832
+            ],
+            [
+              93003,
+              26622,
+              108401
+            ],
+            [
+              25859,
+              75947,
+              43425
+            ]
+          ],
+          "class_order": [
+            "EX",
+            "HE",
+            "SE",
+            "MA"
+          ],
+          "undefined_precision_convention": "zero when TP+FP=0; inspect counts",
+          "images": 76,
+          "threshold": "strictly > .5"
+        },
+        "seconds": 30.46480441093445,
+        "deployment_inference_verified": true,
+        "teacher_or_GT_input": false,
+        "parent_completed": 8000,
+        "probe_updates": 250,
+        "arm": "control",
+        "identity_SHA": "a61b2d550a5530b7941f44eb66e6f37ea33d646587048245620ffe9e948e8225"
+      },
+      "500": {
+        "mIoU_percent": 34.383501901073124,
+        "IoU_percent": [
+          39.90514774599443,
+          40.69914668882268,
+          39.567422671473885,
+          17.362290498001475
+        ],
+        "precision_percent": [
+          57.120643764394366,
+          66.94001159491044,
+          59.226072990964006,
+          29.96861305223262
+        ],
+        "recall_percent": [
+          56.971558065081865,
+          50.93778712423005,
+          54.3807471549721,
+          29.215980601581894
+        ],
+        "counts": [
+          [
+            165675,
+            124369,
+            125128
+          ],
+          [
+            614271,
+            303373,
+            591653
+          ],
+          [
+            109525,
+            75402,
+            91879
+          ],
+          [
+            20242,
+            47302,
+            49042
+          ]
+        ],
+        "class_order": [
+          "EX",
+          "HE",
+          "SE",
+          "MA"
+        ],
+        "undefined_precision_convention": "zero when TP+FP=0; inspect counts",
+        "images": 76,
+        "threshold": "strictly > .5",
+        "base_head_metrics": {
+          "mIoU_percent": 34.11682661912515,
+          "IoU_percent": [
+            39.524569593415414,
+            40.501325148650444,
+            39.527925771590475,
+            16.913485962844288
+          ],
+          "precision_percent": [
+            56.771585031523855,
+            67.30231991853721,
+            59.06089429405491,
+            28.473804100227788
+          ],
+          "recall_percent": [
+            56.541026055439595,
+            50.42299514728955,
+            54.44579055033664,
+            29.407944114081175
+          ],
+          "counts": [
+            [
+              164423,
+              125199,
+              126380
+            ],
+            [
+              608063,
+              295417,
+              597861
+            ],
+            [
+              109656,
+              76010,
+              91748
+            ],
+            [
+              20375,
+              51182,
+              48909
+            ]
+          ],
+          "class_order": [
+            "EX",
+            "HE",
+            "SE",
+            "MA"
+          ],
+          "undefined_precision_convention": "zero when TP+FP=0; inspect counts",
+          "images": 76,
+          "threshold": "strictly > .5"
+        },
+        "seconds": 27.955126516520977,
+        "deployment_inference_verified": true,
+        "teacher_or_GT_input": false,
+        "parent_completed": 8000,
+        "probe_updates": 500,
+        "arm": "control",
+        "identity_SHA": "a61b2d550a5530b7941f44eb66e6f37ea33d646587048245620ffe9e948e8225"
+      }
+    },
+    "gt_stratified": {
+      "0": {
+        "mIoU_percent": 37.212350205968065,
+        "IoU_percent": [
+          34.879628310136646,
+          47.020694121456536,
+          46.46895659609934,
+          20.48012179617974
+        ],
+        "precision_percent": [
+          50.476782820760434,
+          69.01122723877516,
+          78.70355394139011,
+          30.979712484716103
+        ],
+        "recall_percent": [
+          53.02524389363246,
+          59.6059950709995,
+          53.15237036007229,
+          37.66670515559148
+        ],
+        "counts": [
+          [
+            154199,
+            151286,
+            136604
+          ],
+          [
+            718803,
+            322771,
+            487121
+          ],
+          [
+            107051,
+            28967,
+            94353
+          ],
+          [
+            26097,
+            58142,
+            43187
+          ]
+        ],
+        "class_order": [
+          "EX",
+          "HE",
+          "SE",
+          "MA"
+        ],
+        "undefined_precision_convention": "zero when TP+FP=0; inspect counts",
+        "images": 76,
+        "threshold": "strictly > .5",
+        "base_head_metrics": {
+          "mIoU_percent": 36.93416792984321,
+          "IoU_percent": [
+            34.608535724403396,
+            46.880982848589916,
+            46.49334866864868,
+            19.753804477730856
+          ],
+          "precision_percent": [
+            49.99415375621163,
+            69.66367172100522,
+            78.69516029502512,
+            30.601463854157668
+          ],
+          "recall_percent": [
+            52.931709782911454,
+            58.906946043034225,
+            53.18811940179937,
+            35.78459673229028
+          ],
+          "counts": [
+            [
+              153927,
+              153963,
+              136876
+            ],
+            [
+              710373,
+              309345,
+              495551
+            ],
+            [
+              107123,
+              29001,
+              94281
+            ],
+            [
+              24793,
+              56226,
+              44491
+            ]
+          ],
+          "class_order": [
+            "EX",
+            "HE",
+            "SE",
+            "MA"
+          ],
+          "undefined_precision_convention": "zero when TP+FP=0; inspect counts",
+          "images": 76,
+          "threshold": "strictly > .5"
+        },
+        "seconds": 31.60894837230444,
+        "deployment_inference_verified": true,
+        "teacher_or_GT_input": false,
+        "parent_completed": 8000,
+        "probe_updates": 0,
+        "identity_SHA": "9ec0a51586cf2f49d8b8005debafa5058867d0741cc38a46ee1739a3f4b97bfa",
+        "arm": "gt_stratified"
+      },
+      "250": {
+        "mIoU_percent": 36.72721488300781,
+        "IoU_percent": [
+          39.78535186410765,
+          42.52198729314793,
+          45.60273828407156,
+          18.998782090704097
+        ],
+        "precision_percent": [
+          52.60322479028363,
+          63.959766871689325,
+          62.90197413547085,
+          24.601631728930005
+        ],
+        "recall_percent": [
+          62.016898037503054,
+          55.92085405050401,
+          62.38009175587377,
+          45.48091911552451
+        ],
+        "counts": [
+          [
+            180347,
+            162497,
+            110456
+          ],
+          [
+            674363,
+            379992,
+            531561
+          ],
+          [
+            125636,
+            74097,
+            75768
+          ],
+          [
+            31511,
+            96574,
+            37773
+          ]
+        ],
+        "class_order": [
+          "EX",
+          "HE",
+          "SE",
+          "MA"
+        ],
+        "undefined_precision_convention": "zero when TP+FP=0; inspect counts",
+        "images": 76,
+        "threshold": "strictly > .5",
+        "base_head_metrics": {
+          "mIoU_percent": 37.18486755294105,
+          "IoU_percent": [
+            39.86857858704646,
+            42.24150001129138,
+            47.22297566812924,
+            19.406415945297155
+          ],
+          "precision_percent": [
+            54.87395973837579,
+            65.55913051402294,
+            70.60184633000168,
+            28.122364648338678
+          ],
+          "recall_percent": [
+            59.316100590434075,
+            54.28882748829943,
+            58.781354888681456,
+            38.50528260493043
+          ],
+          "counts": [
+            [
+              172493,
+              141851,
+              118310
+            ],
+            [
+              654682,
+              343931,
+              551242
+            ],
+            [
+              118388,
+              49296,
+              83016
+            ],
+            [
+              26678,
+              68186,
+              42606
+            ]
+          ],
+          "class_order": [
+            "EX",
+            "HE",
+            "SE",
+            "MA"
+          ],
+          "undefined_precision_convention": "zero when TP+FP=0; inspect counts",
+          "images": 76,
+          "threshold": "strictly > .5"
+        },
+        "seconds": 32.84444214403629,
+        "deployment_inference_verified": true,
+        "teacher_or_GT_input": false,
+        "parent_completed": 8000,
+        "probe_updates": 250,
+        "arm": "gt_stratified",
+        "identity_SHA": "9ec0a51586cf2f49d8b8005debafa5058867d0741cc38a46ee1739a3f4b97bfa"
+      },
+      "500": {
+        "mIoU_percent": 36.01561025565543,
+        "IoU_percent": [
+          40.25551661770746,
+          41.71560965869578,
+          42.84682150529348,
+          19.244493240925
+        ],
+        "precision_percent": [
+          57.17555871687017,
+          71.0849678110455,
+          54.809386693831605,
+          26.839632121426725
+        ],
+        "recall_percent": [
+          57.63248659745601,
+          50.240728271433355,
+          66.25191158070346,
+          40.47832111309971
+        ],
+        "counts": [
+          [
+            167597,
+            125530,
+            123206
+          ],
+          [
+            605865,
+            246446,
+            600059
+          ],
+          [
+            133434,
+            110017,
+            67970
+          ],
+          [
+            28045,
+            76446,
+            41239
+          ]
+        ],
+        "class_order": [
+          "EX",
+          "HE",
+          "SE",
+          "MA"
+        ],
+        "undefined_precision_convention": "zero when TP+FP=0; inspect counts",
+        "images": 76,
+        "threshold": "strictly > .5",
+        "base_head_metrics": {
+          "mIoU_percent": 36.128163009753514,
+          "IoU_percent": [
+            39.990895470496575,
+            40.85207182623297,
+            44.467885607126114,
+            19.201799135158375
+          ],
+          "precision_percent": [
+            59.46251515534695,
+            73.53382290780756,
+            60.968863523476536,
+            31.012058167639246
+          ],
+          "recall_percent": [
+            54.98017558278284,
+            47.89414589974161,
+            62.164604476574446,
+            33.52000461867098
+          ],
+          "counts": [
+            [
+              159884,
+              108998,
+              130919
+            ],
+            [
+              577567,
+              207877,
+              628357
+            ],
+            [
+              125202,
+              80152,
+              76202
+            ],
+            [
+              23224,
+              51663,
+              46060
+            ]
+          ],
+          "class_order": [
+            "EX",
+            "HE",
+            "SE",
+            "MA"
+          ],
+          "undefined_precision_convention": "zero when TP+FP=0; inspect counts",
+          "images": 76,
+          "threshold": "strictly > .5"
+        },
+        "seconds": 32.333380579948425,
+        "deployment_inference_verified": true,
+        "teacher_or_GT_input": false,
+        "parent_completed": 8000,
+        "probe_updates": 500,
+        "arm": "gt_stratified",
+        "identity_SHA": "9ec0a51586cf2f49d8b8005debafa5058867d0741cc38a46ee1739a3f4b97bfa"
+      }
+    }
+  },
+  "only_KL_normalization_changed": true,
+  "parent_completed": 8000,
+  "warm_updates_per_arm": 500,
+  "fresh_screen_pass": false,
+  "deadline_extension": false,
+  "automatic_fresh_training": false,
+  "test_accessed": false,
+  "goal_achieved": false,
+  "server_kept_running": true,
+  "shutdown_command_issued": false,
+  "external_diagnostics_controlled": false,
+  "own_RAM_retained": true
+}

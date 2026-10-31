@@ -1,0 +1,2295 @@
+{
+  "candidate_count": 114,
+  "records": [
+    {
+      "source": "HRDecoder_Next_20261003/configure.py",
+      "sha256": "d7679f70747e3f6872163a377109cb377ac4b742300aa94a7746d728014749e1",
+      "bytes": 4953,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": []
+    },
+    {
+      "source": "HRDecoder_审查轮_20260916/box2_ops/configs/j0_split613.py",
+      "sha256": "c882b0ed3a83c14c6eecb21391e1491a1877d32abfe5872f53e75c6c6a3814ce",
+      "bytes": 2355,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "checkpoint_config"
+          ],
+          "literal_value": null
+        },
+        {
+          "names": [
+            "optimizer"
+          ],
+          "literal_value": null
+        },
+        {
+          "names": [
+            "optimizer_config"
+          ],
+          "literal_value": null
+        },
+        {
+          "names": [
+            "lr_config"
+          ],
+          "literal_value": null
+        }
+      ]
+    },
+    {
+      "source": "HRDecoder_审查轮_20260916/box2_ops/configs/j1_split613.py",
+      "sha256": "8a3c77167a650749cf5e5789c46035ec5e43d01d62bb5ab41ad0e00a79617da6",
+      "bytes": 847,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": []
+    },
+    {
+      "source": "HRDecoder_Ready_20261002/tools/configure_server.py",
+      "sha256": "9b7a388977d4c130c0a70b6a8920227a62568d14a85eb9f7cc3907d66d29afc5",
+      "bytes": 5170,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": []
+    },
+    {
+      "source": "HRDecoder_Ready_20261002/trainer/config.py",
+      "sha256": "63624875f70841a27e18d83c6b4bee79e061a862f74df2762a38ecdce6f51c62",
+      "bytes": 13685,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "STAGE_SECTION"
+          ],
+          "keys": [
+            "external_pretrain",
+            "ddr_finetune"
+          ],
+          "literal": {
+            "external_pretrain": "pretrain_stage",
+            "ddr_finetune": "ddr_finetune_stage"
+          }
+        },
+        {
+          "names": [
+            "DEFAULT_NORMALIZATION"
+          ],
+          "keys": [
+            "imagenet"
+          ],
+          "literal": {
+            "imagenet": {
+              "mean": [
+                123.675,
+                116.28,
+                103.53
+              ],
+              "std": [
+                58.395,
+                57.12,
+                57.375
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "source": "hrdecoder_plus3/repo/tools/print_config.py",
+      "sha256": "5294b73e6bc193780e328546cd320e72b849e2d52aee1107a2317ce61c3e166b",
+      "bytes": 1263,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": []
+    },
+    {
+      "source": "hrdecoder_plus3/repo/configs/lesion/efficient-hrdecoder_fcn_hr48_ddr_2048.py",
+      "sha256": "b795723ef7c4e838b06cdb3d5e1f91f2a9a6bad286273e2500f155009fce1c78",
+      "bytes": 1342,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "model"
+          ],
+          "literal_value": null
+        },
+        {
+          "names": [
+            "seed"
+          ],
+          "literal_value": 2
+        },
+        {
+          "names": [
+            "checkpoint_config"
+          ],
+          "literal_value": null
+        }
+      ]
+    },
+    {
+      "source": "hrdecoder_plus3/repo/configs/lesion/efficient-hrdecoder_fcn_hr48_idrid_2880x1920-slide.py",
+      "sha256": "0e976d98a90f451ce838c81ec1b4c2394d2bb0a8a87896f1c7044ea9e774f40f",
+      "bytes": 1038,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "model"
+          ],
+          "literal_value": null
+        },
+        {
+          "names": [
+            "seed"
+          ],
+          "literal_value": 2
+        },
+        {
+          "names": [
+            "checkpoint_config"
+          ],
+          "literal_value": null
+        }
+      ]
+    },
+    {
+      "source": "hrdecoder_plus3/repo/configs/lesion/fcn_hr48_ddr_1024.py",
+      "sha256": "5b12861607bc3217fa75c74c6f6f684d2fefc1819485f0932d2ce4c67691a43c",
+      "bytes": 932,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "model"
+          ],
+          "literal_value": null
+        },
+        {
+          "names": [
+            "lr"
+          ],
+          "literal_value": 0.01
+        },
+        {
+          "names": [
+            "optimizer"
+          ],
+          "literal_value": null
+        },
+        {
+          "names": [
+            "lr_config"
+          ],
+          "literal_value": null
+        },
+        {
+          "names": [
+            "checkpoint_config"
+          ],
+          "literal_value": null
+        }
+      ]
+    },
+    {
+      "source": "hrdecoder_plus3/repo/configs/lesion/fcn_hr48_idrid_1440x960.py",
+      "sha256": "da20a6c61a6e1cb4e4243e9a011bfe90f368a496ba63f04bbc641c0b6ca8ec4f",
+      "bytes": 800,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "model"
+          ],
+          "literal_value": null
+        },
+        {
+          "names": [
+            "checkpoint_config"
+          ],
+          "literal_value": null
+        }
+      ]
+    },
+    {
+      "source": "hrdecoder_plus3/repo/configs/lesion/hrdecoder_fcn_hr48_ddr_2048.py",
+      "sha256": "189a1a6dad43480f3a377101eaaf6be662645b15fe83e9b20f15365fd3334c3b",
+      "bytes": 1815,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "model"
+          ],
+          "literal_value": null
+        },
+        {
+          "names": [
+            "optimizer"
+          ],
+          "literal_value": null
+        },
+        {
+          "names": [
+            "seed"
+          ],
+          "literal_value": 14
+        },
+        {
+          "names": [
+            "checkpoint_config"
+          ],
+          "literal_value": null
+        }
+      ]
+    },
+    {
+      "source": "hrdecoder_plus3/repo/configs/lesion/hrdecoder_fcn_hr48_idrid_2880x1920-slide.py",
+      "sha256": "f259b2b1301d18d21334808290af4062f7d32ef347174fe6985a358919dfcf02",
+      "bytes": 996,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "model"
+          ],
+          "literal_value": null
+        },
+        {
+          "names": [
+            "seed"
+          ],
+          "literal_value": 2
+        },
+        {
+          "names": [
+            "checkpoint_config"
+          ],
+          "literal_value": null
+        }
+      ]
+    },
+    {
+      "source": "hrdecoder_plus3/repo/configs/_base_/default_runtime.py",
+      "sha256": "b9ca5ffbd1f3c690fc81e7d240496f587bcc95080f53db41a82da5c223edf648",
+      "bytes": 414,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "log_config"
+          ],
+          "literal_value": null
+        }
+      ]
+    },
+    {
+      "source": "hrdecoder_plus3/repo/configs/_base_/datasets/ddr_1024.py",
+      "sha256": "017ea2827c13aaf584f4b69f5c563b1d196951cf2eb2016064adfe18042ebb08",
+      "bytes": 2538,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "img_norm_cfg"
+          ],
+          "literal_value": null
+        },
+        {
+          "names": [
+            "crop_size"
+          ],
+          "literal_value": "[nonliteral]"
+        }
+      ]
+    },
+    {
+      "source": "hrdecoder_plus3/repo/configs/_base_/datasets/hr_ddr_2048.py",
+      "sha256": "1ac4def51b66d95492c3631bba3024dd19db4baee3d0ad46319a028b1d046d91",
+      "bytes": 2538,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "img_norm_cfg"
+          ],
+          "literal_value": null
+        },
+        {
+          "names": [
+            "crop_size"
+          ],
+          "literal_value": "[nonliteral]"
+        }
+      ]
+    },
+    {
+      "source": "hrdecoder_plus3/repo/configs/_base_/datasets/hr_idrid_2880x1920-slide.py",
+      "sha256": "f5e4b15aa49c5d0810cde5356aa8ba31a29c826bc3988ffe00c998758b08fa10",
+      "bytes": 2574,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "img_norm_cfg"
+          ],
+          "literal_value": null
+        },
+        {
+          "names": [
+            "crop_size"
+          ],
+          "literal_value": "[nonliteral]"
+        }
+      ]
+    },
+    {
+      "source": "hrdecoder_plus3/repo/configs/_base_/datasets/hr_idrid_2880x1920.py",
+      "sha256": "5923ae9801754d9853fdffd9a4655bbf736d93728cde33d02d6b0aec0722faf0",
+      "bytes": 2574,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "img_norm_cfg"
+          ],
+          "literal_value": null
+        },
+        {
+          "names": [
+            "crop_size"
+          ],
+          "literal_value": "[nonliteral]"
+        }
+      ]
+    },
+    {
+      "source": "hrdecoder_plus3/repo/configs/_base_/datasets/idrid_1440x960-slide.py",
+      "sha256": "ff61b1319fdb17240a45c30e77623d1cbd1f8d62ba3837347ff3548022711ca1",
+      "bytes": 2571,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "img_norm_cfg"
+          ],
+          "literal_value": null
+        },
+        {
+          "names": [
+            "crop_size"
+          ],
+          "literal_value": "[nonliteral]"
+        }
+      ]
+    },
+    {
+      "source": "hrdecoder_plus3/repo/configs/_base_/datasets/idrid_1440x960.py",
+      "sha256": "02987f1df0630a8993f87d5833a9a20699adeba3d8518ea9a1ee473e0cf2d32a",
+      "bytes": 2572,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "img_norm_cfg"
+          ],
+          "literal_value": null
+        },
+        {
+          "names": [
+            "crop_size"
+          ],
+          "literal_value": "[nonliteral]"
+        }
+      ]
+    },
+    {
+      "source": "hrdecoder_plus3/repo/configs/_base_/models/efficient-hrdecoder_fcn_hr18.py",
+      "sha256": "4d34d9ab71be222cf0455f65cd12d3adf3c852eb008832dcb9ee8f01c2880acc",
+      "bytes": 1994,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "norm_cfg"
+          ],
+          "literal_value": null
+        },
+        {
+          "names": [
+            "model"
+          ],
+          "literal_value": null
+        }
+      ]
+    },
+    {
+      "source": "hrdecoder_plus3/repo/configs/_base_/models/efficient-hrdecoder_fcn_hr48.py",
+      "sha256": "721fc16d82c47c29e7cd202522ff39ad61e39c289afd1fc328bacb75be6c80f2",
+      "bytes": 447,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "model"
+          ],
+          "literal_value": null
+        }
+      ]
+    },
+    {
+      "source": "hrdecoder_plus3/repo/configs/_base_/models/fcn_hr18.py",
+      "sha256": "d5d83574653e98f3c0f7e1f24d49153f1b4be34b14eeff5af7bb78e069036baa",
+      "bytes": 1797,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "norm_cfg"
+          ],
+          "literal_value": null
+        },
+        {
+          "names": [
+            "model"
+          ],
+          "literal_value": null
+        }
+      ]
+    },
+    {
+      "source": "hrdecoder_plus3/repo/configs/_base_/models/fcn_hr48.py",
+      "sha256": "ff9bc7bb15b0f6bd4cf21b13dcd3ca43e4fef3847c5196cec6c9bbcad779a89b",
+      "bytes": 555,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "norm_cfg"
+          ],
+          "literal_value": null
+        },
+        {
+          "names": [
+            "model"
+          ],
+          "literal_value": null
+        }
+      ]
+    },
+    {
+      "source": "hrdecoder_plus3/repo/configs/_base_/models/hrdecoder_fcn_hr18.py",
+      "sha256": "76e807d9c7f16bc4a76fd8d89230613350115f606dc287904c2c10d7c84463b1",
+      "bytes": 1933,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "norm_cfg"
+          ],
+          "literal_value": null
+        },
+        {
+          "names": [
+            "model"
+          ],
+          "literal_value": null
+        }
+      ]
+    },
+    {
+      "source": "hrdecoder_plus3/repo/configs/_base_/models/hrdecoder_fcn_hr48.py",
+      "sha256": "dac527439c9226955e2c3e772f74638af61a203020883fd96ceb7a0dd5b2b7bf",
+      "bytes": 436,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "model"
+          ],
+          "literal_value": null
+        }
+      ]
+    },
+    {
+      "source": "hrdecoder_plus3/repo/configs/_base_/schedules/adamw.py",
+      "sha256": "c9b845ab5287a49124da0a41a306782892790b55bd17bfa72155e6b16d602a83",
+      "bytes": 207,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "optimizer"
+          ],
+          "literal_value": null
+        },
+        {
+          "names": [
+            "optimizer_config"
+          ],
+          "literal_value": null
+        }
+      ]
+    },
+    {
+      "source": "hrdecoder_plus3/repo/configs/_base_/schedules/poly10.py",
+      "sha256": "6e93ac3bec7fdbf5ca481c4527d5d53dfbd8dc203181d58b7a4f7ab7e545f9d0",
+      "bytes": 404,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "lr_config"
+          ],
+          "literal_value": null
+        }
+      ]
+    },
+    {
+      "source": "hrdecoder_plus3/repo/configs/_base_/schedules/poly10warm.py",
+      "sha256": "a2f1b73af6838d9ce751de68804f641691272e5d17ab08327f862360f9beb7b6",
+      "bytes": 494,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "lr_config"
+          ],
+          "literal_value": null
+        }
+      ]
+    },
+    {
+      "source": "hrdecoder_plus3/repo/configs/_base_/schedules/sgd.py",
+      "sha256": "3bc65469a5e63320e99f2171d87d7c0eb45f7d8f4101952e537ca357b2cb5ed8",
+      "bytes": 114,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "optimizer"
+          ],
+          "literal_value": null
+        },
+        {
+          "names": [
+            "optimizer_config"
+          ],
+          "literal_value": null
+        }
+      ]
+    },
+    {
+      "source": "hrdecoder_plus3/repo/configs/lesion/exp/baseline_split613.py",
+      "sha256": "b1bc3a6fb349d4e04f33ea4c8325852e5859b9ac46ddc04c922909e409040d08",
+      "bytes": 1779,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "model"
+          ],
+          "literal_value": null
+        },
+        {
+          "names": [
+            "optimizer"
+          ],
+          "literal_value": null
+        },
+        {
+          "names": [
+            "seed"
+          ],
+          "literal_value": 42
+        },
+        {
+          "names": [
+            "checkpoint_config"
+          ],
+          "literal_value": null
+        }
+      ]
+    },
+    {
+      "source": "hrdecoder_plus3/repo/configs/lesion/exp/combo_v2_split613.py",
+      "sha256": "c3ffe4183a39a9433c7783797ea9ccb2e8ec1ad92b72437cb14ec1f9a49bbbbd",
+      "bytes": 481,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "model"
+          ],
+          "literal_value": null
+        }
+      ]
+    },
+    {
+      "source": "hrdecoder_plus3/repo/configs/lesion/exp/e1e4_split613.py",
+      "sha256": "23854fb89f6d6760482788badea71560609e8696416a026bdbecc6311329caf4",
+      "bytes": 1086,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "model"
+          ],
+          "literal_value": null
+        }
+      ]
+    },
+    {
+      "source": "hrdecoder_plus3/repo/configs/lesion/exp/e1_cedice_split613.py",
+      "sha256": "bdef70785e89c48cbd9977c0b1e8b2af94fb4ba7b7e925787695119b0d78987b",
+      "bytes": 1067,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "model"
+          ],
+          "literal_value": null
+        }
+      ]
+    },
+    {
+      "source": "hrdecoder_plus3/repo/configs/lesion/exp/e1_tversky_split613.py",
+      "sha256": "4c57037212de829730cba4e626afee308a73d1e9bc2e5920af384d902387f8cc",
+      "bytes": 1071,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "model"
+          ],
+          "literal_value": null
+        }
+      ]
+    },
+    {
+      "source": "hrdecoder_plus3/repo/configs/lesion/exp/e2e3_split613.py",
+      "sha256": "bc37967c38dcbab03b9c0343e0c48ac7f81450bd432a0c6d681a9440f2a04331",
+      "bytes": 606,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "model"
+          ],
+          "literal_value": null
+        }
+      ]
+    },
+    {
+      "source": "hrdecoder_plus3/repo/configs/lesion/exp/e2_fuse_split613.py",
+      "sha256": "41cf0ebb9b7f5c5d58516f6de8ddff05c3d701e7c607aa21f3a4578fe064f58a",
+      "bytes": 746,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "model"
+          ],
+          "literal_value": null
+        }
+      ]
+    },
+    {
+      "source": "hrdecoder_plus3/repo/configs/lesion/exp/e3_context_split613.py",
+      "sha256": "216ab604cec4005cf085423f046d68c7b13d3502a0fe404d82a7d053492d7633",
+      "bytes": 692,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "model"
+          ],
+          "literal_value": null
+        }
+      ]
+    },
+    {
+      "source": "hrdecoder_plus3/repo/configs/lesion/exp/e4v2_detail_split613.py",
+      "sha256": "22c32ed6a0589770aeae52543c02c8e68991f2e2fddf2a03094049e7a2c039f4",
+      "bytes": 1221,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "model"
+          ],
+          "literal_value": null
+        }
+      ]
+    },
+    {
+      "source": "hrdecoder_plus3/repo/configs/lesion/exp/e4_detail_split613.py",
+      "sha256": "65b2c5eb88db2790c1e00dbcb6e18deaf8fc6abc5bf3f148be9ae70d2f06fc1c",
+      "bytes": 1219,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "model"
+          ],
+          "literal_value": null
+        }
+      ]
+    },
+    {
+      "source": "hrdecoder_plus3/repo/configs/lesion/exp/e4_detail_split613_bs1.py",
+      "sha256": "c76d9e7e2b21f582a162fcab9e641a0432de7e572bc6874d4b9a5a5a7f85db46",
+      "bytes": 312,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "optimizer"
+          ],
+          "literal_value": null
+        }
+      ]
+    },
+    {
+      "source": "hrdecoder_plus3/repo/configs/lesion/exp/final_combo_split613.py",
+      "sha256": "4b73a112d8f687cb0ffbea0712d454c3ca8895a0daafb7cedf39ba69771f253f",
+      "bytes": 1047,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "model"
+          ],
+          "literal_value": null
+        }
+      ]
+    },
+    {
+      "source": "hrdecoder_plus3/repo/configs/lesion/exp/final_combo_split613_seed123.py",
+      "sha256": "2dde6701037b1c66b8c8b59ff599e4ed3e20192c015eb472403cb4f15b91ca11",
+      "bytes": 94,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "seed"
+          ],
+          "literal_value": 123
+        }
+      ]
+    },
+    {
+      "source": "hrdecoder_plus3/repo/configs/lesion/exp/final_combo_split613_seed2024.py",
+      "sha256": "1020be7fde6eec0981621d3137b3f0bfaae8806554d93bf96e5f1994178b359a",
+      "bytes": 119,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "seed"
+          ],
+          "literal_value": 2024
+        }
+      ]
+    },
+    {
+      "source": "hrdecoder_plus3/repo/configs/lesion/exp/hr100_a.py",
+      "sha256": "f60a545f6120464275edd60f1e9e504291e676e3a5e6b0df7eba3071af83f45a",
+      "bytes": 1263,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "model"
+          ],
+          "literal_value": null
+        },
+        {
+          "names": [
+            "optimizer"
+          ],
+          "literal_value": null
+        },
+        {
+          "names": [
+            "optimizer_config"
+          ],
+          "literal_value": null
+        },
+        {
+          "names": [
+            "lr_config"
+          ],
+          "literal_value": null
+        },
+        {
+          "names": [
+            "checkpoint_config"
+          ],
+          "literal_value": null
+        },
+        {
+          "names": [
+            "log_config"
+          ],
+          "literal_value": null
+        },
+        {
+          "names": [
+            "seed"
+          ],
+          "literal_value": 42
+        }
+      ]
+    },
+    {
+      "source": "hrdecoder_plus3/repo/configs/lesion/exp/hr100_b.py",
+      "sha256": "556e7c2f1557c6658f6233f1fe1601b8d0b1c8382cc6bdaaaf108a712da3ed54",
+      "bytes": 66,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "model"
+          ],
+          "literal_value": null
+        }
+      ]
+    },
+    {
+      "source": "hrdecoder_plus3/repo/configs/lesion/exp/hr100_ensemble_release.py",
+      "sha256": "f03003ecd4786b3017a0dd8e036e698888ac8de412c8cde829a129cbc2be08e3",
+      "bytes": 250,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "model"
+          ],
+          "literal_value": null
+        }
+      ]
+    },
+    {
+      "source": "hrdecoder_plus3/repo/configs/lesion/exp/hr100_ensemble_test.py",
+      "sha256": "2e4ef6fb7ff025ccd32f2d214b768d1f1cd79f1d63b4136ee528776bf22a87a1",
+      "bytes": 104,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": []
+    },
+    {
+      "source": "hrdecoder_plus3/repo/configs/lesion/exp/hr100_ensemble_val.py",
+      "sha256": "fd94823671c10eae54c85e555625436e7b79cd1b092786b76deda127d8d5c880",
+      "bytes": 339,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "model"
+          ],
+          "literal_value": null
+        }
+      ]
+    },
+    {
+      "source": "hrdecoder_plus3/repo/configs/lesion/exp/hr100_mean_release.py",
+      "sha256": "fa7b5b456e8e7af51f0d738d09940ba50bda6ea7ea3fc16f887d95cc5ff27c06",
+      "bytes": 246,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "model"
+          ],
+          "literal_value": null
+        }
+      ]
+    },
+    {
+      "source": "hrdecoder_plus3/repo/configs/lesion/exp/hr100_mean_test.py",
+      "sha256": "fb2aee9fc4f1139571cb9afa55d51197fb8e8e5d5448a3889b6e1e9f959ff0c7",
+      "bytes": 102,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": []
+    },
+    {
+      "source": "hrdecoder_plus3/repo/configs/lesion/exp/hr100_mean_val.py",
+      "sha256": "5965e08cd1e75a2d1c7f2e98b7cbcd8a25f481aa1aba2ff4324af47fc74094dd",
+      "bytes": 74,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "model"
+          ],
+          "literal_value": null
+        }
+      ]
+    },
+    {
+      "source": "hrdecoder_plus3/repo/configs/lesion/exp/hr100_val_e4.py",
+      "sha256": "992860f41446f4222067211688e9310560a4d59f408896b7f2f9d6ee1097e22a",
+      "bytes": 158,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "model"
+          ],
+          "literal_value": null
+        }
+      ]
+    },
+    {
+      "source": "hrdecoder_plus3/repo/configs/lesion/exp/hrplus_patch_dice.py",
+      "sha256": "2d687086e28533d4bb080f31c12c4abb802d5293fc4f2a463f9f0bd8f36452f9",
+      "bytes": 2327,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "img_norm_cfg"
+          ],
+          "literal_value": null
+        },
+        {
+          "names": [
+            "crop_size"
+          ],
+          "literal_value": "[nonliteral]"
+        },
+        {
+          "names": [
+            "model"
+          ],
+          "literal_value": null
+        },
+        {
+          "names": [
+            "optimizer"
+          ],
+          "literal_value": null
+        },
+        {
+          "names": [
+            "optimizer_config"
+          ],
+          "literal_value": null
+        },
+        {
+          "names": [
+            "lr_config"
+          ],
+          "literal_value": null
+        },
+        {
+          "names": [
+            "checkpoint_config"
+          ],
+          "literal_value": null
+        },
+        {
+          "names": [
+            "log_config"
+          ],
+          "literal_value": null
+        },
+        {
+          "names": [
+            "seed"
+          ],
+          "literal_value": 42
+        }
+      ]
+    },
+    {
+      "source": "hrdecoder_plus3/repo/configs/lesion/exp/hrplus_patch_lovasz.py",
+      "sha256": "cb1dc4cbb75304c29d457f3140a84a4c358aeb844c2f3922f5b6ba33d8f3fc54",
+      "bytes": 200,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "model"
+          ],
+          "literal_value": null
+        }
+      ]
+    },
+    {
+      "source": "HRDecoder_Next_20261003/tools/configure_server.py",
+      "sha256": "9b7a388977d4c130c0a70b6a8920227a62568d14a85eb9f7cc3907d66d29afc5",
+      "bytes": 5170,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": []
+    },
+    {
+      "source": "HRDecoder_Next_20261003/trainer/config.py",
+      "sha256": "63624875f70841a27e18d83c6b4bee79e061a862f74df2762a38ecdce6f51c62",
+      "bytes": 13685,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "STAGE_SECTION"
+          ],
+          "keys": [
+            "external_pretrain",
+            "ddr_finetune"
+          ],
+          "literal": {
+            "external_pretrain": "pretrain_stage",
+            "ddr_finetune": "ddr_finetune_stage"
+          }
+        },
+        {
+          "names": [
+            "DEFAULT_NORMALIZATION"
+          ],
+          "keys": [
+            "imagenet"
+          ],
+          "literal": {
+            "imagenet": {
+              "mean": [
+                123.675,
+                116.28,
+                103.53
+              ],
+              "std": [
+                58.395,
+                57.12,
+                57.375
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "source": "HRDecoder_MA残差头与集成_20260915-16/03_代码/configs/hrplus_maond.py",
+      "sha256": "5ce4f4c5fd5ce2b66808864ddcd2fe53a112dd2c4747eb49880e68dc9d6b0021",
+      "bytes": 537,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "model"
+          ],
+          "literal_value": null
+        }
+      ]
+    },
+    {
+      "source": "HRDecoder_MA残差头与集成_20260915-16/03_代码/configs/hrplus_maond_h01.py",
+      "sha256": "3b1c234813ac69f28b1efc3f168c9f4e62e0c0977a0339212d801790d867883c",
+      "bytes": 338,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "model"
+          ],
+          "literal_value": null
+        }
+      ]
+    },
+    {
+      "source": "HRDecoder_MA残差头与集成_20260915-16/03_代码/configs/hrplus_maond_h03.py",
+      "sha256": "aa77a4034cd66e5bb38a02a35339a80840946c904e68263e469a2e9c30e728ce",
+      "bytes": 338,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "model"
+          ],
+          "literal_value": null
+        }
+      ]
+    },
+    {
+      "source": "HRDecoder_MA残差头与集成_20260915-16/03_代码/configs/hrplus_mares.py",
+      "sha256": "591e4786abaa35b8dfc9a6476c45a8c9eb387544c37e0d56b6a499b683e100b4",
+      "bytes": 1429,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "model"
+          ],
+          "literal_value": null
+        },
+        {
+          "names": [
+            "optimizer"
+          ],
+          "literal_value": null
+        },
+        {
+          "names": [
+            "optimizer_config"
+          ],
+          "literal_value": null
+        },
+        {
+          "names": [
+            "lr_config"
+          ],
+          "literal_value": null
+        },
+        {
+          "names": [
+            "checkpoint_config"
+          ],
+          "literal_value": null
+        },
+        {
+          "names": [
+            "log_config"
+          ],
+          "literal_value": null
+        },
+        {
+          "names": [
+            "seed"
+          ],
+          "literal_value": 42
+        }
+      ]
+    },
+    {
+      "source": "HRDecoder_MA残差头与集成_20260915-16/03_代码/configs/hrplus_mares_p0005.py",
+      "sha256": "fdfc1f279d89f11e39a01e789e02c4007526fde71963e172d6a55272a8c63537",
+      "bytes": 563,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "optimizer"
+          ],
+          "literal_value": null
+        },
+        {
+          "names": [
+            "lr_config"
+          ],
+          "literal_value": null
+        },
+        {
+          "names": [
+            "checkpoint_config"
+          ],
+          "literal_value": null
+        }
+      ]
+    },
+    {
+      "source": "HRDecoder_MA残差头与集成_20260915-16/03_代码/configs/hrplus_mares_p002.py",
+      "sha256": "0673e3d09d0209ea330f2d0bc8a0996cbb2d69bd7cf7324dedc2eeab7b904d01",
+      "bytes": 561,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "optimizer"
+          ],
+          "literal_value": null
+        },
+        {
+          "names": [
+            "lr_config"
+          ],
+          "literal_value": null
+        },
+        {
+          "names": [
+            "checkpoint_config"
+          ],
+          "literal_value": null
+        }
+      ]
+    },
+    {
+      "source": "HRDecoder_FullCompetition_20260920/trainer/config.py",
+      "sha256": "f981072a9c9ad26bf4a8ed218d107d6f7eb10689051d6a01b870bfa7216800c7",
+      "bytes": 13308,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "STAGE_SECTION"
+          ],
+          "keys": [
+            "external_pretrain",
+            "ddr_finetune"
+          ],
+          "literal": {
+            "external_pretrain": "pretrain_stage",
+            "ddr_finetune": "ddr_finetune_stage"
+          }
+        },
+        {
+          "names": [
+            "DEFAULT_NORMALIZATION"
+          ],
+          "keys": [
+            "imagenet"
+          ],
+          "literal": {
+            "imagenet": {
+              "mean": [
+                123.675,
+                116.28,
+                103.53
+              ],
+              "std": [
+                58.395,
+                57.12,
+                57.375
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "source": "HRDecoder_ArchitectureDesign_20261008/training_execution/python_deps/mmengine/config/config.py",
+      "sha256": "74a5faf0de741acdc9f7dcbe492f06a04c8d83a766add0460ba272528ddfceb3",
+      "bytes": 74205,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": []
+    },
+    {
+      "source": "HRDecoder_ArchitectureDesign_20261008/sacd_execution/diagnosis_20261009/server_source/configs/_base_/models/hrdecoder_fcn_hr18.py",
+      "sha256": "76e807d9c7f16bc4a76fd8d89230613350115f606dc287904c2c10d7c84463b1",
+      "bytes": 1933,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "norm_cfg"
+          ],
+          "literal_value": null
+        },
+        {
+          "names": [
+            "model"
+          ],
+          "literal_value": null
+        }
+      ]
+    },
+    {
+      "source": "HRDecoder_ArchitectureDesign_20261008/sacd_execution/diagnosis_20261009/server_source/configs/_base_/models/hrdecoder_fcn_hr48.py",
+      "sha256": "dac527439c9226955e2c3e772f74638af61a203020883fd96ceb7a0dd5b2b7bf",
+      "bytes": 436,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "model"
+          ],
+          "literal_value": null
+        }
+      ]
+    },
+    {
+      "source": "HRDecoder_ArchitectureDesign_20261008/sacd_execution/diagnosis_20261009/server_source/configs/lesion/exp/baseline_split613.py",
+      "sha256": "b1bc3a6fb349d4e04f33ea4c8325852e5859b9ac46ddc04c922909e409040d08",
+      "bytes": 1779,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "model"
+          ],
+          "literal_value": null
+        },
+        {
+          "names": [
+            "optimizer"
+          ],
+          "literal_value": null
+        },
+        {
+          "names": [
+            "seed"
+          ],
+          "literal_value": 42
+        },
+        {
+          "names": [
+            "checkpoint_config"
+          ],
+          "literal_value": null
+        }
+      ]
+    },
+    {
+      "source": "autodl100/work/HRDecoder/tools/print_config.py",
+      "sha256": "5294b73e6bc193780e328546cd320e72b849e2d52aee1107a2317ce61c3e166b",
+      "bytes": 1263,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": []
+    },
+    {
+      "source": "autodl100/work/HRDecoder/configs/lesion/efficient-hrdecoder_fcn_hr48_ddr_2048.py",
+      "sha256": "b795723ef7c4e838b06cdb3d5e1f91f2a9a6bad286273e2500f155009fce1c78",
+      "bytes": 1342,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "model"
+          ],
+          "literal_value": null
+        },
+        {
+          "names": [
+            "seed"
+          ],
+          "literal_value": 2
+        },
+        {
+          "names": [
+            "checkpoint_config"
+          ],
+          "literal_value": null
+        }
+      ]
+    },
+    {
+      "source": "autodl100/work/HRDecoder/configs/lesion/efficient-hrdecoder_fcn_hr48_idrid_2880x1920-slide.py",
+      "sha256": "0e976d98a90f451ce838c81ec1b4c2394d2bb0a8a87896f1c7044ea9e774f40f",
+      "bytes": 1038,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "model"
+          ],
+          "literal_value": null
+        },
+        {
+          "names": [
+            "seed"
+          ],
+          "literal_value": 2
+        },
+        {
+          "names": [
+            "checkpoint_config"
+          ],
+          "literal_value": null
+        }
+      ]
+    },
+    {
+      "source": "autodl100/work/HRDecoder/configs/lesion/fcn_hr48_ddr_1024.py",
+      "sha256": "5b12861607bc3217fa75c74c6f6f684d2fefc1819485f0932d2ce4c67691a43c",
+      "bytes": 932,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "model"
+          ],
+          "literal_value": null
+        },
+        {
+          "names": [
+            "lr"
+          ],
+          "literal_value": 0.01
+        },
+        {
+          "names": [
+            "optimizer"
+          ],
+          "literal_value": null
+        },
+        {
+          "names": [
+            "lr_config"
+          ],
+          "literal_value": null
+        },
+        {
+          "names": [
+            "checkpoint_config"
+          ],
+          "literal_value": null
+        }
+      ]
+    },
+    {
+      "source": "autodl100/work/HRDecoder/configs/lesion/fcn_hr48_idrid_1440x960.py",
+      "sha256": "da20a6c61a6e1cb4e4243e9a011bfe90f368a496ba63f04bbc641c0b6ca8ec4f",
+      "bytes": 800,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "model"
+          ],
+          "literal_value": null
+        },
+        {
+          "names": [
+            "checkpoint_config"
+          ],
+          "literal_value": null
+        }
+      ]
+    },
+    {
+      "source": "autodl100/work/HRDecoder/configs/lesion/hrdecoder_fcn_hr48_ddr_2048.py",
+      "sha256": "189a1a6dad43480f3a377101eaaf6be662645b15fe83e9b20f15365fd3334c3b",
+      "bytes": 1815,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "model"
+          ],
+          "literal_value": null
+        },
+        {
+          "names": [
+            "optimizer"
+          ],
+          "literal_value": null
+        },
+        {
+          "names": [
+            "seed"
+          ],
+          "literal_value": 14
+        },
+        {
+          "names": [
+            "checkpoint_config"
+          ],
+          "literal_value": null
+        }
+      ]
+    },
+    {
+      "source": "autodl100/work/HRDecoder/configs/lesion/hrdecoder_fcn_hr48_idrid_2880x1920-slide.py",
+      "sha256": "f259b2b1301d18d21334808290af4062f7d32ef347174fe6985a358919dfcf02",
+      "bytes": 996,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "model"
+          ],
+          "literal_value": null
+        },
+        {
+          "names": [
+            "seed"
+          ],
+          "literal_value": 2
+        },
+        {
+          "names": [
+            "checkpoint_config"
+          ],
+          "literal_value": null
+        }
+      ]
+    },
+    {
+      "source": "autodl100/work/HRDecoder/configs/_base_/default_runtime.py",
+      "sha256": "b9ca5ffbd1f3c690fc81e7d240496f587bcc95080f53db41a82da5c223edf648",
+      "bytes": 414,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "log_config"
+          ],
+          "literal_value": null
+        }
+      ]
+    },
+    {
+      "source": "autodl100/work/HRDecoder/configs/_base_/datasets/ddr_1024.py",
+      "sha256": "017ea2827c13aaf584f4b69f5c563b1d196951cf2eb2016064adfe18042ebb08",
+      "bytes": 2538,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "img_norm_cfg"
+          ],
+          "literal_value": null
+        },
+        {
+          "names": [
+            "crop_size"
+          ],
+          "literal_value": "[nonliteral]"
+        }
+      ]
+    },
+    {
+      "source": "autodl100/work/HRDecoder/configs/_base_/datasets/hr_ddr_2048.py",
+      "sha256": "1ac4def51b66d95492c3631bba3024dd19db4baee3d0ad46319a028b1d046d91",
+      "bytes": 2538,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "img_norm_cfg"
+          ],
+          "literal_value": null
+        },
+        {
+          "names": [
+            "crop_size"
+          ],
+          "literal_value": "[nonliteral]"
+        }
+      ]
+    },
+    {
+      "source": "autodl100/work/HRDecoder/configs/_base_/datasets/hr_idrid_2880x1920-slide.py",
+      "sha256": "f5e4b15aa49c5d0810cde5356aa8ba31a29c826bc3988ffe00c998758b08fa10",
+      "bytes": 2574,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "img_norm_cfg"
+          ],
+          "literal_value": null
+        },
+        {
+          "names": [
+            "crop_size"
+          ],
+          "literal_value": "[nonliteral]"
+        }
+      ]
+    },
+    {
+      "source": "autodl100/work/HRDecoder/configs/_base_/datasets/hr_idrid_2880x1920.py",
+      "sha256": "5923ae9801754d9853fdffd9a4655bbf736d93728cde33d02d6b0aec0722faf0",
+      "bytes": 2574,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "img_norm_cfg"
+          ],
+          "literal_value": null
+        },
+        {
+          "names": [
+            "crop_size"
+          ],
+          "literal_value": "[nonliteral]"
+        }
+      ]
+    },
+    {
+      "source": "autodl100/work/HRDecoder/configs/_base_/datasets/idrid_1440x960-slide.py",
+      "sha256": "ff61b1319fdb17240a45c30e77623d1cbd1f8d62ba3837347ff3548022711ca1",
+      "bytes": 2571,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "img_norm_cfg"
+          ],
+          "literal_value": null
+        },
+        {
+          "names": [
+            "crop_size"
+          ],
+          "literal_value": "[nonliteral]"
+        }
+      ]
+    },
+    {
+      "source": "autodl100/work/HRDecoder/configs/_base_/datasets/idrid_1440x960.py",
+      "sha256": "02987f1df0630a8993f87d5833a9a20699adeba3d8518ea9a1ee473e0cf2d32a",
+      "bytes": 2572,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "img_norm_cfg"
+          ],
+          "literal_value": null
+        },
+        {
+          "names": [
+            "crop_size"
+          ],
+          "literal_value": "[nonliteral]"
+        }
+      ]
+    },
+    {
+      "source": "autodl100/work/HRDecoder/configs/_base_/models/efficient-hrdecoder_fcn_hr18.py",
+      "sha256": "4d34d9ab71be222cf0455f65cd12d3adf3c852eb008832dcb9ee8f01c2880acc",
+      "bytes": 1994,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "norm_cfg"
+          ],
+          "literal_value": null
+        },
+        {
+          "names": [
+            "model"
+          ],
+          "literal_value": null
+        }
+      ]
+    },
+    {
+      "source": "autodl100/work/HRDecoder/configs/_base_/models/efficient-hrdecoder_fcn_hr48.py",
+      "sha256": "721fc16d82c47c29e7cd202522ff39ad61e39c289afd1fc328bacb75be6c80f2",
+      "bytes": 447,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "model"
+          ],
+          "literal_value": null
+        }
+      ]
+    },
+    {
+      "source": "autodl100/work/HRDecoder/configs/_base_/models/fcn_hr18.py",
+      "sha256": "d5d83574653e98f3c0f7e1f24d49153f1b4be34b14eeff5af7bb78e069036baa",
+      "bytes": 1797,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "norm_cfg"
+          ],
+          "literal_value": null
+        },
+        {
+          "names": [
+            "model"
+          ],
+          "literal_value": null
+        }
+      ]
+    },
+    {
+      "source": "autodl100/work/HRDecoder/configs/_base_/models/fcn_hr48.py",
+      "sha256": "ff9bc7bb15b0f6bd4cf21b13dcd3ca43e4fef3847c5196cec6c9bbcad779a89b",
+      "bytes": 555,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "norm_cfg"
+          ],
+          "literal_value": null
+        },
+        {
+          "names": [
+            "model"
+          ],
+          "literal_value": null
+        }
+      ]
+    },
+    {
+      "source": "autodl100/work/HRDecoder/configs/_base_/models/hrdecoder_fcn_hr18.py",
+      "sha256": "76e807d9c7f16bc4a76fd8d89230613350115f606dc287904c2c10d7c84463b1",
+      "bytes": 1933,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "norm_cfg"
+          ],
+          "literal_value": null
+        },
+        {
+          "names": [
+            "model"
+          ],
+          "literal_value": null
+        }
+      ]
+    },
+    {
+      "source": "autodl100/work/HRDecoder/configs/_base_/models/hrdecoder_fcn_hr48.py",
+      "sha256": "dac527439c9226955e2c3e772f74638af61a203020883fd96ceb7a0dd5b2b7bf",
+      "bytes": 436,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "model"
+          ],
+          "literal_value": null
+        }
+      ]
+    },
+    {
+      "source": "autodl100/work/HRDecoder/configs/_base_/schedules/adamw.py",
+      "sha256": "c9b845ab5287a49124da0a41a306782892790b55bd17bfa72155e6b16d602a83",
+      "bytes": 207,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "optimizer"
+          ],
+          "literal_value": null
+        },
+        {
+          "names": [
+            "optimizer_config"
+          ],
+          "literal_value": null
+        }
+      ]
+    },
+    {
+      "source": "autodl100/work/HRDecoder/configs/_base_/schedules/poly10.py",
+      "sha256": "6e93ac3bec7fdbf5ca481c4527d5d53dfbd8dc203181d58b7a4f7ab7e545f9d0",
+      "bytes": 404,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "lr_config"
+          ],
+          "literal_value": null
+        }
+      ]
+    },
+    {
+      "source": "autodl100/work/HRDecoder/configs/_base_/schedules/poly10warm.py",
+      "sha256": "a2f1b73af6838d9ce751de68804f641691272e5d17ab08327f862360f9beb7b6",
+      "bytes": 494,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "lr_config"
+          ],
+          "literal_value": null
+        }
+      ]
+    },
+    {
+      "source": "autodl100/work/HRDecoder/configs/_base_/schedules/sgd.py",
+      "sha256": "3bc65469a5e63320e99f2171d87d7c0eb45f7d8f4101952e537ca357b2cb5ed8",
+      "bytes": 114,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "optimizer"
+          ],
+          "literal_value": null
+        },
+        {
+          "names": [
+            "optimizer_config"
+          ],
+          "literal_value": null
+        }
+      ]
+    },
+    {
+      "source": "autodl100/work/HRDecoder/configs/lesion/exp/baseline_split613.py",
+      "sha256": "b1bc3a6fb349d4e04f33ea4c8325852e5859b9ac46ddc04c922909e409040d08",
+      "bytes": 1779,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "model"
+          ],
+          "literal_value": null
+        },
+        {
+          "names": [
+            "optimizer"
+          ],
+          "literal_value": null
+        },
+        {
+          "names": [
+            "seed"
+          ],
+          "literal_value": 42
+        },
+        {
+          "names": [
+            "checkpoint_config"
+          ],
+          "literal_value": null
+        }
+      ]
+    },
+    {
+      "source": "autodl100/work/HRDecoder/configs/lesion/exp/combo_v2_split613.py",
+      "sha256": "c3ffe4183a39a9433c7783797ea9ccb2e8ec1ad92b72437cb14ec1f9a49bbbbd",
+      "bytes": 481,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "model"
+          ],
+          "literal_value": null
+        }
+      ]
+    },
+    {
+      "source": "autodl100/work/HRDecoder/configs/lesion/exp/e1e4_split613.py",
+      "sha256": "23854fb89f6d6760482788badea71560609e8696416a026bdbecc6311329caf4",
+      "bytes": 1086,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "model"
+          ],
+          "literal_value": null
+        }
+      ]
+    },
+    {
+      "source": "autodl100/work/HRDecoder/configs/lesion/exp/e1_cedice_split613.py",
+      "sha256": "bdef70785e89c48cbd9977c0b1e8b2af94fb4ba7b7e925787695119b0d78987b",
+      "bytes": 1067,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "model"
+          ],
+          "literal_value": null
+        }
+      ]
+    },
+    {
+      "source": "autodl100/work/HRDecoder/configs/lesion/exp/e1_tversky_split613.py",
+      "sha256": "4c57037212de829730cba4e626afee308a73d1e9bc2e5920af384d902387f8cc",
+      "bytes": 1071,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "model"
+          ],
+          "literal_value": null
+        }
+      ]
+    },
+    {
+      "source": "autodl100/work/HRDecoder/configs/lesion/exp/e2e3_split613.py",
+      "sha256": "bc37967c38dcbab03b9c0343e0c48ac7f81450bd432a0c6d681a9440f2a04331",
+      "bytes": 606,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "model"
+          ],
+          "literal_value": null
+        }
+      ]
+    },
+    {
+      "source": "autodl100/work/HRDecoder/configs/lesion/exp/e2_fuse_split613.py",
+      "sha256": "41cf0ebb9b7f5c5d58516f6de8ddff05c3d701e7c607aa21f3a4578fe064f58a",
+      "bytes": 746,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "model"
+          ],
+          "literal_value": null
+        }
+      ]
+    },
+    {
+      "source": "autodl100/work/HRDecoder/configs/lesion/exp/e3_context_split613.py",
+      "sha256": "216ab604cec4005cf085423f046d68c7b13d3502a0fe404d82a7d053492d7633",
+      "bytes": 692,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "model"
+          ],
+          "literal_value": null
+        }
+      ]
+    },
+    {
+      "source": "autodl100/work/HRDecoder/configs/lesion/exp/e4v2_detail_split613.py",
+      "sha256": "22c32ed6a0589770aeae52543c02c8e68991f2e2fddf2a03094049e7a2c039f4",
+      "bytes": 1221,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "model"
+          ],
+          "literal_value": null
+        }
+      ]
+    },
+    {
+      "source": "autodl100/work/HRDecoder/configs/lesion/exp/e4_detail_split613.py",
+      "sha256": "65b2c5eb88db2790c1e00dbcb6e18deaf8fc6abc5bf3f148be9ae70d2f06fc1c",
+      "bytes": 1219,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "model"
+          ],
+          "literal_value": null
+        }
+      ]
+    },
+    {
+      "source": "autodl100/work/HRDecoder/configs/lesion/exp/e4_detail_split613_bs1.py",
+      "sha256": "c76d9e7e2b21f582a162fcab9e641a0432de7e572bc6874d4b9a5a5a7f85db46",
+      "bytes": 312,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "optimizer"
+          ],
+          "literal_value": null
+        }
+      ]
+    },
+    {
+      "source": "autodl100/work/HRDecoder/configs/lesion/exp/final_combo_split613.py",
+      "sha256": "4b73a112d8f687cb0ffbea0712d454c3ca8895a0daafb7cedf39ba69771f253f",
+      "bytes": 1047,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "model"
+          ],
+          "literal_value": null
+        }
+      ]
+    },
+    {
+      "source": "autodl100/work/HRDecoder/configs/lesion/exp/final_combo_split613_seed123.py",
+      "sha256": "2dde6701037b1c66b8c8b59ff599e4ed3e20192c015eb472403cb4f15b91ca11",
+      "bytes": 94,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "seed"
+          ],
+          "literal_value": 123
+        }
+      ]
+    },
+    {
+      "source": "autodl100/work/HRDecoder/configs/lesion/exp/final_combo_split613_seed2024.py",
+      "sha256": "1020be7fde6eec0981621d3137b3f0bfaae8806554d93bf96e5f1994178b359a",
+      "bytes": 119,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "seed"
+          ],
+          "literal_value": 2024
+        }
+      ]
+    },
+    {
+      "source": "autodl100/work/HRDecoder/configs/lesion/exp/hr100_a.py",
+      "sha256": "f60a545f6120464275edd60f1e9e504291e676e3a5e6b0df7eba3071af83f45a",
+      "bytes": 1263,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "model"
+          ],
+          "literal_value": null
+        },
+        {
+          "names": [
+            "optimizer"
+          ],
+          "literal_value": null
+        },
+        {
+          "names": [
+            "optimizer_config"
+          ],
+          "literal_value": null
+        },
+        {
+          "names": [
+            "lr_config"
+          ],
+          "literal_value": null
+        },
+        {
+          "names": [
+            "checkpoint_config"
+          ],
+          "literal_value": null
+        },
+        {
+          "names": [
+            "log_config"
+          ],
+          "literal_value": null
+        },
+        {
+          "names": [
+            "seed"
+          ],
+          "literal_value": 42
+        }
+      ]
+    },
+    {
+      "source": "autodl100/work/HRDecoder/configs/lesion/exp/hr100_b.py",
+      "sha256": "556e7c2f1557c6658f6233f1fe1601b8d0b1c8382cc6bdaaaf108a712da3ed54",
+      "bytes": 66,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "model"
+          ],
+          "literal_value": null
+        }
+      ]
+    },
+    {
+      "source": "autodl100/work/HRDecoder/configs/lesion/exp/hr100_ensemble_release.py",
+      "sha256": "f03003ecd4786b3017a0dd8e036e698888ac8de412c8cde829a129cbc2be08e3",
+      "bytes": 250,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "model"
+          ],
+          "literal_value": null
+        }
+      ]
+    },
+    {
+      "source": "autodl100/work/HRDecoder/configs/lesion/exp/hr100_ensemble_test.py",
+      "sha256": "2e4ef6fb7ff025ccd32f2d214b768d1f1cd79f1d63b4136ee528776bf22a87a1",
+      "bytes": 104,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": []
+    },
+    {
+      "source": "autodl100/work/HRDecoder/configs/lesion/exp/hr100_ensemble_val.py",
+      "sha256": "fd94823671c10eae54c85e555625436e7b79cd1b092786b76deda127d8d5c880",
+      "bytes": 339,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "model"
+          ],
+          "literal_value": null
+        }
+      ]
+    },
+    {
+      "source": "autodl100/work/HRDecoder/configs/lesion/exp/hr100_mean_release.py",
+      "sha256": "fa7b5b456e8e7af51f0d738d09940ba50bda6ea7ea3fc16f887d95cc5ff27c06",
+      "bytes": 246,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "model"
+          ],
+          "literal_value": null
+        }
+      ]
+    },
+    {
+      "source": "autodl100/work/HRDecoder/configs/lesion/exp/hr100_mean_test.py",
+      "sha256": "fb2aee9fc4f1139571cb9afa55d51197fb8e8e5d5448a3889b6e1e9f959ff0c7",
+      "bytes": 102,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": []
+    },
+    {
+      "source": "autodl100/work/HRDecoder/configs/lesion/exp/hr100_mean_val.py",
+      "sha256": "5965e08cd1e75a2d1c7f2e98b7cbcd8a25f481aa1aba2ff4324af47fc74094dd",
+      "bytes": 74,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "model"
+          ],
+          "literal_value": null
+        }
+      ]
+    },
+    {
+      "source": "autodl100/work/HRDecoder/configs/lesion/exp/hr100_val_e4.py",
+      "sha256": "992860f41446f4222067211688e9310560a4d59f408896b7f2f9d6ee1097e22a",
+      "bytes": 158,
+      "encoding": "utf-8-sig",
+      "status": "ast_parsed",
+      "module_assignments": [
+        {
+          "names": [
+            "model"
+          ],
+          "literal_value": null
+        }
+      ]
+    }
+  ]
+}

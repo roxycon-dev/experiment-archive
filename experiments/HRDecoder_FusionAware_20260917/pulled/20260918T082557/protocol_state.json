@@ -1,0 +1,41 @@
+{
+  "run_start": 1789665222.001558,
+  "chosen_T": 4000,
+  "identity": {
+    "hashes": {
+      "champion_head": "14757e02de49f6f065d4ef82cb8b1c4ee8a6a7f3f66cb1867276993950f80c50",
+      "config": "2d687086e28533d4bb080f31c12c4abb802d5293fc4f2a463f9f0bd8f36452f9",
+      "member_B_cfg": "556e7c2f1557c6658f6233f1fe1601b8d0b1c8382cc6bdaaaf108a712da3ed54",
+      "member_B_ckpt": "abd74330b5ccaad291ee1d2a74739aa7901366f0edf40cf151027cdd61e1c84d",
+      "member_D_cfg": "2d687086e28533d4bb080f31c12c4abb802d5293fc4f2a463f9f0bd8f36452f9",
+      "member_D_ckpt": "5fe18717b62d8fc3ab4846a50c046588e2af05abbbfdb3a958f4794018b319ea",
+      "member_E4_cfg": "65b2c5eb88db2790c1e00dbcb6e18deaf8fc6abc5bf3f148be9ae70d2f06fc1c",
+      "member_E4_ckpt": "ef63779928a1267c5b7e9050bf82ddb3ed88b62d830a9275d7018fd90272e112",
+      "member_E_cfg": "591e4786abaa35b8dfc9a6476c45a8c9eb387544c37e0d56b6a499b683e100b4",
+      "member_E_ckpt": "a18ff92b4da24d870554f17856983d4be042386cacbcaba0d4e13f3f248ed5e5",
+      "reference_checkpoint": "abd74330b5ccaad291ee1d2a74739aa7901366f0edf40cf151027cdd61e1c84d",
+      "student_checkpoint": "5fe18717b62d8fc3ab4846a50c046588e2af05abbbfdb3a958f4794018b319ea"
+    },
+    "fingerprint": {
+      "config_text_sha256": "35cbbc0e5771e909249c2359c2c7519a6421057ce4efcf81d33ec639458cbdb4",
+      "source_files": {
+        "/root/autodl-tmp/hrplus/glm/fusion_core.py": "66fa5de4f4fa200b2f655ba90fd14fdb66250a2958330b67aa91b6828b6a7058",
+        "/root/autodl-tmp/hrplus/glm/ops.py": "8c508065d8d348c159c8a2404bf57b416c98f9a3f3338cfd605b438e506d5c9c",
+        "/root/autodl-tmp/hrplus/glm/run_protocol.py": "3d2cf28594004a959a87e8735c6e34a68e11114052c404f9bdcce5e0c3c3c7c0",
+        "/root/autodl-tmp/hrplus/glm/runtime.py": "acdfa7867a55a74cef1a0bb0acd48556de0e7301d19cc063c2a126095098326c",
+        "/root/autodl-tmp/hrplus/glm/smoke_gpu.py": "0c12a0304c4fc0169aac9d7f00db3da73e4a52a7ffcd76ba6852f106b6b124df",
+        "/root/autodl-tmp/hrplus/glm/storage_preflight.py": "e60ca5ac703bb9fe59b8ad91686bc3383a58c211d62d2dfcd60481515b65faeb",
+        "/root/autodl-tmp/hrplus/repo/hr100_ensemble.py": "b203ba618912702e9aeff9126f1224d934c01fe5b4cae4638191e108cd59e415",
+        "/root/autodl-tmp/hrplus/repo/hr100_refinement.py": "2d0db3056bc50bd68fd4da71f470f6e80fbf4deeb78264cbd4640dc2ab0c1b72",
+        "/root/autodl-tmp/hrplus/repo/hrplus_core.py": "4297d0fc3ffac8927e27a91531a9e9ea66280bfae6eb22a38a39fdaf780bf448",
+        "/root/autodl-tmp/hrplus/repo/hrplus_patch.py": "6433a8fafc950c83b1a6fd432e8c901fb843b3fbaff032454e4289fe8bdd0f37",
+        "/root/autodl-tmp/hrplus/repo/ma_residual.py": "95438df2b26df31a0c29e4933afa482d44072e5be42524177586fb18c165c1ed"
+      }
+    }
+  },
+  "phase_start": {
+    "preparation": 1789665276.2426171,
+    "pair_seed42": 1789666006.3402255
+  },
+  "val_history": {}
+}

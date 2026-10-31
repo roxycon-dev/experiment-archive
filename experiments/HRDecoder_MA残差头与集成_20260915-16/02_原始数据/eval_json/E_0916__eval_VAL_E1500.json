@@ -1,0 +1,31 @@
+{
+  "models": [
+    {
+      "config": "configs/lesion/exp/hrplus_mares.py",
+      "ckpt": "/root/autodl-tmp/hrplus/results/E_0916/best_mIoU_iter_1500.pth",
+      "weight": 1.0
+    }
+  ],
+  "load_report": [
+    {
+      "ckpt": "best_mIoU_iter_1500.pth",
+      "missing": [],
+      "unexpected": []
+    }
+  ],
+  "flip_tta": false,
+  "split": "val",
+  "n_images": 76,
+  "mIoU": 0.4025462524944335,
+  "mF1": 0.5650650562293745,
+  "mPPV": 0.5711504481136196,
+  "mS": 0.5591098860106516,
+  "mAUPR": 0.5712067509649842,
+  "per_class_iou": {
+    "bg": "nan",
+    "EX": "44.98",
+    "HE": "41.39",
+    "SE": "51.84",
+    "MA": "22.81"
+  }
+}

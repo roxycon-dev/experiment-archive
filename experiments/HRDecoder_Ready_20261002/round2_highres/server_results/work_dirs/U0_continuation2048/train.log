@@ -1,0 +1,62 @@
+[train] gate: readiness=LOCAL_READY calibration=READY mode=formal
+[train] arm=U0 family=convnext_unet stage=ddr_finetune mode=formal updates=4000 train_split=train val_split=val out_dir=/root/autodl-tmp/HRDecoder_Ready_20261002/round2_highres/work_dirs/U0_continuation2048
+[train] batch: effective=8 micro=4 accum=2
+/root/miniconda3/lib/python3.8/site-packages/torch/_utils.py:776: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  return self.fget.__get__(instance, owner)()
+[train] model=convnext_unet backbone_prefixes=('encoder.',) norm_eval=False
+[train] weight_report(convnext_encoder_official): loaded=340 missing=[] unexpected=['norm.weight', 'norm.bias', 'head.weight', 'head.bias'] remapped={}
+[train] data: train=454 eval=76 manifest_sha256=c1359e112f16…
+[train] param audit: groups={'backbone': {'lr': 2e-05, 'n_tensors': 340, 'n_params': 49453152}, 'decoder': {'lr': 5.9999999999999995e-05, 'n_tensors': 50, 'n_params': 3532212}} frozen_tensors=0
+[engine] stage=ddr_finetune mode=formal updates 0->4000 grad_accum=2 micro_batch=4 amp=True frozen_bn=0 params=390
+[engine] update 100/4000 loss=0.49528499245643615 lr={'backbone': 1e-05, 'decoder': 2.9999999999999997e-05}
+[engine] update 200/4000 loss=0.5110196581482888 lr={'backbone': 2e-05, 'decoder': 5.9999999999999995e-05}
+[engine] update 300/4000 loss=0.5031747610867023 lr={'backbone': 1.996685899412007e-05, 'decoder': 5.9900576982360204e-05}
+[engine] update 400/4000 loss=0.5031714108586312 lr={'backbone': 1.9866320719725228e-05, 'decoder': 5.959896215917567e-05}
+[engine] update 500/4000 loss=0.4948240976035595 lr={'backbone': 1.9699068571895726e-05, 'decoder': 5.9097205715687174e-05}
+[engine] update 600/4000 loss=0.501421667188406 lr={'backbone': 1.94662450523927e-05, 'decoder': 5.839873515717809e-05}
+[engine] update 700/4000 loss=0.5119611017405987 lr={'backbone': 1.9169440581934287e-05, 'decoder': 5.750832174580285e-05}
+[engine] update 800/4000 loss=0.49330941170454023 lr={'backbone': 1.88106826360095e-05, 'decoder': 5.6432047908028494e-05}
+[engine] update 900/4000 loss=0.5049323508143425 lr={'backbone': 1.8392421895164772e-05, 'decoder': 5.5177265685494307e-05}
+[engine] update 1000/4000 loss=0.5161439642310143 lr={'backbone': 1.7917515504370885e-05, 'decoder': 5.375254651311265e-05}
+Traceback (most recent call last):
+  File "/root/autodl-tmp/HRDecoder_Ready_20261002/train.py", line 520, in <module>
+    sys.exit(main())
+  File "/root/autodl-tmp/HRDecoder_Ready_20261002/train.py", line 290, in main
+    return _run(args)
+  File "/root/autodl-tmp/HRDecoder_Ready_20261002/train.py", line 495, in _run
+    result = runner.run(
+  File "/root/autodl-tmp/HRDecoder_Ready_20261002/trainer/engine.py", line 316, in run
+    report = self.evaluate(update=upd)
+  File "/root/autodl-tmp/HRDecoder_Ready_20261002/trainer/engine.py", line 371, in evaluate
+    report = self.evaluator.run()
+  File "/root/miniconda3/lib/python3.8/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+    return func(*args, **kwargs)
+  File "/root/autodl-tmp/HRDecoder_Ready_20261002/trainer/eval.py", line 151, in run
+    self.fusion_probe.update(stem, probs[0], target, valid)
+  File "/root/autodl-tmp/HRDecoder_Ready_20261002/trainer/fusion_probe.py", line 70, in update
+    base = load_probability(self.base/stem)
+TypeError: load_probability() missing 1 required positional argument: 'sid'
+[train] gate: readiness=LOCAL_READY calibration=READY mode=formal
+[train] arm=U0 family=convnext_unet stage=ddr_finetune mode=formal updates=4000 train_split=train val_split=val out_dir=/root/autodl-tmp/HRDecoder_Ready_20261002/round2_highres/work_dirs/U0_continuation2048
+[train] batch: effective=8 micro=4 accum=2
+/root/miniconda3/lib/python3.8/site-packages/torch/_utils.py:776: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  return self.fget.__get__(instance, owner)()
+[train] model=convnext_unet backbone_prefixes=('encoder.',) norm_eval=False
+[train] weight_report(convnext_encoder_official): loaded=340 missing=[] unexpected=['norm.weight', 'norm.bias', 'head.weight', 'head.bias'] remapped={}
+[train] data: train=454 eval=76 manifest_sha256=c1359e112f16…
+[train] param audit: groups={'backbone': {'lr': 2e-05, 'n_tensors': 340, 'n_params': 49453152}, 'decoder': {'lr': 5.9999999999999995e-05, 'n_tensors': 50, 'n_params': 3532212}} frozen_tensors=0
+[engine] stage=ddr_finetune mode=formal updates 1000->4000 grad_accum=2 micro_batch=4 amp=True frozen_bn=0 params=390
+[engine] eval update=1000 mIoU_lesion4=0.3909 n_images=76
+[engine] update 1100/4000 loss=0.5038142231106758 lr={'backbone': 1.7389207555825705e-05, 'decoder': 5.2167622667477106e-05}
+[engine] update 1200/4000 loss=0.4935228243470192 lr={'backbone': 1.6811106928515012e-05, 'decoder': 5.043332078554503e-05}
+[engine] update 1300/4000 loss=0.48709549456834794 lr={'backbone': 1.618716263590966e-05, 'decoder': 4.856148790772897e-05}
+[engine] update 1400/4000 loss=0.4863696581125259 lr={'backbone': 1.5521636850199328e-05, 'decoder': 4.656491055059798e-05}
+[engine] update 1500/4000 loss=0.48858485609292984 lr={'backbone': 1.4819075787334699e-05, 'decoder': 4.4457227362004086e-05}
+[engine] update 1600/4000 loss=0.49000188916921616 lr={'backbone': 1.4084278651762672e-05, 'decoder': 4.225283595528801e-05}
+[engine] update 1700/4000 loss=0.4839365319907665 lr={'backbone': 1.3322264852993705e-05, 'decoder': 3.9966794558981106e-05}
+[engine] update 1800/4000 loss=0.5013636742532254 lr={'backbone': 1.2538239717945209e-05, 'decoder': 3.761471915383562e-05}
+[engine] update 1900/4000 loss=0.4888490191102028 lr={'backbone': 1.1737558933280604e-05, 'decoder': 3.5212676799841804e-05}
+[engine] update 2000/4000 loss=0.47942967355251315 lr={'backbone': 1.0925691960638778e-05, 'decoder': 3.2777075881916325e-05}
+[engine] eval update=2000 mIoU_lesion4=0.3780 n_images=76
+[engine] STOP: paired_no_gain_or_learning
+[train] done: {"status": "stopped", "stop_reason": "paired_no_gain_or_learning", "elapsed_seconds": 780.6715540440055, "stage": "ddr_finetune", "mode": "formal", "updates_done": 2000, "micro_steps": 4008, "best": {"mIoU_lesion4": 0.3908638255464669, "update": 1000, "selection_score": 0.43366298706385487, "selection_metric": "fixed_fusion_miou"}, "config_file_sha256": "17c15fd8ffd2bc6534080467bc6bfe4821f5250ba158d90a867ee1f7669381b8", "resume_warnings": [], "checkpoints": {"last": "/root/autodl-tmp/HRDecoder_Ready_20261002/round2_highres/work_dirs/U0_continuation2048/ckpt_last.pth", "best": "/root/autodl-tmp/HRDecoder_Ready_20261002/round2_highres/work_dirs/U0_continuation2048/ckpt_best.pth", "final": "/root/autodl-tmp/HRDecoder_Ready_20261002/round2_highres/work_dirs/U0_continuation2048/ckpt_final.pth"}}

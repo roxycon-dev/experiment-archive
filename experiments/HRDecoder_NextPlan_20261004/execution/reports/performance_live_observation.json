@@ -1,0 +1,104 @@
+{
+  "time": "2026-10-04T09:14:30.581481+00:00",
+  "run_status": {
+    "stage": "TRAINING",
+    "completed": 2000,
+    "endpoint": 24000,
+    "updated_at": "2026-10-04T09:12:25.726101+00:00"
+  },
+  "before": {
+    "n_logged_updates": 31,
+    "mean_seconds_per_update": 0.45317468960439006,
+    "mean_data_wait_seconds": 0.1787468978474217
+  },
+  "after": {
+    "n_logged_updates": 20,
+    "mean_seconds_per_update": 0.25710202269256116,
+    "mean_data_wait_seconds": 0.0010730013251304626
+  },
+  "training_process_memory": [
+    {
+      "pid": 2988,
+      "Rss": 43695947776,
+      "Pss": 9887111168
+    },
+    {
+      "pid": 3012,
+      "Rss": 38035279872,
+      "Pss": 4267931648
+    },
+    {
+      "pid": 3013,
+      "Rss": 38003806208,
+      "Pss": 4236529664
+    },
+    {
+      "pid": 3014,
+      "Rss": 38035279872,
+      "Pss": 4269870080
+    },
+    {
+      "pid": 3015,
+      "Rss": 38035275776,
+      "Pss": 4269906944
+    },
+    {
+      "pid": 3016,
+      "Rss": 38035279872,
+      "Pss": 4267974656
+    },
+    {
+      "pid": 3017,
+      "Rss": 38035279872,
+      "Pss": 4267960320
+    },
+    {
+      "pid": 3018,
+      "Rss": 38035279872,
+      "Pss": 4269850624
+    },
+    {
+      "pid": 3019,
+      "Rss": 38035279872,
+      "Pss": 4269836288
+    },
+    {
+      "pid": 3130,
+      "Rss": 13656064,
+      "Pss": 7514112
+    }
+  ],
+  "physical_memory_PSS_GiB": 40.99168395996094,
+  "cache_receipt": {
+    "accepted_at": "2026-10-04T09:08:16.407491+00:00",
+    "cache": {
+      "decoded_bytes": 36593276874,
+      "images": 646,
+      "seconds": 20.658286094665527,
+      "storage": "read-only parent RAM shared by fork workers; no data-disk copy",
+      "estimated_bytes": 36593276874
+    },
+    "execution_io": {
+      "version": 1,
+      "workers": 8,
+      "prefetch_factor": 4,
+      "decode_threads": 8,
+      "decoded_cache_limit_bytes": 51539607552,
+      "micro_batch_changed": false,
+      "model_math_changed": false,
+      "sampling_changed": false,
+      "precision_changed": false,
+      "user_authorized": "2026-10-04: optimize training throughput; preserve registered experiment"
+    },
+    "algorithmic_resources": {
+      "micro_batch": 2,
+      "accumulation": 4,
+      "dtype": "bfloat16",
+      "workers": 4,
+      "prefetch_factor": 2,
+      "pin_memory": true
+    },
+    "historical_training_math_unchanged": true
+  },
+  "validation_nodes": []
+}

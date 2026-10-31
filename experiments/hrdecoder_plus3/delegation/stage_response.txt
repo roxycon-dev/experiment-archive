@@ -1,0 +1,123 @@
+```python
+#!/usr/bin/env python3.8
+"""ops/run_stage.py - CPU preparation stage runner (smoke -> train -> backup)."""
+import argparse, json, os, signal, subprocess, sys, tempfile, time
+from pathlib import Path
+
+SMOKE_TIMEOUT = 900
+ACK_TIMEOUT = 90
+ALLOWED_CONFIGS = {"hrplus_patch_dice.py", "hrplus_patch_lovasz.py"}
+
+
+class Child:
+    proc = None
+
+
+CHILD = Child()
+
+
+def _on_signal(signum, frame):
+    raise SystemExit(130)
+
+
+def write_state(workdir: Path, phase: str, exitcode: int):
+    tmp = tempfile.NamedTemporaryFile("w", dir=str(workdir), delete=False)
+    json.dump({"phase": phase, "exitcode": exitcode}, tmp)
+    tmp.close()
+    os.replace(tmp.name, str(workdir / "state.json"))
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--repo", required=True)
+    ap.add_argument("--config", required=True)
+    ap.add_argument("--work-dir", required=True)
+    args = ap.parse_args()
+
+    repo = Path(args.repo).resolve()
+    workdir = Path(args.work_dir).resolve()
+    config = Path(args.config).resolve()
+    repo.mkdir(parents=True, exist_ok=True)
+    workdir.mkdir(parents=True, exist_ok=True)
+
+    os.chdir(str(repo))
+
+    if config.name not in ALLOWED_CONFIGS or not config.is_file():
+        print(f"[run_stage] invalid config: {config}", file=sys.stderr)
+        return 2
+
+    # Assert required assets present (no test dir check).
+    for req in ["source", "weights", "data/images/train", "data/images/val"]:
+        if not (repo / req).exists():
+            print(f"[run_stage] missing required path: {req}", file=sys.stderr)
+            return 2
+
+    python = sys.executable
+    env = dict(os.environ)
+    env["PYTHONPATH"] = str(repo)
+    env["OMP_NUM_THREADS"] = "4"
+
+    signal.signal(signal.SIGTERM, _on_signal)
+    signal.signal(signal.SIGINT, _on_signal)
+
+    smoke_log = open(str(workdir / "smoke.log"), "w")
+    rc = 0
+    try:
+        smoke_cmd = [python, "tools/hrplus_smoke.py", str(config),
+                     "--output", str(workdir / "smoke.json")]
+        try:
+            p = subprocess.run(smoke_cmd, cwd=str(repo), env=env,
+                               stdout=smoke_log, stderr=subprocess.STDOUT,
+                               timeout=SMOKE_TIMEOUT)
+            if p.returncode != 0:
+                print(f"[run_stage] smoke failed rc={p.returncode}", file=sys.stderr)
+                return 3
+        except subprocess.TimeoutExpired:
+            print("[run_stage] smoke timeout", file=sys.stderr)
+            return 4
+        except subprocess.SubprocessError as e:
+            print(f"[run_stage] smoke error: {e}", file=sys.stderr)
+            return 5
+
+        smoke_json = workdir / "smoke.json"
+        if not smoke_json.is_file():
+            print("[run_stage] smoke.json missing", file=sys.stderr)
+            return 6
+        try:
+            data = json.loads(smoke_json.read_text())
+        except (json.JSONDecodeError, OSError):
+            print("[run_stage] smoke.json unreadable", file=sys.stderr)
+            return 6
+        if data.get("status") != "success":
+            print("[run_stage] smoke status != success", file=sys.stderr)
+            return 7
+
+        write_state(workdir, "train", 0)
+        train_cmd = [python, "tools/train.py", str(config),
+                     "--work-dir", str(workdir)]
+        CHILD.proc = subprocess.Popen(train_cmd, cwd=str(repo), env=env)
+        trc = CHILD.proc.wait()
+        CHILD.proc = None
+        rc = trc
+
+        write_state(workdir, "backup", rc)
+        ack = workdir / "backup_ack"
+        deadline = time.time() + ACK_TIMEOUT
+        while not ack.exists() and time.time() < deadline:
+            time.sleep(1)
+    finally:
+        smoke_log.close()
+        if CHILD.proc is not None and CHILD.proc.poll() is None:
+            CHILD.proc.terminate()
+            try:
+                CHILD.proc.wait(timeout=15)
+            except subprocess.TimeoutExpired:
+                CHILD.proc.kill()
+                CHILD.proc.wait()
+        write_state(workdir, "complete", rc)
+    return rc
+
+
+if __name__ == "__main__":
+    sys.exit(main())
+```

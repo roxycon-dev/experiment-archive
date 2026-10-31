@@ -1,0 +1,24 @@
+{
+  "models": [
+    {
+      "config": "configs/lesion/exp/e4_detail_split613.py",
+      "ckpt": "/root/HRDecoder/work_dirs/exp_e4_detail_split613/best_mIoU_iter_36000.pth",
+      "weight": 1.0
+    }
+  ],
+  "load_report": [
+    {
+      "ckpt": "best_mIoU_iter_36000.pth",
+      "missing": [],
+      "unexpected": []
+    }
+  ],
+  "flip_tta": false,
+  "split": "test",
+  "n_images": 227,
+  "mIoU": 0.41625812634234055,
+  "mF1": 0.5791284987121766,
+  "mPPV": 0.627099420615852,
+  "mS": 0.5409192251221276,
+  "mAUPR": 0.5938943281646332
+}

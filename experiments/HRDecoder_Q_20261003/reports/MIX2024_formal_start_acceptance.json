@@ -1,0 +1,27 @@
+{
+  "stage": "ACTUAL_FORMAL_TRAINING_VERIFIED",
+  "checked_at": "2026-10-04T02:43:09.190764+00:00",
+  "run": "Q_MIX_seed2024",
+  "formal_pid": 94980,
+  "formal_command": "/root/miniconda3/envs/hrdecoder_q_20261003/bin/python -u train_run.py --runtime configs/runtime.qmix.server.json --arm Q_MIX --seed 2024 --endpoint 24000 ",
+  "identity_sha256": "60920d33a3d85acd05f0c6637a4ec2442f21f69a6d4ca3beff46b2cb7034adac",
+  "completed_at_snapshot": 1080,
+  "endpoint": 24000,
+  "receipt": {
+    "stage": "FORMAL_PROCESS_LAUNCHED",
+    "pid": 94980,
+    "arm": "Q_MIX",
+    "seed": 2024,
+    "endpoint": 24000,
+    "runtime_sha256": "fbac1c55289be376b8efb98d1503aa57a794ffca001c0b7affb6151b3b3aee97",
+    "external_manifest_sha256": "4de817deaf9a190a19badee08dccf77fa7dac6c997cca982fd5843f7d48d1bcb",
+    "continuation_protocol_sha256": "240f1aafa14616ad0b011cc998bf67e8671f82a32ca4c1758ff52a3e93d226ff",
+    "stream_sha256": "288eb05725024f807a85ca028ad2d356650063d098d8e219f5b4ed06fcaac0cd",
+    "existing_DDR_final_lock_unchanged": true,
+    "created_at": "2026-10-04T02:33:44.158665+00:00"
+  },
+  "DDR2024_complete_SHA_backup": "reports/run_backup_Q_DDR_seed2024_24k.json",
+  "late_export_worker_pid": 14908,
+  "late_export_worker_state": "reports/mix2024_late_offload_state.json",
+  "automatic_restarts": false
+}

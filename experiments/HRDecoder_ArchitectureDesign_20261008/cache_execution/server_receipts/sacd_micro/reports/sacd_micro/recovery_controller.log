@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/root/autodl-tmp/HRDecoder_v3_20261008/sacd_micro_execution/recovery_controller.py", line 78, in <module>
+    main()
+  File "/root/autodl-tmp/HRDecoder_v3_20261008/sacd_micro_execution/recovery_controller.py", line 58, in main
+    outcome = evaluate_gate(ROOT, plan)
+  File "/root/autodl-tmp/HRDecoder_v3_20261008/sacd_micro_execution/gate.py", line 30, in evaluate_gate
+    ref = json.loads((Path(root) / 'sacd_execution/val_label_reference.json').read_text())
+  File "/root/miniconda3/lib/python3.8/pathlib.py", line 1236, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+  File "/root/miniconda3/lib/python3.8/pathlib.py", line 1222, in open
+    return io.open(self, mode, buffering, encoding, errors, newline,
+  File "/root/miniconda3/lib/python3.8/pathlib.py", line 1078, in _opener
+    return self._accessor.open(self, flags, mode)
+FileNotFoundError: [Errno 2] No such file or directory: '/root/autodl-tmp/HRDecoder_v3_20261008/sacd_execution/val_label_reference.json'

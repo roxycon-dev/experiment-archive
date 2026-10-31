@@ -1,0 +1,91 @@
+{
+  "scope": {
+    "read_only_old_experiment": true,
+    "ssh_or_server_access": false,
+    "training_run": false,
+    "test_predictions_used": false,
+    "cpu_header_and_mask_stats": true
+  },
+  "idrid": {
+    "samples": 54,
+    "external_train": 48,
+    "external_dev": 6,
+    "external_test_used": 0,
+    "source_path": "D:\\dataset\\best_segmentation",
+    "source_image_sha_matches_asset_and_manifest": 54,
+    "source_polygon_sha_matches_manifest_notes": 54,
+    "generated_assets": {"jpeg_images": 54, "png_masks": 216},
+    "source_dimensions_examples": {
+      "IDRiD_01": [4194, 4194],
+      "IDRiD_28": [3416, 3416],
+      "IDRiD_54": [3418, 3418]
+    },
+    "official_pixel_mask_pair_available_locally": false,
+    "polygon_to_asset_exact_raster_check": {"images": 3, "classes": 12, "different_pixels": 0},
+    "class_stats": {
+      "EX": {"positive_images": 54, "polygons": 7526, "positive_pixels": 5208568, "pixel_fraction": 0.0079207556},
+      "HE": {"positive_images": 53, "polygons": 1365, "positive_pixels": 6253548, "pixel_fraction": 0.0095098740},
+      "SE": {"positive_images": 26, "polygons": 112, "positive_pixels": 1219796, "pixel_fraction": 0.0018549640},
+      "MA": {"positive_images": 54, "polygons": 2412, "positive_pixels": 703313, "pixel_fraction": 0.0010695397}
+    },
+    "zero_polygon_images": {"EX": 0, "HE": 1, "SE": 28, "MA": 0},
+    "full_valid_all_classes": true,
+    "images_with_any_cross_class_overlap": 22,
+    "pairwise_overlap_pixels_sum": 6410
+  },
+  "ddr_train_val": {
+    "source_path": "D:\\HRDecoder\\data\\DDR_split_613",
+    "train_images_labels": [454, 454],
+    "val_images_labels": [76, 76],
+    "mask_shape_errors": 0,
+    "label_values_observed_train_val": [0, 1, 2, 3, 4],
+    "class_stats": {
+      "EX": {
+        "train": {"positive_images": 303, "positive_pixels": 5740603, "pixel_fraction": 0.0024463815},
+        "val": {"positive_images": 46, "positive_pixels": 290803, "pixel_fraction": 0.0007249922}
+      },
+      "HE": {
+        "train": {"positive_images": 366, "positive_pixels": 8863815, "pixel_fraction": 0.0037773511},
+        "val": {"positive_images": 63, "positive_pixels": 1205924, "pixel_fraction": 0.0030064529}
+      },
+      "SE": {
+        "train": {"positive_images": 143, "positive_pixels": 1327424, "pixel_fraction": 0.0005656872},
+        "val": {"positive_images": 24, "positive_pixels": 201404, "pixel_fraction": 0.0005021143}
+      },
+      "MA": {
+        "train": {"positive_images": 338, "positive_pixels": 527407, "pixel_fraction": 0.0002247567},
+        "val": {"positive_images": 59, "positive_pixels": 69284, "pixel_fraction": 0.0001727299}
+      }
+    },
+    "val_geometry": {
+      "images": 76,
+      "unique_shapes": 17,
+      "width_range": [1380, 4496],
+      "height_range": [1382, 3000],
+      "long_edge_min_median_max": [1382, 2592, 4496],
+      "short_edge_min_median_max": [1380, 1728, 3000],
+      "w_over_h_min_median_max": [0.9952, 1.4993, 1.5],
+      "portrait_landscape_square": [2, 73, 1],
+      "aspect_bins": {"<=1.05": 11, "1.25-1.4": 23, ">1.4": 42}
+    }
+  },
+  "external_pretraining": {
+    "U1": {"completed_updates": 2400, "best_update": 2400, "dev_images": 6, "best_dev_miou": 0.2716051},
+    "H1": {"completed_updates": 2400, "best_update": 2400, "dev_images": 6, "best_dev_miou": 0.4299977},
+    "interpretation": "completed on user polygon data; insufficient evidence to call official-pixel pretraining failure or estimate matched causal effect"
+  },
+  "other_external_assets": {
+    "MAPLES_DR": {"label_archive_present": true, "train_annotation_images": 138, "test_annotation_images": 60, "messidor_raw_images_available": false, "training_execution_evidence": false},
+    "FGADR": {"usable_assets_found": false, "training_execution_evidence": false}
+  },
+  "evidence_refs": [
+    {"path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\tools\\prepare_external.py", "lines": "21-28,30-50,54-73,77-88,134-148"},
+    {"path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\trainer\\data\\external_dataset.py", "lines": "71-78,101-118,179-200,237-270"},
+    {"path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\trainer\\data\\augment.py", "lines": "72-83"},
+    {"path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\trainer\\eval.py", "lines": "134-137"},
+    {"path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\trainer\\data\\ddr_dataset.py", "lines": "6-15,105-114"},
+    {"path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\reports\\HRDecoder_完整实验报告_20261003.md", "lines": "19-21,28-30,67-73,148-154"},
+    {"path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\reports\\external_partition.json", "keys": ["$.method", "$.seed", "$.train_ids", "$.dev_ids"]},
+    {"path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\assets\\external\\PROVENANCE.json", "keys": ["$.n_train", "$.n_test_used", "$.curated_idrid", "$.maples_available"]}
+  ]
+}

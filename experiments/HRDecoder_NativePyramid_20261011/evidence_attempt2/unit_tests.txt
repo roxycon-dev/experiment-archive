@@ -1,0 +1,25 @@
+test_first_backward_reaches_every_feature_without_detach (tests.DecoderTests.test_first_backward_reaches_every_feature_without_detach) ... ok
+test_microbatch_performs_one_optimizer_step_and_same_update (tests.DecoderTests.test_microbatch_performs_one_optimizer_step_and_same_update) ... ok
+test_absent_class_still_penalizes_background (tests.LossTests.test_absent_class_still_penalizes_background) ... ok
+test_empty_valid_batch_is_not_an_optimizer_update (tests.LossTests.test_empty_valid_batch_is_not_an_optimizer_update) ... ok
+test_hard_negative_gradient_does_not_dilute_in_large_background (tests.LossTests.test_hard_negative_gradient_does_not_dilute_in_large_background) ... ok
+test_ignored_pixels_have_zero_gradient_and_no_value_effect (tests.LossTests.test_ignored_pixels_have_zero_gradient_and_no_value_effect) ... ok
+test_illegal_class_rejected (tests.LossTests.test_illegal_class_rejected) ... ok
+test_microbatch_loss_and_gradient_equal_batch2 (tests.LossTests.test_microbatch_loss_and_gradient_equal_batch2) ... ok
+test_saturated_false_negatives_have_recovery_gradient (tests.LossTests.test_saturated_false_negatives_have_recovery_gradient) ... ok
+test_saturated_false_positives_have_suppression_gradient (tests.LossTests.test_saturated_false_positives_have_suppression_gradient) ... ok
+test_40k_lr_and_warmup (tests.ProtocolTests.test_40k_lr_and_warmup) ... ok
+test_augmentation_reproducible_and_does_not_change_global_rng (tests.ProtocolTests.test_augmentation_reproducible_and_does_not_change_global_rng) ... ok
+test_counts_ignore_255 (tests.ProtocolTests.test_counts_ignore_255) ... ok
+test_exact_threshold_tie_is_negative (tests.ProtocolTests.test_exact_threshold_tie_is_negative) ... ok
+test_global_counts_not_mean_of_image_ious (tests.ProtocolTests.test_global_counts_not_mean_of_image_ious) ... ok
+test_guard_allows_ordinary_historical_baseline_oscillation (tests.ProtocolTests.test_guard_allows_ordinary_historical_baseline_oscillation) ... ok
+test_guard_catches_historical_detail_collapse (tests.ProtocolTests.test_guard_catches_historical_detail_collapse) ... ok
+test_resumed_exposure_order_crosses_epoch_exactly (tests.ProtocolTests.test_resumed_exposure_order_crosses_epoch_exactly) ... ok
+test_test_access_requires_actual_40k_val_pass (tests.ProtocolTests.test_test_access_requires_actual_40k_val_pass) ... ok
+test_training_guard_requires_repeated_saturation (tests.ProtocolTests.test_training_guard_requires_repeated_saturation) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 2.894s
+
+OK

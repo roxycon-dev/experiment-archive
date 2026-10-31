@@ -1,0 +1,13 @@
+{
+  "reason": "SIGINT could not unwind stalled initial worker creation",
+  "executed_updates": 0,
+  "in_flight_update": null,
+  "additional_executed_updates_uncertain": [
+    0,
+    0
+  ],
+  "evidence": "progress persisted before first attempted update; no execution ledger; no optimizer entry",
+  "signal": "SIGTERM",
+  "owned_process_group": 1752,
+  "server_shutdown_requested": false
+}

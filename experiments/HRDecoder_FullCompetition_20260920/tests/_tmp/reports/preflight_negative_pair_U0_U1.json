@@ -1,0 +1,49 @@
+{
+  "generated_at": "2026-09-20T03:17:22.514071+00:00",
+  "mode": "formal",
+  "layer": "formal",
+  "readiness": "BLOCKED",
+  "calibration": "READY",
+  "configs": {
+    "H0": "D:\\dataset\\experiment\\HRDecoder_FullCompetition_20260920\\tests\\_tmp\\configs\\H0_synthetic.yaml",
+    "H1": "D:\\dataset\\experiment\\HRDecoder_FullCompetition_20260920\\tests\\_tmp\\configs\\H1_synthetic.yaml",
+    "U0": "D:\\dataset\\experiment\\HRDecoder_FullCompetition_20260920\\tests\\_tmp\\configs\\U0_synthetic.yaml",
+    "U1": "D:\\dataset\\experiment\\HRDecoder_FullCompetition_20260920\\tests\\_tmp\\configs\\U1_synthetic.yaml"
+  },
+  "ok": false,
+  "error_count": 2,
+  "skipped_count": 0,
+  "calibration_pending_count": 0,
+  "calibration_pending": [],
+  "manifest_records": {
+    "H1@D:\\dataset\\experiment\\HRDecoder_FullCompetition_20260920\\tests\\_tmp\\manifests\\external_train_manifest.jsonl": 2,
+    "U1@D:\\dataset\\experiment\\HRDecoder_FullCompetition_20260920\\tests\\_tmp\\manifests\\external_train_manifest.jsonl": 2
+  },
+  "ddr_split_sizes": {
+    "H0": {
+      "train": 2,
+      "val": 1,
+      "test": 1
+    },
+    "H1": {
+      "train": 2,
+      "val": 1,
+      "test": 1
+    },
+    "U0": {
+      "train": 2,
+      "val": 1,
+      "test": 1
+    },
+    "U1": {
+      "train": 2,
+      "val": 1,
+      "test": 1
+    }
+  },
+  "errors": [
+    "配对 U0↔U1: 锁定字段不一致: $.loss.smooth: 1e-05 != 2e-05",
+    "跨臂一致性: loss 节在 H0 与 U1 不一致: $.loss.smooth: 1e-05 != 2e-05"
+  ],
+  "skipped": []
+}

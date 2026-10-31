@@ -1,0 +1,590 @@
+{
+  "suite": "oracle_metrics",
+  "required_cases": [
+    "S1",
+    "S2",
+    "S3",
+    "S4",
+    "S5",
+    "S6",
+    "S7",
+    "S8",
+    "S9",
+    "S10",
+    "S11",
+    "S12"
+  ],
+  "n_required": 12,
+  "n_pass": 12,
+  "n_fail": 0,
+  "n_not_run": 0,
+  "missing_cases": [],
+  "frozen_constants": {
+    "thresh": 0.5,
+    "comparison": "strict_>",
+    "classes": [
+      "EX",
+      "HE",
+      "SE",
+      "MA"
+    ],
+    "aggregation": "dataset_cumulative",
+    "background_in_mean": false,
+    "empty_union": "nan->0"
+  },
+  "overall_status": "PASS",
+  "results": [
+    {
+      "test_id": "S1",
+      "required": true,
+      "input_case": "S1",
+      "expected": {
+        "EX": 0.3333333333333333,
+        "HE": null,
+        "SE": null,
+        "MA": null
+      },
+      "actual": {
+        "miou": 0.08333333333333333,
+        "iou": {
+          "EX": 0.3333333333333333,
+          "HE": null,
+          "SE": null,
+          "MA": null
+        },
+        "counts_TP_FP_FN": {
+          "TP": {
+            "EX": 1,
+            "HE": 0,
+            "SE": 0,
+            "MA": 0
+          },
+          "FP": {
+            "EX": 1,
+            "HE": 0,
+            "SE": 0,
+            "MA": 0
+          },
+          "FN": {
+            "EX": 1,
+            "HE": 0,
+            "SE": 0,
+            "MA": 0
+          }
+        },
+        "checker_detail": 0.3333333333333333
+      },
+      "status": "PASS"
+    },
+    {
+      "test_id": "S2",
+      "required": true,
+      "input_case": "S2",
+      "expected": {
+        "EX": 0.1,
+        "HE": null,
+        "SE": null,
+        "MA": null
+      },
+      "actual": {
+        "miou": 0.025,
+        "iou": {
+          "EX": 0.1,
+          "HE": null,
+          "SE": null,
+          "MA": null
+        },
+        "counts_TP_FP_FN": {
+          "TP": {
+            "EX": 1,
+            "HE": 0,
+            "SE": 0,
+            "MA": 0
+          },
+          "FP": {
+            "EX": 9,
+            "HE": 0,
+            "SE": 0,
+            "MA": 0
+          },
+          "FN": {
+            "EX": 0,
+            "HE": 0,
+            "SE": 0,
+            "MA": 0
+          }
+        },
+        "checker_detail": 0.1
+      },
+      "status": "PASS"
+    },
+    {
+      "test_id": "S3",
+      "required": true,
+      "input_case": "S3",
+      "expected": {
+        "EX": 0.0,
+        "HE": null,
+        "SE": null,
+        "MA": null
+      },
+      "actual": {
+        "miou": 0.0,
+        "iou": {
+          "EX": 0.0,
+          "HE": null,
+          "SE": null,
+          "MA": null
+        },
+        "counts_TP_FP_FN": {
+          "TP": {
+            "EX": 0,
+            "HE": 0,
+            "SE": 0,
+            "MA": 0
+          },
+          "FP": {
+            "EX": 0,
+            "HE": 0,
+            "SE": 0,
+            "MA": 0
+          },
+          "FN": {
+            "EX": 4,
+            "HE": 0,
+            "SE": 0,
+            "MA": 0
+          }
+        },
+        "checker_detail": 0.0
+      },
+      "status": "PASS"
+    },
+    {
+      "test_id": "S4",
+      "required": true,
+      "input_case": "S4",
+      "expected": {
+        "EX": 0.0,
+        "HE": null,
+        "SE": null,
+        "MA": null
+      },
+      "actual": {
+        "miou": 0.0,
+        "iou": {
+          "EX": 0.0,
+          "HE": null,
+          "SE": null,
+          "MA": null
+        },
+        "counts_TP_FP_FN": {
+          "TP": {
+            "EX": 0,
+            "HE": 0,
+            "SE": 0,
+            "MA": 0
+          },
+          "FP": {
+            "EX": 4,
+            "HE": 0,
+            "SE": 0,
+            "MA": 0
+          },
+          "FN": {
+            "EX": 0,
+            "HE": 0,
+            "SE": 0,
+            "MA": 0
+          }
+        },
+        "checker_detail": 0.0
+      },
+      "status": "PASS"
+    },
+    {
+      "test_id": "S5",
+      "required": true,
+      "input_case": "S5",
+      "expected": {
+        "EX": null,
+        "HE": null,
+        "SE": null,
+        "MA": null
+      },
+      "actual": {
+        "miou": 0.0,
+        "iou": {
+          "EX": null,
+          "HE": null,
+          "SE": null,
+          "MA": null
+        },
+        "counts_TP_FP_FN": {
+          "TP": {
+            "EX": 0,
+            "HE": 0,
+            "SE": 0,
+            "MA": 0
+          },
+          "FP": {
+            "EX": 0,
+            "HE": 0,
+            "SE": 0,
+            "MA": 0
+          },
+          "FN": {
+            "EX": 0,
+            "HE": 0,
+            "SE": 0,
+            "MA": 0
+          }
+        },
+        "checker_detail": [
+          null,
+          0.0
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "test_id": "S6",
+      "required": true,
+      "input_case": "S6",
+      "expected": {
+        "EX": null,
+        "HE": null,
+        "SE": null,
+        "MA": 1.0
+      },
+      "actual": {
+        "miou": 0.25,
+        "iou": {
+          "EX": null,
+          "HE": null,
+          "SE": null,
+          "MA": 1.0
+        },
+        "counts_TP_FP_FN": {
+          "TP": {
+            "EX": 0,
+            "HE": 0,
+            "SE": 0,
+            "MA": 1
+          },
+          "FP": {
+            "EX": 0,
+            "HE": 0,
+            "SE": 0,
+            "MA": 0
+          },
+          "FN": {
+            "EX": 0,
+            "HE": 0,
+            "SE": 0,
+            "MA": 0
+          }
+        },
+        "checker_detail": 1.0
+      },
+      "status": "PASS"
+    },
+    {
+      "test_id": "S7",
+      "required": true,
+      "input_case": "S7",
+      "expected": {
+        "EX": 1.0,
+        "HE": 0.0,
+        "SE": null,
+        "MA": null
+      },
+      "actual": {
+        "miou": 0.25,
+        "iou": {
+          "EX": 1.0,
+          "HE": 0.0,
+          "SE": null,
+          "MA": null
+        },
+        "counts_TP_FP_FN": {
+          "TP": {
+            "EX": 1,
+            "HE": 0,
+            "SE": 0,
+            "MA": 0
+          },
+          "FP": {
+            "EX": 0,
+            "HE": 1,
+            "SE": 0,
+            "MA": 0
+          },
+          "FN": {
+            "EX": 0,
+            "HE": 0,
+            "SE": 0,
+            "MA": 0
+          }
+        },
+        "checker_detail": [
+          1.0,
+          0.0
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "test_id": "S8",
+      "required": true,
+      "input_case": "S8",
+      "expected": {
+        "EX": 0.0,
+        "HE": null,
+        "SE": null,
+        "MA": null
+      },
+      "actual": {
+        "miou": 0.0,
+        "iou": {
+          "EX": 0.0,
+          "HE": null,
+          "SE": null,
+          "MA": null
+        },
+        "counts_TP_FP_FN": {
+          "TP": {
+            "EX": 0,
+            "HE": 0,
+            "SE": 0,
+            "MA": 0
+          },
+          "FP": {
+            "EX": 0,
+            "HE": 0,
+            "SE": 0,
+            "MA": 0
+          },
+          "FN": {
+            "EX": 1,
+            "HE": 0,
+            "SE": 0,
+            "MA": 0
+          }
+        },
+        "checker_detail": 0.0
+      },
+      "status": "PASS"
+    },
+    {
+      "test_id": "S9",
+      "required": true,
+      "input_case": "S9",
+      "expected": {
+        "EX": 0.5,
+        "HE": null,
+        "SE": null,
+        "MA": null
+      },
+      "actual": {
+        "miou": 0.125,
+        "iou": {
+          "EX": 0.5,
+          "HE": null,
+          "SE": null,
+          "MA": null
+        },
+        "counts_TP_FP_FN": {
+          "TP": {
+            "EX": 1,
+            "HE": 0,
+            "SE": 0,
+            "MA": 0
+          },
+          "FP": {
+            "EX": 0,
+            "HE": 0,
+            "SE": 0,
+            "MA": 0
+          },
+          "FN": {
+            "EX": 1,
+            "HE": 0,
+            "SE": 0,
+            "MA": 0
+          }
+        },
+        "checker_detail": 0.5
+      },
+      "status": "PASS"
+    },
+    {
+      "test_id": "S10",
+      "required": true,
+      "input_case": "S10",
+      "expected": {
+        "EX": 1.0,
+        "HE": 1.0,
+        "SE": 1.0,
+        "MA": 1.0
+      },
+      "actual": {
+        "miou": 1.0,
+        "iou": {
+          "EX": 1.0,
+          "HE": 1.0,
+          "SE": 1.0,
+          "MA": 1.0
+        },
+        "counts_TP_FP_FN": {
+          "TP": {
+            "EX": 1,
+            "HE": 1,
+            "SE": 1,
+            "MA": 1
+          },
+          "FP": {
+            "EX": 0,
+            "HE": 0,
+            "SE": 0,
+            "MA": 0
+          },
+          "FN": {
+            "EX": 0,
+            "HE": 0,
+            "SE": 0,
+            "MA": 0
+          }
+        },
+        "checker_detail": {
+          "EX": 1.0,
+          "HE": 1.0,
+          "SE": 1.0,
+          "MA": 1.0
+        }
+      },
+      "status": "PASS"
+    },
+    {
+      "test_id": "S11",
+      "required": true,
+      "input_case": "S11",
+      "expected": {
+        "oracle_counts_invariant": true,
+        "legacy_replica_changes_when_ignore_prediction_changes": true,
+        "interpretation": "若 legacy 变化而 oracle 不变，则证实 ignore_index 未生效（§2）"
+      },
+      "actual": {
+        "oracle_TP_FP_FN_A": {
+          "TP": {
+            "EX": 1,
+            "HE": 0,
+            "SE": 0,
+            "MA": 0
+          },
+          "FP": {
+            "EX": 0,
+            "HE": 0,
+            "SE": 0,
+            "MA": 0
+          },
+          "FN": {
+            "EX": 0,
+            "HE": 0,
+            "SE": 0,
+            "MA": 0
+          }
+        },
+        "oracle_TP_FP_FN_B": {
+          "TP": {
+            "EX": 1,
+            "HE": 0,
+            "SE": 0,
+            "MA": 0
+          },
+          "FP": {
+            "EX": 0,
+            "HE": 0,
+            "SE": 0,
+            "MA": 0
+          },
+          "FN": {
+            "EX": 0,
+            "HE": 0,
+            "SE": 0,
+            "MA": 0
+          }
+        },
+        "legacy_iou_A": {
+          "EX": 1.0,
+          "HE": null,
+          "SE": null,
+          "MA": null
+        },
+        "legacy_iou_B": {
+          "EX": 0.5,
+          "HE": null,
+          "SE": null,
+          "MA": null
+        },
+        "oracle_counts_invariant": true,
+        "legacy_changes": true
+      },
+      "status": "PASS"
+    },
+    {
+      "test_id": "S12",
+      "required": true,
+      "input_case": "S12",
+      "expected": {
+        "order_invariant": true
+      },
+      "actual": {
+        "counts_ab": [
+          {
+            "EX": 1,
+            "HE": 0,
+            "SE": 0,
+            "MA": 0
+          },
+          {
+            "EX": 1,
+            "HE": 0,
+            "SE": 0,
+            "MA": 0
+          },
+          {
+            "EX": 0,
+            "HE": 0,
+            "SE": 0,
+            "MA": 0
+          }
+        ],
+        "counts_ba": [
+          {
+            "EX": 1,
+            "HE": 0,
+            "SE": 0,
+            "MA": 0
+          },
+          {
+            "EX": 1,
+            "HE": 0,
+            "SE": 0,
+            "MA": 0
+          },
+          {
+            "EX": 0,
+            "HE": 0,
+            "SE": 0,
+            "MA": 0
+          }
+        ],
+        "miou_ab": 0.125,
+        "miou_ba": 0.125,
+        "order_invariant": true
+      },
+      "status": "PASS"
+    }
+  ]
+}

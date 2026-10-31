@@ -1,0 +1,175 @@
+{
+  "stage": "WMI_SERVICE_PARENT_AND_NO_KILL_ON_JOB_CLOSE_VERIFIED",
+  "time": "2026-10-05T12:38:02.341849+00:00",
+  "helpers": {
+    "primary": {
+      "process": {
+        "pid": 30004,
+        "parent_pid": 7344,
+        "parent_name": "WmiPrvSE.exe",
+        "command_line": "\"C:\\Users\\GuanXingRen\\Miniconda3\\python.exe\" -u \"D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\execution\\reports\\independent_local_attendant_runner.py\" primary",
+        "alive": true,
+        "creation_date": "2026-10-05T20:35:04.02055+08:00"
+      },
+      "isolation": {
+        "pid": 30004,
+        "parent_pid": 7344,
+        "time": "2026-10-05T12:35:04.193635+00:00",
+        "query_ok": true,
+        "in_job_object": true,
+        "limit_query_ok": true,
+        "job_limit_flags": 6144,
+        "kill_on_job_close": false,
+        "required_CREATE_BREAKAWAY_FROM_JOB": true,
+        "acceptance": "No kill-on-close job; WMI service parent verified separately"
+      },
+      "pid_record": {
+        "pid": 30004,
+        "time": "2026-10-05T12:35:04.195410+00:00",
+        "role": "primary",
+        "helper": "reports/primary_parallel_attendant.py",
+        "runner": "reports/independent_local_attendant_runner.py",
+        "helper_sha256": "f76acf364bdcd56adc290c73ab7d47c9f6641bb817d1b0262b96483d8831578e",
+        "launcher": "Win32_Process.Create with hidden startup and CREATE_BREAKAWAY_FROM_JOB; WMI service parent and no kill-on-close job verified",
+        "training_unchanged": true
+      },
+      "lock": {
+        "pid": 30004,
+        "time": "2026-10-05T12:35:05.538574+00:00"
+      },
+      "transfer_progress": {
+        "stage": "TRANSFERRING",
+        "full": false,
+        "verified_files": 6206,
+        "expected_files": 6692,
+        "verified_bytes": 267668890,
+        "expected_bytes": 270504887,
+        "updated_at": "2026-10-05T12:38:02.289381+00:00"
+      },
+      "attendant_state": {
+        "stage": "WAITING",
+        "time": "2026-10-05T11:33:29.479975+00:00"
+      },
+      "stderr_bytes": 412
+    },
+    "second": {
+      "process": {
+        "pid": 31456,
+        "parent_pid": 7344,
+        "parent_name": "WmiPrvSE.exe",
+        "command_line": "\"C:\\Users\\GuanXingRen\\Miniconda3\\python.exe\" -u \"D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\execution\\reports\\independent_local_attendant_runner.py\" second",
+        "alive": true,
+        "creation_date": "2026-10-05T20:35:04.052515+08:00"
+      },
+      "isolation": {
+        "pid": 31456,
+        "parent_pid": 7344,
+        "time": "2026-10-05T12:35:04.207588+00:00",
+        "query_ok": true,
+        "in_job_object": true,
+        "limit_query_ok": true,
+        "job_limit_flags": 6144,
+        "kill_on_job_close": false,
+        "required_CREATE_BREAKAWAY_FROM_JOB": true,
+        "acceptance": "No kill-on-close job; WMI service parent verified separately"
+      },
+      "pid_record": {
+        "pid": 31456,
+        "time": "2026-10-05T12:35:04.208839+00:00",
+        "role": "second",
+        "helper": "reports/parallel_node2_attendant.py",
+        "runner": "reports/independent_local_attendant_runner.py",
+        "helper_sha256": "037d0a4db1838ae991ace0d4c200a84b7ab1b6fc6d5ac1ae58ca0acc5ed7b2a5",
+        "launcher": "Win32_Process.Create with hidden startup and CREATE_BREAKAWAY_FROM_JOB; WMI service parent and no kill-on-close job verified",
+        "training_unchanged": true
+      },
+      "lock": {
+        "pid": 31456,
+        "time": "2026-10-05T12:35:05.537946+00:00"
+      },
+      "transfer_progress": {
+        "stage": "TRANSFERRING",
+        "full": false,
+        "verified_files": 2824,
+        "expected_files": 3218,
+        "verified_bytes": 188088647,
+        "expected_bytes": 5026141020,
+        "updated_at": "2026-10-05T12:36:58.009781+00:00"
+      },
+      "attendant_state": {
+        "stage": "WAITING",
+        "time": "2026-10-05T11:33:56.799158+00:00"
+      },
+      "stderr_bytes": 0
+    },
+    "coordinator": {
+      "process": {
+        "pid": 15752,
+        "parent_pid": 7344,
+        "parent_name": "WmiPrvSE.exe",
+        "command_line": "\"C:\\Users\\GuanXingRen\\Miniconda3\\python.exe\" -u \"D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\execution\\reports\\independent_local_attendant_runner.py\" coordinator",
+        "alive": true,
+        "creation_date": "2026-10-05T20:35:04.080522+08:00"
+      },
+      "isolation": {
+        "pid": 15752,
+        "parent_pid": 7344,
+        "time": "2026-10-05T12:35:04.236651+00:00",
+        "query_ok": true,
+        "in_job_object": true,
+        "limit_query_ok": true,
+        "job_limit_flags": 6144,
+        "kill_on_job_close": false,
+        "required_CREATE_BREAKAWAY_FROM_JOB": true,
+        "acceptance": "No kill-on-close job; WMI service parent verified separately"
+      },
+      "pid_record": {
+        "pid": 15752,
+        "time": "2026-10-05T12:35:04.238172+00:00",
+        "role": "coordinator",
+        "helper": "reports/parallel_single_seed_coordinator.py",
+        "runner": "reports/independent_local_attendant_runner.py",
+        "helper_sha256": "267f4433f9ac5f0f886d062766a2a10057b00c1995b6ab92b48084e28f81ef5d",
+        "launcher": "Win32_Process.Create with hidden startup and CREATE_BREAKAWAY_FROM_JOB; WMI service parent and no kill-on-close job verified",
+        "training_unchanged": true
+      },
+      "stderr_bytes": 0
+    }
+  },
+  "no_training_restart": true,
+  "scientific_helper_files_unchanged": true,
+  "direct_child_retained_app_kill_job_and_was_rejected": {
+    "pid": 19208,
+    "ppid": 25748,
+    "in_job": true,
+    "query_ok": true,
+    "limit_query_ok": true,
+    "last_error": 0,
+    "limit_flags": 8192,
+    "kill_on_close": true,
+    "breakaway_allowed": false,
+    "argv": [
+      "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\execution\\reports\\probe_background_job_20261005.py",
+      "direct_breakaway"
+    ],
+    "bounded_probe_completed": true
+  },
+  "WMI_probe": {
+    "pid": 24976,
+    "ppid": 7344,
+    "in_job": true,
+    "query_ok": true,
+    "limit_query_ok": true,
+    "last_error": 0,
+    "limit_flags": 6144,
+    "kill_on_close": false,
+    "breakaway_allowed": true,
+    "argv": [
+      "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\execution\\reports\\probe_background_job_20261005.py",
+      "wmi_breakaway"
+    ],
+    "bounded_probe_completed": true
+  },
+  "old_19_31_parent_only_claim_superseded": true,
+  "exact_prior_helper_exit_cause_not_proven": true
+}

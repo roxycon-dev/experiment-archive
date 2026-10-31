@@ -1,0 +1,158 @@
+{
+  "generated_at": "2026-09-16T19:59:49.729118+08:00",
+  "phase": "A4_data_boundary",
+  "constraint_note": "test 标签统计被有意跳过，不用于指导设计（prompt §3.4）；本文件仅作完整性审计记录。",
+  "split_assignment": {
+    "n_entries": 757,
+    "sha256": "840108c13683eee24681195c8f2046aecb1710d41686053a72479a194ce696e3",
+    "field_presence": {
+      "original_subset": 757,
+      "split": 757,
+      "tier": 757,
+      "se_ratio": 757,
+      "class_pixels": 757
+    },
+    "split_counts": {
+      "val": 76,
+      "train": 454,
+      "test": 227
+    },
+    "original_subset_counts": {
+      "train": 383,
+      "val": 149,
+      "test": 225
+    },
+    "tier_counts": {
+      "A": 518,
+      "B": 119,
+      "C": 120
+    },
+    "count_check_454_76_227": {
+      "train": {
+        "expected": 454,
+        "actual": 454,
+        "pass": true
+      },
+      "val": {
+        "expected": 76,
+        "actual": 76,
+        "pass": true
+      },
+      "test": {
+        "expected": 227,
+        "actual": 227,
+        "pass": true
+      }
+    },
+    "total_entries": 757,
+    "disjointness": {
+      "test∩train": {
+        "n_overlap": 0,
+        "pass": true,
+        "sample": []
+      },
+      "test∩val": {
+        "n_overlap": 0,
+        "pass": true,
+        "sample": []
+      },
+      "train∩val": {
+        "n_overlap": 0,
+        "pass": true,
+        "sample": []
+      }
+    },
+    "duplicate_basenames": {
+      "n": 0,
+      "sample": {}
+    },
+    "patient_id_inference": {
+      "rule": "文件名形如 NNN-xxxx-NNN.jpg 时取前 3 位为患者号；否则记为 TIMESTAMP",
+      "filename_pattern_counts": {
+        "NNN-xxxx-NNN 形式": 644,
+        "纯数字时间戳": 113
+      },
+      "distinct_nnn_prefixes": [
+        "007"
+      ],
+      "rule_usable": false,
+      "verdict": "BLOCKED: 患者 ID 无法从文件名可靠推断。证据：644 个 NNN 形式文件的前缀全部是 ['007']（批次编号而非患者号），113 个文件是纯数字时间戳无法归组。因此任何基于文件名的'患者重叠'结论都是规则假象，不得作为患者级泄漏证据。需要数据集自带的患者映射表才能做患者级审计。",
+      "raw_overlap_warning": "以下数字为失效规则的产物，仅作反例留存，不得引用为患者级重叠证据",
+      "raw_overlap_from_bad_rule": {
+        "val": [
+          "P007",
+          "TIMESTAMP"
+        ],
+        "test": [
+          "P007",
+          "TIMESTAMP"
+        ]
+      },
+      "n_patients_per_split_from_bad_rule": {
+        "val": 2,
+        "train": 2,
+        "test": 2
+      }
+    },
+    "class_pixels_train_val_only": {
+      "train": {
+        "n_images": 454,
+        "class_pixels": {
+          "EX": 5786406,
+          "HE": 8873022,
+          "SE": 1327479,
+          "MA": 527407
+        }
+      },
+      "val": {
+        "n_images": 76,
+        "class_pixels": {
+          "EX": 292046,
+          "HE": 1207733,
+          "SE": 201420,
+          "MA": 69284
+        }
+      }
+    },
+    "class_pixels_test": "SKIPPED_BY_DESIGN(prompt §3.4)",
+    "all_fields_seen": [
+      "class_pixels",
+      "original_subset",
+      "se_ratio",
+      "split",
+      "tier"
+    ]
+  },
+  "data_manifest": {
+    "n_entries": 1514,
+    "kind_counts": {
+      "val": 152,
+      "test": 454,
+      "train": 908
+    },
+    "kind_x_split": {
+      "test/test": 454,
+      "train/train": 908,
+      "val/val": 152
+    },
+    "has_sha256": true,
+    "sample": {
+      "path": "data/DDR_split_613/images/val/007-1774-100.jpg",
+      "bytes": 1001293,
+      "sha256": "7714411398671092bf447824296ce8aaf8addec3d9cde7794e0b67e1dc37c99f"
+    },
+    "image_label_pairing": {
+      "n_images": 757,
+      "n_labels": 757,
+      "images_without_label": [],
+      "labels_without_image": [],
+      "pass": true
+    },
+    "cross_split_duplicate_image_hashes": {
+      "n": 0,
+      "sample": {}
+    }
+  },
+  "hard_failures": [],
+  "status": "PASS"
+}

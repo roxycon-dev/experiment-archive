@@ -1,0 +1,99 @@
+{
+  "identity_SHA": "4948bd7a9a745f32abf0679a5bf8026e943569392de78c086e87c0138d683fed",
+  "identity": {
+    "protocol": {
+      "design_version": 11,
+      "name": "HRDecoder-DirectMultiscaleAdapter",
+      "seed": 42,
+      "private_seed": 20261008,
+      "canvas": 2048,
+      "updates": 40000,
+      "global_batch": 2,
+      "precision": "BF16 network; FP32 residual composition/probabilities/losses",
+      "optimizer": {
+        "type": "SGD",
+        "lr": 0.005,
+        "private_lr_multiplier": 4,
+        "momentum": 0.9,
+        "weight_decay": 0.0005
+      },
+      "lr": {
+        "type": "poly",
+        "power": 1,
+        "warmup": 1500,
+        "warmup_ratio": 1e-06
+      },
+      "lambda_k": [
+        [
+          0,
+          0
+        ],
+        [
+          1500,
+          0
+        ],
+        [
+          4000,
+          0.5
+        ],
+        [
+          32000,
+          0.5
+        ],
+        [
+          40000,
+          0.1
+        ]
+      ],
+      "GT": "base original-formula Dice + .1 HRcrop Dice; private Dice + .25 ordinary all-valid BCE",
+      "mask": "Existing geometry-valid and ignore255 masking retained; not claiming every original training detail identical",
+      "KD": "private only fixed GT-consistent train teacher T*, all-valid normalization; no moving student targets",
+      "readout": "W48 F1-F4 project32/sum; RGB16+probability16; DW7-LN-e2 blocks64x2; zero64->64/pixelshuffle4",
+      "gradient_route": "all four HRNet feature inputs and p0 detached; final=z0.float().detach()+r.float(); no private gradient into base",
+      "inference": "resize final FP32 logits then sigmoid; no teacher or GT",
+      "classes": [
+        "EX",
+        "HE",
+        "SE",
+        "MA"
+      ],
+      "threshold": "strictly > .5",
+      "validation_images": 76,
+      "validation_interval": 4000,
+      "student_TTA": false,
+      "inference_teacher": false,
+      "inference_online_H4": false,
+      "test_selection": false,
+      "shutdown_after_completion": false,
+      "data_cache_hash_rescan": false,
+      "initialization": "fresh ImageNet W48 seed42; no warm task weights",
+      "screen_updates": 4000,
+      "accuracy_guaranteed": false
+    },
+    "code": {
+      "baseline.py": "3e19781d2172a7b211f80994739b387d3235c966dd9c81b2f777e1b3c33b2aa9",
+      "model.py": "4bfcbce775ce7ea9af7d3453ec5cf6337d3cd025f541d57690abee7c759112e3",
+      "private_modules.py": "08541136cd72e039a02f145adba9410b404f6852bc226ab716639e43cc82ec60",
+      "stable_objectives.py": "bf79135d2f756b4abcad655beee9ed24f7bde738f62588a5532917e4b881e3ae",
+      "fast_objectives.py": "040a52c29ee9429834a4650bd51242e60a709b9ea2b11095433c9c9e4f969f1a",
+      "objectives.py": "501a6fa798203f37946ae0d3e90f43a4a9aef8369a1efd7eceb7da9b056f6fbb",
+      "data.py": "6145eb862cf75b895767ad627b4bac9ae6a417feacd92c909a4771765bce6545",
+      "loader.py": "ca9642f64c107df309127ddf5197fab5c86c46907ff5f247b5f5772d728ff74e",
+      "train.py": "6ade097741811da299734184ce196157ca98aa406095170759fe878bbb09cef9"
+    },
+    "spec_SHA": "50807d42f4254952a56ab1f7500f4846789d13f75d1d57545791f3ea13708a1e",
+    "screen_protocol_SHA": "c49a89cfd6ad431b1241cea85e609556a7e7be0efd6e8680f128af2f354a40a0",
+    "screen_gate_code_SHA": "0144873ce047232a76f3dbbe000825fc06afa348c733140c324be003ce57d2ad",
+    "ImageNet_W48_SHA": "d2186c55782308392ae14cf179ac4840143b09abdbba81aa3f9274c795ebc960",
+    "data_identity_SHA": "7c53b86bcb27ccd121042f667cc58e39b98716a8c477bfd1f1657fa126575719",
+    "cache_identity": {
+      "A": "0674eb8fd875187e92bc4369e6fc41eb906339acb1f2057bd1d2dcd6c6933ec1",
+      "U": "1696b6eed682e116e98b6630bd429bd49986c24323010215fa8a0b4364952aa5",
+      "S": "b9f9886b393b14c2a25863d56fdbc1f6667bfab1200410d83fd0eb223471207a"
+    },
+    "torch": "2.0.1+cu117"
+  },
+  "baseline_initial_state_SHA": "e180ed1738b5cde6797e60a124aaf75b3cc78309463bb358a240cbddf0480f00",
+  "initialization": "fresh ImageNet seed42; no prior-task checkpoint; own run resumes only",
+  "resume_from_own_update": 1000
+}

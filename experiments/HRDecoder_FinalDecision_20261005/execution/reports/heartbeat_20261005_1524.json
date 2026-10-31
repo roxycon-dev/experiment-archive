@@ -1,0 +1,1669 @@
+{
+  "stage": "SD32_FORMAL_TRAINING_COMPLETE_D_TRAINING",
+  "heartbeat_trigger": "2026-10-05T15:24:26.389Z",
+  "observed_at": "2026-10-05T15:29:41.020195+00:00",
+  "atomic_states": {
+    "primary": {
+      "driver": {
+        "stage": "CAMPAIGN",
+        "pid": 18787,
+        "time": "2026-10-04T21:16:20.663409+00:00"
+      },
+      "campaign": {
+        "stage": "RUNNING",
+        "current_run": "D_seed42",
+        "queue": [
+          [
+            "C",
+            42
+          ],
+          [
+            "S",
+            42
+          ],
+          [
+            "D",
+            42
+          ],
+          [
+            "SD",
+            42
+          ],
+          [
+            "PARENT_F12",
+            2024
+          ],
+          [
+            "C",
+            2024
+          ],
+          [
+            "S",
+            2024
+          ],
+          [
+            "D",
+            2024
+          ],
+          [
+            "SD",
+            2024
+          ]
+        ],
+        "updated_at": "2026-10-05T10:09:41.031997+00:00"
+      },
+      "runs": {
+        "C_seed42": {
+          "stage": "COMPLETE",
+          "completed": 32000,
+          "endpoint": 32000,
+          "updated_at": "2026-10-05T02:31:24.012530+00:00"
+        },
+        "S_seed42": {
+          "stage": "COMPLETE",
+          "completed": 32000,
+          "endpoint": 32000,
+          "updated_at": "2026-10-05T10:09:39.504955+00:00"
+        },
+        "D_seed42": {
+          "stage": "TRAINING",
+          "completed": 23200,
+          "endpoint": 32000,
+          "updated_at": "2026-10-05T15:25:16.021617+00:00",
+          "recent": {
+            "loss": 0.08873579651117325,
+            "grad_norm": 2.2524003982543945,
+            "seconds": 0.5442678399849683,
+            "data_wait_seconds": 0.001317908987402916,
+            "peak_gpu_bytes": 11004799488
+          }
+        }
+      },
+      "free_disk_bytes": 22140481536,
+      "observed_at": "2026-10-05T15:25:26.354905+00:00"
+    },
+    "second": {
+      "driver": {
+        "stage": "PARALLEL_ASSIGNED_RUNS_COMPLETE_WAITING_FOR_GLOBAL",
+        "pid": 3295,
+        "time": "2026-10-05T15:24:31.169924+00:00"
+      },
+      "campaign": {
+        "stage": "PARALLEL_ASSIGNED_RUNS_COMPLETE_WAITING_FOR_GLOBAL",
+        "current_run": "SD_seed42",
+        "queue": [
+          [
+            "SD",
+            42
+          ]
+        ],
+        "time": "2026-10-05T15:24:31.169620+00:00"
+      },
+      "runs": {
+        "SD_seed42": {
+          "stage": "COMPLETE",
+          "completed": 32000,
+          "endpoint": 32000,
+          "updated_at": "2026-10-05T15:24:29.839699+00:00"
+        }
+      },
+      "free_disk_bytes": 12838899712,
+      "observed_at": "2026-10-05T15:25:27.577794+00:00"
+    },
+    "authorized_seed_scope": [
+      42
+    ],
+    "assigned_runs": {
+      "primary": [
+        "C_seed42",
+        "S_seed42",
+        "D_seed42"
+      ],
+      "second": [
+        "SD_seed42"
+      ]
+    },
+    "old_primary_loaded_queue_is_superseded_by_boundary_amendment": true,
+    "time": "2026-10-05T15:25:27.579965+00:00"
+  },
+  "validation_evidence": {
+    "time": "2026-10-05T15:26:30.984123+00:00",
+    "nodes": [
+      {
+        "run": "D_seed42",
+        "validation_curve": [
+          {
+            "update": 4000,
+            "metric_sha256": "c27d573e99b9a8ffe3b339fbac730f9016a1bd7f798b3611665420598e4efec6",
+            "n_images": 76,
+            "per_image_count": 76,
+            "scores": {
+              "single": 40.845137169176596,
+              "fixed_fusion": 44.81903825796121,
+              "half_fusion": 42.69589728421687
+            },
+            "counts": {
+              "single": [
+                [
+                  190890,
+                  118233,
+                  99913
+                ],
+                [
+                  651542,
+                  417700,
+                  554382
+                ],
+                [
+                  151081,
+                  68752,
+                  50323
+                ],
+                [
+                  24123,
+                  47479,
+                  45161
+                ]
+              ],
+              "fixed_fusion": [
+                [
+                  187441,
+                  83661,
+                  103362
+                ],
+                [
+                  689750,
+                  361087,
+                  516174
+                ],
+                [
+                  141220,
+                  38441,
+                  60184
+                ],
+                [
+                  27060,
+                  33513,
+                  42224
+                ]
+              ],
+              "half_fusion": [
+                [
+                  190550,
+                  94572,
+                  100253
+                ],
+                [
+                  657156,
+                  349933,
+                  548768
+                ],
+                [
+                  149029,
+                  60694,
+                  52375
+                ],
+                [
+                  24666,
+                  41621,
+                  44618
+                ]
+              ]
+            },
+            "probability_files": 0,
+            "single_gain_vs_parent_pp": 0.6033035686605714,
+            "fixed25_gain_vs_R42_pp": 0.4633459194228351,
+            "combined_collapse": false
+          },
+          {
+            "update": 8000,
+            "metric_sha256": "a42fcc9d604c40ab559e6e4d8b793ba3ffd969d87a0da54f0ff3df94a10fdbc7",
+            "n_images": 76,
+            "per_image_count": 76,
+            "scores": {
+              "single": 41.587832157303886,
+              "fixed_fusion": 44.98818933537731,
+              "half_fusion": 43.2479783032601
+            },
+            "counts": {
+              "single": [
+                [
+                  190465,
+                  112831,
+                  100338
+                ],
+                [
+                  651973,
+                  410009,
+                  553951
+                ],
+                [
+                  148621,
+                  54662,
+                  52783
+                ],
+                [
+                  23704,
+                  44803,
+                  45580
+                ]
+              ],
+              "fixed_fusion": [
+                [
+                  187338,
+                  82553,
+                  103465
+                ],
+                [
+                  691315,
+                  360005,
+                  514609
+                ],
+                [
+                  140608,
+                  36253,
+                  60796
+                ],
+                [
+                  27003,
+                  32751,
+                  42281
+                ]
+              ],
+              "half_fusion": [
+                [
+                  190291,
+                  93774,
+                  100512
+                ],
+                [
+                  653506,
+                  336980,
+                  552418
+                ],
+                [
+                  147165,
+                  48502,
+                  54239
+                ],
+                [
+                  24269,
+                  39704,
+                  45015
+                ]
+              ]
+            },
+            "probability_files": 0,
+            "single_gain_vs_parent_pp": 1.3459985567878618,
+            "fixed25_gain_vs_R42_pp": 0.6324969968389311,
+            "combined_collapse": false
+          },
+          {
+            "update": 12000,
+            "metric_sha256": "efaf60ba21af097269866d0ccbdca262ec4c84a10cee214eb5f9153c0cbd1b36",
+            "n_images": 76,
+            "per_image_count": 76,
+            "scores": {
+              "single": 40.98629369907318,
+              "fixed_fusion": 44.83109978124305,
+              "half_fusion": 42.91118134437835
+            },
+            "counts": {
+              "single": [
+                [
+                  189450,
+                  120606,
+                  101353
+                ],
+                [
+                  653721,
+                  433269,
+                  552203
+                ],
+                [
+                  150781,
+                  54151,
+                  50623
+                ],
+                [
+                  21287,
+                  42670,
+                  47997
+                ]
+              ],
+              "fixed_fusion": [
+                [
+                  187014,
+                  82934,
+                  103789
+                ],
+                [
+                  691717,
+                  363163,
+                  514207
+                ],
+                [
+                  140940,
+                  36518,
+                  60464
+                ],
+                [
+                  26421,
+                  32478,
+                  42863
+                ]
+              ],
+              "half_fusion": [
+                [
+                  189451,
+                  95683,
+                  101352
+                ],
+                [
+                  654894,
+                  341686,
+                  551030
+                ],
+                [
+                  148943,
+                  48078,
+                  52461
+                ],
+                [
+                  22136,
+                  38128,
+                  47148
+                ]
+              ]
+            },
+            "probability_files": 0,
+            "single_gain_vs_parent_pp": 0.7444600985571554,
+            "fixed25_gain_vs_R42_pp": 0.4754074427046717,
+            "combined_collapse": false
+          },
+          {
+            "update": 16000,
+            "metric_sha256": "194d1e29ba22fa7cc65182cd0363b5e97fc9d353502eefe2162c339027238eed",
+            "n_images": 76,
+            "per_image_count": 76,
+            "scores": {
+              "single": 41.74529041735106,
+              "fixed_fusion": 45.13379698396544,
+              "half_fusion": 43.51934893893609
+            },
+            "counts": {
+              "single": [
+                [
+                  190647,
+                  123600,
+                  100156
+                ],
+                [
+                  650825,
+                  332157,
+                  555099
+                ],
+                [
+                  151764,
+                  52480,
+                  49640
+                ],
+                [
+                  20974,
+                  41778,
+                  48310
+                ]
+              ],
+              "fixed_fusion": [
+                [
+                  187095,
+                  82890,
+                  103708
+                ],
+                [
+                  690872,
+                  337270,
+                  515052
+                ],
+                [
+                  141546,
+                  35793,
+                  59858
+                ],
+                [
+                  26380,
+                  32079,
+                  42904
+                ]
+              ],
+              "half_fusion": [
+                [
+                  190807,
+                  95399,
+                  99996
+                ],
+                [
+                  654142,
+                  286238,
+                  551782
+                ],
+                [
+                  149937,
+                  46681,
+                  51467
+                ],
+                [
+                  21753,
+                  37374,
+                  47531
+                ]
+              ]
+            },
+            "probability_files": 0,
+            "single_gain_vs_parent_pp": 1.5034568168350333,
+            "fixed25_gain_vs_R42_pp": 0.7781046454270637,
+            "combined_collapse": false
+          },
+          {
+            "update": 20000,
+            "metric_sha256": "99e95939094367760d1ec0c077c08cbedf5138a7671994b3b19c4daa836df46c",
+            "n_images": 76,
+            "per_image_count": 76,
+            "scores": {
+              "single": 41.90817108639014,
+              "fixed_fusion": 45.10097806563186,
+              "half_fusion": 43.488406812370975
+            },
+            "counts": {
+              "single": [
+                [
+                  191097,
+                  110718,
+                  99706
+                ],
+                [
+                  651689,
+                  330382,
+                  554235
+                ],
+                [
+                  146765,
+                  48337,
+                  54639
+                ],
+                [
+                  20782,
+                  40946,
+                  48502
+                ]
+              ],
+              "fixed_fusion": [
+                [
+                  187033,
+                  81168,
+                  103770
+                ],
+                [
+                  689115,
+                  334806,
+                  516809
+                ],
+                [
+                  140537,
+                  35256,
+                  60867
+                ],
+                [
+                  26320,
+                  31899,
+                  42964
+                ]
+              ],
+              "half_fusion": [
+                [
+                  191152,
+                  90859,
+                  99651
+                ],
+                [
+                  655360,
+                  274827,
+                  550564
+                ],
+                [
+                  145284,
+                  43682,
+                  56120
+                ],
+                [
+                  21525,
+                  36583,
+                  47759
+                ]
+              ]
+            },
+            "probability_files": 76,
+            "single_gain_vs_parent_pp": 1.6663374858741165,
+            "fixed25_gain_vs_R42_pp": 0.7452857270934814,
+            "combined_collapse": false
+          }
+        ],
+        "boundary": {
+          "stage": "ARMED_AFTER_D42_BOUNDARY",
+          "pid": 44281,
+          "time": "2026-10-05T04:11:34.270609+00:00",
+          "process_alive": true
+        }
+      },
+      {
+        "run": "SD_seed42",
+        "validation_curve": [
+          {
+            "update": 4000,
+            "metric_sha256": "08a9ecb510881d909bdf6abdd4fe6614f5e637967371f5c36907d93855cd20d9",
+            "n_images": 76,
+            "per_image_count": 76,
+            "scores": {
+              "single": 39.65700941327202,
+              "fixed_fusion": 45.06749663241366,
+              "half_fusion": 43.318394842689585
+            },
+            "counts": {
+              "single": [
+                [
+                  193963,
+                  132417,
+                  96840
+                ],
+                [
+                  669384,
+                  746422,
+                  536540
+                ],
+                [
+                  153903,
+                  65905,
+                  47501
+                ],
+                [
+                  25455,
+                  52297,
+                  43829
+                ]
+              ],
+              "fixed_fusion": [
+                [
+                  188432,
+                  86130,
+                  102371
+                ],
+                [
+                  695750,
+                  350128,
+                  510174
+                ],
+                [
+                  142226,
+                  38075,
+                  59178
+                ],
+                [
+                  27153,
+                  34445,
+                  42131
+                ]
+              ],
+              "half_fusion": [
+                [
+                  193161,
+                  103987,
+                  97642
+                ],
+                [
+                  671074,
+                  350101,
+                  534850
+                ],
+                [
+                  151341,
+                  56713,
+                  50063
+                ],
+                [
+                  25892,
+                  45354,
+                  43392
+                ]
+              ]
+            },
+            "probability_files": 0,
+            "single_gain_vs_parent_pp": -0.5848241872440028,
+            "fixed25_gain_vs_R42_pp": 0.7118042938752822,
+            "combined_collapse": false
+          },
+          {
+            "update": 8000,
+            "metric_sha256": "5754d1bbb8a2c1cef274ad0d04acf6fe7d191ec793226969ef6c54efdc8a9a6d",
+            "n_images": 76,
+            "per_image_count": 76,
+            "scores": {
+              "single": 41.27487871289849,
+              "fixed_fusion": 44.5898536602842,
+              "half_fusion": 43.25308579485186
+            },
+            "counts": {
+              "single": [
+                [
+                  192323,
+                  116078,
+                  98480
+                ],
+                [
+                  673712,
+                  561584,
+                  532212
+                ],
+                [
+                  150806,
+                  53978,
+                  50598
+                ],
+                [
+                  24682,
+                  50159,
+                  44602
+                ]
+              ],
+              "fixed_fusion": [
+                [
+                  187902,
+                  82539,
+                  102901
+                ],
+                [
+                  697004,
+                  411425,
+                  508920
+                ],
+                [
+                  139547,
+                  36529,
+                  61857
+                ],
+                [
+                  27169,
+                  34081,
+                  42115
+                ]
+              ],
+              "half_fusion": [
+                [
+                  191880,
+                  93086,
+                  98923
+                ],
+                [
+                  670081,
+                  429293,
+                  535843
+                ],
+                [
+                  148799,
+                  47319,
+                  52605
+                ],
+                [
+                  25193,
+                  44066,
+                  44091
+                ]
+              ]
+            },
+            "probability_files": 0,
+            "single_gain_vs_parent_pp": 1.0330451123824673,
+            "fixed25_gain_vs_R42_pp": 0.23416132174582316,
+            "combined_collapse": false
+          },
+          {
+            "update": 12000,
+            "metric_sha256": "3a2ba2607061b3d0933c73e6d2a941455de657c65477ce5bd42978abc82a0107",
+            "n_images": 76,
+            "per_image_count": 76,
+            "scores": {
+              "single": 40.59472560667222,
+              "fixed_fusion": 44.698779675420255,
+              "half_fusion": 42.98117676693797
+            },
+            "counts": {
+              "single": [
+                [
+                  193130,
+                  145546,
+                  97673
+                ],
+                [
+                  683194,
+                  614525,
+                  522730
+                ],
+                [
+                  150593,
+                  48655,
+                  50811
+                ],
+                [
+                  23300,
+                  45119,
+                  45984
+                ]
+              ],
+              "fixed_fusion": [
+                [
+                  187941,
+                  83425,
+                  102862
+                ],
+                [
+                  696740,
+                  412359,
+                  509184
+                ],
+                [
+                  140443,
+                  34442,
+                  60961
+                ],
+                [
+                  26633,
+                  33264,
+                  42651
+                ]
+              ],
+              "half_fusion": [
+                [
+                  192419,
+                  104603,
+                  98384
+                ],
+                [
+                  675734,
+                  458505,
+                  530190
+                ],
+                [
+                  148963,
+                  43298,
+                  52441
+                ],
+                [
+                  23786,
+                  39890,
+                  45498
+                ]
+              ]
+            },
+            "probability_files": 0,
+            "single_gain_vs_parent_pp": 0.3528920061561962,
+            "fixed25_gain_vs_R42_pp": 0.3430873368818794,
+            "combined_collapse": false
+          },
+          {
+            "update": 16000,
+            "metric_sha256": "51ea9588377b580b8a3139d9f1d80b9a54dfb2f2c8ee2eabb0c44f0b32152f6f",
+            "n_images": 76,
+            "per_image_count": 76,
+            "scores": {
+              "single": 41.64948052112553,
+              "fixed_fusion": 44.918844562947655,
+              "half_fusion": 43.36007037860048
+            },
+            "counts": {
+              "single": [
+                [
+                  191652,
+                  126108,
+                  99151
+                ],
+                [
+                  668325,
+                  473387,
+                  537599
+                ],
+                [
+                  151505,
+                  47790,
+                  49899
+                ],
+                [
+                  22222,
+                  41644,
+                  47062
+                ]
+              ],
+              "fixed_fusion": [
+                [
+                  187317,
+                  81349,
+                  103486
+                ],
+                [
+                  693244,
+                  394742,
+                  512680
+                ],
+                [
+                  140999,
+                  34132,
+                  60405
+                ],
+                [
+                  26563,
+                  32221,
+                  42721
+                ]
+              ],
+              "half_fusion": [
+                [
+                  191248,
+                  95201,
+                  99555
+                ],
+                [
+                  662565,
+                  403487,
+                  543359
+                ],
+                [
+                  149601,
+                  42076,
+                  51803
+                ],
+                [
+                  22675,
+                  37253,
+                  46609
+                ]
+              ]
+            },
+            "probability_files": 0,
+            "single_gain_vs_parent_pp": 1.4076469206095084,
+            "fixed25_gain_vs_R42_pp": 0.5631522244092793,
+            "combined_collapse": false
+          },
+          {
+            "update": 20000,
+            "metric_sha256": "19a6126481f6c02ba04c9910741cb5ac79f1e00f3b0d1e35e862fd2e9f48bd0c",
+            "n_images": 76,
+            "per_image_count": 76,
+            "scores": {
+              "single": 41.37961502605747,
+              "fixed_fusion": 44.88324597144078,
+              "half_fusion": 43.23014357793865
+            },
+            "counts": {
+              "single": [
+                [
+                  191389,
+                  126963,
+                  99414
+                ],
+                [
+                  663759,
+                  468834,
+                  542165
+                ],
+                [
+                  150982,
+                  45531,
+                  50422
+                ],
+                [
+                  20478,
+                  38891,
+                  48806
+                ]
+              ],
+              "fixed_fusion": [
+                [
+                  187108,
+                  79427,
+                  103695
+                ],
+                [
+                  690764,
+                  390640,
+                  515160
+                ],
+                [
+                  140999,
+                  33970,
+                  60405
+                ],
+                [
+                  26059,
+                  31623,
+                  43225
+                ]
+              ],
+              "half_fusion": [
+                [
+                  191295,
+                  93732,
+                  99508
+                ],
+                [
+                  661367,
+                  397479,
+                  544557
+                ],
+                [
+                  149516,
+                  40696,
+                  51888
+                ],
+                [
+                  21007,
+                  34877,
+                  48277
+                ]
+              ]
+            },
+            "probability_files": 76,
+            "single_gain_vs_parent_pp": 1.1377814255414478,
+            "fixed25_gain_vs_R42_pp": 0.5275536329024035,
+            "combined_collapse": false
+          },
+          {
+            "update": 24000,
+            "metric_sha256": "9956a1ba4a2268862c28310a159ed83c2beec8ee780022170d97d05d8fba3941",
+            "n_images": 76,
+            "per_image_count": 76,
+            "scores": {
+              "single": 41.0387457579174,
+              "fixed_fusion": 44.9473870952615,
+              "half_fusion": 43.157049460553175
+            },
+            "counts": {
+              "single": [
+                [
+                  189952,
+                  127514,
+                  100851
+                ],
+                [
+                  658552,
+                  441460,
+                  547372
+                ],
+                [
+                  149346,
+                  45653,
+                  52058
+                ],
+                [
+                  19557,
+                  37464,
+                  49727
+                ]
+              ],
+              "fixed_fusion": [
+                [
+                  186467,
+                  79479,
+                  104336
+                ],
+                [
+                  688266,
+                  362399,
+                  517658
+                ],
+                [
+                  140982,
+                  34291,
+                  60422
+                ],
+                [
+                  25844,
+                  31157,
+                  43440
+                ]
+              ],
+              "half_fusion": [
+                [
+                  190155,
+                  92186,
+                  100648
+                ],
+                [
+                  655842,
+                  357120,
+                  550082
+                ],
+                [
+                  148310,
+                  40394,
+                  53094
+                ],
+                [
+                  20249,
+                  33595,
+                  49035
+                ]
+              ]
+            },
+            "probability_files": 0,
+            "single_gain_vs_parent_pp": 0.7969121574013727,
+            "fixed25_gain_vs_R42_pp": 0.5916947567231219,
+            "combined_collapse": false
+          },
+          {
+            "update": 28000,
+            "metric_sha256": "eff0d6cebeb7e61934ff682bf5e895d585812ee1d133ee496c42af6f8233504c",
+            "n_images": 76,
+            "per_image_count": 76,
+            "scores": {
+              "single": 42.04708103099243,
+              "fixed_fusion": 45.14340478434379,
+              "half_fusion": 43.732136454326955
+            },
+            "counts": {
+              "single": [
+                [
+                  190571,
+                  114908,
+                  100232
+                ],
+                [
+                  666333,
+                  377320,
+                  539591
+                ],
+                [
+                  146931,
+                  39451,
+                  54473
+                ],
+                [
+                  19067,
+                  35909,
+                  50217
+                ]
+              ],
+              "fixed_fusion": [
+                [
+                  186551,
+                  78612,
+                  104252
+                ],
+                [
+                  688904,
+                  346945,
+                  517020
+                ],
+                [
+                  140718,
+                  33226,
+                  60686
+                ],
+                [
+                  25707,
+                  30600,
+                  43577
+                ]
+              ],
+              "half_fusion": [
+                [
+                  190695,
+                  88589,
+                  100108
+                ],
+                [
+                  663591,
+                  314397,
+                  542333
+                ],
+                [
+                  145773,
+                  35449,
+                  55631
+                ],
+                [
+                  19802,
+                  32414,
+                  49482
+                ]
+              ]
+            },
+            "probability_files": 0,
+            "single_gain_vs_parent_pp": 1.8052474304764061,
+            "fixed25_gain_vs_R42_pp": 0.7877124458054112,
+            "combined_collapse": false
+          },
+          {
+            "update": 32000,
+            "metric_sha256": "e4aef97c2b61f5700ac54cc2a62bb0ba04b85699f1fe4dc82a7fefc59f4280a9",
+            "n_images": 76,
+            "per_image_count": 76,
+            "scores": {
+              "single": 42.03123211772317,
+              "fixed_fusion": 45.138855455317554,
+              "half_fusion": 43.66968431945465
+            },
+            "counts": {
+              "single": [
+                [
+                  190097,
+                  112608,
+                  100706
+                ],
+                [
+                  661588,
+                  379432,
+                  544336
+                ],
+                [
+                  148041,
+                  38875,
+                  53363
+                ],
+                [
+                  18575,
+                  35902,
+                  50709
+                ]
+              ],
+              "fixed_fusion": [
+                [
+                  186377,
+                  78398,
+                  104426
+                ],
+                [
+                  687890,
+                  348433,
+                  518034
+                ],
+                [
+                  140714,
+                  32616,
+                  60690
+                ],
+                [
+                  25630,
+                  30484,
+                  43654
+                ]
+              ],
+              "half_fusion": [
+                [
+                  190310,
+                  87947,
+                  100493
+                ],
+                [
+                  660864,
+                  318071,
+                  545060
+                ],
+                [
+                  146807,
+                  34999,
+                  54597
+                ],
+                [
+                  19266,
+                  32289,
+                  50018
+                ]
+              ]
+            },
+            "probability_files": 76,
+            "single_gain_vs_parent_pp": 1.7893985172071467,
+            "fixed25_gain_vs_R42_pp": 0.7831631167791784,
+            "combined_collapse": false
+          }
+        ],
+        "registered_endpoint_request": {
+          "run": "SD_seed42",
+          "update": 32000,
+          "file_count": 77,
+          "bytes": 4877851708,
+          "metrics_sha256": "e4aef97c2b61f5700ac54cc2a62bb0ba04b85699f1fe4dc82a7fefc59f4280a9",
+          "request_sha256": "03bddf35db48e2b57320fbf47f2900e8e8998a8cee1df38cc98185255424c66d"
+        }
+      }
+    ]
+  },
+  "aggregate_count_recomputation": [
+    {
+      "run": "D_seed42",
+      "update": 4000,
+      "formula": "single",
+      "recomputed_mIoU": 40.84513716917659,
+      "error": 7.105427357601002e-15
+    },
+    {
+      "run": "D_seed42",
+      "update": 4000,
+      "formula": "fixed_fusion",
+      "recomputed_mIoU": 44.81903825796121,
+      "error": 0.0
+    },
+    {
+      "run": "D_seed42",
+      "update": 4000,
+      "formula": "half_fusion",
+      "recomputed_mIoU": 42.69589728421687,
+      "error": 0.0
+    },
+    {
+      "run": "D_seed42",
+      "update": 8000,
+      "formula": "single",
+      "recomputed_mIoU": 41.587832157303886,
+      "error": 0.0
+    },
+    {
+      "run": "D_seed42",
+      "update": 8000,
+      "formula": "fixed_fusion",
+      "recomputed_mIoU": 44.9881893353773,
+      "error": 7.105427357601002e-15
+    },
+    {
+      "run": "D_seed42",
+      "update": 8000,
+      "formula": "half_fusion",
+      "recomputed_mIoU": 43.2479783032601,
+      "error": 0.0
+    },
+    {
+      "run": "D_seed42",
+      "update": 12000,
+      "formula": "single",
+      "recomputed_mIoU": 40.98629369907318,
+      "error": 0.0
+    },
+    {
+      "run": "D_seed42",
+      "update": 12000,
+      "formula": "fixed_fusion",
+      "recomputed_mIoU": 44.83109978124305,
+      "error": 0.0
+    },
+    {
+      "run": "D_seed42",
+      "update": 12000,
+      "formula": "half_fusion",
+      "recomputed_mIoU": 42.91118134437835,
+      "error": 0.0
+    },
+    {
+      "run": "D_seed42",
+      "update": 16000,
+      "formula": "single",
+      "recomputed_mIoU": 41.74529041735106,
+      "error": 0.0
+    },
+    {
+      "run": "D_seed42",
+      "update": 16000,
+      "formula": "fixed_fusion",
+      "recomputed_mIoU": 45.133796983965446,
+      "error": 7.105427357601002e-15
+    },
+    {
+      "run": "D_seed42",
+      "update": 16000,
+      "formula": "half_fusion",
+      "recomputed_mIoU": 43.51934893893609,
+      "error": 0.0
+    },
+    {
+      "run": "D_seed42",
+      "update": 20000,
+      "formula": "single",
+      "recomputed_mIoU": 41.90817108639014,
+      "error": 0.0
+    },
+    {
+      "run": "D_seed42",
+      "update": 20000,
+      "formula": "fixed_fusion",
+      "recomputed_mIoU": 45.10097806563186,
+      "error": 0.0
+    },
+    {
+      "run": "D_seed42",
+      "update": 20000,
+      "formula": "half_fusion",
+      "recomputed_mIoU": 43.488406812370975,
+      "error": 0.0
+    },
+    {
+      "run": "SD_seed42",
+      "update": 4000,
+      "formula": "single",
+      "recomputed_mIoU": 39.65700941327202,
+      "error": 0.0
+    },
+    {
+      "run": "SD_seed42",
+      "update": 4000,
+      "formula": "fixed_fusion",
+      "recomputed_mIoU": 45.06749663241365,
+      "error": 7.105427357601002e-15
+    },
+    {
+      "run": "SD_seed42",
+      "update": 4000,
+      "formula": "half_fusion",
+      "recomputed_mIoU": 43.318394842689585,
+      "error": 0.0
+    },
+    {
+      "run": "SD_seed42",
+      "update": 8000,
+      "formula": "single",
+      "recomputed_mIoU": 41.27487871289849,
+      "error": 0.0
+    },
+    {
+      "run": "SD_seed42",
+      "update": 8000,
+      "formula": "fixed_fusion",
+      "recomputed_mIoU": 44.5898536602842,
+      "error": 0.0
+    },
+    {
+      "run": "SD_seed42",
+      "update": 8000,
+      "formula": "half_fusion",
+      "recomputed_mIoU": 43.25308579485186,
+      "error": 0.0
+    },
+    {
+      "run": "SD_seed42",
+      "update": 12000,
+      "formula": "single",
+      "recomputed_mIoU": 40.59472560667221,
+      "error": 7.105427357601002e-15
+    },
+    {
+      "run": "SD_seed42",
+      "update": 12000,
+      "formula": "fixed_fusion",
+      "recomputed_mIoU": 44.698779675420255,
+      "error": 0.0
+    },
+    {
+      "run": "SD_seed42",
+      "update": 12000,
+      "formula": "half_fusion",
+      "recomputed_mIoU": 42.98117676693797,
+      "error": 0.0
+    },
+    {
+      "run": "SD_seed42",
+      "update": 16000,
+      "formula": "single",
+      "recomputed_mIoU": 41.64948052112553,
+      "error": 0.0
+    },
+    {
+      "run": "SD_seed42",
+      "update": 16000,
+      "formula": "fixed_fusion",
+      "recomputed_mIoU": 44.918844562947655,
+      "error": 0.0
+    },
+    {
+      "run": "SD_seed42",
+      "update": 16000,
+      "formula": "half_fusion",
+      "recomputed_mIoU": 43.36007037860048,
+      "error": 0.0
+    },
+    {
+      "run": "SD_seed42",
+      "update": 20000,
+      "formula": "single",
+      "recomputed_mIoU": 41.37961502605747,
+      "error": 0.0
+    },
+    {
+      "run": "SD_seed42",
+      "update": 20000,
+      "formula": "fixed_fusion",
+      "recomputed_mIoU": 44.88324597144078,
+      "error": 0.0
+    },
+    {
+      "run": "SD_seed42",
+      "update": 20000,
+      "formula": "half_fusion",
+      "recomputed_mIoU": 43.23014357793865,
+      "error": 0.0
+    },
+    {
+      "run": "SD_seed42",
+      "update": 24000,
+      "formula": "single",
+      "recomputed_mIoU": 41.0387457579174,
+      "error": 0.0
+    },
+    {
+      "run": "SD_seed42",
+      "update": 24000,
+      "formula": "fixed_fusion",
+      "recomputed_mIoU": 44.9473870952615,
+      "error": 0.0
+    },
+    {
+      "run": "SD_seed42",
+      "update": 24000,
+      "formula": "half_fusion",
+      "recomputed_mIoU": 43.157049460553175,
+      "error": 0.0
+    },
+    {
+      "run": "SD_seed42",
+      "update": 28000,
+      "formula": "single",
+      "recomputed_mIoU": 42.04708103099243,
+      "error": 0.0
+    },
+    {
+      "run": "SD_seed42",
+      "update": 28000,
+      "formula": "fixed_fusion",
+      "recomputed_mIoU": 45.14340478434379,
+      "error": 0.0
+    },
+    {
+      "run": "SD_seed42",
+      "update": 28000,
+      "formula": "half_fusion",
+      "recomputed_mIoU": 43.732136454326955,
+      "error": 0.0
+    },
+    {
+      "run": "SD_seed42",
+      "update": 32000,
+      "formula": "single",
+      "recomputed_mIoU": 42.03123211772317,
+      "error": 0.0
+    },
+    {
+      "run": "SD_seed42",
+      "update": 32000,
+      "formula": "fixed_fusion",
+      "recomputed_mIoU": 45.138855455317554,
+      "error": 0.0
+    },
+    {
+      "run": "SD_seed42",
+      "update": 32000,
+      "formula": "half_fusion",
+      "recomputed_mIoU": 43.66968431945466,
+      "error": 7.105427357601002e-15
+    }
+  ],
+  "helper_ownership": {
+    "primary": {
+      "pid_record": {
+        "pid": 30004,
+        "time": "2026-10-05T12:35:04.195410+00:00",
+        "role": "primary",
+        "helper": "reports/primary_parallel_attendant.py",
+        "runner": "reports/independent_local_attendant_runner.py",
+        "helper_sha256": "f76acf364bdcd56adc290c73ab7d47c9f6641bb817d1b0262b96483d8831578e",
+        "launcher": "Win32_Process.Create with hidden startup and CREATE_BREAKAWAY_FROM_JOB; WMI service parent and no kill-on-close job verified",
+        "training_unchanged": true
+      },
+      "process": {
+        "ProcessId": 30004,
+        "ParentProcessId": 7344,
+        "CommandLine": "\"C:\\Users\\GuanXingRen\\Miniconda3\\python.exe\" -u \"D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\execution\\reports\\independent_local_attendant_runner.py\" primary"
+      },
+      "attendant_state.json": {
+        "stage": "WAITING",
+        "time": "2026-10-05T15:12:50.480177+00:00"
+      },
+      "persistent_receiver_state.json": {
+        "stage": "POOL_COMPLETED",
+        "time": "2026-10-05T15:12:49.640717+00:00",
+        "receiver_connections_opened": 2,
+        "files_received": 11,
+        "seconds": 1188.8677478000009,
+        "negotiated_compression": [
+          "zlib@openssh.com",
+          "zlib@openssh.com"
+        ],
+        "max_file_receivers": 2,
+        "original_mirror_sha256": "28492fcdbd64ae0e08145274af70368726275e2bdc52dbc99fa9177b6c0e366b",
+        "all_original_SHA_and_custody_gates_used": true
+      },
+      "transfer_progress.json": {
+        "stage": "TRANSFERRING",
+        "full": false,
+        "verified_files": 6628,
+        "expected_files": 7563,
+        "verified_bytes": 269222089,
+        "expected_bytes": 4853244813,
+        "updated_at": "2026-10-05T15:29:40.894719+00:00"
+      },
+      "mirror.lock": {
+        "pid": 30004,
+        "time": "2026-10-05T15:13:36.654990+00:00"
+      }
+    },
+    "second": {
+      "pid_record": {
+        "pid": 31456,
+        "time": "2026-10-05T12:35:04.208839+00:00",
+        "role": "second",
+        "helper": "reports/parallel_node2_attendant.py",
+        "runner": "reports/independent_local_attendant_runner.py",
+        "helper_sha256": "037d0a4db1838ae991ace0d4c200a84b7ab1b6fc6d5ac1ae58ca0acc5ed7b2a5",
+        "launcher": "Win32_Process.Create with hidden startup and CREATE_BREAKAWAY_FROM_JOB; WMI service parent and no kill-on-close job verified",
+        "training_unchanged": true
+      },
+      "process": {
+        "ProcessId": 31456,
+        "ParentProcessId": 7344,
+        "CommandLine": "\"C:\\Users\\GuanXingRen\\Miniconda3\\python.exe\" -u \"D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\execution\\reports\\independent_local_attendant_runner.py\" second"
+      },
+      "attendant_state.json": {
+        "stage": "WAITING",
+        "time": "2026-10-05T15:24:45.330921+00:00"
+      },
+      "persistent_receiver_state.json": {
+        "stage": "POOL_COMPLETED",
+        "time": "2026-10-05T15:24:44.880384+00:00",
+        "receiver_connections_opened": 2,
+        "files_received": 5,
+        "seconds": 514.2389214000013,
+        "negotiated_compression": [
+          "zlib@openssh.com",
+          "zlib@openssh.com"
+        ],
+        "max_file_receivers": 2,
+        "original_mirror_sha256": "28492fcdbd64ae0e08145274af70368726275e2bdc52dbc99fa9177b6c0e366b",
+        "all_original_SHA_and_custody_gates_used": true
+      },
+      "transfer_progress.json": {
+        "stage": "TRANSFERRING",
+        "full": false,
+        "verified_files": 1739,
+        "expected_files": 4005,
+        "verified_bytes": 183787392,
+        "expected_bytes": 5071158925,
+        "updated_at": "2026-10-05T15:29:40.801013+00:00"
+      },
+      "mirror.lock": {
+        "pid": 31456,
+        "time": "2026-10-05T15:25:24.885944+00:00"
+      }
+    },
+    "coordinator": {
+      "pid_record": {
+        "pid": 15752,
+        "time": "2026-10-05T12:35:04.238172+00:00",
+        "role": "coordinator",
+        "helper": "reports/parallel_single_seed_coordinator.py",
+        "runner": "reports/independent_local_attendant_runner.py",
+        "helper_sha256": "267f4433f9ac5f0f886d062766a2a10057b00c1995b6ab92b48084e28f81ef5d",
+        "launcher": "Win32_Process.Create with hidden startup and CREATE_BREAKAWAY_FROM_JOB; WMI service parent and no kill-on-close job verified",
+        "training_unchanged": true
+      },
+      "process": {
+        "ProcessId": 15752,
+        "ParentProcessId": 7344,
+        "CommandLine": "\"C:\\Users\\GuanXingRen\\Miniconda3\\python.exe\" -u \"D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\execution\\reports\\independent_local_attendant_runner.py\" coordinator"
+      }
+    }
+  },
+  "coordinator_state": {
+    "stage": "WAITING_SD_COMPLETE_SHA_CUSTODY",
+    "time": "2026-10-05T15:27:55.392995+00:00"
+  },
+  "SD32_fixed25_gain_vs_R42_pp": 0.7831631167791784,
+  "SD32_fixed25_minus_current_best_S20_pp": -0.18297577207085425,
+  "two_consecutive_combined_collapse": {
+    "D_seed42": false,
+    "SD_seed42": false
+  },
+  "read_notes": [],
+  "both_disk_above_8GiB": true,
+  "publication_report_scope": {
+    "stage": "USER_AUTHORIZED_POSTTRAIN_REPORT_WORK",
+    "time": "2026-10-05T15:17:26.915891+00:00",
+    "prompt_path": "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\03_结题报告任务Prompt.md",
+    "prompt_sha256": "90e3c8437940ef32eaa6f91f7ee4def3a196f3ad961219c73c05e5c00a775cac",
+    "hold_primary_shutdown_for_non_training_evidence": true,
+    "retained_server_instance": "connect.nmb2.seetacloud.com:36431",
+    "secondary_follows_existing_full_SHA_and_shutdown_gate": true,
+    "non_training_only": true,
+    "no_new_training_or_selection_or_threshold_scan": true,
+    "release_condition": "All necessary server-dependent report evidence work complete and outputs SHA verified locally; write/render report locally to avoid server idle",
+    "report_deliverables": [
+      "editable_DOCX",
+      "PDF",
+      "Markdown",
+      "evidence_ledger",
+      "figure_sources_and_plot_data"
+    ],
+    "finalizer_original_sha256": "1d5b0280323279759fe4eea50c42734aad463b745582996f603bf99391b1622e",
+    "all_original_scientific_selection_test_backup_and_exactly_once_shutdown_gates_preserved": true
+  },
+  "publication_report_output_directory": "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\结题报告",
+  "primary_authorized_non_training_hold_installed": true,
+  "secondary_global_backup_shutdown_gate_preserved": true,
+  "all_final_shutdown_conditions_met": false,
+  "new_test_started": false,
+  "new_training_or_source_change": false,
+  "healthy_receivers_not_duplicated": true,
+  "notification": "NOTIFY",
+  "reason": "SD formal32k completed; onlyD remains training."
+}

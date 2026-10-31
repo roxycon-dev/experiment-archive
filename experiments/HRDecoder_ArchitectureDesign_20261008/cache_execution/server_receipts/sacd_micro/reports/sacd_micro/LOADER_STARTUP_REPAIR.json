@@ -1,0 +1,74 @@
+{
+  "status": "LOADER_STARTUP_REPAIR",
+  "time_unix": 1791546696.3192072,
+  "original_parent_preserved": true,
+  "reason": "Second worker fork after CUDA/validation; GPU waiting without first25-step progress receipt",
+  "failed_attempt_progress_receipt_exists": false,
+  "failed_attempt_formal_checkpoint_exists": false,
+  "discarded_steps_known": 3,
+  "formal_updates_unreported_upper_bound": 24,
+  "children": [
+    {
+      "pid": 31033,
+      "cmdline": "/root/miniconda3/bin/python -u probe.py --arm control ",
+      "wchan": "futex_wait_queue_me"
+    },
+    {
+      "pid": 31034,
+      "cmdline": "/root/miniconda3/bin/python -u probe.py --arm control ",
+      "wchan": "futex_wait_queue_me"
+    },
+    {
+      "pid": 31035,
+      "cmdline": "/root/miniconda3/bin/python -u probe.py --arm control ",
+      "wchan": "futex_wait_queue_me"
+    },
+    {
+      "pid": 31037,
+      "cmdline": "/root/miniconda3/bin/python -u probe.py --arm control ",
+      "wchan": "futex_wait_queue_me"
+    },
+    {
+      "pid": 31038,
+      "cmdline": "/root/miniconda3/bin/python -u probe.py --arm control ",
+      "wchan": "futex_wait_queue_me"
+    },
+    {
+      "pid": 31039,
+      "cmdline": "/root/miniconda3/bin/python -u probe.py --arm control ",
+      "wchan": "futex_wait_queue_me"
+    },
+    {
+      "pid": 31040,
+      "cmdline": "/root/miniconda3/bin/python -u probe.py --arm control ",
+      "wchan": "futex_wait_queue_me"
+    },
+    {
+      "pid": 31041,
+      "cmdline": "/root/miniconda3/bin/python -u probe.py --arm control ",
+      "wchan": "futex_wait_queue_me"
+    },
+    {
+      "pid": 31042,
+      "cmdline": "/root/miniconda3/bin/python -u probe.py --arm control ",
+      "wchan": "futex_wait_queue_me"
+    },
+    {
+      "pid": 31043,
+      "cmdline": "/root/miniconda3/bin/python -u probe.py --arm control ",
+      "wchan": "futex_wait_queue_me"
+    },
+    {
+      "pid": 31044,
+      "cmdline": "/root/miniconda3/bin/python -u probe.py --arm control ",
+      "wchan": "futex_wait_queue_me"
+    },
+    {
+      "pid": 31045,
+      "cmdline": "/root/miniconda3/bin/python -u probe.py --arm control ",
+      "wchan": "futex_wait_queue_me"
+    }
+  ],
+  "server_kept_running": true,
+  "external_diagnostics_controlled": false
+}

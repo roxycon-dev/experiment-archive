@@ -1,0 +1,126 @@
+{
+  "status": "PASS_DOCUMENTARY_LINEAGE_EXTRACTION",
+  "created_at": "2026-10-24T00:54:47.546300+00:00",
+  "checkpoints": [
+    {
+      "checkpoint": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\best_pipeline\\weights\\E4_weights.pth",
+      "sha256": "c5a3d0f0b990d2430e545146745bc809538bbe764979baf54f62b450785268e0",
+      "config_export": "D:\\dataset\\experiment\\paper_supplement_20261023\\evidence\\historical_hr_lineage_sources\\E4_weights_checkpoint_config.txt",
+      "config_export_sha256": "aa424a05a04b50ce80fe8859750303e15d599e422a7fd3048d2697f11ca87a43",
+      "metadata": {
+        "exp_name": "e4_detail_split613",
+        "seed": 42,
+        "iter": 35999,
+        "time": "Mon Aug 17 10:06:28 2026",
+        "hook_msgs": {
+          "last_ckpt": "/root/HRDecoder/work_dirs/exp_e4_detail_split613/iter_36000.pth",
+          "best_score": 0.3876616597566857,
+          "best_ckpt": "/root/HRDecoder/work_dirs/exp_e4_detail_split613/best_mIoU_iter_36000.pth"
+        }
+      },
+      "initialization_lines": [
+        "    pretrained='open-mmlab://msra/hrnetv2_w48',",
+        "        pretrained='open-mmlab://msra/hrnetv2_w48'),",
+        "load_from = None",
+        "resume_from = None"
+      ]
+    },
+    {
+      "checkpoint": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\best_pipeline\\weights\\B_weights.pth",
+      "sha256": "0b3cd72e740fc5c69242994c12cfd71a49ac892aff37d09c50bb9fb6931a8626",
+      "config_export": "D:\\dataset\\experiment\\paper_supplement_20261023\\evidence\\historical_hr_lineage_sources\\B_weights_checkpoint_config.txt",
+      "config_export_sha256": "134c6ea3d6a3e867bd2e4e5ce63966300a67e16c20d34141e6f6a2527908917d",
+      "metadata": {
+        "exp_name": "hr100_b",
+        "seed": 42,
+        "iter": 2999,
+        "time": "Sat Sep 12 02:04:28 2026",
+        "hook_msgs": {
+          "last_ckpt": "/root/autodl-tmp/hr100/trial_b/iter_3000.pth",
+          "best_score": 0.39204874381616767,
+          "best_ckpt": "/root/autodl-tmp/hr100/trial_b/best_mIoU_iter_3000.pth"
+        }
+      },
+      "initialization_lines": [
+        "    pretrained=None,",
+        "        pretrained=None),",
+        "load_from = '/root/HRDecoder/work_dirs/exp_e4_detail_split613/best_mIoU_iter_36000.pth'",
+        "resume_from = None"
+      ]
+    },
+    {
+      "checkpoint": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\best_pipeline\\weights\\D_student_2000.pth",
+      "sha256": "5fe18717b62d8fc3ab4846a50c046588e2af05abbbfdb3a958f4794018b319ea",
+      "config_export": "D:\\dataset\\experiment\\paper_supplement_20261023\\evidence\\historical_hr_lineage_sources\\D_student_2000_checkpoint_config.txt",
+      "config_export_sha256": "4e9da90ef43cc887c5259c03c91975d2d51e87cf15980dbad762fe18e06329f9",
+      "metadata": {
+        "exp_name": "hrplus_patch_dice",
+        "seed": 42,
+        "iter": 1999,
+        "time": "Sun Sep 13 00:55:01 2026",
+        "hook_msgs": {
+          "last_ckpt": "/root/autodl-tmp/hrplus/D_0913_retry/iter_2000.pth",
+          "best_score": 0.4161472468365645,
+          "best_ckpt": "/root/autodl-tmp/hrplus/D_0913_retry/best_mIoU_iter_2000.pth"
+        }
+      },
+      "initialization_lines": [
+        "    pretrained=None,",
+        "        pretrained=None),",
+        "    source_checkpoint='weights/b_weights.pth',",
+        "load_from = None",
+        "resume_from = None"
+      ]
+    },
+    {
+      "checkpoint": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\best_pipeline\\weights\\E_1500.pth",
+      "sha256": "a18ff92b4da24d870554f17856983d4be042386cacbcaba0d4e13f3f248ed5e5",
+      "config_export": "D:\\dataset\\experiment\\paper_supplement_20261023\\evidence\\historical_hr_lineage_sources\\E_1500_checkpoint_config.txt",
+      "config_export_sha256": "e3dca64738fec08390040cd16d90167bde011270a54f2348ed3216fe670d7f12",
+      "metadata": {
+        "exp_name": "hrplus_mares",
+        "seed": 42,
+        "iter": 1499,
+        "time": "Wed Sep 16 08:18:07 2026",
+        "hook_msgs": {
+          "best_score": 0.40255618799346865,
+          "best_ckpt": "/root/autodl-tmp/hrplus/results/E_0916/best_mIoU_iter_1500.pth",
+          "last_ckpt": "/root/autodl-tmp/hrplus/results/E_0916/iter_1000.pth"
+        }
+      },
+      "initialization_lines": [
+        "    pretrained=None,",
+        "        pretrained=None),",
+        "    source_checkpoint='weights/b_weights.pth',",
+        "load_from = None",
+        "resume_from = None"
+      ]
+    }
+  ],
+  "original_E4_log": {
+    "path": "C:\\Users\\GuanXingRen\\AppData\\experment\\fundus-seg-2026\\hrdecoder-experiments\\week2\\logs\\e4_detail_20260817_034605.log.json",
+    "sha256": "b78269a0fd0d1a96a9a934199b03b3f5a386c66431339d6e52e982e603db953b",
+    "config_export": "D:\\dataset\\experiment\\paper_supplement_20261023\\evidence\\historical_hr_lineage_sources\\E4_original_log_config.txt",
+    "config_export_sha256": "aa424a05a04b50ce80fe8859750303e15d599e422a7fd3048d2697f11ca87a43",
+    "initialization_lines": [
+      "    pretrained='open-mmlab://msra/hrnetv2_w48',",
+      "        pretrained='open-mmlab://msra/hrnetv2_w48'),",
+      "load_from = None",
+      "resume_from = None"
+    ]
+  },
+  "supported_history": [
+    "Retained E4 checkpoint and original training JSON both record ImageNet HRNet initialization, load_from=None, resume_from=None.",
+    "B checkpoint records loading E4 best at36000.",
+    "D and E checkpoint configs record source_checkpoint=weights/b_weights.pth.",
+    "New C/S adaptation runs use an extant F12 raw-model parent, independently verified by training_parent_export.json; it is not the newly retrained HRDecoder baseline."
+  ],
+  "limits": [
+    "Documentary metadata is not a byte-level record of every historical initialization operation.",
+    "No recovered evidence in this audit establishes E4 initialization from historical split613 HRDecoder best32000.",
+    "Absence of that original baseline file now does not imply it never existed or that descendant checkpoints are absent.",
+    "A newly trained comparison baseline cannot retroactively establish the parent of an existing improved checkpoint."
+  ],
+  "historical_42_20_parent_recovered": false,
+  "new_training_or_evaluation_performed_by_this_script": false
+}

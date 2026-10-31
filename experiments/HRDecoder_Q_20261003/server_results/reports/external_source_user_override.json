@@ -1,0 +1,28 @@
+{
+  "updated_at": "2026-10-03T19:26:43.620373+00:00",
+  "authority": "Direct user instruction in this conversation",
+  "instruction_verbatim": "这是messidor idrid我那个bestseg就是，虽然格式不同但完全没裁剪过保证可用",
+  "accepted_source": "D:/dataset/best_segmentation",
+  "user_assertion": "Uncropped and usable despite format difference",
+  "official_native_IDRiD_requirement_waived_for_this_run": true,
+  "independently_verified_uncropped": false,
+  "actual_geometry": "Stored square JPEG coordinates, variable native stored dimensions",
+  "supervision": "Four independent polygon-rasterized 0/255 masks in stored image coordinates",
+  "empty_class_without_completeness_evidence": "unknown; ignore its entire channel for this image",
+  "official_GT_restoration_claimed": false,
+  "training_split": "54 training images only; 27 testing images quarantined",
+  "conversion_receipt": "reports/idrid_polygon_conversion_receipt.json",
+  "remaining_acceptance": [
+    "Exact image/mask pairing and SHA",
+    "Cross-dataset image dedup",
+    "MAPLES uncertain-region ignore",
+    "At least 20 actual visual overlay reviews"
+  ],
+  "architecture_optimizer_microbatch_and_selection_rules_changed": false,
+  "MESSIDOR_access": "User-authorized private access URL, legitimate server cookie, downloading 12 archives",
+  "private_download_files": [
+    "assets/messidor_download/access.private",
+    "assets/messidor_download/links.private",
+    "assets/messidor_download/cookies.private"
+  ]
+}

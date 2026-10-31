@@ -1,0 +1,237 @@
+{
+  "files": [
+    {
+      "id": 45795381,
+      "name": "MAPLES-DR.zip",
+      "size": 14765980,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/45795381",
+      "supplied_md5": "ee8bf3591abcf6c261f85eb6f61416bc",
+      "computed_md5": "ee8bf3591abcf6c261f85eb6f61416bc",
+      "mimetype": "application/zip"
+    },
+    {
+      "id": 45795384,
+      "name": "AdditionalData.zip",
+      "size": 40782288,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/45795384",
+      "supplied_md5": "d77c5891d881ca5cf13ca4c70f52fd49",
+      "computed_md5": "d77c5891d881ca5cf13ca4c70f52fd49",
+      "mimetype": "application/zip"
+    },
+    {
+      "id": 45796281,
+      "name": "MAPLES-DR_Overview.png",
+      "size": 548960,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/45796281",
+      "supplied_md5": "54cdf4b29c2877efd691bcd1704d4adc",
+      "computed_md5": "54cdf4b29c2877efd691bcd1704d4adc",
+      "mimetype": "image/png"
+    },
+    {
+      "id": 60565817,
+      "name": "LesionVariabilityStudy.zip",
+      "size": 2337824,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/60565817",
+      "supplied_md5": "b4a447c3242eb2b2232928ff3749e236",
+      "computed_md5": "b4a447c3242eb2b2232928ff3749e236",
+      "mimetype": "application/zip"
+    }
+  ],
+  "folder_structure": {},
+  "authors": [
+    {
+      "id": 13889817,
+      "full_name": "Gabriel Lepetit-Aimon",
+      "first_name": "Gabriel",
+      "last_name": "Lepetit-Aimon",
+      "is_active": true,
+      "url_name": "Gabriel_Lepetit-Aimon",
+      "orcid_id": "0009-0000-4110-8227"
+    },
+    {
+      "id": 17182114,
+      "full_name": "Cl\u00e9ment Playout",
+      "first_name": "Cl\u00e9ment",
+      "last_name": "Playout",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": "0000-0002-0978-3588"
+    },
+    {
+      "id": 18423342,
+      "full_name": "Marie Carole Boucher",
+      "first_name": "Marie Carole",
+      "last_name": "Boucher",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": "0000-0003-1988-3512"
+    },
+    {
+      "id": 18423346,
+      "full_name": "Renaud Duval",
+      "first_name": "Renaud",
+      "last_name": "Duval",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": "0000-0002-3845-3318"
+    },
+    {
+      "id": 18423352,
+      "full_name": "Michael H Brent",
+      "first_name": "Michael H",
+      "last_name": "Brent",
+      "is_active": false,
+      "url_name": "_",
+      "orcid_id": "0000-0002-8720-5185"
+    },
+    {
+      "id": 17637051,
+      "full_name": "Farida Cheriet",
+      "first_name": "Farida",
+      "last_name": "Cheriet",
+      "is_active": true,
+      "url_name": "Farida_Cheriet",
+      "orcid_id": ""
+    }
+  ],
+  "custom_fields": [],
+  "figshare_url": "https://figshare.com/articles/dataset/_b_MAPLES-DR_b_MESSIDOR_Anatomical_and_Pathological_Labels_for_Explainable_Screening_of_Diabetic_Retinopathy/24328660",
+  "download_disabled": false,
+  "description": "<p dir=\"ltr\"><b>MAPLES-DR</b> (MESSIDOR Anatomical and Pathological Labels for Explainable Screening of Diabetic Retinopathy) [1], contains <i>new diagnoses</i> for Diabetic Retinopathy (DR) and Macular Edema (ME) as well as <i>new pixel-wise </i><i>segmentation maps</i> for 10 retinal structures related to those pathologies for 198 images of the MESSIDOR public fundus dataset [2].</p><p><br></p><ul><li>The annotation procedure and an evaluation of the MAPLES-DR labels are documented in <a href=\"https://doi.org/10.1038/s41597-024-03739-6\" rel=\"noreferrer\" target=\"_blank\">a Scientific Data paper</a> [1]. If you wish to use this dataset in academic works, we kindly ask you to cite:<br>Gabriel Lepetit-Aimon, Cl\u00e9ment Playout, Marie Carole Boucher, Renaud Duval, Michael H Brent, and Farida Cheriet. Maples-dr: messidor anatomical and pathological labels for explainable screening of diabetic retinopathy. <i>Scientific Data</i>, 11(1):914, 08 2024. <a href=\"https://doi.org/10.1038/s41597-024-03739-6\" target=\"_blank\">doi:10.1038/s41597-024-03739-6</a>.</li></ul><p><br></p><ul><li>To ease the integration of MAPLES-DR with MESSIDOR images, we published a Python package named <a href=\"https://github.com/LIV4D/MAPLES-DR\" target=\"_blank\"><u>maples_dr</u></a> that automates the download of MAPLES-DR labels, and the matching, cropping and resizing of MESSIDOR fundus images. We strongly encourage AI researchers willing to train models on MAPLES-DR labels to visit our <a href=\"https://liv4d.github.io/MAPLES-DR/en/welcome/quickstart.html\" target=\"_blank\"><u>Quick Start page</u></a>.</li></ul><h2 dir=\"ltr\"><b>Description of the Dataset</b></h2><h3 dir=\"ltr\">Segmentation of Retinal Structures</h3><p dir=\"ltr\">From February 2019 to February 2020, seven senior retinologists from Montr\u00e9al and Toronto (Canada) segmented anatomical and pathological structures related to DR on 198 fundus images extracted from the public dataset <a href=\"https://www.adcis.net/en/third-party/messidor/\" target=\"_blank\"><u>MESSIDOR</u></a> [2]:</p><ul><li>4 Anatomical Structures: Optic Disc, Optic Cup, Macula, and Vessels;</li><li>3 Bright Lesions: Exudates, Cotton Wool Spots, and Drusens;</li><li>3 Red Lesions: Microaneurysms, Hemorrhages, and Neovessels.</li></ul><p dir=\"ltr\">These 10 biomarkers are provided as individual PNG binary images, along with two other segmentation maps: <b>Uncertain Bright</b><i> </i>and <b>Uncertain Red,</b> which contain structures that are clearly pathological but whose exact nature is unclear (e.g. microaneurysm vs. hemorrhage for a red lesion).</p><p dir=\"ltr\">For more details on the biomarkers definition or on their role in the diagnosis of DR, please refer to the <a href=\"https://liv4d.github.io/MAPLES-DR/en/welcome/dataset_description.html#labels-description\" target=\"_blank\"><u>MAPLES-DR Labels</u></a> page.</p><h3 dir=\"ltr\">DR and ME grades</h3><p dir=\"ltr\">MAPLES-DR grades for DR and ME follow the guidelines developed for Canadian teleopthalmology screening. These guidelines distinguish seven grades for DR (<b>R0</b>: absent, <b>R1</b>: mild, <b>R2</b>: moderate, <b>R3</b>: severe, <b>R4A</b>: proliferative, <b>R4S</b>: stable treated proliferative, <b>R6</b>: insufficient image quality) and four for ME (<b>M0</b>: absent, <b>M1</b>: mild, <b>M2</b>: moderate, <b>M6</b>: insufficient image quality). These grades are defined systematically by the number and position of visible red and bright retinal lesions. Each grade is associated with a recommended course of action (from rescreening in two years for mild cases, to immediate referral to an ophthalmologist for the more severe ones). A detailed definition of the grading system can be found in <a href=\"http://doi.org/10.1016/j.jcjo.2020.01.001\" target=\"_blank\">this paper</a> [3].</p><h2 dir=\"ltr\"><b>Data Records</b></h2><p dir=\"ltr\">MAPLES-DR dataset is distributed as two archives: <b>MAPLES-DR.zip</b> and <b>AdditionalData.zip</b>. The first one contains the main data of MAPLES-DR (segmentation maps and grades), while the second one contains additional information on the annotation process (time, comments) as well as intermediate data (pre-annotation maps, grades before consensus...).</p><p dir=\"ltr\">Please consult <a href=\"https://liv4d.github.io/MAPLES-DR/en/welcome/dataset_description.html#data-records\" target=\"_blank\"><u>MAPLES-DR Data Records</u></a> for more information.</p><p dir=\"ltr\">The additional archive <b>LesionVariabilityStudy.zip</b> contains the segmentation maps collected for a study measuring inter-observer variability when manually segmenting micro-aneurysms, haemorrhages, hard exudates and cotton-wool spots.</p><h2 dir=\"ltr\"><b>Usage</b></h2><p dir=\"ltr\">The annotations provided in MAPLES-DR are published under the CC-BY license. If you wish to use this dataset in academic work, we kindly ask you to cite the following <a href=\" https://doi.org/10.1038/s41597-024-03739-6\" rel=\"noreferrer\" target=\"_blank\">paper</a> [1]:<br>Gabriel Lepetit-Aimon, Cl\u00e9ment Playout, Marie Carole Boucher, Renaud Duval, Michael H Brent, and Farida Cheriet. Maples-dr: messidor anatomical and pathological labels for explainable screening of diabetic retinopathy. <i>Scientific Data</i>, 11(1):914, 08 2024. <a href=\"https://doi.org/10.1038/s41597-024-03739-6\" target=\"_blank\">doi:10.1038/s41597-024-03739-6</a>.</p><p><br></p><p dir=\"ltr\">Note that the fundus images corresponding to the diagnostic labels and biomarker segmentation maps of MAPLES-DR are the property of the MESSIDOR consortium and are freely available from the<a href=\"https://www.adcis.net/fr/logiciels-tiers/messidor-fr/\" target=\"_blank\"> <u>Consortium's website</u></a>. For more specific instructions see <a href=\"https://liv4d.github.io/MAPLES-DR/en/welcome/messidor.html\" target=\"_blank\"><u>Using MESSIDOR images</u></a>.</p><p dir=\"ltr\">To ease the integration of the two datasets we published a Python package named <a href=\"https://github.com/LIV4D/MAPLES-DR\" target=\"_blank\"><u>maples_dr</u></a> that automates MAPLES-DR download, matching with MESSIDOR images, cropping and resizing to a uniform image resolution. We strongly encourage AI researchers willing to train models on MAPLES-DR labels to visit our <a href=\"https://liv4d.github.io/MAPLES-DR/en/welcome/quickstart.html\" target=\"_blank\"><u>Quick Start page</u></a>.</p><h2 dir=\"ltr\">Acknowledgments</h2><p dir=\"ltr\">This study was funded by the NSERC (Natural Science and Engineering Research Council of Canada) as well as Diabetes Action Canada and FROUM (Fonds de recherche en ophtalmologie de l\u2019Universit\u00e9 de Montr\u00e9al).</p><p dir=\"ltr\">The original MESSIDOR dataset was kindly provided by the Messidor program partners (see <a href=\"https://www.adcis.net/en/third-party/messidor/\" target=\"_blank\">https://www.adcis.net/en/third-party/messidor/</a>).</p><h2 dir=\"ltr\">References</h2><p dir=\"ltr\">[1] Gabriel Lepetit-Aimon, Cl\u00e9ment Playout, Marie Carole Boucher, Renaud Duval, Michael H Brent, and Farida Cheriet. Maples-dr: messidor anatomical and pathological labels for explainable screening of diabetic retinopathy. <i>Scientific Data</i>, 11(1):914, 08 2024. <a href=\"https://doi.org/10.1038/s41597-024-03739-6\" target=\"_blank\">doi:10.1038/s41597-024-03739-6</a>.</p><p dir=\"ltr\">[2] Etienne Decenci\u00e8re, Xiwei Zhang, Guy Cazuguel, Bruno Lay, B\u00e9atrice Cochener, Caroline Trone, Philippe Gain, Richard Ordonez, Pascale Massin, Ali Erginay, and others. Feedback on a publicly distributed image database: the MESSIDOR database. <i>Image Analysis & Stereology</i>, 33(3):231\u2013234, Aug 2014. <a href=\"https://doi.org/http://dx.doi.org/10.5566/ias.1155\" target=\"_blank\">doi:http://dx.doi.org/10.5566/ias.1155</a>.</p><p dir=\"ltr\">[3] M.C. Boucher, J. Qian, M.H. Brent, D.T. Wong, T. Sheidow, R. Duval, A. Kherani, R. Dookeran, D. Maberley, A. Samad, and V. Chaudhary. Evidence-based Canadian guidelines for tele-retina screening for diabetic retinopathy: recommendations from the Canadian Retina Research Network (CR2N) Tele-Retina Steering Committee. <i>Canadian Journal of Ophthalmology</i>, 55(1):14\u201324, Feb 2020. <a href=\"https://doi.org/10.1016/j.jcjo.2020.01.001\" target=\"_blank\">doi:10.1016/j.jcjo.2020.01.001</a>.</p><p><br></p>",
+  "funding": "Natural Science and Engineering Research Council of Canada",
+  "funding_list": [
+    {
+      "id": 390659,
+      "title": "Natural Science and Engineering Research Council of Canada",
+      "grant_code": "",
+      "funder_name": null,
+      "is_user_defined": 1
+    },
+    {
+      "id": 23996361,
+      "title": "Diabetes Action Canada",
+      "grant_code": "",
+      "funder_name": null,
+      "is_user_defined": 1
+    }
+  ],
+  "version": 3,
+  "status": "public",
+  "size": 58435052,
+  "created_date": "2026-05-13T14:26:33Z",
+  "modified_date": "2026-05-13T14:26:33Z",
+  "is_public": true,
+  "is_confidential": false,
+  "is_metadata_record": false,
+  "confidential_reason": "",
+  "metadata_reason": "",
+  "license": {
+    "value": 1,
+    "name": "CC BY 4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "tags": [
+    "fundus abnormalities",
+    "MESSIDOR",
+    "Retinal Lesions Segmentation",
+    "Retinal Vessels Segmentation",
+    "Optic Disc/Cup Segmentation",
+    "Diabetic retinopathy (DR) grading",
+    "Macular edema (ME) grading"
+  ],
+  "keywords": [
+    "fundus abnormalities",
+    "MESSIDOR",
+    "Retinal Lesions Segmentation",
+    "Retinal Vessels Segmentation",
+    "Optic Disc/Cup Segmentation",
+    "Diabetic retinopathy (DR) grading",
+    "Macular edema (ME) grading"
+  ],
+  "categories": [
+    {
+      "id": 24817,
+      "title": "Ophthalmology",
+      "parent_id": 24814,
+      "path": "/24457/24814/24817",
+      "source_id": "321201",
+      "taxonomy_id": 100
+    }
+  ],
+  "references": [
+    "https://doi.org/10.5566/ias.1155",
+    "https://liv4d.github.io/MAPLES-DR/en/",
+    "https://github.com/LIV4D/MAPLES-DR",
+    "https://doi.org/10.1038/s41597-024-03739-6"
+  ],
+  "has_linked_file": false,
+  "citation": "Lepetit-Aimon, Gabriel; Playout, Cl\u00e9ment; Boucher, Marie Carole; Duval, Renaud; Brent, Michael H; Cheriet, Farida (2023). MAPLES-DR: MESSIDOR Anatomical and Pathological Labels for Explainable Screening of Diabetic Retinopathy. figshare. Dataset. https://doi.org/10.6084/m9.figshare.24328660.v3",
+  "related_materials": [
+    {
+      "id": 166934331,
+      "identifier": "10.5566/ias.1155",
+      "title": "MESSIDOR database",
+      "relation": "IsSupplementTo",
+      "identifier_type": "DOI",
+      "is_linkout": false,
+      "link": "https://doi.org/10.5566/ias.1155"
+    },
+    {
+      "id": 166934352,
+      "identifier": "https://liv4d.github.io/MAPLES-DR/en/",
+      "title": "MAPLES-DR Documentation",
+      "relation": "IsDescribedBy",
+      "identifier_type": "URL",
+      "is_linkout": true,
+      "link": "https://liv4d.github.io/MAPLES-DR/en/"
+    },
+    {
+      "id": 166934355,
+      "identifier": "https://github.com/LIV4D/MAPLES-DR",
+      "title": "the python library: maples_dr",
+      "relation": "IsRequiredBy",
+      "identifier_type": "URL",
+      "is_linkout": true,
+      "link": "https://github.com/LIV4D/MAPLES-DR"
+    },
+    {
+      "id": 206777158,
+      "identifier": "10.1038/s41597-024-03739-6",
+      "title": "MAPLES-DR: MESSIDOR Anatomical and Pathological Labels for Explainable Screening of Diabetic Retinopathy",
+      "relation": "IsDocumentedBy",
+      "identifier_type": "DOI",
+      "is_linkout": true,
+      "link": "https://doi.org/10.1038/s41597-024-03739-6"
+    }
+  ],
+  "is_embargoed": false,
+  "embargo_date": null,
+  "embargo_type": null,
+  "embargo_title": "",
+  "embargo_reason": "",
+  "embargo_options": [],
+  "id": 24328660,
+  "title": "<b>MAPLES-DR: </b>MESSIDOR Anatomical and Pathological Labels for Explainable Screening of Diabetic Retinopathy",
+  "doi": "10.6084/m9.figshare.24328660.v3",
+  "handle": "",
+  "url": "https://api.figshare.com/v2/articles/24328660",
+  "published_date": "2026-05-13T14:26:33Z",
+  "thumb": "https://s3-eu-west-1.amazonaws.com/pfigshare-u-previews/45796281/thumb.png",
+  "defined_type": 3,
+  "defined_type_name": "dataset",
+  "group_id": null,
+  "url_private_api": "https://api.figshare.com/v2/account/articles/24328660",
+  "url_public_api": "https://api.figshare.com/v2/articles/24328660",
+  "url_private_html": "https://figshare.com/account/articles/24328660",
+  "url_public_html": "https://figshare.com/articles/dataset/_b_MAPLES-DR_b_MESSIDOR_Anatomical_and_Pathological_Labels_for_Explainable_Screening_of_Diabetic_Retinopathy/24328660",
+  "timeline": {
+    "posted": "2026-05-13T14:26:33",
+    "firstOnline": "2023-12-15"
+  },
+  "resource_title": "",
+  "resource_doi": ""
+}

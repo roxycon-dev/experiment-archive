@@ -1,0 +1,10 @@
+{
+  "recorded_at": "2026-10-04T02:00:56.805734+00:00",
+  "stage": "LOCAL_OUTPUT_PARSER_FIXED_TRAINING_UNAFFECTED",
+  "remote_controller_exit_code": 0,
+  "remote_stdout_empty_expected": true,
+  "local_error": "JSONDecodeError caused by interpreting successful controller empty stdout as JSON",
+  "correction": "Use controller exit code; read campaign JSON through the one generic actual snapshot, without rerunning the controller",
+  "campaign_update_and_actual_snapshot_succeeded": true,
+  "no_training_pause_or_restart": true
+}

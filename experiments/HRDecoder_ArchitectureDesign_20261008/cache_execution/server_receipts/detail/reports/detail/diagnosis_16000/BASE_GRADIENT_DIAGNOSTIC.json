@@ -1,0 +1,563 @@
+{
+  "status": "COMPLETE",
+  "train_batches": 12,
+  "formal_SGD_updates": 0,
+  "parent_completed": 21000,
+  "GT_source": "train only",
+  "val_or_test_accessed": false,
+  "identity_SHA": "046abab773f7cb7a9e4f0a0f9cc44c4ad32d48431b971f22720dc8bd7936168a",
+  "records": [
+    {
+      "batch": 0,
+      "Dice": 0.46326181292533875,
+      "balanced_BCE_weighted": 0.7632094621658325,
+      "classes": [
+        {
+          "name": "EX",
+          "positive_pixels": 0
+        },
+        {
+          "name": "HE",
+          "positive_pixels": 12487,
+          "positive_logit_mean": 2.2043063640594482,
+          "positive_logit_min": -9.125,
+          "positive_logit_max": 10.75,
+          "positive_recall_at_half": 0.7569472193717957,
+          "Dice_positive_grad_absmean": 7.294574402294529e-07,
+          "balanced_BCE_positive_grad_absmean": 6.889985115776653e-07,
+          "BCE_to_Dice_grad_ratio": 0.9445355871083293
+        },
+        {
+          "name": "SE",
+          "positive_pixels": 5242,
+          "positive_logit_mean": -20.709699630737305,
+          "positive_logit_min": -24.0,
+          "positive_logit_max": -14.4375,
+          "positive_recall_at_half": 0.0,
+          "Dice_positive_grad_absmean": 3.0376376869596655e-13,
+          "balanced_BCE_positive_grad_absmean": 5.961464921711013e-06,
+          "BCE_to_Dice_grad_ratio": 19625332.367000524
+        },
+        {
+          "name": "MA",
+          "positive_pixels": 967,
+          "positive_logit_mean": -0.276045024394989,
+          "positive_logit_min": -11.125,
+          "positive_logit_max": 7.25,
+          "positive_recall_at_half": 0.4839710295200348,
+          "Dice_positive_grad_absmean": 2.0780920749530196e-05,
+          "balanced_BCE_positive_grad_absmean": 1.879255796666257e-05,
+          "BCE_to_Dice_grad_ratio": 0.9043178689321272
+        }
+      ]
+    },
+    {
+      "batch": 1,
+      "Dice": 0.28627172112464905,
+      "balanced_BCE_weighted": 0.07619839161634445,
+      "classes": [
+        {
+          "name": "EX",
+          "positive_pixels": 0
+        },
+        {
+          "name": "HE",
+          "positive_pixels": 3119,
+          "positive_logit_mean": 1.2595001459121704,
+          "positive_logit_min": -6.3125,
+          "positive_logit_max": 8.0,
+          "positive_recall_at_half": 0.5854440927505493,
+          "Dice_positive_grad_absmean": 3.110175612164312e-06,
+          "balanced_BCE_positive_grad_absmean": 1.958911298061139e-06,
+          "BCE_to_Dice_grad_ratio": 0.6298394503511555
+        },
+        {
+          "name": "SE",
+          "positive_pixels": 0
+        },
+        {
+          "name": "MA",
+          "positive_pixels": 4809,
+          "positive_logit_mean": -1.649255394935608,
+          "positive_logit_min": -9.1875,
+          "positive_logit_max": 6.3125,
+          "positive_recall_at_half": 0.3337492048740387,
+          "Dice_positive_grad_absmean": 3.6795584037463414e-06,
+          "balanced_BCE_positive_grad_absmean": 3.3851492844405584e-06,
+          "BCE_to_Dice_grad_ratio": 0.919987920559698
+        }
+      ]
+    },
+    {
+      "batch": 2,
+      "Dice": 0.510942816734314,
+      "balanced_BCE_weighted": 0.5509998798370361,
+      "classes": [
+        {
+          "name": "EX",
+          "positive_pixels": 2759,
+          "positive_logit_mean": -15.65999984741211,
+          "positive_logit_min": -18.5,
+          "positive_logit_max": -13.5625,
+          "positive_recall_at_half": 0.0,
+          "Dice_positive_grad_absmean": 1.85911789435389e-11,
+          "balanced_BCE_positive_grad_absmean": 5.663282536261249e-06,
+          "BCE_to_Dice_grad_ratio": 304622.02281310636
+        },
+        {
+          "name": "HE",
+          "positive_pixels": 4244,
+          "positive_logit_mean": 1.731608271598816,
+          "positive_logit_min": -5.625,
+          "positive_logit_max": 8.3125,
+          "positive_recall_at_half": 0.727144181728363,
+          "Dice_positive_grad_absmean": 1.5551912611044827e-06,
+          "balanced_BCE_positive_grad_absmean": 1.1236727459618123e-06,
+          "BCE_to_Dice_grad_ratio": 0.7225302598239847
+        },
+        {
+          "name": "SE",
+          "positive_pixels": 9131,
+          "positive_logit_mean": -16.160531997680664,
+          "positive_logit_min": -20.375,
+          "positive_logit_max": -14.25,
+          "positive_recall_at_half": 0.0,
+          "Dice_positive_grad_absmean": 4.211492266037453e-12,
+          "balanced_BCE_positive_grad_absmean": 1.7112033674493432e-06,
+          "BCE_to_Dice_grad_ratio": 406317.5851583353
+        },
+        {
+          "name": "MA",
+          "positive_pixels": 4052,
+          "positive_logit_mean": 0.16816340386867523,
+          "positive_logit_min": -7.75,
+          "positive_logit_max": 5.8125,
+          "positive_recall_at_half": 0.6122902631759644,
+          "Dice_positive_grad_absmean": 4.911148153041722e-06,
+          "balanced_BCE_positive_grad_absmean": 3.341795718370122e-06,
+          "BCE_to_Dice_grad_ratio": 0.6804510094651449
+        }
+      ]
+    },
+    {
+      "batch": 3,
+      "Dice": 0.4815196394920349,
+      "balanced_BCE_weighted": 0.34998786449432373,
+      "classes": [
+        {
+          "name": "EX",
+          "positive_pixels": 1663,
+          "positive_logit_mean": -18.31456756591797,
+          "positive_logit_min": -22.25,
+          "positive_logit_max": -12.875,
+          "positive_recall_at_half": 0.0,
+          "Dice_positive_grad_absmean": 1.2582271162464576e-11,
+          "balanced_BCE_positive_grad_absmean": 9.3956705313758e-06,
+          "BCE_to_Dice_grad_ratio": 746738.8367375962
+        },
+        {
+          "name": "HE",
+          "positive_pixels": 8294,
+          "positive_logit_mean": -0.45323610305786133,
+          "positive_logit_min": -10.625,
+          "positive_logit_max": 8.25,
+          "positive_recall_at_half": 0.4287436604499817,
+          "Dice_positive_grad_absmean": 1.4098259271122515e-06,
+          "balanced_BCE_positive_grad_absmean": 1.0497174116608221e-06,
+          "BCE_to_Dice_grad_ratio": 0.7445723556885918
+        },
+        {
+          "name": "SE",
+          "positive_pixels": 0
+        },
+        {
+          "name": "MA",
+          "positive_pixels": 1514,
+          "positive_logit_mean": -1.0073633193969727,
+          "positive_logit_min": -9.9375,
+          "positive_logit_max": 7.625,
+          "positive_recall_at_half": 0.4101717472076416,
+          "Dice_positive_grad_absmean": 6.384791049640626e-06,
+          "balanced_BCE_positive_grad_absmean": 6.058523013052763e-06,
+          "BCE_to_Dice_grad_ratio": 0.9488991833795052
+        }
+      ]
+    },
+    {
+      "batch": 4,
+      "Dice": 0.4234146475791931,
+      "balanced_BCE_weighted": 0.6363053321838379,
+      "classes": [
+        {
+          "name": "EX",
+          "positive_pixels": 1509,
+          "positive_logit_mean": -17.5304012298584,
+          "positive_logit_min": -18.75,
+          "positive_logit_max": -16.125,
+          "positive_recall_at_half": 0.0,
+          "Dice_positive_grad_absmean": 4.675249336977272e-12,
+          "balanced_BCE_positive_grad_absmean": 1.0354539881518576e-05,
+          "BCE_to_Dice_grad_ratio": 2214756.718881903
+        },
+        {
+          "name": "HE",
+          "positive_pixels": 28269,
+          "positive_logit_mean": 2.8307738304138184,
+          "positive_logit_min": -9.125,
+          "positive_logit_max": 7.9375,
+          "positive_recall_at_half": 0.8374190926551819,
+          "Dice_positive_grad_absmean": 5.020795583732252e-07,
+          "balanced_BCE_positive_grad_absmean": 2.9150263003430155e-07,
+          "BCE_to_Dice_grad_ratio": 0.5805905163293077
+        },
+        {
+          "name": "SE",
+          "positive_pixels": 1931,
+          "positive_logit_mean": -18.726436614990234,
+          "positive_logit_min": -21.5,
+          "positive_logit_max": -15.125,
+          "positive_recall_at_half": 0.0,
+          "Dice_positive_grad_absmean": 2.3677453227233247e-12,
+          "balanced_BCE_positive_grad_absmean": 8.091662493825424e-06,
+          "BCE_to_Dice_grad_ratio": 3417454.7474213084
+        },
+        {
+          "name": "MA",
+          "positive_pixels": 1894,
+          "positive_logit_mean": 0.8989789485931396,
+          "positive_logit_min": -9.0,
+          "positive_logit_max": 6.3125,
+          "positive_recall_at_half": 0.6800422668457031,
+          "Dice_positive_grad_absmean": 8.19607976154657e-06,
+          "balanced_BCE_positive_grad_absmean": 7.606346571265021e-06,
+          "BCE_to_Dice_grad_ratio": 0.9280469190833901
+        }
+      ]
+    },
+    {
+      "batch": 5,
+      "Dice": 0.5751272439956665,
+      "balanced_BCE_weighted": 0.577912449836731,
+      "classes": [
+        {
+          "name": "EX",
+          "positive_pixels": 0
+        },
+        {
+          "name": "HE",
+          "positive_pixels": 23390,
+          "positive_logit_mean": 2.9568750858306885,
+          "positive_logit_min": -6.375,
+          "positive_logit_max": 8.1875,
+          "positive_recall_at_half": 0.832449734210968,
+          "Dice_positive_grad_absmean": 1.907541644641242e-07,
+          "balanced_BCE_positive_grad_absmean": 1.2963027984369546e-07,
+          "BCE_to_Dice_grad_ratio": 0.67956723360593
+        },
+        {
+          "name": "SE",
+          "positive_pixels": 34170,
+          "positive_logit_mean": -17.71083641052246,
+          "positive_logit_min": -20.5,
+          "positive_logit_max": -14.875,
+          "positive_recall_at_half": 0.0,
+          "Dice_positive_grad_absmean": 6.35049087968631e-13,
+          "balanced_BCE_positive_grad_absmean": 9.14545239538711e-07,
+          "BCE_to_Dice_grad_ratio": 1440117.3970096088
+        },
+        {
+          "name": "MA",
+          "positive_pixels": 7997,
+          "positive_logit_mean": -0.2137802392244339,
+          "positive_logit_min": -9.25,
+          "positive_logit_max": 6.8125,
+          "positive_recall_at_half": 0.5319494605064392,
+          "Dice_positive_grad_absmean": 1.292407887376612e-06,
+          "balanced_BCE_positive_grad_absmean": 9.458104273107892e-07,
+          "BCE_to_Dice_grad_ratio": 0.7318203769482079
+        }
+      ]
+    },
+    {
+      "batch": 6,
+      "Dice": 0.7042993307113647,
+      "balanced_BCE_weighted": 0.9855878353118896,
+      "classes": [
+        {
+          "name": "EX",
+          "positive_pixels": 460,
+          "positive_logit_mean": -19.783966064453125,
+          "positive_logit_min": -20.5,
+          "positive_logit_max": -18.5,
+          "positive_recall_at_half": 0.0,
+          "Dice_positive_grad_absmean": 1.5154396834637929e-12,
+          "balanced_BCE_positive_grad_absmean": 3.396738975425251e-05,
+          "BCE_to_Dice_grad_ratio": 22414214.254053526
+        },
+        {
+          "name": "HE",
+          "positive_pixels": 19299,
+          "positive_logit_mean": 1.223237156867981,
+          "positive_logit_min": -7.5,
+          "positive_logit_max": 7.3125,
+          "positive_recall_at_half": 0.7074978351593018,
+          "Dice_positive_grad_absmean": 4.6200284486985765e-07,
+          "balanced_BCE_positive_grad_absmean": 2.684349453829782e-07,
+          "BCE_to_Dice_grad_ratio": 0.5810244425195998
+        },
+        {
+          "name": "SE",
+          "positive_pixels": 8087,
+          "positive_logit_mean": -20.07280158996582,
+          "positive_logit_min": -24.25,
+          "positive_logit_max": -15.25,
+          "positive_recall_at_half": 0.0,
+          "Dice_positive_grad_absmean": 4.015265496395276e-13,
+          "balanced_BCE_positive_grad_absmean": 3.86422652809415e-06,
+          "BCE_to_Dice_grad_ratio": 9623838.153574847
+        },
+        {
+          "name": "MA",
+          "positive_pixels": 531,
+          "positive_logit_mean": 0.42617112398147583,
+          "positive_logit_min": -6.9375,
+          "positive_logit_max": 5.5625,
+          "positive_recall_at_half": 0.5574387907981873,
+          "Dice_positive_grad_absmean": 2.3283404516405426e-05,
+          "balanced_BCE_positive_grad_absmean": 2.8172991733299568e-05,
+          "BCE_to_Dice_grad_ratio": 1.2100031038609045
+        }
+      ]
+    },
+    {
+      "batch": 7,
+      "Dice": 0.6028196811676025,
+      "balanced_BCE_weighted": 0.8228962421417236,
+      "classes": [
+        {
+          "name": "EX",
+          "positive_pixels": 3781,
+          "positive_logit_mean": -14.565855979919434,
+          "positive_logit_min": -17.75,
+          "positive_logit_max": -10.125,
+          "positive_recall_at_half": 0.0,
+          "Dice_positive_grad_absmean": 2.1194739019403386e-10,
+          "balanced_BCE_positive_grad_absmean": 8.264996722573414e-06,
+          "BCE_to_Dice_grad_ratio": 38995.51070200471
+        },
+        {
+          "name": "HE",
+          "positive_pixels": 2130,
+          "positive_logit_mean": 2.0129053592681885,
+          "positive_logit_min": -8.125,
+          "positive_logit_max": 6.875,
+          "positive_recall_at_half": 0.8150234818458557,
+          "Dice_positive_grad_absmean": 3.956566615670454e-06,
+          "balanced_BCE_positive_grad_absmean": 3.6440821986616356e-06,
+          "BCE_to_Dice_grad_ratio": 0.9210213178842519
+        },
+        {
+          "name": "SE",
+          "positive_pixels": 6047,
+          "positive_logit_mean": -18.627098083496094,
+          "positive_logit_min": -21.5,
+          "positive_logit_max": -14.5,
+          "positive_recall_at_half": 0.0,
+          "Dice_positive_grad_absmean": 8.902191050291774e-13,
+          "balanced_BCE_positive_grad_absmean": 2.5839258341875393e-06,
+          "BCE_to_Dice_grad_ratio": 2902572.8830014826
+        },
+        {
+          "name": "MA",
+          "positive_pixels": 6279,
+          "positive_logit_mean": -0.13393644988536835,
+          "positive_logit_min": -11.0,
+          "positive_logit_max": 7.8125,
+          "positive_recall_at_half": 0.5645803809165955,
+          "Dice_positive_grad_absmean": 3.236589236621512e-06,
+          "balanced_BCE_positive_grad_absmean": 2.324626620975323e-06,
+          "BCE_to_Dice_grad_ratio": 0.7182334399041214
+        }
+      ]
+    },
+    {
+      "batch": 8,
+      "Dice": 0.30932754278182983,
+      "balanced_BCE_weighted": 0.32334306836128235,
+      "classes": [
+        {
+          "name": "EX",
+          "positive_pixels": 14806,
+          "positive_logit_mean": -18.249067306518555,
+          "positive_logit_min": -21.625,
+          "positive_logit_max": -14.25,
+          "positive_recall_at_half": 0.0,
+          "Dice_positive_grad_absmean": 3.470764528643727e-13,
+          "balanced_BCE_positive_grad_absmean": 1.0553154652370722e-06,
+          "BCE_to_Dice_grad_ratio": 3040585.0253674756
+        },
+        {
+          "name": "HE",
+          "positive_pixels": 20029,
+          "positive_logit_mean": 1.9141335487365723,
+          "positive_logit_min": -5.625,
+          "positive_logit_max": 7.5,
+          "positive_recall_at_half": 0.775725245475769,
+          "Dice_positive_grad_absmean": 8.325640123985067e-07,
+          "balanced_BCE_positive_grad_absmean": 4.4530997911351733e-07,
+          "BCE_to_Dice_grad_ratio": 0.5348657550434329
+        },
+        {
+          "name": "SE",
+          "positive_pixels": 0
+        },
+        {
+          "name": "MA",
+          "positive_pixels": 2804,
+          "positive_logit_mean": 1.5893032550811768,
+          "positive_logit_min": -4.6875,
+          "positive_logit_max": 6.0,
+          "positive_recall_at_half": 0.7446505427360535,
+          "Dice_positive_grad_absmean": 5.83117434871383e-06,
+          "balanced_BCE_positive_grad_absmean": 3.7412326037156163e-06,
+          "BCE_to_Dice_grad_ratio": 0.6415916211698955
+        }
+      ]
+    },
+    {
+      "batch": 9,
+      "Dice": 0.43927961587905884,
+      "balanced_BCE_weighted": 0.32430461049079895,
+      "classes": [
+        {
+          "name": "EX",
+          "positive_pixels": 0
+        },
+        {
+          "name": "HE",
+          "positive_pixels": 891,
+          "positive_logit_mean": 4.3500776290893555,
+          "positive_logit_min": -3.609375,
+          "positive_logit_max": 8.75,
+          "positive_recall_at_half": 0.8765432238578796,
+          "Dice_positive_grad_absmean": 3.7787615383422235e-06,
+          "balanced_BCE_positive_grad_absmean": 2.4594960450485814e-06,
+          "BCE_to_Dice_grad_ratio": 0.6508735785766424
+        },
+        {
+          "name": "SE",
+          "positive_pixels": 4060,
+          "positive_logit_mean": -20.351463317871094,
+          "positive_logit_min": -25.5,
+          "positive_logit_max": -15.9375,
+          "positive_recall_at_half": 0.0,
+          "Dice_positive_grad_absmean": 2.875673603321832e-13,
+          "balanced_BCE_positive_grad_absmean": 3.848522283078637e-06,
+          "BCE_to_Dice_grad_ratio": 13383028.861943927
+        },
+        {
+          "name": "MA",
+          "positive_pixels": 72,
+          "positive_logit_mean": 3.5448946952819824,
+          "positive_logit_min": -1.5,
+          "positive_logit_max": 6.21875,
+          "positive_recall_at_half": 0.9305555820465088,
+          "Dice_positive_grad_absmean": 4.492181324167177e-05,
+          "balanced_BCE_positive_grad_absmean": 2.3449896616511978e-05,
+          "BCE_to_Dice_grad_ratio": 0.5220158075622525
+        }
+      ]
+    },
+    {
+      "batch": 10,
+      "Dice": 0.4948772192001343,
+      "balanced_BCE_weighted": 0.5861883163452148,
+      "classes": [
+        {
+          "name": "EX",
+          "positive_pixels": 2076,
+          "positive_logit_mean": -16.47540283203125,
+          "positive_logit_min": -21.5,
+          "positive_logit_max": -9.8125,
+          "positive_recall_at_half": 0.0,
+          "Dice_positive_grad_absmean": 2.001166871101745e-10,
+          "balanced_BCE_positive_grad_absmean": 7.526480658270884e-06,
+          "BCE_to_Dice_grad_ratio": 37610.46001189881
+        },
+        {
+          "name": "HE",
+          "positive_pixels": 3865,
+          "positive_logit_mean": 3.058602809906006,
+          "positive_logit_min": -3.234375,
+          "positive_logit_max": 8.6875,
+          "positive_recall_at_half": 0.9241914749145508,
+          "Dice_positive_grad_absmean": 2.029637244049809e-06,
+          "balanced_BCE_positive_grad_absmean": 1.0707439059842727e-06,
+          "BCE_to_Dice_grad_ratio": 0.5275543248545137
+        },
+        {
+          "name": "SE",
+          "positive_pixels": 4526,
+          "positive_logit_mean": -17.965063095092773,
+          "positive_logit_min": -22.5,
+          "positive_logit_max": -14.875,
+          "positive_recall_at_half": 0.0,
+          "Dice_positive_grad_absmean": 1.451351300425785e-12,
+          "balanced_BCE_positive_grad_absmean": 3.452275450399611e-06,
+          "BCE_to_Dice_grad_ratio": 2378662.8705171603
+        },
+        {
+          "name": "MA",
+          "positive_pixels": 2002,
+          "positive_logit_mean": -1.9898121356964111,
+          "positive_logit_min": -8.875,
+          "positive_logit_max": 5.5,
+          "positive_recall_at_half": 0.28971028327941895,
+          "Dice_positive_grad_absmean": 6.382442279573297e-06,
+          "balanced_BCE_positive_grad_absmean": 5.387233613873832e-06,
+          "BCE_to_Dice_grad_ratio": 0.8440708709760552
+        }
+      ]
+    },
+    {
+      "batch": 11,
+      "Dice": 0.46265754103660583,
+      "balanced_BCE_weighted": 0.3076038658618927,
+      "classes": [
+        {
+          "name": "EX",
+          "positive_pixels": 21476,
+          "positive_logit_mean": -18.330188751220703,
+          "positive_logit_min": -21.75,
+          "positive_logit_max": -11.8125,
+          "positive_recall_at_half": 0.0,
+          "Dice_positive_grad_absmean": 6.791845189556278e-13,
+          "balanced_BCE_positive_grad_absmean": 7.275562552422343e-07,
+          "BCE_to_Dice_grad_ratio": 1071220.3163302178
+        },
+        {
+          "name": "HE",
+          "positive_pixels": 16213,
+          "positive_logit_mean": 2.3503620624542236,
+          "positive_logit_min": -7.5,
+          "positive_logit_max": 8.625,
+          "positive_recall_at_half": 0.7608708739280701,
+          "Dice_positive_grad_absmean": 6.092760145293141e-07,
+          "balanced_BCE_positive_grad_absmean": 5.064362085249741e-07,
+          "BCE_to_Dice_grad_ratio": 0.831209823541491
+        },
+        {
+          "name": "SE",
+          "positive_pixels": 0
+        },
+        {
+          "name": "MA",
+          "positive_pixels": 0
+        }
+      ]
+    }
+  ],
+  "seconds": 19.95243501663208,
+  "checkpoint_mutated": false,
+  "scope": "Local logits-gradient diagnostic; gradients do not alone prove cause or fresh training outcome"
+}

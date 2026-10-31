@@ -1,0 +1,694 @@
+Return ONLY JSON {"files":{"relative/path":"full file content"},"notes":"brief"}. Complete working code, no TODO/stubs. Python3.8+ Linux production Windows CPU tests. No secrets. No tools available: all source attached. Do not claim tests run. Generate ONLY fusion_core.py and tests/test_core.py. APIs: dice_prob(prob N4HW,label N1HW or NHW): square-denominator Dice smooth1 mean per class and per sample, ignore255 masked both pred/target. loss_pair(logits,label,ref,arm): scalar A=studentDice B=.5studentDice+.5Dice(.5sigmoid(logits)+.5ref), ref detach validate finite range shape. paired_geometry(image HWC RGBuint8,label HW,reference HWC4,rng np.RandomState) returns normalized CHWfloat32 image,1HWint64 label,CHWfloat32 ref,trace. Resize2048, cv2 rotation [-45,45] same matrix/image+prob bilinear label nearest255border, crop1024 original foreground_crop_bbox algorithm, horizontalflip. Normalize means81.205/50.636/21.216 std76.252/48.798/21.625. configure_trainable(model): only decode_head and backbone.stage4, BN eval including reference; return names. freeze_bn(model). strict_initialize(model,student_checkpoint,reference_checkpoint): accept full D with reference or student-only; strict exact key sets/shapes, strip module prefix; full D reference must equal B reference or reject; known trusted local torch state_dict/bare dict. sha256(path). CPU tests meaningful toy module prove gradients and updates only authorized params, reference detached, BN fixed, strict mismatches rejected, original Dice numeric parity, ignore/allignore/empty cases, paired seed geometry marker alignment. 
+SOURCE D:\dataset\experiment\hrdecoder_plus3\repo\hrplus_core.py
+"""Dependency-light helpers for the HR+ patch (torch + numpy only).
+
+Used by hrplus_patch.py (model / pipeline) and by tests/test_core.py.
+"""
+import numpy as np
+import torch
+import torch.nn.functional as F
+
+
+# ---------------------------------------------------------------- tiling ---
+def _axis_positions(total, tile, stride):
+    """Tile start positions along one axis: complete coverage of [0, total)."""
+    assert 0 < stride <= tile, 'stride must satisfy 0 < stride <= tile'
+    if total <= tile:
+        return [0]
+    pos = list(range(0, total - tile + 1, stride))
+    if pos[-1] != total - tile:
+        pos.append(total - tile)
+    return pos
+
+
+def tiled_forward(img, forward_fn, tile_size, stride, num_classes):
+    """Tiled inference with complete overlap coverage.
+
+    Logits are accumulated in float32 and divided by per-pixel counts so
+    overlapping tiles are exactly averaged.  Images smaller than the tile are
+    right/bottom padded before ``forward_fn`` and the padding is cropped away
+    afterwards, so irregular / small sizes are handled correctly.
+
+    Args:
+        img: (B, 3, H, W) tensor (already normalized).
+        forward_fn: callable (B,3,th,tw) -> (B, C, th, tw) logits tensor.
+        tile_size: int or (tile_h, tile_w).
+        stride: int, tile stride (0 < stride <= min(tile_h, tile_w)).
+        num_classes: number of logit channels C.
+    Returns:
+        (B, C, H, W) float32 averaged logits.
+    """
+    if isinstance(tile_size, (tuple, list)):
+        tile_h, tile_w = int(tile_size[0]), int(tile_size[1])
+    else:
+        tile_h = tile_w = int(tile_size)
+    assert 0 < stride <= min(tile_h, tile_w), \
+        'require 0 < stride <= min(tile_h, tile_w)'
+    b, _, h, w = img.shape
+    sums = torch.zeros((b, num_classes, h, w), dtype=torch.float32,
+                       device=img.device)
+    counts = torch.zeros((b, 1, h, w), dtype=torch.float32,
+                         device=img.device)
+    th, tw = min(tile_h, h), min(tile_w, w)
+    for y in _axis_positions(h, tile_h, stride):
+        for x in _axis_positions(w, tile_w, stride):
+            patch = img[:, :, y:y + th, x:x + tw]
+            if patch.shape[2] < tile_h or patch.shape[3] < tile_w:
+                patch = F.pad(patch, (0, tile_w - patch.shape[3],
+                                      0, tile_h - patch.shape[2]))
+            out = forward_fn(patch)
+            assert out.shape[0] == patch.shape[0] and out.shape[1] == num_classes
+            out = out[:, :, :th, :tw].float()
+            sums[:, :, y:y + th, x:x + tw] += out
+            counts[:, :, y:y + th, x:x + tw] += 1.0
+    assert bool((counts > 0).all()), 'tiling left uncovered pixels'
+    return sums / counts
+
+
+# ---------------------------------------------------------------- blending ---
+def blend_probs(prob_a, prob_b, weight_a=0.5):
+    """Fixed probability-space fusion: weight_a * a + (1 - weight_a) * b.
+
+    prompt §7.4: 非有限或越界的融合权重必须拒绝（0<=w<=1）。
+    模型内部固定用 0.5，此断言对既有行为零影响。
+    """
+    import math
+    assert prob_a.shape == prob_b.shape, \
+        'blend shapes must match exactly (no implicit broadcasting)'
+    assert (isinstance(weight_a, (int, float)) and math.isfinite(weight_a)
+            and 0.0 <= float(weight_a) <= 1.0), \
+        'blend weight must be a finite probability in [0,1], got %r' % (weight_a,)
+    return weight_a * prob_a + (1.0 - weight_a) * prob_b
+
+
+def resize_logit(logits, size, align_corners=False):
+    """Bilinear logit resize with explicit align_corners."""
+    return F.interpolate(logits, size=size, mode='bilinear',
+                         align_corners=align_corners)
+
+
+# ------------------------------------------------------------ crop helpers ---
+def pad_to_size(img, gt, size, img_pad=0, seg_pad=255):
+    """Pad (H,W,3) image with ``img_pad`` and (H,W) label with ``seg_pad``
+    at bottom/right up to ``size``=(H,W). Pure numpy. ``img_pad`` is honored
+    for the image and ``seg_pad`` for the label."""
+    th, tw = int(size[0]), int(size[1])
+    h, w = gt.shape[:2]
+    if h >= th and w >= tw:
+        return img, gt
+    pad_img = np.full((max(th, h), max(tw, w)) + img.shape[2:], int(img_pad),
+                      dtype=img.dtype)
+    pad_img[:h, :w] = img
+    pad_gt = np.full((max(th, h), max(tw, w)) + gt.shape[2:], int(seg_pad),
+                     dtype=gt.dtype)
+    pad_gt[:h, :w] = gt
+    return pad_img, pad_gt
+
+
+def crop_arrays(img, gt, y0, x0, h, w):
+    """Aligned numpy crop of image and label (no resizing)."""
+    return img[y0:y0 + h, x0:x0 + w], gt[y0:y0 + h, x0:x0 + w]
+
+
+def foreground_crop_bbox(gt, crop_size, fg_prob=0.5, rng=None, num_fg=4):
+    """Choose top-left corner (y0, x0) of a crop_size x crop_size window.
+
+    With probability ``fg_prob`` the crop is image-uniform random.  Otherwise
+    a uniformly chosen PRESENT lesion class (1..num_fg) and a uniformly chosen
+    pixel of that class are picked, and the anchor offset is drawn from the
+    valid range that guarantees pixel inclusion.  If no lesion class is
+    present the crop falls back to image-uniform random.  Uses the given
+    ``rng`` (np.random module or np.random.RandomState) for seeding.
+    Assumes H, W >= crop_size (pad first if not).
+    """
+    rng = np.random if rng is None else rng
+    h, w = gt.shape[:2]
+    cs = int(crop_size)
+    cs_h, cs_w = min(cs, h), min(cs, w)
+
+    def uniform():
+        y0 = rng.randint(0, h - cs_h + 1)
+        x0 = rng.randint(0, w - cs_w + 1)
+        return y0, x0
+
+    present = [c for c in range(1, num_fg + 1) if (gt == c).any()]
+    if not present or rng.random() < fg_prob:
+        return uniform()
+    cls = present[rng.randint(0, len(present))]
+    ys, xs = np.where(gt == cls)
+    idx = rng.randint(0, len(ys))
+    py, px = int(ys[idx]), int(xs[idx])
+    y_lo, y_hi = max(0, py - cs_h + 1), min(py, h - cs_h)
+    x_lo, x_hi = max(0, px - cs_w + 1), min(px, w - cs_w)
+    y0 = rng.randint(y_lo, y_hi + 1)
+    x0 = rng.randint(x_lo, x_hi + 1)
+    return y0, x0
+
+
+# ---------------------------------------------------------------- lovasz ---
+def lovasz_grad(gt_sorted):
+    """Gradient of the Lovasz extension w.r.t. sorted errors.
+
+    The differencing step uses torch.cat instead of overlapping in-place
+    slice assignment (jacc[1:] = jacc[1:] - jacc[:-1]), which is unsafe
+    under PyTorch's memory-aliasing rules.
+    """
+    p = len(gt_sorted)
+    gts = gt_sorted.sum()
+    intersection = gts - gt_sorted.float().cumsum(0)
+    union = gts + (1 - gt_sorted).float().cumsum(0)
+    jacc = 1 - intersection / union
+    if p > 1:
+        jacc = torch.cat([jacc[:1], jacc[1:] - jacc[:-1]])
+    return jacc
+
+
+def lovasz_hinge_flat(logits, labels):
+    """Binary Lovasz hinge loss on flattened, already-valid tensors.
+    Graph-safe for empty inputs (returns 0 connected to the graph)."""
+    if logits.numel() == 0:
+        return logits.sum() * 0
+    logits = logits.float()
+    labels = labels.float()
+    signs = 2.0 * labels - 1.0
+    errors = 1.0 - logits * signs
+    errors_sorted, perm = torch.sort(errors, descending=True)
+    gt_sorted = labels[perm]
+    return torch.dot(F.relu(errors_sorted), lovasz_grad(gt_sorted))
+
+
+def multiclass_lovasz_hinge(logits, target, ignore_index=255):
+    """Binary Lovasz hinge applied separately to each of the EXACTLY 4
+    FOREGROUND channels (channel c <-> target label c+1; 0=EX, 1=HE,
+    2=SE, 3=MA; NO background channel).  Batch-flattened,
+    ignore_index (255) excluded, averaged over ALL 4 classes including
+    classes absent from the batch.  Applied on raw logits: NO softmax /
+    sigmoid.  Full-crop usage expected.
+    """
+    assert logits.shape[1] == 4, 'model must output exactly 4 fg channels'
+    tgt = target.squeeze(1) if target.dim() == 4 else target
+    flat_t = tgt.reshape(-1)
+    num_classes = 4
+    total = logits.sum() * 0
+    for c in range(num_classes):
+        lc = logits[:, c].reshape(-1)
+        valid = flat_t != ignore_index
+        if bool(valid.sum()) == 0:
+            total = total + lc.sum() * 0
+            continue
+        labels = (flat_t[valid] == (c + 1)).float()
+        total = total + lovasz_hinge_flat(lc[valid], labels)
+    return total / num_classes
+
+
+SOURCE D:\dataset\experiment\hrdecoder_plus3\repo\hrplus_patch.py
+"""HR+ patch: distillation-free self-ensemble on top of HR100Refinement.
+
+Student: HRPlusRefinement (inherits HR100Refinement.encode_decode on the
+1024x1024 crop).  A separately built frozen HR100Refinement (constructed from
+a deepcopy of the kwargs taken BEFORE super() mutates them, strict-loaded
+from the SAME 4-class B checkpoint) acts as reference at inference;
+probabilities are fused 0.5/0.5.
+"""
+import copy
+
+import numpy as np
+import torch
+
+from mmseg.models.builder import SEGMENTORS
+from mmseg.datasets.builder import PIPELINES
+from mmseg.ops import resize
+
+from hr100_refinement import HR100Refinement
+from hrplus_core import (tiled_forward, blend_probs, resize_logit,
+                         pad_to_size, foreground_crop_bbox, crop_arrays,
+                         multiclass_lovasz_hinge)
+
+
+def _strict_load_state(module, path):
+    """Load checkpoint into ``module``; STRICT w.r.t. all 4-class B tensors.
+
+    The source checkpoint contains NO ``ma_refiner.*`` keys, so missing or
+    unexpected keys of any kind are errors.
+    """
+    ckpt = torch.load(path, map_location='cpu')
+    state = ckpt.get('state_dict', ckpt)
+    state = {k[7:] if k.startswith('module.') else k: v for k, v in state.items()}
+    module.load_state_dict(state, strict=True)
+
+
+def _assert_config(model):
+    """Assert the EXACT-4-class sigmoid HR config (1024 crop scale)."""
+    assert model.num_classes == 4, 'model must have exactly 4 classes'
+    assert tuple(model.hr_scale) == (1024, 1024), 'hr_scale must be 1024x1024'
+    assert model.use_sigmoid, 'model inference must use sigmoid'
+
+
+def _freeze_all_bn(model):
+    """Freeze ALL BatchNorm layers and keep them frozen."""
+    from torch.nn.modules.batchnorm import _BatchNorm
+    for m in model.modules():
+        if isinstance(m, _BatchNorm):
+            m.eval()
+
+
+@SEGMENTORS.register_module()
+class HRPlusRefinement(HR100Refinement):
+    """Student = inherited crop model; reference = frozen sibling module.
+
+    * forward_train: ONLY the student's crop logits + decode_head.losses
+      (optionally + weighted 4-class binary Lovasz hinge).  No MA hard loss,
+      no HR crop auxiliary, no fuse losses.
+    * inference: fixed 0.5 native whole-image reference probabilities +
+      0.5 student tiled logits (tile 1024, stride 768) overlap-averaged,
+      resized to original with align_corners, sigmoid, flip-undo.
+      Does NOT recurse into reference.inference.
+    """
+
+    def __init__(self, source_checkpoint, lovasz_weight=0.0, **kwargs):
+        assert source_checkpoint, 'source_checkpoint is REQUIRED'
+        kwargs['semantic_refinement'] = False
+        kwargs['hard_weight'] = 0
+        kwargs['freeze_bn'] = True
+        # Snapshot kwargs BEFORE super() mutates them; the reference is built
+        # independently from the same pristine configuration.
+        ref_kwargs = copy.deepcopy(kwargs)
+        super(HRPlusRefinement, self).__init__(**kwargs)
+        _assert_config(self)
+        self.lovasz_weight = float(lovasz_weight)
+        # Student: strict-load the 4-class B checkpoint right after the
+        # constructor; init_weights() is overridden as a no-op so later
+        # build-time calls never re-initialize the loaded weights.
+        _strict_load_state(self, source_checkpoint)
+        _freeze_all_bn(self)
+        # Reference: built SEPARATELY from the pre-super kwargs deepcopy
+        # (no deepcopy of the student module), then strict-loaded itself.
+        reference = HR100Refinement(**ref_kwargs)
+        _strict_load_state(reference, source_checkpoint)
+        for p in reference.parameters():
+            p.requires_grad_(False)
+        _freeze_all_bn(reference)
+        reference.eval()
+        self.reference = reference
+
+    # ---- lifecycle guards -------------------------------------------------
+    def init_weights(self):
+        """No-op: student and reference both hold the strict-loaded B
+        checkpoint; never re-initialize."""
+        pass
+
+    def train(self, mode=True):
+        super(HRPlusRefinement, self).train(mode)
+        if hasattr(self, 'reference'):
+            self.reference.eval()  # reference is never trained
+        return self
+
+    # ---- training ---------------------------------------------------------
+    def forward_train(self, img, img_metas, gt_semantic_seg,
+                      seg_weight=None, return_feat=False, **kwargs):
+        logits = self.encode_decode(img, img_metas)  # inherited crop logits
+        # Legacy BinaryLoss maps ignore labels to zeros but does not mask predictions.
+        # Constant zero probability removes ignored pixels from squared-Dice terms.
+        dice_logits = torch.where(gt_semantic_seg == 255, logits.new_tensor(-1e4), logits)
+        losses = self.decode_head.losses(dice_logits, gt_semantic_seg)
+        if self.lovasz_weight > 0:
+            losses['loss_lovasz'] = self.lovasz_weight * multiclass_lovasz_hinge(
+                logits, gt_semantic_seg)
+        return losses
+
+    # ---- inference --------------------------------------------------------
+    def _student_prob(self, img, img_meta, rescale):
+        """Tiled student logits -> overlap-average -> resize to original
+        (same align_corners as baseline) -> sigmoid -> flip undo."""
+        logits = tiled_forward(
+            img,
+            lambda patch: self.encode_decode(patch, img_meta),
+            self.hr_scale, stride=768, num_classes=self.num_classes)
+        img_shape = img_meta[0]['img_shape']
+        logits = logits[:, :, :img_shape[0], :img_shape[1]]
+        if rescale:
+            logits = resize_logit(logits, img_meta[0]['ori_shape'][:2],
+                                  align_corners=self.align_corners)
+        prob = torch.sigmoid(logits)
+        if img_meta[0]['flip']:
+            direction = img_meta[0]['flip_direction']
+            if direction == 'horizontal':
+                prob = prob.flip(dims=(3,))
+            elif direction == 'vertical':
+                prob = prob.flip(dims=(2,))
+            else:
+                raise NotImplementedError(direction)
+        return prob
+
+    def _reference_prob(self, img, img_meta, rescale):
+        """Native whole-image reference probabilities, computed directly
+        (no recursion into reference.inference)."""
+        self.reference.eval()
+        with torch.no_grad():
+            return self.reference.inference(img, img_meta, rescale)
+
+    def inference(self, img, img_meta, rescale):
+        assert img.size(0) == 1, 'eval batch size must be 1'
+        prob_s = self._student_prob(img, img_meta, rescale)
+        prob_r = self._reference_prob(img, img_meta, rescale)
+        # Fixed global fusion: 0.5 reference + 0.5 student, all classes.
+        return blend_probs(prob_r, prob_s, weight_a=0.5)
+
+
+@PIPELINES.register_module()
+class ForegroundMixedCrop(object):
+    """Train-only crop after Resize(2048x2048, keep_ratio=False).
+
+    With probability fg_prob: image-uniform random crop.  Otherwise: a
+    PRESENT lesion class (1..num_fg) is chosen uniformly, a pixel of it is
+    chosen uniformly, and a valid anchor offset guaranteeing pixel inclusion
+    is sampled.  Falls back to uniform when no lesion class is present.
+    The image (primary ``gt_semantic_seg`` and every extra field listed in
+    ``seg_fields``) is padded/cropped with IDENTICAL coordinates; small
+    images are padded first (image 0, labels 255).
+    """
+
+    def __init__(self, crop_size, fg_prob=0.5, num_fg=4, seg_fields=()):
+        self.crop_size = int(crop_size)
+        self.fg_prob = float(fg_prob)
+        self.num_fg = int(num_fg)
+        self.seg_fields = list(seg_fields)
+
+    def _seg_targets(self, results):
+        """All label fields cropped together, primary first."""
+        fields = ['gt_semantic_seg'] + [f for f in dict.fromkeys(results.get('seg_fields', []) + self.seg_fields)
+                                        if f != 'gt_semantic_seg']
+        return fields, [results[f] for f in fields]
+
+    def __call__(self, results):
+        img = results['img']
+        fields, gts = self._seg_targets(results)
+        gt = gts[0]
+        cs = self.crop_size
+        h, w = gt.shape[:2]
+        if h < cs or w < cs:
+            th, tw = max(cs, h), max(cs, w)
+            original_img = img
+            img = pad_to_size(original_img, gt, (th, tw), img_pad=0, seg_pad=255)[0]
+            padded = []
+            for g in gts:
+                padded.append(pad_to_size(original_img, g, (th, tw), 0, 255)[1])
+            gts = padded
+            gt = gts[0]
+        y0, x0 = foreground_crop_bbox(gt, cs, self.fg_prob, np.random,
+                                      self.num_fg)
+        results['img'] = img[y0:y0 + cs, x0:x0 + cs]
+        for f, g in zip(fields, gts):
+            results[f] = crop_arrays(g, g, y0, x0, cs, cs)[0]
+        results['img_shape'] = results['img'].shape  # 3D (H, W, C)
+        results['pad_shape'] = results['img'].shape  # 3D (H, W, C)
+        return results
+
+    def __repr__(self):
+        return self.__class__.__name__ + \
+            '(crop_size={}, fg_prob={}, num_fg={})'.format(
+                self.crop_size, self.fg_prob, self.num_fg)
+
+
+SOURCE D:\HRDecoder\mmseg\models\losses\binary_loss.py
+# REF: https://github.com/hubutui/DiceLoss-PyTorch/blob/master/loss.py
+
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+
+from ..builder import LOSSES
+from .utils import weight_reduce_loss
+
+
+def _make_one_hot(gt, num_classes, ignore=(0, 255)):
+    """
+    :param label: [N, *], values in [0,num_classes)
+    :param ignore: ignore value of background, here is (0, 255)
+    :return: [N, C, *]
+    """
+    # label = gt.clone()
+    label = gt
+    label = label.unsqueeze(1)
+    shape = list(label.shape)
+    shape[1] = num_classes + 1
+
+    if ignore is not None:
+        if 0 in ignore:
+            for index in ignore:
+                label[label == index] = num_classes + 1
+            label = label - 1
+        else:
+            for index in ignore:
+                label[label == index] = num_classes
+
+    result = torch.zeros(shape, device=label.device)
+
+    # print(set(label.detach().cpu().numpy().flatten().tolist())) # for DEBUG
+    result.scatter_(1, label, 1)
+
+    return result[:, :-1, ]
+
+
+def binary_ce_loss(pred, label, **kwargs):
+    loss = F.binary_cross_entropy(pred, label, reduction='none')
+    loss = torch.mean(loss, dim=(1, 2))
+    return loss
+
+
+def binary_dice_loss(pred, label, smooth=1.0, exponent=2):
+    """
+    :param pred: [N, *]: here should be scores in [0,1]
+    :param label: [N, *]: values in [0,1]
+    :param smooth: smooth
+    :return: [N]
+    """
+
+    pred = pred.contiguous().view(pred.shape[0], -1).float()
+    label = label.contiguous().view(label.shape[0], -1).float()
+
+    num = 2 * torch.sum(torch.mul(pred, label), dim=1) + smooth
+    den = torch.sum(pred.pow(exponent) + label.pow(exponent), dim=1) + smooth
+
+    loss = 1. - num / den
+
+    return loss
+
+
+def binary_ce_dice_loss(pred, label, smooth=1.0, **kwargs):
+    loss1 = binary_ce_loss(pred, label, **kwargs)
+    loss2 = binary_dice_loss(pred, label, smooth=smooth)
+
+    return loss1 + loss2
+
+
+def binary_loss(pred_raw,
+                label_raw,
+                loss_func,
+                weight=None,
+                class_weight=None,
+                class_weight_norm=False,
+                reduction='mean',
+                avg_factor=None,
+                smooth=1.0,
+                ODOC=False,
+                **kwargs):
+    """
+    :param pred:  [N, C, *] scores without softmax
+    :param label: [N, *] in [0, C], 0 stands for background, 1~C stands for pred in 0~C-1
+    :return: reduction([N])
+    """
+    pred = pred_raw.clone()
+    label = label_raw.clone()
+    num_classes = pred.shape[1]
+    if class_weight is not None:
+        class_weight = class_weight.float()
+
+    if pred.shape != label.shape:
+        label = _make_one_hot(label, num_classes)
+
+    pred = torch.sigmoid(pred)
+
+    loss = 0.
+    for i in range(num_classes):
+        if isinstance(loss_func, tuple):
+            loss_function = loss_func[i]
+        else:
+            loss_function = loss_func
+        if i == 0 and ODOC:
+            label[:, i] = (label != 0).any(axis=1)
+        class_loss = loss_function(pred[:, i], label[:, i], smooth=smooth)
+        if class_weight is not None:
+            class_loss *= class_weight[i]
+        loss += class_loss
+
+    if class_weight is not None and class_weight_norm:
+        loss = loss / torch.sum(class_weight)
+    else:
+        loss = loss / num_classes
+
+    loss = weight_reduce_loss(loss, weight=weight, reduction=reduction, avg_factor=avg_factor)
+    return loss
+
+
+@LOSSES.register_module()
+class BinaryLoss(nn.Module):
+    def __init__(self,
+                 loss_type='ce',
+                 reduction='mean',
+                 class_weight=None,
+                 class_weight_norm=False,
+                 loss_weight=1.0,
+                 smooth=1.0,
+                 ODOC=False,
+                 loss_name='loss_bde',
+                 **kwargs):
+        super(BinaryLoss, self).__init__()
+        assert loss_type in ['ce', 'dice', 'ce_dice','tversky','focaltversky','dice_focaltversky']
+        self.reduction = reduction
+        self.loss_weight = loss_weight
+        self.class_weight = class_weight
+        self.class_weight_norm = class_weight_norm
+        self.loss_type = loss_type
+        self.smooth = smooth
+        self.ODOC = ODOC
+        self._loss_name = loss_name
+
+        self.loss_hyper = kwargs.get('loss_hyper',None)
+
+    def forward(self,
+                cls_score,
+                label,
+                weight=None,
+                avg_factor=None,
+                reduction_override=None,
+                **kwargs):
+        assert reduction_override in (None, 'none', 'mean', 'sum')
+        reduction = (
+            reduction_override if reduction_override else self.reduction)
+
+        if self.class_weight is not None:
+            class_weight = cls_score.new_tensor(self.class_weight)
+            assert class_weight.shape[0] == cls_score.shape[1], \
+                'Expect weight shape [{}], get[{}]'.format(cls_score.shape[1], class_weight.shape[0])
+        else:
+            class_weight = None
+
+        loss_func = None
+        if self.loss_type == 'ce':
+            loss_func = binary_ce_loss
+        elif self.loss_type == 'dice':
+            loss_func = binary_dice_loss
+        elif self.loss_type == 'ce_dice':
+            loss_func = binary_ce_dice_loss
+        elif self.loss_type == 'tversky':
+            loss_func = TverskyLoss(**self.loss_hyper)
+        elif self.loss_type == 'focaltversky':
+            loss_func = FocalTverskyLoss(**self.loss_hyper)
+        elif self.loss_type == 'dice_focaltversky':
+            loss_func = DiceFocalTverskyLoss(**self.loss_hyper)
+
+        loss_cls = self.loss_weight * binary_loss(
+            cls_score,
+            label,
+            loss_func,
+            weight,
+            class_weight=class_weight,
+            class_weight_norm=self.class_weight_norm,
+            reduction=reduction,
+            avg_factor=avg_factor,
+            smooth=self.smooth,
+            ODOC=self.ODOC
+        )
+        return loss_cls
+
+    @property
+    def loss_name(self):
+        """Loss Name.
+
+        This function must be implemented and will return the name of this
+        loss function. This name will be used to combine different loss items
+        by simple sum operation. In addition, if you want this loss item to be
+        included into the backward graph, `loss_` must be the prefix of the
+        name.
+        Returns:
+            str: The name of this loss item.
+        """
+        return self._loss_name
+    
+
+
+def tversky_loss(pred, label, alpha=0.5, beta=0.5, smooth=1.0, exponent=2.0):
+    pred = pred.contiguous().view(pred.shape[0], -1).float()
+    label = label.contiguous().view(label.shape[0], -1).float()
+
+    num = torch.sum(torch.mul(pred, label), dim=1)
+    fn = torch.sum(torch.mul(1-pred,label), dim=1)
+    fp = torch.sum(torch.mul(pred,1-label), dim=1)
+
+    loss = 1. - (num + smooth) / (num + alpha*fn + beta*fp + smooth)
+    return loss
+
+
+def focal_tversky_loss(pred, label, alpha=0.5, beta=0.5, gamma=0.75, smooth=1.0, exponent=2.0):
+    return tversky_loss(pred,label,alpha,beta,smooth,exponent).pow(gamma)
+
+
+class TverskyLoss(nn.Module):
+    def __init__(self, alpha=0.5) -> None:
+        super().__init__()
+        self.alpha = alpha
+        self.beta = 1-alpha
+
+    def forward(self,pred,label,smooth=1.0,exponent=2):
+        return tversky_loss(
+            pred=pred,
+            label=label,
+            alpha=self.alpha,
+            beta=self.beta,
+            smooth=smooth,
+            exponent=exponent,
+        )
+
+class FocalTverskyLoss(nn.Module):
+    def __init__(self, alpha=0.5, gamma=0.75) -> None:
+        super().__init__()
+        self.alpha = alpha
+        self.beta = 1-alpha
+        self.gamma = gamma
+
+    def forward(self,pred,label,smooth=1.0,exponent=2):
+        return binary_dice_loss(pred=pred,label=label,smooth=smooth) + \
+            focal_tversky_loss(
+                pred=pred,
+                label=label,
+                alpha=self.alpha,
+                beta=self.beta,
+                gamma=self.gamma,
+                smooth=smooth,
+                exponent=exponent,
+            )
+    
+class DiceFocalTverskyLoss(nn.Module):
+    def __init__(self, alpha=0.5, gamma=0.75) -> None:
+        super().__init__()
+        self.alpha = alpha
+        self.beta = 1-alpha
+        self.gamma = gamma
+
+    def forward(self,pred,label,smooth=1.0,exponent=2):
+        return (
+            binary_dice_loss(
+                pred=pred,
+                label=label,
+                smooth=smooth) 
+            + focal_tversky_loss(
+                pred=pred,
+                label=label,
+                alpha=self.alpha,
+                beta=self.beta,
+                gamma=self.gamma,
+                smooth=smooth,
+                exponent=exponent,
+            )
+        )/2

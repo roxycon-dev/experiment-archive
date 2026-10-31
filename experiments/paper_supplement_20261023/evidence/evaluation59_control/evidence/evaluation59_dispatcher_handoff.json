@@ -1,0 +1,15 @@
+{
+  "old_dispatcher_pid": 392732,
+  "adopted_workers": {
+    "S_seed42": {
+      "pid": 435941,
+      "GPU": 1
+    }
+  },
+  "worker_processes_stopped": false,
+  "reason": "Add the validation-selected baseline to the same idle-GPU dispatcher; keep existing fixed-seed inference intact",
+  "original_dispatcher_sha256": "72127476513da5ebc239d72e04358e446c345d53f8a756646c2e593c6d8abcf4",
+  "adopt_state": "/home/studentuser001/paper_supplement_20261023/logs/evaluation_dispatcher_adopt_20261023T131537Z.json",
+  "new_dispatcher_pid": 453129,
+  "new_controller": "queue_supplement_evaluation59.py"
+}

@@ -1,0 +1,3742 @@
+/root/miniconda3/lib/python3.8/site-packages/mmcv/__init__.py:20: UserWarning: On January 1, 2023, MMCV will release v2.0.0, in which it will remove components related to the training process and add a data transformation module. In addition, it will rename the package names mmcv to mmcv-lite and mmcv-full to mmcv. See https://github.com/open-mmlab/mmcv/blob/master/docs/en/compatibility.md for more details.
+  warnings.warn(
+/root/autodl-tmp/HRDecoder_v3_20261008/vendor/champion_repo/mmseg/models/backbones/hrnet.py:318: UserWarning: DeprecationWarning: pretrained is deprecated, please use "init_cfg" instead
+  warnings.warn('DeprecationWarning: pretrained is deprecated, '
+
+==================================================
+【安全激活】手动强行注入骨干网预训练权重: /root/.cache/torch/hub/checkpoints/hrnetv2_w48-d2186c55.pth
+==================================================
+
+load checkpoint from local path: /root/.cache/torch/hub/checkpoints/hrnetv2_w48-d2186c55.pth
+The model and loaded state dict do not match exactly
+
+unexpected key in source state_dict: incre_modules.0.0.conv1.weight, incre_modules.0.0.bn1.weight, incre_modules.0.0.bn1.bias, incre_modules.0.0.bn1.running_mean, incre_modules.0.0.bn1.running_var, incre_modules.0.0.bn1.num_batches_tracked, incre_modules.0.0.conv2.weight, incre_modules.0.0.bn2.weight, incre_modules.0.0.bn2.bias, incre_modules.0.0.bn2.running_mean, incre_modules.0.0.bn2.running_var, incre_modules.0.0.bn2.num_batches_tracked, incre_modules.0.0.conv3.weight, incre_modules.0.0.bn3.weight, incre_modules.0.0.bn3.bias, incre_modules.0.0.bn3.running_mean, incre_modules.0.0.bn3.running_var, incre_modules.0.0.bn3.num_batches_tracked, incre_modules.0.0.downsample.0.weight, incre_modules.0.0.downsample.1.weight, incre_modules.0.0.downsample.1.bias, incre_modules.0.0.downsample.1.running_mean, incre_modules.0.0.downsample.1.running_var, incre_modules.0.0.downsample.1.num_batches_tracked, incre_modules.1.0.conv1.weight, incre_modules.1.0.bn1.weight, incre_modules.1.0.bn1.bias, incre_modules.1.0.bn1.running_mean, incre_modules.1.0.bn1.running_var, incre_modules.1.0.bn1.num_batches_tracked, incre_modules.1.0.conv2.weight, incre_modules.1.0.bn2.weight, incre_modules.1.0.bn2.bias, incre_modules.1.0.bn2.running_mean, incre_modules.1.0.bn2.running_var, incre_modules.1.0.bn2.num_batches_tracked, incre_modules.1.0.conv3.weight, incre_modules.1.0.bn3.weight, incre_modules.1.0.bn3.bias, incre_modules.1.0.bn3.running_mean, incre_modules.1.0.bn3.running_var, incre_modules.1.0.bn3.num_batches_tracked, incre_modules.1.0.downsample.0.weight, incre_modules.1.0.downsample.1.weight, incre_modules.1.0.downsample.1.bias, incre_modules.1.0.downsample.1.running_mean, incre_modules.1.0.downsample.1.running_var, incre_modules.1.0.downsample.1.num_batches_tracked, incre_modules.2.0.conv1.weight, incre_modules.2.0.bn1.weight, incre_modules.2.0.bn1.bias, incre_modules.2.0.bn1.running_mean, incre_modules.2.0.bn1.running_var, incre_modules.2.0.bn1.num_batches_tracked, incre_modules.2.0.conv2.weight, incre_modules.2.0.bn2.weight, incre_modules.2.0.bn2.bias, incre_modules.2.0.bn2.running_mean, incre_modules.2.0.bn2.running_var, incre_modules.2.0.bn2.num_batches_tracked, incre_modules.2.0.conv3.weight, incre_modules.2.0.bn3.weight, incre_modules.2.0.bn3.bias, incre_modules.2.0.bn3.running_mean, incre_modules.2.0.bn3.running_var, incre_modules.2.0.bn3.num_batches_tracked, incre_modules.2.0.downsample.0.weight, incre_modules.2.0.downsample.1.weight, incre_modules.2.0.downsample.1.bias, incre_modules.2.0.downsample.1.running_mean, incre_modules.2.0.downsample.1.running_var, incre_modules.2.0.downsample.1.num_batches_tracked, incre_modules.3.0.conv1.weight, incre_modules.3.0.bn1.weight, incre_modules.3.0.bn1.bias, incre_modules.3.0.bn1.running_mean, incre_modules.3.0.bn1.running_var, incre_modules.3.0.bn1.num_batches_tracked, incre_modules.3.0.conv2.weight, incre_modules.3.0.bn2.weight, incre_modules.3.0.bn2.bias, incre_modules.3.0.bn2.running_mean, incre_modules.3.0.bn2.running_var, incre_modules.3.0.bn2.num_batches_tracked, incre_modules.3.0.conv3.weight, incre_modules.3.0.bn3.weight, incre_modules.3.0.bn3.bias, incre_modules.3.0.bn3.running_mean, incre_modules.3.0.bn3.running_var, incre_modules.3.0.bn3.num_batches_tracked, incre_modules.3.0.downsample.0.weight, incre_modules.3.0.downsample.1.weight, incre_modules.3.0.downsample.1.bias, incre_modules.3.0.downsample.1.running_mean, incre_modules.3.0.downsample.1.running_var, incre_modules.3.0.downsample.1.num_batches_tracked, downsamp_modules.0.0.weight, downsamp_modules.0.0.bias, downsamp_modules.0.1.weight, downsamp_modules.0.1.bias, downsamp_modules.0.1.running_mean, downsamp_modules.0.1.running_var, downsamp_modules.0.1.num_batches_tracked, downsamp_modules.1.0.weight, downsamp_modules.1.0.bias, downsamp_modules.1.1.weight, downsamp_modules.1.1.bias, downsamp_modules.1.1.running_mean, downsamp_modules.1.1.running_var, downsamp_modules.1.1.num_batches_tracked, downsamp_modules.2.0.weight, downsamp_modules.2.0.bias, downsamp_modules.2.1.weight, downsamp_modules.2.1.bias, downsamp_modules.2.1.running_mean, downsamp_modules.2.1.running_var, downsamp_modules.2.1.num_batches_tracked, final_layer.0.weight, final_layer.0.bias, final_layer.1.weight, final_layer.1.bias, final_layer.1.running_mean, final_layer.1.running_var, final_layer.1.num_batches_tracked, classifier.weight, classifier.bias
+
+10/10 14:13:43 - mmengine - INFO - load model from: /root/.cache/torch/hub/checkpoints/hrnetv2_w48-d2186c55.pth
+10/10 14:13:43 - mmengine - INFO - Loads checkpoint by local backend from path: /root/.cache/torch/hub/checkpoints/hrnetv2_w48-d2186c55.pth
+10/10 14:13:44 - mmengine - WARNING - The model and loaded state dict do not match exactly
+
+unexpected key in source state_dict: incre_modules.0.0.conv1.weight, incre_modules.0.0.bn1.weight, incre_modules.0.0.bn1.bias, incre_modules.0.0.bn1.running_mean, incre_modules.0.0.bn1.running_var, incre_modules.0.0.bn1.num_batches_tracked, incre_modules.0.0.conv2.weight, incre_modules.0.0.bn2.weight, incre_modules.0.0.bn2.bias, incre_modules.0.0.bn2.running_mean, incre_modules.0.0.bn2.running_var, incre_modules.0.0.bn2.num_batches_tracked, incre_modules.0.0.conv3.weight, incre_modules.0.0.bn3.weight, incre_modules.0.0.bn3.bias, incre_modules.0.0.bn3.running_mean, incre_modules.0.0.bn3.running_var, incre_modules.0.0.bn3.num_batches_tracked, incre_modules.0.0.downsample.0.weight, incre_modules.0.0.downsample.1.weight, incre_modules.0.0.downsample.1.bias, incre_modules.0.0.downsample.1.running_mean, incre_modules.0.0.downsample.1.running_var, incre_modules.0.0.downsample.1.num_batches_tracked, incre_modules.1.0.conv1.weight, incre_modules.1.0.bn1.weight, incre_modules.1.0.bn1.bias, incre_modules.1.0.bn1.running_mean, incre_modules.1.0.bn1.running_var, incre_modules.1.0.bn1.num_batches_tracked, incre_modules.1.0.conv2.weight, incre_modules.1.0.bn2.weight, incre_modules.1.0.bn2.bias, incre_modules.1.0.bn2.running_mean, incre_modules.1.0.bn2.running_var, incre_modules.1.0.bn2.num_batches_tracked, incre_modules.1.0.conv3.weight, incre_modules.1.0.bn3.weight, incre_modules.1.0.bn3.bias, incre_modules.1.0.bn3.running_mean, incre_modules.1.0.bn3.running_var, incre_modules.1.0.bn3.num_batches_tracked, incre_modules.1.0.downsample.0.weight, incre_modules.1.0.downsample.1.weight, incre_modules.1.0.downsample.1.bias, incre_modules.1.0.downsample.1.running_mean, incre_modules.1.0.downsample.1.running_var, incre_modules.1.0.downsample.1.num_batches_tracked, incre_modules.2.0.conv1.weight, incre_modules.2.0.bn1.weight, incre_modules.2.0.bn1.bias, incre_modules.2.0.bn1.running_mean, incre_modules.2.0.bn1.running_var, incre_modules.2.0.bn1.num_batches_tracked, incre_modules.2.0.conv2.weight, incre_modules.2.0.bn2.weight, incre_modules.2.0.bn2.bias, incre_modules.2.0.bn2.running_mean, incre_modules.2.0.bn2.running_var, incre_modules.2.0.bn2.num_batches_tracked, incre_modules.2.0.conv3.weight, incre_modules.2.0.bn3.weight, incre_modules.2.0.bn3.bias, incre_modules.2.0.bn3.running_mean, incre_modules.2.0.bn3.running_var, incre_modules.2.0.bn3.num_batches_tracked, incre_modules.2.0.downsample.0.weight, incre_modules.2.0.downsample.1.weight, incre_modules.2.0.downsample.1.bias, incre_modules.2.0.downsample.1.running_mean, incre_modules.2.0.downsample.1.running_var, incre_modules.2.0.downsample.1.num_batches_tracked, incre_modules.3.0.conv1.weight, incre_modules.3.0.bn1.weight, incre_modules.3.0.bn1.bias, incre_modules.3.0.bn1.running_mean, incre_modules.3.0.bn1.running_var, incre_modules.3.0.bn1.num_batches_tracked, incre_modules.3.0.conv2.weight, incre_modules.3.0.bn2.weight, incre_modules.3.0.bn2.bias, incre_modules.3.0.bn2.running_mean, incre_modules.3.0.bn2.running_var, incre_modules.3.0.bn2.num_batches_tracked, incre_modules.3.0.conv3.weight, incre_modules.3.0.bn3.weight, incre_modules.3.0.bn3.bias, incre_modules.3.0.bn3.running_mean, incre_modules.3.0.bn3.running_var, incre_modules.3.0.bn3.num_batches_tracked, incre_modules.3.0.downsample.0.weight, incre_modules.3.0.downsample.1.weight, incre_modules.3.0.downsample.1.bias, incre_modules.3.0.downsample.1.running_mean, incre_modules.3.0.downsample.1.running_var, incre_modules.3.0.downsample.1.num_batches_tracked, downsamp_modules.0.0.weight, downsamp_modules.0.0.bias, downsamp_modules.0.1.weight, downsamp_modules.0.1.bias, downsamp_modules.0.1.running_mean, downsamp_modules.0.1.running_var, downsamp_modules.0.1.num_batches_tracked, downsamp_modules.1.0.weight, downsamp_modules.1.0.bias, downsamp_modules.1.1.weight, downsamp_modules.1.1.bias, downsamp_modules.1.1.running_mean, downsamp_modules.1.1.running_var, downsamp_modules.1.1.num_batches_tracked, downsamp_modules.2.0.weight, downsamp_modules.2.0.bias, downsamp_modules.2.1.weight, downsamp_modules.2.1.bias, downsamp_modules.2.1.running_mean, downsamp_modules.2.1.running_var, downsamp_modules.2.1.num_batches_tracked, final_layer.0.weight, final_layer.0.bias, final_layer.1.weight, final_layer.1.bias, final_layer.1.running_mean, final_layer.1.running_var, final_layer.1.num_batches_tracked, classifier.weight, classifier.bias
+
+2026-10-10 14:13:44,116 - mmcv - INFO - initialize FCNHead with init_cfg {'type': 'Normal', 'std': 0.01, 'override': {'name': 'conv_seg'}}
+2026-10-10 14:13:44,117 - mmcv - INFO - 
+backbone.conv1.weight - torch.Size([64, 3, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,117 - mmcv - INFO - 
+backbone.bn1.weight - torch.Size([64]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,117 - mmcv - INFO - 
+backbone.bn1.bias - torch.Size([64]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,117 - mmcv - INFO - 
+backbone.conv2.weight - torch.Size([64, 64, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,117 - mmcv - INFO - 
+backbone.bn2.weight - torch.Size([64]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,117 - mmcv - INFO - 
+backbone.bn2.bias - torch.Size([64]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,117 - mmcv - INFO - 
+backbone.layer1.0.conv1.weight - torch.Size([64, 64, 1, 1]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,117 - mmcv - INFO - 
+backbone.layer1.0.bn1.weight - torch.Size([64]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,117 - mmcv - INFO - 
+backbone.layer1.0.bn1.bias - torch.Size([64]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,117 - mmcv - INFO - 
+backbone.layer1.0.conv2.weight - torch.Size([64, 64, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,117 - mmcv - INFO - 
+backbone.layer1.0.bn2.weight - torch.Size([64]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,117 - mmcv - INFO - 
+backbone.layer1.0.bn2.bias - torch.Size([64]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,118 - mmcv - INFO - 
+backbone.layer1.0.conv3.weight - torch.Size([256, 64, 1, 1]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,118 - mmcv - INFO - 
+backbone.layer1.0.bn3.weight - torch.Size([256]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,118 - mmcv - INFO - 
+backbone.layer1.0.bn3.bias - torch.Size([256]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,118 - mmcv - INFO - 
+backbone.layer1.0.downsample.0.weight - torch.Size([256, 64, 1, 1]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,118 - mmcv - INFO - 
+backbone.layer1.0.downsample.1.weight - torch.Size([256]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,118 - mmcv - INFO - 
+backbone.layer1.0.downsample.1.bias - torch.Size([256]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,118 - mmcv - INFO - 
+backbone.layer1.1.conv1.weight - torch.Size([64, 256, 1, 1]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,118 - mmcv - INFO - 
+backbone.layer1.1.bn1.weight - torch.Size([64]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,118 - mmcv - INFO - 
+backbone.layer1.1.bn1.bias - torch.Size([64]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,118 - mmcv - INFO - 
+backbone.layer1.1.conv2.weight - torch.Size([64, 64, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,118 - mmcv - INFO - 
+backbone.layer1.1.bn2.weight - torch.Size([64]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,118 - mmcv - INFO - 
+backbone.layer1.1.bn2.bias - torch.Size([64]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,118 - mmcv - INFO - 
+backbone.layer1.1.conv3.weight - torch.Size([256, 64, 1, 1]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,118 - mmcv - INFO - 
+backbone.layer1.1.bn3.weight - torch.Size([256]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,118 - mmcv - INFO - 
+backbone.layer1.1.bn3.bias - torch.Size([256]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,118 - mmcv - INFO - 
+backbone.layer1.2.conv1.weight - torch.Size([64, 256, 1, 1]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,118 - mmcv - INFO - 
+backbone.layer1.2.bn1.weight - torch.Size([64]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,119 - mmcv - INFO - 
+backbone.layer1.2.bn1.bias - torch.Size([64]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,119 - mmcv - INFO - 
+backbone.layer1.2.conv2.weight - torch.Size([64, 64, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,119 - mmcv - INFO - 
+backbone.layer1.2.bn2.weight - torch.Size([64]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,119 - mmcv - INFO - 
+backbone.layer1.2.bn2.bias - torch.Size([64]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,119 - mmcv - INFO - 
+backbone.layer1.2.conv3.weight - torch.Size([256, 64, 1, 1]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,119 - mmcv - INFO - 
+backbone.layer1.2.bn3.weight - torch.Size([256]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,119 - mmcv - INFO - 
+backbone.layer1.2.bn3.bias - torch.Size([256]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,119 - mmcv - INFO - 
+backbone.layer1.3.conv1.weight - torch.Size([64, 256, 1, 1]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,119 - mmcv - INFO - 
+backbone.layer1.3.bn1.weight - torch.Size([64]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,119 - mmcv - INFO - 
+backbone.layer1.3.bn1.bias - torch.Size([64]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,119 - mmcv - INFO - 
+backbone.layer1.3.conv2.weight - torch.Size([64, 64, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,120 - mmcv - INFO - 
+backbone.layer1.3.bn2.weight - torch.Size([64]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,120 - mmcv - INFO - 
+backbone.layer1.3.bn2.bias - torch.Size([64]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,120 - mmcv - INFO - 
+backbone.layer1.3.conv3.weight - torch.Size([256, 64, 1, 1]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,120 - mmcv - INFO - 
+backbone.layer1.3.bn3.weight - torch.Size([256]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,120 - mmcv - INFO - 
+backbone.layer1.3.bn3.bias - torch.Size([256]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,120 - mmcv - INFO - 
+backbone.transition1.0.0.weight - torch.Size([48, 256, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,120 - mmcv - INFO - 
+backbone.transition1.0.1.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,120 - mmcv - INFO - 
+backbone.transition1.0.1.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,121 - mmcv - INFO - 
+backbone.transition1.1.0.0.weight - torch.Size([96, 256, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,121 - mmcv - INFO - 
+backbone.transition1.1.0.1.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,121 - mmcv - INFO - 
+backbone.transition1.1.0.1.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,121 - mmcv - INFO - 
+backbone.stage2.0.branches.0.0.conv1.weight - torch.Size([48, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,121 - mmcv - INFO - 
+backbone.stage2.0.branches.0.0.bn1.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,121 - mmcv - INFO - 
+backbone.stage2.0.branches.0.0.bn1.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,121 - mmcv - INFO - 
+backbone.stage2.0.branches.0.0.conv2.weight - torch.Size([48, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,122 - mmcv - INFO - 
+backbone.stage2.0.branches.0.0.bn2.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,122 - mmcv - INFO - 
+backbone.stage2.0.branches.0.0.bn2.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,122 - mmcv - INFO - 
+backbone.stage2.0.branches.0.1.conv1.weight - torch.Size([48, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,122 - mmcv - INFO - 
+backbone.stage2.0.branches.0.1.bn1.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,122 - mmcv - INFO - 
+backbone.stage2.0.branches.0.1.bn1.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,122 - mmcv - INFO - 
+backbone.stage2.0.branches.0.1.conv2.weight - torch.Size([48, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,122 - mmcv - INFO - 
+backbone.stage2.0.branches.0.1.bn2.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,123 - mmcv - INFO - 
+backbone.stage2.0.branches.0.1.bn2.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,123 - mmcv - INFO - 
+backbone.stage2.0.branches.0.2.conv1.weight - torch.Size([48, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,123 - mmcv - INFO - 
+backbone.stage2.0.branches.0.2.bn1.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,123 - mmcv - INFO - 
+backbone.stage2.0.branches.0.2.bn1.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,123 - mmcv - INFO - 
+backbone.stage2.0.branches.0.2.conv2.weight - torch.Size([48, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,123 - mmcv - INFO - 
+backbone.stage2.0.branches.0.2.bn2.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,123 - mmcv - INFO - 
+backbone.stage2.0.branches.0.2.bn2.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,123 - mmcv - INFO - 
+backbone.stage2.0.branches.0.3.conv1.weight - torch.Size([48, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,124 - mmcv - INFO - 
+backbone.stage2.0.branches.0.3.bn1.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,124 - mmcv - INFO - 
+backbone.stage2.0.branches.0.3.bn1.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,124 - mmcv - INFO - 
+backbone.stage2.0.branches.0.3.conv2.weight - torch.Size([48, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,124 - mmcv - INFO - 
+backbone.stage2.0.branches.0.3.bn2.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,124 - mmcv - INFO - 
+backbone.stage2.0.branches.0.3.bn2.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,124 - mmcv - INFO - 
+backbone.stage2.0.branches.1.0.conv1.weight - torch.Size([96, 96, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,124 - mmcv - INFO - 
+backbone.stage2.0.branches.1.0.bn1.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,124 - mmcv - INFO - 
+backbone.stage2.0.branches.1.0.bn1.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,124 - mmcv - INFO - 
+backbone.stage2.0.branches.1.0.conv2.weight - torch.Size([96, 96, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,124 - mmcv - INFO - 
+backbone.stage2.0.branches.1.0.bn2.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,125 - mmcv - INFO - 
+backbone.stage2.0.branches.1.0.bn2.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,126 - mmcv - INFO - 
+backbone.stage2.0.branches.1.1.conv1.weight - torch.Size([96, 96, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,126 - mmcv - INFO - 
+backbone.stage2.0.branches.1.1.bn1.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,126 - mmcv - INFO - 
+backbone.stage2.0.branches.1.1.bn1.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,126 - mmcv - INFO - 
+backbone.stage2.0.branches.1.1.conv2.weight - torch.Size([96, 96, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,126 - mmcv - INFO - 
+backbone.stage2.0.branches.1.1.bn2.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,126 - mmcv - INFO - 
+backbone.stage2.0.branches.1.1.bn2.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,126 - mmcv - INFO - 
+backbone.stage2.0.branches.1.2.conv1.weight - torch.Size([96, 96, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,126 - mmcv - INFO - 
+backbone.stage2.0.branches.1.2.bn1.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,126 - mmcv - INFO - 
+backbone.stage2.0.branches.1.2.bn1.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,126 - mmcv - INFO - 
+backbone.stage2.0.branches.1.2.conv2.weight - torch.Size([96, 96, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,126 - mmcv - INFO - 
+backbone.stage2.0.branches.1.2.bn2.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,126 - mmcv - INFO - 
+backbone.stage2.0.branches.1.2.bn2.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,126 - mmcv - INFO - 
+backbone.stage2.0.branches.1.3.conv1.weight - torch.Size([96, 96, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,126 - mmcv - INFO - 
+backbone.stage2.0.branches.1.3.bn1.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,126 - mmcv - INFO - 
+backbone.stage2.0.branches.1.3.bn1.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,126 - mmcv - INFO - 
+backbone.stage2.0.branches.1.3.conv2.weight - torch.Size([96, 96, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,126 - mmcv - INFO - 
+backbone.stage2.0.branches.1.3.bn2.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,126 - mmcv - INFO - 
+backbone.stage2.0.branches.1.3.bn2.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,126 - mmcv - INFO - 
+backbone.stage2.0.fuse_layers.0.1.0.weight - torch.Size([48, 96, 1, 1]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,126 - mmcv - INFO - 
+backbone.stage2.0.fuse_layers.0.1.1.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,126 - mmcv - INFO - 
+backbone.stage2.0.fuse_layers.0.1.1.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,126 - mmcv - INFO - 
+backbone.stage2.0.fuse_layers.1.0.0.0.weight - torch.Size([96, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,126 - mmcv - INFO - 
+backbone.stage2.0.fuse_layers.1.0.0.1.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,126 - mmcv - INFO - 
+backbone.stage2.0.fuse_layers.1.0.0.1.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,126 - mmcv - INFO - 
+backbone.transition2.2.0.0.weight - torch.Size([192, 96, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,126 - mmcv - INFO - 
+backbone.transition2.2.0.1.weight - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,126 - mmcv - INFO - 
+backbone.transition2.2.0.1.bias - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,126 - mmcv - INFO - 
+backbone.stage3.0.branches.0.0.conv1.weight - torch.Size([48, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,126 - mmcv - INFO - 
+backbone.stage3.0.branches.0.0.bn1.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,126 - mmcv - INFO - 
+backbone.stage3.0.branches.0.0.bn1.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,126 - mmcv - INFO - 
+backbone.stage3.0.branches.0.0.conv2.weight - torch.Size([48, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,126 - mmcv - INFO - 
+backbone.stage3.0.branches.0.0.bn2.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,127 - mmcv - INFO - 
+backbone.stage3.0.branches.0.0.bn2.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,127 - mmcv - INFO - 
+backbone.stage3.0.branches.0.1.conv1.weight - torch.Size([48, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,127 - mmcv - INFO - 
+backbone.stage3.0.branches.0.1.bn1.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,127 - mmcv - INFO - 
+backbone.stage3.0.branches.0.1.bn1.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,127 - mmcv - INFO - 
+backbone.stage3.0.branches.0.1.conv2.weight - torch.Size([48, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,127 - mmcv - INFO - 
+backbone.stage3.0.branches.0.1.bn2.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,127 - mmcv - INFO - 
+backbone.stage3.0.branches.0.1.bn2.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,127 - mmcv - INFO - 
+backbone.stage3.0.branches.0.2.conv1.weight - torch.Size([48, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,127 - mmcv - INFO - 
+backbone.stage3.0.branches.0.2.bn1.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,127 - mmcv - INFO - 
+backbone.stage3.0.branches.0.2.bn1.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,127 - mmcv - INFO - 
+backbone.stage3.0.branches.0.2.conv2.weight - torch.Size([48, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,127 - mmcv - INFO - 
+backbone.stage3.0.branches.0.2.bn2.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,127 - mmcv - INFO - 
+backbone.stage3.0.branches.0.2.bn2.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,127 - mmcv - INFO - 
+backbone.stage3.0.branches.0.3.conv1.weight - torch.Size([48, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,127 - mmcv - INFO - 
+backbone.stage3.0.branches.0.3.bn1.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,127 - mmcv - INFO - 
+backbone.stage3.0.branches.0.3.bn1.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,127 - mmcv - INFO - 
+backbone.stage3.0.branches.0.3.conv2.weight - torch.Size([48, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,127 - mmcv - INFO - 
+backbone.stage3.0.branches.0.3.bn2.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,127 - mmcv - INFO - 
+backbone.stage3.0.branches.0.3.bn2.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,127 - mmcv - INFO - 
+backbone.stage3.0.branches.1.0.conv1.weight - torch.Size([96, 96, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,127 - mmcv - INFO - 
+backbone.stage3.0.branches.1.0.bn1.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,127 - mmcv - INFO - 
+backbone.stage3.0.branches.1.0.bn1.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,127 - mmcv - INFO - 
+backbone.stage3.0.branches.1.0.conv2.weight - torch.Size([96, 96, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,127 - mmcv - INFO - 
+backbone.stage3.0.branches.1.0.bn2.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,127 - mmcv - INFO - 
+backbone.stage3.0.branches.1.0.bn2.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,127 - mmcv - INFO - 
+backbone.stage3.0.branches.1.1.conv1.weight - torch.Size([96, 96, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,127 - mmcv - INFO - 
+backbone.stage3.0.branches.1.1.bn1.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,127 - mmcv - INFO - 
+backbone.stage3.0.branches.1.1.bn1.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,127 - mmcv - INFO - 
+backbone.stage3.0.branches.1.1.conv2.weight - torch.Size([96, 96, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,127 - mmcv - INFO - 
+backbone.stage3.0.branches.1.1.bn2.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,127 - mmcv - INFO - 
+backbone.stage3.0.branches.1.1.bn2.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,127 - mmcv - INFO - 
+backbone.stage3.0.branches.1.2.conv1.weight - torch.Size([96, 96, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,127 - mmcv - INFO - 
+backbone.stage3.0.branches.1.2.bn1.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,127 - mmcv - INFO - 
+backbone.stage3.0.branches.1.2.bn1.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,127 - mmcv - INFO - 
+backbone.stage3.0.branches.1.2.conv2.weight - torch.Size([96, 96, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,127 - mmcv - INFO - 
+backbone.stage3.0.branches.1.2.bn2.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,127 - mmcv - INFO - 
+backbone.stage3.0.branches.1.2.bn2.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,127 - mmcv - INFO - 
+backbone.stage3.0.branches.1.3.conv1.weight - torch.Size([96, 96, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,128 - mmcv - INFO - 
+backbone.stage3.0.branches.1.3.bn1.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,128 - mmcv - INFO - 
+backbone.stage3.0.branches.1.3.bn1.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,128 - mmcv - INFO - 
+backbone.stage3.0.branches.1.3.conv2.weight - torch.Size([96, 96, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,128 - mmcv - INFO - 
+backbone.stage3.0.branches.1.3.bn2.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,128 - mmcv - INFO - 
+backbone.stage3.0.branches.1.3.bn2.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,128 - mmcv - INFO - 
+backbone.stage3.0.branches.2.0.conv1.weight - torch.Size([192, 192, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,128 - mmcv - INFO - 
+backbone.stage3.0.branches.2.0.bn1.weight - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,128 - mmcv - INFO - 
+backbone.stage3.0.branches.2.0.bn1.bias - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,128 - mmcv - INFO - 
+backbone.stage3.0.branches.2.0.conv2.weight - torch.Size([192, 192, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,128 - mmcv - INFO - 
+backbone.stage3.0.branches.2.0.bn2.weight - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,128 - mmcv - INFO - 
+backbone.stage3.0.branches.2.0.bn2.bias - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,128 - mmcv - INFO - 
+backbone.stage3.0.branches.2.1.conv1.weight - torch.Size([192, 192, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,128 - mmcv - INFO - 
+backbone.stage3.0.branches.2.1.bn1.weight - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,128 - mmcv - INFO - 
+backbone.stage3.0.branches.2.1.bn1.bias - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,128 - mmcv - INFO - 
+backbone.stage3.0.branches.2.1.conv2.weight - torch.Size([192, 192, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,128 - mmcv - INFO - 
+backbone.stage3.0.branches.2.1.bn2.weight - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,128 - mmcv - INFO - 
+backbone.stage3.0.branches.2.1.bn2.bias - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,128 - mmcv - INFO - 
+backbone.stage3.0.branches.2.2.conv1.weight - torch.Size([192, 192, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,128 - mmcv - INFO - 
+backbone.stage3.0.branches.2.2.bn1.weight - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,128 - mmcv - INFO - 
+backbone.stage3.0.branches.2.2.bn1.bias - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,128 - mmcv - INFO - 
+backbone.stage3.0.branches.2.2.conv2.weight - torch.Size([192, 192, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,128 - mmcv - INFO - 
+backbone.stage3.0.branches.2.2.bn2.weight - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,128 - mmcv - INFO - 
+backbone.stage3.0.branches.2.2.bn2.bias - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,128 - mmcv - INFO - 
+backbone.stage3.0.branches.2.3.conv1.weight - torch.Size([192, 192, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,128 - mmcv - INFO - 
+backbone.stage3.0.branches.2.3.bn1.weight - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,128 - mmcv - INFO - 
+backbone.stage3.0.branches.2.3.bn1.bias - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,128 - mmcv - INFO - 
+backbone.stage3.0.branches.2.3.conv2.weight - torch.Size([192, 192, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,128 - mmcv - INFO - 
+backbone.stage3.0.branches.2.3.bn2.weight - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,128 - mmcv - INFO - 
+backbone.stage3.0.branches.2.3.bn2.bias - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,128 - mmcv - INFO - 
+backbone.stage3.0.fuse_layers.0.1.0.weight - torch.Size([48, 96, 1, 1]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,128 - mmcv - INFO - 
+backbone.stage3.0.fuse_layers.0.1.1.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,128 - mmcv - INFO - 
+backbone.stage3.0.fuse_layers.0.1.1.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,128 - mmcv - INFO - 
+backbone.stage3.0.fuse_layers.0.2.0.weight - torch.Size([48, 192, 1, 1]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,128 - mmcv - INFO - 
+backbone.stage3.0.fuse_layers.0.2.1.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,128 - mmcv - INFO - 
+backbone.stage3.0.fuse_layers.0.2.1.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,128 - mmcv - INFO - 
+backbone.stage3.0.fuse_layers.1.0.0.0.weight - torch.Size([96, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,128 - mmcv - INFO - 
+backbone.stage3.0.fuse_layers.1.0.0.1.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,128 - mmcv - INFO - 
+backbone.stage3.0.fuse_layers.1.0.0.1.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,129 - mmcv - INFO - 
+backbone.stage3.0.fuse_layers.1.2.0.weight - torch.Size([96, 192, 1, 1]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,129 - mmcv - INFO - 
+backbone.stage3.0.fuse_layers.1.2.1.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,129 - mmcv - INFO - 
+backbone.stage3.0.fuse_layers.1.2.1.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,129 - mmcv - INFO - 
+backbone.stage3.0.fuse_layers.2.0.0.0.weight - torch.Size([48, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,129 - mmcv - INFO - 
+backbone.stage3.0.fuse_layers.2.0.0.1.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,129 - mmcv - INFO - 
+backbone.stage3.0.fuse_layers.2.0.0.1.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,129 - mmcv - INFO - 
+backbone.stage3.0.fuse_layers.2.0.1.0.weight - torch.Size([192, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,129 - mmcv - INFO - 
+backbone.stage3.0.fuse_layers.2.0.1.1.weight - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,129 - mmcv - INFO - 
+backbone.stage3.0.fuse_layers.2.0.1.1.bias - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,129 - mmcv - INFO - 
+backbone.stage3.0.fuse_layers.2.1.0.0.weight - torch.Size([192, 96, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,129 - mmcv - INFO - 
+backbone.stage3.0.fuse_layers.2.1.0.1.weight - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,129 - mmcv - INFO - 
+backbone.stage3.0.fuse_layers.2.1.0.1.bias - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,129 - mmcv - INFO - 
+backbone.stage3.1.branches.0.0.conv1.weight - torch.Size([48, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,129 - mmcv - INFO - 
+backbone.stage3.1.branches.0.0.bn1.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,129 - mmcv - INFO - 
+backbone.stage3.1.branches.0.0.bn1.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,129 - mmcv - INFO - 
+backbone.stage3.1.branches.0.0.conv2.weight - torch.Size([48, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,129 - mmcv - INFO - 
+backbone.stage3.1.branches.0.0.bn2.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,129 - mmcv - INFO - 
+backbone.stage3.1.branches.0.0.bn2.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,129 - mmcv - INFO - 
+backbone.stage3.1.branches.0.1.conv1.weight - torch.Size([48, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,129 - mmcv - INFO - 
+backbone.stage3.1.branches.0.1.bn1.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,129 - mmcv - INFO - 
+backbone.stage3.1.branches.0.1.bn1.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,129 - mmcv - INFO - 
+backbone.stage3.1.branches.0.1.conv2.weight - torch.Size([48, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,129 - mmcv - INFO - 
+backbone.stage3.1.branches.0.1.bn2.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,129 - mmcv - INFO - 
+backbone.stage3.1.branches.0.1.bn2.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,129 - mmcv - INFO - 
+backbone.stage3.1.branches.0.2.conv1.weight - torch.Size([48, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,129 - mmcv - INFO - 
+backbone.stage3.1.branches.0.2.bn1.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,129 - mmcv - INFO - 
+backbone.stage3.1.branches.0.2.bn1.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,129 - mmcv - INFO - 
+backbone.stage3.1.branches.0.2.conv2.weight - torch.Size([48, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,129 - mmcv - INFO - 
+backbone.stage3.1.branches.0.2.bn2.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,129 - mmcv - INFO - 
+backbone.stage3.1.branches.0.2.bn2.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,129 - mmcv - INFO - 
+backbone.stage3.1.branches.0.3.conv1.weight - torch.Size([48, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,129 - mmcv - INFO - 
+backbone.stage3.1.branches.0.3.bn1.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,129 - mmcv - INFO - 
+backbone.stage3.1.branches.0.3.bn1.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,129 - mmcv - INFO - 
+backbone.stage3.1.branches.0.3.conv2.weight - torch.Size([48, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,129 - mmcv - INFO - 
+backbone.stage3.1.branches.0.3.bn2.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,129 - mmcv - INFO - 
+backbone.stage3.1.branches.0.3.bn2.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,129 - mmcv - INFO - 
+backbone.stage3.1.branches.1.0.conv1.weight - torch.Size([96, 96, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,129 - mmcv - INFO - 
+backbone.stage3.1.branches.1.0.bn1.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,130 - mmcv - INFO - 
+backbone.stage3.1.branches.1.0.bn1.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,130 - mmcv - INFO - 
+backbone.stage3.1.branches.1.0.conv2.weight - torch.Size([96, 96, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,130 - mmcv - INFO - 
+backbone.stage3.1.branches.1.0.bn2.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,130 - mmcv - INFO - 
+backbone.stage3.1.branches.1.0.bn2.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,130 - mmcv - INFO - 
+backbone.stage3.1.branches.1.1.conv1.weight - torch.Size([96, 96, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,130 - mmcv - INFO - 
+backbone.stage3.1.branches.1.1.bn1.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,130 - mmcv - INFO - 
+backbone.stage3.1.branches.1.1.bn1.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,130 - mmcv - INFO - 
+backbone.stage3.1.branches.1.1.conv2.weight - torch.Size([96, 96, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,130 - mmcv - INFO - 
+backbone.stage3.1.branches.1.1.bn2.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,130 - mmcv - INFO - 
+backbone.stage3.1.branches.1.1.bn2.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,130 - mmcv - INFO - 
+backbone.stage3.1.branches.1.2.conv1.weight - torch.Size([96, 96, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,130 - mmcv - INFO - 
+backbone.stage3.1.branches.1.2.bn1.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,130 - mmcv - INFO - 
+backbone.stage3.1.branches.1.2.bn1.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,130 - mmcv - INFO - 
+backbone.stage3.1.branches.1.2.conv2.weight - torch.Size([96, 96, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,130 - mmcv - INFO - 
+backbone.stage3.1.branches.1.2.bn2.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,130 - mmcv - INFO - 
+backbone.stage3.1.branches.1.2.bn2.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,130 - mmcv - INFO - 
+backbone.stage3.1.branches.1.3.conv1.weight - torch.Size([96, 96, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,130 - mmcv - INFO - 
+backbone.stage3.1.branches.1.3.bn1.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,130 - mmcv - INFO - 
+backbone.stage3.1.branches.1.3.bn1.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,130 - mmcv - INFO - 
+backbone.stage3.1.branches.1.3.conv2.weight - torch.Size([96, 96, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,130 - mmcv - INFO - 
+backbone.stage3.1.branches.1.3.bn2.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,130 - mmcv - INFO - 
+backbone.stage3.1.branches.1.3.bn2.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,130 - mmcv - INFO - 
+backbone.stage3.1.branches.2.0.conv1.weight - torch.Size([192, 192, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,130 - mmcv - INFO - 
+backbone.stage3.1.branches.2.0.bn1.weight - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,130 - mmcv - INFO - 
+backbone.stage3.1.branches.2.0.bn1.bias - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,130 - mmcv - INFO - 
+backbone.stage3.1.branches.2.0.conv2.weight - torch.Size([192, 192, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,130 - mmcv - INFO - 
+backbone.stage3.1.branches.2.0.bn2.weight - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,130 - mmcv - INFO - 
+backbone.stage3.1.branches.2.0.bn2.bias - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,130 - mmcv - INFO - 
+backbone.stage3.1.branches.2.1.conv1.weight - torch.Size([192, 192, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,130 - mmcv - INFO - 
+backbone.stage3.1.branches.2.1.bn1.weight - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,130 - mmcv - INFO - 
+backbone.stage3.1.branches.2.1.bn1.bias - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,130 - mmcv - INFO - 
+backbone.stage3.1.branches.2.1.conv2.weight - torch.Size([192, 192, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,130 - mmcv - INFO - 
+backbone.stage3.1.branches.2.1.bn2.weight - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,130 - mmcv - INFO - 
+backbone.stage3.1.branches.2.1.bn2.bias - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,130 - mmcv - INFO - 
+backbone.stage3.1.branches.2.2.conv1.weight - torch.Size([192, 192, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,130 - mmcv - INFO - 
+backbone.stage3.1.branches.2.2.bn1.weight - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,130 - mmcv - INFO - 
+backbone.stage3.1.branches.2.2.bn1.bias - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,130 - mmcv - INFO - 
+backbone.stage3.1.branches.2.2.conv2.weight - torch.Size([192, 192, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,131 - mmcv - INFO - 
+backbone.stage3.1.branches.2.2.bn2.weight - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,131 - mmcv - INFO - 
+backbone.stage3.1.branches.2.2.bn2.bias - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,131 - mmcv - INFO - 
+backbone.stage3.1.branches.2.3.conv1.weight - torch.Size([192, 192, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,131 - mmcv - INFO - 
+backbone.stage3.1.branches.2.3.bn1.weight - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,131 - mmcv - INFO - 
+backbone.stage3.1.branches.2.3.bn1.bias - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,131 - mmcv - INFO - 
+backbone.stage3.1.branches.2.3.conv2.weight - torch.Size([192, 192, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,131 - mmcv - INFO - 
+backbone.stage3.1.branches.2.3.bn2.weight - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,131 - mmcv - INFO - 
+backbone.stage3.1.branches.2.3.bn2.bias - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,131 - mmcv - INFO - 
+backbone.stage3.1.fuse_layers.0.1.0.weight - torch.Size([48, 96, 1, 1]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,131 - mmcv - INFO - 
+backbone.stage3.1.fuse_layers.0.1.1.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,131 - mmcv - INFO - 
+backbone.stage3.1.fuse_layers.0.1.1.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,131 - mmcv - INFO - 
+backbone.stage3.1.fuse_layers.0.2.0.weight - torch.Size([48, 192, 1, 1]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,131 - mmcv - INFO - 
+backbone.stage3.1.fuse_layers.0.2.1.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,131 - mmcv - INFO - 
+backbone.stage3.1.fuse_layers.0.2.1.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,131 - mmcv - INFO - 
+backbone.stage3.1.fuse_layers.1.0.0.0.weight - torch.Size([96, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,131 - mmcv - INFO - 
+backbone.stage3.1.fuse_layers.1.0.0.1.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,131 - mmcv - INFO - 
+backbone.stage3.1.fuse_layers.1.0.0.1.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,131 - mmcv - INFO - 
+backbone.stage3.1.fuse_layers.1.2.0.weight - torch.Size([96, 192, 1, 1]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,131 - mmcv - INFO - 
+backbone.stage3.1.fuse_layers.1.2.1.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,131 - mmcv - INFO - 
+backbone.stage3.1.fuse_layers.1.2.1.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,131 - mmcv - INFO - 
+backbone.stage3.1.fuse_layers.2.0.0.0.weight - torch.Size([48, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,131 - mmcv - INFO - 
+backbone.stage3.1.fuse_layers.2.0.0.1.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,131 - mmcv - INFO - 
+backbone.stage3.1.fuse_layers.2.0.0.1.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,131 - mmcv - INFO - 
+backbone.stage3.1.fuse_layers.2.0.1.0.weight - torch.Size([192, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,131 - mmcv - INFO - 
+backbone.stage3.1.fuse_layers.2.0.1.1.weight - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,131 - mmcv - INFO - 
+backbone.stage3.1.fuse_layers.2.0.1.1.bias - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,131 - mmcv - INFO - 
+backbone.stage3.1.fuse_layers.2.1.0.0.weight - torch.Size([192, 96, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,131 - mmcv - INFO - 
+backbone.stage3.1.fuse_layers.2.1.0.1.weight - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,131 - mmcv - INFO - 
+backbone.stage3.1.fuse_layers.2.1.0.1.bias - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,131 - mmcv - INFO - 
+backbone.stage3.2.branches.0.0.conv1.weight - torch.Size([48, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,131 - mmcv - INFO - 
+backbone.stage3.2.branches.0.0.bn1.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,131 - mmcv - INFO - 
+backbone.stage3.2.branches.0.0.bn1.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,131 - mmcv - INFO - 
+backbone.stage3.2.branches.0.0.conv2.weight - torch.Size([48, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,131 - mmcv - INFO - 
+backbone.stage3.2.branches.0.0.bn2.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,131 - mmcv - INFO - 
+backbone.stage3.2.branches.0.0.bn2.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,131 - mmcv - INFO - 
+backbone.stage3.2.branches.0.1.conv1.weight - torch.Size([48, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,131 - mmcv - INFO - 
+backbone.stage3.2.branches.0.1.bn1.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,132 - mmcv - INFO - 
+backbone.stage3.2.branches.0.1.bn1.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,132 - mmcv - INFO - 
+backbone.stage3.2.branches.0.1.conv2.weight - torch.Size([48, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,132 - mmcv - INFO - 
+backbone.stage3.2.branches.0.1.bn2.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,132 - mmcv - INFO - 
+backbone.stage3.2.branches.0.1.bn2.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,132 - mmcv - INFO - 
+backbone.stage3.2.branches.0.2.conv1.weight - torch.Size([48, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,132 - mmcv - INFO - 
+backbone.stage3.2.branches.0.2.bn1.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,132 - mmcv - INFO - 
+backbone.stage3.2.branches.0.2.bn1.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,132 - mmcv - INFO - 
+backbone.stage3.2.branches.0.2.conv2.weight - torch.Size([48, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,132 - mmcv - INFO - 
+backbone.stage3.2.branches.0.2.bn2.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,132 - mmcv - INFO - 
+backbone.stage3.2.branches.0.2.bn2.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,132 - mmcv - INFO - 
+backbone.stage3.2.branches.0.3.conv1.weight - torch.Size([48, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,132 - mmcv - INFO - 
+backbone.stage3.2.branches.0.3.bn1.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,132 - mmcv - INFO - 
+backbone.stage3.2.branches.0.3.bn1.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,132 - mmcv - INFO - 
+backbone.stage3.2.branches.0.3.conv2.weight - torch.Size([48, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,132 - mmcv - INFO - 
+backbone.stage3.2.branches.0.3.bn2.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,132 - mmcv - INFO - 
+backbone.stage3.2.branches.0.3.bn2.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,132 - mmcv - INFO - 
+backbone.stage3.2.branches.1.0.conv1.weight - torch.Size([96, 96, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,132 - mmcv - INFO - 
+backbone.stage3.2.branches.1.0.bn1.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,132 - mmcv - INFO - 
+backbone.stage3.2.branches.1.0.bn1.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,132 - mmcv - INFO - 
+backbone.stage3.2.branches.1.0.conv2.weight - torch.Size([96, 96, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,132 - mmcv - INFO - 
+backbone.stage3.2.branches.1.0.bn2.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,132 - mmcv - INFO - 
+backbone.stage3.2.branches.1.0.bn2.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,132 - mmcv - INFO - 
+backbone.stage3.2.branches.1.1.conv1.weight - torch.Size([96, 96, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,132 - mmcv - INFO - 
+backbone.stage3.2.branches.1.1.bn1.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,132 - mmcv - INFO - 
+backbone.stage3.2.branches.1.1.bn1.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,132 - mmcv - INFO - 
+backbone.stage3.2.branches.1.1.conv2.weight - torch.Size([96, 96, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,132 - mmcv - INFO - 
+backbone.stage3.2.branches.1.1.bn2.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,132 - mmcv - INFO - 
+backbone.stage3.2.branches.1.1.bn2.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,132 - mmcv - INFO - 
+backbone.stage3.2.branches.1.2.conv1.weight - torch.Size([96, 96, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,132 - mmcv - INFO - 
+backbone.stage3.2.branches.1.2.bn1.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,132 - mmcv - INFO - 
+backbone.stage3.2.branches.1.2.bn1.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,132 - mmcv - INFO - 
+backbone.stage3.2.branches.1.2.conv2.weight - torch.Size([96, 96, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,132 - mmcv - INFO - 
+backbone.stage3.2.branches.1.2.bn2.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,132 - mmcv - INFO - 
+backbone.stage3.2.branches.1.2.bn2.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,132 - mmcv - INFO - 
+backbone.stage3.2.branches.1.3.conv1.weight - torch.Size([96, 96, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,132 - mmcv - INFO - 
+backbone.stage3.2.branches.1.3.bn1.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,132 - mmcv - INFO - 
+backbone.stage3.2.branches.1.3.bn1.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,132 - mmcv - INFO - 
+backbone.stage3.2.branches.1.3.conv2.weight - torch.Size([96, 96, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,133 - mmcv - INFO - 
+backbone.stage3.2.branches.1.3.bn2.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,133 - mmcv - INFO - 
+backbone.stage3.2.branches.1.3.bn2.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,133 - mmcv - INFO - 
+backbone.stage3.2.branches.2.0.conv1.weight - torch.Size([192, 192, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,133 - mmcv - INFO - 
+backbone.stage3.2.branches.2.0.bn1.weight - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,133 - mmcv - INFO - 
+backbone.stage3.2.branches.2.0.bn1.bias - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,133 - mmcv - INFO - 
+backbone.stage3.2.branches.2.0.conv2.weight - torch.Size([192, 192, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,133 - mmcv - INFO - 
+backbone.stage3.2.branches.2.0.bn2.weight - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,133 - mmcv - INFO - 
+backbone.stage3.2.branches.2.0.bn2.bias - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,133 - mmcv - INFO - 
+backbone.stage3.2.branches.2.1.conv1.weight - torch.Size([192, 192, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,133 - mmcv - INFO - 
+backbone.stage3.2.branches.2.1.bn1.weight - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,133 - mmcv - INFO - 
+backbone.stage3.2.branches.2.1.bn1.bias - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,133 - mmcv - INFO - 
+backbone.stage3.2.branches.2.1.conv2.weight - torch.Size([192, 192, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,133 - mmcv - INFO - 
+backbone.stage3.2.branches.2.1.bn2.weight - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,133 - mmcv - INFO - 
+backbone.stage3.2.branches.2.1.bn2.bias - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,133 - mmcv - INFO - 
+backbone.stage3.2.branches.2.2.conv1.weight - torch.Size([192, 192, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,133 - mmcv - INFO - 
+backbone.stage3.2.branches.2.2.bn1.weight - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,133 - mmcv - INFO - 
+backbone.stage3.2.branches.2.2.bn1.bias - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,133 - mmcv - INFO - 
+backbone.stage3.2.branches.2.2.conv2.weight - torch.Size([192, 192, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,133 - mmcv - INFO - 
+backbone.stage3.2.branches.2.2.bn2.weight - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,133 - mmcv - INFO - 
+backbone.stage3.2.branches.2.2.bn2.bias - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,133 - mmcv - INFO - 
+backbone.stage3.2.branches.2.3.conv1.weight - torch.Size([192, 192, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,133 - mmcv - INFO - 
+backbone.stage3.2.branches.2.3.bn1.weight - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,133 - mmcv - INFO - 
+backbone.stage3.2.branches.2.3.bn1.bias - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,133 - mmcv - INFO - 
+backbone.stage3.2.branches.2.3.conv2.weight - torch.Size([192, 192, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,133 - mmcv - INFO - 
+backbone.stage3.2.branches.2.3.bn2.weight - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,133 - mmcv - INFO - 
+backbone.stage3.2.branches.2.3.bn2.bias - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,133 - mmcv - INFO - 
+backbone.stage3.2.fuse_layers.0.1.0.weight - torch.Size([48, 96, 1, 1]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,133 - mmcv - INFO - 
+backbone.stage3.2.fuse_layers.0.1.1.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,133 - mmcv - INFO - 
+backbone.stage3.2.fuse_layers.0.1.1.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,133 - mmcv - INFO - 
+backbone.stage3.2.fuse_layers.0.2.0.weight - torch.Size([48, 192, 1, 1]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,133 - mmcv - INFO - 
+backbone.stage3.2.fuse_layers.0.2.1.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,133 - mmcv - INFO - 
+backbone.stage3.2.fuse_layers.0.2.1.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,133 - mmcv - INFO - 
+backbone.stage3.2.fuse_layers.1.0.0.0.weight - torch.Size([96, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,133 - mmcv - INFO - 
+backbone.stage3.2.fuse_layers.1.0.0.1.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,133 - mmcv - INFO - 
+backbone.stage3.2.fuse_layers.1.0.0.1.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,133 - mmcv - INFO - 
+backbone.stage3.2.fuse_layers.1.2.0.weight - torch.Size([96, 192, 1, 1]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,133 - mmcv - INFO - 
+backbone.stage3.2.fuse_layers.1.2.1.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,133 - mmcv - INFO - 
+backbone.stage3.2.fuse_layers.1.2.1.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,134 - mmcv - INFO - 
+backbone.stage3.2.fuse_layers.2.0.0.0.weight - torch.Size([48, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,134 - mmcv - INFO - 
+backbone.stage3.2.fuse_layers.2.0.0.1.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,134 - mmcv - INFO - 
+backbone.stage3.2.fuse_layers.2.0.0.1.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,134 - mmcv - INFO - 
+backbone.stage3.2.fuse_layers.2.0.1.0.weight - torch.Size([192, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,134 - mmcv - INFO - 
+backbone.stage3.2.fuse_layers.2.0.1.1.weight - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,134 - mmcv - INFO - 
+backbone.stage3.2.fuse_layers.2.0.1.1.bias - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,134 - mmcv - INFO - 
+backbone.stage3.2.fuse_layers.2.1.0.0.weight - torch.Size([192, 96, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,134 - mmcv - INFO - 
+backbone.stage3.2.fuse_layers.2.1.0.1.weight - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,134 - mmcv - INFO - 
+backbone.stage3.2.fuse_layers.2.1.0.1.bias - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,134 - mmcv - INFO - 
+backbone.stage3.3.branches.0.0.conv1.weight - torch.Size([48, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,134 - mmcv - INFO - 
+backbone.stage3.3.branches.0.0.bn1.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,134 - mmcv - INFO - 
+backbone.stage3.3.branches.0.0.bn1.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,134 - mmcv - INFO - 
+backbone.stage3.3.branches.0.0.conv2.weight - torch.Size([48, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,134 - mmcv - INFO - 
+backbone.stage3.3.branches.0.0.bn2.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,134 - mmcv - INFO - 
+backbone.stage3.3.branches.0.0.bn2.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,134 - mmcv - INFO - 
+backbone.stage3.3.branches.0.1.conv1.weight - torch.Size([48, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,134 - mmcv - INFO - 
+backbone.stage3.3.branches.0.1.bn1.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,134 - mmcv - INFO - 
+backbone.stage3.3.branches.0.1.bn1.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,134 - mmcv - INFO - 
+backbone.stage3.3.branches.0.1.conv2.weight - torch.Size([48, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,134 - mmcv - INFO - 
+backbone.stage3.3.branches.0.1.bn2.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,134 - mmcv - INFO - 
+backbone.stage3.3.branches.0.1.bn2.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,134 - mmcv - INFO - 
+backbone.stage3.3.branches.0.2.conv1.weight - torch.Size([48, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,134 - mmcv - INFO - 
+backbone.stage3.3.branches.0.2.bn1.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,134 - mmcv - INFO - 
+backbone.stage3.3.branches.0.2.bn1.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,134 - mmcv - INFO - 
+backbone.stage3.3.branches.0.2.conv2.weight - torch.Size([48, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,134 - mmcv - INFO - 
+backbone.stage3.3.branches.0.2.bn2.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,134 - mmcv - INFO - 
+backbone.stage3.3.branches.0.2.bn2.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,134 - mmcv - INFO - 
+backbone.stage3.3.branches.0.3.conv1.weight - torch.Size([48, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,134 - mmcv - INFO - 
+backbone.stage3.3.branches.0.3.bn1.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,134 - mmcv - INFO - 
+backbone.stage3.3.branches.0.3.bn1.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,134 - mmcv - INFO - 
+backbone.stage3.3.branches.0.3.conv2.weight - torch.Size([48, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,134 - mmcv - INFO - 
+backbone.stage3.3.branches.0.3.bn2.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,134 - mmcv - INFO - 
+backbone.stage3.3.branches.0.3.bn2.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,134 - mmcv - INFO - 
+backbone.stage3.3.branches.1.0.conv1.weight - torch.Size([96, 96, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,134 - mmcv - INFO - 
+backbone.stage3.3.branches.1.0.bn1.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,134 - mmcv - INFO - 
+backbone.stage3.3.branches.1.0.bn1.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,134 - mmcv - INFO - 
+backbone.stage3.3.branches.1.0.conv2.weight - torch.Size([96, 96, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,134 - mmcv - INFO - 
+backbone.stage3.3.branches.1.0.bn2.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,135 - mmcv - INFO - 
+backbone.stage3.3.branches.1.0.bn2.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,135 - mmcv - INFO - 
+backbone.stage3.3.branches.1.1.conv1.weight - torch.Size([96, 96, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,135 - mmcv - INFO - 
+backbone.stage3.3.branches.1.1.bn1.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,135 - mmcv - INFO - 
+backbone.stage3.3.branches.1.1.bn1.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,135 - mmcv - INFO - 
+backbone.stage3.3.branches.1.1.conv2.weight - torch.Size([96, 96, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,135 - mmcv - INFO - 
+backbone.stage3.3.branches.1.1.bn2.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,135 - mmcv - INFO - 
+backbone.stage3.3.branches.1.1.bn2.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,135 - mmcv - INFO - 
+backbone.stage3.3.branches.1.2.conv1.weight - torch.Size([96, 96, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,135 - mmcv - INFO - 
+backbone.stage3.3.branches.1.2.bn1.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,135 - mmcv - INFO - 
+backbone.stage3.3.branches.1.2.bn1.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,135 - mmcv - INFO - 
+backbone.stage3.3.branches.1.2.conv2.weight - torch.Size([96, 96, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,135 - mmcv - INFO - 
+backbone.stage3.3.branches.1.2.bn2.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,135 - mmcv - INFO - 
+backbone.stage3.3.branches.1.2.bn2.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,135 - mmcv - INFO - 
+backbone.stage3.3.branches.1.3.conv1.weight - torch.Size([96, 96, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,135 - mmcv - INFO - 
+backbone.stage3.3.branches.1.3.bn1.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,135 - mmcv - INFO - 
+backbone.stage3.3.branches.1.3.bn1.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,135 - mmcv - INFO - 
+backbone.stage3.3.branches.1.3.conv2.weight - torch.Size([96, 96, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,135 - mmcv - INFO - 
+backbone.stage3.3.branches.1.3.bn2.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,135 - mmcv - INFO - 
+backbone.stage3.3.branches.1.3.bn2.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,135 - mmcv - INFO - 
+backbone.stage3.3.branches.2.0.conv1.weight - torch.Size([192, 192, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,135 - mmcv - INFO - 
+backbone.stage3.3.branches.2.0.bn1.weight - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,135 - mmcv - INFO - 
+backbone.stage3.3.branches.2.0.bn1.bias - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,135 - mmcv - INFO - 
+backbone.stage3.3.branches.2.0.conv2.weight - torch.Size([192, 192, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,135 - mmcv - INFO - 
+backbone.stage3.3.branches.2.0.bn2.weight - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,135 - mmcv - INFO - 
+backbone.stage3.3.branches.2.0.bn2.bias - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,135 - mmcv - INFO - 
+backbone.stage3.3.branches.2.1.conv1.weight - torch.Size([192, 192, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,135 - mmcv - INFO - 
+backbone.stage3.3.branches.2.1.bn1.weight - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,135 - mmcv - INFO - 
+backbone.stage3.3.branches.2.1.bn1.bias - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,135 - mmcv - INFO - 
+backbone.stage3.3.branches.2.1.conv2.weight - torch.Size([192, 192, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,135 - mmcv - INFO - 
+backbone.stage3.3.branches.2.1.bn2.weight - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,135 - mmcv - INFO - 
+backbone.stage3.3.branches.2.1.bn2.bias - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,135 - mmcv - INFO - 
+backbone.stage3.3.branches.2.2.conv1.weight - torch.Size([192, 192, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,135 - mmcv - INFO - 
+backbone.stage3.3.branches.2.2.bn1.weight - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,135 - mmcv - INFO - 
+backbone.stage3.3.branches.2.2.bn1.bias - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,135 - mmcv - INFO - 
+backbone.stage3.3.branches.2.2.conv2.weight - torch.Size([192, 192, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,135 - mmcv - INFO - 
+backbone.stage3.3.branches.2.2.bn2.weight - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,135 - mmcv - INFO - 
+backbone.stage3.3.branches.2.2.bn2.bias - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,135 - mmcv - INFO - 
+backbone.stage3.3.branches.2.3.conv1.weight - torch.Size([192, 192, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,136 - mmcv - INFO - 
+backbone.stage3.3.branches.2.3.bn1.weight - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,136 - mmcv - INFO - 
+backbone.stage3.3.branches.2.3.bn1.bias - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,136 - mmcv - INFO - 
+backbone.stage3.3.branches.2.3.conv2.weight - torch.Size([192, 192, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,136 - mmcv - INFO - 
+backbone.stage3.3.branches.2.3.bn2.weight - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,136 - mmcv - INFO - 
+backbone.stage3.3.branches.2.3.bn2.bias - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,136 - mmcv - INFO - 
+backbone.stage3.3.fuse_layers.0.1.0.weight - torch.Size([48, 96, 1, 1]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,136 - mmcv - INFO - 
+backbone.stage3.3.fuse_layers.0.1.1.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,136 - mmcv - INFO - 
+backbone.stage3.3.fuse_layers.0.1.1.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,136 - mmcv - INFO - 
+backbone.stage3.3.fuse_layers.0.2.0.weight - torch.Size([48, 192, 1, 1]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,136 - mmcv - INFO - 
+backbone.stage3.3.fuse_layers.0.2.1.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,136 - mmcv - INFO - 
+backbone.stage3.3.fuse_layers.0.2.1.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,136 - mmcv - INFO - 
+backbone.stage3.3.fuse_layers.1.0.0.0.weight - torch.Size([96, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,136 - mmcv - INFO - 
+backbone.stage3.3.fuse_layers.1.0.0.1.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,136 - mmcv - INFO - 
+backbone.stage3.3.fuse_layers.1.0.0.1.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,136 - mmcv - INFO - 
+backbone.stage3.3.fuse_layers.1.2.0.weight - torch.Size([96, 192, 1, 1]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,136 - mmcv - INFO - 
+backbone.stage3.3.fuse_layers.1.2.1.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,136 - mmcv - INFO - 
+backbone.stage3.3.fuse_layers.1.2.1.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,136 - mmcv - INFO - 
+backbone.stage3.3.fuse_layers.2.0.0.0.weight - torch.Size([48, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,136 - mmcv - INFO - 
+backbone.stage3.3.fuse_layers.2.0.0.1.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,136 - mmcv - INFO - 
+backbone.stage3.3.fuse_layers.2.0.0.1.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,136 - mmcv - INFO - 
+backbone.stage3.3.fuse_layers.2.0.1.0.weight - torch.Size([192, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,136 - mmcv - INFO - 
+backbone.stage3.3.fuse_layers.2.0.1.1.weight - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,136 - mmcv - INFO - 
+backbone.stage3.3.fuse_layers.2.0.1.1.bias - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,136 - mmcv - INFO - 
+backbone.stage3.3.fuse_layers.2.1.0.0.weight - torch.Size([192, 96, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,136 - mmcv - INFO - 
+backbone.stage3.3.fuse_layers.2.1.0.1.weight - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,136 - mmcv - INFO - 
+backbone.stage3.3.fuse_layers.2.1.0.1.bias - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,136 - mmcv - INFO - 
+backbone.transition3.3.0.0.weight - torch.Size([384, 192, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,136 - mmcv - INFO - 
+backbone.transition3.3.0.1.weight - torch.Size([384]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,136 - mmcv - INFO - 
+backbone.transition3.3.0.1.bias - torch.Size([384]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,136 - mmcv - INFO - 
+backbone.stage4.0.branches.0.0.conv1.weight - torch.Size([48, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,136 - mmcv - INFO - 
+backbone.stage4.0.branches.0.0.bn1.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,136 - mmcv - INFO - 
+backbone.stage4.0.branches.0.0.bn1.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,136 - mmcv - INFO - 
+backbone.stage4.0.branches.0.0.conv2.weight - torch.Size([48, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,136 - mmcv - INFO - 
+backbone.stage4.0.branches.0.0.bn2.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,136 - mmcv - INFO - 
+backbone.stage4.0.branches.0.0.bn2.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,136 - mmcv - INFO - 
+backbone.stage4.0.branches.0.1.conv1.weight - torch.Size([48, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,136 - mmcv - INFO - 
+backbone.stage4.0.branches.0.1.bn1.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,137 - mmcv - INFO - 
+backbone.stage4.0.branches.0.1.bn1.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,137 - mmcv - INFO - 
+backbone.stage4.0.branches.0.1.conv2.weight - torch.Size([48, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,137 - mmcv - INFO - 
+backbone.stage4.0.branches.0.1.bn2.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,137 - mmcv - INFO - 
+backbone.stage4.0.branches.0.1.bn2.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,137 - mmcv - INFO - 
+backbone.stage4.0.branches.0.2.conv1.weight - torch.Size([48, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,137 - mmcv - INFO - 
+backbone.stage4.0.branches.0.2.bn1.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,137 - mmcv - INFO - 
+backbone.stage4.0.branches.0.2.bn1.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,137 - mmcv - INFO - 
+backbone.stage4.0.branches.0.2.conv2.weight - torch.Size([48, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,137 - mmcv - INFO - 
+backbone.stage4.0.branches.0.2.bn2.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,137 - mmcv - INFO - 
+backbone.stage4.0.branches.0.2.bn2.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,137 - mmcv - INFO - 
+backbone.stage4.0.branches.0.3.conv1.weight - torch.Size([48, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,137 - mmcv - INFO - 
+backbone.stage4.0.branches.0.3.bn1.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,137 - mmcv - INFO - 
+backbone.stage4.0.branches.0.3.bn1.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,137 - mmcv - INFO - 
+backbone.stage4.0.branches.0.3.conv2.weight - torch.Size([48, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,137 - mmcv - INFO - 
+backbone.stage4.0.branches.0.3.bn2.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,137 - mmcv - INFO - 
+backbone.stage4.0.branches.0.3.bn2.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,137 - mmcv - INFO - 
+backbone.stage4.0.branches.1.0.conv1.weight - torch.Size([96, 96, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,137 - mmcv - INFO - 
+backbone.stage4.0.branches.1.0.bn1.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,137 - mmcv - INFO - 
+backbone.stage4.0.branches.1.0.bn1.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,137 - mmcv - INFO - 
+backbone.stage4.0.branches.1.0.conv2.weight - torch.Size([96, 96, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,137 - mmcv - INFO - 
+backbone.stage4.0.branches.1.0.bn2.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,137 - mmcv - INFO - 
+backbone.stage4.0.branches.1.0.bn2.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,137 - mmcv - INFO - 
+backbone.stage4.0.branches.1.1.conv1.weight - torch.Size([96, 96, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,137 - mmcv - INFO - 
+backbone.stage4.0.branches.1.1.bn1.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,137 - mmcv - INFO - 
+backbone.stage4.0.branches.1.1.bn1.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,137 - mmcv - INFO - 
+backbone.stage4.0.branches.1.1.conv2.weight - torch.Size([96, 96, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,137 - mmcv - INFO - 
+backbone.stage4.0.branches.1.1.bn2.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,137 - mmcv - INFO - 
+backbone.stage4.0.branches.1.1.bn2.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,137 - mmcv - INFO - 
+backbone.stage4.0.branches.1.2.conv1.weight - torch.Size([96, 96, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,137 - mmcv - INFO - 
+backbone.stage4.0.branches.1.2.bn1.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,137 - mmcv - INFO - 
+backbone.stage4.0.branches.1.2.bn1.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,137 - mmcv - INFO - 
+backbone.stage4.0.branches.1.2.conv2.weight - torch.Size([96, 96, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,137 - mmcv - INFO - 
+backbone.stage4.0.branches.1.2.bn2.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,137 - mmcv - INFO - 
+backbone.stage4.0.branches.1.2.bn2.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,137 - mmcv - INFO - 
+backbone.stage4.0.branches.1.3.conv1.weight - torch.Size([96, 96, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,137 - mmcv - INFO - 
+backbone.stage4.0.branches.1.3.bn1.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,137 - mmcv - INFO - 
+backbone.stage4.0.branches.1.3.bn1.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,137 - mmcv - INFO - 
+backbone.stage4.0.branches.1.3.conv2.weight - torch.Size([96, 96, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,138 - mmcv - INFO - 
+backbone.stage4.0.branches.1.3.bn2.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,138 - mmcv - INFO - 
+backbone.stage4.0.branches.1.3.bn2.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,138 - mmcv - INFO - 
+backbone.stage4.0.branches.2.0.conv1.weight - torch.Size([192, 192, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,138 - mmcv - INFO - 
+backbone.stage4.0.branches.2.0.bn1.weight - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,138 - mmcv - INFO - 
+backbone.stage4.0.branches.2.0.bn1.bias - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,138 - mmcv - INFO - 
+backbone.stage4.0.branches.2.0.conv2.weight - torch.Size([192, 192, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,138 - mmcv - INFO - 
+backbone.stage4.0.branches.2.0.bn2.weight - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,138 - mmcv - INFO - 
+backbone.stage4.0.branches.2.0.bn2.bias - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,138 - mmcv - INFO - 
+backbone.stage4.0.branches.2.1.conv1.weight - torch.Size([192, 192, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,138 - mmcv - INFO - 
+backbone.stage4.0.branches.2.1.bn1.weight - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,138 - mmcv - INFO - 
+backbone.stage4.0.branches.2.1.bn1.bias - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,138 - mmcv - INFO - 
+backbone.stage4.0.branches.2.1.conv2.weight - torch.Size([192, 192, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,138 - mmcv - INFO - 
+backbone.stage4.0.branches.2.1.bn2.weight - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,138 - mmcv - INFO - 
+backbone.stage4.0.branches.2.1.bn2.bias - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,138 - mmcv - INFO - 
+backbone.stage4.0.branches.2.2.conv1.weight - torch.Size([192, 192, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,138 - mmcv - INFO - 
+backbone.stage4.0.branches.2.2.bn1.weight - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,138 - mmcv - INFO - 
+backbone.stage4.0.branches.2.2.bn1.bias - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,138 - mmcv - INFO - 
+backbone.stage4.0.branches.2.2.conv2.weight - torch.Size([192, 192, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,138 - mmcv - INFO - 
+backbone.stage4.0.branches.2.2.bn2.weight - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,138 - mmcv - INFO - 
+backbone.stage4.0.branches.2.2.bn2.bias - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,138 - mmcv - INFO - 
+backbone.stage4.0.branches.2.3.conv1.weight - torch.Size([192, 192, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,138 - mmcv - INFO - 
+backbone.stage4.0.branches.2.3.bn1.weight - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,138 - mmcv - INFO - 
+backbone.stage4.0.branches.2.3.bn1.bias - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,138 - mmcv - INFO - 
+backbone.stage4.0.branches.2.3.conv2.weight - torch.Size([192, 192, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,138 - mmcv - INFO - 
+backbone.stage4.0.branches.2.3.bn2.weight - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,138 - mmcv - INFO - 
+backbone.stage4.0.branches.2.3.bn2.bias - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,138 - mmcv - INFO - 
+backbone.stage4.0.branches.3.0.conv1.weight - torch.Size([384, 384, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,138 - mmcv - INFO - 
+backbone.stage4.0.branches.3.0.bn1.weight - torch.Size([384]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,138 - mmcv - INFO - 
+backbone.stage4.0.branches.3.0.bn1.bias - torch.Size([384]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,138 - mmcv - INFO - 
+backbone.stage4.0.branches.3.0.conv2.weight - torch.Size([384, 384, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,138 - mmcv - INFO - 
+backbone.stage4.0.branches.3.0.bn2.weight - torch.Size([384]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,138 - mmcv - INFO - 
+backbone.stage4.0.branches.3.0.bn2.bias - torch.Size([384]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,138 - mmcv - INFO - 
+backbone.stage4.0.branches.3.1.conv1.weight - torch.Size([384, 384, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,138 - mmcv - INFO - 
+backbone.stage4.0.branches.3.1.bn1.weight - torch.Size([384]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,138 - mmcv - INFO - 
+backbone.stage4.0.branches.3.1.bn1.bias - torch.Size([384]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,138 - mmcv - INFO - 
+backbone.stage4.0.branches.3.1.conv2.weight - torch.Size([384, 384, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,138 - mmcv - INFO - 
+backbone.stage4.0.branches.3.1.bn2.weight - torch.Size([384]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,138 - mmcv - INFO - 
+backbone.stage4.0.branches.3.1.bn2.bias - torch.Size([384]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,138 - mmcv - INFO - 
+backbone.stage4.0.branches.3.2.conv1.weight - torch.Size([384, 384, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,139 - mmcv - INFO - 
+backbone.stage4.0.branches.3.2.bn1.weight - torch.Size([384]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,139 - mmcv - INFO - 
+backbone.stage4.0.branches.3.2.bn1.bias - torch.Size([384]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,139 - mmcv - INFO - 
+backbone.stage4.0.branches.3.2.conv2.weight - torch.Size([384, 384, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,139 - mmcv - INFO - 
+backbone.stage4.0.branches.3.2.bn2.weight - torch.Size([384]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,139 - mmcv - INFO - 
+backbone.stage4.0.branches.3.2.bn2.bias - torch.Size([384]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,139 - mmcv - INFO - 
+backbone.stage4.0.branches.3.3.conv1.weight - torch.Size([384, 384, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,139 - mmcv - INFO - 
+backbone.stage4.0.branches.3.3.bn1.weight - torch.Size([384]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,139 - mmcv - INFO - 
+backbone.stage4.0.branches.3.3.bn1.bias - torch.Size([384]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,139 - mmcv - INFO - 
+backbone.stage4.0.branches.3.3.conv2.weight - torch.Size([384, 384, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,139 - mmcv - INFO - 
+backbone.stage4.0.branches.3.3.bn2.weight - torch.Size([384]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,139 - mmcv - INFO - 
+backbone.stage4.0.branches.3.3.bn2.bias - torch.Size([384]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,139 - mmcv - INFO - 
+backbone.stage4.0.fuse_layers.0.1.0.weight - torch.Size([48, 96, 1, 1]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,139 - mmcv - INFO - 
+backbone.stage4.0.fuse_layers.0.1.1.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,139 - mmcv - INFO - 
+backbone.stage4.0.fuse_layers.0.1.1.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,139 - mmcv - INFO - 
+backbone.stage4.0.fuse_layers.0.2.0.weight - torch.Size([48, 192, 1, 1]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,139 - mmcv - INFO - 
+backbone.stage4.0.fuse_layers.0.2.1.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,139 - mmcv - INFO - 
+backbone.stage4.0.fuse_layers.0.2.1.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,139 - mmcv - INFO - 
+backbone.stage4.0.fuse_layers.0.3.0.weight - torch.Size([48, 384, 1, 1]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,139 - mmcv - INFO - 
+backbone.stage4.0.fuse_layers.0.3.1.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,139 - mmcv - INFO - 
+backbone.stage4.0.fuse_layers.0.3.1.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,139 - mmcv - INFO - 
+backbone.stage4.0.fuse_layers.1.0.0.0.weight - torch.Size([96, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,139 - mmcv - INFO - 
+backbone.stage4.0.fuse_layers.1.0.0.1.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,139 - mmcv - INFO - 
+backbone.stage4.0.fuse_layers.1.0.0.1.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,139 - mmcv - INFO - 
+backbone.stage4.0.fuse_layers.1.2.0.weight - torch.Size([96, 192, 1, 1]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,139 - mmcv - INFO - 
+backbone.stage4.0.fuse_layers.1.2.1.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,139 - mmcv - INFO - 
+backbone.stage4.0.fuse_layers.1.2.1.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,139 - mmcv - INFO - 
+backbone.stage4.0.fuse_layers.1.3.0.weight - torch.Size([96, 384, 1, 1]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,139 - mmcv - INFO - 
+backbone.stage4.0.fuse_layers.1.3.1.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,139 - mmcv - INFO - 
+backbone.stage4.0.fuse_layers.1.3.1.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,139 - mmcv - INFO - 
+backbone.stage4.0.fuse_layers.2.0.0.0.weight - torch.Size([48, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,139 - mmcv - INFO - 
+backbone.stage4.0.fuse_layers.2.0.0.1.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,139 - mmcv - INFO - 
+backbone.stage4.0.fuse_layers.2.0.0.1.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,139 - mmcv - INFO - 
+backbone.stage4.0.fuse_layers.2.0.1.0.weight - torch.Size([192, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,139 - mmcv - INFO - 
+backbone.stage4.0.fuse_layers.2.0.1.1.weight - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,139 - mmcv - INFO - 
+backbone.stage4.0.fuse_layers.2.0.1.1.bias - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,139 - mmcv - INFO - 
+backbone.stage4.0.fuse_layers.2.1.0.0.weight - torch.Size([192, 96, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,139 - mmcv - INFO - 
+backbone.stage4.0.fuse_layers.2.1.0.1.weight - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,140 - mmcv - INFO - 
+backbone.stage4.0.fuse_layers.2.1.0.1.bias - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,140 - mmcv - INFO - 
+backbone.stage4.0.fuse_layers.2.3.0.weight - torch.Size([192, 384, 1, 1]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,140 - mmcv - INFO - 
+backbone.stage4.0.fuse_layers.2.3.1.weight - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,140 - mmcv - INFO - 
+backbone.stage4.0.fuse_layers.2.3.1.bias - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,140 - mmcv - INFO - 
+backbone.stage4.0.fuse_layers.3.0.0.0.weight - torch.Size([48, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,140 - mmcv - INFO - 
+backbone.stage4.0.fuse_layers.3.0.0.1.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,140 - mmcv - INFO - 
+backbone.stage4.0.fuse_layers.3.0.0.1.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,140 - mmcv - INFO - 
+backbone.stage4.0.fuse_layers.3.0.1.0.weight - torch.Size([48, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,140 - mmcv - INFO - 
+backbone.stage4.0.fuse_layers.3.0.1.1.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,140 - mmcv - INFO - 
+backbone.stage4.0.fuse_layers.3.0.1.1.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,140 - mmcv - INFO - 
+backbone.stage4.0.fuse_layers.3.0.2.0.weight - torch.Size([384, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,140 - mmcv - INFO - 
+backbone.stage4.0.fuse_layers.3.0.2.1.weight - torch.Size([384]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,140 - mmcv - INFO - 
+backbone.stage4.0.fuse_layers.3.0.2.1.bias - torch.Size([384]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,140 - mmcv - INFO - 
+backbone.stage4.0.fuse_layers.3.1.0.0.weight - torch.Size([96, 96, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,140 - mmcv - INFO - 
+backbone.stage4.0.fuse_layers.3.1.0.1.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,140 - mmcv - INFO - 
+backbone.stage4.0.fuse_layers.3.1.0.1.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,140 - mmcv - INFO - 
+backbone.stage4.0.fuse_layers.3.1.1.0.weight - torch.Size([384, 96, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,140 - mmcv - INFO - 
+backbone.stage4.0.fuse_layers.3.1.1.1.weight - torch.Size([384]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,140 - mmcv - INFO - 
+backbone.stage4.0.fuse_layers.3.1.1.1.bias - torch.Size([384]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,140 - mmcv - INFO - 
+backbone.stage4.0.fuse_layers.3.2.0.0.weight - torch.Size([384, 192, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,140 - mmcv - INFO - 
+backbone.stage4.0.fuse_layers.3.2.0.1.weight - torch.Size([384]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,140 - mmcv - INFO - 
+backbone.stage4.0.fuse_layers.3.2.0.1.bias - torch.Size([384]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,140 - mmcv - INFO - 
+backbone.stage4.1.branches.0.0.conv1.weight - torch.Size([48, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,140 - mmcv - INFO - 
+backbone.stage4.1.branches.0.0.bn1.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,140 - mmcv - INFO - 
+backbone.stage4.1.branches.0.0.bn1.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,140 - mmcv - INFO - 
+backbone.stage4.1.branches.0.0.conv2.weight - torch.Size([48, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,140 - mmcv - INFO - 
+backbone.stage4.1.branches.0.0.bn2.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,140 - mmcv - INFO - 
+backbone.stage4.1.branches.0.0.bn2.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,140 - mmcv - INFO - 
+backbone.stage4.1.branches.0.1.conv1.weight - torch.Size([48, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,140 - mmcv - INFO - 
+backbone.stage4.1.branches.0.1.bn1.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,140 - mmcv - INFO - 
+backbone.stage4.1.branches.0.1.bn1.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,140 - mmcv - INFO - 
+backbone.stage4.1.branches.0.1.conv2.weight - torch.Size([48, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,140 - mmcv - INFO - 
+backbone.stage4.1.branches.0.1.bn2.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,140 - mmcv - INFO - 
+backbone.stage4.1.branches.0.1.bn2.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,140 - mmcv - INFO - 
+backbone.stage4.1.branches.0.2.conv1.weight - torch.Size([48, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,140 - mmcv - INFO - 
+backbone.stage4.1.branches.0.2.bn1.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,140 - mmcv - INFO - 
+backbone.stage4.1.branches.0.2.bn1.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,141 - mmcv - INFO - 
+backbone.stage4.1.branches.0.2.conv2.weight - torch.Size([48, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,141 - mmcv - INFO - 
+backbone.stage4.1.branches.0.2.bn2.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,141 - mmcv - INFO - 
+backbone.stage4.1.branches.0.2.bn2.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,141 - mmcv - INFO - 
+backbone.stage4.1.branches.0.3.conv1.weight - torch.Size([48, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,141 - mmcv - INFO - 
+backbone.stage4.1.branches.0.3.bn1.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,141 - mmcv - INFO - 
+backbone.stage4.1.branches.0.3.bn1.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,141 - mmcv - INFO - 
+backbone.stage4.1.branches.0.3.conv2.weight - torch.Size([48, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,141 - mmcv - INFO - 
+backbone.stage4.1.branches.0.3.bn2.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,141 - mmcv - INFO - 
+backbone.stage4.1.branches.0.3.bn2.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,141 - mmcv - INFO - 
+backbone.stage4.1.branches.1.0.conv1.weight - torch.Size([96, 96, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,141 - mmcv - INFO - 
+backbone.stage4.1.branches.1.0.bn1.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,141 - mmcv - INFO - 
+backbone.stage4.1.branches.1.0.bn1.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,141 - mmcv - INFO - 
+backbone.stage4.1.branches.1.0.conv2.weight - torch.Size([96, 96, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,141 - mmcv - INFO - 
+backbone.stage4.1.branches.1.0.bn2.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,141 - mmcv - INFO - 
+backbone.stage4.1.branches.1.0.bn2.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,141 - mmcv - INFO - 
+backbone.stage4.1.branches.1.1.conv1.weight - torch.Size([96, 96, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,141 - mmcv - INFO - 
+backbone.stage4.1.branches.1.1.bn1.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,141 - mmcv - INFO - 
+backbone.stage4.1.branches.1.1.bn1.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,141 - mmcv - INFO - 
+backbone.stage4.1.branches.1.1.conv2.weight - torch.Size([96, 96, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,141 - mmcv - INFO - 
+backbone.stage4.1.branches.1.1.bn2.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,141 - mmcv - INFO - 
+backbone.stage4.1.branches.1.1.bn2.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,141 - mmcv - INFO - 
+backbone.stage4.1.branches.1.2.conv1.weight - torch.Size([96, 96, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,141 - mmcv - INFO - 
+backbone.stage4.1.branches.1.2.bn1.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,141 - mmcv - INFO - 
+backbone.stage4.1.branches.1.2.bn1.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,141 - mmcv - INFO - 
+backbone.stage4.1.branches.1.2.conv2.weight - torch.Size([96, 96, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,141 - mmcv - INFO - 
+backbone.stage4.1.branches.1.2.bn2.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,141 - mmcv - INFO - 
+backbone.stage4.1.branches.1.2.bn2.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,141 - mmcv - INFO - 
+backbone.stage4.1.branches.1.3.conv1.weight - torch.Size([96, 96, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,141 - mmcv - INFO - 
+backbone.stage4.1.branches.1.3.bn1.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,141 - mmcv - INFO - 
+backbone.stage4.1.branches.1.3.bn1.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,141 - mmcv - INFO - 
+backbone.stage4.1.branches.1.3.conv2.weight - torch.Size([96, 96, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,141 - mmcv - INFO - 
+backbone.stage4.1.branches.1.3.bn2.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,141 - mmcv - INFO - 
+backbone.stage4.1.branches.1.3.bn2.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,141 - mmcv - INFO - 
+backbone.stage4.1.branches.2.0.conv1.weight - torch.Size([192, 192, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,141 - mmcv - INFO - 
+backbone.stage4.1.branches.2.0.bn1.weight - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,141 - mmcv - INFO - 
+backbone.stage4.1.branches.2.0.bn1.bias - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,141 - mmcv - INFO - 
+backbone.stage4.1.branches.2.0.conv2.weight - torch.Size([192, 192, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,141 - mmcv - INFO - 
+backbone.stage4.1.branches.2.0.bn2.weight - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,141 - mmcv - INFO - 
+backbone.stage4.1.branches.2.0.bn2.bias - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,142 - mmcv - INFO - 
+backbone.stage4.1.branches.2.1.conv1.weight - torch.Size([192, 192, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,142 - mmcv - INFO - 
+backbone.stage4.1.branches.2.1.bn1.weight - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,142 - mmcv - INFO - 
+backbone.stage4.1.branches.2.1.bn1.bias - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,142 - mmcv - INFO - 
+backbone.stage4.1.branches.2.1.conv2.weight - torch.Size([192, 192, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,142 - mmcv - INFO - 
+backbone.stage4.1.branches.2.1.bn2.weight - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,142 - mmcv - INFO - 
+backbone.stage4.1.branches.2.1.bn2.bias - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,142 - mmcv - INFO - 
+backbone.stage4.1.branches.2.2.conv1.weight - torch.Size([192, 192, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,142 - mmcv - INFO - 
+backbone.stage4.1.branches.2.2.bn1.weight - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,142 - mmcv - INFO - 
+backbone.stage4.1.branches.2.2.bn1.bias - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,142 - mmcv - INFO - 
+backbone.stage4.1.branches.2.2.conv2.weight - torch.Size([192, 192, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,142 - mmcv - INFO - 
+backbone.stage4.1.branches.2.2.bn2.weight - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,142 - mmcv - INFO - 
+backbone.stage4.1.branches.2.2.bn2.bias - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,142 - mmcv - INFO - 
+backbone.stage4.1.branches.2.3.conv1.weight - torch.Size([192, 192, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,142 - mmcv - INFO - 
+backbone.stage4.1.branches.2.3.bn1.weight - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,142 - mmcv - INFO - 
+backbone.stage4.1.branches.2.3.bn1.bias - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,142 - mmcv - INFO - 
+backbone.stage4.1.branches.2.3.conv2.weight - torch.Size([192, 192, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,142 - mmcv - INFO - 
+backbone.stage4.1.branches.2.3.bn2.weight - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,142 - mmcv - INFO - 
+backbone.stage4.1.branches.2.3.bn2.bias - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,142 - mmcv - INFO - 
+backbone.stage4.1.branches.3.0.conv1.weight - torch.Size([384, 384, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,142 - mmcv - INFO - 
+backbone.stage4.1.branches.3.0.bn1.weight - torch.Size([384]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,142 - mmcv - INFO - 
+backbone.stage4.1.branches.3.0.bn1.bias - torch.Size([384]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,142 - mmcv - INFO - 
+backbone.stage4.1.branches.3.0.conv2.weight - torch.Size([384, 384, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,142 - mmcv - INFO - 
+backbone.stage4.1.branches.3.0.bn2.weight - torch.Size([384]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,142 - mmcv - INFO - 
+backbone.stage4.1.branches.3.0.bn2.bias - torch.Size([384]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,142 - mmcv - INFO - 
+backbone.stage4.1.branches.3.1.conv1.weight - torch.Size([384, 384, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,142 - mmcv - INFO - 
+backbone.stage4.1.branches.3.1.bn1.weight - torch.Size([384]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,142 - mmcv - INFO - 
+backbone.stage4.1.branches.3.1.bn1.bias - torch.Size([384]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,142 - mmcv - INFO - 
+backbone.stage4.1.branches.3.1.conv2.weight - torch.Size([384, 384, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,142 - mmcv - INFO - 
+backbone.stage4.1.branches.3.1.bn2.weight - torch.Size([384]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,142 - mmcv - INFO - 
+backbone.stage4.1.branches.3.1.bn2.bias - torch.Size([384]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,142 - mmcv - INFO - 
+backbone.stage4.1.branches.3.2.conv1.weight - torch.Size([384, 384, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,142 - mmcv - INFO - 
+backbone.stage4.1.branches.3.2.bn1.weight - torch.Size([384]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,142 - mmcv - INFO - 
+backbone.stage4.1.branches.3.2.bn1.bias - torch.Size([384]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,142 - mmcv - INFO - 
+backbone.stage4.1.branches.3.2.conv2.weight - torch.Size([384, 384, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,142 - mmcv - INFO - 
+backbone.stage4.1.branches.3.2.bn2.weight - torch.Size([384]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,142 - mmcv - INFO - 
+backbone.stage4.1.branches.3.2.bn2.bias - torch.Size([384]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,142 - mmcv - INFO - 
+backbone.stage4.1.branches.3.3.conv1.weight - torch.Size([384, 384, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,142 - mmcv - INFO - 
+backbone.stage4.1.branches.3.3.bn1.weight - torch.Size([384]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,143 - mmcv - INFO - 
+backbone.stage4.1.branches.3.3.bn1.bias - torch.Size([384]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,143 - mmcv - INFO - 
+backbone.stage4.1.branches.3.3.conv2.weight - torch.Size([384, 384, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,143 - mmcv - INFO - 
+backbone.stage4.1.branches.3.3.bn2.weight - torch.Size([384]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,143 - mmcv - INFO - 
+backbone.stage4.1.branches.3.3.bn2.bias - torch.Size([384]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,143 - mmcv - INFO - 
+backbone.stage4.1.fuse_layers.0.1.0.weight - torch.Size([48, 96, 1, 1]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,143 - mmcv - INFO - 
+backbone.stage4.1.fuse_layers.0.1.1.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,143 - mmcv - INFO - 
+backbone.stage4.1.fuse_layers.0.1.1.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,143 - mmcv - INFO - 
+backbone.stage4.1.fuse_layers.0.2.0.weight - torch.Size([48, 192, 1, 1]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,143 - mmcv - INFO - 
+backbone.stage4.1.fuse_layers.0.2.1.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,143 - mmcv - INFO - 
+backbone.stage4.1.fuse_layers.0.2.1.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,143 - mmcv - INFO - 
+backbone.stage4.1.fuse_layers.0.3.0.weight - torch.Size([48, 384, 1, 1]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,143 - mmcv - INFO - 
+backbone.stage4.1.fuse_layers.0.3.1.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,143 - mmcv - INFO - 
+backbone.stage4.1.fuse_layers.0.3.1.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,143 - mmcv - INFO - 
+backbone.stage4.1.fuse_layers.1.0.0.0.weight - torch.Size([96, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,143 - mmcv - INFO - 
+backbone.stage4.1.fuse_layers.1.0.0.1.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,143 - mmcv - INFO - 
+backbone.stage4.1.fuse_layers.1.0.0.1.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,143 - mmcv - INFO - 
+backbone.stage4.1.fuse_layers.1.2.0.weight - torch.Size([96, 192, 1, 1]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,143 - mmcv - INFO - 
+backbone.stage4.1.fuse_layers.1.2.1.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,143 - mmcv - INFO - 
+backbone.stage4.1.fuse_layers.1.2.1.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,143 - mmcv - INFO - 
+backbone.stage4.1.fuse_layers.1.3.0.weight - torch.Size([96, 384, 1, 1]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,143 - mmcv - INFO - 
+backbone.stage4.1.fuse_layers.1.3.1.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,143 - mmcv - INFO - 
+backbone.stage4.1.fuse_layers.1.3.1.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,143 - mmcv - INFO - 
+backbone.stage4.1.fuse_layers.2.0.0.0.weight - torch.Size([48, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,143 - mmcv - INFO - 
+backbone.stage4.1.fuse_layers.2.0.0.1.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,143 - mmcv - INFO - 
+backbone.stage4.1.fuse_layers.2.0.0.1.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,143 - mmcv - INFO - 
+backbone.stage4.1.fuse_layers.2.0.1.0.weight - torch.Size([192, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,143 - mmcv - INFO - 
+backbone.stage4.1.fuse_layers.2.0.1.1.weight - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,143 - mmcv - INFO - 
+backbone.stage4.1.fuse_layers.2.0.1.1.bias - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,143 - mmcv - INFO - 
+backbone.stage4.1.fuse_layers.2.1.0.0.weight - torch.Size([192, 96, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,143 - mmcv - INFO - 
+backbone.stage4.1.fuse_layers.2.1.0.1.weight - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,143 - mmcv - INFO - 
+backbone.stage4.1.fuse_layers.2.1.0.1.bias - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,143 - mmcv - INFO - 
+backbone.stage4.1.fuse_layers.2.3.0.weight - torch.Size([192, 384, 1, 1]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,143 - mmcv - INFO - 
+backbone.stage4.1.fuse_layers.2.3.1.weight - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,143 - mmcv - INFO - 
+backbone.stage4.1.fuse_layers.2.3.1.bias - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,143 - mmcv - INFO - 
+backbone.stage4.1.fuse_layers.3.0.0.0.weight - torch.Size([48, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,143 - mmcv - INFO - 
+backbone.stage4.1.fuse_layers.3.0.0.1.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,143 - mmcv - INFO - 
+backbone.stage4.1.fuse_layers.3.0.0.1.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,144 - mmcv - INFO - 
+backbone.stage4.1.fuse_layers.3.0.1.0.weight - torch.Size([48, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,144 - mmcv - INFO - 
+backbone.stage4.1.fuse_layers.3.0.1.1.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,144 - mmcv - INFO - 
+backbone.stage4.1.fuse_layers.3.0.1.1.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,144 - mmcv - INFO - 
+backbone.stage4.1.fuse_layers.3.0.2.0.weight - torch.Size([384, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,144 - mmcv - INFO - 
+backbone.stage4.1.fuse_layers.3.0.2.1.weight - torch.Size([384]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,144 - mmcv - INFO - 
+backbone.stage4.1.fuse_layers.3.0.2.1.bias - torch.Size([384]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,144 - mmcv - INFO - 
+backbone.stage4.1.fuse_layers.3.1.0.0.weight - torch.Size([96, 96, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,144 - mmcv - INFO - 
+backbone.stage4.1.fuse_layers.3.1.0.1.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,144 - mmcv - INFO - 
+backbone.stage4.1.fuse_layers.3.1.0.1.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,144 - mmcv - INFO - 
+backbone.stage4.1.fuse_layers.3.1.1.0.weight - torch.Size([384, 96, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,144 - mmcv - INFO - 
+backbone.stage4.1.fuse_layers.3.1.1.1.weight - torch.Size([384]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,144 - mmcv - INFO - 
+backbone.stage4.1.fuse_layers.3.1.1.1.bias - torch.Size([384]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,144 - mmcv - INFO - 
+backbone.stage4.1.fuse_layers.3.2.0.0.weight - torch.Size([384, 192, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,144 - mmcv - INFO - 
+backbone.stage4.1.fuse_layers.3.2.0.1.weight - torch.Size([384]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,144 - mmcv - INFO - 
+backbone.stage4.1.fuse_layers.3.2.0.1.bias - torch.Size([384]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,144 - mmcv - INFO - 
+backbone.stage4.2.branches.0.0.conv1.weight - torch.Size([48, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,144 - mmcv - INFO - 
+backbone.stage4.2.branches.0.0.bn1.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,144 - mmcv - INFO - 
+backbone.stage4.2.branches.0.0.bn1.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,144 - mmcv - INFO - 
+backbone.stage4.2.branches.0.0.conv2.weight - torch.Size([48, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,144 - mmcv - INFO - 
+backbone.stage4.2.branches.0.0.bn2.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,144 - mmcv - INFO - 
+backbone.stage4.2.branches.0.0.bn2.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,144 - mmcv - INFO - 
+backbone.stage4.2.branches.0.1.conv1.weight - torch.Size([48, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,144 - mmcv - INFO - 
+backbone.stage4.2.branches.0.1.bn1.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,144 - mmcv - INFO - 
+backbone.stage4.2.branches.0.1.bn1.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,144 - mmcv - INFO - 
+backbone.stage4.2.branches.0.1.conv2.weight - torch.Size([48, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,144 - mmcv - INFO - 
+backbone.stage4.2.branches.0.1.bn2.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,144 - mmcv - INFO - 
+backbone.stage4.2.branches.0.1.bn2.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,144 - mmcv - INFO - 
+backbone.stage4.2.branches.0.2.conv1.weight - torch.Size([48, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,144 - mmcv - INFO - 
+backbone.stage4.2.branches.0.2.bn1.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,144 - mmcv - INFO - 
+backbone.stage4.2.branches.0.2.bn1.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,144 - mmcv - INFO - 
+backbone.stage4.2.branches.0.2.conv2.weight - torch.Size([48, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,144 - mmcv - INFO - 
+backbone.stage4.2.branches.0.2.bn2.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,144 - mmcv - INFO - 
+backbone.stage4.2.branches.0.2.bn2.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,144 - mmcv - INFO - 
+backbone.stage4.2.branches.0.3.conv1.weight - torch.Size([48, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,144 - mmcv - INFO - 
+backbone.stage4.2.branches.0.3.bn1.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,144 - mmcv - INFO - 
+backbone.stage4.2.branches.0.3.bn1.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,144 - mmcv - INFO - 
+backbone.stage4.2.branches.0.3.conv2.weight - torch.Size([48, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,144 - mmcv - INFO - 
+backbone.stage4.2.branches.0.3.bn2.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,145 - mmcv - INFO - 
+backbone.stage4.2.branches.0.3.bn2.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,145 - mmcv - INFO - 
+backbone.stage4.2.branches.1.0.conv1.weight - torch.Size([96, 96, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,145 - mmcv - INFO - 
+backbone.stage4.2.branches.1.0.bn1.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,145 - mmcv - INFO - 
+backbone.stage4.2.branches.1.0.bn1.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,145 - mmcv - INFO - 
+backbone.stage4.2.branches.1.0.conv2.weight - torch.Size([96, 96, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,145 - mmcv - INFO - 
+backbone.stage4.2.branches.1.0.bn2.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,145 - mmcv - INFO - 
+backbone.stage4.2.branches.1.0.bn2.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,145 - mmcv - INFO - 
+backbone.stage4.2.branches.1.1.conv1.weight - torch.Size([96, 96, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,145 - mmcv - INFO - 
+backbone.stage4.2.branches.1.1.bn1.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,145 - mmcv - INFO - 
+backbone.stage4.2.branches.1.1.bn1.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,145 - mmcv - INFO - 
+backbone.stage4.2.branches.1.1.conv2.weight - torch.Size([96, 96, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,145 - mmcv - INFO - 
+backbone.stage4.2.branches.1.1.bn2.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,145 - mmcv - INFO - 
+backbone.stage4.2.branches.1.1.bn2.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,145 - mmcv - INFO - 
+backbone.stage4.2.branches.1.2.conv1.weight - torch.Size([96, 96, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,145 - mmcv - INFO - 
+backbone.stage4.2.branches.1.2.bn1.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,145 - mmcv - INFO - 
+backbone.stage4.2.branches.1.2.bn1.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,145 - mmcv - INFO - 
+backbone.stage4.2.branches.1.2.conv2.weight - torch.Size([96, 96, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,145 - mmcv - INFO - 
+backbone.stage4.2.branches.1.2.bn2.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,145 - mmcv - INFO - 
+backbone.stage4.2.branches.1.2.bn2.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,145 - mmcv - INFO - 
+backbone.stage4.2.branches.1.3.conv1.weight - torch.Size([96, 96, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,145 - mmcv - INFO - 
+backbone.stage4.2.branches.1.3.bn1.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,145 - mmcv - INFO - 
+backbone.stage4.2.branches.1.3.bn1.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,145 - mmcv - INFO - 
+backbone.stage4.2.branches.1.3.conv2.weight - torch.Size([96, 96, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,145 - mmcv - INFO - 
+backbone.stage4.2.branches.1.3.bn2.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,145 - mmcv - INFO - 
+backbone.stage4.2.branches.1.3.bn2.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,145 - mmcv - INFO - 
+backbone.stage4.2.branches.2.0.conv1.weight - torch.Size([192, 192, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,145 - mmcv - INFO - 
+backbone.stage4.2.branches.2.0.bn1.weight - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,145 - mmcv - INFO - 
+backbone.stage4.2.branches.2.0.bn1.bias - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,145 - mmcv - INFO - 
+backbone.stage4.2.branches.2.0.conv2.weight - torch.Size([192, 192, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,145 - mmcv - INFO - 
+backbone.stage4.2.branches.2.0.bn2.weight - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,145 - mmcv - INFO - 
+backbone.stage4.2.branches.2.0.bn2.bias - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,145 - mmcv - INFO - 
+backbone.stage4.2.branches.2.1.conv1.weight - torch.Size([192, 192, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,145 - mmcv - INFO - 
+backbone.stage4.2.branches.2.1.bn1.weight - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,145 - mmcv - INFO - 
+backbone.stage4.2.branches.2.1.bn1.bias - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,145 - mmcv - INFO - 
+backbone.stage4.2.branches.2.1.conv2.weight - torch.Size([192, 192, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,145 - mmcv - INFO - 
+backbone.stage4.2.branches.2.1.bn2.weight - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,145 - mmcv - INFO - 
+backbone.stage4.2.branches.2.1.bn2.bias - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,145 - mmcv - INFO - 
+backbone.stage4.2.branches.2.2.conv1.weight - torch.Size([192, 192, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,146 - mmcv - INFO - 
+backbone.stage4.2.branches.2.2.bn1.weight - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,146 - mmcv - INFO - 
+backbone.stage4.2.branches.2.2.bn1.bias - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,146 - mmcv - INFO - 
+backbone.stage4.2.branches.2.2.conv2.weight - torch.Size([192, 192, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,146 - mmcv - INFO - 
+backbone.stage4.2.branches.2.2.bn2.weight - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,146 - mmcv - INFO - 
+backbone.stage4.2.branches.2.2.bn2.bias - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,146 - mmcv - INFO - 
+backbone.stage4.2.branches.2.3.conv1.weight - torch.Size([192, 192, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,146 - mmcv - INFO - 
+backbone.stage4.2.branches.2.3.bn1.weight - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,146 - mmcv - INFO - 
+backbone.stage4.2.branches.2.3.bn1.bias - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,146 - mmcv - INFO - 
+backbone.stage4.2.branches.2.3.conv2.weight - torch.Size([192, 192, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,146 - mmcv - INFO - 
+backbone.stage4.2.branches.2.3.bn2.weight - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,146 - mmcv - INFO - 
+backbone.stage4.2.branches.2.3.bn2.bias - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,146 - mmcv - INFO - 
+backbone.stage4.2.branches.3.0.conv1.weight - torch.Size([384, 384, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,146 - mmcv - INFO - 
+backbone.stage4.2.branches.3.0.bn1.weight - torch.Size([384]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,146 - mmcv - INFO - 
+backbone.stage4.2.branches.3.0.bn1.bias - torch.Size([384]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,146 - mmcv - INFO - 
+backbone.stage4.2.branches.3.0.conv2.weight - torch.Size([384, 384, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,146 - mmcv - INFO - 
+backbone.stage4.2.branches.3.0.bn2.weight - torch.Size([384]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,146 - mmcv - INFO - 
+backbone.stage4.2.branches.3.0.bn2.bias - torch.Size([384]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,146 - mmcv - INFO - 
+backbone.stage4.2.branches.3.1.conv1.weight - torch.Size([384, 384, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,146 - mmcv - INFO - 
+backbone.stage4.2.branches.3.1.bn1.weight - torch.Size([384]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,146 - mmcv - INFO - 
+backbone.stage4.2.branches.3.1.bn1.bias - torch.Size([384]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,146 - mmcv - INFO - 
+backbone.stage4.2.branches.3.1.conv2.weight - torch.Size([384, 384, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,146 - mmcv - INFO - 
+backbone.stage4.2.branches.3.1.bn2.weight - torch.Size([384]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,146 - mmcv - INFO - 
+backbone.stage4.2.branches.3.1.bn2.bias - torch.Size([384]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,146 - mmcv - INFO - 
+backbone.stage4.2.branches.3.2.conv1.weight - torch.Size([384, 384, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,146 - mmcv - INFO - 
+backbone.stage4.2.branches.3.2.bn1.weight - torch.Size([384]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,146 - mmcv - INFO - 
+backbone.stage4.2.branches.3.2.bn1.bias - torch.Size([384]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,146 - mmcv - INFO - 
+backbone.stage4.2.branches.3.2.conv2.weight - torch.Size([384, 384, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,146 - mmcv - INFO - 
+backbone.stage4.2.branches.3.2.bn2.weight - torch.Size([384]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,146 - mmcv - INFO - 
+backbone.stage4.2.branches.3.2.bn2.bias - torch.Size([384]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,146 - mmcv - INFO - 
+backbone.stage4.2.branches.3.3.conv1.weight - torch.Size([384, 384, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,146 - mmcv - INFO - 
+backbone.stage4.2.branches.3.3.bn1.weight - torch.Size([384]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,146 - mmcv - INFO - 
+backbone.stage4.2.branches.3.3.bn1.bias - torch.Size([384]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,146 - mmcv - INFO - 
+backbone.stage4.2.branches.3.3.conv2.weight - torch.Size([384, 384, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,146 - mmcv - INFO - 
+backbone.stage4.2.branches.3.3.bn2.weight - torch.Size([384]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,146 - mmcv - INFO - 
+backbone.stage4.2.branches.3.3.bn2.bias - torch.Size([384]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,146 - mmcv - INFO - 
+backbone.stage4.2.fuse_layers.0.1.0.weight - torch.Size([48, 96, 1, 1]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,146 - mmcv - INFO - 
+backbone.stage4.2.fuse_layers.0.1.1.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,146 - mmcv - INFO - 
+backbone.stage4.2.fuse_layers.0.1.1.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,147 - mmcv - INFO - 
+backbone.stage4.2.fuse_layers.0.2.0.weight - torch.Size([48, 192, 1, 1]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,147 - mmcv - INFO - 
+backbone.stage4.2.fuse_layers.0.2.1.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,147 - mmcv - INFO - 
+backbone.stage4.2.fuse_layers.0.2.1.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,147 - mmcv - INFO - 
+backbone.stage4.2.fuse_layers.0.3.0.weight - torch.Size([48, 384, 1, 1]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,147 - mmcv - INFO - 
+backbone.stage4.2.fuse_layers.0.3.1.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,147 - mmcv - INFO - 
+backbone.stage4.2.fuse_layers.0.3.1.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,147 - mmcv - INFO - 
+backbone.stage4.2.fuse_layers.1.0.0.0.weight - torch.Size([96, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,147 - mmcv - INFO - 
+backbone.stage4.2.fuse_layers.1.0.0.1.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,147 - mmcv - INFO - 
+backbone.stage4.2.fuse_layers.1.0.0.1.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,147 - mmcv - INFO - 
+backbone.stage4.2.fuse_layers.1.2.0.weight - torch.Size([96, 192, 1, 1]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,147 - mmcv - INFO - 
+backbone.stage4.2.fuse_layers.1.2.1.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,147 - mmcv - INFO - 
+backbone.stage4.2.fuse_layers.1.2.1.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,147 - mmcv - INFO - 
+backbone.stage4.2.fuse_layers.1.3.0.weight - torch.Size([96, 384, 1, 1]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,147 - mmcv - INFO - 
+backbone.stage4.2.fuse_layers.1.3.1.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,147 - mmcv - INFO - 
+backbone.stage4.2.fuse_layers.1.3.1.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,147 - mmcv - INFO - 
+backbone.stage4.2.fuse_layers.2.0.0.0.weight - torch.Size([48, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,147 - mmcv - INFO - 
+backbone.stage4.2.fuse_layers.2.0.0.1.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,147 - mmcv - INFO - 
+backbone.stage4.2.fuse_layers.2.0.0.1.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,147 - mmcv - INFO - 
+backbone.stage4.2.fuse_layers.2.0.1.0.weight - torch.Size([192, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,147 - mmcv - INFO - 
+backbone.stage4.2.fuse_layers.2.0.1.1.weight - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,147 - mmcv - INFO - 
+backbone.stage4.2.fuse_layers.2.0.1.1.bias - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,147 - mmcv - INFO - 
+backbone.stage4.2.fuse_layers.2.1.0.0.weight - torch.Size([192, 96, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,147 - mmcv - INFO - 
+backbone.stage4.2.fuse_layers.2.1.0.1.weight - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,147 - mmcv - INFO - 
+backbone.stage4.2.fuse_layers.2.1.0.1.bias - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,147 - mmcv - INFO - 
+backbone.stage4.2.fuse_layers.2.3.0.weight - torch.Size([192, 384, 1, 1]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,147 - mmcv - INFO - 
+backbone.stage4.2.fuse_layers.2.3.1.weight - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,147 - mmcv - INFO - 
+backbone.stage4.2.fuse_layers.2.3.1.bias - torch.Size([192]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,147 - mmcv - INFO - 
+backbone.stage4.2.fuse_layers.3.0.0.0.weight - torch.Size([48, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,147 - mmcv - INFO - 
+backbone.stage4.2.fuse_layers.3.0.0.1.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,147 - mmcv - INFO - 
+backbone.stage4.2.fuse_layers.3.0.0.1.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,147 - mmcv - INFO - 
+backbone.stage4.2.fuse_layers.3.0.1.0.weight - torch.Size([48, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,147 - mmcv - INFO - 
+backbone.stage4.2.fuse_layers.3.0.1.1.weight - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,147 - mmcv - INFO - 
+backbone.stage4.2.fuse_layers.3.0.1.1.bias - torch.Size([48]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,147 - mmcv - INFO - 
+backbone.stage4.2.fuse_layers.3.0.2.0.weight - torch.Size([384, 48, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,147 - mmcv - INFO - 
+backbone.stage4.2.fuse_layers.3.0.2.1.weight - torch.Size([384]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,147 - mmcv - INFO - 
+backbone.stage4.2.fuse_layers.3.0.2.1.bias - torch.Size([384]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,147 - mmcv - INFO - 
+backbone.stage4.2.fuse_layers.3.1.0.0.weight - torch.Size([96, 96, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,148 - mmcv - INFO - 
+backbone.stage4.2.fuse_layers.3.1.0.1.weight - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,148 - mmcv - INFO - 
+backbone.stage4.2.fuse_layers.3.1.0.1.bias - torch.Size([96]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,148 - mmcv - INFO - 
+backbone.stage4.2.fuse_layers.3.1.1.0.weight - torch.Size([384, 96, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,148 - mmcv - INFO - 
+backbone.stage4.2.fuse_layers.3.1.1.1.weight - torch.Size([384]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,148 - mmcv - INFO - 
+backbone.stage4.2.fuse_layers.3.1.1.1.bias - torch.Size([384]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,148 - mmcv - INFO - 
+backbone.stage4.2.fuse_layers.3.2.0.0.weight - torch.Size([384, 192, 3, 3]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,148 - mmcv - INFO - 
+backbone.stage4.2.fuse_layers.3.2.0.1.weight - torch.Size([384]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,148 - mmcv - INFO - 
+backbone.stage4.2.fuse_layers.3.2.0.1.bias - torch.Size([384]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,148 - mmcv - INFO - 
+decode_head.conv_seg.weight - torch.Size([4, 64, 1, 1]): 
+NormalInit: mean=0, std=0.01, bias=0 
+ 
+2026-10-10 14:13:44,148 - mmcv - INFO - 
+decode_head.conv_seg.bias - torch.Size([4]): 
+NormalInit: mean=0, std=0.01, bias=0 
+ 
+2026-10-10 14:13:44,148 - mmcv - INFO - 
+decode_head.convs.0.conv.weight - torch.Size([64, 720, 1, 1]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,148 - mmcv - INFO - 
+decode_head.convs.0.bn.weight - torch.Size([64]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,148 - mmcv - INFO - 
+decode_head.convs.0.bn.bias - torch.Size([64]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,148 - mmcv - INFO - 
+decode_head.convs.1.conv.weight - torch.Size([64, 64, 7, 7]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,148 - mmcv - INFO - 
+decode_head.convs.1.bn.weight - torch.Size([64]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+2026-10-10 14:13:44,148 - mmcv - INFO - 
+decode_head.convs.1.bn.bias - torch.Size([64]): 
+The value is the same before and after calling `init_weights` of HRDecoder  
+ 
+{"smoke_discarded_step": 1, "seconds": 9.485287465155125, "losses": {"gt_final": 1.139933466911316, "gt_base": 0.9984757900238037, "gt_hr_crop": 0.9995206594467163, "kl_final": 0.4437854290008545, "base_balanced_BCE": 0.5658308863639832, "kl_base_stratified": 0.4437854290008545, "lambda_k": 0.5, "lambda_base_kd": 0.25, "task_loss": 2.712658166885376, "action_kl_removed": true, "private_positive_negative_balanced": true, "base_grad_norm_before_clip": 0.3259003162384033, "private_grad_norm_before_clip": 0.14007924497127533, "gradient_clipped": 0.0}, "private_nonzero_gradients": {"features": false, "semantic": false, "rgb": false, "mix": false, "blocks": false, "readout": true}}
+{"smoke_discarded_step": 2, "seconds": 1.1378588154911995, "losses": {"gt_final": 1.0926775932312012, "gt_base": 0.9617379903793335, "gt_hr_crop": 0.9825025200843811, "kl_final": 0.4495110809803009, "base_balanced_BCE": 0.5242339372634888, "kl_base_stratified": 0.4499456286430359, "lambda_k": 0.5, "lambda_base_kd": 0.25, "task_loss": 2.6209661960601807, "action_kl_removed": true, "private_positive_negative_balanced": true, "base_grad_norm_before_clip": 0.28665903210639954, "private_grad_norm_before_clip": 0.18416540324687958, "gradient_clipped": 0.0}, "private_nonzero_gradients": {"features": true, "semantic": true, "rgb": true, "mix": true, "blocks": true, "readout": true}}
+{"smoke_discarded_step": 3, "seconds": 1.1308179423213005, "losses": {"gt_final": 1.15632963180542, "gt_base": 0.9938534498214722, "gt_hr_crop": 0.9904887676239014, "kl_final": 0.4778938591480255, "base_balanced_BCE": 0.6504786610603333, "kl_base_stratified": 0.4791525900363922, "lambda_k": 0.5, "lambda_base_kd": 0.25, "task_loss": 2.7705867290496826, "action_kl_removed": true, "private_positive_negative_balanced": true, "base_grad_norm_before_clip": 0.2889223098754883, "private_grad_norm_before_clip": 0.11071695387363434, "gradient_clipped": 0.0}, "private_nonzero_gradients": {"features": true, "semantic": true, "rgb": true, "mix": true, "blocks": true, "readout": true}}
+{"smoke_discarded_step": 4, "seconds": 1.1361366212368011, "losses": {"gt_final": 1.114061951637268, "gt_base": 0.9953430891036987, "gt_hr_crop": 0.996373176574707, "kl_final": 0.4053861200809479, "base_balanced_BCE": 0.4777476191520691, "kl_base_stratified": 0.4086434543132782, "lambda_k": 0.5, "lambda_base_kd": 0.25, "task_loss": 2.633333206176758, "action_kl_removed": true, "private_positive_negative_balanced": true, "base_grad_norm_before_clip": 0.30850714445114136, "private_grad_norm_before_clip": 0.17667639255523682, "gradient_clipped": 0.0}, "private_nonzero_gradients": {"features": true, "semantic": true, "rgb": true, "mix": true, "blocks": true, "readout": true}}
+{"smoke_discarded_step": 5, "seconds": 1.1367983371019363, "losses": {"gt_final": 1.1498655080795288, "gt_base": 0.9989128112792969, "gt_hr_crop": 0.9983270168304443, "kl_final": 0.4672049880027771, "base_balanced_BCE": 0.6059019565582275, "kl_base_stratified": 0.47107625007629395, "lambda_k": 0.5, "lambda_base_kd": 0.25, "task_loss": 2.751457929611206, "action_kl_removed": true, "private_positive_negative_balanced": true, "base_grad_norm_before_clip": 0.3149489462375641, "private_grad_norm_before_clip": 0.13108213245868683, "gradient_clipped": 0.0}, "private_nonzero_gradients": {"features": true, "semantic": true, "rgb": true, "mix": true, "blocks": true, "readout": true}}
+{"smoke_discarded_step": 6, "seconds": 1.1354922726750374, "losses": {"gt_final": 1.1379190683364868, "gt_base": 0.9988296031951904, "gt_hr_crop": 0.9989941120147705, "kl_final": 0.42732423543930054, "base_balanced_BCE": 0.5600663423538208, "kl_base_stratified": 0.43353280425071716, "lambda_k": 0.5, "lambda_base_kd": 0.25, "task_loss": 2.6987099647521973, "action_kl_removed": true, "private_positive_negative_balanced": true, "base_grad_norm_before_clip": 0.3162435293197632, "private_grad_norm_before_clip": 0.13077233731746674, "gradient_clipped": 0.0}, "private_nonzero_gradients": {"features": true, "semantic": true, "rgb": true, "mix": true, "blocks": true, "readout": true}}
+{"smoke_discarded_step": 7, "seconds": 1.1315236166119576, "losses": {"gt_final": 1.1175583600997925, "gt_base": 0.9996167421340942, "gt_hr_crop": 0.9991528391838074, "kl_final": 0.40749645233154297, "base_balanced_BCE": 0.4794358015060425, "kl_base_stratified": 0.4167401194572449, "lambda_k": 0.5, "lambda_base_kd": 0.25, "task_loss": 2.6448826789855957, "action_kl_removed": true, "private_positive_negative_balanced": true, "base_grad_norm_before_clip": 0.2902612090110779, "private_grad_norm_before_clip": 0.17204752564430237, "gradient_clipped": 0.0}, "private_nonzero_gradients": {"features": true, "semantic": true, "rgb": true, "mix": true, "blocks": true, "readout": true}}
+{"smoke_discarded_step": 8, "seconds": 1.1344729736447334, "losses": {"gt_final": 1.1313390731811523, "gt_base": 0.9926255941390991, "gt_hr_crop": 0.9959540367126465, "kl_final": 0.427965372800827, "base_balanced_BCE": 0.5640242695808411, "kl_base_stratified": 0.4397735595703125, "lambda_k": 0.5, "lambda_base_kd": 0.25, "task_loss": 2.6884922981262207, "action_kl_removed": true, "private_positive_negative_balanced": true, "base_grad_norm_before_clip": 0.2783128619194031, "private_grad_norm_before_clip": 0.14696447551250458, "gradient_clipped": 0.0}, "private_nonzero_gradients": {"features": true, "semantic": true, "rgb": true, "mix": true, "blocks": true, "readout": true}}
+{"smoke_discarded_step": 9, "seconds": 1.1382774412631989, "losses": {"gt_final": 1.1337746381759644, "gt_base": 0.9956590533256531, "gt_hr_crop": 0.9959158897399902, "kl_final": 0.4426186680793762, "base_balanced_BCE": 0.5625823140144348, "kl_base_stratified": 0.45579206943511963, "lambda_k": 0.5, "lambda_base_kd": 0.25, "task_loss": 2.704928398132324, "action_kl_removed": true, "private_positive_negative_balanced": true, "base_grad_norm_before_clip": 0.21442921459674835, "private_grad_norm_before_clip": 0.1416136771440506, "gradient_clipped": 0.0}, "private_nonzero_gradients": {"features": true, "semantic": true, "rgb": true, "mix": true, "blocks": true, "readout": true}}
+{"smoke_discarded_step": 10, "seconds": 1.1330219432711601, "losses": {"gt_final": 1.1415746212005615, "gt_base": 0.9927312135696411, "gt_hr_crop": 0.9929885864257812, "kl_final": 0.45128583908081055, "base_balanced_BCE": 0.604279637336731, "kl_base_stratified": 0.4649852514266968, "lambda_k": 0.5, "lambda_base_kd": 0.25, "task_loss": 2.7265636920928955, "action_kl_removed": true, "private_positive_negative_balanced": true, "base_grad_norm_before_clip": 0.2788121700286865, "private_grad_norm_before_clip": 0.1149027869105339, "gradient_clipped": 0.0}, "private_nonzero_gradients": {"features": true, "semantic": true, "rgb": true, "mix": true, "blocks": true, "readout": true}}
+{"smoke_discarded_step": 11, "seconds": 1.1470110341906548, "losses": {"gt_final": 1.124563217163086, "gt_base": 0.9992330074310303, "gt_hr_crop": 0.9996426105499268, "kl_final": 0.3981569707393646, "base_balanced_BCE": 0.5150251984596252, "kl_base_stratified": 0.41740092635154724, "lambda_k": 0.5, "lambda_base_kd": 0.25, "task_loss": 2.6559455394744873, "action_kl_removed": true, "private_positive_negative_balanced": true, "base_grad_norm_before_clip": 0.286719411611557, "private_grad_norm_before_clip": 0.15339086949825287, "gradient_clipped": 0.0}, "private_nonzero_gradients": {"features": true, "semantic": true, "rgb": true, "mix": true, "blocks": true, "readout": true}}
+{"smoke_discarded_step": 12, "seconds": 1.147745668888092, "losses": {"gt_final": 1.1229302883148193, "gt_base": 0.9986963272094727, "gt_hr_crop": 0.9985017776489258, "kl_final": 0.3814607858657837, "base_balanced_BCE": 0.5164793729782104, "kl_base_stratified": 0.40684598684310913, "lambda_k": 0.5, "lambda_base_kd": 0.25, "task_loss": 2.643038511276245, "action_kl_removed": true, "private_positive_negative_balanced": true, "base_grad_norm_before_clip": 0.313686728477478, "private_grad_norm_before_clip": 0.16111046075820923, "gradient_clipped": 0.0}, "private_nonzero_gradients": {"features": true, "semantic": true, "rgb": true, "mix": true, "blocks": true, "readout": true}}
+GPU_SACD_SMOKE_PASS
+/root/miniconda3/lib/python3.8/site-packages/mmcv/__init__.py:20: UserWarning: On January 1, 2023, MMCV will release v2.0.0, in which it will remove components related to the training process and add a data transformation module. In addition, it will rename the package names mmcv to mmcv-lite and mmcv-full to mmcv. See https://github.com/open-mmlab/mmcv/blob/master/docs/en/compatibility.md for more details.
+  warnings.warn(
+/root/miniconda3/lib/python3.8/site-packages/mmcv/__init__.py:20: UserWarning: On January 1, 2023, MMCV will release v2.0.0, in which it will remove components related to the training process and add a data transformation module. In addition, it will rename the package names mmcv to mmcv-lite and mmcv-full to mmcv. See https://github.com/open-mmlab/mmcv/blob/master/docs/en/compatibility.md for more details.
+  warnings.warn(
+/root/miniconda3/lib/python3.8/site-packages/mmcv/__init__.py:20: UserWarning: On January 1, 2023, MMCV will release v2.0.0, in which it will remove components related to the training process and add a data transformation module. In addition, it will rename the package names mmcv to mmcv-lite and mmcv-full to mmcv. See https://github.com/open-mmlab/mmcv/blob/master/docs/en/compatibility.md for more details.
+  warnings.warn(
+/root/miniconda3/lib/python3.8/site-packages/mmcv/__init__.py:20: UserWarning: On January 1, 2023, MMCV will release v2.0.0, in which it will remove components related to the training process and add a data transformation module. In addition, it will rename the package names mmcv to mmcv-lite and mmcv-full to mmcv. See https://github.com/open-mmlab/mmcv/blob/master/docs/en/compatibility.md for more details.
+  warnings.warn(
+/root/miniconda3/lib/python3.8/site-packages/mmcv/__init__.py:20: UserWarning: On January 1, 2023, MMCV will release v2.0.0, in which it will remove components related to the training process and add a data transformation module. In addition, it will rename the package names mmcv to mmcv-lite and mmcv-full to mmcv. See https://github.com/open-mmlab/mmcv/blob/master/docs/en/compatibility.md for more details.
+  warnings.warn(
+/root/miniconda3/lib/python3.8/site-packages/mmcv/__init__.py:20: UserWarning: On January 1, 2023, MMCV will release v2.0.0, in which it will remove components related to the training process and add a data transformation module. In addition, it will rename the package names mmcv to mmcv-lite and mmcv-full to mmcv. See https://github.com/open-mmlab/mmcv/blob/master/docs/en/compatibility.md for more details.
+  warnings.warn(
+/root/miniconda3/lib/python3.8/site-packages/mmcv/__init__.py:20: UserWarning: On January 1, 2023, MMCV will release v2.0.0, in which it will remove components related to the training process and add a data transformation module. In addition, it will rename the package names mmcv to mmcv-lite and mmcv-full to mmcv. See https://github.com/open-mmlab/mmcv/blob/master/docs/en/compatibility.md for more details.
+  warnings.warn(
+/root/miniconda3/lib/python3.8/site-packages/mmcv/__init__.py:20: UserWarning: On January 1, 2023, MMCV will release v2.0.0, in which it will remove components related to the training process and add a data transformation module. In addition, it will rename the package names mmcv to mmcv-lite and mmcv-full to mmcv. See https://github.com/open-mmlab/mmcv/blob/master/docs/en/compatibility.md for more details.
+  warnings.warn(

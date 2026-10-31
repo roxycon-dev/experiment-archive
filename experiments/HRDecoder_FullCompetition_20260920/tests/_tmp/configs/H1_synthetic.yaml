@@ -1,0 +1,145 @@
+schema_version: '1.0'
+arm_id: H1
+role: external-lesion-pretrained hrdecoder arm
+status: locked-intent
+structure:
+  family: hrdecoder
+  paired_group: hrdecoder
+  definition_ref: docs/ASSET_AND_INTERFACE_AUDIT.md 第4节
+  training_entry: train.py
+  reference_root: D:/dataset/experiment/HRDecoder_FullCompetition_20260920/tests/_tmp/refrepo
+  open_all_stages: true
+  keep_frozen_b_copy: false
+initialization:
+  imagenet_weights:
+    source: synthetic://imagenet_w48
+    file: D:\dataset\experiment\HRDecoder_FullCompetition_20260920\tests\_tmp\weights\imagenet_dummy.pth
+    sha256: 8f8bb2638af98484983a1ddd3adb5d886318a9cd9c8a51ce4a54aa6300c3c07a
+  external_pretrain_checkpoint:
+    file: D:\dataset\experiment\HRDecoder_FullCompetition_20260920\tests\_tmp\weights\external_pretrain_dummy.pth
+    sha256: 763ccb75ad78dd04776b61d5fb41f8bd3ca3c7583ac47aaca6ca370328d52f88
+data:
+  ddr_root: D:/dataset/experiment/HRDecoder_FullCompetition_20260920/tests/_tmp/ddr
+  ddr_train_split: train
+  ddr_val_split: val
+  ddr_test_split: test
+  channel_order:
+  - EX
+  - HE
+  - SE
+  - MA
+  input_fov: 2048
+  train_crop: 1024
+  ddr_normalization:
+    mean:
+    - 81.205
+    - 50.636
+    - 21.216
+    std:
+    - 76.252
+    - 48.798
+    - 21.625
+pretrain_stage:
+  external_manifest: D:/dataset/experiment/HRDecoder_FullCompetition_20260920/tests/_tmp/manifests/external_train_manifest.jsonl
+  allowed_splits:
+  - train
+  forbidden_splits:
+  - test
+  dev_ratio: 0.1
+  source_mixing: source_balanced_sampling
+  updates: 8000
+  effective_batch: 8
+  micro_batch: 2
+  grad_accum: 4
+  optimizer: adamw
+  weight_decay: 0.01
+  warmup_ratio: 0.05
+  lr_schedule: cosine
+  cosine_min_ratio: 0.01
+  backbone_lr: 0.0001
+  decoder_lr: 0.0003
+  channel_order:
+  - EX
+  - HE
+  - SE
+  - MA
+  valid_mask_handling: per_class_valid_masking
+  node_selection: external_train_derived_dev_only
+  overfit_monitor: dev_loss_every_1000_updates
+  init_checkpoint_output:
+    file: D:\dataset\experiment\HRDecoder_FullCompetition_20260920\tests\_tmp\weights\init_ckpt_output_dummy.pth
+    sha256: 8f3fdec9b7199e9435c380d49489c14295aa0f0b7a83c1b8dc6843bf591e39ae
+ddr_finetune_stage:
+  seed: 42
+  updates: 12000
+  effective_batch: 8
+  micro_batch: 2
+  grad_accum: 4
+  eval_progress_points:
+  - 0.25
+  - 0.5
+  - 0.75
+  - 1.0
+  optimizer: adamw
+  weight_decay: 0.01
+  warmup_ratio: 0.05
+  lr_schedule: cosine
+  cosine_min_ratio: 0.01
+  backbone_lr: 5.0e-05
+  decoder_lr: 0.0002
+  augmentation:
+    resize_ratio_range:
+    - 0.5
+    - 2.0
+    random_crop_cat_max_ratio: 0.75
+    flip_ratio: 0.5
+    rotate_degrees:
+    - -45
+    - 45
+    photometric: light
+  sampling: random_plus_foreground_mixed
+  bn_policy:
+    backbone_norm_eval: true
+    affine_trainable: true
+  mixed_precision: true
+  gradient_checkpointing: false
+loss:
+  type: binary_per_class
+  recipe: ce_dice
+  smooth: 1.0e-05
+  per_class_valid_masking: true
+  ce_weight: 1.0
+  dice_weight: 1.0
+metrics:
+  protocol: whole_image_accumulated_counts
+  threshold: 0.5
+  primary: mIoU_lesion4
+  reported:
+  - mF1
+  - mPPV
+  - mRecall
+  - mAUPR
+checkpoint_selection:
+  allowed_splits:
+  - val
+  test_forbidden: true
+test_usage:
+  train_on_test: forbidden
+  select_checkpoint_on_test: forbidden
+  final_single_eval: allowed_only_after_full_lock
+equivalence_lock:
+  identical_with: H0
+  fields:
+  - data
+  - ddr_finetune_stage
+  - loss
+  - metrics
+  - checkpoint_selection
+  - test_usage
+  - structure.family
+  - structure.paired_group
+  - initialization.imagenet_weights
+notes: 'H1 回答"真实病灶预训练是否有用"。额外预训练计算量如实记录，不声称等算力优势； 选出的外部节点进入 DDR 适配后必须使用与 H0 完全相同的同结构
+  LR 与日程。
+
+  '

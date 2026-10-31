@@ -1,0 +1,43 @@
+{
+  "groupnorm_padding": {
+    "unpadded_shape": [
+      1,
+      8,
+      64,
+      80
+    ],
+    "padded_shape": [
+      1,
+      8,
+      128,
+      160
+    ],
+    "valid_region_max_abs_difference": 1.6378977298736572,
+    "valid_region_mean_abs_difference": 1.440633773803711
+  },
+  "trained_refiner_padding": {
+    "checkpoint": "D:\\dataset\\experiment\\HRDecoder_FullCompetition_20260920\\refiner_v1\\logs\\formal_20260921_remote\\failure_20260921_122218\\stage2__last.pth",
+    "epoch1": 19,
+    "step": 12597,
+    "synthetic_only": true,
+    "max_abs_difference": 0.254781574010849,
+    "interior_mean_abs_difference": 0.020807934924960136,
+    "decision_changes_at_0_5": 248,
+    "total_channel_pixels": 10240
+  },
+  "wrong_clamped_pixel_gradient": {
+    "base_p": 0.01,
+    "residual_logit": -1.0,
+    "target": 1,
+    "prediction": [
+      0.0,
+      0.0
+    ],
+    "loss": 311.84832763671875,
+    "gradient_wrt_residual": [
+      0.0,
+      0.0
+    ],
+    "scope": "demonstrates zero local gradient on wrong saturated pixels; not prevalence in real data"
+  }
+}

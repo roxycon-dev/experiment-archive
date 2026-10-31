@@ -1,0 +1,37 @@
+{
+  "design_version": 6,
+  "name": "HRDecoder-SACD",
+  "full_name": "Student-Aligned Correction Decoder",
+  "student_error_aligned_targets": true,
+  "base": "unchanged original ImageNet HRNet-W48/HRDecoder; one backbone call",
+  "private_paths": "unchanged LocalPath 2918816, GlobalPath 3459872",
+  "head": {
+    "input_channels": 128,
+    "class_heads": 4,
+    "hidden_channels_per_class": 32,
+    "residual_kernel": 3,
+    "expansion": 2,
+    "output_channels_per_class_before_pixelshuffle": 48,
+    "pixelshuffle": 4,
+    "parameters": 40768
+  },
+  "private_parameters": 6419456,
+  "total_parameters": 71991876,
+  "probability": "P=pi_keep*sigmoid(z0)+pi_on",
+  "action_regions": "student FN with any correct-positive teacher; student FP with any correct-negative teacher; GT-correct student keep; wrong student without correct teacher unknown",
+  "targets": "on=(qmax-p0)/(1-p0) only Cplus; off=(p0-qmin)/p0 only Cminus; detach current student; fixed1/3 region normalization",
+  "GT_KD": "unchanged CET .75G(final)+.25G(base)+.1G(HRcrop), same corrected teacher and schedules",
+  "protocol": {
+    "canvas": 2048,
+    "batch": 2,
+    "updates": 40000,
+    "base_seed": 42,
+    "private_seed": 20261008,
+    "fresh_ImageNet": true,
+    "TTA": false,
+    "inference_teacher": false,
+    "BN": "unchanged original settings"
+  },
+  "budget": "one final additional full run; deadline2026-10-10T02:00:00+08:00",
+  "claimed_accuracy": null
+}

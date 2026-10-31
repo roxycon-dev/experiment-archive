@@ -1,0 +1,31 @@
+{
+  "human_instruction": "Task must not be interrupted; finish server tasks and close before report writing",
+  "evidence": {
+    "reports/driver_state.json": {
+      "stage": "SINGLE_SEED_FINAL_SELECTION",
+      "pid": 44281,
+      "time": "2026-10-05T16:54:11.165340+00:00"
+    },
+    "reports/final_test_state.json": {
+      "stage": "RUNNING",
+      "lock_sha256": "3146ca1edafdffdae7bf4987524bddc502209929e5d6d5b0e7ba49f12b6bd66e",
+      "time": "2026-10-05T18:00:05.183855+00:00",
+      "reselection_permitted": false
+    },
+    "reports/final_test.json": null,
+    "runs/LOCKED_TEST_seed42/progress.json": {
+      "completed_images": 195,
+      "expected": 227,
+      "update": 20000
+    },
+    "reports/publication_report_server_release.json": null,
+    "p0_progress": {
+      "stage": "COMPLETE",
+      "images": 227,
+      "expected_images": 227
+    },
+    "observed_at": "2026-10-05T18:21:04.476726+00:00"
+  },
+  "time": "2026-10-05T18:21:04.019357+00:00",
+  "original_receiver_and_closure_workers_alive": true
+}

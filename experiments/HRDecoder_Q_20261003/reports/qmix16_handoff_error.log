@@ -1,0 +1,20 @@
+Traceback (most recent call last):
+  File "D:\dataset\experiment\HRDecoder_Q_20261003\reports\handoff_after_qmix16.py", line 223, in <module>
+    main()
+    ~~~~^^
+  File "D:\dataset\experiment\HRDecoder_Q_20261003\reports\handoff_after_qmix16.py", line 137, in main
+    offload(cache_plan(12000), '12000')
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\dataset\experiment\HRDecoder_Q_20261003\reports\handoff_after_qmix16.py", line 90, in offload
+    row = future.result()
+  File "C:\Users\GuanXingRen\Miniconda3\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\GuanXingRen\Miniconda3\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\GuanXingRen\Miniconda3\Lib\concurrent\futures\thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "D:\dataset\experiment\HRDecoder_Q_20261003\reports\handoff_after_qmix16.py", line 70, in copy_file
+    assert target.is_relative_to((ROOT/'server_results/runs'/RUN).resolve())
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

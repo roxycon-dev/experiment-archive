@@ -1,0 +1,10 @@
+{"analyzed_images": 25}
+{"analyzed_images": 50}
+{"analyzed_images": 75}
+{"analyzed_images": 100}
+{"analyzed_images": 125}
+{"analyzed_images": 150}
+{"analyzed_images": 175}
+{"analyzed_images": 200}
+{"analyzed_images": 225}
+{"status": "COMPLETE", "n_images": 227, "pixel_table": [{"method": "full", "description": "Full system", "n_images": 227, "miou_pct": 45.86088631351919, "EX_IoU_pct": 55.10779587009915, "HE_IoU_pct": 46.20820873690813, "SE_IoU_pct": 52.88237714511699, "MA_IoU_pct": 29.245163501952486, "MA_precision_pct": 50.049100879989794, "MA_recall_pct": 41.299600616702534, "miou_ci_low_pct": 42.53108035798785, "miou_ci_high_pct": 48.68575890909595, "full_minus_row_pp": 0.0}, {"method": "no_h4", "description": "Without H4", "n_images": 227, "miou_pct": 45.093134407312604, "EX_IoU_pct": 55.10779587009915, "HE_IoU_pct": 46.20820873690813, "SE_IoU_pct": 52.88237714511699, "MA_IoU_pct": 26.174155877126175, "MA_precision_pct": 47.39685093667394, "MA_recall_pct": 36.89059844351015, "miou_ci_low_pct": 41.79065596370172, "miou_ci_high_pct": 47.9239396037653, "full_minus_row_pp": 0.7677519062065841}, {"method": "no_convnext", "description": "Without ConvNeXt", "n_images": 227, "miou_pct": 45.321533853931086, "EX_IoU_pct": 54.77483902942338, "HE_IoU_pct": 44.42797328092606, "SE_IoU_pct": 52.88567027245183, "MA_IoU_pct": 29.197652832923087, "MA_precision_pct": 50.15591515135961, "MA_recall_pct": 41.132796261898626, "miou_ci_low_pct": 42.13858670044458, "miou_ci_high_pct": 48.12298080373838, "full_minus_row_pp": 0.5393524595881019}, {"method": "matched_c20", "description": "Replace S20 with C20", "n_images": 227, "miou_pct": 45.7968590911655, "EX_IoU_pct": 54.96632538651439, "HE_IoU_pct": 46.25508590300652, "SE_IoU_pct": 52.936949830985746, "MA_IoU_pct": 29.02907524415535, "MA_precision_pct": 49.81789370103896, "MA_recall_pct": 41.025452134516925, "miou_ci_low_pct": 42.43627662810524, "miou_ci_high_pct": 48.7080730342046, "full_minus_row_pp": 0.06402722235368685}], "output": "D:\\dataset\\experiment\\paper_supplement_20261023\\results\\ddr_test_local_v1\\analysis"}

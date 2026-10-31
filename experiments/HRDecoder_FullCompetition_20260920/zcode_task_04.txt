@@ -1,0 +1,5 @@
+只完成一个收尾任务，不再调查旧仓库：在 D:\dataset\experiment\HRDecoder_FullCompetition_20260920 中为已经存在的 tools/preflight_contract.py 编写并跑通 tests/run_contract_smoke.py，然后写两份简短报告。禁止服务器和训练。
+
+测试必须覆盖：合成 train-only 正例成功；missing file、official test 泄漏、valid_mode=none 带 mask、配对字段不一致、正式模式 REQUIRED/TBD 五种负例均失败。运行 tools/*.py 与 tests/*.py 的 py_compile。运行真实配置正式 preflight，资产未齐应以明确 blocker 非零退出。
+
+若 preflight 本身有 bug就修。完成后写 docs/PREFLIGHT_TEST_REPORT.md 和 docs/IMPLEMENTATION_STATUS.md。不要只回复方案，必须落盘并执行。可使用 Pillow/PyYAML 已安装环境，不安装依赖。

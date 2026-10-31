@@ -1,0 +1,5 @@
+{
+  "exit_code": 0,
+  "stdout": "[engine] stage=external_pretrain mode=formal updates 0->2400 grad_accum=4 micro_batch=2 amp=True frozen_bn=0 params=390\n[engine] update 100/2400 loss=1.6668177616596223 lr={'backbone': 8.333333333333334e-05, 'decoder': 0.00025}\n[engine] update 200/2400 loss=1.6043710279464722 lr={'backbone': 9.97070250001054e-05, 'decoder': 0.0002991210750003162}\n[engine] update 300/2400 loss=1.5412132716178895 lr={'backbone': 9.850201109890858e-05, 'decoder': 0.0002955060332967257}\n[engine] eval update=300 mIoU_lesion4=0.0183 n_images=6\n7034 MiB, 98 %\n",
+  "stderr": ""
+}

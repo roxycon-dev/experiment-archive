@@ -1,0 +1,597 @@
+{
+  "stage": "LOCAL_BACKGROUND_RECOVERY_VERIFIED_AND_SD20_VALIDATED",
+  "heartbeat_trigger": "2026-10-05T12:19:16.945Z",
+  "time": "2026-10-05T12:38:02.359617+00:00",
+  "live_parallel_status": {
+    "primary": {
+      "driver": {
+        "stage": "CAMPAIGN",
+        "pid": 18787,
+        "time": "2026-10-04T21:16:20.663409+00:00"
+      },
+      "campaign": {
+        "stage": "RUNNING",
+        "current_run": "D_seed42",
+        "queue": [
+          [
+            "C",
+            42
+          ],
+          [
+            "S",
+            42
+          ],
+          [
+            "D",
+            42
+          ],
+          [
+            "SD",
+            42
+          ],
+          [
+            "PARENT_F12",
+            2024
+          ],
+          [
+            "C",
+            2024
+          ],
+          [
+            "S",
+            2024
+          ],
+          [
+            "D",
+            2024
+          ],
+          [
+            "SD",
+            2024
+          ]
+        ],
+        "updated_at": "2026-10-05T10:09:41.031997+00:00"
+      },
+      "runs": {
+        "C_seed42": {
+          "stage": "COMPLETE",
+          "completed": 32000,
+          "endpoint": 32000,
+          "updated_at": "2026-10-05T02:31:24.012530+00:00"
+        },
+        "S_seed42": {
+          "stage": "COMPLETE",
+          "completed": 32000,
+          "endpoint": 32000,
+          "updated_at": "2026-10-05T10:09:39.504955+00:00"
+        },
+        "D_seed42": {
+          "stage": "TRAINING",
+          "completed": 10320,
+          "endpoint": 32000,
+          "updated_at": "2026-10-05T12:35:40.275390+00:00",
+          "recent": {
+            "loss": 0.20326822996139526,
+            "grad_norm": 13.180902481079102,
+            "seconds": 0.8170248989481479,
+            "data_wait_seconds": 0.002035329816862941,
+            "peak_gpu_bytes": 11004799488
+          }
+        }
+      },
+      "free_disk_bytes": 26724847616,
+      "observed_at": "2026-10-05T12:35:43.828874+00:00"
+    },
+    "second": {
+      "driver": {
+        "stage": "PARALLEL_CAMPAIGN",
+        "pid": 3295,
+        "time": "2026-10-05T05:33:32.002303+00:00"
+      },
+      "campaign": {
+        "stage": "RUNNING",
+        "current_run": "SD_seed42",
+        "queue": [
+          [
+            "SD",
+            42
+          ]
+        ],
+        "amendment_sha256": "cae05b90a986f4d14a7c7f1e7ca25de10b9d966d905cd1ea88f5e0c2116344c3",
+        "time": "2026-10-05T05:33:32.001933+00:00"
+      },
+      "runs": {
+        "SD_seed42": {
+          "stage": "TRAINING",
+          "completed": 20200,
+          "endpoint": 32000,
+          "updated_at": "2026-10-05T12:35:39.806961+00:00",
+          "recent": {
+            "loss": 0.17483878135681152,
+            "grad_norm": 1.4044420719146729,
+            "seconds": 0.8062805831432343,
+            "data_wait_seconds": 0.001452513039112091,
+            "peak_gpu_bytes": 11006432768
+          }
+        }
+      },
+      "free_disk_bytes": 12885233664,
+      "observed_at": "2026-10-05T12:35:45.159664+00:00"
+    },
+    "authorized_seed_scope": [
+      42
+    ],
+    "assigned_runs": {
+      "primary": [
+        "C_seed42",
+        "S_seed42",
+        "D_seed42"
+      ],
+      "second": [
+        "SD_seed42"
+      ]
+    },
+    "old_primary_loaded_queue_is_superseded_by_boundary_amendment": true,
+    "time": "2026-10-05T12:35:45.161641+00:00"
+  },
+  "validation_curves": {
+    "D_seed42": [
+      {
+        "update": 4000,
+        "metric_sha256": "c27d573e99b9a8ffe3b339fbac730f9016a1bd7f798b3611665420598e4efec6",
+        "n_images": 76,
+        "per_image_count": 76,
+        "scores": {
+          "single": 40.845137169176596,
+          "fixed_fusion": 44.81903825796121,
+          "half_fusion": 42.69589728421687
+        },
+        "counts": {
+          "single": [
+            [
+              190890,
+              118233,
+              99913
+            ],
+            [
+              651542,
+              417700,
+              554382
+            ],
+            [
+              151081,
+              68752,
+              50323
+            ],
+            [
+              24123,
+              47479,
+              45161
+            ]
+          ],
+          "fixed_fusion": [
+            [
+              187441,
+              83661,
+              103362
+            ],
+            [
+              689750,
+              361087,
+              516174
+            ],
+            [
+              141220,
+              38441,
+              60184
+            ],
+            [
+              27060,
+              33513,
+              42224
+            ]
+          ]
+        },
+        "probability_files": 0,
+        "mirror_matches": true
+      },
+      {
+        "update": 8000,
+        "metric_sha256": "a42fcc9d604c40ab559e6e4d8b793ba3ffd969d87a0da54f0ff3df94a10fdbc7",
+        "n_images": 76,
+        "per_image_count": 76,
+        "scores": {
+          "single": 41.587832157303886,
+          "fixed_fusion": 44.98818933537731,
+          "half_fusion": 43.2479783032601
+        },
+        "counts": {
+          "single": [
+            [
+              190465,
+              112831,
+              100338
+            ],
+            [
+              651973,
+              410009,
+              553951
+            ],
+            [
+              148621,
+              54662,
+              52783
+            ],
+            [
+              23704,
+              44803,
+              45580
+            ]
+          ],
+          "fixed_fusion": [
+            [
+              187338,
+              82553,
+              103465
+            ],
+            [
+              691315,
+              360005,
+              514609
+            ],
+            [
+              140608,
+              36253,
+              60796
+            ],
+            [
+              27003,
+              32751,
+              42281
+            ]
+          ]
+        },
+        "probability_files": 0,
+        "mirror_matches": false
+      }
+    ],
+    "SD_seed42": [
+      {
+        "update": 4000,
+        "metric_sha256": "08a9ecb510881d909bdf6abdd4fe6614f5e637967371f5c36907d93855cd20d9",
+        "n_images": 76,
+        "per_image_count": 76,
+        "scores": {
+          "single": 39.65700941327202,
+          "fixed_fusion": 45.06749663241366,
+          "half_fusion": 43.318394842689585
+        },
+        "counts": {
+          "single": [
+            [
+              193963,
+              132417,
+              96840
+            ],
+            [
+              669384,
+              746422,
+              536540
+            ],
+            [
+              153903,
+              65905,
+              47501
+            ],
+            [
+              25455,
+              52297,
+              43829
+            ]
+          ],
+          "fixed_fusion": [
+            [
+              188432,
+              86130,
+              102371
+            ],
+            [
+              695750,
+              350128,
+              510174
+            ],
+            [
+              142226,
+              38075,
+              59178
+            ],
+            [
+              27153,
+              34445,
+              42131
+            ]
+          ]
+        },
+        "probability_files": 0,
+        "mirror_matches": true
+      },
+      {
+        "update": 8000,
+        "metric_sha256": "5754d1bbb8a2c1cef274ad0d04acf6fe7d191ec793226969ef6c54efdc8a9a6d",
+        "n_images": 76,
+        "per_image_count": 76,
+        "scores": {
+          "single": 41.27487871289849,
+          "fixed_fusion": 44.5898536602842,
+          "half_fusion": 43.25308579485186
+        },
+        "counts": {
+          "single": [
+            [
+              192323,
+              116078,
+              98480
+            ],
+            [
+              673712,
+              561584,
+              532212
+            ],
+            [
+              150806,
+              53978,
+              50598
+            ],
+            [
+              24682,
+              50159,
+              44602
+            ]
+          ],
+          "fixed_fusion": [
+            [
+              187902,
+              82539,
+              102901
+            ],
+            [
+              697004,
+              411425,
+              508920
+            ],
+            [
+              139547,
+              36529,
+              61857
+            ],
+            [
+              27169,
+              34081,
+              42115
+            ]
+          ]
+        },
+        "probability_files": 0,
+        "mirror_matches": true
+      },
+      {
+        "update": 12000,
+        "metric_sha256": "3a2ba2607061b3d0933c73e6d2a941455de657c65477ce5bd42978abc82a0107",
+        "n_images": 76,
+        "per_image_count": 76,
+        "scores": {
+          "single": 40.59472560667222,
+          "fixed_fusion": 44.698779675420255,
+          "half_fusion": 42.98117676693797
+        },
+        "counts": {
+          "single": [
+            [
+              193130,
+              145546,
+              97673
+            ],
+            [
+              683194,
+              614525,
+              522730
+            ],
+            [
+              150593,
+              48655,
+              50811
+            ],
+            [
+              23300,
+              45119,
+              45984
+            ]
+          ],
+          "fixed_fusion": [
+            [
+              187941,
+              83425,
+              102862
+            ],
+            [
+              696740,
+              412359,
+              509184
+            ],
+            [
+              140443,
+              34442,
+              60961
+            ],
+            [
+              26633,
+              33264,
+              42651
+            ]
+          ]
+        },
+        "probability_files": 0,
+        "mirror_matches": true
+      },
+      {
+        "update": 16000,
+        "metric_sha256": "51ea9588377b580b8a3139d9f1d80b9a54dfb2f2c8ee2eabb0c44f0b32152f6f",
+        "n_images": 76,
+        "per_image_count": 76,
+        "scores": {
+          "single": 41.64948052112553,
+          "fixed_fusion": 44.918844562947655,
+          "half_fusion": 43.36007037860048
+        },
+        "counts": {
+          "single": [
+            [
+              191652,
+              126108,
+              99151
+            ],
+            [
+              668325,
+              473387,
+              537599
+            ],
+            [
+              151505,
+              47790,
+              49899
+            ],
+            [
+              22222,
+              41644,
+              47062
+            ]
+          ],
+          "fixed_fusion": [
+            [
+              187317,
+              81349,
+              103486
+            ],
+            [
+              693244,
+              394742,
+              512680
+            ],
+            [
+              140999,
+              34132,
+              60405
+            ],
+            [
+              26563,
+              32221,
+              42721
+            ]
+          ]
+        },
+        "probability_files": 0,
+        "mirror_matches": true
+      },
+      {
+        "update": 20000,
+        "scores": {
+          "single": 41.37961502605747,
+          "fixed_fusion": 44.88324597144078,
+          "half_fusion": 43.23014357793865
+        },
+        "n_images": 76,
+        "per_image_count": 76,
+        "FP32_probability_file_count": 76,
+        "metric_sha256": "19a6126481f6c02ba04c9910741cb5ac79f1e00f3b0d1e35e862fd2e9f48bd0c"
+      }
+    ]
+  },
+  "two_consecutive_combined_collapse_thresholds_met": {
+    "D_seed42": false,
+    "SD_seed42": false
+  },
+  "local_helper_verification": "reports\\local_attendant_recovery_20261005_2024\\verification.json",
+  "endpoint_custody": {
+    "reports\\storage_offload\\C_seed42_u20000.json": {
+      "stage": "LOCAL_SHA_VERIFIED_REMOTE_RELEASED",
+      "files": 77,
+      "time": "2026-10-05T01:50:50.543239+00:00",
+      "receipt_sha256": "bebb8296322a78857405717b174d5df3a0bd73c0304c8730626b8121e32590bd"
+    },
+    "reports\\storage_offload\\C_seed42_u32000.json": {
+      "stage": "LOCAL_SHA_VERIFIED_REMOTE_RELEASED",
+      "files": 77,
+      "time": "2026-10-05T02:44:47.505526+00:00",
+      "receipt_sha256": "8469fd43547fbaa746771f7a87e2f9b1dfa167654053eb3ac6c4d5cc584e1e55"
+    },
+    "reports\\storage_offload\\S_seed42_u20000.json": {
+      "stage": "LOCAL_SHA_VERIFIED_REMOTE_RELEASED",
+      "files": 77,
+      "time": "2026-10-05T09:24:58.992023+00:00",
+      "receipt_sha256": "77f86cde4f3fbae2369f43699e91ced37bc37a53fa71881634b329a73a95dbc9"
+    },
+    "reports\\storage_offload\\S_seed42_u32000.json": {
+      "stage": "LOCAL_SHA_VERIFIED_REMOTE_RELEASED",
+      "files": 77,
+      "time": "2026-10-05T10:23:43.797686+00:00",
+      "receipt_sha256": "274800a4de56a1f36e1b85d717ef33ea0b0164d85368a8186468bb8ba9055590"
+    }
+  },
+  "authorized_seeds": [
+    42
+  ],
+  "SD20_fixed25_gain_vs_R42_pp": 0.5275536329024035,
+  "SD20_passes_exploratory_recipe_gain_gate": true,
+  "scientific_stop_required": false,
+  "shutdown_eligible": false,
+  "training_or_scientific_source_changed": false,
+  "duplicate_healthy_mirror_started": false,
+  "timer_automatic_dispatch_reobserved": [
+    "2026-10-05T11:34:09.553Z",
+    "2026-10-05T12:19:16.945Z"
+  ],
+  "no_claim_11_34_wake_processed_tools": true,
+  "recovery_functional_followup": {
+    "verified_at": "2026-10-05T12:40:42.857642+00:00",
+    "primary_completed_receiver_pool": {
+      "stage": "POOL_COMPLETED",
+      "time": "2026-10-05T12:39:06.896322+00:00",
+      "receiver_connections_opened": 2,
+      "files_received": 272,
+      "seconds": 239.0728736000001,
+      "negotiated_compression": [
+        "zlib@openssh.com",
+        "zlib@openssh.com"
+      ],
+      "max_file_receivers": 2,
+      "original_mirror_sha256": "28492fcdbd64ae0e08145274af70368726275e2bdc52dbc99fa9177b6c0e366b",
+      "all_original_SHA_and_custody_gates_used": true
+    },
+    "primary_attendant_state": {
+      "stage": "WAITING",
+      "time": "2026-10-05T12:39:07.003506+00:00"
+    },
+    "second_actual_temporary_byte_progress": {
+      "stage": "IMMUTABLE_SD20_ENDPOINT_RECEIVER_BYTE_PROGRESS_VERIFIED",
+      "observations": [
+        {
+          "time": "2026-10-05T12:39:43.981818+00:00",
+          "files": {
+            "parallel\\node2\\server_results\\runs\\SD_seed42\\checkpoint_u20000.pth.download": 21069824,
+            "parallel\\node2\\server_results\\runs\\SD_seed42\\val_u20000\\007-1774-100.npz.download": 15892480
+          }
+        },
+        {
+          "time": "2026-10-05T12:39:51.982530+00:00",
+          "files": {
+            "parallel\\node2\\server_results\\runs\\SD_seed42\\checkpoint_u20000.pth.download": 22085632,
+            "parallel\\node2\\server_results\\runs\\SD_seed42\\val_u20000\\007-1774-100.npz.download": 16678912
+          }
+        }
+      ],
+      "aggregate_progress_is_per_completed_SHA_file": true,
+      "no_duplicate_receiver": true
+    },
+    "future_space_note": "SD20 endpoint recovery remains incomplete. Monitor remote8GiB reserve at later formal writes; current12GiB is above guard, not a guarantee for all future outputs."
+  }
+}

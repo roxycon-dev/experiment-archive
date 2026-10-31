@@ -1,0 +1,290 @@
+{
+  "stage": "COMPLETE_SCIENTIFIC_DELIVERY_LOCAL_SHA_AND_CLEANUP",
+  "created_at": "2026-10-04T06:55:16.349416+00:00",
+  "selected": {
+    "arm": "Q_DDR",
+    "update": 16000,
+    "formula": "fixed_fusion",
+    "seed_scores_pct": [
+      44.35569233853838,
+      44.21734429280863
+    ],
+    "mean_val_pct": 44.286518315673504,
+    "test_eligible": true,
+    "deployment_seed": 42,
+    "candidate_count": 16
+  },
+  "selected_lock_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\server_results\\continuation_evidence\\reports\\continuation_final_selection.json",
+  "selected_lock_sha256": "537f516bbdcd6517e5aca3c8a87ae9d6c2d2f9174ee6d3aeda7d3ce8ace6e8ee",
+  "selected_checkpoints": [
+    {
+      "seed": 42,
+      "path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\server_results\\runs\\Q_DDR_seed42\\checkpoint_u16000.pth",
+      "sha256": "0c525c901c8d4d6e4192c9de40c63a6d12710b76494f0c552dc39cbf6b67cb71"
+    },
+    {
+      "seed": 2024,
+      "path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\server_results\\runs\\Q_DDR_seed2024\\checkpoint_u16000.pth",
+      "sha256": "b064c78cc7472608c3400671267c83209defd03720b5e191443a48211ecb5168"
+    }
+  ],
+  "original_P0_lock": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\configs\\p0_original_lock.json",
+  "full_system_formula": "0.75 P0 + 0.25 Q_DDR(seed42, update16000); P0 and its seven-model expanded inventory retained in the full report",
+  "final_test_action": "REUSE_EXACT_PRIOR_TEST_COUNTS",
+  "test_scores_pct": [
+    45.72155710642771,
+    45.677066093957414
+  ],
+  "mean_test_pct": 45.69931160019256,
+  "report": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\reports\\HRDecoder_原方案完整实验报告_20261004.md",
+  "run_backups": [
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\reports\\run_backup_Q_DDR_seed42_24k.json",
+      "sha256": "19b9556226362100bbfe3f46ba53829626e7a047faade32ca5ffbcba21df80f8",
+      "files": 327,
+      "bytes": 14686919649,
+      "verified_at": "2026-10-03T23:56:25.386157+00:00"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\reports\\run_backup_Q_DDR_seed2024_24k.json",
+      "sha256": "d55d293972e91ac7142a1852018dae72734d3b1618060e87cfa4a9e5645e26c9",
+      "files": 327,
+      "bytes": 14745280366,
+      "verified_at": "2026-10-04T02:36:19.505508+00:00"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\reports\\run_backup_Q_MIX_seed42_24k.json",
+      "sha256": "0f9193434a2b92d44a106e879028afd74ea592ce51fc6f95d7bbb8611220d1a6",
+      "files": 327,
+      "bytes": 14669423641,
+      "verified_at": "2026-10-04T01:15:44.889849+00:00"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\reports\\run_backup_Q_MIX_seed2024_24k.json",
+      "sha256": "5dbf12776f448c8d4357a3dbb16acaaa4e0c9da793449a954a5aac35266f600e",
+      "files": 327,
+      "bytes": 14865430114,
+      "verified_at": "2026-10-04T06:38:09.015080+00:00"
+    }
+  ],
+  "total_run_files": 1308,
+  "verified_evidence": [
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\reports\\HRDecoder_原方案完整实验报告_20261004.md",
+      "bytes": 10269,
+      "sha256": "a8cfaa1f47ddf3ed6655d7c3dc45a150198420a446d9a62298edf0835faa0a41"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\reports\\original_plan_experiment_result.json",
+      "bytes": 10923,
+      "sha256": "c52013f12499b71b0803754d379044482d07bdc361df6887a400a78e89e19773"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\reports\\paired_validation_all_nodes_24k.json",
+      "bytes": 133896,
+      "sha256": "98bf3961e46ec8e9a17632a5491b08b1ce24c5df091a798ea85108ac016c45c8"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\reports\\supervision_comparison_common24k.json",
+      "bytes": 1460,
+      "sha256": "3143b43deb9629091bec7b5f3664511e233b5418a56b229f852a414bc83f10fd"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\reports\\final_test_uncertainty_and_error_buckets.json",
+      "bytes": 7460,
+      "sha256": "80376ca0990787f14c2142dd277f8af0f22018a460e28c8f0ee0cf1b4570cd1e"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\reports\\HRDecoder_paired_validation_20261004.png",
+      "bytes": 146715,
+      "sha256": "39f1aded7b380680ee5f61d71efee6aace20f47fd8d338ee00bf7245e1409141"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\reports\\HRDecoder_paired_validation_20261004.svg",
+      "bytes": 78453,
+      "sha256": "31e550e96b74b50d4647f8c0af878b2d77e9d13c587c7d474cc6cb590cec83f4"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\server_results\\continuation_evidence\\reports\\continuation_final_selection.json",
+      "bytes": 11605,
+      "sha256": "537f516bbdcd6517e5aca3c8a87ae9d6c2d2f9174ee6d3aeda7d3ce8ace6e8ee"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\server_results\\continuation_evidence\\reports\\continuation_final_evaluation_state.json",
+      "bytes": 1609,
+      "sha256": "6112a7c83a2bfc8a73153b95f23754b6e857baaa78b2d2c9f1f99b2b2f448436"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\server_results\\continuation_evidence\\reports\\continuation_final_evaluation.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\server_results\\continuation_evidence\\reports\\continuation_final_launch_receipt.json",
+      "bytes": 266,
+      "sha256": "fa43942546ec11d338b7264367700bb98cb686d5803d9cec1bb6cf5c6d6f7155"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\server_results\\continuation_evidence\\reports\\campaign_state.json",
+      "bytes": 6587,
+      "sha256": "5e748e134ed8b47b9c7ec300880889bba52a400d098e3436678ee67cbdc85aa8"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\server_results\\continuation_evidence\\reports\\continuation_final_test\\reuse_receipt.json",
+      "bytes": 828,
+      "sha256": "042d0f006015de1d4de495e5f4f67a18396d554bfb95bac0272aecd093a0a7d6"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\server_results\\continuation_evidence\\reports\\continuation_final_test\\seed2024.json",
+      "bytes": 1123611,
+      "sha256": "52c63472d1052d6abc225aa06222f84590b226382574e8993ad9cde6669ad12b"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\server_results\\continuation_evidence\\reports\\continuation_final_test\\seed42.json",
+      "bytes": 1123607,
+      "sha256": "7d6a715b42266138ac75d3dece2b96f23762cd67f4be07980e0103ebd9f38d0c"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\server_results\\continuation_evidence\\reports\\continuation_final_test\\summary.json",
+      "bytes": 1115,
+      "sha256": "def88e3cbab6f0b52b707f50c9a9240188171a3ac61096cff405168c20243080"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\server_results\\configs\\protocol.json",
+      "bytes": 3077,
+      "sha256": "ad83409138bdf23ddcb2273112b3c79c54d8ad51731f2cfd817ff6f0addde46f"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\server_results\\configs\\runtime.server.json",
+      "bytes": 1248,
+      "sha256": "a791a59e1d180787ebcc83e2b05a1d14dbb4ba215c74f69fa913f42c87f6e187"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\server_results\\configs\\runtime.qmix.server.json",
+      "bytes": 1356,
+      "sha256": "fbac1c55289be376b8efb98d1503aa57a794ffca001c0b7affb6151b3b3aee97"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\server_results\\reports\\source_identity.json",
+      "bytes": 31142,
+      "sha256": "c4f43b937c4d1dbed970da48574a563b16a4f0ef351ef7845bce46afbf4d1378"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\server_results\\reports\\data_identity.json",
+      "bytes": 291297,
+      "sha256": "7c53b86bcb27ccd121042f667cc58e39b98716a8c477bfd1f1657fa126575719"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\server_results\\reports\\pretraining_identity.json",
+      "bytes": 785,
+      "sha256": "73aa09897066f255ab46e74c5fad9efaa912c0b6b4fae7f8202c6df4ab9f0077"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\server_results\\reports\\qmix_continuation_protocol.json",
+      "bytes": 274916,
+      "sha256": "240f1aafa14616ad0b011cc998bf67e8671f82a32ca4c1758ff52a3e93d226ff"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\server_results\\reports\\external_source_user_override.json",
+      "bytes": 1535,
+      "sha256": "3e682c81ac85eb246232759539132e821e859eeb7166c884e7d0cc6f06ce3fdb"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\server_results\\reports\\external_acceptance\\manifest.server.accepted.json",
+      "bytes": 610861,
+      "sha256": "4de817deaf9a190a19badee08dccf77fa7dac6c997cca982fd5843f7d48d1bcb"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\server_results\\reports\\final_evaluation.py",
+      "bytes": 16717,
+      "sha256": "fddfcf5d3b1a6293ed9d9950055c11087ae02f6092b6a3fcb860ca60e08115d0"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\server_results\\reports\\continuation_final_evaluation.py",
+      "bytes": 11207,
+      "sha256": "75f0cca79c7c3ebeaf3852fccae7cdb64107ede35143224d9a5d252aa1378e08"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\server_results\\reports\\run_continuation_locked_test.py",
+      "bytes": 3261,
+      "sha256": "491f31cce94c025195efd387d938331d2ca3aeed5d2480611b7bc3366935d77f"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\server_results\\reports\\advance_qmix_campaign.py",
+      "bytes": 2164,
+      "sha256": "4656574d5b0b01a0bdb0d692b02f76571389041e0d32f63afe0077bd0e5f1634"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\server_results\\reports\\stream_Q_DDR_seed42.jsonl",
+      "bytes": 39730012,
+      "sha256": "aa95f47b6a967db5e175da8b216859477d0e6746006693d15e8176a80836359f"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\server_results\\reports\\stream_Q_DDR_seed42.summary.json",
+      "bytes": 614,
+      "sha256": "5d15376c4077cd9ff5b394d09125629de0f6ad55b915d0c4efb7ad3379dba354"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\server_results\\runs\\Q_DDR_seed42\\identity.json",
+      "bytes": 725,
+      "sha256": "9aa285ab2bdc15c24ef94ad04842e9c709f8949f2f0f59648d8e048772b1a547"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\server_results\\reports\\stream_Q_DDR_seed2024.jsonl",
+      "bytes": 39739165,
+      "sha256": "097d6d2401a6541dd97e914ff4929abb86d73edb0cbcbce66ae35b015f0bb90f"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\server_results\\reports\\stream_Q_DDR_seed2024.summary.json",
+      "bytes": 591,
+      "sha256": "1d8979b47bae660acb17e8fbf4b0b9cc4e98aebab8f8116473af60e6f14a0ad3"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\server_results\\runs\\Q_DDR_seed2024\\identity.json",
+      "bytes": 727,
+      "sha256": "4960e18c73f5cd5f322ff0d1b99c32e6c999c4059026d2df70d42695727cd7ba"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\server_results\\reports\\stream_Q_MIX_seed42.jsonl",
+      "bytes": 39935521,
+      "sha256": "7a0e4a655726f4ec76a9d46abec508132bb5c4999846d4d48181838faa1fddf8"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\server_results\\reports\\stream_Q_MIX_seed42.summary.json",
+      "bytes": 850,
+      "sha256": "3bd16687007e6f92c54676edd37c88ffffef74a01621471866614f4335cd9b00"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\server_results\\runs\\Q_MIX_seed42\\identity.json",
+      "bytes": 725,
+      "sha256": "e834ada804783501f16e92f1dcd35f40e1ee5bbb703a5cc558c3c326391f04b6"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\server_results\\reports\\stream_Q_MIX_seed2024.jsonl",
+      "bytes": 39962702,
+      "sha256": "288eb05725024f807a85ca028ad2d356650063d098d8e219f5b4ed06fcaac0cd"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\server_results\\reports\\stream_Q_MIX_seed2024.summary.json",
+      "bytes": 852,
+      "sha256": "db89ee84d4d0e68c4a245b09f07cda49be524ee3b281733ca987f46f5a5881fd"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\server_results\\runs\\Q_MIX_seed2024\\identity.json",
+      "bytes": 727,
+      "sha256": "6efbde98c96d0d28276a6ab1f461d7419051f8c16e61e8fffc58a1f14ae54f35"
+    }
+  ],
+  "frozen_source_sha256": "d0fc4e0478835131cf3b731302174395d6827260bdae78bfa276b8e9851c9a3f",
+  "frozen_source_files": 251,
+  "cleanup_receipt": "D:\\dataset\\experiment\\_maintenance\\next_retired_U1_cleanup_result_20261004.json",
+  "cleanup_receipt_sha256": "7aba11371676c1738f115776aeb0f136d02ab1b6f4b2de320e47b638bf97f368",
+  "cleanup_deleted_bytes": 11622934560,
+  "previous_test_and_all_model_evidence_preserved": true,
+  "original_plan_scientific_scope_complete": true,
+  "shutdown_authorized": true,
+  "shutdown_dispatched": false,
+  "platform_OFF_verified": false,
+  "actual_billing_receipt_available": false,
+  "automatic_additional_experiments": false
+}

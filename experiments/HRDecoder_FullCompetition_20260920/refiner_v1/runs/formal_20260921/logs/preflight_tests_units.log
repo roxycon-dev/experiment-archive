@@ -1,0 +1,37 @@
+[PASS] identity_is_bitwise
+[PASS] identity_from_zero_head_only
+[PASS] residual_is_bounded
+[PASS] gradients_reach_head
+[PASS] haar_level_invertible
+[PASS] haar_invertible_odd_sizes
+[PASS] haar_hf_shape
+[PASS] haar_hf_no_params
+[PASS] build_input_11ch
+[PASS] assemble_outside_bitwise
+[PASS] assemble_identity_inside
+[PASS] assemble_context_alignment
+[PASS] assemble_rejects_undersized
+[PASS] assemble_empty_tiles
+[PASS] assemble_overlap_weighted
+[PASS] binarize_fixed_threshold
+[PASS] e2e_refiner_roundtrip_bitwise
+[PASS] ignore_pixels_excluded
+[PASS] fully_ignored_zero
+[PASS] empty_lesion_finite
+[PASS] perfect_prediction_low_loss
+[PASS] loss_is_two_terms
+[PASS] objective_30focal_1dice
+[PASS] objective_frozen_fail_closed
+[PASS] loss_total_and_focal_share
+[PASS] validation_nodes_frozen
+[PASS] dice_rewards_overlap
+[PASS] only_refiner_grads
+[PASS] frozen_reference_guard
+[PASS] no_test_paths
+/root/miniconda3/lib/python3.8/site-packages/torch/_utils.py:776: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  return self.fget.__get__(instance, owner)()
+[PASS] checkpoint_strict_load
+      [info] trainable params = 25394
+[PASS] param_count_small
+
+32 passed, 0 failed

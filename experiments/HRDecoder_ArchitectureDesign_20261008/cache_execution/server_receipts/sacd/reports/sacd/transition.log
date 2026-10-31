@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "transition.py", line 72, in <module>
+    try:main()
+  File "transition.py", line 50, in main
+    assert cpu['status']==resume['status']=='PASS' and cpu['torch']==resume['torch']=='2.0.1+cu117'
+AssertionError

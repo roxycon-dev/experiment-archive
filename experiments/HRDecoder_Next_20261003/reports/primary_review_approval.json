@@ -1,0 +1,26 @@
+{
+  "status": "PRIMARY_REVIEW_COMPLETE",
+  "time": 1791022788.4096339,
+  "report": "D:\\dataset\\experiment\\HRDecoder_Next_20261003\\reports\\HRDecoder_严格实验最终报告_20261003.md",
+  "report_sha256": "08f7e43fa724c94c7873586c41d0ab82502afbec7c388596e9eeb6d9e7feed7a",
+  "final_test_sha256": "5745f00527ae1810f5b18d092107ae42c1332ebc5d1a95aa375e8bdfee6aff98",
+  "metadata_manifest_sha256": "94f3ffa70f15531da9b8b0d20ed127335126b0ca7d21e416e2a197476043aa44",
+  "package_sha256": "ad733879232919e99b9c3421c2aa211a8b658f5ee51f507630efc585115a9ef5",
+  "model_source_sha256": "0dc17cf13e331d2d5a12a4b28fe67db75422547f0c078305b95e543a8d9f50d4",
+  "original_deployment_lock": {
+    "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\best_pipeline\\original_deployment_lock.json",
+    "sha256": "644974f4a888835f838472199dcb623e879be2d62e73dab502394759551ceac4"
+  },
+  "checked": [
+    "Complete paired 0/1k/2k outputs",
+    "Cost-stop policy and preserved exact last/best",
+    "G 24 and M 12 inspected error crops",
+    "M curve figure layout",
+    "Pooled 227-image counts and fixed test identity",
+    "Image-bootstrap limits and absence of seed validation",
+    "Retain original deployed winner",
+    "Persistent nonwinner storage and local critical-backup gate"
+  ],
+  "waiting_only_for": "Required stable probability backup and final server idle/shutdown verification",
+  "completion_ready_written": false
+}

@@ -1,0 +1,36 @@
+{
+  "stage": "USER_AUTHORIZED_AMENDMENT",
+  "time": "2026-10-05T03:56:50.240175+00:00",
+  "seeds": [
+    42
+  ],
+  "main_arms": [
+    "C",
+    "S",
+    "D",
+    "SD"
+  ],
+  "cancelled": [
+    "PARENT_F12_seed2024",
+    "C_seed2024",
+    "S_seed2024",
+    "D_seed2024",
+    "SD_seed2024"
+  ],
+  "node1": [
+    "C_seed42",
+    "S_seed42",
+    "D_seed42"
+  ],
+  "node2": [
+    "SD_seed42"
+  ],
+  "training_scientific_settings_unchanged": true,
+  "primary_healthy_S_not_interrupted": true,
+  "selection": "Same24 registered arm/endpoint/formula recipes, seed42 gain_vs_R>=.5pp; rank unrounded mIoU then original ties; freeze one before one locked test",
+  "target": "seed42 test_mIoU>=47.2115; exploratory single-seed result, no two-seed claim",
+  "further_seed_reproduction_requires_new_user_scope": true,
+  "source_sha256": "937565a59a9d65f46d891cdf456a8bc75141434e2815bb875dce316b5d5d8629",
+  "runtime_sha256": "a13151a87478a3965e053077a03cfb4aca2e418ed3e34df13714359d7d4f59e5",
+  "second_node_authorization": "New explicit user assignment nmb1:40920, key only; previous20261004 remainsclosed"
+}

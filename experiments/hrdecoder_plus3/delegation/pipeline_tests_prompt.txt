@@ -1,0 +1,55 @@
+Output ONLY Python unittest code repo/tests/test_pipeline.py. Test actual ForegroundMixedCrop from given productionfile withoutmmcvinstalled using AST select classonly + compileexec with PIPELINES dummyregistry whose register_module returnsidentity, globalsnp/corehelpers. This executes ACTUALclass not duplicatedlogic. Tests: largeimage coordinateimageencoding cropmatcheslabel, metadata3D; smallimagepadding label255 andimage0; ALLresults.seg_fields transformedidentically including extra auxmask; seededforegroundtargetincluded, inputgtpattern classes1..4. Loaderlocates hrplus_patch.py fromparentrepo, ASTClassDef nameForegroundMixedCrop; namespace core pad_to_size crop_arrays foreground_crop_bbox np; compilemoduleonlythatclass safe. unitteststandard, numpy only. NO fake test modelaccuracy. Minimal<=100lines, no code commentsbloat.
+PRODUCTIONCLASS:
+@PIPELINES.register_module()
+class ForegroundMixedCrop(object):
+    """Train-only crop after Resize(2048x2048, keep_ratio=False).
+
+    With probability fg_prob: image-uniform random crop.  Otherwise: a
+    PRESENT lesion class (1..num_fg) is chosen uniformly, a pixel of it is
+    chosen uniformly, and a valid anchor offset guaranteeing pixel inclusion
+    is sampled.  Falls back to uniform when no lesion class is present.
+    The image (primary ``gt_semantic_seg`` and every extra field listed in
+    ``seg_fields``) is padded/cropped with IDENTICAL coordinates; small
+    images are padded first (image 0, labels 255).
+    """
+
+    def __init__(self, crop_size, fg_prob=0.5, num_fg=4, seg_fields=()):
+        self.crop_size = int(crop_size)
+        self.fg_prob = float(fg_prob)
+        self.num_fg = int(num_fg)
+        self.seg_fields = list(seg_fields)
+
+    def _seg_targets(self, results):
+        """All label fields cropped together, primary first."""
+        fields = ['gt_semantic_seg'] + [f for f in dict.fromkeys(results.get('seg_fields', []) + self.seg_fields)
+                                        if f != 'gt_semantic_seg']
+        return fields, [results[f] for f in fields]
+
+    def __call__(self, results):
+        img = results['img']
+        fields, gts = self._seg_targets(results)
+        gt = gts[0]
+        cs = self.crop_size
+        h, w = gt.shape[:2]
+        if h < cs or w < cs:
+            th, tw = max(cs, h), max(cs, w)
+            original_img = img
+            img = pad_to_size(original_img, gt, (th, tw), img_pad=0, seg_pad=255)[0]
+            padded = []
+            for g in gts:
+                padded.append(pad_to_size(original_img, g, (th, tw), 0, 255)[1])
+            gts = padded
+            gt = gts[0]
+        y0, x0 = foreground_crop_bbox(gt, cs, self.fg_prob, np.random,
+                                      self.num_fg)
+        results['img'] = img[y0:y0 + cs, x0:x0 + cs]
+        for f, g in zip(fields, gts):
+            results[f] = crop_arrays(g, g, y0, x0, cs, cs)[0]
+        results['img_shape'] = results['img'].shape  # 3D (H, W, C)
+        results['pad_shape'] = results['img'].shape  # 3D (H, W, C)
+        return results
+
+    def __repr__(self):
+        return self.__class__.__name__ + \
+            '(crop_size={}, fg_prob={}, num_fg={})'.format(
+                self.crop_size, self.fg_prob, self.num_fg)

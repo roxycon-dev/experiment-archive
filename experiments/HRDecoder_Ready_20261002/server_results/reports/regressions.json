@@ -1,0 +1,10 @@
+{
+  "passed": 5,
+  "checks": [
+    "fp16 reductions exceeding 65504 remain finite, with usable gradients",
+    "full external transfer preserves backbone prefixes and restores decoder exactly",
+    "sliding windows cover short edges and preserve original coordinates",
+    "screening stops a plateau, preserves learning and class complementarity",
+    "external pretrain has no circular output gate; DDR still requires its checkpoint"
+  ]
+}

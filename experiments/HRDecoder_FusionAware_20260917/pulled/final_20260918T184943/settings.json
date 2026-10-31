@@ -1,0 +1,54 @@
+{
+  "cache_dir": "/root/autodl-tmp/hrplus/cache/ref_train_v3",
+  "champion": {
+    "head": "weights/h4_best.pth",
+    "members": [
+      {
+        "checkpoint": "weights/glm_D_student.pth",
+        "config": "configs/lesion/exp/hrplus_patch_dice.py",
+        "load": "student_only",
+        "name": "D",
+        "weight": 3
+      },
+      {
+        "checkpoint": "weights/glm_E_1500.pth",
+        "config": "configs/lesion/exp/hrplus_mares.py",
+        "load": "full",
+        "name": "E",
+        "weight": 2
+      },
+      {
+        "checkpoint": "weights/b_weights.pth",
+        "config": "configs/lesion/exp/hr100_b.py",
+        "load": "full",
+        "name": "B",
+        "weight": 1
+      },
+      {
+        "checkpoint": "weights/glm_E4_36000.pth",
+        "config": "configs/lesion/exp/e4_detail_split613.py",
+        "load": "full",
+        "name": "E4",
+        "weight": 1
+      }
+    ]
+  },
+  "config": "configs/lesion/exp/hrplus_patch_dice.py",
+  "data_root": "/root/autodl-tmp/hrplus/repo/data/DDR_split_613",
+  "expected_sha256": {
+    "configs/lesion/exp/e4_detail_split613.py": "65b2c5eb88db2790c1e00dbcb6e18deaf8fc6abc5bf3f148be9ae70d2f06fc1c",
+    "configs/lesion/exp/hr100_b.py": "556e7c2f1557c6658f6233f1fe1601b8d0b1c8382cc6bdaaaf108a712da3ed54",
+    "configs/lesion/exp/hrplus_mares.py": "591e4786abaa35b8dfc9a6476c45a8c9eb387544c37e0d56b6a499b683e100b4",
+    "configs/lesion/exp/hrplus_patch_dice.py": "2d687086e28533d4bb080f31c12c4abb802d5293fc4f2a463f9f0bd8f36452f9",
+    "weights/b_weights.pth": "abd74330b5ccaad291ee1d2a74739aa7901366f0edf40cf151027cdd61e1c84d",
+    "weights/glm_D_student.pth": "d583548a26ce31a16c9ae29f15377ce440bf14e2436592814a50de388a962166",
+    "weights/glm_E4_36000.pth": "ef63779928a1267c5b7e9050bf82ddb3ed88b62d830a9275d7018fd90272e112",
+    "weights/glm_E_1500.pth": "a18ff92b4da24d870554f17856983d4be042386cacbcaba0d4e13f3f248ed5e5",
+    "weights/h4_best.pth": "14757e02de49f6f065d4ef82cb8b1c4ee8a6a7f3f66cb1867276993950f80c50"
+  },
+  "final_reserve_hours": 2.5,
+  "gpu_id": 0,
+  "reference_checkpoint": "weights/b_weights.pth",
+  "repo": "/root/autodl-tmp/hrplus/repo",
+  "student_checkpoint": "weights/glm_D_student.pth"
+}

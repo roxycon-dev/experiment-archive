@@ -1,0 +1,90 @@
+/root/miniconda3/lib/python3.8/site-packages/mmcv/__init__.py:20: UserWarning: On January 1, 2023, MMCV will release v2.0.0, in which it will remove components related to the training process and add a data transformation module. In addition, it will rename the package names mmcv to mmcv-lite and mmcv-full to mmcv. See https://github.com/open-mmlab/mmcv/blob/master/docs/en/compatibility.md for more details.
+  warnings.warn(
+/root/miniconda3/lib/python3.8/site-packages/torch/_utils.py:776: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  return self.fget.__get__(instance, owner)()
+{
+  "family": "hrdecoder",
+  "stage": "ddr_finetune",
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "torch": "2.0.1+cu117",
+  "peak_allocated_mb": 13390.85888671875,
+  "timings_seconds": [
+    10.368919385015033,
+    1.4179200730286539,
+    2.8161161129828542,
+    1.414034673012793,
+    1.415447926032357,
+    1.4291520540136844,
+    1.4260313250124454,
+    1.4263642439618707,
+    1.4274665509583429,
+    1.4349990939954296,
+    1.4262907659867778,
+    1.4286568119423464,
+    1.4259959820192307,
+    1.4228907800279558,
+    1.4149452600395307,
+    1.4276981849689037
+  ],
+  "effective_batch": 8,
+  "micro_batch": 4,
+  "data_wait_seconds": [
+    1.3069654959253967,
+    0.0004116799682378769,
+    0.00024061696603894234,
+    0.0003726310096681118,
+    0.00026525999419391155,
+    0.00030958792194724083,
+    9.509199298918247e-05,
+    0.0003267750144004822,
+    0.0002454540226608515,
+    0.000383037026040256,
+    0.00025424896739423275,
+    0.0003600009949877858,
+    0.00029147404711693525,
+    0.00037144089583307505,
+    0.00026891904417425394,
+    0.00034656189382076263,
+    0.00015376904048025608,
+    0.00036473607178777456,
+    0.00011704908683896065,
+    0.000663458020426333,
+    0.0002706719096750021,
+    0.0003177720354869962,
+    0.00028331298381090164,
+    0.0004236380336806178,
+    0.00026146904565393925,
+    0.0003431489458307624,
+    0.00026074203196913004,
+    0.00034954503644257784,
+    0.0002543199807405472,
+    0.0003404130693525076,
+    0.00023499492090195417,
+    0.00035247195046395063,
+    0.0002774350577965379,
+    0.0003705100389197469
+  ],
+  "workers": 4,
+  "fast_kernels": true,
+  "grad_accum": 2,
+  "parameter_delta": {
+    "backbone.conv1.weight": 8.704140782356262e-06,
+    "decode_head.conv_seg.weight": 4.3258070945739746e-05
+  },
+  "last_loss": {
+    "loss_bce": 0.00529757235199213,
+    "loss_dice": 0.6833534240722656,
+    "loss_total": 0.6886510252952576,
+    "active_classes": 4,
+    "valid_pixels_per_class": [
+      3841807,
+      3841807,
+      3841807,
+      3841807
+    ]
+  },
+  "n_train": 454,
+  "n_dev": 76,
+  "calibration_only": true,
+  "checkpoint_saved": false
+}

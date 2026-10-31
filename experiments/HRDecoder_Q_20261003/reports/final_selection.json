@@ -1,0 +1,133 @@
+{
+  "status": "LOCKED_TEST_AUTHORIZED",
+  "selection": {
+    "selected": {
+      "arm": "Q_DDR",
+      "update": 16000,
+      "formula": "fixed_fusion",
+      "seed_scores_pct": [
+        44.35569233853838,
+        44.21734429280863
+      ],
+      "mean_val_pct": 44.286518315673504,
+      "test_eligible": true,
+      "deployment_seed": 42,
+      "candidate_count": 4
+    },
+    "all_candidates": [
+      {
+        "arm": "Q_DDR",
+        "update": 16000,
+        "formula": "fixed_fusion",
+        "seed_scores_pct": [
+          44.35569233853838,
+          44.21734429280863
+        ],
+        "mean_val_pct": 44.286518315673504
+      },
+      {
+        "arm": "Q_DDR",
+        "update": 12000,
+        "formula": "fixed_fusion",
+        "seed_scores_pct": [
+          44.27597579085049,
+          44.17298119164855
+        ],
+        "mean_val_pct": 44.22447849124952
+      },
+      {
+        "arm": "Q_DDR",
+        "update": 16000,
+        "formula": "single",
+        "seed_scores_pct": [
+          37.893718646800664,
+          37.295592060779256
+        ],
+        "mean_val_pct": 37.59465535378996
+      },
+      {
+        "arm": "Q_DDR",
+        "update": 12000,
+        "formula": "single",
+        "seed_scores_pct": [
+          37.84096064019035,
+          37.11565733429797
+        ],
+        "mean_val_pct": 37.47830898724416
+      }
+    ],
+    "common_endpoint": 16000,
+    "test_selection_forbidden": true
+  },
+  "created_at": "2026-10-03T17:52:25.602970+00:00",
+  "source_sha256": "d0fc4e0478835131cf3b731302174395d6827260bdae78bfa276b8e9851c9a3f",
+  "driver_sha256": "fddfcf5d3b1a6293ed9d9950055c11087ae02f6092b6a3fcb860ca60e08115d0",
+  "runtime_sha256": "a791a59e1d180787ebcc83e2b05a1d14dbb4ba215c74f69fa913f42c87f6e187",
+  "checkpoints": {
+    "42": {
+      "path": "/root/autodl-tmp/HRDecoder_Q_20261003/runs/Q_DDR_seed42/checkpoint_u16000.pth",
+      "sha256": "0c525c901c8d4d6e4192c9de40c63a6d12710b76494f0c552dc39cbf6b67cb71",
+      "identity": {
+        "arm": "Q_DDR",
+        "seed": 42,
+        "protocol_sha256": "ad83409138bdf23ddcb2273112b3c79c54d8ad51731f2cfd817ff6f0addde46f",
+        "source_sha256": "d0fc4e0478835131cf3b731302174395d6827260bdae78bfa276b8e9851c9a3f",
+        "data_sha256": "a0a69afd241d96a6a239f6745b13d0bd9129652ea25d607b354ecb0314bd2b76",
+        "pretraining_sha256": "73cec8be7427c8655ceced13ce62f6e20a1fa90d1b4d4a550df17a1144081a7c",
+        "stream_sha256": "aa95f47b6a967db5e175da8b216859477d0e6746006693d15e8176a80836359f",
+        "resources": {
+          "micro_batch": 2,
+          "accumulation": 4,
+          "dtype": "bfloat16",
+          "workers": 4,
+          "prefetch_factor": 2,
+          "pin_memory": true
+        },
+        "p0_identity_sha256": "9468a4d2a8d9a1344a21358698a427fdc5ce9950d3603ce91ea9258a15a648db"
+      }
+    },
+    "2024": {
+      "path": "/root/autodl-tmp/HRDecoder_Q_20261003/runs/Q_DDR_seed2024/checkpoint_u16000.pth",
+      "sha256": "b064c78cc7472608c3400671267c83209defd03720b5e191443a48211ecb5168",
+      "identity": {
+        "arm": "Q_DDR",
+        "seed": 2024,
+        "protocol_sha256": "ad83409138bdf23ddcb2273112b3c79c54d8ad51731f2cfd817ff6f0addde46f",
+        "source_sha256": "d0fc4e0478835131cf3b731302174395d6827260bdae78bfa276b8e9851c9a3f",
+        "data_sha256": "a0a69afd241d96a6a239f6745b13d0bd9129652ea25d607b354ecb0314bd2b76",
+        "pretraining_sha256": "73cec8be7427c8655ceced13ce62f6e20a1fa90d1b4d4a550df17a1144081a7c",
+        "stream_sha256": "097d6d2401a6541dd97e914ff4929abb86d73edb0cbcbce66ae35b015f0bb90f",
+        "resources": {
+          "micro_batch": 2,
+          "accumulation": 4,
+          "dtype": "bfloat16",
+          "workers": 4,
+          "prefetch_factor": 2,
+          "pin_memory": true
+        },
+        "p0_identity_sha256": "9468a4d2a8d9a1344a21358698a427fdc5ce9950d3603ce91ea9258a15a648db"
+      }
+    }
+  },
+  "data_identity_sha256": "7c53b86bcb27ccd121042f667cc58e39b98716a8c477bfd1f1657fa126575719",
+  "candidate_metrics_sha256": {
+    "/root/autodl-tmp/HRDecoder_Q_20261003/runs/Q_DDR_seed42/val_u12000/metrics.json": "16c39d3ce78b8b6f4ef4e7d0f8b92c9e42b88060b3fcd06955546ec0325684c7",
+    "/root/autodl-tmp/HRDecoder_Q_20261003/runs/Q_DDR_seed42/val_u16000/metrics.json": "cb5ed0832e885af4fbd3cabec8ed09d690049ee25278de7290e0aa74219d7737",
+    "/root/autodl-tmp/HRDecoder_Q_20261003/runs/Q_DDR_seed2024/val_u12000/metrics.json": "669ab92e31c56aac44ef8a058f1512ffb8b2261e91db9caa6e6f115c8b45ba46",
+    "/root/autodl-tmp/HRDecoder_Q_20261003/runs/Q_DDR_seed2024/val_u16000/metrics.json": "34b14378dd635a41e9b7c79910a38047e302324b253b74b0aa45b3a058d26dcc"
+  },
+  "p0_original_lock_sha256": "644974f4a888835f838472199dcb623e879be2d62e73dab502394759551ceac4",
+  "champion_settings_sha256": "2156e29a244ba4fe804317489c72111a7692410a56110a12a6943435d42630ae",
+  "p0_reference_sha256": "cd00999b05d5ba38a02cf5078473a79107fa0a0468b3fdf4841dcf8fad7f57c0",
+  "legacy_source_sha256": {
+    "/root/autodl-tmp/HRDecoder_Ready_20261002/tools/final_eval_locked.py": "0c280493459f2eafac90e63e5f2253742fd29fa458d3ed77dcc2c2eebcc8e18d",
+    "/root/autodl-tmp/HRDecoder_Ready_20261002/legacy/runtime.py": "64990a4f2806ab1f76b43352bdf86c2b1bef211ce8d137f8806f582b765ce6ff",
+    "/root/autodl-tmp/HRDecoder_Ready_20261002/legacy/fusion_core.py": "66fa5de4f4fa200b2f655ba90fd14fdb66250a2958330b67aa91b6828b6a7058",
+    "/root/autodl-tmp/HRDecoder_Ready_20261002/trainer/models/convnext_unet.py": "7f199310c8f866bb66094a1b9bc550bd9ca10b0ed02f7b55942579d417948dcd"
+  },
+  "p0_cache": "/dev/shm/hrdecoder_q_final_p0_20261003",
+  "target_test_pct": 47.2115,
+  "deployment_seed": 42,
+  "test_based_reselection_allowed": false,
+  "historical_limitation": "DDR val and test have been used in previous experiments; exploratory continuation."
+}

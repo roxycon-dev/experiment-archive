@@ -1,0 +1,89 @@
+{
+  "reviewer": "root",
+  "date": "2026-10-17",
+  "scope": "design algebra and scalar numerical checks only",
+  "model_executed": false,
+  "training_updates": 0,
+  "new_pixel_evaluation": false,
+  "spec_sha256": "ff11ed081f69d74a38408aed1d80ee76bb540005235d7bfb5e513e1e1e512597",
+  "checks": [
+    {
+      "name": "conditional main loss finite-difference gradients",
+      "status": "PASS",
+      "detail": {
+        "cases": 120,
+        "max_absolute_error": 4.0651010335679416e-11
+      }
+    },
+    {
+      "name": "positive/negative gradient direction and ignore zeros",
+      "status": "PASS",
+      "detail": "Checked each logit in the same 120 cases; statement is about logits, not shared network updates"
+    },
+    {
+      "name": "empty-class BCE numerical extremes and masked NaN",
+      "status": "PASS",
+      "detail": "finite softplus at +/-1000; supervised false-positive gradient remains nonzero"
+    },
+    {
+      "name": "all-ignore main batch",
+      "status": "PASS",
+      "detail": "rejected before a model forward in the execution contract"
+    },
+    {
+      "name": "aux valid-background and all-ignore are distinct",
+      "status": "PASS",
+      "detail": "all-background kept; all-ignore excluded; empty aux set maps to zero, no aux BN call"
+    },
+    {
+      "name": "pooled reduction permutation and negative-image supervision",
+      "status": "PASS",
+      "detail": "negative pixels share the positive batch numerator; no per-image ratio averaging"
+    },
+    {
+      "name": "common/difference basis and concatenated-kernel equivalence",
+      "status": "PASS",
+      "detail": "100 scalar instances; applies elementwise and by convolution linearity"
+    },
+    {
+      "name": "zero difference kernel does not sever either input route",
+      "status": "PASS",
+      "detail": "both inputs receive the common-kernel derivative; difference weights have a first-step derivative in this nondegenerate example"
+    },
+    {
+      "name": "two-view staged VJP chain rule",
+      "status": "PASS",
+      "detail": {
+        "staged": 1.4809200000000002,
+        "direct_finite_difference": 1.4809200000243103,
+        "scope": "scalar algebra only, not the CUDA model"
+      }
+    },
+    {
+      "name": "recompute BN state contract",
+      "status": "PASS",
+      "detail": "training batch statistics reproduce normalization without a second EMA/counter write; formula-level check only"
+    },
+    {
+      "name": "parameter and update budget arithmetic",
+      "status": "PASS",
+      "detail": {
+        "decoder": 448004,
+        "total": 65773124,
+        "original_images": 80000
+      }
+    },
+    {
+      "name": "schedule boundary arithmetic",
+      "status": "PASS",
+      "detail": {
+        "0": 5e-09,
+        "1499": 0.0048094165865417505,
+        "1500": 0.0048125,
+        "39999": 1.250000000002638e-07
+      }
+    }
+  ],
+  "passed": 12,
+  "failed": 0
+}

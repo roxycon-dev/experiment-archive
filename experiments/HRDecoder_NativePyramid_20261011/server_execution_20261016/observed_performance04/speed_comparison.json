@@ -1,0 +1,90 @@
+{
+  "environment": {
+    "python": "3.11.16",
+    "platform": "Linux-5.15.0-78-generic-x86_64-with-glibc2.31",
+    "dependencies": {
+      "torch": "2.6.0+cu124",
+      "torchvision": "0.21.0+cu124",
+      "timm": "1.0.27",
+      "numpy": "2.4.1",
+      "opencv-python": "4.13.0.90",
+      "Pillow": "12.1.0"
+    },
+    "torch_cuda": "12.4",
+    "cudnn": 90100,
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "compute_capability": [
+      8,
+      9
+    ],
+    "bf16_supported": true,
+    "cudnn_benchmark": false,
+    "cudnn_deterministic": true,
+    "matmul_allow_tf32": false,
+    "cudnn_allow_tf32": false,
+    "deterministic_algorithms": false,
+    "cublas_workspace_config": ":4096:8",
+    "model_batch_execution": "independent_images_single_image_convolution_schedule",
+    "dataloader_process_policy": "spawn_when_workers_positive",
+    "precision": "BF16_forward_FP32_loss_and_master_weights"
+  },
+  "records": [
+    {
+      "checkpointing": true,
+      "memory_format": "contiguous",
+      "formal_updates": 0,
+      "SGD_updates": 0,
+      "global_batch": 2,
+      "micro_batch": 1,
+      "test_accessed": false,
+      "status": "PASS",
+      "seconds_per_pair": [
+        1.648440487217158,
+        1.0129120238125324,
+        1.0609481479041278,
+        1.1771133746951818
+      ],
+      "steady_seconds_per_pair": 1.0836578488039474,
+      "peak_allocated_GiB": 5.214325904846191,
+      "peak_reserved_GiB": 6.1953125
+    },
+    {
+      "checkpointing": false,
+      "memory_format": "contiguous",
+      "formal_updates": 0,
+      "SGD_updates": 0,
+      "global_batch": 2,
+      "micro_batch": 1,
+      "test_accessed": false,
+      "status": "PASS",
+      "seconds_per_pair": [
+        0.8574863448739052,
+        0.816229434683919,
+        0.8126351679675281,
+        0.81662388285622
+      ],
+      "steady_seconds_per_pair": 0.8151628285025557,
+      "peak_allocated_GiB": 13.387152194976807,
+      "peak_reserved_GiB": 14.138671875
+    },
+    {
+      "checkpointing": false,
+      "memory_format": "channels_last",
+      "formal_updates": 0,
+      "SGD_updates": 0,
+      "global_batch": 2,
+      "micro_batch": 1,
+      "test_accessed": false,
+      "status": "PASS",
+      "seconds_per_pair": [
+        0.9147702329792082,
+        0.7665375438518822,
+        0.790239148773253,
+        0.7898289798758924
+      ],
+      "steady_seconds_per_pair": 0.7822018908336759,
+      "peak_allocated_GiB": 13.418814182281494,
+      "peak_reserved_GiB": 13.9453125
+    }
+  ]
+}

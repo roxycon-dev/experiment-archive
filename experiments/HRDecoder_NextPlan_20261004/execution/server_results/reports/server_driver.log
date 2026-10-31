@@ -1,0 +1,45 @@
+{'before_free_bytes': 21335597056, 'after_free_bytes': 21335597056, 'removed': [], 'authorization': '2026-10-04 user permits deletion of experiment-unrelated server data', 'all_scripts_logs_and_structured_evidence_preserved': True, 'preserved': 'P0/DDR/IDRiD/MAPLES/DINO/Q16k/current experiment inputs and results', 'time': '2026-10-04T08:28:12.776664+00:00'}
+Traceback (most recent call last):
+  File "/root/autodl-tmp/HRDecoder_Finetune_20261004/preflight_gpu.py", line 136, in <module>
+    main()
+  File "/root/autodl-tmp/HRDecoder_Finetune_20261004/preflight_gpu.py", line 90, in main
+    assert fa==local['initialization_sha256_by_seed'][str(seed)]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+Traceback (most recent call last):
+  File "/root/autodl-tmp/HRDecoder_Finetune_20261004/server_driver.py", line 25, in <module>
+    main()
+  File "/root/autodl-tmp/HRDecoder_Finetune_20261004/server_driver.py", line 14, in main
+    subprocess.run([sys.executable,'-u','preflight_gpu.py'],check=True)
+  File "/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/root/miniconda3/envs/hrdecoder_q_20261003/bin/python', '-u', 'preflight_gpu.py']' returned non-zero exit status 1.
+{'before_free_bytes': 21335449600, 'after_free_bytes': 21335449600, 'removed': [], 'authorization': '2026-10-04 user permits deletion of experiment-unrelated server data', 'all_scripts_logs_and_structured_evidence_preserved': True, 'preserved': 'P0/DDR/IDRiD/MAPLES/DINO/Q16k/current experiment inputs and results', 'time': '2026-10-04T08:35:30.125762+00:00'}
+preflight F4 20
+preflight F4 40
+preflight F4 60
+preflight F4 80
+preflight F4 100
+preflight F12 20
+preflight F12 40
+preflight F12 60
+preflight F12 80
+preflight F12 100
+{"status": "READY", "F_resources": {"micro_batch": 2, "accumulation": 4, "dtype": "bfloat16", "workers": 4, "prefetch_factor": 2, "pin_memory": true}, "estimate": {"discovery_hours_measured_F_plus_historical_E_estimate": 9.09937670101834, "all_promoted_hours_estimate": 18.19875340203668, "E_NEG_seconds_is_historical_estimate_not_new_measurement": true, "F12_seconds_is_new_real_measurement": true, "hourly_rate_cny": null}}
+Traceback (most recent call last):
+  File "/root/autodl-tmp/HRDecoder_Finetune_20261004/campaign.py", line 86, in <module>
+    main()
+  File "/root/autodl-tmp/HRDecoder_Finetune_20261004/campaign.py", line 44, in main
+    runs[arm,42]=invoke(arm,42,args.runtime,args.resume_paused)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/HRDecoder_Finetune_20261004/campaign.py", line 31, in invoke
+    raise RuntimeError('Technical pause in '+arm+' seed'+str(seed)+'; inspect its log')
+RuntimeError: Technical pause in E_NEG seed42; inspect its log
+Traceback (most recent call last):
+  File "/root/autodl-tmp/HRDecoder_Finetune_20261004/server_driver.py", line 26, in <module>
+    main()
+  File "/root/autodl-tmp/HRDecoder_Finetune_20261004/server_driver.py", line 17, in main
+    subprocess.run([sys.executable,'-u','campaign.py'],check=True,env=env)
+  File "/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/root/miniconda3/envs/hrdecoder_q_20261003/bin/python', '-u', 'campaign.py']' returned non-zero exit status 1.

@@ -1,0 +1,105 @@
+# ==========================================================================
+# H0 — HRDecoder-W48，DDR-only 对照臂（锁定意图配置 / locked intent）
+# 结构族 hrdecoder 的控制臂；外部预训练不存在于此臂。
+# 与 H1 共享：DDR 日程、seed、采样、loss、指标、ImageNet 初始化（equivalence_lock）。
+# 值为 REQUIRED/TBD 的字段表示尚未确认的资产/版本，禁止伪造；preflight 会拦截。
+# ==========================================================================
+schema_version: "1.0"
+arm_id: H0
+role: "DDR-only control for hrdecoder family"
+status: locked-intent        # 配置意图已锁定；REQUIRED/TBD 资产到位后由 preflight 放行
+
+structure:
+  family: hrdecoder
+  paired_group: hrdecoder            # H0/H1 同组
+  definition_ref: "docs/ASSET_AND_INTERFACE_AUDIT.md 第4节"
+  training_entry: train.py            # 统一训练入口（--stage ddr_finetune）
+  reference_root: REQUIRED            # 旧仓库只读根目录（HRNet/FCNHead adapter 来源）
+  open_all_stages: true              # backbone/transition/stem/decoder 全开放
+  keep_frozen_b_copy: false          # 不携带无用的冻结 B 副本参与推理
+
+initialization:
+  imagenet_weights:
+    source: REQUIRED                 # 候选 open-mmlab://msra/hrnetv2_w48，需确认来源与版本
+    file: REQUIRED                   # 本地权重文件路径（到位后填写）
+    sha256: REQUIRED                 # 权重文件 SHA256（到位后计算，禁止编造）
+  external_pretrain_checkpoint: null # H0 绝不允许外部预训练权重
+
+data:
+  ddr_root: "D:/HRDecoder/data/DDR_split_613"
+  ddr_train_split: train
+  ddr_val_split: val                 # 仅 val 可用于训练期验证与 checkpoint 选择
+  ddr_test_split: test               # 仅最终一次评估；见 test_usage
+  channel_order: [EX, HE, SE, MA]    # 必须等于 tools/contract_common.py 常量
+  input_fov: 2048
+  train_crop: 1024
+  ddr_normalization:
+    mean: [81.205, 50.636, 21.216]
+    std: [76.252, 48.798, 21.625]
+
+ddr_finetune_stage:
+  seed: 42
+  updates: 12000                     # optimizer updates（约 96,000 crop 暴露 @ batch 8）
+  effective_batch: 8
+  micro_batch: REQUIRED              # 1-2，显存测速后锁定；与 grad_accum 乘积必须 = 8
+  grad_accum: REQUIRED
+  eval_progress_points: [0.25, 0.5, 0.75, 1.0]
+  optimizer: adamw
+  weight_decay: 1.0e-2
+  warmup_ratio: 0.05
+  lr_schedule: cosine
+  cosine_min_ratio: 0.01
+  backbone_lr: 5.0e-5
+  decoder_lr: 2.0e-4
+  augmentation:
+    resize_ratio_range: [0.5, 2.0]
+    random_crop_cat_max_ratio: 0.75
+    flip_ratio: 0.5
+    rotate_degrees: [-45, 45]
+    photometric: light               # 轻量亮度/对比度；几何共享图像/标签
+  sampling: random_plus_foreground_mixed   # 实现细节 REQUIRED 在训练入口确定
+  bn_policy:
+    backbone_norm_eval: true         # HRNet BN 统计冻结
+    affine_trainable: true           # affine 可训练；实现时显式记录
+  mixed_precision: true
+  gradient_checkpointing: REQUIRED   # 依显存实测决定
+
+loss:
+  type: binary_per_class
+  recipe: ce_dice                    # 沿用已验证监督 Dice 定义（ce_dice, smooth 1e-5）
+  smooth: 1.0e-5
+  per_class_valid_masking: true       # trainer.loss 已实现 valid=0 整类屏蔽（缺类绝不当阴性）
+  ce_weight: 1.0
+  dice_weight: 1.0  # 新训练入口必须实现 valid=0 整类屏蔽（旧 BinaryLoss 无此语义）
+
+metrics:
+  protocol: whole_image_accumulated_counts   # 原尺寸整图累计 TP/FP/FN
+  threshold: 0.5
+  primary: mIoU_lesion4              # 仅 EX/HE/SE/MA，背景不参与
+  reported: [mF1, mPPV, mRecall, mAUPR]
+
+checkpoint_selection:
+  allowed_splits: [val]
+  test_forbidden: true
+
+test_usage:
+  train_on_test: forbidden
+  select_checkpoint_on_test: forbidden
+  final_single_eval: allowed_only_after_full_lock
+
+equivalence_lock:
+  identical_with: H1
+  fields:                            # preflight 逐字段比对 H0 vs H1
+    - data
+    - ddr_finetune_stage
+    - loss
+    - metrics
+    - checkpoint_selection
+    - test_usage
+    - structure.family
+    - structure.paired_group
+    - initialization.imagenet_weights
+
+notes: >
+  H0 回答"HRDecoder 的可比较完整训练基准"。本配置是意图锁定，不代表已验证超参；
+  micro_batch/grad_accum/gradient_checkpointing 由开机测速确定后一次性填写并重新过 preflight。

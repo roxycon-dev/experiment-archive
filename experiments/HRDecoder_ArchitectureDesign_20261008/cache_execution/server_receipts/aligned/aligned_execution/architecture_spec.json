@@ -1,0 +1,34 @@
+{
+  "version": 14,
+  "name": "HRDecoder-ClassBalancedCorrection",
+  "private_parameters": 79504,
+  "total_parameters": 65651924,
+  "network": "same half-resolution continuous signed private adapter and HRDecoder; fresh ImageNet W48 seed42/private20261008",
+  "base_supervision": "original squared Dice + .25 GT-positive/negative balanced BCE + .1 original HRcrop Dice",
+  "teacher_route": "base .5lambda_K and private lambda_K use fixedGT-consistent teacher BernoulliKL fullGTposneg group denominators at fixed.5/.5",
+  "normalization": "original BN unchanged; no BN buffer transplantation or per-image BN inference",
+  "gradient_clip": "global L2 max5, finite-check then clip then exactlyoneSGD",
+  "critical_stop": {
+    "after_update_at_least": 8000,
+    "mIoU_drop_from_best_at_least_pp": 15.0,
+    "or_drop_at_least_pp": 8.0,
+    "with_previous_class_IoU_at_least": 5.0,
+    "and_current_class_IoU_zero": true,
+    "action": "save own current checkpoint and stop before another update; not an overfitting claim"
+  },
+  "changes_relative_to_detail": "base positive-gradient guarantee, direct semantic teacher learning in provider, fixed clipping and critical-collapse stop",
+  "evidence": "Foundation4k base31.70135 final31.67949; privateMA IoU-5.18988pp/recall29.672to15.602 with lowerFP. Eight train-only no-SGD logit probes: MA balanced/old totalpositive gradient amplitude about2.22x, medianKD amplitude4019.86x; not parameter causal proof",
+  "hypothesis_not_guarantee": "Reduce negative-pixel dominance of private correction and protect rare positive recall; no fresh guarantee",
+  "budget": [
+    2048,
+    2,
+    40000
+  ],
+  "inference": "no GT/teacher/TTA/H4; native FP32 logit resize then sigmoid",
+  "fresh_own_run": true,
+  "old_weights_used": false,
+  "accuracy_guaranteed": false,
+  "private_supervision": "original Dice + .25 fullGTposneg balanced BCE; no ordinary background-dominated BCE",
+  "changes_relative_to_foundation": "Only private GT BCE and private teacher KL normalization changed; base supervision/network/sampler/BN/LR/clipping/critical gate unchanged",
+  "gradient_diagnostic_source": "server_receipts/foundation/reports/foundation/private_gradient/PRIVATE_GRADIENT_DIAGNOSTIC.json"
+}

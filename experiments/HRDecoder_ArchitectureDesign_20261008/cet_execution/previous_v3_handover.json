@@ -1,0 +1,283 @@
+{
+  "stage": "V3_STOPPED_BY_USER_AWAITING_NEW_FRAMEWORK",
+  "server": {
+    "host": "connect.nmb1.seetacloud.com",
+    "port": 11347,
+    "remote_root": "/root/autodl-tmp/HRDecoder_v3_20261008",
+    "password_stored": false
+  },
+  "latest_user_instruction": "Stop training; archive logs locally; do not download checkpoints; do not shut down; wait for new framework. Do not interfere with another AI diagnostic; no further restore operations.",
+  "members": {
+    "A": "locked D/E/B/E4 3:2:1:1 + original MA H4 + horizontal TTA",
+    "U": "U0 historical best update12000, native whole image, original torch2.0.1+cu117",
+    "S": "S_seed42 update20000 EMA, native1024 center768 halo128, original torch2.7.1+cu128 and MSDA CUDA"
+  },
+  "target_contract": {
+    "split": "train",
+    "images_per_member": 454,
+    "dtype": "float32",
+    "coordinates": "original_image",
+    "class_order": [
+      "EX",
+      "HE",
+      "SE",
+      "MA"
+    ],
+    "compression": "lossless npz deflate1"
+  },
+  "input_and_source_audit": "PASS: 757 image and label content hashes; 438 archived source files",
+  "S20_canary_parity": "PASS: bitwise equal to original archived validation probability; max diff 0; no threshold disagreements",
+  "shutdown": {
+    "ssh_unreachable_after_authorized_shutdown": true,
+    "time_unix": 1791446753.2068305,
+    "error": "[Errno None] Unable to connect to port 19700 on 1.27.207.179"
+  },
+  "cpu_preparation_after_gpu": "PASS: real HRNet integration, masks, routing, optimizer resume, pinned initialization, source audit",
+  "active_local_monitor_session": null,
+  "server_controller": {
+    "status": "STOPPED_BY_USER",
+    "pid": 4981,
+    "controller_pid": 4979,
+    "start_unix": 1791456485.222602,
+    "updates": 40000,
+    "batch": 2,
+    "canvas": 2048,
+    "shutdown_after_completion": false,
+    "shutdown_after_fatal_failure_grace_seconds": null,
+    "resume": true,
+    "data_hash_rescan": false,
+    "stopped_at_utc": "2026-10-08T16:14:30.397893+00:00",
+    "processes_alive": false
+  },
+  "local_modern_U_resource_probe": "Quarantined on server under canary/U_modern_resource_check; excluded from actual training cache; main U export uses historical environment.",
+  "gpu_cache_completion": {
+    "status": "PASS",
+    "stage": "GPU_TEACHER_CACHE_EXPORT_COMPLETE",
+    "images_per_member": 454,
+    "members": [
+      "A",
+      "U",
+      "S"
+    ],
+    "total_cache_files": 1362,
+    "dtype": "float32",
+    "channel_order": [
+      "EX",
+      "HE",
+      "SE",
+      "MA"
+    ],
+    "coordinates": "original_image",
+    "compression": "lossless npz deflate1",
+    "all_lossless_roundtrips_verified_during_export": true,
+    "file_and_tensor_SHA_recorded_at_export": true,
+    "manifest_and_file_sizes_verified": true,
+    "full_post_export_CPU_audit": "DEFERRED_UNTIL_NO_GPU_MODE",
+    "partial_CPU_audit_progress": {
+      "stage": "CPU_CACHE_AUDIT",
+      "completed": 210,
+      "expected": 454,
+      "seconds": 169.207244863268
+    },
+    "no_training_performed": true,
+    "teacher_predictions_are_in_sample": true,
+    "OOF": false,
+    "member_compressed_bytes": {
+      "A": 32035411039,
+      "U": 32838087676,
+      "S": 19364573039
+    },
+    "index_sha256": {
+      "A": "4b6685239b6dfd72d73f02cbd62daafce22f78152761350b865550c38ffc7130",
+      "U": "b0e08a81ca16c9ec9bb1937b921f9cc898045a70edd6375aa5521e8521315da0",
+      "S": "72e00587900743fbff81eb6b149779c1ab56fb6a174e4a47b482be53e6f46af5"
+    },
+    "member_identity_sha256": {
+      "A": "0674eb8fd875187e92bc4369e6fc41eb906339acb1f2057bd1d2dcd6c6933ec1",
+      "U": "1696b6eed682e116e98b6630bd429bd49986c24323010215fa8a0b4364952aa5",
+      "S": "b9f9886b393b14c2a25863d56fdbc1f6667bfab1200410d83fd0eb223471207a"
+    },
+    "compressed_bytes": 84238071754,
+    "uncompressed_bytes": 112635312960,
+    "data_disk_free_bytes": 31623507968,
+    "S20_locked_val_canary_parity": {
+      "sid": "007-1774-100",
+      "bitwise_equal": true,
+      "max_abs_difference": 0.0,
+      "mean_abs_difference": 0.0,
+      "threshold_disagree_pixels": 0,
+      "reference_coordinates": "original image",
+      "reference": "archived S20 EMA val cache"
+    },
+    "shutdown_authorized": true,
+    "shutdown_reason": "User requested finishing GPU caches first, then switching to no-GPU mode for CPU work."
+  },
+  "receipt_archive_index_SHA_verified_locally": true,
+  "shutdown_observation": {
+    "ssh_unreachable_after_authorized_shutdown": true,
+    "time_unix": 1791439912.209974,
+    "error": "[Errno None] Unable to connect to port 19700 on 1.27.207.179"
+  },
+  "full_cpu_cache_audit": "PASS: 454/454 all file and tensor SHA; signed statistics and GT coverage",
+  "resume_first": "User stopped v3. Do not resume, restart, or shut down automatically. Await explicit new framework/instructions.",
+  "local_report": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\training_execution\\4090训练启动记录.md",
+  "GPU_smoke": {
+    "status": "PASS",
+    "identity_SHA": "a42c0c6bbb0449e9bc8e04ed106158062697bc5272554937b4e8048abc55bff3",
+    "batch": 2,
+    "canvas": 2048,
+    "single_HRNet_forward": true,
+    "measured_backbone_calls": 1,
+    "device": "NVIDIA GeForce RTX 4090",
+    "losses": {
+      "dice": 0.9984757900238037,
+      "hr_dice": 0.9995206594467163,
+      "kl": 0.7092893123626709,
+      "signed_aux": 0.39756399393081665,
+      "lambda_k": 0.5,
+      "lambda_d": 0.1
+    },
+    "peak_allocated_bytes": 14720192512,
+    "peak_reserved_bytes": 15219032064,
+    "seconds": 13.521824359893799,
+    "formal_updates": 0,
+    "probe_optimizer_step_discarded": true
+  },
+  "formal_training_started": true,
+  "launch_mode": "v3 only; no paid control runs",
+  "formal_training_status": "STOPPED_BY_USER",
+  "latest_performance": {
+    "measured_batches": 18930,
+    "workers": 12,
+    "prefetch_factor": 1,
+    "pin_memory": true,
+    "opencv_threads_per_worker": 1,
+    "completed_update": 21930,
+    "shared_RAM_cache_bytes": 103079190214,
+    "channels_last": false,
+    "CUDA_async_next_batch": true,
+    "warmup_batches_excluded": 12,
+    "window_batches": 100,
+    "mean_step_compute_seconds": 1.004718472585082,
+    "mean_data_wait_seconds": 6.029479205608368e-05,
+    "mean_batch_seconds": 1.004778767377138,
+    "median_compute_seconds": 1.0039209313690662,
+    "estimated_40000_train_hours_excluding_validation": 11.164208526412644,
+    "peak_allocated_bytes": 16440918528,
+    "peak_reserved_bytes": 20189282304,
+    "formal_protocol_unchanged": true,
+    "time_unix": 1791476033.9849348
+  },
+  "source_update_after_CPU_preparation": "CUDA BF16 bilinear interpolation uses FP32 and casts back; actual 2048 batch2 GPU smoke passed.",
+  "startup_pipeline_replacement": "Initial 4-worker pre-checkpoint run discarded after last observed 120 batches; final retained trajectory restarted seed42 with 12 workers, OpenCV1 thread.",
+  "automatic_shutdown": "DISABLED_BY_USER: controller terminated; shutdown_hold enabled; heartbeat PAUSED; server remains online.",
+  "heartbeat_automation_id": "hrdecoder-v3",
+  "performance_tuning_in_progress": false,
+  "full_RAM_cache": {
+    "status": "RELEASED_BY_USER_STOP",
+    "pid": 4407,
+    "selected_images": 454,
+    "total_images": 454,
+    "files": 1362,
+    "all_teachers_in_RAM": false,
+    "bytes": 103079190214,
+    "storage": "shared memfd; A/U decoded NPY, S lossless NPZ or decoded NPY",
+    "format_counts": {
+      "npy": 1069,
+      "npz": 293
+    },
+    "source_probabilities_unchanged": true,
+    "hash_rescan": false,
+    "seconds": 46.52405858039856,
+    "time_unix": 1791455695.784726,
+    "owner_alive": false,
+    "resident_bytes": 0,
+    "released_at_utc": "2026-10-08T16:14:30.397893+00:00"
+  },
+  "current_runtime": {
+    "training_pid_alive": false,
+    "controller_pid_alive": false,
+    "RAM_owner_alive": false,
+    "RAM_files": 0,
+    "RAM_bytes": 0,
+    "memory_current_bytes": 1851613184,
+    "shutdown_hold": true,
+    "gpu_compute_processes_at_post_stop_check": [],
+    "server_online": true,
+    "external_CPU_diagnostic": {
+      "restored_pid": 10977,
+      "restored_at_utc": "2026-10-08T16:21:16.899041+00:00",
+      "current_liveness_not_rechecked": true,
+      "do_not_control": true
+    }
+  },
+  "last_monitor_time_unix": 1791474223.2456203,
+  "current_completion_receipt": null,
+  "current_outcome": {
+    "status": "STOPPED_BY_USER",
+    "stopped_at_utc": "2026-10-08T16:14:30.397893+00:00",
+    "protocol_completed": false,
+    "shutdown_command_issued": false,
+    "receipt": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\cache_execution\\server_receipts\\stopped_20261009T001430\\reports\\GPU_CAMPAIGN_STOPPED.json"
+  },
+  "latest_performance_report": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\training_execution\\RAM与吞吐调优记录.md",
+  "estimated_remaining_train_hours_excluding_validation": null,
+  "historical_RAM_tuning": "First resume1000, last observed1280; second switch saved and observed3000. Current mixed RAM cache1362/1362 files.",
+  "current_shutdown_observation": {
+    "shutdown_command_issued": false,
+    "server_online_verified": true,
+    "checked_at_utc": "2026-10-08T16:16:51.586136+00:00"
+  },
+  "last_monitor_receipt": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\cache_execution\\server_receipts\\stopped_20261009T001430\\post_stop_verification.json",
+  "validation_reporting_required": true,
+  "validation_reporting_ledger": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\training_execution\\validation_reporting.json",
+  "validation_report": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\training_execution\\验证指标与趋势.md",
+  "reported_validation_steps": [
+    4000,
+    8000,
+    12000,
+    16000,
+    20000
+  ],
+  "available_validation_steps": [
+    4000,
+    8000,
+    12000,
+    16000,
+    20000
+  ],
+  "heartbeat_check_interval_minutes": 45,
+  "historical_checkpoint_comparison_required": true,
+  "historical_comparison_report": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\training_execution\\历史检查点对比.md",
+  "historical_comparison_data": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\training_execution\\historical_checkpoint_comparison.json",
+  "comparison_reference": "Historical original HRDecoder same-step val; fixed40k38.835%, best32k39.390%; not a newly reproduced paired control",
+  "validation_anomaly": {
+    "step": 20000,
+    "mIoU_percent": 15.050912466184402,
+    "zero_positive_prediction_classes": [
+      "EX",
+      "SE"
+    ],
+    "checkpoint_numeric_health": "PASS",
+    "diagnostic_checkpoint": "/root/autodl-tmp/HRDecoder_v3_20261008/reports/diagnostics/checkpoint_20000.pt",
+    "CPU_FP32_positive_image_probe": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\cache_execution\\server_receipts\\reports\\diagnostics\\cpu_output_20000_positive_EX_SE.json",
+    "CPU_checkpoint_health_report": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\cache_execution\\server_receipts\\reports\\diagnostics\\checkpoint_health_20000.json",
+    "observed_suppression_on_positive_image": true,
+    "proven_implementation_defect": false,
+    "cause": "UNRESOLVED",
+    "protocol_changed": false,
+    "additional_formal_SGD_updates": 0,
+    "budget": "User stopped before 40k; last measured update 21930",
+    "followup": "No automatic diagnostics or further validation. Existing anomaly evidence retained; await new framework.",
+    "created_at_UTC_plus_8": "2026-10-09T00:00:48+08:00"
+  },
+  "validation_anomaly_report": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\training_execution\\validation_anomaly_20000.json",
+  "heartbeat_automation_status": "PAUSED",
+  "stop_report": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\training_execution\\训练停止与日志归档记录.md",
+  "stopped_run_archive": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\cache_execution\\server_receipts\\stopped_20261009T001430",
+  "last_logged_loss_update": 21900,
+  "last_measured_update": 21930,
+  "training_complete": false,
+  "checkpoint_downloaded": false,
+  "waiting_for_new_framework": true
+}

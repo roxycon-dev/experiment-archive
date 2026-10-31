@@ -1,0 +1,117 @@
+{
+  "mIoU_percent": 14.797921497964376,
+  "IoU_percent": [
+    0.0,
+    41.553253827425415,
+    0.0,
+    17.638432164432086
+  ],
+  "precision_percent": [
+    0.0,
+    63.93428050930652,
+    0.0,
+    22.45254027973233
+  ],
+  "recall_percent": [
+    0.0,
+    54.27572550177291,
+    0.0,
+    45.134518792217534
+  ],
+  "counts": [
+    [
+      0,
+      0,
+      290803
+    ],
+    [
+      654524,
+      369221,
+      551400
+    ],
+    [
+      0,
+      0,
+      201404
+    ],
+    [
+      31271,
+      108005,
+      38013
+    ]
+  ],
+  "class_order": [
+    "EX",
+    "HE",
+    "SE",
+    "MA"
+  ],
+  "undefined_precision_convention": "zero when TP+FP=0; inspect counts",
+  "images": 76,
+  "threshold": "strictly > .5",
+  "base_head_metrics": {
+    "mIoU_percent": 14.751329475739183,
+    "IoU_percent": [
+      0.0,
+      41.46103074764851,
+      0.0,
+      17.544287155308226
+    ],
+    "precision_percent": [
+      0.0,
+      64.35621572846533,
+      0.0,
+      22.41180856685754
+    ],
+    "recall_percent": [
+      0.0,
+      53.81980954023636,
+      0.0,
+      44.684198371918484
+    ],
+    "counts": [
+      [
+        0,
+        0,
+        290803
+      ],
+      [
+        649026,
+        359464,
+        556898
+      ],
+      [
+        0,
+        0,
+        201404
+      ],
+      [
+        30959,
+        107178,
+        38325
+      ]
+    ],
+    "class_order": [
+      "EX",
+      "HE",
+      "SE",
+      "MA"
+    ],
+    "undefined_precision_convention": "zero when TP+FP=0; inspect counts",
+    "images": 76,
+    "threshold": "strictly > .5"
+  },
+  "seconds": 34.759135723114014,
+  "deployment_inference_verified": true,
+  "teacher_or_GT_input": false,
+  "status": "COMPLETE",
+  "diagnostic_only": true,
+  "weight_step": 21000,
+  "BN": "per-inference-image batch statistics with no running buffer updates; dropout stays eval",
+  "BN_buffers_unchanged": true,
+  "formal_updates": 0,
+  "test_accessed": false,
+  "not_deployment_model": true,
+  "time_unix": 1791600995.9025514,
+  "scope": "Detect train/eval BN dependence, not valid final score or proof of generalization"
+}

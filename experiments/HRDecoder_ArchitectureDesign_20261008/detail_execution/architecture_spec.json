@@ -1,0 +1,24 @@
+{
+  "version": 12,
+  "name": "HRDecoder-HalfResolutionAdapter",
+  "private_parameters": 79504,
+  "base": "unchanged original HRDecoder GT + .1 HRcrop",
+  "gradient_route": "detached features, p0 and direct base logits; private does not change provider gradients",
+  "private_GT": "final original Dice + .25 ordinary all-valid BCE",
+  "teacher": "same fixed train-GT-consistent T*; original all-valid KL normalization; same lambda schedule",
+  "initialization": "fresh ImageNet W48 seed42/private20261008; final residual exactly zero",
+  "SGD": "base .005; private .02; same warmup1500/poly40k ratios; momentum.9/wd.0005",
+  "budget": [
+    2048,
+    2,
+    40000
+  ],
+  "inference": "native logits resize then sigmoid; no GT/teacher/TTA/H4",
+  "scientific_scope": "Relative to immediately previous adapter: private spatial grid/readout phase changed together with depthwise kernel to preserve approximate physical support; LR/loss/base remain identical; this one-run comparison does not prove causal/final generalization",
+  "accuracy_guaranteed": false,
+  "total_parameters": 65651924,
+  "change": "private grid1/4->1/2; phase4->phase2 RGB/probability/readout; DW7->DW13 comparable pixel-support",
+  "hypothesis": "Improve MA missed detections and finer FP boundaries while retaining detached baseline and all loss/schedule/data decisions; no causal/final accuracy guarantee",
+  "fresh_own_run": true,
+  "old_weights_used": false
+}

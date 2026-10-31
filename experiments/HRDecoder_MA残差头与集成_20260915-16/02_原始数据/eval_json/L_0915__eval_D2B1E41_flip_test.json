@@ -1,0 +1,44 @@
+{
+  "models": [
+    {
+      "config": "configs/lesion/exp/hrplus_patch_dice.py",
+      "ckpt": "/root/autodl-tmp/hrplus/D_0913_retry/best_mIoU_iter_2000.pth",
+      "weight": 2.0
+    },
+    {
+      "config": "configs/lesion/exp/hr100_b.py",
+      "ckpt": "/root/autodl-tmp/hr100/trial_b/best_mIoU_iter_3000.pth",
+      "weight": 1.0
+    },
+    {
+      "config": "configs/lesion/exp/e4_detail_split613.py",
+      "ckpt": "/root/HRDecoder/work_dirs/exp_e4_detail_split613/best_mIoU_iter_36000.pth",
+      "weight": 1.0
+    }
+  ],
+  "load_report": [
+    {
+      "ckpt": "best_mIoU_iter_2000.pth",
+      "missing": [],
+      "unexpected": []
+    },
+    {
+      "ckpt": "best_mIoU_iter_3000.pth",
+      "missing": [],
+      "unexpected": []
+    },
+    {
+      "ckpt": "best_mIoU_iter_36000.pth",
+      "missing": [],
+      "unexpected": []
+    }
+  ],
+  "flip_tta": true,
+  "split": "test",
+  "n_images": 227,
+  "mIoU": 0.43121731479081143,
+  "mF1": 0.5930174687110872,
+  "mPPV": 0.6507577812663875,
+  "mS": 0.5485119519335069,
+  "mAUPR": 0.6161542083567773
+}

@@ -1,0 +1,45 @@
+{
+ "gate": "E1",
+ "verdict": "SKIP",
+ "selfcheck_ok": true,
+ "method": {
+  "unit": "image",
+  "resamples": 2000,
+  "rng_seed": 20260917,
+  "accumulate_then_iou": true,
+  "empty_union": 0.0,
+  "cls_index": 4
+ },
+ "arm_a": {
+  "tag": "T0",
+  "file": "_gatetest/a2.json",
+  "seed": 1,
+  "head_MA_IoU": 0.5873747443100904,
+  "tp_fp_fn": [
+   22685,
+   9087,
+   6849
+  ],
+  "n_val": 76
+ },
+ "arm_b": {
+  "tag": "T1",
+  "file": "_gatetest/b2_better.json",
+  "seed": 1,
+  "head_MA_IoU": 0.7079687981601347,
+  "tp_fp_fn": [
+   29860,
+   5438,
+   6879
+  ],
+  "n_val": 76
+ },
+ "base0_MA_IoU": 0.5673935890698897,
+ "delta_point": 0.12059405385004429,
+ "delta_ci95_two_sided": [
+  0.11391262458884803,
+  0.1271199364622302
+ ],
+ "delta_q05_one_sided": 0.11503027559229824,
+ "caveat": "单 seed 无法分离采样规则效应与 seed 噪声；V1(3 seed x 2 臂) 才提供 seed 方差。本门为保守门：不能证明 T1 更好就跑 E1。"
+}

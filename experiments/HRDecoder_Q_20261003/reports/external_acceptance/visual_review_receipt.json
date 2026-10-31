@@ -1,0 +1,110 @@
+{
+  "status": "PASS",
+  "reviewed_at": "2026-10-03T19:41:20.506521+00:00",
+  "reviewer": "Codex actual image inspection",
+  "reviewed_cases": 20,
+  "sources": {
+    "IDRiD": 10,
+    "MAPLES": 10
+  },
+  "sheets": [
+    {
+      "sheet": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\reports\\external_acceptance\\IDRiD_review_10.png",
+      "sha256": "5ef5110558b3365632509c887ac331225c0f7c0ce9d355babba0541235f4f596",
+      "case_ids": [
+        {
+          "source": "IDRiD",
+          "sid": "IDRiD_10"
+        },
+        {
+          "source": "IDRiD",
+          "sid": "IDRiD_17"
+        },
+        {
+          "source": "IDRiD",
+          "sid": "IDRiD_31"
+        },
+        {
+          "source": "IDRiD",
+          "sid": "IDRiD_39"
+        },
+        {
+          "source": "IDRiD",
+          "sid": "IDRiD_29"
+        },
+        {
+          "source": "IDRiD",
+          "sid": "IDRiD_01"
+        },
+        {
+          "source": "IDRiD",
+          "sid": "IDRiD_02"
+        },
+        {
+          "source": "IDRiD",
+          "sid": "IDRiD_03"
+        },
+        {
+          "source": "IDRiD",
+          "sid": "IDRiD_04"
+        },
+        {
+          "source": "IDRiD",
+          "sid": "IDRiD_05"
+        }
+      ]
+    },
+    {
+      "sheet": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\reports\\external_acceptance\\MAPLES_review_10.png",
+      "sha256": "750df8940623a254d3bda5d32df70f05c1c2272c4ae5330a339c9ff77ad6da7e",
+      "case_ids": [
+        {
+          "source": "MAPLES",
+          "sid": "20051020_55346_0100_PP"
+        },
+        {
+          "source": "MAPLES",
+          "sid": "20051020_64007_0100_PP"
+        },
+        {
+          "source": "MAPLES",
+          "sid": "20051116_44126_0400_PP"
+        },
+        {
+          "source": "MAPLES",
+          "sid": "20051208_40972_0400_PP"
+        },
+        {
+          "source": "MAPLES",
+          "sid": "20051019_38557_0100_PP"
+        },
+        {
+          "source": "MAPLES",
+          "sid": "20051020_55701_0100_PP"
+        },
+        {
+          "source": "MAPLES",
+          "sid": "20051020_58065_0100_PP"
+        },
+        {
+          "source": "MAPLES",
+          "sid": "20051020_58214_0100_PP"
+        },
+        {
+          "source": "MAPLES",
+          "sid": "20051020_58276_0100_PP"
+        },
+        {
+          "source": "MAPLES",
+          "sid": "20051020_62385_0100_PP"
+        }
+      ]
+    }
+  ],
+  "four_class_coverage": true,
+  "stored_coordinate_alignment_passed": true,
+  "MAPLES_uncertain_regions_visible": true,
+  "reviewed_zero_class_and_negative_crop_coverage": true,
+  "clinical_annotation_correctness_guarantee_claimed": false,
+  "IDRiD_official_geometry_restoration_claimed": false
+}

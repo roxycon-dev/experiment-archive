@@ -1,0 +1,631 @@
+{
+  "time": 1791022065.6661155,
+  "stage": {
+    "stage": "experiments",
+    "status": "complete",
+    "time": 1791022033.8231132
+  },
+  "progress": {
+    "work/M_seed42/M1": {
+      "update": 2000,
+      "target": 2000,
+      "stream_cursor": 16000,
+      "amp_skips": 1,
+      "center_foreground_draws": [
+        3725,
+        5060,
+        1437,
+        4718
+      ],
+      "draws_counted": 8000,
+      "frozen_global_cache": {
+        "hits": 28440,
+        "misses": 3576,
+        "entries": 3576,
+        "bytes": 45024280576,
+        "storage": "bounded_RAM_exact_float32",
+        "input_identity": "SHA256 of actual augmented normalized full input"
+      },
+      "seconds_this_segment": 1157.3348672389984
+    },
+    "work/M_seed42/M0": {
+      "update": 2000,
+      "target": 2000,
+      "stream_cursor": 16000,
+      "amp_skips": 1,
+      "center_foreground_draws": [
+        3725,
+        5060,
+        1437,
+        4718
+      ],
+      "draws_counted": 8000,
+      "frozen_global_cache": {
+        "hits": 20432,
+        "misses": 3576,
+        "entries": 3576,
+        "bytes": 45024280576,
+        "storage": "bounded_RAM_exact_float32",
+        "input_identity": "SHA256 of actual augmented normalized full input"
+      },
+      "seconds_this_segment": 1093.3634622097015
+    }
+  },
+  "histories": {
+    "work/M_seed42/M1": [
+      {
+        "update": 0,
+        "solo": 0.40769637496785366,
+        "fixed_half": 0.416723384615296,
+        "solo_counts": [
+          [
+            175322,
+            89056,
+            115481
+          ],
+          [
+            681298,
+            485665,
+            524626
+          ],
+          [
+            126496,
+            37956,
+            74908
+          ],
+          [
+            28060,
+            48611,
+            41224
+          ]
+        ],
+        "half_counts": [
+          [
+            174777,
+            76384,
+            116026
+          ],
+          [
+            683202,
+            471068,
+            522722
+          ],
+          [
+            126946,
+            35356,
+            74458
+          ],
+          [
+            28083,
+            44262,
+            41201
+          ]
+        ]
+      },
+      {
+        "update": 1000,
+        "solo": 0.41044111787518683,
+        "fixed_half": 0.4234589432855201,
+        "solo_counts": [
+          [
+            185753,
+            115533,
+            105050
+          ],
+          [
+            680260,
+            478598,
+            525664
+          ],
+          [
+            142860,
+            62149,
+            58544
+          ],
+          [
+            27927,
+            47693,
+            41357
+          ]
+        ],
+        "half_counts": [
+          [
+            185921,
+            99751,
+            104882
+          ],
+          [
+            683101,
+            452788,
+            522823
+          ],
+          [
+            142139,
+            53612,
+            59265
+          ],
+          [
+            27905,
+            42968,
+            41379
+          ]
+        ]
+      },
+      {
+        "update": 2000,
+        "solo": 0.4097449724743718,
+        "fixed_half": 0.4216427759713359,
+        "solo_counts": [
+          [
+            184389,
+            105888,
+            106414
+          ],
+          [
+            661176,
+            438534,
+            544748
+          ],
+          [
+            143814,
+            64307,
+            57590
+          ],
+          [
+            27568,
+            50132,
+            41716
+          ]
+        ],
+        "half_counts": [
+          [
+            184692,
+            96086,
+            106111
+          ],
+          [
+            666222,
+            421265,
+            539702
+          ],
+          [
+            143162,
+            56204,
+            58242
+          ],
+          [
+            27617,
+            43888,
+            41667
+          ]
+        ]
+      }
+    ],
+    "work/M_seed42/M0": [
+      {
+        "update": 0,
+        "solo": 0.40769637496785366,
+        "fixed_half": 0.416723384615296,
+        "solo_counts": [
+          [
+            175322,
+            89056,
+            115481
+          ],
+          [
+            681298,
+            485665,
+            524626
+          ],
+          [
+            126496,
+            37956,
+            74908
+          ],
+          [
+            28060,
+            48611,
+            41224
+          ]
+        ],
+        "half_counts": [
+          [
+            174777,
+            76384,
+            116026
+          ],
+          [
+            683202,
+            471068,
+            522722
+          ],
+          [
+            126946,
+            35356,
+            74458
+          ],
+          [
+            28083,
+            44262,
+            41201
+          ]
+        ]
+      },
+      {
+        "update": 1000,
+        "solo": 0.41037296404790374,
+        "fixed_half": 0.42355241147194167,
+        "solo_counts": [
+          [
+            185448,
+            115246,
+            105355
+          ],
+          [
+            682836,
+            486872,
+            523088
+          ],
+          [
+            142180,
+            60287,
+            59224
+          ],
+          [
+            28038,
+            48479,
+            41246
+          ]
+        ],
+        "half_counts": [
+          [
+            185641,
+            99358,
+            105162
+          ],
+          [
+            685172,
+            460146,
+            520752
+          ],
+          [
+            141595,
+            52209,
+            59809
+          ],
+          [
+            28038,
+            43390,
+            41246
+          ]
+        ]
+      },
+      {
+        "update": 2000,
+        "solo": 0.40982485303296723,
+        "fixed_half": 0.4220268051908416,
+        "solo_counts": [
+          [
+            183771,
+            103734,
+            107032
+          ],
+          [
+            659415,
+            436355,
+            546509
+          ],
+          [
+            144098,
+            64724,
+            57306
+          ],
+          [
+            27568,
+            50304,
+            41716
+          ]
+        ],
+        "half_counts": [
+          [
+            184109,
+            93885,
+            106694
+          ],
+          [
+            664423,
+            416362,
+            541501
+          ],
+          [
+            143486,
+            56814,
+            57918
+          ],
+          [
+            27636,
+            43850,
+            41648
+          ]
+        ]
+      }
+    ]
+  },
+  "test_progress_summary": {
+    "n_images": 227,
+    "lock_sha256": "45397a7ae9ec377fcc6d1e2b7449c0cd4bf5c177449a02097ee8d2709a1f74d1"
+  },
+  "M_review": {
+    "images": 12,
+    "done": true,
+    "log": "/root/autodl-tmp/HRDecoder_Next_20261003/reports/M_error_gallery/index.html\n"
+  },
+  "M_log": "07-4035-200\neval val_u2000: 31/76 007-4145-200\neval val_u2000: 32/76 007-4171-200\neval val_u2000: 33/76 007-4203-200\neval val_u2000: 34/76 007-4224-200\neval val_u2000: 35/76 007-4479-200\neval val_u2000: 36/76 007-4482-200\neval val_u2000: 37/76 007-4548-200\neval val_u2000: 38/76 007-4576-200\neval val_u2000: 39/76 007-4743-200\neval val_u2000: 40/76 007-4960-300\neval val_u2000: 41/76 007-4980-300\neval val_u2000: 42/76 007-5063-300\neval val_u2000: 43/76 007-5172-300\neval val_u2000: 44/76 007-5269-300\neval val_u2000: 45/76 007-5434-300\neval val_u2000: 46/76 007-5443-300\neval val_u2000: 47/76 007-5470-300\neval val_u2000: 48/76 007-5474-300\neval val_u2000: 49/76 007-5504-300\neval val_u2000: 50/76 007-5506-300\neval val_u2000: 51/76 007-5672-300\neval val_u2000: 52/76 007-5869-300\neval val_u2000: 53/76 007-5938-300\neval val_u2000: 54/76 007-6054-300\neval val_u2000: 55/76 007-6148-300\neval val_u2000: 56/76 007-6220-300\neval val_u2000: 57/76 007-6519-400\neval val_u2000: 58/76 007-6520-400\neval val_u2000: 59/76 007-6551-400\neval val_u2000: 60/76 007-6577-400\neval val_u2000: 61/76 007-6686-400\neval val_u2000: 62/76 007-6722-400\neval val_u2000: 63/76 007-6734-400\neval val_u2000: 64/76 007-6811-400\neval val_u2000: 65/76 007-6815-400\neval val_u2000: 66/76 007-6847-400\neval val_u2000: 67/76 007-6894-400\neval val_u2000: 68/76 007-6912-400\neval val_u2000: 69/76 20170503161702100\neval val_u2000: 70/76 20170503161702278\neval val_u2000: 71/76 20170509100155767\neval val_u2000: 72/76 20170510152714920\neval val_u2000: 73/76 20170518142454730\neval val_u2000: 74/76 20170522100404106\neval val_u2000: 75/76 20170609154552424\neval val_u2000: 76/76 20170629163635747\nM0 seed=42 u=2100/4000 loss=0.60464 sec/update=1.034\nG/M queue complete. Selections saved; final test remains locked behind final recipe.\n",
+  "completion": {
+    "status": "EXPERIMENTS_COMPLETE_BACKUP_REVIEW_PENDING",
+    "time": 1791022033.822728,
+    "winner": {
+      "kind": "G_fixed25",
+      "asset": "U0_highres",
+      "canvas": "native",
+      "inference": "slide",
+      "score": 0.4386790869927479,
+      "cache": "/root/autodl-tmp/HRDecoder_Next_20261003/work/G/highres_fixed25",
+      "key": "U0_highres_native_slide"
+    },
+    "required_files": {
+      "work/geometry_lock.json": "a5fce1a91db940d24aa939865489982d2f5d3c8a825327afb68ef0e272352786",
+      "work/campaign_complete.json": "5ba1dc093f1190c7c923f0e0db947717fb9b0f66e2d97a024aed9038e1e12f1f",
+      "configs/protocol.json": "3c9d693d6a238bcc7eca6e3985462b24160a27313c3c224e03d8f21e45dd23f0",
+      "configs/settings.json": "104f4f2beb36d63de8da5172d004367c8a081ac3bcefae5f7ebfd7a74a6e06ce",
+      "reports/val_final_selection.json": "8f9fd41646cd6d7d76dc66e67916a43963616f0010991c3203257dae591c734e",
+      "work/M_seed42/M1/best.pth": "72c67bf2ad027e94766957582a65d98aef7d0b707334bbbb766095c3b2ae596f",
+      "work/M_seed42/M0/best.pth": "564732d8122f97b1a4e105fc5a222a3c8b09ac05e5a5ed9c940a1a7744c61808",
+      "work/M_seed42/M1/last.pth": "e34e1fbd23b627d01273a4c914541f17f24da983a00416019ba95e6f7a6d1f4e",
+      "work/M_seed42/M0/last.pth": "562a5ddabe596161db7e4957afb70fc1c13904bebb38173c2e24b977d138e915",
+      "work/final_lock.json": "45397a7ae9ec377fcc6d1e2b7449c0cd4bf5c177449a02097ee8d2709a1f74d1",
+      "work/final_test.json": "5745f00527ae1810f5b18d092107ae42c1332ebc5d1a95aa375e8bdfee6aff98",
+      "work/test_progress.json": "18b0e81dfa5aaee7fa52aae05f5164f7fc48b8ec01a5aebaeab04371e4f746f3"
+    },
+    "original_winner_retained": true,
+    "E": "official assets gate not satisfied; no GPU time allocated",
+    "mechanism": "Not run: user requests discovering improvements, not repeated proof of efficacy",
+    "target": 0.472115,
+    "test_run": true,
+    "next": "Verify local backup, finish report and manual error review, then authorized shutdown"
+  },
+  "adaptive_budget_decision": {
+    "status": "PAIRED_COST_STOP_AT_2000",
+    "time": 1791020885.2765894,
+    "evidence": {
+      "M0": {
+        "best": {
+          "update": 1000,
+          "output": "fixed_half",
+          "score": 0.42355241147194167,
+          "arm": "M0"
+        },
+        "current": 0.4220268051908416,
+        "recent_delta": -0.0015256062811000448,
+        "image_uncertainty_vs_old": {
+          "delta_mean": -0.013600627538161707,
+          "percentile95": [
+            -0.029332225786987576,
+            -0.0001748885711931698
+          ],
+          "repetitions": 2000,
+          "seed": 7303,
+          "note": "Resamples paired images; this does not estimate training-seed variability"
+        },
+        "qualifies": true
+      },
+      "M1": {
+        "best": {
+          "update": 1000,
+          "output": "fixed_half",
+          "score": 0.4234589432855201,
+          "arm": "M1"
+        },
+        "current": 0.4216427759713359,
+        "recent_delta": -0.0018161673141841583,
+        "image_uncertainty_vs_old": {
+          "delta_mean": -0.013902237660544176,
+          "percentile95": [
+            -0.029213990088001955,
+            -0.000359001804895224
+          ],
+          "repetitions": 2000,
+          "seed": 7303,
+          "note": "Resamples paired images; this does not estimate training-seed variability"
+        },
+        "qualifies": true
+      }
+    },
+    "checkpoints": {
+      "M0": {
+        "update": 2000,
+        "stream_cursor": 16000,
+        "amp_skips": 1,
+        "last_sha256": "562a5ddabe596161db7e4957afb70fc1c13904bebb38173c2e24b977d138e915",
+        "best_sha256": "564732d8122f97b1a4e105fc5a222a3c8b09ac05e5a5ed9c940a1a7744c61808",
+        "best_update": 1000
+      },
+      "M1": {
+        "update": 2000,
+        "stream_cursor": 16000,
+        "amp_skips": 1,
+        "last_sha256": "e34e1fbd23b627d01273a4c914541f17f24da983a00416019ba95e6f7a6d1f4e",
+        "best_sha256": "72c67bf2ad027e94766957582a65d98aef7d0b707334bbbb766095c3b2ae596f",
+        "best_update": 1000
+      }
+    },
+    "policy_sha256": "9af6c01b36f6004a8e5501bd0bcb34e41c9f3c48aa4fb0240b87e7a54b51b68e",
+    "original_planned_updates": 8000,
+    "actual_matched_updates": 2000,
+    "not_a_convergence_claim": true,
+    "old_source_unchanged": true,
+    "reason": "Both complete arms remain over 1 percentage point below old deployment; no recent rise; paired-image 95% upper bounds below old deployment",
+    "discarded_unscored_partial_segment": "The paused process may have begun constructing the next segment. No later complete result is used; preserved last checkpoints are both exactly 2000.",
+    "resumed_controller_pid": 11331
+  },
+  "adaptive_budget_guard_error": {
+    "error": "AssertionError()",
+    "time": 1791020681.3601618,
+    "checkpoint_verified": false,
+    "status": "RESOLVED_COMPATIBILITY_METADATA_ONLY",
+    "resolved_at": 1791020886.3445873,
+    "explanation": "Known zero-update statistics compatibility annotation is preserved; all core checkpoint identity fields compared exactly",
+    "checkpoint_unchanged": true
+  },
+  "adaptive_budget_guard_log": "Traceback (most recent call last):\n  File \"ops/adaptive_budget_guard.py\", line 180, in <module>\n    main()\n  File \"ops/adaptive_budget_guard.py\", line 123, in main\n    assert ck['identity'] == identity\nAssertionError\nPAIRED_COST_STOP_AT_2000 11331\n",
+  "final_test": {
+    "lock_sha256": "45397a7ae9ec377fcc6d1e2b7449c0cd4bf5c177449a02097ee8d2709a1f74d1",
+    "n_images": 227,
+    "old_complete_pipeline": {
+      "mIoU_lesion4": 0.44780891451100807,
+      "counts": [
+        [
+          1072861,
+          390087,
+          502080
+        ],
+        [
+          1609384,
+          506944,
+          1444094
+        ],
+        [
+          354891,
+          138077,
+          215627
+        ],
+        [
+          80222,
+          84314,
+          109821
+        ]
+      ],
+      "per_class": {
+        "EX": {
+          "tp": 1072861,
+          "fp": 390087,
+          "fn": 502080,
+          "iou": 0.5459774618987617,
+          "precision": 0.7333555259653795,
+          "recall": 0.6812071055360169
+        },
+        "HE": {
+          "tp": 1609384,
+          "fp": 506944,
+          "fn": 1444094,
+          "iou": 0.4520205750891327,
+          "precision": 0.760460571329208,
+          "recall": 0.5270658573600334
+        },
+        "SE": {
+          "tp": 354891,
+          "fp": 138077,
+          "fn": 215627,
+          "iou": 0.500837572943642,
+          "precision": 0.7199067687963518,
+          "recall": 0.6220504874517544
+        },
+        "MA": {
+          "tp": 80222,
+          "fp": 84314,
+          "fn": 109821,
+          "iou": 0.29240004811249576,
+          "precision": 0.487565031360918,
+          "recall": 0.4221255189614982
+        }
+      }
+    },
+    "selected_complete_pipeline": {
+      "mIoU_lesion4": 0.446344519463188,
+      "counts": [
+        [
+          1071039,
+          373450,
+          503902
+        ],
+        [
+          1573031,
+          485878,
+          1480447
+        ],
+        [
+          347286,
+          126093,
+          223232
+        ],
+        [
+          79669,
+          82146,
+          110374
+        ]
+      ],
+      "per_class": {
+        "EX": {
+          "tp": 1071039,
+          "fp": 373450,
+          "fn": 503902,
+          "iou": 0.549704345790963,
+          "precision": 0.7414656670974995,
+          "recall": 0.6800502368025215
+        },
+        "HE": {
+          "tp": 1573031,
+          "fp": 485878,
+          "fn": 1480447,
+          "iou": 0.4444398924550116,
+          "precision": 0.7640119111626594,
+          "recall": 0.5151604170719423
+        },
+        "SE": {
+          "tp": 347286,
+          "fp": 126093,
+          "fn": 223232,
+          "iou": 0.498536485929737,
+          "precision": 0.7336320369091152,
+          "recall": 0.6087204961105521
+        },
+        "MA": {
+          "tp": 79669,
+          "fp": 82146,
+          "fn": 110374,
+          "iou": 0.2926973536770406,
+          "precision": 0.4923461978184964,
+          "recall": 0.4192156511947296
+        }
+      }
+    },
+    "delta": -0.0014643950478200884,
+    "target": 0.472115,
+    "target_met": false,
+    "paired_image_uncertainty": {
+      "delta_mean": -0.0013330605107879077,
+      "percentile95": [
+        -0.004093892388482364,
+        0.0009480918002468813
+      ],
+      "repetitions": 2000,
+      "seed": 7303,
+      "note": "Resamples paired images; this does not estimate training-seed variability"
+    },
+    "selection_basis": "prelocked validation; no retuning after test",
+    "historical_limitation": "227-image test inspected in past rounds; exploratory continuation"
+  },
+  "memory_current": 43287646208,
+  "memory": {
+    "anon": 333254656,
+    "file": 42820808704,
+    "shmem": 24752431104,
+    "file_mapped": 26243072,
+    "inactive_file": 17475653632,
+    "active_file": 595116032
+  },
+  "memory_events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\n",
+  "disk": "Filesystem      Size  Used Avail Use% Mounted on\nshm              60G   24G   37G  39% /dev/shm\n/dev/md0         50G   49G  1.2G  98% /root/autodl-tmp\n",
+  "gpu": "0 %, 1 MiB\n",
+  "processes": ""
+}

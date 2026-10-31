@@ -1,0 +1,24 @@
+[2026-09-20 01:26:26] split audit OK; test stems = 227
+[2026-09-20 01:26:32] candidate C_step_2000 loaded: arm=C steps=2000 seed=42
+[HRPlusMAResidual] 可训练 0.058M / 冻结 131.221M
+[2026-09-20 01:26:37] champion built: members=['D', 'E', 'B', 'E4'] head=/root/autodl-tmp/hr_exec_20260919/assets/H4_best.pth
+/root/miniconda3/lib/python3.8/site-packages/mmcv/__init__.py:20: UserWarning: On January 1, 2023, MMCV will release v2.0.0, in which it will remove components related to the training process and add a data transformation module. In addition, it will rename the package names mmcv to mmcv-lite and mmcv-full to mmcv. See https://github.com/open-mmlab/mmcv/blob/master/docs/en/compatibility.md for more details.
+  warnings.warn(
+2026-09-20 01:26:38,693 - mmseg - INFO - Loaded 227 images from /root/autodl-tmp/hr_exec_20260919/data/DDR_split_613/images/test
+[2026-09-20 01:26:44] champion cache mode: build (/root/autodl-tmp/hr_exec_20260919/runs/champ_prob_cache_test)
+[2026-09-20 01:29:03] eval test 25/227 (138.7s)
+[2026-09-20 01:31:22] eval test 50/227 (278.1s)
+[2026-09-20 01:33:32] eval test 75/227 (407.3s)
+[2026-09-20 01:35:46] eval test 100/227 (541.7s)
+[2026-09-20 01:38:13] eval test 125/227 (688.6s)
+[2026-09-20 01:40:29] eval test 150/227 (825.0s)
+Corrupt JPEG data: 36 extraneous bytes before marker 0xd9
+[2026-09-20 01:42:48] eval test 175/227 (963.3s)
+[2026-09-20 01:45:15] eval test 200/227 (1110.5s)
+[2026-09-20 01:47:34] eval test 225/227 (1249.7s)
+[2026-09-20 01:47:45] eval test 227/227 (1260.5s)
+[2026-09-20 01:47:45] champion cache finalized: 227 entries
+[2026-09-20 01:47:45] test champion mIoU 0.442115
+[2026-09-20 01:47:45] test cand_C_step_2000 mIoU 0.398104
+[2026-09-20 01:47:45] test mix_C_step_2000 mIoU 0.438064
+[2026-09-20 01:47:46] DONE split=test mious={'champion': 0.442115, 'cand_C_step_2000': 0.398104, 'mix_C_step_2000': 0.438064}

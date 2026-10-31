@@ -1,0 +1,23 @@
+{
+  "status": "complete",
+  "results": {
+    "U0_continuation2048": {
+      "best_update": 1000,
+      "standalone_miou": 0.3908638255464669,
+      "fixed_fusion_miou": 0.43366298706385487,
+      "baseline_miou": 0.43487703221036567,
+      "gain": -0.0012140451465108004,
+      "updates_done": 2000
+    },
+    "U0_highres": {
+      "best_update": 1000,
+      "standalone_miou": 0.3960651568641143,
+      "fixed_fusion_miou": 0.437327634300698,
+      "baseline_miou": 0.43487703221036567,
+      "gain": 0.002450602090332321,
+      "updates_done": 4000
+    }
+  },
+  "completed_at_epoch": 1790959925.7711217,
+  "test_policy": "No further evaluation on the previously completed test split."
+}

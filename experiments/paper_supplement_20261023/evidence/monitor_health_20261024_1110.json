@@ -1,0 +1,25 @@
+{
+  "status": "HEALTHY_WAITING_LAST_FIXED_ENDPOINT",
+  "checked_at_UTC": "2026-10-24T03:10:28.579917+00:00",
+  "S3407": {
+    "logged_records": 178,
+    "last": {
+      "update": 3560,
+      "loss": 0.18892359733581543,
+      "grad_norm": 3.385313034057617,
+      "seconds": 1.1217626743018627,
+      "data_wait_seconds": 0.002741299569606781
+    },
+    "nonfinite": []
+  },
+  "remaining_adaptation_hours": 5.147766250946535,
+  "backup_watcher_pid": 45360,
+  "backup_watcher_recent_update_unix": 1792811319.803423,
+  "backup_watcher_stderr_empty": true,
+  "paired_seeds_complete": [
+    42,
+    2024
+  ],
+  "new_training_runs_fully_validated": 3,
+  "overall_campaign_complete": false
+}

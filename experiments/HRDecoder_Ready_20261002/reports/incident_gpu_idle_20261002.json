@@ -1,0 +1,281 @@
+{
+  "now": 1790946836.4476926,
+  "logs": {
+    "export_champion": [
+      "champion export 33/76",
+      "champion export 34/76",
+      "champion export 35/76",
+      "champion export 36/76",
+      "champion export 37/76",
+      "champion export 38/76",
+      "champion export 39/76",
+      "champion export 40/76",
+      "champion export 41/76",
+      "champion export 42/76",
+      "champion export 43/76",
+      "champion export 44/76",
+      "champion export 45/76",
+      "champion export 46/76",
+      "champion export 47/76",
+      "champion export 48/76",
+      "champion export 49/76",
+      "champion export 50/76",
+      "champion export 51/76",
+      "champion export 52/76",
+      "champion export 53/76",
+      "champion export 54/76",
+      "champion export 55/76",
+      "champion export 56/76",
+      "champion export 57/76",
+      "champion export 58/76",
+      "champion export 59/76",
+      "champion export 60/76",
+      "champion export 61/76",
+      "champion export 62/76",
+      "champion export 63/76",
+      "champion export 64/76",
+      "champion export 65/76",
+      "champion export 66/76",
+      "champion export 67/76",
+      "champion export 68/76",
+      "champion export 69/76",
+      "champion export 70/76",
+      "champion export 71/76",
+      "champion export 72/76",
+      "champion export 73/76",
+      "champion export 74/76",
+      "champion export 75/76",
+      "champion export 76/76",
+      "{\"counts\": [[181590, 105938, 109213], [704563, 404259, 501361], [138912, 50338, 62492], [27153, 35275, 42131]], \"mIoU_lesion4\": 0.42669122905238266, \"per_class_iou\": {\"EX\": 0.45770414451745595, \"HE\": 0.4375670343060385, \"SE\": 0.5518030364420716, \"MA\": 0.2596907009439646}}"
+    ],
+    "export_U0": [
+      "/root/miniconda3/lib/python3.8/site-packages/torch/_utils.py:776: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()",
+      "  return self.fget.__get__(instance, owner)()",
+      "export 10/76",
+      "export 20/76",
+      "export 30/76",
+      "export 40/76",
+      "export 50/76",
+      "export 60/76",
+      "export 70/76",
+      "Traceback (most recent call last):",
+      "  File \"tools/export_predictions.py\", line 76, in <module>",
+      "    if __name__=='__main__':main()",
+      "  File \"tools/export_predictions.py\", line 74, in main",
+      "    print(json.dumps(export(a.config,a.checkpoint,a.out,a.flip),indent=2))",
+      "  File \"tools/export_predictions.py\", line 62, in export",
+      "    raise ValueError(f'Export/evaluator mismatch: export={report[\"mIoU_lesion4\"]} checkpoint={expected}; repair geometry before fusion')",
+      "ValueError: Export/evaluator mismatch: export=0.35805433670826103 checkpoint=0.3844641257662971; repair geometry before fusion"
+    ],
+    "finish": []
+  },
+  "states": {
+    "campaign_state": {
+      "jobs": {
+        "U1_external_pretrain": {
+          "status": "complete",
+          "started_at_epoch": 1790906941.645659,
+          "config_sha256": "0ed6fb25f1e81aa79815a3e2bba55ec42011739150035d01eaca8b9ba8df2e99",
+          "exit_code": 0,
+          "finished_at_epoch": 1790908345.5982351,
+          "summary": {
+            "status": "complete",
+            "stop_reason": null,
+            "elapsed_seconds": 1399.5731031559408,
+            "stage": "external_pretrain",
+            "mode": "formal",
+            "updates_done": 2400,
+            "micro_steps": 9600,
+            "best": {
+              "mIoU_lesion4": 0.27160511927790537,
+              "update": 2400
+            },
+            "resume_warnings": [],
+            "checkpoints": {
+              "last": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/U1_external_pretrain/ckpt_last.pth",
+              "best": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/U1_external_pretrain/ckpt_best.pth",
+              "final": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/U1_external_pretrain/ckpt_final.pth"
+            },
+            "generated_at": "2026-10-02T02:32:24.250407+00:00"
+          }
+        },
+        "U1_ddr_finetune": {
+          "status": "complete",
+          "started_at_epoch": 1790908346.2194698,
+          "config_sha256": "b44967b823f6e6a2cf04b246a15ca37f766dd76209bcee5a69e8fe0254bab4ef",
+          "exit_code": 0,
+          "finished_at_epoch": 1790914382.2453682,
+          "summary": {
+            "status": "complete",
+            "stop_reason": null,
+            "elapsed_seconds": 6029.805540608009,
+            "stage": "ddr_finetune",
+            "mode": "formal",
+            "updates_done": 12000,
+            "micro_steps": 24016,
+            "best": {
+              "mIoU_lesion4": 0.3669342309981436,
+              "update": 12000
+            },
+            "resume_warnings": [],
+            "checkpoints": {
+              "last": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/U1_ddr_finetune/ckpt_last.pth",
+              "best": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/U1_ddr_finetune/ckpt_best.pth",
+              "final": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/U1_ddr_finetune/ckpt_final.pth"
+            },
+            "generated_at": "2026-10-02T04:13:01.074989+00:00"
+          }
+        },
+        "H1_external_pretrain": {
+          "status": "complete",
+          "started_at_epoch": 1790914382.2892206,
+          "config_sha256": "97bf76e9d68c6dae493d318a80da21f5c2de7415cd037c0428b8b65cfd1be649",
+          "exit_code": 0,
+          "finished_at_epoch": 1790918162.5453734,
+          "summary": {
+            "status": "complete",
+            "stop_reason": null,
+            "elapsed_seconds": 3762.144079893944,
+            "stage": "external_pretrain",
+            "mode": "formal",
+            "updates_done": 2400,
+            "micro_steps": 4804,
+            "best": {
+              "mIoU_lesion4": 0.42999768710592823,
+              "update": 2400
+            },
+            "config_file_sha256": "97bf76e9d68c6dae493d318a80da21f5c2de7415cd037c0428b8b65cfd1be649",
+            "resume_warnings": [],
+            "checkpoints": {
+              "last": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/H1_external_pretrain/ckpt_last.pth",
+              "best": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/H1_external_pretrain/ckpt_best.pth",
+              "final": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/H1_external_pretrain/ckpt_final.pth"
+            },
+            "generated_at": "2026-10-02T05:16:00.962970+00:00"
+          }
+        },
+        "H1_ddr_finetune": {
+          "status": "stopped",
+          "started_at_epoch": 1790918163.322156,
+          "config_sha256": "2bf116be1cd68dabe78b7685d5d2afe416d1c5b781329648a036616dd9347dac",
+          "exit_code": 0,
+          "finished_at_epoch": 1790934934.1426003,
+          "summary": {
+            "status": "stopped",
+            "stop_reason": "low_priority: best=0.355950, recent_gain=-0.001919, no_class_advantage",
+            "elapsed_seconds": 16609.185342184966,
+            "stage": "ddr_finetune",
+            "mode": "formal",
+            "updates_done": 12000,
+            "micro_steps": 12008,
+            "best": {
+              "mIoU_lesion4": 0.3559504929505182,
+              "update": 9000
+            },
+            "config_file_sha256": "1b2de9719d17d9ba1a1ea9b9ba20c2dc839f0ea1f2e573ad1f5b0d4a1c5965f5",
+            "resume_warnings": [],
+            "checkpoints": {
+              "last": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/H1_ddr_finetune/ckpt_last.pth",
+              "best": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/H1_ddr_finetune/ckpt_best.pth",
+              "final": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/H1_ddr_finetune/ckpt_final.pth"
+            },
+            "generated_at": "2026-10-02T09:55:32.580880+00:00"
+          }
+        },
+        "A0_ddr_finetune": {
+          "status": "stopped",
+          "started_at_epoch": 1790934934.1772797,
+          "config_sha256": "6ae617369dbd53a8c609fffd08a329c928c8e8bf2b31c5f08e5de3f443dd5535",
+          "exit_code": 0,
+          "finished_at_epoch": 1790943903.065582,
+          "summary": {
+            "status": "stopped",
+            "stop_reason": "operator_stop_at_update_boundary",
+            "elapsed_seconds": 8965.399070524029,
+            "stage": "ddr_finetune",
+            "mode": "formal",
+            "updates_done": 6197,
+            "micro_steps": 6200,
+            "best": {
+              "mIoU_lesion4": 0.09678075116594265,
+              "update": 6000
+            },
+            "config_file_sha256": "6ae617369dbd53a8c609fffd08a329c928c8e8bf2b31c5f08e5de3f443dd5535",
+            "resume_warnings": [],
+            "checkpoints": {
+              "last": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/A0_ddr_finetune/ckpt_last.pth",
+              "best": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/A0_ddr_finetune/ckpt_best.pth",
+              "final": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/A0_ddr_finetune/ckpt_final.pth"
+            },
+            "generated_at": "2026-10-02T12:25:01.611528+00:00"
+          }
+        }
+      },
+      "pid": 4040,
+      "status": "main_training_done",
+      "started_at_epoch": 1790906941.6279829,
+      "skipped_historical": [
+        "U0_complete_12000",
+        "H0_partial_6000_no_local_restart"
+      ],
+      "active_job": null,
+      "finished_at_epoch": 1790943903.0679934,
+      "next_action": "nominate at most two families; export probabilities; constrained cross-fit; promote only useful candidates"
+    },
+    "finish_state": {
+      "status": "engineering_attention_required",
+      "rules": {
+        "highres": "OOF and locked-val gain >0.001; best fixed25 nominee only; paired 4000-update continuation",
+        "second_seed": "OOF gain >=0.005 and standalone >= champion-0.015; ensemble exploration, not confirmation",
+        "final_test": "one locked pipeline only if OOF and locked-val gain >0.001; otherwise retain champion"
+      },
+      "error": "export_U0 failed (1); inspect /root/autodl-tmp/HRDecoder_Ready_20261002/reports/finish/export_U0.log; engineering failure, not method rejection"
+    }
+  },
+  "indexes": {
+    "champion": {
+      "counts": [
+        [
+          181590,
+          105938,
+          109213
+        ],
+        [
+          704563,
+          404259,
+          501361
+        ],
+        [
+          138912,
+          50338,
+          62492
+        ],
+        [
+          27153,
+          35275,
+          42131
+        ]
+      ],
+      "mIoU_lesion4": 0.42669122905238266,
+      "per_class_iou": {
+        "EX": 0.45770414451745595,
+        "HE": 0.4375670343060385,
+        "SE": 0.5518030364420716,
+        "MA": 0.2596907009439646
+      }
+    }
+  },
+  "processes": [
+    "   793    773    11:48:59  0.0  0.0 Sl   do_poll.constprop.0      /root/miniconda3/bin/python /root/miniconda3/bin/tensorboard --host 0.0.0.0 --port 6007 --logdir /root/tf-logs",
+    "   794    773    11:48:59  0.0  0.0 S    do_select                sshd: /usr/sbin/sshd -D [listener] 2 of 10-100 startups",
+    "   797    773    11:48:59  0.0  0.0 S    ep_poll                  /root/miniconda3/bin/python /root/miniconda3/bin/jupyter-lab --allow-root --config=/init/jupyter/jupyter_config.py",
+    "   957    794    11:46:10  0.0  0.0 Ss   do_select                sshd: root@notty",
+    "  1363    794    11:34:02  0.0  0.0 Ss   do_select                sshd: root@notty",
+    "  8015    794    09:39:19  0.0  0.0 Ss   do_select                sshd: root@notty",
+    " 28613    794       00:05  0.6  0.0 Ss   do_poll.constprop.0      sshd: root [priv]",
+    " 28614  28613       00:05  0.2  0.0 S    -                        sshd: root [net]",
+    " 28617    794       00:02  1.5  0.0 Ss   do_select                sshd: root [priv]",
+    " 28618  28617       00:02  0.5  0.0 S    -                        sshd: root [net]",
+    " 28619    794       00:01  4.0  0.0 Ss   do_select                sshd: root@notty"
+  ]
+}

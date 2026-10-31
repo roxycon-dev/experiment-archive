@@ -1,0 +1,94 @@
+{
+ "host": {
+  "stdout": "autodl-container-557e4899c9-1a6d6965\n2026-09-18T00:38:17+08:00\n 00:38:17 up 188 days, 13:40,  4 users,  load average: 10.48, 11.15, 11.82",
+  "stderr": ""
+ },
+ "gpu": {
+  "stdout": "NVIDIA GeForce RTX 4090, 24564 MiB, 0 MiB",
+  "stderr": ""
+ },
+ "disk": {
+  "stdout": "Filesystem      Size  Used Avail Use% Mounted on\noverlay          30G   22G  8.9G  71% /\n/dev/md0         50G   17G   34G  34% /root/autodl-tmp",
+  "stderr": ""
+ },
+ "python": {
+  "stdout": "bash: python: command not found",
+  "stderr": ""
+ },
+ "torch": {
+  "stdout": "bash: python: command not found",
+  "stderr": ""
+ },
+ "hrplus_tree": {
+  "stdout": "D_0913\nD_0913.log\nD_0913.log.status.json\nD_0913_retry\nD_0913_retry.log\nD_0913_retry.log.status.json\nD_0913_retry_summary.json\nD_0913_retry_wrapper.log\nD_0913_wrapper.log\ncode.tar.gz\ncompact_monitor.log\ncpu_preflight.json\nd_test.log\nd_test_backup_ack\nd_test_guard.log\nd_test_state.json\nd_test_wrapper.log\nd_test_wrapper.log.status.json\ndata_manifest.json\ndeadline.log\ndeadline.log.status.json\ndeadline_retry.log\ndeadline_retry.log.status.json\ndeadline_retry_wrapper.log\ndeadline_wrapper.log\nexperiment_lock.json\nops\nrepo\nresults\nsplit_assignment.json",
+  "stderr": ""
+ },
+ "hrplus_repo": {
+  "stdout": "CLAUDE.md\nREADME.md\n__pycache__\nconfigs\ndata\ndiagnostics\nhr100_ensemble.py\nhr100_refinement.py\nhrplus_core.py\nhrplus_patch.py\nma_residual.py\nmmseg\nrequirements.txt\ntests\ntools\nweights",
+  "stderr": ""
+ },
+ "repo_configs": {
+  "stdout": "baseline_split613.py\ncombo_v2_split613.py\ne1_cedice_split613.py\ne1_tversky_split613.py\ne1e4_split613.py\ne2_fuse_split613.py\ne2e3_split613.py\ne3_context_split613.py\ne4_detail_split613.py\ne4_detail_split613_bs1.py\ne4v2_detail_split613.py\nfinal_combo_split613.py\nfinal_combo_split613_seed123.py\nfinal_combo_split613_seed2024.py\nhr100_a.py\nhr100_b.py\nhr100_ensemble_release.py\nhr100_ensemble_test.py\nhr100_ensemble_val.py\nhr100_mean_release.py\nhr100_mean_test.py\nhr100_mean_val.py\nhr100_val_e4.py\nhrplus_maond.py\nhrplus_maond_h01.py\nhrplus_maond_h03.py\nhrplus_mares.py\nhrplus_mares_p0005.py\nhrplus_mares_p002.py\nhrplus_patch_dice.py\nhrplus_patch_lovasz.py",
+  "stderr": ""
+ },
+ "repo_weights": {
+  "stdout": "total 4\ndrwxr-xr-x  2 root root   35 Sep 13 00:22 .\ndrwxr-xr-x 10 root root 4096 Sep 16 20:18 ..\nlrwxrwxrwx  1 root root   54 Sep 13 00:22 b_weights.pth -> /root/autodl-tmp/hr100/trial_b/best_mIoU_iter_3000.pth",
+  "stderr": ""
+ },
+ "hrplus_model_files": {
+  "stdout": "/root/autodl-tmp/hrplus/repo/hr100_ensemble.py\n/root/autodl-tmp/hrplus/repo/hr100_refinement.py\n/root/autodl-tmp/hrplus/repo/hrplus_core.py\n/root/autodl-tmp/hrplus/repo/hrplus_patch.py\n/root/autodl-tmp/hrplus/repo/ma_residual.py",
+  "stderr": ""
+ },
+ "data_dirs": {
+  "stdout": "== /root/autodl-tmp/hrplus/data\n== /root/autodl-tmp/hrplus/repo/data\nDDR_split_613\n== /root/autodl-tmp/hr100/data\nDDR_split_613\n== /root/autodl-tmp/data",
+  "stderr": ""
+ },
+ "ddr_split": {
+  "stdout": "== /root/autodl-tmp/hrplus/repo/data/DDR_split_613\ntrain: 454 imgs, 454 labels\nval: 76 imgs, 76 labels\ntest: 227 imgs, 227 labels\n== /root/autodl-tmp/hr100/data/DDR_split_613\ntrain: 454 imgs, 454 labels\nval: 76 imgs, 76 labels\ntest: 227 imgs, 227 labels",
+  "stderr": ""
+ },
+ "d_full": {
+  "stdout": "total 2571296\ndrwxr-xr-x 2 root root      4096 Sep 13 02:55 .\ndrwxr-xr-x 7 root root      4096 Sep 15 23:23 ..\n-rw-r--r-- 1 root root    378174 Sep 13 02:55 20260913_004131.log\n-rw-r--r-- 1 root root    188024 Sep 13 02:55 20260913_004131.log.json\n-rw-r--r-- 1 root root        10 Sep 13 02:55 backup_ack\n-rw-r--r-- 1 root root 263419124 Sep 13 00:55 backup_student_2000.pth\n-rw-r--r-- 1 root root 789655426 Sep 13 00:55 best_mIoU_iter_2000.pth\n-rw-r--r-- 1 root root      8027 Sep 13 00:41 hrplus_patch_dice.py\n-rw-r--r-- 1 root root 789655426 Sep 13 02:40 iter_18000.pth\n-rw-r--r-- 1 root root 789655426 Sep 13 02:53 iter_20000.pth\nlrwxrwxrwx 1 root root        14 Sep 13 02:53 latest.pth -> iter_20000.pth\n-rw-r--r-- 1 root root       647 Sep 13 00:41 smoke.json\n-rw-r--r-- 1 root root       621 Sep 13 00:41 smoke.log\n-rw------- 1 root root        36 Sep 13 02:55 state.json",
+  "stderr": ""
+ },
+ "e_ckpt": {
+  "stdout": "total 2575096\ndrwxr-xr-x 4 root root      4096 Sep 16 10:46 .\ndrwxr-xr-x 6 root root        84 Sep 16 09:25 ..\n-rw-r--r-- 1 root root    216253 Sep 16 08:26 20260916_080832.log\n-rw-r--r-- 1 root root     37925 Sep 16 08:26 20260916_080832.log.json\n-rw-r--r-- 1 root root 527412743 Sep 16 08:18 best_mIoU_iter_1500.pth\n-rw-r--r-- 1 root root      2095 Sep 16 08:26 bn_eval.log\n-rw-r--r-- 1 root root 526986891 Sep 16 08:13 d_renorm_all.pth\n-rw-r--r-- 1 root root 527001915 Sep 16 08:11 d_renorm_student.pth\n-rw-r--r-- 1 root root       176 Sep 16 08:26 e_stage.log\n-rw-r--r-- 1 root root    249431 Sep 16 08:26 e_train.log\n-rw-r--r-- 1 root root     16106 Sep 16 10:35 ens_de.log\n-rw-r--r-- 1 root root      1435 Sep 16 10:12 eval_ENS_D1E2B1E41_flip.json\n-rw-r--r-- 1 root root      1435 Sep 16 09:51 eval_ENS_D2E1B1E41_flip.json\n-rw-r--r-- 1 root root      1461 Sep 16 10:35 eval_ENS_D3E2B1E41_flip.json\n-rw-r--r-- 1 root root      1436 Sep 16 09:30 eval_ENS_DEB_E4_flip.json\n-rw-r--r-- 1 root root       900 Sep 16 09:13 eval_ENS_DE_flip.json\n-rw-r--r-- 1 root root       938 Sep 16 10:46 eval_ENS_DE_flip_2scale.json\n-rw-r--r-- 1 root root       673 Sep 16 10:15 eval_SCALE_D_2048_2560.json\n-rw-r--r-- 1 root root       664 Sep 16 10:04 eval_SCALE_VALID_D.json\n-rw-r--r-- 1 root root       633 Sep 16 08:54 eval_TEST_E_head.json\n-rw-r--r-- 1 root root       586 Sep 16 08:34 eval_VAL_B_base.json\n-rw-r--r-- 1 root root       633 Sep 16 08:21 eval_VAL_D_ref.json\n-rw-r--r-- 1 root root       738 Sep 16 08:26 eval_VAL_D_renorm_all.json\n-rw-r--r-- 1 root root       744 Sep 16 08:24 eval_VAL_D_renorm_stu.json\n-rw-r--r-- 1 root root       631 Sep 16 08:31 eval_VAL_E1500.json\n-rw-r--r-- 1 root root      8072 Sep 16 08:08 hrplus_mares.py\n-rw-r--r-- 1 root root 527412743 Sep 16 08:19 iter_2000.pth\n-rw-r--r-- 1 root root 527412743 Sep 16 08:26 iter_3000.pth\nlrwxrwxrwx 1 root root        13 Sep 16 08:26 latest.pth -> iter_3000.pth\n-rw-r--r-- 1 root root        11 Sep 16 08:26 launcher.out\n-rw-r--r-- 1 root root       523 Sep 16 08:35 probe.log\ndrwxr-xr-x 2 root root      4096 Sep 16 08:35 probe_p0005\ndrwxr-xr-x 2 root root       147 Sep 16 08:35 probe_p002\n-rw-r--r-- 1 root root      1152 Sep 16 08:13 renorm.log\n-rw-r--r-- 1 root root       969 Sep 16 08:13 renorm_all.json\n-rw-r--r-- 1 root root       977 Sep 16 08:11 renorm_student.json\n-rw-r--r-- 1 root root      2530 Sep 16 10:46 scale_tta.log\n-rw-r--r-- 1 root root       900 Sep 16 08:07 smoke.json\n-rw-r--r-- 1 root root       900 Sep 16 08:35 smoke_maond.json\n-rw-r--r-- 1 root root      1445 Sep 16 09:02 test_heads.log\n-rw-r--r-- 1 root root         4 Sep 16 08:26 train_returncode",
+  "stderr": ""
+ },
+ "b_ckpt": {
+  "stdout": "total 1799180\ndrwxr-xr-x 2 root root      4096 Sep 12 02:57 .\ndrwxr-xr-x 7 root root      4096 Sep 12 03:50 ..\n-rw-r--r-- 1 root root    198712 Sep 12 02:54 20260912_013421.log\n-rw-r--r-- 1 root root    103728 Sep 12 02:54 20260912_013421.log.json\n-rw-r--r-- 1 root root 526178711 Sep 12 02:04 best_mIoU_iter_3000.pth\n-rw-r--r-- 1 root root      8133 Sep 12 01:34 hr100_b.py\n-rw-r--r-- 1 root root 526178711 Sep 12 02:48 iter_7500.pth\n-rw-r--r-- 1 root root 526178711 Sep 12 02:53 iter_8000.pth\nlrwxrwxrwx 1 root root        13 Sep 12 02:53 latest.pth -> iter_8000.pth\n-rw-r--r-- 1 root root 263479238 Sep 12 02:57 selected_weights_only.pth",
+  "stderr": ""
+ },
+ "e4_ckpt": {
+  "stdout": "total 1028432\ndrwxr-xr-x 3 root root      4096 Aug 17 10:46 .\ndrwxr-xr-x 8 root root      4096 Aug 18 08:35 ..\ndrwxr-xr-x 2 root root        52 Aug 17 09:51 .ipynb_checkpoints\n-rw-r--r-- 1 root root    189755 Aug 17 10:47 20260817_034605.log\n-rw-r--r-- 1 root root     85737 Aug 17 10:47 20260817_034605.log.json\n-rw-r--r-- 1 root root 526178519 Aug 17 10:06 best_mIoU_iter_36000.pth\n-rw-r--r-- 1 root root      7808 Aug 17 03:46 e4_detail_split613.py\n-rw-r--r-- 1 root root 526178519 Aug 17 10:46 iter_40000.pth\nlrwxrwxrwx 1 root root        14 Aug 17 10:46 latest.pth -> iter_40000.pth\n-rw-r--r-- 1 root root    446739 Aug 17 10:47 nohup_train.log",
+  "stderr": ""
+ },
+ "shas": {
+  "stdout": "abd74330b5ccaad291ee1d2a74739aa7901366f0edf40cf151027cdd61e1c84d  /root/autodl-tmp/hrplus/repo/weights/b_weights.pth\nabd74330b5ccaad291ee1d2a74739aa7901366f0edf40cf151027cdd61e1c84d  /root/autodl-tmp/hr100/trial_b/best_mIoU_iter_3000.pth\na18ff92b4da24d870554f17856983d4be042386cacbcaba0d4e13f3f248ed5e5  /root/autodl-tmp/hrplus/results/E_0916/best_mIoU_iter_1500.pth\n907ef546acf88653c0674dde40a235ba9d4cf2e5dff0c0d62beeaeab9b05d694  /root/autodl-tmp/hrplus/D_0913_retry/best_mIoU_iter_2000.pth\nef63779928a1267c5b7e9050bf82ddb3ed88b62d830a9275d7018fd90272e112  /root/HRDecoder/work_dirs/exp_e4_detail_split613/best_mIoU_iter_36000.pth",
+  "stderr": ""
+ },
+ "cfg_shas": {
+  "stdout": "2d687086e28533d4bb080f31c12c4abb802d5293fc4f2a463f9f0bd8f36452f9  configs/lesion/exp/hrplus_patch_dice.py\n591e4786abaa35b8dfc9a6476c45a8c9eb387544c37e0d56b6a499b683e100b4  configs/lesion/exp/hrplus_mares.py\n556e7c2f1557c6658f6233f1fe1601b8d0b1c8382cc6bdaaaf108a712da3ed54  configs/lesion/exp/hr100_b.py\n65b2c5eb88db2790c1e00dbcb6e18deaf8fc6abc5bf3f148be9ae70d2f06fc1c  configs/lesion/exp/e4_detail_split613.py",
+  "stderr": ""
+ },
+ "mares_cfg": {
+  "stdout": "_base_ = './hrplus_patch_dice.py'\n\n# P1: 语义条件 MA 残差头（冻结基准主干，只训头）\n# 相对 hrplus_patch_dice.py 的唯一变化 = model.type 换成 HRPlusMAResidual，\n# 外加「只训头」所需的学习率/步数调整（主干冻结，头是新建的，需要更大 lr）。\ncustom_imports = dict(imports=['hrplus_patch', 'ma_residual'],\n                      allow_failed_imports=False)\n\nmodel = dict(\n    type='HRPlusMAResidual',\n    source_checkpoint='weights/b_weights.pth',\n    ma_hard_weight=0.0,       # 第一版按 R1 设计只用 Dice 主目标\n    lovasz_weight=0.0,\n)\n\ndata = dict(\n    samples_per_gpu=2,\n    workers_per_gpu=4,\n)\n\n# 只训头：lr 比端到端微调大一个量级\noptimizer = dict(type='SGD', lr=0.01, momentum=0.9, weight_decay=0.0005)\noptimizer_config = dict(grad_clip=dict(max_norm=5.0, norm_type=2))\nlr_config = dict(policy='poly', warmup='linear', warmup_iters=300,\n                 warmup_ratio=0.1, power=1.0, min_lr=0.0001, by_epoch=False)\nrunner = dict(type='IterBasedRunner', max_iters=6000)\n# 头很小，密集验证成本可接受；interval 就是步数（IterBasedRunner，by_epoch=False）\ncheckpoint_config = dict(by_epoch=False, interval=1000, max_keep_ckpts=2)\nevaluation = dict(interval=500, metric='mIoU', priority='LOW', save_best='mIoU')\nlog_config = dict(interval=20,\n                  hooks=[dict(type='TextLoggerHook', by_epoch=False)])\nseed = 42",
+  "stderr": ""
+ },
+ "glm_dir": {
+  "stdout": "NO_GLM_DIR",
+  "stderr": ""
+ },
+ "cache_dir": {
+  "stdout": "NO_CACHE",
+  "stderr": ""
+ },
+ "running": {
+  "stdout": "root        793  0.1  0.0 743748 83292 ?        Sl   Sep17   0:03 /root/miniconda3/bin/python /root/miniconda3/bin/tensorboard --host 0.0.0.0 --port 6007 --logdir /root/tf-logs\nroot        796  0.0  0.0 121504 80180 ?        S    Sep17   0:00 /root/miniconda3/bin/python /root/miniconda3/bin/jupyter-lab --allow-root --config=/init/jupyter/jupyter_config.py",
+  "stderr": ""
+ },
+ "autodl_shutdown": {
+  "stdout": "/usr/bin/shutdown\n/usr/sbin/poweroff",
+  "stderr": ""
+ }
+}

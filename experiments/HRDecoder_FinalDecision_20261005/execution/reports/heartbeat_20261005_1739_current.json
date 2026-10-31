@@ -1,0 +1,55 @@
+{
+  "reports/driver_state.json": {
+    "stage": "SINGLE_SEED_FINAL_SELECTION",
+    "pid": 44281,
+    "time": "2026-10-05T16:54:11.165340+00:00"
+  },
+  "reports/campaign.json": {
+    "stage": "WAITING_FOR_SELECTED_CHECKPOINT",
+    "queue": [
+      [
+        "C",
+        42
+      ],
+      [
+        "S",
+        42
+      ],
+      [
+        "D",
+        42
+      ],
+      [
+        "SD",
+        42
+      ]
+    ],
+    "time": "2026-10-05T16:54:15.675455+00:00"
+  },
+  "reports/final_test_state.json": {
+    "stage": "RUNNING",
+    "lock_sha256": "3146ca1edafdffdae7bf4987524bddc502209929e5d6d5b0e7ba49f12b6bd66e",
+    "time": "2026-10-05T18:00:05.183855+00:00",
+    "reselection_permitted": false
+  },
+  "reports/final_test.json": null,
+  "reports/selected_restore_deadline_guard_state.json": {
+    "stage": "LOCKED_CHECKPOINT_SHA_VERIFIED_ORIGINAL_OWNER_CONTINUES",
+    "time": "2026-10-05T18:00:02.149037+00:00",
+    "guard_pid": 76720,
+    "same_finalizer_pid": 44281,
+    "no_new_training_or_test_process": true,
+    "lock_sha256": "3146ca1edafdffdae7bf4987524bddc502209929e5d6d5b0e7ba49f12b6bd66e",
+    "checkpoint_sha256": "c933256b07556689a7fd199dd80e50d4d0c27eb6b9ea782713d95ec51e6d8d62",
+    "operational_wait_was_held": true,
+    "lost_training_updates": 0
+  },
+  "runs/LOCKED_TEST_seed42/progress.json": null,
+  "p0_progress": {
+    "status": "RUNNING",
+    "images": 111,
+    "expected_images": 227
+  },
+  "time": "2026-10-05T18:08:12.299546+00:00",
+  "free_disk_bytes": 26478727168
+}

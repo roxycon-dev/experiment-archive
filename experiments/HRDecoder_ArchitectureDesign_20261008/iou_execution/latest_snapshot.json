@@ -1,0 +1,147 @@
+{
+  "checked_at": "2026-10-10T17:18:26.404398+08:00",
+  "runtime": {
+    "server_online": true,
+    "checked_at_unix": 1791623924.6363847,
+    "shutdown_command_issued": false,
+    "external_processes_controlled": false,
+    "GPU_CAMPAIGN_RUNNING.json": {
+      "status": "SCREEN_REJECTED",
+      "pid": 64343,
+      "controller_pid": 63572,
+      "identity_SHA": "49ee0537d2802450284844a32405a6da0116ee9b77c2ab519aa9f985d15d47d4",
+      "start_unix": 1791618823.3007941,
+      "canvas": 2048,
+      "batch": 2,
+      "screen_updates": 4000,
+      "max_conditional_updates": 40000,
+      "shutdown_after_completion": false,
+      "shutdown_after_failure": false,
+      "further_revisions_user_authorized": true,
+      "processes_alive": false,
+      "end_unix": 1791623667.7907465
+    },
+    "GPU_CAMPAIGN_OUTCOME.json": {
+      "status": "SCREEN_REJECTED",
+      "exit_code": 0,
+      "time_unix": 1791623667.7907465,
+      "start_unix": 1791618823.3007941,
+      "completion": null,
+      "final_validation": null,
+      "fresh_screen_rejection": {
+        "status": "REJECTED",
+        "identity_SHA": "49ee0537d2802450284844a32405a6da0116ee9b77c2ab519aa9f985d15d47d4",
+        "decisions": {
+          "4k_floor": false,
+          "private_net_gain_at_least1pp": false,
+          "all_classes_nonzero": true,
+          "no_class_IoU_loss_over2pp": false,
+          "HE_MA_FN_FP_tradeoff": true
+        },
+        "time_unix": 1791623622.4327273,
+        "screen_updates": 4000,
+        "full_val_counts_verified": true,
+        "mIoU_4k": 26.269022697070994,
+        "base_mIoU_4k": 32.518165701262426,
+        "private_gain_pp": -6.249143004191431,
+        "calibration": {
+          "HE": {
+            "FN_ratio_final_vs_base": 1.3839245865087086,
+            "FP_ratio_final_vs_base": 0.2719637650596886,
+            "pass": true
+          },
+          "MA": {
+            "FN_ratio_final_vs_base": 1.247852813296494,
+            "FP_ratio_final_vs_base": 0.2925721979596416,
+            "pass": true
+          }
+        },
+        "criterion_registered_before_results": true,
+        "test_accessed": false,
+        "accuracy_guaranteed": false,
+        "goal_achieved": false
+      },
+      "critical_collapse": null,
+      "test_evaluation": {
+        "status": "NOT_RUN",
+        "reason": "Fresh screen rejected or training incomplete"
+      },
+      "server_kept_running": true,
+      "shutdown_command_issued": false,
+      "external_diagnostics_controlled": false,
+      "goal_achieved": false,
+      "own_RAM_retained_for_authorized_next_revision": true
+    },
+    "DEADLINE_GATE.json": {
+      "status": "PASS",
+      "measured_screen_estimate_seconds": 5242.173397541046,
+      "checked_unix": 1791618823.2996173,
+      "user_latest_server_available": true,
+      "reserve_seconds": 180,
+      "full40k_conditional_on_screen": true
+    },
+    "DEPLOYMENT_DISPATCHED.json": {
+      "status": "CPU_TO_REAL_GPU_PIPELINE_DISPATCHED",
+      "pipeline_pid": 63572,
+      "time_unix": 1791618759.5356238,
+      "fresh_run_count": 1,
+      "server_kept_running": true,
+      "external_diagnostics_controlled": false
+    },
+    "CPU_TO_GPU_DISPATCH.json": {
+      "status": "CPU_PASS_STARTING_REAL_GPU_GATE",
+      "controller_pid": 63572,
+      "time_unix": 1791618762.3960311,
+      "fresh_only": true
+    },
+    "own_process_checks": {
+      "pid": {
+        "pid": 64343,
+        "alive": false,
+        "cmdline": "",
+        "matches_current_task": false
+      },
+      "controller_pid": {
+        "pid": 63572,
+        "alive": false,
+        "cmdline": "",
+        "matches_current_task": false
+      }
+    },
+    "own_session_id": 63572,
+    "own_session_live_processes": [],
+    "own_RAM": {
+      "pid": 39434,
+      "bytes": 103079171144,
+      "alive": false,
+      "matches_own_RAM": false
+    },
+    "GPU_status": "utilization.gpu [%], memory.used [MiB], power.draw [W]\n0 %, 1 MiB, 19.90 W\n"
+  },
+  "downloaded": [
+    "reports/iou/VALIDATOR_LOCK.json",
+    "reports/iou/dispatch.log",
+    "reports/iou/DEPLOYMENT_DISPATCHED.json",
+    "reports/iou/CPU_gate.log",
+    "reports/iou/CPU_TO_GPU_DISPATCH.json",
+    "reports/iou/smoke.log",
+    "reports/iou/DEADLINE_GATE.json",
+    "reports/iou/SCREEN_STARTED.json",
+    "reports/iou/training.log",
+    "reports/iou/GPU_CAMPAIGN_RUNNING.json",
+    "reports/iou/LAST_RUN_POLICY.json",
+    "reports/iou/GPU_CAMPAIGN_OUTCOME.json",
+    "training_runs/iou/GPU_SMOKE_PASS.json",
+    "training_runs/iou/protocol.json",
+    "training_runs/iou/performance.json",
+    "training_runs/iou/progress.json",
+    "training_runs/iou/validation_progress.json",
+    "training_runs/iou/val_04000.json",
+    "training_runs/iou/SCREEN_REJECTED.json",
+    "iou_execution/screen_protocol.json",
+    "iou_execution/WORKER_RAM_PASS.json",
+    "iou_execution/architecture_spec.json",
+    "iou_execution/validation_reporting.json",
+    "iou_execution/CPU_ADAPTER_PASS.json"
+  ]
+}

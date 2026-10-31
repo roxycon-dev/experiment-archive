@@ -1,0 +1,859 @@
+{
+  "run": "Q_DDR_seed42",
+  "status": {
+    "stage": "COMPLETE",
+    "completed": 16000,
+    "endpoint": 16000,
+    "total_seconds_this_invocation": 8352.324739255011,
+    "identity_sha256": "b3e4cea88c5eeda8923a9c3950c0f67e74f02c28057730f2dd2d19154c500396",
+    "updated_at": "2026-10-03T15:23:51.631883+00:00"
+  },
+  "files": [
+    {
+      "path": "runs/Q_DDR_seed42/checkpoint_u12000.pth",
+      "bytes": 601023387,
+      "sha256": "131263eae5b20d12e4937f710e0af4378ee68889090c62f44ac3a4a61163efc6"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/checkpoint_u16000.pth",
+      "bytes": 601023387,
+      "sha256": "0c525c901c8d4d6e4192c9de40c63a6d12710b76494f0c552dc39cbf6b67cb71"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/identity.json",
+      "bytes": 725,
+      "sha256": "9aa285ab2bdc15c24ef94ad04842e9c709f8949f2f0f59648d8e048772b1a547"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/initialization.json",
+      "bytes": 284,
+      "sha256": "6e43bfe25127c8972ed65199a49a25648f8d2b05b40f5490b0a5414da77576c1"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/last.pth",
+      "bytes": 600980705,
+      "sha256": "4471ec431f66db36393e129dd2d2024b92f82d91af80df6d6ab1933ec03afca0"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/status.json",
+      "bytes": 263,
+      "sha256": "8ed664b5131520ec5c74fd7dfa4a7690a6c2f1ddc8738be75a10e5cca0202859"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/train.jsonl",
+      "bytes": 247410,
+      "sha256": "22acbf68189d1cf954ed4e4030de860d6bb5b34a1a2c942bc4e9f7cbbcb9a58e"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u12000/007-1774-100.npz",
+      "bytes": 27120429,
+      "sha256": "12c3fab112ef17cff0e06213e8365abeba634db670685fc80652787e3cb9cc94"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u12000/007-1782-100.npz",
+      "bytes": 26771986,
+      "sha256": "a7de208227935775bc7bac079cb42ac66b11962f026f59ee737fc34c01a7648d"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u12000/007-1829-100.npz",
+      "bytes": 32618156,
+      "sha256": "5748eb5fb3d5263d69f4d366a51afe4afe7335938a06fa7a72d981c5fa569965"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u12000/007-1900-100.npz",
+      "bytes": 25596173,
+      "sha256": "a03eaf32bf7d1253ab77f0e3e00c6e3432ff066e6a7f03351fa134d95c44ba72"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u12000/007-2167-100.npz",
+      "bytes": 71819735,
+      "sha256": "cde7b8681b9335d373cc1f07818f549110442eb1c722af7753564d20a87514f4"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u12000/007-2210-100.npz",
+      "bytes": 72007836,
+      "sha256": "ba6dd5bfdad61e6a5f2a9011ec66a4720c25d385dbf77366683103c7b1fab0ec"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u12000/007-2345-100.npz",
+      "bytes": 103061754,
+      "sha256": "3647f3379aff45f79e00b634624db2c115dfb0088ab8f35b17a6183a3d21cad9"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u12000/007-2369-100.npz",
+      "bytes": 27140332,
+      "sha256": "d6abf88846baaa1a717c9c36666501dc8191c9d33a7c7be5dfece11338c430e7"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u12000/007-2371-100.npz",
+      "bytes": 26925393,
+      "sha256": "1f41c7d5fbab1e00b5483cf10acc7d769c4ba1d643c6d41b3d96e446461b983e"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u12000/007-2460-100.npz",
+      "bytes": 38886012,
+      "sha256": "d2e095a1c07054ffcd92ac9b969756d7317a44bb51b75b6c8519ee1c1a019150"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u12000/007-2525-100.npz",
+      "bytes": 29669759,
+      "sha256": "11cd10c8479f4ad902726e714ebc5f5aeeb735230721008e47727296a86b8783"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u12000/007-2697-100.npz",
+      "bytes": 57066330,
+      "sha256": "8789d4972f56a2998c10c9278246d98736e2675d98deb2f77b365493e9f0d74b"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u12000/007-2704-100.npz",
+      "bytes": 57438396,
+      "sha256": "27e1578482311053a075e6d12a9e87678f8180e9eb7f4995b503fd7e53a13b04"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u12000/007-2769-100.npz",
+      "bytes": 26752787,
+      "sha256": "b7de679bf9f260393fe56ca707ef8f750ccacc54ae99997ed8e864eaf8cba70d"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u12000/007-2809-100.npz",
+      "bytes": 26910350,
+      "sha256": "25916210c6d2f5cb2d7ea5c4ee7d0a66b3822bd2210c5ad7ceba06f08e2ddfff"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u12000/007-2983-100.npz",
+      "bytes": 60007310,
+      "sha256": "75e5ca2e063e048bc7fb76a04361bffe58b6455129dc15da534e58c0bf1f4355"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u12000/007-3413-200.npz",
+      "bytes": 23821683,
+      "sha256": "d3ac132ced3ff7d62ff90a15b6d73ca5077d124aab518a31a54ff7c1090309be"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u12000/007-3414-200.npz",
+      "bytes": 26831541,
+      "sha256": "204b7c798aeeb41a7d25d25ab7c7f641e100ef5f7b45d41bf380eaa2b1b5450b"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u12000/007-3420-200.npz",
+      "bytes": 25830154,
+      "sha256": "596ff3fa68b6667e49c013339c5391813b9b75675bf3834235622f749af71314"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u12000/007-3500-200.npz",
+      "bytes": 26680283,
+      "sha256": "d41f960c48df0e6f53156941f97798938473d4c6e27d61a23e6bf3fc332bd53a"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u12000/007-3541-200.npz",
+      "bytes": 55612605,
+      "sha256": "38cbdf8e93b08ff5c83d7d7969ec51f16609a4d73877d17afe10c56bcea29b67"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u12000/007-3567-200.npz",
+      "bytes": 57092417,
+      "sha256": "83247a13a2f82ab345cf65191c450b1b6fc725a797cbf95b24d14c60a03a68fd"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u12000/007-3628-200.npz",
+      "bytes": 47017778,
+      "sha256": "b554644a30c6191351d2e977208060b4faa57c95c69740cb5f308aadc64bc7d7"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u12000/007-3727-200.npz",
+      "bytes": 72492488,
+      "sha256": "334509abccf50a2e53bf80511148d1083facf658323b20276c013e8ef8007d94"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u12000/007-3873-200.npz",
+      "bytes": 27735030,
+      "sha256": "85a4f953a78ba926f5700b2d55b27c2c2af7237744f87a09ec51d93d3d23c2ee"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u12000/007-3921-200.npz",
+      "bytes": 22105975,
+      "sha256": "abab8af4608a8d084aca0a974a49e63ab908c860d8110530c1d3a411fc4593cc"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u12000/007-4007-200.npz",
+      "bytes": 38430642,
+      "sha256": "230b62f8065e47803391dcf827f43ee89428e96616431e677ec69f80439556a1"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u12000/007-4033-200.npz",
+      "bytes": 54086481,
+      "sha256": "0dc0c79f5e59235031f6885ecb8ed5bc7cb582f11e51007157ae8c7b9bcc4cfa"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u12000/007-4034-200.npz",
+      "bytes": 55568177,
+      "sha256": "3ab10b63ff6f008dc8dd18c8426bab095439b09c6d30e5c00ab034b5923a6bb3"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u12000/007-4035-200.npz",
+      "bytes": 53883236,
+      "sha256": "90f00b21c400848d194328d7848d068df0369eb74d5c9be3fb5f1ef325e8fc98"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u12000/007-4145-200.npz",
+      "bytes": 31517892,
+      "sha256": "de6ae3a0b89261f5eb3102c316b0f3bcc01027a1b12642f0bc2b8e1faabe99aa"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u12000/007-4171-200.npz",
+      "bytes": 29480938,
+      "sha256": "84d0ded8f9705bb1b5573316a1fd9b890818a31da542f2f83bce02fe4b8fde06"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u12000/007-4203-200.npz",
+      "bytes": 27619803,
+      "sha256": "74cbebf4a5165384ce898dbceed67f8b2643789cf8b8d27142580bf1173d06ce"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u12000/007-4224-200.npz",
+      "bytes": 27173291,
+      "sha256": "29172f62abea36c117b07af323cd54e2d7ceed578760005953fe63b5979c5622"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u12000/007-4479-200.npz",
+      "bytes": 55706965,
+      "sha256": "407391afa8ae9a6cfebe3603bfa53193a470dfab8e5c17c780d630c0ecdb3440"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u12000/007-4482-200.npz",
+      "bytes": 36053038,
+      "sha256": "2d66c2708a09e463d0a922a3833e4b753f7f424e6afbfa5e9699b418200c0d53"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u12000/007-4548-200.npz",
+      "bytes": 47426344,
+      "sha256": "c08b551d369903f24b96f3a23ca900ffac3667a9921f759c6d3ddee7cccc48f7"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u12000/007-4576-200.npz",
+      "bytes": 25642146,
+      "sha256": "4d5209bb126c7ece237f8a9cd59555329be5e6b82e982347b15f03c7d1057192"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u12000/007-4743-200.npz",
+      "bytes": 30656135,
+      "sha256": "caddd2f029fccc58f4dbeb8e40ad7562a7cc40c128f37719413c1f6c178b33e4"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u12000/007-4960-300.npz",
+      "bytes": 25881574,
+      "sha256": "ddf96aa80e19342049e89f2508ad88a0549983ccba3f3cd0fb3fd6f21fa1f6de"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u12000/007-4980-300.npz",
+      "bytes": 56397581,
+      "sha256": "b28a706d4ebe2628ac586936b77ec6824f5f63bf1c4fc95e9f04f9cef8add6fb"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u12000/007-5063-300.npz",
+      "bytes": 25496106,
+      "sha256": "8f1a9ef92c55b1ae3d252374fd1ef9b8d3f766447e9c7c7ebf497f69c8cb6ae4"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u12000/007-5172-300.npz",
+      "bytes": 29922316,
+      "sha256": "fedbf504d25b373af54902ea75e0da3196e6f6ddec7ac5358fee0cbddecc3ebe"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u12000/007-5269-300.npz",
+      "bytes": 31340066,
+      "sha256": "9d0dce1c8c79a79b0479ce3b6a651094845f614e405d7bfbfb0d6759a971ec99"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u12000/007-5434-300.npz",
+      "bytes": 27275873,
+      "sha256": "9621051381ae3124f4a45d03d145020c75d4ec3a660a5acfca908d0e6604fdee"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u12000/007-5443-300.npz",
+      "bytes": 28506443,
+      "sha256": "fe24a3edd2bd229924f88e6aebe15d2fac50e2297c2da3f7bbe5a83bf9b047f6"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u12000/007-5470-300.npz",
+      "bytes": 28929972,
+      "sha256": "39c4d09f862a559b1b298c8908864b9b792ff970c10727fb981e57881d2eec7a"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u12000/007-5474-300.npz",
+      "bytes": 27465722,
+      "sha256": "0640b60ba28d9bce9df814f569d39f75030a72e11c5bc14050072fdb76990df6"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u12000/007-5504-300.npz",
+      "bytes": 39284764,
+      "sha256": "89d50d55a68645dddfc9ba378dc367e75f156f42b72032cf05bd35eb9bc87b99"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u12000/007-5506-300.npz",
+      "bytes": 39586898,
+      "sha256": "4566ecc848290b7aa63bf747158339892470909f6237be08ba9a644bd61e32b6"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u12000/007-5672-300.npz",
+      "bytes": 59024352,
+      "sha256": "267f9af0e576bdbce2859d0db3705dbdf1ba59f7615ff2a1bf51d06513619ebd"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u12000/007-5869-300.npz",
+      "bytes": 27187055,
+      "sha256": "0950e2e514be636201f7f1df7c412a4f11ef8aa0b2a66468d42363b79c2ab3f7"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u12000/007-5938-300.npz",
+      "bytes": 30816828,
+      "sha256": "2025f675afd8dcdf19f2eab2a721c4a1394e921be89dc7781f11528ebe8fc6c1"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u12000/007-6054-300.npz",
+      "bytes": 62430694,
+      "sha256": "cba5a7f6eb9fdf9ae69e94b946dd0d3187c3c35e79f25ef68278dc6037547969"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u12000/007-6148-300.npz",
+      "bytes": 31079004,
+      "sha256": "27f0b698d21624f9cc3496eca867bf8d477153659768b7e4d91cbf3fc4f40e1a"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u12000/007-6220-300.npz",
+      "bytes": 51472257,
+      "sha256": "d6c291e05765187006012977381ed038a470f5e7791b01807d561671efc1f3cf"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u12000/007-6519-400.npz",
+      "bytes": 32915491,
+      "sha256": "45646170fd542b5ad62c364e38de5e235fa8ec998dc581c7c296c429a094b1ac"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u12000/007-6520-400.npz",
+      "bytes": 31865468,
+      "sha256": "a3f5efd26dbb52a3ae82da9d288a5514e8fb982504156893c40f7e0db2dfba6d"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u12000/007-6551-400.npz",
+      "bytes": 28371238,
+      "sha256": "37400556117e6419ef1db5dff092009c934d0ea94b595595da72386091224e45"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u12000/007-6577-400.npz",
+      "bytes": 28937843,
+      "sha256": "0370ee90115de9383d5d213d9db40a9fa685a208c1b746c0c4711ed2ddbefb90"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u12000/007-6686-400.npz",
+      "bytes": 17077525,
+      "sha256": "d38d5effa1e4e70ead148967b097b6a5043e98ebc0e3a2d3a4c04ca1d5f91530"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u12000/007-6722-400.npz",
+      "bytes": 17650506,
+      "sha256": "6eb6b148b68bb9f970601c211bd9de1a831f3184b2ff54c5d1cae9b9b38270fc"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u12000/007-6734-400.npz",
+      "bytes": 61948503,
+      "sha256": "7f1edb28ca7652e89239afe4ed1e713c4e146e05381d39d5282dfb309450722f"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u12000/007-6811-400.npz",
+      "bytes": 28025326,
+      "sha256": "d7abacc3a878292970c9535b307ba21ec6b6e44827ada4e0cfadd5b3c7bc821f"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u12000/007-6815-400.npz",
+      "bytes": 27982706,
+      "sha256": "5352fe80d287917974daf2b29a60fa5a8d2bc27f89016a40b4a9190b50cc2ffe"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u12000/007-6847-400.npz",
+      "bytes": 28456008,
+      "sha256": "a220d8acc2729d7c184ca4596be00a6ce054ccfda455b37662f04f5dd4884f58"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u12000/007-6894-400.npz",
+      "bytes": 34613555,
+      "sha256": "f9228f98bcf052a7a23555878db9a260e76a3a45a9baa2db0bb3acb25efb14bb"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u12000/007-6912-400.npz",
+      "bytes": 23951843,
+      "sha256": "eca4605c8e98dcba1ebe1ef8f6bb65e0ccfd39ace15d2c32e613bec048a54cc8"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u12000/20170503161702100.npz",
+      "bytes": 26883721,
+      "sha256": "dfa86a1093be7b06f77ce6b60aa5ec4d8ecae3579d37f99c0085144b3121b0d8"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u12000/20170503161702278.npz",
+      "bytes": 26781747,
+      "sha256": "6ec9f1a5d5b3ad77592d316232a741cf172a9af7ad66e23667d1913111142486"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u12000/20170509100155767.npz",
+      "bytes": 20319957,
+      "sha256": "e3b8f03e0751f8f85b9128c76e13226566a3386b66cc2c90d207097053fdcdee"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u12000/20170510152714920.npz",
+      "bytes": 27687346,
+      "sha256": "24d0ecd1d3408ed2829252709f7db998f47e8a7c3181d97cada4947f4668d6bf"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u12000/20170518142454730.npz",
+      "bytes": 26205911,
+      "sha256": "6795747d09c749591d5031c4f92baf7514f195065ef36e0a7c36a9a3df907655"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u12000/20170522100404106.npz",
+      "bytes": 31141181,
+      "sha256": "61b0650110b9534f0a4667c53e7f3d7dd9948b33573a80759988698d9f565eeb"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u12000/20170609154552424.npz",
+      "bytes": 36019699,
+      "sha256": "89f9e3376d9577a2efc459670a0f8a95a9eaa36d5e0217f86e26278ac6b0ed01"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u12000/20170629163635747.npz",
+      "bytes": 29321930,
+      "sha256": "ba8ef55bbb9fd18f339c0b191ce3b3bc902ae0c506de68d8fd11f4adc794284a"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u12000/metrics.json",
+      "bytes": 91234,
+      "sha256": "16c39d3ce78b8b6f4ef4e7d0f8b92c9e42b88060b3fcd06955546ec0325684c7"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u12000/progress.json",
+      "bytes": 65,
+      "sha256": "e07503d42c041cbcb489a1976e3d90bbc8b1f777ecd1891a74240b2ea9c179d4"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u16000/007-1774-100.npz",
+      "bytes": 27414767,
+      "sha256": "07eefd008cd53ae24138e7aa7605b8e45283ee91b0e12ace13b6f03c5612f2e0"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u16000/007-1782-100.npz",
+      "bytes": 27398135,
+      "sha256": "7563bd9f6547b177583f2538e1a41615ad21e35cddb2b58b484fc8bb6290b99b"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u16000/007-1829-100.npz",
+      "bytes": 33386065,
+      "sha256": "022a41eda337e4b67097cf76bb59c27960dc0a649c2866d89ce27baf076a9667"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u16000/007-1900-100.npz",
+      "bytes": 26271576,
+      "sha256": "5546cbc39bfb5acd04605537beec74f87f30d378eef3eea5cd6a875c9e89d9bd"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u16000/007-2167-100.npz",
+      "bytes": 73019569,
+      "sha256": "4e38cca7ebc554c2271ce0c31d95be40e27c09721f6c5487073bc988a538248a"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u16000/007-2210-100.npz",
+      "bytes": 72340812,
+      "sha256": "1e381ad65f61ea1ca39f31fd94ee31375d837caa96815c038c37f075c087edcf"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u16000/007-2345-100.npz",
+      "bytes": 100229088,
+      "sha256": "7da3d88c0994508b5de048a782a18ac17abafe43e9800a3784f28ebca98f5ec2"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u16000/007-2369-100.npz",
+      "bytes": 27501790,
+      "sha256": "ec0047e0b152fe253e14458604538153e0910aaaada58ec854362ff7002e5381"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u16000/007-2371-100.npz",
+      "bytes": 27717407,
+      "sha256": "ae37f731e3a92fa5c723e5a9c25c1b21d7d031a34c6a4e8e2e5536c33928f7d6"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u16000/007-2460-100.npz",
+      "bytes": 38520398,
+      "sha256": "7163f9ab2d6386e91edd0ebfa126ec0ecac0e5f2c8cec27170c12fa351622687"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u16000/007-2525-100.npz",
+      "bytes": 30455656,
+      "sha256": "d619005f9d93e51aa40249d8107d0d9b2970e8ac2cd3aff5f83bf3fab6b3ce74"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u16000/007-2697-100.npz",
+      "bytes": 57350473,
+      "sha256": "bf2bfde87cdbdc95da1e341b892c6dd9fce416effb4d30ac6cb5594a20116545"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u16000/007-2704-100.npz",
+      "bytes": 56752587,
+      "sha256": "045380ffc258a9b229523d3c1937f38fc5809a6b16181ed727ce7c220dd542fa"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u16000/007-2769-100.npz",
+      "bytes": 27059929,
+      "sha256": "d90c03df52b5656beb941beb96860fd10c63b0433ce5d4bce7331033a12b85fd"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u16000/007-2809-100.npz",
+      "bytes": 27396959,
+      "sha256": "1366dbd89ea2b792b2345c2bf664a6dcbcaa6a610d1b663d97fae9bcdfe549ea"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u16000/007-2983-100.npz",
+      "bytes": 60930579,
+      "sha256": "1e0cda6ce527801874e9d539b4639305185f40cac65a47b27355660c17dacabf"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u16000/007-3413-200.npz",
+      "bytes": 24169433,
+      "sha256": "356aa71d709339ae257d2119dad1b22aad2d85a8f046da2fa024c7aec655888a"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u16000/007-3414-200.npz",
+      "bytes": 27545365,
+      "sha256": "6465cdd2f6d63726da63f37e797df0b7e7af00b816c39f7aa7c48fcc9439a8b2"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u16000/007-3420-200.npz",
+      "bytes": 27243980,
+      "sha256": "088399f2a2d5cc812e3e844ba4d429e3729c0a5909383b577e738e198b9b8db3"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u16000/007-3500-200.npz",
+      "bytes": 27199638,
+      "sha256": "bff663fdfdbfdbe55c60dc54c10acd7b0e221e63c829597cc3204b84b59b7c0c"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u16000/007-3541-200.npz",
+      "bytes": 55277581,
+      "sha256": "646175706c49bf2884a15c251c7854e86a7bbec0f2d9ca6dc072960714231e81"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u16000/007-3567-200.npz",
+      "bytes": 57525664,
+      "sha256": "b127149e0f8860bb29e04fe957d096e88892e8a17338a905cf0606b6fd94f473"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u16000/007-3628-200.npz",
+      "bytes": 47133720,
+      "sha256": "6831f9d08eb927138b04c7f8c01ffe7c8cefc5b3f30feec2739556e214fa2da1"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u16000/007-3727-200.npz",
+      "bytes": 71637753,
+      "sha256": "fb6ef62f3949ae31fb2a15911df01bfd0b6ac1f5d3b692d3902eaabb811010af"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u16000/007-3873-200.npz",
+      "bytes": 28240824,
+      "sha256": "c3f9b144ecb15e38b0051a9d8cb5c2fef19dafeef452c8ae81d4e147c21d092e"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u16000/007-3921-200.npz",
+      "bytes": 22808957,
+      "sha256": "86f762efaa2c02c5ec6c2c94e8eb0c25066828aa6f4306fbb788b97d7712dc0f"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u16000/007-4007-200.npz",
+      "bytes": 39652408,
+      "sha256": "51d729787a80ba2cb95d8d6a7ead4485ee2cd2952f92f7d99ff6de90a3cd9662"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u16000/007-4033-200.npz",
+      "bytes": 54355243,
+      "sha256": "164cc2c3e2e98668331e917ad842e1eadb164f102fa97f90e4f25a75ed6bcb92"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u16000/007-4034-200.npz",
+      "bytes": 55832126,
+      "sha256": "cf884a37b32d7a5f99ecac6565cf907366a04db4d669aec4668f593033dc8c0e"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u16000/007-4035-200.npz",
+      "bytes": 53475667,
+      "sha256": "f26eaab9c72a89ef8880a78537cc35cb0e2a77b3779d3c8e82dcb7aaa5834d02"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u16000/007-4145-200.npz",
+      "bytes": 33330909,
+      "sha256": "ddd73c34200f2240d70834bea00532c01f9b1f617eb4fece072410b4dd9fe908"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u16000/007-4171-200.npz",
+      "bytes": 29481141,
+      "sha256": "32e0db3f21acfb16f6d366edd0b331af340f08dd9cd11e4f1563df0e1e2abb75"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u16000/007-4203-200.npz",
+      "bytes": 27661104,
+      "sha256": "9b2e3c8d8c95b56158a13b963586d7e006fd8af3a716e345a7727280564f9103"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u16000/007-4224-200.npz",
+      "bytes": 27335098,
+      "sha256": "2b2f82b6a9aec0362d3d6fde27839f7a47afa66d52a01b3aabc0ad94366dfae4"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u16000/007-4479-200.npz",
+      "bytes": 55908313,
+      "sha256": "31318f75d4e0eebe38cac24e29c4faae43e1e3ad39410e6ae7f4dd0857b0269f"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u16000/007-4482-200.npz",
+      "bytes": 36643768,
+      "sha256": "5d9d7f9581c5d22cc8cd52ba3a721ccad1740153467cc4cea2fd5c4dde55f96c"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u16000/007-4548-200.npz",
+      "bytes": 47516506,
+      "sha256": "c3a442523b53fc5337cb02de1d42edf68487ebdd9836cbe189743a795a633f0c"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u16000/007-4576-200.npz",
+      "bytes": 26584278,
+      "sha256": "59d601efdae7c7ad7ebf88a692980e10c9f21e3f863baf13694bdad61b1150e4"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u16000/007-4743-200.npz",
+      "bytes": 30822022,
+      "sha256": "72914afc4c3564711a2e40dff738f770aea2ad44c26bc9a35d76671f993de893"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u16000/007-4960-300.npz",
+      "bytes": 26782610,
+      "sha256": "6cff8e6f18b2470bbf81436fdb093a70f83857b70242b60c0ff04657749a262b"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u16000/007-4980-300.npz",
+      "bytes": 56722728,
+      "sha256": "880e6e248eee7f2fe8303f1bec6ea3a9616dc584d6e4592ec2f3bddc716021cd"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u16000/007-5063-300.npz",
+      "bytes": 26239850,
+      "sha256": "ac71110a53d7ab4b0149943e47e8ba5e24ea866d0d47cc69839511e524ef896b"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u16000/007-5172-300.npz",
+      "bytes": 29681600,
+      "sha256": "b30b0b5216fe47f54864d8f01bd6d957f6a68787027868704b31bc6075af4570"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u16000/007-5269-300.npz",
+      "bytes": 31107951,
+      "sha256": "69a5e79533e50a5480279f0ed9ef4c8e094a2c342bdbfa5a565c09f7375e1d32"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u16000/007-5434-300.npz",
+      "bytes": 27977222,
+      "sha256": "bd5ed0eb75537b26057e144fa87b28fc4c5efabd0bbe0f244f422cd2dbf48154"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u16000/007-5443-300.npz",
+      "bytes": 28678872,
+      "sha256": "64e24601daf9f4a24e0d8daded15d745b34996b259cccc040eea1e8ba0681919"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u16000/007-5470-300.npz",
+      "bytes": 28474832,
+      "sha256": "43a8b7ad92a671146e2cb2475c7f4dab37aa63584f10d64c876968a4eb03c2d3"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u16000/007-5474-300.npz",
+      "bytes": 27789159,
+      "sha256": "b4d35e6e3b759c990e00396db03938c24b514516b897a26706338f3048686d87"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u16000/007-5504-300.npz",
+      "bytes": 38788934,
+      "sha256": "e6e4e939ee378f1ac117856c6a950312fab3614b85701781c33f78bb9235b40b"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u16000/007-5506-300.npz",
+      "bytes": 39507719,
+      "sha256": "76babf37f0ea1791126c33660e3ac6657aceef8b7f585887231e911cd7beb6c5"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u16000/007-5672-300.npz",
+      "bytes": 58012548,
+      "sha256": "ec7be412f1fb9d4cc6be634417e66a620748d098c95eb0dce9c65da243faad89"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u16000/007-5869-300.npz",
+      "bytes": 27315665,
+      "sha256": "5bd3dde3ace1461aa5f1986d78bbe88156cdd8ff05bb0c90c3965cca2b54e8d4"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u16000/007-5938-300.npz",
+      "bytes": 30875026,
+      "sha256": "5c3fb8c67b7f641a0e5bfa939a3e6da398f6bb7066b9ceeb082c36a72ff1eb53"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u16000/007-6054-300.npz",
+      "bytes": 62570148,
+      "sha256": "d91f3e47494b733fb78eb0a59caa0100532123af470457311628d23521a75acd"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u16000/007-6148-300.npz",
+      "bytes": 31296358,
+      "sha256": "565ebc8c1f3e03cec6c882657e5e88f5c6334bf1e479a0365fc248df951c4b81"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u16000/007-6220-300.npz",
+      "bytes": 51511471,
+      "sha256": "74189b4120fedcf4a9d442b9b220bfc3ffbedea07bf2b8e868b9690e325e4e06"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u16000/007-6519-400.npz",
+      "bytes": 32756593,
+      "sha256": "e925dc51080cd1035c4f53338a6a6a7ef0fb553fe28b51994c8e8a0c0bd8b2fc"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u16000/007-6520-400.npz",
+      "bytes": 31874877,
+      "sha256": "6a50ba1b3ef68ba01b8f924463d207667569e62dc772fae698a6ba787aee0738"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u16000/007-6551-400.npz",
+      "bytes": 28377770,
+      "sha256": "d2dcde407583c7162a4f3ded0856734e745484fb47fe6f7d38894cde54605e5c"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u16000/007-6577-400.npz",
+      "bytes": 29044851,
+      "sha256": "eed56a31ceed924eaf5244343a287cd0fa1ba6f3b40c967943d6b9e4471990bd"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u16000/007-6686-400.npz",
+      "bytes": 18133521,
+      "sha256": "9e5e4397d3ee02462bb8362d7aab6c7977c35dec550db7d09ffbc54a2b6327e2"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u16000/007-6722-400.npz",
+      "bytes": 17860260,
+      "sha256": "ae5da198a68f18a171aee73cf46ace1462fc0d170cc72ccccdd890f2430eaa27"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u16000/007-6734-400.npz",
+      "bytes": 61964289,
+      "sha256": "96a30a7a1c12f99079685790923c8b44fac66af1e169b3865648c5854ebb4acf"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u16000/007-6811-400.npz",
+      "bytes": 28139367,
+      "sha256": "75cead64a40fb673bd68ef04bf808a489d355f6181fca09c36229613cd97fc74"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u16000/007-6815-400.npz",
+      "bytes": 28073759,
+      "sha256": "13180518cfa0310cae5253164ff4d0c5c7ce71af1f7087bd9d4dc5022b9bc8d9"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u16000/007-6847-400.npz",
+      "bytes": 28651825,
+      "sha256": "7061551e72987392206e7ef1bd2e47e2866ed5b8e06b5f1081abecc310f1da8b"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u16000/007-6894-400.npz",
+      "bytes": 34465400,
+      "sha256": "5f6cebb1ce9274cba51dc6c0b1b55d9bf6c20dfcc3080d53fced72e4e330b9bf"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u16000/007-6912-400.npz",
+      "bytes": 25012585,
+      "sha256": "fc90ce2ed72924edef440faa26f7dac97c8ed6e59385cada05ca74414edcb9f0"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u16000/20170503161702100.npz",
+      "bytes": 27119311,
+      "sha256": "e9134f098ede9c10e711c05767d1fabbd2892b05b697cab9172616f97022d737"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u16000/20170503161702278.npz",
+      "bytes": 26913066,
+      "sha256": "2ea14d339ced99f4720d333340502b9ed62aef24e6d51c79159d5c7d2cf268e3"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u16000/20170509100155767.npz",
+      "bytes": 20758459,
+      "sha256": "eb4d9547ee1354e722e47beefe731e8dd6ea3946d290979b1341001e587dae38"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u16000/20170510152714920.npz",
+      "bytes": 28273212,
+      "sha256": "5386b7f88af27b0415834a97d91142ce1d9760dedd74b2b136d3332f64fd195f"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u16000/20170518142454730.npz",
+      "bytes": 26721103,
+      "sha256": "5b84bc3f48fd7d86ee1dfb60b0e9f81d7735c2d8967f37a576fb019a3dde6027"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u16000/20170522100404106.npz",
+      "bytes": 30943066,
+      "sha256": "e7da0707078c388003c6bde8fc77b37ab3bd57309462e86531e1f77e77eea95c"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u16000/20170609154552424.npz",
+      "bytes": 36487329,
+      "sha256": "ffdbc7ec2c6674ba022294e4d2201abaa280820f979538adb6a6ad2a5e8522e4"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u16000/20170629163635747.npz",
+      "bytes": 28840777,
+      "sha256": "df64b6d9328278f1bd7996b81232292f4353ab6eb072bd9c815ea6942777d6fc"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u16000/metrics.json",
+      "bytes": 91271,
+      "sha256": "cb5ed0832e885af4fbd3cabec8ed09d690049ee25278de7290e0aa74219d7737"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u16000/progress.json",
+      "bytes": 65,
+      "sha256": "ef7bec31526980bd4f4352b6a5ab60f4a68739f692733ac238443f54ab0ee35f"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u2000/metrics.json",
+      "bytes": 74785,
+      "sha256": "39811b5d2e91dbcf9299b3c66ccf433b6f5e6de63c86ad2694c9c2fe171be707"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u2000/progress.json",
+      "bytes": 64,
+      "sha256": "e336ab3bad3ff3e574a597ad63f57337c9d3c79412b6ce29274ad5cd31fad831"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u4000/metrics.json",
+      "bytes": 74788,
+      "sha256": "0b7ac5c9cbc2f83367e98d480cc0091d20afb409d35d0d925991ddf06999fbbf"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u4000/progress.json",
+      "bytes": 64,
+      "sha256": "5a81b58976c75ffaf78c68a853c5c91829ca0fc8650b5378f677e04dba7c92bf"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u8000/metrics.json",
+      "bytes": 74837,
+      "sha256": "c1ef79fdf7d05b1f2746b8c609faaa2513e3647745fbe42d6522cf7dab1f4ed1"
+    },
+    {
+      "path": "runs/Q_DDR_seed42/val_u8000/progress.json",
+      "bytes": 64,
+      "sha256": "482fc08af7cdcfaf6274ccba83467ac6208ae33bba2a6697040acc355db563f7"
+    }
+  ],
+  "created_at": "2026-10-03T15:29:13.750588+00:00"
+}

@@ -1,0 +1,419 @@
+{
+  "stage": "FORMAL_TRAINING_AND_EXISTING_RECEIVERS_HEALTHY",
+  "heartbeat_trigger": "2026-10-05T13:04:17.591Z",
+  "observed_at": "2026-10-05T13:07:36.578593+00:00",
+  "atomic_states": {
+    "primary": {
+      "driver": {
+        "stage": "CAMPAIGN",
+        "pid": 18787,
+        "time": "2026-10-04T21:16:20.663409+00:00"
+      },
+      "campaign": {
+        "stage": "RUNNING",
+        "current_run": "D_seed42",
+        "queue": [
+          [
+            "C",
+            42
+          ],
+          [
+            "S",
+            42
+          ],
+          [
+            "D",
+            42
+          ],
+          [
+            "SD",
+            42
+          ],
+          [
+            "PARENT_F12",
+            2024
+          ],
+          [
+            "C",
+            2024
+          ],
+          [
+            "S",
+            2024
+          ],
+          [
+            "D",
+            2024
+          ],
+          [
+            "SD",
+            2024
+          ]
+        ],
+        "updated_at": "2026-10-05T10:09:41.031997+00:00"
+      },
+      "runs": {
+        "C_seed42": {
+          "stage": "COMPLETE",
+          "completed": 32000,
+          "endpoint": 32000,
+          "updated_at": "2026-10-05T02:31:24.012530+00:00"
+        },
+        "S_seed42": {
+          "stage": "COMPLETE",
+          "completed": 32000,
+          "endpoint": 32000,
+          "updated_at": "2026-10-05T10:09:39.504955+00:00"
+        },
+        "D_seed42": {
+          "stage": "TRAINING",
+          "completed": 12240,
+          "endpoint": 32000,
+          "updated_at": "2026-10-05T13:04:39.604526+00:00",
+          "recent": {
+            "loss": 0.22648149728775024,
+            "grad_norm": 1.1994996070861816,
+            "seconds": 0.8200403889641166,
+            "data_wait_seconds": 0.002389857079833746,
+            "peak_gpu_bytes": 11004799488
+          }
+        }
+      },
+      "free_disk_bytes": 26723909632,
+      "observed_at": "2026-10-05T13:04:53.228482+00:00"
+    },
+    "second": {
+      "driver": {
+        "stage": "PARALLEL_CAMPAIGN",
+        "pid": 3295,
+        "time": "2026-10-05T05:33:32.002303+00:00"
+      },
+      "campaign": {
+        "stage": "RUNNING",
+        "current_run": "SD_seed42",
+        "queue": [
+          [
+            "SD",
+            42
+          ]
+        ],
+        "amendment_sha256": "cae05b90a986f4d14a7c7f1e7ca25de10b9d966d905cd1ea88f5e0c2116344c3",
+        "time": "2026-10-05T05:33:32.001933+00:00"
+      },
+      "runs": {
+        "SD_seed42": {
+          "stage": "TRAINING",
+          "completed": 22340,
+          "endpoint": 32000,
+          "updated_at": "2026-10-05T13:04:46.689483+00:00",
+          "recent": {
+            "loss": 0.13899555802345276,
+            "grad_norm": 0.5491747260093689,
+            "seconds": 0.8064958304166794,
+            "data_wait_seconds": 0.0014550387859344482,
+            "peak_gpu_bytes": 11006432768
+          }
+        }
+      },
+      "free_disk_bytes": 12885061632,
+      "observed_at": "2026-10-05T13:04:54.454890+00:00"
+    },
+    "authorized_seed_scope": [
+      42
+    ],
+    "assigned_runs": {
+      "primary": [
+        "C_seed42",
+        "S_seed42",
+        "D_seed42"
+      ],
+      "second": [
+        "SD_seed42"
+      ]
+    },
+    "old_primary_loaded_queue_is_superseded_by_boundary_amendment": true,
+    "time": "2026-10-05T13:04:54.457154+00:00"
+  },
+  "fresh_validation_evidence": {
+    "time": "2026-10-05T13:06:08.592155+00:00",
+    "nodes": [
+      {
+        "run": "D_seed42",
+        "validation_curve": [
+          {
+            "update": 4000,
+            "metric_sha256": "c27d573e99b9a8ffe3b339fbac730f9016a1bd7f798b3611665420598e4efec6",
+            "n_images": 76,
+            "per_image_count": 76,
+            "scores": {
+              "single": 40.845137169176596,
+              "fixed_fusion": 44.81903825796121,
+              "half_fusion": 42.69589728421687
+            },
+            "probability_files": 0,
+            "single_gain_vs_parent_pp": 0.6033035686605714,
+            "fixed25_gain_vs_R42_pp": 0.4633459194228351,
+            "both_collapse_thresholds_met": false
+          },
+          {
+            "update": 8000,
+            "metric_sha256": "a42fcc9d604c40ab559e6e4d8b793ba3ffd969d87a0da54f0ff3df94a10fdbc7",
+            "n_images": 76,
+            "per_image_count": 76,
+            "scores": {
+              "single": 41.587832157303886,
+              "fixed_fusion": 44.98818933537731,
+              "half_fusion": 43.2479783032601
+            },
+            "probability_files": 0,
+            "single_gain_vs_parent_pp": 1.3459985567878618,
+            "fixed25_gain_vs_R42_pp": 0.6324969968389311,
+            "both_collapse_thresholds_met": false
+          },
+          {
+            "update": 12000,
+            "metric_sha256": "efaf60ba21af097269866d0ccbdca262ec4c84a10cee214eb5f9153c0cbd1b36",
+            "n_images": 76,
+            "per_image_count": 76,
+            "scores": {
+              "single": 40.98629369907318,
+              "fixed_fusion": 44.83109978124305,
+              "half_fusion": 42.91118134437835
+            },
+            "probability_files": 0,
+            "single_gain_vs_parent_pp": 0.7444600985571554,
+            "fixed25_gain_vs_R42_pp": 0.4754074427046717,
+            "both_collapse_thresholds_met": false
+          }
+        ],
+        "boundary": {
+          "stage": "ARMED_AFTER_D42_BOUNDARY",
+          "pid": 44281,
+          "time": "2026-10-05T04:11:34.270609+00:00",
+          "process_alive": true
+        }
+      },
+      {
+        "run": "SD_seed42",
+        "validation_curve": [
+          {
+            "update": 4000,
+            "metric_sha256": "08a9ecb510881d909bdf6abdd4fe6614f5e637967371f5c36907d93855cd20d9",
+            "n_images": 76,
+            "per_image_count": 76,
+            "scores": {
+              "single": 39.65700941327202,
+              "fixed_fusion": 45.06749663241366,
+              "half_fusion": 43.318394842689585
+            },
+            "probability_files": 0,
+            "single_gain_vs_parent_pp": -0.5848241872440028,
+            "fixed25_gain_vs_R42_pp": 0.7118042938752822,
+            "both_collapse_thresholds_met": false
+          },
+          {
+            "update": 8000,
+            "metric_sha256": "5754d1bbb8a2c1cef274ad0d04acf6fe7d191ec793226969ef6c54efdc8a9a6d",
+            "n_images": 76,
+            "per_image_count": 76,
+            "scores": {
+              "single": 41.27487871289849,
+              "fixed_fusion": 44.5898536602842,
+              "half_fusion": 43.25308579485186
+            },
+            "probability_files": 0,
+            "single_gain_vs_parent_pp": 1.0330451123824673,
+            "fixed25_gain_vs_R42_pp": 0.23416132174582316,
+            "both_collapse_thresholds_met": false
+          },
+          {
+            "update": 12000,
+            "metric_sha256": "3a2ba2607061b3d0933c73e6d2a941455de657c65477ce5bd42978abc82a0107",
+            "n_images": 76,
+            "per_image_count": 76,
+            "scores": {
+              "single": 40.59472560667222,
+              "fixed_fusion": 44.698779675420255,
+              "half_fusion": 42.98117676693797
+            },
+            "probability_files": 0,
+            "single_gain_vs_parent_pp": 0.3528920061561962,
+            "fixed25_gain_vs_R42_pp": 0.3430873368818794,
+            "both_collapse_thresholds_met": false
+          },
+          {
+            "update": 16000,
+            "metric_sha256": "51ea9588377b580b8a3139d9f1d80b9a54dfb2f2c8ee2eabb0c44f0b32152f6f",
+            "n_images": 76,
+            "per_image_count": 76,
+            "scores": {
+              "single": 41.64948052112553,
+              "fixed_fusion": 44.918844562947655,
+              "half_fusion": 43.36007037860048
+            },
+            "probability_files": 0,
+            "single_gain_vs_parent_pp": 1.4076469206095084,
+            "fixed25_gain_vs_R42_pp": 0.5631522244092793,
+            "both_collapse_thresholds_met": false
+          },
+          {
+            "update": 20000,
+            "metric_sha256": "19a6126481f6c02ba04c9910741cb5ac79f1e00f3b0d1e35e862fd2e9f48bd0c",
+            "n_images": 76,
+            "per_image_count": 76,
+            "scores": {
+              "single": 41.37961502605747,
+              "fixed_fusion": 44.88324597144078,
+              "half_fusion": 43.23014357793865
+            },
+            "probability_files": 76,
+            "single_gain_vs_parent_pp": 1.1377814255414478,
+            "fixed25_gain_vs_R42_pp": 0.5275536329024035,
+            "both_collapse_thresholds_met": false
+          }
+        ]
+      }
+    ]
+  },
+  "local_helper_ownership": {
+    "primary": {
+      "pid": {
+        "pid": 30004,
+        "time": "2026-10-05T12:35:04.195410+00:00",
+        "role": "primary",
+        "helper": "reports/primary_parallel_attendant.py",
+        "runner": "reports/independent_local_attendant_runner.py",
+        "helper_sha256": "f76acf364bdcd56adc290c73ab7d47c9f6641bb817d1b0262b96483d8831578e",
+        "launcher": "Win32_Process.Create with hidden startup and CREATE_BREAKAWAY_FROM_JOB; WMI service parent and no kill-on-close job verified",
+        "training_unchanged": true
+      },
+      "process": {
+        "ProcessId": 30004,
+        "ParentProcessId": 7344,
+        "CommandLine": "\"C:\\Users\\GuanXingRen\\Miniconda3\\python.exe\" -u \"D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\execution\\reports\\independent_local_attendant_runner.py\" primary"
+      },
+      "attendant_state.json": {
+        "stage": "WAITING",
+        "time": "2026-10-05T13:06:54.929297+00:00"
+      },
+      "persistent_receiver_state.json": {
+        "stage": "POOL_COMPLETED",
+        "time": "2026-10-05T13:06:54.817827+00:00",
+        "receiver_connections_opened": 2,
+        "files_received": 43,
+        "seconds": 134.3562751999998,
+        "negotiated_compression": [
+          "zlib@openssh.com",
+          "zlib@openssh.com"
+        ],
+        "max_file_receivers": 2,
+        "original_mirror_sha256": "28492fcdbd64ae0e08145274af70368726275e2bdc52dbc99fa9177b6c0e366b",
+        "all_original_SHA_and_custody_gates_used": true
+      },
+      "transfer_progress.json": {
+        "stage": "TRANSFERRING",
+        "full": false,
+        "verified_files": 2,
+        "expected_files": 6950,
+        "verified_bytes": 46517,
+        "expected_bytes": 271640124,
+        "updated_at": "2026-10-05T13:07:36.564456+00:00"
+      },
+      "mirror.lock": {
+        "pid": 30004,
+        "time": "2026-10-05T13:07:26.840924+00:00"
+      }
+    },
+    "second": {
+      "pid": {
+        "pid": 31456,
+        "time": "2026-10-05T12:35:04.208839+00:00",
+        "role": "second",
+        "helper": "reports/parallel_node2_attendant.py",
+        "runner": "reports/independent_local_attendant_runner.py",
+        "helper_sha256": "037d0a4db1838ae991ace0d4c200a84b7ab1b6fc6d5ac1ae58ca0acc5ed7b2a5",
+        "launcher": "Win32_Process.Create with hidden startup and CREATE_BREAKAWAY_FROM_JOB; WMI service parent and no kill-on-close job verified",
+        "training_unchanged": true
+      },
+      "process": {
+        "ProcessId": 31456,
+        "ParentProcessId": 7344,
+        "CommandLine": "\"C:\\Users\\GuanXingRen\\Miniconda3\\python.exe\" -u \"D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\execution\\reports\\independent_local_attendant_runner.py\" second"
+      },
+      "attendant_state.json": {
+        "stage": "WAITING",
+        "time": "2026-10-05T11:33:56.799158+00:00"
+      },
+      "persistent_receiver_state.json": {
+        "stage": "POOL_COMPLETED",
+        "time": "2026-10-05T11:33:56.734750+00:00",
+        "receiver_connections_opened": 2,
+        "files_received": 3,
+        "seconds": 75.07832530001178,
+        "negotiated_compression": [
+          "zlib@openssh.com",
+          "zlib@openssh.com"
+        ],
+        "max_file_receivers": 2,
+        "original_mirror_sha256": "28492fcdbd64ae0e08145274af70368726275e2bdc52dbc99fa9177b6c0e366b",
+        "all_original_SHA_and_custody_gates_used": true
+      },
+      "transfer_progress.json": {
+        "stage": "TRANSFERRING",
+        "full": false,
+        "verified_files": 2827,
+        "expected_files": 3218,
+        "verified_bytes": 320842263,
+        "expected_bytes": 5026141020,
+        "updated_at": "2026-10-05T13:05:40.154747+00:00"
+      },
+      "mirror.lock": {
+        "pid": 31456,
+        "time": "2026-10-05T12:35:05.537946+00:00"
+      }
+    },
+    "coordinator": {
+      "pid": {
+        "pid": 15752,
+        "time": "2026-10-05T12:35:04.238172+00:00",
+        "role": "coordinator",
+        "helper": "reports/parallel_single_seed_coordinator.py",
+        "runner": "reports/independent_local_attendant_runner.py",
+        "helper_sha256": "267f4433f9ac5f0f886d062766a2a10057b00c1995b6ab92b48084e28f81ef5d",
+        "launcher": "Win32_Process.Create with hidden startup and CREATE_BREAKAWAY_FROM_JOB; WMI service parent and no kill-on-close job verified",
+        "training_unchanged": true
+      },
+      "process": {
+        "ProcessId": 15752,
+        "ParentProcessId": 7344,
+        "CommandLine": "\"C:\\Users\\GuanXingRen\\Miniconda3\\python.exe\" -u \"D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\execution\\reports\\independent_local_attendant_runner.py\" coordinator"
+      }
+    }
+  },
+  "coordinator_state": {
+    "stage": "WAITING_SD_COMPLETE_SHA_CUSTODY",
+    "time": "2026-10-05T13:07:35.284630+00:00"
+  },
+  "SD20_active_temporary_file_bytes": {
+    "parallel\\node2\\server_results\\runs\\SD_seed42\\checkpoint_u20000.pth.download": 155320320,
+    "parallel\\node2\\server_results\\runs\\SD_seed42\\val_u20000\\007-1829-100.npz.download": 6258688
+  },
+  "two_consecutive_combined_collapse": {
+    "D_seed42": false,
+    "SD_seed42": false
+  },
+  "scientific_stop_required": false,
+  "remote_disk_guard_bytes": 8589934592,
+  "current_disk_above_guard": {
+    "primary": true,
+    "second": true
+  },
+  "mirror_not_duplicated_because_both_healthy_owners_active": true,
+  "training_restarted": false,
+  "scientific_source_changed": false,
+  "cleanup_performed": false,
+  "shutdown_eligible": false,
+  "new_test_started": false,
+  "notification": "DONT_NOTIFY",
+  "reason": "Healthy progression and existing recovery; no new selected endpoint or actionable failure."
+}

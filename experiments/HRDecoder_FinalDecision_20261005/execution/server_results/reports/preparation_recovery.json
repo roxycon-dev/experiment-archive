@@ -1,0 +1,9 @@
+{
+  "time": "2026-10-04T20:07:39.032725+00:00",
+  "old_source_sha256": "c2dafa8ac52d49fdcdbd39df760c11c63c9f5747c1d79e947f2847a785da4347",
+  "diagnosis": "S repeated identical CUDA forward outputs are exact in BF16 and FP32, while atomic backward reductions produce numerical Adam moment differences without interruption. Keep exact serialized model/optimizer/EMA/all RNG, exact next forward/loss, and 1e-7 model/EMA continuation bounds; use Adam moment atol .1 times registered 1e-4 gradient atol, rtol1e-3. Actual MSDA forward/backward tolerances and formal settings unchanged.",
+  "formal_training_started": false,
+  "failed_early_pid": 7248,
+  "preserve_original_logs": true,
+  "archive": "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\execution\\reports\\preparation_repairs\\spatial_atomic_repeatability_20261005"
+}

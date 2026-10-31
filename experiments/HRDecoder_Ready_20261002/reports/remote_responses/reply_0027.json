@@ -1,0 +1,5 @@
+{
+  "exit_code": 0,
+  "stdout": "{\n  \"H0\": \"/root/autodl-tmp/HRDecoder_Ready_20261002/configs/resolved/H0_hrdecoder_ddr_only.yaml\",\n  \"H1\": \"/root/autodl-tmp/HRDecoder_Ready_20261002/configs/resolved/H1_hrdecoder_ext_pretrain.yaml\",\n  \"U0\": \"/root/autodl-tmp/HRDecoder_Ready_20261002/configs/resolved/U0_convnext_unet_ddr_only.yaml\",\n  \"U1\": \"/root/autodl-tmp/HRDecoder_Ready_20261002/configs/resolved/U1_convnext_unet_ext_pretrain.yaml\",\n  \"A0\": \"/root/autodl-tmp/HRDecoder_Ready_20261002/configs/resolved/A0_hacdr_adapted.yaml\"\n}\n{\"uint8_geometry_equivalent\": true, \"cache_reuses_raw_arrays\": true, \"persistent_workers_receive_new_epoch\": true}\n{\"pid\": 4040, \"choices\": {\"H0\": {\"ddr_micro\": 8, \"external_micro\": null}, \"H1\": {\"ddr_micro\": 8, \"external_micro\": 4}, \"U0\": {\"ddr_micro\": 4, \"external_micro\": null}, \"U1\": {\"ddr_micro\": 4, \"external_micro\": 2}, \"A0\": {\"ddr_micro\": 8, \"external_micro\": null}}}\n",
+  "stderr": ""
+}

@@ -1,0 +1,24 @@
+{
+  "models": [
+    {
+      "config": "configs/lesion/exp/hrplus_patch_dice.py",
+      "ckpt": "/root/autodl-tmp/hrplus/D_0913_retry/best_mIoU_iter_2000.pth",
+      "weight": 1.0
+    }
+  ],
+  "load_report": [
+    {
+      "ckpt": "best_mIoU_iter_2000.pth",
+      "missing": [],
+      "unexpected": []
+    }
+  ],
+  "flip_tta": true,
+  "split": "test",
+  "n_images": 227,
+  "mIoU": 0.4271666869773508,
+  "mF1": 0.5896969241855208,
+  "mPPV": 0.6424483246017458,
+  "mS": 0.5498580571461515,
+  "mAUPR": 0.6111280071643517
+}

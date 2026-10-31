@@ -1,0 +1,116 @@
+{
+  "status": "TRAINING",
+  "completed": 8000,
+  "expected": 40000,
+  "saved_update": 8000,
+  "best_val_mIoU": 37.212350205968065,
+  "last_validation": {
+    "mIoU_percent": 37.212350205968065,
+    "IoU_percent": [
+      34.879628310136646,
+      47.020694121456536,
+      46.46895659609934,
+      20.48012179617974
+    ],
+    "precision_percent": [
+      50.476782820760434,
+      69.01122723877516,
+      78.70355394139011,
+      30.979712484716103
+    ],
+    "recall_percent": [
+      53.02524389363246,
+      59.6059950709995,
+      53.15237036007229,
+      37.66670515559148
+    ],
+    "counts": [
+      [
+        154199,
+        151286,
+        136604
+      ],
+      [
+        718803,
+        322771,
+        487121
+      ],
+      [
+        107051,
+        28967,
+        94353
+      ],
+      [
+        26097,
+        58142,
+        43187
+      ]
+    ],
+    "class_order": [
+      "EX",
+      "HE",
+      "SE",
+      "MA"
+    ],
+    "undefined_precision_convention": "zero when TP+FP=0; inspect counts",
+    "images": 76,
+    "threshold": "strictly > .5",
+    "base_head_metrics": {
+      "mIoU_percent": 36.93416792984321,
+      "IoU_percent": [
+        34.608535724403396,
+        46.880982848589916,
+        46.49334866864868,
+        19.753804477730856
+      ],
+      "precision_percent": [
+        49.99415375621163,
+        69.66367172100522,
+        78.69516029502512,
+        30.601463854157668
+      ],
+      "recall_percent": [
+        52.931709782911454,
+        58.906946043034225,
+        53.18811940179937,
+        35.78459673229028
+      ],
+      "counts": [
+        [
+          153927,
+          153963,
+          136876
+        ],
+        [
+          710373,
+          309345,
+          495551
+        ],
+        [
+          107123,
+          29001,
+          94281
+        ],
+        [
+          24793,
+          56226,
+          44491
+        ]
+      ],
+      "class_order": [
+        "EX",
+        "HE",
+        "SE",
+        "MA"
+      ],
+      "undefined_precision_convention": "zero when TP+FP=0; inspect counts",
+      "images": 76,
+      "threshold": "strictly > .5"
+    },
+    "seconds": 31.527377128601074,
+    "deployment_inference_verified": true,
+    "teacher_or_GT_input": false,
+    "completed": 8000
+  },
+  "time_unix": 1791560847.9640388
+}

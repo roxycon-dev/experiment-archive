@@ -1,0 +1,127 @@
+```python
+#!/usr/bin/env python3
+"""GPU experiment wrapper: run command with deadline, log output, shutdown after.
+
+Draft for review. Standard library only. Linux only.
+
+Usage:
+  gpu_run.py --deadline-utc "2024-06-01T12:00:00Z" --log run.log -- cmd args...
+"""
+import argparse
+import datetime
+import json
+import os
+import signal
+import subprocess
+import sys
+import time
+
+SHUTDOWN_CMD = ["/usr/bin/shutdown", "-h", "now"]
+
+
+def parse_utc_deadline(s):
+    s = s.strip()
+    if s.endswith("Z"):
+        s = s[:-1] + "+00:00"
+    dt = datetime.datetime.fromisoformat(s)
+    if dt.tzinfo is None:
+        dt = dt.replace(tzinfo=datetime.timezone.utc)
+    return dt.astimezone(datetime.timezone.utc)
+
+
+def do_shutdown(execute):
+    if execute:
+        try:
+            subprocess.run(SHUTDOWN_CMD, check=False)
+        except OSError as e:
+            print(f"shutdown failed: {e}", file=sys.stderr)
+    else:
+        print(f"[dry-run] would run: {' '.join(SHUTDOWN_CMD)}", file=sys.stderr)
+
+
+def main():
+    p = argparse.ArgumentParser(description=__doc__)
+    p.add_argument("--deadline-utc", required=True,
+                   help="absolute UTC deadline, ISO 8601 (e.g. 2024-06-01T12:00:00Z)")
+    p.add_argument("--log", required=True, help="log file for stdout+stderr")
+    p.add_argument("--execute-shutdown", action="store_true",
+                   help="actually call /usr/bin/shutdown (default: dry-run)")
+    p.add_argument("cmd", nargs=argparse.REMAINDER, metavar="-- cmd")
+    args = p.parse_args()
+
+    if not args.cmd or args.cmd[0] != "--":
+        p.error("command must be passed after --")
+    cmd = args.cmd[1:]
+    if not cmd:
+        p.error("empty command after --")
+
+    deadline = parse_utc_deadline(args.deadline_utc)
+    now = datetime.datetime.now(datetime.timezone.utc)
+    if deadline <= now:
+        print("deadline already passed", file=sys.stderr)
+        sys.exit(2)
+
+    os.setsid  # (call happens in preexec_fn below)
+
+    def preexec():
+        os.setsid()
+
+    log = open(args.log, "ab", buffering=0)
+    proc = subprocess.Popen(cmd, stdout=log, stderr=log,
+                            start_new_session=True, preexec_fn=preexec)
+
+    state = {"cmd": cmd, "deadline_utc": deadline.isoformat(),
+             "log": args.log, "outcome": None, "returncode": None,
+             "elapsed_sec": None, "signaled": False}
+    start = time.monotonic()
+
+    def on_sigterm(signum, frame):
+        # forward SIGTERM to child's process group
+        try:
+            os.killpg(proc.pid, signal.SIGTERM)
+        except OSError:
+            pass
+        state["signaled"] = True
+
+    signal.signal(signal.SIGTERM, on_sigterm)
+    signal.signal(signal.SIGINT, on_sigterm)
+
+    remaining = (deadline - datetime.datetime.now(datetime.timezone.utc)).total_seconds()
+    try:
+        rc = proc.wait(timeout=max(remaining, 0))
+    except subprocess.TimeoutExpired:
+        state["outcome"] = "deadline"
+        try:
+            os.killpg(proc.pid, signal.SIGTERM)
+        except OSError:
+            pass
+        try:
+            proc.wait(timeout=15)
+        except subprocess.TimeoutExpired:
+            try:
+                os.killpg(proc.pid, signal.SIGKILL)
+            except OSError:
+                pass
+            proc.wait()
+        rc = proc.returncode
+    else:
+        state["outcome"] = "success" if rc == 0 else "failure"
+
+    state["returncode"] = rc
+    state["elapsed_sec"] = round(time.monotonic() - start, 3)
+
+    if state["signaled"] and state["outcome"] is None:
+        state["outcome"] = "terminated"
+
+    print(json.dumps(state, indent=2))
+
+    # Always shutdown (real or dry-run) once child has finished or timed out.
+    do_shutdown(args.execute_shutdown)
+    sys.exit(0 if rc == 0 else 1)
+
+
+if __name__ == "__main__":
+    main()
+```
+
+Notes for review: `preexec_fn`/`start_new_session` are somewhat redundant (kept `start_new_session=True` as the authoritative one); SIGTERM handling forwards to the child's process group; JSON result is printed to the wrapper's stdout, not the log file.

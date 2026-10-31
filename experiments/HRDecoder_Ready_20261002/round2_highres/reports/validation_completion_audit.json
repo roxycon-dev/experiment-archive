@@ -1,0 +1,50 @@
+{
+  "queue_status": "complete",
+  "validation_nodes": [
+    {
+      "tag": "U0_continuation2048",
+      "update": 1000,
+      "solo_miou": 0.3908638255464669,
+      "fusion_miou": 0.43366298706385487,
+      "gain_pp": -0.12140451465108004
+    },
+    {
+      "tag": "U0_continuation2048",
+      "update": 2000,
+      "solo_miou": 0.3780079617917798,
+      "fusion_miou": 0.4333828198845408,
+      "gain_pp": -0.14942123258248619
+    },
+    {
+      "tag": "U0_highres",
+      "update": 1000,
+      "solo_miou": 0.3960651568641143,
+      "fusion_miou": 0.437327634300698,
+      "gain_pp": 0.2450602090332321
+    },
+    {
+      "tag": "U0_highres",
+      "update": 2000,
+      "solo_miou": 0.3748741917445036,
+      "fusion_miou": 0.4333288719566418,
+      "gain_pp": -0.15481602537238404
+    },
+    {
+      "tag": "U0_highres",
+      "update": 4000,
+      "solo_miou": 0.38493732233318023,
+      "fusion_miou": 0.43395522888794646,
+      "gain_pp": -0.09218033224192013
+    }
+  ],
+  "counts_crosscheck": true,
+  "wall_seconds": 4196.910892486572,
+  "job_wall_seconds": {
+    "U0_continuation2048": 1912.21231174469,
+    "U0_highres": 2281.6632318496704
+  },
+  "total_new_updates": 6000,
+  "saved_updates": 2000,
+  "test_closed": true,
+  "finished_at_cst": "2026-10-03T00:52:05.771485+08:00"
+}

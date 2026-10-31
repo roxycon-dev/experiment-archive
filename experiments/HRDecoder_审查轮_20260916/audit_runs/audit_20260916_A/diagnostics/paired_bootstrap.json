@@ -1,0 +1,103 @@
+{
+  "probe": "R0_paired_bootstrap",
+  "csv": "D:/dataset/experiment/HRDecoder_审查轮_20260916/audit_runs/audit_20260916_A/diagnostics/val_per_image_counts_R0.csv",
+  "n_images": 76,
+  "n_bootstrap": 2000,
+  "seed": 20260917,
+  "resampling": "image-level (patient ID UNAVAILABLE -> patient correlation NOT handled)",
+  "same_indices_for_both_models": true,
+  "accumulate_then_divide": true,
+  "empty_union_rule": "denominator 0 -> class IoU recorded as 0 (frozen rule)",
+  "point_estimate": {
+    "base0": {
+      "mIoU": 0.41796267336729404,
+      "per_class": {
+        "EX": 0.4577047841571581,
+        "HE": 0.4375516601740191,
+        "SE": 0.5518055058991777,
+        "MA": 0.2247887432388212
+      }
+    },
+    "h4": {
+      "mIoU": 0.4266857717990218,
+      "per_class": {
+        "EX": 0.4577047841571581,
+        "HE": 0.4375516601740191,
+        "SE": 0.5518055058991777,
+        "MA": 0.25968113696573225
+      }
+    },
+    "delta_mIoU": 0.00872309843172775,
+    "delta_per_class": {
+      "EX": 0.0,
+      "HE": 0.0,
+      "SE": 0.0,
+      "MA": 0.03489239372691105
+    }
+  },
+  "bootstrap": {
+    "delta_mIoU": {
+      "mean": 0.008737159007269625,
+      "ci95": [
+        0.0057177269242427095,
+        0.011814706567087482
+      ],
+      "frac_gt_0": 1.0
+    },
+    "delta_MA": {
+      "mean": 0.03494863602907849,
+      "ci95": [
+        0.022870907696970786,
+        0.047258826268350144
+      ],
+      "frac_gt_0": 1.0
+    },
+    "delta_per_class": {
+      "EX": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "frac_gt_0": 0.0
+      },
+      "HE": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "frac_gt_0": 0.0
+      },
+      "SE": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "frac_gt_0": 0.0
+      },
+      "MA": {
+        "mean": 0.03494863602907849,
+        "ci95": [
+          0.022870907696970786,
+          0.047258826268350144
+        ],
+        "frac_gt_0": 1.0
+      }
+    }
+  },
+  "ci_crosses_zero_mIoU": false,
+  "ci_crosses_zero_MA": false,
+  "undefined_class_occurrences": {
+    "base0": 0,
+    "h4": 0,
+    "per_bootstrap_max_possible": 8000
+  },
+  "caveats": [
+    "该区间只反映固定模型在当前 val 上的图像采样变动；",
+    "不消除在同一 val 上选模型的乐观偏差，不代表训练种子方差，也不恢复 test 独立性。",
+    "跨零不等于方法无效。",
+    "未处理患者相关性（患者 ID 不可用）。"
+  ]
+}

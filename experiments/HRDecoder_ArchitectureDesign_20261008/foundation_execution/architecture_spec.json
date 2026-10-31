@@ -1,0 +1,31 @@
+{
+  "version": 13,
+  "name": "HRDecoder-FoundationDistill",
+  "private_parameters": 79504,
+  "total_parameters": 65651924,
+  "network": "same half-resolution continuous signed private adapter and HRDecoder; fresh ImageNet W48 seed42/private20261008",
+  "base_supervision": "original squared Dice + .25 GT-positive/negative balanced BCE + .1 original HRcrop Dice",
+  "teacher_route": "fixed GT-consistent T* base KL with fullGTpositive/negative denominators, .5*lambda_K; private all-valid KL unchanged",
+  "normalization": "original BN unchanged; no BN buffer transplantation or per-image BN inference",
+  "gradient_clip": "global L2 max5, finite-check then clip then exactlyoneSGD",
+  "critical_stop": {
+    "after_update_at_least": 8000,
+    "mIoU_drop_from_best_at_least_pp": 15.0,
+    "or_drop_at_least_pp": 8.0,
+    "with_previous_class_IoU_at_least": 5.0,
+    "and_current_class_IoU_zero": true,
+    "action": "save own current checkpoint and stop before another update; not an overfitting claim"
+  },
+  "changes_relative_to_detail": "base positive-gradient guarantee, direct semantic teacher learning in provider, fixed clipping and critical-collapse stop",
+  "evidence": "train-only21k probe shows EX/SE logits strongly negative and Dice positive gradients nearzero; BN crossover and batch-stat interventions do not restore these classes",
+  "hypothesis_not_guarantee": "Prevent persistent negative-logit saturation and improve semantic distillation; exact initial collapse trigger and final fresh accuracy not established",
+  "budget": [
+    2048,
+    2,
+    40000
+  ],
+  "inference": "no GT/teacher/TTA/H4; native FP32 logit resize then sigmoid",
+  "fresh_own_run": true,
+  "old_weights_used": false,
+  "accuracy_guaranteed": false
+}

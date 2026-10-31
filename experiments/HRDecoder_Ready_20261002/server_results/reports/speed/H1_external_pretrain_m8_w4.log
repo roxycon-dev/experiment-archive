@@ -1,0 +1,72 @@
+/root/miniconda3/lib/python3.8/site-packages/mmcv/__init__.py:20: UserWarning: On January 1, 2023, MMCV will release v2.0.0, in which it will remove components related to the training process and add a data transformation module. In addition, it will rename the package names mmcv to mmcv-lite and mmcv-full to mmcv. See https://github.com/open-mmlab/mmcv/blob/master/docs/en/compatibility.md for more details.
+  warnings.warn(
+/root/miniconda3/lib/python3.8/site-packages/torch/_utils.py:776: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  return self.fget.__get__(instance, owner)()
+{
+  "family": "hrdecoder",
+  "stage": "external_pretrain",
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "torch": "2.0.1+cu117",
+  "peak_allocated_mb": 21618.06591796875,
+  "timings_seconds": [
+    19.656914252904244,
+    1.353202817030251,
+    1.4535363729810342,
+    1.3509458190528676,
+    1.3596447110176086,
+    1.3579365329351276,
+    4.411323030944914,
+    1.34477022907231,
+    1.3394655999727547,
+    1.3459070610115305,
+    1.356230897945352,
+    1.3414888890692964,
+    3.9432547070318833,
+    1.3997796720359474,
+    1.365291599999182,
+    1.3513361640507355
+  ],
+  "effective_batch": 8,
+  "micro_batch": 8,
+  "data_wait_seconds": [
+    4.975122531061061,
+    8.355500176548958e-05,
+    0.00010852597188204527,
+    0.00014128698967397213,
+    0.0001260730205103755,
+    0.00012306100688874722,
+    3.0717472520191222,
+    7.226597517728806e-05,
+    0.00010961689986288548,
+    7.374701090157032e-05,
+    8.90649389475584e-05,
+    5.639297887682915e-05,
+    2.599758564028889,
+    0.04795912909321487,
+    6.748409941792488e-05,
+    6.525206845253706e-05
+  ],
+  "workers": 4,
+  "fast_kernels": true,
+  "grad_accum": 1,
+  "parameter_delta": {
+    "backbone.conv1.weight": 3.353133797645569e-05,
+    "decode_head.conv_seg.weight": 0.00010345876216888428
+  },
+  "last_loss": {
+    "loss_bce": 0.6513841152191162,
+    "loss_dice": 0.9775615930557251,
+    "loss_total": 1.6289457082748413,
+    "active_classes": 4,
+    "valid_pixels_per_class": [
+      7193561,
+      7193561,
+      7193561,
+      7193561
+    ]
+  },
+  "n_train": 48,
+  "n_dev": 6,
+  "calibration_only": true,
+  "checkpoint_saved": false
+}

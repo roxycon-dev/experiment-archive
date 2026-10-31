@@ -1,0 +1,361 @@
+{
+  "status": "EXPERIMENTS_AND_FINAL_EVALUATION_COMPLETE",
+  "created_at": "2026-10-04T06:40:17.826221+00:00",
+  "selection": {
+    "selected": {
+      "arm": "Q_DDR",
+      "update": 16000,
+      "formula": "fixed_fusion",
+      "seed_scores_pct": [
+        44.35569233853838,
+        44.21734429280863
+      ],
+      "mean_val_pct": 44.286518315673504,
+      "test_eligible": true,
+      "deployment_seed": 42,
+      "candidate_count": 16
+    },
+    "all_candidates": [
+      {
+        "arm": "Q_DDR",
+        "update": 16000,
+        "formula": "fixed_fusion",
+        "seed_scores_pct": [
+          44.35569233853838,
+          44.21734429280863
+        ],
+        "mean_val_pct": 44.286518315673504
+      },
+      {
+        "arm": "Q_MIX",
+        "update": 16000,
+        "formula": "fixed_fusion",
+        "seed_scores_pct": [
+          44.23652473194449,
+          44.27421385597268
+        ],
+        "mean_val_pct": 44.25536929395859
+      },
+      {
+        "arm": "Q_DDR",
+        "update": 20000,
+        "formula": "fixed_fusion",
+        "seed_scores_pct": [
+          44.50054444000122,
+          44.00900225372265
+        ],
+        "mean_val_pct": 44.25477334686194
+      },
+      {
+        "arm": "Q_MIX",
+        "update": 20000,
+        "formula": "fixed_fusion",
+        "seed_scores_pct": [
+          44.40372086902319,
+          44.09748309134313
+        ],
+        "mean_val_pct": 44.25060198018316
+      },
+      {
+        "arm": "Q_DDR",
+        "update": 24000,
+        "formula": "fixed_fusion",
+        "seed_scores_pct": [
+          44.38266194327085,
+          44.09630071531775
+        ],
+        "mean_val_pct": 44.2394813292943
+      },
+      {
+        "arm": "Q_DDR",
+        "update": 12000,
+        "formula": "fixed_fusion",
+        "seed_scores_pct": [
+          44.27597579085049,
+          44.17298119164855
+        ],
+        "mean_val_pct": 44.22447849124952
+      },
+      {
+        "arm": "Q_MIX",
+        "update": 24000,
+        "formula": "fixed_fusion",
+        "seed_scores_pct": [
+          44.30954807238056,
+          44.13242352914901
+        ],
+        "mean_val_pct": 44.22098580076478
+      },
+      {
+        "arm": "Q_MIX",
+        "update": 12000,
+        "formula": "fixed_fusion",
+        "seed_scores_pct": [
+          44.08666200293783,
+          44.22091224467842
+        ],
+        "mean_val_pct": 44.15378712380813
+      },
+      {
+        "arm": "Q_DDR",
+        "update": 24000,
+        "formula": "single",
+        "seed_scores_pct": [
+          39.01229427774314,
+          37.84379943157931
+        ],
+        "mean_val_pct": 38.428046854661225
+      },
+      {
+        "arm": "Q_DDR",
+        "update": 20000,
+        "formula": "single",
+        "seed_scores_pct": [
+          39.19208770005944,
+          37.34503201726641
+        ],
+        "mean_val_pct": 38.268559858662925
+      },
+      {
+        "arm": "Q_DDR",
+        "update": 16000,
+        "formula": "single",
+        "seed_scores_pct": [
+          37.893718646800664,
+          37.295592060779256
+        ],
+        "mean_val_pct": 37.59465535378996
+      },
+      {
+        "arm": "Q_DDR",
+        "update": 12000,
+        "formula": "single",
+        "seed_scores_pct": [
+          37.84096064019035,
+          37.11565733429797
+        ],
+        "mean_val_pct": 37.47830898724416
+      },
+      {
+        "arm": "Q_MIX",
+        "update": 24000,
+        "formula": "single",
+        "seed_scores_pct": [
+          37.51675796976994,
+          36.63332237493327
+        ],
+        "mean_val_pct": 37.075040172351606
+      },
+      {
+        "arm": "Q_MIX",
+        "update": 16000,
+        "formula": "single",
+        "seed_scores_pct": [
+          36.648693330057725,
+          37.44543006549156
+        ],
+        "mean_val_pct": 37.04706169777464
+      },
+      {
+        "arm": "Q_MIX",
+        "update": 20000,
+        "formula": "single",
+        "seed_scores_pct": [
+          37.165225699295156,
+          36.92610409649124
+        ],
+        "mean_val_pct": 37.0456648978932
+      },
+      {
+        "arm": "Q_MIX",
+        "update": 12000,
+        "formula": "single",
+        "seed_scores_pct": [
+          35.56783958776863,
+          35.70212394157796
+        ],
+        "mean_val_pct": 35.6349817646733
+      }
+    ],
+    "common_endpoint": 24000,
+    "test_selection_forbidden": true
+  },
+  "lock_sha256": "537f516bbdcd6517e5aca3c8a87ae9d6c2d2f9174ee6d3aeda7d3ce8ace6e8ee",
+  "test_action": "REUSE_EXACT_PRIOR_TEST_COUNTS",
+  "final_test": {
+    "status": "COMPLETE",
+    "lock_sha256": "537f516bbdcd6517e5aca3c8a87ae9d6c2d2f9174ee6d3aeda7d3ce8ace6e8ee",
+    "formula": "fixed_fusion",
+    "update": 16000,
+    "deployment_seed": 42,
+    "seed_scores_pct": [
+      45.72155710642771,
+      45.677066093957414
+    ],
+    "mean_test_pct": 45.69931160019256,
+    "range_test_pct": [
+      45.677066093957414,
+      45.72155710642771
+    ],
+    "target_test_pct": 47.2115,
+    "both_seeds_target_met": false,
+    "mean_target_met": false,
+    "selection_changed_after_test": false,
+    "historical_limitation": "Exploratory continuation after historical DDR val/test use and an already completed DDR16k test. Choice uses paired validation only; test never changes it.",
+    "completed_at": "2026-10-03T18:24:37.758210+00:00",
+    "reused_from_prior_lock_sha256": "26e5852194aca66bb02062ac79b2f0f8026e33652a95133140a3824bffb38905",
+    "reused_source_sha256": "5d22cc93c64c76486cd150c0869cf1fc05611e54086158b3dc6f8b08c968c7b6",
+    "test_action": "REUSE_EXACT_PRIOR_TEST_COUNTS",
+    "no_new_test_inference": true,
+    "arm": "Q_DDR",
+    "common_endpoint": 24000,
+    "selected_mean_val_pct": 44.286518315673504
+  },
+  "supervision_comparison": {
+    "created_at": "2026-10-04T06:40:17.693542+00:00",
+    "update": 24000,
+    "formula": "single",
+    "seeds": [
+      {
+        "seed": 42,
+        "DDR_single_pct": 39.01229427774314,
+        "MIX_single_pct": 37.51675796976994,
+        "MIX_minus_DDR_pp": -1.4955363079731967,
+        "per_class_delta_pp": {
+          "EX": 0.11437795896831915,
+          "HE": -0.9621002591346581,
+          "SE": -5.627001731855792,
+          "MA": 0.4925788001293441
+        }
+      },
+      {
+        "seed": 2024,
+        "DDR_single_pct": 37.84379943157931,
+        "MIX_single_pct": 36.63332237493327,
+        "MIX_minus_DDR_pp": -1.2104770566460417,
+        "per_class_delta_pp": {
+          "EX": -1.476327350790747,
+          "HE": 1.9497443529545109,
+          "SE": -5.608904331893243,
+          "MA": 0.293579103145305
+        }
+      }
+    ],
+    "mean_MIX_minus_DDR_pp": -1.3530066823096192,
+    "range_MIX_minus_DDR_pp": [
+      -1.4955363079731967,
+      -1.2104770566460417
+    ],
+    "exposure_windows": {
+      "Q_DDR": {
+        "DDR": 192000
+      },
+      "Q_MIX": {
+        "DDR": 144000,
+        "IDRiD": 24000,
+        "MAPLES": 24000
+      }
+    },
+    "interpretation": "The fixed MIX protocol did not improve this paired DDR validation comparison. Exposure and annotation source differ; not a universal conclusion about external supervision.",
+    "IDRiD_source_exception": "User-authorized stored uncropped assertion and polygon-derived masks; official native pixel GT not restored"
+  },
+  "per_seed_test": {
+    "42": {
+      "score_pct": 45.72155710642771,
+      "delta_P0_pp": 0.940665655326903,
+      "image_percentile95_pct": [
+        42.49474324251534,
+        48.61244360548383
+      ],
+      "paired_image_percentile95_pp": [
+        0.43217148883510104,
+        1.444012036675967
+      ],
+      "Q_per_image_seconds_mean": 0.56888137957992,
+      "Q_per_image_seconds_median": 0.5307741388678551,
+      "Q_per_image_seconds_p90": 1.1211999356746674
+    },
+    "2024": {
+      "score_pct": 45.677066093957414,
+      "delta_P0_pp": 0.8961746428566073,
+      "image_percentile95_pct": [
+        42.47267353478321,
+        48.568906979100156
+      ],
+      "paired_image_percentile95_pp": [
+        0.44823831029366074,
+        1.3717673755116617
+      ],
+      "Q_per_image_seconds_mean": 0.5616666766515387,
+      "Q_per_image_seconds_median": 0.5215905420482159,
+      "Q_per_image_seconds_p90": 1.0955475218594075
+    }
+  },
+  "uncertainty": {
+    "image_resamples": 2000,
+    "seed": 100303,
+    "unit": "paired image",
+    "includes_training_seed_variance": false,
+    "mean_delta_P0_image_percentile95_pp": [
+      0.4636956501592039,
+      1.3925704742316654
+    ]
+  },
+  "formal_training_invocation_seconds": {
+    "Q_DDR_seed42": 12686.805325519294,
+    "Q_DDR_seed2024": 12805.231237564236,
+    "Q_MIX_seed42": 13299.885983008891,
+    "Q_MIX_seed2024": 13625.24491360411
+  },
+  "training_plus_val_checkpoint_wall_hours": 14.560324294360148,
+  "accepted_training_preflight_performance": {
+    "real_unfrozen_updates": 100,
+    "frozen_updates_for_timing": 10,
+    "micro_batch": 2,
+    "accumulation": 4,
+    "dtype": "bfloat16",
+    "peak_allocated_bytes": 3816224256,
+    "peak_reserved_bytes": 4200595456,
+    "frozen_seconds_per_update_mean": 0.4881195011548698,
+    "unfrozen_seconds_per_update_mean": 0.460820545963943,
+    "unfrozen_seconds_p90": 0.6258071597665549,
+    "data_wait_seconds_mean": 0.10172772690653802,
+    "attention": "official_torch_SDPA_no_attention_matrix_logging",
+    "sdpa_dispatched_operators": [
+      "aten::_scaled_dot_product_flash_attention"
+    ],
+    "full_76_val_seconds": 207.49816977605224,
+    "full_76_val_is_initial_model_not_a_candidate": true
+  },
+  "backups": {
+    "Q_DDR_seed42": {
+      "files": 327,
+      "bytes": 14686919649,
+      "verified_at": "2026-10-03T23:56:25.386157+00:00",
+      "receipt_sha256": "19b9556226362100bbfe3f46ba53829626e7a047faade32ca5ffbcba21df80f8"
+    },
+    "Q_DDR_seed2024": {
+      "files": 327,
+      "bytes": 14745280366,
+      "verified_at": "2026-10-04T02:36:19.505508+00:00",
+      "receipt_sha256": "d55d293972e91ac7142a1852018dae72734d3b1618060e87cfa4a9e5645e26c9"
+    },
+    "Q_MIX_seed42": {
+      "files": 327,
+      "bytes": 14669423641,
+      "verified_at": "2026-10-04T01:15:44.889849+00:00",
+      "receipt_sha256": "0f9193434a2b92d44a106e879028afd74ea592ce51fc6f95d7bbb8611220d1a6"
+    },
+    "Q_MIX_seed2024": {
+      "files": 327,
+      "bytes": 14865430114,
+      "verified_at": "2026-10-04T06:38:09.015080+00:00",
+      "receipt_sha256": "5dbf12776f448c8d4357a3dbb16acaaa4e0c9da793449a954a5aac35266f600e"
+    }
+  },
+  "actual_charged_CNY": null,
+  "actual_hourly_rate_CNY": null,
+  "full_system_peak_memory": "Not separately instrumented",
+  "automatic_extra_experiments": false,
+  "shutdown_or_platform_OFF_verified": false
+}

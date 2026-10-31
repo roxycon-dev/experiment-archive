@@ -1,0 +1,31 @@
+{
+  "status": "success",
+  "config": "configs/lesion/exp/hrplus_patch_lovasz.py",
+  "steps": 3,
+  "seconds": 2.218,
+  "peak_allocated_mb": 10816.99,
+  "losses_finite": true,
+  "reference_frozen": true,
+  "student_matches_checkpoint": true,
+  "reference_matches_b_weights": true,
+  "val": {
+    "ori_shape": [
+      1728,
+      2592
+    ],
+    "prob_shape": [
+      4,
+      1728,
+      2592
+    ],
+    "use_sigmoid": true,
+    "compute_aupr": true,
+    "prob_min": 7.302821245502855e-07,
+    "prob_max": 0.9846711158752441
+  },
+  "versions": {
+    "mmcv": "1.7.1",
+    "mmseg": "0.16.0",
+    "torch": "2.0.1+cu117"
+  }
+}

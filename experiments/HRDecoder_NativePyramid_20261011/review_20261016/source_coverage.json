@@ -1,0 +1,4079 @@
+{
+  "as_of": "2026-10-16",
+  "reviewer": "source_research_luna",
+  "scope_root": "D:\\dataset\\experiment",
+  "purpose": "Source/protocol identity audit and source-level review for NativePyramid-SP v3; no model execution or training.",
+  "inventory_snapshot": {
+    "file_count": 37487,
+    "directory_count": 1940,
+    "bytes_approx": 101017506982,
+    "inventory_path": "HRDecoder_NativePyramid_20261011/review_20261016/inventory_all.json",
+    "source_code_paths": 1323,
+    "source_code_distinct_sha256": 1146,
+    "third_party_or_archived_source_paths": 4015,
+    "third_party_or_archived_source_distinct_sha256": 1541,
+    "archive_containers": 39,
+    "source_inventory_note": "Counts are from frozen path+SHA inventory. SHA deduplication is not itself evidence of reading.",
+    "bytes_exact": 101017506982,
+    "bytes_approx_note": "Exact byte count copied from inventory_all.json; former approximate value corrected."
+  },
+  "protocol_bound_experiment_core": {
+    "protocol_count": 11,
+    "unique_code_sha256_count": 43,
+    "review_status": "all_unique_protocol_named_code_sha_manually_read_in_full",
+    "protocols": [
+      {
+        "run": "adapter",
+        "protocol_path": "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/adapter/training_runs/adapter/protocol.json",
+        "protocol_identity_sha256": "4948bd7a9a745f32abf0679a5bf8026e943569392de78c086e87c0138d683fed",
+        "code_sha256_by_file": {
+          "baseline.py": "3e19781d2172a7b211f80994739b387d3235c966dd9c81b2f777e1b3c33b2aa9",
+          "model.py": "4bfcbce775ce7ea9af7d3453ec5cf6337d3cd025f541d57690abee7c759112e3",
+          "private_modules.py": "08541136cd72e039a02f145adba9410b404f6852bc226ab716639e43cc82ec60",
+          "stable_objectives.py": "bf79135d2f756b4abcad655beee9ed24f7bde738f62588a5532917e4b881e3ae",
+          "fast_objectives.py": "040a52c29ee9429834a4650bd51242e60a709b9ea2b11095433c9c9e4f969f1a",
+          "objectives.py": "501a6fa798203f37946ae0d3e90f43a4a9aef8369a1efd7eceb7da9b056f6fbb",
+          "data.py": "6145eb862cf75b895767ad627b4bac9ae6a417feacd92c909a4771765bce6545",
+          "loader.py": "ca9642f64c107df309127ddf5197fab5c86c46907ff5f247b5f5772d728ff74e",
+          "train.py": "6ade097741811da299734184ce196157ca98aa406095170759fe878bbb09cef9"
+        }
+      },
+      {
+        "run": "aligned",
+        "protocol_path": "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/aligned/training_runs/aligned/protocol.json",
+        "protocol_identity_sha256": "637a5e77db60fecb85c569b7bbbb9cdececdef317e8a62136f49a1f9ef1a5f04",
+        "code_sha256_by_file": {
+          "baseline.py": "3e19781d2172a7b211f80994739b387d3235c966dd9c81b2f777e1b3c33b2aa9",
+          "model.py": "f49e08ec2b5d3b04590813f9e13ac06ae3c52eb422e7ec379b7f93de5b2115c9",
+          "private_modules.py": "08541136cd72e039a02f145adba9410b404f6852bc226ab716639e43cc82ec60",
+          "stable_objectives.py": "bf79135d2f756b4abcad655beee9ed24f7bde738f62588a5532917e4b881e3ae",
+          "fast_objectives.py": "c83b0320c0bc4f6841f1be555453f3fde7b31458565723929ee8ea98a92544a6",
+          "objectives.py": "4a57912cec38cc5bfea157fb0947c37a3f2372cfbb30115104d208d113749878",
+          "data.py": "6145eb862cf75b895767ad627b4bac9ae6a417feacd92c909a4771765bce6545",
+          "loader.py": "ca9642f64c107df309127ddf5197fab5c86c46907ff5f247b5f5772d728ff74e",
+          "train.py": "716c165d78f5de9726c37f51f53043e3cfcb8a84b6722038b77494630cd28ef2"
+        }
+      },
+      {
+        "run": "cet",
+        "protocol_path": "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/cet/training_runs/cet/protocol.json",
+        "protocol_identity_sha256": "435bd9619a6f141d5598ae078e5f170c3201fd82dc0b87f05ae0897abf3b9460",
+        "code_sha256_by_file": {
+          "baseline.py": "3e19781d2172a7b211f80994739b387d3235c966dd9c81b2f777e1b3c33b2aa9",
+          "model.py": "dcf9115d9960d54c4cb0332372ac4feb729e8aca722d7daf33b85582224a62a9",
+          "private_modules.py": "08541136cd72e039a02f145adba9410b404f6852bc226ab716639e43cc82ec60",
+          "stable_objectives.py": "85e370740808d61ee4f19915607c341235f40347bf6938970178af377cc666b2",
+          "fast_objectives.py": "81f6837b905062c5339f55f024a091a6e987c25e0309bf46e8c5bdeef668cedc",
+          "objectives.py": "3b9abd16d63be83261da369ba6e99ceb8d19fce65491ba46d54135b748012595",
+          "data.py": "dc23b825acf55dcf326ffe3b8fd316ed893f1506eb890522b5c760aeddf3302e",
+          "loader.py": "66881e3944d7b8a7e3b2429d951ff1a327f25975fa3dbcb49ed4940f3be7b9c4",
+          "train.py": "493c2224b844e9f352b0c78e7dad8c94d7312b3f8fc23651b67a6776a868f14d"
+        }
+      },
+      {
+        "run": "detail",
+        "protocol_path": "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/detail/training_runs/detail/protocol.json",
+        "protocol_identity_sha256": "046abab773f7cb7a9e4f0a0f9cc44c4ad32d48431b971f22720dc8bd7936168a",
+        "code_sha256_by_file": {
+          "baseline.py": "3e19781d2172a7b211f80994739b387d3235c966dd9c81b2f777e1b3c33b2aa9",
+          "model.py": "f49e08ec2b5d3b04590813f9e13ac06ae3c52eb422e7ec379b7f93de5b2115c9",
+          "private_modules.py": "08541136cd72e039a02f145adba9410b404f6852bc226ab716639e43cc82ec60",
+          "stable_objectives.py": "bf79135d2f756b4abcad655beee9ed24f7bde738f62588a5532917e4b881e3ae",
+          "fast_objectives.py": "040a52c29ee9429834a4650bd51242e60a709b9ea2b11095433c9c9e4f969f1a",
+          "objectives.py": "501a6fa798203f37946ae0d3e90f43a4a9aef8369a1efd7eceb7da9b056f6fbb",
+          "data.py": "6145eb862cf75b895767ad627b4bac9ae6a417feacd92c909a4771765bce6545",
+          "loader.py": "ca9642f64c107df309127ddf5197fab5c86c46907ff5f247b5f5772d728ff74e",
+          "train.py": "bff69ed9a8e0c13f743425cc9c14b78e43d5e814f481188d86e5a3e405b9f644"
+        }
+      },
+      {
+        "run": "expert",
+        "protocol_path": "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/expert/training_runs/expert/protocol.json",
+        "protocol_identity_sha256": "4fa9d6cf18c806475d4877c34154ed15cb8e45500efe7f1e79e8dabd767758c9",
+        "code_sha256_by_file": {
+          "baseline.py": "3e19781d2172a7b211f80994739b387d3235c966dd9c81b2f777e1b3c33b2aa9",
+          "model.py": "e6461742a5e0e7c08e8ede78b7fd824953e9240f21f2c80d82e99f2098841926",
+          "private_modules.py": "08541136cd72e039a02f145adba9410b404f6852bc226ab716639e43cc82ec60",
+          "stable_objectives.py": "bf79135d2f756b4abcad655beee9ed24f7bde738f62588a5532917e4b881e3ae",
+          "fast_objectives.py": "04c3534cc5b0ac4ec469c8fd57f1763ac92054a0e05f2e7ffdccd198ef4c826b",
+          "objectives.py": "c81945ddfeacd91a484e5eabdbb20f80095611430a18e6bac5e1008ce3ff9250",
+          "data.py": "6145eb862cf75b895767ad627b4bac9ae6a417feacd92c909a4771765bce6545",
+          "loader.py": "353674fbe260e9232540283bd4198b0b24642950309edfdbc3ecb7475d498533",
+          "train.py": "48bf532791bb0a6b192093a9f827d57e7d7e6352dd7982c06122c57cd361eb2b"
+        }
+      },
+      {
+        "run": "foundation",
+        "protocol_path": "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/foundation/training_runs/foundation/protocol.json",
+        "protocol_identity_sha256": "cc3a215c3e867779f4c5e2a6feedb5921c95b4cf48bfc9fe610003216be73bf8",
+        "code_sha256_by_file": {
+          "baseline.py": "3e19781d2172a7b211f80994739b387d3235c966dd9c81b2f777e1b3c33b2aa9",
+          "model.py": "f49e08ec2b5d3b04590813f9e13ac06ae3c52eb422e7ec379b7f93de5b2115c9",
+          "private_modules.py": "08541136cd72e039a02f145adba9410b404f6852bc226ab716639e43cc82ec60",
+          "stable_objectives.py": "bf79135d2f756b4abcad655beee9ed24f7bde738f62588a5532917e4b881e3ae",
+          "fast_objectives.py": "01d62bc1dec49da00bbef7cd849f0ee3749730ffef51c36fbc2f1f824b951387",
+          "objectives.py": "cdcd38a5a6516545b8265011d1d73c60be47499cca760bf8c6059f1f18ac84d5",
+          "data.py": "6145eb862cf75b895767ad627b4bac9ae6a417feacd92c909a4771765bce6545",
+          "loader.py": "ca9642f64c107df309127ddf5197fab5c86c46907ff5f247b5f5772d728ff74e",
+          "train.py": "0b6d1f17873d9df8f02ed9d214fdc17fb65be6112728725fc1d1170b65b6e5cc"
+        }
+      },
+      {
+        "run": "iou",
+        "protocol_path": "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/iou/training_runs/iou/protocol.json",
+        "protocol_identity_sha256": "49ee0537d2802450284844a32405a6da0116ee9b77c2ab519aa9f985d15d47d4",
+        "code_sha256_by_file": {
+          "baseline.py": "3e19781d2172a7b211f80994739b387d3235c966dd9c81b2f777e1b3c33b2aa9",
+          "model.py": "fda926f0e5cdb6eb04df3b312effe240942bd8df8b54346ba1747cc85246bd4c",
+          "private_modules.py": "08541136cd72e039a02f145adba9410b404f6852bc226ab716639e43cc82ec60",
+          "stable_objectives.py": "bf79135d2f756b4abcad655beee9ed24f7bde738f62588a5532917e4b881e3ae",
+          "fast_objectives.py": "99ca2d79bd885e27c86aa54f154ca506e5e49208dcfa66f142f0d9fdf28e23d9",
+          "objectives.py": "51b6fb6003fc38a8e55136718ffaac73aabea3498c309fe082d146535b2397ca",
+          "data.py": "6145eb862cf75b895767ad627b4bac9ae6a417feacd92c909a4771765bce6545",
+          "loader.py": "ca9642f64c107df309127ddf5197fab5c86c46907ff5f247b5f5772d728ff74e",
+          "train.py": "1e59934909b92d504d2a8d0880211bfcff5512ae09f978e3c079bb1cbf8029ac"
+        }
+      },
+      {
+        "run": "residual",
+        "protocol_path": "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/residual/training_runs/residual/protocol.json",
+        "protocol_identity_sha256": "96cd1bc0ce79e9e5f5f8247958f868a4e00023f072bc6fea920092ad5a5003ec",
+        "code_sha256_by_file": {
+          "baseline.py": "3e19781d2172a7b211f80994739b387d3235c966dd9c81b2f777e1b3c33b2aa9",
+          "model.py": "b37a8c1d05d72358b6aae0c5a2e8b1703a743c125b98a812534d672a506bad67",
+          "private_modules.py": "08541136cd72e039a02f145adba9410b404f6852bc226ab716639e43cc82ec60",
+          "stable_objectives.py": "bf79135d2f756b4abcad655beee9ed24f7bde738f62588a5532917e4b881e3ae",
+          "fast_objectives.py": "040a52c29ee9429834a4650bd51242e60a709b9ea2b11095433c9c9e4f969f1a",
+          "objectives.py": "501a6fa798203f37946ae0d3e90f43a4a9aef8369a1efd7eceb7da9b056f6fbb",
+          "data.py": "6145eb862cf75b895767ad627b4bac9ae6a417feacd92c909a4771765bce6545",
+          "loader.py": "353674fbe260e9232540283bd4198b0b24642950309edfdbc3ecb7475d498533",
+          "train.py": "784929039f484ebf590acf1ab3b3e71e8cc3f1fd9b9433425ff776f30223194d"
+        }
+      },
+      {
+        "run": "sacd",
+        "protocol_path": "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/sacd/training_runs/sacd/protocol.json",
+        "protocol_identity_sha256": "8f6fd8dfc7a032f335511168a4ae831f4c9a69f5aaaf00876842c11dc20c11cf",
+        "code_sha256_by_file": {
+          "baseline.py": "3e19781d2172a7b211f80994739b387d3235c966dd9c81b2f777e1b3c33b2aa9",
+          "model.py": "0857c0f1a6ac29e49adf8cb39d62ee7a7c115384de40f07147c85d171ff561bf",
+          "private_modules.py": "08541136cd72e039a02f145adba9410b404f6852bc226ab716639e43cc82ec60",
+          "stable_objectives.py": "bf79135d2f756b4abcad655beee9ed24f7bde738f62588a5532917e4b881e3ae",
+          "fast_objectives.py": "b90c236dc6727b746e6e7e424f417479a10670d27a8c9c196b357f72a69684c6",
+          "objectives.py": "9f67cf16211f3abc10d79521dd27d6783026a62db0d15a0287fe0bc4a3cd60d1",
+          "data.py": "6145eb862cf75b895767ad627b4bac9ae6a417feacd92c909a4771765bce6545",
+          "loader.py": "353674fbe260e9232540283bd4198b0b24642950309edfdbc3ecb7475d498533",
+          "train.py": "a3d1b20b06fe52ee3c0ec5867945577b640b87cf550c02100d3bb07fe1a6ed39"
+        }
+      },
+      {
+        "run": "semantic",
+        "protocol_path": "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/semantic/training_runs/semantic/protocol.json",
+        "protocol_identity_sha256": "9e21de915c24dc3c16322cc39babb53cdc3754271b07e5f27ef22b10b43ddf43",
+        "code_sha256_by_file": {
+          "baseline.py": "3e19781d2172a7b211f80994739b387d3235c966dd9c81b2f777e1b3c33b2aa9",
+          "model.py": "fda926f0e5cdb6eb04df3b312effe240942bd8df8b54346ba1747cc85246bd4c",
+          "private_modules.py": "08541136cd72e039a02f145adba9410b404f6852bc226ab716639e43cc82ec60",
+          "stable_objectives.py": "bf79135d2f756b4abcad655beee9ed24f7bde738f62588a5532917e4b881e3ae",
+          "fast_objectives.py": "c83b0320c0bc4f6841f1be555453f3fde7b31458565723929ee8ea98a92544a6",
+          "objectives.py": "4a57912cec38cc5bfea157fb0947c37a3f2372cfbb30115104d208d113749878",
+          "data.py": "6145eb862cf75b895767ad627b4bac9ae6a417feacd92c909a4771765bce6545",
+          "loader.py": "ca9642f64c107df309127ddf5197fab5c86c46907ff5f247b5f5772d728ff74e",
+          "train.py": "32ec590eb21f8bc5b5caa6264dbc1a6d73367feff21fb684984810d7e633ba94"
+        }
+      },
+      {
+        "run": "v3",
+        "protocol_path": "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/stopped_20261009T001430/training_runs/v3/protocol.json",
+        "protocol_identity_sha256": "a42c0c6bbb0449e9bc8e04ed106158062697bc5272554937b4e8048abc55bff3",
+        "code_sha256_by_file": {
+          "model.py": "14e266e9ff0d49f8638c5079226e42ef5a1bd1c544efa85b02474749e3697c30",
+          "private_modules.py": "08541136cd72e039a02f145adba9410b404f6852bc226ab716639e43cc82ec60",
+          "objectives.py": "5ce6a2c15cbae4aef280cc2911fcef2e3d9a69f8fd34f16f146e63867941e64c",
+          "data.py": "dc23b825acf55dcf326ffe3b8fd316ed893f1506eb890522b5c760aeddf3302e",
+          "train.py": "534a32ad018aed7cac7032e458b8bb35de8ec07610779fed45bb018de5976b23"
+        }
+      }
+    ],
+    "unique_code_versions": [
+      {
+        "sha256": "01d62bc1dec49da00bbef7cd849f0ee3749730ffef51c36fbc2f1f824b951387",
+        "logical_names": [
+          "fast_objectives.py"
+        ],
+        "protocol_runs": [
+          "foundation"
+        ],
+        "matching_inventory_paths": [
+          "HRDecoder_ArchitectureDesign_20261008/foundation_execution/fast_objectives.py"
+        ],
+        "review_status": "manual_full_text_review",
+        "identity_basis": "exact code SHA named by one or more run protocol.json files",
+        "notes": "Same-SHA paths are one content version; repeated copies were not counted as separate readings."
+      },
+      {
+        "sha256": "040a52c29ee9429834a4650bd51242e60a709b9ea2b11095433c9c9e4f969f1a",
+        "logical_names": [
+          "fast_objectives.py"
+        ],
+        "protocol_runs": [
+          "adapter",
+          "detail",
+          "residual"
+        ],
+        "matching_inventory_paths": [
+          "HRDecoder_ArchitectureDesign_20261008/adapter_execution/fast_objectives.py",
+          "HRDecoder_ArchitectureDesign_20261008/detail_execution/fast_objectives.py",
+          "HRDecoder_ArchitectureDesign_20261008/residual_execution/fast_objectives.py"
+        ],
+        "review_status": "manual_full_text_review",
+        "identity_basis": "exact code SHA named by one or more run protocol.json files",
+        "notes": "Same-SHA paths are one content version; repeated copies were not counted as separate readings."
+      },
+      {
+        "sha256": "04c3534cc5b0ac4ec469c8fd57f1763ac92054a0e05f2e7ffdccd198ef4c826b",
+        "logical_names": [
+          "fast_objectives.py"
+        ],
+        "protocol_runs": [
+          "expert"
+        ],
+        "matching_inventory_paths": [
+          "HRDecoder_ArchitectureDesign_20261008/expert_execution/fast_objectives.py"
+        ],
+        "review_status": "manual_full_text_review",
+        "identity_basis": "exact code SHA named by one or more run protocol.json files",
+        "notes": "Same-SHA paths are one content version; repeated copies were not counted as separate readings."
+      },
+      {
+        "sha256": "08541136cd72e039a02f145adba9410b404f6852bc226ab716639e43cc82ec60",
+        "logical_names": [
+          "private_modules.py"
+        ],
+        "protocol_runs": [
+          "adapter",
+          "aligned",
+          "cet",
+          "detail",
+          "expert",
+          "foundation",
+          "iou",
+          "residual",
+          "sacd",
+          "semantic",
+          "v3"
+        ],
+        "matching_inventory_paths": [
+          "HRDecoder_ArchitectureDesign_20261008/adapter_execution/private_modules.py",
+          "HRDecoder_ArchitectureDesign_20261008/aligned_execution/private_modules.py",
+          "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/stopped_20261009T001430/training_execution/private_modules.py",
+          "HRDecoder_ArchitectureDesign_20261008/cet_execution/private_modules.py",
+          "HRDecoder_ArchitectureDesign_20261008/detail_execution/private_modules.py",
+          "HRDecoder_ArchitectureDesign_20261008/expert_execution/private_modules.py",
+          "HRDecoder_ArchitectureDesign_20261008/foundation_execution/private_modules.py",
+          "HRDecoder_ArchitectureDesign_20261008/iou_execution/private_modules.py",
+          "HRDecoder_ArchitectureDesign_20261008/residual_execution/private_modules.py",
+          "HRDecoder_ArchitectureDesign_20261008/sacd_execution/private_modules.py",
+          "HRDecoder_ArchitectureDesign_20261008/sacd_isolated_execution/private_modules.py",
+          "HRDecoder_ArchitectureDesign_20261008/semantic_execution/private_modules.py",
+          "HRDecoder_ArchitectureDesign_20261008/training_execution/private_modules.py"
+        ],
+        "review_status": "manual_full_text_review",
+        "identity_basis": "exact code SHA named by one or more run protocol.json files",
+        "notes": "Same-SHA paths are one content version; repeated copies were not counted as separate readings."
+      },
+      {
+        "sha256": "0857c0f1a6ac29e49adf8cb39d62ee7a7c115384de40f07147c85d171ff561bf",
+        "logical_names": [
+          "model.py"
+        ],
+        "protocol_runs": [
+          "sacd"
+        ],
+        "matching_inventory_paths": [
+          "HRDecoder_ArchitectureDesign_20261008/sacd_execution/model.py"
+        ],
+        "review_status": "manual_full_text_review",
+        "identity_basis": "exact code SHA named by one or more run protocol.json files",
+        "notes": "Same-SHA paths are one content version; repeated copies were not counted as separate readings."
+      },
+      {
+        "sha256": "0b6d1f17873d9df8f02ed9d214fdc17fb65be6112728725fc1d1170b65b6e5cc",
+        "logical_names": [
+          "train.py"
+        ],
+        "protocol_runs": [
+          "foundation"
+        ],
+        "matching_inventory_paths": [
+          "HRDecoder_ArchitectureDesign_20261008/foundation_execution/train.py"
+        ],
+        "review_status": "manual_full_text_review",
+        "identity_basis": "exact code SHA named by one or more run protocol.json files",
+        "notes": "Same-SHA paths are one content version; repeated copies were not counted as separate readings."
+      },
+      {
+        "sha256": "14e266e9ff0d49f8638c5079226e42ef5a1bd1c544efa85b02474749e3697c30",
+        "logical_names": [
+          "model.py"
+        ],
+        "protocol_runs": [
+          "v3"
+        ],
+        "matching_inventory_paths": [
+          "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/stopped_20261009T001430/training_execution/model.py",
+          "HRDecoder_ArchitectureDesign_20261008/training_execution/model.py"
+        ],
+        "review_status": "manual_full_text_review",
+        "identity_basis": "exact code SHA named by one or more run protocol.json files",
+        "notes": "Same-SHA paths are one content version; repeated copies were not counted as separate readings."
+      },
+      {
+        "sha256": "1e59934909b92d504d2a8d0880211bfcff5512ae09f978e3c079bb1cbf8029ac",
+        "logical_names": [
+          "train.py"
+        ],
+        "protocol_runs": [
+          "iou"
+        ],
+        "matching_inventory_paths": [
+          "HRDecoder_ArchitectureDesign_20261008/iou_execution/train.py"
+        ],
+        "review_status": "manual_full_text_review",
+        "identity_basis": "exact code SHA named by one or more run protocol.json files",
+        "notes": "Same-SHA paths are one content version; repeated copies were not counted as separate readings."
+      },
+      {
+        "sha256": "32ec590eb21f8bc5b5caa6264dbc1a6d73367feff21fb684984810d7e633ba94",
+        "logical_names": [
+          "train.py"
+        ],
+        "protocol_runs": [
+          "semantic"
+        ],
+        "matching_inventory_paths": [
+          "HRDecoder_ArchitectureDesign_20261008/semantic_execution/train.py"
+        ],
+        "review_status": "manual_full_text_review",
+        "identity_basis": "exact code SHA named by one or more run protocol.json files",
+        "notes": "Same-SHA paths are one content version; repeated copies were not counted as separate readings."
+      },
+      {
+        "sha256": "353674fbe260e9232540283bd4198b0b24642950309edfdbc3ecb7475d498533",
+        "logical_names": [
+          "loader.py"
+        ],
+        "protocol_runs": [
+          "expert",
+          "residual",
+          "sacd"
+        ],
+        "matching_inventory_paths": [
+          "HRDecoder_ArchitectureDesign_20261008/expert_execution/loader.py",
+          "HRDecoder_ArchitectureDesign_20261008/residual_execution/loader.py",
+          "HRDecoder_ArchitectureDesign_20261008/sacd_execution/loader.py",
+          "HRDecoder_ArchitectureDesign_20261008/sacd_isolated_execution/loader.py"
+        ],
+        "review_status": "manual_full_text_review",
+        "identity_basis": "exact code SHA named by one or more run protocol.json files",
+        "notes": "Same-SHA paths are one content version; repeated copies were not counted as separate readings."
+      },
+      {
+        "sha256": "3b9abd16d63be83261da369ba6e99ceb8d19fce65491ba46d54135b748012595",
+        "logical_names": [
+          "objectives.py"
+        ],
+        "protocol_runs": [
+          "cet"
+        ],
+        "matching_inventory_paths": [
+          "HRDecoder_ArchitectureDesign_20261008/cet_execution/objectives.py"
+        ],
+        "review_status": "manual_full_text_review",
+        "identity_basis": "exact code SHA named by one or more run protocol.json files",
+        "notes": "Same-SHA paths are one content version; repeated copies were not counted as separate readings."
+      },
+      {
+        "sha256": "3e19781d2172a7b211f80994739b387d3235c966dd9c81b2f777e1b3c33b2aa9",
+        "logical_names": [
+          "baseline.py"
+        ],
+        "protocol_runs": [
+          "adapter",
+          "aligned",
+          "cet",
+          "detail",
+          "expert",
+          "foundation",
+          "iou",
+          "residual",
+          "sacd",
+          "semantic"
+        ],
+        "matching_inventory_paths": [
+          "HRDecoder_ArchitectureDesign_20261008/adapter_execution/baseline.py",
+          "HRDecoder_ArchitectureDesign_20261008/aligned_execution/baseline.py",
+          "HRDecoder_ArchitectureDesign_20261008/cet_execution/baseline.py",
+          "HRDecoder_ArchitectureDesign_20261008/detail_execution/baseline.py",
+          "HRDecoder_ArchitectureDesign_20261008/expert_execution/baseline.py",
+          "HRDecoder_ArchitectureDesign_20261008/foundation_execution/baseline.py",
+          "HRDecoder_ArchitectureDesign_20261008/iou_execution/baseline.py",
+          "HRDecoder_ArchitectureDesign_20261008/residual_execution/baseline.py",
+          "HRDecoder_ArchitectureDesign_20261008/sacd_execution/baseline.py",
+          "HRDecoder_ArchitectureDesign_20261008/sacd_isolated_execution/baseline.py",
+          "HRDecoder_ArchitectureDesign_20261008/semantic_execution/baseline.py"
+        ],
+        "review_status": "manual_full_text_review",
+        "identity_basis": "exact code SHA named by one or more run protocol.json files",
+        "notes": "Same-SHA paths are one content version; repeated copies were not counted as separate readings."
+      },
+      {
+        "sha256": "48bf532791bb0a6b192093a9f827d57e7d7e6352dd7982c06122c57cd361eb2b",
+        "logical_names": [
+          "train.py"
+        ],
+        "protocol_runs": [
+          "expert"
+        ],
+        "matching_inventory_paths": [
+          "HRDecoder_ArchitectureDesign_20261008/expert_execution/train.py"
+        ],
+        "review_status": "manual_full_text_review",
+        "identity_basis": "exact code SHA named by one or more run protocol.json files",
+        "notes": "Same-SHA paths are one content version; repeated copies were not counted as separate readings."
+      },
+      {
+        "sha256": "493c2224b844e9f352b0c78e7dad8c94d7312b3f8fc23651b67a6776a868f14d",
+        "logical_names": [
+          "train.py"
+        ],
+        "protocol_runs": [
+          "cet"
+        ],
+        "matching_inventory_paths": [
+          "HRDecoder_ArchitectureDesign_20261008/cet_execution/train.py"
+        ],
+        "review_status": "manual_full_text_review",
+        "identity_basis": "exact code SHA named by one or more run protocol.json files",
+        "notes": "Same-SHA paths are one content version; repeated copies were not counted as separate readings."
+      },
+      {
+        "sha256": "4a57912cec38cc5bfea157fb0947c37a3f2372cfbb30115104d208d113749878",
+        "logical_names": [
+          "objectives.py"
+        ],
+        "protocol_runs": [
+          "aligned",
+          "semantic"
+        ],
+        "matching_inventory_paths": [
+          "HRDecoder_ArchitectureDesign_20261008/aligned_execution/objectives.py",
+          "HRDecoder_ArchitectureDesign_20261008/semantic_execution/objectives.py"
+        ],
+        "review_status": "manual_full_text_review",
+        "identity_basis": "exact code SHA named by one or more run protocol.json files",
+        "notes": "Same-SHA paths are one content version; repeated copies were not counted as separate readings."
+      },
+      {
+        "sha256": "4bfcbce775ce7ea9af7d3453ec5cf6337d3cd025f541d57690abee7c759112e3",
+        "logical_names": [
+          "model.py"
+        ],
+        "protocol_runs": [
+          "adapter"
+        ],
+        "matching_inventory_paths": [
+          "HRDecoder_ArchitectureDesign_20261008/adapter_execution/model.py"
+        ],
+        "review_status": "manual_full_text_review",
+        "identity_basis": "exact code SHA named by one or more run protocol.json files",
+        "notes": "Same-SHA paths are one content version; repeated copies were not counted as separate readings."
+      },
+      {
+        "sha256": "501a6fa798203f37946ae0d3e90f43a4a9aef8369a1efd7eceb7da9b056f6fbb",
+        "logical_names": [
+          "objectives.py"
+        ],
+        "protocol_runs": [
+          "adapter",
+          "detail",
+          "residual"
+        ],
+        "matching_inventory_paths": [
+          "HRDecoder_ArchitectureDesign_20261008/adapter_execution/objectives.py",
+          "HRDecoder_ArchitectureDesign_20261008/detail_execution/objectives.py",
+          "HRDecoder_ArchitectureDesign_20261008/residual_execution/objectives.py"
+        ],
+        "review_status": "manual_full_text_review",
+        "identity_basis": "exact code SHA named by one or more run protocol.json files",
+        "notes": "Same-SHA paths are one content version; repeated copies were not counted as separate readings."
+      },
+      {
+        "sha256": "51b6fb6003fc38a8e55136718ffaac73aabea3498c309fe082d146535b2397ca",
+        "logical_names": [
+          "objectives.py"
+        ],
+        "protocol_runs": [
+          "iou"
+        ],
+        "matching_inventory_paths": [
+          "HRDecoder_ArchitectureDesign_20261008/iou_execution/objectives.py"
+        ],
+        "review_status": "manual_full_text_review",
+        "identity_basis": "exact code SHA named by one or more run protocol.json files",
+        "notes": "Same-SHA paths are one content version; repeated copies were not counted as separate readings."
+      },
+      {
+        "sha256": "534a32ad018aed7cac7032e458b8bb35de8ec07610779fed45bb018de5976b23",
+        "logical_names": [
+          "train.py"
+        ],
+        "protocol_runs": [
+          "v3"
+        ],
+        "matching_inventory_paths": [
+          "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/stopped_20261009T001430/training_execution/train.py",
+          "HRDecoder_ArchitectureDesign_20261008/training_execution/train.py"
+        ],
+        "review_status": "manual_full_text_review",
+        "identity_basis": "exact code SHA named by one or more run protocol.json files",
+        "notes": "Same-SHA paths are one content version; repeated copies were not counted as separate readings."
+      },
+      {
+        "sha256": "5ce6a2c15cbae4aef280cc2911fcef2e3d9a69f8fd34f16f146e63867941e64c",
+        "logical_names": [
+          "objectives.py"
+        ],
+        "protocol_runs": [
+          "v3"
+        ],
+        "matching_inventory_paths": [
+          "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/stopped_20261009T001430/training_execution/objectives.py",
+          "HRDecoder_ArchitectureDesign_20261008/training_execution/objectives.py"
+        ],
+        "review_status": "manual_full_text_review",
+        "identity_basis": "exact code SHA named by one or more run protocol.json files",
+        "notes": "Same-SHA paths are one content version; repeated copies were not counted as separate readings."
+      },
+      {
+        "sha256": "6145eb862cf75b895767ad627b4bac9ae6a417feacd92c909a4771765bce6545",
+        "logical_names": [
+          "data.py"
+        ],
+        "protocol_runs": [
+          "adapter",
+          "aligned",
+          "detail",
+          "expert",
+          "foundation",
+          "iou",
+          "residual",
+          "sacd",
+          "semantic"
+        ],
+        "matching_inventory_paths": [
+          "HRDecoder_ArchitectureDesign_20261008/adapter_execution/data.py",
+          "HRDecoder_ArchitectureDesign_20261008/aligned_execution/data.py",
+          "HRDecoder_ArchitectureDesign_20261008/detail_execution/data.py",
+          "HRDecoder_ArchitectureDesign_20261008/expert_execution/data.py",
+          "HRDecoder_ArchitectureDesign_20261008/foundation_execution/data.py",
+          "HRDecoder_ArchitectureDesign_20261008/iou_execution/data.py",
+          "HRDecoder_ArchitectureDesign_20261008/residual_execution/data.py",
+          "HRDecoder_ArchitectureDesign_20261008/sacd_execution/data.py",
+          "HRDecoder_ArchitectureDesign_20261008/sacd_isolated_execution/data.py",
+          "HRDecoder_ArchitectureDesign_20261008/semantic_execution/data.py"
+        ],
+        "review_status": "manual_full_text_review",
+        "identity_basis": "exact code SHA named by one or more run protocol.json files",
+        "notes": "Same-SHA paths are one content version; repeated copies were not counted as separate readings."
+      },
+      {
+        "sha256": "66881e3944d7b8a7e3b2429d951ff1a327f25975fa3dbcb49ed4940f3be7b9c4",
+        "logical_names": [
+          "loader.py"
+        ],
+        "protocol_runs": [
+          "cet"
+        ],
+        "matching_inventory_paths": [
+          "HRDecoder_ArchitectureDesign_20261008/cet_execution/loader.py"
+        ],
+        "review_status": "manual_full_text_review",
+        "identity_basis": "exact code SHA named by one or more run protocol.json files",
+        "notes": "Same-SHA paths are one content version; repeated copies were not counted as separate readings."
+      },
+      {
+        "sha256": "6ade097741811da299734184ce196157ca98aa406095170759fe878bbb09cef9",
+        "logical_names": [
+          "train.py"
+        ],
+        "protocol_runs": [
+          "adapter"
+        ],
+        "matching_inventory_paths": [
+          "HRDecoder_ArchitectureDesign_20261008/adapter_execution/train.py",
+          "HRDecoder_ArchitectureDesign_20261008/adapter_execution/train_ram_patch.py"
+        ],
+        "review_status": "manual_full_text_review",
+        "identity_basis": "exact code SHA named by one or more run protocol.json files",
+        "notes": "Same-SHA paths are one content version; repeated copies were not counted as separate readings."
+      },
+      {
+        "sha256": "716c165d78f5de9726c37f51f53043e3cfcb8a84b6722038b77494630cd28ef2",
+        "logical_names": [
+          "train.py"
+        ],
+        "protocol_runs": [
+          "aligned"
+        ],
+        "matching_inventory_paths": [
+          "HRDecoder_ArchitectureDesign_20261008/aligned_execution/train.py"
+        ],
+        "review_status": "manual_full_text_review",
+        "identity_basis": "exact code SHA named by one or more run protocol.json files",
+        "notes": "Same-SHA paths are one content version; repeated copies were not counted as separate readings."
+      },
+      {
+        "sha256": "784929039f484ebf590acf1ab3b3e71e8cc3f1fd9b9433425ff776f30223194d",
+        "logical_names": [
+          "train.py"
+        ],
+        "protocol_runs": [
+          "residual"
+        ],
+        "matching_inventory_paths": [
+          "HRDecoder_ArchitectureDesign_20261008/residual_execution/train.py"
+        ],
+        "review_status": "manual_full_text_review",
+        "identity_basis": "exact code SHA named by one or more run protocol.json files",
+        "notes": "Same-SHA paths are one content version; repeated copies were not counted as separate readings."
+      },
+      {
+        "sha256": "81f6837b905062c5339f55f024a091a6e987c25e0309bf46e8c5bdeef668cedc",
+        "logical_names": [
+          "fast_objectives.py"
+        ],
+        "protocol_runs": [
+          "cet"
+        ],
+        "matching_inventory_paths": [
+          "HRDecoder_ArchitectureDesign_20261008/cet_execution/fast_objectives.py"
+        ],
+        "review_status": "manual_full_text_review",
+        "identity_basis": "exact code SHA named by one or more run protocol.json files",
+        "notes": "Same-SHA paths are one content version; repeated copies were not counted as separate readings."
+      },
+      {
+        "sha256": "85e370740808d61ee4f19915607c341235f40347bf6938970178af377cc666b2",
+        "logical_names": [
+          "stable_objectives.py"
+        ],
+        "protocol_runs": [
+          "cet"
+        ],
+        "matching_inventory_paths": [
+          "HRDecoder_ArchitectureDesign_20261008/cet_execution/stable_objectives.py",
+          "HRDecoder_ArchitectureDesign_20261008/diagnosis_v4/v4_objectives.py"
+        ],
+        "review_status": "manual_full_text_review",
+        "identity_basis": "exact code SHA named by one or more run protocol.json files",
+        "notes": "Same-SHA paths are one content version; repeated copies were not counted as separate readings."
+      },
+      {
+        "sha256": "99ca2d79bd885e27c86aa54f154ca506e5e49208dcfa66f142f0d9fdf28e23d9",
+        "logical_names": [
+          "fast_objectives.py"
+        ],
+        "protocol_runs": [
+          "iou"
+        ],
+        "matching_inventory_paths": [
+          "HRDecoder_ArchitectureDesign_20261008/iou_execution/fast_objectives.py"
+        ],
+        "review_status": "manual_full_text_review",
+        "identity_basis": "exact code SHA named by one or more run protocol.json files",
+        "notes": "Same-SHA paths are one content version; repeated copies were not counted as separate readings."
+      },
+      {
+        "sha256": "9f67cf16211f3abc10d79521dd27d6783026a62db0d15a0287fe0bc4a3cd60d1",
+        "logical_names": [
+          "objectives.py"
+        ],
+        "protocol_runs": [
+          "sacd"
+        ],
+        "matching_inventory_paths": [
+          "HRDecoder_ArchitectureDesign_20261008/sacd_execution/objectives.py",
+          "HRDecoder_ArchitectureDesign_20261008/sacd_isolated_execution/objectives.py"
+        ],
+        "review_status": "manual_full_text_review",
+        "identity_basis": "exact code SHA named by one or more run protocol.json files",
+        "notes": "Same-SHA paths are one content version; repeated copies were not counted as separate readings."
+      },
+      {
+        "sha256": "a3d1b20b06fe52ee3c0ec5867945577b640b87cf550c02100d3bb07fe1a6ed39",
+        "logical_names": [
+          "train.py"
+        ],
+        "protocol_runs": [
+          "sacd"
+        ],
+        "matching_inventory_paths": [
+          "HRDecoder_ArchitectureDesign_20261008/sacd_execution/train.py"
+        ],
+        "review_status": "manual_full_text_review",
+        "identity_basis": "exact code SHA named by one or more run protocol.json files",
+        "notes": "Same-SHA paths are one content version; repeated copies were not counted as separate readings."
+      },
+      {
+        "sha256": "b37a8c1d05d72358b6aae0c5a2e8b1703a743c125b98a812534d672a506bad67",
+        "logical_names": [
+          "model.py"
+        ],
+        "protocol_runs": [
+          "residual"
+        ],
+        "matching_inventory_paths": [
+          "HRDecoder_ArchitectureDesign_20261008/residual_execution/model.py"
+        ],
+        "review_status": "manual_full_text_review",
+        "identity_basis": "exact code SHA named by one or more run protocol.json files",
+        "notes": "Same-SHA paths are one content version; repeated copies were not counted as separate readings."
+      },
+      {
+        "sha256": "b90c236dc6727b746e6e7e424f417479a10670d27a8c9c196b357f72a69684c6",
+        "logical_names": [
+          "fast_objectives.py"
+        ],
+        "protocol_runs": [
+          "sacd"
+        ],
+        "matching_inventory_paths": [
+          "HRDecoder_ArchitectureDesign_20261008/sacd_execution/fast_objectives.py",
+          "HRDecoder_ArchitectureDesign_20261008/sacd_isolated_execution/fast_objectives.py"
+        ],
+        "review_status": "manual_full_text_review",
+        "identity_basis": "exact code SHA named by one or more run protocol.json files",
+        "notes": "Same-SHA paths are one content version; repeated copies were not counted as separate readings."
+      },
+      {
+        "sha256": "bf79135d2f756b4abcad655beee9ed24f7bde738f62588a5532917e4b881e3ae",
+        "logical_names": [
+          "stable_objectives.py"
+        ],
+        "protocol_runs": [
+          "adapter",
+          "aligned",
+          "detail",
+          "expert",
+          "foundation",
+          "iou",
+          "residual",
+          "sacd",
+          "semantic"
+        ],
+        "matching_inventory_paths": [
+          "HRDecoder_ArchitectureDesign_20261008/adapter_execution/stable_objectives.py",
+          "HRDecoder_ArchitectureDesign_20261008/aligned_execution/stable_objectives.py",
+          "HRDecoder_ArchitectureDesign_20261008/detail_execution/stable_objectives.py",
+          "HRDecoder_ArchitectureDesign_20261008/expert_execution/stable_objectives.py",
+          "HRDecoder_ArchitectureDesign_20261008/foundation_execution/stable_objectives.py",
+          "HRDecoder_ArchitectureDesign_20261008/iou_execution/stable_objectives.py",
+          "HRDecoder_ArchitectureDesign_20261008/residual_execution/stable_objectives.py",
+          "HRDecoder_ArchitectureDesign_20261008/sacd_execution/stable_objectives.py",
+          "HRDecoder_ArchitectureDesign_20261008/sacd_isolated_execution/stable_objectives.py",
+          "HRDecoder_ArchitectureDesign_20261008/semantic_execution/stable_objectives.py"
+        ],
+        "review_status": "manual_full_text_review",
+        "identity_basis": "exact code SHA named by one or more run protocol.json files",
+        "notes": "Same-SHA paths are one content version; repeated copies were not counted as separate readings."
+      },
+      {
+        "sha256": "bff69ed9a8e0c13f743425cc9c14b78e43d5e814f481188d86e5a3e405b9f644",
+        "logical_names": [
+          "train.py"
+        ],
+        "protocol_runs": [
+          "detail"
+        ],
+        "matching_inventory_paths": [
+          "HRDecoder_ArchitectureDesign_20261008/detail_execution/train.py"
+        ],
+        "review_status": "manual_full_text_review",
+        "identity_basis": "exact code SHA named by one or more run protocol.json files",
+        "notes": "Same-SHA paths are one content version; repeated copies were not counted as separate readings."
+      },
+      {
+        "sha256": "c81945ddfeacd91a484e5eabdbb20f80095611430a18e6bac5e1008ce3ff9250",
+        "logical_names": [
+          "objectives.py"
+        ],
+        "protocol_runs": [
+          "expert"
+        ],
+        "matching_inventory_paths": [
+          "HRDecoder_ArchitectureDesign_20261008/expert_execution/objectives.py"
+        ],
+        "review_status": "manual_full_text_review",
+        "identity_basis": "exact code SHA named by one or more run protocol.json files",
+        "notes": "Same-SHA paths are one content version; repeated copies were not counted as separate readings."
+      },
+      {
+        "sha256": "c83b0320c0bc4f6841f1be555453f3fde7b31458565723929ee8ea98a92544a6",
+        "logical_names": [
+          "fast_objectives.py"
+        ],
+        "protocol_runs": [
+          "aligned",
+          "semantic"
+        ],
+        "matching_inventory_paths": [
+          "HRDecoder_ArchitectureDesign_20261008/aligned_execution/fast_objectives.py",
+          "HRDecoder_ArchitectureDesign_20261008/semantic_execution/fast_objectives.py"
+        ],
+        "review_status": "manual_full_text_review",
+        "identity_basis": "exact code SHA named by one or more run protocol.json files",
+        "notes": "Same-SHA paths are one content version; repeated copies were not counted as separate readings."
+      },
+      {
+        "sha256": "ca9642f64c107df309127ddf5197fab5c86c46907ff5f247b5f5772d728ff74e",
+        "logical_names": [
+          "loader.py"
+        ],
+        "protocol_runs": [
+          "adapter",
+          "aligned",
+          "detail",
+          "foundation",
+          "iou",
+          "semantic"
+        ],
+        "matching_inventory_paths": [
+          "HRDecoder_ArchitectureDesign_20261008/adapter_execution/loader.py",
+          "HRDecoder_ArchitectureDesign_20261008/adapter_execution/loader_ram_patch.py",
+          "HRDecoder_ArchitectureDesign_20261008/aligned_execution/loader.py",
+          "HRDecoder_ArchitectureDesign_20261008/detail_execution/loader.py",
+          "HRDecoder_ArchitectureDesign_20261008/foundation_execution/loader.py",
+          "HRDecoder_ArchitectureDesign_20261008/iou_execution/loader.py",
+          "HRDecoder_ArchitectureDesign_20261008/semantic_execution/loader.py"
+        ],
+        "review_status": "manual_full_text_review",
+        "identity_basis": "exact code SHA named by one or more run protocol.json files",
+        "notes": "Same-SHA paths are one content version; repeated copies were not counted as separate readings."
+      },
+      {
+        "sha256": "cdcd38a5a6516545b8265011d1d73c60be47499cca760bf8c6059f1f18ac84d5",
+        "logical_names": [
+          "objectives.py"
+        ],
+        "protocol_runs": [
+          "foundation"
+        ],
+        "matching_inventory_paths": [
+          "HRDecoder_ArchitectureDesign_20261008/foundation_execution/objectives.py"
+        ],
+        "review_status": "manual_full_text_review",
+        "identity_basis": "exact code SHA named by one or more run protocol.json files",
+        "notes": "Same-SHA paths are one content version; repeated copies were not counted as separate readings."
+      },
+      {
+        "sha256": "dc23b825acf55dcf326ffe3b8fd316ed893f1506eb890522b5c760aeddf3302e",
+        "logical_names": [
+          "data.py"
+        ],
+        "protocol_runs": [
+          "cet",
+          "v3"
+        ],
+        "matching_inventory_paths": [
+          "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/stopped_20261009T001430/training_execution/data.py",
+          "HRDecoder_ArchitectureDesign_20261008/cet_execution/data.py",
+          "HRDecoder_ArchitectureDesign_20261008/training_execution/data.py"
+        ],
+        "review_status": "manual_full_text_review",
+        "identity_basis": "exact code SHA named by one or more run protocol.json files",
+        "notes": "Same-SHA paths are one content version; repeated copies were not counted as separate readings."
+      },
+      {
+        "sha256": "dcf9115d9960d54c4cb0332372ac4feb729e8aca722d7daf33b85582224a62a9",
+        "logical_names": [
+          "model.py"
+        ],
+        "protocol_runs": [
+          "cet"
+        ],
+        "matching_inventory_paths": [
+          "HRDecoder_ArchitectureDesign_20261008/cet_execution/model.py"
+        ],
+        "review_status": "manual_full_text_review",
+        "identity_basis": "exact code SHA named by one or more run protocol.json files",
+        "notes": "Same-SHA paths are one content version; repeated copies were not counted as separate readings."
+      },
+      {
+        "sha256": "e6461742a5e0e7c08e8ede78b7fd824953e9240f21f2c80d82e99f2098841926",
+        "logical_names": [
+          "model.py"
+        ],
+        "protocol_runs": [
+          "expert"
+        ],
+        "matching_inventory_paths": [
+          "HRDecoder_ArchitectureDesign_20261008/expert_execution/model.py"
+        ],
+        "review_status": "manual_full_text_review",
+        "identity_basis": "exact code SHA named by one or more run protocol.json files",
+        "notes": "Same-SHA paths are one content version; repeated copies were not counted as separate readings."
+      },
+      {
+        "sha256": "f49e08ec2b5d3b04590813f9e13ac06ae3c52eb422e7ec379b7f93de5b2115c9",
+        "logical_names": [
+          "model.py"
+        ],
+        "protocol_runs": [
+          "aligned",
+          "detail",
+          "foundation"
+        ],
+        "matching_inventory_paths": [
+          "HRDecoder_ArchitectureDesign_20261008/aligned_execution/model.py",
+          "HRDecoder_ArchitectureDesign_20261008/detail_execution/model.py",
+          "HRDecoder_ArchitectureDesign_20261008/foundation_execution/model.py"
+        ],
+        "review_status": "manual_full_text_review",
+        "identity_basis": "exact code SHA named by one or more run protocol.json files",
+        "notes": "Same-SHA paths are one content version; repeated copies were not counted as separate readings."
+      },
+      {
+        "sha256": "fda926f0e5cdb6eb04df3b312effe240942bd8df8b54346ba1747cc85246bd4c",
+        "logical_names": [
+          "model.py"
+        ],
+        "protocol_runs": [
+          "iou",
+          "semantic"
+        ],
+        "matching_inventory_paths": [
+          "HRDecoder_ArchitectureDesign_20261008/iou_execution/model.py",
+          "HRDecoder_ArchitectureDesign_20261008/semantic_execution/model.py"
+        ],
+        "review_status": "manual_full_text_review",
+        "identity_basis": "exact code SHA named by one or more run protocol.json files",
+        "notes": "Same-SHA paths are one content version; repeated copies were not counted as separate readings."
+      }
+    ],
+    "notes": [
+      "The 43? count is computed from current protocol catalog and identity.code values; use the JSON field, not earlier informal totals.",
+      "These are exact code identities recorded by experiment protocols. The matching current snapshot path is not inferred by folder name.",
+      "ArchitectureDesign v3 was persisted through 21k/actual log through 21,930 and validated last at 20k; no formal 40k completion or test result is attributed to this source."
+    ]
+  },
+  "non_protocol_core_sources": {
+    "manually_read_paths": [
+      {
+        "path": "HRDecoder_NativePyramid_20261011/model.py",
+        "sha256": "ca1a2bb4b45773fa13c1b1aa5931402176ba7bbd6ff550e512d8a7d7fa1f0723",
+        "bytes": 8611,
+        "review_status": "manual_full_text",
+        "review_note": "Core path read in full; identity and any link to a historical run are stated separately."
+      },
+      {
+        "path": "HRDecoder_NativePyramid_20261011/data.py",
+        "sha256": "78e2e26ecb22d360c3c04e23544b16ca77f05dceeb75f496c5fd25b7afc2945b",
+        "bytes": 7513,
+        "review_status": "manual_full_text",
+        "review_note": "Core path read in full; identity and any link to a historical run are stated separately."
+      },
+      {
+        "path": "HRDecoder_NativePyramid_20261011/losses.py",
+        "sha256": "521a9b7424328547968f29b658724e2b9a20b0449f001dc6996d3ca9a5fc1321",
+        "bytes": 4570,
+        "review_status": "manual_full_text",
+        "review_note": "Core path read in full; identity and any link to a historical run are stated separately."
+      },
+      {
+        "path": "HRDecoder_NativePyramid_20261011/metrics.py",
+        "sha256": "c231fc546ac57dc5c528ef9898b1fcd31ce86c13e2330090d5a7b3db4f74e551",
+        "bytes": 3450,
+        "review_status": "manual_full_text",
+        "review_note": "Core path read in full; identity and any link to a historical run are stated separately."
+      },
+      {
+        "path": "HRDecoder_NativePyramid_20261011/evaluate.py",
+        "sha256": "98fd0d67cfd322712eb2aad744e998b756ab65ef92bf955cf6baf36a2f3b93ab",
+        "bytes": 2686,
+        "review_status": "manual_full_text",
+        "review_note": "Core path read in full; identity and any link to a historical run are stated separately."
+      },
+      {
+        "path": "HRDecoder_NativePyramid_20261011/train.py",
+        "sha256": "0e37befca74989704f4307573707d6b8f1b96a2aaf761a63f65b8c70303ffacd",
+        "bytes": 14723,
+        "review_status": "manual_full_text",
+        "review_note": "Core path read in full; identity and any link to a historical run are stated separately."
+      },
+      {
+        "path": "autodl100/work/HRDecoder/mmseg/models/segmentors/HRDecoder.py",
+        "sha256": "a97d00407c03947363df65a035dc70e5b458f440e38c21161a247b3282c1b933",
+        "bytes": 13919,
+        "review_status": "manual_full_text",
+        "review_note": "Core path read in full; identity and any link to a historical run are stated separately."
+      },
+      {
+        "path": "autodl100/work/HRDecoder/mmseg/models/decode_heads/fcn_head.py",
+        "sha256": "71da7bd06c5501126020e3b9eb433eaaa1d3271238085f0e03dd46a558a13b6f",
+        "bytes": 4666,
+        "review_status": "manual_full_text",
+        "review_note": "Core path read in full; identity and any link to a historical run are stated separately."
+      },
+      {
+        "path": "autodl100/work/HRDecoder/mmseg/models/decode_heads/decode_head.py",
+        "sha256": "7761148740342da86df5ff6cdbbe404dbb0e27c0144a9ffc14f2ea5e8fbbf198",
+        "bytes": 9867,
+        "review_status": "manual_full_text",
+        "review_note": "Core path read in full; identity and any link to a historical run are stated separately."
+      },
+      {
+        "path": "autodl100/work/HRDecoder/mmseg/models/losses/binary_loss.py",
+        "sha256": "a56634a14dccf92ce004c9a87684ef53c6d66d8705ff49b5ab7c184a4e5e903c",
+        "bytes": 9042,
+        "review_status": "manual_full_text",
+        "review_note": "Core path read in full; identity and any link to a historical run are stated separately."
+      },
+      {
+        "path": "autodl100/work/HRDecoder/mmseg/models/necks/detail_branch.py",
+        "sha256": "d71d616fc876b3753596f839e3bc05c42e355ce9e52b4e1de6298634d57e1d3e",
+        "bytes": 2555,
+        "review_status": "manual_full_text",
+        "review_note": "Core path read in full; identity and any link to a historical run are stated separately."
+      },
+      {
+        "path": "autodl100/work/HRDecoder/mmseg/models/backbones/hrnet.py",
+        "sha256": "34b5bbe14dee11b694ac0bc6bc87092b11a79f00e6e17f4f66374275404eae24",
+        "bytes": 25724,
+        "review_status": "manual_full_text",
+        "review_note": "Core path read in full; identity and any link to a historical run are stated separately."
+      },
+      {
+        "path": "autodl100/work/HRDecoder/configs/lesion/hrdecoder_fcn_hr48_ddr_2048.py",
+        "sha256": "189a1a6dad43480f3a377101eaaf6be662645b15fe83e9b20f15365fd3334c3b",
+        "bytes": 1815,
+        "review_status": "manual_full_text",
+        "review_note": "Core path read in full; identity and any link to a historical run are stated separately."
+      },
+      {
+        "path": "autodl100/work/HRDecoder/configs/_base_/models/hrdecoder_fcn_hr48.py",
+        "sha256": "dac527439c9226955e2c3e772f74638af61a203020883fd96ceb7a0dd5b2b7bf",
+        "bytes": 436,
+        "review_status": "manual_full_text",
+        "review_note": "Core path read in full; identity and any link to a historical run are stated separately."
+      },
+      {
+        "path": "autodl100/work/HRDecoder/configs/_base_/models/hrdecoder_fcn_hr18.py",
+        "sha256": "76e807d9c7f16bc4a76fd8d89230613350115f606dc287904c2c10d7c84463b1",
+        "bytes": 1933,
+        "review_status": "manual_full_text",
+        "review_note": "Core path read in full; identity and any link to a historical run are stated separately."
+      },
+      {
+        "path": "HRDecoder_FullCompetition_20260920/trainer/models/hrdecoder_adapter.py",
+        "sha256": "36ead49711f97023e17d4072b582d3512d7dec35d996537af6bf3ecbf67d7c23",
+        "bytes": 14300,
+        "review_status": "manual_full_text",
+        "review_note": "Core path read in full; identity and any link to a historical run are stated separately."
+      },
+      {
+        "path": "HRDecoder_FullCompetition_20260920/trainer/loss.py",
+        "sha256": "e766ca1d39e5224d1598caa284b4a5e53e482e3656349e8683fa0dcbb060431f",
+        "bytes": 5538,
+        "review_status": "manual_full_text",
+        "review_note": "Core path read in full; identity and any link to a historical run are stated separately."
+      },
+      {
+        "path": "HRDecoder_FullCompetition_20260920/trainer/engine.py",
+        "sha256": "c87d0aa728baabae3c2b8896c0fd82cb5e21010c7cf33ab828f1b2150674bc11",
+        "bytes": 19377,
+        "review_status": "manual_full_text",
+        "review_note": "Core path read in full; identity and any link to a historical run are stated separately."
+      },
+      {
+        "path": "HRDecoder_FullCompetition_20260920/trainer/eval.py",
+        "sha256": "346942f06053501a2738362b21b602dc2902a7c60cea39b1dcbf3313b9b9bd96",
+        "bytes": 7470,
+        "review_status": "manual_full_text",
+        "review_note": "Core path read in full; identity and any link to a historical run are stated separately."
+      },
+      {
+        "path": "HRDecoder_FullCompetition_20260920/trainer/config.py",
+        "sha256": "f981072a9c9ad26bf4a8ed218d107d6f7eb10689051d6a01b870bfa7216800c7",
+        "bytes": 13308,
+        "review_status": "manual_full_text",
+        "review_note": "Core path read in full; identity and any link to a historical run are stated separately."
+      },
+      {
+        "path": "HRDecoder_FullCompetition_20260920/trainer/optim.py",
+        "sha256": "3a97a68ed23b21151b13b43f25d16c6541547d896f13ab34e08d6d748e5c50b9",
+        "bytes": 11187,
+        "review_status": "manual_full_text",
+        "review_note": "Core path read in full; identity and any link to a historical run are stated separately."
+      },
+      {
+        "path": "HRDecoder_FullCompetition_20260920/train.py",
+        "sha256": "0816ddc45be76f1613997054e16bd44ebd67ed2db20ba78b1a387fb214ac1bca",
+        "bytes": 20018,
+        "review_status": "manual_full_text",
+        "review_note": "Core path read in full; identity and any link to a historical run are stated separately."
+      },
+      {
+        "path": "HRDecoder_Ready_20261002/trainer/models/hrdecoder_adapter.py",
+        "sha256": "9d4f14d1dd114b82c44126bde3ec10fd57c643bc46eb6c8d53e4c54ea3e7a787",
+        "bytes": 16359,
+        "review_status": "manual_full_text",
+        "review_note": "Core path read in full; identity and any link to a historical run are stated separately."
+      },
+      {
+        "path": "HRDecoder_Ready_20261002/trainer/loss.py",
+        "sha256": "fc1d9d8882a67a648b1ac64f412da4a4ec894949473784bcd1ccec2efd9fe95a",
+        "bytes": 5698,
+        "review_status": "manual_full_text",
+        "review_note": "Core path read in full; identity and any link to a historical run are stated separately."
+      },
+      {
+        "path": "HRDecoder_Ready_20261002/trainer/engine.py",
+        "sha256": "b4f3e2ea30c96a7d3bc4721ce805b917d154a9a4df6abb14a213c62263ef7ecb",
+        "bytes": 23979,
+        "review_status": "manual_full_text",
+        "review_note": "Core path read in full; identity and any link to a historical run are stated separately."
+      },
+      {
+        "path": "HRDecoder_Ready_20261002/trainer/eval.py",
+        "sha256": "9578c2e46866fa3f0006a0b52a76bb653b76b5a8d373840cd8731dc864bb154e",
+        "bytes": 8570,
+        "review_status": "manual_full_text",
+        "review_note": "Core path read in full; identity and any link to a historical run are stated separately."
+      },
+      {
+        "path": "HRDecoder_Ready_20261002/train.py",
+        "sha256": "87a0e42783903cb0e314f5bddf000a49f6fd13c7205198c88ba0e3886a043e6e",
+        "bytes": 22789,
+        "review_status": "manual_full_text",
+        "review_note": "Core path read in full; identity and any link to a historical run are stated separately."
+      },
+      {
+        "path": "HRDecoder_Ready_20261002/trainer/config.py",
+        "sha256": "63624875f70841a27e18d83c6b4bee79e061a862f74df2762a38ecdce6f51c62",
+        "bytes": 13685,
+        "review_status": "manual_full_text",
+        "review_note": "Core path read in full; identity and any link to a historical run are stated separately."
+      },
+      {
+        "path": "hrdecoder_plus3/repo/hrplus_core.py",
+        "sha256": "4297d0fc3ffac8927e27a91531a9e9ea66280bfae6eb22a38a39fdaf780bf448",
+        "bytes": 8416,
+        "review_status": "manual_full_text",
+        "review_note": "Core path read in full; identity and any link to a historical run are stated separately."
+      },
+      {
+        "path": "hrdecoder_plus3/repo/hr100_refinement.py",
+        "sha256": "2d0db3056bc50bd68fd4da71f470f6e80fbf4deeb78264cbd4640dc2ab0c1b72",
+        "bytes": 2946,
+        "review_status": "manual_full_text",
+        "review_note": "Core path read in full; identity and any link to a historical run are stated separately."
+      },
+      {
+        "path": "hrdecoder_plus3/repo/mmseg/models/segmentors/HRDecoder.py",
+        "sha256": "a97d00407c03947363df65a035dc70e5b458f440e38c21161a247b3282c1b933",
+        "bytes": 13919,
+        "review_status": "manual_full_text",
+        "review_note": "Core path read in full; identity and any link to a historical run are stated separately."
+      },
+      {
+        "path": "hrdecoder_plus3/repo/mmseg/models/decode_heads/fcn_head.py",
+        "sha256": "71da7bd06c5501126020e3b9eb433eaaa1d3271238085f0e03dd46a558a13b6f",
+        "bytes": 4666,
+        "review_status": "manual_full_text",
+        "review_note": "Core path read in full; identity and any link to a historical run are stated separately."
+      },
+      {
+        "path": "hrdecoder_plus3/repo/mmseg/models/decode_heads/decode_head.py",
+        "sha256": "7761148740342da86df5ff6cdbbe404dbb0e27c0144a9ffc14f2ea5e8fbbf198",
+        "bytes": 9867,
+        "review_status": "manual_full_text",
+        "review_note": "Core path read in full; identity and any link to a historical run are stated separately."
+      },
+      {
+        "path": "hrdecoder_plus3/repo/mmseg/models/losses/binary_loss.py",
+        "sha256": "a56634a14dccf92ce004c9a87684ef53c6d66d8705ff49b5ab7c184a4e5e903c",
+        "bytes": 9042,
+        "review_status": "manual_full_text",
+        "review_note": "Core path read in full; identity and any link to a historical run are stated separately."
+      },
+      {
+        "path": "hrdecoder_plus3/repo/mmseg/models/necks/detail_branch.py",
+        "sha256": "d71d616fc876b3753596f839e3bc05c42e355ce9e52b4e1de6298634d57e1d3e",
+        "bytes": 2555,
+        "review_status": "manual_full_text",
+        "review_note": "Core path read in full; identity and any link to a historical run are stated separately."
+      },
+      {
+        "path": "hrdecoder_plus3/repo/tools/train.py",
+        "sha256": "0d1f2cbcd0ef4a00519a794abfa64596ccc6b264264adb60b709b7a931f4af76",
+        "bytes": 6486,
+        "review_status": "manual_full_text",
+        "review_note": "Core path read in full; identity and any link to a historical run are stated separately."
+      },
+      {
+        "path": "HRDecoder_Next_20261003/nextlib/model.py",
+        "sha256": "0c37beeb9efed709f2b4a237519e9d921e567617412f4905704380b0ae574eb4",
+        "bytes": 8292,
+        "review_status": "manual_full_text",
+        "review_note": "Next semantic model"
+      },
+      {
+        "path": "HRDecoder_Next_20261003/nextlib/data.py",
+        "sha256": "ec6e00c6a114487b7abaa60348bca5994c6f9020b38efdcc5b2b8c39f5c838e2",
+        "bytes": 5450,
+        "review_status": "manual_full_text",
+        "review_note": "Next frozen data stream"
+      },
+      {
+        "path": "HRDecoder_Next_20261003/nextlib/evaluate.py",
+        "sha256": "10b387afb7f7c8d12dbc906036c29b52f05fd058202592e60ccf1521e7a8cdcb",
+        "bytes": 12642,
+        "review_status": "manual_full_text",
+        "review_note": "Next image-coordinate evaluation"
+      },
+      {
+        "path": "HRDecoder_Next_20261003/nextlib/train.py",
+        "sha256": "510c60831c6ed52e2f9895396a2f989563fd8242c3b2e499bdbdea7c60f4e4e3",
+        "bytes": 15303,
+        "review_status": "manual_full_text",
+        "review_note": "Next training and resume runner"
+      },
+      {
+        "path": "HRDecoder_Next_20261003/trainer/models/hrdecoder_adapter.py",
+        "sha256": "9d4f14d1dd114b82c44126bde3ec10fd57c643bc46eb6c8d53e4c54ea3e7a787",
+        "bytes": 16359,
+        "review_status": "same_sha_full_read_inherited",
+        "review_note": "Next adapter; same SHA as manually read Ready source"
+      },
+      {
+        "path": "HRDecoder_Next_20261003/trainer/loss.py",
+        "sha256": "fc1d9d8882a67a648b1ac64f412da4a4ec894949473784bcd1ccec2efd9fe95a",
+        "bytes": 5698,
+        "review_status": "same_sha_full_read_inherited",
+        "review_note": "Next loss; same SHA as manually read Ready source"
+      },
+      {
+        "path": "HRDecoder_Next_20261003/trainer/engine.py",
+        "sha256": "b4f3e2ea30c96a7d3bc4721ce805b917d154a9a4df6abb14a213c62263ef7ecb",
+        "bytes": 23979,
+        "review_status": "same_sha_full_read_inherited",
+        "review_note": "Next engine; same SHA as manually read Ready source"
+      }
+    ],
+    "missing_expected_paths": [],
+    "identity_gaps_not_read_gaps": [
+      {
+        "run_or_artifact": "H0_stopped6000_metadata.tar.gz",
+        "issue": "No byte identity binds the archived run to a source SHA; candidate adapter/model/loss/train sources were read. H0 is 1024 canvas/effective batch 8/AdamW and is not a matched NativePyramid comparison."
+      },
+      {
+        "run_or_artifact": "D_0913_retry",
+        "issue": "Formal 20k result is documented, but no exact source SHA is present in the recoverable run metadata; the Plus3 candidate implementation was read and must not be represented as proven run source."
+      },
+      {
+        "run_or_artifact": "B0 historical baseline",
+        "issue": "No byte-bound source identity in the reviewed evidence; its historical report is not proof of the current source snapshot."
+      }
+    ],
+    "reviewed_separate_proposal_family": [
+      {
+        "sha256": "0c37beeb9efed709f2b4a237519e9d921e567617412f4905704380b0ae574eb4",
+        "review_status": "manual_full_text",
+        "reviewer": "remaining_materials_luna",
+        "review_note": "Next semantic model",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_Next_20261003/nextlib/model.py",
+            "bytes": 8292,
+            "line_count": 182,
+            "category": "source_code"
+          }
+        ]
+      },
+      {
+        "sha256": "ec6e00c6a114487b7abaa60348bca5994c6f9020b38efdcc5b2b8c39f5c838e2",
+        "review_status": "manual_full_text",
+        "reviewer": "remaining_materials_luna",
+        "review_note": "Next frozen data stream",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_Next_20261003/nextlib/data.py",
+            "bytes": 5450,
+            "line_count": 116,
+            "category": "source_code"
+          }
+        ]
+      },
+      {
+        "sha256": "10b387afb7f7c8d12dbc906036c29b52f05fd058202592e60ccf1521e7a8cdcb",
+        "review_status": "manual_full_text",
+        "reviewer": "remaining_materials_luna",
+        "review_note": "Next image-coordinate evaluation",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_Next_20261003/nextlib/evaluate.py",
+            "bytes": 12642,
+            "line_count": 247,
+            "category": "run_output_or_evidence"
+          }
+        ]
+      },
+      {
+        "sha256": "510c60831c6ed52e2f9895396a2f989563fd8242c3b2e499bdbdea7c60f4e4e3",
+        "review_status": "manual_full_text",
+        "reviewer": "remaining_materials_luna",
+        "review_note": "Next training and resume runner",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_Next_20261003/nextlib/train.py",
+            "bytes": 15303,
+            "line_count": 297,
+            "category": "source_code"
+          }
+        ]
+      },
+      {
+        "sha256": "9d4f14d1dd114b82c44126bde3ec10fd57c643bc46eb6c8d53e4c54ea3e7a787",
+        "review_status": "same_sha_full_read_inherited",
+        "reviewer": "remaining_materials_luna",
+        "review_note": "Next adapter; same SHA as manually read Ready source",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_Next_20261003/trainer/models/hrdecoder_adapter.py",
+            "bytes": 16359,
+            "line_count": 347,
+            "category": "source_code"
+          },
+          {
+            "path": "HRDecoder_Ready_20261002/trainer/models/hrdecoder_adapter.py",
+            "bytes": 16359,
+            "line_count": 347,
+            "category": "source_code"
+          }
+        ]
+      },
+      {
+        "sha256": "fc1d9d8882a67a648b1ac64f412da4a4ec894949473784bcd1ccec2efd9fe95a",
+        "review_status": "same_sha_full_read_inherited",
+        "reviewer": "remaining_materials_luna",
+        "review_note": "Next loss; same SHA as manually read Ready source",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_Next_20261003/trainer/loss.py",
+            "bytes": 5698,
+            "line_count": 123,
+            "category": "source_code"
+          },
+          {
+            "path": "HRDecoder_Ready_20261002/trainer/loss.py",
+            "bytes": 5698,
+            "line_count": 123,
+            "category": "source_code"
+          }
+        ]
+      },
+      {
+        "sha256": "b4f3e2ea30c96a7d3bc4721ce805b917d154a9a4df6abb14a213c62263ef7ecb",
+        "review_status": "same_sha_full_read_inherited",
+        "reviewer": "remaining_materials_luna",
+        "review_note": "Next engine; same SHA as manually read Ready source",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_Next_20261003/trainer/engine.py",
+            "bytes": 23979,
+            "line_count": 515,
+            "category": "source_code"
+          },
+          {
+            "path": "HRDecoder_Ready_20261002/trainer/engine.py",
+            "bytes": 23979,
+            "line_count": 515,
+            "category": "source_code"
+          }
+        ]
+      }
+    ]
+  },
+  "archive_only_source_members": {
+    "member_count": 68,
+    "unique_sha256_count": 52,
+    "source": "HRDecoder_NativePyramid_20261011/review_20261016/archive_only_source_members.csv",
+    "selection_rule": "Archive members whose SHA256 is absent from all regular-file rows in inventory_all.json.",
+    "status_counts_by_unique_sha256": {
+      "manual_full_text": 23,
+      "AST_or_index_only": 19,
+      "manual_diff_review": 10
+    },
+    "entries": [
+      {
+        "sha256": "0219c35bbeb8938f9b2e134489272cb8a3fc83e3922c31c8aba3d22800bad999",
+        "members": [
+          {
+            "archive": "D:/dataset/experiment/HRDecoder_inference_patch.tar.gz",
+            "member": "HRDecoder_Ready_20261002/tools/probability_cache.py",
+            "bytes": 870
+          }
+        ],
+        "review_status": "manual_full_text",
+        "review_rationale": "Core architecture/training/inference implementation or directly relevant regression/protocol utility was read in full."
+      },
+      {
+        "sha256": "0502ac86e7f8a71863661286414db6b69d7b2b3e299bff765a5cfce3db7b367a",
+        "members": [
+          {
+            "archive": "D:/dataset/experiment/HRDecoder_FullCompetition_20260920_upload.tar.gz",
+            "member": "trainer/models/hrdecoder_adapter.py",
+            "bytes": 12524
+          }
+        ],
+        "review_status": "manual_full_text",
+        "review_rationale": "Core architecture/training/inference implementation or directly relevant regression/protocol utility was read in full."
+      },
+      {
+        "sha256": "17c9c5150e488a01b0447b5911efedf146d7db2d0b10915cbc4943ffb45f134b",
+        "members": [
+          {
+            "archive": "D:/dataset/experiment/HRDecoder_NextPlan_20261004/execution/reports/HRDecoder_20261004_prepared.zip",
+            "member": "server_driver.py",
+            "bytes": 1365
+          }
+        ],
+        "review_status": "AST_or_index_only",
+        "review_rationale": "Deployment, packaging, static config, or test/support code outside the core model/loss/train/eval path; Python content is AST-parsed where applicable, YAML is structurally indexed. Not counted as full human reading."
+      },
+      {
+        "sha256": "1e2ef2a5439442acdbc5d2864da04855dcdc9c37d615658ea65b91808872b79f",
+        "members": [
+          {
+            "archive": "D:/dataset/experiment/HRDecoder_Next_20261003_code.tar.gz",
+            "member": "HRDecoder_Next_20261003/nextlib/g_stage.py",
+            "bytes": 7286
+          }
+        ],
+        "review_status": "manual_full_text",
+        "review_rationale": "Core architecture/training/inference implementation or directly relevant regression/protocol utility was read in full."
+      },
+      {
+        "sha256": "25de8f3aad754c80a78c696673e488aa5f96a09390cafcb1581bcf76e75171dc",
+        "members": [
+          {
+            "archive": "D:/dataset/experiment/HRDecoder_Ready_20261002_upload.tar.gz",
+            "member": "HRDecoder_Ready_20261002/tests/test_readiness_regressions.py",
+            "bytes": 3296
+          }
+        ],
+        "review_status": "AST_or_index_only",
+        "review_rationale": "Deployment, packaging, static config, or test/support code outside the core model/loss/train/eval path; Python content is AST-parsed where applicable, YAML is structurally indexed. Not counted as full human reading."
+      },
+      {
+        "sha256": "2762a5fa5f7c6986a5da349f7ced8072b1906282199b2bcbea493b821afee598",
+        "members": [
+          {
+            "archive": "D:/dataset/experiment/HRDecoder_final_ready_patch.tar.gz",
+            "member": "HRDecoder_Ready_20261002/tools/configure_server.py",
+            "bytes": 4962
+          }
+        ],
+        "review_status": "manual_diff_review",
+        "review_rationale": "Version delta was compared against its full-read predecessor; repeated identical paths are grouped by SHA."
+      },
+      {
+        "sha256": "27af5fefcdb7aaa94496c8008fb1741ce599177c9d22d7a0882d9c3d596e0315",
+        "members": [
+          {
+            "archive": "D:/dataset/experiment/HRDecoder_Ready_20261002_patch.tar.gz",
+            "member": "HRDecoder_Ready_20261002/trainer/engine.py",
+            "bytes": 22120
+          },
+          {
+            "archive": "D:/dataset/experiment/HRDecoder_Ready_20261002_upload.tar.gz",
+            "member": "HRDecoder_Ready_20261002/trainer/engine.py",
+            "bytes": 22120
+          }
+        ],
+        "review_status": "AST_or_index_only",
+        "review_rationale": "Deployment, packaging, static config, or test/support code outside the core model/loss/train/eval path; Python content is AST-parsed where applicable, YAML is structurally indexed. Not counted as full human reading."
+      },
+      {
+        "sha256": "3d60179e58d6fa89c2af116061c74f183fe288f11bcb013236dfe5ed38695a6e",
+        "members": [
+          {
+            "archive": "D:/dataset/experiment/HRDecoder_Ready_speed_patch.tar.gz",
+            "member": "HRDecoder_Ready_20261002/trainer/engine.py",
+            "bytes": 22276
+          }
+        ],
+        "review_status": "manual_diff_review",
+        "review_rationale": "Version delta was compared against its full-read predecessor; repeated identical paths are grouped by SHA."
+      },
+      {
+        "sha256": "42706e29e3218b192f5281f191037c8aa92f7907fd0f8bda02aa7caff8bb4bd0",
+        "members": [
+          {
+            "archive": "D:/dataset/experiment/HRDecoder_Ready_20261002_patch.tar.gz",
+            "member": "HRDecoder_Ready_20261002/trainer/eval.py",
+            "bytes": 8215
+          },
+          {
+            "archive": "D:/dataset/experiment/HRDecoder_Ready_20261002_upload.tar.gz",
+            "member": "HRDecoder_Ready_20261002/trainer/eval.py",
+            "bytes": 8215
+          },
+          {
+            "archive": "D:/dataset/experiment/HRDecoder_Ready_speed_patch.tar.gz",
+            "member": "HRDecoder_Ready_20261002/trainer/eval.py",
+            "bytes": 8215
+          }
+        ],
+        "review_status": "manual_full_text",
+        "review_rationale": "Core architecture/training/inference implementation or directly relevant regression/protocol utility was read in full."
+      },
+      {
+        "sha256": "43ca2c0296c9dec100a44591be90c25e6277cdcb4ab0de55e022acfaec7eb3bb",
+        "members": [
+          {
+            "archive": "D:/dataset/experiment/HRDecoder_FullCompetition_20260920_upload.tar.gz",
+            "member": "configs/U0_convnext_unet_ddr_only.yaml",
+            "bytes": 4898
+          }
+        ],
+        "review_status": "AST_or_index_only",
+        "review_rationale": "Deployment, packaging, static config, or test/support code outside the core model/loss/train/eval path; Python content is AST-parsed where applicable, YAML is structurally indexed. Not counted as full human reading."
+      },
+      {
+        "sha256": "44dd369e2b00c43dce2c580310bc05fd09ac26c308e6471146ee725169d58a61",
+        "members": [
+          {
+            "archive": "D:/dataset/experiment/HRDecoder_inference_patch.tar.gz",
+            "member": "HRDecoder_Ready_20261002/tests/test_hr_inference_geometry.py",
+            "bytes": 2321
+          }
+        ],
+        "review_status": "manual_full_text",
+        "review_rationale": "Core architecture/training/inference implementation or directly relevant regression/protocol utility was read in full."
+      },
+      {
+        "sha256": "45ed45b16ee53653c8cc6ed7fea9efe5bd89da8124420a5030d9191b45f58317",
+        "members": [
+          {
+            "archive": "D:/dataset/experiment/HRDecoder_Ready_20261002/finish_backend_patch.tar.gz",
+            "member": "trainer/screening.py",
+            "bytes": 2196
+          }
+        ],
+        "review_status": "AST_or_index_only",
+        "review_rationale": "Deployment, packaging, static config, or test/support code outside the core model/loss/train/eval path; Python content is AST-parsed where applicable, YAML is structurally indexed. Not counted as full human reading."
+      },
+      {
+        "sha256": "4bb62585c2ed0c37ffece8d086acb41b236d524a5d5f3bfad1737ca673c119ad",
+        "members": [
+          {
+            "archive": "D:/dataset/experiment/HRDecoder_Next_20261003_code.tar.gz",
+            "member": "HRDecoder_Next_20261003/preflight.py",
+            "bytes": 9734
+          }
+        ],
+        "review_status": "AST_or_index_only",
+        "review_rationale": "Deployment, packaging, static config, or test/support code outside the core model/loss/train/eval path; Python content is AST-parsed where applicable, YAML is structurally indexed. Not counted as full human reading."
+      },
+      {
+        "sha256": "4e3104021b68b8ef9224627e06034f09253000a6ba26ba842dc3316410305741",
+        "members": [
+          {
+            "archive": "D:/dataset/experiment/HRDecoder_Ready_20261002_patch.tar.gz",
+            "member": "HRDecoder_Ready_20261002/tools/crossfit_fusion.py",
+            "bytes": 6120
+          },
+          {
+            "archive": "D:/dataset/experiment/HRDecoder_Ready_speed_patch.tar.gz",
+            "member": "HRDecoder_Ready_20261002/tools/crossfit_fusion.py",
+            "bytes": 6120
+          }
+        ],
+        "review_status": "manual_diff_review",
+        "review_rationale": "Version delta was compared against its full-read predecessor; repeated identical paths are grouped by SHA."
+      },
+      {
+        "sha256": "5de1293da748ed17a965112e9903d0b27b81adaf146ec80dd21dcf085ac5ec55",
+        "members": [
+          {
+            "archive": "D:/dataset/experiment/HRDecoder_FullCompetition_20260920_upload.tar.gz",
+            "member": "tools/preflight_training.py",
+            "bytes": 31722
+          }
+        ],
+        "review_status": "AST_or_index_only",
+        "review_rationale": "Deployment, packaging, static config, or test/support code outside the core model/loss/train/eval path; Python content is AST-parsed where applicable, YAML is structurally indexed. Not counted as full human reading."
+      },
+      {
+        "sha256": "611efb7b58722d7830b28139ebc01f0c2788c8572968f7feb6dc0d04082dc5df",
+        "members": [
+          {
+            "archive": "D:/dataset/experiment/HRDecoder_Next_20261003/artifacts/HRDecoder_final_source_and_evidence_20261003.zip",
+            "member": "ops/ready_when_backed.py",
+            "bytes": 5930
+          }
+        ],
+        "review_status": "AST_or_index_only",
+        "review_rationale": "Deployment, packaging, static config, or test/support code outside the core model/loss/train/eval path; Python content is AST-parsed where applicable, YAML is structurally indexed. Not counted as full human reading."
+      },
+      {
+        "sha256": "693668ab513d1534c91ab856c6b7ef8d4afbb142bc1c6389cac68fd99c9209c6",
+        "members": [
+          {
+            "archive": "D:/dataset/experiment/HRDecoder_Ready_20261002/final_speed_patch.tar.gz",
+            "member": "trainer/engine.py",
+            "bytes": 22466
+          }
+        ],
+        "review_status": "manual_diff_review",
+        "review_rationale": "Version delta was compared against its full-read predecessor; repeated identical paths are grouped by SHA."
+      },
+      {
+        "sha256": "7a8afeb32b9ef5a3d9b811dfb4564b2f18f09dab6a8b41d0cd8128c1595a97d2",
+        "members": [
+          {
+            "archive": "D:/dataset/experiment/HRDecoder_Ready_20261002_patch.tar.gz",
+            "member": "HRDecoder_Ready_20261002/tools/export_predictions.py",
+            "bytes": 3493
+          },
+          {
+            "archive": "D:/dataset/experiment/HRDecoder_Ready_speed_patch.tar.gz",
+            "member": "HRDecoder_Ready_20261002/tools/export_predictions.py",
+            "bytes": 3493
+          }
+        ],
+        "review_status": "manual_full_text",
+        "review_rationale": "Core architecture/training/inference implementation or directly relevant regression/protocol utility was read in full."
+      },
+      {
+        "sha256": "7e1580b5ab8d380b049384d9cbb28831d2054043aaba77a48554d92a043f4fb1",
+        "members": [
+          {
+            "archive": "D:/dataset/experiment/HRDecoder_Ready_20261002/semi_backend_patch.tar.gz",
+            "member": "campaign/finish_campaign.py",
+            "bytes": 15180
+          }
+        ],
+        "review_status": "AST_or_index_only",
+        "review_rationale": "Deployment, packaging, static config, or test/support code outside the core model/loss/train/eval path; Python content is AST-parsed where applicable, YAML is structurally indexed. Not counted as full human reading."
+      },
+      {
+        "sha256": "80b360507e04b56f1ceb9ecd73b1bbd2f1f225720d87ca435448d0aa2afa6186",
+        "members": [
+          {
+            "archive": "D:/dataset/experiment/HRDecoder_FullCompetition_20260920_upload.tar.gz",
+            "member": "trainer/engine.py",
+            "bytes": 18245
+          }
+        ],
+        "review_status": "manual_full_text",
+        "review_rationale": "Core architecture/training/inference implementation or directly relevant regression/protocol utility was read in full."
+      },
+      {
+        "sha256": "8315a3b96dc2cc2fe89a0a7958e89df70952940dc46e564947733ddd7891427f",
+        "members": [
+          {
+            "archive": "D:/dataset/experiment/HRDecoder_Ready_20261002/finish_backend_patch.tar.gz",
+            "member": "trainer/engine.py",
+            "bytes": 22396
+          }
+        ],
+        "review_status": "manual_diff_review",
+        "review_rationale": "Version delta was compared against its full-read predecessor; repeated identical paths are grouped by SHA."
+      },
+      {
+        "sha256": "87be7c2f413e4bba068b74f9e96b88a3ef24ac525de84d737cb316a5819ff995",
+        "members": [
+          {
+            "archive": "D:/dataset/experiment/HRDecoder_FullCompetition_20260920_upload.tar.gz",
+            "member": "configs/U1_convnext_unet_ext_pretrain.yaml",
+            "bytes": 5000
+          }
+        ],
+        "review_status": "AST_or_index_only",
+        "review_rationale": "Deployment, packaging, static config, or test/support code outside the core model/loss/train/eval path; Python content is AST-parsed where applicable, YAML is structurally indexed. Not counted as full human reading."
+      },
+      {
+        "sha256": "8d7878f955fa90f7f15c8d81f851a99a26bb816679eb1dfba8d848bfea8dd53c",
+        "members": [
+          {
+            "archive": "D:/dataset/experiment/HRDecoder_Ready_20261002_patch.tar.gz",
+            "member": "HRDecoder_Ready_20261002/tools/gpu_preflight.py",
+            "bytes": 3896
+          }
+        ],
+        "review_status": "AST_or_index_only",
+        "review_rationale": "Deployment, packaging, static config, or test/support code outside the core model/loss/train/eval path; Python content is AST-parsed where applicable, YAML is structurally indexed. Not counted as full human reading."
+      },
+      {
+        "sha256": "9828dab2cd2f8f782242e85d52fb99af27dbc1440fd45ecb7e3cab42a2196f15",
+        "members": [
+          {
+            "archive": "D:/dataset/experiment/HRDecoder_Ready_speed_patch.tar.gz",
+            "member": "HRDecoder_Ready_20261002/train.py",
+            "bytes": 20631
+          }
+        ],
+        "review_status": "manual_diff_review",
+        "review_rationale": "Version delta was compared against its full-read predecessor; repeated identical paths are grouped by SHA."
+      },
+      {
+        "sha256": "9a62991390231b8283828d1c200ffa6e17fedab11873bb070910d775c7db78c4",
+        "members": [
+          {
+            "archive": "D:/dataset/experiment/HRDecoder_final_ready_patch.tar.gz",
+            "member": "HRDecoder_Ready_20261002/tools/crossfit_fusion.py",
+            "bytes": 6762
+          }
+        ],
+        "review_status": "manual_full_text",
+        "review_rationale": "Core architecture/training/inference implementation or directly relevant regression/protocol utility was read in full."
+      },
+      {
+        "sha256": "9aa6e6ac92ee47453dd4484c3426c15af9965363fc09ae4f9084cc9a24a28e3c",
+        "members": [
+          {
+            "archive": "D:/dataset/experiment/HRDecoder_inference_patch.tar.gz",
+            "member": "HRDecoder_Ready_20261002/train.py",
+            "bytes": 21164
+          }
+        ],
+        "review_status": "manual_full_text",
+        "review_rationale": "Core architecture/training/inference implementation or directly relevant regression/protocol utility was read in full."
+      },
+      {
+        "sha256": "9b6b00ebed2644ca25a81389d3d1f58c17a947be24a4c5bb7b9e090013c3662c",
+        "members": [
+          {
+            "archive": "D:/dataset/experiment/HRDecoder_NextPlan_20261004/execution/reports/HRDecoder_20261004_prepared.zip",
+            "member": "ops/package.py",
+            "bytes": 2124
+          }
+        ],
+        "review_status": "AST_or_index_only",
+        "review_rationale": "Deployment, packaging, static config, or test/support code outside the core model/loss/train/eval path; Python content is AST-parsed where applicable, YAML is structurally indexed. Not counted as full human reading."
+      },
+      {
+        "sha256": "9d8a4f5945bb2027be166fb5db3961ea081a725db2650ac9af55b15d7e26c85e",
+        "members": [
+          {
+            "archive": "D:/dataset/experiment/HRDecoder_Ready_20261002/space_backend_patch.tar.gz",
+            "member": "campaign/finish_campaign.py",
+            "bytes": 17620
+          }
+        ],
+        "review_status": "AST_or_index_only",
+        "review_rationale": "Deployment, packaging, static config, or test/support code outside the core model/loss/train/eval path; Python content is AST-parsed where applicable, YAML is structurally indexed. Not counted as full human reading."
+      },
+      {
+        "sha256": "a3bfe4aeda1e01de3dde6bd522f1b7762d28d23bb6437c0bcfe56cd86b059aa9",
+        "members": [
+          {
+            "archive": "D:/dataset/experiment/HRDecoder_Ready_20261002/finish_backend_patch.tar.gz",
+            "member": "tests/test_finish_fusion.py",
+            "bytes": 2536
+          }
+        ],
+        "review_status": "AST_or_index_only",
+        "review_rationale": "Deployment, packaging, static config, or test/support code outside the core model/loss/train/eval path; Python content is AST-parsed where applicable, YAML is structurally indexed. Not counted as full human reading."
+      },
+      {
+        "sha256": "a3f96ce469049e6e07a43d49a4192dd543dd8c2392027e9795bcc2341f880240",
+        "members": [
+          {
+            "archive": "D:/dataset/experiment/HRDecoder_inference_patch.tar.gz",
+            "member": "HRDecoder_Ready_20261002/tools/export_predictions.py",
+            "bytes": 3879
+          }
+        ],
+        "review_status": "manual_full_text",
+        "review_rationale": "Core architecture/training/inference implementation or directly relevant regression/protocol utility was read in full."
+      },
+      {
+        "sha256": "a6f160d268757e26c43ff4c187029891ab6f95cef90bd500da46e3b0aff79131",
+        "members": [
+          {
+            "archive": "D:/dataset/experiment/HRDecoder_final_ready_patch.tar.gz",
+            "member": "HRDecoder_Ready_20261002/tools/export_champion.py",
+            "bytes": 3416
+          }
+        ],
+        "review_status": "manual_full_text",
+        "review_rationale": "Core architecture/training/inference implementation or directly relevant regression/protocol utility was read in full."
+      },
+      {
+        "sha256": "a72f8eeed7db3056f62704265fb7fb8458b51700a17a2b6bacefbdda042e81c3",
+        "members": [
+          {
+            "archive": "D:/dataset/experiment/HRDecoder_Next_20261003_code.tar.gz",
+            "member": "HRDecoder_Next_20261003/nextlib/train.py",
+            "bytes": 14769
+          }
+        ],
+        "review_status": "manual_full_text",
+        "review_rationale": "Core architecture/training/inference implementation or directly relevant regression/protocol utility was read in full."
+      },
+      {
+        "sha256": "b1db0dadd1a97a7191d71d0fa48f075635132cf7d4ba82d59a0e4bebb6e01988",
+        "members": [
+          {
+            "archive": "D:/dataset/experiment/HRDecoder_Ready_20261002/final_speed_patch.tar.gz",
+            "member": "train.py",
+            "bytes": 22533
+          }
+        ],
+        "review_status": "manual_full_text",
+        "review_rationale": "Core architecture/training/inference implementation or directly relevant regression/protocol utility was read in full."
+      },
+      {
+        "sha256": "b204caf6111b100cab6ee0b5f2ee6fbcabf418b07120871df7b0adf5fbfb698e",
+        "members": [
+          {
+            "archive": "D:/dataset/experiment/HRDecoder_Ready_20261002_upload.tar.gz",
+            "member": "HRDecoder_Ready_20261002/trainer/data/external_dataset.py",
+            "bytes": 12238
+          }
+        ],
+        "review_status": "AST_or_index_only",
+        "review_rationale": "Deployment, packaging, static config, or test/support code outside the core model/loss/train/eval path; Python content is AST-parsed where applicable, YAML is structurally indexed. Not counted as full human reading."
+      },
+      {
+        "sha256": "b7f1751968aeda16783fc8858e1ccc60d2b5893f529741968c705da8b5b00450",
+        "members": [
+          {
+            "archive": "D:/dataset/experiment/HRDecoder_Ready_20261002_patch.tar.gz",
+            "member": "HRDecoder_Ready_20261002/tools/configure_server.py",
+            "bytes": 4890
+          },
+          {
+            "archive": "D:/dataset/experiment/HRDecoder_Ready_20261002_upload.tar.gz",
+            "member": "HRDecoder_Ready_20261002/tools/configure_server.py",
+            "bytes": 4890
+          },
+          {
+            "archive": "D:/dataset/experiment/HRDecoder_Ready_speed_patch.tar.gz",
+            "member": "HRDecoder_Ready_20261002/tools/configure_server.py",
+            "bytes": 4890
+          }
+        ],
+        "review_status": "manual_diff_review",
+        "review_rationale": "Version delta was compared against its full-read predecessor; repeated identical paths are grouped by SHA."
+      },
+      {
+        "sha256": "c0caf999c68bce8da84b6386c4972009ebff018a68e71bd9364fe0e15e8c7539",
+        "members": [
+          {
+            "archive": "D:/dataset/experiment/hrdecoder_plus3/hrplus_code_ready.tar.gz",
+            "member": "repo/hrplus_core.py",
+            "bytes": 8029
+          }
+        ],
+        "review_status": "manual_full_text",
+        "review_rationale": "Core architecture/training/inference implementation or directly relevant regression/protocol utility was read in full."
+      },
+      {
+        "sha256": "c373a437fc5a72fe27b66ff4ad9c3920f8cf45c313a6f70090d22e5f4fa5b854",
+        "members": [
+          {
+            "archive": "D:/dataset/experiment/HRDecoder_Ready_20261002/finish_backend_patch.tar.gz",
+            "member": "train.py",
+            "bytes": 21228
+          }
+        ],
+        "review_status": "manual_diff_review",
+        "review_rationale": "Version delta was compared against its full-read predecessor; repeated identical paths are grouped by SHA."
+      },
+      {
+        "sha256": "c89b014250e8fc0605340445c23e4a3ac5268c280def26e303b6b67e17ba8f21",
+        "members": [
+          {
+            "archive": "D:/dataset/experiment/HRDecoder_Ready_20261002/finish_backend_patch.tar.gz",
+            "member": "tools/export_predictions.py",
+            "bytes": 3945
+          }
+        ],
+        "review_status": "manual_full_text",
+        "review_rationale": "Core architecture/training/inference implementation or directly relevant regression/protocol utility was read in full."
+      },
+      {
+        "sha256": "cf9ec0c00a2fbb9ee1f84143c4fb8099fd3ea4fd785ce085ed3c660b7857f757",
+        "members": [
+          {
+            "archive": "D:/dataset/experiment/HRDecoder_Ready_20261002/semi_backend_patch.tar.gz",
+            "member": "train.py",
+            "bytes": 22035
+          }
+        ],
+        "review_status": "manual_diff_review",
+        "review_rationale": "Version delta was compared against its full-read predecessor; repeated identical paths are grouped by SHA."
+      },
+      {
+        "sha256": "d2fce82d92b1e04e06ab67f74b38df2330965c1ca7a36b2a132be07cc693b40b",
+        "members": [
+          {
+            "archive": "D:/dataset/experiment/HRDecoder_Ready_20261002_upload.tar.gz",
+            "member": "HRDecoder_Ready_20261002/campaign/remote_ops.py",
+            "bytes": 1659
+          }
+        ],
+        "review_status": "AST_or_index_only",
+        "review_rationale": "Deployment, packaging, static config, or test/support code outside the core model/loss/train/eval path; Python content is AST-parsed where applicable, YAML is structurally indexed. Not counted as full human reading."
+      },
+      {
+        "sha256": "da94b0271a96c7519edebd4e3ed94c4b9cf09f425c58e6c10af9e64060cb9209",
+        "members": [
+          {
+            "archive": "D:/dataset/experiment/HRDecoder_Next_20261003_code.tar.gz",
+            "member": "HRDecoder_Next_20261003/configure.py",
+            "bytes": 4086
+          }
+        ],
+        "review_status": "AST_or_index_only",
+        "review_rationale": "Deployment, packaging, static config, or test/support code outside the core model/loss/train/eval path; Python content is AST-parsed where applicable, YAML is structurally indexed. Not counted as full human reading."
+      },
+      {
+        "sha256": "de4429d5f024f2fb4a1fce918186cc78b53b7f7de11e07745c7a107a124ab767",
+        "members": [
+          {
+            "archive": "D:/dataset/experiment/HRDecoder_Ready_20261002_patch.tar.gz",
+            "member": "HRDecoder_Ready_20261002/trainer/data/external_dataset.py",
+            "bytes": 12786
+          }
+        ],
+        "review_status": "manual_full_text",
+        "review_rationale": "Core architecture/training/inference implementation or directly relevant regression/protocol utility was read in full."
+      },
+      {
+        "sha256": "de8e6d6afa664828bad36254024a642710a09f84fd360dceae8d5646a0ef697b",
+        "members": [
+          {
+            "archive": "D:/dataset/experiment/HRDecoder_Ready_20261002_patch.tar.gz",
+            "member": "HRDecoder_Ready_20261002/trainer/models/hrdecoder_adapter.py",
+            "bytes": 14478
+          },
+          {
+            "archive": "D:/dataset/experiment/HRDecoder_Ready_20261002_upload.tar.gz",
+            "member": "HRDecoder_Ready_20261002/trainer/models/hrdecoder_adapter.py",
+            "bytes": 14478
+          },
+          {
+            "archive": "D:/dataset/experiment/HRDecoder_Ready_speed_patch.tar.gz",
+            "member": "HRDecoder_Ready_20261002/trainer/models/hrdecoder_adapter.py",
+            "bytes": 14478
+          }
+        ],
+        "review_status": "manual_full_text",
+        "review_rationale": "Core architecture/training/inference implementation or directly relevant regression/protocol utility was read in full."
+      },
+      {
+        "sha256": "dead7f4eda4b56ca0beabacbd4cba95be9731515d8b17f982ba4809305ef6ebf",
+        "members": [
+          {
+            "archive": "D:/dataset/experiment/HRDecoder_Ready_20261002_patch.tar.gz",
+            "member": "HRDecoder_Ready_20261002/trainer/models/__init__.py",
+            "bytes": 4967
+          },
+          {
+            "archive": "D:/dataset/experiment/HRDecoder_Ready_20261002_upload.tar.gz",
+            "member": "HRDecoder_Ready_20261002/trainer/models/__init__.py",
+            "bytes": 4967
+          },
+          {
+            "archive": "D:/dataset/experiment/HRDecoder_Ready_speed_patch.tar.gz",
+            "member": "HRDecoder_Ready_20261002/trainer/models/__init__.py",
+            "bytes": 4967
+          }
+        ],
+        "review_status": "manual_full_text",
+        "review_rationale": "Core architecture/training/inference implementation or directly relevant regression/protocol utility was read in full."
+      },
+      {
+        "sha256": "e1d626c42d915eb8fdf5a0b5ebfdccab907fe2dff4a24d7110bd6137da81885d",
+        "members": [
+          {
+            "archive": "D:/dataset/experiment/HRDecoder_NextPlan_20261004/execution/reports/HRDecoder_20261004_prepared.zip",
+            "member": "preflight_gpu.py",
+            "bytes": 7998
+          }
+        ],
+        "review_status": "AST_or_index_only",
+        "review_rationale": "Deployment, packaging, static config, or test/support code outside the core model/loss/train/eval path; Python content is AST-parsed where applicable, YAML is structurally indexed. Not counted as full human reading."
+      },
+      {
+        "sha256": "e2c15d46de1335f033926c3d542c2babbf522b92d32eb2f40c5d56fb696acb1f",
+        "members": [
+          {
+            "archive": "D:/dataset/experiment/HRDecoder_Ready_20261002/finish_backend_patch.tar.gz",
+            "member": "campaign/finish_campaign.py",
+            "bytes": 13868
+          }
+        ],
+        "review_status": "AST_or_index_only",
+        "review_rationale": "Deployment, packaging, static config, or test/support code outside the core model/loss/train/eval path; Python content is AST-parsed where applicable, YAML is structurally indexed. Not counted as full human reading."
+      },
+      {
+        "sha256": "e4efeb7e8ca21df18f9113d18a0d9d77cb9f857aa38d0b2d8287600cdcdabd9e",
+        "members": [
+          {
+            "archive": "D:/dataset/experiment/HRDecoder_Ready_20261002_patch.tar.gz",
+            "member": "HRDecoder_Ready_20261002/train.py",
+            "bytes": 20411
+          },
+          {
+            "archive": "D:/dataset/experiment/HRDecoder_Ready_20261002_upload.tar.gz",
+            "member": "HRDecoder_Ready_20261002/train.py",
+            "bytes": 20411
+          }
+        ],
+        "review_status": "manual_full_text",
+        "review_rationale": "Core architecture/training/inference implementation or directly relevant regression/protocol utility was read in full."
+      },
+      {
+        "sha256": "ea4274636cf05668b9be0cbbfd4a960e11477d7483894d88d3cb409396576ea1",
+        "members": [
+          {
+            "archive": "D:/dataset/experiment/HRDecoder_Next_20261003_code.tar.gz",
+            "member": "HRDecoder_Next_20261003/nextlib/evaluate.py",
+            "bytes": 10415
+          }
+        ],
+        "review_status": "manual_full_text",
+        "review_rationale": "Core architecture/training/inference implementation or directly relevant regression/protocol utility was read in full."
+      },
+      {
+        "sha256": "eb838e6eac377cea65539160e099ed0282509857c5b67278b5197ef801bd0359",
+        "members": [
+          {
+            "archive": "D:/dataset/experiment/HRDecoder_Ready_20261002_patch.tar.gz",
+            "member": "HRDecoder_Ready_20261002/trainer/screening.py",
+            "bytes": 1867
+          },
+          {
+            "archive": "D:/dataset/experiment/HRDecoder_Ready_20261002_upload.tar.gz",
+            "member": "HRDecoder_Ready_20261002/trainer/screening.py",
+            "bytes": 1867
+          },
+          {
+            "archive": "D:/dataset/experiment/HRDecoder_Ready_speed_patch.tar.gz",
+            "member": "HRDecoder_Ready_20261002/trainer/screening.py",
+            "bytes": 1867
+          }
+        ],
+        "review_status": "manual_full_text",
+        "review_rationale": "Core architecture/training/inference implementation or directly relevant regression/protocol utility was read in full."
+      },
+      {
+        "sha256": "f63090b72ab62c9f48c12617f77b342dad960d3575ae6270987409c45f59bde9",
+        "members": [
+          {
+            "archive": "D:/dataset/experiment/HRDecoder_Ready_20261002/semi_backend_patch.tar.gz",
+            "member": "trainer/semi.py",
+            "bytes": 4282
+          }
+        ],
+        "review_status": "manual_diff_review",
+        "review_rationale": "Version delta was compared against its full-read predecessor; repeated identical paths are grouped by SHA."
+      },
+      {
+        "sha256": "f7a2e9f76776ee5e1390116dd506c2e5c86005353e8c7bcd5dd809d96bfc5251",
+        "members": [
+          {
+            "archive": "D:/dataset/experiment/HRDecoder_Ready_20261002_patch.tar.gz",
+            "member": "HRDecoder_Ready_20261002/trainer/config.py",
+            "bytes": 13644
+          },
+          {
+            "archive": "D:/dataset/experiment/HRDecoder_Ready_20261002_upload.tar.gz",
+            "member": "HRDecoder_Ready_20261002/trainer/config.py",
+            "bytes": 13644
+          },
+          {
+            "archive": "D:/dataset/experiment/HRDecoder_Ready_speed_patch.tar.gz",
+            "member": "HRDecoder_Ready_20261002/trainer/config.py",
+            "bytes": 13644
+          }
+        ],
+        "review_status": "manual_full_text",
+        "review_rationale": "Core architecture/training/inference implementation or directly relevant regression/protocol utility was read in full."
+      },
+      {
+        "sha256": "fdf229c21caf6cb9fc2ee08722d18d5dcb28c8d1b88f4098be737e85837ee2d4",
+        "members": [
+          {
+            "archive": "D:/dataset/experiment/HRDecoder_FullCompetition_20260920_upload.tar.gz",
+            "member": "trainer/eval.py",
+            "bytes": 7116
+          }
+        ],
+        "review_status": "manual_full_text",
+        "review_rationale": "Core architecture/training/inference implementation or directly relevant regression/protocol utility was read in full."
+      }
+    ],
+    "notes": [
+      "Each distinct member was read in memory and SHA-verified before classification; no archive member was executed or written as code.",
+      "manual_diff_review means a byte-distinct patch was compared against its full-read base; it does not mean the entire source family has the same behavior.",
+      "AST/index-only entries are explicitly not claimed as human full reads; they are outside the core architecture/loss/train/evaluation paths."
+    ]
+  },
+  "ast_and_static_coverage": {
+    "ast_audit_path": "HRDecoder_NativePyramid_20261011/review_20261016/source_ast_audit.json",
+    "distinct_python_contents_ast_parsed": 2370,
+    "regular_inventory_unique_python": 2320,
+    "archive_only_unique_python": 50,
+    "parse_pass_count": 2368,
+    "parse_failure_count": 2,
+    "parse_failures": [
+      {
+        "sha256": "c3d865317020d0366f31e2b0fb923ea80bc5b4fbc7fa48aab151fa8c9b574003",
+        "path": "HRDecoder_Ready_20261002/vendor/HACDR-Net/build/lib/mmseg/models/backbones/resnet50+vit.py",
+        "origin": "regular_source",
+        "bytes": 17227,
+        "ast_parse": "fail",
+        "error": "SyntaxError: invalid syntax (HRDecoder_Ready_20261002/vendor/HACDR-Net/build/lib/mmseg/models/backbones/resnet50+vit.py, line 519)"
+      },
+      {
+        "sha256": "e54950934fa11684be0e13ab1f9451740bd7b424999c0c04cd23fbd255073406",
+        "path": "HRDecoder_Ready_20261002/vendor/HACDR-Net/build/lib/mmseg/.mim/configs/_base_/models/pspnet_r50-d8.py",
+        "origin": "regular_source",
+        "bytes": 929,
+        "ast_parse": "fail",
+        "error": "IndentationError: unexpected indent (HRDecoder_Ready_20261002/vendor/HACDR-Net/build/lib/mmseg/.mim/configs/_base_/models/pspnet_r50-d8.py, line 30)"
+      }
+    ],
+    "method_limit": "AST parse checks syntax only: no imports, dynamic behavior, tensor shapes, data, or runtime semantics are validated.",
+    "safe_yaml_count": "95 unique regular YAML/YML files safely parsed in project-wide configuration inventory; archive-only YAML members are listed and structurally inspected."
+  },
+  "coverage_conclusion": {
+    "unread_architecture_or_loss_or_training_or_evaluation_core_sha256_count": 0,
+    "unread_direct_core_sha256_count": 0,
+    "pending_separate_proposal_sha256_count": 0,
+    "pending_paths": [],
+    "scope_limit": "Zero unread applies to the frozen self-owned model/loss/train/evaluate/inference and directly imported data/geometry/decision/support candidates: 43 protocol-named code SHA, the 29 SHA independent supplemental core/support list, the four unique Nextlib sources plus three same-SHA inherited aliases, and the previously listed non-protocol core and archive-only core versions. It does not claim manual full reading of all 1,146 regular source-code SHA. Generic utilities, third-party/vendor sources and 19 archive-only AST/index entries remain classified separately; AST syntax parsing is not semantic source review."
+  },
+  "safety_and_nonexecution": {
+    "model_instantiated": false,
+    "forward_pass_run": false,
+    "training_or_sgd_run": false,
+    "new_validation_or_test_pixels_read": false,
+    "checkpoint_or_pickle_deserialized": false,
+    "network_or_server_connection_made": false,
+    "credential_handling": "Credential files were not read; SHA inventory intentionally skips them."
+  },
+  "supplemental_self_owned_source_manifest": {
+    "frozen_candidate_scope": "Independent inventory scan selected 29 additional unique self-owned direct-core/support SHA beyond the protocol-bound code SHA and previously listed sources.",
+    "candidate_unique_sha256_count": 29,
+    "manual_full_read_count": 29,
+    "unread_count": 0,
+    "records": [
+      {
+        "sha256": "afe23e727f33bb736e693546dc5eb214f15a5dff9e25fa9835aca870fdffadbe",
+        "review_status": "manual_full_text",
+        "reviewer": "source_research_luna",
+        "review_note": "ArchitectureDesign semantic loss/logit-gradient diagnostic",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_ArchitectureDesign_20261008/semantic_execution/loss_probe.py",
+            "bytes": 4433,
+            "line_count": 53,
+            "category": "source_code"
+          }
+        ]
+      },
+      {
+        "sha256": "4b35796c34379a59d612a037b4847a58198f82fa178589fa5e0d2102062e430c",
+        "review_status": "manual_full_text",
+        "reviewer": "source_research_luna",
+        "review_note": "FinalDecision candidate lock and paired-seed selection",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_FinalDecision_20261005/execution/decision.py",
+            "bytes": 6436,
+            "line_count": 84,
+            "category": "source_code"
+          },
+          {
+            "path": "HRDecoder_FinalDecision_20261005/execution/parallel/node2/server_results/decision.py",
+            "bytes": 6436,
+            "line_count": 84,
+            "category": "run_output_or_evidence"
+          },
+          {
+            "path": "HRDecoder_FinalDecision_20261005/execution/server_results/decision.py",
+            "bytes": 6436,
+            "line_count": 84,
+            "category": "run_output_or_evidence"
+          }
+        ]
+      },
+      {
+        "sha256": "8cc786c9290cd078127ab8040137710ab8e9b50c974ce4467784cd3697461e21",
+        "review_status": "manual_full_text",
+        "reviewer": "source_research_luna",
+        "review_note": "Q/NextPlan identity and atomic artifact helper",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_FinalDecision_20261005/execution/parallel/node2/server_results/qlib/common.py",
+            "bytes": 1431,
+            "line_count": 57,
+            "category": "run_output_or_evidence"
+          },
+          {
+            "path": "HRDecoder_FinalDecision_20261005/execution/qlib/common.py",
+            "bytes": 1431,
+            "line_count": 57,
+            "category": "source_code"
+          },
+          {
+            "path": "HRDecoder_FinalDecision_20261005/execution/server_results/qlib/common.py",
+            "bytes": 1431,
+            "line_count": 57,
+            "category": "run_output_or_evidence"
+          },
+          {
+            "path": "HRDecoder_NextPlan_20261004/execution/qlib/common.py",
+            "bytes": 1431,
+            "line_count": 57,
+            "category": "source_code"
+          },
+          {
+            "path": "HRDecoder_Q_20261003/qlib/common.py",
+            "bytes": 1431,
+            "line_count": 57,
+            "category": "source_code"
+          }
+        ]
+      },
+      {
+        "sha256": "2d27b7b0504e551b26d1ee8e874594cba141601531007d4d0fac4b13239610f8",
+        "review_status": "manual_full_text",
+        "reviewer": "source_research_luna",
+        "review_note": "Q/NextPlan paired failure and candidate decision helper",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_FinalDecision_20261005/execution/parallel/node2/server_results/qlib/decision.py",
+            "bytes": 2520,
+            "line_count": 46,
+            "category": "run_output_or_evidence"
+          },
+          {
+            "path": "HRDecoder_FinalDecision_20261005/execution/qlib/decision.py",
+            "bytes": 2520,
+            "line_count": 46,
+            "category": "source_code"
+          },
+          {
+            "path": "HRDecoder_FinalDecision_20261005/execution/server_results/qlib/decision.py",
+            "bytes": 2520,
+            "line_count": 46,
+            "category": "run_output_or_evidence"
+          },
+          {
+            "path": "HRDecoder_NextPlan_20261004/execution/qlib/decision.py",
+            "bytes": 2520,
+            "line_count": 46,
+            "category": "source_code"
+          },
+          {
+            "path": "HRDecoder_Q_20261003/qlib/decision.py",
+            "bytes": 2520,
+            "line_count": 46,
+            "category": "source_code"
+          }
+        ]
+      },
+      {
+        "sha256": "b0dc746c5c6611a789e781ddf36534f22c8be7a13f88b14247350363e154c5b6",
+        "review_status": "manual_full_text",
+        "reviewer": "source_research_luna",
+        "review_note": "Q/NextPlan tile coordinate and supervision geometry helper",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_FinalDecision_20261005/execution/parallel/node2/server_results/qlib/geometry.py",
+            "bytes": 2632,
+            "line_count": 88,
+            "category": "run_output_or_evidence"
+          },
+          {
+            "path": "HRDecoder_FinalDecision_20261005/execution/qlib/geometry.py",
+            "bytes": 2632,
+            "line_count": 88,
+            "category": "source_code"
+          },
+          {
+            "path": "HRDecoder_FinalDecision_20261005/execution/server_results/qlib/geometry.py",
+            "bytes": 2632,
+            "line_count": 88,
+            "category": "run_output_or_evidence"
+          },
+          {
+            "path": "HRDecoder_NextPlan_20261004/execution/qlib/geometry.py",
+            "bytes": 2632,
+            "line_count": 88,
+            "category": "source_code"
+          },
+          {
+            "path": "HRDecoder_Q_20261003/qlib/geometry.py",
+            "bytes": 2632,
+            "line_count": 88,
+            "category": "source_code"
+          }
+        ]
+      },
+      {
+        "sha256": "f0db2cf06284ec6aed12b94c1f5d885b3e79fe1981ad29700bcb5f50f557bc9e",
+        "review_status": "manual_full_text",
+        "reviewer": "source_research_luna",
+        "review_note": "FinalDecision multi-source training runner",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_FinalDecision_20261005/execution/parallel/node2/server_results/train_run.py",
+            "bytes": 6070,
+            "line_count": 87,
+            "category": "run_output_or_evidence"
+          },
+          {
+            "path": "HRDecoder_FinalDecision_20261005/execution/server_results/train_run.py",
+            "bytes": 6070,
+            "line_count": 87,
+            "category": "run_output_or_evidence"
+          },
+          {
+            "path": "HRDecoder_FinalDecision_20261005/execution/train_run.py",
+            "bytes": 6070,
+            "line_count": 87,
+            "category": "source_code"
+          }
+        ]
+      },
+      {
+        "sha256": "b936535ce271eb0f34af192b954b0dd5528c9c161c2953531ff23048c164e310",
+        "review_status": "manual_full_text",
+        "reviewer": "historical_runs_luna",
+        "review_note": "FullCompetition Refiner evaluation",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_FullCompetition_20260920/refiner_v1/eval_refiner.py",
+            "bytes": 11838,
+            "line_count": 258,
+            "category": "run_output_or_evidence"
+          }
+        ]
+      },
+      {
+        "sha256": "d2d2294692e81fbb6e60dc705fd592195e74bf14f950524beb0713451a89c579",
+        "review_status": "manual_full_text",
+        "reviewer": "historical_runs_luna",
+        "review_note": "FullCompetition Refiner patch assembly",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_FullCompetition_20260920/refiner_v1/refiner/assemble.py",
+            "bytes": 6413,
+            "line_count": 143,
+            "category": "source_code"
+          }
+        ]
+      },
+      {
+        "sha256": "99f60eb2a2ec679055d6e6e5bb66dc533cf638db967bbd3659052df7c3b65d59",
+        "review_status": "manual_full_text",
+        "reviewer": "historical_runs_luna",
+        "review_note": "FullCompetition Refiner candidate generation",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_FullCompetition_20260920/refiner_v1/refiner/candidate.py",
+            "bytes": 13277,
+            "line_count": 308,
+            "category": "source_code"
+          }
+        ]
+      },
+      {
+        "sha256": "92ee5c68d49cfb520f6de895428f5a464a79fe12c43c4e5ed1dd6ed3757eb4b0",
+        "review_status": "manual_full_text",
+        "reviewer": "historical_runs_luna",
+        "review_note": "FullCompetition Refiner dataset/collation",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_FullCompetition_20260920/refiner_v1/refiner/dataset.py",
+            "bytes": 8930,
+            "line_count": 201,
+            "category": "source_code"
+          }
+        ]
+      },
+      {
+        "sha256": "0c93e703ddcfbbb450f5fc6380f176acbd3dadbf9b63d777d634386f43f24ebc",
+        "review_status": "manual_full_text",
+        "reviewer": "historical_runs_luna",
+        "review_note": "FullCompetition frozen reference inference",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_FullCompetition_20260920/refiner_v1/refiner/reference.py",
+            "bytes": 5935,
+            "line_count": 139,
+            "category": "source_code"
+          }
+        ]
+      },
+      {
+        "sha256": "3adaf43a060775a03f25613966fc8c3405e611e6226bdccbfe0bd584501edb2d",
+        "review_status": "manual_full_text",
+        "reviewer": "historical_runs_luna",
+        "review_note": "FullCompetition tiled Refiner inference",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_FullCompetition_20260920/refiner_v1/refiner/tiled_infer.py",
+            "bytes": 4198,
+            "line_count": 87,
+            "category": "source_code"
+          }
+        ]
+      },
+      {
+        "sha256": "4fcb3d05ad652d771122a8309fb97067b81efb4a9756ab103ee4106e7d7142f6",
+        "review_status": "manual_full_text",
+        "reviewer": "historical_runs_luna",
+        "review_note": "FullCompetition Refiner training runner",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_FullCompetition_20260920/refiner_v1/train_refiner.py",
+            "bytes": 23621,
+            "line_count": 488,
+            "category": "source_code"
+          }
+        ]
+      },
+      {
+        "sha256": "6771893f889aea2a35635ac94338626d55aa5651f32b4942306223845c96e2cf",
+        "review_status": "manual_full_text",
+        "reviewer": "historical_runs_luna",
+        "review_note": "FullCompetition data augmentation support",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_FullCompetition_20260920/trainer/data/augment.py",
+            "bytes": 8370,
+            "line_count": 180,
+            "category": "source_code"
+          }
+        ]
+      },
+      {
+        "sha256": "283ca44100c2320e411ddbbb5a530ce35b7963647da7c534c269b01c17aa0d3f",
+        "review_status": "manual_full_text",
+        "reviewer": "historical_runs_luna",
+        "review_note": "FullCompetition data/cache support",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_FullCompetition_20260920/trainer/data/common.py",
+            "bytes": 7837,
+            "line_count": 212,
+            "category": "source_code"
+          }
+        ]
+      },
+      {
+        "sha256": "e7b7d4c59314400616ae7a852305b27b2c1d27db8c7f95409fa55fdb8aae47ed",
+        "review_status": "manual_full_text",
+        "reviewer": "historical_runs_luna",
+        "review_note": "FullCompetition DDR dataset loader",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_FullCompetition_20260920/trainer/data/ddr_dataset.py",
+            "bytes": 4595,
+            "line_count": 123,
+            "category": "source_code"
+          }
+        ]
+      },
+      {
+        "sha256": "5336e99446664fd2c6b1de23e5256cd436bee36bbd9079768f88bddacd613ba3",
+        "review_status": "manual_full_text",
+        "reviewer": "historical_runs_luna",
+        "review_note": "FullCompetition external dataset loader",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_FullCompetition_20260920/trainer/data/external_dataset.py",
+            "bytes": 12070,
+            "line_count": 259,
+            "category": "source_code"
+          }
+        ]
+      },
+      {
+        "sha256": "696667a0ed33be9966988337099dd7d3d54ba6b730086f166ccdfe26e0cf0aae",
+        "review_status": "manual_full_text",
+        "reviewer": "historical_runs_luna",
+        "review_note": "FullCompetition ConvNeXt U-Net model",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_FullCompetition_20260920/trainer/models/convnext_unet.py",
+            "bytes": 15225,
+            "line_count": 350,
+            "category": "source_code"
+          }
+        ]
+      },
+      {
+        "sha256": "64ab36faf236616dbfabbbf278bf5cff8c0abeb66faf7fc5261fad2b86317cd9",
+        "review_status": "manual_full_text",
+        "reviewer": "source_research_luna",
+        "review_note": "Next common identity and data helper",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_Next_20261003/nextlib/common.py",
+            "bytes": 3085,
+            "line_count": 89,
+            "category": "source_code"
+          }
+        ]
+      },
+      {
+        "sha256": "dcbf1613fdc3896337ccea4a4f21fb472cfece8c94982e26ed42b313a859c219",
+        "review_status": "manual_full_text",
+        "reviewer": "source_research_luna",
+        "review_note": "Next paired stopping/selection helper",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_Next_20261003/nextlib/decision.py",
+            "bytes": 1688,
+            "line_count": 33,
+            "category": "source_code"
+          }
+        ]
+      },
+      {
+        "sha256": "a716ea4205039ee1d58c2d7789ea837bc2b72703e9a513b67f6ec54b31b3049e",
+        "review_status": "manual_full_text",
+        "reviewer": "source_research_luna",
+        "review_note": "Next tile/global coordinate alignment helper",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_Next_20261003/nextlib/geometry.py",
+            "bytes": 4450,
+            "line_count": 121,
+            "category": "source_code"
+          }
+        ]
+      },
+      {
+        "sha256": "757b92372f1162ee8bb7eef0f962065906c2bdf5182d03790fe81d964a99ef19",
+        "review_status": "manual_full_text",
+        "reviewer": "historical_runs_luna",
+        "review_note": "Next frozen global feature cache",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_Next_20261003/nextlib/global_cache.py",
+            "bytes": 1739,
+            "line_count": 49,
+            "category": "source_code"
+          }
+        ]
+      },
+      {
+        "sha256": "d8cbab6cb835ffe2c58845ff769529f7c4481377de8c44da9efcb063c111dc0c",
+        "review_status": "manual_full_text",
+        "reviewer": "historical_runs_luna",
+        "review_note": "Next/Ready augmentation; duplicate path inherited by SHA",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_Next_20261003/trainer/data/augment.py",
+            "bytes": 8597,
+            "line_count": 183,
+            "category": "source_code"
+          },
+          {
+            "path": "HRDecoder_Ready_20261002/trainer/data/augment.py",
+            "bytes": 8597,
+            "line_count": 183,
+            "category": "source_code"
+          }
+        ]
+      },
+      {
+        "sha256": "e360c33d46eea48224e5585101969a34f9977d783573c50d52f2290359a8d178",
+        "review_status": "manual_full_text",
+        "reviewer": "historical_runs_luna",
+        "review_note": "Next/Ready common data support; duplicate path inherited by SHA",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_Next_20261003/trainer/data/common.py",
+            "bytes": 8803,
+            "line_count": 236,
+            "category": "source_code"
+          },
+          {
+            "path": "HRDecoder_Ready_20261002/trainer/data/common.py",
+            "bytes": 8803,
+            "line_count": 236,
+            "category": "source_code"
+          }
+        ]
+      },
+      {
+        "sha256": "4f1f940dc71aef620fb4bb32afbd03ffcc8778ce80ec46ad220a7b67fb16b61c",
+        "review_status": "manual_full_text",
+        "reviewer": "historical_runs_luna",
+        "review_note": "Next/Ready DDR loader; duplicate path inherited by SHA",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_Next_20261003/trainer/data/ddr_dataset.py",
+            "bytes": 4873,
+            "line_count": 130,
+            "category": "source_code"
+          },
+          {
+            "path": "HRDecoder_Ready_20261002/trainer/data/ddr_dataset.py",
+            "bytes": 4873,
+            "line_count": 130,
+            "category": "source_code"
+          }
+        ]
+      },
+      {
+        "sha256": "d0ff3f99fad178ffd2c891075305f4c82602e58fd0700211dbdfac17a5fba45e",
+        "review_status": "manual_full_text",
+        "reviewer": "historical_runs_luna",
+        "review_note": "Next/Ready external loader; duplicate path inherited by SHA",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_Next_20261003/trainer/data/external_dataset.py",
+            "bytes": 13147,
+            "line_count": 281,
+            "category": "source_code"
+          },
+          {
+            "path": "HRDecoder_Ready_20261002/trainer/data/external_dataset.py",
+            "bytes": 13147,
+            "line_count": 281,
+            "category": "source_code"
+          }
+        ]
+      },
+      {
+        "sha256": "7f199310c8f866bb66094a1b9bc550bd9ca10b0ed02f7b55942579d417948dcd",
+        "review_status": "manual_full_text",
+        "reviewer": "historical_runs_luna",
+        "review_note": "Next/Ready ConvNeXt U-Net; duplicate path inherited by SHA",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_Next_20261003/trainer/models/convnext_unet.py",
+            "bytes": 15373,
+            "line_count": 353,
+            "category": "source_code"
+          },
+          {
+            "path": "HRDecoder_Ready_20261002/trainer/models/convnext_unet.py",
+            "bytes": 15373,
+            "line_count": 353,
+            "category": "source_code"
+          }
+        ]
+      },
+      {
+        "sha256": "1e94336a2c933174a86114ebc6fdb9ee3b90fa0e24ecf2f874d0776d29869c97",
+        "review_status": "manual_full_text",
+        "reviewer": "source_research_luna",
+        "review_note": "NextPlan paired validation selector",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_NextPlan_20261004/execution/decision.py",
+            "bytes": 2310,
+            "line_count": 42,
+            "category": "source_code"
+          }
+        ]
+      },
+      {
+        "sha256": "911ea4ce36bd2bbca1952fe6ed81f24c3ae32dff5289c907bb2f7e7ed3167af3",
+        "review_status": "manual_full_text",
+        "reviewer": "source_research_luna",
+        "review_note": "Q/NextPlan DINO proposal training runner; excluded from v3 evidence",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_NextPlan_20261004/execution/historical/train_run.py",
+            "bytes": 9948,
+            "line_count": 162,
+            "category": "source_code"
+          },
+          {
+            "path": "HRDecoder_Q_20261003/train_run.py",
+            "bytes": 9948,
+            "line_count": 162,
+            "category": "source_code"
+          }
+        ]
+      }
+    ],
+    "independent_omission_audit": "historical_runs_luna confirmed no additional unread direct-core SHA outside this frozen list."
+  },
+  "related_source_addenda": {
+    "next_family": {
+      "unique_nextlib_sha256_count": 4,
+      "unique_nextlib_full_read_count": 4,
+      "adapter_loss_engine_same_sha_reuse_count": 3,
+      "all_seven_paths_closed": true,
+      "identity_caveat": "settings/package_manifest cite older evaluate/train SHA; later closed-node M metadata binds current evaluate.py/train.py. The tuple-dimension any() error belongs to the older train SHA. This metadata does not bind the sources to an ArchitectureDesign protocol."
+    },
+    "screen_gate_protocol_bindings": [
+      {
+        "sha256": "0144873ce047232a76f3dbbe000825fc06afa348c733140c324be003ce57d2ad",
+        "bound_protocol_runs": [
+          "adapter"
+        ]
+      },
+      {
+        "sha256": "d67c451bf2c29ee2600433d107f5cfe9f9dee6fa9b4ba51f627ed896c03edfbf",
+        "bound_protocol_runs": [
+          "aligned",
+          "detail",
+          "foundation",
+          "iou",
+          "semantic"
+        ]
+      },
+      {
+        "sha256": "266593f42b351b5839d284587a5a4374cce6cfaa162dd56e822a561332d54ffd",
+        "bound_protocol_runs": [
+          "expert"
+        ]
+      },
+      {
+        "sha256": "c7f50ef5ec80bd2d513f2b6f451d502af19b3c0bee199eac750830575a94ed35",
+        "bound_protocol_runs": [
+          "residual"
+        ]
+      },
+      {
+        "sha256": "d336c59060e135387ba81fe6e690ec94f4b98a3243543c9bf1ebf9fa4e07a35e",
+        "bound_protocol_runs": []
+      }
+    ],
+    "screen_gate_not_bound": "CET/SACD/v3 identities lack screen_gate_code_SHA; SACD isolated gate is not bound. Supplemental source_before_worker_RAM/failed-assertion/SACD-isolated sources are not among the 43 protocol SHA.",
+    "DINO_evidence_boundary": "DINO model/loss/data/evaluate/metrics/optim and related qlib helpers were read to complete historical coverage/source identity only; no weights read, no execution, and no DINO result or learned knowledge transferred into v3 evidence/design.",
+    "supplemental_reviewed_unique_sha256_count": 67,
+    "supplemental_records": [
+      {
+        "sha256": "afe23e727f33bb736e693546dc5eb214f15a5dff9e25fa9835aca870fdffadbe",
+        "review_status": "manual_full_text",
+        "reviewer": "source_research_luna",
+        "review_note": "ArchitectureDesign semantic loss/logit-gradient diagnostic",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_ArchitectureDesign_20261008/semantic_execution/loss_probe.py",
+            "bytes": 4433,
+            "line_count": 53,
+            "category": "source_code"
+          }
+        ]
+      },
+      {
+        "sha256": "4b35796c34379a59d612a037b4847a58198f82fa178589fa5e0d2102062e430c",
+        "review_status": "manual_full_text",
+        "reviewer": "source_research_luna",
+        "review_note": "FinalDecision candidate lock and paired-seed selection",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_FinalDecision_20261005/execution/decision.py",
+            "bytes": 6436,
+            "line_count": 84,
+            "category": "source_code"
+          },
+          {
+            "path": "HRDecoder_FinalDecision_20261005/execution/parallel/node2/server_results/decision.py",
+            "bytes": 6436,
+            "line_count": 84,
+            "category": "run_output_or_evidence"
+          },
+          {
+            "path": "HRDecoder_FinalDecision_20261005/execution/server_results/decision.py",
+            "bytes": 6436,
+            "line_count": 84,
+            "category": "run_output_or_evidence"
+          }
+        ]
+      },
+      {
+        "sha256": "8cc786c9290cd078127ab8040137710ab8e9b50c974ce4467784cd3697461e21",
+        "review_status": "manual_full_text",
+        "reviewer": "source_research_luna",
+        "review_note": "Q/NextPlan identity and atomic artifact helper",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_FinalDecision_20261005/execution/parallel/node2/server_results/qlib/common.py",
+            "bytes": 1431,
+            "line_count": 57,
+            "category": "run_output_or_evidence"
+          },
+          {
+            "path": "HRDecoder_FinalDecision_20261005/execution/qlib/common.py",
+            "bytes": 1431,
+            "line_count": 57,
+            "category": "source_code"
+          },
+          {
+            "path": "HRDecoder_FinalDecision_20261005/execution/server_results/qlib/common.py",
+            "bytes": 1431,
+            "line_count": 57,
+            "category": "run_output_or_evidence"
+          },
+          {
+            "path": "HRDecoder_NextPlan_20261004/execution/qlib/common.py",
+            "bytes": 1431,
+            "line_count": 57,
+            "category": "source_code"
+          },
+          {
+            "path": "HRDecoder_Q_20261003/qlib/common.py",
+            "bytes": 1431,
+            "line_count": 57,
+            "category": "source_code"
+          }
+        ]
+      },
+      {
+        "sha256": "2d27b7b0504e551b26d1ee8e874594cba141601531007d4d0fac4b13239610f8",
+        "review_status": "manual_full_text",
+        "reviewer": "source_research_luna",
+        "review_note": "Q/NextPlan paired failure and candidate decision helper",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_FinalDecision_20261005/execution/parallel/node2/server_results/qlib/decision.py",
+            "bytes": 2520,
+            "line_count": 46,
+            "category": "run_output_or_evidence"
+          },
+          {
+            "path": "HRDecoder_FinalDecision_20261005/execution/qlib/decision.py",
+            "bytes": 2520,
+            "line_count": 46,
+            "category": "source_code"
+          },
+          {
+            "path": "HRDecoder_FinalDecision_20261005/execution/server_results/qlib/decision.py",
+            "bytes": 2520,
+            "line_count": 46,
+            "category": "run_output_or_evidence"
+          },
+          {
+            "path": "HRDecoder_NextPlan_20261004/execution/qlib/decision.py",
+            "bytes": 2520,
+            "line_count": 46,
+            "category": "source_code"
+          },
+          {
+            "path": "HRDecoder_Q_20261003/qlib/decision.py",
+            "bytes": 2520,
+            "line_count": 46,
+            "category": "source_code"
+          }
+        ]
+      },
+      {
+        "sha256": "b0dc746c5c6611a789e781ddf36534f22c8be7a13f88b14247350363e154c5b6",
+        "review_status": "manual_full_text",
+        "reviewer": "source_research_luna",
+        "review_note": "Q/NextPlan tile coordinate and supervision geometry helper",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_FinalDecision_20261005/execution/parallel/node2/server_results/qlib/geometry.py",
+            "bytes": 2632,
+            "line_count": 88,
+            "category": "run_output_or_evidence"
+          },
+          {
+            "path": "HRDecoder_FinalDecision_20261005/execution/qlib/geometry.py",
+            "bytes": 2632,
+            "line_count": 88,
+            "category": "source_code"
+          },
+          {
+            "path": "HRDecoder_FinalDecision_20261005/execution/server_results/qlib/geometry.py",
+            "bytes": 2632,
+            "line_count": 88,
+            "category": "run_output_or_evidence"
+          },
+          {
+            "path": "HRDecoder_NextPlan_20261004/execution/qlib/geometry.py",
+            "bytes": 2632,
+            "line_count": 88,
+            "category": "source_code"
+          },
+          {
+            "path": "HRDecoder_Q_20261003/qlib/geometry.py",
+            "bytes": 2632,
+            "line_count": 88,
+            "category": "source_code"
+          }
+        ]
+      },
+      {
+        "sha256": "f0db2cf06284ec6aed12b94c1f5d885b3e79fe1981ad29700bcb5f50f557bc9e",
+        "review_status": "manual_full_text",
+        "reviewer": "source_research_luna",
+        "review_note": "FinalDecision multi-source training runner",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_FinalDecision_20261005/execution/parallel/node2/server_results/train_run.py",
+            "bytes": 6070,
+            "line_count": 87,
+            "category": "run_output_or_evidence"
+          },
+          {
+            "path": "HRDecoder_FinalDecision_20261005/execution/server_results/train_run.py",
+            "bytes": 6070,
+            "line_count": 87,
+            "category": "run_output_or_evidence"
+          },
+          {
+            "path": "HRDecoder_FinalDecision_20261005/execution/train_run.py",
+            "bytes": 6070,
+            "line_count": 87,
+            "category": "source_code"
+          }
+        ]
+      },
+      {
+        "sha256": "b936535ce271eb0f34af192b954b0dd5528c9c161c2953531ff23048c164e310",
+        "review_status": "manual_full_text",
+        "reviewer": "historical_runs_luna",
+        "review_note": "FullCompetition Refiner evaluation",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_FullCompetition_20260920/refiner_v1/eval_refiner.py",
+            "bytes": 11838,
+            "line_count": 258,
+            "category": "run_output_or_evidence"
+          }
+        ]
+      },
+      {
+        "sha256": "d2d2294692e81fbb6e60dc705fd592195e74bf14f950524beb0713451a89c579",
+        "review_status": "manual_full_text",
+        "reviewer": "historical_runs_luna",
+        "review_note": "FullCompetition Refiner patch assembly",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_FullCompetition_20260920/refiner_v1/refiner/assemble.py",
+            "bytes": 6413,
+            "line_count": 143,
+            "category": "source_code"
+          }
+        ]
+      },
+      {
+        "sha256": "99f60eb2a2ec679055d6e6e5bb66dc533cf638db967bbd3659052df7c3b65d59",
+        "review_status": "manual_full_text",
+        "reviewer": "historical_runs_luna",
+        "review_note": "FullCompetition Refiner candidate generation",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_FullCompetition_20260920/refiner_v1/refiner/candidate.py",
+            "bytes": 13277,
+            "line_count": 308,
+            "category": "source_code"
+          }
+        ]
+      },
+      {
+        "sha256": "92ee5c68d49cfb520f6de895428f5a464a79fe12c43c4e5ed1dd6ed3757eb4b0",
+        "review_status": "manual_full_text",
+        "reviewer": "historical_runs_luna",
+        "review_note": "FullCompetition Refiner dataset/collation",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_FullCompetition_20260920/refiner_v1/refiner/dataset.py",
+            "bytes": 8930,
+            "line_count": 201,
+            "category": "source_code"
+          }
+        ]
+      },
+      {
+        "sha256": "0c93e703ddcfbbb450f5fc6380f176acbd3dadbf9b63d777d634386f43f24ebc",
+        "review_status": "manual_full_text",
+        "reviewer": "historical_runs_luna",
+        "review_note": "FullCompetition frozen reference inference",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_FullCompetition_20260920/refiner_v1/refiner/reference.py",
+            "bytes": 5935,
+            "line_count": 139,
+            "category": "source_code"
+          }
+        ]
+      },
+      {
+        "sha256": "3adaf43a060775a03f25613966fc8c3405e611e6226bdccbfe0bd584501edb2d",
+        "review_status": "manual_full_text",
+        "reviewer": "historical_runs_luna",
+        "review_note": "FullCompetition tiled Refiner inference",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_FullCompetition_20260920/refiner_v1/refiner/tiled_infer.py",
+            "bytes": 4198,
+            "line_count": 87,
+            "category": "source_code"
+          }
+        ]
+      },
+      {
+        "sha256": "4fcb3d05ad652d771122a8309fb97067b81efb4a9756ab103ee4106e7d7142f6",
+        "review_status": "manual_full_text",
+        "reviewer": "historical_runs_luna",
+        "review_note": "FullCompetition Refiner training runner",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_FullCompetition_20260920/refiner_v1/train_refiner.py",
+            "bytes": 23621,
+            "line_count": 488,
+            "category": "source_code"
+          }
+        ]
+      },
+      {
+        "sha256": "6771893f889aea2a35635ac94338626d55aa5651f32b4942306223845c96e2cf",
+        "review_status": "manual_full_text",
+        "reviewer": "historical_runs_luna",
+        "review_note": "FullCompetition data augmentation support",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_FullCompetition_20260920/trainer/data/augment.py",
+            "bytes": 8370,
+            "line_count": 180,
+            "category": "source_code"
+          }
+        ]
+      },
+      {
+        "sha256": "283ca44100c2320e411ddbbb5a530ce35b7963647da7c534c269b01c17aa0d3f",
+        "review_status": "manual_full_text",
+        "reviewer": "historical_runs_luna",
+        "review_note": "FullCompetition data/cache support",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_FullCompetition_20260920/trainer/data/common.py",
+            "bytes": 7837,
+            "line_count": 212,
+            "category": "source_code"
+          }
+        ]
+      },
+      {
+        "sha256": "e7b7d4c59314400616ae7a852305b27b2c1d27db8c7f95409fa55fdb8aae47ed",
+        "review_status": "manual_full_text",
+        "reviewer": "historical_runs_luna",
+        "review_note": "FullCompetition DDR dataset loader",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_FullCompetition_20260920/trainer/data/ddr_dataset.py",
+            "bytes": 4595,
+            "line_count": 123,
+            "category": "source_code"
+          }
+        ]
+      },
+      {
+        "sha256": "5336e99446664fd2c6b1de23e5256cd436bee36bbd9079768f88bddacd613ba3",
+        "review_status": "manual_full_text",
+        "reviewer": "historical_runs_luna",
+        "review_note": "FullCompetition external dataset loader",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_FullCompetition_20260920/trainer/data/external_dataset.py",
+            "bytes": 12070,
+            "line_count": 259,
+            "category": "source_code"
+          }
+        ]
+      },
+      {
+        "sha256": "696667a0ed33be9966988337099dd7d3d54ba6b730086f166ccdfe26e0cf0aae",
+        "review_status": "manual_full_text",
+        "reviewer": "historical_runs_luna",
+        "review_note": "FullCompetition ConvNeXt U-Net model",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_FullCompetition_20260920/trainer/models/convnext_unet.py",
+            "bytes": 15225,
+            "line_count": 350,
+            "category": "source_code"
+          }
+        ]
+      },
+      {
+        "sha256": "64ab36faf236616dbfabbbf278bf5cff8c0abeb66faf7fc5261fad2b86317cd9",
+        "review_status": "manual_full_text",
+        "reviewer": "source_research_luna",
+        "review_note": "Next common identity and data helper",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_Next_20261003/nextlib/common.py",
+            "bytes": 3085,
+            "line_count": 89,
+            "category": "source_code"
+          }
+        ]
+      },
+      {
+        "sha256": "dcbf1613fdc3896337ccea4a4f21fb472cfece8c94982e26ed42b313a859c219",
+        "review_status": "manual_full_text",
+        "reviewer": "source_research_luna",
+        "review_note": "Next paired stopping/selection helper",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_Next_20261003/nextlib/decision.py",
+            "bytes": 1688,
+            "line_count": 33,
+            "category": "source_code"
+          }
+        ]
+      },
+      {
+        "sha256": "a716ea4205039ee1d58c2d7789ea837bc2b72703e9a513b67f6ec54b31b3049e",
+        "review_status": "manual_full_text",
+        "reviewer": "source_research_luna",
+        "review_note": "Next tile/global coordinate alignment helper",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_Next_20261003/nextlib/geometry.py",
+            "bytes": 4450,
+            "line_count": 121,
+            "category": "source_code"
+          }
+        ]
+      },
+      {
+        "sha256": "757b92372f1162ee8bb7eef0f962065906c2bdf5182d03790fe81d964a99ef19",
+        "review_status": "manual_full_text",
+        "reviewer": "historical_runs_luna",
+        "review_note": "Next frozen global feature cache",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_Next_20261003/nextlib/global_cache.py",
+            "bytes": 1739,
+            "line_count": 49,
+            "category": "source_code"
+          }
+        ]
+      },
+      {
+        "sha256": "d8cbab6cb835ffe2c58845ff769529f7c4481377de8c44da9efcb063c111dc0c",
+        "review_status": "manual_full_text",
+        "reviewer": "historical_runs_luna",
+        "review_note": "Next/Ready augmentation; duplicate path inherited by SHA",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_Next_20261003/trainer/data/augment.py",
+            "bytes": 8597,
+            "line_count": 183,
+            "category": "source_code"
+          },
+          {
+            "path": "HRDecoder_Ready_20261002/trainer/data/augment.py",
+            "bytes": 8597,
+            "line_count": 183,
+            "category": "source_code"
+          }
+        ]
+      },
+      {
+        "sha256": "e360c33d46eea48224e5585101969a34f9977d783573c50d52f2290359a8d178",
+        "review_status": "manual_full_text",
+        "reviewer": "historical_runs_luna",
+        "review_note": "Next/Ready common data support; duplicate path inherited by SHA",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_Next_20261003/trainer/data/common.py",
+            "bytes": 8803,
+            "line_count": 236,
+            "category": "source_code"
+          },
+          {
+            "path": "HRDecoder_Ready_20261002/trainer/data/common.py",
+            "bytes": 8803,
+            "line_count": 236,
+            "category": "source_code"
+          }
+        ]
+      },
+      {
+        "sha256": "4f1f940dc71aef620fb4bb32afbd03ffcc8778ce80ec46ad220a7b67fb16b61c",
+        "review_status": "manual_full_text",
+        "reviewer": "historical_runs_luna",
+        "review_note": "Next/Ready DDR loader; duplicate path inherited by SHA",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_Next_20261003/trainer/data/ddr_dataset.py",
+            "bytes": 4873,
+            "line_count": 130,
+            "category": "source_code"
+          },
+          {
+            "path": "HRDecoder_Ready_20261002/trainer/data/ddr_dataset.py",
+            "bytes": 4873,
+            "line_count": 130,
+            "category": "source_code"
+          }
+        ]
+      },
+      {
+        "sha256": "d0ff3f99fad178ffd2c891075305f4c82602e58fd0700211dbdfac17a5fba45e",
+        "review_status": "manual_full_text",
+        "reviewer": "historical_runs_luna",
+        "review_note": "Next/Ready external loader; duplicate path inherited by SHA",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_Next_20261003/trainer/data/external_dataset.py",
+            "bytes": 13147,
+            "line_count": 281,
+            "category": "source_code"
+          },
+          {
+            "path": "HRDecoder_Ready_20261002/trainer/data/external_dataset.py",
+            "bytes": 13147,
+            "line_count": 281,
+            "category": "source_code"
+          }
+        ]
+      },
+      {
+        "sha256": "7f199310c8f866bb66094a1b9bc550bd9ca10b0ed02f7b55942579d417948dcd",
+        "review_status": "manual_full_text",
+        "reviewer": "historical_runs_luna",
+        "review_note": "Next/Ready ConvNeXt U-Net; duplicate path inherited by SHA",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_Next_20261003/trainer/models/convnext_unet.py",
+            "bytes": 15373,
+            "line_count": 353,
+            "category": "source_code"
+          },
+          {
+            "path": "HRDecoder_Ready_20261002/trainer/models/convnext_unet.py",
+            "bytes": 15373,
+            "line_count": 353,
+            "category": "source_code"
+          }
+        ]
+      },
+      {
+        "sha256": "1e94336a2c933174a86114ebc6fdb9ee3b90fa0e24ecf2f874d0776d29869c97",
+        "review_status": "manual_full_text",
+        "reviewer": "source_research_luna",
+        "review_note": "NextPlan paired validation selector",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_NextPlan_20261004/execution/decision.py",
+            "bytes": 2310,
+            "line_count": 42,
+            "category": "source_code"
+          }
+        ]
+      },
+      {
+        "sha256": "911ea4ce36bd2bbca1952fe6ed81f24c3ae32dff5289c907bb2f7e7ed3167af3",
+        "review_status": "manual_full_text",
+        "reviewer": "source_research_luna",
+        "review_note": "Q/NextPlan DINO proposal training runner; excluded from v3 evidence",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_NextPlan_20261004/execution/historical/train_run.py",
+            "bytes": 9948,
+            "line_count": 162,
+            "category": "source_code"
+          },
+          {
+            "path": "HRDecoder_Q_20261003/train_run.py",
+            "bytes": 9948,
+            "line_count": 162,
+            "category": "source_code"
+          }
+        ]
+      },
+      {
+        "sha256": "0c37beeb9efed709f2b4a237519e9d921e567617412f4905704380b0ae574eb4",
+        "review_status": "manual_full_text",
+        "reviewer": "remaining_materials_luna",
+        "review_note": "Next semantic model",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_Next_20261003/nextlib/model.py",
+            "bytes": 8292,
+            "line_count": 182,
+            "category": "source_code"
+          }
+        ]
+      },
+      {
+        "sha256": "ec6e00c6a114487b7abaa60348bca5994c6f9020b38efdcc5b2b8c39f5c838e2",
+        "review_status": "manual_full_text",
+        "reviewer": "remaining_materials_luna",
+        "review_note": "Next frozen data stream",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_Next_20261003/nextlib/data.py",
+            "bytes": 5450,
+            "line_count": 116,
+            "category": "source_code"
+          }
+        ]
+      },
+      {
+        "sha256": "10b387afb7f7c8d12dbc906036c29b52f05fd058202592e60ccf1521e7a8cdcb",
+        "review_status": "manual_full_text",
+        "reviewer": "remaining_materials_luna",
+        "review_note": "Next image-coordinate evaluation",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_Next_20261003/nextlib/evaluate.py",
+            "bytes": 12642,
+            "line_count": 247,
+            "category": "run_output_or_evidence"
+          }
+        ]
+      },
+      {
+        "sha256": "510c60831c6ed52e2f9895396a2f989563fd8242c3b2e499bdbdea7c60f4e4e3",
+        "review_status": "manual_full_text",
+        "reviewer": "remaining_materials_luna",
+        "review_note": "Next training and resume runner",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_Next_20261003/nextlib/train.py",
+            "bytes": 15303,
+            "line_count": 297,
+            "category": "source_code"
+          }
+        ]
+      },
+      {
+        "sha256": "9d4f14d1dd114b82c44126bde3ec10fd57c643bc46eb6c8d53e4c54ea3e7a787",
+        "review_status": "same_sha_full_read_inherited",
+        "reviewer": "remaining_materials_luna",
+        "review_note": "Next adapter; same SHA as manually read Ready source",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_Next_20261003/trainer/models/hrdecoder_adapter.py",
+            "bytes": 16359,
+            "line_count": 347,
+            "category": "source_code"
+          },
+          {
+            "path": "HRDecoder_Ready_20261002/trainer/models/hrdecoder_adapter.py",
+            "bytes": 16359,
+            "line_count": 347,
+            "category": "source_code"
+          }
+        ]
+      },
+      {
+        "sha256": "fc1d9d8882a67a648b1ac64f412da4a4ec894949473784bcd1ccec2efd9fe95a",
+        "review_status": "same_sha_full_read_inherited",
+        "reviewer": "remaining_materials_luna",
+        "review_note": "Next loss; same SHA as manually read Ready source",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_Next_20261003/trainer/loss.py",
+            "bytes": 5698,
+            "line_count": 123,
+            "category": "source_code"
+          },
+          {
+            "path": "HRDecoder_Ready_20261002/trainer/loss.py",
+            "bytes": 5698,
+            "line_count": 123,
+            "category": "source_code"
+          }
+        ]
+      },
+      {
+        "sha256": "b4f3e2ea30c96a7d3bc4721ce805b917d154a9a4df6abb14a213c62263ef7ecb",
+        "review_status": "same_sha_full_read_inherited",
+        "reviewer": "remaining_materials_luna",
+        "review_note": "Next engine; same SHA as manually read Ready source",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_Next_20261003/trainer/engine.py",
+            "bytes": 23979,
+            "line_count": 515,
+            "category": "source_code"
+          },
+          {
+            "path": "HRDecoder_Ready_20261002/trainer/engine.py",
+            "bytes": 23979,
+            "line_count": 515,
+            "category": "source_code"
+          }
+        ]
+      },
+      {
+        "sha256": "0e4ade255e487d2b2f627e5f8ca45885424f8ea3881149134fbbcfa620d434d6",
+        "review_status": "manual_full_text",
+        "reviewer": "remaining_materials_luna",
+        "review_note": "FullCompetition Refiner model",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_FullCompetition_20260920/refiner_v1/refiner/model.py",
+            "bytes": 6692,
+            "line_count": 161,
+            "category": "source_code"
+          }
+        ]
+      },
+      {
+        "sha256": "d798d48f28236a8381a9564e22c4d7279386980cd8c231eaeae96fde28a94839",
+        "review_status": "manual_full_text",
+        "reviewer": "remaining_materials_luna",
+        "review_note": "FullCompetition Refiner loss",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_FullCompetition_20260920/refiner_v1/refiner/losses.py",
+            "bytes": 7092,
+            "line_count": 159,
+            "category": "source_code"
+          }
+        ]
+      },
+      {
+        "sha256": "10af8256a7f9e1ac4a59b55c1cdffd0c04719805c82b7573fc256f23e3eaa405",
+        "review_status": "manual_full_text",
+        "reviewer": "remaining_materials_luna",
+        "review_note": "shared trainer metrics",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_FullCompetition_20260920/trainer/metrics.py",
+            "bytes": 9809,
+            "line_count": 222,
+            "category": "run_output_or_evidence"
+          },
+          {
+            "path": "HRDecoder_Next_20261003/trainer/metrics.py",
+            "bytes": 9809,
+            "line_count": 222,
+            "category": "run_output_or_evidence"
+          },
+          {
+            "path": "HRDecoder_Ready_20261002/trainer/metrics.py",
+            "bytes": 9809,
+            "line_count": 222,
+            "category": "run_output_or_evidence"
+          }
+        ]
+      },
+      {
+        "sha256": "88331aca1c9a1da353315d28883b8823fe93d59f387f94a44632832d292057a2",
+        "review_status": "manual_full_text",
+        "reviewer": "remaining_materials_luna",
+        "review_note": "NextPlan execution train",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_NextPlan_20261004/execution/train.py",
+            "bytes": 13345,
+            "line_count": 236,
+            "category": "source_code"
+          }
+        ]
+      },
+      {
+        "sha256": "1e84cad8f974a51f50f259df0cbf8ed942549af6c16edf613f8f3791c2ade85f",
+        "review_status": "manual_full_text",
+        "reviewer": "remaining_materials_luna",
+        "review_note": "NextPlan performance-revision train",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_NextPlan_20261004/execution/reports/performance_revision_20261004/source/train.py",
+            "bytes": 11654,
+            "line_count": 212,
+            "category": "source_code"
+          }
+        ]
+      },
+      {
+        "sha256": "f68a07f604248575df6db8553c554aa3d9eb718d112a9488c42780695ab9710f",
+        "review_status": "manual_full_text",
+        "reviewer": "remaining_materials_luna",
+        "review_note": "DINO model",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_FinalDecision_20261005/execution/parallel/node2/server_results/qlib/model.py",
+            "bytes": 4615,
+            "line_count": 97,
+            "category": "run_output_or_evidence"
+          },
+          {
+            "path": "HRDecoder_FinalDecision_20261005/execution/qlib/model.py",
+            "bytes": 4615,
+            "line_count": 97,
+            "category": "source_code"
+          },
+          {
+            "path": "HRDecoder_FinalDecision_20261005/execution/server_results/qlib/model.py",
+            "bytes": 4615,
+            "line_count": 97,
+            "category": "run_output_or_evidence"
+          },
+          {
+            "path": "HRDecoder_NextPlan_20261004/execution/qlib/model.py",
+            "bytes": 4615,
+            "line_count": 97,
+            "category": "source_code"
+          },
+          {
+            "path": "HRDecoder_Q_20261003/qlib/model.py",
+            "bytes": 4615,
+            "line_count": 97,
+            "category": "source_code"
+          }
+        ]
+      },
+      {
+        "sha256": "87379d9e58619f1cf89e351cda71348a38c44af233881998e7d0a830e4a4e879",
+        "review_status": "manual_full_text",
+        "reviewer": "remaining_materials_luna",
+        "review_note": "DINO loss",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_FinalDecision_20261005/execution/parallel/node2/server_results/qlib/loss.py",
+            "bytes": 984,
+            "line_count": 23,
+            "category": "run_output_or_evidence"
+          },
+          {
+            "path": "HRDecoder_FinalDecision_20261005/execution/qlib/loss.py",
+            "bytes": 984,
+            "line_count": 23,
+            "category": "source_code"
+          },
+          {
+            "path": "HRDecoder_FinalDecision_20261005/execution/server_results/qlib/loss.py",
+            "bytes": 984,
+            "line_count": 23,
+            "category": "run_output_or_evidence"
+          },
+          {
+            "path": "HRDecoder_NextPlan_20261004/execution/qlib/loss.py",
+            "bytes": 984,
+            "line_count": 23,
+            "category": "source_code"
+          },
+          {
+            "path": "HRDecoder_Q_20261003/qlib/loss.py",
+            "bytes": 984,
+            "line_count": 23,
+            "category": "source_code"
+          }
+        ]
+      },
+      {
+        "sha256": "b42b031bf0212ad26e86aa0bb47d520d1bf53f7e493d59e4a95363e73318c4f5",
+        "review_status": "manual_full_text",
+        "reviewer": "remaining_materials_luna",
+        "review_note": "DINO data",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_FinalDecision_20261005/execution/parallel/node2/server_results/qlib/data.py",
+            "bytes": 9734,
+            "line_count": 207,
+            "category": "run_output_or_evidence"
+          },
+          {
+            "path": "HRDecoder_FinalDecision_20261005/execution/qlib/data.py",
+            "bytes": 9734,
+            "line_count": 207,
+            "category": "source_code"
+          },
+          {
+            "path": "HRDecoder_FinalDecision_20261005/execution/server_results/qlib/data.py",
+            "bytes": 9734,
+            "line_count": 207,
+            "category": "run_output_or_evidence"
+          },
+          {
+            "path": "HRDecoder_NextPlan_20261004/execution/qlib/data.py",
+            "bytes": 9734,
+            "line_count": 207,
+            "category": "source_code"
+          },
+          {
+            "path": "HRDecoder_Q_20261003/qlib/data.py",
+            "bytes": 9734,
+            "line_count": 207,
+            "category": "source_code"
+          }
+        ]
+      },
+      {
+        "sha256": "3098342fc7ace6fc238f10f80c86f561e142c0fce024fcf2cfcaf59d9b7d7fcc",
+        "review_status": "manual_full_text",
+        "reviewer": "remaining_materials_luna",
+        "review_note": "NextPlan DINO evaluation",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_NextPlan_20261004/execution/qlib/evaluate.py",
+            "bytes": 3812,
+            "category": "run_output_or_evidence",
+            "line_count": 80
+          }
+        ]
+      },
+      {
+        "sha256": "e164e18654275edb85ec69d47a5ce085ffa5ae6cb3bd3a55e0b3010f08816c5a",
+        "review_status": "manual_full_text",
+        "reviewer": "remaining_materials_luna",
+        "review_note": "Q DINO evaluation",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_Q_20261003/qlib/evaluate.py",
+            "bytes": 3300,
+            "line_count": 73,
+            "category": "run_output_or_evidence"
+          }
+        ]
+      },
+      {
+        "sha256": "141a30a9cda67f52783dce6bcc284fb3dc1a4eb98a87de7693e50b2e628149de",
+        "review_status": "manual_full_text",
+        "reviewer": "remaining_materials_luna",
+        "review_note": "DINO metrics",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_FinalDecision_20261005/execution/parallel/node2/server_results/qlib/metrics.py",
+            "bytes": 1765,
+            "line_count": 37,
+            "category": "run_output_or_evidence"
+          },
+          {
+            "path": "HRDecoder_FinalDecision_20261005/execution/qlib/metrics.py",
+            "bytes": 1765,
+            "line_count": 37,
+            "category": "run_output_or_evidence"
+          },
+          {
+            "path": "HRDecoder_FinalDecision_20261005/execution/server_results/qlib/metrics.py",
+            "bytes": 1765,
+            "line_count": 37,
+            "category": "run_output_or_evidence"
+          },
+          {
+            "path": "HRDecoder_NextPlan_20261004/execution/qlib/metrics.py",
+            "bytes": 1765,
+            "line_count": 37,
+            "category": "run_output_or_evidence"
+          },
+          {
+            "path": "HRDecoder_Q_20261003/qlib/metrics.py",
+            "bytes": 1765,
+            "line_count": 37,
+            "category": "run_output_or_evidence"
+          }
+        ]
+      },
+      {
+        "sha256": "ef251f728f38ffa103901a08cdb1ee2e2da5bcc1a771d2b24728219bcab48140",
+        "review_status": "manual_full_text",
+        "reviewer": "remaining_materials_luna",
+        "review_note": "DINO optimizer",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_NextPlan_20261004/execution/qlib/optim.py",
+            "bytes": 2041,
+            "line_count": 57,
+            "category": "source_code"
+          },
+          {
+            "path": "HRDecoder_Q_20261003/qlib/optim.py",
+            "bytes": 2041,
+            "line_count": 57,
+            "category": "source_code"
+          }
+        ]
+      },
+      {
+        "sha256": "4297d0fc3ffac8927e27a91531a9e9ea66280bfae6eb22a38a39fdaf780bf448",
+        "review_status": "manual_full_text",
+        "reviewer": "remaining_materials_luna",
+        "review_note": "repo_snapshot hrplus_core; SHA duplicate of later Plus3 source",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_审查轮_20260916/repo_snapshot/hrplus_core.py",
+            "bytes": 8416,
+            "category": "third_party_or_archived_source",
+            "line_count": 199
+          }
+        ]
+      },
+      {
+        "sha256": "591e4786abaa35b8dfc9a6476c45a8c9eb387544c37e0d56b6a499b683e100b4",
+        "review_status": "manual_full_text",
+        "reviewer": "remaining_materials_luna",
+        "review_note": "repo_snapshot hrplus_mares",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_MA残差头与集成_20260915-16/03_代码/configs/hrplus_mares.py",
+            "bytes": 1429,
+            "line_count": 32,
+            "category": "source_code"
+          },
+          {
+            "path": "HRDecoder_Next_20261003/vendor/champion_repo/configs/lesion/exp/hrplus_mares.py",
+            "bytes": 1429,
+            "line_count": 32,
+            "category": "third_party_or_archived_source"
+          },
+          {
+            "path": "HRDecoder_Ready_20261002/vendor/champion_repo/configs/lesion/exp/hrplus_mares.py",
+            "bytes": 1429,
+            "line_count": 32,
+            "category": "third_party_or_archived_source"
+          },
+          {
+            "path": "HRDecoder_审查轮_20260916/repo_snapshot/hrplus_mares.py",
+            "bytes": 1429,
+            "line_count": 32,
+            "category": "third_party_or_archived_source"
+          }
+        ]
+      },
+      {
+        "sha256": "6433a8fafc950c83b1a6fd432e8c901fb843b3fbaff032454e4289fe8bdd0f37",
+        "review_status": "manual_full_text",
+        "reviewer": "remaining_materials_luna",
+        "review_note": "repo_snapshot hrplus_patch; SHA duplicate of Plus3/FusionAware source",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_FusionAware_20260917/fork_hrplus_patch.py",
+            "bytes": 9315,
+            "line_count": 206,
+            "category": "source_code"
+          },
+          {
+            "path": "HRDecoder_Next_20261003/vendor/champion_repo/hrplus_patch.py",
+            "bytes": 9315,
+            "line_count": 206,
+            "category": "third_party_or_archived_source"
+          },
+          {
+            "path": "HRDecoder_Ready_20261002/vendor/champion_repo/hrplus_patch.py",
+            "bytes": 9315,
+            "line_count": 206,
+            "category": "third_party_or_archived_source"
+          },
+          {
+            "path": "HRDecoder_审查轮_20260916/repo_snapshot/hrplus_patch.py",
+            "bytes": 9315,
+            "line_count": 206,
+            "category": "third_party_or_archived_source"
+          },
+          {
+            "path": "hrdecoder_plus3/repo/hrplus_patch.py",
+            "bytes": 9315,
+            "line_count": 206,
+            "category": "third_party_or_archived_source"
+          }
+        ]
+      },
+      {
+        "sha256": "2d687086e28533d4bb080f31c12c4abb802d5293fc4f2a463f9f0bd8f36452f9",
+        "review_status": "manual_full_text",
+        "reviewer": "remaining_materials_luna",
+        "review_note": "repo_snapshot hrplus_patch_dice; SHA duplicate of source/config copies",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_FusionAware_20260917/fork_cfg_hrplus_patch_dice.py",
+            "bytes": 2327,
+            "line_count": 60,
+            "category": "source_code"
+          },
+          {
+            "path": "HRDecoder_Next_20261003/vendor/champion_repo/configs/lesion/exp/hrplus_patch_dice.py",
+            "bytes": 2327,
+            "line_count": 60,
+            "category": "third_party_or_archived_source"
+          },
+          {
+            "path": "HRDecoder_Ready_20261002/vendor/champion_repo/configs/lesion/exp/hrplus_patch_dice.py",
+            "bytes": 2327,
+            "line_count": 60,
+            "category": "third_party_or_archived_source"
+          },
+          {
+            "path": "HRDecoder_审查轮_20260916/repo_snapshot/hrplus_patch_dice.py",
+            "bytes": 2327,
+            "line_count": 60,
+            "category": "third_party_or_archived_source"
+          },
+          {
+            "path": "hrdecoder_plus3/repo/configs/lesion/exp/hrplus_patch_dice.py",
+            "bytes": 2327,
+            "line_count": 60,
+            "category": "third_party_or_archived_source"
+          }
+        ]
+      },
+      {
+        "sha256": "95438df2b26df31a0c29e4933afa482d44072e5be42524177586fb18c165c1ed",
+        "review_status": "manual_full_text",
+        "reviewer": "remaining_materials_luna",
+        "review_note": "repo_snapshot MA residual; SHA duplicate of MA residual branch",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_MA残差头与集成_20260915-16/03_代码/ma_residual.py",
+            "bytes": 12031,
+            "line_count": 263,
+            "category": "source_code"
+          },
+          {
+            "path": "HRDecoder_Next_20261003/vendor/champion_repo/ma_residual.py",
+            "bytes": 12031,
+            "line_count": 263,
+            "category": "third_party_or_archived_source"
+          },
+          {
+            "path": "HRDecoder_Ready_20261002/vendor/champion_repo/ma_residual.py",
+            "bytes": 12031,
+            "line_count": 263,
+            "category": "third_party_or_archived_source"
+          },
+          {
+            "path": "HRDecoder_审查轮_20260916/repo_snapshot/ma_residual.py",
+            "bytes": 12031,
+            "line_count": 263,
+            "category": "third_party_or_archived_source"
+          }
+        ]
+      },
+      {
+        "sha256": "a463e528cc986623e2287cb0ebf5da44fb79582288847605122a90f27826bf46",
+        "review_status": "manual_full_text",
+        "reviewer": "remaining_materials_luna",
+        "review_note": "IDRiD derived-label README; provenance only",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/README.md",
+            "bytes": 621,
+            "line_count": 5,
+            "category": "research_or_project_document"
+          }
+        ]
+      },
+      {
+        "sha256": "04234aea4b190093f4427c75301e6edb31d3d48b27add7b171d653f07307702d",
+        "review_status": "manual_full_text",
+        "reviewer": "historical_runs_luna",
+        "review_note": "source_before_worker_RAM train",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_ArchitectureDesign_20261008/adapter_execution/source_before_worker_RAM/train.py",
+            "bytes": 17755,
+            "line_count": 247,
+            "category": "source_code"
+          }
+        ]
+      },
+      {
+        "sha256": "0c49f8322762a9deddabb29ed3e665544111ec0c6bd70f53de75d9f7bcdeccdf",
+        "review_status": "manual_full_text",
+        "reviewer": "historical_runs_luna",
+        "review_note": "semantic failed-assertion train",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/semantic/reports/semantic/failed_parameter_assertion_before_updates/train.py",
+            "bytes": 20526,
+            "line_count": 268,
+            "category": "source_code"
+          }
+        ]
+      },
+      {
+        "sha256": "1dc7b72a8ab7857d963b789344be8068ec327ff616f582c5fbb58e9d70095ee1",
+        "review_status": "manual_full_text",
+        "reviewer": "historical_runs_luna",
+        "review_note": "SACD isolated model",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_ArchitectureDesign_20261008/sacd_isolated_execution/model.py",
+            "bytes": 6305,
+            "line_count": 109,
+            "category": "source_code"
+          }
+        ]
+      },
+      {
+        "sha256": "9619a401e2c034dca03fc3afba076f17240493ac6bc8e814caa51b6bc3801f2c",
+        "review_status": "manual_full_text",
+        "reviewer": "historical_runs_luna",
+        "review_note": "SACD isolated train",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_ArchitectureDesign_20261008/sacd_isolated_execution/train.py",
+            "bytes": 17693,
+            "line_count": 264,
+            "category": "source_code"
+          }
+        ]
+      },
+      {
+        "sha256": "fb18469db27865c3e195a23f14b363ad0374a652fddfb825552f5c320512e026",
+        "review_status": "manual_full_text",
+        "reviewer": "historical_runs_luna",
+        "review_note": "source_before_worker_RAM loader",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_ArchitectureDesign_20261008/adapter_execution/source_before_worker_RAM/loader.py",
+            "bytes": 3995,
+            "line_count": 94,
+            "category": "source_code"
+          }
+        ]
+      },
+      {
+        "sha256": "0144873ce047232a76f3dbbe000825fc06afa348c733140c324be003ce57d2ad",
+        "review_status": "manual_full_text",
+        "reviewer": "historical_runs_luna",
+        "review_note": "adapter screen gate",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_ArchitectureDesign_20261008/adapter_execution/screen_gate.py",
+            "bytes": 2232,
+            "line_count": 32,
+            "category": "source_code"
+          }
+        ]
+      },
+      {
+        "sha256": "d67c451bf2c29ee2600433d107f5cfe9f9dee6fa9b4ba51f627ed896c03edfbf",
+        "review_status": "manual_full_text",
+        "reviewer": "historical_runs_luna",
+        "review_note": "aligned/detail/foundation/iou/semantic shared screen gate",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_ArchitectureDesign_20261008/aligned_execution/screen_gate.py",
+            "bytes": 2264,
+            "line_count": 32,
+            "category": "source_code"
+          },
+          {
+            "path": "HRDecoder_ArchitectureDesign_20261008/detail_execution/screen_gate.py",
+            "bytes": 2264,
+            "line_count": 32,
+            "category": "source_code"
+          },
+          {
+            "path": "HRDecoder_ArchitectureDesign_20261008/foundation_execution/screen_gate.py",
+            "bytes": 2264,
+            "line_count": 32,
+            "category": "source_code"
+          },
+          {
+            "path": "HRDecoder_ArchitectureDesign_20261008/iou_execution/screen_gate.py",
+            "bytes": 2264,
+            "line_count": 32,
+            "category": "source_code"
+          },
+          {
+            "path": "HRDecoder_ArchitectureDesign_20261008/semantic_execution/screen_gate.py",
+            "bytes": 2264,
+            "line_count": 32,
+            "category": "source_code"
+          }
+        ]
+      },
+      {
+        "sha256": "266593f42b351b5839d284587a5a4374cce6cfaa162dd56e822a561332d54ffd",
+        "review_status": "manual_full_text",
+        "reviewer": "historical_runs_luna",
+        "review_note": "expert screen gate",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_ArchitectureDesign_20261008/expert_execution/screen_gate.py",
+            "bytes": 2732,
+            "line_count": 39,
+            "category": "source_code"
+          }
+        ]
+      },
+      {
+        "sha256": "c7f50ef5ec80bd2d513f2b6f451d502af19b3c0bee199eac750830575a94ed35",
+        "review_status": "manual_full_text",
+        "reviewer": "historical_runs_luna",
+        "review_note": "residual screen gate",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_ArchitectureDesign_20261008/residual_execution/screen_gate.py",
+            "bytes": 2805,
+            "line_count": 42,
+            "category": "source_code"
+          }
+        ]
+      },
+      {
+        "sha256": "d336c59060e135387ba81fe6e690ec94f4b98a3243543c9bf1ebf9fa4e07a35e",
+        "review_status": "manual_full_text",
+        "reviewer": "historical_runs_luna",
+        "review_note": "SACD isolated screen gate",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_ArchitectureDesign_20261008/sacd_isolated_execution/screen_gate.py",
+            "bytes": 2436,
+            "line_count": 38,
+            "category": "source_code"
+          }
+        ]
+      },
+      {
+        "sha256": "322ea926ae3936ee2aa74530de2bb7f6b25e952983da5263347b75f7f235f25b",
+        "review_status": "manual_full_text",
+        "reviewer": "source_research_luna",
+        "review_note": "NativePyramid tests, read but not executed",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_NativePyramid_20261011/tests.py",
+            "bytes": 9325,
+            "line_count": 186,
+            "category": "source_code"
+          }
+        ]
+      },
+      {
+        "sha256": "49fece790edac8001ee655a2e13838425a74877e1a27663973a679c1efd0fb73",
+        "review_status": "manual_full_text",
+        "reviewer": "source_research_luna",
+        "review_note": "NativePyramid verify utility, read but not executed",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_NativePyramid_20261011/verify.py",
+            "bytes": 13946,
+            "line_count": 262,
+            "category": "source_code"
+          }
+        ]
+      },
+      {
+        "sha256": "3ff3d6ac32f402d51b302ef751152bdc233aa540ab198addda94c4695da57464",
+        "review_status": "manual_full_text",
+        "reviewer": "source_research_luna",
+        "review_note": "offline validation probe, read but not executed",
+        "matching_inventory_paths": [
+          {
+            "path": "HRDecoder_Breakthrough_Plan_20261003/offline_val_probe.py",
+            "bytes": 6363,
+            "line_count": 108,
+            "category": "source_code"
+          }
+        ]
+      }
+    ]
+  }
+}

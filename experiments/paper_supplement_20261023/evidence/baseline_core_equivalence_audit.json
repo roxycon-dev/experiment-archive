@@ -1,0 +1,26 @@
+{
+  "status": "PASS_BASELINE_CORE_LOSS_AND_GRADIENT_NUMERICAL_CHECK",
+  "reference": "Git cfc6c88 named by original checkpoint metadata; not proof of absence of uncommitted historical edits",
+  "reference_file_sha256": "ee4c1a5578d58a45459835c7c28dca5fd0702b55866fef178699e8f62d860f6b",
+  "actual_source_file": "D:\\dataset\\experiment\\paper_supplement_20261023\\local_baseline_profile_source\\baseline_v1\\repo\\mmseg\\models\\segmentors\\HRDecoder.py",
+  "optional_detail_context_learned_fusion_SE_slide_modules_disabled": true,
+  "historical_losses": {
+    "hr.loss_seg": 0.09935292601585388,
+    "fuse.loss_seg": 0.994176983833313
+  },
+  "current_losses": {
+    "hr.loss_seg": 0.09935292601585388,
+    "fuse.loss_seg": 0.994176983833313
+  },
+  "absolute_loss_differences": {
+    "hr.loss_seg": 0.0,
+    "fuse.loss_seg": 0.0
+  },
+  "maximum_absolute_gradient_difference": 0.0,
+  "parameter_gradients_checked": 923,
+  "optimizer_updates": 0,
+  "GPU_used": false,
+  "geometry": "Synthetic2x256 input,128 HR scale; diagnostic only",
+  "normalization": "Both BN for core-code comparison, not distributed SyncBN equivalence",
+  "limits": "Does not establish matched stochastic sampling, rank RNG, distributed gradients, or identical full-training test scores"
+}

@@ -1,0 +1,30 @@
+{
+  "files": {
+    "qlib/__init__.py": "a3735cf7b5c8ffa46d128704422b6c48b710ef7a26e9a56cf532cbaac1f4589c",
+    "qlib/common.py": "8cc786c9290cd078127ab8040137710ab8e9b50c974ce4467784cd3697461e21",
+    "qlib/model.py": "f68a07f604248575df6db8553c554aa3d9eb718d112a9488c42780695ab9710f",
+    "qlib/data.py": "b42b031bf0212ad26e86aa0bb47d520d1bf53f7e493d59e4a95363e73318c4f5",
+    "qlib/geometry.py": "b0dc746c5c6611a789e781ddf36534f22c8be7a13f88b14247350363e154c5b6",
+    "qlib/loss.py": "87379d9e58619f1cf89e351cda71348a38c44af233881998e7d0a830e4a4e879",
+    "qlib/metrics.py": "141a30a9cda67f52783dce6bcc284fb3dc1a4eb98a87de7693e50b2e628149de",
+    "qlib/evaluate.py": "3098342fc7ace6fc238f10f80c86f561e142c0fce024fcf2cfcaf59d9b7d7fcc",
+    "qlib/checkpoint.py": "f4b0a1f8e5aa9005adbb93e1bc5bbbe31f8d833c830e32a046b90b1cd2018b52",
+    "parent_adaptation.py": "a5be5ed8bcef8d0ddc56393e550675ad1c562004d0126b8cd66f6b2e087de8d7",
+    "parent_performance.py": "9f3325100b997c277a00b3de6d4da94a661673f32d9a9411f8e1b0bb425575b6"
+  },
+  "historical_execution": "D:\\dataset\\experiment\\HRDecoder_NextPlan_20261004\\execution",
+  "seed42_parent": {
+    "path": "D:/dataset/experiment/HRDecoder_NextPlan_20261004/execution/server_results/runs/F12_seed42/checkpoint_u12000.pth",
+    "sha256": "68d7b5821fab1210b3336cf2a63b9de893f24fc32876f5255d7d662084b5e728",
+    "bytes": 1059606539
+  },
+  "seed2024_Q_parent": {
+    "status": "MUST_PREPARE",
+    "parent": "D:/dataset/experiment/HRDecoder_Q_20261003/server_results/runs/Q_DDR_seed2024/checkpoint_u16000.pth",
+    "parent_sha256": "b064c78cc7472608c3400671267c83209defd03720b5e191443a48211ecb5168",
+    "procedure": "Run exact archived F12 configuration and existing seed2024 F stream for 12000 updates, fixed endpoint, no node selection",
+    "archived_protocol": "D:/dataset/experiment/HRDecoder_NextPlan_20261004/execution/configs/protocol.json"
+  },
+  "old_recovery_complete": true,
+  "time": "2026-10-04T17:14:47.558823+00:00"
+}

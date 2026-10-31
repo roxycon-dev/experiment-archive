@@ -1,0 +1,168 @@
+{
+  "date": "2026-10-18",
+  "reviewer": "root",
+  "torch": "2.6.0+cu124",
+  "device": "CPU",
+  "fixture": "small four-stage shared encoder and joint head",
+  "full_W48_model_executed": false,
+  "dataset_pixels_loaded": false,
+  "gpu_used": false,
+  "optimizer_steps": 0,
+  "new_validation_metrics": false,
+  "spec_sha256": "2632a431d0464aaa81d38c26decb2e0fed26dc162f9cb433dbf1c96e7f5d46a3",
+  "script_sha256": "57d680cf9e8b04d211fba6e7ea9b0fd0c0d4baf0392bbe9368c4d734aeebe16a",
+  "checks": [
+    {
+      "name": "review 1: conditional-loss scale and metric counterexamples",
+      "status": "PASS",
+      "detail": {
+        "old_unit_empty_bce_bias_gradient": 0.5,
+        "same_dice_bias_gradient_if_P_1": 2.384230064049443e-07,
+        "same_dice_bias_gradient_if_P_1000": 0.00023807779421852805,
+        "same_dice_bias_gradient_if_P_0": 4.768371581985776e-12,
+        "old_empty_bce_to_P1_ratio": 2097113.0577507524,
+        "old_empty_bce_to_P1000_ratio": 2100.153866265484,
+        "scope": "constant p=0.5, all-valid illustrative batch; not observed network gradients",
+        "loss_not_iou_guarantee": {
+          "before": 0.32008852094040163,
+          "after": 0.2098031784939648,
+          "before_iou": 1.0,
+          "after_iou": 0.0
+        }
+      }
+    },
+    {
+      "name": "review 1: orthonormal view and optimizer-coordinate algebra",
+      "status": "PASS",
+      "detail": {
+        "energy_and_gradient_norm": "preserved",
+        "momentum_weight_decay_global_clip_coordinate_identity": "PASS",
+        "scope": "vector arithmetic; no optimizer or training loop",
+        "bn_note": "common rescaling before BN is mostly normalized away; no convergence-speed claim"
+      }
+    },
+    {
+      "name": "review 1: interpolation interpretation",
+      "status": "PASS",
+      "detail": {
+        "stem_center_ramp_offset_input_pixels": 1.5,
+        "decision": "retain conventional interpolation; remove any exact-lattice claim",
+        "reason": "trained multi-branch feature semantics are not a coordinate ramp; custom correction has no performance evidence"
+      }
+    },
+    {
+      "name": "review 2: AMP cached no_grad failure and cache-off repair",
+      "status": "PASS",
+      "detail": {
+        "same_outer_context_cache_on_requires_grad": false,
+        "cache_off_requires_grad": true,
+        "BN_can_mask_missing_conv_gradients": {
+          "True": {
+            "output_requires_grad": true,
+            "missing_parameter_gradients": [
+              "convs.0.weight",
+              "convs.1.weight",
+              "convs.2.weight",
+              "convs.3.weight"
+            ]
+          },
+          "False": {
+            "output_requires_grad": true,
+            "missing_parameter_gradients": []
+          }
+        },
+        "observed_torch": "2.6.0+cu124",
+        "device": "cpu"
+      }
+    },
+    {
+      "name": "review 2: revised Dice analytical/autograd/finite-difference agreement",
+      "status": "PASS",
+      "detail": {
+        "max_analytic_autograd_error": 1.734723475976807e-18,
+        "finite_difference_and_masked_nan": "PASS",
+        "empty_class_uses_same_dice": true
+      }
+    },
+    {
+      "name": "review 3: full vs staged graphs fp32 aux=all",
+      "status": "PASS",
+      "detail": {
+        "precision": "fp32",
+        "valid_aux_instances": 8,
+        "max_gradient_absolute_difference": 0.0,
+        "global_gradient_relative_l2": 0.0,
+        "exact_output_and_bn_state_match": true,
+        "full_model": false,
+        "optimizer_steps": 0
+      }
+    },
+    {
+      "name": "review 3: full vs staged graphs fp32 aux=one",
+      "status": "PASS",
+      "detail": {
+        "precision": "fp32",
+        "valid_aux_instances": 1,
+        "max_gradient_absolute_difference": 0.0,
+        "global_gradient_relative_l2": 0.0,
+        "exact_output_and_bn_state_match": true,
+        "full_model": false,
+        "optimizer_steps": 0
+      }
+    },
+    {
+      "name": "review 3: full vs staged graphs fp32 aux=none",
+      "status": "PASS",
+      "detail": {
+        "precision": "fp32",
+        "valid_aux_instances": 0,
+        "max_gradient_absolute_difference": 0.0,
+        "global_gradient_relative_l2": 0.0,
+        "exact_output_and_bn_state_match": true,
+        "full_model": false,
+        "optimizer_steps": 0
+      }
+    },
+    {
+      "name": "review 3: full vs staged graphs bf16 aux=all",
+      "status": "PASS",
+      "detail": {
+        "precision": "bf16",
+        "valid_aux_instances": 8,
+        "max_gradient_absolute_difference": 0.0,
+        "global_gradient_relative_l2": 0.0,
+        "exact_output_and_bn_state_match": true,
+        "full_model": false,
+        "optimizer_steps": 0
+      }
+    },
+    {
+      "name": "review 3: full vs staged graphs bf16 aux=one",
+      "status": "PASS",
+      "detail": {
+        "precision": "bf16",
+        "valid_aux_instances": 1,
+        "max_gradient_absolute_difference": 0.0,
+        "global_gradient_relative_l2": 0.0,
+        "exact_output_and_bn_state_match": true,
+        "full_model": false,
+        "optimizer_steps": 0
+      }
+    },
+    {
+      "name": "review 3: full vs staged graphs bf16 aux=none",
+      "status": "PASS",
+      "detail": {
+        "precision": "bf16",
+        "valid_aux_instances": 0,
+        "max_gradient_absolute_difference": 0.0,
+        "global_gradient_relative_l2": 0.0,
+        "exact_output_and_bn_state_match": true,
+        "full_model": false,
+        "optimizer_steps": 0
+      }
+    }
+  ],
+  "passed": 11,
+  "failed": 0
+}

@@ -1,0 +1,3 @@
+# Fixed examples with recovered original baseline
+
+The nine cases were selected during phase1 from full vs noH4 using the frozen SID/component rule. The recovered baseline did not affect selection. Recovered/still_missed/new_fp categories are relative to full vs noH4, not the original HRDecoder. Some still_missed examples are detected by the original baseline; some new_fp targets are also predicted by the original baseline. Both outcomes are retained. A prediction can be unmatched under the fixed IoU>=0.10 rule even when its crop contains nearby GT. Colors: green GT, orange prediction; white box marks the fixed target. No thresholds, masks, crops or selected targets were changed.

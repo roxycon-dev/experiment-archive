@@ -1,0 +1,92 @@
+{
+  "status": "PASS",
+  "time": "2026-10-04T09:08:16.407491+00:00",
+  "cache": {
+    "decoded_bytes": 36593276874,
+    "images": 646,
+    "seconds": 20.822930365800858,
+    "storage": "read-only parent RAM shared by fork workers; no data-disk copy",
+    "estimated_bytes": 36593276874
+  },
+  "config": {
+    "version": 1,
+    "workers": 8,
+    "prefetch_factor": 4,
+    "decode_threads": 8,
+    "decoded_cache_limit_bytes": 51539607552,
+    "micro_batch_changed": false,
+    "model_math_changed": false,
+    "sampling_changed": false,
+    "precision_changed": false,
+    "user_authorized": "2026-10-04: optimize training throughput; preserve registered experiment"
+  },
+  "performance_sha256": "9f3325100b997c277a00b3de6d4da94a661673f32d9a9411f8e1b0bb425575b6",
+  "config_sha256": "2fc8294b44eaba18b32e298402f11efd2b59ae20c0b5d6d806218cb5a6f510b0",
+  "arms": {
+    "E_NEG": {
+      "equivalence_updates": 20,
+      "exact_checks": {
+        "model": true,
+        "gradients": true,
+        "optimizer_tensors": true,
+        "optimizer_metadata": true,
+        "scheduler": true,
+        "rng_torch": true,
+        "audit": true,
+        "loss_grad_rows": true
+      },
+      "baseline_update_mean_seconds": 0.5557345189154148,
+      "baseline_data_wait_mean_seconds": 0.07857886739075184,
+      "optimized_steady_updates": 60,
+      "optimized_update_mean_seconds": 0.2583713222295046,
+      "optimized_update_p90_seconds": 0.2646644003689289,
+      "optimized_data_wait_mean_seconds": 0.0009528895219167074,
+      "peak_allocated_bytes": 2181791232
+    },
+    "F4": {
+      "equivalence_updates": 5,
+      "exact_checks": {
+        "model": true,
+        "gradients": true,
+        "optimizer_tensors": true,
+        "optimizer_metadata": true,
+        "scheduler": true,
+        "rng_torch": true,
+        "audit": true,
+        "loss_grad_rows": true
+      },
+      "baseline_update_mean_seconds": 0.6905309051275254,
+      "baseline_data_wait_mean_seconds": 0.12760506123304366,
+      "optimized_steady_updates": 60,
+      "optimized_update_mean_seconds": 0.3530300633360942,
+      "optimized_update_p90_seconds": 0.3594879493117332,
+      "optimized_data_wait_mean_seconds": 0.0011123508214950562,
+      "peak_allocated_bytes": 3869532672
+    },
+    "F12": {
+      "equivalence_updates": 5,
+      "exact_checks": {
+        "model": true,
+        "gradients": true,
+        "optimizer_tensors": true,
+        "optimizer_metadata": true,
+        "scheduler": true,
+        "rng_torch": true,
+        "audit": true,
+        "loss_grad_rows": true
+      },
+      "baseline_update_mean_seconds": 0.9476236909627914,
+      "baseline_data_wait_mean_seconds": 0.12930808812379838,
+      "optimized_steady_updates": 60,
+      "optimized_update_mean_seconds": 0.5333650102217992,
+      "optimized_update_p90_seconds": 0.5370739825069905,
+      "optimized_data_wait_mean_seconds": 0.0013796334465344747,
+      "peak_allocated_bytes": 7003138048
+    }
+  },
+  "formal_candidate": false,
+  "val_or_test_read": false,
+  "formal_checkpoint_modified": false,
+  "equivalence_comparison_only_deterministic_CUDA": true,
+  "throughput_and_formal_training_historical_CUDA_setting": true
+}

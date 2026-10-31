@@ -1,0 +1,171 @@
+{
+  "checkpoint": 20000,
+  "formal_updates": 0,
+  "optimizer_created": false,
+  "mode": "train, actual BN and Dropout; frozen weights except classifier bias requires_grad",
+  "limitation": "Three selected two-image batches, current gradient only; not full momentum trajectory or a recovery training experiment.",
+  "records": [
+    {
+      "sids": [
+        "007-3396-200",
+        "007-1811-100"
+      ],
+      "seed": 42000,
+      "gradients": {
+        "old_GT_including_HR": {
+          "loss": 0.5430245995521545,
+          "base_classifier_bias_gradient_EX_HE_SE_MA": [
+            8.737675671000034e-05,
+            -0.0012566359946504235,
+            2.5360979634569958e-05,
+            0.005716658663004637
+          ]
+        },
+        "weighted_KD": {
+          "loss": 0.0024328995496034622,
+          "base_classifier_bias_gradient_EX_HE_SE_MA": [
+            -5.495851655723527e-05,
+            3.307177030364983e-05,
+            -9.462476009503007e-05,
+            2.0392188162077218e-05
+          ]
+        },
+        "old_task": {
+          "loss": 0.5454574823379517,
+          "base_classifier_bias_gradient_EX_HE_SE_MA": [
+            3.241823287680745e-05,
+            -0.001223564031533897,
+            -6.926376954652369e-05,
+            0.005737052299082279
+          ]
+        },
+        "repaired_GT_including_HR": {
+          "loss": 1.712395429611206,
+          "base_classifier_bias_gradient_EX_HE_SE_MA": [
+            -0.03392858803272247,
+            -0.012110738083720207,
+            -0.03392859548330307,
+            -0.023821204900741577
+          ]
+        },
+        "GT_repaired_same_KD": {
+          "loss": 1.714828372001648,
+          "base_classifier_bias_gradient_EX_HE_SE_MA": [
+            -0.033983539789915085,
+            -0.012077665887773037,
+            -0.034023217856884,
+            -0.023800808936357498
+          ]
+        }
+      }
+    },
+    {
+      "sids": [
+        "007-3448-200",
+        "007-1824-100"
+      ],
+      "seed": 42000,
+      "gradients": {
+        "old_GT_including_HR": {
+          "loss": 0.5784008502960205,
+          "base_classifier_bias_gradient_EX_HE_SE_MA": [
+            0.00010298386041540653,
+            -0.008650860749185085,
+            3.156692400807515e-05,
+            0.017981432378292084
+          ]
+        },
+        "weighted_KD": {
+          "loss": 0.004441671073436737,
+          "base_classifier_bias_gradient_EX_HE_SE_MA": [
+            -0.00022574778995476663,
+            -2.1555164494202472e-05,
+            -6.619421765208244e-05,
+            1.0624180504237302e-05
+          ]
+        },
+        "old_task": {
+          "loss": 0.5828425288200378,
+          "base_classifier_bias_gradient_EX_HE_SE_MA": [
+            -0.00012276394409127533,
+            -0.00867241621017456,
+            -3.4627293644007295e-05,
+            0.017992058768868446
+          ]
+        },
+        "repaired_GT_including_HR": {
+          "loss": 1.7379910945892334,
+          "base_classifier_bias_gradient_EX_HE_SE_MA": [
+            -0.03392861410975456,
+            -0.02951456420123577,
+            -0.033928580582141876,
+            -0.0050572240725159645
+          ]
+        },
+        "GT_repaired_same_KD": {
+          "loss": 1.742432713508606,
+          "base_classifier_bias_gradient_EX_HE_SE_MA": [
+            -0.03415435552597046,
+            -0.029536116868257523,
+            -0.03399477154016495,
+            -0.005046594887971878
+          ]
+        }
+      }
+    },
+    {
+      "sids": [
+        "007-3520-200",
+        "007-1831-100"
+      ],
+      "seed": 42000,
+      "gradients": {
+        "old_GT_including_HR": {
+          "loss": 0.6121159791946411,
+          "base_classifier_bias_gradient_EX_HE_SE_MA": [
+            9.321193647338077e-05,
+            0.005872406996786594,
+            3.943515912396833e-05,
+            0.013899006880819798
+          ]
+        },
+        "weighted_KD": {
+          "loss": 0.006507451646029949,
+          "base_classifier_bias_gradient_EX_HE_SE_MA": [
+            -0.00017481143004260957,
+            0.00011719889880623668,
+            -0.0002430328167974949,
+            3.890119114657864e-05
+          ]
+        },
+        "old_task": {
+          "loss": 0.6186234354972839,
+          "base_classifier_bias_gradient_EX_HE_SE_MA": [
+            -8.15994935692288e-05,
+            0.0059896064922213554,
+            -0.00020359765039756894,
+            0.013937908224761486
+          ]
+        },
+        "repaired_GT_including_HR": {
+          "loss": 1.696300983428955,
+          "base_classifier_bias_gradient_EX_HE_SE_MA": [
+            -0.03392862528562546,
+            -0.0033159847371280193,
+            -0.033035751432180405,
+            -0.01902272179722786
+          ]
+        },
+        "GT_repaired_same_KD": {
+          "loss": 1.7028083801269531,
+          "base_classifier_bias_gradient_EX_HE_SE_MA": [
+            -0.034103430807590485,
+            -0.003198785474523902,
+            -0.033278778195381165,
+            -0.018983816727995872
+          ]
+        }
+      }
+    }
+  ]
+}

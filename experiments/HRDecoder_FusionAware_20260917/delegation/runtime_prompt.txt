@@ -1,0 +1,514 @@
+Return ONLY JSON {"files":{"relative/path":"full content"},"notes":"brief"}. Complete runnable Python3.8+, no TODO/stubs. Generate runtime.py, run_protocol.py, settings.example.json, README.md. Do not edit other files. No tools available. Legacy mmcv/mmseg on Linux GPU. Files now generated on Windows; do not claim execution.
+Goal baseline42.20 champion44.2115 target47.20, budget50RMB one4090/1.98h max24h. No opening/SSH now.
+Core API implemented independently: sha256(path); strict_initialize(model,student_checkpoint,reference_checkpoint) accepts fullD/studentonly and validates full ref equalB; configure_trainable(model)->names only decode_head/backbone.stage4 frozen BN/ref; freeze_bn(model); paired_geometry(imageRGB_HWC,labelHW,refHWC4,rng np.RandomState)->normalized CHW image,1HWlabel,CHWref,trace; loss_pair(logits,label,ref,arm)->scalar A studentDice B .5studentDice+.5fusedDice.
+Ops API: choose_steps(train_seconds_per_step,eval_seconds,overhead_seconds=600)->int min1000 max4000 multiple4 fits2*T*step+8*eval+overhead in21600sec; gate_first(a4,b4,start_miou)->bool; choose_checkpoint(list of(step,miou))->tuple. run_guarded.sh launches run_protocol.py --settings --run-dir, independent watchdog. Also --dry-run local config validation no GPU/realshutdown.
+runtime.py: inject repo sys.path, cwd repo, mmcv.Config.fromfile, register custom_imports before build, override source_checkpoint/reference absolute, disable unrelated pretraining. Strict D2000 init ONLY. Require settings expected_sha256 for all weights/configs; no unhashed fallback. Settings repo,config,data_root,student_checkpoint,reference_checkpoint,cache_dir,champion.head and 4members config/ckpt/weight3,2,1,1 D/E/B/E4. Images images/train|val|test, labels labels/train|val|test; train.txt/val.txt/test.txt. Count454/76/227 no duplicates/intersection, stems JPEG vs PNG. split_assignment.json dict filenames->dict split. No test labels during training.
+Cache full train reference via true eval-pipeline model._reference_prob(img,meta,True), before crop. Store native resolution HWC4 float32. Manifest checkpoint/config/image IDs and hashes, normalization/version/shapes, finite/range; atomic complete flag only all454 entries. Dataset for cache uses val pipeline override img_dir to train and ann_dir train, should not read labels. paired_geometry resizes cache with image. Validate identity on use.
+Evaluation original val/test dataset pipeline, DataContainer unwrap identical attached h7. gt nearest resize to ori as old. true per-image4class TPFPFN then global counts IoU, threshold>0.5 ignore255, no AUPR. D model.inference returns tensor. Champion EXACT attached h7 weightedmodels plus horizontalflip; separate D ps/pr noflip; normalizedRGB resizebilinear align_cornersFalse; Head7->16->16->1 delta6tanh, strict headload. No missing models/heads skipped. Full config customimports supported. Fixed mix=.5completechampion+.5completenew; no headtransfer. originalchampion predictions can diskcache tagged hashes.
+Training manual batch2 FP32 SGD5e-5 momentum.9 wd.0005 clip5. BN frozen after train(). SameD start eacharm seed42 then43; RNG/imageordering/geometry match; val save/restore python numpy torch cuda RNG. call encode_decode, loss_pair. T checkpoints quarters up to4000, choose bestval tiesearlier. checkpoint includes full model optimizer allRNG samplerRNG iter seed T arm config/split hashes; resume must validate; lastsave every100. Firstupdate verify authorizedgrad/paramchanges/frozenparams/ref/BN unchanged output evidence.
+Protocol phasecaps3h cache/startingDval/championval/timing;10h pairseed42;6h pairseed43;5h final inclbackup allinsideglobaldeadline. Read ledger.json deadline supports ISO or epoch explicitly reject unknown. Functions receive deadline and check before each train/eval/cache iteration. Pilot50updates eacharm separately reinit; measure max trainstep and fullval evaltime; chooseT with6h rule. Don't start main if T<1000. Don't start phases lacking reserved final5h. B-A bestval>=.003 AND2/4 pairednodes B>A ANDbestB>=startingDval then seed43 pair else stop direction retainchampion. If seed43 reverses B<=A reject new adoption. New candidate bestB of two seeds by val tie42; compare onval only champion,new,mix; tieschampion/new/mix. Persist selectionlock confighashes/weights beforetest. One final batched test of locked candidates and winner, never change winner usingtest. TEST_STARTED/DONE files prevent automatic rerun on interruption; flag blocked if incomplete. Output allperimagecounts/report exploratorybaseline historical. On no gate stop, no pointless test. Return guard forshutdown. README clear realGPUunverified, missingassetsfailclosed. No synthetic metrics.
+
+SOURCE D:\dataset\experiment\hrdecoder_plus3\repo\hrplus_patch.py
+"""HR+ patch: distillation-free self-ensemble on top of HR100Refinement.
+
+Student: HRPlusRefinement (inherits HR100Refinement.encode_decode on the
+1024x1024 crop).  A separately built frozen HR100Refinement (constructed from
+a deepcopy of the kwargs taken BEFORE super() mutates them, strict-loaded
+from the SAME 4-class B checkpoint) acts as reference at inference;
+probabilities are fused 0.5/0.5.
+"""
+import copy
+
+import numpy as np
+import torch
+
+from mmseg.models.builder import SEGMENTORS
+from mmseg.datasets.builder import PIPELINES
+from mmseg.ops import resize
+
+from hr100_refinement import HR100Refinement
+from hrplus_core import (tiled_forward, blend_probs, resize_logit,
+                         pad_to_size, foreground_crop_bbox, crop_arrays,
+                         multiclass_lovasz_hinge)
+
+
+def _strict_load_state(module, path):
+    """Load checkpoint into ``module``; STRICT w.r.t. all 4-class B tensors.
+
+    The source checkpoint contains NO ``ma_refiner.*`` keys, so missing or
+    unexpected keys of any kind are errors.
+    """
+    ckpt = torch.load(path, map_location='cpu')
+    state = ckpt.get('state_dict', ckpt)
+    state = {k[7:] if k.startswith('module.') else k: v for k, v in state.items()}
+    module.load_state_dict(state, strict=True)
+
+
+def _assert_config(model):
+    """Assert the EXACT-4-class sigmoid HR config (1024 crop scale)."""
+    assert model.num_classes == 4, 'model must have exactly 4 classes'
+    assert tuple(model.hr_scale) == (1024, 1024), 'hr_scale must be 1024x1024'
+    assert model.use_sigmoid, 'model inference must use sigmoid'
+
+
+def _freeze_all_bn(model):
+    """Freeze ALL BatchNorm layers and keep them frozen."""
+    from torch.nn.modules.batchnorm import _BatchNorm
+    for m in model.modules():
+        if isinstance(m, _BatchNorm):
+            m.eval()
+
+
+@SEGMENTORS.register_module()
+class HRPlusRefinement(HR100Refinement):
+    """Student = inherited crop model; reference = frozen sibling module.
+
+    * forward_train: ONLY the student's crop logits + decode_head.losses
+      (optionally + weighted 4-class binary Lovasz hinge).  No MA hard loss,
+      no HR crop auxiliary, no fuse losses.
+    * inference: fixed 0.5 native whole-image reference probabilities +
+      0.5 student tiled logits (tile 1024, stride 768) overlap-averaged,
+      resized to original with align_corners, sigmoid, flip-undo.
+      Does NOT recurse into reference.inference.
+    """
+
+    def __init__(self, source_checkpoint, lovasz_weight=0.0, **kwargs):
+        assert source_checkpoint, 'source_checkpoint is REQUIRED'
+        kwargs['semantic_refinement'] = False
+        kwargs['hard_weight'] = 0
+        kwargs['freeze_bn'] = True
+        # Snapshot kwargs BEFORE super() mutates them; the reference is built
+        # independently from the same pristine configuration.
+        ref_kwargs = copy.deepcopy(kwargs)
+        super(HRPlusRefinement, self).__init__(**kwargs)
+        _assert_config(self)
+        self.lovasz_weight = float(lovasz_weight)
+        # Student: strict-load the 4-class B checkpoint right after the
+        # constructor; init_weights() is overridden as a no-op so later
+        # build-time calls never re-initialize the loaded weights.
+        _strict_load_state(self, source_checkpoint)
+        _freeze_all_bn(self)
+        # Reference: built SEPARATELY from the pre-super kwargs deepcopy
+        # (no deepcopy of the student module), then strict-loaded itself.
+        reference = HR100Refinement(**ref_kwargs)
+        _strict_load_state(reference, source_checkpoint)
+        for p in reference.parameters():
+            p.requires_grad_(False)
+        _freeze_all_bn(reference)
+        reference.eval()
+        self.reference = reference
+
+    # ---- lifecycle guards -------------------------------------------------
+    def init_weights(self):
+        """No-op: student and reference both hold the strict-loaded B
+        checkpoint; never re-initialize."""
+        pass
+
+    def train(self, mode=True):
+        super(HRPlusRefinement, self).train(mode)
+        if hasattr(self, 'reference'):
+            self.reference.eval()  # reference is never trained
+        return self
+
+    # ---- training ---------------------------------------------------------
+    def forward_train(self, img, img_metas, gt_semantic_seg,
+                      seg_weight=None, return_feat=False, **kwargs):
+        logits = self.encode_decode(img, img_metas)  # inherited crop logits
+        # Legacy BinaryLoss maps ignore labels to zeros but does not mask predictions.
+        # Constant zero probability removes ignored pixels from squared-Dice terms.
+        dice_logits = torch.where(gt_semantic_seg == 255, logits.new_tensor(-1e4), logits)
+        losses = self.decode_head.losses(dice_logits, gt_semantic_seg)
+        if self.lovasz_weight > 0:
+            losses['loss_lovasz'] = self.lovasz_weight * multiclass_lovasz_hinge(
+                logits, gt_semantic_seg)
+        return losses
+
+    # ---- inference --------------------------------------------------------
+    def _student_prob(self, img, img_meta, rescale):
+        """Tiled student logits -> overlap-average -> resize to original
+        (same align_corners as baseline) -> sigmoid -> flip undo."""
+        logits = tiled_forward(
+            img,
+            lambda patch: self.encode_decode(patch, img_meta),
+            self.hr_scale, stride=768, num_classes=self.num_classes)
+        img_shape = img_meta[0]['img_shape']
+        logits = logits[:, :, :img_shape[0], :img_shape[1]]
+        if rescale:
+            logits = resize_logit(logits, img_meta[0]['ori_shape'][:2],
+                                  align_corners=self.align_corners)
+        prob = torch.sigmoid(logits)
+        if img_meta[0]['flip']:
+            direction = img_meta[0]['flip_direction']
+            if direction == 'horizontal':
+                prob = prob.flip(dims=(3,))
+            elif direction == 'vertical':
+                prob = prob.flip(dims=(2,))
+            else:
+                raise NotImplementedError(direction)
+        return prob
+
+    def _reference_prob(self, img, img_meta, rescale):
+        """Native whole-image reference probabilities, computed directly
+        (no recursion into reference.inference)."""
+        self.reference.eval()
+        with torch.no_grad():
+            return self.reference.inference(img, img_meta, rescale)
+
+    def inference(self, img, img_meta, rescale):
+        assert img.size(0) == 1, 'eval batch size must be 1'
+        prob_s = self._student_prob(img, img_meta, rescale)
+        prob_r = self._reference_prob(img, img_meta, rescale)
+        # Fixed global fusion: 0.5 reference + 0.5 student, all classes.
+        return blend_probs(prob_r, prob_s, weight_a=0.5)
+
+
+@PIPELINES.register_module()
+class ForegroundMixedCrop(object):
+    """Train-only crop after Resize(2048x2048, keep_ratio=False).
+
+    With probability fg_prob: image-uniform random crop.  Otherwise: a
+    PRESENT lesion class (1..num_fg) is chosen uniformly, a pixel of it is
+    chosen uniformly, and a valid anchor offset guaranteeing pixel inclusion
+    is sampled.  Falls back to uniform when no lesion class is present.
+    The image (primary ``gt_semantic_seg`` and every extra field listed in
+    ``seg_fields``) is padded/cropped with IDENTICAL coordinates; small
+    images are padded first (image 0, labels 255).
+    """
+
+    def __init__(self, crop_size, fg_prob=0.5, num_fg=4, seg_fields=()):
+        self.crop_size = int(crop_size)
+        self.fg_prob = float(fg_prob)
+        self.num_fg = int(num_fg)
+        self.seg_fields = list(seg_fields)
+
+    def _seg_targets(self, results):
+        """All label fields cropped together, primary first."""
+        fields = ['gt_semantic_seg'] + [f for f in dict.fromkeys(results.get('seg_fields', []) + self.seg_fields)
+                                        if f != 'gt_semantic_seg']
+        return fields, [results[f] for f in fields]
+
+    def __call__(self, results):
+        img = results['img']
+        fields, gts = self._seg_targets(results)
+        gt = gts[0]
+        cs = self.crop_size
+        h, w = gt.shape[:2]
+        if h < cs or w < cs:
+            th, tw = max(cs, h), max(cs, w)
+            original_img = img
+            img = pad_to_size(original_img, gt, (th, tw), img_pad=0, seg_pad=255)[0]
+            padded = []
+            for g in gts:
+                padded.append(pad_to_size(original_img, g, (th, tw), 0, 255)[1])
+            gts = padded
+            gt = gts[0]
+        y0, x0 = foreground_crop_bbox(gt, cs, self.fg_prob, np.random,
+                                      self.num_fg)
+        results['img'] = img[y0:y0 + cs, x0:x0 + cs]
+        for f, g in zip(fields, gts):
+            results[f] = crop_arrays(g, g, y0, x0, cs, cs)[0]
+        results['img_shape'] = results['img'].shape  # 3D (H, W, C)
+        results['pad_shape'] = results['img'].shape  # 3D (H, W, C)
+        return results
+
+    def __repr__(self):
+        return self.__class__.__name__ + \
+            '(crop_size={}, fg_prob={}, num_fg={})'.format(
+                self.crop_size, self.fg_prob, self.num_fg)
+
+SOURCE D:\dataset\experiment\hrdecoder_plus3\repo\configs\lesion\exp\hrplus_patch_dice.py
+_base_ = '../exp/hr100_a.py'
+
+# HR+ patch (dice-only): student + frozen reference both strict-loaded from
+# the B checkpoint inside the model constructor; load_from stays None.
+custom_imports = dict(imports=['hrplus_patch'], allow_failed_imports=False)
+
+img_norm_cfg = dict(
+    mean=[81.205, 50.636, 21.216], std=[76.252, 48.798, 21.625], to_rgb=True)
+image_scale = (2048, 2048)
+crop_size = (1024, 1024)
+
+train_pipeline = [
+    dict(type='LoadImageFromFile'),
+    dict(type='LoadAnnotations'),
+    dict(type='Resize', img_scale=image_scale, keep_ratio=False),
+    dict(type='RandomRotate', prob=1.0, pad_val=0, seg_pad_val=255,
+         degree=(-45, 45), auto_bound=False),
+    dict(type='ForegroundMixedCrop', crop_size=1024, fg_prob=0.5),
+    dict(type='RandomFlip', flip_ratio=0.5),
+    dict(type='Normalize', **img_norm_cfg),
+    dict(type='Pad', size=crop_size, pad_val=0, seg_pad_val=255),
+    dict(type='DefaultFormatBundle'),
+    dict(type='Collect', keys=['img', 'gt_semantic_seg']),
+]
+
+model = dict(
+    type='HRPlusRefinement',
+    pretrained=None,
+    backbone=dict(pretrained=None),
+    semantic_refinement=False,
+    hard_weight=0,
+    freeze_bn=True,
+    source_checkpoint='weights/b_weights.pth',
+    lovasz_weight=0.0,
+    test_cfg=dict(compute_aupr=True))
+
+data = dict(
+    samples_per_gpu=2,
+    workers_per_gpu=4,
+    train=dict(
+        data_root='./data/DDR_split_613',
+        pipeline=train_pipeline),
+    val=dict(data_root='./data/DDR_split_613'),
+    test=dict(data_root='./data/DDR_split_613'))
+
+# Both weights come from source_checkpoint strict-loaded in the constructor.
+load_from = None
+resume_from = None
+
+optimizer = dict(type='SGD', lr=0.0005, momentum=0.9, weight_decay=0.0005)
+optimizer_config = dict(grad_clip=dict(max_norm=5.0, norm_type=2))
+lr_config = dict(policy='poly', warmup='linear', warmup_iters=200,
+                 warmup_ratio=0.1, power=1.0, min_lr=0.00005, by_epoch=False)
+runner = dict(type='IterBasedRunner', max_iters=20000)
+checkpoint_config = dict(by_epoch=False, interval=2000, max_keep_ckpts=2)
+evaluation = dict(interval=2000, metric='mIoU', priority='LOW',
+                  save_best='mIoU')
+log_config = dict(interval=20,
+                  hooks=[dict(type='TextLoggerHook', by_epoch=False)])
+seed = 42
+
+SOURCE D:\dataset\experiment\HRDecoder_审查轮_20260916\tools\h7_all_heads.py
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""H7：把多个类别校正头一起接到集成输出上（最终方案）。
+
+对每个类别 c ∈ {MA, HE, SE}：用该类别的头修正融合概率
+    P_new_c = sigmoid( logit(P_fused_c) + 6*tanh(head_c(feat_7)) )
+EX 不修正（已是最强类，无头）。
+特征 = [RGB, logit(P_fused_c), logit(P_s_c), logit(P_r_c), P_s_c - P_r_c]
+
+协议冻结：阈值 0.5、严格 >、全数据集累计、背景不计入。
+正确性断言：未接头的类别必须逐位不变。
+"""
+import argparse
+import copy
+import json
+import os
+import sys
+import time
+
+import numpy as np
+import torch
+import torch.nn as nn
+
+REPO = "/root/autodl-tmp/hrplus/repo"
+os.chdir(REPO)
+sys.path.insert(0, REPO)
+CLASSES = ["EX", "HE", "SE", "MA"]
+TAU = 0.5
+IDX = {"EX": 0, "HE": 1, "SE": 2, "MA": 3}
+
+
+class Head(nn.Module):
+    def __init__(self):
+        super().__init__()
+        self.net = nn.Sequential(nn.Conv2d(7, 16, 3, 1, 1), nn.ReLU(inplace=True),
+                                 nn.Conv2d(16, 16, 3, 1, 1), nn.ReLU(inplace=True),
+                                 nn.Conv2d(16, 1, 1))
+
+    def forward(self, f):
+        return 6.0 * torch.tanh(self.net(f))
+
+
+def logit(p, eps=1e-4):
+    q = p.clamp(eps, 1 - eps)
+    return torch.log(q / (1 - q))
+
+
+def unwrap(x):
+    n = 0
+    while hasattr(x, "data") and n < 8:
+        x = x.data; n += 1
+    return x
+
+
+def as_img(x):
+    x = unwrap(x)
+    while isinstance(x, (list, tuple)):
+        x = unwrap(x[0])
+    return x
+
+
+def as_meta(x):
+    x = unwrap(x)
+    if isinstance(x, dict):
+        return [x]
+    out = []
+    for e in x:
+        e = unwrap(e)
+        out.extend([e] if isinstance(e, dict) else [unwrap(e)])
+    return out
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--split", default="test")
+    ap.add_argument("--out-dir", required=True)
+    ap.add_argument("--heads", required=True,
+                    help="如 MA=/path/a.pth,HE=/path/b.pth,SE=/path/c.pth")
+    ap.add_argument("--models", required=True)
+    ap.add_argument("--flip", action="store_true")
+    ap.add_argument("--limit", type=int, default=0)
+    args = ap.parse_args()
+
+    from mmcv import Config
+    from mmseg.datasets import build_dataset
+    from mmseg.models import build_segmentor
+    from mmcv.runner import load_checkpoint
+
+    # 类别 -> 头
+    heads = {}
+    for item in args.heads.split(","):
+        item = item.strip()
+        if not item:
+            continue
+        cname, hp = item.split("=", 1)
+        if not os.path.isfile(hp):
+            print("!! 头文件不存在，跳过:", cname, hp, flush=True)
+            continue
+        h = Head().cuda()
+        ck = torch.load(hp, map_location="cpu")
+        h.load_state_dict(ck["head"] if isinstance(ck, dict) and "head" in ck else ck)
+        h.eval()
+        for p in h.parameters():
+            p.requires_grad_(False)
+        heads[cname] = (h, ck.get("step") if isinstance(ck, dict) else None)
+    print("生效的头 =", {k: v[1] for k, v in heads.items()}, flush=True)
+
+    base = Config.fromfile("configs/lesion/exp/hrplus_patch_dice.py")
+    d = copy.deepcopy(base.data[args.split]); d.test_mode = True
+    ds = build_dataset(d)
+    gt_maps = ds.get_gt_seg_maps()
+    n = len(ds) if args.limit <= 0 else min(args.limit, len(ds))
+
+    specs = []
+    for sp in args.models.split(";"):
+        sp = sp.strip()
+        if not sp:
+            continue
+        cfgp, rest = sp.split("=", 1)
+        if ":" in rest:
+            ck, w = rest.rsplit(":", 1); w = float(w)
+        else:
+            ck, w = rest, 1.0
+        specs.append((cfgp, ck, w))
+    models = []
+    for cfgp, ck, w in specs:
+        c = Config.fromfile(cfgp)
+        m = build_segmentor(c.model)
+        load_checkpoint(m, ck, map_location="cpu", strict=False)
+        models.append((m.cuda().eval(), w))
+    tot = sum(w for _, w in models) * (2 if args.flip else 1)
+    print("成员 =", [s[2] for s in specs], " split =", args.split, " n =", n, flush=True)
+
+    dm = build_segmentor(base.model)
+    load_checkpoint(dm, "/root/autodl-tmp/hrplus/D_0913_retry/best_mIoU_iter_2000.pth",
+                    map_location="cpu", strict=False)
+    dm = dm.cuda().eval()
+
+    agg = {"fused": {c: [0, 0, 0] for c in range(4)},
+           "final": {c: [0, 0, 0] for c in range(4)}}
+    nohead_same = True
+    t0 = time.time()
+    for i in range(n):
+        s = ds[i]
+        img = as_img(s["img"]).unsqueeze(0).cuda()
+        meta = as_meta(s["img_metas"])
+        gt = np.asarray(gt_maps[i]); ori = meta[0]["ori_shape"][:2]
+        if gt.shape != tuple(ori):
+            import cv2
+            gt = cv2.resize(gt.astype(np.uint8), (ori[1], ori[0]),
+                            interpolation=cv2.INTER_NEAREST)
+        gtf = torch.from_numpy(gt).cuda()
+        acc = None
+        with torch.no_grad():
+            for m, w in models:
+                p = m(return_loss=False, rescale=True, img=[img], img_metas=[meta])[0]
+                p = np.asarray(p[0] if isinstance(p, tuple) else p, dtype=np.float32)
+                acc = p * w if acc is None else acc + p * w
+                if args.flip:
+                    imf = img.flip(-1)
+                    mf = copy.deepcopy(meta)
+                    mf[0]["flip"] = True; mf[0]["flip_direction"] = "horizontal"
+                    p2 = m(return_loss=False, rescale=True, img=[imf], img_metas=[mf])[0]
+                    p2 = np.asarray(p2[0] if isinstance(p2, tuple) else p2, dtype=np.float32)
+                    acc = acc + p2 * w
+            pf = torch.from_numpy(acc / tot).cuda()
+            ps = dm._student_prob(img, meta, True)[0]
+            pr = dm._reference_prob(img, meta, True)[0]
+            img_f = torch.nn.functional.interpolate(
+                img, size=tuple(ori), mode="bilinear", align_corners=False)[0]
+            chans = []
+            for c in range(4):
+                cname = CLASSES[c]
+                if cname in heads:
+                    h, _ = heads[cname]
+                    f7 = torch.cat([img_f, logit(pf[c:c+1]), logit(ps[c:c+1]),
+                                    logit(pr[c:c+1]), (ps[c:c+1] - pr[c:c+1])],
+                                   dim=0).unsqueeze(0)
+                    newp = torch.sigmoid(logit(pf[c:c+1][0]) + h(f7)[0, 0])
+                    chans.append(newp.unsqueeze(0))
+                else:
+                    chans.append(pf[c:c+1])
+            pfin = torch.cat(chans, dim=0)      # (4,H,W)
+        for c in range(4):
+            for tag, prob in (("fused", pf), ("final", pfin)):
+                p = prob[c] > TAU; g = gtf == (c + 1); ig = gtf == 255
+                agg[tag][c][0] += int((p & g).sum())
+                agg[tag][c][1] += int((p & ~g & ~ig).sum())
+                agg[tag][c][2] += int((~p & g).sum())
+        for c in range(4):
+            if CLASSES[c] not in heads:
+                if not torch.equal(pf[c] > TAU, pfin[c] > TAU):
+                    nohead_same = False
+        if (i + 1) % 25 == 0 or i + 1 == n:
+            print("  %d/%d %.1fs" % (i + 1, n, time.time() - t0), flush=True)
+
+    def miou(tag):
+        ious = {}
+        for c in range(4):
+            tp, fp, fn = agg[tag][c]; den = tp + fp + fn
+            ious[CLASSES[c]] = tp / den if den else 0.0
+        return float(np.mean(list(ious.values()))), ious
+
+    mf, iouf = miou("fused"); mc, iouc = miou("final")
+    print("\n[fused] mIoU=%.4f  %s" % (mf, {k: round(v, 4) for k, v in iouf.items()}))
+    print("[final] mIoU=%.4f  %s" % (mc, {k: round(v, 4) for k, v in iouc.items()}))
+    print("[delta] mIoU=%+.4f  %s" % (mc - mf,
+          {k: round(iouc[k] - iouf[k], 4) for k in CLASSES}))
+    print("[未接头类别逐位不变] =", nohead_same)
+    out = {"probe": "H7_all_heads", "split": args.split, "n": n,
+           "heads": {k: v[1] for k, v in heads.items()},
+           "models": [{"cfg": a, "ckpt": b, "w": c} for a, b, c in specs],
+           "flip": bool(args.flip),
+           "fused": {"mIoU": mf, "per_class": iouf,
+                     "counts": {CLASSES[c]: dict(zip(("TP", "FP", "FN"), agg["fused"][c]))
+                                for c in range(4)}},
+           "final": {"mIoU": mc, "per_class": iouc,
+                     "counts": {CLASSES[c]: dict(zip(("TP", "FP", "FN"), agg["final"][c]))
+                                for c in range(4)}},
+           "delta_mIoU": mc - mf,
+           "no_head_classes_bit_identical": bool(nohead_same),
+           "status": "PASS" if (mc > mf and nohead_same) else "FAIL"}
+    p = os.path.join(args.out_dir, "experiments", "h7_%s.json" % args.split)
+    os.makedirs(os.path.dirname(p), exist_ok=True)
+    tmp = p + ".tmp"
+    with open(tmp, "w", encoding="utf-8") as f:
+        json.dump(out, f, indent=2, ensure_ascii=False)
+    os.replace(tmp, p)
+    print("\n状态:", out["status"], " 写出:", p)
+
+
+if __name__ == "__main__":
+    main()

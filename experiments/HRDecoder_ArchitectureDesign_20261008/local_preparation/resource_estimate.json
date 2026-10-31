@@ -1,0 +1,193 @@
+{
+  "recorded_at": "2026-10-08T12:46:01.647195+08:00",
+  "scope": "Incremental local preparation before server access; reuse data, weights and Python; large cache and training stay on server.",
+  "design_source": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\05_v3_机制重构与反驳审查.md",
+  "identity_source": "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\execution\\server_results\\reports\\data_identity.json",
+  "disk": {
+    "drive": "D:",
+    "total_bytes": 701008703488,
+    "free_bytes": 156824240128
+  },
+  "ram": {
+    "total_bytes": 16898142208,
+    "available_bytes": 3829743616
+  },
+  "runtime": {
+    "python": "C:\\Users\\GuanXingRen\\Miniconda3\\python.exe",
+    "installed_modules": {
+      "torch": true,
+      "numpy": true,
+      "PIL": true,
+      "psutil": true,
+      "mmcv": false,
+      "mmseg": false
+    },
+    "new_environment_required_for_current_small_probe": false
+  },
+  "data": {
+    "root": "D:\\HRDecoder\\data\\DDR_split_613",
+    "splits": {
+      "train": {
+        "images": 454,
+        "actual_bytes": 408364146,
+        "pixels_from_actual_jpg_headers": 2346569020,
+        "largest_image_pixels": 17915904,
+        "missing": [],
+        "metadata_mismatches": [],
+        "content_sha_verified": false
+      },
+      "val": {
+        "images": 76,
+        "actual_bytes": 65096468,
+        "pixels_from_actual_jpg_headers": 401111888,
+        "largest_image_pixels": 13488000,
+        "missing": [],
+        "metadata_mismatches": [],
+        "content_sha_verified": false
+      },
+      "test": {
+        "images": 227,
+        "actual_bytes": 208074664,
+        "pixels_from_actual_jpg_headers": 1184110704,
+        "largest_image_pixels": 17915904,
+        "missing": [],
+        "metadata_mismatches": [],
+        "content_sha_verified": false
+      }
+    },
+    "all_splits_total_bytes": 681535278,
+    "incremental_copy_bytes": 0
+  },
+  "baseline_source": {
+    "root": "D:\\dataset\\experiment\\autodl100\\work\\HRDecoder",
+    "source_file_count": 152,
+    "source_bytes": 698460
+  },
+  "teacher_assets": [
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\best_pipeline\\weights\\D_student_2000.pth",
+      "exists": true,
+      "bytes": 263419124,
+      "content_sha_verified_this_audit": false
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\best_pipeline\\weights\\B_weights.pth",
+      "exists": true,
+      "bytes": 263479238,
+      "content_sha_verified_this_audit": false
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\best_pipeline\\weights\\E_1500.pth",
+      "exists": true,
+      "bytes": 527412743,
+      "content_sha_verified_this_audit": false
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\best_pipeline\\weights\\E4_weights.pth",
+      "exists": true,
+      "bytes": 263477167,
+      "content_sha_verified_this_audit": false
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\best_pipeline\\weights\\H4_best.pth",
+      "exists": true,
+      "bytes": 15447,
+      "content_sha_verified_this_audit": false
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\best_pipeline\\weights\\U0_historical_best.pth",
+      "exists": true,
+      "bytes": 636326835,
+      "content_sha_verified_this_audit": false
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\execution\\server_results\\runs\\S_seed42\\checkpoint_u20000.pth",
+      "exists": true,
+      "bytes": 1621379373,
+      "content_sha_verified_this_audit": false
+    }
+  ],
+  "teacher_existing_total_bytes": 3575509927,
+  "student_imagenet_initialization": {
+    "path": "C:\\Users\\GuanXingRen\\.cache\\torch\\hub\\checkpoints\\hrnetv2_w48-d2186c55.pth",
+    "bytes": 310659148,
+    "sha256": "d2186c55782308392ae14cf179ac4840143b09abdbba81aa3f9274c795ebc960",
+    "historical_B0_tensor_equality_verified": false
+  },
+  "teacher_cache": {
+    "split": "train_454_only",
+    "pixels": 2346569020,
+    "members": 3,
+    "channels": 4,
+    "dtype": "float32",
+    "bytes_per_pixel": 48,
+    "uncompressed_array_payload_bytes": 112635312960,
+    "payload_GiB": 104.89980965852737,
+    "largest_one_image_three_member_payload_bytes": 859963392,
+    "local_generation_or_download": false,
+    "derived_T_dU_dS_extra_disk_bytes_if_computed_in_memory": 0,
+    "extra_bytes_if_three_full_derived_maps_also_saved": 112635312960,
+    "compression_ratio_measured": false
+  },
+  "small_cpu_probe": {
+    "status": "PASS",
+    "elapsed_seconds": 5.815420399998402,
+    "memory_bytes": {
+      "rss": 678965248,
+      "vms": 1372872704,
+      "num_page_faults": 181515,
+      "peak_wset": 679104512,
+      "wset": 678965248,
+      "peak_paged_pool": 7901144,
+      "paged_pool": 7901144,
+      "peak_nonpaged_pool": 49072,
+      "nonpaged_pool": 48944,
+      "pagefile": 1372872704,
+      "peak_pagefile": 1375686656,
+      "private": 1372872704
+    },
+    "peak_working_set_bytes": 679104512,
+    "new_parameter_count": 6419648,
+    "python": "C:\\Users\\GuanXingRen\\Miniconda3\\python.exe",
+    "scope": {
+      "cpu_only": true,
+      "real_hrnet_weights_loaded": false,
+      "real_model_inference": false,
+      "optimizer_created_or_step": false,
+      "canvas_2048_forward_run": false,
+      "prototype_note": "The feature provider is a random shape stub, not HRNet; all reported structural checks use random tensors.",
+      "design_source": "05_v3_机制重构与反驳审查.md sections 4 and 6"
+    },
+    "original_evidence_modified": false
+  },
+  "planning_budgets_not_measured_usage": {
+    "code_configs_reports_upload_bundle_disk_range_MiB": [
+      20,
+      100
+    ],
+    "local_incremental_disk_reserve_GiB": 2,
+    "local_small_checks_RAM_reserve_GiB": [
+      2,
+      4
+    ],
+    "optional_all_selected_weights_staging_bytes": 3886169075,
+    "optional_fresh_environment_GiB": [
+      3,
+      8
+    ],
+    "optional_fresh_environment_note": "Rough allowance only; depends on CPU/CUDA packages and installation cache. Not required for current preparation.",
+    "server_free_disk_target_GiB": [
+      160,
+      200
+    ],
+    "server_disk_assumptions": "One uncompressed A/U/S train cache, reused source data and weights, computed derived targets, bounded checkpoint retention; upload archive plus extracted cache not both retained.",
+    "full_2048_training_RAM_or_VRAM": "unmeasured; requires server smoke test"
+  },
+  "preparation_status": {
+    "inventory_and_small_private_module_check": "done",
+    "full_HRNet_trainer_integration": "not_done",
+    "AMP_DDP_gradient_merge": "not_verified",
+    "geometric_pipeline_integration": "not_done",
+    "large_teacher_cache": "not_generated"
+  }
+}

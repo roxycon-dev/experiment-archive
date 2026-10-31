@@ -1,0 +1,40 @@
+# 40-step learning smoke with the frozen objective (2026-09-21)
+
+Verbatim stdout of the executed command (captured from the remote run):
+
+```
+cd /root/autodl-tmp/HRDecoder_FullCompetition_20260920
+/root/miniconda3/bin/python refiner_v1/train_refiner.py \
+    --stage-config refiner_v1/configs/stage1.json \
+    --cache-root   refiner_v1/patch_cache_smoke_train \
+    --train-images 4 --overfit-steps 40 \
+    --out-dir      refiner_v1/runs/smoke_w30_20260921
+```
+
+```
+[train] objective = L = 30.0*focal_bce(alpha=0.75,gamma=2) + 1.0*soft_dice (frozen at 2026-09-21)
+[train] stage=stage1_overfit images=4/4 patches=43 roles={'background': 8, 'candidate_neg_fp': 3, 'candidate_neg_plain': 12, 'candidate_pos': 20}
+[train] refiner trainable params=25394 (non-refiner trainable=0)
+[train] identity guard OK: refiner == champion bitwise at init (max|d|=0.0e+00, batch=8)
+[train] ep=1 step=1 lr=5.00e-05 loss=0.3484 focal=0.0009 dice=0.3204 focal_share=0.080 gnorm=174.19 2.3s
+[train] ep=4 step=20 lr=1.00e-03 loss=0.6309 focal=0.0006 dice=0.6136 focal_share=0.027 gnorm=1.78 5.6s
+[train] ep=7 step=40 lr=9.99e-04 loss=0.4623 focal=0.0039 dice=0.3461 focal_share=0.251 gnorm=4.63 9.1s
+[train] wrote .../runs/smoke_w30_20260921/refiner_last.pth
+[remote_exit=0]
+```
+
+What this establishes (the four things the task asked to confirm):
+
+| requirement | observed |
+|---|---|
+| loss finite | every row of `steps.csv` has `finite=1`; `done.json.exit_code = 0`; loss over the 40 steps ranges 0.12695 – 1.00005 (per-step, unaggregated) |
+| gradients non-zero | `gnorm` is non-zero at every step (0.08 – 174.19, clipped to ≤ 5.0 by the configured `grad_clip_norm`); `non-refiner trainable = 0` |
+| focal share recorded | per-step `focal_share` is written; over the smoke: min 0.0001, max 0.5929, **mean 0.1569** (step 1: 0.080, step 40: 0.251) versus ≈ 0.005 under the old `w_focal = 1.0` — the R1 concern is closed by measurement, not by assertion. The share is small at the very first steps because the frozen champion already gives a low focal loss on the dominant easy negatives; it grows as Dice falls. |
+| identity still exact | the trainer's own identity guard ran before step 1: `refiner == champion` **bitwise**, `max|d| = 0.0e+00`; `done.json.identity_ok = {bitwise: true, max_abs_diff: 0.0, batch: 8}` |
+
+Artifacts mirrored into `runs/smoke_w30_20260921/`: `steps.csv`, `epochs.csv`,
+`history.json`, `heartbeat.json`, `done.json`, `refiner_last.pth`.
+
+CPU unit tests on the same revision: `logs/test_candidate_rules_20260921.log`
+(15/15) and `logs/test_refiner_units_20260921.log` (32/32) — 47 checks total,
+including the four new ones that pin the objective and the validation nodes.

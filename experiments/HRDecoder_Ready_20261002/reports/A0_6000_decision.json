@@ -1,0 +1,12 @@
+{
+  "validation_update": 6000,
+  "miou": 0.09678075116594265,
+  "gain_from_3000": 0.02729600709490854,
+  "action": "operator_stop_after_second_complete_val_low_priority",
+  "reason": "Persistent HE/MA collapse; EX/SE also far below all existing champions. Bright-lesion improvement does not justify another 6000 updates in this bounded exploration. No confirmed engineering fault; not a general negative claim about the architecture.",
+  "diagnosis_evidence": "reports/A0_train_diagnosis.json",
+  "checkpoint_policy": "Preserve full best plus last optimizer/RNG; no config mutation or restart. Retain for finite fusion screening only if nominated by the locked procedure.",
+  "decision_epoch": 1790943898.9433324,
+  "summary_zh": "HACDR 6k完整val（76图）mIoU为9.6781%，相比3k增加2.7296个百分点，但HE IoU仅0.0001615%、TP=2，MA IoU/TP均为0；EX为24.1359%、SE为14.5762%，所有类别都明显落后于历史冠军。先前训练图诊断未确认工程故障。",
+  "decision_zh": "按用户要求节省时间，自适应停止当前HACDR配置，不再机械跑满12k；亮病灶的改善不足以抵消持续红病灶检出失败及巨大整体差距。通过更新边界STOP保存完整状态，保留best及可恢复last，不修改配置、不从头重训。主队列结束后进入原先锁定的冠军复现、有限提名和三折融合；不会为了更高test分改挑候选。"
+}

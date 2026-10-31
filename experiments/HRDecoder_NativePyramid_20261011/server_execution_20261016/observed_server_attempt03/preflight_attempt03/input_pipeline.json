@@ -1,0 +1,52 @@
+{
+  "status": "PASS",
+  "workers": 8,
+  "batches_verified": 2,
+  "multiprocessing_context": "spawn",
+  "after_CUDA_initialization": true,
+  "pin_memory": true,
+  "prefetch_factor": 1,
+  "persistent_workers": true,
+  "matches_seeded_samples": true,
+  "SGD_updates": 0,
+  "test_accessed": false,
+  "seconds": 18.389330280944705,
+  "batches": [
+    {
+      "sids": [
+        "007-4571-200",
+        "007-5803-300"
+      ],
+      "sampler_items": [
+        [
+          226,
+          42
+        ],
+        [
+          306,
+          43
+        ]
+      ],
+      "image_dtype": "torch.float32",
+      "label_dtype": "torch.int64"
+    },
+    {
+      "sids": [
+        "007-4679-200",
+        "007-7146-400"
+      ],
+      "sampler_items": [
+        [
+          238,
+          44
+        ],
+        [
+          380,
+          45
+        ]
+      ],
+      "image_dtype": "torch.float32",
+      "label_dtype": "torch.int64"
+    }
+  ]
+}

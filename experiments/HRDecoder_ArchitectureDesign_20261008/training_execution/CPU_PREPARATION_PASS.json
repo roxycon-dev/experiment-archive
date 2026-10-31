@@ -1,0 +1,65 @@
+{
+  "status": "PASS",
+  "checks": {
+    "original_image_label_and_RNG_replay_20_seeds": true,
+    "three_soft_members_same_bilinear_geometry": {
+      "max_abs": 2.384185791015625e-07
+    },
+    "void_rotation_and_padding_masks_applied": true,
+    "real_black_background_remains_valid": true,
+    "private_initialization_preserves_baseline_rng": true,
+    "private_initialization_preserves_all_base_tensors": true,
+    "reviewed_new_parameters": true,
+    "actual_HRNet_called_once": true,
+    "zero_residual_exact_original_train_logits": {
+      "max_abs": 0.0
+    },
+    "all_original_BN_buffers_and_decode_order_exact": {
+      "BN_buffers": 921
+    },
+    "HR_crop_random_draws_exact": true,
+    "original_HR_crop_dice_weight_point1": true,
+    "original_squared_dice_smooth_matches_valid_domain": true,
+    "task_via_private_reaches_real_HRNet": true,
+    "unrouted_aux_would_reach_real_HRNet": true,
+    "scaled_aux_only_private_route_real_model": {
+      "group_max_abs": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": 32
+    },
+    "real_model_routed_gradients_finite": true,
+    "B0_B1_no_private_modules_or_teacher_network": true,
+    "B0_B1_output_exact_original_inference": true,
+    "B0_only_masked_GT_and_HR": true,
+    "B1_only_GT_HR_and_final_T_KD": true,
+    "B0_B1_empty_private_route_backward_valid": true,
+    "empty_valid_domain_differentiable_zero": true,
+    "teacher_target_detached": true,
+    "locked_schedules": true,
+    "original_poly_warmup_including_poly_factor": true,
+    "sample_ids_and_augmentation_seeds_resume_exact": true,
+    "two_images_per_batch_all_454_once_per_epoch": true
+  },
+  "model": {
+    "real_HRNet_source": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\vendor\\champion_repo",
+    "ImageNet_W48_SHA": "d2186c55782308392ae14cf179ac4840143b09abdbba81aa3f9274c795ebc960",
+    "baseline_initial_state_SHA": "3509110617e68d9cb9f673af9b641a7ebdd33882ab37d86b3c61530da833920f",
+    "base_parameters": 65572420,
+    "total_parameters": 71992068,
+    "seconds": 54.84399999999732
+  },
+  "torch": "1.10.0+cu113",
+  "scope": {
+    "real_HRNet": true,
+    "canvas": 128,
+    "GPU_used": false,
+    "CUDA_AMP_validated": false,
+    "DDP_supported": false,
+    "formal_training_updates": 0,
+    "historical_B0_initial_snapshot_compared": false
+  }
+}

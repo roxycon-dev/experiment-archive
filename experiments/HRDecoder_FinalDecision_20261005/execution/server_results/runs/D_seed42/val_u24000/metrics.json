@@ -1,0 +1,8305 @@
+{
+  "update": 24000,
+  "split": "val",
+  "n_images": 76,
+  "per_image": [
+    {
+      "sid": "007-1774-100",
+      "q_inference_seconds": 0.626664626179263,
+      "single": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          202,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          196,
+          225,
+          72
+        ]
+      ],
+      "fixed_fusion": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          228,
+          173,
+          40
+        ]
+      ],
+      "half_fusion": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          207,
+          203,
+          61
+        ]
+      ],
+      "p0": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          234,
+          178,
+          34
+        ]
+      ],
+      "mechanism": {
+        "HE": {
+          "gt_lesions": 0,
+          "missed_lesions": 0,
+          "new_false_positive_regions": 1,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        },
+        "MA": {
+          "gt_lesions": 10,
+          "missed_lesions": 3,
+          "new_false_positive_regions": 10,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        }
+      }
+    },
+    {
+      "sid": "007-1782-100",
+      "q_inference_seconds": 0.6631712769158185,
+      "single": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          359,
+          568,
+          217
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "fixed_fusion": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          361,
+          373,
+          215
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "half_fusion": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          360,
+          367,
+          216
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "p0": [
+        [
+          0,
+          36,
+          0
+        ],
+        [
+          358,
+          376,
+          218
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "mechanism": {
+        "HE": {
+          "gt_lesions": 3,
+          "missed_lesions": 2,
+          "new_false_positive_regions": 5,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        },
+        "MA": {
+          "gt_lesions": 0,
+          "missed_lesions": 0,
+          "new_false_positive_regions": 0,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        }
+      }
+    },
+    {
+      "sid": "007-1829-100",
+      "q_inference_seconds": 0.5195660460740328,
+      "single": [
+        [
+          0,
+          131,
+          0
+        ],
+        [
+          0,
+          0,
+          510
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          15,
+          1,
+          180
+        ]
+      ],
+      "fixed_fusion": [
+        [
+          0,
+          463,
+          0
+        ],
+        [
+          300,
+          62,
+          210
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          77,
+          27,
+          118
+        ]
+      ],
+      "half_fusion": [
+        [
+          0,
+          130,
+          0
+        ],
+        [
+          0,
+          0,
+          510
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          28,
+          2,
+          167
+        ]
+      ],
+      "p0": [
+        [
+          0,
+          772,
+          0
+        ],
+        [
+          352,
+          149,
+          158
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          85,
+          44,
+          110
+        ]
+      ],
+      "mechanism": {
+        "HE": {
+          "gt_lesions": 1,
+          "missed_lesions": 1,
+          "new_false_positive_regions": 0,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        },
+        "MA": {
+          "gt_lesions": 3,
+          "missed_lesions": 2,
+          "new_false_positive_regions": 1,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        }
+      }
+    },
+    {
+      "sid": "007-1900-100",
+      "q_inference_seconds": 0.3736570831388235,
+      "single": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          40,
+          0
+        ],
+        [
+          0,
+          276,
+          0
+        ],
+        [
+          129,
+          142,
+          50
+        ]
+      ],
+      "fixed_fusion": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          85,
+          0
+        ],
+        [
+          148,
+          73,
+          31
+        ]
+      ],
+      "half_fusion": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          255,
+          0
+        ],
+        [
+          134,
+          117,
+          45
+        ]
+      ],
+      "p0": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          33,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          150,
+          68,
+          29
+        ]
+      ],
+      "mechanism": {
+        "HE": {
+          "gt_lesions": 0,
+          "missed_lesions": 0,
+          "new_false_positive_regions": 1,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        },
+        "MA": {
+          "gt_lesions": 6,
+          "missed_lesions": 2,
+          "new_false_positive_regions": 5,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        }
+      }
+    },
+    {
+      "sid": "007-2167-100",
+      "q_inference_seconds": 1.101083094952628,
+      "single": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          226,
+          209,
+          30
+        ]
+      ],
+      "fixed_fusion": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          172,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          212,
+          64,
+          44
+        ]
+      ],
+      "half_fusion": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          223,
+          166,
+          33
+        ]
+      ],
+      "p0": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          278,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          166,
+          20,
+          90
+        ]
+      ],
+      "mechanism": {
+        "HE": {
+          "gt_lesions": 0,
+          "missed_lesions": 0,
+          "new_false_positive_regions": 0,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        },
+        "MA": {
+          "gt_lesions": 1,
+          "missed_lesions": 0,
+          "new_false_positive_regions": 2,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        }
+      }
+    },
+    {
+      "sid": "007-2210-100",
+      "q_inference_seconds": 1.0880695129744709,
+      "single": [
+        [
+          0,
+          457,
+          0
+        ],
+        [
+          1490,
+          271,
+          390
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          766,
+          0
+        ]
+      ],
+      "fixed_fusion": [
+        [
+          0,
+          1076,
+          0
+        ],
+        [
+          1700,
+          437,
+          180
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          662,
+          0
+        ]
+      ],
+      "half_fusion": [
+        [
+          0,
+          482,
+          0
+        ],
+        [
+          1551,
+          272,
+          329
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          719,
+          0
+        ]
+      ],
+      "p0": [
+        [
+          0,
+          4186,
+          0
+        ],
+        [
+          1720,
+          720,
+          160
+        ],
+        [
+          0,
+          1418,
+          0
+        ],
+        [
+          0,
+          549,
+          0
+        ]
+      ],
+      "mechanism": {
+        "HE": {
+          "gt_lesions": 1,
+          "missed_lesions": 0,
+          "new_false_positive_regions": 3,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        },
+        "MA": {
+          "gt_lesions": 0,
+          "missed_lesions": 0,
+          "new_false_positive_regions": 3,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        }
+      }
+    },
+    {
+      "sid": "007-2345-100",
+      "q_inference_seconds": 1.6431746089365333,
+      "single": [
+        [
+          0,
+          22,
+          0
+        ],
+        [
+          4312,
+          554,
+          1620
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          397,
+          1014,
+          199
+        ]
+      ],
+      "fixed_fusion": [
+        [
+          0,
+          566,
+          0
+        ],
+        [
+          4660,
+          573,
+          1272
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          424,
+          1223,
+          172
+        ]
+      ],
+      "half_fusion": [
+        [
+          0,
+          32,
+          0
+        ],
+        [
+          4325,
+          526,
+          1607
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          415,
+          1050,
+          181
+        ]
+      ],
+      "p0": [
+        [
+          0,
+          2363,
+          0
+        ],
+        [
+          4810,
+          831,
+          1122
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          425,
+          1341,
+          171
+        ]
+      ],
+      "mechanism": {
+        "HE": {
+          "gt_lesions": 5,
+          "missed_lesions": 0,
+          "new_false_positive_regions": 13,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        },
+        "MA": {
+          "gt_lesions": 3,
+          "missed_lesions": 1,
+          "new_false_positive_regions": 7,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        }
+      }
+    },
+    {
+      "sid": "007-2369-100",
+      "q_inference_seconds": 0.6876120718661696,
+      "single": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          578,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          82,
+          83,
+          346
+        ]
+      ],
+      "fixed_fusion": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          360,
+          0
+        ],
+        [
+          0,
+          4,
+          0
+        ],
+        [
+          126,
+          152,
+          302
+        ]
+      ],
+      "half_fusion": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          371,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          110,
+          72,
+          318
+        ]
+      ],
+      "p0": [
+        [
+          0,
+          15,
+          0
+        ],
+        [
+          0,
+          353,
+          0
+        ],
+        [
+          0,
+          30,
+          0
+        ],
+        [
+          141,
+          190,
+          287
+        ]
+      ],
+      "mechanism": {
+        "HE": {
+          "gt_lesions": 0,
+          "missed_lesions": 0,
+          "new_false_positive_regions": 3,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        },
+        "MA": {
+          "gt_lesions": 10,
+          "missed_lesions": 7,
+          "new_false_positive_regions": 4,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        }
+      }
+    },
+    {
+      "sid": "007-2371-100",
+      "q_inference_seconds": 0.6367387201171368,
+      "single": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          625,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          91,
+          28,
+          177
+        ]
+      ],
+      "fixed_fusion": [
+        [
+          0,
+          11,
+          0
+        ],
+        [
+          0,
+          797,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          268
+        ]
+      ],
+      "half_fusion": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          416,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          46,
+          8,
+          222
+        ]
+      ],
+      "p0": [
+        [
+          0,
+          41,
+          0
+        ],
+        [
+          0,
+          900,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          268
+        ]
+      ],
+      "mechanism": {
+        "HE": {
+          "gt_lesions": 0,
+          "missed_lesions": 0,
+          "new_false_positive_regions": 2,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        },
+        "MA": {
+          "gt_lesions": 2,
+          "missed_lesions": 1,
+          "new_false_positive_regions": 2,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        }
+      }
+    },
+    {
+      "sid": "007-2460-100",
+      "q_inference_seconds": 0.7207221549469978,
+      "single": [
+        [
+          114,
+          115,
+          110
+        ],
+        [
+          171,
+          130,
+          341
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          118,
+          96
+        ]
+      ],
+      "fixed_fusion": [
+        [
+          123,
+          97,
+          101
+        ],
+        [
+          156,
+          34,
+          356
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          93,
+          96
+        ]
+      ],
+      "half_fusion": [
+        [
+          118,
+          112,
+          106
+        ],
+        [
+          167,
+          102,
+          345
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          87,
+          96
+        ]
+      ],
+      "p0": [
+        [
+          129,
+          100,
+          95
+        ],
+        [
+          124,
+          12,
+          388
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          158,
+          96
+        ]
+      ],
+      "mechanism": {
+        "HE": {
+          "gt_lesions": 7,
+          "missed_lesions": 6,
+          "new_false_positive_regions": 2,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        },
+        "MA": {
+          "gt_lesions": 2,
+          "missed_lesions": 2,
+          "new_false_positive_regions": 3,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        }
+      }
+    },
+    {
+      "sid": "007-2525-100",
+      "q_inference_seconds": 0.46697693900205195,
+      "single": [
+        [
+          0,
+          688,
+          0
+        ],
+        [
+          610,
+          191,
+          45
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          168,
+          64,
+          72
+        ]
+      ],
+      "fixed_fusion": [
+        [
+          0,
+          769,
+          0
+        ],
+        [
+          648,
+          266,
+          7
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          212,
+          50,
+          28
+        ]
+      ],
+      "half_fusion": [
+        [
+          0,
+          636,
+          0
+        ],
+        [
+          623,
+          197,
+          32
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          188,
+          58,
+          52
+        ]
+      ],
+      "p0": [
+        [
+          0,
+          1439,
+          0
+        ],
+        [
+          646,
+          406,
+          9
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          210,
+          45,
+          30
+        ]
+      ],
+      "mechanism": {
+        "HE": {
+          "gt_lesions": 1,
+          "missed_lesions": 0,
+          "new_false_positive_regions": 5,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        },
+        "MA": {
+          "gt_lesions": 3,
+          "missed_lesions": 1,
+          "new_false_positive_regions": 4,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        }
+      }
+    },
+    {
+      "sid": "007-2697-100",
+      "q_inference_seconds": 1.4272673700470477,
+      "single": [
+        [
+          0,
+          207,
+          0
+        ],
+        [
+          39,
+          812,
+          2293
+        ],
+        [
+          0,
+          2433,
+          0
+        ],
+        [
+          0,
+          2312,
+          0
+        ]
+      ],
+      "fixed_fusion": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          400,
+          108,
+          1932
+        ],
+        [
+          0,
+          623,
+          0
+        ],
+        [
+          0,
+          1662,
+          0
+        ]
+      ],
+      "half_fusion": [
+        [
+          0,
+          183,
+          0
+        ],
+        [
+          20,
+          11,
+          2312
+        ],
+        [
+          0,
+          2210,
+          0
+        ],
+        [
+          0,
+          2170,
+          0
+        ]
+      ],
+      "p0": [
+        [
+          0,
+          3,
+          0
+        ],
+        [
+          407,
+          167,
+          1925
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1291,
+          0
+        ]
+      ],
+      "mechanism": {
+        "HE": {
+          "gt_lesions": 18,
+          "missed_lesions": 17,
+          "new_false_positive_regions": 3,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        },
+        "MA": {
+          "gt_lesions": 0,
+          "missed_lesions": 0,
+          "new_false_positive_regions": 16,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        }
+      }
+    },
+    {
+      "sid": "007-2704-100",
+      "q_inference_seconds": 1.4336422649212182,
+      "single": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          628,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          585,
+          273,
+          99
+        ]
+      ],
+      "fixed_fusion": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          11,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          557,
+          153,
+          127
+        ]
+      ],
+      "half_fusion": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          584,
+          235,
+          100
+        ]
+      ],
+      "p0": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          180,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          530,
+          97,
+          154
+        ]
+      ],
+      "mechanism": {
+        "HE": {
+          "gt_lesions": 0,
+          "missed_lesions": 0,
+          "new_false_positive_regions": 1,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        },
+        "MA": {
+          "gt_lesions": 5,
+          "missed_lesions": 1,
+          "new_false_positive_regions": 12,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        }
+      }
+    },
+    {
+      "sid": "007-2769-100",
+      "q_inference_seconds": 0.6886086098384112,
+      "single": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          236,
+          135,
+          236
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          346,
+          305,
+          274
+        ]
+      ],
+      "fixed_fusion": [
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          206,
+          179,
+          266
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          304,
+          265,
+          316
+        ]
+      ],
+      "half_fusion": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          231,
+          70,
+          241
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          347,
+          285,
+          273
+        ]
+      ],
+      "p0": [
+        [
+          0,
+          9,
+          0
+        ],
+        [
+          179,
+          181,
+          293
+        ],
+        [
+          0,
+          150,
+          0
+        ],
+        [
+          254,
+          286,
+          366
+        ]
+      ],
+      "mechanism": {
+        "HE": {
+          "gt_lesions": 6,
+          "missed_lesions": 4,
+          "new_false_positive_regions": 3,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        },
+        "MA": {
+          "gt_lesions": 8,
+          "missed_lesions": 1,
+          "new_false_positive_regions": 13,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        }
+      }
+    },
+    {
+      "sid": "007-2809-100",
+      "q_inference_seconds": 0.6367753520607948,
+      "single": [
+        [
+          0,
+          1256,
+          0
+        ],
+        [
+          0,
+          58,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          87,
+          29,
+          33
+        ]
+      ],
+      "fixed_fusion": [
+        [
+          0,
+          1050,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          95,
+          13,
+          25
+        ]
+      ],
+      "half_fusion": [
+        [
+          0,
+          1212,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          90,
+          24,
+          30
+        ]
+      ],
+      "p0": [
+        [
+          0,
+          1031,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          96,
+          9,
+          24
+        ]
+      ],
+      "mechanism": {
+        "HE": {
+          "gt_lesions": 0,
+          "missed_lesions": 0,
+          "new_false_positive_regions": 1,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        },
+        "MA": {
+          "gt_lesions": 2,
+          "missed_lesions": 1,
+          "new_false_positive_regions": 2,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        }
+      }
+    },
+    {
+      "sid": "007-2983-100",
+      "q_inference_seconds": 1.0368907870724797,
+      "single": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          185,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          145,
+          227,
+          27
+        ]
+      ],
+      "fixed_fusion": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          166,
+          112,
+          6
+        ]
+      ],
+      "half_fusion": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          125,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          152,
+          178,
+          20
+        ]
+      ],
+      "p0": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          91,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          172,
+          93,
+          0
+        ]
+      ],
+      "mechanism": {
+        "HE": {
+          "gt_lesions": 0,
+          "missed_lesions": 0,
+          "new_false_positive_regions": 1,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        },
+        "MA": {
+          "gt_lesions": 1,
+          "missed_lesions": 0,
+          "new_false_positive_regions": 2,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        }
+      }
+    },
+    {
+      "sid": "007-3413-200",
+      "q_inference_seconds": 0.39875576202757657,
+      "single": [
+        [
+          2527,
+          768,
+          895
+        ],
+        [
+          824,
+          1288,
+          85
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          149,
+          76,
+          150
+        ]
+      ],
+      "fixed_fusion": [
+        [
+          2592,
+          633,
+          830
+        ],
+        [
+          860,
+          395,
+          49
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          154,
+          55,
+          145
+        ]
+      ],
+      "half_fusion": [
+        [
+          2564,
+          699,
+          858
+        ],
+        [
+          840,
+          1069,
+          69
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          148,
+          57,
+          151
+        ]
+      ],
+      "p0": [
+        [
+          2633,
+          680,
+          789
+        ],
+        [
+          872,
+          334,
+          37
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          151,
+          65,
+          148
+        ]
+      ],
+      "mechanism": {
+        "HE": {
+          "gt_lesions": 2,
+          "missed_lesions": 0,
+          "new_false_positive_regions": 13,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        },
+        "MA": {
+          "gt_lesions": 9,
+          "missed_lesions": 4,
+          "new_false_positive_regions": 6,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        }
+      }
+    },
+    {
+      "sid": "007-3414-200",
+      "q_inference_seconds": 0.4121640450321138,
+      "single": [
+        [
+          4505,
+          3533,
+          1274
+        ],
+        [
+          10164,
+          4505,
+          13167
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          131,
+          0
+        ]
+      ],
+      "fixed_fusion": [
+        [
+          4516,
+          2954,
+          1263
+        ],
+        [
+          10436,
+          2514,
+          12895
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          252,
+          0
+        ]
+      ],
+      "half_fusion": [
+        [
+          4534,
+          3181,
+          1245
+        ],
+        [
+          10205,
+          3778,
+          13126
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          156,
+          0
+        ]
+      ],
+      "p0": [
+        [
+          4484,
+          3267,
+          1295
+        ],
+        [
+          10936,
+          2478,
+          12395
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          324,
+          0
+        ]
+      ],
+      "mechanism": {
+        "HE": {
+          "gt_lesions": 34,
+          "missed_lesions": 12,
+          "new_false_positive_regions": 45,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        },
+        "MA": {
+          "gt_lesions": 0,
+          "missed_lesions": 0,
+          "new_false_positive_regions": 4,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        }
+      }
+    },
+    {
+      "sid": "007-3420-200",
+      "q_inference_seconds": 0.4156447711866349,
+      "single": [
+        [
+          1536,
+          573,
+          423
+        ],
+        [
+          298,
+          799,
+          927
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          62,
+          35,
+          18
+        ]
+      ],
+      "fixed_fusion": [
+        [
+          1564,
+          357,
+          395
+        ],
+        [
+          295,
+          654,
+          930
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          72,
+          39,
+          8
+        ]
+      ],
+      "half_fusion": [
+        [
+          1567,
+          494,
+          392
+        ],
+        [
+          296,
+          773,
+          929
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          67,
+          33,
+          13
+        ]
+      ],
+      "p0": [
+        [
+          1544,
+          384,
+          415
+        ],
+        [
+          324,
+          786,
+          901
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          74,
+          42,
+          6
+        ]
+      ],
+      "mechanism": {
+        "HE": {
+          "gt_lesions": 12,
+          "missed_lesions": 7,
+          "new_false_positive_regions": 8,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        },
+        "MA": {
+          "gt_lesions": 1,
+          "missed_lesions": 0,
+          "new_false_positive_regions": 1,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        }
+      }
+    },
+    {
+      "sid": "007-3500-200",
+      "q_inference_seconds": 0.40541816293261945,
+      "single": [
+        [
+          8294,
+          2082,
+          1793
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "fixed_fusion": [
+        [
+          8853,
+          1914,
+          1234
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "half_fusion": [
+        [
+          8463,
+          1929,
+          1624
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "p0": [
+        [
+          9064,
+          2142,
+          1023
+        ],
+        [
+          0,
+          40,
+          0
+        ],
+        [
+          0,
+          68,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "mechanism": {
+        "HE": {
+          "gt_lesions": 0,
+          "missed_lesions": 0,
+          "new_false_positive_regions": 0,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        },
+        "MA": {
+          "gt_lesions": 0,
+          "missed_lesions": 0,
+          "new_false_positive_regions": 0,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        }
+      }
+    },
+    {
+      "sid": "007-3541-200",
+      "q_inference_seconds": 1.168476051883772,
+      "single": [
+        [
+          3335,
+          1049,
+          2697
+        ],
+        [
+          4329,
+          6646,
+          5183
+        ],
+        [
+          0,
+          2306,
+          0
+        ],
+        [
+          475,
+          231,
+          1025
+        ]
+      ],
+      "fixed_fusion": [
+        [
+          3267,
+          715,
+          2765
+        ],
+        [
+          5267,
+          6603,
+          4245
+        ],
+        [
+          0,
+          1887,
+          0
+        ],
+        [
+          814,
+          145,
+          686
+        ]
+      ],
+      "half_fusion": [
+        [
+          3342,
+          901,
+          2690
+        ],
+        [
+          4507,
+          6123,
+          5005
+        ],
+        [
+          0,
+          2218,
+          0
+        ],
+        [
+          518,
+          182,
+          982
+        ]
+      ],
+      "p0": [
+        [
+          3348,
+          699,
+          2684
+        ],
+        [
+          5541,
+          6999,
+          3971
+        ],
+        [
+          0,
+          1392,
+          0
+        ],
+        [
+          857,
+          192,
+          643
+        ]
+      ],
+      "mechanism": {
+        "HE": {
+          "gt_lesions": 14,
+          "missed_lesions": 1,
+          "new_false_positive_regions": 37,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        },
+        "MA": {
+          "gt_lesions": 11,
+          "missed_lesions": 6,
+          "new_false_positive_regions": 6,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        }
+      }
+    },
+    {
+      "sid": "007-3567-200",
+      "q_inference_seconds": 1.2113529001362622,
+      "single": [
+        [
+          0,
+          2574,
+          0
+        ],
+        [
+          48457,
+          10468,
+          83619
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          2080,
+          0
+        ]
+      ],
+      "fixed_fusion": [
+        [
+          0,
+          5159,
+          0
+        ],
+        [
+          60726,
+          12126,
+          71350
+        ],
+        [
+          0,
+          1861,
+          0
+        ],
+        [
+          0,
+          1842,
+          0
+        ]
+      ],
+      "half_fusion": [
+        [
+          0,
+          2022,
+          0
+        ],
+        [
+          50048,
+          9299,
+          82028
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          2009,
+          0
+        ]
+      ],
+      "p0": [
+        [
+          0,
+          7676,
+          0
+        ],
+        [
+          66060,
+          16597,
+          66016
+        ],
+        [
+          0,
+          4748,
+          0
+        ],
+        [
+          0,
+          1957,
+          0
+        ]
+      ],
+      "mechanism": {
+        "HE": {
+          "gt_lesions": 149,
+          "missed_lesions": 90,
+          "new_false_positive_regions": 132,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        },
+        "MA": {
+          "gt_lesions": 0,
+          "missed_lesions": 0,
+          "new_false_positive_regions": 15,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        }
+      }
+    },
+    {
+      "sid": "007-3628-200",
+      "q_inference_seconds": 0.810187408933416,
+      "single": [
+        [
+          2337,
+          1369,
+          799
+        ],
+        [
+          665,
+          130,
+          523
+        ],
+        [
+          0,
+          1793,
+          0
+        ],
+        [
+          180,
+          636,
+          240
+        ]
+      ],
+      "fixed_fusion": [
+        [
+          2376,
+          954,
+          760
+        ],
+        [
+          951,
+          356,
+          237
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          225,
+          246,
+          195
+        ]
+      ],
+      "half_fusion": [
+        [
+          2348,
+          1235,
+          788
+        ],
+        [
+          684,
+          158,
+          504
+        ],
+        [
+          0,
+          1548,
+          0
+        ],
+        [
+          193,
+          575,
+          227
+        ]
+      ],
+      "p0": [
+        [
+          2379,
+          1136,
+          757
+        ],
+        [
+          1046,
+          538,
+          142
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          264,
+          233,
+          156
+        ]
+      ],
+      "mechanism": {
+        "HE": {
+          "gt_lesions": 5,
+          "missed_lesions": 3,
+          "new_false_positive_regions": 10,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        },
+        "MA": {
+          "gt_lesions": 12,
+          "missed_lesions": 7,
+          "new_false_positive_regions": 10,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        }
+      }
+    },
+    {
+      "sid": "007-3727-200",
+      "q_inference_seconds": 1.1647241229657084,
+      "single": [
+        [
+          580,
+          1902,
+          820
+        ],
+        [
+          3278,
+          5505,
+          866
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1047,
+          609,
+          2505
+        ]
+      ],
+      "fixed_fusion": [
+        [
+          596,
+          1733,
+          804
+        ],
+        [
+          3695,
+          5789,
+          449
+        ],
+        [
+          0,
+          621,
+          0
+        ],
+        [
+          1507,
+          756,
+          2045
+        ]
+      ],
+      "half_fusion": [
+        [
+          595,
+          1826,
+          805
+        ],
+        [
+          3363,
+          5378,
+          781
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1114,
+          536,
+          2438
+        ]
+      ],
+      "p0": [
+        [
+          602,
+          1829,
+          798
+        ],
+        [
+          3710,
+          7440,
+          434
+        ],
+        [
+          0,
+          1387,
+          0
+        ],
+        [
+          1567,
+          1044,
+          1985
+        ]
+      ],
+      "mechanism": {
+        "HE": {
+          "gt_lesions": 4,
+          "missed_lesions": 0,
+          "new_false_positive_regions": 23,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        },
+        "MA": {
+          "gt_lesions": 15,
+          "missed_lesions": 12,
+          "new_false_positive_regions": 10,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        }
+      }
+    },
+    {
+      "sid": "007-3873-200",
+      "q_inference_seconds": 0.6799331938382238,
+      "single": [
+        [
+          0,
+          682,
+          580
+        ],
+        [
+          3677,
+          3984,
+          643
+        ],
+        [
+          415,
+          125,
+          753
+        ],
+        [
+          56,
+          203,
+          160
+        ]
+      ],
+      "fixed_fusion": [
+        [
+          202,
+          417,
+          378
+        ],
+        [
+          3671,
+          2549,
+          649
+        ],
+        [
+          87,
+          0,
+          1081
+        ],
+        [
+          81,
+          231,
+          135
+        ]
+      ],
+      "half_fusion": [
+        [
+          0,
+          577,
+          580
+        ],
+        [
+          3702,
+          3328,
+          618
+        ],
+        [
+          402,
+          85,
+          766
+        ],
+        [
+          60,
+          195,
+          156
+        ]
+      ],
+      "p0": [
+        [
+          288,
+          719,
+          292
+        ],
+        [
+          3622,
+          2771,
+          698
+        ],
+        [
+          0,
+          0,
+          1168
+        ],
+        [
+          85,
+          279,
+          131
+        ]
+      ],
+      "mechanism": {
+        "HE": {
+          "gt_lesions": 15,
+          "missed_lesions": 2,
+          "new_false_positive_regions": 32,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        },
+        "MA": {
+          "gt_lesions": 5,
+          "missed_lesions": 1,
+          "new_false_positive_regions": 6,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        }
+      }
+    },
+    {
+      "sid": "007-3921-200",
+      "q_inference_seconds": 0.3783525589387864,
+      "single": [
+        [
+          2989,
+          1081,
+          1469
+        ],
+        [
+          524,
+          439,
+          1448
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          204,
+          153,
+          133
+        ]
+      ],
+      "fixed_fusion": [
+        [
+          2928,
+          781,
+          1530
+        ],
+        [
+          538,
+          501,
+          1434
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          261,
+          143,
+          76
+        ]
+      ],
+      "half_fusion": [
+        [
+          2987,
+          966,
+          1471
+        ],
+        [
+          526,
+          448,
+          1446
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          214,
+          142,
+          123
+        ]
+      ],
+      "p0": [
+        [
+          2981,
+          937,
+          1477
+        ],
+        [
+          536,
+          632,
+          1436
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          257,
+          156,
+          80
+        ]
+      ],
+      "mechanism": {
+        "HE": {
+          "gt_lesions": 9,
+          "missed_lesions": 3,
+          "new_false_positive_regions": 7,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        },
+        "MA": {
+          "gt_lesions": 6,
+          "missed_lesions": 3,
+          "new_false_positive_regions": 6,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        }
+      }
+    },
+    {
+      "sid": "007-4007-200",
+      "q_inference_seconds": 0.574382150080055,
+      "single": [
+        [
+          1928,
+          857,
+          434
+        ],
+        [
+          0,
+          1460,
+          6466
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          184,
+          456,
+          2223
+        ]
+      ],
+      "fixed_fusion": [
+        [
+          1960,
+          713,
+          402
+        ],
+        [
+          0,
+          1425,
+          6466
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          126,
+          403,
+          2281
+        ]
+      ],
+      "half_fusion": [
+        [
+          1943,
+          781,
+          419
+        ],
+        [
+          0,
+          1452,
+          6466
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          174,
+          438,
+          2233
+        ]
+      ],
+      "p0": [
+        [
+          1958,
+          1015,
+          404
+        ],
+        [
+          41,
+          1535,
+          6425
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          130,
+          390,
+          2277
+        ]
+      ],
+      "mechanism": {
+        "HE": {
+          "gt_lesions": 11,
+          "missed_lesions": 11,
+          "new_false_positive_regions": 5,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        },
+        "MA": {
+          "gt_lesions": 7,
+          "missed_lesions": 4,
+          "new_false_positive_regions": 5,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        }
+      }
+    },
+    {
+      "sid": "007-4033-200",
+      "q_inference_seconds": 1.1657465379685163,
+      "single": [
+        [
+          350,
+          92,
+          150
+        ],
+        [
+          2461,
+          1134,
+          6039
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          2832,
+          0
+        ]
+      ],
+      "fixed_fusion": [
+        [
+          317,
+          59,
+          183
+        ],
+        [
+          2687,
+          545,
+          5813
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          2198,
+          0
+        ]
+      ],
+      "half_fusion": [
+        [
+          344,
+          76,
+          156
+        ],
+        [
+          2513,
+          584,
+          5987
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          2708,
+          0
+        ]
+      ],
+      "p0": [
+        [
+          254,
+          66,
+          246
+        ],
+        [
+          2908,
+          607,
+          5592
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          2089,
+          0
+        ]
+      ],
+      "mechanism": {
+        "HE": {
+          "gt_lesions": 67,
+          "missed_lesions": 60,
+          "new_false_positive_regions": 24,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        },
+        "MA": {
+          "gt_lesions": 0,
+          "missed_lesions": 0,
+          "new_false_positive_regions": 25,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        }
+      }
+    },
+    {
+      "sid": "007-4034-200",
+      "q_inference_seconds": 1.1946890850085765,
+      "single": [
+        [
+          436,
+          8932,
+          388
+        ],
+        [
+          14165,
+          8106,
+          18159
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1167,
+          0
+        ]
+      ],
+      "fixed_fusion": [
+        [
+          388,
+          5169,
+          436
+        ],
+        [
+          15346,
+          4488,
+          16978
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          911,
+          0
+        ]
+      ],
+      "half_fusion": [
+        [
+          417,
+          7484,
+          407
+        ],
+        [
+          14375,
+          5763,
+          17949
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1075,
+          0
+        ]
+      ],
+      "p0": [
+        [
+          313,
+          2839,
+          511
+        ],
+        [
+          16424,
+          6079,
+          15900
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1196,
+          0
+        ]
+      ],
+      "mechanism": {
+        "HE": {
+          "gt_lesions": 98,
+          "missed_lesions": 68,
+          "new_false_positive_regions": 69,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        },
+        "MA": {
+          "gt_lesions": 0,
+          "missed_lesions": 0,
+          "new_false_positive_regions": 10,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        }
+      }
+    },
+    {
+      "sid": "007-4035-200",
+      "q_inference_seconds": 1.1669545490294695,
+      "single": [
+        [
+          0,
+          771,
+          0
+        ],
+        [
+          0,
+          447,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          63,
+          170,
+          397
+        ]
+      ],
+      "fixed_fusion": [
+        [
+          0,
+          576,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          112,
+          143,
+          348
+        ]
+      ],
+      "half_fusion": [
+        [
+          0,
+          727,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          65,
+          161,
+          395
+        ]
+      ],
+      "p0": [
+        [
+          0,
+          411,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          132,
+          145,
+          328
+        ]
+      ],
+      "mechanism": {
+        "HE": {
+          "gt_lesions": 0,
+          "missed_lesions": 0,
+          "new_false_positive_regions": 2,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        },
+        "MA": {
+          "gt_lesions": 2,
+          "missed_lesions": 1,
+          "new_false_positive_regions": 1,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        }
+      }
+    },
+    {
+      "sid": "007-4145-200",
+      "q_inference_seconds": 0.5471048201434314,
+      "single": [
+        [
+          804,
+          296,
+          287
+        ],
+        [
+          165,
+          772,
+          693
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          50,
+          79,
+          14
+        ]
+      ],
+      "fixed_fusion": [
+        [
+          868,
+          281,
+          223
+        ],
+        [
+          296,
+          787,
+          562
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          60,
+          100,
+          4
+        ]
+      ],
+      "half_fusion": [
+        [
+          819,
+          285,
+          272
+        ],
+        [
+          165,
+          726,
+          693
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          56,
+          67,
+          8
+        ]
+      ],
+      "p0": [
+        [
+          894,
+          648,
+          197
+        ],
+        [
+          329,
+          877,
+          529
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          61,
+          146,
+          3
+        ]
+      ],
+      "mechanism": {
+        "HE": {
+          "gt_lesions": 4,
+          "missed_lesions": 3,
+          "new_false_positive_regions": 3,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        },
+        "MA": {
+          "gt_lesions": 1,
+          "missed_lesions": 0,
+          "new_false_positive_regions": 3,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        }
+      }
+    },
+    {
+      "sid": "007-4171-200",
+      "q_inference_seconds": 0.6669777969364077,
+      "single": [
+        [
+          13914,
+          6690,
+          2998
+        ],
+        [
+          10269,
+          6050,
+          2255
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          852,
+          657,
+          2380
+        ]
+      ],
+      "fixed_fusion": [
+        [
+          13624,
+          4383,
+          3288
+        ],
+        [
+          9454,
+          3809,
+          3070
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1677,
+          1025,
+          1555
+        ]
+      ],
+      "half_fusion": [
+        [
+          13913,
+          5766,
+          2999
+        ],
+        [
+          10089,
+          5202,
+          2435
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          883,
+          542,
+          2349
+        ]
+      ],
+      "p0": [
+        [
+          13401,
+          4356,
+          3511
+        ],
+        [
+          8749,
+          3338,
+          3775
+        ],
+        [
+          0,
+          214,
+          0
+        ],
+        [
+          1865,
+          1315,
+          1367
+        ]
+      ],
+      "mechanism": {
+        "HE": {
+          "gt_lesions": 25,
+          "missed_lesions": 1,
+          "new_false_positive_regions": 108,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        },
+        "MA": {
+          "gt_lesions": 57,
+          "missed_lesions": 40,
+          "new_false_positive_regions": 30,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        }
+      }
+    },
+    {
+      "sid": "007-4203-200",
+      "q_inference_seconds": 0.690136794000864,
+      "single": [
+        [
+          1906,
+          704,
+          402
+        ],
+        [
+          5335,
+          1479,
+          10629
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          363,
+          0
+        ]
+      ],
+      "fixed_fusion": [
+        [
+          1883,
+          534,
+          425
+        ],
+        [
+          4957,
+          919,
+          11007
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          423,
+          0
+        ]
+      ],
+      "half_fusion": [
+        [
+          1926,
+          632,
+          382
+        ],
+        [
+          5222,
+          1191,
+          10742
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          348,
+          0
+        ]
+      ],
+      "p0": [
+        [
+          1878,
+          616,
+          430
+        ],
+        [
+          4754,
+          867,
+          11210
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          482,
+          0
+        ]
+      ],
+      "mechanism": {
+        "HE": {
+          "gt_lesions": 51,
+          "missed_lesions": 35,
+          "new_false_positive_regions": 38,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        },
+        "MA": {
+          "gt_lesions": 0,
+          "missed_lesions": 0,
+          "new_false_positive_regions": 9,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        }
+      }
+    },
+    {
+      "sid": "007-4224-200",
+      "q_inference_seconds": 0.6584753801580518,
+      "single": [
+        [
+          508,
+          175,
+          224
+        ],
+        [
+          1342,
+          1340,
+          50
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          96
+        ]
+      ],
+      "fixed_fusion": [
+        [
+          545,
+          174,
+          187
+        ],
+        [
+          1339,
+          588,
+          53
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          42,
+          96
+        ]
+      ],
+      "half_fusion": [
+        [
+          521,
+          165,
+          211
+        ],
+        [
+          1342,
+          1060,
+          50
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          96
+        ]
+      ],
+      "p0": [
+        [
+          546,
+          214,
+          186
+        ],
+        [
+          1285,
+          603,
+          107
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          109,
+          96
+        ]
+      ],
+      "mechanism": {
+        "HE": {
+          "gt_lesions": 3,
+          "missed_lesions": 0,
+          "new_false_positive_regions": 22,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        },
+        "MA": {
+          "gt_lesions": 5,
+          "missed_lesions": 5,
+          "new_false_positive_regions": 0,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        }
+      }
+    },
+    {
+      "sid": "007-4479-200",
+      "q_inference_seconds": 1.1457096179947257,
+      "single": [
+        [
+          1846,
+          636,
+          906
+        ],
+        [
+          5855,
+          6533,
+          5945
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          2086,
+          0
+        ]
+      ],
+      "fixed_fusion": [
+        [
+          1985,
+          600,
+          767
+        ],
+        [
+          5996,
+          5685,
+          5804
+        ],
+        [
+          0,
+          489,
+          0
+        ],
+        [
+          0,
+          1893,
+          0
+        ]
+      ],
+      "half_fusion": [
+        [
+          1879,
+          582,
+          873
+        ],
+        [
+          5838,
+          5425,
+          5962
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1925,
+          0
+        ]
+      ],
+      "p0": [
+        [
+          2043,
+          681,
+          709
+        ],
+        [
+          5943,
+          6425,
+          5857
+        ],
+        [
+          0,
+          645,
+          0
+        ],
+        [
+          0,
+          2083,
+          0
+        ]
+      ],
+      "mechanism": {
+        "HE": {
+          "gt_lesions": 60,
+          "missed_lesions": 36,
+          "new_false_positive_regions": 67,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        },
+        "MA": {
+          "gt_lesions": 0,
+          "missed_lesions": 0,
+          "new_false_positive_regions": 14,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        }
+      }
+    },
+    {
+      "sid": "007-4482-200",
+      "q_inference_seconds": 0.5620147369336337,
+      "single": [
+        [
+          2456,
+          75,
+          31069
+        ],
+        [
+          4716,
+          192,
+          10038
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          191,
+          0
+        ]
+      ],
+      "fixed_fusion": [
+        [
+          2662,
+          67,
+          30863
+        ],
+        [
+          6342,
+          322,
+          8412
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          73,
+          0
+        ]
+      ],
+      "half_fusion": [
+        [
+          2473,
+          70,
+          31052
+        ],
+        [
+          4940,
+          183,
+          9814
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          162,
+          0
+        ]
+      ],
+      "p0": [
+        [
+          2871,
+          102,
+          30654
+        ],
+        [
+          6821,
+          555,
+          7933
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          15,
+          0
+        ]
+      ],
+      "mechanism": {
+        "HE": {
+          "gt_lesions": 16,
+          "missed_lesions": 13,
+          "new_false_positive_regions": 4,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        },
+        "MA": {
+          "gt_lesions": 0,
+          "missed_lesions": 0,
+          "new_false_positive_regions": 2,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        }
+      }
+    },
+    {
+      "sid": "007-4548-200",
+      "q_inference_seconds": 0.7727739510592073,
+      "single": [
+        [
+          7624,
+          2298,
+          5500
+        ],
+        [
+          654,
+          487,
+          5270
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1544,
+          0
+        ]
+      ],
+      "fixed_fusion": [
+        [
+          7255,
+          3001,
+          5869
+        ],
+        [
+          1043,
+          442,
+          4881
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1106,
+          0
+        ]
+      ],
+      "half_fusion": [
+        [
+          7531,
+          2001,
+          5593
+        ],
+        [
+          663,
+          407,
+          5261
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1451,
+          0
+        ]
+      ],
+      "p0": [
+        [
+          6974,
+          4310,
+          6150
+        ],
+        [
+          1182,
+          554,
+          4742
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1112,
+          0
+        ]
+      ],
+      "mechanism": {
+        "HE": {
+          "gt_lesions": 54,
+          "missed_lesions": 50,
+          "new_false_positive_regions": 9,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        },
+        "MA": {
+          "gt_lesions": 0,
+          "missed_lesions": 0,
+          "new_false_positive_regions": 18,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        }
+      }
+    },
+    {
+      "sid": "007-4576-200",
+      "q_inference_seconds": 0.3809814010746777,
+      "single": [
+        [
+          880,
+          280,
+          199
+        ],
+        [
+          3735,
+          1629,
+          1094
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          47,
+          0
+        ]
+      ],
+      "fixed_fusion": [
+        [
+          879,
+          217,
+          200
+        ],
+        [
+          2964,
+          1040,
+          1865
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          63,
+          0
+        ]
+      ],
+      "half_fusion": [
+        [
+          881,
+          251,
+          198
+        ],
+        [
+          3573,
+          1315,
+          1256
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          43,
+          0
+        ]
+      ],
+      "p0": [
+        [
+          862,
+          221,
+          217
+        ],
+        [
+          2915,
+          904,
+          1914
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          70,
+          0
+        ]
+      ],
+      "mechanism": {
+        "HE": {
+          "gt_lesions": 18,
+          "missed_lesions": 12,
+          "new_false_positive_regions": 15,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        },
+        "MA": {
+          "gt_lesions": 0,
+          "missed_lesions": 0,
+          "new_false_positive_regions": 1,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        }
+      }
+    },
+    {
+      "sid": "007-4743-200",
+      "q_inference_seconds": 0.7084062229841948,
+      "single": [
+        [
+          124,
+          47,
+          616
+        ],
+        [
+          0,
+          0,
+          376
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          224,
+          564,
+          632
+        ]
+      ],
+      "fixed_fusion": [
+        [
+          157,
+          21,
+          583
+        ],
+        [
+          267,
+          10,
+          109
+        ],
+        [
+          0,
+          17,
+          0
+        ],
+        [
+          277,
+          144,
+          579
+        ]
+      ],
+      "half_fusion": [
+        [
+          115,
+          32,
+          625
+        ],
+        [
+          0,
+          0,
+          376
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          241,
+          515,
+          615
+        ]
+      ],
+      "p0": [
+        [
+          209,
+          48,
+          531
+        ],
+        [
+          332,
+          94,
+          44
+        ],
+        [
+          0,
+          368,
+          0
+        ],
+        [
+          290,
+          95,
+          566
+        ]
+      ],
+      "mechanism": {
+        "HE": {
+          "gt_lesions": 1,
+          "missed_lesions": 1,
+          "new_false_positive_regions": 0,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        },
+        "MA": {
+          "gt_lesions": 29,
+          "missed_lesions": 21,
+          "new_false_positive_regions": 11,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        }
+      }
+    },
+    {
+      "sid": "007-4960-300",
+      "q_inference_seconds": 0.3550829959567636,
+      "single": [
+        [
+          5934,
+          4252,
+          681
+        ],
+        [
+          2810,
+          1327,
+          4122
+        ],
+        [
+          3050,
+          1648,
+          212
+        ],
+        [
+          68,
+          34,
+          320
+        ]
+      ],
+      "fixed_fusion": [
+        [
+          6218,
+          3906,
+          397
+        ],
+        [
+          3027,
+          1424,
+          3905
+        ],
+        [
+          3036,
+          832,
+          226
+        ],
+        [
+          105,
+          29,
+          283
+        ]
+      ],
+      "half_fusion": [
+        [
+          6027,
+          4033,
+          588
+        ],
+        [
+          3041,
+          872,
+          3891
+        ],
+        [
+          3049,
+          1435,
+          213
+        ],
+        [
+          71,
+          28,
+          317
+        ]
+      ],
+      "p0": [
+        [
+          6224,
+          4061,
+          391
+        ],
+        [
+          3208,
+          2187,
+          3724
+        ],
+        [
+          3017,
+          1008,
+          245
+        ],
+        [
+          113,
+          37,
+          275
+        ]
+      ],
+      "mechanism": {
+        "HE": {
+          "gt_lesions": 9,
+          "missed_lesions": 3,
+          "new_false_positive_regions": 21,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        },
+        "MA": {
+          "gt_lesions": 10,
+          "missed_lesions": 9,
+          "new_false_positive_regions": 1,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        }
+      }
+    },
+    {
+      "sid": "007-4980-300",
+      "q_inference_seconds": 1.1734919571317732,
+      "single": [
+        [
+          3714,
+          843,
+          3014
+        ],
+        [
+          5733,
+          4733,
+          4131
+        ],
+        [
+          7891,
+          715,
+          1165
+        ],
+        [
+          417,
+          83,
+          1563
+        ]
+      ],
+      "fixed_fusion": [
+        [
+          3564,
+          672,
+          3164
+        ],
+        [
+          5566,
+          4042,
+          4298
+        ],
+        [
+          7235,
+          555,
+          1821
+        ],
+        [
+          299,
+          20,
+          1681
+        ]
+      ],
+      "half_fusion": [
+        [
+          3663,
+          746,
+          3065
+        ],
+        [
+          5729,
+          4024,
+          4135
+        ],
+        [
+          7780,
+          629,
+          1276
+        ],
+        [
+          341,
+          45,
+          1639
+        ]
+      ],
+      "p0": [
+        [
+          3523,
+          743,
+          3205
+        ],
+        [
+          5544,
+          4936,
+          4320
+        ],
+        [
+          7203,
+          687,
+          1853
+        ],
+        [
+          327,
+          39,
+          1653
+        ]
+      ],
+      "mechanism": {
+        "HE": {
+          "gt_lesions": 15,
+          "missed_lesions": 6,
+          "new_false_positive_regions": 54,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        },
+        "MA": {
+          "gt_lesions": 14,
+          "missed_lesions": 10,
+          "new_false_positive_regions": 7,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        }
+      }
+    },
+    {
+      "sid": "007-5063-300",
+      "q_inference_seconds": 0.3572725569829345,
+      "single": [
+        [
+          1036,
+          417,
+          324
+        ],
+        [
+          241,
+          2282,
+          883
+        ],
+        [
+          915,
+          685,
+          453
+        ],
+        [
+          0,
+          0,
+          637
+        ]
+      ],
+      "fixed_fusion": [
+        [
+          1050,
+          317,
+          310
+        ],
+        [
+          417,
+          1842,
+          707
+        ],
+        [
+          1290,
+          809,
+          78
+        ],
+        [
+          38,
+          4,
+          599
+        ]
+      ],
+      "half_fusion": [
+        [
+          1041,
+          377,
+          319
+        ],
+        [
+          245,
+          2121,
+          879
+        ],
+        [
+          967,
+          680,
+          401
+        ],
+        [
+          0,
+          0,
+          637
+        ]
+      ],
+      "p0": [
+        [
+          1053,
+          333,
+          307
+        ],
+        [
+          460,
+          1800,
+          664
+        ],
+        [
+          1337,
+          1388,
+          31
+        ],
+        [
+          66,
+          10,
+          571
+        ]
+      ],
+      "mechanism": {
+        "HE": {
+          "gt_lesions": 6,
+          "missed_lesions": 5,
+          "new_false_positive_regions": 7,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        },
+        "MA": {
+          "gt_lesions": 11,
+          "missed_lesions": 11,
+          "new_false_positive_regions": 0,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        }
+      }
+    },
+    {
+      "sid": "007-5172-300",
+      "q_inference_seconds": 0.683075486915186,
+      "single": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          7452,
+          6194,
+          2472
+        ],
+        [
+          28415,
+          4800,
+          11521
+        ],
+        [
+          818,
+          1277,
+          4922
+        ]
+      ],
+      "fixed_fusion": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          7302,
+          3677,
+          2622
+        ],
+        [
+          25469,
+          1593,
+          14467
+        ],
+        [
+          1598,
+          1262,
+          4142
+        ]
+      ],
+      "half_fusion": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          7413,
+          5077,
+          2511
+        ],
+        [
+          27564,
+          3708,
+          12372
+        ],
+        [
+          890,
+          1130,
+          4850
+        ]
+      ],
+      "p0": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          7135,
+          3419,
+          2789
+        ],
+        [
+          24604,
+          1368,
+          15332
+        ],
+        [
+          1869,
+          1618,
+          3871
+        ]
+      ],
+      "mechanism": {
+        "HE": {
+          "gt_lesions": 30,
+          "missed_lesions": 12,
+          "new_false_positive_regions": 89,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        },
+        "MA": {
+          "gt_lesions": 121,
+          "missed_lesions": 83,
+          "new_false_positive_regions": 56,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        }
+      }
+    },
+    {
+      "sid": "007-5269-300",
+      "q_inference_seconds": 0.6831310382112861,
+      "single": [
+        [
+          860,
+          418,
+          464
+        ],
+        [
+          1228,
+          1696,
+          2580
+        ],
+        [
+          6488,
+          1980,
+          936
+        ],
+        [
+          219,
+          294,
+          629
+        ]
+      ],
+      "fixed_fusion": [
+        [
+          822,
+          237,
+          502
+        ],
+        [
+          1448,
+          1892,
+          2360
+        ],
+        [
+          6423,
+          1767,
+          1001
+        ],
+        [
+          179,
+          181,
+          669
+        ]
+      ],
+      "half_fusion": [
+        [
+          862,
+          364,
+          462
+        ],
+        [
+          1285,
+          1723,
+          2523
+        ],
+        [
+          6481,
+          1888,
+          943
+        ],
+        [
+          208,
+          262,
+          640
+        ]
+      ],
+      "p0": [
+        [
+          835,
+          232,
+          489
+        ],
+        [
+          1608,
+          2171,
+          2200
+        ],
+        [
+          6270,
+          2042,
+          1154
+        ],
+        [
+          184,
+          175,
+          664
+        ]
+      ],
+      "mechanism": {
+        "HE": {
+          "gt_lesions": 10,
+          "missed_lesions": 4,
+          "new_false_positive_regions": 7,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        },
+        "MA": {
+          "gt_lesions": 15,
+          "missed_lesions": 10,
+          "new_false_positive_regions": 9,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        }
+      }
+    },
+    {
+      "sid": "007-5434-300",
+      "q_inference_seconds": 0.6662206188775599,
+      "single": [
+        [
+          1988,
+          198,
+          592
+        ],
+        [
+          1,
+          298,
+          1363
+        ],
+        [
+          5570,
+          97,
+          5994
+        ],
+        [
+          15,
+          197,
+          733
+        ]
+      ],
+      "fixed_fusion": [
+        [
+          2130,
+          207,
+          450
+        ],
+        [
+          165,
+          69,
+          1199
+        ],
+        [
+          6974,
+          87,
+          4590
+        ],
+        [
+          66,
+          79,
+          682
+        ]
+      ],
+      "half_fusion": [
+        [
+          2015,
+          179,
+          565
+        ],
+        [
+          3,
+          85,
+          1361
+        ],
+        [
+          5517,
+          75,
+          6047
+        ],
+        [
+          23,
+          178,
+          725
+        ]
+      ],
+      "p0": [
+        [
+          2193,
+          285,
+          387
+        ],
+        [
+          307,
+          195,
+          1057
+        ],
+        [
+          6934,
+          211,
+          4630
+        ],
+        [
+          105,
+          91,
+          643
+        ]
+      ],
+      "mechanism": {
+        "HE": {
+          "gt_lesions": 2,
+          "missed_lesions": 1,
+          "new_false_positive_regions": 2,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        },
+        "MA": {
+          "gt_lesions": 13,
+          "missed_lesions": 11,
+          "new_false_positive_regions": 3,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        }
+      }
+    },
+    {
+      "sid": "007-5443-300",
+      "q_inference_seconds": 0.6440229199361056,
+      "single": [
+        [
+          3027,
+          1764,
+          1561
+        ],
+        [
+          5201,
+          2252,
+          2939
+        ],
+        [
+          6572,
+          1717,
+          1828
+        ],
+        [
+          2984,
+          2872,
+          4804
+        ]
+      ],
+      "fixed_fusion": [
+        [
+          2943,
+          1186,
+          1645
+        ],
+        [
+          5287,
+          1447,
+          2853
+        ],
+        [
+          6638,
+          1363,
+          1762
+        ],
+        [
+          3752,
+          2252,
+          4036
+        ]
+      ],
+      "half_fusion": [
+        [
+          3024,
+          1510,
+          1564
+        ],
+        [
+          5253,
+          1675,
+          2887
+        ],
+        [
+          6580,
+          1610,
+          1820
+        ],
+        [
+          3143,
+          2503,
+          4645
+        ]
+      ],
+      "p0": [
+        [
+          2955,
+          1201,
+          1633
+        ],
+        [
+          5296,
+          1737,
+          2844
+        ],
+        [
+          6980,
+          1395,
+          1420
+        ],
+        [
+          3830,
+          2534,
+          3958
+        ]
+      ],
+      "mechanism": {
+        "HE": {
+          "gt_lesions": 29,
+          "missed_lesions": 18,
+          "new_false_positive_regions": 53,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        },
+        "MA": {
+          "gt_lesions": 166,
+          "missed_lesions": 70,
+          "new_false_positive_regions": 144,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        }
+      }
+    },
+    {
+      "sid": "007-5470-300",
+      "q_inference_seconds": 0.6725664348341525,
+      "single": [
+        [
+          6649,
+          2659,
+          1691
+        ],
+        [
+          6125,
+          7192,
+          3075
+        ],
+        [
+          2856,
+          712,
+          344
+        ],
+        [
+          619,
+          813,
+          1333
+        ]
+      ],
+      "fixed_fusion": [
+        [
+          6324,
+          1580,
+          2016
+        ],
+        [
+          5551,
+          3836,
+          3649
+        ],
+        [
+          2973,
+          518,
+          227
+        ],
+        [
+          1077,
+          849,
+          875
+        ]
+      ],
+      "half_fusion": [
+        [
+          6618,
+          2168,
+          1722
+        ],
+        [
+          5967,
+          5819,
+          3233
+        ],
+        [
+          2892,
+          640,
+          308
+        ],
+        [
+          649,
+          743,
+          1303
+        ]
+      ],
+      "p0": [
+        [
+          6205,
+          1555,
+          2135
+        ],
+        [
+          5337,
+          3159,
+          3863
+        ],
+        [
+          2991,
+          408,
+          209
+        ],
+        [
+          1177,
+          883,
+          775
+        ]
+      ],
+      "mechanism": {
+        "HE": {
+          "gt_lesions": 16,
+          "missed_lesions": 4,
+          "new_false_positive_regions": 28,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        },
+        "MA": {
+          "gt_lesions": 27,
+          "missed_lesions": 13,
+          "new_false_positive_regions": 24,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        }
+      }
+    },
+    {
+      "sid": "007-5474-300",
+      "q_inference_seconds": 0.646043631946668,
+      "single": [
+        [
+          677,
+          262,
+          2415
+        ],
+        [
+          0,
+          944,
+          0
+        ],
+        [
+          2795,
+          253,
+          297
+        ],
+        [
+          502,
+          383,
+          1622
+        ]
+      ],
+      "fixed_fusion": [
+        [
+          596,
+          132,
+          2496
+        ],
+        [
+          0,
+          546,
+          0
+        ],
+        [
+          2734,
+          216,
+          358
+        ],
+        [
+          836,
+          274,
+          1288
+        ]
+      ],
+      "half_fusion": [
+        [
+          658,
+          214,
+          2434
+        ],
+        [
+          0,
+          683,
+          0
+        ],
+        [
+          2795,
+          205,
+          297
+        ],
+        [
+          526,
+          318,
+          1598
+        ]
+      ],
+      "p0": [
+        [
+          489,
+          108,
+          2603
+        ],
+        [
+          0,
+          506,
+          0
+        ],
+        [
+          2684,
+          403,
+          408
+        ],
+        [
+          922,
+          296,
+          1202
+        ]
+      ],
+      "mechanism": {
+        "HE": {
+          "gt_lesions": 0,
+          "missed_lesions": 0,
+          "new_false_positive_regions": 4,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        },
+        "MA": {
+          "gt_lesions": 29,
+          "missed_lesions": 18,
+          "new_false_positive_regions": 21,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        }
+      }
+    },
+    {
+      "sid": "007-5504-300",
+      "q_inference_seconds": 0.708549473900348,
+      "single": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          570,
+          277,
+          898
+        ],
+        [
+          3206,
+          2566,
+          678
+        ],
+        [
+          382,
+          1224,
+          1442
+        ]
+      ],
+      "fixed_fusion": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          972,
+          470,
+          496
+        ],
+        [
+          3408,
+          2977,
+          476
+        ],
+        [
+          420,
+          456,
+          1404
+        ]
+      ],
+      "half_fusion": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          559,
+          272,
+          909
+        ],
+        [
+          3262,
+          2612,
+          622
+        ],
+        [
+          390,
+          1129,
+          1434
+        ]
+      ],
+      "p0": [
+        [
+          0,
+          7,
+          0
+        ],
+        [
+          1088,
+          611,
+          380
+        ],
+        [
+          3459,
+          3400,
+          425
+        ],
+        [
+          409,
+          363,
+          1415
+        ]
+      ],
+      "mechanism": {
+        "HE": {
+          "gt_lesions": 3,
+          "missed_lesions": 2,
+          "new_false_positive_regions": 3,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        },
+        "MA": {
+          "gt_lesions": 18,
+          "missed_lesions": 14,
+          "new_false_positive_regions": 10,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        }
+      }
+    },
+    {
+      "sid": "007-5506-300",
+      "q_inference_seconds": 0.699357490055263,
+      "single": [
+        [
+          0,
+          0,
+          616
+        ],
+        [
+          5353,
+          1248,
+          2223
+        ],
+        [
+          3045,
+          709,
+          731
+        ],
+        [
+          1238,
+          1267,
+          1134
+        ]
+      ],
+      "fixed_fusion": [
+        [
+          0,
+          0,
+          616
+        ],
+        [
+          5101,
+          804,
+          2475
+        ],
+        [
+          1779,
+          189,
+          1997
+        ],
+        [
+          1347,
+          1248,
+          1025
+        ]
+      ],
+      "half_fusion": [
+        [
+          0,
+          0,
+          616
+        ],
+        [
+          5283,
+          1111,
+          2293
+        ],
+        [
+          2953,
+          553,
+          823
+        ],
+        [
+          1294,
+          1220,
+          1078
+        ]
+      ],
+      "p0": [
+        [
+          55,
+          4,
+          561
+        ],
+        [
+          5166,
+          798,
+          2410
+        ],
+        [
+          1638,
+          160,
+          2138
+        ],
+        [
+          1390,
+          1386,
+          982
+        ]
+      ],
+      "mechanism": {
+        "HE": {
+          "gt_lesions": 9,
+          "missed_lesions": 1,
+          "new_false_positive_regions": 27,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        },
+        "MA": {
+          "gt_lesions": 34,
+          "missed_lesions": 13,
+          "new_false_positive_regions": 39,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        }
+      }
+    },
+    {
+      "sid": "007-5672-300",
+      "q_inference_seconds": 1.3799730809405446,
+      "single": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          3757,
+          2944,
+          3567
+        ],
+        [
+          2128,
+          72,
+          420
+        ],
+        [
+          1288,
+          1343,
+          1580
+        ]
+      ],
+      "fixed_fusion": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          4400,
+          2617,
+          2924
+        ],
+        [
+          2336,
+          77,
+          212
+        ],
+        [
+          1422,
+          695,
+          1446
+        ]
+      ],
+      "half_fusion": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          3793,
+          2025,
+          3531
+        ],
+        [
+          2181,
+          73,
+          367
+        ],
+        [
+          1308,
+          1197,
+          1560
+        ]
+      ],
+      "p0": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          4635,
+          3257,
+          2689
+        ],
+        [
+          2352,
+          105,
+          196
+        ],
+        [
+          1394,
+          671,
+          1474
+        ]
+      ],
+      "mechanism": {
+        "HE": {
+          "gt_lesions": 11,
+          "missed_lesions": 4,
+          "new_false_positive_regions": 25,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        },
+        "MA": {
+          "gt_lesions": 26,
+          "missed_lesions": 13,
+          "new_false_positive_regions": 26,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        }
+      }
+    },
+    {
+      "sid": "007-5869-300",
+      "q_inference_seconds": 0.6600801649037749,
+      "single": [
+        [
+          0,
+          120,
+          0
+        ],
+        [
+          0,
+          268,
+          0
+        ],
+        [
+          2111,
+          91,
+          261
+        ],
+        [
+          344,
+          226,
+          544
+        ]
+      ],
+      "fixed_fusion": [
+        [
+          0,
+          124,
+          0
+        ],
+        [
+          0,
+          24,
+          0
+        ],
+        [
+          2235,
+          63,
+          137
+        ],
+        [
+          405,
+          127,
+          483
+        ]
+      ],
+      "half_fusion": [
+        [
+          0,
+          119,
+          0
+        ],
+        [
+          0,
+          157,
+          0
+        ],
+        [
+          2138,
+          75,
+          234
+        ],
+        [
+          351,
+          187,
+          537
+        ]
+      ],
+      "p0": [
+        [
+          0,
+          161,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          2265,
+          83,
+          107
+        ],
+        [
+          469,
+          114,
+          419
+        ]
+      ],
+      "mechanism": {
+        "HE": {
+          "gt_lesions": 0,
+          "missed_lesions": 0,
+          "new_false_positive_regions": 2,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        },
+        "MA": {
+          "gt_lesions": 16,
+          "missed_lesions": 8,
+          "new_false_positive_regions": 14,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        }
+      }
+    },
+    {
+      "sid": "007-5938-300",
+      "q_inference_seconds": 0.7270864511374384,
+      "single": [
+        [
+          1269,
+          2619,
+          375
+        ],
+        [
+          3115,
+          1532,
+          2621
+        ],
+        [
+          0,
+          1248,
+          2440
+        ],
+        [
+          50,
+          208,
+          54
+        ]
+      ],
+      "fixed_fusion": [
+        [
+          1287,
+          1359,
+          357
+        ],
+        [
+          3588,
+          1724,
+          2148
+        ],
+        [
+          0,
+          2595,
+          2440
+        ],
+        [
+          46,
+          102,
+          58
+        ]
+      ],
+      "half_fusion": [
+        [
+          1300,
+          2481,
+          344
+        ],
+        [
+          3252,
+          1549,
+          2484
+        ],
+        [
+          0,
+          1398,
+          2440
+        ],
+        [
+          52,
+          178,
+          52
+        ]
+      ],
+      "p0": [
+        [
+          1328,
+          956,
+          316
+        ],
+        [
+          3620,
+          2061,
+          2116
+        ],
+        [
+          34,
+          2950,
+          2406
+        ],
+        [
+          40,
+          104,
+          64
+        ]
+      ],
+      "mechanism": {
+        "HE": {
+          "gt_lesions": 10,
+          "missed_lesions": 7,
+          "new_false_positive_regions": 8,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        },
+        "MA": {
+          "gt_lesions": 3,
+          "missed_lesions": 1,
+          "new_false_positive_regions": 5,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        }
+      }
+    },
+    {
+      "sid": "007-6054-300",
+      "q_inference_seconds": 0.9848253801465034,
+      "single": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          2983,
+          842,
+          4033
+        ],
+        [
+          8437,
+          3499,
+          2003
+        ],
+        [
+          0,
+          0,
+          228
+        ]
+      ],
+      "fixed_fusion": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          2671,
+          419,
+          4345
+        ],
+        [
+          4090,
+          623,
+          6350
+        ],
+        [
+          36,
+          28,
+          192
+        ]
+      ],
+      "half_fusion": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          2947,
+          730,
+          4069
+        ],
+        [
+          8182,
+          2554,
+          2258
+        ],
+        [
+          14,
+          0,
+          214
+        ]
+      ],
+      "p0": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          2696,
+          464,
+          4320
+        ],
+        [
+          3620,
+          431,
+          6820
+        ],
+        [
+          38,
+          52,
+          190
+        ]
+      ],
+      "mechanism": {
+        "HE": {
+          "gt_lesions": 4,
+          "missed_lesions": 1,
+          "new_false_positive_regions": 8,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        },
+        "MA": {
+          "gt_lesions": 4,
+          "missed_lesions": 4,
+          "new_false_positive_regions": 0,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        }
+      }
+    },
+    {
+      "sid": "007-6148-300",
+      "q_inference_seconds": 0.5799668331164867,
+      "single": [
+        [
+          8250,
+          3442,
+          2376
+        ],
+        [
+          28950,
+          18767,
+          17781
+        ],
+        [
+          904,
+          49,
+          1238
+        ],
+        [
+          368,
+          913,
+          1952
+        ]
+      ],
+      "fixed_fusion": [
+        [
+          8394,
+          1792,
+          2232
+        ],
+        [
+          26866,
+          10303,
+          19865
+        ],
+        [
+          1465,
+          0,
+          677
+        ],
+        [
+          438,
+          677,
+          1882
+        ]
+      ],
+      "half_fusion": [
+        [
+          8326,
+          2708,
+          2300
+        ],
+        [
+          28248,
+          14982,
+          18483
+        ],
+        [
+          882,
+          23,
+          1260
+        ],
+        [
+          366,
+          773,
+          1954
+        ]
+      ],
+      "p0": [
+        [
+          8361,
+          1727,
+          2265
+        ],
+        [
+          25374,
+          8427,
+          21357
+        ],
+        [
+          1231,
+          8,
+          911
+        ],
+        [
+          483,
+          743,
+          1837
+        ]
+      ],
+      "mechanism": {
+        "HE": {
+          "gt_lesions": 73,
+          "missed_lesions": 11,
+          "new_false_positive_regions": 127,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        },
+        "MA": {
+          "gt_lesions": 59,
+          "missed_lesions": 41,
+          "new_false_positive_regions": 30,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        }
+      }
+    },
+    {
+      "sid": "007-6220-300",
+      "q_inference_seconds": 0.7927865281235427,
+      "single": [
+        [
+          375,
+          364,
+          161
+        ],
+        [
+          17813,
+          17155,
+          5615
+        ],
+        [
+          7767,
+          805,
+          4209
+        ],
+        [
+          466,
+          632,
+          3014
+        ]
+      ],
+      "fixed_fusion": [
+        [
+          313,
+          103,
+          223
+        ],
+        [
+          17648,
+          14370,
+          5780
+        ],
+        [
+          7640,
+          554,
+          4336
+        ],
+        [
+          931,
+          561,
+          2549
+        ]
+      ],
+      "half_fusion": [
+        [
+          364,
+          305,
+          172
+        ],
+        [
+          17699,
+          15923,
+          5729
+        ],
+        [
+          7737,
+          710,
+          4239
+        ],
+        [
+          493,
+          562,
+          2987
+        ]
+      ],
+      "p0": [
+        [
+          245,
+          76,
+          291
+        ],
+        [
+          17517,
+          13500,
+          5911
+        ],
+        [
+          7511,
+          426,
+          4465
+        ],
+        [
+          1208,
+          708,
+          2272
+        ]
+      ],
+      "mechanism": {
+        "HE": {
+          "gt_lesions": 29,
+          "missed_lesions": 4,
+          "new_false_positive_regions": 65,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        },
+        "MA": {
+          "gt_lesions": 47,
+          "missed_lesions": 31,
+          "new_false_positive_regions": 20,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        }
+      }
+    },
+    {
+      "sid": "007-6519-400",
+      "q_inference_seconds": 0.7262940090149641,
+      "single": [
+        [
+          31889,
+          23457,
+          3247
+        ],
+        [
+          4535,
+          10870,
+          1025
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          584
+        ]
+      ],
+      "fixed_fusion": [
+        [
+          29744,
+          16456,
+          5392
+        ],
+        [
+          4555,
+          6683,
+          1005
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          17,
+          8,
+          567
+        ]
+      ],
+      "half_fusion": [
+        [
+          31675,
+          16042,
+          3461
+        ],
+        [
+          4589,
+          9931,
+          971
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          584
+        ]
+      ],
+      "p0": [
+        [
+          28820,
+          20233,
+          6316
+        ],
+        [
+          4372,
+          5359,
+          1188
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          62,
+          44,
+          522
+        ]
+      ],
+      "mechanism": {
+        "HE": {
+          "gt_lesions": 16,
+          "missed_lesions": 5,
+          "new_false_positive_regions": 33,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        },
+        "MA": {
+          "gt_lesions": 10,
+          "missed_lesions": 10,
+          "new_false_positive_regions": 0,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        }
+      }
+    },
+    {
+      "sid": "007-6520-400",
+      "q_inference_seconds": 0.7039903709664941,
+      "single": [
+        [
+          1185,
+          422,
+          1915
+        ],
+        [
+          4640,
+          2398,
+          4332
+        ],
+        [
+          6602,
+          2111,
+          2222
+        ],
+        [
+          183,
+          710,
+          677
+        ]
+      ],
+      "fixed_fusion": [
+        [
+          1043,
+          171,
+          2057
+        ],
+        [
+          4497,
+          1349,
+          4475
+        ],
+        [
+          5972,
+          885,
+          2852
+        ],
+        [
+          319,
+          639,
+          541
+        ]
+      ],
+      "half_fusion": [
+        [
+          1161,
+          290,
+          1939
+        ],
+        [
+          4550,
+          1921,
+          4422
+        ],
+        [
+          6534,
+          1801,
+          2290
+        ],
+        [
+          208,
+          602,
+          652
+        ]
+      ],
+      "p0": [
+        [
+          966,
+          363,
+          2134
+        ],
+        [
+          4653,
+          1373,
+          4319
+        ],
+        [
+          5673,
+          834,
+          3151
+        ],
+        [
+          347,
+          902,
+          513
+        ]
+      ],
+      "mechanism": {
+        "HE": {
+          "gt_lesions": 38,
+          "missed_lesions": 26,
+          "new_false_positive_regions": 48,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        },
+        "MA": {
+          "gt_lesions": 11,
+          "missed_lesions": 6,
+          "new_false_positive_regions": 18,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        }
+      }
+    },
+    {
+      "sid": "007-6551-400",
+      "q_inference_seconds": 0.6850903518497944,
+      "single": [
+        [
+          8673,
+          2353,
+          2171
+        ],
+        [
+          6992,
+          5367,
+          972
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          60,
+          209,
+          444
+        ]
+      ],
+      "fixed_fusion": [
+        [
+          8861,
+          1805,
+          1983
+        ],
+        [
+          6707,
+          2951,
+          1257
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          218,
+          183,
+          286
+        ]
+      ],
+      "half_fusion": [
+        [
+          8845,
+          2093,
+          1999
+        ],
+        [
+          7005,
+          4203,
+          959
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          65,
+          185,
+          439
+        ]
+      ],
+      "p0": [
+        [
+          8609,
+          1930,
+          2235
+        ],
+        [
+          6630,
+          2853,
+          1334
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          232,
+          209,
+          272
+        ]
+      ],
+      "mechanism": {
+        "HE": {
+          "gt_lesions": 21,
+          "missed_lesions": 3,
+          "new_false_positive_regions": 79,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        },
+        "MA": {
+          "gt_lesions": 10,
+          "missed_lesions": 8,
+          "new_false_positive_regions": 9,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        }
+      }
+    },
+    {
+      "sid": "007-6577-400",
+      "q_inference_seconds": 0.6568983390461653,
+      "single": [
+        [
+          0,
+          1107,
+          0
+        ],
+        [
+          15201,
+          7968,
+          8495
+        ],
+        [
+          1810,
+          2093,
+          54
+        ],
+        [
+          383,
+          1871,
+          449
+        ]
+      ],
+      "fixed_fusion": [
+        [
+          0,
+          528,
+          0
+        ],
+        [
+          16137,
+          8093,
+          7559
+        ],
+        [
+          1781,
+          2151,
+          83
+        ],
+        [
+          428,
+          1286,
+          404
+        ]
+      ],
+      "half_fusion": [
+        [
+          0,
+          924,
+          0
+        ],
+        [
+          15479,
+          7661,
+          8217
+        ],
+        [
+          1806,
+          2098,
+          58
+        ],
+        [
+          386,
+          1604,
+          446
+        ]
+      ],
+      "p0": [
+        [
+          0,
+          496,
+          0
+        ],
+        [
+          16508,
+          8828,
+          7188
+        ],
+        [
+          1768,
+          2286,
+          96
+        ],
+        [
+          441,
+          1373,
+          391
+        ]
+      ],
+      "mechanism": {
+        "HE": {
+          "gt_lesions": 80,
+          "missed_lesions": 36,
+          "new_false_positive_regions": 116,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        },
+        "MA": {
+          "gt_lesions": 15,
+          "missed_lesions": 6,
+          "new_false_positive_regions": 33,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        }
+      }
+    },
+    {
+      "sid": "007-6686-400",
+      "q_inference_seconds": 0.20976617909036577,
+      "single": [
+        [
+          14927,
+          6904,
+          5024
+        ],
+        [
+          36706,
+          11230,
+          12568
+        ],
+        [
+          24220,
+          6995,
+          7664
+        ],
+        [
+          0,
+          11,
+          509
+        ]
+      ],
+      "fixed_fusion": [
+        [
+          14659,
+          4656,
+          5292
+        ],
+        [
+          38232,
+          12979,
+          11042
+        ],
+        [
+          24659,
+          6060,
+          7225
+        ],
+        [
+          0,
+          6,
+          509
+        ]
+      ],
+      "half_fusion": [
+        [
+          14887,
+          6084,
+          5064
+        ],
+        [
+          37228,
+          11115,
+          12046
+        ],
+        [
+          24077,
+          6558,
+          7807
+        ],
+        [
+          0,
+          8,
+          509
+        ]
+      ],
+      "p0": [
+        [
+          14548,
+          5878,
+          5403
+        ],
+        [
+          38460,
+          14927,
+          10814
+        ],
+        [
+          24198,
+          5981,
+          7686
+        ],
+        [
+          4,
+          4,
+          505
+        ]
+      ],
+      "mechanism": {
+        "HE": {
+          "gt_lesions": 23,
+          "missed_lesions": 2,
+          "new_false_positive_regions": 99,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        },
+        "MA": {
+          "gt_lesions": 10,
+          "missed_lesions": 10,
+          "new_false_positive_regions": 1,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        }
+      }
+    },
+    {
+      "sid": "007-6722-400",
+      "q_inference_seconds": 0.21121913706883788,
+      "single": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          13532,
+          2613,
+          1348
+        ],
+        [
+          17926,
+          2971,
+          3322
+        ],
+        [
+          0,
+          0,
+          303
+        ]
+      ],
+      "fixed_fusion": [
+        [
+          0,
+          50,
+          0
+        ],
+        [
+          14179,
+          3450,
+          701
+        ],
+        [
+          16143,
+          1906,
+          5105
+        ],
+        [
+          0,
+          0,
+          303
+        ]
+      ],
+      "half_fusion": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          13758,
+          2875,
+          1122
+        ],
+        [
+          17657,
+          2574,
+          3591
+        ],
+        [
+          0,
+          0,
+          303
+        ]
+      ],
+      "p0": [
+        [
+          0,
+          232,
+          0
+        ],
+        [
+          14287,
+          3964,
+          593
+        ],
+        [
+          15191,
+          1825,
+          6057
+        ],
+        [
+          0,
+          0,
+          303
+        ]
+      ],
+      "mechanism": {
+        "HE": {
+          "gt_lesions": 6,
+          "missed_lesions": 0,
+          "new_false_positive_regions": 34,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        },
+        "MA": {
+          "gt_lesions": 2,
+          "missed_lesions": 2,
+          "new_false_positive_regions": 0,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        }
+      }
+    },
+    {
+      "sid": "007-6734-400",
+      "q_inference_seconds": 1.137435968965292,
+      "single": [
+        [
+          0,
+          1368,
+          0
+        ],
+        [
+          141764,
+          52826,
+          74644
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "fixed_fusion": [
+        [
+          0,
+          230,
+          0
+        ],
+        [
+          148855,
+          142741,
+          67553
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          8,
+          0
+        ]
+      ],
+      "half_fusion": [
+        [
+          0,
+          381,
+          0
+        ],
+        [
+          144542,
+          50273,
+          71866
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "p0": [
+        [
+          0,
+          471,
+          0
+        ],
+        [
+          149661,
+          215722,
+          66747
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          33,
+          0
+        ]
+      ],
+      "mechanism": {
+        "HE": {
+          "gt_lesions": 54,
+          "missed_lesions": 24,
+          "new_false_positive_regions": 106,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        },
+        "MA": {
+          "gt_lesions": 0,
+          "missed_lesions": 0,
+          "new_false_positive_regions": 0,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        }
+      }
+    },
+    {
+      "sid": "007-6811-400",
+      "q_inference_seconds": 0.6511767189949751,
+      "single": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          36118,
+          2686,
+          60662
+        ],
+        [
+          0,
+          3755,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "fixed_fusion": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          59258,
+          3292,
+          37522
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "half_fusion": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          43409,
+          2512,
+          53371
+        ],
+        [
+          0,
+          3306,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "p0": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          62958,
+          4337,
+          33822
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "mechanism": {
+        "HE": {
+          "gt_lesions": 17,
+          "missed_lesions": 9,
+          "new_false_positive_regions": 23,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        },
+        "MA": {
+          "gt_lesions": 0,
+          "missed_lesions": 0,
+          "new_false_positive_regions": 0,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        }
+      }
+    },
+    {
+      "sid": "007-6815-400",
+      "q_inference_seconds": 0.6279445320833474,
+      "single": [
+        [
+          18904,
+          9356,
+          4692
+        ],
+        [
+          15870,
+          11013,
+          4250
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          176
+        ]
+      ],
+      "fixed_fusion": [
+        [
+          18659,
+          3846,
+          4937
+        ],
+        [
+          16529,
+          7180,
+          3591
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          23,
+          77,
+          153
+        ]
+      ],
+      "half_fusion": [
+        [
+          19040,
+          5565,
+          4556
+        ],
+        [
+          15914,
+          9637,
+          4206
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          176
+        ]
+      ],
+      "p0": [
+        [
+          18028,
+          3617,
+          5568
+        ],
+        [
+          16162,
+          6282,
+          3958
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          34,
+          119,
+          142
+        ]
+      ],
+      "mechanism": {
+        "HE": {
+          "gt_lesions": 14,
+          "missed_lesions": 1,
+          "new_false_positive_regions": 31,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        },
+        "MA": {
+          "gt_lesions": 3,
+          "missed_lesions": 3,
+          "new_false_positive_regions": 0,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        }
+      }
+    },
+    {
+      "sid": "007-6847-400",
+      "q_inference_seconds": 0.6539085630793124,
+      "single": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          24820,
+          12311,
+          13656
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          351,
+          462,
+          153
+        ]
+      ],
+      "fixed_fusion": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          25752,
+          10981,
+          12724
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          318,
+          328,
+          186
+        ]
+      ],
+      "half_fusion": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          24905,
+          11418,
+          13571
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          351,
+          359,
+          153
+        ]
+      ],
+      "p0": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          25754,
+          10985,
+          12722
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          244,
+          379,
+          260
+        ]
+      ],
+      "mechanism": {
+        "HE": {
+          "gt_lesions": 16,
+          "missed_lesions": 8,
+          "new_false_positive_regions": 20,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        },
+        "MA": {
+          "gt_lesions": 9,
+          "missed_lesions": 2,
+          "new_false_positive_regions": 19,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        }
+      }
+    },
+    {
+      "sid": "007-6894-400",
+      "q_inference_seconds": 0.7043225760571659,
+      "single": [
+        [
+          9871,
+          5909,
+          11457
+        ],
+        [
+          66341,
+          19042,
+          111091
+        ],
+        [
+          2194,
+          5775,
+          2370
+        ],
+        [
+          166,
+          1138,
+          314
+        ]
+      ],
+      "fixed_fusion": [
+        [
+          8554,
+          2536,
+          12774
+        ],
+        [
+          61312,
+          12923,
+          116120
+        ],
+        [
+          2449,
+          3725,
+          2115
+        ],
+        [
+          178,
+          1192,
+          302
+        ]
+      ],
+      "half_fusion": [
+        [
+          9576,
+          4335,
+          11752
+        ],
+        [
+          61617,
+          14939,
+          115815
+        ],
+        [
+          2195,
+          5345,
+          2369
+        ],
+        [
+          183,
+          955,
+          297
+        ]
+      ],
+      "p0": [
+        [
+          7963,
+          2244,
+          13365
+        ],
+        [
+          62033,
+          16284,
+          115399
+        ],
+        [
+          3715,
+          3262,
+          849
+        ],
+        [
+          189,
+          1630,
+          291
+        ]
+      ],
+      "mechanism": {
+        "HE": {
+          "gt_lesions": 219,
+          "missed_lesions": 110,
+          "new_false_positive_regions": 318,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        },
+        "MA": {
+          "gt_lesions": 12,
+          "missed_lesions": 8,
+          "new_false_positive_regions": 18,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        }
+      }
+    },
+    {
+      "sid": "007-6912-400",
+      "q_inference_seconds": 0.3760487698018551,
+      "single": [
+        [
+          9182,
+          2852,
+          727
+        ],
+        [
+          16498,
+          41917,
+          8366
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "fixed_fusion": [
+        [
+          9094,
+          2142,
+          815
+        ],
+        [
+          9093,
+          2616,
+          15771
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          8,
+          0
+        ]
+      ],
+      "half_fusion": [
+        [
+          9216,
+          2381,
+          693
+        ],
+        [
+          15431,
+          16169,
+          9433
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "p0": [
+        [
+          9002,
+          2453,
+          907
+        ],
+        [
+          2133,
+          1930,
+          22731
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          18,
+          0
+        ]
+      ],
+      "mechanism": {
+        "HE": {
+          "gt_lesions": 17,
+          "missed_lesions": 1,
+          "new_false_positive_regions": 19,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        },
+        "MA": {
+          "gt_lesions": 0,
+          "missed_lesions": 0,
+          "new_false_positive_regions": 0,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        }
+      }
+    },
+    {
+      "sid": "20170503161702100",
+      "q_inference_seconds": 0.641477671219036,
+      "single": [
+        [
+          167,
+          21,
+          385
+        ],
+        [
+          0,
+          202,
+          196
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          958,
+          1434,
+          390
+        ]
+      ],
+      "fixed_fusion": [
+        [
+          165,
+          18,
+          387
+        ],
+        [
+          0,
+          135,
+          196
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          998,
+          873,
+          350
+        ]
+      ],
+      "half_fusion": [
+        [
+          167,
+          20,
+          385
+        ],
+        [
+          0,
+          0,
+          196
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          979,
+          1297,
+          369
+        ]
+      ],
+      "p0": [
+        [
+          161,
+          22,
+          391
+        ],
+        [
+          0,
+          368,
+          196
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          957,
+          772,
+          391
+        ]
+      ],
+      "mechanism": {
+        "HE": {
+          "gt_lesions": 2,
+          "missed_lesions": 2,
+          "new_false_positive_regions": 1,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        },
+        "MA": {
+          "gt_lesions": 32,
+          "missed_lesions": 6,
+          "new_false_positive_regions": 39,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        }
+      }
+    },
+    {
+      "sid": "20170503161702278",
+      "q_inference_seconds": 0.6430113029200584,
+      "single": [
+        [
+          81,
+          54,
+          47
+        ],
+        [
+          0,
+          372,
+          232
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          314,
+          494,
+          190
+        ]
+      ],
+      "fixed_fusion": [
+        [
+          81,
+          37,
+          47
+        ],
+        [
+          98,
+          15,
+          134
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          375,
+          334,
+          129
+        ]
+      ],
+      "half_fusion": [
+        [
+          82,
+          49,
+          46
+        ],
+        [
+          0,
+          103,
+          232
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          317,
+          427,
+          187
+        ]
+      ],
+      "p0": [
+        [
+          89,
+          33,
+          39
+        ],
+        [
+          165,
+          97,
+          67
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          383,
+          309,
+          121
+        ]
+      ],
+      "mechanism": {
+        "HE": {
+          "gt_lesions": 2,
+          "missed_lesions": 2,
+          "new_false_positive_regions": 3,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        },
+        "MA": {
+          "gt_lesions": 8,
+          "missed_lesions": 3,
+          "new_false_positive_regions": 13,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        }
+      }
+    },
+    {
+      "sid": "20170509100155767",
+      "q_inference_seconds": 0.39165436499752104,
+      "single": [
+        [
+          152,
+          36,
+          132
+        ],
+        [
+          283,
+          419,
+          359
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          171,
+          67,
+          707
+        ]
+      ],
+      "fixed_fusion": [
+        [
+          119,
+          14,
+          165
+        ],
+        [
+          287,
+          333,
+          355
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          176,
+          35,
+          702
+        ]
+      ],
+      "half_fusion": [
+        [
+          145,
+          33,
+          139
+        ],
+        [
+          283,
+          359,
+          359
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          171,
+          56,
+          707
+        ]
+      ],
+      "p0": [
+        [
+          100,
+          9,
+          184
+        ],
+        [
+          303,
+          356,
+          339
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          224,
+          24,
+          654
+        ]
+      ],
+      "mechanism": {
+        "HE": {
+          "gt_lesions": 1,
+          "missed_lesions": 0,
+          "new_false_positive_regions": 4,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        },
+        "MA": {
+          "gt_lesions": 13,
+          "missed_lesions": 8,
+          "new_false_positive_regions": 6,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        }
+      }
+    },
+    {
+      "sid": "20170510152714920",
+      "q_inference_seconds": 0.6525297639891505,
+      "single": [
+        [
+          2345,
+          533,
+          1807
+        ],
+        [
+          608,
+          2251,
+          36
+        ],
+        [
+          3947,
+          811,
+          1025
+        ],
+        [
+          100,
+          65,
+          1108
+        ]
+      ],
+      "fixed_fusion": [
+        [
+          2282,
+          358,
+          1870
+        ],
+        [
+          560,
+          495,
+          84
+        ],
+        [
+          4034,
+          681,
+          938
+        ],
+        [
+          283,
+          133,
+          925
+        ]
+      ],
+      "half_fusion": [
+        [
+          2315,
+          481,
+          1837
+        ],
+        [
+          613,
+          1671,
+          31
+        ],
+        [
+          3963,
+          742,
+          1009
+        ],
+        [
+          101,
+          56,
+          1107
+        ]
+      ],
+      "p0": [
+        [
+          2208,
+          366,
+          1944
+        ],
+        [
+          556,
+          404,
+          88
+        ],
+        [
+          4102,
+          688,
+          870
+        ],
+        [
+          344,
+          221,
+          864
+        ]
+      ],
+      "mechanism": {
+        "HE": {
+          "gt_lesions": 2,
+          "missed_lesions": 0,
+          "new_false_positive_regions": 15,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        },
+        "MA": {
+          "gt_lesions": 22,
+          "missed_lesions": 18,
+          "new_false_positive_regions": 5,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        }
+      }
+    },
+    {
+      "sid": "20170518142454730",
+      "q_inference_seconds": 0.6411654381081462,
+      "single": [
+        [
+          500,
+          140,
+          248
+        ],
+        [
+          0,
+          202,
+          1332
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          145,
+          0
+        ]
+      ],
+      "fixed_fusion": [
+        [
+          503,
+          99,
+          245
+        ],
+        [
+          0,
+          0,
+          1332
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          156,
+          0
+        ]
+      ],
+      "half_fusion": [
+        [
+          506,
+          123,
+          242
+        ],
+        [
+          0,
+          0,
+          1332
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          144,
+          0
+        ]
+      ],
+      "p0": [
+        [
+          532,
+          107,
+          216
+        ],
+        [
+          10,
+          0,
+          1322
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          164,
+          0
+        ]
+      ],
+      "mechanism": {
+        "HE": {
+          "gt_lesions": 8,
+          "missed_lesions": 8,
+          "new_false_positive_regions": 1,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        },
+        "MA": {
+          "gt_lesions": 0,
+          "missed_lesions": 0,
+          "new_false_positive_regions": 3,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        }
+      }
+    },
+    {
+      "sid": "20170522100404106",
+      "q_inference_seconds": 0.7762081730179489,
+      "single": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          511,
+          538,
+          333
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          710,
+          803,
+          978
+        ]
+      ],
+      "fixed_fusion": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          540,
+          722,
+          304
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          816,
+          375,
+          872
+        ]
+      ],
+      "half_fusion": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          525,
+          578,
+          319
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          732,
+          675,
+          956
+        ]
+      ],
+      "p0": [
+        [
+          0,
+          5,
+          0
+        ],
+        [
+          551,
+          945,
+          293
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          836,
+          339,
+          852
+        ]
+      ],
+      "mechanism": {
+        "HE": {
+          "gt_lesions": 5,
+          "missed_lesions": 4,
+          "new_false_positive_regions": 6,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        },
+        "MA": {
+          "gt_lesions": 24,
+          "missed_lesions": 7,
+          "new_false_positive_regions": 29,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        }
+      }
+    },
+    {
+      "sid": "20170609154552424",
+      "q_inference_seconds": 0.5671626660041511,
+      "single": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          150,
+          182,
+          282
+        ]
+      ],
+      "fixed_fusion": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          160,
+          69,
+          272
+        ]
+      ],
+      "half_fusion": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          157,
+          143,
+          275
+        ]
+      ],
+      "p0": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          165,
+          64,
+          267
+        ]
+      ],
+      "mechanism": {
+        "HE": {
+          "gt_lesions": 0,
+          "missed_lesions": 0,
+          "new_false_positive_regions": 0,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        },
+        "MA": {
+          "gt_lesions": 6,
+          "missed_lesions": 3,
+          "new_false_positive_regions": 4,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        }
+      }
+    },
+    {
+      "sid": "20170629163635747",
+      "q_inference_seconds": 0.6950243189930916,
+      "single": [
+        [
+          0,
+          65,
+          0
+        ],
+        [
+          44085,
+          17013,
+          16631
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          733,
+          344,
+          3811
+        ]
+      ],
+      "fixed_fusion": [
+        [
+          0,
+          42,
+          0
+        ],
+        [
+          45148,
+          13696,
+          15568
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          912,
+          189,
+          3632
+        ]
+      ],
+      "half_fusion": [
+        [
+          0,
+          62,
+          0
+        ],
+        [
+          44418,
+          15270,
+          16298
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          759,
+          280,
+          3785
+        ]
+      ],
+      "p0": [
+        [
+          0,
+          55,
+          0
+        ],
+        [
+          45866,
+          14404,
+          14850
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          988,
+          251,
+          3556
+        ]
+      ],
+      "mechanism": {
+        "HE": {
+          "gt_lesions": 64,
+          "missed_lesions": 11,
+          "new_false_positive_regions": 189,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        },
+        "MA": {
+          "gt_lesions": 58,
+          "missed_lesions": 41,
+          "new_false_positive_regions": 23,
+          "definition": "8-connected valid GT components missed when zero predicted overlap; FP components are predicted valid pixels outside GT"
+        }
+      }
+    }
+  ],
+  "seconds": 158.31830628891475,
+  "threshold": 0.5,
+  "strict_greater": true,
+  "coordinates": "original_image",
+  "probability_dtype": "float32",
+  "probability_files": [],
+  "single": {
+    "counts": [
+      [
+        190648,
+        112277,
+        100155
+      ],
+      [
+        647966,
+        339559,
+        557958
+      ],
+      [
+        149264,
+        53090,
+        52140
+      ],
+      [
+        20070,
+        39807,
+        49214
+      ]
+    ],
+    "miou_pct": 41.56825397258711,
+    "per_class": {
+      "EX": {
+        "tp": 190648,
+        "fp": 112277,
+        "fn": 100155,
+        "iou_pct": 47.29780688697033,
+        "precision": 0.6293571015928034,
+        "recall": 0.65559158605654
+      },
+      "HE": {
+        "tp": 647966,
+        "fp": 339559,
+        "fn": 557958,
+        "iou_pct": 41.92643982496087,
+        "precision": 0.6561514898357004,
+        "recall": 0.5373191013695722
+      },
+      "SE": {
+        "tp": 149264,
+        "fp": 53090,
+        "fn": 52140,
+        "iou_pct": 58.65128450965445,
+        "precision": 0.7376380007313915,
+        "recall": 0.7411173561597585
+      },
+      "MA": {
+        "tp": 20070,
+        "fp": 39807,
+        "fn": 49214,
+        "iou_pct": 18.397484668762775,
+        "precision": 0.33518713362392905,
+        "recall": 0.2896772703654523
+      }
+    }
+  },
+  "fixed_fusion": {
+    "counts": [
+      [
+        186945,
+        80049,
+        103858
+      ],
+      [
+        687309,
+        335060,
+        518615
+      ],
+      [
+        140850,
+        35814,
+        60554
+      ],
+      [
+        26131,
+        31698,
+        43153
+      ]
+    ],
+    "miou_pct": 45.0660515021911,
+    "per_class": {
+      "EX": {
+        "tp": 186945,
+        "fp": 80049,
+        "fn": 103858,
+        "iou_pct": 50.40959735959358,
+        "precision": 0.7001842738039057,
+        "recall": 0.6428578797330151
+      },
+      "HE": {
+        "tp": 687309,
+        "fp": 335060,
+        "fn": 518615,
+        "iou_pct": 44.60195563354324,
+        "precision": 0.6722709706573654,
+        "recall": 0.569943877060246
+      },
+      "SE": {
+        "tp": 140850,
+        "fp": 35814,
+        "fn": 60554,
+        "iou_pct": 59.37576406512154,
+        "precision": 0.7972761853009102,
+        "recall": 0.6993406287859228
+      },
+      "MA": {
+        "tp": 26131,
+        "fp": 31698,
+        "fn": 43153,
+        "iou_pct": 25.876888950506032,
+        "precision": 0.45186671047398363,
+        "recall": 0.37715778534726635
+      }
+    }
+  },
+  "half_fusion": {
+    "counts": [
+      [
+        190793,
+        89536,
+        100010
+      ],
+      [
+        655151,
+        275582,
+        550773
+      ],
+      [
+        147594,
+        47608,
+        53810
+      ],
+      [
+        20785,
+        35938,
+        48499
+      ]
+    ],
+    "miou_pct": 43.35280231443162,
+    "per_class": {
+      "EX": {
+        "tp": 190793,
+        "fp": 89536,
+        "fn": 100010,
+        "iou_pct": 50.163932702142034,
+        "precision": 0.6806038618908496,
+        "recall": 0.6560902053967806
+      },
+      "HE": {
+        "tp": 655151,
+        "fp": 275582,
+        "fn": 550773,
+        "iou_pct": 44.221960626551635,
+        "precision": 0.7039086397495308,
+        "recall": 0.5432771882805218
+      },
+      "SE": {
+        "tp": 147594,
+        "fp": 47608,
+        "fn": 53810,
+        "iou_pct": 59.27184232085201,
+        "precision": 0.7561090562596695,
+        "recall": 0.7328255645369506
+      },
+      "MA": {
+        "tp": 20785,
+        "fp": 35938,
+        "fn": 48499,
+        "iou_pct": 19.753473608180798,
+        "precision": 0.3664298432734517,
+        "recall": 0.2999971133306391
+      }
+    }
+  },
+  "p0": {
+    "counts": [
+      [
+        184147,
+        94954,
+        106656
+      ],
+      [
+        692979,
+        424376,
+        512945
+      ],
+      [
+        138777,
+        41769,
+        62627
+      ],
+      [
+        27670,
+        34587,
+        41614
+      ]
+    ],
+    "miou_pct": 43.48770322103657,
+    "per_class": {
+      "EX": {
+        "tp": 184147,
+        "fp": 94954,
+        "fn": 106656,
+        "iou_pct": 47.73652843629539,
+        "precision": 0.6597862422563875,
+        "recall": 0.633236245843406
+      },
+      "HE": {
+        "tp": 692979,
+        "fp": 424376,
+        "fn": 512945,
+        "iou_pct": 42.50622584800344,
+        "precision": 0.6201959090888751,
+        "recall": 0.5746456658960266
+      },
+      "SE": {
+        "tp": 138777,
+        "fp": 41769,
+        "fn": 62627,
+        "iou_pct": 57.069246996993904,
+        "precision": 0.7686517563391048,
+        "recall": 0.6890478838553356
+      },
+      "MA": {
+        "tp": 27670,
+        "fp": 34587,
+        "fn": 41614,
+        "iou_pct": 26.63881160285354,
+        "precision": 0.4444480138779575,
+        "recall": 0.3993707060793257
+      }
+    }
+  }
+}

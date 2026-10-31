@@ -1,0 +1,23 @@
+{
+  "identity": {
+    "operation": "fixed_probability_fusion",
+    "left": "9994f3bd4f5e8a6456d05061cb571574c46315b6570b4fdc30a6d6c869ecdf38",
+    "right": "c0bc8cb153397c05e79d56f14ae7483267506703a5a654e7609aaf1d70373b16",
+    "weight": 0.5
+  },
+  "storage": "lazy_weighted_lossless_float32",
+  "components_cache": [
+    "/dev/shm/hrdecoder_next_20261003/work/G/current_deployment",
+    "/dev/shm/hrdecoder_next_20261003/work/G/H1_square2048_whole_ordinary"
+  ],
+  "weight": 0.5,
+  "split": "val",
+  "n_images": 76,
+  "channel_order": [
+    "EX",
+    "HE",
+    "SE",
+    "MA"
+  ],
+  "coordinates": "original_image"
+}

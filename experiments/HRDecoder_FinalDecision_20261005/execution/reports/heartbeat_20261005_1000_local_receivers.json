@@ -1,0 +1,131 @@
+{
+  "time": "2026-10-05T10:01:48.051298+00:00",
+  "nodes": {
+    "primary": {
+      "attendant_pid.json": {
+        "pid": 32844,
+        "time": "2026-10-05T04:13:41.940043+00:00",
+        "helper": "reports/primary_parallel_attendant.py"
+      },
+      "attendant_state.json": {
+        "stage": "WAITING",
+        "time": "2026-10-05T10:00:35.155146+00:00"
+      },
+      "persistent_receiver_state.json": {
+        "stage": "POOL_COMPLETED",
+        "time": "2026-10-05T10:00:35.042998+00:00",
+        "receiver_connections_opened": 2,
+        "files_received": 4,
+        "seconds": 77.5716796000197,
+        "negotiated_compression": [
+          "zlib@openssh.com",
+          "zlib@openssh.com"
+        ],
+        "max_file_receivers": 2,
+        "original_mirror_sha256": "28492fcdbd64ae0e08145274af70368726275e2bdc52dbc99fa9177b6c0e366b",
+        "all_original_SHA_and_custody_gates_used": true
+      },
+      "transfer_progress.json": {
+        "stage": "TRANSFERRING",
+        "full": false,
+        "verified_files": 2610,
+        "expected_files": 5902,
+        "verified_bytes": 252341234,
+        "expected_bytes": 266920269,
+        "updated_at": "2026-10-05T10:01:48.000336+00:00"
+      },
+      "mirror.lock": {
+        "pid": 32844,
+        "time": "2026-10-05T10:01:06.871583+00:00"
+      },
+      "process": {
+        "pid": 32844,
+        "alive": true,
+        "cmdline": [
+          "C:\\Users\\GuanXingRen\\Miniconda3\\python.exe",
+          "-u",
+          "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\execution\\reports\\primary_parallel_attendant.py"
+        ]
+      },
+      "endpoint_custody": {
+        "C_seed42_u20000": {
+          "stage": "LOCAL_SHA_VERIFIED_REMOTE_RELEASED",
+          "file_count": 77,
+          "server_instance": "connect.nmb2.seetacloud.com:36431",
+          "time": "2026-10-05T01:50:50.543239+00:00",
+          "verified_at": null
+        },
+        "S_seed42_u20000": {
+          "stage": "LOCAL_SHA_VERIFIED_REMOTE_RELEASED",
+          "file_count": 77,
+          "server_instance": "connect.nmb2.seetacloud.com:36431",
+          "time": "2026-10-05T09:24:58.992023+00:00",
+          "verified_at": null
+        }
+      }
+    },
+    "second": {
+      "attendant_pid.json": {
+        "pid": 8552,
+        "helper": "reports/parallel_node2_attendant.py",
+        "replaced_paused_pid": 24868,
+        "reason": "New-node native atomic comparison diagnosed; early gates passed and driver is healthy waiting for data",
+        "time": "2026-10-05T04:31:40.152738+00:00"
+      },
+      "attendant_state.json": {
+        "stage": "WAITING",
+        "time": "2026-10-05T10:00:47.082440+00:00"
+      },
+      "persistent_receiver_state.json": {
+        "stage": "POOL_COMPLETED",
+        "time": "2026-10-05T10:00:47.057124+00:00",
+        "receiver_connections_opened": 2,
+        "files_received": 3,
+        "seconds": 35.52778679999756,
+        "negotiated_compression": [
+          "zlib@openssh.com",
+          "zlib@openssh.com"
+        ],
+        "max_file_receivers": 2,
+        "original_mirror_sha256": "28492fcdbd64ae0e08145274af70368726275e2bdc52dbc99fa9177b6c0e366b",
+        "all_original_SHA_and_custody_gates_used": true
+      },
+      "transfer_progress.json": {
+        "stage": "TRANSFERRING",
+        "full": false,
+        "verified_files": 1563,
+        "expected_files": 2617,
+        "verified_bytes": 182499360,
+        "expected_bytes": 187267102,
+        "updated_at": "2026-10-05T10:01:48.009474+00:00"
+      },
+      "mirror.lock": {
+        "pid": 8552,
+        "time": "2026-10-05T10:01:19.108095+00:00"
+      },
+      "process": {
+        "pid": 8552,
+        "alive": true,
+        "cmdline": [
+          "C:\\Users\\GuanXingRen\\Miniconda3\\python.exe",
+          "-u",
+          "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\execution\\reports\\parallel_node2_attendant.py"
+        ]
+      },
+      "endpoint_custody": {}
+    }
+  },
+  "coordinator": {
+    "stage": "WAITING_SD_COMPLETE_SHA_CUSTODY",
+    "time": "2026-10-05T10:01:35.687780+00:00"
+  },
+  "coordinator_process": {
+    "pid": 13216,
+    "alive": true,
+    "cmdline": [
+      "C:\\Users\\GuanXingRen\\Miniconda3\\python.exe",
+      "-u",
+      "reports/parallel_single_seed_coordinator.py"
+    ]
+  }
+}

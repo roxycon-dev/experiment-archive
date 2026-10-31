@@ -1,0 +1,1 @@
+Reused oldguard structure; fixed: ISO tz-aware deadline w/ expired/>12h/naive preflight (exit 2, no shutdown on reject), real signal-handler cleanup w/ SIGKILL after 5s, atomic state write, exit 124/130/propagation, timeout/interrupt distinct from failure. Shutdown armed-only in finally. Tests dry-run only incl. process-tree grandchild kill check and no-network/creds source scan.

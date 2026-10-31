@@ -1,0 +1,151 @@
+{
+  "stage": "READ_ONLY_TRANSPORT_DIAGNOSIS",
+  "before": {
+    "time": "2026-10-05T08:36:54.047257+00:00",
+    "cpu": {
+      "user": 1089.953125,
+      "system": 4157.6875,
+      "children_user": 0.0,
+      "children_system": 0.0
+    },
+    "io": {
+      "read_count": 2085964,
+      "write_count": 822085,
+      "read_bytes": 41705701885,
+      "write_bytes": 4451921187,
+      "other_count": 65066488,
+      "other_bytes": 2484331758
+    },
+    "memory": {
+      "rss": 22605824,
+      "vms": 2091954176,
+      "num_page_faults": 2854610107,
+      "peak_wset": 877166592,
+      "wset": 22605824,
+      "peak_paged_pool": 225040,
+      "paged_pool": 224816,
+      "peak_nonpaged_pool": 107664,
+      "nonpaged_pool": 42720,
+      "pagefile": 2091954176,
+      "peak_pagefile": 2111582208,
+      "private": 2091954176
+    },
+    "threads": 14,
+    "connections": [
+      {
+        "laddr": [
+          "172.29.15.124",
+          53285
+        ],
+        "raddr": [
+          "1.27.207.179",
+          36431
+        ],
+        "status": "ESTABLISHED"
+      },
+      {
+        "laddr": [
+          "172.29.15.124",
+          56485
+        ],
+        "raddr": [
+          "1.27.207.179",
+          36431
+        ],
+        "status": "ESTABLISHED"
+      }
+    ],
+    "temps": [
+      {
+        "path": "server_results\\runs\\S_seed42\\checkpoint_u20000.pth.download",
+        "bytes": 888864768,
+        "mtime": 1791189413.9975634
+      },
+      {
+        "path": "server_results\\runs\\S_seed42\\status.json.download",
+        "bytes": 325,
+        "mtime": 1791184976.9140017
+      },
+      {
+        "path": "server_results\\runs\\S_seed42\\train.jsonl.download",
+        "bytes": 232781,
+        "mtime": 1791184977.2201583
+      }
+    ]
+  },
+  "after": {
+    "time": "2026-10-05T08:37:05.224236+00:00",
+    "cpu": {
+      "user": 1090.375,
+      "system": 4157.796875,
+      "children_user": 0.0,
+      "children_system": 0.0
+    },
+    "io": {
+      "read_count": 2085964,
+      "write_count": 822179,
+      "read_bytes": 41705701885,
+      "write_bytes": 4455001379,
+      "other_count": 65067396,
+      "other_bytes": 2484358910
+    },
+    "memory": {
+      "rss": 22773760,
+      "vms": 2091954176,
+      "num_page_faults": 2854610148,
+      "peak_wset": 877166592,
+      "wset": 22773760,
+      "peak_paged_pool": 225040,
+      "paged_pool": 224816,
+      "peak_nonpaged_pool": 107664,
+      "nonpaged_pool": 43468,
+      "pagefile": 2091954176,
+      "peak_pagefile": 2111582208,
+      "private": 2091954176
+    },
+    "threads": 14,
+    "connections": [
+      {
+        "laddr": [
+          "172.29.15.124",
+          53285
+        ],
+        "raddr": [
+          "1.27.207.179",
+          36431
+        ],
+        "status": "ESTABLISHED"
+      },
+      {
+        "laddr": [
+          "172.29.15.124",
+          56485
+        ],
+        "raddr": [
+          "1.27.207.179",
+          36431
+        ],
+        "status": "ESTABLISHED"
+      }
+    ],
+    "temps": [
+      {
+        "path": "server_results\\runs\\S_seed42\\checkpoint_u20000.pth.download",
+        "bytes": 891944960,
+        "mtime": 1791189425.1594217
+      },
+      {
+        "path": "server_results\\runs\\S_seed42\\status.json.download",
+        "bytes": 325,
+        "mtime": 1791184976.9140017
+      },
+      {
+        "path": "server_results\\runs\\S_seed42\\train.jsonl.download",
+        "bytes": 232781,
+        "mtime": 1791184977.2201583
+      }
+    ]
+  },
+  "remote_before": [],
+  "remote_after": []
+}

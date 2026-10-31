@@ -1,0 +1,27 @@
+{
+  "status": "SCREEN_REJECTED_VERIFIED",
+  "checks": {
+    "protocol_identity_consistent": true,
+    "small_core_sources_match": true,
+    "screen_protocol_unchanged": true,
+    "all_full76_raw_counts_verified": true,
+    "all_new_validation_points_reported": true,
+    "honest_rejection_without_failure_or_threshold_override": true,
+    "post_rejection_server_online_own_training_and_controller_ended": true,
+    "no_40k_or_test_claim": true
+  },
+  "identity_SHA": "4fa9d6cf18c806475d4877c34154ed15cb8e45500efe7f1e79e8dabd767758c9",
+  "mIoU_2k": 5.054378012019821,
+  "mIoU_4k": 27.737652600543726,
+  "base_mIoU_4k": 27.783389382517942,
+  "failed_decisions": [
+    "4k_floor_previous_residual4k_plus1pp",
+    "private_net_gain_over_base"
+  ],
+  "goal_achieved": false,
+  "full40000_completed": false,
+  "test_evaluated": false,
+  "deadline_extension": false,
+  "checkpoint_download": false,
+  "hash_rescan_of_dataset_cache": false
+}

@@ -1,0 +1,89 @@
+{
+  "status": "STOPPED_BY_USER",
+  "stopped_at_utc": "2026-10-08T16:14:30.397893+00:00",
+  "requested_at_utc": "2026-10-08T16:14:29.065917+00:00",
+  "protocol_completed": false,
+  "shutdown_command_issued": false,
+  "shutdown_authorized": false,
+  "server_left_running": true,
+  "checkpoints_download_requested": false,
+  "disk_checkpoints_unchanged_by_stop": true,
+  "automatic_resume_authorized": false,
+  "previous_running_record": {
+    "status": "RUNNING",
+    "pid": 4981,
+    "controller_pid": 4979,
+    "start_unix": 1791456485.222602,
+    "updates": 40000,
+    "batch": 2,
+    "canvas": 2048,
+    "shutdown_after_completion": true,
+    "shutdown_after_fatal_failure_grace_seconds": 600,
+    "resume": true,
+    "data_hash_rescan": false
+  },
+  "performance": {
+    "measured_batches": 18930,
+    "workers": 12,
+    "prefetch_factor": 1,
+    "pin_memory": true,
+    "opencv_threads_per_worker": 1,
+    "completed_update": 21930,
+    "shared_RAM_cache_bytes": 103079190214,
+    "channels_last": false,
+    "CUDA_async_next_batch": true,
+    "warmup_batches_excluded": 12,
+    "window_batches": 100,
+    "mean_step_compute_seconds": 1.004718472585082,
+    "mean_data_wait_seconds": 6.029479205608368e-05,
+    "mean_batch_seconds": 1.004778767377138,
+    "median_compute_seconds": 1.0039209313690662,
+    "estimated_40000_train_hours_excluding_validation": 11.164208526412644,
+    "peak_allocated_bytes": 16440918528,
+    "peak_reserved_bytes": 20189282304,
+    "formal_protocol_unchanged": true,
+    "time_unix": 1791476033.9849348
+  },
+  "progress": {
+    "completed": 21000,
+    "expected": 40000,
+    "best_val_mIoU": 37.988196754202605,
+    "last_validation": null
+  },
+  "target_processes": [
+    {
+      "pid": 4407,
+      "state": "S",
+      "ppid": 1,
+      "start_ticks": "5438054870",
+      "cmdline": "/root/miniconda3/envs/hrdecoder_q_20261003/bin/python -u /root/autodl-tmp/HRDecoder_v3_20261008/training_execution/ram_cache_mixed.py",
+      "cwd": "/root"
+    },
+    {
+      "pid": 10320,
+      "state": "R",
+      "ppid": 10308,
+      "start_ticks": "5440081131",
+      "cmdline": "/root/miniconda3/bin/python -u /root/autodl-tmp/HRDecoder_v3_20261008/reports/diagnostics/probe_normalization.py",
+      "cwd": "/root"
+    }
+  ],
+  "actions": [
+    {
+      "pid": 4407,
+      "signal": "SIGTERM",
+      "cmdline": "/root/miniconda3/envs/hrdecoder_q_20261003/bin/python -u /root/autodl-tmp/HRDecoder_v3_20261008/training_execution/ram_cache_mixed.py"
+    },
+    {
+      "pid": 10320,
+      "signal": "SIGTERM",
+      "cmdline": "/root/miniconda3/bin/python -u /root/autodl-tmp/HRDecoder_v3_20261008/reports/diagnostics/probe_normalization.py"
+    }
+  ],
+  "remaining_target_processes": [],
+  "gpu_compute_processes_csv": "pid, process_name, used_gpu_memory [MiB]\n",
+  "gpu_status_csv": "utilization.gpu [%], memory.used [MiB], memory.total [MiB], power.draw [W]\n0 %, 1 MiB, 24564 MiB, 21.15 W\n",
+  "gpu_query_exit_code": 0,
+  "meminfo_after_stop": "MemTotal:       1056465060 kB\nMemFree:        138215284 kB\nMemAvailable:   877277328 kB\nBuffers:          654680 kB\nCached:         816371648 kB\nSwapCached:            0 kB\nActive:         541992380 kB\nInactive:       336097484 kB\nActive(anon):   91280448 kB\nInactive(anon): 63459132 kB\nActive(file):   450711932 kB\nInactive(file): 272638352 kB\nUnevictable:       27776 kB\nMlocked:           27776 kB\nSwapTotal:             0 kB\nSwapFree:              0 kB\nDirty:               364 kB\nWriteback:             0 kB\nAnonPages:      61093300 kB\nMapped:          7499552 kB\nShmem:          93686360 kB\nKReclaimable:   21900380 kB\nSlab:           28179120 kB\nSReclaimable:   21900380 kB\nSUnreclaim:      6278740 kB\nKernelStack:      116464 kB\nPageTables:       296216 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:    528232528 kB\nCommitted_AS:   207637232 kB\nVmallocTotal:   13743895347199 kB\nVmallocUsed:      725156 kB\nVmallocChunk:          0 kB\nPercpu:           331264 kB\nHardwareCorrupted:     0 kB\nAnonHugePages:         0 kB\nShmemHugePages:        0 kB\nShmemPmdMapped:        0 kB\nFileHugePages:         0 kB\nFilePmdMapped:         0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:    360931548 kB\nDirectMap2M:    668426240 kB\nDirectMap1G:    46137344 kB\n",
+  "shutdown_hold_exists": true
+}

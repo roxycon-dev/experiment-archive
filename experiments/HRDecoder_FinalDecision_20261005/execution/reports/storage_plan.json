@@ -1,0 +1,15 @@
+{
+  "stage": "USER_AUTHORIZED_BOUNDED_ACTIVE_STORAGE",
+  "time": "2026-10-04T18:51:04.152140+00:00",
+  "user_authorized_local_cold_archive": true,
+  "authorization": "User revoked expansion, explicitly permits local offload if training is unaffected, and requests removal of useless temporary/duplicate files on C/D disks.",
+  "initial_local_free_bytes": 197009690624,
+  "local_destination": "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\execution\\server_results",
+  "remote_minimum_active_free_bytes": 8589934592,
+  "remote_initial_after_input_free_minimum_bytes": 12884901888,
+  "preserve_full_precision_and_all_required_endpoints": true,
+  "remote_release_gate": "Only immutable20k/32k endpoint checkpoint and76 probabilities after local SHA verification; preserve active last and all scripts/logs/reports. Completed redundant last removed only when SHA equals its backed-up32k endpoint.",
+  "local_duplicate_policy": "One canonical result tree; no copies into C drive; remove prepared zip only after deployment SHA receipt.",
+  "scientific_settings_changed": false,
+  "reserve_interpretation": "100GiB initial free cold storage on physical D drive; 50GiB remote disk is bounded active storage. User declined remote expansion."
+}

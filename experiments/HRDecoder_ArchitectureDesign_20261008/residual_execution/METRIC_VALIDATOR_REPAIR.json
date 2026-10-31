@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "repair_kind": "validation-only API adapter, complete76 record vs standalone base row",
+  "time_unix": 1791558540.5726144,
+  "validator_identity": {
+    "validation_helper_SHA256": "b892ad7e62304788fc37c73bc201b6ead0e19f057b75f504d343e1fde85aada4",
+    "screen_gate_code_SHA256": "c7f50ef5ec80bd2d513f2b6f451d502af19b3c0bee199eac750830575a94ed35",
+    "screen_protocol_SHA256": "71976adb5435df68274f1e9af6ccd8346d5c06f015a84151b6dcc618bfdf1da2",
+    "training_identity_SHA": "96cd1bc0ce79e9e5f5f8247958f868a4e00023f072bc6fea920092ad5a5003ec"
+  },
+  "validator_identity_SHA": "8593aab9918e15381fd62ff935704e18632718f7c895faca729ca2c3b4c7552b",
+  "original_helper_SHA256": "49680b210e0916c574238b01043fb3ac1fd79e2c8a468bb90812a542e95bb537",
+  "training_identity_SHA": "96cd1bc0ce79e9e5f5f8247958f868a4e00023f072bc6fea920092ad5a5003ec",
+  "all_core_network_forward_loss_backward_sampler_optimizer_sources_unchanged": true,
+  "original_GPU_SMOKE_still_applicable": true,
+  "GPU_SMOKE_identity_SHA": "96cd1bc0ce79e9e5f5f8247958f868a4e00023f072bc6fea920092ad5a5003ec",
+  "full_screen_gate_CPU_fixture_PASS": true,
+  "fixture_is_not_real8k_validation": true,
+  "all_metric_negative_controls_rejected": [
+    "IoU",
+    "count",
+    "missing_deployment_flag",
+    "missing_base_head",
+    "negative_count",
+    "float_count"
+  ],
+  "screen_criteria_changed": false,
+  "raw_counts_or_val_artifacts_changed": false,
+  "optimizer_updates_by_repair": 0,
+  "server_kept_running": true,
+  "external_diagnostics_controlled": false
+}

@@ -1,0 +1,189 @@
+{
+  "status": "PASS",
+  "stage": "TRAIN_CACHE_READY",
+  "images_per_member": 454,
+  "members": [
+    "A",
+    "U",
+    "S"
+  ],
+  "dtype": "float32",
+  "channel_order": [
+    "EX",
+    "HE",
+    "SE",
+    "MA"
+  ],
+  "coordinates": "original_image",
+  "teacher_predictions_are_in_sample": true,
+  "OOF": false,
+  "all_file_and_tensor_SHA_verified": true,
+  "all_lossless_roundtrips_verified": true,
+  "member_identity_sha256": {
+    "A": "0674eb8fd875187e92bc4369e6fc41eb906339acb1f2057bd1d2dcd6c6933ec1",
+    "U": "1696b6eed682e116e98b6630bd429bd49986c24323010215fa8a0b4364952aa5",
+    "S": "b9f9886b393b14c2a25863d56fdbc1f6667bfab1200410d83fd0eb223471207a"
+  },
+  "compressed_bytes": 84238071754,
+  "uncompressed_bytes": 112635312960,
+  "compression_ratio": 0.7478833195404299,
+  "data_disk_free_bytes": 31620841472,
+  "S20_locked_val_canary_parity": {
+    "sid": "007-1774-100",
+    "bitwise_equal": true,
+    "max_abs_difference": 0.0,
+    "mean_abs_difference": 0.0,
+    "threshold_disagree_pixels": 0,
+    "reference_coordinates": "original image",
+    "reference": "archived S20 EMA val cache"
+  },
+  "class_statistics": [
+    {
+      "class": "EX",
+      "valid_pixels": 2346569020,
+      "gt_positive_pixels": 5740603,
+      "du_mean": -0.0002613335573670854,
+      "ds_mean": 9.17181426247286e-06,
+      "du_mse_energy": 0.0005005719198771013,
+      "ds_mse_energy": 0.0005072211356376185,
+      "du_mean_absolute": 0.001405305796774095,
+      "ds_mean_absolute": 0.0013502934701647138,
+      "du_std": 0.02237193833016923,
+      "ds_std": 0.022521568584702122,
+      "U_probability_std": 0.04660293896277701,
+      "S_probability_std": 0.04733231055919758,
+      "du_positive_fraction": 0.008016015228906414,
+      "du_negative_fraction": 0.9919319138543813,
+      "ds_positive_fraction": 0.003409402379308664,
+      "ds_negative_fraction": 0.9965904625298428,
+      "opposite_sign_fraction": 0.008096711342417705,
+      "covariance": [
+        [
+          0.0005005036246488951,
+          -1.733462787105141e-05
+        ],
+        [
+          -1.733462787105141e-05,
+          0.0005072210515154416
+        ]
+      ],
+      "covariance_eigenvalues": [
+        0.0004862053202321835,
+        0.0005215193559321532
+      ],
+      "covariance_rank_relative_tolerance_1e_minus6": 2,
+      "images_with_gt_positive": 303
+    },
+    {
+      "class": "HE",
+      "valid_pixels": 2346569020,
+      "gt_positive_pixels": 8863815,
+      "du_mean": -0.0008844355148392736,
+      "ds_mean": -0.0007570138488730207,
+      "du_mse_energy": 0.0008532834163218992,
+      "ds_mse_energy": 0.0007095881177745733,
+      "du_mean_absolute": 0.0023731385937458506,
+      "ds_mean_absolute": 0.0020984535638807244,
+      "du_std": 0.02919762302212271,
+      "ds_std": 0.026627336476020048,
+      "U_probability_std": 0.058699588714963745,
+      "S_probability_std": 0.05712179522482004,
+      "du_positive_fraction": 0.03476330561970856,
+      "du_negative_fraction": 0.9651458881870008,
+      "ds_positive_fraction": 0.005344230616323401,
+      "ds_negative_fraction": 0.9946551425110011,
+      "opposite_sign_fraction": 0.03576981341038927,
+      "covariance": [
+        [
+          0.0008525011901419901,
+          2.5965084420496475e-05
+        ],
+        [
+          2.5965084420496475e-05,
+          0.0007090150478071878
+        ]
+      ],
+      "covariance_eigenvalues": [
+        0.000704460977026189,
+        0.000857055260922989
+      ],
+      "covariance_rank_relative_tolerance_1e_minus6": 2,
+      "images_with_gt_positive": 366
+    },
+    {
+      "class": "SE",
+      "valid_pixels": 2346569020,
+      "gt_positive_pixels": 1327424,
+      "du_mean": -0.0007971177617261425,
+      "ds_mean": -0.0006169186110100961,
+      "du_mse_energy": 0.00020548562682596767,
+      "ds_mse_energy": 0.00011840641055628542,
+      "du_mean_absolute": 0.001090179079178852,
+      "ds_mean_absolute": 0.0008335872404103634,
+      "du_std": 0.014312589915871563,
+      "ds_std": 0.01086396897932219,
+      "U_probability_std": 0.02389861753893706,
+      "S_probability_std": 0.02372781364965609,
+      "du_positive_fraction": 0.001412406356579275,
+      "du_negative_fraction": 0.9985856026514831,
+      "ds_positive_fraction": 0.0006046789964013077,
+      "ds_negative_fraction": 0.9993953205774446,
+      "opposite_sign_fraction": 0.0011673928943287592,
+      "covariance": [
+        [
+          0.00020485023009990836,
+          1.496036248871738e-05
+        ],
+        [
+          1.496036248871738e-05,
+          0.00011802582198367479
+        ]
+      ],
+      "covariance_eigenvalues": [
+        0.00011552036160883731,
+        0.00020735569047474584
+      ],
+      "covariance_rank_relative_tolerance_1e_minus6": 2,
+      "images_with_gt_positive": 143
+    },
+    {
+      "class": "MA",
+      "valid_pixels": 2346569020,
+      "gt_positive_pixels": 527407,
+      "du_mean": -5.381112081190628e-05,
+      "ds_mean": -0.00010573033728242002,
+      "du_mse_energy": 0.00017040607616905667,
+      "ds_mse_energy": 0.00012763845877017337,
+      "du_mean_absolute": 0.0003388502799535465,
+      "ds_mean_absolute": 0.00029856421507416824,
+      "du_std": 0.013053856921704545,
+      "ds_std": 0.011297224431954581,
+      "U_probability_std": 0.01599215971906935,
+      "S_probability_std": 0.01434460449440694,
+      "du_positive_fraction": 0.09263860050449316,
+      "du_negative_fraction": 0.9030408694307231,
+      "ds_positive_fraction": 0.00031368606409028617,
+      "ds_negative_fraction": 0.9996860599480684,
+      "opposite_sign_fraction": 0.09270579179469436,
+      "covariance": [
+        [
+          0.00017040318053233364,
+          1.4346690672777964e-06
+        ],
+        [
+          1.4346690672777964e-06,
+          0.00012762727986595152
+        ]
+      ],
+      "covariance_eigenvalues": [
+        0.0001275792162322771,
+        0.00017045124416600806
+      ],
+      "covariance_rank_relative_tolerance_1e_minus6": 2,
+      "images_with_gt_positive": 338
+    }
+  ],
+  "seconds": 4424.3292901990935,
+  "no_training_performed": true,
+  "interpretation": "Contrast energy/rank verifies targets exist; it does not prove useful knowledge, generalization or improvement."
+}

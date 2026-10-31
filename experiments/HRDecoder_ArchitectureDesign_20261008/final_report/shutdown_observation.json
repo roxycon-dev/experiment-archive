@@ -1,0 +1,17 @@
+{
+  "status": "SHUTDOWN_REQUESTED_SSH_UNREACHABLE",
+  "requested_at": "2026-10-10T17:18:45.235789+08:00",
+  "identity_SHA": "49ee0537d2802450284844a32405a6da0116ee9b77c2ab519aa9f985d15d47d4",
+  "terminal_status": "SCREEN_REJECTED",
+  "local_receipts_archived": true,
+  "local_report_saved": true,
+  "command": "/bin/bash /usr/bin/shutdown",
+  "shutdown_command_issued": true,
+  "platform_poweroff_verified": false,
+  "external_diagnostic_processes_individually_controlled": false,
+  "SSH_transport_active_after_command": false,
+  "command_exit_code": 0,
+  "SSH_reconnect_succeeded": false,
+  "connection_error": "NoValidConnectionsError: [Errno None] Unable to connect to port 11347 on 116.136.52.182",
+  "observed_at": "2026-10-10T17:18:49.535651+08:00"
+}

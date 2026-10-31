@@ -1,0 +1,111 @@
+{
+  "stage": "NATIVE_BACKWARD_VARIATION_WITHOUT_SERIALIZATION_REPRODUCED",
+  "arm": "S",
+  "forward_and_loss": "EXACT",
+  "checkpoint_file_sha256": "9d3c033bfa1bebfbba4f23eccfa4dc3f0d621cc2e08ff86094036522347c0531",
+  "largest_differences": [
+    {
+      "path": "state/1/state/298/exp_avg",
+      "max_abs": 1.7007550923153758e-10,
+      "mismatch": 1
+    },
+    {
+      "path": "state/1/state/323/exp_avg",
+      "max_abs": 1.1641532182693481e-10,
+      "mismatch": 9
+    },
+    {
+      "path": "state/0/spatial.interactions.1.extract_patch_norm.bias",
+      "max_abs": 6.021849685566849e-11,
+      "mismatch": 3
+    },
+    {
+      "path": "state/1/state/326/exp_avg",
+      "max_abs": 5.820766091346741e-11,
+      "mismatch": 2
+    },
+    {
+      "path": "state/1/state/353/exp_avg",
+      "max_abs": 5.820766091346741e-11,
+      "mismatch": 3
+    },
+    {
+      "path": "state/0/spatial.interactions.3.extract_patch_norm.bias",
+      "max_abs": 4.18580725636275e-11,
+      "mismatch": 7
+    },
+    {
+      "path": "state/1/state/341/exp_avg",
+      "max_abs": 2.9103830456733704e-11,
+      "mismatch": 6
+    },
+    {
+      "path": "state/1/state/324/exp_avg",
+      "max_abs": 1.4551915228366852e-11,
+      "mismatch": 3
+    },
+    {
+      "path": "state/1/state/329/exp_avg",
+      "max_abs": 1.4551915228366852e-11,
+      "mismatch": 3
+    },
+    {
+      "path": "state/1/state/354/exp_avg",
+      "max_abs": 1.0913936421275139e-11,
+      "mismatch": 2
+    },
+    {
+      "path": "state/1/state/327/exp_avg",
+      "max_abs": 7.275957614183426e-12,
+      "mismatch": 1
+    },
+    {
+      "path": "state/1/state/330/exp_avg",
+      "max_abs": 7.275957614183426e-12,
+      "mismatch": 1
+    },
+    {
+      "path": "state/1/state/347/exp_avg",
+      "max_abs": 7.275957614183426e-12,
+      "mismatch": 4
+    },
+    {
+      "path": "state/1/state/348/exp_avg",
+      "max_abs": 3.637978807091713e-12,
+      "mismatch": 3
+    },
+    {
+      "path": "state/1/state/342/exp_avg",
+      "max_abs": 9.094947017729282e-13,
+      "mismatch": 1
+    },
+    {
+      "path": "state/1/state/249/exp_avg",
+      "max_abs": 3.3169300639457333e-13,
+      "mismatch": 3
+    },
+    {
+      "path": "state/1/state/281/exp_avg",
+      "max_abs": 3.316791286067655e-13,
+      "mismatch": 7
+    },
+    {
+      "path": "state/1/state/213/exp_avg",
+      "max_abs": 1.658430337503347e-13,
+      "mismatch": 12
+    },
+    {
+      "path": "state/1/state/197/exp_avg",
+      "max_abs": 1.6584129902685874e-13,
+      "mismatch": 3
+    },
+    {
+      "path": "state/1/state/280/exp_avg",
+      "max_abs": 6.993017276357705e-14,
+      "mismatch": 7
+    }
+  ],
+  "checkpoint_roundtrip_not_the_cause": true,
+  "formal_updates": 0,
+  "time": "2026-10-05T04:26:35.214838+00:00"
+}

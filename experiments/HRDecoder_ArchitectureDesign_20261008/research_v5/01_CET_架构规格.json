@@ -1,0 +1,136 @@
+{
+  "version": 5,
+  "name": "HRDecoder-CET",
+  "date": "2026-10-09",
+  "status": "architecture_and_training_proposal_only_untrained",
+  "normative_document": "00_HRDecoder_CET_架构与训练方案.md",
+  "initialization": {
+    "backbone": "original ImageNet HRNet-W48",
+    "sha256": "d2186c55782308392ae14cf179ac4840143b09abdbba81aa3f9274c795ebc960",
+    "base_seed": 42,
+    "private_seed": 20261008,
+    "task_checkpoint": false
+  },
+  "architecture": {
+    "shared_backbone_calls": 1,
+    "canvas": 2048,
+    "backbone_canvas": 1024,
+    "anchor": "original HRDecoder p0=sigmoid(z0)",
+    "private_representations": "unchanged v3 LocalPath and GlobalPath; no teacher-specific clone assignment",
+    "head_input": "L32 + G32 + PixelUnshuffle4(stop_gradient(p0))64 at stride4",
+    "head": [
+      "1x1Conv128to64 no_bias + channelLayerNorm + GELU",
+      "ResidualBlock64 depthwise3 expansion2",
+      "1x1Conv64to192 with_bias + PixelShuffle4",
+      "reshape to4classes x3actions; FP32 softmax"
+    ],
+    "actions": [
+      "keep",
+      "on",
+      "off"
+    ],
+    "output": "P=pi_keep*p0+pi_on",
+    "output_initialization": {
+      "weight": 0,
+      "action_probabilities": [
+        0.98,
+        0.01,
+        0.01
+      ]
+    },
+    "new_parameters_analytic": 6416576,
+    "total_parameters_analytic": 71988996,
+    "new_MAC_2048_batch1_analytic": 43891294208,
+    "cost_scope": "excludes original model and non-MAC operations; CET runtime not tested"
+  },
+  "teachers": {
+    "members": [
+      "A old HR ensemble including H4",
+      "U ConvNeXt U0",
+      "S DINOv3 S20 EMA"
+    ],
+    "T_weights": [
+      0.5625,
+      0.1875,
+      0.25
+    ],
+    "training_cache_only": true,
+    "OOF": false
+  },
+  "targets": {
+    "C_plus": "GT1 and T<=.5 and max(A,U,S)>.5",
+    "C_minus": "GT0 and T>.5 and min(A,U,S)<=.5",
+    "C_zero": "T hard decision matches GT",
+    "C_unknown": "T and every member hard decision incorrect; exclude action KD",
+    "pi_on_star": "(qmax-T)/(1-T) only on C_plus; zero elsewhere",
+    "pi_off_star": "(T-qmin)/T only on C_minus; zero elsewhere",
+    "pi_keep_star": "1-pi_on_star-pi_off_star",
+    "T_star": "pi_keep_star*T+pi_on_star",
+    "oracle_usage": "train labels only; not an evaluable deployed teacher; no target or GT input at inference"
+  },
+  "losses": {
+    "G": "presence-masked squared Dice + .25*(positive-mean BCE + negative-mean BCE), valid sample/class macro",
+    "GT": ".75G(P)+.25G(p0)+.1G(HRcrop)",
+    "K": "GT hard-decision consistent Bernoulli KL, denominator all valid pixels",
+    "task": "GT + lambda_K*(K(P,T_star)+.25K(p0,T))",
+    "action": ".25*lambda_K*macro_valid_pair[sum(mean_C_plus_KL,mean_C_minus_KL,mean_C_zero_KL)/3]; absent group zero; fixed denominator3",
+    "gradient_route": "task to all parameters; action only L/G/head via selected parameter gradients",
+    "lambda_K": [
+      [
+        0,
+        0
+      ],
+      [
+        1500,
+        0
+      ],
+      [
+        4000,
+        0.5
+      ],
+      [
+        32000,
+        0.5
+      ],
+      [
+        40000,
+        0.1
+      ]
+    ]
+  },
+  "training": {
+    "updates": 40000,
+    "batch": 2,
+    "optimizer": "SGD",
+    "lr": 0.005,
+    "momentum": 0.9,
+    "weight_decay": 0.0005,
+    "warmup": 1500,
+    "warmup_ratio": 1e-06,
+    "poly_power": 1,
+    "data": "454train76val227test",
+    "image_exposure_and_augmentation": "same original v3 protocol",
+    "precision": "network BF16; probabilities and losses FP32",
+    "optimizer_steps_per_update": 1
+  },
+  "inference": "resize z0 and action logits separately to original image; sigmoid/softmax then transport; strict>.5; no teacher/no onlineH4/noTTA",
+  "validation_status": {
+    "new_training_started": false,
+    "CET_runtime_tested": false,
+    "CET_accuracy_known": false,
+    "additional_checks": "not performed per user request"
+  },
+  "main_controls_for_future_study": [
+    "loss-repaired HRDecoder+T KD",
+    "v4 fixed three-head probabilities",
+    "CET without action supervision",
+    "same-capacity ordinary student with T_star target but without CET"
+  ],
+  "limitations": [
+    "conditional algebra is not observed improvement",
+    "in-sample teacher targets and target coverage generalization unknown",
+    "capacity sufficiency unproven",
+    "newness and top-journal suitability not established",
+    "custom split cannot establish official-paper superiority"
+  ]
+}

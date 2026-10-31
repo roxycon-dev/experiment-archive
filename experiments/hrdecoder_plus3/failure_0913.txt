@@ -1,0 +1,7 @@
+{"phase": "complete", "exitcode": 3}{
+  "status": "error",
+  "error": "ValueError('persistent_workers option needs num_workers > 0')"
+}/root/miniconda3/lib/python3.8/site-packages/mmcv/__init__.py:20: UserWarning: On January 1, 2023, MMCV will release v2.0.0, in which it will remove components related to the training process and add a data transformation module. In addition, it will rename the package names mmcv to mmcv-lite and mmcv-full to mmcv. See https://github.com/open-mmlab/mmcv/blob/master/docs/en/compatibility.md for more details.
+  warnings.warn(
+2026-09-13 00:26:01,678 - mmseg - INFO - Loaded 454 images from ./data/DDR_split_613/images/train
+{"started_unix": 1789230352.2672043, "deadline": "2026-09-13T08:00:00+08:00", "command": ["/root/miniconda3/bin/python", "/root/autodl-tmp/hrplus/ops/run_stage.py", "--repo", "/root/autodl-tmp/hrplus/repo", "--config", "/root/autodl-tmp/hrplus/repo/configs/lesion/exp/hrplus_patch_dice.py", "--work-dir", "/root/autodl-tmp/hrplus/D_0913"], "execute_shutdown": true, "status": "failure", "returncode": 3, "deadline_unix": 1789257600.0, "preflight_seconds": 27247.73279, "pid": 1150, "ended_unix": 1789230363.2801173}

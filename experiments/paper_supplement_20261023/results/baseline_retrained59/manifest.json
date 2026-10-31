@@ -1,0 +1,191 @@
+{
+  "scope": "newly_retrained_baseline_not_recovered_historical42.20",
+  "job": {
+    "kind": "baseline",
+    "checkpoint_path": "/home/studentuser001/paper_supplement_20261023/baseline_v1/runs/baseline_seed42/best_mIoU_iter_16000.pth",
+    "checkpoint_sha256": "02bb7a4a28120b565516d287160985135a84dc6142cc09929d2d975330a21372",
+    "selected_node": 16000,
+    "training_finished_at": 40000,
+    "selected_by": "Original validation mIoU hook, never test",
+    "config_sha256": "9b06a0bf3871aeccf7f9a019a70cfe000198faecf6b8f04994583fd690f52052",
+    "all_validation_records": [
+      {
+        "training_node": 4000,
+        "original_log_record": {
+          "mode": "val",
+          "epoch": 18,
+          "iter": 38,
+          "lr": 0.0045,
+          "mIoU": 0.20563,
+          "mF1": 0.30716,
+          "mPPV": 0.33953,
+          "mS": 0.40342,
+          "mAUPR": 0.30353,
+          "mMAE": 0.17939
+        },
+        "log": "20261023_192737.log.json"
+      },
+      {
+        "training_node": 8000,
+        "original_log_record": {
+          "mode": "val",
+          "epoch": 36,
+          "iter": 38,
+          "lr": 0.004,
+          "mIoU": 0.30225,
+          "mF1": 0.43407,
+          "mPPV": 0.51617,
+          "mS": 0.43663,
+          "mAUPR": 0.4638,
+          "mMAE": 0.04495
+        },
+        "log": "20261023_192737.log.json"
+      },
+      {
+        "training_node": 12000,
+        "original_log_record": {
+          "mode": "val",
+          "epoch": 53,
+          "iter": 38,
+          "lr": 0.0035,
+          "mIoU": 0.36907,
+          "mF1": 0.53055,
+          "mPPV": 0.58122,
+          "mS": 0.49777,
+          "mAUPR": 0.54568,
+          "mMAE": 0.00206
+        },
+        "log": "20261023_192737.log.json"
+      },
+      {
+        "training_node": 16000,
+        "original_log_record": {
+          "mode": "val",
+          "epoch": 71,
+          "iter": 38,
+          "lr": 0.003,
+          "mIoU": 0.3793,
+          "mF1": 0.54123,
+          "mPPV": 0.61707,
+          "mS": 0.48552,
+          "mAUPR": 0.55479,
+          "mMAE": 0.0019
+        },
+        "log": "20261023_192737.log.json"
+      },
+      {
+        "training_node": 20000,
+        "original_log_record": {
+          "mode": "val",
+          "epoch": 89,
+          "iter": 38,
+          "lr": 0.0025,
+          "mIoU": 0.377,
+          "mF1": 0.53927,
+          "mPPV": 0.55087,
+          "mS": 0.53117,
+          "mAUPR": 0.54534,
+          "mMAE": 0.00217
+        },
+        "log": "20261023_192737.log.json"
+      },
+      {
+        "training_node": 24000,
+        "original_log_record": {
+          "mode": "val",
+          "epoch": 106,
+          "iter": 38,
+          "lr": 0.002,
+          "mIoU": 0.33124,
+          "mF1": 0.48258,
+          "mPPV": 0.46132,
+          "mS": 0.52285,
+          "mAUPR": 0.48088,
+          "mMAE": 0.00245
+        },
+        "log": "20261023_192737.log.json"
+      },
+      {
+        "training_node": 28000,
+        "original_log_record": {
+          "mode": "val",
+          "epoch": 124,
+          "iter": 38,
+          "lr": 0.0015,
+          "mIoU": 0.37284,
+          "mF1": 0.53476,
+          "mPPV": 0.54283,
+          "mS": 0.53086,
+          "mAUPR": 0.54136,
+          "mMAE": 0.00193
+        },
+        "log": "20261023_192737.log.json"
+      },
+      {
+        "training_node": 32000,
+        "original_log_record": {
+          "mode": "val",
+          "epoch": 141,
+          "iter": 38,
+          "lr": 0.001,
+          "mIoU": 0.34349,
+          "mF1": 0.49808,
+          "mPPV": 0.5118,
+          "mS": 0.50133,
+          "mAUPR": 0.50557,
+          "mMAE": 0.00222
+        },
+        "log": "20261023_192737.log.json"
+      },
+      {
+        "training_node": 36000,
+        "original_log_record": {
+          "mode": "val",
+          "epoch": 159,
+          "iter": 38,
+          "lr": 0.0005,
+          "mIoU": 0.35362,
+          "mF1": 0.51353,
+          "mPPV": 0.51112,
+          "mS": 0.52286,
+          "mAUPR": 0.5308,
+          "mMAE": 0.00211
+        },
+        "log": "20261023_192737.log.json"
+      },
+      {
+        "training_node": 40000,
+        "original_log_record": {
+          "mode": "val",
+          "epoch": 177,
+          "iter": 38,
+          "lr": 0.0,
+          "mIoU": 0.3787,
+          "mF1": 0.53988,
+          "mPPV": 0.55876,
+          "mS": 0.52236,
+          "mAUPR": 0.54596,
+          "mMAE": 0.00199
+        },
+        "log": "20261023_192737.log.json"
+      }
+    ],
+    "endpoint_checkpoint_sha256": "256035ecfc6e7f7197b142104ed2195869d3766ffa342a7bdab2a2e625e3d40e"
+  },
+  "torch": "2.0.1+cu117",
+  "CUDA": "11.7",
+  "GPU": "NVIDIA GeForce RTX 2080 Ti",
+  "script_sha256": "9d9f05cd4c786e2d602c653a50d6b85d5a37f3c615385728b250ea38d2a96874",
+  "helper_sha256": "143c70c61c7881b0203ebb7a053dd5df115a11588c6e6af239900be5d9a3094b",
+  "precision": "FP32",
+  "threshold": 0.5,
+  "strict_greater": true,
+  "channels": [
+    "EX",
+    "HE",
+    "SE",
+    "MA"
+  ],
+  "protocol_sha256": "1adda5560edd53d8c6eeac42d0968b111db33bb8e94959db8fe91d082973cfbe",
+  "inference": "Original2048 square test_pipeline, single whole inference, sigmoid after native-coordinate logit interpolation; no TTA"
+}

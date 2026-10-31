@@ -1,0 +1,141 @@
+{
+  "suite": "geometry_tiling",
+  "tile": 1024,
+  "stride": 768,
+  "n_cases": 18,
+  "overall_status": "PASS",
+  "results": [
+    {
+      "case": "G1/G2 1x1",
+      "const": true,
+      "ramp": true,
+      "spot": true,
+      "coverage": true,
+      "status": "PASS"
+    },
+    {
+      "case": "G1/G2 767x767",
+      "const": true,
+      "ramp": true,
+      "spot": true,
+      "coverage": true,
+      "status": "PASS"
+    },
+    {
+      "case": "G1/G2 768x768",
+      "const": true,
+      "ramp": true,
+      "spot": true,
+      "coverage": true,
+      "status": "PASS"
+    },
+    {
+      "case": "G1/G2 769x769",
+      "const": true,
+      "ramp": true,
+      "spot": true,
+      "coverage": true,
+      "status": "PASS"
+    },
+    {
+      "case": "G1/G2 1023x1023",
+      "const": true,
+      "ramp": true,
+      "spot": true,
+      "coverage": true,
+      "status": "PASS"
+    },
+    {
+      "case": "G1/G2 1024x1024",
+      "const": true,
+      "ramp": true,
+      "spot": true,
+      "coverage": true,
+      "status": "PASS"
+    },
+    {
+      "case": "G1/G2 1025x1025",
+      "const": true,
+      "ramp": true,
+      "spot": true,
+      "coverage": true,
+      "status": "PASS"
+    },
+    {
+      "case": "G1/G2 1792x1792",
+      "const": true,
+      "ramp": true,
+      "spot": true,
+      "coverage": true,
+      "status": "PASS"
+    },
+    {
+      "case": "G1/G2 1793x1793",
+      "const": true,
+      "ramp": true,
+      "spot": true,
+      "coverage": true,
+      "status": "PASS"
+    },
+    {
+      "case": "G1/G2 2048x2048",
+      "const": true,
+      "ramp": true,
+      "spot": true,
+      "coverage": true,
+      "status": "PASS"
+    },
+    {
+      "case": "G1/G2 2049x2049",
+      "const": true,
+      "ramp": true,
+      "spot": true,
+      "coverage": true,
+      "status": "PASS"
+    },
+    {
+      "case": "G1/G2 769x1025",
+      "const": true,
+      "ramp": true,
+      "spot": true,
+      "coverage": true,
+      "status": "PASS"
+    },
+    {
+      "case": "G1/G2 1025x769",
+      "const": true,
+      "ramp": true,
+      "spot": true,
+      "coverage": true,
+      "status": "PASS"
+    },
+    {
+      "case": "G1/G2 513x1501",
+      "const": true,
+      "ramp": true,
+      "spot": true,
+      "coverage": true,
+      "status": "PASS"
+    },
+    {
+      "case": "G8 权重1与3归一相同",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "case": "G8 同模型复制等价",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "case": "G8 输入线性（缩放 7 倍）",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "case": "G8 负权重拒绝（§7.4 要求）",
+      "status": "PASS",
+      "note": "真实缺口：blend_probs 不拒绝负权重；ops_eval_ens.py 也不校验权重符号/总和。修复位置应在评估器的权重解析处。"
+    }
+  ]
+}

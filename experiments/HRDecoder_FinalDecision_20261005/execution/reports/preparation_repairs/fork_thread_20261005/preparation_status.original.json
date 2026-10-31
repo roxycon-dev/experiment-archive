@@ -1,0 +1,19 @@
+{
+  "stage": "LOCAL_READY_SERVER_ASSIGNED_GPU_GATE_PENDING",
+  "time": "2026-10-04T20:07:42.134278+00:00",
+  "data_acceptance": "PASS",
+  "cpu_architecture_acceptance": "PASS",
+  "packed_geometry_acceptance": "PASS",
+  "saved_streams": "READY",
+  "source_sha256": "d97c2c25f965dfa8b464e7876103eb125b67521382e952e0b974b59e07f26606",
+  "paid_gpu_started": false,
+  "server_assigned": true,
+  "remaining_server_gates": [
+    "native1024 and parent fullval",
+    "CUDA kernel/reference forward/backward",
+    "full trainable gradients and EMA/RNG resume",
+    "100complete updates and fullval timing per C/S/D/SD",
+    "audited100GiB initial local reserve and bounded remote endpoint custody",
+    "verified P0/R identity"
+  ]
+}

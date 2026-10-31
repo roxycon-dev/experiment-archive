@@ -1,0 +1,52 @@
+{
+  "status": "FROZEN_BEFORE_NEW_TRAINING",
+  "date": "2026-10-23",
+  "authority": "User explicitly requested four new paired-seed runs and retraining the missing original baseline; both supplied servers authorized; no long training locally.",
+  "new_adaptation_seeds": [2024, 3407],
+  "adaptation_arms": ["C", "S"],
+  "adaptation_runs": 4,
+  "common_parent": {
+    "full_checkpoint_sha256": "68d7b5821fab1210b3336cf2a63b9de893f24fc32876f5255d7d662084b5e728",
+    "name": "F12_seed42 checkpoint_u12000",
+    "state": "raw model, exactly as historical C_seed42 and S_seed42 initialization",
+    "fresh_optimizer_and_EMA": true,
+    "interpretation": "Adaptation variability conditional on one fixed parent; not independent end-to-end training lineages"
+  },
+  "adaptation_training": {
+    "schedule_horizon": 32000,
+    "fixed_comparison_update": 20000,
+    "scheduler": "Exact archived schedule.py, 500-update warmup and original 32k cosine horizon; do not shorten horizon to20k",
+    "optimizer_loss_EMA": "Unmodified archived schedule.py, engine.py, state.py and qlib/loss.py",
+    "DDR_windows_per_update": 8,
+    "microbatch": 2,
+    "accumulation": 4,
+    "precision": "BF16 forward; FP32 masked loss and MSDA",
+    "data_stream": "Archived draw_row(seed,update,slot), slots0-3 uniform and4-7 EX/HE/SE/MA foreground. Same saved rows for C/S of each seed.",
+    "forward_RNG": "Unmodified archived random_streams.py, separates source/update/micro and module initialization",
+    "geometry": "1024 window,768 supervised center,128 halo, original pixels",
+    "checkpoint_policy": "Full model/optimizer/EMA/scheduler/RNG/next-stream identity at resource benchmark100 and every1000 updates; fixed20k endpoint",
+    "benchmark": "First100 formal updates on each C/S path retained and resumed exactly, not discarded exploratory training",
+    "selection": "No per-seed best checkpoint, threshold search, blend search, early winner selection or external cohort tuning"
+  },
+  "baseline": {
+    "architecture": "Original HRDecoder HRNet-W48, simple fusion, no extra modules",
+    "configuration_authority": "Exact config text in first JSON record of D:/dataset/lesion_segmentation/实验日志_json/01_板块一_baseline.json, not the subsequently modified exp/baseline_split613.py",
+    "seed": 42,
+    "updates": 40000,
+    "learning_rate_schedule": "Original40k poly with1500warmup",
+    "global_batch": 2,
+    "checkpoint_selection": "Best validation mIoU at4000-step nodes, preserving all node scores; never test selection",
+    "pretraining": "Original ImageNet HRNet-W48 asset, not a trained expert",
+    "precision_resource_gate": "Prefer original FP32. On11GB2080Ti, benchmark standard FP16 only if needed; disclose any such runtime change, preserve batch/geometry/loss, otherwise use32GB server. No reduced-resolution or batch substitution.",
+    "identity": "New reproduction baseline; cannot claim recovered historical42.20 model or identical score"
+  },
+  "evaluation": {
+    "data": "Same frozen DDR454/76/227 identities; existing IDRiD27 history and labels unchanged",
+    "adaptation_primary": "20k EMA S-C per seed, single model and fixed25percent system fusion",
+    "reference_seed42": "Existing20k C/S re-evaluated with the same runtime/protocol when comparing all three pairs",
+    "baseline_outputs": "DDR227 and IDRiD27 original-coordinate masks/counts, four-class IoU/mIoU/MA pixelP/R, MA lesion size/detection/FP and actual inference cost",
+    "uncertainty": "Report3paired seed outcomes individually and mean/SD. Image bootstrap distinct from seed variation; no patient-level claim.",
+    "all_outcomes_reported": true
+  },
+  "shutdown": "Keep servers on per latest user instruction; no automatic shutdown. No unrelated workload to fill GPU time."
+}

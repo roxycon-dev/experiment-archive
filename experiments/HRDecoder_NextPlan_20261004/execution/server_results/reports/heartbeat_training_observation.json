@@ -1,0 +1,44 @@
+{
+  "time": "2026-10-04T14:53:38.003911+00:00",
+  "run": "F12_seed42",
+  "recent_updates": [
+    8500,
+    8520,
+    8540,
+    8560,
+    8580,
+    8600,
+    8620,
+    8640,
+    8660,
+    8680
+  ],
+  "finite": true,
+  "mean_update_seconds": 0.528119383752346,
+  "mean_data_wait_seconds": 0.0013248242437839508,
+  "status": {
+    "stage": "TRAINING",
+    "completed": 8680,
+    "endpoint": 12000,
+    "updated_at": "2026-10-04T14:53:34.822579+00:00"
+  },
+  "completed_validation_nodes": {
+    "2000": {
+      "single": 39.50884487969024,
+      "fixed_fusion": 44.27339851463587,
+      "half_fusion": 41.258431652661486
+    },
+    "4000": {
+      "single": 36.62149565918677,
+      "fixed_fusion": 44.3897144059159,
+      "half_fusion": 40.035864050187584
+    },
+    "8000": {
+      "single": 40.10719543776794,
+      "fixed_fusion": 44.66402843497286,
+      "half_fusion": 41.912300331631144
+    }
+  },
+  "promotion_formulas": [],
+  "catastrophic_stop": false
+}

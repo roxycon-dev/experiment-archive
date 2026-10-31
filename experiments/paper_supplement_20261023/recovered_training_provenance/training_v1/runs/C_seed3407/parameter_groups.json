@@ -1,0 +1,310 @@
+{
+  "embedding_cls_register:decay=True": [
+    "backbone.cls_token",
+    "backbone.storage_tokens",
+    "backbone.patch_embed.proj.weight"
+  ],
+  "embedding_cls_register:decay=False": [
+    "backbone.patch_embed.proj.bias"
+  ],
+  "block0:decay=False": [
+    "backbone.blocks.0.norm1.weight",
+    "backbone.blocks.0.norm1.bias",
+    "backbone.blocks.0.attn.qkv.bias",
+    "backbone.blocks.0.attn.proj.bias",
+    "backbone.blocks.0.norm2.weight",
+    "backbone.blocks.0.norm2.bias",
+    "backbone.blocks.0.mlp.fc1.bias",
+    "backbone.blocks.0.mlp.fc2.bias"
+  ],
+  "block0:decay=True": [
+    "backbone.blocks.0.attn.qkv.weight",
+    "backbone.blocks.0.attn.proj.weight",
+    "backbone.blocks.0.ls1.gamma",
+    "backbone.blocks.0.mlp.fc1.weight",
+    "backbone.blocks.0.mlp.fc2.weight",
+    "backbone.blocks.0.ls2.gamma"
+  ],
+  "block1:decay=False": [
+    "backbone.blocks.1.norm1.weight",
+    "backbone.blocks.1.norm1.bias",
+    "backbone.blocks.1.attn.qkv.bias",
+    "backbone.blocks.1.attn.proj.bias",
+    "backbone.blocks.1.norm2.weight",
+    "backbone.blocks.1.norm2.bias",
+    "backbone.blocks.1.mlp.fc1.bias",
+    "backbone.blocks.1.mlp.fc2.bias"
+  ],
+  "block1:decay=True": [
+    "backbone.blocks.1.attn.qkv.weight",
+    "backbone.blocks.1.attn.proj.weight",
+    "backbone.blocks.1.ls1.gamma",
+    "backbone.blocks.1.mlp.fc1.weight",
+    "backbone.blocks.1.mlp.fc2.weight",
+    "backbone.blocks.1.ls2.gamma"
+  ],
+  "block2:decay=False": [
+    "backbone.blocks.2.norm1.weight",
+    "backbone.blocks.2.norm1.bias",
+    "backbone.blocks.2.attn.qkv.bias",
+    "backbone.blocks.2.attn.proj.bias",
+    "backbone.blocks.2.norm2.weight",
+    "backbone.blocks.2.norm2.bias",
+    "backbone.blocks.2.mlp.fc1.bias",
+    "backbone.blocks.2.mlp.fc2.bias"
+  ],
+  "block2:decay=True": [
+    "backbone.blocks.2.attn.qkv.weight",
+    "backbone.blocks.2.attn.proj.weight",
+    "backbone.blocks.2.ls1.gamma",
+    "backbone.blocks.2.mlp.fc1.weight",
+    "backbone.blocks.2.mlp.fc2.weight",
+    "backbone.blocks.2.ls2.gamma"
+  ],
+  "block3:decay=False": [
+    "backbone.blocks.3.norm1.weight",
+    "backbone.blocks.3.norm1.bias",
+    "backbone.blocks.3.attn.qkv.bias",
+    "backbone.blocks.3.attn.proj.bias",
+    "backbone.blocks.3.norm2.weight",
+    "backbone.blocks.3.norm2.bias",
+    "backbone.blocks.3.mlp.fc1.bias",
+    "backbone.blocks.3.mlp.fc2.bias"
+  ],
+  "block3:decay=True": [
+    "backbone.blocks.3.attn.qkv.weight",
+    "backbone.blocks.3.attn.proj.weight",
+    "backbone.blocks.3.ls1.gamma",
+    "backbone.blocks.3.mlp.fc1.weight",
+    "backbone.blocks.3.mlp.fc2.weight",
+    "backbone.blocks.3.ls2.gamma"
+  ],
+  "block4:decay=False": [
+    "backbone.blocks.4.norm1.weight",
+    "backbone.blocks.4.norm1.bias",
+    "backbone.blocks.4.attn.qkv.bias",
+    "backbone.blocks.4.attn.proj.bias",
+    "backbone.blocks.4.norm2.weight",
+    "backbone.blocks.4.norm2.bias",
+    "backbone.blocks.4.mlp.fc1.bias",
+    "backbone.blocks.4.mlp.fc2.bias"
+  ],
+  "block4:decay=True": [
+    "backbone.blocks.4.attn.qkv.weight",
+    "backbone.blocks.4.attn.proj.weight",
+    "backbone.blocks.4.ls1.gamma",
+    "backbone.blocks.4.mlp.fc1.weight",
+    "backbone.blocks.4.mlp.fc2.weight",
+    "backbone.blocks.4.ls2.gamma"
+  ],
+  "block5:decay=False": [
+    "backbone.blocks.5.norm1.weight",
+    "backbone.blocks.5.norm1.bias",
+    "backbone.blocks.5.attn.qkv.bias",
+    "backbone.blocks.5.attn.proj.bias",
+    "backbone.blocks.5.norm2.weight",
+    "backbone.blocks.5.norm2.bias",
+    "backbone.blocks.5.mlp.fc1.bias",
+    "backbone.blocks.5.mlp.fc2.bias"
+  ],
+  "block5:decay=True": [
+    "backbone.blocks.5.attn.qkv.weight",
+    "backbone.blocks.5.attn.proj.weight",
+    "backbone.blocks.5.ls1.gamma",
+    "backbone.blocks.5.mlp.fc1.weight",
+    "backbone.blocks.5.mlp.fc2.weight",
+    "backbone.blocks.5.ls2.gamma"
+  ],
+  "block6:decay=False": [
+    "backbone.blocks.6.norm1.weight",
+    "backbone.blocks.6.norm1.bias",
+    "backbone.blocks.6.attn.qkv.bias",
+    "backbone.blocks.6.attn.proj.bias",
+    "backbone.blocks.6.norm2.weight",
+    "backbone.blocks.6.norm2.bias",
+    "backbone.blocks.6.mlp.fc1.bias",
+    "backbone.blocks.6.mlp.fc2.bias"
+  ],
+  "block6:decay=True": [
+    "backbone.blocks.6.attn.qkv.weight",
+    "backbone.blocks.6.attn.proj.weight",
+    "backbone.blocks.6.ls1.gamma",
+    "backbone.blocks.6.mlp.fc1.weight",
+    "backbone.blocks.6.mlp.fc2.weight",
+    "backbone.blocks.6.ls2.gamma"
+  ],
+  "block7:decay=False": [
+    "backbone.blocks.7.norm1.weight",
+    "backbone.blocks.7.norm1.bias",
+    "backbone.blocks.7.attn.qkv.bias",
+    "backbone.blocks.7.attn.proj.bias",
+    "backbone.blocks.7.norm2.weight",
+    "backbone.blocks.7.norm2.bias",
+    "backbone.blocks.7.mlp.fc1.bias",
+    "backbone.blocks.7.mlp.fc2.bias"
+  ],
+  "block7:decay=True": [
+    "backbone.blocks.7.attn.qkv.weight",
+    "backbone.blocks.7.attn.proj.weight",
+    "backbone.blocks.7.ls1.gamma",
+    "backbone.blocks.7.mlp.fc1.weight",
+    "backbone.blocks.7.mlp.fc2.weight",
+    "backbone.blocks.7.ls2.gamma"
+  ],
+  "block8:decay=False": [
+    "backbone.blocks.8.norm1.weight",
+    "backbone.blocks.8.norm1.bias",
+    "backbone.blocks.8.attn.qkv.bias",
+    "backbone.blocks.8.attn.proj.bias",
+    "backbone.blocks.8.norm2.weight",
+    "backbone.blocks.8.norm2.bias",
+    "backbone.blocks.8.mlp.fc1.bias",
+    "backbone.blocks.8.mlp.fc2.bias"
+  ],
+  "block8:decay=True": [
+    "backbone.blocks.8.attn.qkv.weight",
+    "backbone.blocks.8.attn.proj.weight",
+    "backbone.blocks.8.ls1.gamma",
+    "backbone.blocks.8.mlp.fc1.weight",
+    "backbone.blocks.8.mlp.fc2.weight",
+    "backbone.blocks.8.ls2.gamma"
+  ],
+  "block9:decay=False": [
+    "backbone.blocks.9.norm1.weight",
+    "backbone.blocks.9.norm1.bias",
+    "backbone.blocks.9.attn.qkv.bias",
+    "backbone.blocks.9.attn.proj.bias",
+    "backbone.blocks.9.norm2.weight",
+    "backbone.blocks.9.norm2.bias",
+    "backbone.blocks.9.mlp.fc1.bias",
+    "backbone.blocks.9.mlp.fc2.bias"
+  ],
+  "block9:decay=True": [
+    "backbone.blocks.9.attn.qkv.weight",
+    "backbone.blocks.9.attn.proj.weight",
+    "backbone.blocks.9.ls1.gamma",
+    "backbone.blocks.9.mlp.fc1.weight",
+    "backbone.blocks.9.mlp.fc2.weight",
+    "backbone.blocks.9.ls2.gamma"
+  ],
+  "block10:decay=False": [
+    "backbone.blocks.10.norm1.weight",
+    "backbone.blocks.10.norm1.bias",
+    "backbone.blocks.10.attn.qkv.bias",
+    "backbone.blocks.10.attn.proj.bias",
+    "backbone.blocks.10.norm2.weight",
+    "backbone.blocks.10.norm2.bias",
+    "backbone.blocks.10.mlp.fc1.bias",
+    "backbone.blocks.10.mlp.fc2.bias"
+  ],
+  "block10:decay=True": [
+    "backbone.blocks.10.attn.qkv.weight",
+    "backbone.blocks.10.attn.proj.weight",
+    "backbone.blocks.10.ls1.gamma",
+    "backbone.blocks.10.mlp.fc1.weight",
+    "backbone.blocks.10.mlp.fc2.weight",
+    "backbone.blocks.10.ls2.gamma"
+  ],
+  "block11:decay=False": [
+    "backbone.blocks.11.norm1.weight",
+    "backbone.blocks.11.norm1.bias",
+    "backbone.blocks.11.attn.qkv.bias",
+    "backbone.blocks.11.attn.proj.bias",
+    "backbone.blocks.11.norm2.weight",
+    "backbone.blocks.11.norm2.bias",
+    "backbone.blocks.11.mlp.fc1.bias",
+    "backbone.blocks.11.mlp.fc2.bias"
+  ],
+  "block11:decay=True": [
+    "backbone.blocks.11.attn.qkv.weight",
+    "backbone.blocks.11.attn.proj.weight",
+    "backbone.blocks.11.ls1.gamma",
+    "backbone.blocks.11.mlp.fc1.weight",
+    "backbone.blocks.11.mlp.fc2.weight",
+    "backbone.blocks.11.ls2.gamma"
+  ],
+  "final_norm:decay=False": [
+    "backbone.norm.weight",
+    "backbone.norm.bias"
+  ],
+  "ddr_decoder:decay=True": [
+    "ddr.projections.0.weight",
+    "ddr.projections.1.weight",
+    "ddr.projections.2.weight",
+    "ddr.projections.3.weight",
+    "ddr.downsample.weight",
+    "ddr.scale_refine.0.0.weight",
+    "ddr.scale_refine.1.0.weight",
+    "ddr.scale_refine.2.0.weight",
+    "ddr.scale_refine.3.0.weight",
+    "ddr.fusion_refine.0.body.0.0.weight",
+    "ddr.fusion_refine.0.body.1.weight",
+    "ddr.fusion_refine.1.body.0.0.weight",
+    "ddr.fusion_refine.1.body.1.weight",
+    "ddr.fusion_refine.2.body.0.0.weight",
+    "ddr.fusion_refine.2.body.1.weight",
+    "ddr.fusion_refine.3.body.0.0.weight",
+    "ddr.fusion_refine.3.body.1.weight",
+    "ddr.rgb.0.0.weight",
+    "ddr.rgb.1.0.weight",
+    "ddr.rgb.2.0.weight",
+    "ddr.merge.0.weight",
+    "ddr.head.weight"
+  ],
+  "ddr_decoder:decay=False": [
+    "ddr.projections.0.bias",
+    "ddr.projections.1.bias",
+    "ddr.projections.2.bias",
+    "ddr.projections.3.bias",
+    "ddr.downsample.bias",
+    "ddr.scale_refine.0.0.bias",
+    "ddr.scale_refine.0.1.weight",
+    "ddr.scale_refine.0.1.bias",
+    "ddr.scale_refine.1.0.bias",
+    "ddr.scale_refine.1.1.weight",
+    "ddr.scale_refine.1.1.bias",
+    "ddr.scale_refine.2.0.bias",
+    "ddr.scale_refine.2.1.weight",
+    "ddr.scale_refine.2.1.bias",
+    "ddr.scale_refine.3.0.bias",
+    "ddr.scale_refine.3.1.weight",
+    "ddr.scale_refine.3.1.bias",
+    "ddr.fusion_refine.0.body.0.0.bias",
+    "ddr.fusion_refine.0.body.0.1.weight",
+    "ddr.fusion_refine.0.body.0.1.bias",
+    "ddr.fusion_refine.0.body.1.bias",
+    "ddr.fusion_refine.0.body.2.weight",
+    "ddr.fusion_refine.0.body.2.bias",
+    "ddr.fusion_refine.1.body.0.0.bias",
+    "ddr.fusion_refine.1.body.0.1.weight",
+    "ddr.fusion_refine.1.body.0.1.bias",
+    "ddr.fusion_refine.1.body.1.bias",
+    "ddr.fusion_refine.1.body.2.weight",
+    "ddr.fusion_refine.1.body.2.bias",
+    "ddr.fusion_refine.2.body.0.0.bias",
+    "ddr.fusion_refine.2.body.0.1.weight",
+    "ddr.fusion_refine.2.body.0.1.bias",
+    "ddr.fusion_refine.2.body.1.bias",
+    "ddr.fusion_refine.2.body.2.weight",
+    "ddr.fusion_refine.2.body.2.bias",
+    "ddr.fusion_refine.3.body.0.0.bias",
+    "ddr.fusion_refine.3.body.0.1.weight",
+    "ddr.fusion_refine.3.body.0.1.bias",
+    "ddr.fusion_refine.3.body.1.bias",
+    "ddr.fusion_refine.3.body.2.weight",
+    "ddr.fusion_refine.3.body.2.bias",
+    "ddr.rgb.0.0.bias",
+    "ddr.rgb.0.1.weight",
+    "ddr.rgb.0.1.bias",
+    "ddr.rgb.1.0.bias",
+    "ddr.rgb.1.1.weight",
+    "ddr.rgb.1.1.bias",
+    "ddr.rgb.2.0.bias",
+    "ddr.rgb.2.1.weight",
+    "ddr.rgb.2.1.bias",
+    "ddr.merge.0.bias",
+    "ddr.merge.1.weight",
+    "ddr.merge.1.bias",
+    "ddr.head.bias"
+  ]
+}

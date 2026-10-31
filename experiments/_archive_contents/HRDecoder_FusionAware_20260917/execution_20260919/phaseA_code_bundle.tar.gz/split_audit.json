@@ -1,0 +1,47 @@
+{
+  "data_root": "D:/HRDecoder/data/DDR_split_613",
+  "expected": {
+    "train": 454,
+    "val": 76,
+    "test": 227
+  },
+  "status": "OK",
+  "splits": {
+    "train": {
+      "count": 454,
+      "count_ok": true,
+      "agreement_txt_disk_assignment": true,
+      "missing_on_disk": [],
+      "missing_in_txt": [],
+      "missing_in_assignment": [],
+      "duplicate_stems": [],
+      "labels_present": true,
+      "ok": true
+    },
+    "val": {
+      "count": 76,
+      "count_ok": true,
+      "agreement_txt_disk_assignment": true,
+      "missing_on_disk": [],
+      "missing_in_txt": [],
+      "missing_in_assignment": [],
+      "duplicate_stems": [],
+      "labels_present": true,
+      "ok": true
+    },
+    "test": {
+      "count": 227,
+      "count_ok": true,
+      "agreement_txt_disk_assignment": true,
+      "missing_on_disk": [],
+      "missing_in_txt": [],
+      "missing_in_assignment": [],
+      "duplicate_stems": [],
+      "labels_present": true,
+      "ok": true
+    }
+  },
+  "cross_split_stem_overlaps": {},
+  "duplicate_bytes_across_splits": [],
+  "hash_note": "duplicate image/mask bytes detected across splits; recorded, NOT deduped automatically"
+}

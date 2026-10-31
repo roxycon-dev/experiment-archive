@@ -1,0 +1,14 @@
+[train] objective = L = 30.0*focal_bce(alpha=0.75,gamma=2) + 1.0*soft_dice (frozen at 2026-09-21)
+[train] stage=stage2_main images=454/454 patches=10608 roles={'background': 908, 'candidate_neg_fp': 613, 'candidate_neg_plain': 2544, 'candidate_pos': 6543}
+[train] refiner trainable params=25394 (non-refiner trainable=0)
+[train] identity guard OK: refiner == champion bitwise at init (max|d|=0.0e+00, batch=16)
+[train] ep=1 step=1 lr=3.00e-06 loss=1.1813 focal=0.0238 dice=0.4668 focal_share=0.605 gnorm=95.89 5.5s
+[train] ep=1 step=20 lr=6.00e-05 loss=0.9573 focal=0.0141 dice=0.5332 focal_share=0.443 gnorm=16.61 18.1s
+[train] ep=1 step=40 lr=1.20e-04 loss=0.7592 focal=0.0059 dice=0.5808 focal_share=0.235 gnorm=54.98 31.0s
+[train] ep=1 step=60 lr=1.80e-04 loss=0.7091 focal=0.0132 dice=0.3125 focal_share=0.559 gnorm=18.43 44.4s
+[train] ep=1 step=80 lr=2.40e-04 loss=0.9206 focal=0.0132 dice=0.5237 focal_share=0.431 gnorm=34.30 59.2s
+[train] ep=1 step=100 lr=3.00e-04 loss=0.9130 focal=0.0087 dice=0.6519 focal_share=0.286 gnorm=134.20 72.2s
+[train] ep=1 step=120 lr=3.00e-04 loss=0.5581 focal=0.0054 dice=0.3952 focal_share=0.292 gnorm=6.09 85.8s
+[train] ep=1 step=140 lr=3.00e-04 loss=0.7325 focal=0.0061 dice=0.5491 focal_share=0.250 gnorm=3.61 100.3s
+[train] wrote /root/autodl-tmp/s2probe/maxsplit128/refiner_last.pth
+[train] NOTE: this entry point does not select on val; the supervisor runs eval_refiner.py on every pre-registered node and selects with the frozen rule.

@@ -1,0 +1,29 @@
+{
+  "round": "round2_highres",
+  "created_at_cst": "2026-10-02T23:40:04.987357+08:00",
+  "job_order": [
+    "U0_continuation2048",
+    "U0_highres"
+  ],
+  "config_sha256": {
+    "U0_continuation2048": "17c15fd8ffd2bc6534080467bc6bfe4821f5250ba158d90a867ee1f7669381b8",
+    "U0_highres": "10f16d28e4fbd01ce6f8249b219bf0e9aaceb472da531dd215b0fa4a480bbf08"
+  },
+  "source_sha256": {
+    "train.py": "87a0e42783903cb0e314f5bddf000a49f6fd13c7205198c88ba0e3886a043e6e",
+    "trainer/eval.py": "9578c2e46866fa3f0006a0b52a76bb653b76b5a8d373840cd8731dc864bb154e",
+    "trainer/engine.py": "8b196f9ede491877d4b08ce75a76c7c883c4f07da017610bb9e5e214d7c58cca",
+    "trainer/screening.py": "7be0cbe5a9f8721964a94f0151e5d5c59a21cc53424d5987b926133fe95d71d9",
+    "trainer/fusion_probe.py": "aefa60e852fabfad022d67cbd3757e2d7bbff841274883538c0c84f21a8974cb",
+    "campaign/run_round2.py": "347f825f9fa9d71353430418c9ce063965cb54bd9d111d540ce8bc25b9018a26"
+  },
+  "starting_checkpoint_sha256": "98d98a5d02dc2615062c3c31cd15d061daf3d7ab41cb8f25cd90b062cd53bb34",
+  "baseline_val_miou": 0.43487703221036567,
+  "selection": "Fixed old champion .75 + candidate .25, no fusion-weight search; checkpoint selected on fused full val",
+  "max_updates_per_arm": 4000,
+  "stop": "At >=2000, stop when best fused gain <.001, recent fused gain <.001 and recent standalone gain <.001",
+  "test_policy": "Closed: no further evaluation of the already completed test split; all new decisions train/val only",
+  "matching": "Same seed42, starting model, fresh optimizer, LR, crop1024, effective batch8 and planned nodes. If early stops differ, compare matched shared nodes; unequal budgets are disclosed. Resize schedules differ, including augmentation RNG consumption.",
+  "space": "Actual training needs retained best+last, no duplicated probability export; existing lossless val caches reused",
+  "engineering": "Strict unchanged-config checkpoint resume only; fault is not a negative result"
+}

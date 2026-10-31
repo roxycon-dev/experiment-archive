@@ -1,0 +1,62 @@
+{
+  "status": "PASS",
+  "stage": "GPU_TEACHER_CACHE_EXPORT_COMPLETE",
+  "images_per_member": 454,
+  "members": [
+    "A",
+    "U",
+    "S"
+  ],
+  "total_cache_files": 1362,
+  "dtype": "float32",
+  "channel_order": [
+    "EX",
+    "HE",
+    "SE",
+    "MA"
+  ],
+  "coordinates": "original_image",
+  "compression": "lossless npz deflate1",
+  "all_lossless_roundtrips_verified_during_export": true,
+  "file_and_tensor_SHA_recorded_at_export": true,
+  "manifest_and_file_sizes_verified": true,
+  "full_post_export_CPU_audit": "DEFERRED_UNTIL_NO_GPU_MODE",
+  "partial_CPU_audit_progress": {
+    "stage": "CPU_CACHE_AUDIT",
+    "completed": 210,
+    "expected": 454,
+    "seconds": 169.207244863268
+  },
+  "no_training_performed": true,
+  "teacher_predictions_are_in_sample": true,
+  "OOF": false,
+  "member_compressed_bytes": {
+    "A": 32035411039,
+    "U": 32838087676,
+    "S": 19364573039
+  },
+  "index_sha256": {
+    "A": "4b6685239b6dfd72d73f02cbd62daafce22f78152761350b865550c38ffc7130",
+    "U": "b0e08a81ca16c9ec9bb1937b921f9cc898045a70edd6375aa5521e8521315da0",
+    "S": "72e00587900743fbff81eb6b149779c1ab56fb6a174e4a47b482be53e6f46af5"
+  },
+  "member_identity_sha256": {
+    "A": "0674eb8fd875187e92bc4369e6fc41eb906339acb1f2057bd1d2dcd6c6933ec1",
+    "U": "1696b6eed682e116e98b6630bd429bd49986c24323010215fa8a0b4364952aa5",
+    "S": "b9f9886b393b14c2a25863d56fdbc1f6667bfab1200410d83fd0eb223471207a"
+  },
+  "compressed_bytes": 84238071754,
+  "uncompressed_bytes": 112635312960,
+  "data_disk_free_bytes": 31623507968,
+  "S20_locked_val_canary_parity": {
+    "sid": "007-1774-100",
+    "bitwise_equal": true,
+    "max_abs_difference": 0.0,
+    "mean_abs_difference": 0.0,
+    "threshold_disagree_pixels": 0,
+    "reference_coordinates": "original image",
+    "reference": "archived S20 EMA val cache"
+  },
+  "shutdown_authorized": true,
+  "shutdown_reason": "User requested finishing GPU caches first, then switching to no-GPU mode for CPU work."
+}

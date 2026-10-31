@@ -1,0 +1,19 @@
+{
+  "status": "NOT_SUPPORTED_AS_CLEAN_CAUSAL_TEST",
+  "registered_interpretation_checks": {
+    "delta_mIoU500_at_least1pp": true,
+    "no_class_IoU_loss_over2pp": true,
+    "MA_precision_improves": false,
+    "MA_recall_not_lost_over5pp": true
+  },
+  "all_registered_support_conditions_met": false,
+  "observed_final_mIoU_variant_minus_control_pp": 1.6321083545823072,
+  "observed_base_mIoU_variant_minus_control_pp": 2.0113363906283652,
+  "provider_trajectory_invariance_observed": false,
+  "root_cause_of_divergence_proven": false,
+  "both_best_probe_updates": 0,
+  "fresh_screen_pass": false,
+  "goal_achieved": false,
+  "no_test_access": true,
+  "no_deadline_extension": true
+}

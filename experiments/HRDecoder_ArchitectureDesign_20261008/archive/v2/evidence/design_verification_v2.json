@@ -1,0 +1,98 @@
+{
+  "scope": "CPU design probes only: no HRNet, real images, teacher weights or optimizer steps.",
+  "version": 2,
+  "torch": "2.6.0+cu124",
+  "device": "cpu",
+  "seed": 42,
+  "passed": 29,
+  "failed": 0,
+  "checks": {
+    "parameter_counts": true,
+    "total_new_parameters": true,
+    "conv_MAC_2048_batch1": true,
+    "shape_and_initial_identity": true,
+    "restore_logits_initial_identity": true,
+    "initial_GT_value_matches_same_mask_baseline": true,
+    "main_gradients_finite": true,
+    "first_output_layers_have_gradient": true,
+    "first_hidden_gradient_zero": true,
+    "main_has_no_H4_gradient": true,
+    "main_MA_has_gradient": true,
+    "hidden_gradients_with_nonzero_output_probe": true,
+    "H4_gradient_isolation": true,
+    "H4_all_gradients_finite_nonzero": true,
+    "H4_changes_only_MA": true,
+    "H4_halo2_nonzero_tiles_match_full": true,
+    "ignored_prediction_label_target_invariance": true,
+    "all_ignore_graph_zero": true,
+    "H4_empty_foreground_half_BCE": true,
+    "KL_extreme_logits_endpoint_targets_finite": true,
+    "KD_continuous_at_half": true,
+    "KD_continuity_probe_is_nonzero": true,
+    "KD_empty_group_not_renormalized": true,
+    "v1_conditional_veto_counterexample": true,
+    "v2_override_negative_base": true,
+    "weak_member_error_not_required_by_targets": true,
+    "teacher_stage_and_logit_telescoping": true,
+    "head_and_resize_not_commutative": true,
+    "spec_core_contract": true
+  },
+  "details": {
+    "parameter_counts": {
+      "detail_including_shared_stem": 26004,
+      "context": 77444,
+      "H4": 3361
+    },
+    "conv_MAC_2048_batch1": {
+      "detail_including_shared_stem": 5939134464,
+      "context": 3734241280,
+      "H4": 13958643712
+    },
+    "H4_halo2_nonzero_tiles_match_full": 1.4901161193847656e-07,
+    "KD_continuous_at_half": [
+      0.030028816682315843,
+      0.030028436796822874
+    ],
+    "weak_member_error_not_required_by_targets": {
+      "A": 0.05,
+      "P0": 0.275,
+      "T2": 0.21875,
+      "weak_U": 0.95
+    },
+    "head_and_resize_not_commutative": 0.3068169057369232
+  },
+  "new_parameters": {
+    "detail_including_shared_stem": 26004,
+    "context": 77444,
+    "H4": 3361
+  },
+  "new_parameters_total": 106809,
+  "conv_MAC_2048_batch1": {
+    "detail_including_shared_stem": 5939134464,
+    "context": 3734241280,
+    "H4": 13958643712
+  },
+  "conv_MAC_total": 23632019456,
+  "MAC_excludes": [
+    "backbone",
+    "original HRDecoder",
+    "interpolation",
+    "normalization",
+    "activations",
+    "loss",
+    "backward",
+    "optimizer",
+    "teacher preprocessing"
+  ],
+  "unverified": [
+    "full HRDecoder integration",
+    "geometric transforms and HR crop mask plumbing",
+    "ImageNet SHA",
+    "454 train teacher caches",
+    "GPU memory/speed",
+    "training stability",
+    "mIoU",
+    "multi-seed variation",
+    "external generalization"
+  ]
+}

@@ -1,0 +1,16 @@
+# 最终交付与临时认证清理（仅准备，尚未执行）
+
+1. 等S3407固定20k及完整状态/EMA、本地预测GT计数、真实三组统计全部通过既有门槛。不得使用中间节点或补造第三组。
+2. 执行finalize_training_campaign.py --finalize，做完整SHA审计并生成报告/CSV/TeX。第一次生成仅应返回RESULTS_GENERATED_AWAITING_REPORT_REVIEW、overall_campaign_complete=false。尚未实际阅读报告和表格时不能完成认证清理或总体完成通知。
+3. 实际阅读论文补充实验结果.md，逐项对照baseline_original、三组单模型/固定融合的12条配对结果及4条均值/样本SD、MA三方分母/检出/FP、同硬件真实成本和所有负结果/限制。检查5份CSV和7张TeX表中的数值、标签和列对应。条件允许时编译/查看TeX表，明确记录实际检查方式与任何编译限制，不假称看过未渲染的PDF。
+4. 阅读/校核后才写evidence/final_report_review.json：status为PASS_FINAL_REPORT_REVIEW，reviewed_at_UTC为实际时间，method写实际审阅方法，reviewed_outputs_sha256必须完整对应results/final_campaign内所有实际文件及根目录论文补充实验结果.md的SHA字典；另外记录检查要点。不能先填PASS再看文件。
+5. 再次执行--finalize。它会核查审阅SHA与当前输出完全相同，只有相同才把campaign_completion_receipt设为COMPLETE_ALL_AUTHORIZED_EXPERIMENTS_AND_LOCAL_EVIDENCE、overall_campaign_complete=true。输出有变必须重新检查，不绕过状态保护。
+
+完整证据和交付审阅真正完成后，再清理本任务认证，保持两台服务器开机：
+
+- 只读清理清单在evidence/temporary_auth_cleanup_inventory.json。当前确认root authorized_keys中本任务仅paper_supplement_reverse_only_20261023一行，完整行SHA70f8d44cc436afa3f05646392fdd8f8d01c586fb46827d56023c6d03234888d2，公钥指纹MyrKxQlMzI3PfZAd6VzPGMm5WB2AP/OrPJ6+I/F/3ks；原本的本地直连公钥不是本任务新加，必须保留。
+- .59 studentuser001 authorized_keys中本任务仅paper_supplement_transfer_20261023，完整行SHA280dc1f5ffc142f9131c44ce995b52abfdb5412f129770831e38efbe1de2b991，指纹5W4VoTigT3p+0MjYLVtxf1aC3Y+P5cZFViam1x1tSJc。
+- 两条到期值20261027180000，仍须在删除前重新读实际文件，按确认的完整行SHA/公钥/注释匹配，不能按“含codex”批量删除，不能删除别人条目或整个authorized_keys。仅记录删除的行身份及前后SHA，不记录私钥/密码。
+- .59只属于本任务的reverse监督器当前PID292079，命令/usr/bin/python3 -u /home/studentuser001/paper_supplement_20261023/keep_reverse_59.py。其源码支持logs/stop_reverse_tunnel停止标志。停止前仍要核实际PID/父子链，别按旧PID盲杀。不要在任何剩余推理、回收、SHA核验或审阅前停止该隧道。
+- 认证清理必须先确保.59的清理结果与收据已通过仍存活的会话回收，再让本任务隧道结束；不能先断开唯一通道后假称已核实清理。root原有本地直连认证继续保留。不要删除原权重、预测、概率缓存或用户原工程。
+- 验证训练/评估/备份监督确已不再需要后，停止本任务残留监督与automation-2；不关闭任何服务器、不干预studentuser003等其他用户进程。

@@ -1,0 +1,170 @@
+[2026-09-18 13:17:19] round6: ledger deadline 2026-09-18T11:17:15+00:00 (6.00h left)
+[2026-09-18 13:17:21] smoke: champion
+[2026-09-18 13:17:33] disk: 5.9G free (need 2.0G) at /root/autodl-tmp
+[2026-09-18 13:17:37] smoke gate1: pre_head_probs OK (4, 1944, 2592)
+[2026-09-18 13:18:33] round6: ledger deadline 2026-09-18T11:17:15+00:00 (5.98h left)
+[2026-09-18 13:18:35] smoke: champion
+[2026-09-18 13:18:46] disk: 5.9G free (need 2.0G) at /root/autodl-tmp
+[2026-09-18 13:18:50] smoke gate1: pre_head_probs OK (4, 1944, 2592)
+[2026-09-18 13:19:01] feature cache COMPLETE HE/train: 3 entries (10s)
+[2026-09-18 13:19:38] round6: ledger deadline 2026-09-18T11:17:15+00:00 (5.96h left)
+[2026-09-18 13:19:40] smoke: champion
+[2026-09-18 13:19:53] disk: 5.8G free (need 2.0G) at /root/autodl-tmp
+[2026-09-18 13:19:57] smoke gate1: pre_head_probs OK (4, 1944, 2592)
+[2026-09-18 13:19:58] feature cache present: /root/autodl-tmp/hrplus/glm/runs/r6/smoke/featcache_r6/HE/train (3 entries)
+[2026-09-18 13:19:58] smoke gate1b: feature cache entry OK img(3, 1934, 1956) fields(3, 1934, 1956)
+[2026-09-18 13:20:49] round6: ledger deadline 2026-09-18T11:17:15+00:00 (5.94h left)
+[2026-09-18 13:20:51] smoke: champion
+[2026-09-18 13:21:02] disk: 5.8G free (need 2.0G) at /root/autodl-tmp
+[2026-09-18 13:21:06] smoke gate1: pre_head_probs OK (4, 1944, 2592)
+[2026-09-18 13:21:07] feature cache present: /root/autodl-tmp/hrplus/glm/runs/r6/smoke/featcache_r6/HE/train (3 entries)
+[2026-09-18 13:21:07] smoke gate1b: feature cache entry OK img(3, 1934, 1956) fields(3, 1934, 1956)
+[2026-09-18 13:21:07] smoke gate2: head identity OK
+[2026-09-18 13:21:08] smoke gate3: head 5 steps OK (loss 0.9484)
+[2026-09-18 13:21:53] round6: ledger deadline 2026-09-18T11:17:15+00:00 (5.92h left)
+[2026-09-18 13:21:55] smoke: champion
+[2026-09-18 13:22:07] disk: 5.8G free (need 2.0G) at /root/autodl-tmp
+[2026-09-18 13:22:11] smoke gate1: pre_head_probs OK (4, 1944, 2592)
+[2026-09-18 13:22:12] feature cache present: /root/autodl-tmp/hrplus/glm/runs/r6/smoke/featcache_r6/HE/train (3 entries)
+[2026-09-18 13:22:12] smoke gate1b: feature cache entry OK img(3, 1934, 1956) fields(3, 1934, 1956)
+[2026-09-18 13:22:12] smoke gate2: head identity OK
+[2026-09-18 13:22:12] smoke gate3: head 5 steps OK (loss 0.9529)
+[2026-09-18 13:22:35] expert patch plan: 454 train images, 338 with MA-positive windows
+[2026-09-18 13:22:35] smoke gate4: expert 5 steps OK (loss 1.2795)
+[2026-09-18 13:22:37] smoke gate5: expert sliding window OK (1934, 1956)
+[2026-09-18 13:22:37] SMOKE OK (6 gates; smoke cache removed)
+[2026-09-18 13:22:44] round6: ledger deadline 2026-09-18T11:17:15+00:00 (5.91h left)
+[2026-09-18 13:22:46] P0: split audit OK (454/76/227)
+[2026-09-18 13:24:32] eval val 25/76 (92.5s)
+[2026-09-18 13:26:02] eval val 50/76 (183.1s)
+[2026-09-18 13:27:31] eval val 75/76 (272.5s)
+[2026-09-18 13:27:34] P0: pristine champion val mIoU 0.4267 {'EX': 0.4577, 'HE': 0.4376, 'SE': 0.5518, 'MA': 0.2597} (277s; r5 ref 0.4267)
+[2026-09-18 13:29:08] eval test 25/227 (88.4s)
+[2026-09-18 13:30:36] eval test 50/227 (176.3s)
+[2026-09-18 13:32:02] eval test 75/227 (262.1s)
+[2026-09-18 13:33:33] eval test 100/227 (353.3s)
+[2026-09-18 13:35:06] eval test 125/227 (445.7s)
+[2026-09-18 13:36:35] eval test 150/227 (534.6s)
+[2026-09-18 13:38:03] eval test 175/227 (623.4s)
+[2026-09-18 13:39:34] eval test 200/227 (714.0s)
+[2026-09-18 13:41:06] eval test 225/227 (805.7s)
+[2026-09-18 13:41:13] P0: pristine champion test mIoU 0.4421 {'EX': 0.5386, 'HE': 0.4451, 'SE': 0.4982, 'MA': 0.2866} (818s; contract ref 0.4421)
+[2026-09-18 13:41:13] P0: attack order ['HE', 'EX'] (val IoU {'HE': 0.4376, 'EX': 0.4577}; FN-share {'HE': 0.554, 'EX': 0.508})
+[2026-09-18 13:41:13] P1[HE]: building feature caches
+[2026-09-18 13:41:13] disk: 5.9G free (need 22.0G) at /root/autodl-tmp
+[2026-09-18 13:41:15] removed /root/autodl-tmp/hrplus/cache/ref_train_v3 (14.19G) to make room
+[2026-09-18 13:41:15] removed /root/autodl-tmp/hrplus/glm/backups/run_20260918T121128.tar (6.02G) to make room
+[2026-09-18 13:41:15] disk after cleanup: 26.1G free
+[2026-09-18 13:42:34] featcache HE/train 25/454 (78s)
+[2026-09-18 13:43:52] featcache HE/train 50/454 (155s)
+[2026-09-18 13:45:09] featcache HE/train 75/454 (233s)
+[2026-09-18 13:46:25] featcache HE/train 100/454 (309s)
+[2026-09-18 13:47:42] featcache HE/train 125/454 (386s)
+[2026-09-18 13:49:00] featcache HE/train 150/454 (463s)
+[2026-09-18 13:50:16] featcache HE/train 175/454 (540s)
+[2026-09-18 13:51:34] featcache HE/train 200/454 (617s)
+[2026-09-18 13:52:52] featcache HE/train 225/454 (695s)
+[2026-09-18 13:54:12] featcache HE/train 250/454 (775s)
+[2026-09-18 13:55:29] featcache HE/train 275/454 (852s)
+[2026-09-18 13:56:46] featcache HE/train 300/454 (929s)
+[2026-09-18 13:58:03] featcache HE/train 325/454 (1006s)
+[2026-09-18 13:59:22] featcache HE/train 350/454 (1085s)
+[2026-09-18 14:00:39] featcache HE/train 375/454 (1162s)
+[2026-09-18 14:01:57] featcache HE/train 400/454 (1241s)
+[2026-09-18 14:03:17] featcache HE/train 425/454 (1321s)
+[2026-09-18 14:04:37] featcache HE/train 450/454 (1401s)
+[2026-09-18 14:04:50] feature cache COMPLETE HE/train: 454 entries (1413s)
+[2026-09-18 14:06:10] featcache HE/val 25/76 (79s)
+[2026-09-18 14:07:28] featcache HE/val 50/76 (157s)
+[2026-09-18 14:08:45] featcache HE/val 75/76 (234s)
+[2026-09-18 14:08:48] feature cache COMPLETE HE/val: 76 entries (237s)
+[2026-09-18 14:09:36] H6[HE] identity self-check OK (zero-init head -> delta==0)
+[2026-09-18 14:13:09] H6[HE] step 250/3000 loss 0.1804 (213s)
+[2026-09-18 14:16:42] H6[HE] step 500/3000 loss 0.1454 (426s)
+[2026-09-18 14:48:19] round6: ledger deadline 2026-09-18T11:17:15+00:00 (4.48h left)
+[2026-09-18 14:48:21] rehearse: champion
+[2026-09-18 14:48:59] round6: ledger deadline 2026-09-18T11:17:15+00:00 (4.47h left)
+[2026-09-18 14:49:01] rehearse: champion
+[2026-09-18 14:49:13] rehearse: head training on HE cache (40 steps, val every 20, 3 val images)
+[2026-09-18 14:49:14] H6[HE] identity self-check OK (zero-init head -> delta==0)
+[2026-09-18 14:49:33] H6[HE] step 20 val HE IoU 0.4442 (counts [688, 463, 398])
+[2026-09-18 14:49:51] H6[HE] step 40 val HE IoU 0.4425 (counts [692, 478, 394])
+[2026-09-18 14:49:51] H6[HE] rehearsal complete (nothing written)
+[2026-09-18 14:49:51] rehearse: head val path OK (val HE IoU 0.4442 on 3 images)
+[2026-09-18 14:49:51] rehearse: expert + fusion evaluator on 3 val images
+[2026-09-18 14:52:38] expert eval val 25/76 (165s)
+[2026-09-18 14:55:12] expert eval val 50/76 (320s)
+[2026-09-18 14:57:40] expert eval val 75/76 (467s)
+[2026-09-18 14:57:44] expert eval val done: champion mIoU 0.4267 / MA 0.2597; fused MA: {'0.5': 0.2582}
+[2026-09-18 14:57:44] rehearse: evaluator OK (champion val mIoU 0.4267, fused MA 0.2582)
+[2026-09-18 14:57:44] REHEARSE OK -- resume path validated; state untouched
+[2026-09-18 14:57:51] round6: ledger deadline 2026-09-18T11:17:15+00:00 (4.32h left)
+[2026-09-18 14:58:05] P0: cached (attack order ['HE', 'EX'])
+[2026-09-18 14:58:05] P1[HE]: feature caches
+[2026-09-18 14:58:07] P1[HE]: caches complete on disk -> no reservation needed (4.0G free)
+[2026-09-18 14:58:08] feature cache present: /root/autodl-tmp/hrplus/glm/runs/r6/featcache_r6/HE/train (454 entries)
+[2026-09-18 14:58:09] feature cache present: /root/autodl-tmp/hrplus/glm/runs/r6/featcache_r6/HE/val (76 entries)
+[2026-09-18 14:58:10] H6[HE] identity self-check OK (zero-init head -> delta==0)
+[2026-09-18 15:01:52] H6[HE] step 250/3000 loss 0.1804 (222s)
+[2026-09-18 15:05:30] H6[HE] step 500/3000 loss 0.1454 (440s)
+[2026-09-18 15:06:08] H6[HE] step 500 val HE IoU 0.4291 (counts [723248, 479670, 482676])
+[2026-09-18 15:09:36] H6[HE] step 750/3000 loss 0.3576 (686s)
+[2026-09-18 15:12:59] H6[HE] step 1000/3000 loss 0.1832 (890s)
+[2026-09-18 15:13:32] H6[HE] step 1000 val HE IoU 0.4306 (counts [729448, 487955, 476476])
+[2026-09-18 15:16:56] H6[HE] step 1250/3000 loss 0.1935 (1126s)
+[2026-09-18 15:20:17] H6[HE] step 1500/3000 loss 0.0637 (1328s)
+[2026-09-18 15:20:52] H6[HE] step 1500 val HE IoU 0.4354 (counts [731871, 474854, 474053])
+[2026-09-18 15:24:13] H6[HE] step 1750/3000 loss 0.0364 (1563s)
+[2026-09-18 15:27:37] H6[HE] step 2000/3000 loss 0.1954 (1767s)
+[2026-09-18 15:28:11] H6[HE] step 2000 val HE IoU 0.4360 (counts [729425, 466978, 476499])
+[2026-09-18 15:31:32] H6[HE] step 2250/3000 loss 0.1919 (2002s)
+[2026-09-18 15:34:57] H6[HE] step 2500/3000 loss 0.1424 (2208s)
+[2026-09-18 15:35:31] H6[HE] step 2500 val HE IoU 0.4328 (counts [722240, 463026, 483684])
+[2026-09-18 15:38:55] H6[HE] step 2750/3000 loss 0.2274 (2446s)
+[2026-09-18 15:42:20] H6[HE] step 3000/3000 loss 0.1927 (2651s)
+[2026-09-18 15:42:53] H6[HE] step 3000 val HE IoU 0.4305 (counts [717909, 461641, 488015])
+[2026-09-18 15:42:53] H6[HE] DONE best step 2000 val HE IoU 0.4360 -> /root/autodl-tmp/hrplus/glm/runs/r6/heads/head_HE.pth
+[2026-09-18 15:42:53] P1[HE] GATE: val 0.4360 vs baseline 0.4376 (delta -0.0015, need +0.0050) -> reject
+[2026-09-18 15:42:56] deleted feature cache /root/autodl-tmp/hrplus/glm/runs/r6/featcache_r6/HE/train (26.23G)
+[2026-09-18 15:42:56] deleted feature cache /root/autodl-tmp/hrplus/glm/runs/r6/featcache_r6/HE/val (4.48G)
+[2026-09-18 15:42:56] P1[EX]: feature caches
+[2026-09-18 15:42:57] disk: 34.7G free (need 34.0G) at /root/autodl-tmp
+[2026-09-18 15:44:19] featcache EX/train 25/454 (81s)
+[2026-09-18 15:45:41] featcache EX/train 50/454 (162s)
+[2026-09-18 15:47:00] featcache EX/train 75/454 (241s)
+[2026-09-18 15:48:17] featcache EX/train 100/454 (318s)
+[2026-09-18 15:49:36] featcache EX/train 125/454 (397s)
+[2026-09-18 15:50:56] featcache EX/train 150/454 (477s)
+[2026-09-18 15:52:16] featcache EX/train 175/454 (557s)
+[2026-09-18 15:53:36] featcache EX/train 200/454 (638s)
+[2026-09-18 15:54:57] featcache EX/train 225/454 (718s)
+[2026-09-18 15:56:24] featcache EX/train 250/454 (805s)
+[2026-09-18 15:57:43] featcache EX/train 275/454 (884s)
+[2026-09-18 15:59:01] featcache EX/train 300/454 (962s)
+[2026-09-18 16:00:20] featcache EX/train 325/454 (1041s)
+[2026-09-18 16:01:43] featcache EX/train 350/454 (1125s)
+[2026-09-18 16:03:04] featcache EX/train 375/454 (1205s)
+[2026-09-18 16:04:27] featcache EX/train 400/454 (1288s)
+[2026-09-18 16:05:51] featcache EX/train 425/454 (1373s)
+[2026-09-18 16:07:15] featcache EX/train 450/454 (1456s)
+[2026-09-18 16:07:28] feature cache COMPLETE EX/train: 454 entries (1469s)
+[2026-09-18 16:08:51] featcache EX/val 25/76 (82s)
+[2026-09-18 16:10:12] featcache EX/val 50/76 (163s)
+[2026-09-18 16:11:22] P2: MA patch plan
+[2026-09-18 16:11:44] expert patch plan: 454 train images, 338 with MA-positive windows
+[2026-09-18 16:15:47] M1 step 250/3000 loss 1.0175 (242s)
+[2026-09-18 16:19:39] M1 step 500/3000 loss 1.0051 (475s)
+[2026-09-18 16:19:44] M1 step 500 val patch IoU 0.0000
+[2026-09-18 16:23:35] M1 step 750/3000 loss 1.0023 (710s)
+[2026-09-18 16:27:26] M1 step 1000/3000 loss 1.0022 (941s)
+[2026-09-18 16:27:30] M1 step 1000 val patch IoU 0.0000
+[2026-09-18 16:31:22] M1 step 1250/3000 loss 1.0039 (1178s)
+[2026-09-18 16:35:11] M1 step 1500/3000 loss 1.0041 (1407s)
+[2026-09-18 16:35:16] M1 step 1500 val patch IoU 0.0052
+[2026-09-18 16:39:08] M1 step 1750/3000 loss 1.0022 (1643s)
+[2026-09-18 16:42:59] M1 step 2000/3000 loss 1.0051 (1874s)
+[2026-09-18 16:43:03] M1 step 2000 val patch IoU 0.0220
+[2026-09-18 16:46:52] M1 step 2250/3000 loss 0.9773 (2108s)
+[2026-09-18 16:50:44] M1 step 2500/3000 loss 0.8663 (2340s)
+[2026-09-18 16:50:49] M1 step 2500 val patch IoU 0.0100
+[2026-09-18 16:54:43] M1 step 2750/3000 loss 0.9961 (2579s)

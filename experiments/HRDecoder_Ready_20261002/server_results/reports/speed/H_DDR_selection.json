@@ -1,0 +1,26 @@
+{
+  "cases": [
+    {
+      "micro_batch": 4,
+      "mean_seconds": 1.4261179287423147,
+      "median_seconds": 1.4268786584725603,
+      "peak_mb": 13390.85888671875
+    },
+    {
+      "micro_batch": 8,
+      "mean_seconds": 1.345218944901717,
+      "median_seconds": 1.3432627285365015,
+      "peak_mb": 21617.12841796875
+    }
+  ],
+  "chosen": {
+    "micro_batch": 8,
+    "mean_seconds": 1.345218944901717,
+    "median_seconds": 1.3432627285365015,
+    "peak_mb": 21617.12841796875
+  },
+  "validation_used": false,
+  "effective_batch": 8,
+  "inference_geometry_unchanged": true,
+  "reason": "lowest post-warmup mean including actual DDR data loading"
+}

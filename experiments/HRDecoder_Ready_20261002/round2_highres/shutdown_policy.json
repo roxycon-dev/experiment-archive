@@ -1,0 +1,28 @@
+{
+  "enabled": true,
+  "authorized_at_cst": "2026-10-03T00:29:42.369515+08:00",
+  "user_instruction": "浠诲姟鍏ㄩ儴鍋氬畬鍚庡緱鎶婃湇鍔″櫒鍏充簡",
+  "host": "connect.nmb1.seetacloud.com",
+  "port": 12191,
+  "remote_root": "/root/autodl-tmp/HRDecoder_Ready_20261002/round2_highres",
+  "job_order": [
+    "U0_continuation2048",
+    "U0_highres"
+  ],
+  "conditions": [
+    "Entire authorized queue complete or protocol early-stopped, never on engineering failure",
+    "Full validation metadata and reports finalized; workspace summary updated",
+    "Both new best checkpoints backed up locally, full SHA256 matches remote; prior six deployment weights verified",
+    "No remaining experiment processes or GPU compute jobs; fresh remote completion and checkpoint identity verified"
+  ],
+  "command": [
+    "/bin/bash",
+    "/usr/bin/shutdown"
+  ],
+  "official_reference": "https://www.autodl.com/docs/save_money/",
+  "model_monitor_interval": "hourly",
+  "background_controller_interval_seconds": 30,
+  "no_test_rerun": true,
+  "no_instance_release": true,
+  "execformat_repair_at_cst": "2026-10-03T01:43:12.099259+08:00"
+}

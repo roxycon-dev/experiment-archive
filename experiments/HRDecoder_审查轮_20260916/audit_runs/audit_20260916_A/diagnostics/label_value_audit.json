@@ -1,0 +1,47 @@
+{
+  "audit": "标签值域与255审计（V1）",
+  "generated": "2026-09-16 CST",
+  "note": "在服务器上实测全部 757 个标签文件（逐像素）",
+  "splits": {
+    "train": {
+      "n_files": 454,
+      "total_pixels": 2346569020,
+      "unique_values": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "pixels_eq_255": 0,
+      "has_255": false
+    },
+    "val": {
+      "n_files": 76,
+      "total_pixels": 401111888,
+      "unique_values": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "pixels_eq_255": 0,
+      "has_255": false
+    },
+    "test": {
+      "n_files": 227,
+      "total_pixels": 1184110704,
+      "unique_values": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "pixels_eq_255": 0,
+      "has_255": false
+    }
+  },
+  "conclusion": "train/val/test 的标签值域均为 {0,1,2,3,4}，255 像素数为 0。因此 lesion_metric 忽略 ignore_index 的实现问题对 val/test 的评估路径影响为零，历史分数不受该缺陷影响。训练路径（RandomRotate 填充 255）不走该函数。"
+}

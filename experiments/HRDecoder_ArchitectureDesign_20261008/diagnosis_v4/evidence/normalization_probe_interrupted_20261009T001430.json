@@ -1,0 +1,1848 @@
+{
+  "status": "RUNNING",
+  "device": "CPU",
+  "dtype": "FP32",
+  "canvas": 2048,
+  "formal_updates": 0,
+  "dropout_enabled": false,
+  "batch_stat_probe_batch": 1,
+  "limitation": "Purposefully selected positive images; not full-val or unbiased generalization estimate.",
+  "records": [
+    {
+      "checkpoint": 8000,
+      "split": "train",
+      "sid": "007-3396-200",
+      "BN_mode": "running_stats",
+      "components": {
+        "base_logits": [
+          {
+            "min": -14.713388442993164,
+            "mean": -7.554306983947754,
+            "max": 8.529150009155273,
+            "positive": 805,
+            "finite": true
+          },
+          {
+            "min": -15.475160598754883,
+            "mean": -7.518664836883545,
+            "max": 9.341224670410156,
+            "positive": 35196,
+            "finite": true
+          },
+          {
+            "min": -13.00168228149414,
+            "mean": -6.830221176147461,
+            "max": 2.1245689392089844,
+            "positive": 2011,
+            "finite": true
+          },
+          {
+            "min": -16.080041885375977,
+            "mean": -8.006129264831543,
+            "max": 4.966757774353027,
+            "positive": 2165,
+            "finite": true
+          }
+        ],
+        "residual": [
+          {
+            "min": -1.0351746082305908,
+            "mean": -0.7773973345756531,
+            "max": -0.1575242131948471,
+            "positive": 0,
+            "finite": true
+          },
+          {
+            "min": -0.6213882565498352,
+            "mean": -0.5134260058403015,
+            "max": -0.26713159680366516,
+            "positive": 0,
+            "finite": true
+          },
+          {
+            "min": -0.9533396363258362,
+            "mean": -0.7607169151306152,
+            "max": -0.26002267003059387,
+            "positive": 0,
+            "finite": true
+          },
+          {
+            "min": -0.9384697675704956,
+            "mean": -0.6998636722564697,
+            "max": -0.2439173460006714,
+            "positive": 0,
+            "finite": true
+          }
+        ],
+        "logits": [
+          {
+            "min": -15.64109992980957,
+            "mean": -8.331703186035156,
+            "max": 8.220879554748535,
+            "positive": 689,
+            "finite": true
+          },
+          {
+            "min": -15.79626178741455,
+            "mean": -8.03209114074707,
+            "max": 8.797304153442383,
+            "positive": 31251,
+            "finite": true
+          },
+          {
+            "min": -13.850589752197266,
+            "mean": -7.590937614440918,
+            "max": 1.768491268157959,
+            "positive": 1562,
+            "finite": true
+          },
+          {
+            "min": -16.379013061523438,
+            "mean": -8.70599365234375,
+            "max": 4.240278244018555,
+            "positive": 1513,
+            "finite": true
+          }
+        ]
+      },
+      "classes": [
+        {
+          "class": "EX",
+          "counts": [
+            451,
+            66,
+            345
+          ],
+          "GT_pixels": 796,
+          "GT_probability_mean": 0.5741075873374939,
+          "GT_probability_max": 0.9997280240058899,
+          "max_probability": 0.9997280240058899,
+          "predicted_positive": 517
+        },
+        {
+          "class": "HE",
+          "counts": [
+            16968,
+            6455,
+            6553
+          ],
+          "GT_pixels": 23521,
+          "GT_probability_mean": 0.7050483226776123,
+          "GT_probability_max": 0.9998486042022705,
+          "max_probability": 0.9998486042022705,
+          "predicted_positive": 23423
+        },
+        {
+          "class": "SE",
+          "counts": [
+            1051,
+            120,
+            621
+          ],
+          "GT_pixels": 1672,
+          "GT_probability_mean": 0.5546456575393677,
+          "GT_probability_max": 0.8539329767227173,
+          "max_probability": 0.8539329767227173,
+          "predicted_positive": 1171
+        },
+        {
+          "class": "MA",
+          "counts": [
+            233,
+            883,
+            326
+          ],
+          "GT_pixels": 559,
+          "GT_probability_mean": 0.4161035120487213,
+          "GT_probability_max": 0.9846211671829224,
+          "max_probability": 0.9846211671829224,
+          "predicted_positive": 1116
+        }
+      ],
+      "seconds": 11.62904492765665
+    },
+    {
+      "checkpoint": 8000,
+      "split": "train",
+      "sid": "007-3396-200",
+      "BN_mode": "batch_stats",
+      "components": {
+        "base_logits": [
+          {
+            "min": -12.53814697265625,
+            "mean": -6.187799453735352,
+            "max": 8.18291187286377,
+            "positive": 829,
+            "finite": true
+          },
+          {
+            "min": -11.746219635009766,
+            "mean": -6.167924880981445,
+            "max": 7.919355392456055,
+            "positive": 30431,
+            "finite": true
+          },
+          {
+            "min": -11.550748825073242,
+            "mean": -5.609594821929932,
+            "max": 3.761758327484131,
+            "positive": 4291,
+            "finite": true
+          },
+          {
+            "min": -12.393333435058594,
+            "mean": -6.691394805908203,
+            "max": 4.972931861877441,
+            "positive": 1920,
+            "finite": true
+          }
+        ],
+        "residual": [
+          {
+            "min": -1.0342514514923096,
+            "mean": -0.7799651622772217,
+            "max": -0.15525396168231964,
+            "positive": 0,
+            "finite": true
+          },
+          {
+            "min": -0.6213444471359253,
+            "mean": -0.5140640735626221,
+            "max": -0.26521575450897217,
+            "positive": 0,
+            "finite": true
+          },
+          {
+            "min": -0.9530603885650635,
+            "mean": -0.7629973292350769,
+            "max": -0.2604708969593048,
+            "positive": 0,
+            "finite": true
+          },
+          {
+            "min": -0.9389585256576538,
+            "mean": -0.7019411325454712,
+            "max": -0.24442295730113983,
+            "positive": 0,
+            "finite": true
+          }
+        ],
+        "logits": [
+          {
+            "min": -13.445760726928711,
+            "mean": -6.967764377593994,
+            "max": 7.875972270965576,
+            "positive": 693,
+            "finite": true
+          },
+          {
+            "min": -12.05440616607666,
+            "mean": -6.681988716125488,
+            "max": 7.402095794677734,
+            "positive": 27235,
+            "finite": true
+          },
+          {
+            "min": -12.396269798278809,
+            "mean": -6.372591972351074,
+            "max": 3.397413730621338,
+            "positive": 3815,
+            "finite": true
+          },
+          {
+            "min": -12.702296257019043,
+            "mean": -7.393336296081543,
+            "max": 4.244745254516602,
+            "positive": 1382,
+            "finite": true
+          }
+        ]
+      },
+      "classes": [
+        {
+          "class": "EX",
+          "counts": [
+            450,
+            69,
+            346
+          ],
+          "GT_pixels": 796,
+          "GT_probability_mean": 0.5790470242500305,
+          "GT_probability_max": 0.9996166229248047,
+          "max_probability": 0.9996166229248047,
+          "predicted_positive": 519
+        },
+        {
+          "class": "HE",
+          "counts": [
+            16016,
+            4416,
+            7505
+          ],
+          "GT_pixels": 23521,
+          "GT_probability_mean": 0.6608783006668091,
+          "GT_probability_max": 0.9993875026702881,
+          "max_probability": 0.9993875026702881,
+          "predicted_positive": 20432
+        },
+        {
+          "class": "SE",
+          "counts": [
+            1607,
+            1248,
+            65
+          ],
+          "GT_pixels": 1672,
+          "GT_probability_mean": 0.8389422297477722,
+          "GT_probability_max": 0.9673619866371155,
+          "max_probability": 0.9673619866371155,
+          "predicted_positive": 2855
+        },
+        {
+          "class": "MA",
+          "counts": [
+            212,
+            816,
+            347
+          ],
+          "GT_pixels": 559,
+          "GT_probability_mean": 0.39090976119041443,
+          "GT_probability_max": 0.9850553274154663,
+          "max_probability": 0.9850553274154663,
+          "predicted_positive": 1028
+        }
+      ],
+      "seconds": 12.096152924001217
+    },
+    {
+      "checkpoint": 8000,
+      "split": "train",
+      "sid": "007-3448-200",
+      "BN_mode": "running_stats",
+      "components": {
+        "base_logits": [
+          {
+            "min": -13.231054306030273,
+            "mean": -7.616044044494629,
+            "max": 8.115884780883789,
+            "positive": 10577,
+            "finite": true
+          },
+          {
+            "min": -14.839120864868164,
+            "mean": -7.694733142852783,
+            "max": 5.010168075561523,
+            "positive": 4824,
+            "finite": true
+          },
+          {
+            "min": -13.028227806091309,
+            "mean": -7.067485809326172,
+            "max": 4.883368015289307,
+            "positive": 1097,
+            "finite": true
+          },
+          {
+            "min": -14.512680053710938,
+            "mean": -8.31727409362793,
+            "max": 6.322910308837891,
+            "positive": 700,
+            "finite": true
+          }
+        ],
+        "residual": [
+          {
+            "min": -1.0359632968902588,
+            "mean": -0.9007028341293335,
+            "max": -0.22352024912834167,
+            "positive": 0,
+            "finite": true
+          },
+          {
+            "min": -0.6258009076118469,
+            "mean": -0.5698749423027039,
+            "max": -0.30886000394821167,
+            "positive": 0,
+            "finite": true
+          },
+          {
+            "min": -0.954585611820221,
+            "mean": -0.8751422166824341,
+            "max": -0.31301361322402954,
+            "positive": 0,
+            "finite": true
+          },
+          {
+            "min": -0.9395120143890381,
+            "mean": -0.8172900676727295,
+            "max": -0.2686595618724823,
+            "positive": 0,
+            "finite": true
+          }
+        ],
+        "logits": [
+          {
+            "min": -13.696950912475586,
+            "mean": -8.516746520996094,
+            "max": 7.680042743682861,
+            "positive": 8052,
+            "finite": true
+          },
+          {
+            "min": -15.162032127380371,
+            "mean": -8.264608383178711,
+            "max": 4.4278154373168945,
+            "positive": 3954,
+            "finite": true
+          },
+          {
+            "min": -13.827241897583008,
+            "mean": -7.942627906799316,
+            "max": 4.28416633605957,
+            "positive": 919,
+            "finite": true
+          },
+          {
+            "min": -14.899487495422363,
+            "mean": -9.134565353393555,
+            "max": 5.466273307800293,
+            "positive": 424,
+            "finite": true
+          }
+        ]
+      },
+      "classes": [
+        {
+          "class": "EX",
+          "counts": [
+            4442,
+            1562,
+            3280
+          ],
+          "GT_pixels": 7722,
+          "GT_probability_mean": 0.5689919590950012,
+          "GT_probability_max": 0.9995286464691162,
+          "max_probability": 0.9995286464691162,
+          "predicted_positive": 6004
+        },
+        {
+          "class": "HE",
+          "counts": [
+            2403,
+            555,
+            3800
+          ],
+          "GT_pixels": 6203,
+          "GT_probability_mean": 0.388650506734848,
+          "GT_probability_max": 0.9878957271575928,
+          "max_probability": 0.9878957271575928,
+          "predicted_positive": 2958
+        },
+        {
+          "class": "SE",
+          "counts": [
+            616,
+            74,
+            140
+          ],
+          "GT_pixels": 756,
+          "GT_probability_mean": 0.7477608919143677,
+          "GT_probability_max": 0.9863191843032837,
+          "max_probability": 0.9863191843032837,
+          "predicted_positive": 690
+        },
+        {
+          "class": "MA",
+          "counts": [
+            185,
+            130,
+            215
+          ],
+          "GT_pixels": 400,
+          "GT_probability_mean": 0.4723386764526367,
+          "GT_probability_max": 0.9954642653465271,
+          "max_probability": 0.9954642653465271,
+          "predicted_positive": 315
+        }
+      ],
+      "seconds": 11.7348338291049
+    },
+    {
+      "checkpoint": 8000,
+      "split": "train",
+      "sid": "007-3448-200",
+      "BN_mode": "batch_stats",
+      "components": {
+        "base_logits": [
+          {
+            "min": -11.028322219848633,
+            "mean": -6.185544490814209,
+            "max": 8.384769439697266,
+            "positive": 12217,
+            "finite": true
+          },
+          {
+            "min": -12.414737701416016,
+            "mean": -6.076723575592041,
+            "max": 5.908943176269531,
+            "positive": 5348,
+            "finite": true
+          },
+          {
+            "min": -12.326637268066406,
+            "mean": -5.585357666015625,
+            "max": 4.70104455947876,
+            "positive": 1280,
+            "finite": true
+          },
+          {
+            "min": -12.416664123535156,
+            "mean": -6.666672706604004,
+            "max": 7.675128936767578,
+            "positive": 3381,
+            "finite": true
+          }
+        ],
+        "residual": [
+          {
+            "min": -1.0351771116256714,
+            "mean": -0.9003323316574097,
+            "max": -0.2241203486919403,
+            "positive": 0,
+            "finite": true
+          },
+          {
+            "min": -0.6255568265914917,
+            "mean": -0.5695163011550903,
+            "max": -0.3117891252040863,
+            "positive": 0,
+            "finite": true
+          },
+          {
+            "min": -0.9554927945137024,
+            "mean": -0.8747179508209229,
+            "max": -0.3162688910961151,
+            "positive": 0,
+            "finite": true
+          },
+          {
+            "min": -0.9398955702781677,
+            "mean": -0.8167975544929504,
+            "max": -0.26752209663391113,
+            "positive": 0,
+            "finite": true
+          }
+        ],
+        "logits": [
+          {
+            "min": -11.974427223205566,
+            "mean": -7.085876941680908,
+            "max": 7.951256275177002,
+            "positive": 9247,
+            "finite": true
+          },
+          {
+            "min": -12.741833686828613,
+            "mean": -6.646239280700684,
+            "max": 5.317759037017822,
+            "positive": 4023,
+            "finite": true
+          },
+          {
+            "min": -13.245272636413574,
+            "mean": -6.460075378417969,
+            "max": 4.142553806304932,
+            "positive": 1056,
+            "finite": true
+          },
+          {
+            "min": -13.189178466796875,
+            "mean": -7.4834699630737305,
+            "max": 6.846085548400879,
+            "positive": 1304,
+            "finite": true
+          }
+        ]
+      },
+      "classes": [
+        {
+          "class": "EX",
+          "counts": [
+            4844,
+            2095,
+            2878
+          ],
+          "GT_pixels": 7722,
+          "GT_probability_mean": 0.6018692851066589,
+          "GT_probability_max": 0.9996408224105835,
+          "max_probability": 0.9996408224105835,
+          "predicted_positive": 6939
+        },
+        {
+          "class": "HE",
+          "counts": [
+            2116,
+            889,
+            4087
+          ],
+          "GT_pixels": 6203,
+          "GT_probability_mean": 0.3539426326751709,
+          "GT_probability_max": 0.9951194524765015,
+          "max_probability": 0.9951194524765015,
+          "predicted_positive": 3005
+        },
+        {
+          "class": "SE",
+          "counts": [
+            649,
+            141,
+            107
+          ],
+          "GT_pixels": 756,
+          "GT_probability_mean": 0.7814645767211914,
+          "GT_probability_max": 0.9842998385429382,
+          "max_probability": 0.9842998385429382,
+          "predicted_positive": 790
+        },
+        {
+          "class": "MA",
+          "counts": [
+            204,
+            766,
+            196
+          ],
+          "GT_pixels": 400,
+          "GT_probability_mean": 0.5271602272987366,
+          "GT_probability_max": 0.9988914132118225,
+          "max_probability": 0.9988914132118225,
+          "predicted_positive": 970
+        }
+      ],
+      "seconds": 12.075633771717548
+    },
+    {
+      "checkpoint": 8000,
+      "split": "val",
+      "sid": "007-3873-200",
+      "BN_mode": "running_stats",
+      "components": {
+        "base_logits": [
+          {
+            "min": -13.588249206542969,
+            "mean": -7.8919878005981445,
+            "max": 4.920230865478516,
+            "positive": 608,
+            "finite": true
+          },
+          {
+            "min": -12.59918212890625,
+            "mean": -8.000028610229492,
+            "max": 7.627478122711182,
+            "positive": 5896,
+            "finite": true
+          },
+          {
+            "min": -11.794805526733398,
+            "mean": -7.2269368171691895,
+            "max": -0.21078279614448547,
+            "positive": 0,
+            "finite": true
+          },
+          {
+            "min": -13.370969772338867,
+            "mean": -8.580190658569336,
+            "max": 3.545408248901367,
+            "positive": 333,
+            "finite": true
+          }
+        ],
+        "residual": [
+          {
+            "min": -1.033621907234192,
+            "mean": -0.7035967707633972,
+            "max": -0.1982288807630539,
+            "positive": 0,
+            "finite": true
+          },
+          {
+            "min": -0.5950554013252258,
+            "mean": -0.47350549697875977,
+            "max": -0.18833714723587036,
+            "positive": 0,
+            "finite": true
+          },
+          {
+            "min": -0.9510175585746765,
+            "mean": -0.6971044540405273,
+            "max": -0.2523697018623352,
+            "positive": 0,
+            "finite": true
+          },
+          {
+            "min": -0.9302510619163513,
+            "mean": -0.645369291305542,
+            "max": -0.14777244627475739,
+            "positive": 0,
+            "finite": true
+          }
+        ],
+        "logits": [
+          {
+            "min": -13.916221618652344,
+            "mean": -8.595584869384766,
+            "max": 4.677513122558594,
+            "positive": 530,
+            "finite": true
+          },
+          {
+            "min": -12.939531326293945,
+            "mean": -8.47353458404541,
+            "max": 7.42800760269165,
+            "positive": 5422,
+            "finite": true
+          },
+          {
+            "min": -12.570588111877441,
+            "mean": -7.924041271209717,
+            "max": -0.5365880727767944,
+            "positive": 0,
+            "finite": true
+          },
+          {
+            "min": -14.259588241577148,
+            "mean": -9.22555923461914,
+            "max": 3.2769007682800293,
+            "positive": 290,
+            "finite": true
+          }
+        ]
+      },
+      "classes": [
+        {
+          "class": "EX",
+          "counts": [
+            290,
+            270,
+            290
+          ],
+          "GT_pixels": 580,
+          "GT_probability_mean": 0.4892982244491577,
+          "GT_probability_max": 0.9904302954673767,
+          "max_probability": 0.9904302954673767,
+          "predicted_positive": 560
+        },
+        {
+          "class": "HE",
+          "counts": [
+            3471,
+            2308,
+            849
+          ],
+          "GT_pixels": 4320,
+          "GT_probability_mean": 0.7435917258262634,
+          "GT_probability_max": 0.9993984699249268,
+          "max_probability": 0.9993984699249268,
+          "predicted_positive": 5779
+        },
+        {
+          "class": "SE",
+          "counts": [
+            0,
+            0,
+            1168
+          ],
+          "GT_pixels": 1168,
+          "GT_probability_mean": 0.02942696586251259,
+          "GT_probability_max": 0.07372575253248215,
+          "max_probability": 0.36759817600250244,
+          "predicted_positive": 0
+        },
+        {
+          "class": "MA",
+          "counts": [
+            56,
+            245,
+            160
+          ],
+          "GT_pixels": 216,
+          "GT_probability_mean": 0.2651195824146271,
+          "GT_probability_max": 0.9614118933677673,
+          "max_probability": 0.9614118933677673,
+          "predicted_positive": 301
+        }
+      ],
+      "seconds": 11.42670477181673
+    },
+    {
+      "checkpoint": 8000,
+      "split": "val",
+      "sid": "007-3873-200",
+      "BN_mode": "batch_stats",
+      "components": {
+        "base_logits": [
+          {
+            "min": -13.059793472290039,
+            "mean": -6.081241607666016,
+            "max": 6.481740951538086,
+            "positive": 1852,
+            "finite": true
+          },
+          {
+            "min": -13.337335586547852,
+            "mean": -6.012459754943848,
+            "max": 8.443778991699219,
+            "positive": 7490,
+            "finite": true
+          },
+          {
+            "min": -11.811227798461914,
+            "mean": -5.521857261657715,
+            "max": 0.2650472819805145,
+            "positive": 91,
+            "finite": true
+          },
+          {
+            "min": -14.146958351135254,
+            "mean": -6.576751708984375,
+            "max": 3.8042144775390625,
+            "positive": 421,
+            "finite": true
+          }
+        ],
+        "residual": [
+          {
+            "min": -1.0320807695388794,
+            "mean": -0.7035903334617615,
+            "max": -0.1936323195695877,
+            "positive": 0,
+            "finite": true
+          },
+          {
+            "min": -0.5954509973526001,
+            "mean": -0.4733448624610901,
+            "max": -0.18410581350326538,
+            "positive": 0,
+            "finite": true
+          },
+          {
+            "min": -0.9501296877861023,
+            "mean": -0.6969399452209473,
+            "max": -0.2503424882888794,
+            "positive": 0,
+            "finite": true
+          },
+          {
+            "min": -0.930885374546051,
+            "mean": -0.6451125741004944,
+            "max": -0.1447211503982544,
+            "positive": 0,
+            "finite": true
+          }
+        ],
+        "logits": [
+          {
+            "min": -14.02025318145752,
+            "mean": -6.784832000732422,
+            "max": 6.237563610076904,
+            "positive": 1637,
+            "finite": true
+          },
+          {
+            "min": -13.684176445007324,
+            "mean": -6.485805034637451,
+            "max": 8.245502471923828,
+            "positive": 6912,
+            "finite": true
+          },
+          {
+            "min": -12.712804794311523,
+            "mean": -6.218796730041504,
+            "max": -0.11014249920845032,
+            "positive": 0,
+            "finite": true
+          },
+          {
+            "min": -14.51050090789795,
+            "mean": -7.221863746643066,
+            "max": 3.5079970359802246,
+            "positive": 354,
+            "finite": true
+          }
+        ]
+      },
+      "classes": [
+        {
+          "class": "EX",
+          "counts": [
+            353,
+            1394,
+            227
+          ],
+          "GT_pixels": 580,
+          "GT_probability_mean": 0.6078943014144897,
+          "GT_probability_max": 0.9979547262191772,
+          "max_probability": 0.9979547262191772,
+          "predicted_positive": 1747
+        },
+        {
+          "class": "HE",
+          "counts": [
+            3517,
+            3873,
+            803
+          ],
+          "GT_pixels": 4320,
+          "GT_probability_mean": 0.7750076651573181,
+          "GT_probability_max": 0.9997352957725525,
+          "max_probability": 0.9997352957725525,
+          "predicted_positive": 7390
+        },
+        {
+          "class": "SE",
+          "counts": [
+            0,
+            0,
+            1168
+          ],
+          "GT_pixels": 1168,
+          "GT_probability_mean": 0.20564328134059906,
+          "GT_probability_max": 0.4709789454936981,
+          "max_probability": 0.4709789454936981,
+          "predicted_positive": 0
+        },
+        {
+          "class": "MA",
+          "counts": [
+            61,
+            308,
+            155
+          ],
+          "GT_pixels": 216,
+          "GT_probability_mean": 0.29294630885124207,
+          "GT_probability_max": 0.9693441987037659,
+          "max_probability": 0.9693441987037659,
+          "predicted_positive": 369
+        }
+      ],
+      "seconds": 12.050987102091312
+    },
+    {
+      "checkpoint": 8000,
+      "split": "val",
+      "sid": "007-4960-300",
+      "BN_mode": "running_stats",
+      "components": {
+        "base_logits": [
+          {
+            "min": -13.734130859375,
+            "mean": -7.29496955871582,
+            "max": 8.380460739135742,
+            "positive": 12690,
+            "finite": true
+          },
+          {
+            "min": -13.992515563964844,
+            "mean": -7.235699653625488,
+            "max": 6.890721321105957,
+            "positive": 9088,
+            "finite": true
+          },
+          {
+            "min": -13.003335952758789,
+            "mean": -6.85101318359375,
+            "max": 0.6230565905570984,
+            "positive": 951,
+            "finite": true
+          },
+          {
+            "min": -14.763181686401367,
+            "mean": -7.976971626281738,
+            "max": 3.787996768951416,
+            "positive": 481,
+            "finite": true
+          }
+        ],
+        "residual": [
+          {
+            "min": -1.0503976345062256,
+            "mean": -0.8692050576210022,
+            "max": -0.1992470771074295,
+            "positive": 0,
+            "finite": true
+          },
+          {
+            "min": -0.6358327865600586,
+            "mean": -0.5477557182312012,
+            "max": -0.1924867331981659,
+            "positive": 0,
+            "finite": true
+          },
+          {
+            "min": -0.9803241491317749,
+            "mean": -0.8429722785949707,
+            "max": -0.30555540323257446,
+            "positive": 0,
+            "finite": true
+          },
+          {
+            "min": -0.96718430519104,
+            "mean": -0.7855918407440186,
+            "max": -0.2610292136669159,
+            "positive": 0,
+            "finite": true
+          }
+        ],
+        "logits": [
+          {
+            "min": -14.719929695129395,
+            "mean": -8.16417407989502,
+            "max": 8.077920913696289,
+            "positive": 9486,
+            "finite": true
+          },
+          {
+            "min": -14.355277061462402,
+            "mean": -7.783454895019531,
+            "max": 6.295285701751709,
+            "positive": 7203,
+            "finite": true
+          },
+          {
+            "min": -13.925878524780273,
+            "mean": -7.693985462188721,
+            "max": 0.028101414442062378,
+            "positive": 19,
+            "finite": true
+          },
+          {
+            "min": -15.183293342590332,
+            "mean": -8.762563705444336,
+            "max": 2.9087371826171875,
+            "positive": 278,
+            "finite": true
+          }
+        ]
+      },
+      "classes": [
+        {
+          "class": "EX",
+          "counts": [
+            5095,
+            1996,
+            1520
+          ],
+          "GT_pixels": 6615,
+          "GT_probability_mean": 0.7314131259918213,
+          "GT_probability_max": 0.9996803998947144,
+          "max_probability": 0.9996803998947144,
+          "predicted_positive": 7091
+        },
+        {
+          "class": "HE",
+          "counts": [
+            3207,
+            2196,
+            3725
+          ],
+          "GT_pixels": 6932,
+          "GT_probability_mean": 0.42884156107902527,
+          "GT_probability_max": 0.9981378316879272,
+          "max_probability": 0.9981378316879272,
+          "predicted_positive": 5403
+        },
+        {
+          "class": "SE",
+          "counts": [
+            13,
+            0,
+            3249
+          ],
+          "GT_pixels": 3262,
+          "GT_probability_mean": 0.20124226808547974,
+          "GT_probability_max": 0.5069947242736816,
+          "max_probability": 0.5069947242736816,
+          "predicted_positive": 13
+        },
+        {
+          "class": "MA",
+          "counts": [
+            106,
+            102,
+            282
+          ],
+          "GT_pixels": 388,
+          "GT_probability_mean": 0.29555341601371765,
+          "GT_probability_max": 0.9466672539710999,
+          "max_probability": 0.9466672539710999,
+          "predicted_positive": 208
+        }
+      ],
+      "seconds": 11.284616388380527
+    },
+    {
+      "checkpoint": 8000,
+      "split": "val",
+      "sid": "007-4960-300",
+      "BN_mode": "batch_stats",
+      "components": {
+        "base_logits": [
+          {
+            "min": -14.963396072387695,
+            "mean": -6.133597373962402,
+            "max": 8.329657554626465,
+            "positive": 17967,
+            "finite": true
+          },
+          {
+            "min": -13.26609992980957,
+            "mean": -6.051412105560303,
+            "max": 8.133343696594238,
+            "positive": 12413,
+            "finite": true
+          },
+          {
+            "min": -13.449721336364746,
+            "mean": -5.561428070068359,
+            "max": 3.8784871101379395,
+            "positive": 6079,
+            "finite": true
+          },
+          {
+            "min": -15.065620422363281,
+            "mean": -6.607152938842773,
+            "max": 5.607785224914551,
+            "positive": 873,
+            "finite": true
+          }
+        ],
+        "residual": [
+          {
+            "min": -1.0504049062728882,
+            "mean": -0.8690165281295776,
+            "max": -0.19900572299957275,
+            "positive": 0,
+            "finite": true
+          },
+          {
+            "min": -0.6357195377349854,
+            "mean": -0.5475941896438599,
+            "max": -0.1948462873697281,
+            "positive": 0,
+            "finite": true
+          },
+          {
+            "min": -0.9807167649269104,
+            "mean": -0.8428401947021484,
+            "max": -0.3079778850078583,
+            "positive": 0,
+            "finite": true
+          },
+          {
+            "min": -0.9666383266448975,
+            "mean": -0.7854645252227783,
+            "max": -0.26267507672309875,
+            "positive": 0,
+            "finite": true
+          }
+        ],
+        "logits": [
+          {
+            "min": -15.969944953918457,
+            "mean": -7.0026140213012695,
+            "max": 7.911640167236328,
+            "positive": 13199,
+            "finite": true
+          },
+          {
+            "min": -13.653005599975586,
+            "mean": -6.599005699157715,
+            "max": 7.5930962562561035,
+            "positive": 9698,
+            "finite": true
+          },
+          {
+            "min": -14.380547523498535,
+            "mean": -6.404268264770508,
+            "max": 3.057839870452881,
+            "positive": 4940,
+            "finite": true
+          },
+          {
+            "min": -15.49916934967041,
+            "mean": -7.392617225646973,
+            "max": 4.728907585144043,
+            "positive": 488,
+            "finite": true
+          }
+        ]
+      },
+      "classes": [
+        {
+          "class": "EX",
+          "counts": [
+            5909,
+            3939,
+            706
+          ],
+          "GT_pixels": 6615,
+          "GT_probability_mean": 0.8220692873001099,
+          "GT_probability_max": 0.9996228218078613,
+          "max_probability": 0.9996228218078613,
+          "predicted_positive": 9848
+        },
+        {
+          "class": "HE",
+          "counts": [
+            3517,
+            3754,
+            3415
+          ],
+          "GT_pixels": 6932,
+          "GT_probability_mean": 0.4812149107456207,
+          "GT_probability_max": 0.9994946718215942,
+          "max_probability": 0.9994946718215942,
+          "predicted_positive": 7271
+        },
+        {
+          "class": "SE",
+          "counts": [
+            2188,
+            1520,
+            1074
+          ],
+          "GT_pixels": 3262,
+          "GT_probability_mean": 0.5958912968635559,
+          "GT_probability_max": 0.9108490943908691,
+          "max_probability": 0.9550641179084778,
+          "predicted_positive": 3708
+        },
+        {
+          "class": "MA",
+          "counts": [
+            144,
+            220,
+            244
+          ],
+          "GT_pixels": 388,
+          "GT_probability_mean": 0.3987390100955963,
+          "GT_probability_max": 0.9911826848983765,
+          "max_probability": 0.9911826848983765,
+          "predicted_positive": 364
+        }
+      ],
+      "seconds": 12.005450442433357
+    },
+    {
+      "checkpoint": 20000,
+      "split": "train",
+      "sid": "007-3396-200",
+      "BN_mode": "running_stats",
+      "components": {
+        "base_logits": [
+          {
+            "min": -20.901042938232422,
+            "mean": -15.086875915527344,
+            "max": -9.461362838745117,
+            "positive": 0,
+            "finite": true
+          },
+          {
+            "min": -10.886460304260254,
+            "mean": -7.94217586517334,
+            "max": 7.815237045288086,
+            "positive": 31218,
+            "finite": true
+          },
+          {
+            "min": -24.44731903076172,
+            "mean": -16.203857421875,
+            "max": -11.057403564453125,
+            "positive": 0,
+            "finite": true
+          },
+          {
+            "min": -11.356590270996094,
+            "mean": -9.269134521484375,
+            "max": 4.761618614196777,
+            "positive": 670,
+            "finite": true
+          }
+        ],
+        "residual": [
+          {
+            "min": -2.1976397037506104,
+            "mean": -2.1146249771118164,
+            "max": -0.9425587058067322,
+            "positive": 0,
+            "finite": true
+          },
+          {
+            "min": -0.4364273250102997,
+            "mean": -0.39006271958351135,
+            "max": -0.21215328574180603,
+            "positive": 0,
+            "finite": true
+          },
+          {
+            "min": -2.6064634323120117,
+            "mean": -2.5282089710235596,
+            "max": -1.3187255859375,
+            "positive": 0,
+            "finite": true
+          },
+          {
+            "min": -0.9879058599472046,
+            "mean": -0.8807821273803711,
+            "max": -0.4579794704914093,
+            "positive": 0,
+            "finite": true
+          }
+        ],
+        "logits": [
+          {
+            "min": -22.985673904418945,
+            "mean": -17.201499938964844,
+            "max": -11.4795503616333,
+            "positive": 0,
+            "finite": true
+          },
+          {
+            "min": -11.273433685302734,
+            "mean": -8.332239151000977,
+            "max": 7.466067314147949,
+            "positive": 28404,
+            "finite": true
+          },
+          {
+            "min": -26.904085159301758,
+            "mean": -18.732065200805664,
+            "max": -13.353670120239258,
+            "positive": 0,
+            "finite": true
+          },
+          {
+            "min": -12.320465087890625,
+            "mean": -10.149917602539062,
+            "max": 3.873745918273926,
+            "positive": 298,
+            "finite": true
+          }
+        ]
+      },
+      "classes": [
+        {
+          "class": "EX",
+          "counts": [
+            0,
+            0,
+            796
+          ],
+          "GT_pixels": 796,
+          "GT_probability_mean": 1.246170597823948e-07,
+          "GT_probability_max": 3.7678680087083194e-07,
+          "max_probability": 1.0041406312666368e-05,
+          "predicted_positive": 0
+        },
+        {
+          "class": "HE",
+          "counts": [
+            16040,
+            5261,
+            7481
+          ],
+          "GT_pixels": 23521,
+          "GT_probability_mean": 0.6548515558242798,
+          "GT_probability_max": 0.9994242191314697,
+          "max_probability": 0.9994242191314697,
+          "predicted_positive": 21301
+        },
+        {
+          "class": "SE",
+          "counts": [
+            0,
+            0,
+            1672
+          ],
+          "GT_pixels": 1672,
+          "GT_probability_mean": 1.7346438596632652e-07,
+          "GT_probability_max": 4.1497651181998663e-07,
+          "max_probability": 1.564543026688625e-06,
+          "predicted_positive": 0
+        },
+        {
+          "class": "MA",
+          "counts": [
+            68,
+            155,
+            491
+          ],
+          "GT_pixels": 559,
+          "GT_probability_mean": 0.18975751101970673,
+          "GT_probability_max": 0.9789049029350281,
+          "max_probability": 0.9789049029350281,
+          "predicted_positive": 223
+        }
+      ],
+      "seconds": 10.413289174437523
+    },
+    {
+      "checkpoint": 20000,
+      "split": "train",
+      "sid": "007-3396-200",
+      "BN_mode": "batch_stats",
+      "components": {
+        "base_logits": [
+          {
+            "min": -19.64309310913086,
+            "mean": -13.932826042175293,
+            "max": -9.457954406738281,
+            "positive": 0,
+            "finite": true
+          },
+          {
+            "min": -10.934816360473633,
+            "mean": -7.439784526824951,
+            "max": 7.395591735839844,
+            "positive": 30389,
+            "finite": true
+          },
+          {
+            "min": -22.87360954284668,
+            "mean": -15.664470672607422,
+            "max": -10.88144302368164,
+            "positive": 0,
+            "finite": true
+          },
+          {
+            "min": -12.570615768432617,
+            "mean": -8.676027297973633,
+            "max": 4.47438907623291,
+            "positive": 1371,
+            "finite": true
+          }
+        ],
+        "residual": [
+          {
+            "min": -2.198063373565674,
+            "mean": -2.1155309677124023,
+            "max": -0.9349555969238281,
+            "positive": 0,
+            "finite": true
+          },
+          {
+            "min": -0.43521225452423096,
+            "mean": -0.3899667263031006,
+            "max": -0.21227027475833893,
+            "positive": 0,
+            "finite": true
+          },
+          {
+            "min": -2.6063084602355957,
+            "mean": -2.5290629863739014,
+            "max": -1.3109577894210815,
+            "positive": 0,
+            "finite": true
+          },
+          {
+            "min": -0.988085925579071,
+            "mean": -0.8809584379196167,
+            "max": -0.4585237503051758,
+            "positive": 0,
+            "finite": true
+          }
+        ],
+        "logits": [
+          {
+            "min": -21.725366592407227,
+            "mean": -16.048357009887695,
+            "max": -11.270197868347168,
+            "positive": 0,
+            "finite": true
+          },
+          {
+            "min": -11.330808639526367,
+            "mean": -7.829751491546631,
+            "max": 7.0479536056518555,
+            "positive": 27735,
+            "finite": true
+          },
+          {
+            "min": -25.326641082763672,
+            "mean": -18.193532943725586,
+            "max": -13.399092674255371,
+            "positive": 0,
+            "finite": true
+          },
+          {
+            "min": -13.470549583435059,
+            "mean": -9.556985855102539,
+            "max": 3.5682291984558105,
+            "positive": 875,
+            "finite": true
+          }
+        ]
+      },
+      "classes": [
+        {
+          "class": "EX",
+          "counts": [
+            0,
+            0,
+            796
+          ],
+          "GT_pixels": 796,
+          "GT_probability_mean": 1.7888688716993784e-06,
+          "GT_probability_max": 1.2655237696890254e-05,
+          "max_probability": 1.2655237696890254e-05,
+          "predicted_positive": 0
+        },
+        {
+          "class": "HE",
+          "counts": [
+            16090,
+            4703,
+            7431
+          ],
+          "GT_pixels": 23521,
+          "GT_probability_mean": 0.6586964726448059,
+          "GT_probability_max": 0.9991282820701599,
+          "max_probability": 0.9991282820701599,
+          "predicted_positive": 20793
+        },
+        {
+          "class": "SE",
+          "counts": [
+            0,
+            0,
+            1672
+          ],
+          "GT_pixels": 1672,
+          "GT_probability_mean": 2.59623451626112e-08,
+          "GT_probability_max": 1.1186703119392405e-07,
+          "max_probability": 1.492025148763787e-06,
+          "predicted_positive": 0
+        },
+        {
+          "class": "MA",
+          "counts": [
+            127,
+            523,
+            432
+          ],
+          "GT_pixels": 559,
+          "GT_probability_mean": 0.2549843490123749,
+          "GT_probability_max": 0.9707794189453125,
+          "max_probability": 0.9707794189453125,
+          "predicted_positive": 650
+        }
+      ],
+      "seconds": 11.329674564301968
+    },
+    {
+      "checkpoint": 20000,
+      "split": "train",
+      "sid": "007-3448-200",
+      "BN_mode": "running_stats",
+      "components": {
+        "base_logits": [
+          {
+            "min": -20.215850830078125,
+            "mean": -15.163755416870117,
+            "max": -10.70277214050293,
+            "positive": 0,
+            "finite": true
+          },
+          {
+            "min": -10.400382995605469,
+            "mean": -8.192188262939453,
+            "max": 4.99870491027832,
+            "positive": 5084,
+            "finite": true
+          },
+          {
+            "min": -22.848264694213867,
+            "mean": -16.363903045654297,
+            "max": -12.680049896240234,
+            "positive": 0,
+            "finite": true
+          },
+          {
+            "min": -11.170031547546387,
+            "mean": -9.365890502929688,
+            "max": 5.9972734451293945,
+            "positive": 590,
+            "finite": true
+          }
+        ],
+        "residual": [
+          {
+            "min": -2.1966300010681152,
+            "mean": -2.1291019916534424,
+            "max": -1.4699023962020874,
+            "positive": 0,
+            "finite": true
+          },
+          {
+            "min": -0.43980029225349426,
+            "mean": -0.4008257985115051,
+            "max": -0.2149244099855423,
+            "positive": 0,
+            "finite": true
+          },
+          {
+            "min": -2.6076881885528564,
+            "mean": -2.554492235183716,
+            "max": -1.7520846128463745,
+            "positive": 0,
+            "finite": true
+          },
+          {
+            "min": -0.9883230328559875,
+            "mean": -0.9019606113433838,
+            "max": -0.5651216506958008,
+            "positive": 0,
+            "finite": true
+          }
+        ],
+        "logits": [
+          {
+            "min": -22.305574417114258,
+            "mean": -17.292856216430664,
+            "max": -12.814733505249023,
+            "positive": 0,
+            "finite": true
+          },
+          {
+            "min": -10.789530754089355,
+            "mean": -8.593013763427734,
+            "max": 4.59230375289917,
+            "positive": 4364,
+            "finite": true
+          },
+          {
+            "min": -25.379310607910156,
+            "mean": -18.91839599609375,
+            "max": -15.220921516418457,
+            "positive": 0,
+            "finite": true
+          },
+          {
+            "min": -12.149456024169922,
+            "mean": -10.267850875854492,
+            "max": 5.111005783081055,
+            "positive": 401,
+            "finite": true
+          }
+        ]
+      },
+      "classes": [
+        {
+          "class": "EX",
+          "counts": [
+            0,
+            0,
+            7722
+          ],
+          "GT_pixels": 7722,
+          "GT_probability_mean": 1.1515452058574738e-07,
+          "GT_probability_max": 2.0991647033952177e-06,
+          "max_probability": 2.63632819041959e-06,
+          "predicted_positive": 0
+        },
+        {
+          "class": "HE",
+          "counts": [
+            2268,
+            1000,
+            3935
+          ],
+          "GT_pixels": 6203,
+          "GT_probability_mean": 0.36164629459381104,
+          "GT_probability_max": 0.9899204969406128,
+          "max_probability": 0.9899204969406128,
+          "predicted_positive": 3268
+        },
+        {
+          "class": "SE",
+          "counts": [
+            0,
+            0,
+            756
+          ],
+          "GT_pixels": 756,
+          "GT_probability_mean": 1.05362989444302e-08,
+          "GT_probability_max": 3.6251613266813365e-08,
+          "max_probability": 2.439849424717977e-07,
+          "predicted_positive": 0
+        },
+        {
+          "class": "MA",
+          "counts": [
+            190,
+            107,
+            210
+          ],
+          "GT_pixels": 400,
+          "GT_probability_mean": 0.4704781472682953,
+          "GT_probability_max": 0.9936002492904663,
+          "max_probability": 0.9936002492904663,
+          "predicted_positive": 297
+        }
+      ],
+      "seconds": 10.727446898818016
+    },
+    {
+      "checkpoint": 20000,
+      "split": "train",
+      "sid": "007-3448-200",
+      "BN_mode": "batch_stats",
+      "components": {
+        "base_logits": [
+          {
+            "min": -19.768301010131836,
+            "mean": -13.946433067321777,
+            "max": -10.248536109924316,
+            "positive": 0,
+            "finite": true
+          },
+          {
+            "min": -10.504180908203125,
+            "mean": -7.419118881225586,
+            "max": 5.205101490020752,
+            "positive": 4233,
+            "finite": true
+          },
+          {
+            "min": -23.016254425048828,
+            "mean": -15.686542510986328,
+            "max": -11.807210922241211,
+            "positive": 0,
+            "finite": true
+          },
+          {
+            "min": -12.314315795898438,
+            "mean": -8.679006576538086,
+            "max": 7.478790760040283,
+            "positive": 896,
+            "finite": true
+          }
+        ],
+        "residual": [
+          {
+            "min": -2.1974782943725586,
+            "mean": -2.129281520843506,
+            "max": -1.467057228088379,
+            "positive": 0,
+            "finite": true
+          },
+          {
+            "min": -0.43969419598579407,
+            "mean": -0.40093541145324707,
+            "max": -0.21367807686328888,
+            "positive": 0,
+            "finite": true
+          },
+          {
+            "min": -2.609178066253662,
+            "mean": -2.554450035095215,
+            "max": -1.7473098039627075,
+            "positive": 0,
+            "finite": true
+          },
+          {
+            "min": -0.9883748888969421,
+            "mean": -0.9017957448959351,
+            "max": -0.5625923275947571,
+            "positive": 0,
+            "finite": true
+          }
+        ],
+        "logits": [
+          {
+            "min": -21.858110427856445,
+            "mean": -16.075714111328125,
+            "max": -12.381380081176758,
+            "positive": 0,
+            "finite": true
+          },
+          {
+            "min": -10.927236557006836,
+            "mean": -7.82005500793457,
+            "max": 4.804035186767578,
+            "positive": 3610,
+            "finite": true
+          },
+          {
+            "min": -25.582969665527344,
+            "mean": -18.240991592407227,
+            "max": -14.33537483215332,
+            "positive": 0,
+            "finite": true
+          },
+          {
+            "min": -13.276154518127441,
+            "mean": -9.580801010131836,
+            "max": 6.5919904708862305,
+            "positive": 613,
+            "finite": true
+          }
+        ]
+      },
+      "classes": [
+        {
+          "class": "EX",
+          "counts": [
+            0,
+            0,
+            7722
+          ],
+          "GT_pixels": 7722,
+          "GT_probability_mean": 4.0187353533838177e-07,
+          "GT_probability_max": 3.875693892041454e-06,
+          "max_probability": 3.999098225904163e-06,
+          "predicted_positive": 0
+        },
+        {
+          "class": "HE",
+          "counts": [
+            1955,
+            738,
+            4248
+          ],
+          "GT_pixels": 6203,
+          "GT_probability_mean": 0.3308328092098236,
+          "GT_probability_max": 0.9918518662452698,
+          "max_probability": 0.9918518662452698,
+          "predicted_positive": 2693
+        },
+        {
+          "class": "SE",
+          "counts": [
+            0,
+            0,
+            756
+          ],
+          "GT_pixels": 756,
+          "GT_probability_mean": 1.32536612795775e-07,
+          "GT_probability_max": 3.1057015803526156e-07,
+          "max_probability": 5.927670372329885e-07,
+          "predicted_positive": 0
+        },
+        {
+          "class": "MA",
+          "counts": [
+            233,
+            224,
+            167
+          ],
+          "GT_pixels": 400,
+          "GT_probability_mean": 0.5654409527778625,
+          "GT_probability_max": 0.9985494017601013,
+          "max_probability": 0.9985494017601013,
+          "predicted_positive": 457
+        }
+      ],
+      "seconds": 11.129428952932358
+    }
+  ]
+}

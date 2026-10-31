@@ -1,0 +1,25 @@
+/root/miniconda3/lib/python3.8/site-packages/mmcv/__init__.py:20: UserWarning: On January 1, 2023, MMCV will release v2.0.0, in which it will remove components related to the training process and add a data transformation module. In addition, it will rename the package names mmcv to mmcv-lite and mmcv-full to mmcv. See https://github.com/open-mmlab/mmcv/blob/master/docs/en/compatibility.md for more details.
+  warnings.warn(
+2026-09-20 21:31:22,386 - mmseg - INFO - Loaded 76 images from /root/autodl-tmp/hr_exec_20260919/data/DDR_split_613/images/val
+[2026-09-20 21:31:24] val dataset: 76 张（契约要求 76）
+[2026-09-20 21:31:35] GT 复用已校验的共享副本: /root/autodl-tmp/HRDecoder_FullCompetition_20260920/expert_outputs/_shared/gt（76 张）
+[HRPlusMAResidual] 可训练 0.058M / 冻结 131.221M
+[2026-09-20 21:31:44] champion built: members=['D', 'E', 'B', 'E4'] head=/root/autodl-tmp/hr_exec_20260919/assets/H4_best.pth
+[2026-09-20 21:31:49] candidate C2000 loaded: arm=C steps=2000 seed=42 sha=119793766067…
+[2026-09-20 21:31:53] candidate S4000 loaded: arm=S steps=4000 seed=42 sha=abb2f078e57f…
+[2026-09-20 21:32:04] 首图自检通过：champion 共享路径 bitwise-equal（max|Δ|=0.0e+00），非 MA 三通道与 BASE_0 逐位一致
+[2026-09-20 21:33:13] export 10/76 (79.8s)
+[2026-09-20 21:34:24] export 20/76 (150.6s)
+[2026-09-20 21:35:41] export 30/76 (228.1s)
+[2026-09-20 21:36:49] export 40/76 (295.4s)
+[2026-09-20 21:37:57] export 50/76 (364.0s)
+[2026-09-20 21:39:10] export 60/76 (436.5s)
+[2026-09-20 21:40:15] export 70/76 (501.8s)
+[2026-09-20 21:40:54] export 76/76 (541.2s)
+[2026-09-20 21:40:55] contract written: /root/autodl-tmp/HRDecoder_FullCompetition_20260920/expert_outputs/hrplus/champion/contract.json
+[2026-09-20 21:40:55] pipeline champion   mIoU=0.426694  per_class={'EX': 0.457715, 'HE': 0.437583, 'SE': 0.551807, 'MA': 0.259672}
+[2026-09-20 21:40:55] contract written: /root/autodl-tmp/HRDecoder_FullCompetition_20260920/expert_outputs/hrplus/BASE_0/contract.json
+[2026-09-20 21:40:55] pipeline BASE_0     mIoU=0.417973  per_class={'EX': 0.457715, 'HE': 0.437583, 'SE': 0.551807, 'MA': 0.224788}
+[2026-09-20 21:40:55] contract written: /root/autodl-tmp/HRDecoder_FullCompetition_20260920/expert_outputs/hrplus/D_blend/contract.json
+[2026-09-20 21:40:55] pipeline D_blend    mIoU=0.416149  per_class={'EX': 0.440397, 'HE': 0.447262, 'SE': 0.550758, 'MA': 0.226179}
+[2026-09-20 21:40:55] CONTRACT FAILURE: contract[C2000]: 契约中出现概率字段 'probability' —— 本契约只允许二值 packbits，禁止保存概率（fp16 概率会改变严格 0.5 判定）

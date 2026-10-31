@@ -1,0 +1,32 @@
+{
+  "checked_at": "2026-10-04T04:13:18.461271+00:00",
+  "recorded_at": "2026-10-04T04:26:28.144739+00:00",
+  "arm": "Q_MIX",
+  "seed": 2024,
+  "completed": 10380,
+  "endpoint": 24000,
+  "formal_pid": 94980,
+  "formal_process_alive": true,
+  "identity_sha256": "60920d33a3d85acd05f0c6637a4ec2442f21f69a6d4ca3beff46b2cb7034adac",
+  "free_bytes": 12484608000,
+  "val_8k": {
+    "single": 35.1186628110024,
+    "fixed_fusion": 44.26283558883056,
+    "p0": 43.48770322103657
+  },
+  "severe_8k_check": {
+    "single_below_35": false,
+    "fusion_below_P0_minus_1": false,
+    "single_4k_to_8k_gain_below_0_2": false,
+    "single_4k_to_8k_gain_pp": 0.6611658740088515,
+    "run": "Q_MIX_seed2024",
+    "all_three_stop_conditions_met": false
+  },
+  "late_export_worker_stage": "WAITING_FOR_REGISTERED_LATE_NODE",
+  "finalization_dependency_stage": "WAITING_FOR_COMPLETE_PAIRED_RUN_AND_LOCAL_SHA_BACKUP",
+  "finalization_source_prepared_and_guarded": true,
+  "final_selection_frozen": false,
+  "test_executed": false,
+  "notification": "NONE_HEALTHY_REGISTERED_REVIEW_PROGRESS",
+  "shutdown_allowed": false
+}

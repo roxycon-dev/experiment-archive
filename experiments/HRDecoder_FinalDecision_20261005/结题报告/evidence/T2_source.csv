@@ -1,0 +1,12 @@
+设置,固定实现,解释
+父模型,F12 raw@12k,严格同状态；新优化器
+每臂更新,32000,4k验证；20k/32k部署端点
+DDR窗口,micro2 × accum4,4前景+4均匀
+TJDR窗口,micro2 × accum2,仅D/SD前20k
+窗口几何,1024 / center768 / halo128,原生像素；有效区域
+损失,DDRmean + 0.25TJDRmean,每micro .5BCE+.5Dice
+AdamW,β=.9/.999;ε=1e−8;wd=.01,bias/norm无decay；clip1
+学习率,块1e−5层衰减.8；旧头5e−5；新空间1e−4,500warmup；余弦至1%
+EMA,全模型.999,每成功step更新；仅EMA选型
+空间路径,strides4/8/16/32;64/128/256/256,GN/GELU；12头4点
+交互时点,inject before0/3/6/9;extract after2/5/8/11,官方RoPE/CLS/register保留

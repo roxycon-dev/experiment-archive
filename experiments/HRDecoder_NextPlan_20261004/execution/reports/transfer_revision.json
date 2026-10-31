@@ -1,0 +1,21 @@
+{
+  "time": "2026-10-04T14:16:04.171951+00:00",
+  "status": "BOUNDED_LOCAL_RECEIVER_RUNNING",
+  "old_backup_pid": 33520,
+  "new_backup_pid": 20244,
+  "old_attendant_pid": 31936,
+  "new_attendant_pid": 26100,
+  "bounded_prefetch_requests": 64,
+  "SFTP_receive_window_bytes": 67108864,
+  "preserved_frozen_sources": {
+    "ops/attendant.py": true,
+    "ops/mirror.py": true,
+    "train.py": true,
+    "performance.py": true
+  },
+  "verified_files": 24,
+  "total_files": 156,
+  "remote_source_or_training_changed": false,
+  "remote_files_deleted": false,
+  "reference": "https://docs.paramiko.org/en/stable/api/sftp.html#paramiko.sftp_client.SFTPClient.get"
+}

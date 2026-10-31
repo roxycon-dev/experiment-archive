@@ -1,0 +1,37 @@
+[2026-09-18 17:23:34] round6b: deadline 2026-09-18T11:23:28+00:00 (2.00h)
+[2026-09-18 17:23:34] R6b provenance recorded (authorised recipe revision)
+[2026-09-18 17:24:24] round6b: deadline 2026-09-18T11:23:28+00:00 (1.98h)
+[2026-09-18 17:24:24] R6b provenance recorded (authorised recipe revision)
+[2026-09-18 17:24:59] R6b patch plan: 454 images, 332 with >=32-pixel MA windows
+[2026-09-18 17:25:24] round6b: deadline 2026-09-18T11:23:28+00:00 (1.97h)
+[2026-09-18 17:25:24] R6b provenance recorded (authorised recipe revision)
+[2026-09-18 17:26:00] R6b patch plan: 454 images, 332 with >=32-pixel MA windows
+[2026-09-18 17:26:02] smoke gate1: 20 Tversky steps OK (loss 0.9836)
+[2026-09-18 17:26:03] smoke gate2: val patch IoU path OK (0.0024 on 5 patches)
+[2026-09-18 17:26:08] smoke gate3: 256/128 sliding window OK (1728, 2592)
+[2026-09-18 17:26:08] SMOKE OK (3 gates)
+[2026-09-18 17:26:15] round6b: deadline 2026-09-18T11:23:28+00:00 (1.95h)
+[2026-09-18 17:26:15] R6b provenance recorded (authorised recipe revision)
+[2026-09-18 17:26:17] R6b: champion
+[2026-09-18 17:26:29] R6b: patch plan (256 px windows, >=32 MA px)
+[2026-09-18 17:26:46] R6b patch plan: 454 images, 332 with >=32-pixel MA windows
+[2026-09-18 17:26:47] R6b: 454 train images with windows; 105 val patches; Tversky(0.3,0.7)
+[2026-09-18 17:30:30] R6b step 250/2000 loss 0.9969 (223s)
+[2026-09-18 17:30:35] R6b step 250 val patch IoU 0.0081
+[2026-09-18 17:34:04] R6b step 500/2000 loss 0.9910 (437s)
+[2026-09-18 17:34:08] R6b step 500 val patch IoU 0.0045
+[2026-09-18 17:37:38] R6b step 750/2000 loss 0.9984 (650s)
+[2026-09-18 17:37:42] R6b step 750 val patch IoU 0.0015
+[2026-09-18 17:41:15] R6b step 1000/2000 loss 0.9987 (868s)
+[2026-09-18 17:41:19] R6b step 1000 val patch IoU 0.0563
+[2026-09-18 17:44:48] R6b step 1250/2000 loss 0.9815 (1081s)
+[2026-09-18 17:44:53] R6b step 1250 val patch IoU 0.0038
+[2026-09-18 17:48:21] R6b step 1500/2000 loss 0.9974 (1294s)
+[2026-09-18 17:48:25] R6b step 1500 val patch IoU 0.0066
+[2026-09-18 17:51:53] R6b step 1750/2000 loss 0.8107 (1506s)
+[2026-09-18 17:51:57] R6b step 1750 val patch IoU 0.0432
+[2026-09-18 17:55:24] R6b step 2000/2000 loss 0.5991 (1717s)
+[2026-09-18 17:55:28] R6b step 2000 val patch IoU 0.0402
+[2026-09-18 17:55:28] R6b DONE best step 1000 patch IoU 0.0563 -> /root/autodl-tmp/hrplus/glm/runs/r6b/expert/ma_expert_r6b.pth
+[2026-09-18 17:55:28] R6b: val alpha sweep (expert windows 256/128)
+[2026-09-18 18:00:38] expert eval val 25/76 (308s)

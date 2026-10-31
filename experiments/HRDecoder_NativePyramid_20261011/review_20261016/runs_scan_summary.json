@@ -1,0 +1,1175 @@
+{
+  "root": "D:\\dataset\\experiment",
+  "exclude_generated_review_dir": "review_20261016",
+  "textlike_file_count": 5526,
+  "extension_counts": {
+    ".json": 3942,
+    ".md": 439,
+    ".jsonl": 69,
+    ".csv": 68,
+    ".txt": 114,
+    ".log": 502,
+    ".source": 162,
+    ".toml": 2,
+    ".cfg": 2,
+    ".yaml": 62,
+    ".out": 3,
+    ".err": 12,
+    ".yml": 143,
+    ".rst": 6
+  },
+  "extension_bytes": {
+    ".json": 1273934334,
+    ".md": 4758948,
+    ".jsonl": 977808990,
+    ".csv": 18277639,
+    ".txt": 1167500,
+    ".log": 21732038,
+    ".source": 809587,
+    ".toml": 8007,
+    ".cfg": 1471,
+    ".yaml": 214311,
+    ".out": 9870,
+    ".err": 1876,
+    ".yml": 1268013,
+    ".rst": 3896
+  },
+  "json_parsed": 3917,
+  "json_parse_failures": [
+    {
+      "path": "autodl100/results/trial_a/20260912_001100.log.json",
+      "error": "JSONDecodeError"
+    },
+    {
+      "path": "autodl100/results/trial_b/20260912_013421.log.json",
+      "error": "JSONDecodeError"
+    },
+    {
+      "path": "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/reports/TRAINING_SHUTDOWN_COMMAND_ISSUED.json",
+      "error": "JSONDecodeError"
+    },
+    {
+      "path": "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/training_runs/v3/TRAINING_COMPLETE.json",
+      "error": "JSONDecodeError"
+    },
+    {
+      "path": "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/training_runs/v3/val_24000.json",
+      "error": "JSONDecodeError"
+    },
+    {
+      "path": "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/training_runs/v3/val_28000.json",
+      "error": "JSONDecodeError"
+    },
+    {
+      "path": "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/training_runs/v3/val_32000.json",
+      "error": "JSONDecodeError"
+    },
+    {
+      "path": "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/training_runs/v3/val_36000.json",
+      "error": "JSONDecodeError"
+    },
+    {
+      "path": "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/training_runs/v3/val_40000.json",
+      "error": "JSONDecodeError"
+    },
+    {
+      "path": "HRDecoder_FusionAware_20260917/pulled/20260918T082557/selection_lock.json",
+      "error": "JSONDecodeError"
+    },
+    {
+      "path": "HRDecoder_FusionAware_20260917/pulled/20260918T082557/test_report.json",
+      "error": "JSONDecodeError"
+    },
+    {
+      "path": "HRDecoder_FusionAware_20260917/pulled/20260918T102225/protocol_state.json",
+      "error": "JSONDecodeError"
+    },
+    {
+      "path": "HRDecoder_FusionAware_20260917/pulled/20260918T102225/selection_lock.json",
+      "error": "JSONDecodeError"
+    },
+    {
+      "path": "HRDecoder_FusionAware_20260917/pulled/20260918T102225/summary.json",
+      "error": "JSONDecodeError"
+    },
+    {
+      "path": "HRDecoder_FusionAware_20260917/pulled/20260918T102225/test_report.json",
+      "error": "JSONDecodeError"
+    },
+    {
+      "path": "HRDecoder_FusionAware_20260917/pulled/20260918T102757/protocol_state.json",
+      "error": "JSONDecodeError"
+    },
+    {
+      "path": "HRDecoder_FusionAware_20260917/pulled/20260918T102757/selection_lock.json",
+      "error": "JSONDecodeError"
+    },
+    {
+      "path": "HRDecoder_FusionAware_20260917/pulled/20260918T102757/summary.json",
+      "error": "JSONDecodeError"
+    },
+    {
+      "path": "HRDecoder_FusionAware_20260917/pulled/20260918T102757/test_report.json",
+      "error": "JSONDecodeError"
+    },
+    {
+      "path": "HRDecoder_MA残差头与集成_20260915-16/02_原始数据/eval_json/E2_0916__smoke.json",
+      "error": "JSONDecodeError"
+    },
+    {
+      "path": "HRDecoder_MA残差头与集成_20260915-16/02_原始数据/eval_json/E2_0916__smoke_maond.json",
+      "error": "JSONDecodeError"
+    },
+    {
+      "path": "HRDecoder_MA残差头与集成_20260915-16/02_原始数据/eval_json/E3_0916__smoke.json",
+      "error": "JSONDecodeError"
+    },
+    {
+      "path": "HRDecoder_MA残差头与集成_20260915-16/02_原始数据/eval_json/E3_0916__smoke_maond.json",
+      "error": "JSONDecodeError"
+    },
+    {
+      "path": "HRDecoder_MA残差头与集成_20260915-16/02_原始数据/eval_json/L_0915__smoke_maond.json",
+      "error": "JSONDecodeError"
+    },
+    {
+      "path": "hrdecoder_plus3/results/D_0913_retry/20260913_004131.log.json",
+      "error": "JSONDecodeError"
+    }
+  ],
+  "json_metric_candidates": 2370,
+  "jsonl_files": 69,
+  "jsonl_valid_records": 4483322,
+  "jsonl_invalid_records": 0,
+  "csv_files": 68,
+  "csv_parsed_rows": 62737,
+  "loglike_files": 517,
+  "loglike_lines_scanned": 337720,
+  "exact_sha_duplicate_groups": 962,
+  "exact_sha_duplicate_copies_excess": 1520,
+  "exact_sha_duplicate_groups_sample": [
+    {
+      "ext": ".json",
+      "sha256": "50807d42f4254952a56ab1f7500f4846789d13f75d1d57545791f3ea13708a1e",
+      "paths": [
+        "architecture_spec.json",
+        "HRDecoder_ArchitectureDesign_20261008/adapter_execution/architecture_spec.json",
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/adapter/adapter_execution/architecture_spec.json"
+      ],
+      "copies": 3
+    },
+    {
+      "ext": ".json",
+      "sha256": "8a10cea67598ea5e8f4bad5e7aa6636ca817c0e4d1f845d4e7f6ec294b70c6c4",
+      "paths": [
+        "autodl100/.mimosa/reports/task-review-sess_247cd7e1-11df-4561-84f6-50280c306db6-20260912T125103018Z-6332-4f11ecae35eb.json",
+        "autodl100/.mimosa/reports/task-review-sess_247cd7e1-11df-4561-84f6-50280c306db6.json"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".json",
+      "sha256": "e35c2ef3ea0cc25e5d02495a3e6ad61b0aaf7bd4c61d5c2b4b116cf0ffb1a701",
+      "paths": [
+        "autodl100/bundle/data_manifest.json",
+        "hrdecoder_plus3/data_manifest.json"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".json",
+      "sha256": "840108c13683eee24681195c8f2046aecb1710d41686053a72479a194ce696e3",
+      "paths": [
+        "autodl100/bundle/split_assignment.json",
+        "hrdecoder_plus3/split_assignment.json"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "paths": [
+        "autodl100/results/ensemble_driver.log",
+        "autodl100/results/ensemble_wrapper.log",
+        "autodl100/results/mean_test_wrapper.log",
+        "autodl100/results/mean_wrapper.log",
+        "autodl100/results/wrapper.log",
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/adapter/reports/adapter/controller.log",
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/adapter/reports/adapter/staging.log",
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/adapter/reports/adapter/worker_ram_repair.log",
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/aligned/reports/aligned/dispatch.log",
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/detail/reports/detail/controller.log",
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/foundation/reports/foundation/dispatch.log",
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/iou/reports/iou/dispatch.log",
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/reports/gpu_controller.log",
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/sacd/reports/sacd/controller.log",
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/sacd_micro/reports/sacd_micro/controller.log",
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/semantic/reports/semantic/dispatch.log",
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/stopped_20261009T001430/reports/gpu_controller.log",
+        "HRDecoder_FinalDecision_20261005/execution/parallel/node2/server_results/reports/node2_atomic_recovery.log",
+        "HRDecoder_FinalDecision_20261005/execution/reports/cpu_acceptance.err.log",
+        "HRDecoder_FinalDecision_20261005/execution/reports/independent_coordinator_20261005_2030.err.log",
+        "HRDecoder_FinalDecision_20261005/execution/reports/parallel_coordinator.log",
+        "HRDecoder_FinalDecision_20261005/execution/reports/parallel_coordinator_barrier.err.log",
+        "HRDecoder_FinalDecision_20261005/execution/reports/parallel_coordinator_barrier.log",
+        "HRDecoder_FinalDecision_20261005/execution/reports/preparation_driver_atomic.err.log",
+        "HRDecoder_FinalDecision_20261005/execution/reports/priority_selected_restore.err.log",
+        "HRDecoder_FinalDecision_20261005/execution/reports/publication_server_release_worker.err.log",
+        "HRDecoder_FinalDecision_20261005/execution/reports/publication_server_release_worker.log",
+        "HRDecoder_FinalDecision_20261005/execution/reports/required_assets_native_R.err.log",
+        "HRDecoder_FinalDecision_20261005/execution/reports/required_assets_upload.log",
+        "HRDecoder_FinalDecision_20261005/execution/reports/required_assets_upload_retry.err.log",
+        "HRDecoder_FinalDecision_20261005/execution/reports/selected_restore_receiver_recovery.err.log",
+        "HRDecoder_FinalDecision_20261005/execution/reports/selected_restore_receiver_recovery.log",
+        "HRDecoder_FinalDecision_20261005/execution/reports/streams_preparation.err.log",
+        "HRDecoder_FinalDecision_20261005/execution/reports/TJDR_acceptance.err.log",
+        "HRDecoder_FinalDecision_20261005/execution/reports/TJDR_acceptance_parallel.err.log",
+        "HRDecoder_FinalDecision_20261005/execution/reports/TJDR_download.err.log",
+        "HRDecoder_FinalDecision_20261005/execution/reports/TJDR_refine_dedup.err.log",
+        "HRDecoder_FinalDecision_20261005/execution/reports/local_attendant_recovery_20261005_2024/coordinator/independent_coordinator_20261005_1929.err.log",
+        "HRDecoder_FinalDecision_20261005/execution/reports/local_attendant_recovery_20261005_2024/primary/independent_primary_20261005_1929.err.log",
+        "HRDecoder_FinalDecision_20261005/execution/reports/local_attendant_recovery_20261005_2024/second/independent_second_20261005_1929.err.log",
+        "HRDecoder_FinalDecision_20261005/execution/server_results/reports/cpu_acceptance.err.log",
+        "HRDecoder_FinalDecision_20261005/execution/server_results/reports/endpoint_policy_receipt_extension.log",
+        "HRDecoder_FinalDecision_20261005/execution/server_results/reports/required_assets_native_R.err.log",
+        "HRDecoder_FinalDecision_20261005/execution/server_results/reports/required_assets_upload.log",
+        "HRDecoder_FinalDecision_20261005/execution/server_results/reports/required_assets_upload_retry.err.log",
+        "HRDecoder_FinalDecision_20261005/execution/server_results/reports/selected_restore_deadline_guard.log",
+        "HRDecoder_FinalDecision_20261005/execution/server_results/reports/streams_preparation.err.log",
+        "HRDecoder_FinalDecision_20261005/execution/server_results/reports/TJDR_acceptance.err.log",
+        "HRDecoder_FinalDecision_20261005/execution/server_results/reports/TJDR_acceptance_parallel.err.log",
+        "HRDecoder_FinalDecision_20261005/execution/server_results/reports/TJDR_download.err.log",
+        "HRDecoder_FinalDecision_20261005/execution/server_results/reports/TJDR_refine_dedup.err.log",
+        "HRDecoder_FinalDecision_20261005/execution/server_results/reports/parallel_node2_evidence/node2_atomic_recovery.log",
+        "HRDecoder_FinalDecision_20261005/execution/server_results/reports/preparation_repairs/fork_thread_20261005/reports__endpoint_policy_receipt_extension.original.log",
+        "HRDecoder_FinalDecision_20261005/execution/server_results/reports/selected_restore_guard_repair_20261005/selected_restore_deadline_guard.log",
+        "HRDecoder_NextPlan_20261004/execution/reports/attendant_20261004_171130.err.log",
+        "HRDecoder_NextPlan_20261004/execution/reports/attendant_20261004_171130.log",
+        "HRDecoder_NextPlan_20261004/execution/reports/attendant_bounded_20261004_221312.err.log",
+        "HRDecoder_NextPlan_20261004/execution/reports/early_backup_20261004_212653.err.log",
+        "HRDecoder_NextPlan_20261004/execution/reports/early_backup_bounded_20261004_221312.err.log",
+        "HRDecoder_NextPlan_20261004/execution/reports/parallel_probability_backup.err.log",
+        "HRDecoder_Next_20261003/reports/health_watch_restart.log",
+        "HRDecoder_Next_20261003/reports/mirror_restart.log",
+        "HRDecoder_Next_20261003/reports/mirror_terminal.log",
+        "HRDecoder_Next_20261003/reports/shutdown_guard.log",
+        "HRDecoder_Next_20261003/reports/shutdown_guard_utf8.log",
+        "HRDecoder_Next_20261003/server_results/reports/scheduling_restart.log",
+        "HRDecoder_Next_20261003/server_results/reports/stage_g_driver.log",
+        "hrdecoder_plus3/results/D_test/d_test_guard.log",
+        "hrdecoder_plus3/results/D_test/d_test_wrapper.log",
+        "HRDecoder_Q_20261003/reports/closed_u1_cache_offload.log",
+        "HRDecoder_Q_20261003/reports/closed_u1_cache_offload_error.log",
+        "HRDecoder_Q_20261003/reports/continuation_final_handoff.log",
+        "HRDecoder_Q_20261003/reports/continuation_final_handoff_repaired.log",
+        "HRDecoder_Q_20261003/reports/continuation_final_handoff_repaired_error.log",
+        "HRDecoder_Q_20261003/reports/ddr2024_24k_handoff_error.log",
+        "HRDecoder_Q_20261003/reports/ddr42_24k_handoff_error.log",
+        "HRDecoder_Q_20261003/reports/external_acceptance_error.log",
+        "HRDecoder_Q_20261003/reports/external_dedup_scene_error.log",
+        "HRDecoder_Q_20261003/reports/messidor_download_error.log",
+        "HRDecoder_Q_20261003/reports/mix2024_late_offload_error.log",
+        "HRDecoder_Q_20261003/reports/mix42_24k_handoff_error.log",
+        "HRDecoder_Q_20261003/reports/qmix16_handoff.log",
+        "HRDecoder_Q_20261003/reports/qmix16_handoff_repaired_error.log",
+        "HRDecoder_Q_20261003/reports/qmix_cache_cleanup_error.log",
+        "HRDecoder_Q_20261003/reports/qmix_deployment_error.log",
+        "HRDecoder_Q_20261003/reports/qmix_launch_queue_error.log",
+        "HRDecoder_Q_20261003/reports/temporary_stop_dispatch.log",
+        "HRDecoder_Q_20261003/server_results/continuation_evidence/reports/continuation_final_evaluation.log",
+        "HRDecoder_Ready_20261002/reports/mirror_watch_stderr.log",
+        "HRDecoder_Ready_20261002/reports/mirror_watch_stdout.log",
+        "HRDecoder_Ready_20261002/reports/report_watch_stderr.log",
+        "HRDecoder_Ready_20261002/round2_highres/reports/fast_backup_stderr.log",
+        "HRDecoder_Ready_20261002/round2_highres/reports/fast_backup_stdout.log",
+        "HRDecoder_Ready_20261002/round2_highres/reports/mirror_stderr.log",
+        "HRDecoder_Ready_20261002/round2_highres/reports/mirror_stdout.log",
+        "HRDecoder_Ready_20261002/round2_highres/reports/shutdown_controller_stdout.log"
+      ],
+      "copies": 96
+    },
+    {
+      "ext": ".json",
+      "sha256": "83506c347cbbda4a705751b660030bef50e1bdb8ea7301046c574e27ac5d8876",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/automation_monitor_contract.json",
+        "HRDecoder_ArchitectureDesign_20261008/iterative_execution/automation_monitor_contract.json"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".json",
+      "sha256": "0be2d3d333ceb2e01fc17b92bc89d9f4c0cb06f6deace72febe5802271ce6c6f",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/adapter_execution/PINNED_CPU_ADAPTER_PASS.json",
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/adapter/adapter_execution/CPU_ADAPTER_PASS.json"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".json",
+      "sha256": "1fb438998925e7d45096b53e809b8689df1aa0ef860def6e5982c319234b4222",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/adapter_execution/RAM_RESUME_STEADY_VERIFIED.json",
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/adapter/reports/adapter/RAM_RESUME_STEADY_VERIFIED.json"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".json",
+      "sha256": "c49a89cfd6ad431b1241cea85e609556a7e7be0efd6e8680f128af2f354a40a0",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/adapter_execution/screen_protocol.json",
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/adapter/adapter_execution/screen_protocol.json"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".json",
+      "sha256": "2c621b7642a30f55b7951a3571d533b76f7da87ee02a9b5c352bb2366fe621b3",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/adapter_execution/VALIDATOR_LOCK.json",
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/adapter/reports/adapter/VALIDATOR_LOCK.json"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".json",
+      "sha256": "552393adc616dfa42faf2093c2eb2bfbe2627dd18744985a302770ede9abb38d",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/adapter_execution/WORKER_RAM_PASS.json",
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/adapter/adapter_execution/WORKER_RAM_PASS.json",
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/detail/detail_execution/WORKER_RAM_PASS.json",
+        "HRDecoder_ArchitectureDesign_20261008/detail_execution/WORKER_RAM_PASS.json"
+      ],
+      "copies": 4
+    },
+    {
+      "ext": ".json",
+      "sha256": "c52a525680e48c71f406695c003717a928597b6fc1819b4f39ec999b6974e328",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/aligned_execution/architecture_spec.json",
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/aligned/aligned_execution/architecture_spec.json"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".json",
+      "sha256": "87067eb0f3d909c266d69a1bcea25f47a9243ee64397cb735f371f2ae22cbec9",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/aligned_execution/CPU_ADAPTER_PASS.json",
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/aligned/aligned_execution/CPU_ADAPTER_PASS.json"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".json",
+      "sha256": "4b4aece69a689ec3620427eea1f907b5a66d7a4894854f112d0f1523d56898d1",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/aligned_execution/REGISTRATION_METADATA_ERRATA.json",
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/aligned/aligned_execution/REGISTRATION_METADATA_ERRATA.json"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".json",
+      "sha256": "fdbf5af9b65454989f346c26964dfc486a5dd632b498b55c7d0629f99e3e2a3e",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/aligned_execution/screen_protocol.json",
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/aligned/aligned_execution/screen_protocol.json"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".json",
+      "sha256": "44b0d5d70fdd9f1be272086d69730fed50f8da51005d6fe968f4be15ea5147ed",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/aligned_execution/WORKER_RAM_PASS.json",
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/aligned/aligned_execution/WORKER_RAM_PASS.json",
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/foundation/foundation_execution/WORKER_RAM_PASS.json",
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/iou/iou_execution/WORKER_RAM_PASS.json",
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/semantic/semantic_execution/WORKER_RAM_PASS.json",
+        "HRDecoder_ArchitectureDesign_20261008/foundation_execution/WORKER_RAM_PASS.json",
+        "HRDecoder_ArchitectureDesign_20261008/iou_execution/WORKER_RAM_PASS.json",
+        "HRDecoder_ArchitectureDesign_20261008/semantic_execution/WORKER_RAM_PASS.json"
+      ],
+      "copies": 8
+    },
+    {
+      "ext": ".json",
+      "sha256": "20520cd5af8288f3070955ae71f0e9daf173927a2e443b4ba95145071ec9edb0",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/archive/v2/evidence/design_verification_v2.json",
+        "HRDecoder_ArchitectureDesign_20261008/evidence/design_verification_v2.json"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".json",
+      "sha256": "e5dd53ff306dcb1945692100ed39684bcdcc15d86ae69bf5569f613082676406",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/inference_weight_receipt.json",
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/metadata/inference_weight_receipt.json"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".json",
+      "sha256": "7e7d3ec907b3660e1fe3c46137719f4ede7b24efa639a0d2eca8f69c2e926398",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/source_manifest.json",
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/metadata/source_manifest.json"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".json",
+      "sha256": "53e066e88037abd98a1acd9d1df284f431f44f2e18035376ab5e27be901ce77f",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/CACHE_READY.json",
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/stopped_20261009T001430/CACHE_READY.json"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".json",
+      "sha256": "3da7b18fcb11d94dd63cc5b40cfb9368f82900984e287f1ed2a45ba7bd8532d0",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/GPU_CACHE_READY.json",
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/stopped_20261009T001430/GPU_CACHE_READY.json"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".json",
+      "sha256": "c75fc5b8b4e570083ee4c978c8771af5b8c45c9a017a4b8a7129a8765bc507ec",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/GPU_CURRENT_SNAPSHOT.json",
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/monitoring/heartbeat_20261008T154343Z.json"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".log",
+      "sha256": "a5020aac1b03ea8657094c4c55afe671838c991e5e4dc99920df9eb861055001",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/reports_pipeline.log",
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/stopped_20261009T001430/reports_pipeline.log"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".json",
+      "sha256": "4b6685239b6dfd72d73f02cbd62daafce22f78152761350b865550c38ffc7130",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/cache/train/A/index.json",
+        "HRDecoder_ArchitectureDesign_20261008/training_execution/real_cache_probe/cache/train/A/index.json"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".json",
+      "sha256": "72e00587900743fbff81eb6b149779c1ab56fb6a174e4a47b482be53e6f46af5",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/cache/train/S/index.json",
+        "HRDecoder_ArchitectureDesign_20261008/training_execution/real_cache_probe/cache/train/S/index.json"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".json",
+      "sha256": "b0e08a81ca16c9ec9bb1937b921f9cc898045a70edd6375aa5521e8521315da0",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/cache/train/U/index.json",
+        "HRDecoder_ArchitectureDesign_20261008/training_execution/real_cache_probe/cache/train/U/index.json"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".json",
+      "sha256": "c66a5e00877feed6de5cb5fb0d24e7ebb50e6d94ddae77561bd3218b0793c6ff",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/cet/latest_snapshot.json",
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/cet/monitoring/snapshot_20261009T133153.json"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".json",
+      "sha256": "b23ee85213ba8a49eb616891a4d6bb94e23bc25c5022c0124968cd3f1594de48",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/cet/cet_execution/CHECKPOINT_RESUME_PASS.json",
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/sacd/sacd_execution/CHECKPOINT_RESUME_PASS.json",
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/sacd_isolated/sacd_isolated_execution/CHECKPOINT_RESUME_PASS.json",
+        "HRDecoder_ArchitectureDesign_20261008/sacd_isolated_execution/CHECKPOINT_RESUME_PASS.json"
+      ],
+      "copies": 4
+    },
+    {
+      "ext": ".json",
+      "sha256": "fa5d9a08fb7436703d9ae67ee63bf1da7c933238bdd0341f82747642b9160ce3",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/detail/detail_execution/architecture_spec.json",
+        "HRDecoder_ArchitectureDesign_20261008/detail_execution/architecture_spec.json"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".json",
+      "sha256": "8732b1255369ad6b853898b687dcf57f07c001634c92a1f5b47c16469ecc70e0",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/detail/detail_execution/screen_protocol.json",
+        "HRDecoder_ArchitectureDesign_20261008/detail_execution/screen_protocol.json"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".json",
+      "sha256": "1e70102b758ac16f61651b5a23e934f2051ff6d82fd5cbee0b4e7446d27ca61b",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/detail/reports/detail/diagnosis_16000/BASE_GRADIENT_DIAGNOSTIC.json",
+        "HRDecoder_ArchitectureDesign_20261008/detail_execution/diagnosis_16000/BASE_GRADIENT_DIAGNOSTIC.json"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".log",
+      "sha256": "28d34c21321cdac4fd28d7185081b8d1dfdc230b894273bd7cf461780b1d8075",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/detail/reports/detail/diagnosis_16000/batch_bn_probe.log",
+        "HRDecoder_ArchitectureDesign_20261008/detail_execution/diagnosis_16000/batch_bn_probe.log"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".json",
+      "sha256": "8fd3db99948986a069458325787c3c9402dcc3de5cac07342e244f0c036e3736",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/detail/reports/detail/diagnosis_16000/BN_BATCH_STAT_DIAGNOSTIC.json",
+        "HRDecoder_ArchitectureDesign_20261008/detail_execution/diagnosis_16000/BN_BATCH_STAT_DIAGNOSTIC.json"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".json",
+      "sha256": "ef1755914274f8126db1ab6cf5c6abb08c21e57cca2ad8a4f2775af2ad2d436d",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/detail/reports/detail/diagnosis_16000/BN_BATCH_STAT_PROTOCOL.json",
+        "HRDecoder_ArchitectureDesign_20261008/detail_execution/diagnosis_16000/BN_BATCH_STAT_PROTOCOL.json"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".log",
+      "sha256": "1578157ce54df3d1d1cbad98582cd00031d8446a60d6d0e56bc154b47087d9da",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/detail/reports/detail/diagnosis_16000/bn_crossover.log",
+        "HRDecoder_ArchitectureDesign_20261008/detail_execution/diagnosis_16000/bn_crossover.log"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".json",
+      "sha256": "48f152222eb32bc47a219b2daa11e8b243ce61487b4657f4d9a60047db25ee2a",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/detail/reports/detail/diagnosis_16000/BN_CROSSOVER_COMPLETE.json",
+        "HRDecoder_ArchitectureDesign_20261008/detail_execution/diagnosis_16000/BN_CROSSOVER_COMPLETE.json"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".json",
+      "sha256": "f4e2a729cbe0d16372a629f4991b94ce5a4583b984bce10f79bc3ce2a81e563c",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/detail/reports/detail/diagnosis_16000/BN_CROSSOVER_PROTOCOL.json",
+        "HRDecoder_ArchitectureDesign_20261008/detail_execution/diagnosis_16000/BN_CROSSOVER_PROTOCOL.json"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".json",
+      "sha256": "9c2060332e56ba984cfd7e4a7ec4b727c988508eb6dfcfb1d0b55d2258a976cb",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/detail/reports/detail/diagnosis_16000/CHECKPOINT_CPU_DIAGNOSTIC.json",
+        "HRDecoder_ArchitectureDesign_20261008/detail_execution/diagnosis_16000/CHECKPOINT_CPU_DIAGNOSTIC.json"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".json",
+      "sha256": "09e54c277713dd6e278b566706c29108820d697db608a57ddef017b0aab6c5f6",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/detail/reports/detail/diagnosis_16000/W12000_BN12000.json",
+        "HRDecoder_ArchitectureDesign_20261008/detail_execution/diagnosis_16000/W12000_BN12000.json"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".json",
+      "sha256": "e8d2d58140a247ffeb43a82e7cc01a2f522948c924702eef023ef0c8d27670e3",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/detail/reports/detail/diagnosis_16000/W12000_BN21000.json",
+        "HRDecoder_ArchitectureDesign_20261008/detail_execution/diagnosis_16000/W12000_BN21000.json"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".json",
+      "sha256": "24469e4bebe2a5da2b1f127eaf7a5e330a824ed1795ffe40451c2f42a648b364",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/detail/reports/detail/diagnosis_16000/W21000_BN12000.json",
+        "HRDecoder_ArchitectureDesign_20261008/detail_execution/diagnosis_16000/W21000_BN12000.json"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".json",
+      "sha256": "0b827a5e6ef649a2503c7933cf06386e176e0a66add0a435598013db7fb51b61",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/detail/reports/detail/diagnosis_16000/W21000_BN21000.json",
+        "HRDecoder_ArchitectureDesign_20261008/detail_execution/diagnosis_16000/W21000_BN21000.json"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".json",
+      "sha256": "f844aaf486fa87b72d54febda2c8c76ce278a314ab4425cef98b33d8c5cae10d",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/diagnostic_v10/reports/diagnostic_v10/TERMINAL_INCOMPLETE.json",
+        "HRDecoder_ArchitectureDesign_20261008/research_v10/TERMINAL_INCOMPLETE.json"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".json",
+      "sha256": "283e86ac82c4dfba1d0617158a25b15404854a2b2a1d1e20336aa236101e101a",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/diagnostic_v10/training_runs/diagnostic_v10/GPU_SMOKE_PASS.json",
+        "HRDecoder_ArchitectureDesign_20261008/research_v10/GPU_SMOKE_PASS.json"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".json",
+      "sha256": "05a6bd25791ce8736d9a0399235c2f31589d55b5f22ea76b1af68b53ee6ca131",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/expert/expert_execution/architecture_spec.json",
+        "HRDecoder_ArchitectureDesign_20261008/expert_execution/architecture_spec.json"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".json",
+      "sha256": "9252b5dc0f7696909b46894e6242847dc6fab57c853eb5cdc117eb9ba9b26af6",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/expert/expert_execution/screen_protocol.json",
+        "HRDecoder_ArchitectureDesign_20261008/expert_execution/screen_protocol.json"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".json",
+      "sha256": "fac266f34244397f97c75103a34001cb766039f46780a054df5aa94b787dd7ee",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/expert/expert_execution/SEALED_LOCAL_SOURCE.json",
+        "HRDecoder_ArchitectureDesign_20261008/expert_execution/SEALED_LOCAL_SOURCE.json"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".json",
+      "sha256": "2f57dc0f663e1a68b12fe872085a4ba943bffae3a32ab5158a54c37ae9648056",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/foundation/foundation_execution/architecture_spec.json",
+        "HRDecoder_ArchitectureDesign_20261008/foundation_execution/architecture_spec.json"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".json",
+      "sha256": "70466f409c13e000903665cbbceb22e7d5aec244d66eb3eff8694991945fe9d7",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/foundation/foundation_execution/CPU_ADAPTER_PASS.json",
+        "HRDecoder_ArchitectureDesign_20261008/foundation_execution/CPU_ADAPTER_PASS.json"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".json",
+      "sha256": "33a7a049ce0737445dbe8854f209f5fb19968841372653365946863761050bf5",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/foundation/foundation_execution/screen_protocol.json",
+        "HRDecoder_ArchitectureDesign_20261008/foundation_execution/screen_protocol.json"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".json",
+      "sha256": "44b17b761cba4d0d403d071aec18b05b76cd6bc0129ae1b7adc8621f02faa028",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/iou/iou_execution/architecture_spec.json",
+        "HRDecoder_ArchitectureDesign_20261008/iou_execution/architecture_spec.json"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".json",
+      "sha256": "8852f3f22a22cb9cb230bf40116d9da8838420a9acfcf83de3f8a25f981ef439",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/iou/iou_execution/screen_protocol.json",
+        "HRDecoder_ArchitectureDesign_20261008/iou_execution/screen_protocol.json"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".json",
+      "sha256": "b4e849064b6f915e1e7f063799be2511e4bdc49002a60e098332c145eecbf7db",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/iou/reports/iou/LAST_RUN_POLICY.json",
+        "HRDecoder_ArchitectureDesign_20261008/iou_execution/LAST_RUN_POLICY.json"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".json",
+      "sha256": "7c53b86bcb27ccd121042f667cc58e39b98716a8c477bfd1f1657fa126575719",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/metadata/data_identity.json",
+        "HRDecoder_ArchitectureDesign_20261008/training_execution/real_cache_probe/metadata/data_identity.json",
+        "HRDecoder_FinalDecision_20261005/execution/parallel/node2/server_results/reports/data_identity.json",
+        "HRDecoder_FinalDecision_20261005/execution/reports/data_identity.json",
+        "HRDecoder_FinalDecision_20261005/execution/server_results/reports/data_identity.json",
+        "HRDecoder_FinalDecision_20261005/execution/server_results/reports/parallel_node2_evidence/data_identity.json",
+        "HRDecoder_NextPlan_20261004/execution/reports/data_identity.json",
+        "HRDecoder_NextPlan_20261004/execution/server_results/reports/data_identity.json",
+        "HRDecoder_Q_20261003/reports/data_identity.json",
+        "HRDecoder_Q_20261003/server_results/reports/data_identity.json"
+      ],
+      "copies": 10
+    },
+    {
+      "ext": ".json",
+      "sha256": "4169481fb2540ccbc7eee894be768cb816d5fcc571edee23bdfe81c84715f43d",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/reports/audit_decoder_benchmark.json",
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/stopped_20261009T001430/reports/audit_decoder_benchmark.json"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".json",
+      "sha256": "c07ac5b9e6e45cc78963bf5292c115aa3f6b890442314d109cf666a73ae08326",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/reports/before_final_tuning_1791456336_GPU_CAMPAIGN_OUTCOME.json",
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/stopped_20261009T001430/reports/before_final_tuning_1791456336_GPU_CAMPAIGN_OUTCOME.json"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".json",
+      "sha256": "4e4d810edad9f459ced44bc05e63b69485f05d356c8a12a1ef91a4fc0f330ef9",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/reports/before_final_tuning_1791456336_GPU_CAMPAIGN_REPAIR_HOLD.json",
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/stopped_20261009T001430/reports/before_final_tuning_1791456336_GPU_CAMPAIGN_REPAIR_HOLD.json"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".csv",
+      "sha256": "20e38e7cb8d02177619563eaac97495793bb69531fda04ac94f78f52675849d0",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/reports/before_final_tuning_1791456336_gpu_telemetry.csv",
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/stopped_20261009T001430/reports/before_final_tuning_1791456336_gpu_telemetry.csv"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".json",
+      "sha256": "32ef94e84d1251cf89b13ac1c693d98dc4d836a6741b0e57a198942001cbc73f",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/reports/before_final_tuning_1791456336_performance.json",
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/stopped_20261009T001430/reports/before_final_tuning_1791456336_performance.json"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".log",
+      "sha256": "5aa29470098e5be19d08d58860a37b39e19dd94751fb9ebc70c81de767d2c6c4",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/reports/before_final_tuning_1791456336_v3_training.log",
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/stopped_20261009T001430/reports/before_final_tuning_1791456336_v3_training.log"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".json",
+      "sha256": "de6f35617ee8674e4873d0c763d540c6711b2a2bc0abb1a7590bb83d4f018031",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/reports/BEFORE_RAM_CACHE_OUTCOME.json",
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/stopped_20261009T001430/reports/BEFORE_RAM_CACHE_OUTCOME.json"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".json",
+      "sha256": "62958f0453b743ab95e26790ad5ca4480dd2dd725ef613e367c9817e0832199c",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/reports/BEFORE_RAM_CACHE_PERFORMANCE.json",
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/stopped_20261009T001430/reports/BEFORE_RAM_CACHE_PERFORMANCE.json"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".json",
+      "sha256": "c43434b1f15ede4a366ebede5884015719c40ab84d565b2bae1cc221deb0c212",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/reports/BEFORE_RAM_CACHE_REPAIR_HOLD.json",
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/stopped_20261009T001430/reports/BEFORE_RAM_CACHE_REPAIR_HOLD.json"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".log",
+      "sha256": "157fb6b5dbd8afe71df9ce42fa5c400d154e4c77fadcb612cf5795b809bda33e",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/reports/benchmark_gpu_layout.py.log",
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/stopped_20261009T001430/reports/benchmark_gpu_layout.py.log"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".log",
+      "sha256": "80a7ca1b8ede440ae874ac2eff7c347bd42f7e49ae0aa7aef0a69bb846999118",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/reports/benchmark_ram_loader.py.log",
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/stopped_20261009T001430/reports/benchmark_ram_loader.py.log"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".json",
+      "sha256": "9ea4021575629ac2aab1ee6f91afec4c9207136212def12481840938d0d638f3",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/reports/cache_audit_progress.json",
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/stopped_20261009T001430/reports/cache_audit_progress.json"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".json",
+      "sha256": "1fbf64efd818c7fe4a2e14e07eb6cc7b45d6f8f3557f78e42ca774fc40b0bc4b",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/reports/cpu_audit_deferred.json",
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/stopped_20261009T001430/reports/cpu_audit_deferred.json"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".log",
+      "sha256": "3d74f02b8478b7f4e95c39710ccbf1d2d3281cf86d7ef6983da5e709d2897277",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/reports/cpu_audit_nogpu.log",
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/stopped_20261009T001430/reports/cpu_audit_nogpu.log"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".json",
+      "sha256": "8923a061a546048913ab780cbd06ab5a45242ee605e7ddabf5660fb59865d70f",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/reports/FINAL_PERFORMANCE_TUNING_PASS.json",
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/stopped_20261009T001430/reports/FINAL_PERFORMANCE_TUNING_PASS.json"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".json",
+      "sha256": "6363befe728f5d9811ffb9567940c6cf47580116c9378c611518ba1c80e6d5ef",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/reports/FINAL_TUNING_CHECKPOINT_SAVED.json",
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/stopped_20261009T001430/reports/FINAL_TUNING_CHECKPOINT_SAVED.json"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".log",
+      "sha256": "34d3023fa2d217c7c03130c9c8ebab0a0476f03d30edc7de062ac4b002cb3b6e",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/reports/finish_performance_tuning.log",
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/stopped_20261009T001430/reports/finish_performance_tuning.log"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".json",
+      "sha256": "a9529feccf073575f64d2ac3f31b9377fed800121936e66c8a421dcb494afa31",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/reports/GPU_ASYNC_PREFETCH_PASS.json",
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/stopped_20261009T001430/reports/GPU_ASYNC_PREFETCH_PASS.json"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".csv",
+      "sha256": "ef7a82a5dab532e61dd197a912372c768fce354038dffaf7b6d3d4fb1a7eb2c0",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/reports/gpu_before_ram_cache.csv",
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/stopped_20261009T001430/reports/gpu_before_ram_cache.csv"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".json",
+      "sha256": "5a60af15a9079cfc60228839f1ea788e6d08a90dcd6e8072b839175b7504e63e",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/reports/GPU_CAMPAIGN_OUTCOME.json",
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/reports/GPU_CAMPAIGN_STOPPED.json",
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/stopped_20261009T001430/reports/GPU_CAMPAIGN_OUTCOME.json",
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/stopped_20261009T001430/reports/GPU_CAMPAIGN_STOPPED.json"
+      ],
+      "copies": 4
+    },
+    {
+      "ext": ".json",
+      "sha256": "ec4149c30e2f30b5a14fe5a7594bcf5505cd45b108cce0d7af2b86c41ec37492",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/reports/GPU_CAMPAIGN_REPAIR_HOLD.json",
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/stopped_20261009T001430/reports/GPU_CAMPAIGN_REPAIR_HOLD.json"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".json",
+      "sha256": "ac4c39804e84dc9370f0fb0772a963c58831f224e5393992f628d777900494b2",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/reports/GPU_CAMPAIGN_RUNNING.json",
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/stopped_20261009T001430/reports/GPU_CAMPAIGN_RUNNING.json"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".json",
+      "sha256": "f9eb57e0057a66fb657a9c0b15927d166282bb6cff4dbf933397485c8b72d7af",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/reports/GPU_LAYOUT_BENCHMARK.json",
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/stopped_20261009T001430/reports/GPU_LAYOUT_BENCHMARK.json"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".log",
+      "sha256": "c144539a002f9d4c962d31ce5d6a8b709b6802958bcc63875ee8415e6acb19c9",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/reports/gpu_smoke_4090.log",
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/stopped_20261009T001430/reports/gpu_smoke_4090.log"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".csv",
+      "sha256": "c3d1f44e80f76ca527193f210ac0a246a0bf41e6b853471d2e8a369f88adf2ca",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/reports/gpu_startup_workers4.csv",
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/stopped_20261009T001430/reports/gpu_startup_workers4.csv"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".json",
+      "sha256": "62cc0f9e57ee9dc2a0c22f662d13b6696b9d75f97192af06067214180e394dd5",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/reports/GPU_STEP_PROFILE.json",
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/stopped_20261009T001430/reports/GPU_STEP_PROFILE.json"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".json",
+      "sha256": "e12e575aaef686d1b2155a0673b5e01114dba811e0275f3626ad19b5a3fa167c",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/reports/GPU_STEP_TRACE.json",
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/stopped_20261009T001430/reports/GPU_STEP_TRACE.json"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".csv",
+      "sha256": "03f1ba892633ba325551df3d8871023681eb3360a25ec280d524f05ea8d2e9f4",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/reports/gpu_telemetry.csv",
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/stopped_20261009T001430/reports/gpu_telemetry.csv"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".json",
+      "sha256": "678dc1f989e4d8863007d07ae3421247ed936a6266f0bd56e75e91bc687090dd",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/reports/input_audit.json",
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/stopped_20261009T001430/reports/input_audit.json"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".json",
+      "sha256": "f94a2257f99a715373f379730e382632b5a5577771e1e4fc9fb562bd6063aba2",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/reports/low_memory_audit_resources.json",
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/stopped_20261009T001430/reports/low_memory_audit_resources.json"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".log",
+      "sha256": "b8dcfe6df8cb13d43f1bf6d71e9d2ef9c2b02217b68e914914bce21aa02bd364",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/reports/pause_at_checkpoint.py.log",
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/stopped_20261009T001430/reports/pause_at_checkpoint.py.log"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".json",
+      "sha256": "cd4f7a60c4d403aa9fe2f09de89141ce07f80d1824a745431fb5e429241caa92",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/reports/performance_config.json",
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/stopped_20261009T001430/reports/performance_config.json"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".log",
+      "sha256": "ead0d70cde14958392508e118ef148ef9e2195da76c8ed8ee10b090a662869e9",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/reports/ram_cache_mixed.py.log",
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/stopped_20261009T001430/reports/ram_cache_mixed.py.log"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".json",
+      "sha256": "76360a983b92a9fcede3c1846721cdc90d32f2c39847b38ddea3452c708b3b65",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/reports/RAM_CACHE_PRESSURE.json",
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/stopped_20261009T001430/reports/RAM_CACHE_PRESSURE.json"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".json",
+      "sha256": "ed9745877008ab27ef2b9b7d5fac5acc419941f06833b1722471bcfac21ca809",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/reports/RAM_CACHE_PROGRESS.json",
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/stopped_20261009T001430/reports/RAM_CACHE_PROGRESS.json"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".json",
+      "sha256": "91c11ab7b4c349207afa441417a0853b496bb639351499d3c3572cdd5f490667",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/reports/RAM_CACHE_READY.json",
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/stopped_20261009T001430/reports/RAM_CACHE_READY.json"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".json",
+      "sha256": "ea824517b6b55b3ecec44e1ec2ad0722829f2281bf4f941db489592e5085b9ee",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/reports/RAM_MIXED_PROGRESS.json",
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/stopped_20261009T001430/reports/RAM_MIXED_PROGRESS.json"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".json",
+      "sha256": "e405e0a2e6ded81895a2f66c717cb2f213d293e866238e2cfeb6a78a215d4a14",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/reports/RAM_MIXED_READY_SUMMARY.json",
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/stopped_20261009T001430/reports/RAM_MIXED_READY_SUMMARY.json"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".log",
+      "sha256": "caadc5c85ede38c063898708b668e21c76ec0dfbe9a3de3dd5eefe28100e991d",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/reports/ram_pipeline_benchmark.log",
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/stopped_20261009T001430/reports/ram_pipeline_benchmark.log"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".json",
+      "sha256": "5d760ce6fea8a95d53c6bbd266ee1ff3a39537de98359113cecb3fafcaf23917",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/reports/RAM_PIPELINE_BENCHMARK_PASS.json",
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/stopped_20261009T001430/reports/RAM_PIPELINE_BENCHMARK_PASS.json"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".log",
+      "sha256": "b25b9e5d4f5175c2c4db5d3cc6c2d2705106ce412f3b557e27380fe6a094130d",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/reports/ram_probability_cache.log",
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/stopped_20261009T001430/reports/ram_probability_cache.log"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".json",
+      "sha256": "7a9396c24d8d3ae0079cd1ec3d0ed2cc2a1ae5fcda4cc7595027d6fadd1d6320",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/reports/RAM_TUNING_CHECKPOINT_SAVED.json",
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/stopped_20261009T001430/reports/RAM_TUNING_CHECKPOINT_SAVED.json"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".json",
+      "sha256": "aa40c67846b0bdfeeb9e2877251632803e4907c9b92e1b8fc920275b785d2d6e",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/reports/S20_canary_parity.json",
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/stopped_20261009T001430/reports/S20_canary_parity.json"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".log",
+      "sha256": "4a5f8c8e4cc5386e6609657f88e7c91dd94c5a82c069e3d45b82a031461ce0a9",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/reports/server_initialization.log",
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/stopped_20261009T001430/reports/server_initialization.log"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".json",
+      "sha256": "db916d9c7229a332842eb0db12c8d57d9b42218df58d7ee79e51308474df0067",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/reports/SERVER_INITIALIZATION_PASS.json",
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/stopped_20261009T001430/reports/SERVER_INITIALIZATION_PASS.json"
+      ],
+      "copies": 2
+    },
+    {
+      "ext": ".log",
+      "sha256": "e56d9a583c1d80d280b1c00261b09532124c1fa7c5fd2da3d4e35fe667233aca",
+      "paths": [
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/reports/server_optimizer_resume.log",
+        "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/stopped_20261009T001430/reports/server_optimizer_resume.log"
+      ],
+      "copies": 2
+    }
+  ],
+  "elapsed_seconds": 215.18,
+  "outputs": [
+    "runs_json_candidates.json",
+    "runs_jsonl_audit.json",
+    "runs_csv_audit.json",
+    "runs_text_log_audit.json",
+    "runs_file_hash_inventory.json"
+  ]
+}

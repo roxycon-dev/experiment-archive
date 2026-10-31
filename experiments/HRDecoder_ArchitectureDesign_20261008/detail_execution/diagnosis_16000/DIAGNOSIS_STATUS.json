@@ -1,0 +1,22 @@
+{
+  "status": "SINGLE_FULLVAL_COLLAPSE_UNDER_DIAGNOSIS",
+  "validation_step": 16000,
+  "mIoU": 13.074769744480871,
+  "delta_mIoU_pp": -23.661078853996667,
+  "SE_predicted_positive_pixels": 0,
+  "base_head_mIoU": 12.792119724348606,
+  "first_abnormal_fullval_not_persistent_pattern": true,
+  "CPU_checkpoint_probe": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\detail_execution\\diagnosis_16000\\CHECKPOINT_CPU_DIAGNOSTIC.json",
+  "CPU_probe_steps": [
+    12000,
+    17000
+  ],
+  "exact16k_checkpoint_available": false,
+  "model_optimizer_nonfinite_detected": false,
+  "registered_source_mismatch": false,
+  "BN_causal_evidence": false,
+  "next_fullval_to_observe": 20000,
+  "training_modified": false,
+  "server_shutdown": false,
+  "test_accessed": false
+}

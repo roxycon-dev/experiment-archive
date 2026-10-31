@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "device": "CPU",
+  "formal_updates": 0,
+  "canvas_probe": 128,
+  "batch_probe": 2,
+  "new_parameters": 6382912,
+  "new_parameters_groups": {
+    "local": 2918816,
+    "global_path": 3459872,
+    "head_u": 2112,
+    "head_s": 2112
+  },
+  "new_MAC_2048_batch1": {
+    "conv_linear": 33002881024,
+    "attention_QK_AV": 2147483648,
+    "total": 35150364672
+  },
+  "initial_threshold_decisions_match_anchor": true,
+  "initial_probabilities_match_anchor": false,
+  "native_resolution_mixture_checked": true,
+  "component_aux_excludes_shared_gradient": true,
+  "raw_component_aux_shared_gradient_nonzero": true,
+  "task_shared_gradient_nonzero": true,
+  "gradient_max_errors": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "diagnostic_readout_randomization_not_saved": true,
+  "limitations": "Module probes use random feature tensors; no performance claim or end-to-end training validation."
+}

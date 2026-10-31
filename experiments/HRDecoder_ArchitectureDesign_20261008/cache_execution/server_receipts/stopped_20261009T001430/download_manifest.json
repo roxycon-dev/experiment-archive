@@ -1,0 +1,663 @@
+{
+  "status": "ARCHIVED_STOPPED_BY_USER",
+  "archived_at": "2026-10-09T00:16:51.417161+08:00",
+  "remote_root": "/root/autodl-tmp/HRDecoder_v3_20261008",
+  "archive_directory": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\cache_execution\\server_receipts\\stopped_20261009T001430",
+  "file_count": 120,
+  "total_bytes": 50941592,
+  "validation_steps": [
+    4000,
+    8000,
+    12000,
+    16000,
+    20000
+  ],
+  "checks": "Each transferred file byte length compared with stable SFTP file size. No data/cache hash scan.",
+  "checkpoint_downloaded": false,
+  "checkpoint_deleted": false,
+  "shutdown_executed": false,
+  "files": [
+    {
+      "relative_path": "reports/BEFORE_RAM_CACHE_OUTCOME.json",
+      "bytes": 175,
+      "remote_mtime": 1791452445
+    },
+    {
+      "relative_path": "reports/BEFORE_RAM_CACHE_PERFORMANCE.json",
+      "bytes": 628,
+      "remote_mtime": 1791452439
+    },
+    {
+      "relative_path": "reports/BEFORE_RAM_CACHE_REPAIR_HOLD.json",
+      "bytes": 72,
+      "remote_mtime": 1791452445
+    },
+    {
+      "relative_path": "reports/FINAL_PERFORMANCE_TUNING_PASS.json",
+      "bytes": 304,
+      "remote_mtime": 1791456485
+    },
+    {
+      "relative_path": "reports/FINAL_TUNING_CHECKPOINT_SAVED.json",
+      "bytes": 185,
+      "remote_mtime": 1791456336
+    },
+    {
+      "relative_path": "reports/GPU_ASYNC_PREFETCH_PASS.json",
+      "bytes": 189,
+      "remote_mtime": 1791456501
+    },
+    {
+      "relative_path": "reports/GPU_CAMPAIGN_OUTCOME.json",
+      "bytes": 4493,
+      "remote_mtime": 1791476070
+    },
+    {
+      "relative_path": "reports/GPU_CAMPAIGN_REPAIR_HOLD.json",
+      "bytes": 72,
+      "remote_mtime": 1791476042
+    },
+    {
+      "relative_path": "reports/GPU_CAMPAIGN_RUNNING.json",
+      "bytes": 385,
+      "remote_mtime": 1791476070
+    },
+    {
+      "relative_path": "reports/GPU_CAMPAIGN_STOPPED.json",
+      "bytes": 4493,
+      "remote_mtime": 1791476070
+    },
+    {
+      "relative_path": "reports/GPU_LAYOUT_BENCHMARK.json",
+      "bytes": 2359,
+      "remote_mtime": 1791456483
+    },
+    {
+      "relative_path": "reports/GPU_STEP_PROFILE.json",
+      "bytes": 28835,
+      "remote_mtime": 1791456557
+    },
+    {
+      "relative_path": "reports/GPU_STEP_TRACE.json",
+      "bytes": 46208216,
+      "remote_mtime": 1791456540
+    },
+    {
+      "relative_path": "reports/RAM_CACHE_PRESSURE.json",
+      "bytes": 388,
+      "remote_mtime": 1791454020
+    },
+    {
+      "relative_path": "reports/RAM_CACHE_PROGRESS.json",
+      "bytes": 198,
+      "remote_mtime": 1791452905
+    },
+    {
+      "relative_path": "reports/RAM_CACHE_READY.json",
+      "bytes": 299853,
+      "remote_mtime": 1791455695
+    },
+    {
+      "relative_path": "reports/RAM_MIXED_PROGRESS.json",
+      "bytes": 110,
+      "remote_mtime": 1791455695
+    },
+    {
+      "relative_path": "reports/RAM_MIXED_READY_SUMMARY.json",
+      "bytes": 428,
+      "remote_mtime": 1791455695
+    },
+    {
+      "relative_path": "reports/RAM_PIPELINE_BENCHMARK_PASS.json",
+      "bytes": 982,
+      "remote_mtime": 1791456405
+    },
+    {
+      "relative_path": "reports/RAM_TUNING_CHECKPOINT_SAVED.json",
+      "bytes": 185,
+      "remote_mtime": 1791452446
+    },
+    {
+      "relative_path": "reports/S20_canary_parity.json",
+      "bytes": 236,
+      "remote_mtime": 1791437065
+    },
+    {
+      "relative_path": "reports/SERVER_INITIALIZATION_PASS.json",
+      "bytes": 704,
+      "remote_mtime": 1791445654
+    },
+    {
+      "relative_path": "reports/SERVER_OPTIMIZER_RESUME_PASS.json",
+      "bytes": 371,
+      "remote_mtime": 1791445672
+    },
+    {
+      "relative_path": "reports/SERVER_REAL_HRNET_ROUTE_PASS.json",
+      "bytes": 605,
+      "remote_mtime": 1791445732
+    },
+    {
+      "relative_path": "reports/STARTUP_PIPELINE_REPLACEMENT.json",
+      "bytes": 265,
+      "remote_mtime": 1791450994
+    },
+    {
+      "relative_path": "reports/STARTUP_WORKERS4_OUTCOME.json",
+      "bytes": 175,
+      "remote_mtime": 1791450994
+    },
+    {
+      "relative_path": "reports/STARTUP_WORKERS4_PERFORMANCE.json",
+      "bytes": 562,
+      "remote_mtime": 1791450991
+    },
+    {
+      "relative_path": "reports/STARTUP_WORKERS4_REPAIR_HOLD.json",
+      "bytes": 72,
+      "remote_mtime": 1791450994
+    },
+    {
+      "relative_path": "reports/TRAINER_PREPARATION_PASS.json",
+      "bytes": 433,
+      "remote_mtime": 1791445735
+    },
+    {
+      "relative_path": "reports/USER_STOP_REQUESTED.json",
+      "bytes": 296,
+      "remote_mtime": 1791476069
+    },
+    {
+      "relative_path": "reports/audit_decoder_benchmark.json",
+      "bytes": 279,
+      "remote_mtime": 1791444387
+    },
+    {
+      "relative_path": "reports/before_final_tuning_1791456336_GPU_CAMPAIGN_OUTCOME.json",
+      "bytes": 176,
+      "remote_mtime": 1791456336
+    },
+    {
+      "relative_path": "reports/before_final_tuning_1791456336_GPU_CAMPAIGN_REPAIR_HOLD.json",
+      "bytes": 72,
+      "remote_mtime": 1791456336
+    },
+    {
+      "relative_path": "reports/before_final_tuning_1791456336_gpu_telemetry.csv",
+      "bytes": 84319,
+      "remote_mtime": 1791456335
+    },
+    {
+      "relative_path": "reports/before_final_tuning_1791456336_performance.json",
+      "bytes": 701,
+      "remote_mtime": 1791456334
+    },
+    {
+      "relative_path": "reports/before_final_tuning_1791456336_v3_training.log",
+      "bytes": 194143,
+      "remote_mtime": 1791456334
+    },
+    {
+      "relative_path": "reports/benchmark_gpu_layout.py.log",
+      "bytes": 184031,
+      "remote_mtime": 1791456483
+    },
+    {
+      "relative_path": "reports/benchmark_ram_loader.py.log",
+      "bytes": 1824,
+      "remote_mtime": 1791456405
+    },
+    {
+      "relative_path": "reports/cache_audit_progress.json",
+      "bytes": 103,
+      "remote_mtime": 1791446677
+    },
+    {
+      "relative_path": "reports/cpu_audit_deferred.json",
+      "bytes": 432,
+      "remote_mtime": 1791439896
+    },
+    {
+      "relative_path": "reports/cpu_audit_nogpu.log",
+      "bytes": 9370,
+      "remote_mtime": 1791446677
+    },
+    {
+      "relative_path": "reports/diagnostics/checkpoint_health_20000.json",
+      "bytes": 38121,
+      "remote_mtime": 1791474465
+    },
+    {
+      "relative_path": "reports/diagnostics/cpu_output_20000.json",
+      "bytes": 3754,
+      "remote_mtime": 1791474689
+    },
+    {
+      "relative_path": "reports/diagnostics/cpu_output_20000_positive_EX_SE.json",
+      "bytes": 3768,
+      "remote_mtime": 1791474984
+    },
+    {
+      "relative_path": "reports/diagnostics/probe_normalization.py",
+      "bytes": 5389,
+      "remote_mtime": 1791475910
+    },
+    {
+      "relative_path": "reports/diagnostics/v4/normalization_probe.json",
+      "bytes": 49722,
+      "remote_mtime": 1791476064
+    },
+    {
+      "relative_path": "reports/finish_performance_tuning.log",
+      "bytes": 30,
+      "remote_mtime": 1791456485
+    },
+    {
+      "relative_path": "reports/gpu_before_ram_cache.csv",
+      "bytes": 51887,
+      "remote_mtime": 1791452444
+    },
+    {
+      "relative_path": "reports/gpu_controller.log",
+      "bytes": 0,
+      "remote_mtime": 1791450724
+    },
+    {
+      "relative_path": "reports/gpu_smoke_4090.log",
+      "bytes": 182220,
+      "remote_mtime": 1791450514
+    },
+    {
+      "relative_path": "reports/gpu_startup_workers4.csv",
+      "bytes": 9508,
+      "remote_mtime": 1791450992
+    },
+    {
+      "relative_path": "reports/gpu_telemetry.csv",
+      "bytes": 705248,
+      "remote_mtime": 1791476041
+    },
+    {
+      "relative_path": "reports/input_audit.json",
+      "bytes": 458,
+      "remote_mtime": 1791436852
+    },
+    {
+      "relative_path": "reports/low_memory_audit_resources.json",
+      "bytes": 148,
+      "remote_mtime": 1791446677
+    },
+    {
+      "relative_path": "reports/pause_at_checkpoint.py.log",
+      "bytes": 221,
+      "remote_mtime": 1791456336
+    },
+    {
+      "relative_path": "reports/performance_config.json",
+      "bytes": 118,
+      "remote_mtime": 1791456485
+    },
+    {
+      "relative_path": "reports/ram_cache_mixed.py.log",
+      "bytes": 388,
+      "remote_mtime": 1791455695
+    },
+    {
+      "relative_path": "reports/ram_pipeline_benchmark.log",
+      "bytes": 2090,
+      "remote_mtime": 1791453651
+    },
+    {
+      "relative_path": "reports/ram_probability_cache.log",
+      "bytes": 2818,
+      "remote_mtime": 1791452905
+    },
+    {
+      "relative_path": "reports/server_initialization.log",
+      "bytes": 182931,
+      "remote_mtime": 1791445654
+    },
+    {
+      "relative_path": "reports/server_optimizer_resume.log",
+      "bytes": 347,
+      "remote_mtime": 1791445672
+    },
+    {
+      "relative_path": "reports/server_route.log",
+      "bytes": 182814,
+      "remote_mtime": 1791445732
+    },
+    {
+      "relative_path": "reports/shutdown_requested.txt",
+      "bytes": 39,
+      "remote_mtime": 1791439896
+    },
+    {
+      "relative_path": "reports/train_cache_audit.json",
+      "bytes": 1441412,
+      "remote_mtime": 1791446677
+    },
+    {
+      "relative_path": "reports/v3_before_ram_cache.log",
+      "bytes": 189365,
+      "remote_mtime": 1791452403
+    },
+    {
+      "relative_path": "reports/v3_startup_workers4.log",
+      "bytes": 182992,
+      "remote_mtime": 1791450953
+    },
+    {
+      "relative_path": "reports/v3_training.log",
+      "bytes": 286930,
+      "remote_mtime": 1791476003
+    },
+    {
+      "relative_path": "training_runs/v3/GPU_SMOKE_PASS.json",
+      "bytes": 615,
+      "remote_mtime": 1791450514
+    },
+    {
+      "relative_path": "training_runs/v3/performance.json",
+      "bytes": 732,
+      "remote_mtime": 1791476033
+    },
+    {
+      "relative_path": "training_runs/v3/progress.json",
+      "bytes": 112,
+      "remote_mtime": 1791475093
+    },
+    {
+      "relative_path": "training_runs/v3/protocol.json",
+      "bytes": 2493,
+      "remote_mtime": 1791456493
+    },
+    {
+      "relative_path": "training_runs/v3/val_04000.json",
+      "bytes": 630,
+      "remote_mtime": 1791457608
+    },
+    {
+      "relative_path": "training_runs/v3/val_08000.json",
+      "bytes": 628,
+      "remote_mtime": 1791461684
+    },
+    {
+      "relative_path": "training_runs/v3/val_12000.json",
+      "bytes": 624,
+      "remote_mtime": 1791465842
+    },
+    {
+      "relative_path": "training_runs/v3/val_16000.json",
+      "bytes": 626,
+      "remote_mtime": 1791470007
+    },
+    {
+      "relative_path": "training_runs/v3/val_20000.json",
+      "bytes": 523,
+      "remote_mtime": 1791474078
+    },
+    {
+      "relative_path": "training_execution/CPU_PREPARATION_PASS.json",
+      "bytes": 2390,
+      "remote_mtime": 1791450479
+    },
+    {
+      "relative_path": "training_execution/OPTIMIZER_RESUME_PASS.json",
+      "bytes": 385,
+      "remote_mtime": 1791450480
+    },
+    {
+      "relative_path": "training_execution/REAL_CACHE_PIPELINE_PASS.json",
+      "bytes": 684,
+      "remote_mtime": 1791450479
+    },
+    {
+      "relative_path": "training_execution/benchmark_gpu_layout.py",
+      "bytes": 4285,
+      "remote_mtime": 1791455784
+    },
+    {
+      "relative_path": "training_execution/benchmark_ram_loader.py",
+      "bytes": 3637,
+      "remote_mtime": 1791455784
+    },
+    {
+      "relative_path": "training_execution/channels_last_runtime.py",
+      "bytes": 1496,
+      "remote_mtime": 1791455784
+    },
+    {
+      "relative_path": "training_execution/check_optimizer_resume.py",
+      "bytes": 3830,
+      "remote_mtime": 1791450477
+    },
+    {
+      "relative_path": "training_execution/check_server_init.py",
+      "bytes": 1529,
+      "remote_mtime": 1791450476
+    },
+    {
+      "relative_path": "training_execution/check_server_route.py",
+      "bytes": 2856,
+      "remote_mtime": 1791450477
+    },
+    {
+      "relative_path": "training_execution/checkpoint_health_audit.py",
+      "bytes": 3644,
+      "remote_mtime": 1791474459
+    },
+    {
+      "relative_path": "training_execution/cpu_output_diagnostic.py",
+      "bytes": 4291,
+      "remote_mtime": 1791474964
+    },
+    {
+      "relative_path": "training_execution/current_snapshot_remote.py",
+      "bytes": 790,
+      "remote_mtime": 1791474222
+    },
+    {
+      "relative_path": "training_execution/data.py",
+      "bytes": 8214,
+      "remote_mtime": 1791450476
+    },
+    {
+      "relative_path": "training_execution/execution_manifest.json",
+      "bytes": 1399,
+      "remote_mtime": 1791450481
+    },
+    {
+      "relative_path": "training_execution/finish_performance_tuning.py",
+      "bytes": 2284,
+      "remote_mtime": 1791455785
+    },
+    {
+      "relative_path": "training_execution/gpu_campaign_controller.py",
+      "bytes": 4748,
+      "remote_mtime": 1791455894
+    },
+    {
+      "relative_path": "training_execution/launch_final_tuning.py",
+      "bytes": 475,
+      "remote_mtime": 1791455648
+    },
+    {
+      "relative_path": "training_execution/launch_finish_remote.py",
+      "bytes": 327,
+      "remote_mtime": 1791455785
+    },
+    {
+      "relative_path": "training_execution/model.py",
+      "bytes": 5913,
+      "remote_mtime": 1791450474
+    },
+    {
+      "relative_path": "training_execution/objectives.py",
+      "bytes": 4060,
+      "remote_mtime": 1791450475
+    },
+    {
+      "relative_path": "training_execution/pause_at_checkpoint.py",
+      "bytes": 1786,
+      "remote_mtime": 1791455648
+    },
+    {
+      "relative_path": "training_execution/pause_for_ram_remote.py",
+      "bytes": 1485,
+      "remote_mtime": 1791452444
+    },
+    {
+      "relative_path": "training_execution/private_modules.py",
+      "bytes": 11209,
+      "remote_mtime": 1791450475
+    },
+    {
+      "relative_path": "training_execution/ram_cache_mixed.py",
+      "bytes": 4268,
+      "remote_mtime": 1791455647
+    },
+    {
+      "relative_path": "training_execution/ram_loader.py",
+      "bytes": 1232,
+      "remote_mtime": 1791455784
+    },
+    {
+      "relative_path": "training_execution/ram_probability_cache.py",
+      "bytes": 6072,
+      "remote_mtime": 1791452608
+    },
+    {
+      "relative_path": "training_execution/replace_startup_remote.py",
+      "bytes": 1602,
+      "remote_mtime": 1791450993
+    },
+    {
+      "relative_path": "training_execution/review_notes.md",
+      "bytes": 4642,
+      "remote_mtime": 1791450480
+    },
+    {
+      "relative_path": "training_execution/stop_training_by_user.py",
+      "bytes": 6379,
+      "remote_mtime": 1791476067
+    },
+    {
+      "relative_path": "training_execution/train.py",
+      "bytes": 13625,
+      "remote_mtime": 1791450476
+    },
+    {
+      "relative_path": "training_execution/train_performance.py",
+      "bytes": 8186,
+      "remote_mtime": 1791455783
+    },
+    {
+      "relative_path": "training_execution/verify_server_preparation.py",
+      "bytes": 1739,
+      "remote_mtime": 1791450478
+    },
+    {
+      "relative_path": "CACHE_READY.json",
+      "bytes": 6174,
+      "remote_mtime": 1791446677
+    },
+    {
+      "relative_path": "GPU_CACHE_READY.json",
+      "bytes": 1954,
+      "remote_mtime": 1791439896
+    },
+    {
+      "relative_path": "audit_inputs.py",
+      "bytes": 1654,
+      "remote_mtime": 1791436261
+    },
+    {
+      "relative_path": "benchmark_audit_decoder.py",
+      "bytes": 1171,
+      "remote_mtime": 1791444328
+    },
+    {
+      "relative_path": "cache_audit.py",
+      "bytes": 7958,
+      "remote_mtime": 1791436261
+    },
+    {
+      "relative_path": "cache_audit_lowmem.py",
+      "bytes": 5737,
+      "remote_mtime": 1791442191
+    },
+    {
+      "relative_path": "cache_common.py",
+      "bytes": 8778,
+      "remote_mtime": 1791436477
+    },
+    {
+      "relative_path": "export_A.py",
+      "bytes": 2852,
+      "remote_mtime": 1791436262
+    },
+    {
+      "relative_path": "export_S.py",
+      "bytes": 3628,
+      "remote_mtime": 1791436263
+    },
+    {
+      "relative_path": "export_U.py",
+      "bytes": 2223,
+      "remote_mtime": 1791436263
+    },
+    {
+      "relative_path": "reports_pipeline.log",
+      "bytes": 216394,
+      "remote_mtime": 1791439896
+    },
+    {
+      "relative_path": "test_lowmem_audit.py",
+      "bytes": 2187,
+      "remote_mtime": 1791442236
+    }
+  ],
+  "excluded_files": [
+    {
+      "relative_path": "reports/diagnostics/checkpoint_20000.pt",
+      "bytes": 577189375,
+      "reason": "Non-text artifact excluded; not downloaded."
+    },
+    {
+      "relative_path": "reports/gpu.lock",
+      "bytes": 0,
+      "reason": "Non-text artifact excluded; not downloaded."
+    },
+    {
+      "relative_path": "reports/local_mmengine_deps.tar.gz",
+      "bytes": 914451,
+      "reason": "Non-text artifact excluded; not downloaded."
+    },
+    {
+      "relative_path": "reports/shutdown_hold.enabled",
+      "bytes": 79,
+      "reason": "Non-text artifact excluded; not downloaded."
+    },
+    {
+      "relative_path": "training_runs/v3/best_val.pt",
+      "bytes": 289067547,
+      "reason": "Non-text artifact excluded; not downloaded."
+    },
+    {
+      "relative_path": "training_runs/v3/last.pt",
+      "bytes": 577189439,
+      "reason": "Non-text artifact excluded; not downloaded."
+    },
+    {
+      "relative_path": "training_execution/launch_gpu.sh",
+      "bytes": 518,
+      "reason": "Non-text artifact excluded; not downloaded."
+    },
+    {
+      "relative_path": "training_execution/resume_gpu.sh",
+      "bytes": 269,
+      "reason": "Non-text artifact excluded; not downloaded."
+    }
+  ]
+}

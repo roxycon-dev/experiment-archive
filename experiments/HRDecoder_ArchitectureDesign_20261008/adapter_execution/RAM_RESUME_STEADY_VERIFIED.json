@@ -1,0 +1,38 @@
+{
+  "checked_unix": 1791574299.9854863,
+  "server_online": true,
+  "progress": {
+    "status": "TRAINING",
+    "completed": 1300,
+    "expected": 40000,
+    "saved_update": 1000,
+    "best_val_mIoU": null,
+    "time_unix": 1791574272.818866
+  },
+  "performance": {
+    "completed_update": 1330,
+    "mean_batch_seconds": 0.8431227600574493,
+    "mean_step_compute_seconds": 0.8430959098786116,
+    "mean_data_wait_seconds": 2.6850178837776184e-05,
+    "window_batches": 100,
+    "warmup_batches_excluded": 12,
+    "workers": 8,
+    "prefetch_factor": 1,
+    "CUDA_future_batches": 1,
+    "shared_RAM_cache_bytes": 103079171144,
+    "channels_last": false,
+    "peak_allocated_bytes": 12095212032,
+    "peak_reserved_bytes": 13509853184,
+    "estimated_remaining_train_hours_excluding_validation": 9.056543647617103,
+    "time_unix": 1791574298.1295795,
+    "protocol_unchanged": true
+  },
+  "GPU": "96 %, 13395 MiB, 313.11 W\n",
+  "own_processes": {
+    "44025": "/root/miniconda3/bin/python -u /root/autodl-tmp/HRDecoder_v3_20261008/adapter_execution/resume_controller.py ",
+    "44808": "/root/miniconda3/bin/python -u train.py --train --resume ",
+    "39434": "/root/miniconda3/bin/python -u /root/autodl-tmp/HRDecoder_v3_20261008/sacd_execution/ram_cache_owner.py "
+  },
+  "original_own_session_live": [],
+  "error_files": []
+}

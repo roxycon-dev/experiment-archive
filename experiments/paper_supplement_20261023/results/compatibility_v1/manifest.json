@@ -1,0 +1,57 @@
+{
+  "run": "compatibility_v1",
+  "split": "val",
+  "expected_images": 1,
+  "scope": "compatibility_smoke_only",
+  "protocol_sha256": "d606cf42fa6506e2f39fd401e4d720b052ba7663fef1c6ae46066f1fcd3328d4",
+  "runtime_amendment_sha256": "2f7a4cb0351d53a31ec74cd4f333c719ea1fcbba911784eb29ad0c7ebd679379",
+  "assets": {
+    "B_weights.pth": {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\best_pipeline\\weights\\B_weights.pth",
+      "sha256": "0b3cd72e740fc5c69242994c12cfd71a49ac892aff37d09c50bb9fb6931a8626"
+    },
+    "D_student_2000.pth": {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\best_pipeline\\weights\\D_student_2000.pth",
+      "sha256": "5fe18717b62d8fc3ab4846a50c046588e2af05abbbfdb3a958f4794018b319ea"
+    },
+    "E_1500.pth": {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\best_pipeline\\weights\\E_1500.pth",
+      "sha256": "a18ff92b4da24d870554f17856983d4be042386cacbcaba0d4e13f3f248ed5e5"
+    },
+    "E4_weights.pth": {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\best_pipeline\\weights\\E4_weights.pth",
+      "sha256": "c5a3d0f0b990d2430e545146745bc809538bbe764979baf54f62b450785268e0"
+    },
+    "H4_best.pth": {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\best_pipeline\\weights\\H4_best.pth",
+      "sha256": "14757e02de49f6f065d4ef82cb8b1c4ee8a6a7f3f66cb1867276993950f80c50"
+    },
+    "U0": {
+      "path": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\cache_execution\\inference_weights\\U0_inference.pth",
+      "sha256": "b37fc328bfbbe029d5bc83f781072254d95ff97f7f7b6559efb7f91d9b1c4e39"
+    },
+    "S20": {
+      "path": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\cache_execution\\inference_weights\\S20_ema_inference.pth",
+      "sha256": "80c0f0250341ea65b29c23476a135d4f6020b8089e84b868b4ba185c550ec104"
+    },
+    "C20": {
+      "path": "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\execution\\server_results\\runs\\C_seed42\\checkpoint_u20000.pth",
+      "sha256": "8a9e416ad2bee95fe3375bd5d767e9f5fa852f34ee5db2368ba9b7678f372f72"
+    }
+  },
+  "scripts": {
+    "run_fixed_system.py": "e71ac5eabbbb5fa55ee4a81dfd1220fd3455f803bd54a47a4fe139d2e4268701",
+    "legacy_canary.py": "26dc42eafd9b38594a7f7cf5082824d3d171f0301cb263aa010ce46695484ac5",
+    "modern_worker.py": "475863ca63624deb552861bdcec8673428ed933d358147c4ab1102e1e1292ea8"
+  },
+  "sample_ids": [
+    "007-1774-100"
+  ],
+  "legacy_torch": "1.10.0+cu113",
+  "modern_python": "C:\\Users\\GuanXingRen\\Miniconda3\\python.exe",
+  "threshold": 0.5,
+  "strict_greater": true,
+  "coordinates": "original_image",
+  "new_training": false,
+  "historical_exact_replay": false
+}

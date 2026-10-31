@@ -1,0 +1,129 @@
+{
+  "scope": {
+    "champion_root": "D:/dataset/experiment/hrdecoder_plus3",
+    "audit_root": "D:/dataset/experiment/HRDecoder_审查轮_20260916/audit_runs/audit_20260916_A",
+    "data_root": "D:/HRDecoder/data/DDR_split_613"
+  },
+  "champion_heads": [],
+  "champion_files": [
+    {
+      "path": "D:/dataset/experiment/HRDecoder_审查轮_20260916/audit_runs/audit_20260916_A\\h4_best.pth",
+      "exists": true,
+      "sha256": "14757e02de49f6f065d4ef82cb8b1c4ee8a6a7f3f66cb1867276993950f80c50"
+    },
+    {
+      "path": "D:/dataset/experiment/HRDecoder_审查轮_20260916/audit_runs/audit_20260916_A\\experiments\\h5_test.json",
+      "exists": true,
+      "sha256": "03d9a9dfd187dc6b10bf8a5fb61f09f4a4d1a9dea801e8c02f7306d8811008e3"
+    },
+    {
+      "path": "D:/dataset/experiment/HRDecoder_审查轮_20260916/audit_runs/audit_20260916_A\\experiments\\h7_test.json",
+      "exists": true,
+      "sha256": "c7b28928aa3e502d8a710c29612acb868f6a71068bd89e93654c22ffbed959f2"
+    }
+  ],
+  "student_backup": {
+    "path": "D:/dataset/experiment/hrdecoder_plus3\\D2000",
+    "exists": false,
+    "sha256": null
+  },
+  "h5_h7": {
+    "h5": "D:/dataset/experiment/HRDecoder_审查轮_20260916/audit_runs/audit_20260916_A\\experiments\\h5_test.json",
+    "h7": "D:/dataset/experiment/HRDecoder_审查轮_20260916/audit_runs/audit_20260916_A\\experiments\\h7_test.json",
+    "numerically_equal": false,
+    "details": [
+      {
+        "key": "corrected",
+        "equal": false
+      },
+      {
+        "key": "delta_MA",
+        "equal": false
+      },
+      {
+        "key": "delta_mIoU",
+        "equal": true
+      },
+      {
+        "key": "final",
+        "equal": false
+      },
+      {
+        "key": "flip",
+        "equal": true
+      },
+      {
+        "key": "fused",
+        "equal": false
+      },
+      {
+        "key": "heads",
+        "equal": false
+      },
+      {
+        "key": "models",
+        "equal": true
+      },
+      {
+        "key": "n",
+        "equal": true
+      },
+      {
+        "key": "no_head_classes_bit_identical",
+        "equal": false
+      },
+      {
+        "key": "non_MA_bit_identical",
+        "equal": false
+      },
+      {
+        "key": "probe",
+        "equal": false
+      },
+      {
+        "key": "split",
+        "equal": true
+      },
+      {
+        "key": "status",
+        "equal": true
+      }
+    ]
+  },
+  "split": {
+    "expected": {
+      "train": 454,
+      "val": 76,
+      "test": 227
+    },
+    "status": "BLOCKED",
+    "splits": {
+      "train": {
+        "source": "files-on-disk",
+        "count": 0,
+        "count_ok": false,
+        "duplicates": [],
+        "images_present": true,
+        "labels_present": true
+      },
+      "val": {
+        "source": "files-on-disk",
+        "count": 0,
+        "count_ok": false,
+        "duplicates": [],
+        "images_present": true,
+        "labels_present": true
+      },
+      "test": {
+        "source": "files-on-disk",
+        "count": 0,
+        "count_ok": false,
+        "duplicates": [],
+        "images_present": true,
+        "labels_present": true
+      }
+    },
+    "all_ids": [],
+    "overlaps": {}
+  }
+}

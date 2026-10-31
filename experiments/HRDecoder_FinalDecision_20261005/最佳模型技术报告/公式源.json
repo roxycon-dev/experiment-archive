@@ -1,0 +1,19 @@
+{
+  "detail": "z_{E4}=z_{HRDecoder}+\\alpha\\,\\operatorname{Up}(D(x)),\\qquad\\alpha_0=0",
+  "local": "P_{local}=0.5P_{student}+0.5P_B",
+  "early_ma": "z_{MA}^{new}=z_{MA}^{base}+h(F_{detail},F_{semantic},z_{MA}^{base})",
+  "old_mix": "P_{mix}=\\frac{3P_{local}+2P_{MAres}+P_B+P_{E4}}{7}",
+  "ma_correct": "P_{MA}^{new}=\\sigma\\!\\left(\\operatorname{logit}(P_{mix,MA})+6\\tanh(h(X))\\right)",
+  "p0": "P_0=0.75P_{old}+0.25P_{U0}",
+  "msda": "A(q,F)=W_o\\operatorname{Concat}_{m=1}^{12}\\!\\left[\\sum_{\\ell=1}^{L}\\sum_{k=1}^{4}a_{m\\ell k}(q)\\,W_v^mF_{\\ell}(r+\\Delta_{m\\ell k}(q))\\right]",
+  "inject": "T\\leftarrow T+\\operatorname{MSDA}(\\operatorname{LN}(T),\\operatorname{LN}(C))",
+  "extract": "C\\leftarrow C+\\operatorname{MSDA}(\\operatorname{LN}(C),\\operatorname{LN}(T))",
+  "decoder_residual": "F_i^{new}=F_i^{DINO}+\\operatorname{Conv}_{1\\times1}(C_i)",
+  "bce": "L_{BCE}=-\\frac{\\sum_j v_j[y_j\\log p_j+(1-y_j)\\log(1-p_j)]}{\\sum_jv_j}",
+  "dice": "L_{Dice}=1-\\frac{2\\sum_jv_jp_jy_j+1}{\\sum_jv_jp_j+\\sum_jv_jy_j+1}",
+  "loss": "L_{micro}=\\frac{1}{4}\\sum_{c=1}^{4}\\left(0.5L_{BCE,c}+0.5L_{Dice,c}\\right)",
+  "source_loss": "L_{update}=\\frac{1}{4}\\sum_{t=1}^{4}L_{DDR,t}+0.25\\left(\\frac{1}{2}\\sum_{t=1}^{2}L_{TJDR,t}\\right)",
+  "ema": "\\bar\\theta_t=0.999\\bar\\theta_{t-1}+0.001\\theta_t",
+  "final": "P_{final}=0.75P_0+0.25P_{S20,EMA}=0.5625P_{old}+0.1875P_{U0}+0.25P_{S20,EMA}",
+  "miou": "\\operatorname{IoU}_c=\\frac{TP_c}{TP_c+FP_c+FN_c},\\qquad\\operatorname{mIoU}=\\frac{1}{4}\\sum_{c=1}^4\\operatorname{IoU}_c"
+}

@@ -1,0 +1,41 @@
+{
+  "stream_DDR_seed42.jsonl": {
+    "sha256": "7bb867a5f771960a7256a2b471823687d20b61c2e18d8cd65d3a368ee93c21c8",
+    "rows": 256000,
+    "seed": 42,
+    "source": "DDR",
+    "DDR_reuses_same_seed_update_slot_scheme": true,
+    "interpretation": "Repeated DDR exposure; not disjoint new training windows"
+  },
+  "stream_TJDR_seed42.jsonl": {
+    "sha256": "7990174a5b5c3791a0aad746f4301edc8d69cf80d8f98f444308fc079f4824f6",
+    "rows": 80000,
+    "seed": 42,
+    "source": "TJDR",
+    "DDR_reuses_same_seed_update_slot_scheme": false,
+    "interpretation": "Independent source stream, shared exactly by D/SD"
+  },
+  "stream_DDR_seed2024.jsonl": {
+    "sha256": "0833423fe9d9d94105d3144fb522c66c34ed08cd08545a4dde6363d8b180e7ef",
+    "rows": 256000,
+    "seed": 2024,
+    "source": "DDR",
+    "DDR_reuses_same_seed_update_slot_scheme": true,
+    "interpretation": "Repeated DDR exposure; not disjoint new training windows"
+  },
+  "stream_TJDR_seed2024.jsonl": {
+    "sha256": "00dae26f7eeefd0b41987a5e2506774901828939df652e065956a1501d6877ce",
+    "rows": 80000,
+    "seed": 2024,
+    "source": "TJDR",
+    "DDR_reuses_same_seed_update_slot_scheme": false,
+    "interpretation": "Independent source stream, shared exactly by D/SD"
+  },
+  "stream_PARENT_seed2024.jsonl": {
+    "sha256": "982fb514bf8cd165a09fe787bc9ba64d2806214f5d8dc7ae016a64bbed182698",
+    "rows": 96000,
+    "seed": 2024,
+    "source": "DDR",
+    "historical": true
+  }
+}

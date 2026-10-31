@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "formal_updates": 0,
+  "optimizer_created": false,
+  "canvas": 2048,
+  "batch": 2,
+  "device": "NVIDIA GeForce RTX 4090",
+  "precision": "BF16 autocast network; FP32 loss and probability mixture",
+  "limitations": "One fresh forward/backward, not warmed-up throughput or full training stability; no SGD state allocated.",
+  "forward_seconds": 1.3213748559355736,
+  "peak_after_forward_bytes": 14727491584,
+  "stage": "backward_done",
+  "sids": [
+    "007-3396-200",
+    "007-1811-100"
+  ],
+  "augmentation_seed": 42000,
+  "backward_and_gradient_checks_seconds": 1.2305744886398315,
+  "peak_allocated_bytes": 19890649600,
+  "peak_reserved_bytes": 21839740928,
+  "total_GPU_bytes": 25282281472,
+  "estimated_SGD_momentum_bytes": 287821328,
+  "task_loss": 1.3327364921569824,
+  "component_loss": 0.17569328844547272,
+  "hr_loss": 0.7977996468544006,
+  "backbone_initialization_preserved": true,
+  "backbone_forward_calls": 1,
+  "all_gradients_finite": true,
+  "parameters_with_nonzero_gradient": 927,
+  "initial_threshold_decisions_match_anchor": true,
+  "loss_dtype": "torch.float32",
+  "accuracy_validated": false
+}

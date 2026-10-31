@@ -1,0 +1,26 @@
+{
+  "status": "ORIGINAL_BASELINE_RECOVERED_SUPERSEDES_RETRAINING_REQUIREMENT",
+  "recorded_at": "2026-10-24T01:36:54.317240+00:00",
+  "authority": "User supplied recovered original project folder; original baseline identity verified before adopting it",
+  "baseline_primary": "Original historical DDR_split613 seed42 best32000, not retrained v1/v2",
+  "source_checkpoint_sha256": "446fc7b598e9680a1470059d2aba3a6f9c2222b66658a5eccef6059b1362850f",
+  "local_full_checkpoint": "D:\\dataset\\experiment\\paper_supplement_20261023\\models\\recovered_hrdecoder_baseline_u32000.pth",
+  "v1_attempt": "40k completed with incorrect scale_ratio; retain all artifacts, excluded as faithful original baseline",
+  "v2_attempt": {
+    "status": "SUPERSEDED_BY_RECOVERED_ORIGINAL",
+    "last_logged_update": 2980,
+    "last_saved_checkpoint_update": 2000,
+    "not_a_completed40k_run": true,
+    "preserve_logs_and_checkpoints": true
+  },
+  "new_adaptation_runs_required": 4,
+  "new_baseline_training_required_after_recovery": false,
+  "primary_baseline_DDR_mIoU_pct": 42.19623779633788,
+  "matches_historical_report_at_two_decimal_mIoU": true,
+  "original_baseline_does_not_retroactively_establish_E4_parent_edge": true,
+  "all_C_S_training_and_evaluation_settings_unchanged": true,
+  "no_test_based_checkpoint_selection_or_threshold_search": true,
+  "all_other_recovered_variant_weights_excluded_from_primary_baseline_selection": true,
+  "servers_kept_on": true,
+  "overall_campaign_complete": false
+}

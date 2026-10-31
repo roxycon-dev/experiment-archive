@@ -1,0 +1,30 @@
+{
+  "time": "2026-10-05T03:51:14.286272+00:00",
+  "server": {
+    "host": "connect.nmb1.seetacloud.com",
+    "port": 40920,
+    "instance_id": "connect.nmb1.seetacloud.com:40920",
+    "remote_root": "/root/autodl-tmp/HRDecoder_FinalDecision_20261005",
+    "ssh_key": "C:/Users/GuanXingRen/.ssh/codex_hrdecoder_next_20261003",
+    "assignment_confirmed": true,
+    "assigned_at": "2026-10-05T03:51:13.107718+00:00",
+    "password_stored": false,
+    "authorization": "User explicitly supplied this second-server assignment for parallel20261005 work; previous20261004 task remains closed."
+  },
+  "result": {
+    "new_root_exists": false,
+    "new_driver": null,
+    "free_disk_bytes": 14776463360,
+    "paths": {
+      "/root/miniconda3/envs/hrdecoder_q_20261003/bin/python": true,
+      "/root/HRDecoder/data/DDR_split_613": true,
+      "/root/autodl-tmp/HRDecoder_Q_20261003/vendor/dinov3": true,
+      "/root/autodl-tmp/HRDecoder_Q_20261003/assets/dinov3_vitb16_pretrain_lvd1689m-73cec8be.pth": true,
+      "/root/autodl-tmp/HRDecoder_Q_20261003/runs/Q_DDR_seed2024/checkpoint_u16000.pth": true,
+      "/root/autodl-tmp/HRDecoder_Finetune_20261004/runs/F12_seed42/checkpoint_u12000.pth": true,
+      "/root/autodl-tmp/HRDecoder_Ready_20261002/cache/val/champion": true,
+      "/root/autodl-tmp/HRDecoder_Ready_20261002/cache/val/U0": true
+    },
+    "DDR_train_inventory": 0
+  }
+}

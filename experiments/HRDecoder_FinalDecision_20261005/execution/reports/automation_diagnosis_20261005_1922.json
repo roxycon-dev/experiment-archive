@@ -1,0 +1,259 @@
+{
+  "stage": "AUTOMATION_ACTIVE_REFRESHED_MANUAL_CATCHUP_AND_LOCAL_HELPERS_RECOVERED",
+  "time": "2026-10-05T11:32:32.109565+00:00",
+  "automation_id": "hrdecoder-45",
+  "automation_updated_at": 1791199566909,
+  "status": "ACTIVE",
+  "same45min_heartbeat_and_thread_preserved": true,
+  "last_confirmed_heartbeat_shanghai": "2026-10-05 18:00:28",
+  "missed_expected_cycle_shanghai": "2026-10-05 18:45",
+  "local_Codex_service_current_process_started_shanghai": "2026-10-05 19:21:02",
+  "cause_assessment": "The local service was relaunched after the missed slot. Client interruption is consistent with the scheduler gap; exact shutdown/restart/sleep cause is not proven. The automation remained ACTIVE. Old local receiver/coordinator owners subsequently ended abruptly around19:19; all three were confirmed dead and no duplicate helpers existed.",
+  "official_source": "https://learn.chatgpt.com/docs/automations?surface=app",
+  "manual_live_states": {
+    "primary": {
+      "driver": {
+        "stage": "CAMPAIGN",
+        "pid": 18787,
+        "time": "2026-10-04T21:16:20.663409+00:00"
+      },
+      "campaign": {
+        "stage": "RUNNING",
+        "current_run": "D_seed42",
+        "queue": [
+          [
+            "C",
+            42
+          ],
+          [
+            "S",
+            42
+          ],
+          [
+            "D",
+            42
+          ],
+          [
+            "SD",
+            42
+          ],
+          [
+            "PARENT_F12",
+            2024
+          ],
+          [
+            "C",
+            2024
+          ],
+          [
+            "S",
+            2024
+          ],
+          [
+            "D",
+            2024
+          ],
+          [
+            "SD",
+            2024
+          ]
+        ],
+        "updated_at": "2026-10-05T10:09:41.031997+00:00"
+      },
+      "runs": {
+        "C_seed42": {
+          "stage": "COMPLETE",
+          "completed": 32000,
+          "endpoint": 32000,
+          "updated_at": "2026-10-05T02:31:24.012530+00:00"
+        },
+        "S_seed42": {
+          "stage": "COMPLETE",
+          "completed": 32000,
+          "endpoint": 32000,
+          "updated_at": "2026-10-05T10:09:39.504955+00:00"
+        },
+        "D_seed42": {
+          "stage": "TRAINING",
+          "completed": 5760,
+          "endpoint": 32000,
+          "updated_at": "2026-10-05T11:30:55.292195+00:00",
+          "recent": {
+            "loss": 0.1867353767156601,
+            "grad_norm": 1.8372889757156372,
+            "seconds": 0.7920346187893301,
+            "data_wait_seconds": 0.0019272188656032085,
+            "peak_gpu_bytes": 11004799488
+          }
+        }
+      },
+      "free_disk_bytes": 26727120896,
+      "observed_at": "2026-10-05T11:30:58.767934+00:00"
+    },
+    "second": {
+      "driver": {
+        "stage": "PARALLEL_CAMPAIGN",
+        "pid": 3295,
+        "time": "2026-10-05T05:33:32.002303+00:00"
+      },
+      "campaign": {
+        "stage": "RUNNING",
+        "current_run": "SD_seed42",
+        "queue": [
+          [
+            "SD",
+            42
+          ]
+        ],
+        "amendment_sha256": "cae05b90a986f4d14a7c7f1e7ca25de10b9d966d905cd1ea88f5e0c2116344c3",
+        "time": "2026-10-05T05:33:32.001933+00:00"
+      },
+      "runs": {
+        "SD_seed42": {
+          "stage": "TRAINING",
+          "completed": 17080,
+          "endpoint": 32000,
+          "updated_at": "2026-10-05T11:30:53.740250+00:00",
+          "recent": {
+            "loss": 0.1774013340473175,
+            "grad_norm": 3.1147308349609375,
+            "seconds": 1.2074916884303093,
+            "data_wait_seconds": 0.0024349987506866455,
+            "peak_gpu_bytes": 11006432768
+          }
+        }
+      },
+      "free_disk_bytes": 17722707968,
+      "observed_at": "2026-10-05T11:30:59.995959+00:00"
+    },
+    "authorized_seed_scope": [
+      42
+    ],
+    "assigned_runs": {
+      "primary": [
+        "C_seed42",
+        "S_seed42",
+        "D_seed42"
+      ],
+      "second": [
+        "SD_seed42"
+      ]
+    },
+    "old_primary_loaded_queue_is_superseded_by_boundary_amendment": true,
+    "time": "2026-10-05T11:30:59.997835+00:00"
+  },
+  "helper_recovery": {
+    "time": "2026-10-05T11:30:57.451095+00:00",
+    "helpers": {
+      "primary": {
+        "pid": 17736,
+        "alive": true,
+        "cmdline": [
+          "C:\\Users\\GuanXingRen\\Miniconda3\\python.exe",
+          "-u",
+          "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\execution\\reports\\independent_local_attendant_runner.py",
+          "primary"
+        ],
+        "parent_pid": 7760,
+        "parent_name": "WmiPrvSE.exe",
+        "helper_sha256": "f76acf364bdcd56adc290c73ab7d47c9f6641bb817d1b0262b96483d8831578e",
+        "attendant_state.json": {
+          "stage": "WAITING",
+          "time": "2026-10-05T11:19:01.947957+00:00"
+        },
+        "transfer_progress.json": {
+          "stage": "TRANSFERRING",
+          "full": false,
+          "verified_files": 981,
+          "expected_files": 6423,
+          "verified_bytes": 244893381,
+          "expected_bytes": 269312848,
+          "updated_at": "2026-10-05T11:30:57.434693+00:00"
+        },
+        "mirror.lock": {
+          "pid": 17736,
+          "time": "2026-10-05T11:30:19.549926+00:00"
+        },
+        "log": [
+          "{\"stage\": \"EXISTING_HELPER_RECOVERED\", \"role\": \"primary\", \"pid\": 17736, \"time\": \"2026-10-05T11:30:18.329844+00:00\"}",
+          "{\"time\": \"2026-10-05T11:30:19.549254+00:00\", \"driver_stage\": \"CAMPAIGN\", \"run\": \"D_seed42\", \"run_stage\": \"TRAINING\", \"completed\": 5700, \"free_disk_bytes\": 26726625280}"
+        ],
+        "err.log": []
+      },
+      "second": {
+        "pid": 31360,
+        "alive": true,
+        "cmdline": [
+          "C:\\Users\\GuanXingRen\\Miniconda3\\python.exe",
+          "-u",
+          "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\execution\\reports\\independent_local_attendant_runner.py",
+          "second"
+        ],
+        "parent_pid": 7760,
+        "parent_name": "WmiPrvSE.exe",
+        "helper_sha256": "037d0a4db1838ae991ace0d4c200a84b7ab1b6fc6d5ac1ae58ca0acc5ed7b2a5",
+        "attendant_state.json": {
+          "stage": "WAITING",
+          "time": "2026-10-05T11:18:59.415373+00:00"
+        },
+        "transfer_progress.json": {
+          "stage": "TRANSFERRING",
+          "full": false,
+          "verified_files": 1115,
+          "expected_files": 2882,
+          "verified_bytes": 180417484,
+          "expected_bytes": 188508203,
+          "updated_at": "2026-10-05T11:30:57.476655+00:00"
+        },
+        "mirror.lock": {
+          "pid": 31360,
+          "time": "2026-10-05T11:30:19.550084+00:00"
+        },
+        "log": [
+          "{\"stage\": \"EXISTING_HELPER_RECOVERED\", \"role\": \"second\", \"pid\": 31360, \"time\": \"2026-10-05T11:30:18.345692+00:00\"}",
+          "{\"time\": \"2026-10-05T11:30:19.549359+00:00\", \"driver_stage\": \"PARALLEL_CAMPAIGN\", \"run\": \"SD_seed42\", \"run_stage\": \"TRAINING\", \"completed\": 17040, \"free_disk_bytes\": 17722707968}"
+        ],
+        "err.log": []
+      },
+      "coordinator": {
+        "pid": 32432,
+        "alive": true,
+        "cmdline": [
+          "C:\\Users\\GuanXingRen\\Miniconda3\\python.exe",
+          "-u",
+          "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\execution\\reports\\independent_local_attendant_runner.py",
+          "coordinator"
+        ],
+        "parent_pid": 7760,
+        "parent_name": "WmiPrvSE.exe",
+        "helper_sha256": "267f4433f9ac5f0f886d062766a2a10057b00c1995b6ab92b48084e28f81ef5d",
+        "state": {
+          "stage": "WAITING_SD_COMPLETE_SHA_CUSTODY",
+          "time": "2026-10-05T11:30:48.475784+00:00"
+        },
+        "log": [
+          "{\"stage\": \"EXISTING_HELPER_RECOVERED\", \"role\": \"coordinator\", \"pid\": 32432, \"time\": \"2026-10-05T11:30:18.374596+00:00\"}"
+        ],
+        "err.log": []
+      }
+    }
+  },
+  "original_logs_states_and_stale_locks_archived": "reports/local_attendant_recovery_20261005_1929",
+  "old_pids": [
+    32844,
+    8552,
+    13216
+  ],
+  "new_pids": {
+    "primary": 17736,
+    "second": 31360,
+    "coordinator": 32432
+  },
+  "launcher": "Windows WMI hidden processes with WmiPrvSE parent, outside app child-process lifetime",
+  "original_transport_custody_shutdown_logic_preserved": true,
+  "training_restarted": false,
+  "healthy_receiver_restarted": false,
+  "duplicate_automation_created": false,
+  "actual_future_scheduler_trigger_not_yet_observed": true,
+  "shutdown_eligible": false
+}

@@ -1,0 +1,74 @@
+/root/miniconda3/lib/python3.8/site-packages/mmcv/__init__.py:20: UserWarning: On January 1, 2023, MMCV will release v2.0.0, in which it will remove components related to the training process and add a data transformation module. In addition, it will rename the package names mmcv to mmcv-lite and mmcv-full to mmcv. See https://github.com/open-mmlab/mmcv/blob/master/docs/en/compatibility.md for more details.
+  warnings.warn(
+/root/miniconda3/lib/python3.8/site-packages/torch/_utils.py:776: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  return self.fget.__get__(instance, owner)()
+{
+  "family": "hrdecoder",
+  "stage": "ddr_finetune",
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "torch": "2.0.1+cu117",
+  "peak_allocated_mb": 21617.12841796875,
+  "timings_seconds": [
+    17.505237194010988,
+    2.672099821968004,
+    1.3522706989897415,
+    1.3465668529970571,
+    1.3395705379080027,
+    1.3382254600292072,
+    2.6712776659987867,
+    1.3470993799855933,
+    1.3471471919910982,
+    1.3429296590620652,
+    1.339038323960267,
+    1.3594063729979098,
+    1.347615046077408,
+    1.3435957980109379,
+    1.3394854380749166,
+    1.3425337290391326
+  ],
+  "effective_batch": 8,
+  "micro_batch": 8,
+  "data_wait_seconds": [
+    2.721354575944133,
+    0.00011938891839236021,
+    9.737501386553049e-05,
+    0.0002888719318434596,
+    0.00016324000898748636,
+    0.0002173309912905097,
+    0.0003108299570158124,
+    0.00027372094336897135,
+    0.00010062498040497303,
+    0.0002637540455907583,
+    0.0002928520552814007,
+    0.000286039081402123,
+    0.0002709579421207309,
+    0.00024789292365312576,
+    0.00025198899675160646,
+    0.0002758809132501483,
+    0.0002507109893485904,
+    0.00026790692936629057
+  ],
+  "workers": 4,
+  "fast_kernels": true,
+  "grad_accum": 1,
+  "parameter_delta": {
+    "backbone.conv1.weight": 7.838010787963867e-06,
+    "decode_head.conv_seg.weight": 4.094839096069336e-05
+  },
+  "last_loss": {
+    "loss_bce": 0.004612534306943417,
+    "loss_dice": 0.8527788519859314,
+    "loss_total": 0.857391357421875,
+    "active_classes": 4,
+    "valid_pixels_per_class": [
+      7582856,
+      7582856,
+      7582856,
+      7582856
+    ]
+  },
+  "n_train": 454,
+  "n_dev": 76,
+  "calibration_only": true,
+  "checkpoint_saved": false
+}

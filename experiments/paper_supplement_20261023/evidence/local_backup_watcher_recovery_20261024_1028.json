@@ -1,0 +1,22 @@
+{
+  "status": "REPAIRED_LOCAL_BACKUP_WATCHER_ONLY",
+  "checked_at_UTC": "2026-10-24T02:30:03.496020+00:00",
+  "observed": "PreviousPID33400 absent;last successful C3407 backup at10:09;stderr empty",
+  "root_cause": "Unconfirmed; no traceback or normal-exit evidence from previous process",
+  "training_or_evaluation_stopped": false,
+  "artifacts_lost": false,
+  "already_completed_C3407_backup_verified": true,
+  "repair": "Win32_Process.Create with hidden pythonw launcher, independent of tool-shell process; explicit exit evidence on normal/exception exit",
+  "new_controller": {
+    "pid": 45360,
+    "previous_pid": 33400,
+    "reason": "Previous33400 absent without traceback; detached WMI launcher restores local backup only",
+    "launch_method": "Win32_Process.Create/pythonw,hidden,not inherited tool-shell job",
+    "stdout": "D:\\dataset\\experiment\\paper_supplement_20261023\\logs\\terminal_backup_detached_20261024.log",
+    "stderr": "D:\\dataset\\experiment\\paper_supplement_20261023\\logs\\terminal_backup_detached_20261024.err.log",
+    "no_shutdown": true,
+    "updated_at": "2026-10-24T02:28:47.108416+00:00"
+  },
+  "servers_shutdown": false,
+  "no_other_processes_interfered": true
+}

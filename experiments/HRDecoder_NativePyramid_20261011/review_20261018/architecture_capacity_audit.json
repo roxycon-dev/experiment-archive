@@ -1,0 +1,96 @@
+{
+  "date": "2026-10-18",
+  "reviewer": "root",
+  "scope": "architecture-only algebra; no learned-performance conclusion",
+  "spec_sha256": "bc6a1f9d6e150cd6c7ebe71b4e6ff5c3cc0abc832b10767b4fde71e8c265771a",
+  "script_sha256": "3b617a434a4c24b1f3f19c0a87c66ecea76a39e480ae7ca93c6708019bb1e3f5",
+  "source_sha256": {
+    "C:\\Users\\GuanXingRen\\Miniconda3\\Lib\\site-packages\\timm\\models\\hrnet.py": "55ba88db4d76b61dfdb1c69b1161cae63d73c50a274e94138dad82222135d7c5"
+  },
+  "receptive_field": {
+    "path": [
+      {
+        "node": "stem1",
+        "rf_side": 3,
+        "jump": 2
+      },
+      {
+        "node": "stem2",
+        "rf_side": 7,
+        "jump": 4
+      },
+      {
+        "node": "stage1",
+        "rf_side": 39,
+        "jump": 4
+      },
+      {
+        "node": "stage2_lowest_branch",
+        "rf_side": 175,
+        "jump": 8
+      },
+      {
+        "node": "stage3_lowest_branch",
+        "rf_side": 1215,
+        "jump": 16
+      },
+      {
+        "node": "stage4_lowest_branch",
+        "rf_side": 2783,
+        "jump": 32
+      }
+    ],
+    "side": 2783,
+    "scope": "nominal convolution support of one deepest path at inference; not effective or full-network RF"
+  },
+  "channel_row_space_example": {
+    "shared_basis_union_rank": 64,
+    "independent_basis_union_rank": 128,
+    "scope": "rank in the SAME 720-channel coordinate space across two view roles; both joint block-diagonal projections still have at most rank 128 in 1440-dimensional input space",
+    "not_established": "actual lesion information lies in these extra directions"
+  },
+  "containment": {
+    "construction": "P_N=P_G with matching affine and corresponding domain buffers reproduces v2; split parameters are separate objects",
+    "initial_forward_identity": "algebraic",
+    "same_SGD_trajectory": false,
+    "full_model_runtime_identity_tested": false,
+    "applies_to_prediction_family_not_regularized_finite_step_optimization": true
+  },
+  "parameters": {
+    "per_projection": 46208,
+    "decoder": 494212,
+    "model": 65819332,
+    "extra_vs_v2": 46208
+  },
+  "target_gap_percentage_points": 5.896280222360267,
+  "error_budgets": {
+    "EX": {
+      "target_iou": 0.5037020374756765,
+      "strict_requirement_if_matching_this_class": "delta_TP - target_iou * delta_FP > rhs",
+      "rhs": 15301.445873285149,
+      "scope": "sufficient per-class route, not necessary for beating mean IoU"
+    },
+    "HE": {
+      "target_iou": 0.4504046701127168,
+      "strict_requirement_if_matching_this_class": "delta_TP - target_iou * delta_FP > rhs",
+      "rhs": 69205.19119035138,
+      "scope": "sufficient per-class route, not necessary for beating mean IoU"
+    },
+    "SE": {
+      "target_iou": 0.5984178389933564,
+      "strict_requirement_if_matching_this_class": "delta_TP - target_iou * delta_FP > rhs",
+      "rhs": 25905.478245286155,
+      "scope": "sufficient per-class route, not necessary for beating mean IoU"
+    },
+    "MA": {
+      "target_iou": 0.2603487025137867,
+      "strict_requirement_if_matching_this_class": "delta_TP - target_iou * delta_FP > rhs",
+      "rhs": 6067.572913675831,
+      "scope": "sufficient per-class route, not necessary for beating mean IoU"
+    }
+  },
+  "optimizer_steps": 0,
+  "full_model_executed": false,
+  "new_miou": null,
+  "guaranteed_target_exceedance": false
+}

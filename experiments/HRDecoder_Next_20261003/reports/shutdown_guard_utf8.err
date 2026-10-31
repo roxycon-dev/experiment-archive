@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "D:\dataset\experiment\HRDecoder_Next_20261003\ops\shutdown_guard.py", line 88, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "D:\dataset\experiment\HRDecoder_Next_20261003\ops\shutdown_guard.py", line 79, in main
+    result=json.loads(remote_exec(c,"/root/miniconda3/bin/python - <<'PY'\n"+code+"\nPY",120))
+                      ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\dataset\experiment\HRDecoder_Next_20261003\ops\mirror_remote.py", line 33, in remote_exec
+    if status:raise RuntimeError(str(status)+' '+stderr[-3000:]+stdout[-3000:])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: -1 {"status": "shutdown_request_accepted", "returncode": 0, "requested_at": 1791023852.2928176}
+

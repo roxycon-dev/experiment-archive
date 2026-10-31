@@ -1,0 +1,25 @@
+{
+  "canvas": "native",
+  "G_inference": "slide",
+  "start_asset": "U0_highres",
+  "start_asset_sha256": "622184c13f794938e79592cdb71b3628d2ea9d658be55fd7a9dfee29aee77cc1",
+  "baseline_cache": "/root/autodl-tmp/HRDecoder_Next_20261003/work/G/current_deployment",
+  "champion_cache": "/root/autodl-tmp/HRDecoder_Next_20261003/work/G/champion",
+  "baseline_val_miou": 0.43487703221036567,
+  "canvas_evidence": {
+    "U0": {
+      "native": 0.4356958018590438,
+      "long2048": 0.4364737489643856
+    },
+    "U1": {
+      "native": 0.43349993113814084,
+      "long2048": 0.4344162928121451
+    }
+  },
+  "data_sha256": "9d98e740527f3d38a45e60027a5c43d2409673475fcd247038cf4eecf79765af",
+  "source_sha256": "56fa846972da1fbf4acb366892eb5b038dd5999d12b1fbb53e00d4d3c77fea9d",
+  "M_inference": "1024 halo128 center768 single-coverage",
+  "current_test_reference": 0.447809,
+  "target": 0.472115,
+  "test_access": "none during G/M"
+}

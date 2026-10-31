@@ -1,0 +1,190 @@
+schema_version: '1.0'
+arm_id: H1
+role: external-lesion-pretrained hrdecoder arm
+status: locked-intent
+structure:
+  family: hrdecoder
+  paired_group: hrdecoder
+  definition_ref: docs/ASSET_AND_INTERFACE_AUDIT.md 第4节
+  training_entry: train.py
+  reference_root: /root/autodl-tmp/HRDecoder_Ready_20261002/vendor/HRDecoder
+  open_all_stages: true
+  keep_frozen_b_copy: false
+  variant: HRNet-FCN supervised crops; source HRDecoder global/local feature inference;
+    no frozen B or auxiliary crop loss
+initialization:
+  imagenet_weights:
+    source: https://download.openmmlab.com/pretrain/third_party/hrnetv2_w48-d2186c55.pth
+    file: /root/autodl-tmp/HRDecoder_Ready_20261002/assets/hrnetv2_w48-d2186c55.pth
+    sha256: d2186c55782308392ae14cf179ac4840143b09abdbba81aa3f9274c795ebc960
+  external_pretrain_checkpoint:
+    file: /root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/H1_external_pretrain/ckpt_best.pth
+    sha256: 3aa43faa5ad38f0c6409ba8b518cb8783d319f5b8a5e4b8dce7ccfd25cfaf408
+data:
+  ddr_root: /root/HRDecoder/data/DDR_split_613
+  ddr_train_split: train
+  ddr_val_split: val
+  ddr_test_split: test
+  channel_order:
+  - EX
+  - HE
+  - SE
+  - MA
+  input_fov: 2048
+  train_crop: 1024
+  ddr_normalization:
+    mean:
+    - 81.205
+    - 50.636
+    - 21.216
+    std:
+    - 76.252
+    - 48.798
+    - 21.625
+pretrain_stage:
+  external_manifest: /root/autodl-tmp/HRDecoder_Ready_20261002/assets/external/external_train_dedup.jsonl
+  allowed_splits:
+  - train
+  forbidden_splits:
+  - test
+  dev_ratio: 0.1
+  source_mixing: source_balanced_sampling
+  updates: 2400
+  effective_batch: 8
+  micro_batch: 4
+  grad_accum: 2
+  optimizer: adamw
+  weight_decay: 0.01
+  warmup_ratio: 0.05
+  lr_schedule: cosine
+  cosine_min_ratio: 0.01
+  backbone_lr: 0.0001
+  decoder_lr: 0.0003
+  channel_order:
+  - EX
+  - HE
+  - SE
+  - MA
+  valid_mask_handling: per_class_valid_masking
+  node_selection: external_train_derived_dev_only
+  overfit_monitor: 48 train / 6 dev; nodes 300/600/1200/2400; plateau early exit;
+    budget scaled before new validation
+  init_checkpoint_output: /root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/H1_external_pretrain/ckpt_best.pth
+  manifest_base_dir: /root/autodl-tmp/HRDecoder_Ready_20261002/assets/external
+  seed: 42
+  mixed_precision: true
+  gradient_checkpointing: false
+  num_workers: 4
+  log_every: 100
+  eval_progress_points:
+  - 0.125
+  - 0.25
+  - 0.5
+  - 1
+  periodic_save_updates: 1000
+  screening:
+    enabled: true
+    mode: external_dev_plateau
+    min_progress: 0.25
+    minimum_gain: 0.001
+ddr_finetune_stage:
+  seed: 42
+  updates: 12000
+  effective_batch: 8
+  micro_batch: 8
+  grad_accum: 1
+  eval_progress_points:
+  - 0.25
+  - 0.5
+  - 0.75
+  - 1.0
+  optimizer: adamw
+  weight_decay: 0.01
+  warmup_ratio: 0.05
+  lr_schedule: cosine
+  cosine_min_ratio: 0.01
+  backbone_lr: 5.0e-05
+  decoder_lr: 0.0002
+  augmentation:
+    resize_ratio_range:
+    - 0.5
+    - 2.0
+    random_crop_cat_max_ratio: 0.75
+    flip_ratio: 0.5
+    rotate_degrees:
+    - -45
+    - 45
+    photometric: light
+  sampling: random_plus_foreground_mixed
+  bn_policy:
+    backbone_norm_eval: true
+    affine_trainable: true
+  mixed_precision: true
+  gradient_checkpointing: false
+  log_every: 100
+  num_workers: 4
+  periodic_save_updates: 1000
+  screening:
+    enabled: true
+    min_progress: 0.5
+    minimum_gain: 0.003
+    gap: 0.015
+    reference_miou: 0.426694
+    reference_class_iou:
+      EX: 0.457715
+      HE: 0.437583
+      SE: 0.551807
+      MA: 0.259672
+    class_margin: 0.005
+loss:
+  type: binary_per_class
+  recipe: ce_dice
+  smooth: 1.0e-05
+  per_class_valid_masking: true
+  ce_weight: 1.0
+  dice_weight: 1.0
+metrics:
+  protocol: whole_image_accumulated_counts
+  threshold: 0.5
+  primary: mIoU_lesion4
+  reported:
+  - mF1
+  - mPPV
+  - mRecall
+  - mAUPR
+  eval_mode: whole_image
+  window_size: 1024
+  window_stride: 768
+  resize_to:
+  - 2048
+  - 2048
+checkpoint_selection:
+  allowed_splits:
+  - val
+  test_forbidden: true
+test_usage:
+  train_on_test: forbidden
+  select_checkpoint_on_test: forbidden
+  final_single_eval: allowed_only_after_full_lock
+equivalence_lock:
+  identical_with: H0
+  fields:
+  - data
+  - ddr_finetune_stage
+  - loss
+  - metrics
+  - checkpoint_selection
+  - test_usage
+  - structure.family
+  - structure.paired_group
+  - initialization.imagenet_weights
+notes: 'H1 回答"真实病灶预训练是否有用"。额外预训练计算量如实记录，不声称等算力优势； 选出的外部节点进入 DDR 适配后必须使用与 H0 完全相同的同结构
+  LR 与日程。
+
+  '
+execution_revision: '20261002: fp32 loss, real transfer, source sampling, explicit
+  geometry'
+execution_fast_kernels: true
+historical_comparison: 'descriptive_only: historical controls used an earlier implementation'
+exploration_status: historical controls reused; no matched causal claim for external
+  pretraining

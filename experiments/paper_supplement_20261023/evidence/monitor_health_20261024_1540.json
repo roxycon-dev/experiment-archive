@@ -1,0 +1,38 @@
+{
+  "status": "HEALTHY_WAITING_LAST_FIXED_ENDPOINT",
+  "checked_at_UTC": "2026-10-24T07:41:13.294585+00:00",
+  "S3407": {
+    "records": 897,
+    "last": {
+      "update": 17940,
+      "loss": 0.10377347469329834,
+      "grad_norm": 1.0790255069732666,
+      "seconds": 1.1214316310361028,
+      "data_wait_seconds": 0.0016661565750837326
+    },
+    "nonfinite": []
+  },
+  "remaining_adaptation_hours": 0.6567624013965812,
+  "GPU59_resources_at_snapshot": {
+    "0": {
+      "memory_used_MiB": 6,
+      "utilization_pct": 0
+    },
+    "1": {
+      "memory_used_MiB": 6,
+      "utilization_pct": 0
+    },
+    "2": {
+      "memory_used_MiB": 6,
+      "utilization_pct": 0
+    },
+    "3": {
+      "memory_used_MiB": 6,
+      "utilization_pct": 0
+    }
+  },
+  "backup_PID45360_alive": true,
+  "backup_stderr_empty": true,
+  "all_terminal_evidence_required_after_endpoint": true,
+  "overall_campaign_complete": false
+}

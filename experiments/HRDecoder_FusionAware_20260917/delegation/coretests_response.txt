@@ -1,0 +1,217 @@
+```python
+# tests/test_core.py
+import unittest
+
+import cv2
+import numpy as np
+import torch
+import torch.nn as nn
+
+from fusion_core import (NUM_FG, IMG_MEAN, IMG_STD, IGNORE_INDEX,
+                         configure_trainable, dice_prob, freeze_bn,
+                         loss_pair, paired_geometry, strict_initialize)
+
+
+def make_gt(shape=(64, 64)):
+    gt = np.zeros(shape, dtype=np.int64)
+    gt[10:20, 10:20] = 1
+    gt[30:40, 30:45] = 2
+    gt[50:60, 5:15] = 4
+    return gt
+
+
+def make_model():
+    class M(nn.Module):
+        def __init__(self):
+            super().__init__()
+            self.backbone = nn.Module()
+            self.backbone.stage4 = nn.Sequential(
+                nn.Conv2d(3, 4, 3, padding=1), nn.BatchNorm2d(4))
+            self.decode_head = nn.Sequential(
+                nn.Conv2d(4, 4, 3, padding=1), nn.BatchNorm2d(4))
+            self.reference = nn.Sequential(nn.Conv2d(4, 4, 3, padding=1))
+
+        def forward(self, x):
+            return self.decode_head(self.backbone.stage4(x))
+    return M()
+
+
+class TestDice(unittest.TestCase):
+    def test_matches_formula(self):
+        torch.manual_seed(0)
+        prob = torch.rand(2, NUM_FG, 8, 8)
+        lab = torch.randint(0, 5, (2, 1, 8, 8))
+        lab[0, 0, :4] = IGNORE_INDEX
+        got = dice_prob(prob, lab).item()
+        valid = (lab != IGNORE_INDEX).float()
+        idx = torch.arange(1, NUM_FG + 1).view(1, NUM_FG, 1, 1)
+        tgt = (lab == idx).float() * valid
+        p = prob * valid
+        num = 2 * (p * tgt).sum((2, 3)) + 1.0
+        den = (p * p).sum((2, 3)) + (tgt * tgt).sum((2, 3)) + 1.0
+        self.assertAlmostEqual(got, (1 - num / den).mean().item(), places=6)
+
+    def test_perfect_uniform_probs_zero_loss(self):
+        # p == target == 0.5 everywhere on all fg channels -> dice == 1 -> loss 0
+        prob = torch.full((1, NUM_FG, 4, 4), 0.5)
+        lab = torch.arange(1, NUM_FG + 1).view(1, 1, 4, 4).repeat(1, 1, 1, 1)[:, :, 0].view(1, 1, 4, 4)
+        lab = torch.arange(1, 5).view(1, 1, 4, 4)
+        self.assertAlmostEqual(dice_prob(prob, lab).item(), 0.0, places=6)
+
+    def test_background_label_no_channel(self):
+        # label 0 -> target all zeros; loss depends only on prob mass (no bg channel)
+        prob = torch.zeros(1, NUM_FG, 4, 4); prob[..., :2] = 0.3
+        loss_fg = dice_prob(prob, torch.zeros(1, 1, 4, 4, dtype=torch.long))
+        prob2 = torch.zeros(1, NUM_FG, 4, 4)
+        self.assertGreater(loss_fg.item(), dice_prob(prob2, torch.zeros(1, 1, 4, 4, dtype=torch.long)).item())
+        # ignore label removes everything -> smooth-only loss identical
+        ig = torch.full((1, 1, 4, 4), IGNORE_INDEX, dtype=torch.long)
+        self.assertAlmostEqual(dice_prob(prob, ig).item(), dice_prob(prob2, ig).item(), places=6)
+
+    def test_pair_armB_ref_detached_grad_flows(self):
+        torch.manual_seed(1)
+        logits = torch.randn(1, NUM_FG, 8, 8, requires_grad=True)
+        ref = torch.rand(1, NUM_FG, 8, 8)
+        lab = torch.randint(0, 5, (1, 1, 8, 8))
+        lb = loss_pair(logits, lab, ref, 'B')
+        lb.backward()
+        self.assertIsNotNone(logits.grad)
+        self.assertGreater(float(logits.grad.abs().sum()), 0.0)
+        la = loss_pair(logits.detach().requires_grad_(True), lab, ref, 'A')
+        la.backward()
+        with self.assertRaises(ValueError):
+            loss_pair(logits, lab, ref, 'C')
+        with self.assertRaises(ValueError):
+            loss_pair(logits, lab, torch.full_like(ref, 2.0), 'B')
+
+
+class TestStrictInit(unittest.TestCase):
+    def setUp(self):
+        self.m = make_model()
+        sd = self.m.state_dict()
+        self.full = {k: v.clone() for k, v in sd.items()}
+        self.student = {k: v.clone() for k, v in sd.items()
+                        if not k.startswith('reference.')}
+        self.ref = {k[10:]: v.clone() for k, v in sd.items()
+                    if k.startswith('reference.')}
+
+    def test_student_only_missing_ref_raises(self):
+        with self.assertRaises(ValueError):
+            strict_initialize(make_model(), self.student, None)
+
+    def test_student_only_with_B_ok(self):
+        info = strict_initialize(make_model(), self.student, self.ref)
+        self.assertIsNone(None) if False else None
+        self.assertEqual(set(info['reference']), set(self.ref))
+
+    def test_full_embedded_ok(self):
+        info = strict_initialize(make_model(), self.full, None)
+        self.assertEqual(len(info['student']), len(self.student))
+
+    def test_conflicting_reference_rejected(self):
+        bad_ref = {k: v + 1.0 for k, v in self.ref.items()}
+        before = {k: v.clone() for k, v in self.m.state_dict().items()}
+        with self.assertRaises(ValueError):
+            strict_initialize(self.m, self.full, bad_ref)
+        after = self.m.state_dict()
+        for k in before:
+            self.assertTrue(torch.equal(before[k], after[k]))  # no mutation
+
+    def test_bad_key_and_shape_no_mutation(self):
+        before = {k: v.clone() for k, v in self.m.state_dict().items()}
+        bad = dict(self.student); bad['bogus'] = torch.zeros(1)
+        with self.assertRaises(ValueError):
+            strict_initialize(self.m, bad, self.ref)
+        wrong_shape = dict(self.student)
+        wrong_shape['backbone.stage4.0.weight'] = torch.zeros(1, 3, 1, 1)
+        with self.assertRaises(ValueError):
+            strict_initialize(self.m, wrong_shape, self.ref)
+        after = self.m.state_dict()
+        for k in before:
+            self.assertTrue(torch.equal(before[k], after[k]))
+
+    def test_module_prefix_stripped(self):
+        pref = {'module.' + k: v for k, v in self.student.items()}
+        strict_initialize(make_model(), pref, self.ref)
+
+
+class TestTrainableAndBN(unittest.TestCase):
+    def test_train_then_freeze_bn(self):
+        m = make_model()
+        m.train()
+        self.assertTrue(m.backbone.stage4[1].training)
+        freeze_bn(m)
+        self.assertFalse(m.backbone.stage4[1].training)
+        self.assertFalse(m.decode_head[1].training)
+        self.assertTrue(m.backbone.stage4[0].training)  # conv unaffected
+
+    def test_configure_trainable(self):
+        m = make_model()
+        names = configure_trainable(m)
+        for n, p in m.named_parameters():
+            ok = n.startswith(('decode_head.', 'backbone.stage4.'))
+            self.assertEqual(p.requires_grad, ok, n)
+        self.assertEqual(names, sorted(names))
+        self.assertFalse(any(n.startswith('reference.') for n in names))
+        self.assertFalse(m.reference[0].training)  # reference eval
+        # BN buffers frozen everywhere even in allowed paths
+        self.assertFalse(m.decode_head[1].training)
+
+
+class TestGeometry(unittest.TestCase):
+    def _sample(self, seed):
+        rng = np.random.RandomState(seed)
+        img = np.zeros((256, 256, 3), dtype=np.uint8)
+        lab = np.zeros((256, 256), dtype=np.int64)
+        cv2.circle(img, (128, 128), 20, (255, 0, 0), -1)
+        cv2.circle(lab, (128, 128), 20, 4, -1)
+        ref = np.zeros((256, 256, NUM_FG), dtype=np.float32)
+        ref[:, :, 3] = (lab == 4).astype(np.float32)
+        img_o, lab_o, ref_o, trace = paired_geometry(img, lab, ref, rng)
+        return img_o, lab_o, ref_o, trace
+
+    def test_shared_rng_reproducible(self):
+        a = self._sample(7)
+        b = self._sample(7)
+        for x, y in zip(a[:3], b[:3]):
+            np.testing.assert_array_equal(x, y)
+        self.assertEqual(a[3], b[3])
+
+    def test_shapes_ranges_trace(self):
+        img_o, lab_o, ref_o, tr = self._sample(3)
+        self.assertEqual(img_o.shape, (3, 1024, 1024))
+        self.assertEqual(lab_o.shape, (1, 1024, 1024))
+        self.assertEqual(ref_o.shape, (4, 1024, 1024))
+        self.assertTrue(np.isfinite(img_o).all())
+        self.assertTrue((ref_o >= 0).all() and (ref_o <= 1).all())
+        self.assertEqual(set(tr), {'angle', 'y0', 'x0', 'flip', 'ignore_pixels',
+                                   'crop', 'resize'})
+        self.assertTrue(-45 <= tr['angle'] <= 45)
+        self.assertIn(tr['flip'], (True, False))
+
+    def test_marker_alignment_via_shared_warp(self):
+        # Denormalize image channel 0 (/255 undo) and compare marker centroids
+        # against reference channel 3 within eroded valid interior.
+        img_o, lab_o, ref_o, tr = self._sample(11)
+        denorm = np.clip(img_o[0] * IMG_STD[0] + IMG_MEAN[0], 0, 255) / 255.0
+        valid = (lab_o[0] != IGNORE_INDEX).astype(np.uint8)
+        valid = cv2.erode(valid, np.ones((11, 11), np.uint8)) > 0
+        self.assertTrue(valid.any())
+        w_img = np.where(valid, denorm, 0.0)
+        w_ref = np.where(valid, ref_o[3], 0.0)
+        self.assertGreater(w_ref.sum(), 1.0)
+        ys, xs = np.nonzero(valid)
+        ci_y = (w_img[ys, xs] * ys).sum() / w_img.sum()
+        ci_x = (w_img[ys, xs] * xs).sum() / w_img.sum()
+        cr_y = (w_ref[ys, xs] * ys).sum() / w_ref.sum()
+        cr_x = (w_ref[ys, xs] * xs).sum() / w_ref.sum()
+        self.assertLess(abs(ci_y - cr_y), 12.0)
+        self.assertLess(abs(ci_x - cr_x), 12.0)
+        # reference has ONLY the marker channel nonzero (no eye incl. background)
+        for c in range(3):
+            self.assertLess(float(np.abs(ref_o[c]).max()), 1e-3)
+
+
+if __name__ == '__main__':
+    unittest.main()
+```

@@ -1,0 +1,48 @@
+{
+  "status": "PASS",
+  "asset_path": "/home/studentuser001/paper_supplement_20261023/assets/hrnetv2_w48-d2186c55.pth",
+  "asset_sha256": "d2186c55782308392ae14cf179ac4840143b09abdbba81aa3f9274c795ebc960",
+  "asset_bytes": 310659148,
+  "backbone_state_tensors": 1830,
+  "missing_backbone_tensors": [],
+  "different_after_full_model_init": [],
+  "classification_only_source_tensors": 126,
+  "passed_hr_settings": {
+    "hr_scale": [
+      1024,
+      1024
+    ],
+    "divisible": 8,
+    "lr_loss_weight": 0,
+    "hr_loss_weight": 0.1,
+    "fuse_mode": "simple"
+  },
+  "post_constructor_hr_settings": {
+    "hr_scale": [
+      1024,
+      1024
+    ],
+    "divisible": 8,
+    "lr_loss_weight": 0,
+    "hr_loss_weight": 0.1
+  },
+  "effective_scale_ratio": 1,
+  "effective_crop_num": 4,
+  "all_backbone_tensors_equal_to_pretrained_after_full_init": true,
+  "training_updates": 0,
+  "GPU_used": false,
+  "restored_candidate_scale_ratio": [
+    0.75,
+    1.25
+  ],
+  "restored_candidate_post_constructor_hr_settings": {
+    "hr_scale": [
+      1024,
+      1024
+    ],
+    "divisible": 8,
+    "lr_loss_weight": 0,
+    "hr_loss_weight": 0.1
+  },
+  "scale_ratio_missing_from_both_post_constructor_configs": true
+}

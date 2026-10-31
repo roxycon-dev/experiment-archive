@@ -1,0 +1,76 @@
+[2026-09-18 10:29:31] round5 global deadline: 2026-09-18T06:47:49.090909+00:00 (4.30h remaining)
+/root/miniconda3/lib/python3.8/site-packages/mmcv/__init__.py:20: UserWarning: On January 1, 2023, MMCV will release v2.0.0, in which it will remove components related to the training process and add a data transformation module. In addition, it will rename the package names mmcv to mmcv-lite and mmcv-full to mmcv. See https://github.com/open-mmlab/mmcv/blob/master/docs/en/compatibility.md for more details.
+  warnings.warn(
+[2026-09-18 10:30:32] split audit OK (454/76/227 expected)
+Corrupt JPEG data: 40 extraneous bytes before marker 0xd9
+[2026-09-18 10:31:24] labels OK for train (454 files)
+[2026-09-18 10:31:30] V1 s42 resumed at iter 2900 with 2 val entries
+2026-09-18 10:33:02,945 - mmseg - INFO - Loaded 76 images from /root/autodl-tmp/hrplus/repo/data/DDR_split_613/images/val
+[2026-09-18 10:33:25] eval val 25/76 (21.2s)
+[2026-09-18 10:33:46] eval val 50/76 (41.9s)
+[2026-09-18 10:34:06] eval val 75/76 (62.2s)
+[2026-09-18 10:34:09] V1 s42 iter 3000 val mIoU 0.4187
+Corrupt JPEG data: 40 extraneous bytes before marker 0xd9
+Corrupt JPEG data: 40 extraneous bytes before marker 0xd9
+Corrupt JPEG data: 40 extraneous bytes before marker 0xd9
+Corrupt JPEG data: 40 extraneous bytes before marker 0xd9
+2026-09-18 10:47:23,902 - mmseg - INFO - Loaded 76 images from /root/autodl-tmp/hrplus/repo/data/DDR_split_613/images/val
+[2026-09-18 10:47:45] eval val 25/76 (20.2s)
+[2026-09-18 10:48:05] eval val 50/76 (40.2s)
+[2026-09-18 10:48:25] eval val 75/76 (59.6s)
+[2026-09-18 10:48:27] V2 s42 iter 1000 val mIoU 0.4152
+Corrupt JPEG data: 40 extraneous bytes before marker 0xd9
+Corrupt JPEG data: 40 extraneous bytes before marker 0xd9
+Corrupt JPEG data: 40 extraneous bytes before marker 0xd9
+Corrupt JPEG data: 40 extraneous bytes before marker 0xd9
+Corrupt JPEG data: 40 extraneous bytes before marker 0xd9
+Corrupt JPEG data: 40 extraneous bytes before marker 0xd9
+Corrupt JPEG data: 40 extraneous bytes before marker 0xd9
+2026-09-18 11:01:32,897 - mmseg - INFO - Loaded 76 images from /root/autodl-tmp/hrplus/repo/data/DDR_split_613/images/val
+[2026-09-18 11:01:55] eval val 25/76 (20.3s)
+[2026-09-18 11:02:14] eval val 50/76 (40.2s)
+[2026-09-18 11:02:34] eval val 75/76 (59.6s)
+[2026-09-18 11:02:36] V2 s42 iter 2000 val mIoU 0.4166
+Corrupt JPEG data: 40 extraneous bytes before marker 0xd9
+Corrupt JPEG data: 40 extraneous bytes before marker 0xd9
+2026-09-18 11:15:41,765 - mmseg - INFO - Loaded 76 images from /root/autodl-tmp/hrplus/repo/data/DDR_split_613/images/val
+[2026-09-18 11:16:03] eval val 25/76 (20.2s)
+[2026-09-18 11:16:23] eval val 50/76 (39.8s)
+[2026-09-18 11:16:42] eval val 75/76 (58.9s)
+[2026-09-18 11:16:44] V2 s42 iter 3000 val mIoU 0.4181
+[2026-09-18 11:16:44] E1 winner=V1 (best 0.4187 @3000) G1 pass=True
+2026-09-18 11:29:56,599 - mmseg - INFO - Loaded 76 images from /root/autodl-tmp/hrplus/repo/data/DDR_split_613/images/val
+[2026-09-18 11:30:18] eval val 25/76 (20.5s)
+[2026-09-18 11:30:38] eval val 50/76 (40.4s)
+[2026-09-18 11:30:58] eval val 75/76 (59.7s)
+[2026-09-18 11:31:00] V1 s43 iter 1000 val mIoU 0.4176
+Corrupt JPEG data: 40 extraneous bytes before marker 0xd9
+Corrupt JPEG data: 40 extraneous bytes before marker 0xd9
+Corrupt JPEG data: 40 extraneous bytes before marker 0xd9
+Corrupt JPEG data: 40 extraneous bytes before marker 0xd9
+2026-09-18 11:44:01,779 - mmseg - INFO - Loaded 76 images from /root/autodl-tmp/hrplus/repo/data/DDR_split_613/images/val
+[2026-09-18 11:44:24] eval val 25/76 (20.5s)
+[2026-09-18 11:44:43] eval val 50/76 (40.4s)
+[2026-09-18 11:45:03] eval val 75/76 (59.8s)
+[2026-09-18 11:45:05] V1 s43 iter 2000 val mIoU 0.4179
+Corrupt JPEG data: 40 extraneous bytes before marker 0xd9
+Corrupt JPEG data: 40 extraneous bytes before marker 0xd9
+2026-09-18 11:58:11,837 - mmseg - INFO - Loaded 76 images from /root/autodl-tmp/hrplus/repo/data/DDR_split_613/images/val
+[2026-09-18 11:58:33] eval val 25/76 (20.4s)
+[2026-09-18 11:58:53] eval val 50/76 (40.3s)
+[2026-09-18 11:59:13] eval val 75/76 (59.9s)
+[2026-09-18 11:59:15] V1 s43 iter 3000 val mIoU 0.4178
+[2026-09-18 11:59:15] E2 V1 s43: best 0.4179 @2000 (s42-A reference 0.4167)
+[HRPlusMAResidual] 可训练 0.058M / 冻结 131.221M
+2026-09-18 11:59:30,099 - mmseg - INFO - Loaded 76 images from /root/autodl-tmp/hrplus/repo/data/DDR_split_613/images/val
+[2026-09-18 12:01:30] eval val 25/76 (118.6s)
+[2026-09-18 12:03:27] eval val 50/76 (235.9s)
+[2026-09-18 12:05:22] eval val 75/76 (351.1s)
+[2026-09-18 12:05:26] E3 e1_w1 val 0.4273 (357s)
+2026-09-18 12:05:31,586 - mmseg - INFO - Loaded 76 images from /root/autodl-tmp/hrplus/repo/data/DDR_split_613/images/val
+[2026-09-18 12:07:31] eval val 25/76 (117.9s)
+[2026-09-18 12:09:28] eval val 50/76 (235.0s)
+[2026-09-18 12:11:23] eval val 75/76 (350.2s)
+[2026-09-18 12:11:27] E3 e1_w2 val 0.4278 (356s)
+[2026-09-18 12:11:27] E3 best=e1_w2 0.4278 G3 pass=False
+[2026-09-18 12:11:27] ROUND5 COMPLETE status=no_gain

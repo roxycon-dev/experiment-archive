@@ -1,0 +1,82 @@
+{
+  "files": [
+    {
+      "path": "reports/continuation_final_selection.json",
+      "bytes": 11605,
+      "sha256": "537f516bbdcd6517e5aca3c8a87ae9d6c2d2f9174ee6d3aeda7d3ce8ace6e8ee"
+    },
+    {
+      "path": "reports/continuation_final_evaluation_state.json",
+      "bytes": 1609,
+      "sha256": "6112a7c83a2bfc8a73153b95f23754b6e857baaa78b2d2c9f1f99b2b2f448436"
+    },
+    {
+      "path": "reports/continuation_final_evaluation.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "reports/continuation_final_launch_receipt.json",
+      "bytes": 266,
+      "sha256": "fa43942546ec11d338b7264367700bb98cb686d5803d9cec1bb6cf5c6d6f7155"
+    },
+    {
+      "path": "reports/campaign_state.json",
+      "bytes": 6587,
+      "sha256": "5e748e134ed8b47b9c7ec300880889bba52a400d098e3436678ee67cbdc85aa8"
+    },
+    {
+      "path": "reports/continuation_final_test/reuse_receipt.json",
+      "bytes": 828,
+      "sha256": "042d0f006015de1d4de495e5f4f67a18396d554bfb95bac0272aecd093a0a7d6"
+    },
+    {
+      "path": "reports/continuation_final_test/seed2024.json",
+      "bytes": 1123611,
+      "sha256": "52c63472d1052d6abc225aa06222f84590b226382574e8993ad9cde6669ad12b"
+    },
+    {
+      "path": "reports/continuation_final_test/seed42.json",
+      "bytes": 1123607,
+      "sha256": "7d6a715b42266138ac75d3dece2b96f23762cd67f4be07980e0103ebd9f38d0c"
+    },
+    {
+      "path": "reports/continuation_final_test/summary.json",
+      "bytes": 1115,
+      "sha256": "def88e3cbab6f0b52b707f50c9a9240188171a3ac61096cff405168c20243080"
+    }
+  ],
+  "lock_sha256": "537f516bbdcd6517e5aca3c8a87ae9d6c2d2f9174ee6d3aeda7d3ce8ace6e8ee",
+  "test_action": "REUSE_EXACT_PRIOR_TEST_COUNTS",
+  "final_process_exited": true,
+  "summary": {
+    "status": "COMPLETE",
+    "lock_sha256": "537f516bbdcd6517e5aca3c8a87ae9d6c2d2f9174ee6d3aeda7d3ce8ace6e8ee",
+    "formula": "fixed_fusion",
+    "update": 16000,
+    "deployment_seed": 42,
+    "seed_scores_pct": [
+      45.72155710642771,
+      45.677066093957414
+    ],
+    "mean_test_pct": 45.69931160019256,
+    "range_test_pct": [
+      45.677066093957414,
+      45.72155710642771
+    ],
+    "target_test_pct": 47.2115,
+    "both_seeds_target_met": false,
+    "mean_target_met": false,
+    "selection_changed_after_test": false,
+    "historical_limitation": "Exploratory continuation after historical DDR val/test use and an already completed DDR16k test. Choice uses paired validation only; test never changes it.",
+    "completed_at": "2026-10-03T18:24:37.758210+00:00",
+    "reused_from_prior_lock_sha256": "26e5852194aca66bb02062ac79b2f0f8026e33652a95133140a3824bffb38905",
+    "reused_source_sha256": "5d22cc93c64c76486cd150c0869cf1fc05611e54086158b3dc6f8b08c968c7b6",
+    "test_action": "REUSE_EXACT_PRIOR_TEST_COUNTS",
+    "no_new_test_inference": true,
+    "arm": "Q_DDR",
+    "common_endpoint": 24000,
+    "selected_mean_val_pct": 44.286518315673504
+  },
+  "created_at": "2026-10-04T06:39:59.324541+00:00"
+}

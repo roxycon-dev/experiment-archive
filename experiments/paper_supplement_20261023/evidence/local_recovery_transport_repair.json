@@ -1,0 +1,8 @@
+{
+  "date": "2026-10-23",
+  "observation": "First local Paramiko3.5.1 get remained at0bytes for several minutes after the verified14.97MB archive was already on the relay server.",
+  "action": "Stopped only local recovery Python PID32776; inference and training workers were untouched. Retry with bounded channel timeout and no SFTP prefetch.",
+  "scientific_protocol_change": false,
+  "source_archives_unchanged": true,
+  "result_of_retry": "PASS: no-prefetch transfer completed, archive SHA and768 individual file SHAs verified. Sequential round trips were slow; subsequent transfers use the previously proven128MiB window and bounded16-request prefetch."
+}

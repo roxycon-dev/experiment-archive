@@ -1,0 +1,30 @@
+{
+  "ddr_root": "D:/HRDecoder/data/DDR_split_613",
+  "historical_root": "D:/dataset/experiment/HRDecoder_Next_20261003",
+  "dinov3_repo": "vendor/dinov3",
+  "pretrained_checkpoint": null,
+  "pretrained_source": "https://github.com/facebookresearch/dinov3",
+  "license_acceptance_evidence": null,
+  "external_manifest": null,
+  "server": {
+    "host": "connect.nmb1.seetacloud.com",
+    "port": 26494,
+    "instance_id": null,
+    "remote_root": "/root/autodl-tmp/HRDecoder_Q_20261003",
+    "ssh_key": "C:/Users/GuanXingRen/.ssh/codex_hrdecoder_next_20261003"
+  },
+  "resources": {
+    "micro_batch": 2,
+    "accumulation": 4,
+    "dtype": "bfloat16",
+    "workers": 4,
+    "prefetch_factor": 2,
+    "pin_memory": true
+  },
+  "budget": {
+    "approved_total_cny": null,
+    "hourly_rate_cny": null,
+    "approval": "unlimited_explicit_user_authorization_20261003"
+  },
+  "stage": "PREPARING_LOCAL"
+}

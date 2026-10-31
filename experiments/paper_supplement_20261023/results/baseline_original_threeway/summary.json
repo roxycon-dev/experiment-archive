@@ -1,0 +1,603 @@
+{
+  "status": "COMPLETE_THREEWAY_BASELINE_MA_COMPARISON",
+  "pixel_rows": [
+    {
+      "cohort": "ddr",
+      "method": "baseline",
+      "mIoU_pct": 42.19623779633788,
+      "EX_IoU_pct": 51.56060267683247,
+      "HE_IoU_pct": 43.12728820097811,
+      "SE_IoU_pct": 49.98760079696946,
+      "MA_IoU_pct": 24.109459510571504,
+      "MA_pixel_precision_pct": 46.160475052501994,
+      "MA_pixel_recall_pct": 33.541356429860606,
+      "global_counts": [
+        [
+          992753,
+          350469,
+          582188
+        ],
+        [
+          1572957,
+          593765,
+          1480521
+        ],
+        [
+          350742,
+          131140,
+          219776
+        ],
+        [
+          63743,
+          74347,
+          126300
+        ]
+      ]
+    },
+    {
+      "cohort": "ddr",
+      "method": "no_h4",
+      "mIoU_pct": 45.093134407312604,
+      "EX_IoU_pct": 55.10779587009915,
+      "HE_IoU_pct": 46.20820873690813,
+      "SE_IoU_pct": 52.88237714511699,
+      "MA_IoU_pct": 26.174155877126175,
+      "MA_pixel_precision_pct": 47.39685093667394,
+      "MA_pixel_recall_pct": 36.89059844351015,
+      "global_counts": [
+        [
+          1084382,
+          392806,
+          490559
+        ],
+        [
+          1623762,
+          460534,
+          1429716
+        ],
+        [
+          363716,
+          117265,
+          206802
+        ],
+        [
+          70108,
+          77809,
+          119935
+        ]
+      ]
+    },
+    {
+      "cohort": "ddr",
+      "method": "full",
+      "mIoU_pct": 45.86088631351918,
+      "EX_IoU_pct": 55.10779587009915,
+      "HE_IoU_pct": 46.20820873690813,
+      "SE_IoU_pct": 52.88237714511699,
+      "MA_IoU_pct": 29.245163501952486,
+      "MA_pixel_precision_pct": 50.049100879989794,
+      "MA_pixel_recall_pct": 41.299600616702534,
+      "global_counts": [
+        [
+          1084382,
+          392806,
+          490559
+        ],
+        [
+          1623762,
+          460534,
+          1429716
+        ],
+        [
+          363716,
+          117265,
+          206802
+        ],
+        [
+          78487,
+          78333,
+          111556
+        ]
+      ]
+    },
+    {
+      "cohort": "idrid",
+      "method": "baseline",
+      "mIoU_pct": 35.595664799894415,
+      "EX_IoU_pct": 50.54281995700749,
+      "HE_IoU_pct": 36.93576890407335,
+      "SE_IoU_pct": 37.45886979151371,
+      "MA_IoU_pct": 17.4452005469831,
+      "MA_pixel_precision_pct": 57.470345195255234,
+      "MA_pixel_recall_pct": 20.031217481789803,
+      "global_counts": [
+        [
+          2016657,
+          508022,
+          1465318
+        ],
+        [
+          1566296,
+          861361,
+          1812937
+        ],
+        [
+          267871,
+          131715,
+          315521
+        ],
+        [
+          64680,
+          47865,
+          258216
+        ]
+      ]
+    },
+    {
+      "cohort": "idrid",
+      "method": "no_h4",
+      "mIoU_pct": 39.90297738523024,
+      "EX_IoU_pct": 57.80621610098492,
+      "HE_IoU_pct": 42.7989704929395,
+      "SE_IoU_pct": 41.32228098328001,
+      "MA_IoU_pct": 17.68444196371652,
+      "MA_pixel_precision_pct": 67.50375826006079,
+      "MA_pixel_recall_pct": 19.330062930479166,
+      "global_counts": [
+        [
+          2287270,
+          474814,
+          1194705
+        ],
+        [
+          1756180,
+          724090,
+          1623053
+        ],
+        [
+          289182,
+          116429,
+          294210
+        ],
+        [
+          62416,
+          30047,
+          260480
+        ]
+      ]
+    },
+    {
+      "cohort": "idrid",
+      "method": "full",
+      "mIoU_pct": 40.907333473596964,
+      "EX_IoU_pct": 57.80621610098492,
+      "HE_IoU_pct": 42.7989704929395,
+      "SE_IoU_pct": 41.32228098328001,
+      "MA_IoU_pct": 21.701866317183445,
+      "MA_pixel_precision_pct": 65.4232721141289,
+      "MA_pixel_recall_pct": 24.51346563599425,
+      "global_counts": [
+        [
+          2287270,
+          474814,
+          1194705
+        ],
+        [
+          1756180,
+          724090,
+          1623053
+        ],
+        [
+          289182,
+          116429,
+          294210
+        ],
+        [
+          79153,
+          41833,
+          243743
+        ]
+      ]
+    }
+  ],
+  "MA_lesion_rows": [
+    {
+      "cohort": "ddr",
+      "method": "baseline",
+      "size": "all",
+      "GT": 2513,
+      "detected": 1032,
+      "detection_pct": 41.06645443692798,
+      "detection_image_CI95_pct": [
+        37.819339829545626,
+        44.4951811655376
+      ],
+      "false_positives_per_image": 2.859030837004405,
+      "lesion_precision_pct": 61.39202855443189
+    },
+    {
+      "cohort": "ddr",
+      "method": "baseline",
+      "size": "small",
+      "GT": 891,
+      "detected": 211,
+      "detection_pct": 23.681257014590347,
+      "detection_image_CI95_pct": [
+        19.276936709208556,
+        28.189340376262315
+      ],
+      "false_positives_per_image": null,
+      "lesion_precision_pct": null
+    },
+    {
+      "cohort": "ddr",
+      "method": "baseline",
+      "size": "medium",
+      "GT": 752,
+      "detected": 360,
+      "detection_pct": 47.87234042553192,
+      "detection_image_CI95_pct": [
+        43.25313673413316,
+        52.59484889543259
+      ],
+      "false_positives_per_image": null,
+      "lesion_precision_pct": null
+    },
+    {
+      "cohort": "ddr",
+      "method": "baseline",
+      "size": "large",
+      "GT": 870,
+      "detected": 461,
+      "detection_pct": 52.98850574712644,
+      "detection_image_CI95_pct": [
+        47.88230423368491,
+        57.92364050447972
+      ],
+      "false_positives_per_image": null,
+      "lesion_precision_pct": null
+    },
+    {
+      "cohort": "ddr",
+      "method": "no_h4",
+      "size": "all",
+      "GT": 2513,
+      "detected": 1209,
+      "detection_pct": 48.10982888977318,
+      "detection_image_CI95_pct": [
+        44.71719143441958,
+        51.21879732699266
+      ],
+      "false_positives_per_image": 3.449339207048458,
+      "lesion_precision_pct": 60.69277108433735
+    },
+    {
+      "cohort": "ddr",
+      "method": "no_h4",
+      "size": "small",
+      "GT": 891,
+      "detected": 294,
+      "detection_pct": 32.996632996633,
+      "detection_image_CI95_pct": [
+        28.76159187287385,
+        37.45906650598265
+      ],
+      "false_positives_per_image": null,
+      "lesion_precision_pct": null
+    },
+    {
+      "cohort": "ddr",
+      "method": "no_h4",
+      "size": "medium",
+      "GT": 752,
+      "detected": 415,
+      "detection_pct": 55.18617021276596,
+      "detection_image_CI95_pct": [
+        50.24305378319976,
+        59.875946370891945
+      ],
+      "false_positives_per_image": null,
+      "lesion_precision_pct": null
+    },
+    {
+      "cohort": "ddr",
+      "method": "no_h4",
+      "size": "large",
+      "GT": 870,
+      "detected": 500,
+      "detection_pct": 57.47126436781609,
+      "detection_image_CI95_pct": [
+        52.72345852652658,
+        62.05897035181036
+      ],
+      "false_positives_per_image": null,
+      "lesion_precision_pct": null
+    },
+    {
+      "cohort": "ddr",
+      "method": "full",
+      "size": "all",
+      "GT": 2513,
+      "detected": 1323,
+      "detection_pct": 52.64623955431755,
+      "detection_image_CI95_pct": [
+        49.21563870999279,
+        56.10144437174117
+      ],
+      "false_positives_per_image": 4.20704845814978,
+      "lesion_precision_pct": 58.077260755048286
+    },
+    {
+      "cohort": "ddr",
+      "method": "full",
+      "size": "small",
+      "GT": 891,
+      "detected": 338,
+      "detection_pct": 37.93490460157127,
+      "detection_image_CI95_pct": [
+        33.543148005110844,
+        42.3505282287412
+      ],
+      "false_positives_per_image": null,
+      "lesion_precision_pct": null
+    },
+    {
+      "cohort": "ddr",
+      "method": "full",
+      "size": "medium",
+      "GT": 752,
+      "detected": 445,
+      "detection_pct": 59.17553191489362,
+      "detection_image_CI95_pct": [
+        54.315484344795046,
+        63.73964235127479
+      ],
+      "false_positives_per_image": null,
+      "lesion_precision_pct": null
+    },
+    {
+      "cohort": "ddr",
+      "method": "full",
+      "size": "large",
+      "GT": 870,
+      "detected": 540,
+      "detection_pct": 62.06896551724138,
+      "detection_image_CI95_pct": [
+        57.5124011536544,
+        66.50269217550692
+      ],
+      "false_positives_per_image": null,
+      "lesion_precision_pct": null
+    },
+    {
+      "cohort": "idrid",
+      "method": "baseline",
+      "size": "all",
+      "GT": 1085,
+      "detected": 350,
+      "detection_pct": 32.25806451612903,
+      "detection_image_CI95_pct": [
+        27.540656213738856,
+        37.165532520968505
+      ],
+      "false_positives_per_image": 4.925925925925926,
+      "lesion_precision_pct": 72.46376811594203
+    },
+    {
+      "cohort": "idrid",
+      "method": "baseline",
+      "size": "small",
+      "GT": 4,
+      "detected": 0,
+      "detection_pct": 0.0,
+      "detection_image_CI95_pct": [
+        0.0,
+        0.0
+      ],
+      "false_positives_per_image": null,
+      "lesion_precision_pct": null
+    },
+    {
+      "cohort": "idrid",
+      "method": "baseline",
+      "size": "medium",
+      "GT": 49,
+      "detected": 3,
+      "detection_pct": 6.122448979591836,
+      "detection_image_CI95_pct": [
+        0.0,
+        15.0
+      ],
+      "false_positives_per_image": null,
+      "lesion_precision_pct": null
+    },
+    {
+      "cohort": "idrid",
+      "method": "baseline",
+      "size": "large",
+      "GT": 1032,
+      "detected": 347,
+      "detection_pct": 33.62403100775194,
+      "detection_image_CI95_pct": [
+        28.844006140037383,
+        38.41311908886473
+      ],
+      "false_positives_per_image": null,
+      "lesion_precision_pct": null
+    },
+    {
+      "cohort": "idrid",
+      "method": "no_h4",
+      "size": "all",
+      "GT": 1085,
+      "detected": 375,
+      "detection_pct": 34.56221198156682,
+      "detection_image_CI95_pct": [
+        28.152141414343426,
+        39.8888711611356
+      ],
+      "false_positives_per_image": 4.703703703703703,
+      "lesion_precision_pct": 74.7011952191235
+    },
+    {
+      "cohort": "idrid",
+      "method": "no_h4",
+      "size": "small",
+      "GT": 4,
+      "detected": 0,
+      "detection_pct": 0.0,
+      "detection_image_CI95_pct": [
+        0.0,
+        0.0
+      ],
+      "false_positives_per_image": null,
+      "lesion_precision_pct": null
+    },
+    {
+      "cohort": "idrid",
+      "method": "no_h4",
+      "size": "medium",
+      "GT": 49,
+      "detected": 6,
+      "detection_pct": 12.244897959183673,
+      "detection_image_CI95_pct": [
+        3.3281250000000004,
+        24.444444444444443
+      ],
+      "false_positives_per_image": null,
+      "lesion_precision_pct": null
+    },
+    {
+      "cohort": "idrid",
+      "method": "no_h4",
+      "size": "large",
+      "GT": 1032,
+      "detected": 369,
+      "detection_pct": 35.75581395348838,
+      "detection_image_CI95_pct": [
+        29.568013728529937,
+        40.88406131902239
+      ],
+      "false_positives_per_image": null,
+      "lesion_precision_pct": null
+    },
+    {
+      "cohort": "idrid",
+      "method": "full",
+      "size": "all",
+      "GT": 1085,
+      "detected": 463,
+      "detection_pct": 42.672811059907836,
+      "detection_image_CI95_pct": [
+        37.57183288114025,
+        47.45200675299359
+      ],
+      "false_positives_per_image": 7.555555555555555,
+      "lesion_precision_pct": 69.41529235382309
+    },
+    {
+      "cohort": "idrid",
+      "method": "full",
+      "size": "small",
+      "GT": 4,
+      "detected": 0,
+      "detection_pct": 0.0,
+      "detection_image_CI95_pct": [
+        0.0,
+        0.0
+      ],
+      "false_positives_per_image": null,
+      "lesion_precision_pct": null
+    },
+    {
+      "cohort": "idrid",
+      "method": "full",
+      "size": "medium",
+      "GT": 49,
+      "detected": 7,
+      "detection_pct": 14.285714285714285,
+      "detection_image_CI95_pct": [
+        5.125,
+        25.86366538952745
+      ],
+      "false_positives_per_image": null,
+      "lesion_precision_pct": null
+    },
+    {
+      "cohort": "idrid",
+      "method": "full",
+      "size": "large",
+      "GT": 1032,
+      "detected": 456,
+      "detection_pct": 44.18604651162791,
+      "detection_image_CI95_pct": [
+        39.26397424641498,
+        48.71741903425099
+      ],
+      "false_positives_per_image": null,
+      "lesion_precision_pct": null
+    }
+  ],
+  "comparisons": {
+    "ddr": {
+      "baseline": {
+        "full_minus_row_mIoU_pp": 3.6646485171812984,
+        "paired_image_CI95_pp": [
+          2.8096912946579544,
+          4.6161834376074875
+        ]
+      },
+      "no_h4": {
+        "full_minus_row_mIoU_pp": 0.767751906206577,
+        "paired_image_CI95_pp": [
+          0.6180940928219943,
+          0.9118138786416947
+        ]
+      },
+      "MA_full_minus_no_h4": {
+        "detection": [
+          3.5497559765075675,
+          5.534506701439772
+        ],
+        "FP_per_image": [
+          0.5506607929515415,
+          0.9779735682819384
+        ]
+      }
+    },
+    "idrid": {
+      "baseline": {
+        "full_minus_row_mIoU_pp": 5.311668673702549,
+        "paired_image_CI95_pp": [
+          2.97643064689957,
+          8.206854722386408
+        ]
+      },
+      "no_h4": {
+        "full_minus_row_mIoU_pp": 1.0043560883667269,
+        "paired_image_CI95_pp": [
+          0.6958802164516742,
+          1.3845095314014013
+        ]
+      },
+      "MA_full_minus_no_h4": {
+        "detection": [
+          5.725081663667964,
+          11.061084338991057
+        ],
+        "FP_per_image": [
+          1.7037037037037037,
+          4.037037037037037
+        ]
+      }
+    }
+  },
+  "pixel_size_boundaries": [
+    32,
+    74
+  ],
+  "runtime_note": "Recovered original HRDecoder legacyFP32; full/noH4 are the original frozen phase1 BF16 system outputs. Same images,GT,coordinates,threshold and metric; no claim of bitwise cross-runtime replay.",
+  "scope": "Frozen-system replacement/dependency and observed MA recovery/false-positive tradeoff; not a proof of independent training causality",
+  "patient_bootstrap": false,
+  "new_training_or_tuning": false
+}

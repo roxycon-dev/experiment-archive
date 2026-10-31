@@ -1,0 +1,29 @@
+{
+  "status": "DIAGNOSTIC_TRAINING",
+  "probe_updates_per_arm": 125,
+  "identity_SHA": "4b8b4cf4231b283caa67b9931bed65a9d84c35a938e3e8491f2992d5ea0b66f7",
+  "metrics": {
+    "control": {
+      "gt_final": 0.7484092712402344,
+      "KL": 0.0040115006268024445,
+      "loss": 0.750415027141571,
+      "private_nonzero": {
+        "local": true,
+        "global": true,
+        "head": true
+      }
+    },
+    "gt_stratified": {
+      "gt_final": 0.7446742653846741,
+      "KL": 0.09168428182601929,
+      "loss": 0.7905163764953613,
+      "private_nonzero": {
+        "local": true,
+        "global": true,
+        "head": true
+      }
+    }
+  },
+  "pair_step_seconds": 0.7254968658089638,
+  "time_unix": 1791572211.873596
+}

@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "arm": "control",
+  "identity_SHA": "58056baf70f90f0b947f5cc4de77e0d676ab637c8e36805ac1738fe5d67b8ec9",
+  "canvas": 2048,
+  "batch": 2,
+  "discarded_optimizer_steps": 3,
+  "formal_updates": 0,
+  "finite_losses_and_all_gradients": true,
+  "backbone_calls": 3,
+  "private_nonzero_gradients": {
+    "local": true,
+    "global": true,
+    "head": true
+  },
+  "step_seconds": [
+    7.3889854699373245,
+    1.0825143158435822,
+    1.0734240040183067
+  ],
+  "device": "NVIDIA GeForce RTX 4090",
+  "accuracy_validated": false
+}

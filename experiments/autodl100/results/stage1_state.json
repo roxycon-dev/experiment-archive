@@ -1,0 +1,216 @@
+{
+  "phase": "finished",
+  "completed": [
+    {
+      "trial": "a",
+      "validation": [
+        {
+          "mode": "val",
+          "epoch": 5,
+          "iter": 76,
+          "lr": 0.00044,
+          "mIoU": 0.38632,
+          "mF1": 0.54578,
+          "mPPV": 0.56367,
+          "mS": 0.53771,
+          "mAUPR": 0.55575,
+          "mMAE": 0.00159
+        },
+        {
+          "mode": "val",
+          "epoch": 9,
+          "iter": 76,
+          "lr": 0.00039,
+          "mIoU": 0.3757,
+          "mF1": 0.53666,
+          "mPPV": 0.54642,
+          "mS": 0.53094,
+          "mAUPR": 0.54014,
+          "mMAE": 0.00152
+        },
+        {
+          "mode": "val",
+          "epoch": 14,
+          "iter": 76,
+          "lr": 0.00033,
+          "mIoU": 0.37421,
+          "mF1": 0.53647,
+          "mPPV": 0.52154,
+          "mS": 0.55473,
+          "mAUPR": 0.53956,
+          "mMAE": 0.00152
+        },
+        {
+          "mode": "val",
+          "epoch": 18,
+          "iter": 76,
+          "lr": 0.00028,
+          "mIoU": 0.38064,
+          "mF1": 0.54152,
+          "mPPV": 0.54128,
+          "mS": 0.54298,
+          "mAUPR": 0.54773,
+          "mMAE": 0.0014
+        },
+        {
+          "mode": "val",
+          "epoch": 23,
+          "iter": 76,
+          "lr": 0.00022,
+          "mIoU": 0.38129,
+          "mF1": 0.54232,
+          "mPPV": 0.56621,
+          "mS": 0.52241,
+          "mAUPR": 0.54811,
+          "mMAE": 0.00125
+        },
+        {
+          "mode": "val",
+          "epoch": 27,
+          "iter": 76,
+          "lr": 0.00016,
+          "mIoU": 0.38034,
+          "mF1": 0.54061,
+          "mPPV": 0.56521,
+          "mS": 0.52715,
+          "mAUPR": 0.54975,
+          "mMAE": 0.00125
+        },
+        {
+          "mode": "val",
+          "epoch": 31,
+          "iter": 76,
+          "lr": 0.00011,
+          "mIoU": 0.38429,
+          "mF1": 0.54412,
+          "mPPV": 0.56398,
+          "mS": 0.52859,
+          "mAUPR": 0.55086,
+          "mMAE": 0.0012
+        },
+        {
+          "mode": "val",
+          "epoch": 36,
+          "iter": 76,
+          "lr": 5e-05,
+          "mIoU": 0.38265,
+          "mF1": 0.54343,
+          "mPPV": 0.56288,
+          "mS": 0.52928,
+          "mAUPR": 0.55096,
+          "mMAE": 0.00119
+        }
+      ],
+      "best_checkpoints": [
+        "/root/autodl-tmp/hr100/trial_a/best_mIoU_iter_1000.pth"
+      ]
+    },
+    {
+      "trial": "b",
+      "validation": [
+        {
+          "mode": "val",
+          "epoch": 5,
+          "iter": 76,
+          "lr": 0.00044,
+          "mIoU": 0.38284,
+          "mF1": 0.54407,
+          "mPPV": 0.56432,
+          "mS": 0.53589,
+          "mAUPR": 0.55518,
+          "mMAE": 0.00147
+        },
+        {
+          "mode": "val",
+          "epoch": 9,
+          "iter": 76,
+          "lr": 0.00039,
+          "mIoU": 0.38502,
+          "mF1": 0.54504,
+          "mPPV": 0.56438,
+          "mS": 0.53253,
+          "mAUPR": 0.55597,
+          "mMAE": 0.00144
+        },
+        {
+          "mode": "val",
+          "epoch": 14,
+          "iter": 76,
+          "lr": 0.00033,
+          "mIoU": 0.39205,
+          "mF1": 0.55161,
+          "mPPV": 0.55868,
+          "mS": 0.54977,
+          "mAUPR": 0.55982,
+          "mMAE": 0.00145
+        },
+        {
+          "mode": "val",
+          "epoch": 18,
+          "iter": 76,
+          "lr": 0.00028,
+          "mIoU": 0.37453,
+          "mF1": 0.534,
+          "mPPV": 0.55983,
+          "mS": 0.51644,
+          "mAUPR": 0.54301,
+          "mMAE": 0.00139
+        },
+        {
+          "mode": "val",
+          "epoch": 23,
+          "iter": 76,
+          "lr": 0.00022,
+          "mIoU": 0.37605,
+          "mF1": 0.53697,
+          "mPPV": 0.54284,
+          "mS": 0.53304,
+          "mAUPR": 0.53876,
+          "mMAE": 0.0014
+        },
+        {
+          "mode": "val",
+          "epoch": 27,
+          "iter": 76,
+          "lr": 0.00016,
+          "mIoU": 0.38561,
+          "mF1": 0.54622,
+          "mPPV": 0.56466,
+          "mS": 0.53014,
+          "mAUPR": 0.55167,
+          "mMAE": 0.00124
+        },
+        {
+          "mode": "val",
+          "epoch": 31,
+          "iter": 76,
+          "lr": 0.00011,
+          "mIoU": 0.38449,
+          "mF1": 0.54612,
+          "mPPV": 0.54411,
+          "mS": 0.54914,
+          "mAUPR": 0.54934,
+          "mMAE": 0.00127
+        },
+        {
+          "mode": "val",
+          "epoch": 36,
+          "iter": 76,
+          "lr": 5e-05,
+          "mIoU": 0.38244,
+          "mF1": 0.54347,
+          "mPPV": 0.552,
+          "mS": 0.53842,
+          "mAUPR": 0.55031,
+          "mMAE": 0.00124
+        }
+      ],
+      "best_checkpoints": [
+        "/root/autodl-tmp/hr100/trial_b/best_mIoU_iter_3000.pth"
+      ]
+    }
+  ],
+  "updated_unix": 1789153154.9559817,
+  "backup_acknowledged": false,
+  "test_evaluated": false
+}

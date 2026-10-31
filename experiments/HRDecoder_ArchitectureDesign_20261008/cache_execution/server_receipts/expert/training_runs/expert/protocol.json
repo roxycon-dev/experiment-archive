@@ -1,0 +1,100 @@
+{
+  "identity_SHA": "4fa9d6cf18c806475d4877c34154ed15cb8e45500efe7f1e79e8dabd767758c9",
+  "identity": {
+    "protocol": {
+      "design_version": 9,
+      "name": "HRDecoder-PrivateExpert",
+      "seed": 42,
+      "private_seed": 20261008,
+      "canvas": 2048,
+      "updates": 40000,
+      "global_batch": 2,
+      "precision": "BF16 network; FP32 residual composition/probabilities/losses",
+      "optimizer": {
+        "type": "SGD",
+        "lr": 0.005,
+        "momentum": 0.9,
+        "weight_decay": 0.0005
+      },
+      "lr": {
+        "type": "poly",
+        "power": 1,
+        "warmup": 1500,
+        "warmup_ratio": 1e-06
+      },
+      "lambda_k": [
+        [
+          0,
+          0
+        ],
+        [
+          1500,
+          0
+        ],
+        [
+          4000,
+          0.5
+        ],
+        [
+          32000,
+          0.5
+        ],
+        [
+          40000,
+          0.1
+        ]
+      ],
+      "GT": "base original-formula Dice + .1 HRcrop; private standalone Dice + .5 fused Dice; no ordinary BCE",
+      "mask": "Existing geometry-valid and ignore255 masking retained; not claiming every original training detail identical",
+      "KD": "private standalone fixed GT-consistent T* KL; positive/negative GT strata independently normalized at fixed .5/.5",
+      "readout": "four independent private segmentation logits zero initialized; four learned per-class convex logit fusion weights initialized .5",
+      "gradient_route": "features and p0 detached; final=alpha*base.float().detach()+(1-alpha)*private.float(); base supervised independently",
+      "inference": "resize final FP32 logits then sigmoid; no teacher or GT",
+      "classes": [
+        "EX",
+        "HE",
+        "SE",
+        "MA"
+      ],
+      "threshold": "strictly > .5",
+      "validation_images": 76,
+      "validation_interval": 4000,
+      "student_TTA": false,
+      "inference_teacher": false,
+      "inference_online_H4": false,
+      "test_selection": false,
+      "shutdown_after_completion": false,
+      "data_cache_hash_rescan": false,
+      "initialization": "fresh ImageNet W48 seed42; no warm task weights",
+      "screen_updates": 4000,
+      "accuracy_guaranteed": false,
+      "initialization_parity": "At zero private logits and alpha=.5, hard decisions equal base; probabilities intentionally differ",
+      "validation_extra_screen_probe": 2000
+    },
+    "code": {
+      "baseline.py": "3e19781d2172a7b211f80994739b387d3235c966dd9c81b2f777e1b3c33b2aa9",
+      "model.py": "e6461742a5e0e7c08e8ede78b7fd824953e9240f21f2c80d82e99f2098841926",
+      "private_modules.py": "08541136cd72e039a02f145adba9410b404f6852bc226ab716639e43cc82ec60",
+      "stable_objectives.py": "bf79135d2f756b4abcad655beee9ed24f7bde738f62588a5532917e4b881e3ae",
+      "fast_objectives.py": "04c3534cc5b0ac4ec469c8fd57f1763ac92054a0e05f2e7ffdccd198ef4c826b",
+      "objectives.py": "c81945ddfeacd91a484e5eabdbb20f80095611430a18e6bac5e1008ce3ff9250",
+      "data.py": "6145eb862cf75b895767ad627b4bac9ae6a417feacd92c909a4771765bce6545",
+      "loader.py": "353674fbe260e9232540283bd4198b0b24642950309edfdbc3ecb7475d498533",
+      "train.py": "48bf532791bb0a6b192093a9f827d57e7d7e6352dd7982c06122c57cd361eb2b"
+    },
+    "spec_SHA": "05a6bd25791ce8736d9a0399235c2f31589d55b5f22ea76b1af68b53ee6ca131",
+    "screen_protocol_SHA": "9252b5dc0f7696909b46894e6242847dc6fab57c853eb5cdc117eb9ba9b26af6",
+    "screen_gate_code_SHA": "266593f42b351b5839d284587a5a4374cce6cfaa162dd56e822a561332d54ffd",
+    "validation_helper_SHA": "b892ad7e62304788fc37c73bc201b6ead0e19f057b75f504d343e1fde85aada4",
+    "ImageNet_W48_SHA": "d2186c55782308392ae14cf179ac4840143b09abdbba81aa3f9274c795ebc960",
+    "data_identity_SHA": "7c53b86bcb27ccd121042f667cc58e39b98716a8c477bfd1f1657fa126575719",
+    "cache_identity": {
+      "A": "0674eb8fd875187e92bc4369e6fc41eb906339acb1f2057bd1d2dcd6c6933ec1",
+      "U": "1696b6eed682e116e98b6630bd429bd49986c24323010215fa8a0b4364952aa5",
+      "S": "b9f9886b393b14c2a25863d56fdbc1f6667bfab1200410d83fd0eb223471207a"
+    },
+    "torch": "2.0.1+cu117"
+  },
+  "baseline_initial_state_SHA": "e180ed1738b5cde6797e60a124aaf75b3cc78309463bb358a240cbddf0480f00",
+  "initialization": "fresh ImageNet seed42; no task checkpoint"
+}

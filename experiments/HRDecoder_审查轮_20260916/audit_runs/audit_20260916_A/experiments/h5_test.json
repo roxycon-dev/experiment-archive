@@ -1,0 +1,50 @@
+{
+  "probe": "H5_ensemble_plus_corrector",
+  "split": "test",
+  "n": 227,
+  "models": [
+    {
+      "cfg": "configs/lesion/exp/hrplus_patch_dice.py",
+      "ckpt": "/root/autodl-tmp/hrplus/D_0913_retry/best_mIoU_iter_2000.pth",
+      "w": 3.0
+    },
+    {
+      "cfg": "configs/lesion/exp/hrplus_mares.py",
+      "ckpt": "/root/autodl-tmp/hrplus/results/E_0916/best_mIoU_iter_1500.pth",
+      "w": 2.0
+    },
+    {
+      "cfg": "configs/lesion/exp/hr100_b.py",
+      "ckpt": "/root/autodl-tmp/hr100/trial_b/best_mIoU_iter_3000.pth",
+      "w": 1.0
+    },
+    {
+      "cfg": "configs/lesion/exp/e4_detail_split613.py",
+      "ckpt": "/root/HRDecoder/work_dirs/exp_e4_detail_split613/best_mIoU_iter_36000.pth",
+      "w": 1.0
+    }
+  ],
+  "flip": true,
+  "fused": {
+    "mIoU": 0.43228924245323747,
+    "per_class": {
+      "EX": 0.5386111922725695,
+      "HE": 0.4451296131641197,
+      "SE": 0.4981614515880462,
+      "MA": 0.2472547127882145
+    }
+  },
+  "corrected": {
+    "mIoU": 0.442115035614162,
+    "per_class": {
+      "EX": 0.5386111922725695,
+      "HE": 0.4451296131641197,
+      "SE": 0.4981614515880462,
+      "MA": 0.2865578854319127
+    }
+  },
+  "delta_mIoU": 0.009825793160924523,
+  "delta_MA": 0.039303172643698175,
+  "non_MA_bit_identical": true,
+  "status": "PASS"
+}

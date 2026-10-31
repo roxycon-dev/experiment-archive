@@ -1,0 +1,177 @@
+{
+  "stage": "ALL_TRAINING_COMPLETE_ORIGINAL_LOCKED_TEST_RUNNING_SERVER_FIRST_CLOSE_ARMED",
+  "automation_id": "hrdecoder-45",
+  "trigger_time": "2026-10-05T17:39:39.302Z",
+  "observed_at": "2026-10-05T18:08:11.917875+00:00",
+  "all_four_train_runs_complete": true,
+  "no_new_training_or_selection": true,
+  "primary_atomic_evidence": {
+    "reports/driver_state.json": {
+      "stage": "SINGLE_SEED_FINAL_SELECTION",
+      "pid": 44281,
+      "time": "2026-10-05T16:54:11.165340+00:00"
+    },
+    "reports/campaign.json": {
+      "stage": "WAITING_FOR_SELECTED_CHECKPOINT",
+      "queue": [
+        [
+          "C",
+          42
+        ],
+        [
+          "S",
+          42
+        ],
+        [
+          "D",
+          42
+        ],
+        [
+          "SD",
+          42
+        ]
+      ],
+      "time": "2026-10-05T16:54:15.675455+00:00"
+    },
+    "reports/final_test_state.json": {
+      "stage": "RUNNING",
+      "lock_sha256": "3146ca1edafdffdae7bf4987524bddc502209929e5d6d5b0e7ba49f12b6bd66e",
+      "time": "2026-10-05T18:00:05.183855+00:00",
+      "reselection_permitted": false
+    },
+    "reports/final_test.json": null,
+    "reports/selected_restore_deadline_guard_state.json": {
+      "stage": "LOCKED_CHECKPOINT_SHA_VERIFIED_ORIGINAL_OWNER_CONTINUES",
+      "time": "2026-10-05T18:00:02.149037+00:00",
+      "guard_pid": 76720,
+      "same_finalizer_pid": 44281,
+      "no_new_training_or_test_process": true,
+      "lock_sha256": "3146ca1edafdffdae7bf4987524bddc502209929e5d6d5b0e7ba49f12b6bd66e",
+      "checkpoint_sha256": "c933256b07556689a7fd199dd80e50d4d0c27eb6b9ea782713d95ec51e6d8d62",
+      "operational_wait_was_held": true,
+      "lost_training_updates": 0
+    },
+    "runs/LOCKED_TEST_seed42/progress.json": null,
+    "p0_progress": {
+      "status": "RUNNING",
+      "images": 111,
+      "expected_images": 227
+    },
+    "time": "2026-10-05T18:08:12.299546+00:00",
+    "free_disk_bytes": 26478727168
+  },
+  "primary_receiver_pid": 3316,
+  "second_receiver_pid": 31456,
+  "coordinator_pid": 15752,
+  "closure_evidence_worker_pid": 22408,
+  "actual_processes": [
+    {
+      "pid": 3316,
+      "parent_pid": 7344,
+      "cmdline": [
+        "C:\\Users\\GuanXingRen\\Miniconda3\\python.exe",
+        "-u",
+        "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\execution\\reports\\independent_local_attendant_runner.py",
+        "primary"
+      ],
+      "create_time": 1791223206.216922
+    },
+    {
+      "pid": 31456,
+      "parent_pid": 7344,
+      "cmdline": [
+        "C:\\Users\\GuanXingRen\\Miniconda3\\python.exe",
+        "-u",
+        "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\execution\\reports\\independent_local_attendant_runner.py",
+        "second"
+      ],
+      "create_time": 1791203704.0525155
+    },
+    {
+      "pid": 15752,
+      "parent_pid": 7344,
+      "cmdline": [
+        "C:\\Users\\GuanXingRen\\Miniconda3\\python.exe",
+        "-u",
+        "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\execution\\reports\\independent_local_attendant_runner.py",
+        "coordinator"
+      ],
+      "create_time": 1791203704.080522
+    },
+    {
+      "pid": 22408,
+      "parent_pid": 7344,
+      "cmdline": [
+        "C:\\Users\\GuanXingRen\\Miniconda3\\python.exe",
+        "-u",
+        "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\execution\\reports\\release_server_after_evidence.py"
+      ],
+      "create_time": 1791223428.3713956
+    }
+  ],
+  "priority_checkpoint_restore": {
+    "stage": "ONLY_LOCKED_WEIGHTS_SHA_RESTORED",
+    "path": "runs/S_seed42/checkpoint_u20000.pth",
+    "bytes": 1621379373,
+    "sha256": "c933256b07556689a7fd199dd80e50d4d0c27eb6b9ea782713d95ec51e6d8d62",
+    "lock_sha256": "3146ca1edafdffdae7bf4987524bddc502209929e5d6d5b0e7ba49f12b6bd66e",
+    "lossless_compression": true,
+    "no_scientific_state_changed": true,
+    "time": "2026-10-05T17:59:58.727276+00:00",
+    "pid": 28616,
+    "seconds": 3395.7415052000033,
+    "compressed_bytes_sent": 1503609966,
+    "original_primary_attendant_preserved": true,
+    "diagnostic_cause": "The ordinary endpoint mirror was already receiving 4.9GB before restore_selected; only the frozen selected checkpoint was prioritized."
+  },
+  "duplicate_upload_resolution": {
+    "stage": "CANCELED_DUPLICATE_PARTIAL_UPLOAD_ONLY",
+    "time": "2026-10-05T17:51:00.712704+00:00",
+    "path": "/root/autodl-tmp/HRDecoder_FinalDecision_20261005/runs/S_seed42/checkpoint_u20000.pth.restore",
+    "local_source_original_SHA_preserved": true,
+    "priority_upload_preserved": true,
+    "no_model_or_test_changes": true,
+    "discarded_partial_bytes": 397705216
+  },
+  "receiver_recovery": {
+    "stage": "ORIGINAL_PRIMARY_RECEIVER_RECOVERED_AFTER_LOCKED_SHA",
+    "time": "2026-10-05T18:00:09.508414+00:00",
+    "pid": 3316,
+    "canceled_duplicate_owner": 30004,
+    "locked_sha_verified": {
+      "sha256": "c933256b07556689a7fd199dd80e50d4d0c27eb6b9ea782713d95ec51e6d8d62",
+      "bytes": 1621379373
+    },
+    "original_helper_sha256": "f76acf364bdcd56adc290c73ab7d47c9f6641bb817d1b0262b96483d8831578e",
+    "no_duplicate_receiver": true,
+    "no_scientific_code_or_selection_changed": true,
+    "cause": "Concrete competing selected-checkpoint upload; sealed endpoint download pool and all custody receipts preserved."
+  },
+  "server_evidence_recovery": {
+    "stage": "REQUIRED_SAVED_VALIDATION_EVIDENCE_SHA_AND_COUNTS_VERIFIED",
+    "files": 5,
+    "bytes": 41837798,
+    "sha256": "fbdbf7a7241161529f922f4c667c1dc0051c7375cb44f026121640b314d6dc5e"
+  },
+  "closure_evidence_worker": {
+    "stage": "WAITING_FOR_ORIGINAL_LOCKED_TEST_AND_GLOBAL_ACK",
+    "pid": 22408,
+    "time": "2026-10-05T18:03:48.882360+00:00",
+    "no_new_training_inference_or_selection": true,
+    "writing_report_after_servers_closed": true
+  },
+  "latest_human_order": "Finish all necessary server work and verified backups, shut down both servers before writing/rendering report locally. Never keep an unused server for prose.",
+  "shutdown_dispatched": false,
+  "actual_platform_OFF_confirmed": false,
+  "report_body_not_written": true,
+  "automation": {
+    "id": "hrdecoder-45",
+    "status": "ACTIVE",
+    "rrule": "FREQ=MINUTELY;INTERVAL=45",
+    "latest_server_first_scope_in_saved_prompt": true,
+    "tool_call_no_completion_receipt": true,
+    "no_duplicate_automation": true,
+    "time": "2026-10-05T18:08:11.879586+00:00"
+  },
+  "quiet_routine_policy_preserved": true
+}

@@ -1,0 +1,116 @@
+cache {'images': 50, 'total': 893, 'bytes': 1021484192}
+cache {'images': 100, 'total': 893, 'bytes': 1888325728}
+cache {'images': 150, 'total': 893, 'bytes': 2854608800}
+cache {'images': 200, 'total': 893, 'bytes': 3817020320}
+cache {'images': 250, 'total': 893, 'bytes': 5016982660}
+cache {'images': 300, 'total': 893, 'bytes': 5930559780}
+cache {'images': 350, 'total': 893, 'bytes': 6986201028}
+cache {'images': 400, 'total': 893, 'bytes': 8127096080}
+cache {'images': 450, 'total': 893, 'bytes': 9273503984}
+cache {'images': 500, 'total': 893, 'bytes': 12202164976}
+cache {'images': 550, 'total': 893, 'bytes': 15262913776}
+cache {'images': 600, 'total': 893, 'bytes': 18323662576}
+cache {'images': 650, 'total': 893, 'bytes': 21384411376}
+cache {'images': 700, 'total': 893, 'bytes': 24089658096}
+cache {'images': 750, 'total': 893, 'bytes': 24928518896}
+cache {'images': 800, 'total': 893, 'bytes': 25767379696}
+cache {'images': 850, 'total': 893, 'bytes': 26606240496}
+cache {'images': 893, 'total': 893, 'bytes': 27327660784}
+
+EXPLICIT_DIAGNOSED_FORK_RECOVERY; original acceptance evidence archived; no formal updates lost
+cache {'images': 50, 'total': 893, 'bytes': 1021484192}
+cache {'images': 100, 'total': 893, 'bytes': 1888325728}
+cache {'images': 150, 'total': 893, 'bytes': 2854608800}
+cache {'images': 200, 'total': 893, 'bytes': 3817020320}
+cache {'images': 250, 'total': 893, 'bytes': 5016982660}
+cache {'images': 300, 'total': 893, 'bytes': 5930559780}
+cache {'images': 350, 'total': 893, 'bytes': 6986201028}
+cache {'images': 400, 'total': 893, 'bytes': 8127096080}
+cache {'images': 450, 'total': 893, 'bytes': 9273503984}
+cache {'images': 500, 'total': 893, 'bytes': 12202164976}
+cache {'images': 550, 'total': 893, 'bytes': 15262913776}
+cache {'images': 600, 'total': 893, 'bytes': 18323662576}
+cache {'images': 650, 'total': 893, 'bytes': 21384411376}
+cache {'images': 700, 'total': 893, 'bytes': 24089658096}
+cache {'images': 750, 'total': 893, 'bytes': 24928518896}
+cache {'images': 800, 'total': 893, 'bytes': 25767379696}
+cache {'images': 850, 'total': 893, 'bytes': 26606240496}
+cache {'images': 893, 'total': 893, 'bytes': 27327660784}
+C {'complete_updates': 100, 'seconds_per_update': 0.5632033744989894, 'data_wait_seconds_per_update': 0.004513519967440515, 'full_val_seconds': 153.2427820409648, 'checkpoint_seconds': 1.1513189859688282, 'checkpoint_bytes': 1412876767, 'peak_gpu_bytes': 7318949376}
+Traceback (most recent call last):
+  File "/root/autodl-tmp/HRDecoder_FinalDecision_20261005/server_driver.py", line 24, in main
+    acceptance()
+  File "/root/autodl-tmp/HRDecoder_FinalDecision_20261005/tests/gpu_acceptance.py", line 176, in main
+    for u in range(1,101):stat=update(model,opt,sched,ema,loaders,42,u-1);wait+=stat['data_wait_seconds']
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/HRDecoder_FinalDecision_20261005/engine.py", line 24, in update
+    with torch.autocast('cuda',dtype=torch.bfloat16):z=center_logits(model(x,source))
+                                                                     ^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/HRDecoder_FinalDecision_20261005/final_model.py", line 91, in forward
+    patch = patch + interaction.injector(interaction.inject_patch_norm(patch),
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/HRDecoder_FinalDecision_20261005/spatial.py", line 113, in forward
+    sampled = CUDAAttention.apply(value.float(), shapes, starts, locations, weights)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/torch/autograd/function.py", line 575, in apply
+    return super().apply(*args, **kwargs)  # type: ignore[misc]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/torch/amp/autocast_mode.py", line 521, in decorate_fwd
+    return fwd(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/HRDecoder_FinalDecision_20261005/spatial.py", line 34, in forward
+    import MultiScaleDeformableAttention as kernel
+ModuleNotFoundError: No module named 'MultiScaleDeformableAttention'
+Traceback (most recent call last):
+  File "/root/autodl-tmp/HRDecoder_FinalDecision_20261005/server_driver.py", line 37, in <module>
+    p=argparse.ArgumentParser();p.add_argument('--resume-paused',action='store_true');a=p.parse_args();main(a.resume_paused)
+                                                                                                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/HRDecoder_FinalDecision_20261005/server_driver.py", line 24, in main
+    acceptance()
+  File "/root/autodl-tmp/HRDecoder_FinalDecision_20261005/tests/gpu_acceptance.py", line 176, in main
+    for u in range(1,101):stat=update(model,opt,sched,ema,loaders,42,u-1);wait+=stat['data_wait_seconds']
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/HRDecoder_FinalDecision_20261005/engine.py", line 24, in update
+    with torch.autocast('cuda',dtype=torch.bfloat16):z=center_logits(model(x,source))
+                                                                     ^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/HRDecoder_FinalDecision_20261005/final_model.py", line 91, in forward
+    patch = patch + interaction.injector(interaction.inject_patch_norm(patch),
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/HRDecoder_FinalDecision_20261005/spatial.py", line 113, in forward
+    sampled = CUDAAttention.apply(value.float(), shapes, starts, locations, weights)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/torch/autograd/function.py", line 575, in apply
+    return super().apply(*args, **kwargs)  # type: ignore[misc]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/torch/amp/autocast_mode.py", line 521, in decorate_fwd
+    return fwd(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/HRDecoder_FinalDecision_20261005/spatial.py", line 34, in forward
+    import MultiScaleDeformableAttention as kernel
+ModuleNotFoundError: No module named 'MultiScaleDeformableAttention'
+
+EXPLICIT_REMAINING_GPU_ACCEPTANCE; load verified module in new process; no completed gate repeated

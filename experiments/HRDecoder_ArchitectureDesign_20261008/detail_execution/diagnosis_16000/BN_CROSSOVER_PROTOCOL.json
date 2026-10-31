@@ -1,0 +1,20 @@
+{
+  "kind": "REGISTERED_BN_BUFFER_CROSSOVER",
+  "checkpoints": [
+    12000,
+    21000
+  ],
+  "arms": [
+    "W12000_BN12000",
+    "W21000_BN21000",
+    "W21000_BN12000",
+    "W12000_BN21000"
+  ],
+  "held_fixed": "all affine/conv parameters follow weight step, only921 BN buffers swapped; complete same76val at2048; same BF16/native-threshold evaluator",
+  "formal_SGD_updates": 0,
+  "test_accessed": false,
+  "immutable_parent": true,
+  "strong_support_rule": "12k reproduction within.05pp and BN12 onW21 improvement>=10pp and BN21 onW12 decline>=10pp",
+  "not_a_fresh_training_screen": true,
+  "not_final_goal_evidence": true
+}

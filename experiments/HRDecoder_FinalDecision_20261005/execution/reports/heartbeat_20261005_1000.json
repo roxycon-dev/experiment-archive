@@ -1,0 +1,929 @@
+{
+  "stage": "S20_ENDPOINT_SHA_CUSTODY_COMPLETE_FORMAL_TRAINING_HEALTHY",
+  "observed_at": "2026-10-05T10:02:49.647972+00:00",
+  "primary": {
+    "driver": {
+      "stage": "CAMPAIGN",
+      "pid": 18787,
+      "time": "2026-10-04T21:16:20.663409+00:00"
+    },
+    "campaign": {
+      "stage": "RUNNING",
+      "current_run": "S_seed42",
+      "queue": [
+        [
+          "C",
+          42
+        ],
+        [
+          "S",
+          42
+        ],
+        [
+          "D",
+          42
+        ],
+        [
+          "SD",
+          42
+        ],
+        [
+          "PARENT_F12",
+          2024
+        ],
+        [
+          "C",
+          2024
+        ],
+        [
+          "S",
+          2024
+        ],
+        [
+          "D",
+          2024
+        ],
+        [
+          "SD",
+          2024
+        ]
+      ],
+      "updated_at": "2026-10-05T02:31:25.514043+00:00"
+    },
+    "runs": {
+      "C_seed42": {
+        "stage": "COMPLETE",
+        "completed": 32000,
+        "endpoint": 32000,
+        "updated_at": "2026-10-05T02:31:24.012530+00:00"
+      },
+      "S_seed42": {
+        "stage": "TRAINING",
+        "completed": 31560,
+        "endpoint": 32000,
+        "updated_at": "2026-10-05T10:00:46.341617+00:00",
+        "recent": {
+          "loss": 0.18779128789901733,
+          "grad_norm": 1.2733434438705444,
+          "seconds": 0.8096869389992207,
+          "data_wait_seconds": 0.0015370319597423077,
+          "peak_gpu_bytes": 11004799488
+        }
+      }
+    },
+    "free_disk_bytes": 26563375104,
+    "observed_at": "2026-10-05T10:00:53.395880+00:00"
+  },
+  "second": {
+    "driver": {
+      "stage": "PARALLEL_CAMPAIGN",
+      "pid": 3295,
+      "time": "2026-10-05T05:33:32.002303+00:00"
+    },
+    "campaign": {
+      "stage": "RUNNING",
+      "current_run": "SD_seed42",
+      "queue": [
+        [
+          "SD",
+          42
+        ]
+      ],
+      "amendment_sha256": "cae05b90a986f4d14a7c7f1e7ca25de10b9d966d905cd1ea88f5e0c2116344c3",
+      "time": "2026-10-05T05:33:32.001933+00:00"
+    },
+    "runs": {
+      "SD_seed42": {
+        "stage": "TRAINING",
+        "completed": 12760,
+        "endpoint": 32000,
+        "updated_at": "2026-10-05T10:00:34.265795+00:00",
+        "recent": {
+          "loss": 0.16650637984275818,
+          "grad_norm": 1.0601085424423218,
+          "seconds": 1.2057539895176888,
+          "data_wait_seconds": 0.0025198906660079956,
+          "peak_gpu_bytes": 11006432768
+        }
+      }
+    },
+    "free_disk_bytes": 17724395520,
+    "observed_at": "2026-10-05T10:00:54.624017+00:00"
+  },
+  "additional_fresh_run_status_observations": {
+    "S_seed42": {
+      "stage": "TRAINING",
+      "completed": 31620,
+      "endpoint": 32000,
+      "updated_at": "2026-10-05T10:01:36.490587+00:00",
+      "recent": {
+        "loss": 0.11260081082582474,
+        "grad_norm": 0.6977475881576538,
+        "seconds": 0.8103034622035921,
+        "data_wait_seconds": 0.0021737387869507074,
+        "peak_gpu_bytes": 11004799488
+      }
+    },
+    "SD_seed42": {
+      "stage": "TRAINING",
+      "completed": 12820,
+      "endpoint": 32000,
+      "updated_at": "2026-10-05T10:01:48.202359+00:00",
+      "recent": {
+        "loss": 0.14056134223937988,
+        "grad_norm": 0.8109296560287476,
+        "seconds": 1.2059174478054047,
+        "data_wait_seconds": 0.0023748204112052917,
+        "peak_gpu_bytes": 11006432768
+      }
+    }
+  },
+  "validation_curves": {
+    "S_seed42": [
+      {
+        "update": 4000,
+        "metric_sha256": "7f53302b0328b52fcb5e552b25a9700f051f4aee8d5e3c78d22e98b06836e71e",
+        "n_images": 76,
+        "per_image_count": 76,
+        "scores": {
+          "single": 41.28424748145035,
+          "fixed_fusion": 45.050413477512585,
+          "half_fusion": 43.06775775425701
+        },
+        "counts": {
+          "single": [
+            [
+              192396,
+              121535,
+              98407
+            ],
+            [
+              642970,
+              404413,
+              562954
+            ],
+            [
+              152696,
+              64455,
+              48708
+            ],
+            [
+              25578,
+              51855,
+              43706
+            ]
+          ],
+          "fixed_fusion": [
+            [
+              187972,
+              83820,
+              102831
+            ],
+            [
+              689963,
+              347100,
+              515961
+            ],
+            [
+              142536,
+              39392,
+              58868
+            ],
+            [
+              27352,
+              34304,
+              41932
+            ]
+          ]
+        },
+        "probability_files": 0,
+        "mirror_matches": true,
+        "fixed25_gain_vs_R42_pp": 0.6947211389742094,
+        "single_vs_F12_parent_pp": 1.0424138809343262,
+        "node_meets_both_collapse_thresholds": false
+      },
+      {
+        "update": 8000,
+        "metric_sha256": "c6d197122a0eda8aea121bf4bd06ae32ed7367fe713fab98391ada21dd9835fb",
+        "n_images": 76,
+        "per_image_count": 76,
+        "scores": {
+          "single": 41.225148798658964,
+          "fixed_fusion": 44.91937669048375,
+          "half_fusion": 43.02300822147355
+        },
+        "counts": {
+          "single": [
+            [
+              194214,
+              128342,
+              96589
+            ],
+            [
+              649988,
+              449880,
+              555936
+            ],
+            [
+              148363,
+              53553,
+              53041
+            ],
+            [
+              24802,
+              48159,
+              44482
+            ]
+          ],
+          "fixed_fusion": [
+            [
+              188306,
+              82958,
+              102497
+            ],
+            [
+              691835,
+              380781,
+              514089
+            ],
+            [
+              140928,
+              35983,
+              60476
+            ],
+            [
+              27066,
+              33520,
+              42218
+            ]
+          ]
+        },
+        "probability_files": 0,
+        "mirror_matches": true,
+        "fixed25_gain_vs_R42_pp": 0.5636843519453762,
+        "single_vs_F12_parent_pp": 0.9833151981429396,
+        "node_meets_both_collapse_thresholds": false
+      },
+      {
+        "update": 12000,
+        "metric_sha256": "d4772fa526db35804c57e214e95af7fe0b22d80c03551e2b75b71f43cfb19599",
+        "n_images": 76,
+        "per_image_count": 76,
+        "scores": {
+          "single": 41.540638483788044,
+          "fixed_fusion": 44.902354656390116,
+          "half_fusion": 43.11420017653772
+        },
+        "counts": {
+          "single": [
+            [
+              192216,
+              113069,
+              98587
+            ],
+            [
+              647434,
+              434487,
+              558490
+            ],
+            [
+              146448,
+              49061,
+              54956
+            ],
+            [
+              24096,
+              47511,
+              45188
+            ]
+          ],
+          "fixed_fusion": [
+            [
+              187900,
+              81009,
+              102903
+            ],
+            [
+              689705,
+              377976,
+              516219
+            ],
+            [
+              140027,
+              34713,
+              61377
+            ],
+            [
+              26935,
+              33426,
+              42349
+            ]
+          ]
+        },
+        "probability_files": 0,
+        "mirror_matches": true,
+        "fixed25_gain_vs_R42_pp": 0.5466623178517409,
+        "single_vs_F12_parent_pp": 1.2988048832720196,
+        "node_meets_both_collapse_thresholds": false
+      },
+      {
+        "update": 16000,
+        "metric_sha256": "abc87d00723e1291966521e90d39cdcad2836f79da8bb5f6390f2c6a71ab8937",
+        "n_images": 76,
+        "per_image_count": 76,
+        "scores": {
+          "single": 42.398125211123094,
+          "fixed_fusion": 45.530973783994924,
+          "half_fusion": 43.81826138760529
+        },
+        "counts": {
+          "single": [
+            [
+              189903,
+              114228,
+              100900
+            ],
+            [
+              659596,
+              366074,
+              546328
+            ],
+            [
+              147272,
+              42086,
+              54132
+            ],
+            [
+              22987,
+              44156,
+              46297
+            ]
+          ],
+          "fixed_fusion": [
+            [
+              187045,
+              79882,
+              103758
+            ],
+            [
+              693480,
+              338370,
+              512444
+            ],
+            [
+              141291,
+              32373,
+              60113
+            ],
+            [
+              26798,
+              32531,
+              42486
+            ]
+          ]
+        },
+        "probability_files": 0,
+        "mirror_matches": true,
+        "fixed25_gain_vs_R42_pp": 1.1752814454565481,
+        "single_vs_F12_parent_pp": 2.15629161060707,
+        "node_meets_both_collapse_thresholds": false
+      },
+      {
+        "update": 20000,
+        "metric_sha256": "41d492ec19114055da41c90bfbf3dc6d692afb2e191483fe348d4b6d4e4fd441",
+        "n_images": 76,
+        "per_image_count": 76,
+        "scores": {
+          "single": 42.27032190489858,
+          "fixed_fusion": 45.32183122738841,
+          "half_fusion": 43.58948548754201
+        },
+        "counts": {
+          "single": [
+            [
+              186991,
+              102200,
+              103812
+            ],
+            [
+              666325,
+              350764,
+              539599
+            ],
+            [
+              144699,
+              41536,
+              56705
+            ],
+            [
+              21075,
+              40851,
+              48209
+            ]
+          ],
+          "fixed_fusion": [
+            [
+              185859,
+              78183,
+              104944
+            ],
+            [
+              695246,
+              337679,
+              510678
+            ],
+            [
+              140247,
+              32959,
+              61157
+            ],
+            [
+              26296,
+              31719,
+              42988
+            ]
+          ]
+        },
+        "probability_files": 76,
+        "mirror_matches": true,
+        "fixed25_gain_vs_R42_pp": 0.9661388888500326,
+        "single_vs_F12_parent_pp": 2.028488304382556,
+        "node_meets_both_collapse_thresholds": false
+      },
+      {
+        "update": 24000,
+        "metric_sha256": "69518a6e38be6125bbfad166b86d90ec53ca8360d798394d75db303201cb3bca",
+        "n_images": 76,
+        "per_image_count": 76,
+        "scores": {
+          "single": 42.018816265387485,
+          "fixed_fusion": 45.323095776327385,
+          "half_fusion": 43.54937754768469
+        },
+        "counts": {
+          "single": [
+            [
+              187310,
+              101900,
+              103493
+            ],
+            [
+              659808,
+              377836,
+              546116
+            ],
+            [
+              145233,
+              38917,
+              56171
+            ],
+            [
+              19465,
+              37176,
+              49819
+            ]
+          ],
+          "fixed_fusion": [
+            [
+              186239,
+              78406,
+              104564
+            ],
+            [
+              690981,
+              336861,
+              514943
+            ],
+            [
+              140874,
+              32284,
+              60530
+            ],
+            [
+              25809,
+              30833,
+              43475
+            ]
+          ]
+        },
+        "probability_files": 0,
+        "mirror_matches": true,
+        "fixed25_gain_vs_R42_pp": 0.9674034377890095,
+        "single_vs_F12_parent_pp": 1.7769826648714613,
+        "node_meets_both_collapse_thresholds": false
+      },
+      {
+        "update": 28000,
+        "metric_sha256": "16573e96271b7ff8374e331aa6655d18752ceebb372724f29ba808e2c2323c5b",
+        "n_images": 76,
+        "per_image_count": 76,
+        "scores": {
+          "single": 41.99065247726068,
+          "fixed_fusion": 45.31019779209142,
+          "half_fusion": 43.36410344472786
+        },
+        "counts": {
+          "single": [
+            [
+              185826,
+              97020,
+              104977
+            ],
+            [
+              653332,
+              340869,
+              552592
+            ],
+            [
+              143335,
+              40918,
+              58069
+            ],
+            [
+              19602,
+              35770,
+              49682
+            ]
+          ],
+          "fixed_fusion": [
+            [
+              185606,
+              77144,
+              105197
+            ],
+            [
+              688615,
+              334833,
+              517309
+            ],
+            [
+              140822,
+              32767,
+              60582
+            ],
+            [
+              25909,
+              30491,
+              43375
+            ]
+          ]
+        },
+        "probability_files": 0,
+        "mirror_matches": true,
+        "fixed25_gain_vs_R42_pp": 0.9545054535530468,
+        "single_vs_F12_parent_pp": 1.7488188767446573,
+        "node_meets_both_collapse_thresholds": false
+      }
+    ],
+    "SD_seed42": [
+      {
+        "update": 4000,
+        "metric_sha256": "08a9ecb510881d909bdf6abdd4fe6614f5e637967371f5c36907d93855cd20d9",
+        "n_images": 76,
+        "per_image_count": 76,
+        "scores": {
+          "single": 39.65700941327202,
+          "fixed_fusion": 45.06749663241366,
+          "half_fusion": 43.318394842689585
+        },
+        "counts": {
+          "single": [
+            [
+              193963,
+              132417,
+              96840
+            ],
+            [
+              669384,
+              746422,
+              536540
+            ],
+            [
+              153903,
+              65905,
+              47501
+            ],
+            [
+              25455,
+              52297,
+              43829
+            ]
+          ],
+          "fixed_fusion": [
+            [
+              188432,
+              86130,
+              102371
+            ],
+            [
+              695750,
+              350128,
+              510174
+            ],
+            [
+              142226,
+              38075,
+              59178
+            ],
+            [
+              27153,
+              34445,
+              42131
+            ]
+          ]
+        },
+        "probability_files": 0,
+        "mirror_matches": true,
+        "fixed25_gain_vs_R42_pp": 0.7118042938752822,
+        "single_vs_F12_parent_pp": -0.5848241872440028,
+        "node_meets_both_collapse_thresholds": false
+      },
+      {
+        "update": 8000,
+        "metric_sha256": "5754d1bbb8a2c1cef274ad0d04acf6fe7d191ec793226969ef6c54efdc8a9a6d",
+        "n_images": 76,
+        "per_image_count": 76,
+        "scores": {
+          "single": 41.27487871289849,
+          "fixed_fusion": 44.5898536602842,
+          "half_fusion": 43.25308579485186
+        },
+        "counts": {
+          "single": [
+            [
+              192323,
+              116078,
+              98480
+            ],
+            [
+              673712,
+              561584,
+              532212
+            ],
+            [
+              150806,
+              53978,
+              50598
+            ],
+            [
+              24682,
+              50159,
+              44602
+            ]
+          ],
+          "fixed_fusion": [
+            [
+              187902,
+              82539,
+              102901
+            ],
+            [
+              697004,
+              411425,
+              508920
+            ],
+            [
+              139547,
+              36529,
+              61857
+            ],
+            [
+              27169,
+              34081,
+              42115
+            ]
+          ]
+        },
+        "probability_files": 0,
+        "mirror_matches": true,
+        "fixed25_gain_vs_R42_pp": 0.23416132174582316,
+        "single_vs_F12_parent_pp": 1.0330451123824673,
+        "node_meets_both_collapse_thresholds": false
+      },
+      {
+        "update": 12000,
+        "metric_sha256": "3a2ba2607061b3d0933c73e6d2a941455de657c65477ce5bd42978abc82a0107",
+        "n_images": 76,
+        "per_image_count": 76,
+        "scores": {
+          "single": 40.59472560667222,
+          "fixed_fusion": 44.698779675420255,
+          "half_fusion": 42.98117676693797
+        },
+        "counts": {
+          "single": [
+            [
+              193130,
+              145546,
+              97673
+            ],
+            [
+              683194,
+              614525,
+              522730
+            ],
+            [
+              150593,
+              48655,
+              50811
+            ],
+            [
+              23300,
+              45119,
+              45984
+            ]
+          ],
+          "fixed_fusion": [
+            [
+              187941,
+              83425,
+              102862
+            ],
+            [
+              696740,
+              412359,
+              509184
+            ],
+            [
+              140443,
+              34442,
+              60961
+            ],
+            [
+              26633,
+              33264,
+              42651
+            ]
+          ]
+        },
+        "probability_files": 0,
+        "mirror_matches": true,
+        "fixed25_gain_vs_R42_pp": 0.3430873368818794,
+        "single_vs_F12_parent_pp": 0.3528920061561962,
+        "node_meets_both_collapse_thresholds": false
+      }
+    ]
+  },
+  "two_consecutive_combined_collapse_thresholds_met": {
+    "S_seed42": false,
+    "SD_seed42": false
+  },
+  "boundary": {
+    "stage": "ARMED_AFTER_D42_BOUNDARY",
+    "pid": 44281,
+    "time": "2026-10-05T04:11:34.270609+00:00",
+    "process_alive": true
+  },
+  "local_receivers": {
+    "time": "2026-10-05T10:01:48.051298+00:00",
+    "nodes": {
+      "primary": {
+        "attendant_pid.json": {
+          "pid": 32844,
+          "time": "2026-10-05T04:13:41.940043+00:00",
+          "helper": "reports/primary_parallel_attendant.py"
+        },
+        "attendant_state.json": {
+          "stage": "WAITING",
+          "time": "2026-10-05T10:00:35.155146+00:00"
+        },
+        "persistent_receiver_state.json": {
+          "stage": "POOL_COMPLETED",
+          "time": "2026-10-05T10:00:35.042998+00:00",
+          "receiver_connections_opened": 2,
+          "files_received": 4,
+          "seconds": 77.5716796000197,
+          "negotiated_compression": [
+            "zlib@openssh.com",
+            "zlib@openssh.com"
+          ],
+          "max_file_receivers": 2,
+          "original_mirror_sha256": "28492fcdbd64ae0e08145274af70368726275e2bdc52dbc99fa9177b6c0e366b",
+          "all_original_SHA_and_custody_gates_used": true
+        },
+        "transfer_progress.json": {
+          "stage": "TRANSFERRING",
+          "full": false,
+          "verified_files": 2610,
+          "expected_files": 5902,
+          "verified_bytes": 252341234,
+          "expected_bytes": 266920269,
+          "updated_at": "2026-10-05T10:01:48.000336+00:00"
+        },
+        "mirror.lock": {
+          "pid": 32844,
+          "time": "2026-10-05T10:01:06.871583+00:00"
+        },
+        "process": {
+          "pid": 32844,
+          "alive": true,
+          "cmdline": [
+            "C:\\Users\\GuanXingRen\\Miniconda3\\python.exe",
+            "-u",
+            "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\execution\\reports\\primary_parallel_attendant.py"
+          ]
+        },
+        "endpoint_custody": {
+          "C_seed42_u20000": {
+            "stage": "LOCAL_SHA_VERIFIED_REMOTE_RELEASED",
+            "file_count": 77,
+            "server_instance": "connect.nmb2.seetacloud.com:36431",
+            "time": "2026-10-05T01:50:50.543239+00:00",
+            "verified_at": null
+          },
+          "S_seed42_u20000": {
+            "stage": "LOCAL_SHA_VERIFIED_REMOTE_RELEASED",
+            "file_count": 77,
+            "server_instance": "connect.nmb2.seetacloud.com:36431",
+            "time": "2026-10-05T09:24:58.992023+00:00",
+            "verified_at": null
+          }
+        }
+      },
+      "second": {
+        "attendant_pid.json": {
+          "pid": 8552,
+          "helper": "reports/parallel_node2_attendant.py",
+          "replaced_paused_pid": 24868,
+          "reason": "New-node native atomic comparison diagnosed; early gates passed and driver is healthy waiting for data",
+          "time": "2026-10-05T04:31:40.152738+00:00"
+        },
+        "attendant_state.json": {
+          "stage": "WAITING",
+          "time": "2026-10-05T10:00:47.082440+00:00"
+        },
+        "persistent_receiver_state.json": {
+          "stage": "POOL_COMPLETED",
+          "time": "2026-10-05T10:00:47.057124+00:00",
+          "receiver_connections_opened": 2,
+          "files_received": 3,
+          "seconds": 35.52778679999756,
+          "negotiated_compression": [
+            "zlib@openssh.com",
+            "zlib@openssh.com"
+          ],
+          "max_file_receivers": 2,
+          "original_mirror_sha256": "28492fcdbd64ae0e08145274af70368726275e2bdc52dbc99fa9177b6c0e366b",
+          "all_original_SHA_and_custody_gates_used": true
+        },
+        "transfer_progress.json": {
+          "stage": "TRANSFERRING",
+          "full": false,
+          "verified_files": 1563,
+          "expected_files": 2617,
+          "verified_bytes": 182499360,
+          "expected_bytes": 187267102,
+          "updated_at": "2026-10-05T10:01:48.009474+00:00"
+        },
+        "mirror.lock": {
+          "pid": 8552,
+          "time": "2026-10-05T10:01:19.108095+00:00"
+        },
+        "process": {
+          "pid": 8552,
+          "alive": true,
+          "cmdline": [
+            "C:\\Users\\GuanXingRen\\Miniconda3\\python.exe",
+            "-u",
+            "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\execution\\reports\\parallel_node2_attendant.py"
+          ]
+        },
+        "endpoint_custody": {}
+      }
+    },
+    "coordinator": {
+      "stage": "WAITING_SD_COMPLETE_SHA_CUSTODY",
+      "time": "2026-10-05T10:01:35.687780+00:00"
+    },
+    "coordinator_process": {
+      "pid": 13216,
+      "alive": true,
+      "cmdline": [
+        "C:\\Users\\GuanXingRen\\Miniconda3\\python.exe",
+        "-u",
+        "reports/parallel_single_seed_coordinator.py"
+      ]
+    }
+  },
+  "new_custody_completion": {
+    "receipt": "reports\\storage_offload\\S_seed42_u20000.json",
+    "receipt_sha256": "77f86cde4f3fbae2369f43699e91ced37bc37a53fa71881634b329a73a95dbc9",
+    "stage": "LOCAL_SHA_VERIFIED_REMOTE_RELEASED",
+    "time": "2026-10-05T09:24:58.992023+00:00",
+    "files": 77,
+    "full_recoverable_checkpoint_files": 1,
+    "FP32_probability_files": 76,
+    "required_fields_and_sizes_present": true,
+    "binary_SHA_verification_already_performed_by_official_attendant_no_duplicate_full_hash": true
+  },
+  "disk_cleanup_needed": false,
+  "scientific_stop_required": false,
+  "shutdown_eligible": false,
+  "final_selection_frozen": false,
+  "new_test_run": false,
+  "authorized_seeds": [
+    42
+  ],
+  "duplicate_mirror_started": false,
+  "training_or_frozen_source_changed": false
+}

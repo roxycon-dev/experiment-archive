@@ -1,0 +1,330 @@
+Review correction request. Output same JSON files format full replacements ops/guard.py and tests/test_guard.py only. Do NOT execute. Fix actual failedtest: preflight rejection atomic_write_json fails nonexistent logsparent -> rc1, ensuremkdirbeforewrite. test_invalid_deadlines incorrectlyexpects DRY_RUN_SHUTDOWN althoughrejectdoesn'tshutdown: test correctpolicy, notfakemarker. Prefer actualshutdown on armed preflight rejection because machinealreadyrunning, but nochildlaunched; implement consistent dryrunmarker + no actualshutdown in tests; mainfinally mustcover all postargparse errors includingbaddeadline; ensure neverlaunch invaliddeadline. Keepabsolute12h andbashshutdown. Descendants must be cleaned evenifleaderexits normally; currentonly proc.pollNone allowsorphans. ALWAYS cleanup existingprocessgroupafterchild exit. Don't reset signalhandlerbeforeremaining cleanup/shutdown unnecessarily. Handle shutdown nonzero status visibly andstate. parseZ UTC inPython3.8 via replaceZ+00:00. Tests portable success/fail/launchfailure use sys.executable instead true/false, cleanup testslinuxonly; childgroupzombie isdead notrunning so /proc statusZ acceptable. Testsignal uses importsignalexplicitly. testtmp cleanup. Include testnormalleaderexitsleaveschild and timeout andcorrectreturncode. We have localWSLUbuntu to runlinuxunittests. No realshutdown in tests.
+
+FILE ops/guard.py
+#!/usr/bin/env python3
+"""Guard: run a command under a hard UTC deadline, dry-run shutdown by default.
+
+Fixes over oldguard:
+- deadline is REQUIRED ISO-8601 WITH timezone (naive/expired/>12h rejected before launch)
+- exit codes: child propagated; timeout 124; signal-interrupt 130; preflight reject 2
+- signal handlers run full cleanup (SIGTERM group, SIGKILL after 5s) not just a flag
+- atomic JSON state write (tmp + os.replace)
+- shutdown runs only when armed, in finally, for all outcomes (launch error included)
+"""
+import argparse
+import datetime
+import json
+import os
+from pathlib import Path
+import signal
+import subprocess
+import sys
+import tempfile
+import time
+
+MAX_SESSION_SECONDS = 12 * 3600
+TERMINATION_GRACE = 5  # seconds between SIGTERM and SIGKILL
+
+
+class PreflightError(Exception):
+    pass
+
+
+def parse_deadline(value):
+    try:
+        dt = datetime.datetime.fromisoformat(value)
+    except ValueError:
+        raise PreflightError('deadline must be ISO-8601 with timezone: %r' % value)
+    if dt.tzinfo is None or dt.tzinfo.utcoffset(dt) is None:
+        raise PreflightError('deadline must include timezone offset (naive rejected)')
+    return dt
+
+
+def preflight(deadline_str, cmd):
+    dt = parse_deadline(deadline_str)
+    now = datetime.datetime.now(dt.tzinfo)
+    delta = (dt - now).total_seconds()
+    if delta <= 0:
+        raise PreflightError('deadline already expired')
+    if delta > MAX_SESSION_SECONDS:
+        raise PreflightError('deadline more than 12h from now (max session 12h)')
+    if not cmd:
+        raise PreflightError('missing command')
+    return dt.timestamp(), delta
+
+
+def atomic_write_json(path, obj):
+    d = os.path.dirname(os.path.abspath(path))
+    fd, tmp = tempfile.mkstemp(dir=d, suffix='.tmp')
+    try:
+        with os.fdopen(fd, 'w') as f:
+            json.dump(obj, f, indent=2)
+            f.flush()
+            os.fsync(f.fileno())
+        os.replace(tmp, path)
+    except BaseException:
+        try:
+            os.unlink(tmp)
+        except OSError:
+            pass
+        raise
+
+
+def terminate_group(pid):
+    """SIGTERM process group, then SIGKILL after grace. Returns exit via caller."""
+    try:
+        os.killpg(pid, signal.SIGTERM)
+    except ProcessLookupError:
+        return True
+    deadline = time.time() + TERMINATION_GRACE
+    while time.time() < deadline:
+        try:
+            os.killpg(pid, 0)
+        except ProcessLookupError:
+            return True
+        time.sleep(0.1)
+    try:
+        os.killpg(pid, signal.SIGKILL)
+    except ProcessLookupError:
+        pass
+    return False
+
+
+def main():
+    parser = argparse.ArgumentParser(description='Deadline guard runner')
+    parser.add_argument('--deadline-utc', required=True,
+                        help='ISO-8601 UTC deadline with timezone, e.g. 2024-01-01T00:00:00+00:00')
+    parser.add_argument('--log', required=True)
+    parser.add_argument('--execute-shutdown', action='store_true',
+                        help='ARM: actually run /bin/bash /usr/bin/shutdown at the end')
+    parser.add_argument('cmd', nargs=argparse.REMAINDER)
+    args = parser.parse_args()
+    cmd = args.cmd[1:] if args.cmd[:1] == ['--'] else args.cmd
+
+    state = {'started_unix': time.time(), 'deadline': args.deadline_utc,
+             'command': cmd, 'execute_shutdown': bool(args.execute_shutdown),
+             'status': 'starting', 'returncode': None}
+    proc = None
+    exit_code = 1
+    interrupted = []
+
+    try:
+        deadline_unix, delta = preflight(args.deadline_utc, cmd)
+        state['deadline_unix'] = deadline_unix
+        state['preflight_seconds'] = delta
+    except PreflightError as exc:
+        state['status'] = 'preflight_rejected'
+        state['error'] = str(exc)
+        state['ended_unix'] = time.time()
+        atomic_write_json(args.log + '.status.json', state)
+        print(json.dumps(state), flush=True)
+        # No shutdown attempt: nothing was launched, session never started.
+        sys.exit(2)
+
+    def on_signal(signum, frame):
+        interrupted.append(signum)
+
+    prev = {}
+    for sig in (signal.SIGTERM, signal.SIGINT):
+        prev[sig] = signal.signal(sig, on_signal)
+
+    logf = None
+    try:
+        Path(args.log).parent.mkdir(parents=True, exist_ok=True)
+        logf = open(args.log, 'ab', buffering=0)
+        proc = subprocess.Popen(cmd, stdout=logf, stderr=logf,
+                                start_new_session=True, shell=False)
+        state['pid'] = proc.pid
+        state['status'] = 'running'
+        atomic_write_json(args.log + '.status.json', state)
+
+        while proc.poll() is None and time.time() < deadline_unix and not interrupted:
+            time.sleep(min(1.0, max(0.05, deadline_unix - time.time())))
+
+        if proc.poll() is None:
+            if interrupted:
+                state['status'] = 'interrupted'
+            else:
+                state['status'] = 'timeout'
+            killed = terminate_group(proc.pid)
+            state['killed_with_sigkill'] = not killed
+            try:
+                proc.wait(timeout=TERMINATION_GRACE + 10)
+            except subprocess.TimeoutExpired:
+                pass
+            exit_code = 124 if state['status'] == 'timeout' else 130
+        else:
+            state['status'] = 'success' if proc.returncode == 0 else 'failure'
+            exit_code = proc.returncode
+        state['returncode'] = exit_code
+    except BaseException as exc:
+        state['status'] = 'wrapper_error'
+        state['error'] = repr(exc)
+        exit_code = 125
+        if proc is not None and proc.poll() is None:
+            terminate_group(proc.pid)
+            try:
+                proc.wait(timeout=TERMINATION_GRACE + 10)
+            except subprocess.TimeoutExpired:
+                pass
+    finally:
+        if proc is not None and proc.poll() is None:
+            terminate_group(proc.pid)
+            try:
+                proc.wait(timeout=TERMINATION_GRACE + 10)
+            except subprocess.TimeoutExpired:
+                pass
+        if logf is not None:
+            logf.close()
+        for sig, handler in prev.items():
+            try:
+                signal.signal(sig, handler)
+            except Exception:
+                pass
+        state['ended_unix'] = time.time()
+        try:
+            atomic_write_json(args.log + '.status.json', state)
+            print(json.dumps(state), flush=True)
+        finally:
+            # Shutdown on every completed session (success/failure/timeout/launch error)
+            # ONLY when explicitly armed. Never in dry-run, never after preflight reject.
+            if args.execute_shutdown:
+                try:
+                    subprocess.run(['/bin/bash', '/usr/bin/shutdown'],
+                                   timeout=30, check=False, shell=False)
+                except Exception as exc:
+                    print('SHUTDOWN_INVOCATION_ERROR %r' % (exc,), flush=True)
+            else:
+                print('DRY_RUN_SHUTDOWN', flush=True)
+    sys.exit(exit_code)
+
+
+if __name__ == '__main__':
+    main()
+
+FILE tests/test_guard.py
+"""Dry-run-only tests for ops/guard.py. Never passes --execute-shutdown."""
+import datetime
+import json
+import os
+from pathlib import Path
+import subprocess
+import sys
+import tempfile
+import time
+import unittest
+
+GUARD = str(Path(__file__).resolve().parent.parent / 'ops' / 'guard.py')
+IS_LINUX = sys.platform.startswith('linux')
+
+
+def deadline_in(seconds):
+    dt = datetime.datetime.now(datetime.timezone.utc) + datetime.timedelta(seconds=seconds)
+    return dt.isoformat()
+
+
+class GuardTests(unittest.TestCase):
+    def setUp(self):
+        self.tmp = tempfile.mkdtemp(prefix='guardtest_')
+        self.log = os.path.join(self.tmp, 'logs', 'run.log')
+
+    def run_guard(self, extra, timeout=60):
+        return subprocess.run(
+            [sys.executable, GUARD, '--log', self.log] + extra,
+            capture_output=True, text=True, timeout=timeout)
+
+    def assert_dry_run(self, res):
+        self.assertIn('DRY_RUN_SHUTDOWN', res.stdout)
+        self.assertNotIn('execute-shutdown', res.stdout)
+        self.assertFalse(Path(self.log + '.shutdown').exists())
+
+    def read_state(self):
+        with open(self.log + '.status.json') as f:
+            return json.load(f)
+
+    @unittest.skipUnless(IS_LINUX, 'linux only')
+    def test_success(self):
+        res = self.run_guard(['--deadline-utc', deadline_in(60), 'true'])
+        self.assertEqual(res.returncode, 0)
+        self.assertEqual(self.read_state()['status'], 'success')
+        self.assert_dry_run(res)
+
+    @unittest.skipUnless(IS_LINUX, 'linux only')
+    def test_failure_propagates(self):
+        res = self.run_guard(['--deadline-utc', deadline_in(60), 'false'])
+        self.assertEqual(res.returncode, 1)
+        self.assertEqual(self.read_state()['status'], 'failure')
+        self.assert_dry_run(res)
+
+    @unittest.skipUnless(IS_LINUX, 'linux only')
+    def test_timeout_124(self):
+        res = self.run_guard(
+            ['--deadline-utc', deadline_in(2), 'sleep', '30'], timeout=30)
+        self.assertEqual(res.returncode, 124)
+        self.assertEqual(self.read_state()['status'], 'timeout')
+        self.assert_dry_run(res)
+
+    @unittest.skipUnless(IS_LINUX, 'linux only')
+    def test_process_tree_cleanup(self):
+        # Child spawns a grandchild sleeping under a marker file; guard must
+        # SIGTERM the whole group on timeout.
+        script = os.path.join(self.tmp, 'parent.sh')
+        with open(script, 'w') as f:
+            f.write('#!/bin/bash\nnohup sleep 300 &\necho $! > %s/gc.pid\nsleep 300\n'
+                    % self.tmp)
+        os.chmod(script, 0o755)
+        res = self.run_guard(['--deadline-utc', deadline_in(3), '/bin/bash', script],
+                             timeout=45)
+        self.assertEqual(res.returncode, 124)
+        time.sleep(1.5)
+        with open(os.path.join(self.tmp, 'gc.pid')) as f:
+            gc = int(f.read().strip())
+        with self.assertRaises(ProcessLookupError):
+            os.kill(gc, 0)
+        self.assert_dry_run(res)
+
+    @unittest.skipUnless(IS_LINUX, 'linux only')
+    def test_launch_failure(self):
+        res = self.run_guard(
+            ['--deadline-utc', deadline_in(60), '/nonexistent/binary/xyz'])
+        self.assertEqual(res.returncode, 125)
+        st = self.read_state()
+        self.assertEqual(st['status'], 'wrapper_error')
+        self.assert_dry_run(res)
+
+    def test_invalid_deadlines(self):
+        now = datetime.datetime.now(datetime.timezone.utc)
+        expired = (now - datetime.timedelta(seconds=1)).isoformat()
+        naive = (datetime.datetime.utcnow() + datetime.timedelta(hours=1)).isoformat()
+        too_far = deadline_in(13 * 3600)
+        for bad in (expired, naive, too_far):
+            res = self.run_guard(['--deadline-utc', bad, 'true'])
+            self.assertEqual(res.returncode, 2, msg=bad)
+            self.assertEqual(self.read_state()['status'], 'preflight_rejected')
+            self.assert_dry_run(res)
+        res = self.run_guard(['--deadline-utc', deadline_in(60)])
+        self.assertEqual(res.returncode, 2)
+
+    @unittest.skipUnless(IS_LINUX, 'linux only')
+    def test_signal_cleanup(self):
+        p = subprocess.Popen(
+            [sys.executable, GUARD, '--log', self.log,
+             '--deadline-utc', deadline_in(120), 'sleep', '90'],
+            stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+        time.sleep(3)
+        p.send_signal(subprocess.signal.SIGTERM)
+        out, _ = p.communicate(timeout=45)
+        self.assertEqual(p.returncode, 130)
+        self.assertEqual(self.read_state()['status'], 'interrupted')
+        self.assertIn('DRY_RUN_SHUTDOWN', out)
+
+    @unittest.skipUnless(IS_LINUX, 'linux only')
+    def test_no_network_no_creds(self):
+        src = open(GUARD).read()
+        for banned in ('requests', 'urllib', 'socket.socket', 'http', 'paramiko',
+                       'boto3', 'AWS_', 'os.environ['):
+            self.assertNotIn(banned, src)
+
+
+if __name__ == '__main__':
+    unittest.main()

@@ -1,0 +1,112 @@
+{
+  "identity_SHA": "637a5e77db60fecb85c569b7bbbb9cdececdef317e8a62136f49a1f9ef1a5f04",
+  "identity": {
+    "protocol": {
+      "design_version": 14,
+      "name": "HRDecoder-ClassBalancedCorrection",
+      "seed": 42,
+      "private_seed": 20261008,
+      "canvas": 2048,
+      "updates": 40000,
+      "global_batch": 2,
+      "precision": "BF16 network; FP32 residual composition/probabilities/losses",
+      "optimizer": {
+        "type": "SGD",
+        "lr": 0.005,
+        "private_lr_multiplier": 4,
+        "momentum": 0.9,
+        "weight_decay": 0.0005
+      },
+      "lr": {
+        "type": "poly",
+        "power": 1,
+        "warmup": 1500,
+        "warmup_ratio": 1e-06
+      },
+      "lambda_k": [
+        [
+          0,
+          0
+        ],
+        [
+          1500,
+          0
+        ],
+        [
+          4000,
+          0.5
+        ],
+        [
+          32000,
+          0.5
+        ],
+        [
+          40000,
+          0.1
+        ]
+      ],
+      "GT": "base original Dice + .25 GT-stratified balanced BCE + .1 HRcrop original Dice; private original Dice + .25 fullGT positive/negative balanced BCE",
+      "mask": "Existing geometry-valid and ignore255 masking retained; not claiming every original training detail identical",
+      "KD": "base fixed GT-consistent teacher KL normalized by fullGTpositive/negative counts at .5*lambda_K; private fixed GT-consistent teacher fullGT positive/negative stratified KL at lambda_K; teacher input only during training",
+      "readout": "W48 F1-F4 project32/sum; RGB/probability pixelunshuffle2->16 each at1/2; DW13-LN-e2 blocks64x2; zero64->16/pixelshuffle2",
+      "gradient_route": "private feature/logit inputs detach; explicit base GT and base teacher KL train HRNet; private GT/KD cannot change base",
+      "inference": "resize final FP32 logits then sigmoid; no teacher or GT",
+      "classes": [
+        "EX",
+        "HE",
+        "SE",
+        "MA"
+      ],
+      "threshold": "strictly > .5",
+      "validation_images": 76,
+      "validation_interval": 4000,
+      "student_TTA": false,
+      "inference_teacher": false,
+      "inference_online_H4": false,
+      "test_selection": false,
+      "shutdown_after_completion": false,
+      "data_cache_hash_rescan": false,
+      "initialization": "fresh ImageNet W48 seed42; no warm task weights",
+      "screen_updates": 4000,
+      "accuracy_guaranteed": false,
+      "gradient_clip": {
+        "type": "global_L2",
+        "max_norm": 5.0,
+        "after_finite_check": true
+      },
+      "critical_stop": {
+        "after_update_at_least": 8000,
+        "mIoU_drop_from_best_at_least_pp": 15.0,
+        "or_drop_at_least_pp": 8.0,
+        "with_previous_class_IoU_at_least": 5.0,
+        "and_current_class_IoU_zero": true,
+        "action": "save own current checkpoint and stop before another update; not an overfitting claim"
+      }
+    },
+    "code": {
+      "baseline.py": "3e19781d2172a7b211f80994739b387d3235c966dd9c81b2f777e1b3c33b2aa9",
+      "model.py": "f49e08ec2b5d3b04590813f9e13ac06ae3c52eb422e7ec379b7f93de5b2115c9",
+      "private_modules.py": "08541136cd72e039a02f145adba9410b404f6852bc226ab716639e43cc82ec60",
+      "stable_objectives.py": "bf79135d2f756b4abcad655beee9ed24f7bde738f62588a5532917e4b881e3ae",
+      "fast_objectives.py": "c83b0320c0bc4f6841f1be555453f3fde7b31458565723929ee8ea98a92544a6",
+      "objectives.py": "4a57912cec38cc5bfea157fb0947c37a3f2372cfbb30115104d208d113749878",
+      "data.py": "6145eb862cf75b895767ad627b4bac9ae6a417feacd92c909a4771765bce6545",
+      "loader.py": "ca9642f64c107df309127ddf5197fab5c86c46907ff5f247b5f5772d728ff74e",
+      "train.py": "716c165d78f5de9726c37f51f53043e3cfcb8a84b6722038b77494630cd28ef2"
+    },
+    "spec_SHA": "c52a525680e48c71f406695c003717a928597b6fc1819b4f39ec999b6974e328",
+    "screen_protocol_SHA": "fdbf5af9b65454989f346c26964dfc486a5dd632b498b55c7d0629f99e3e2a3e",
+    "screen_gate_code_SHA": "d67c451bf2c29ee2600433d107f5cfe9f9dee6fa9b4ba51f627ed896c03edfbf",
+    "ImageNet_W48_SHA": "d2186c55782308392ae14cf179ac4840143b09abdbba81aa3f9274c795ebc960",
+    "data_identity_SHA": "7c53b86bcb27ccd121042f667cc58e39b98716a8c477bfd1f1657fa126575719",
+    "cache_identity": {
+      "A": "0674eb8fd875187e92bc4369e6fc41eb906339acb1f2057bd1d2dcd6c6933ec1",
+      "U": "1696b6eed682e116e98b6630bd429bd49986c24323010215fa8a0b4364952aa5",
+      "S": "b9f9886b393b14c2a25863d56fdbc1f6667bfab1200410d83fd0eb223471207a"
+    },
+    "torch": "2.0.1+cu117"
+  },
+  "baseline_initial_state_SHA": "e180ed1738b5cde6797e60a124aaf75b3cc78309463bb358a240cbddf0480f00",
+  "initialization": "fresh ImageNet seed42; no task checkpoint",
+  "resume_from_own_update": null
+}

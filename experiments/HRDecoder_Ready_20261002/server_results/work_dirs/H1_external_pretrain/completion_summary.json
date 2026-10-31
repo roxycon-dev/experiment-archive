@@ -1,0 +1,21 @@
+{
+  "status": "complete",
+  "stop_reason": null,
+  "elapsed_seconds": 3762.144079893944,
+  "stage": "external_pretrain",
+  "mode": "formal",
+  "updates_done": 2400,
+  "micro_steps": 4804,
+  "best": {
+    "mIoU_lesion4": 0.42999768710592823,
+    "update": 2400
+  },
+  "config_file_sha256": "97bf76e9d68c6dae493d318a80da21f5c2de7415cd037c0428b8b65cfd1be649",
+  "resume_warnings": [],
+  "checkpoints": {
+    "last": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/H1_external_pretrain/ckpt_last.pth",
+    "best": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/H1_external_pretrain/ckpt_best.pth",
+    "final": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/H1_external_pretrain/ckpt_final.pth"
+  },
+  "generated_at": "2026-10-02T05:16:00.962970+00:00"
+}

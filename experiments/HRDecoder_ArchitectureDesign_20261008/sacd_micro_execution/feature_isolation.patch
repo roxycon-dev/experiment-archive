@@ -1,0 +1,14 @@
+--- a/sacd_execution/model.py
++++ b/sacd_execution/model.py
+@@ -94,7 +94,10 @@
+         for local, box in zip(slide['logits'], slide['boxes']):
+             y1, y2, x1, x2 = box
+             z0[..., y1:y2, x1:x2] = base._fuse_logits(global_logits[..., y1:y2, x1:x2], local)
+-        actions = self.private(image, features, z0)
++        # Proposed follow-up only: retain direct z0 task gradients, but prevent
++        # final GT/KD from changing HRNet through the private feature path.
++        private_features = tuple(feature.detach() for feature in features)
++        actions = self.private(image, private_features, z0)
+         logits, log_probs = transport_logits(z0, actions)
+         return {'logits': logits, 'base_logits': z0, 'action_logits': actions,
+                 'action_log_probs': log_probs, 'hr_loss': hr_loss}

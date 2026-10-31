@@ -1,0 +1,16 @@
+{
+  "status": "AUTOMATION_DELETED_AFTER_VERIFIED_DELIVERY_AND_AUTH_CLEANUP",
+  "automation": {
+    "automationId": "automation-2",
+    "mode": "delete",
+    "deleteStatus": "deleted",
+    "snapshot": {
+      "kind": "heartbeat",
+      "name": "论文补证训练与结果收尾",
+      "rrule": "RRULE:FREQ=MINUTELY;INTERVAL=45"
+    }
+  },
+  "servers_shutdown": false,
+  "experiments_and_report_review_complete": true,
+  "temporary_task_auth_cleanup_complete": true
+}

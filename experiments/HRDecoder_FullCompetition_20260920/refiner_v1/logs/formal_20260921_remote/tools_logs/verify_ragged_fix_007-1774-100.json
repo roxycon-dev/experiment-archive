@@ -1,0 +1,337 @@
+{
+  "schema": "hrdecoder-refiner-ragged-fix-verify/v1",
+  "split": "val",
+  "index": 0,
+  "stem": "007-1774-100",
+  "image_hw": [
+    1728,
+    2592
+  ],
+  "n_tiles": 11,
+  "n_boxes": 11,
+  "candidate": {
+    "threshold": 0.1,
+    "dilate": 0,
+    "margin": 24
+  },
+  "extraction": {
+    "context": 32,
+    "max_patch": 768
+  },
+  "device": "cuda",
+  "ckpt": "/root/autodl-tmp/HRDecoder_FullCompetition_20260920/refiner_v1/runs/formal_20260921/stage1/nodes/node_ep200.pth",
+  "window_shapes": [
+    [
+      114,
+      117
+    ],
+    [
+      117,
+      121
+    ],
+    [
+      119,
+      121
+    ],
+    [
+      119,
+      122
+    ],
+    [
+      120,
+      124
+    ],
+    [
+      121,
+      122
+    ],
+    [
+      122,
+      124
+    ],
+    [
+      123,
+      127
+    ],
+    [
+      124,
+      124
+    ]
+  ],
+  "n_distinct_window_shapes": 9,
+  "cache_geometry": {
+    "npz": "/root/autodl-tmp/HRDecoder_FullCompetition_20260920/refiner_v1/patch_cache/patch/val/007-1774-100.npz",
+    "cached_candidate_tiles": 11,
+    "tiles_identical": true,
+    "rects_identical": true,
+    "shapes_identical": true,
+    "note": "the evaluator cuts exactly the rectangle the training cache stored"
+  },
+  "identity_zero_init": {
+    "assembled_bitwise_champion": true,
+    "max_abs_diff": 0.0,
+    "n_buckets": 9,
+    "n_forward": 9
+  },
+  "strict_load": {
+    "missing": [],
+    "unexpected": [],
+    "stage": "stage1_overfit",
+    "step": 2200,
+    "ok": true
+  },
+  "legacy_repro": {
+    "statement": "np.stack(patches)",
+    "result": "ValueError: all input arrays must have the same shape",
+    "fixed_path_shapes": [
+      [
+        2,
+        56,
+        60
+      ],
+      [
+        2,
+        53,
+        57
+      ],
+      [
+        2,
+        60,
+        60
+      ],
+      [
+        2,
+        55,
+        57
+      ],
+      [
+        2,
+        55,
+        57
+      ],
+      [
+        2,
+        58,
+        60
+      ]
+    ],
+    "fixed_path_is_ragged": true
+  },
+  "bucket_stats": {
+    "mode": "shape-bucketed exact windows (no padding)",
+    "n_tiles": 11,
+    "n_buckets": 9,
+    "n_forward": 9,
+    "max_bucket_size": 2,
+    "batch_cap": 8,
+    "max_window": 127,
+    "n_distinct_shapes": 9
+  },
+  "bucket_vs_per_patch": {
+    "per_tile": [
+      {
+        "tile": [
+          649,
+          833,
+          709,
+          889
+        ],
+        "shape": [
+          2,
+          56,
+          60
+        ],
+        "shape_ok": true,
+        "max_abs_diff": 0.0,
+        "n_exact": 6720,
+        "n_elements": 6720
+      },
+      {
+        "tile": [
+          730,
+          865,
+          787,
+          918
+        ],
+        "shape": [
+          2,
+          53,
+          57
+        ],
+        "shape_ok": true,
+        "max_abs_diff": 0.0,
+        "n_exact": 6042,
+        "n_elements": 6042
+      },
+      {
+        "tile": [
+          859,
+          1147,
+          919,
+          1207
+        ],
+        "shape": [
+          2,
+          60,
+          60
+        ],
+        "shape_ok": true,
+        "max_abs_diff": 0.0,
+        "n_exact": 7200,
+        "n_elements": 7200
+      },
+      {
+        "tile": [
+          905,
+          1046,
+          962,
+          1101
+        ],
+        "shape": [
+          2,
+          55,
+          57
+        ],
+        "shape_ok": true,
+        "max_abs_diff": 0.0,
+        "n_exact": 6270,
+        "n_elements": 6270
+      },
+      {
+        "tile": [
+          1104,
+          1124,
+          1161,
+          1179
+        ],
+        "shape": [
+          2,
+          55,
+          57
+        ],
+        "shape_ok": true,
+        "max_abs_diff": 0.0,
+        "n_exact": 6270,
+        "n_elements": 6270
+      },
+      {
+        "tile": [
+          1150,
+          341,
+          1210,
+          399
+        ],
+        "shape": [
+          2,
+          58,
+          60
+        ],
+        "shape_ok": true,
+        "max_abs_diff": 0.0,
+        "n_exact": 6960,
+        "n_elements": 6960
+      },
+      {
+        "tile": [
+          1308,
+          395,
+          1366,
+          450
+        ],
+        "shape": [
+          2,
+          55,
+          58
+        ],
+        "shape_ok": true,
+        "max_abs_diff": 0.0,
+        "n_exact": 6380,
+        "n_elements": 6380
+      },
+      {
+        "tile": [
+          1421,
+          1237,
+          1484,
+          1296
+        ],
+        "shape": [
+          2,
+          59,
+          63
+        ],
+        "shape_ok": true,
+        "max_abs_diff": 0.0,
+        "n_exact": 7434,
+        "n_elements": 7434
+      },
+      {
+        "tile": [
+          1503,
+          674,
+          1561,
+          731
+        ],
+        "shape": [
+          2,
+          57,
+          58
+        ],
+        "shape_ok": true,
+        "max_abs_diff": 0.0,
+        "n_exact": 6612,
+        "n_elements": 6612
+      },
+      {
+        "tile": [
+          1569,
+          533,
+          1622,
+          583
+        ],
+        "shape": [
+          2,
+          50,
+          53
+        ],
+        "shape_ok": true,
+        "max_abs_diff": 0.0,
+        "n_exact": 5300,
+        "n_elements": 5300
+      },
+      {
+        "tile": [
+          1632,
+          580,
+          1692,
+          638
+        ],
+        "shape": [
+          2,
+          58,
+          60
+        ],
+        "shape_ok": true,
+        "max_abs_diff": 0.0,
+        "n_exact": 6960,
+        "n_elements": 6960
+      }
+    ],
+    "max_abs_diff": 0.0,
+    "all_shapes_ok": true,
+    "n_exact_elements": 72148,
+    "n_elements": 72148
+  },
+  "invariants": {
+    "ex_se_changed": 0,
+    "outside_cand_changed": 0,
+    "changed_inside_candidate": 72148,
+    "nonfinite_refined": 0,
+    "assembled_bucket_vs_perpatch_max_abs_diff": 0.0,
+    "assembled_bucket_vs_perpatch_n_diff": 0,
+    "n_candidate_px": 36074
+  },
+  "residual_bound_ok": true,
+  "max_abs_residual_MA": 0.06336692720651627,
+  "verdict": true
+}

@@ -1,0 +1,203 @@
+{
+  "status": "PASS",
+  "canvas": 128,
+  "global_batch": 2,
+  "SGD_updates": 0,
+  "model_forward_schedule": "per_image_forward_then_concatenate",
+  "native_physical_B2_convolution_parity_claimed": false,
+  "all_BN_buffers_unchanged": true,
+  "records": [
+    {
+      "fixture": "zero_residual_initialization",
+      "BF16": false,
+      "checkpointing": false,
+      "micro_batch": 2,
+      "physical_forward_batch": 1,
+      "loss_batch": 2,
+      "backward_calls": 1,
+      "full_parameter_gradient_comparison": true,
+      "S_Z_loss_comparison": true,
+      "tolerance": {
+        "rtol": 0.0003,
+        "atol": 3e-06
+      },
+      "loss": 2.5916295051574707
+    },
+    {
+      "fixture": "zero_residual_initialization",
+      "BF16": false,
+      "checkpointing": true,
+      "micro_batch": 2,
+      "physical_forward_batch": 1,
+      "loss_batch": 2,
+      "backward_calls": 1,
+      "full_parameter_gradient_comparison": true,
+      "S_Z_loss_comparison": true,
+      "tolerance": {
+        "rtol": 0.0003,
+        "atol": 3e-06
+      },
+      "loss": 2.5916295051574707
+    },
+    {
+      "fixture": "zero_residual_initialization",
+      "BF16": false,
+      "checkpointing": true,
+      "micro_batch": 1,
+      "physical_forward_batch": 1,
+      "loss_batch": 1,
+      "backward_calls": 2,
+      "full_parameter_gradient_comparison": true,
+      "S_Z_loss_comparison": true,
+      "tolerance": {
+        "rtol": 0.0003,
+        "atol": 3e-06
+      },
+      "loss": 2.591629981994629
+    },
+    {
+      "fixture": "zero_residual_initialization",
+      "BF16": true,
+      "checkpointing": false,
+      "micro_batch": 2,
+      "physical_forward_batch": 1,
+      "loss_batch": 2,
+      "backward_calls": 1,
+      "full_parameter_gradient_comparison": true,
+      "S_Z_loss_comparison": true,
+      "tolerance": {
+        "rtol": 0.03,
+        "atol": 0.0005
+      },
+      "loss": 2.5915818214416504
+    },
+    {
+      "fixture": "zero_residual_initialization",
+      "BF16": true,
+      "checkpointing": true,
+      "micro_batch": 2,
+      "physical_forward_batch": 1,
+      "loss_batch": 2,
+      "backward_calls": 1,
+      "full_parameter_gradient_comparison": true,
+      "S_Z_loss_comparison": true,
+      "tolerance": {
+        "rtol": 0.03,
+        "atol": 0.0005
+      },
+      "loss": 2.5915818214416504
+    },
+    {
+      "fixture": "zero_residual_initialization",
+      "BF16": true,
+      "checkpointing": true,
+      "micro_batch": 1,
+      "physical_forward_batch": 1,
+      "loss_batch": 1,
+      "backward_calls": 2,
+      "full_parameter_gradient_comparison": true,
+      "S_Z_loss_comparison": true,
+      "tolerance": {
+        "rtol": 0.03,
+        "atol": 0.0005
+      },
+      "loss": 2.5915814638137817
+    },
+    {
+      "fixture": "deterministic_nonzero_residual_connectivity_fixture",
+      "BF16": false,
+      "checkpointing": false,
+      "micro_batch": 2,
+      "physical_forward_batch": 1,
+      "loss_batch": 2,
+      "backward_calls": 1,
+      "full_parameter_gradient_comparison": true,
+      "S_Z_loss_comparison": true,
+      "tolerance": {
+        "rtol": 0.0003,
+        "atol": 3e-06
+      },
+      "loss": 2.5889997482299805
+    },
+    {
+      "fixture": "deterministic_nonzero_residual_connectivity_fixture",
+      "BF16": false,
+      "checkpointing": true,
+      "micro_batch": 2,
+      "physical_forward_batch": 1,
+      "loss_batch": 2,
+      "backward_calls": 1,
+      "full_parameter_gradient_comparison": true,
+      "S_Z_loss_comparison": true,
+      "tolerance": {
+        "rtol": 0.0003,
+        "atol": 3e-06
+      },
+      "loss": 2.5889997482299805
+    },
+    {
+      "fixture": "deterministic_nonzero_residual_connectivity_fixture",
+      "BF16": false,
+      "checkpointing": true,
+      "micro_batch": 1,
+      "physical_forward_batch": 1,
+      "loss_batch": 1,
+      "backward_calls": 2,
+      "full_parameter_gradient_comparison": true,
+      "S_Z_loss_comparison": true,
+      "tolerance": {
+        "rtol": 0.0003,
+        "atol": 3e-06
+      },
+      "loss": 2.58899986743927
+    },
+    {
+      "fixture": "deterministic_nonzero_residual_connectivity_fixture",
+      "BF16": true,
+      "checkpointing": false,
+      "micro_batch": 2,
+      "physical_forward_batch": 1,
+      "loss_batch": 2,
+      "backward_calls": 1,
+      "full_parameter_gradient_comparison": true,
+      "S_Z_loss_comparison": true,
+      "tolerance": {
+        "rtol": 0.03,
+        "atol": 0.0005
+      },
+      "loss": 2.588980197906494
+    },
+    {
+      "fixture": "deterministic_nonzero_residual_connectivity_fixture",
+      "BF16": true,
+      "checkpointing": true,
+      "micro_batch": 2,
+      "physical_forward_batch": 1,
+      "loss_batch": 2,
+      "backward_calls": 1,
+      "full_parameter_gradient_comparison": true,
+      "S_Z_loss_comparison": true,
+      "tolerance": {
+        "rtol": 0.03,
+        "atol": 0.0005
+      },
+      "loss": 2.588980197906494
+    },
+    {
+      "fixture": "deterministic_nonzero_residual_connectivity_fixture",
+      "BF16": true,
+      "checkpointing": true,
+      "micro_batch": 1,
+      "physical_forward_batch": 1,
+      "loss_batch": 1,
+      "backward_calls": 2,
+      "full_parameter_gradient_comparison": true,
+      "S_Z_loss_comparison": true,
+      "tolerance": {
+        "rtol": 0.03,
+        "atol": 0.0005
+      },
+      "loss": 2.5889803171157837
+    }
+  ]
+}

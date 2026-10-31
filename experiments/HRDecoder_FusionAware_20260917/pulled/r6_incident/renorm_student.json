@@ -1,0 +1,34 @@
+{
+  "config": "configs/lesion/exp/hrplus_patch_dice.py",
+  "ckpt": "/root/autodl-tmp/hrplus/D_0913_retry/best_mIoU_iter_2000.pth",
+  "which": "student",
+  "bn_count": 312,
+  "learnable_params_unchanged": true,
+  "param_fp": "13a153b9d1d96e3d",
+  "bn_after": {
+    "backbone.bn1": {
+      "mean_abs": 0.15624485909938812,
+      "var_mean": 0.13693705201148987
+    },
+    "backbone.bn2": {
+      "mean_abs": 0.1074894368648529,
+      "var_mean": 0.007272779475897551
+    },
+    "backbone.layer1.0.bn1": {
+      "mean_abs": 0.04077025502920151,
+      "var_mean": 0.0010067466646432877
+    },
+    "backbone.layer1.0.bn2": {
+      "mean_abs": 0.05507528781890869,
+      "var_mean": 0.002562632318586111
+    },
+    "backbone.layer1.0.bn3": {
+      "mean_abs": 0.009541137143969536,
+      "var_mean": 0.00023061093816068023
+    }
+  },
+  "bn_changed_count": 312,
+  "out_ckpt": "/root/autodl-tmp/hrplus/results/E_0916/d_renorm_student.pth",
+  "elapsed_s": 108.6,
+  "status": "success"
+}

@@ -1,0 +1,142 @@
+{
+  "_comment": [
+    "HRDecoder 历史类别专家 — val 二值掩膜导出/互补性分析 的统一配置模板。",
+    "用法：复制本文件为 expert_eval_settings.json，把所有 REQUIRED 值替换为服务器上的真实绝对路径，",
+    "并填满 expected_sha256（每一项都必须与文件实际 sha256 完全一致；缺失或不符一律 fail closed）。",
+    "严禁在此文件写入账号/密码/密钥；本工具不联网、不登录、不上传。",
+    "HRPlus 导出需要：repo / data_root / config / student_checkpoint / reference_checkpoint / cache_dir /",
+    "champion / expected_sha256 / fusionaware_src_dir / fusionaware_exec_dir / cs_candidates / export。",
+    "整模导出需要：ddr_root / export / fullmodel；分析需要：export.out_root（analysis 段可选）。"
+  ],
+  "schema_version": "hrdecoder-expert-eval/v1",
+
+  "repo": "REQUIRED_MMSEG_FORK_ABS_PATH",
+  "fusionaware_src_dir": "REQUIRED_DIR_CONTAINING_runtime.py_run_protocol.py_fusion_core.py",
+  "fusionaware_exec_dir": "REQUIRED_DIR_CONTAINING_eval_candidates.py",
+  "config": "configs/lesion/exp/hrplus_patch_dice.py",
+  "data_root": "REQUIRED_DDR_split_613_ABS_PATH",
+  "ddr_root": "REQUIRED_DDR_split_613_ABS_PATH_SAME_AS_data_root",
+  "student_checkpoint": "REQUIRED_D_student_2000.pth_ABS_PATH",
+  "reference_checkpoint": "REQUIRED_B_weights.pth_ABS_PATH",
+  "cache_dir": "REQUIRED_SCRATCH_DIR_reserved_key_for_run_protocol_validate_settings",
+  "_cache_dir_note": "本工具**不写任何概率缓存**（禁止 fp32/fp16 概率落盘）；该键仅因 run_protocol.validate_settings 把它列为必填而保留。",
+
+  "champion": {
+    "head": "REQUIRED_H4_best.pth_ABS_PATH",
+    "members": [
+      {
+        "name": "D",
+        "config": "configs/lesion/exp/hrplus_patch_dice.py",
+        "checkpoint": "REQUIRED_D_student_2000.pth_ABS_PATH",
+        "load": "student_only",
+        "weight": 3
+      },
+      {
+        "name": "E",
+        "config": "configs/lesion/exp/hrplus_mares.py",
+        "checkpoint": "REQUIRED_E_1500.pth_ABS_PATH",
+        "load": "full",
+        "weight": 2
+      },
+      {
+        "name": "B",
+        "config": "configs/lesion/exp/hr100_b.py",
+        "checkpoint": "REQUIRED_B_weights.pth_ABS_PATH",
+        "load": "full",
+        "weight": 1
+      },
+      {
+        "name": "E4",
+        "config": "configs/lesion/exp/e4_detail_split613.py",
+        "checkpoint": "REQUIRED_E4_weights.pth_ABS_PATH",
+        "load": "full",
+        "weight": 1
+      }
+    ]
+  },
+
+  "expected_sha256": {
+    "_note": "键 = 上面出现的路径字符串本身；值 = 该文件 sha256（十六进制小写）。任何缺失/不符 fail closed。",
+    "configs/lesion/exp/hrplus_patch_dice.py": "REQUIRED_SHA256_HEX64",
+    "configs/lesion/exp/hrplus_mares.py": "REQUIRED_SHA256_HEX64",
+    "configs/lesion/exp/hr100_b.py": "REQUIRED_SHA256_HEX64",
+    "configs/lesion/exp/e4_detail_split613.py": "REQUIRED_SHA256_HEX64",
+    "REQUIRED_D_student_2000.pth_ABS_PATH": "REQUIRED_SHA256_HEX64",
+    "REQUIRED_B_weights.pth_ABS_PATH": "REQUIRED_SHA256_HEX64",
+    "REQUIRED_E_1500.pth_ABS_PATH": "REQUIRED_SHA256_HEX64",
+    "REQUIRED_E4_weights.pth_ABS_PATH": "REQUIRED_SHA256_HEX64",
+    "REQUIRED_H4_best.pth_ABS_PATH": "REQUIRED_SHA256_HEX64"
+  },
+
+  "cs_candidates": [
+    {
+      "name": "C2000",
+      "path": "REQUIRED_C_step_2000.pth_ABS_PATH",
+      "arm": "C",
+      "steps": 2000,
+      "sha256": "REQUIRED_SHA256_HEX64",
+      "_definition": "C 臂（class-balanced 采样续训）在 step 2000 的 node checkpoint；概率只取 _student_prob",
+      "_history_val_miou": 0.3979739003932351
+    },
+    {
+      "name": "S4000",
+      "path": "REQUIRED_S_step_4000.pth_ABS_PATH",
+      "arm": "S",
+      "steps": 4000,
+      "sha256": "REQUIRED_SHA256_HEX64",
+      "_definition": "S 臂（class→image→instance 条件采样）在 step 4000 的 node checkpoint；概率只取 _student_prob",
+      "_history_val_miou": 0.39831982892663487
+    }
+  ],
+
+  "export": {
+    "out_root": "REQUIRED_WRITABLE_OUT_ROOT_ABS_PATH",
+    "_note": "两个导出脚本必须共用同一个 out_root：共享 GT 写在 <out_root>/_shared/gt，HRPlus 写在 <out_root>/hrplus，整模写在 <out_root>/fullmodel。",
+    "pipelines": ["champion", "BASE_0", "D_blend", "C2000", "MIX_C2000", "S4000"]
+  },
+
+  "fullmodel": {
+    "_note": "U0/H0 走本工程 trainer 的整图/滑窗评测路径；config 相对本工程根目录（或用 config_base 给绝对基准）。",
+    "eval_mode": null,
+    "window_size": null,
+    "window_stride": null,
+    "imagenet_weights": {
+      "_note": "仅在 H0 的 adapter 需要在构建阶段预载 ImageNet 权重时才填；整模权重随后会被 strict checkpoint 全量覆盖。留空则跳过。",
+      "file": null,
+      "sha256": null
+    },
+    "models": [
+      {
+        "name": "U0",
+        "config": "configs/U0_convnext_unet_ddr_only.yaml",
+        "checkpoint": "REQUIRED_U0_ckpt_best.pth_ABS_PATH",
+        "sha256": "REQUIRED_SHA256_HEX64",
+        "expected_miou": 0.3844641257662971,
+        "_note": "expected_miou 为历史 val 复现目标；不符（>1e-6）即拒绝出图。不需要时删除该键。"
+      },
+      {
+        "name": "H0",
+        "config": "configs/H0_hrdecoder_ddr_only.yaml",
+        "checkpoint": "REQUIRED_H0_ckpt_best.pth_ABS_PATH",
+        "sha256": "REQUIRED_SHA256_HEX64",
+        "reference_root": "REQUIRED_OLD_HRDECODER_REPO_READONLY_ABS_PATH",
+        "_note": "H0 本地只有 6000 步的元数据（无 .pth）；权重必须由服务器提供，否则本模型阻塞（见 README 阻塞清单）。",
+        "expected_miou": null
+      }
+    ]
+  },
+
+  "analysis": {
+    "champion": "champion",
+    "models": ["champion", "BASE_0", "D_blend", "C2000", "MIX_C2000", "S4000", "U0", "H0"],
+    "out_dir": null,
+    "area_mode": "tertile",
+    "area_thresholds": null,
+    "_area_note": "tertile = 逐类按 GT 连通域面积的三分位切小/中/大；absolute 时给出 [small_max, medium_max] 像素阈值。"
+  },
+
+  "known_blockers": [
+    "H0：本地仅有 runs/H0_stopped6000_metadata.tar.gz（元数据，无 .pth）→ H0 需服务器权重；缺失时 export_fullmodel_masks.py 以 BLOCKED(exit 3) 退出。",
+    "C2000/S4000：需要 phase_cs.py 产出的 node checkpoint（payload 含 state_dict/arm/steps）；缺则 HRPlus 导出 BLOCKED。"
+  ]
+}

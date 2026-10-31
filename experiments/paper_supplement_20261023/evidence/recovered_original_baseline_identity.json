@@ -1,0 +1,35 @@
+{
+  "status": "PASS_RECOVERED_HISTORICAL_BASELINE_IDENTITY_AND_LOCAL_BACKUP",
+  "verified_at": "2026-10-24T01:26:26.833013+00:00",
+  "source_path": "C:\\Users\\GuanXingRen\\Downloads\\Compressed\\工程文件\\server_checkpoints\\01_板块一_baseline_best_iter32000.pth",
+  "source_checkpoint_sha256": "446fc7b598e9680a1470059d2aba3a6f9c2222b66658a5eccef6059b1362850f",
+  "source_bytes": 525855050,
+  "local_checkpoint": "D:\\dataset\\experiment\\paper_supplement_20261023\\models\\recovered_hrdecoder_baseline_u32000.pth",
+  "local_checkpoint_sha256": "446fc7b598e9680a1470059d2aba3a6f9c2222b66658a5eccef6059b1362850f",
+  "compact_checkpoint": "D:\\dataset\\experiment\\paper_supplement_20261023\\models\\recovered_hrdecoder_baseline_inference.pth",
+  "compact_sha256": "7455a7d3f4c8ed051abc1a127ef90045f9193d7b0f57628acf5a6e9613eecfa7",
+  "selected_update": 32000,
+  "historical_validation_mIoU": 0.39390182190651146,
+  "checkpoint_config_matches_original_log_exactly": true,
+  "state_tensors_finite": 1844,
+  "optimizer_floating_slots_finite": 923,
+  "source_files": [
+    {
+      "source": "C:\\Users\\GuanXingRen\\Downloads\\Compressed\\工程文件\\实验日志_json\\01_板块一_baseline.json",
+      "local": "D:\\dataset\\experiment\\paper_supplement_20261023\\evidence\\recovered_original_baseline\\01_板块一_baseline.json",
+      "sha256": "70b5c9faddcdcf894e316ca5194b286f6f4082cd4bc70df166d4b1d826e9ada0"
+    },
+    {
+      "source": "C:\\Users\\GuanXingRen\\Downloads\\Compressed\\工程文件\\01_板块一_baseline实验配置.py",
+      "local": "D:\\dataset\\experiment\\paper_supplement_20261023\\evidence\\recovered_original_baseline\\01_板块一_baseline实验配置.py",
+      "sha256": "553654f1879c6558fa0363794be011a67b9935728350df93465b611f50acb9a8"
+    }
+  ],
+  "inference_config": "D:\\dataset\\experiment\\paper_supplement_20261023\\evidence\\recovered_original_baseline\\inference_config.py",
+  "inference_config_sha256": "2277468e6ddbe1fcae8ed75965a2881a3b8e747d480688dacbbca0bcf35a6ceb",
+  "reported_historical_test_mIoU_pct": 42.2,
+  "test_score_verified_by_new_inference": false,
+  "retraining_needed_to_recover_baseline": false,
+  "historical_E4_parent_edge_established_by_finding_this_file": false,
+  "overall_campaign_complete": false
+}

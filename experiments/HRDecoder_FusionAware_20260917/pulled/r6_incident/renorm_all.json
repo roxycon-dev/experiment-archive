@@ -1,0 +1,34 @@
+{
+  "config": "configs/lesion/exp/hrplus_patch_dice.py",
+  "ckpt": "/root/autodl-tmp/hrplus/D_0913_retry/best_mIoU_iter_2000.pth",
+  "which": "all",
+  "bn_count": 624,
+  "learnable_params_unchanged": true,
+  "param_fp": "13a153b9d1d96e3d",
+  "bn_after": {
+    "backbone.bn1": {
+      "mean_abs": 0.1518128365278244,
+      "var_mean": 0.13524706661701202
+    },
+    "backbone.bn2": {
+      "mean_abs": 0.107506163418293,
+      "var_mean": 0.0072312732227146626
+    },
+    "backbone.layer1.0.bn1": {
+      "mean_abs": 0.04076884686946869,
+      "var_mean": 0.0010061769280582666
+    },
+    "backbone.layer1.0.bn2": {
+      "mean_abs": 0.055052176117897034,
+      "var_mean": 0.0025790769141167402
+    },
+    "backbone.layer1.0.bn3": {
+      "mean_abs": 0.00953805074095726,
+      "var_mean": 0.00023120699916034937
+    }
+  },
+  "bn_changed_count": 624,
+  "out_ckpt": "/root/autodl-tmp/hrplus/results/E_0916/d_renorm_all.pth",
+  "elapsed_s": 121.8,
+  "status": "success"
+}

@@ -1,0 +1,85 @@
+{
+  "checked_at": "2026-10-10T00:34:44.455864+08:00",
+  "next_routine_check_at": "2026-10-10T01:19:44.455864+08:00",
+  "interval_minutes": 45,
+  "dispatch_tolerance_seconds": 60,
+  "progress": {
+    "status": "TRAINING",
+    "completed": 1900,
+    "expected": 40000,
+    "saved_update": 1000,
+    "best_val_mIoU": null,
+    "time_unix": 1791563685.8596702
+  },
+  "performance": {
+    "completed_update": 1900,
+    "mean_batch_seconds": 0.9390833173692227,
+    "mean_step_compute_seconds": 0.9390548815578222,
+    "mean_data_wait_seconds": 2.8435811400413514e-05,
+    "window_batches": 100,
+    "warmup_batches_excluded": 12,
+    "workers": 12,
+    "prefetch_factor": 1,
+    "CUDA_future_batches": 1,
+    "shared_RAM_cache_bytes": 103079171144,
+    "channels_last": false,
+    "peak_allocated_bytes": 16901344768,
+    "peak_reserved_bytes": 18148753408,
+    "estimated_remaining_train_hours_excluding_validation": 9.93863177549094,
+    "time_unix": 1791563685.8590024,
+    "protocol_unchanged": true
+  },
+  "new_val_steps": [],
+  "status": "HEALTHY_NO_ACTION",
+  "notification_required": false,
+  "runtime": {
+    "server_online": true,
+    "checked_at_unix": 1791563698.6947088,
+    "shutdown_command_issued": false,
+    "external_processes_controlled": false,
+    "GPU_CAMPAIGN_RUNNING.json": {
+      "status": "FRESH_SCREEN_RUNNING",
+      "pid": 36273,
+      "controller_pid": 36083,
+      "identity_SHA": "4fa9d6cf18c806475d4877c34154ed15cb8e45500efe7f1e79e8dabd767758c9",
+      "start_unix": 1791561878.8532677,
+      "canvas": 2048,
+      "batch": 2,
+      "screen_updates": 4000,
+      "max_conditional_updates": 40000,
+      "shutdown_after_completion": false,
+      "shutdown_after_failure": false,
+      "further_revisions_user_authorized": true
+    },
+    "DEADLINE_GATE.json": {
+      "status": "PASS",
+      "measured_screen_estimate_seconds": 4305.376133322716,
+      "checked_unix": 1791561878.852232,
+      "original_deadline_unix": 1791568800,
+      "reserve_seconds": 180,
+      "full40k_conditional_on_screen": true
+    },
+    "own_process_checks": {
+      "pid": {
+        "pid": 36273,
+        "alive": true,
+        "cmdline": "/root/miniconda3/bin/python -u train.py --train ",
+        "matches_current_task": true
+      },
+      "controller_pid": {
+        "pid": 36083,
+        "alive": true,
+        "cmdline": "/root/miniconda3/bin/python controller.py ",
+        "matches_current_task": true
+      }
+    },
+    "own_RAM": {
+      "pid": 25079,
+      "bytes": 103079171144,
+      "alive": true,
+      "matches_own_RAM": true
+    },
+    "GPU_status": "utilization.gpu [%], memory.used [MiB], power.draw [W]\n100 %, 17839 MiB, 315.25 W\n"
+  },
+  "last_log_losses_are_not_val_metrics": true
+}

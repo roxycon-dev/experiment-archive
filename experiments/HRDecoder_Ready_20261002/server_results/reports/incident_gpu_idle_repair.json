@@ -1,0 +1,98 @@
+{
+  "recorded_at_epoch": 1790947095.4704711,
+  "failure": "export_U0 failed (1); inspect /root/autodl-tmp/HRDecoder_Ready_20261002/reports/finish/export_U0.log; engineering failure, not method rejection",
+  "export_miou_2048": 0.35805433670826103,
+  "historical_expected_miou_native": 0.3844641257662971,
+  "cause": "Historical evaluator had no resize; current generic export used new 2048 resize. Model source differs only in training-only gradient-checkpointing implementation.",
+  "repair": "Restored historical native whole-image pipeline; initial native-only attempt still had inherited sliding mode and failed. Single-image native+whole predictions now bitwise match all 4 classes of historical mask. Full strict metric guard retained.",
+  "original_config": "/root/autodl-tmp/HRDecoder_Ready_20261002/configs/resolved/U0_convnext_unet_ddr_only.yaml",
+  "restored_export_config": "/root/autodl-tmp/HRDecoder_Ready_20261002/configs/resolved/U0_historical_native_export.yaml",
+  "champion_reproduced_miou": 0.42669122905238266,
+  "test_touched": false,
+  "mirror_fault": "Checkpoint SFTP download blocked the single metadata loop; being split into independent connections/workers with channel timeouts.",
+  "single_image_reproduction": {
+    "sample_id": "007-1774-100",
+    "shape": [
+      1728,
+      2592
+    ],
+    "disagreement_pixels_per_class": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "bitwise_equal": true,
+    "inference": "native whole image"
+  },
+  "second_attempt_native_slide_miou": 0.36084468458702146,
+  "recovery_epoch": 1790948079.4909935,
+  "full_U0_reproduction": {
+    "n_images": 76,
+    "metrics": {
+      "protocol": "whole_image_accumulated_counts",
+      "threshold": 0.5,
+      "n_images": 76,
+      "per_class": {
+        "EX": {
+          "iou": 0.43677085723362574,
+          "f1": 0.6079895830774145,
+          "ppv": 0.6208056938277445,
+          "recall": 0.5956919289003209,
+          "aupr": 0.44456413169046294,
+          "tp": 173229,
+          "fp": 105810,
+          "fn": 117574,
+          "gt_positive_pixels": 290803
+        },
+        "HE": {
+          "iou": 0.38426938207497247,
+          "f1": 0.5551945120666699,
+          "ppv": 0.5447654345816992,
+          "recall": 0.5660306951350168,
+          "aupr": 0.4076207601366439,
+          "tp": 682590,
+          "fp": 570408,
+          "fn": 523334,
+          "gt_positive_pixels": 1205924
+        },
+        "SE": {
+          "iou": 0.5093488968147359,
+          "f1": 0.6749253242767708,
+          "ppv": 0.6958970572724397,
+          "recall": 0.6551806319636154,
+          "aupr": 0.47523172783917267,
+          "tp": 131956,
+          "fp": 57664,
+          "fn": 69448,
+          "gt_positive_pixels": 201404
+        },
+        "MA": {
+          "iou": 0.20748563207568488,
+          "f1": 0.34366559164602917,
+          "ppv": 0.30262680860881314,
+          "recall": 0.397580971075573,
+          "aupr": 0.15264729830509466,
+          "tp": 27546,
+          "fp": 63477,
+          "fn": 41738,
+          "gt_positive_pixels": 69284
+        }
+      },
+      "mIoU_lesion4": 0.38446869204975476,
+      "mF1": 0.5454437527667211,
+      "mPPV": 0.5410237485726742,
+      "mRecall": 0.5536210567686315,
+      "mAUPR": 0.37001597949284354,
+      "excluded_classes": {
+        "iou": [],
+        "aupr": []
+      },
+      "aupr_note": "256-bin histogram approximation of PR curve"
+    },
+    "checkpoint_sha256": "98d98a5d02dc2615062c3c31cd15d061daf3d7ab41cb8f25cd90b062cd53bb34",
+    "config_sha256": "cfc66cad69dd3a3bb52e740924d12bbb7958fa77bc50507f4dd127206d40154b",
+    "resize_to": null
+  },
+  "export_geometry_repair_verified_at_epoch": 1790948487.1123948
+}

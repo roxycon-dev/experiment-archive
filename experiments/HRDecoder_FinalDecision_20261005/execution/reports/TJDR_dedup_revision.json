@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "time": "2026-10-04T18:33:47.238674+00:00",
+  "training_started": false,
+  "reason": "pHash-only quarantine produced visual false positives on fundus images; geometry verification now required for all non-exact pairs.",
+  "reviewed_example": "TJDR_train_003 vs DDR train007-4850-300; visibly different vessel trees",
+  "candidate_threshold_unchanged": 18,
+  "geometric_threshold_unchanged": {
+    "inliers": 40,
+    "fraction": 0.6
+  },
+  "accepted_count": 439,
+  "previous_results_retained": true
+}

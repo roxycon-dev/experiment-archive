@@ -1,0 +1,607 @@
+{
+  "source_sha256": "a446d7fe22a2d83a6986407847d5b680c2e46088b40b6ba23b6825db53e4a2c5",
+  "source_files": {
+    "model.py": "055451717699715bd60b61027dfac560c29168f34c1b67ff69be28a6398347c2",
+    "data.py": "0e8a41d992acf796a45c7bf1a58cc65c421d9566acc2627d3642fae84b832272",
+    "losses.py": "471bf7ba0afd16c5ba25f6ee69be7d1d71a77f35f614378b643c36f6e490ab21",
+    "metrics.py": "c0d8a157f78cbf2ca532f1d801bbdd60c81efbbcf558a6ebf0f4d37a9574fc0c",
+    "train.py": "f52a3a2dbd21ab2bfed659d6c6dc5a031a1a94c2cb7a9bb0cc721549ed0661c5",
+    "evaluate.py": "98fd0d67cfd322712eb2aad744e998b756ab65ef92bf955cf6baf36a2f3b93ab",
+    "protocol.json": "7bcbcec189cee8c5559acc9558e7b5d53e745dba7ee00e1d11d6cde7f4f05dee"
+  },
+  "formal_updates": 0,
+  "test_accessed": false,
+  "torch": "2.6.0+cu124",
+  "unit_tests": {
+    "status": "PASS",
+    "tests": 20,
+    "failures": 0,
+    "errors": 0
+  },
+  "data_audit": {
+    "status": "PASS",
+    "checks": {
+      "train": {
+        "images_and_labels_sha256_verified": 454
+      },
+      "val": {
+        "images_and_labels_sha256_verified": 76
+      }
+    },
+    "train_probe_sids": [
+      "007-4847-300",
+      "007-4679-200",
+      "007-7014-400",
+      "007-6361-400",
+      "007-4885-300",
+      "007-5169-300",
+      "007-6612-400",
+      "007-5885-300"
+    ],
+    "test_pixels_read": false,
+    "test_metadata_only": true,
+    "identity_sha256": "7c53b86bcb27ccd121042f667cc58e39b98716a8c477bfd1f1657fa126575719"
+  },
+  "train_probe_sids": [
+    "007-4847-300",
+    "007-4679-200",
+    "007-7014-400",
+    "007-6361-400",
+    "007-4885-300",
+    "007-5169-300",
+    "007-6612-400",
+    "007-5885-300"
+  ],
+  "backbone_integration": {
+    "status": "PASS",
+    "scope": "full W48, FP32 CUDA, 128 grid; no SGD",
+    "records": [
+      {
+        "checkpointing": false,
+        "loss": 2.6124348640441895,
+        "nonzero_gradient_parameters": 1003
+      },
+      {
+        "checkpointing": true,
+        "loss": 2.6124348640441895,
+        "nonzero_gradient_parameters": 1003
+      }
+    ],
+    "selected_gradient_parity": [
+      "backbone.net.conv1.weight",
+      "backbone.net.stage2.0.branches.0.0.conv1.weight",
+      "backbone.net.stage4.2.branches.3.3.conv2.weight",
+      "decoder.readout.weight"
+    ],
+    "all_BN_buffers_unchanged": true,
+    "initialization": {
+      "file_sha256": "d2186c55782308392ae14cf179ac4840143b09abdbba81aa3f9274c795ebc960",
+      "verified_backbone_tensors": 1830,
+      "ignored_classification_tensors": 126,
+      "fusion_bilinear_modules": 31,
+      "timm_version": "1.0.27"
+    },
+    "parameters": 65569364,
+    "decoder_parameters": 244244
+  },
+  "real_crop_learning": {
+    "status": "NOT_PASSED",
+    "scope": "256x256 fixed REAL TRAINING crops, learnability diagnostic only",
+    "not_validation_accuracy": true,
+    "not_formal_40k": true,
+    "discarded_updates": 64,
+    "initial": {
+      "mIoU_percent": 0.0,
+      "IoU_percent": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "precision_percent": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "recall_percent": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "counts": [
+        [
+          0,
+          0,
+          1672
+        ],
+        [
+          0,
+          0,
+          2017
+        ],
+        [
+          0,
+          0,
+          6004
+        ],
+        [
+          0,
+          0,
+          545
+        ]
+      ],
+      "images": 8,
+      "classes": [
+        "EX",
+        "HE",
+        "SE",
+        "MA"
+      ],
+      "threshold": "strictly > 0.5",
+      "undefined_precision_classes": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "loss": 0.8056712001562119
+    },
+    "final": {
+      "mIoU_percent": 12.814388729917582,
+      "IoU_percent": [
+        7.790432801822324,
+        0.0,
+        0.0,
+        43.46712211784799
+      ],
+      "precision_percent": [
+        24.639769452449567,
+        0.0,
+        0.0,
+        44.84581497797357
+      ],
+      "recall_percent": [
+        10.227272727272728,
+        0.0,
+        0.0,
+        93.39449541284404
+      ],
+      "counts": [
+        [
+          171,
+          523,
+          1501
+        ],
+        [
+          0,
+          0,
+          2017
+        ],
+        [
+          0,
+          0,
+          6004
+        ],
+        [
+          509,
+          626,
+          36
+        ]
+      ],
+      "images": 8,
+      "classes": [
+        "EX",
+        "HE",
+        "SE",
+        "MA"
+      ],
+      "threshold": "strictly > 0.5",
+      "undefined_precision_classes": [
+        1,
+        2
+      ],
+      "loss": 0.45576296374201775
+    },
+    "trajectory": [
+      {
+        "update": 16,
+        "mIoU_percent": 1.2385321100917432,
+        "IoU_percent": [
+          0.0,
+          0.0,
+          0.0,
+          4.954128440366973
+        ],
+        "precision_percent": [
+          0.0,
+          0.0,
+          0.0,
+          100.0
+        ],
+        "recall_percent": [
+          0.0,
+          0.0,
+          0.0,
+          4.954128440366973
+        ],
+        "counts": [
+          [
+            0,
+            0,
+            1672
+          ],
+          [
+            0,
+            0,
+            2017
+          ],
+          [
+            0,
+            0,
+            6004
+          ],
+          [
+            27,
+            0,
+            518
+          ]
+        ],
+        "images": 8,
+        "classes": [
+          "EX",
+          "HE",
+          "SE",
+          "MA"
+        ],
+        "threshold": "strictly > 0.5",
+        "undefined_precision_classes": [
+          0,
+          1,
+          2
+        ],
+        "loss": 0.6565519943833351
+      },
+      {
+        "update": 32,
+        "mIoU_percent": 7.006750563589155,
+        "IoU_percent": [
+          1.6045548654244308,
+          0.0,
+          0.0,
+          26.42244738893219
+        ],
+        "precision_percent": [
+          10.652920962199312,
+          0.0,
+          0.0,
+          31.47632311977716
+        ],
+        "recall_percent": [
+          1.8540669856459329,
+          0.0,
+          0.0,
+          62.20183486238532
+        ],
+        "counts": [
+          [
+            31,
+            260,
+            1641
+          ],
+          [
+            0,
+            56,
+            2017
+          ],
+          [
+            0,
+            0,
+            6004
+          ],
+          [
+            339,
+            738,
+            206
+          ]
+        ],
+        "images": 8,
+        "classes": [
+          "EX",
+          "HE",
+          "SE",
+          "MA"
+        ],
+        "threshold": "strictly > 0.5",
+        "undefined_precision_classes": [
+          2
+        ],
+        "loss": 0.5849646627902985
+      },
+      {
+        "update": 48,
+        "mIoU_percent": 6.15394682720712,
+        "IoU_percent": [
+          3.3391915641476277,
+          0.0,
+          0.0,
+          21.27659574468085
+        ],
+        "precision_percent": [
+          61.95652173913043,
+          0.0,
+          0.0,
+          43.596730245231605
+        ],
+        "recall_percent": [
+          3.4090909090909087,
+          0.0,
+          0.0,
+          29.357798165137616
+        ],
+        "counts": [
+          [
+            57,
+            35,
+            1615
+          ],
+          [
+            0,
+            0,
+            2017
+          ],
+          [
+            0,
+            0,
+            6004
+          ],
+          [
+            160,
+            207,
+            385
+          ]
+        ],
+        "images": 8,
+        "classes": [
+          "EX",
+          "HE",
+          "SE",
+          "MA"
+        ],
+        "threshold": "strictly > 0.5",
+        "undefined_precision_classes": [
+          1,
+          2
+        ],
+        "loss": 0.5608128160238266
+      },
+      {
+        "update": 64,
+        "mIoU_percent": 12.814388729917582,
+        "IoU_percent": [
+          7.790432801822324,
+          0.0,
+          0.0,
+          43.46712211784799
+        ],
+        "precision_percent": [
+          24.639769452449567,
+          0.0,
+          0.0,
+          44.84581497797357
+        ],
+        "recall_percent": [
+          10.227272727272728,
+          0.0,
+          0.0,
+          93.39449541284404
+        ],
+        "counts": [
+          [
+            171,
+            523,
+            1501
+          ],
+          [
+            0,
+            0,
+            2017
+          ],
+          [
+            0,
+            0,
+            6004
+          ],
+          [
+            509,
+            626,
+            36
+          ]
+        ],
+        "images": 8,
+        "classes": [
+          "EX",
+          "HE",
+          "SE",
+          "MA"
+        ],
+        "threshold": "strictly > 0.5",
+        "undefined_precision_classes": [
+          1,
+          2
+        ],
+        "loss": 0.45576296374201775
+      }
+    ],
+    "crops": [
+      {
+        "sid": "007-2200-100",
+        "target_class": 1,
+        "crop_yxhw": [
+          1344,
+          1088,
+          256,
+          256
+        ],
+        "class_positive_pixels": [
+          1564,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "sid": "007-2383-100",
+        "target_class": 1,
+        "crop_yxhw": [
+          576,
+          1344,
+          256,
+          256
+        ],
+        "class_positive_pixels": [
+          108,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "sid": "007-1853-100",
+        "target_class": 2,
+        "crop_yxhw": [
+          1088,
+          192,
+          256,
+          256
+        ],
+        "class_positive_pixels": [
+          0,
+          790,
+          0,
+          174
+        ]
+      },
+      {
+        "sid": "007-1889-100",
+        "target_class": 2,
+        "crop_yxhw": [
+          1088,
+          448,
+          256,
+          256
+        ],
+        "class_positive_pixels": [
+          0,
+          1227,
+          0,
+          0
+        ]
+      },
+      {
+        "sid": "007-2452-100",
+        "target_class": 3,
+        "crop_yxhw": [
+          320,
+          1216,
+          256,
+          256
+        ],
+        "class_positive_pixels": [
+          0,
+          0,
+          1812,
+          24
+        ]
+      },
+      {
+        "sid": "007-2466-100",
+        "target_class": 3,
+        "crop_yxhw": [
+          960,
+          1600,
+          256,
+          256
+        ],
+        "class_positive_pixels": [
+          0,
+          0,
+          4192,
+          0
+        ]
+      },
+      {
+        "sid": "007-1811-100",
+        "target_class": 4,
+        "crop_yxhw": [
+          1344,
+          832,
+          256,
+          256
+        ],
+        "class_positive_pixels": [
+          0,
+          0,
+          0,
+          241
+        ]
+      },
+      {
+        "sid": "007-1824-100",
+        "target_class": 4,
+        "crop_yxhw": [
+          1088,
+          832,
+          256,
+          256
+        ],
+        "class_positive_pixels": [
+          0,
+          0,
+          0,
+          106
+        ]
+      }
+    ],
+    "weights_retained": false
+  },
+  "full_resolution_smoke": {
+    "status": "PASS",
+    "canvas": 2048,
+    "global_batch": 2,
+    "micro_batch": 1,
+    "discarded_updates": 2,
+    "mean_seconds_per_update": 30.87281380000013,
+    "peak_allocated_GiB": 8.01590347290039,
+    "peak_reserved_GiB": 8.486328125,
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "metrics": [
+      {
+        "ohem_bce": 0.5768072605133057,
+        "squared_dice": 0.24803533405065536,
+        "dense_bce": 0.010346431285142899,
+        "main_loss": 0.5369562804698944,
+        "aux_loss": 0.5563791990280151,
+        "loss": 0.648232102394104,
+        "grad_norm_before_clip": 1.7901701927185059
+      },
+      {
+        "ohem_bce": 0.5532198548316956,
+        "squared_dice": 0.2476508766412735,
+        "dense_bce": 0.010418755002319813,
+        "main_loss": 0.5247817039489746,
+        "aux_loss": 0.5594455599784851,
+        "loss": 0.6366707980632782,
+        "grad_norm_before_clip": 2.333094358444214
+      }
+    ],
+    "train_sids": [
+      "007-1811-100",
+      "007-1824-100"
+    ],
+    "weights_retained": false,
+    "not_formal_40k": true
+  },
+  "status": "INCOMPLETE_OR_FAILED"
+}

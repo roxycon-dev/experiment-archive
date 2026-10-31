@@ -1,0 +1,70 @@
+/root/miniconda3/lib/python3.8/site-packages/torch/_utils.py:776: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  return self.fget.__get__(instance, owner)()
+export 10/76
+export 20/76
+export 30/76
+export 40/76
+export 50/76
+export 60/76
+export 70/76
+{
+  "protocol": "whole_image_accumulated_counts",
+  "threshold": 0.5,
+  "n_images": 76,
+  "per_class": {
+    "EX": {
+      "iou": 0.43039604005112525,
+      "f1": 0.6017858383273237,
+      "ppv": 0.5562758117475374,
+      "recall": 0.6554058933367263,
+      "aupr": 0.41972657093213456,
+      "tp": 190594,
+      "fp": 152031,
+      "fn": 100209,
+      "gt_positive_pixels": 290803
+    },
+    "HE": {
+      "iou": 0.3680077355656772,
+      "f1": 0.5380199628966343,
+      "ppv": 0.5282161505671036,
+      "recall": 0.5481945794262325,
+      "aupr": 0.3651622669670719,
+      "tp": 661081,
+      "fp": 590454,
+      "fn": 544843,
+      "gt_positive_pixels": 1205924
+    },
+    "SE": {
+      "iou": 0.46992513747379433,
+      "f1": 0.6393864905003329,
+      "ppv": 0.6601228745453007,
+      "recall": 0.6199132092709182,
+      "aupr": 0.43334657464859805,
+      "tp": 124853,
+      "fp": 64283,
+      "fn": 76551,
+      "gt_positive_pixels": 201404
+    },
+    "MA": {
+      "iou": 0.19940801090197746,
+      "f1": 0.3325107204378581,
+      "ppv": 0.28824850140857006,
+      "recall": 0.39283239997690667,
+      "aupr": 0.14061865220733863,
+      "tp": 27217,
+      "fp": 67205,
+      "fn": 42067,
+      "gt_positive_pixels": 69284
+    }
+  },
+  "mIoU_lesion4": 0.3669342309981436,
+  "mF1": 0.5279257530405372,
+  "mPPV": 0.5082158345671279,
+  "mRecall": 0.5540865205026959,
+  "mAUPR": 0.3397135161887858,
+  "excluded_classes": {
+    "iou": [],
+    "aupr": []
+  },
+  "aupr_note": "256-bin histogram approximation of PR curve"
+}

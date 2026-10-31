@@ -1,0 +1,230 @@
+Detected CUDA files, patching ldflags
+Emitting ninja build file /root/autodl-tmp/HRDecoder_FinalDecision_20261005/vendor/msda_build/build.ninja...
+Building extension module MultiScaleDeformableAttention...
+Using envvar MAX_JOBS (4) as the number of workers...
+[1/4] c++ -MMD -MF ms_deform_attn_cpu.o.d -DTORCH_EXTENSION_NAME=MultiScaleDeformableAttention -DTORCH_API_INCLUDE_EXTENSION_H -DPYBIND11_COMPILER_TYPE=\"_gcc\" -DPYBIND11_STDLIB=\"_libstdcpp\" -DPYBIND11_BUILD_ABI=\"_cxxabi1016\" -I/root/autodl-tmp/HRDecoder_FinalDecision_20261005/vendor/msda_compat/src -I/root/miniconda3/envs/hrdecoder_q_20261003/targets/x86_64-linux/include -I/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/nvidia/cublas/include -I/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/nvidia/cuda_cupti/include -I/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/nvidia/cuda_nvrtc/include -I/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/nvidia/cuda_runtime/include -I/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/nvidia/cudnn/include -I/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/nvidia/cufft/include -I/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/nvidia/cufile/include -I/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/nvidia/curand/include -I/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/nvidia/cusolver/include -I/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/nvidia/cusparse/include -I/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/nvidia/nccl/include -I/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/nvidia/nvjitlink/include -I/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/nvidia/nvtx/include -isystem /root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/torch/include -isystem /root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/torch/include/torch/csrc/api/include -isystem /root/miniconda3/envs/hrdecoder_q_20261003/include -isystem /root/miniconda3/envs/hrdecoder_q_20261003/include/python3.11 -D_GLIBCXX_USE_CXX11_ABI=1 -fPIC -std=c++17 -O3 -DWITH_CUDA -c /root/autodl-tmp/HRDecoder_FinalDecision_20261005/vendor/msda_compat/src/cpu/ms_deform_attn_cpu.cpp -o ms_deform_attn_cpu.o 
+[2/4] c++ -MMD -MF vision.o.d -DTORCH_EXTENSION_NAME=MultiScaleDeformableAttention -DTORCH_API_INCLUDE_EXTENSION_H -DPYBIND11_COMPILER_TYPE=\"_gcc\" -DPYBIND11_STDLIB=\"_libstdcpp\" -DPYBIND11_BUILD_ABI=\"_cxxabi1016\" -I/root/autodl-tmp/HRDecoder_FinalDecision_20261005/vendor/msda_compat/src -I/root/miniconda3/envs/hrdecoder_q_20261003/targets/x86_64-linux/include -I/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/nvidia/cublas/include -I/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/nvidia/cuda_cupti/include -I/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/nvidia/cuda_nvrtc/include -I/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/nvidia/cuda_runtime/include -I/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/nvidia/cudnn/include -I/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/nvidia/cufft/include -I/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/nvidia/cufile/include -I/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/nvidia/curand/include -I/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/nvidia/cusolver/include -I/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/nvidia/cusparse/include -I/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/nvidia/nccl/include -I/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/nvidia/nvjitlink/include -I/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/nvidia/nvtx/include -isystem /root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/torch/include -isystem /root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/torch/include/torch/csrc/api/include -isystem /root/miniconda3/envs/hrdecoder_q_20261003/include -isystem /root/miniconda3/envs/hrdecoder_q_20261003/include/python3.11 -D_GLIBCXX_USE_CXX11_ABI=1 -fPIC -std=c++17 -O3 -DWITH_CUDA -c /root/autodl-tmp/HRDecoder_FinalDecision_20261005/vendor/msda_compat/src/vision.cpp -o vision.o 
+[3/4] /root/miniconda3/envs/hrdecoder_q_20261003/bin/nvcc --generate-dependencies-with-compile --dependency-output ms_deform_attn_cuda.cuda.o.d -DTORCH_EXTENSION_NAME=MultiScaleDeformableAttention -DTORCH_API_INCLUDE_EXTENSION_H -DPYBIND11_COMPILER_TYPE=\"_gcc\" -DPYBIND11_STDLIB=\"_libstdcpp\" -DPYBIND11_BUILD_ABI=\"_cxxabi1016\" -I/root/autodl-tmp/HRDecoder_FinalDecision_20261005/vendor/msda_compat/src -I/root/miniconda3/envs/hrdecoder_q_20261003/targets/x86_64-linux/include -I/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/nvidia/cublas/include -I/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/nvidia/cuda_cupti/include -I/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/nvidia/cuda_nvrtc/include -I/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/nvidia/cuda_runtime/include -I/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/nvidia/cudnn/include -I/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/nvidia/cufft/include -I/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/nvidia/cufile/include -I/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/nvidia/curand/include -I/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/nvidia/cusolver/include -I/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/nvidia/cusparse/include -I/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/nvidia/nccl/include -I/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/nvidia/nvjitlink/include -I/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/nvidia/nvtx/include -isystem /root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/torch/include -isystem /root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/torch/include/torch/csrc/api/include -isystem /root/miniconda3/envs/hrdecoder_q_20261003/include -isystem /root/miniconda3/envs/hrdecoder_q_20261003/include/python3.11 -D_GLIBCXX_USE_CXX11_ABI=1 -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_BFLOAT16_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ --expt-relaxed-constexpr -gencode=arch=compute_89,code=sm_89 --compiler-options '-fPIC' -O3 -DWITH_CUDA -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ -std=c++17 -c /root/autodl-tmp/HRDecoder_FinalDecision_20261005/vendor/msda_compat/src/cuda/ms_deform_attn_cuda.cu -o ms_deform_attn_cuda.cuda.o 
+/root/autodl-tmp/HRDecoder_FinalDecision_20261005/vendor/msda_compat/src/cuda/ms_deform_im2col_cuda.cuh(261): warning #177-D: variable "q_col" was declared but never referenced
+      const int q_col = _temp % num_query;
+                ^
+          detected during instantiation of "void ms_deformable_im2col_cuda(cudaStream_t, const scalar_t *, const int64_t *, const int64_t *, const scalar_t *, const scalar_t *, int, int, int, int, int, int, int, scalar_t *) [with scalar_t=double]" at line 64 of /root/autodl-tmp/HRDecoder_FinalDecision_20261005/vendor/msda_compat/src/cuda/ms_deform_attn_cuda.cu
+
+Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
+
+/root/autodl-tmp/HRDecoder_FinalDecision_20261005/vendor/msda_compat/src/cuda/ms_deform_im2col_cuda.cuh(762): warning #177-D: variable "q_col" was declared but never referenced
+      const int q_col = _temp % num_query;
+                ^
+          detected during instantiation of "void ms_deformable_col2im_cuda(cudaStream_t, const scalar_t *, const scalar_t *, const int64_t *, const int64_t *, const scalar_t *, const scalar_t *, int, int, int, int, int, int, int, scalar_t *, scalar_t *, scalar_t *) [with scalar_t=double]" at line 134 of /root/autodl-tmp/HRDecoder_FinalDecision_20261005/vendor/msda_compat/src/cuda/ms_deform_attn_cuda.cu
+
+/root/autodl-tmp/HRDecoder_FinalDecision_20261005/vendor/msda_compat/src/cuda/ms_deform_im2col_cuda.cuh(872): warning #177-D: variable "q_col" was declared but never referenced
+      const int q_col = _temp % num_query;
+                ^
+          detected during instantiation of "void ms_deformable_col2im_cuda(cudaStream_t, const scalar_t *, const scalar_t *, const int64_t *, const int64_t *, const scalar_t *, const scalar_t *, int, int, int, int, int, int, int, scalar_t *, scalar_t *, scalar_t *) [with scalar_t=double]" at line 134 of /root/autodl-tmp/HRDecoder_FinalDecision_20261005/vendor/msda_compat/src/cuda/ms_deform_attn_cuda.cu
+
+/root/autodl-tmp/HRDecoder_FinalDecision_20261005/vendor/msda_compat/src/cuda/ms_deform_im2col_cuda.cuh(331): warning #177-D: variable "q_col" was declared but never referenced
+      const int q_col = _temp % num_query;
+                ^
+          detected during instantiation of "void ms_deformable_col2im_cuda(cudaStream_t, const scalar_t *, const scalar_t *, const int64_t *, const int64_t *, const scalar_t *, const scalar_t *, int, int, int, int, int, int, int, scalar_t *, scalar_t *, scalar_t *) [with scalar_t=double]" at line 134 of /root/autodl-tmp/HRDecoder_FinalDecision_20261005/vendor/msda_compat/src/cuda/ms_deform_attn_cuda.cu
+
+/root/autodl-tmp/HRDecoder_FinalDecision_20261005/vendor/msda_compat/src/cuda/ms_deform_im2col_cuda.cuh(436): warning #177-D: variable "q_col" was declared but never referenced
+      const int q_col = _temp % num_query;
+                ^
+          detected during instantiation of "void ms_deformable_col2im_cuda(cudaStream_t, const scalar_t *, const scalar_t *, const int64_t *, const int64_t *, const scalar_t *, const scalar_t *, int, int, int, int, int, int, int, scalar_t *, scalar_t *, scalar_t *) [with scalar_t=double]" at line 134 of /root/autodl-tmp/HRDecoder_FinalDecision_20261005/vendor/msda_compat/src/cuda/ms_deform_attn_cuda.cu
+
+/root/autodl-tmp/HRDecoder_FinalDecision_20261005/vendor/msda_compat/src/cuda/ms_deform_im2col_cuda.cuh(544): warning #177-D: variable "q_col" was declared but never referenced
+      const int q_col = _temp % num_query;
+                ^
+          detected during instantiation of "void ms_deformable_col2im_cuda(cudaStream_t, const scalar_t *, const scalar_t *, const int64_t *, const int64_t *, const scalar_t *, const scalar_t *, int, int, int, int, int, int, int, scalar_t *, scalar_t *, scalar_t *) [with scalar_t=double]" at line 134 of /root/autodl-tmp/HRDecoder_FinalDecision_20261005/vendor/msda_compat/src/cuda/ms_deform_attn_cuda.cu
+
+/root/autodl-tmp/HRDecoder_FinalDecision_20261005/vendor/msda_compat/src/cuda/ms_deform_im2col_cuda.cuh(649): warning #177-D: variable "q_col" was declared but never referenced
+      const int q_col = _temp % num_query;
+                ^
+          detected during instantiation of "void ms_deformable_col2im_cuda(cudaStream_t, const scalar_t *, const scalar_t *, const int64_t *, const int64_t *, const scalar_t *, const scalar_t *, int, int, int, int, int, int, int, scalar_t *, scalar_t *, scalar_t *) [with scalar_t=double]" at line 134 of /root/autodl-tmp/HRDecoder_FinalDecision_20261005/vendor/msda_compat/src/cuda/ms_deform_attn_cuda.cu
+
+/root/autodl-tmp/HRDecoder_FinalDecision_20261005/vendor/msda_compat/src/cuda/ms_deform_attn_cuda.cu: In lambda function:
+/root/autodl-tmp/HRDecoder_FinalDecision_20261005/vendor/msda_compat/src/cuda/ms_deform_attn_cuda.cu:64:86: warning: ‘T* at::Tensor::data() const [with T = double]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+   64 |         AT_DISPATCH_FLOATING_TYPES(value.scalar_type(), "ms_deform_attn_forward_cuda", ([&] {
+      |                                                                                      ^
+/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/torch/include/ATen/core/TensorBody.h:247:1: note: declared here
+  247 |   T * data() const {
+      | ^ ~~
+/root/autodl-tmp/HRDecoder_FinalDecision_20261005/vendor/msda_compat/src/cuda/ms_deform_attn_cuda.cu:64:172: warning: ‘T* at::Tensor::data() const [with T = long int]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+   64 |         AT_DISPATCH_FLOATING_TYPES(value.scalar_type(), "ms_deform_attn_forward_cuda", ([&] {
+      |                                                                                                                                                                            ^
+/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/torch/include/ATen/core/TensorBody.h:247:1: note: declared here
+  247 |   T * data() const {
+      | ^ ~~
+/root/autodl-tmp/HRDecoder_FinalDecision_20261005/vendor/msda_compat/src/cuda/ms_deform_attn_cuda.cu:64:215: warning: ‘T* at::Tensor::data() const [with T = long int]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+   64 |         AT_DISPATCH_FLOATING_TYPES(value.scalar_type(), "ms_deform_attn_forward_cuda", ([&] {
+      |                                                                                                                                                                                                                       ^
+/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/torch/include/ATen/core/TensorBody.h:247:1: note: declared here
+  247 |   T * data() const {
+      | ^ ~~
+/root/autodl-tmp/HRDecoder_FinalDecision_20261005/vendor/msda_compat/src/cuda/ms_deform_attn_cuda.cu:64:248: warning: ‘T* at::Tensor::data() const [with T = double]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+   64 |         AT_DISPATCH_FLOATING_TYPES(value.scalar_type(), "ms_deform_attn_forward_cuda", ([&] {
+      |                                                                                                                                                                                                                                                        ^
+/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/torch/include/ATen/core/TensorBody.h:247:1: note: declared here
+  247 |   T * data() const {
+      | ^ ~~
+/root/autodl-tmp/HRDecoder_FinalDecision_20261005/vendor/msda_compat/src/cuda/ms_deform_attn_cuda.cu:64:331: warning: ‘T* at::Tensor::data() const [with T = double]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+   64 |         AT_DISPATCH_FLOATING_TYPES(value.scalar_type(), "ms_deform_attn_forward_cuda", ([&] {
+      |                                                                                                                                                                                                                                                                                                                                           ^
+/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/torch/include/ATen/core/TensorBody.h:247:1: note: declared here
+  247 |   T * data() const {
+      | ^ ~~
+/root/autodl-tmp/HRDecoder_FinalDecision_20261005/vendor/msda_compat/src/cuda/ms_deform_attn_cuda.cu:64:489: warning: ‘T* at::Tensor::data() const [with T = double]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+   64 |         AT_DISPATCH_FLOATING_TYPES(value.scalar_type(), "ms_deform_attn_forward_cuda", ([&] {
+      |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         ^
+/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/torch/include/ATen/core/TensorBody.h:247:1: note: declared here
+  247 |   T * data() const {
+      | ^ ~~
+/root/autodl-tmp/HRDecoder_FinalDecision_20261005/vendor/msda_compat/src/cuda/ms_deform_attn_cuda.cu: In lambda function:
+/root/autodl-tmp/HRDecoder_FinalDecision_20261005/vendor/msda_compat/src/cuda/ms_deform_attn_cuda.cu:64:85: warning: ‘T* at::Tensor::data() const [with T = float]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+   64 |         AT_DISPATCH_FLOATING_TYPES(value.scalar_type(), "ms_deform_attn_forward_cuda", ([&] {
+      |                                                                                     ^
+/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/torch/include/ATen/core/TensorBody.h:247:1: note: declared here
+  247 |   T * data() const {
+      | ^ ~~
+/root/autodl-tmp/HRDecoder_FinalDecision_20261005/vendor/msda_compat/src/cuda/ms_deform_attn_cuda.cu:64:171: warning: ‘T* at::Tensor::data() const [with T = long int]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+   64 |         AT_DISPATCH_FLOATING_TYPES(value.scalar_type(), "ms_deform_attn_forward_cuda", ([&] {
+      |                                                                                                                                                                           ^
+/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/torch/include/ATen/core/TensorBody.h:247:1: note: declared here
+  247 |   T * data() const {
+      | ^ ~~
+/root/autodl-tmp/HRDecoder_FinalDecision_20261005/vendor/msda_compat/src/cuda/ms_deform_attn_cuda.cu:64:214: warning: ‘T* at::Tensor::data() const [with T = long int]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+   64 |         AT_DISPATCH_FLOATING_TYPES(value.scalar_type(), "ms_deform_attn_forward_cuda", ([&] {
+      |                                                                                                                                                                                                                      ^
+/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/torch/include/ATen/core/TensorBody.h:247:1: note: declared here
+  247 |   T * data() const {
+      | ^ ~~
+/root/autodl-tmp/HRDecoder_FinalDecision_20261005/vendor/msda_compat/src/cuda/ms_deform_attn_cuda.cu:64:246: warning: ‘T* at::Tensor::data() const [with T = float]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+   64 |         AT_DISPATCH_FLOATING_TYPES(value.scalar_type(), "ms_deform_attn_forward_cuda", ([&] {
+      |                                                                                                                                                                                                                                                      ^
+/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/torch/include/ATen/core/TensorBody.h:247:1: note: declared here
+  247 |   T * data() const {
+      | ^ ~~
+/root/autodl-tmp/HRDecoder_FinalDecision_20261005/vendor/msda_compat/src/cuda/ms_deform_attn_cuda.cu:64:328: warning: ‘T* at::Tensor::data() const [with T = float]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+   64 |         AT_DISPATCH_FLOATING_TYPES(value.scalar_type(), "ms_deform_attn_forward_cuda", ([&] {
+      |                                                                                                                                                                                                                                                                                                                                        ^
+/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/torch/include/ATen/core/TensorBody.h:247:1: note: declared here
+  247 |   T * data() const {
+      | ^ ~~
+/root/autodl-tmp/HRDecoder_FinalDecision_20261005/vendor/msda_compat/src/cuda/ms_deform_attn_cuda.cu:64:485: warning: ‘T* at::Tensor::data() const [with T = float]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+   64 |         AT_DISPATCH_FLOATING_TYPES(value.scalar_type(), "ms_deform_attn_forward_cuda", ([&] {
+      |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     ^
+/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/torch/include/ATen/core/TensorBody.h:247:1: note: declared here
+  247 |   T * data() const {
+      | ^ ~~
+/root/autodl-tmp/HRDecoder_FinalDecision_20261005/vendor/msda_compat/src/cuda/ms_deform_attn_cuda.cu: In lambda function:
+/root/autodl-tmp/HRDecoder_FinalDecision_20261005/vendor/msda_compat/src/cuda/ms_deform_attn_cuda.cu:134:94: warning: ‘T* at::Tensor::data() const [with T = double]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+  134 |         AT_DISPATCH_FLOATING_TYPES(value.scalar_type(), "ms_deform_attn_backward_cuda", ([&] {
+      |                                                                                              ^
+/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/torch/include/ATen/core/TensorBody.h:247:1: note: declared here
+  247 |   T * data() const {
+      | ^ ~~
+/root/autodl-tmp/HRDecoder_FinalDecision_20261005/vendor/msda_compat/src/cuda/ms_deform_attn_cuda.cu:134:120: warning: ‘T* at::Tensor::data() const [with T = double]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+  134 |         AT_DISPATCH_FLOATING_TYPES(value.scalar_type(), "ms_deform_attn_backward_cuda", ([&] {
+      |                                                                                                                        ^
+/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/torch/include/ATen/core/TensorBody.h:247:1: note: declared here
+  247 |   T * data() const {
+      | ^ ~~
+/root/autodl-tmp/HRDecoder_FinalDecision_20261005/vendor/msda_compat/src/cuda/ms_deform_attn_cuda.cu:134:206: warning: ‘T* at::Tensor::data() const [with T = long int]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+  134 |         AT_DISPATCH_FLOATING_TYPES(value.scalar_type(), "ms_deform_attn_backward_cuda", ([&] {
+      |                                                                                                                                                                                                              ^
+/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/torch/include/ATen/core/TensorBody.h:247:1: note: declared here
+  247 |   T * data() const {
+      | ^ ~~
+/root/autodl-tmp/HRDecoder_FinalDecision_20261005/vendor/msda_compat/src/cuda/ms_deform_attn_cuda.cu:134:249: warning: ‘T* at::Tensor::data() const [with T = long int]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+  134 |         AT_DISPATCH_FLOATING_TYPES(value.scalar_type(), "ms_deform_attn_backward_cuda", ([&] {
+      |                                                                                                                                                                                                                                                         ^
+/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/torch/include/ATen/core/TensorBody.h:247:1: note: declared here
+  247 |   T * data() const {
+      | ^ ~~
+/root/autodl-tmp/HRDecoder_FinalDecision_20261005/vendor/msda_compat/src/cuda/ms_deform_attn_cuda.cu:134:282: warning: ‘T* at::Tensor::data() const [with T = double]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+  134 |         AT_DISPATCH_FLOATING_TYPES(value.scalar_type(), "ms_deform_attn_backward_cuda", ([&] {
+      |                                                                                                                                                                                                                                                                                          ^
+/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/torch/include/ATen/core/TensorBody.h:247:1: note: declared here
+  247 |   T * data() const {
+      | ^ ~~
+/root/autodl-tmp/HRDecoder_FinalDecision_20261005/vendor/msda_compat/src/cuda/ms_deform_attn_cuda.cu:134:365: warning: ‘T* at::Tensor::data() const [with T = double]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+  134 |         AT_DISPATCH_FLOATING_TYPES(value.scalar_type(), "ms_deform_attn_backward_cuda", ([&] {
+      |                                                                                                                                                                                                                                                                                                                                                                             ^
+/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/torch/include/ATen/core/TensorBody.h:247:1: note: declared here
+  247 |   T * data() const {
+      | ^ ~~
+/root/autodl-tmp/HRDecoder_FinalDecision_20261005/vendor/msda_compat/src/cuda/ms_deform_attn_cuda.cu:134:526: warning: ‘T* at::Tensor::data() const [with T = double]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+  134 |         AT_DISPATCH_FLOATING_TYPES(value.scalar_type(), "ms_deform_attn_backward_cuda", ([&] {
+      |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              ^
+/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/torch/include/ATen/core/TensorBody.h:247:1: note: declared here
+  247 |   T * data() const {
+      | ^ ~~
+/root/autodl-tmp/HRDecoder_FinalDecision_20261005/vendor/msda_compat/src/cuda/ms_deform_attn_cuda.cu:134:610: warning: ‘T* at::Tensor::data() const [with T = double]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+  134 |         AT_DISPATCH_FLOATING_TYPES(value.scalar_type(), "ms_deform_attn_backward_cuda", ([&] {
+      |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  ^
+/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/torch/include/ATen/core/TensorBody.h:247:1: note: declared here
+  247 |   T * data() const {
+      | ^ ~~
+/root/autodl-tmp/HRDecoder_FinalDecision_20261005/vendor/msda_compat/src/cuda/ms_deform_attn_cuda.cu:134:698: warning: ‘T* at::Tensor::data() const [with T = double]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+  134 |         AT_DISPATCH_FLOATING_TYPES(value.scalar_type(), "ms_deform_attn_backward_cuda", ([&] {
+      |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          ^
+/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/torch/include/ATen/core/TensorBody.h:247:1: note: declared here
+  247 |   T * data() const {
+      | ^ ~~
+/root/autodl-tmp/HRDecoder_FinalDecision_20261005/vendor/msda_compat/src/cuda/ms_deform_attn_cuda.cu: In lambda function:
+/root/autodl-tmp/HRDecoder_FinalDecision_20261005/vendor/msda_compat/src/cuda/ms_deform_attn_cuda.cu:134:93: warning: ‘T* at::Tensor::data() const [with T = float]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+  134 |         AT_DISPATCH_FLOATING_TYPES(value.scalar_type(), "ms_deform_attn_backward_cuda", ([&] {
+      |                                                                                             ^
+/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/torch/include/ATen/core/TensorBody.h:247:1: note: declared here
+  247 |   T * data() const {
+      | ^ ~~
+/root/autodl-tmp/HRDecoder_FinalDecision_20261005/vendor/msda_compat/src/cuda/ms_deform_attn_cuda.cu:134:118: warning: ‘T* at::Tensor::data() const [with T = float]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+  134 |         AT_DISPATCH_FLOATING_TYPES(value.scalar_type(), "ms_deform_attn_backward_cuda", ([&] {
+      |                                                                                                                      ^
+/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/torch/include/ATen/core/TensorBody.h:247:1: note: declared here
+  247 |   T * data() const {
+      | ^ ~~
+/root/autodl-tmp/HRDecoder_FinalDecision_20261005/vendor/msda_compat/src/cuda/ms_deform_attn_cuda.cu:134:204: warning: ‘T* at::Tensor::data() const [with T = long int]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+  134 |         AT_DISPATCH_FLOATING_TYPES(value.scalar_type(), "ms_deform_attn_backward_cuda", ([&] {
+      |                                                                                                                                                                                                            ^
+/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/torch/include/ATen/core/TensorBody.h:247:1: note: declared here
+  247 |   T * data() const {
+      | ^ ~~
+/root/autodl-tmp/HRDecoder_FinalDecision_20261005/vendor/msda_compat/src/cuda/ms_deform_attn_cuda.cu:134:247: warning: ‘T* at::Tensor::data() const [with T = long int]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+  134 |         AT_DISPATCH_FLOATING_TYPES(value.scalar_type(), "ms_deform_attn_backward_cuda", ([&] {
+      |                                                                                                                                                                                                                                                       ^
+/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/torch/include/ATen/core/TensorBody.h:247:1: note: declared here
+  247 |   T * data() const {
+      | ^ ~~
+/root/autodl-tmp/HRDecoder_FinalDecision_20261005/vendor/msda_compat/src/cuda/ms_deform_attn_cuda.cu:134:279: warning: ‘T* at::Tensor::data() const [with T = float]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+  134 |         AT_DISPATCH_FLOATING_TYPES(value.scalar_type(), "ms_deform_attn_backward_cuda", ([&] {
+      |                                                                                                                                                                                                                                                                                       ^
+/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/torch/include/ATen/core/TensorBody.h:247:1: note: declared here
+  247 |   T * data() const {
+      | ^ ~~
+/root/autodl-tmp/HRDecoder_FinalDecision_20261005/vendor/msda_compat/src/cuda/ms_deform_attn_cuda.cu:134:361: warning: ‘T* at::Tensor::data() const [with T = float]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+  134 |         AT_DISPATCH_FLOATING_TYPES(value.scalar_type(), "ms_deform_attn_backward_cuda", ([&] {
+      |                                                                                                                                                                                                                                                                                                                                                                         ^
+/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/torch/include/ATen/core/TensorBody.h:247:1: note: declared here
+  247 |   T * data() const {
+      | ^ ~~
+/root/autodl-tmp/HRDecoder_FinalDecision_20261005/vendor/msda_compat/src/cuda/ms_deform_attn_cuda.cu:134:521: warning: ‘T* at::Tensor::data() const [with T = float]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+  134 |         AT_DISPATCH_FLOATING_TYPES(value.scalar_type(), "ms_deform_attn_backward_cuda", ([&] {
+      |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         ^
+/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/torch/include/ATen/core/TensorBody.h:247:1: note: declared here
+  247 |   T * data() const {
+      | ^ ~~
+/root/autodl-tmp/HRDecoder_FinalDecision_20261005/vendor/msda_compat/src/cuda/ms_deform_attn_cuda.cu:134:604: warning: ‘T* at::Tensor::data() const [with T = float]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+  134 |         AT_DISPATCH_FLOATING_TYPES(value.scalar_type(), "ms_deform_attn_backward_cuda", ([&] {
+      |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ^
+/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/torch/include/ATen/core/TensorBody.h:247:1: note: declared here
+  247 |   T * data() const {
+      | ^ ~~
+/root/autodl-tmp/HRDecoder_FinalDecision_20261005/vendor/msda_compat/src/cuda/ms_deform_attn_cuda.cu:134:691: warning: ‘T* at::Tensor::data() const [with T = float]’ is deprecated: Tensor.data<T>() is deprecated. Please use Tensor.data_ptr<T>() instead. [-Wdeprecated-declarations]
+  134 |         AT_DISPATCH_FLOATING_TYPES(value.scalar_type(), "ms_deform_attn_backward_cuda", ([&] {
+      |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   ^
+/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/torch/include/ATen/core/TensorBody.h:247:1: note: declared here
+  247 |   T * data() const {
+      | ^ ~~
+[4/4] c++ vision.o ms_deform_attn_cpu.o ms_deform_attn_cuda.cuda.o -shared -L/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/torch/lib -lc10 -lc10_cuda -ltorch_cpu -ltorch_cuda -ltorch -ltorch_python -L/root/miniconda3/envs/hrdecoder_q_20261003/lib -lcudart -o MultiScaleDeformableAttention.so
+Loading extension module MultiScaleDeformableAttention...

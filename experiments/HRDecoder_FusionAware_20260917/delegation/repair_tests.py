@@ -1,0 +1,365 @@
+# delegation/repair_tests.py
+"""Bounded one-shot patch script. Run from currentroot (D:/dataset/experiment/HRDecoder_FusionAware_20260917).
+Modifies ONLY tests/test_core.py, tests/test_runtime.py, tests/test_protocol.py,
+tests/test_ops.py, tests/test_storage.py. Exact replacements with asserted counts;
+whole-file rewrite only for tests/test_ops.py and tests/test_storage.py.
+No production files touched. No shell, no network, no deletes (except mkdtemp
+cleanup inside rewritten tests, which use TemporaryDirectory)."""
+from pathlib import Path
+
+ROOT = Path.cwd()
+
+
+def patch(rel, old, new, count=1):
+    p = ROOT / rel
+    s = p.read_text(encoding="utf-8")
+    n = s.count(old)
+    assert n == count, "unexpected count %d for %s in %s" % (n, old[:60], rel)
+    p.write_text(s.replace(old, new), encoding="utf-8")
+    print("patched %-26s %s" % (rel, old.strip().splitlines()[0][:48]))
+
+
+def replace_between(rel, start_marker, end_marker, new_text):
+    p = ROOT / rel
+    s = p.read_text(encoding="utf-8")
+    i = s.index(start_marker)
+    j = s.index(end_marker)
+    assert i < j, (rel, start_marker)
+    p.write_text(s[:i] + new_text + s[j:], encoding="utf-8")
+    print("rewrote block %-20s %s" % (rel, start_marker.strip()[:40]))
+
+
+def rewrite(rel, text):
+    (ROOT / rel).write_text(text, encoding="utf-8")
+    print("rewrote file %s (%d lines)" % (rel, len(text.splitlines())))
+
+
+# ---------------------------------------------------------------- test_core.py
+CORE = "tests/test_core.py"
+# 1) invalid 4-element reshape -> valid 16-element label (1..4 repeated 4x)
+patch(CORE,
+      "        lab = torch.arange(1, NUM_FG + 1).view(1, 1, 4, 4)"
+      ".repeat(1, 1, 1, 1)[:, :, 0].view(1, 1, 4, 4)\n"
+      "        lab = torch.arange(1, 5).view(1, 1, 4, 4)\n",
+      "        lab = torch.arange(1, NUM_FG + 1).view(1, 1, 4, 4)"
+      ".repeat(1, 1, 1, 1)\n")
+# 2) cv2.circle needs uint8 canvas, not int64
+patch(CORE,
+      "        lab = np.zeros((256, 256), dtype=np.int64)\n",
+      "        lab = np.zeros((256, 256), dtype=np.uint8)\n")
+
+# ----------------------------------------------------------- test_runtime.py
+RT = "tests/test_runtime.py"
+# 1) union-zero must be an all-zero fixture inside assertRaises
+patch(RT,
+      "        with self.assertRaises(RuntimeError):\n"
+      "            runtime.global_miou([(0, 0, 0), (1, 0, 0), (0, 1, 0), (1, 1, 1)])\n",
+      "        with self.assertRaises(RuntimeError):\n"
+      "            runtime.global_miou([(0, 0, 0), (0, 0, 0), (0, 0, 0), (0, 0, 0)])\n")
+# 2) FakeMember: unwrap nested img_metas list correctly
+patch(RT,
+      "        self.last_flip = bool(img_metas[0].get('flip', False))\n",
+      "        meta = img_metas[0]\n"
+      "        if not isinstance(meta, dict):\n"
+      "            meta = meta[0]\n"
+      "        self.last_flip = bool(meta.get('flip', False))\n")
+# 3) dataset length must match expected_count: len 1 / count 1 in exact test
+patch(RT,
+      "        ds = FakeDS()\n"
+      "        ds._gt = gt\n",
+      "        ds = FakeDS(n=1)\n"
+      "        ds._gt = gt\n")
+# 4) shape-strict test: FakeDS len 2 -> expected_count 2; unique ori_filename
+#    across the 2 items is guaranteed by FakeDS ('v0.jpg', 'v1.jpg')
+patch(RT,
+      "            runtime.evaluate_split(predictor, 'val', 'x', None,\n"
+      "                                   float('inf'), lambda m: None,\n"
+      "                                   expected_count=1, _ds_builder=builder))\n",
+      "            runtime.evaluate_split(predictor, 'val', 'x', None,\n"
+      "                                   float('inf'), lambda m: None,\n"
+      "                                   expected_count=2, _ds_builder=builder))\n")
+
+# ---------------------------------------------------------- test_protocol.py
+PR = "tests/test_protocol.py"
+# 1) ledger fixture must carry the real schema keys ops.load_ledger validates
+patch(PR,
+      "        with open(os.path.join(self.d, 'budget_ledger.json'), 'w') as f:\n"
+      "            json.dump({'deadline': self.dl.isoformat()}, f)\n",
+      "        with open(os.path.join(self.d, 'budget_ledger.json'), 'w') as f:\n"
+      "            json.dump({'billing_started_at': self.dl.isoformat(),\n"
+      "                       'other_cost': 0.0}, f)\n")
+# 2) FINAL_RESERVE counted once: PHASE_CAPS already includes 'final'
+patch(PR,
+      "        self.assertLessEqual(\n"
+      "            rp.PHASE_CAPS['preparation'] + rp.PHASE_CAPS['pair_seed42'] +\n"
+      "            rp.PHASE_CAPS['pair_seed43'] + rp.PHASE_CAPS['final'] +\n"
+      "            rp.FINAL_RESERVE, rp.GLOBAL_BUDGET + 1)\n",
+      "        # PHASE_CAPS already includes 'final'; add reserve exactly once\n"
+      "        self.assertLessEqual(sum(rp.PHASE_CAPS.values()) + rp.FINAL_RESERVE,\n"
+      "                             rp.GLOBAL_BUDGET + 1)\n")
+# 3) RNG restore: compare 3 distinct draws from one RandomState, not one draw
+replace_between(PR,
+                "    def test_restore_makes_next_sample_equal_uninterrupted(self):",
+                "\n\nclass TestChooseBestTie(unittest.TestCase):",
+                '''    def test_restore_makes_next_sample_equal_uninterrupted(self):
+        rng = np.random.RandomState(42)
+        first3 = [rng.randint(0, 1000) for _ in range(3)]
+        state = rng.get_state()
+        [rng.randint(0, 1000) for _ in range(10)]   # divergence
+        rng.set_state(state)                        # restore
+        again = [rng.randint(0, 1000) for _ in range(3)]
+        ref_rng = np.random.RandomState(42)         # uninterrupted reference
+        ref3 = [ref_rng.randint(0, 1000) for _ in range(3)]
+        self.assertEqual(again, ref3)
+        self.assertEqual(first3, ref3)  # 3 distinct draws all reproduced
+''')
+
+# ------------------------------------------------------------- test_ops.py
+OPS = '''"""ops tests: budget, watchdog, steps, gates, checkpoints, metrics. unittest."""
+import json, os, sys, tempfile, unittest
+from datetime import datetime, timedelta, timezone
+from pathlib import Path
+from unittest import mock
+
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+import ops
+
+
+def _led(start, cost):
+    return {"billing_started_at": start.isoformat(), "other_cost": cost}
+
+
+class TestBudget(unittest.TestCase):
+    def test_deadline_min_of_cap_and_budget(self):
+        start = datetime(2026, 9, 16, tzinfo=timezone.utc)
+        self.assertEqual(ops.deadline_of(_led(start, 0.0)),
+                         start + timedelta(hours=ops.CAP_HOURS))
+        self.assertEqual(ops.deadline_of(_led(start, 40.0)),
+                         start + timedelta(hours=10 / 1.98))
+
+    def test_invalid_budget_rejected(self):
+        start = datetime(2026, 9, 16, tzinfo=timezone.utc)
+        for bad in (float("nan"), float("inf"), -1.0, 50.0, "x"):
+            with self.assertRaises((ValueError, TypeError)):
+                ops.deadline_of(_led(start, bad))
+
+    def test_init_persists_and_rejects_naive(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            rd = os.path.join(tmp, "run")
+            ops.main(["init", "--started-at", "2026-09-16T00:00:00+00:00",
+                      "--other-cost", "5.5", "--run-dir", rd])
+            led = ops.load_ledger(rd)
+            self.assertTrue(led["billing_started_at"]
+                            .startswith("2026-09-16T00:00:00+00:00"))
+            with self.assertRaises(ValueError):
+                ops.main(["init", "--started-at", "2026-09-16T00:00:00",
+                          "--other-cost", "0", "--run-dir", rd])
+
+    def test_restart_never_resets_ledger(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            rd = os.path.join(tmp, "run")
+            ops.main(["init", "--started-at", "2026-09-16T00:00:00+00:00",
+                      "--other-cost", "1.0", "--run-dir", rd])
+            ops.main(["init", "--started-at", "2030-01-01T00:00:00+00:00",
+                      "--other-cost", "2.0", "--run-dir", rd])
+            led = ops.load_ledger(rd)
+            self.assertTrue(led["billing_started_at"].startswith("2026-09-16"))
+            self.assertEqual(led["other_cost"], 2.0)
+
+
+class TestWatchdog(unittest.TestCase):
+    def test_dry_run_deadline_expired_no_shutdown(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            rd = os.path.join(tmp, "run")
+            ops.main(["init", "--started-at", "2020-01-01T00:00:00+00:00",
+                      "--other-cost", "0", "--run-dir", rd])
+            ops.main(["watchdog", "--run-dir", rd, "--dry-run"])
+
+    def test_windows_real_shutdown_forbidden(self):
+        with mock.patch.object(ops.sys, "platform", "win32"):
+            with self.assertRaises(RuntimeError):
+                ops.shutdown_system(False)
+
+
+class TestChooseSteps(unittest.TestCase):
+    def test_feasible_and_multiple_of_four(self):
+        self.assertEqual(ops.choose_steps(0.001, 100.0), 4000)
+        t = ops.choose_steps(0.002, 50.0)
+        self.assertTrue(1000 <= t <= 4000 and t % 4 == 0)
+
+    def test_infeasible_raises(self):
+        with self.assertRaises(ValueError):
+            ops.choose_steps(1.0, 100.0)
+
+
+class TestGates(unittest.TestCase):
+    def test_gate_four_timepoints(self):
+        a = [0.50, 0.51, 0.52, 0.52]
+        self.assertTrue(ops.gate_first(a, [0.525, 0.526, 0.53, 0.53], 0.50))
+        self.assertFalse(ops.gate_first(a, [0.522, 0.522, 0.522, 0.522], 0.50))
+        self.assertFalse(ops.gate_first([0.52] * 4, [0.53, 0.50, 0.50, 0.50], 0.50))
+        self.assertFalse(ops.gate_first([0.40] * 4, [0.45] * 4, 0.50))
+        with self.assertRaises(ValueError):
+            ops.gate_first([0.5, 0.5, 0.5], [0.6] * 4, 0.4)
+
+
+class TestChooseCheckpoint(unittest.TestCase):
+    def test_tie_prefers_earlier_regardless_of_order(self):
+        self.assertEqual(ops.choose_checkpoint([(100, 0.60), (200, 0.62),
+                                                (300, 0.62)]), 200)
+        self.assertEqual(ops.choose_checkpoint([(300, 0.62), (200, 0.62),
+                                                (100, 0.60)]), 200)
+
+
+class TestMetrics(unittest.TestCase):
+    def test_true_aggregates_across_images(self):
+        imgs = [[[10, 5, 5], [4, 4, 2], [0, 1, 1], [3, 0, 3]],
+                [[0, 0, 0], [1, 0, 1], [2, 2, 0], [0, 0, 0]]]
+        m = ops.metrics_from_counts(imgs)
+        self.assertAlmostEqual(m["per_class"]["EX"], 10 / 20)
+        self.assertAlmostEqual(m["per_class"]["HE"], 5 / 12)
+        self.assertAlmostEqual(m["per_class"]["SE"], 2 / 5)
+        self.assertAlmostEqual(m["per_class"]["MA"], 3 / 6)
+        self.assertAlmostEqual(m["mIoU"],
+                               sum(m["per_class"].values()) / 4)
+        self.assertEqual(m["counts"]["HE"],
+                         {"tp": 5.0, "fp": 4.0, "fn": 3.0})
+
+    def test_reject_zero_union(self):
+        with self.assertRaises(ValueError):
+            ops.metrics_from_counts({c: {"tp": 0, "fp": 0, "fn": 0}
+                                     for c in ops.CLASSES})
+
+
+class TestSplitAssignment(unittest.TestCase):
+    def _read(self, data):
+        with tempfile.TemporaryDirectory() as tmp:
+            p = Path(tmp) / "split_assignment.json"
+            p.write_text(json.dumps(data))
+            import asset_inventory as ai
+            with mock.patch.object(ai, "SPLIT_ASSIGNMENT", str(p)):
+                return ai.read_split_assignment()
+
+    def test_shapes(self):
+        got = self._read({"train": ["a", "b"], "val": {"ids": ["c"]},
+                          "test": []})
+        self.assertEqual(got["train"], ["a", "b"])
+        self.assertEqual(got["val"], ["c"])
+        got = self._read([{"id": "a", "split": "train"},
+                          {"id": "b", "split": "test"}])
+        self.assertEqual(got["train"], ["a"])
+        self.assertEqual(got["test"], ["b"])
+
+
+if __name__ == "__main__":
+    unittest.main()
+'''
+rewrite("tests/test_ops.py", OPS)
+
+# --------------------------------------------------------- test_storage.py
+STO = '''"""tests/test_storage.py: real PNG fixtures, >=2GiB headroom, mocked disk."""
+import json, tempfile, unittest
+from pathlib import Path
+from unittest import mock
+
+import numpy as np
+from PIL import Image
+
+import storage_preflight as sp
+
+
+def make_png(path, w, h):
+    """Real PNG bytes (PIL encodes valid IHDR/IDAT)."""
+    Image.fromarray(np.zeros((h, w, 3), dtype=np.uint8)).save(str(path))
+
+
+class TestStoragePreflight(unittest.TestCase):
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.tmp.cleanup)
+        root = Path(self.tmp.name)
+        self.data = root / "data"
+        self.data.mkdir()
+        make_png(self.data / "a.png", 4, 4)  # 4*4*16 = 256 B
+        self.student = root / "student.bin"
+        self.student.write_bytes(b"x" * 100)
+        self.ref = root / "ref.bin"
+        self.ref.write_bytes(b"y" * 50)
+        self.cache = root / "cache"
+        self.run = root / "run"
+        self.out = root / "report.json"
+
+    def _call(self, cache_free, run_free):
+        ret = mock.Mock(free=cache_free, total=1 << 40, used=0)
+        st = mock.Mock()
+        st.st_dev = 1  # single filesystem -> combined min(free) branch
+        with mock.patch("shutil.disk_usage", return_value=ret), \\
+             mock.patch("os.stat", return_value=st):
+            return sp.check_storage(self.data, self.cache, self.run,
+                                    self.student, self.ref)
+
+    def test_ok_with_2gib_headroom(self):
+        r = self._call(cache_free=4 << 30, run_free=4 << 30)
+        self.assertEqual(r["status"], "ok")
+        self.assertEqual(r["images"]["count"], 1)
+        self.assertEqual(r["images"]["bytes"], 256)
+        self.assertEqual(r["checkpoints"]["per_ckpt_bytes"], 2 * 150)
+
+    def test_block_below_headroom(self):
+        # 2 GiB headroom alone exceeds tiny free space
+        r = self._call(cache_free=1 << 30, run_free=1 << 30)
+        self.assertEqual(r["status"], "block")
+        r = self._call(cache_free=10, run_free=10)
+        self.assertEqual(r["status"], "block")
+
+    def test_missing_inputs_block(self):
+        r = sp.check_storage(self.data, self.cache, self.run,
+                             self.student, self.tmp.name + "/nope.bin")
+        self.assertEqual(r["status"], "block")
+        self.assertIn("missing", r["reason"])
+
+    def test_headroom_applied(self):
+        r = self._call(cache_free=1 << 40, run_free=1 << 40)
+        base = 256 + 24 * 300
+        self.assertEqual(r["required_bytes"], int(base * 1.2) + (2 << 30))
+
+    def test_nearest_existing_dir_stat(self):
+        # cache/run do not exist: free_for walks to nearest existing parent,
+        # which must still be stat-able for st_dev comparison.
+        ret = mock.Mock(free=4 << 30, total=1 << 40, used=0)
+        st = mock.Mock()
+        st.st_dev = 1
+        with mock.patch("shutil.disk_usage", return_value=ret) as du, \\
+             mock.patch("os.stat", return_value=st) as ost:
+            r = sp.check_storage(self.data, self.cache, self.run,
+                                 self.student, self.ref)
+            self.assertEqual(du.call_count, 2)
+            self.assertEqual(ost.call_count, 2)
+            self.assertTrue(r["same_filesystem"])
+
+    def test_cli_writes_only_out_json(self):
+        import subprocess
+        import sys
+        before = sorted(str(p) for p in Path(self.tmp.name).rglob("*")
+                        if p.is_file())
+        cp = subprocess.run([sys.executable, "storage_preflight.py",
+                             "--data-root", str(self.data),
+                             "--cache-dir", str(self.cache),
+                             "--run-dir", str(self.run),
+                             "--student-checkpoint", str(self.student),
+                             "--reference-checkpoint", str(self.ref),
+                             "--out-json", str(self.out)],
+                            capture_output=True)
+        after = sorted(str(p) for p in Path(self.tmp.name).rglob("*")
+                       if p.is_file())
+        self.assertEqual(set(after) - set(before), {str(self.out)})
+        self.assertIn(cp.returncode, (0, 2))
+        json.loads(self.out.read_text())
+
+
+if __name__ == "__main__":
+    unittest.main()
+'''
+rewrite("tests/test_storage.py", STO)
+
+print("done: all test patches applied")

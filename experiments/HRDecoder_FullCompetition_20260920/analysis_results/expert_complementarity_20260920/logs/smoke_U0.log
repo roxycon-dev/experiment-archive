@@ -1,0 +1,14 @@
+[2026-09-20 22:02:52] === U0 构建/加载 ===
+[2026-09-20 22:03:06] GT 复用已校验的共享副本: /root/autodl-tmp/HRDecoder_FullCompetition_20260920/expert_outputs/_shared/gt（76 张）
+[2026-09-20 22:03:09] U0 export 1/1 (2.5s)
+[2026-09-20 22:03:09] SMOKE: U0 只跑了 1/76 张 —— 跳过 expected_miou 比对（历史期望 0.384464125766 属于整轮 val 口径）
+[2026-09-20 22:03:09] SMOKE: U0 只处理 1/76 张 —— 不写 contract
+/root/miniconda3/lib/python3.8/site-packages/torch/_utils.py:776: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  return self.fget.__get__(instance, owner)()
+{
+  "smoke": true,
+  "images": 1,
+  "models": [
+    "U0"
+  ]
+}

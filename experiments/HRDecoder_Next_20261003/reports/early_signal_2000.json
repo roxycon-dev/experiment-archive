@@ -1,0 +1,112 @@
+{
+  "arms": {
+    "M0": {
+      "status": "complete",
+      "output": "fixed_half",
+      "current": 0.4220268051908416,
+      "best": 0.42355241147194167,
+      "baseline_gap": 0.011324620738423996,
+      "recent_delta": -0.0015256062811000448,
+      "image_uncertainty_vs_old": {
+        "delta_mean": -0.013600627538161707,
+        "percentile95": [
+          -0.029332225786987576,
+          -0.0001748885711931698
+        ],
+        "repetitions": 2000,
+        "seed": 7303,
+        "note": "Resamples paired images; this does not estimate training-seed variability"
+      },
+      "strong_underperformance": true,
+      "per_class": {
+        "EX": {
+          "tp": 184109,
+          "fp": 93885,
+          "fn": 106694,
+          "iou": 0.47859304163373956,
+          "precision": 0.6622768836737484,
+          "recall": 0.6331055731887223
+        },
+        "HE": {
+          "tp": 664423,
+          "fp": 416362,
+          "fn": 541501,
+          "iou": 0.4095597200493624,
+          "precision": 0.6147596422970341,
+          "recall": 0.5509658983484863
+        },
+        "SE": {
+          "tp": 143486,
+          "fp": 56814,
+          "fn": 57918,
+          "iou": 0.5556777606518523,
+          "precision": 0.7163554667998003,
+          "recall": 0.71242875017378
+        },
+        "MA": {
+          "tp": 27636,
+          "fp": 43850,
+          "fn": 41648,
+          "iou": 0.24427669842841232,
+          "precision": 0.38659317908401647,
+          "recall": 0.3988799722879741
+        }
+      }
+    },
+    "M1": {
+      "status": "complete",
+      "output": "fixed_half",
+      "current": 0.4216427759713359,
+      "best": 0.4234589432855201,
+      "baseline_gap": 0.011418088924845582,
+      "recent_delta": -0.0018161673141841583,
+      "image_uncertainty_vs_old": {
+        "delta_mean": -0.013902237660544176,
+        "percentile95": [
+          -0.029213990088001955,
+          -0.000359001804895224
+        ],
+        "repetitions": 2000,
+        "seed": 7303,
+        "note": "Resamples paired images; this does not estimate training-seed variability"
+      },
+      "strong_underperformance": true,
+      "per_class": {
+        "EX": {
+          "tp": 184692,
+          "fp": 96086,
+          "fn": 106111,
+          "iou": 0.47737723222939915,
+          "precision": 0.657786578720555,
+          "recall": 0.6351103668118967
+        },
+        "HE": {
+          "tp": 666222,
+          "fp": 421265,
+          "fn": 539702,
+          "iou": 0.40943123386404406,
+          "precision": 0.6126252543708568,
+          "recall": 0.5524577004852711
+        },
+        "SE": {
+          "tp": 143162,
+          "fp": 56204,
+          "fn": 58242,
+          "iou": 0.555735846712835,
+          "precision": 0.7180863336777585,
+          "recall": 0.7108200432960616
+        },
+        "MA": {
+          "tp": 27617,
+          "fp": 43888,
+          "fn": 41667,
+          "iou": 0.2440267910790655,
+          "precision": 0.3862247395287043,
+          "recall": 0.3986057386986894
+        }
+      }
+    }
+  },
+  "rule": "Read-only diagnostic: best >=1pp below old, no recent full-val rise, 95% paired-image interval below old",
+  "not_a_convergence_claim": true
+}

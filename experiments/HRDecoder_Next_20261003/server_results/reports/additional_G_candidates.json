@@ -1,0 +1,47 @@
+{
+  "candidates": [
+    {
+      "kind": "G_fixed25",
+      "asset": "H1",
+      "canvas": "square2048",
+      "inference": "whole",
+      "ordinary": true,
+      "output": "champion_fixed25",
+      "score": 0.4383833243103097,
+      "cache": "/root/autodl-tmp/HRDecoder_Next_20261003/work/G/H1_ordinary_fixed25",
+      "key": "H1_square2048_whole_ordinary",
+      "paired_image_uncertainty": {
+        "delta_mean": 0.0026493324857768856,
+        "percentile95": [
+          -0.007571647824658939,
+          0.014272360399233894
+        ],
+        "repetitions": 2000,
+        "seed": 7303,
+        "note": "Resamples paired images; this does not estimate training-seed variability"
+      }
+    },
+    {
+      "kind": "G_fixed25",
+      "asset": "H1",
+      "canvas": "square2048",
+      "inference": "whole",
+      "ordinary": true,
+      "output": "old_complete_fixed_half",
+      "score": 0.42869754092361056,
+      "cache": "/root/autodl-tmp/HRDecoder_Next_20261003/work/G/H1_ordinary_fixed_half",
+      "key": "H1_square2048_whole_ordinary",
+      "paired_image_uncertainty": {
+        "delta_mean": -0.007814304094040757,
+        "percentile95": [
+          -0.027378661344281133,
+          0.010740724973658402
+        ],
+        "repetitions": 2000,
+        "seed": 7303,
+        "note": "Resamples paired images; this does not estimate training-seed variability"
+      }
+    }
+  ],
+  "reason": "H1 ordinary forward restored +6.11 points vs eval_forward; reuse cached probabilities under the already declared fixed25/half recipes before any test; no additional GPU inference, weights or geometry search"
+}

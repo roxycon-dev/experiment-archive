@@ -1,0 +1,48 @@
+{
+  "created_at": "2026-10-04T06:40:17.693542+00:00",
+  "update": 24000,
+  "formula": "single",
+  "seeds": [
+    {
+      "seed": 42,
+      "DDR_single_pct": 39.01229427774314,
+      "MIX_single_pct": 37.51675796976994,
+      "MIX_minus_DDR_pp": -1.4955363079731967,
+      "per_class_delta_pp": {
+        "EX": 0.11437795896831915,
+        "HE": -0.9621002591346581,
+        "SE": -5.627001731855792,
+        "MA": 0.4925788001293441
+      }
+    },
+    {
+      "seed": 2024,
+      "DDR_single_pct": 37.84379943157931,
+      "MIX_single_pct": 36.63332237493327,
+      "MIX_minus_DDR_pp": -1.2104770566460417,
+      "per_class_delta_pp": {
+        "EX": -1.476327350790747,
+        "HE": 1.9497443529545109,
+        "SE": -5.608904331893243,
+        "MA": 0.293579103145305
+      }
+    }
+  ],
+  "mean_MIX_minus_DDR_pp": -1.3530066823096192,
+  "range_MIX_minus_DDR_pp": [
+    -1.4955363079731967,
+    -1.2104770566460417
+  ],
+  "exposure_windows": {
+    "Q_DDR": {
+      "DDR": 192000
+    },
+    "Q_MIX": {
+      "DDR": 144000,
+      "IDRiD": 24000,
+      "MAPLES": 24000
+    }
+  },
+  "interpretation": "The fixed MIX protocol did not improve this paired DDR validation comparison. Exposure and annotation source differ; not a universal conclusion about external supervision.",
+  "IDRiD_source_exception": "User-authorized stored uncropped assertion and polygon-derived masks; official native pixel GT not restored"
+}

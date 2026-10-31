@@ -1,0 +1,111 @@
+{
+  "mIoU_percent": 36.83437700312366,
+  "IoU_percent": [
+    39.077504999669884,
+    35.96339436913672,
+    50.091551852704974,
+    22.205056790983072
+  ],
+  "precision_percent": [
+    50.65611290718894,
+    49.77927721699141,
+    70.09653680363202,
+    30.860339700619928
+  ],
+  "recall_percent": [
+    63.09460356323697,
+    56.44178240088098,
+    63.704792357649296,
+    44.18769124184516
+  ],
+  "counts": [
+    [
+      183481,
+      178728,
+      107322
+    ],
+    [
+      680645,
+      686681,
+      525279
+    ],
+    [
+      128304,
+      54735,
+      73100
+    ],
+    [
+      30615,
+      68590,
+      38669
+    ]
+  ],
+  "class_order": [
+    "EX",
+    "HE",
+    "SE",
+    "MA"
+  ],
+  "undefined_precision_convention": "zero when TP+FP=0; inspect counts",
+  "images": 76,
+  "threshold": "strictly > .5",
+  "base_head_metrics": {
+    "mIoU_percent": 33.999713878584906,
+    "IoU_percent": [
+      35.303437889036886,
+      34.017261994257936,
+      46.425124004855064,
+      20.253031626189713
+    ],
+    "precision_percent": [
+      41.69511322415339,
+      42.492599250534376,
+      56.434941891311,
+      24.71119803081903
+    ],
+    "recall_percent": [
+      69.72417753599515,
+      63.038466769050125,
+      72.35606045560168,
+      52.888112695571856
+    ],
+    "counts": [
+      [
+        202760,
+        283532,
+        88043
+      ],
+      [
+        760196,
+        1028812,
+        445728
+      ],
+      [
+        145728,
+        112495,
+        55676
+      ],
+      [
+        36643,
+        111642,
+        32641
+      ]
+    ],
+    "class_order": [
+      "EX",
+      "HE",
+      "SE",
+      "MA"
+    ],
+    "undefined_precision_convention": "zero when TP+FP=0; inspect counts",
+    "images": 76,
+    "threshold": "strictly > .5"
+  },
+  "seconds": 27.8768527880311,
+  "deployment_inference_verified": true,
+  "teacher_or_GT_input": false,
+  "parent_completed": 20000,
+  "probe_updates": 250,
+  "arm": "feature_isolated",
+  "identity_SHA": "77556f6fa88c89083bf9acd0e7c50f0135e0fd8f5438ca495a5d68695bc6144a"
+}

@@ -1,0 +1,40 @@
+{
+  "stage": "COMPLETE",
+  "phase": "COMPLETE",
+  "pid": 136230,
+  "lock_sha256": "537f516bbdcd6517e5aca3c8a87ae9d6c2d2f9174ee6d3aeda7d3ce8ace6e8ee",
+  "runner_sha256": "491f31cce94c025195efd387d938331d2ca3aeed5d2480611b7bc3366935d77f",
+  "test_action": "REUSE_EXACT_PRIOR_TEST_COUNTS",
+  "started_at": "2026-10-04T06:38:33.875926+00:00",
+  "automatic_restart": false,
+  "completed_at": "2026-10-04T06:38:35.179916+00:00",
+  "summary": {
+    "status": "COMPLETE",
+    "lock_sha256": "537f516bbdcd6517e5aca3c8a87ae9d6c2d2f9174ee6d3aeda7d3ce8ace6e8ee",
+    "formula": "fixed_fusion",
+    "update": 16000,
+    "deployment_seed": 42,
+    "seed_scores_pct": [
+      45.72155710642771,
+      45.677066093957414
+    ],
+    "mean_test_pct": 45.69931160019256,
+    "range_test_pct": [
+      45.677066093957414,
+      45.72155710642771
+    ],
+    "target_test_pct": 47.2115,
+    "both_seeds_target_met": false,
+    "mean_target_met": false,
+    "selection_changed_after_test": false,
+    "historical_limitation": "Exploratory continuation after historical DDR val/test use and an already completed DDR16k test. Choice uses paired validation only; test never changes it.",
+    "completed_at": "2026-10-03T18:24:37.758210+00:00",
+    "reused_from_prior_lock_sha256": "26e5852194aca66bb02062ac79b2f0f8026e33652a95133140a3824bffb38905",
+    "reused_source_sha256": "5d22cc93c64c76486cd150c0869cf1fc05611e54086158b3dc6f8b08c968c7b6",
+    "test_action": "REUSE_EXACT_PRIOR_TEST_COUNTS",
+    "no_new_test_inference": true,
+    "arm": "Q_DDR",
+    "common_endpoint": 24000,
+    "selected_mean_val_pct": 44.286518315673504
+  }
+}

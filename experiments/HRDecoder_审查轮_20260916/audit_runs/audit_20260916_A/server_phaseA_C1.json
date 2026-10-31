@@ -1,0 +1,301 @@
+{
+  "environment": {
+    "instance_hostname": "autodl-container-cb6a4f850d-6aa7b741",
+    "python": "3.8.10",
+    "executable": "/root/miniconda3/bin/python",
+    "platform": "Linux-5.15.0-133-generic-x86_64-with-glibc2.17",
+    "torch": "2.0.1+cu117",
+    "torch_cuda": "11.7",
+    "cudnn_version": 8500,
+    "cudnn_deterministic": false,
+    "cudnn_benchmark": false,
+    "tf32_matmul_allowed": false,
+    "tf32_cudnn_allowed": true,
+    "cuda_available": true,
+    "gpu_name": "NVIDIA GeForce RTX 4090",
+    "mmcv": "1.7.1",
+    "mmseg": "0.16.0",
+    "numpy": "1.24.4",
+    "torch_load_weights_only_default": "False (<2.6)"
+  },
+  "code_identity": {
+    "hrplus_core.py": {
+      "status": "FOUND",
+      "bytes": 8029,
+      "sha256": "c0caf999c68bce8da84b6386c4972009ebff018a68e71bd9364fe0e15e8c7539"
+    },
+    "hrplus_patch.py": {
+      "status": "FOUND",
+      "bytes": 9315,
+      "sha256": "6433a8fafc950c83b1a6fd432e8c901fb843b3fbaff032454e4289fe8bdd0f37"
+    },
+    "hr100_refinement.py": {
+      "status": "FOUND",
+      "bytes": 2946,
+      "sha256": "2d0db3056bc50bd68fd4da71f470f6e80fbf4deeb78264cbd4640dc2ab0c1b72"
+    },
+    "ma_residual.py": {
+      "status": "FOUND",
+      "bytes": 12031,
+      "sha256": "95438df2b26df31a0c29e4933afa482d44072e5be42524177586fb18c165c1ed"
+    },
+    "hr100_ensemble.py": {
+      "status": "FOUND",
+      "bytes": 1884,
+      "sha256": "b203ba618912702e9aeff9126f1224d934c01fe5b4cae4638191e108cd59e415"
+    },
+    "mmseg/models/segmentors/base.py": {
+      "status": "FOUND",
+      "bytes": 10319,
+      "sha256": "1b8b57470ce45d32a0f24b041badeaef1bd2c4d49a8e8518d8c51488cded3df9"
+    },
+    "mmseg/models/segmentors/lesion_encoder_decoder.py": {
+      "status": "FOUND",
+      "bytes": 7492,
+      "sha256": "3a11c417030f3066670df5d53e060746c16bec16f089dfeaaba4e77ac3cea5f8"
+    },
+    "mmseg/models/segmentors/HRDecoder.py": {
+      "status": "FOUND",
+      "bytes": 13919,
+      "sha256": "a97d00407c03947363df65a035dc70e5b458f440e38c21161a247b3282c1b933"
+    },
+    "mmseg/models/segmentors/encoder_decoder.py": {
+      "status": "FOUND",
+      "bytes": 14580,
+      "sha256": "5099f4774ea1563ec52ffc0de673c7974f6d6f647bd7bee00824666230969d11"
+    },
+    "mmseg/datasets/lesion_dataset.py": {
+      "status": "FOUND",
+      "bytes": 4901,
+      "sha256": "96e697e26f15c477d0d7707bc38f9d93515a646c508ac7c4dfc35e6e762f0c42"
+    },
+    "mmseg/core/evaluation/lesion_metric.py": {
+      "status": "FOUND",
+      "bytes": 6918,
+      "sha256": "2d8ff78ec6ffd4a2659f571c53a4206c2c97987c409c7ba2e6603a6d77ea72ab"
+    },
+    "mmseg/models/losses/binary_loss.py": {
+      "status": "FOUND",
+      "bytes": 9042,
+      "sha256": "a56634a14dccf92ce004c9a87684ef53c6d66d8705ff49b5ab7c184a4e5e903c"
+    },
+    "mmseg/datasets/pipelines/transforms.py": {
+      "status": "FOUND",
+      "bytes": 32169,
+      "sha256": "5a22f34183537738351b7d0bfe7fa591cbe44e76357c2a48782590ab7dd5ffd2"
+    },
+    "mmseg/datasets/pipelines/formating.py": {
+      "status": "FOUND",
+      "bytes": 9811,
+      "sha256": "c7421700326f587f9228eb4ecf961436affd29e89f236899521732a3ae93545a"
+    },
+    "mmseg/datasets/pipelines/test_time_aug.py": {
+      "status": "FOUND",
+      "bytes": 5384,
+      "sha256": "176f8c1cd4e71599b4b2882820c1fde0120cf2220b67f4958d147367add26302"
+    },
+    "tools/train.py": {
+      "status": "FOUND",
+      "bytes": 6486,
+      "sha256": "0d1f2cbcd0ef4a00519a794abfa64596ccc6b264264adb60b709b7a931f4af76"
+    },
+    "tools/test.py": {
+      "status": "FOUND",
+      "bytes": 9524,
+      "sha256": "823ce7284b8afcae21c131f9ba1c6763670ec6726d708cea77b5466512382f9f"
+    },
+    "tools/hrplus_smoke.py": {
+      "status": "FOUND",
+      "bytes": 12084,
+      "sha256": "d6698352b56d3466e2ba66dca1d638e5934dfb412b6bb22f3f24920bae15fe6d"
+    },
+    "configs/lesion/exp/hrplus_patch_dice.py": {
+      "status": "FOUND",
+      "bytes": 2327,
+      "sha256": "2d687086e28533d4bb080f31c12c4abb802d5293fc4f2a463f9f0bd8f36452f9"
+    },
+    "configs/lesion/exp/hrplus_patch_lovasz.py": {
+      "status": "FOUND",
+      "bytes": 200,
+      "sha256": "cb1dc4cbb75304c29d457f3140a84a4c358aeb844c2f3922f5b6ba33d8f3fc54"
+    },
+    "configs/lesion/exp/hrplus_mares.py": {
+      "status": "FOUND",
+      "bytes": 1429,
+      "sha256": "591e4786abaa35b8dfc9a6476c45a8c9eb387544c37e0d56b6a499b683e100b4"
+    },
+    "configs/lesion/exp/hrplus_maond.py": {
+      "status": "FOUND",
+      "bytes": 537,
+      "sha256": "5ce4f4c5fd5ce2b66808864ddcd2fe53a112dd2c4747eb49880e68dc9d6b0021"
+    },
+    "configs/lesion/exp/hr100_a.py": {
+      "status": "FOUND",
+      "bytes": 1263,
+      "sha256": "f60a545f6120464275edd60f1e9e504291e676e3a5e6b0df7eba3071af83f45a"
+    },
+    "configs/lesion/exp/hr100_b.py": {
+      "status": "FOUND",
+      "bytes": 66,
+      "sha256": "556e7c2f1557c6658f6233f1fe1601b8d0b1c8382cc6bdaaaf108a712da3ed54"
+    },
+    "configs/lesion/exp/e4_detail_split613.py": {
+      "status": "FOUND",
+      "bytes": 1219,
+      "sha256": "65b2c5eb88db2790c1e00dbcb6e18deaf8fc6abc5bf3f148be9ae70d2f06fc1c"
+    },
+    "configs/lesion/exp/baseline_split613.py": {
+      "status": "FOUND",
+      "bytes": 1779,
+      "sha256": "b1bc3a6fb349d4e04f33ea4c8325852e5859b9ac46ddc04c922909e409040d08"
+    },
+    "ops/eval_ens.py": {
+      "status": "MISSING"
+    },
+    "ops/smoke_mares.py": {
+      "status": "MISSING"
+    },
+    "ops/renorm_bn.py": {
+      "status": "MISSING"
+    },
+    "ops/hard_deadline_guard.py": {
+      "status": "MISSING"
+    }
+  },
+  "checkpoints": {
+    "b_weights": {
+      "status": "FOUND",
+      "path": "/root/autodl-tmp/hrplus/repo/weights/b_weights.pth",
+      "bytes": 526178711,
+      "sha256": "abd74330b5ccaad291ee1d2a74739aa7901366f0edf40cf151027cdd61e1c84d"
+    },
+    "d_full": {
+      "status": "FOUND",
+      "path": "/root/autodl-tmp/hrplus/D_0913_retry/best_mIoU_iter_2000.pth",
+      "bytes": 789655426,
+      "sha256": "907ef546acf88653c0674dde40a235ba9d4cf2e5dff0c0d62beeaeab9b05d694"
+    },
+    "d_student_only": {
+      "status": "FOUND",
+      "path": "/root/autodl-tmp/hrplus/D_0913_retry/backup_student_2000.pth",
+      "bytes": 263419124,
+      "sha256": "5fe18717b62d8fc3ab4846a50c046588e2af05abbbfdb3a958f4794018b319ea"
+    },
+    "e_full": {
+      "status": "FOUND",
+      "path": "/root/autodl-tmp/hrplus/results/E_0916/best_mIoU_iter_1500.pth",
+      "bytes": 527412743,
+      "sha256": "a18ff92b4da24d870554f17856983d4be042386cacbcaba0d4e13f3f248ed5e5"
+    },
+    "e2_full": {
+      "status": "FOUND",
+      "path": "/root/autodl-tmp/hrplus/results/E2_0916/best_mIoU_iter_1500.pth",
+      "bytes": 527412871,
+      "sha256": "e72aefd30b6f1a1419b4a61c330e4e112a97e77cae230797fecafb7f3d2c646f"
+    },
+    "e3_full": {
+      "status": "FOUND",
+      "path": "/root/autodl-tmp/hrplus/results/E3_0916/best_mIoU_iter_2000.pth",
+      "bytes": 527412871,
+      "sha256": "07f8c44c0949ff0a0ebdee28f6629c5fdefcfa6ab7779aac5e9fb263d3ab13a8"
+    },
+    "l_full": {
+      "status": "FOUND",
+      "path": "/root/autodl-tmp/hrplus/results/L_0915/best_mIoU_iter_6000.pth",
+      "bytes": 789655426,
+      "sha256": "d721fa5fa43fa2b31dbf0641ab8066088cb9be60f737f3320a0e714927f84d7e"
+    },
+    "e4_full": {
+      "status": "FOUND",
+      "path": "/root/HRDecoder/work_dirs/exp_e4_detail_split613/best_mIoU_iter_36000.pth",
+      "bytes": 526178519,
+      "sha256": "ef63779928a1267c5b7e9050bf82ddb3ed88b62d830a9275d7018fd90272e112"
+    },
+    "b_full": {
+      "status": "FOUND",
+      "path": "/root/autodl-tmp/hr100/trial_b/best_mIoU_iter_3000.pth",
+      "bytes": 526178711,
+      "sha256": "abd74330b5ccaad291ee1d2a74739aa7901366f0edf40cf151027cdd61e1c84d"
+    }
+  },
+  "load_checkpoint_contract": {
+    "module": "mmcv.runner.checkpoint",
+    "qualname": "load_checkpoint",
+    "signature": "(model: torch.nn.modules.module.Module, filename: str, map_location: Union[str, Callable, NoneType] = None, strict: bool = False, logger: Union[logging.Logger, NoneType] = None, revise_keys: list = [('^module\\\\.', '')]) -> Union[dict, collections.OrderedDict]",
+    "source_file": "/root/miniconda3/lib/python3.8/site-packages/mmcv/runner/checkpoint.py",
+    "return_statements": [
+      "return checkpoint"
+    ],
+    "docstring_return": "Returns: | dict or OrderedDict: The loaded checkpoint. | "
+  },
+  "resolved_config": {
+    "path": "configs/lesion/exp/hrplus_maond.py",
+    "sha256_of_pretty_text": "e7e98d13c325a5144b120a86c714d07baf3b732bba7c4b070ac998a51df1e221",
+    "bytes_of_pretty_text": 8041,
+    "key_fields": {
+      "model.type": "HRPlusMAOnBase",
+      "model.source_checkpoint": "/root/autodl-tmp/hrplus/D_0913_retry/best_mIoU_iter_2000.pth",
+      "model.semantic_refinement": false,
+      "model.test_cfg": {
+        "mode": "whole",
+        "compute_aupr": true
+      },
+      "model.hr_settings": {
+        "hr_scale": [
+          1024,
+          1024
+        ],
+        "scale_ratio": [
+          0.75,
+          1.25
+        ],
+        "divisible": 8,
+        "lr_loss_weight": 0,
+        "hr_loss_weight": 0.1,
+        "fuse_mode": "simple",
+        "crop_num": 4
+      },
+      "data.samples_per_gpu": 2,
+      "data.workers_per_gpu": 4,
+      "optimizer": {
+        "type": "SGD",
+        "lr": 0.01,
+        "momentum": 0.9,
+        "weight_decay": 0.0005
+      },
+      "lr_config": {
+        "policy": "poly",
+        "warmup": "linear",
+        "warmup_iters": 300,
+        "warmup_ratio": 0.1,
+        "power": 1.0,
+        "min_lr": 0.0001,
+        "by_epoch": false
+      },
+      "runner": {
+        "type": "IterBasedRunner",
+        "max_iters": 6000
+      },
+      "seed": 42,
+      "custom_imports": {
+        "imports": [
+          "hrplus_patch",
+          "ma_residual"
+        ],
+        "allow_failed_imports": false
+      },
+      "data.train.data_root": "./data/DDR_split_613",
+      "data.train.img_dir": "images/train",
+      "data.train.ann_dir": "labels/train",
+      "data.train.split": null,
+      "data.val.data_root": "./data/DDR_split_613",
+      "data.val.img_dir": "images/val",
+      "data.val.ann_dir": "labels/val",
+      "data.val.split": null,
+      "data.test.data_root": "./data/DDR_split_613",
+      "data.test.img_dir": "images/test",
+      "data.test.ann_dir": "labels/test",
+      "data.test.split": null
+    }
+  }
+}

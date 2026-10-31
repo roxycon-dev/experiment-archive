@@ -1,0 +1,74 @@
+[train] gate: readiness=LOCAL_READY calibration=READY mode=formal
+[train] arm=H0 family=hrdecoder stage=ddr_finetune mode=formal updates=12000 train_split=train val_split=val out_dir=/root/autodl-tmp/HRDecoder_FullCompetition_20260920/runs/H0_full_fast_seed42
+[train] batch: effective=8 micro=4 accum=2
+/root/miniconda3/lib/python3.8/site-packages/mmcv/__init__.py:20: UserWarning: On January 1, 2023, MMCV will release v2.0.0, in which it will remove components related to the training process and add a data transformation module. In addition, it will rename the package names mmcv to mmcv-lite and mmcv-full to mmcv. See https://github.com/open-mmlab/mmcv/blob/master/docs/en/compatibility.md for more details.
+  warnings.warn(
+/root/miniconda3/lib/python3.8/site-packages/torch/_utils.py:776: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  return self.fget.__get__(instance, owner)()
+[train] model=hrdecoder backbone_prefixes=('backbone',) norm_eval=True
+[train] weight_report(imagenet_hrnet_w48): loaded=1830 missing=[] unexpected=['incre_modules.0.0.conv1.weight', 'incre_modules.0.0.bn1.weight', 'incre_modules.0.0.bn1.bias', 'incre_modules.0.0.bn1.running_mean', 'incre_modules.0.0.bn1.running_var', 'incre_modules.0.0.bn1.num_batches_tracked', 'incre_modules.0.0.conv2.weight', 'incre_modules.0.0.bn2.weight', 'incre_modules.0.0.bn2.bias', 'incre_modules.0.0.bn2.running_mean', 'incre_modules.0.0.bn2.running_var', 'incre_modules.0.0.bn2.num_batches_tracked', 'incre_modules.0.0.conv3.weight', 'incre_modules.0.0.bn3.weight', 'incre_modules.0.0.bn3.bias', 'incre_modules.0.0.bn3.running_mean', 'incre_modules.0.0.bn3.running_var', 'incre_modules.0.0.bn3.num_batches_tracked', 'incre_modules.0.0.downsample.0.weight', 'incre_modules.0.0.downsample.1.weight', 'incre_modules.0.0.downsample.1.bias', 'incre_modules.0.0.downsample.1.running_mean', 'incre_modules.0.0.downsample.1.running_var', 'incre_modules.0.0.downsample.1.num_batches_tracked', 'incre_modules.1.0.conv1.weight', 'incre_modules.1.0.bn1.weight', 'incre_modules.1.0.bn1.bias', 'incre_modules.1.0.bn1.running_mean', 'incre_modules.1.0.bn1.running_var', 'incre_modules.1.0.bn1.num_batches_tracked', 'incre_modules.1.0.conv2.weight', 'incre_modules.1.0.bn2.weight', 'incre_modules.1.0.bn2.bias', 'incre_modules.1.0.bn2.running_mean', 'incre_modules.1.0.bn2.running_var', 'incre_modules.1.0.bn2.num_batches_tracked', 'incre_modules.1.0.conv3.weight', 'incre_modules.1.0.bn3.weight', 'incre_modules.1.0.bn3.bias', 'incre_modules.1.0.bn3.running_mean', 'incre_modules.1.0.bn3.running_var', 'incre_modules.1.0.bn3.num_batches_tracked', 'incre_modules.1.0.downsample.0.weight', 'incre_modules.1.0.downsample.1.weight', 'incre_modules.1.0.downsample.1.bias', 'incre_modules.1.0.downsample.1.running_mean', 'incre_modules.1.0.downsample.1.running_var', 'incre_modules.1.0.downsample.1.num_batches_tracked', 'incre_modules.2.0.conv1.weight', 'incre_modules.2.0.bn1.weight', 'incre_modules.2.0.bn1.bias', 'incre_modules.2.0.bn1.running_mean', 'incre_modules.2.0.bn1.running_var', 'incre_modules.2.0.bn1.num_batches_tracked', 'incre_modules.2.0.conv2.weight', 'incre_modules.2.0.bn2.weight', 'incre_modules.2.0.bn2.bias', 'incre_modules.2.0.bn2.running_mean', 'incre_modules.2.0.bn2.running_var', 'incre_modules.2.0.bn2.num_batches_tracked', 'incre_modules.2.0.conv3.weight', 'incre_modules.2.0.bn3.weight', 'incre_modules.2.0.bn3.bias', 'incre_modules.2.0.bn3.running_mean', 'incre_modules.2.0.bn3.running_var', 'incre_modules.2.0.bn3.num_batches_tracked', 'incre_modules.2.0.downsample.0.weight', 'incre_modules.2.0.downsample.1.weight', 'incre_modules.2.0.downsample.1.bias', 'incre_modules.2.0.downsample.1.running_mean', 'incre_modules.2.0.downsample.1.running_var', 'incre_modules.2.0.downsample.1.num_batches_tracked', 'incre_modules.3.0.conv1.weight', 'incre_modules.3.0.bn1.weight', 'incre_modules.3.0.bn1.bias', 'incre_modules.3.0.bn1.running_mean', 'incre_modules.3.0.bn1.running_var', 'incre_modules.3.0.bn1.num_batches_tracked', 'incre_modules.3.0.conv2.weight', 'incre_modules.3.0.bn2.weight', 'incre_modules.3.0.bn2.bias', 'incre_modules.3.0.bn2.running_mean', 'incre_modules.3.0.bn2.running_var', 'incre_modules.3.0.bn2.num_batches_tracked', 'incre_modules.3.0.conv3.weight', 'incre_modules.3.0.bn3.weight', 'incre_modules.3.0.bn3.bias', 'incre_modules.3.0.bn3.running_mean', 'incre_modules.3.0.bn3.running_var', 'incre_modules.3.0.bn3.num_batches_tracked', 'incre_modules.3.0.downsample.0.weight', 'incre_modules.3.0.downsample.1.weight', 'incre_modules.3.0.downsample.1.bias', 'incre_modules.3.0.downsample.1.running_mean', 'incre_modules.3.0.downsample.1.running_var', 'incre_modules.3.0.downsample.1.num_batches_tracked', 'downsamp_modules.0.0.weight', 'downsamp_modules.0.0.bias', 'downsamp_modules.0.1.weight', 'downsamp_modules.0.1.bias', 'downsamp_modules.0.1.running_mean', 'downsamp_modules.0.1.running_var', 'downsamp_modules.0.1.num_batches_tracked', 'downsamp_modules.1.0.weight', 'downsamp_modules.1.0.bias', 'downsamp_modules.1.1.weight', 'downsamp_modules.1.1.bias', 'downsamp_modules.1.1.running_mean', 'downsamp_modules.1.1.running_var', 'downsamp_modules.1.1.num_batches_tracked', 'downsamp_modules.2.0.weight', 'downsamp_modules.2.0.bias', 'downsamp_modules.2.1.weight', 'downsamp_modules.2.1.bias', 'downsamp_modules.2.1.running_mean', 'downsamp_modules.2.1.running_var', 'downsamp_modules.2.1.num_batches_tracked', 'final_layer.0.weight', 'final_layer.0.bias', 'final_layer.1.weight', 'final_layer.1.bias', 'final_layer.1.running_mean', 'final_layer.1.running_var', 'final_layer.1.num_batches_tracked', 'classifier.weight', 'classifier.bias'] remapped={}
+[train] data: train=454 eval=76 manifest_sha256=c1359e112f16…
+[train] param audit: groups={'backbone': {'lr': 5e-05, 'n_tensors': 915, 'n_params': 65325120}, 'decoder': {'lr': 0.0002, 'n_tensors': 5, 'n_params': 2258308}} frozen_tensors=0
+[engine] stage=ddr_finetune mode=formal updates 0->12000 grad_accum=2 micro_batch=4 amp=True frozen_bn=305 params=920
+[engine] update 100/12000 lr={'backbone': 8.333333333333334e-06, 'decoder': 3.3333333333333335e-05}
+[engine] update 200/12000 lr={'backbone': 1.6666666666666667e-05, 'decoder': 6.666666666666667e-05}
+[engine] update 300/12000 lr={'backbone': 2.5e-05, 'decoder': 0.0001}
+[engine] update 400/12000 lr={'backbone': 3.3333333333333335e-05, 'decoder': 0.00013333333333333334}
+[engine] update 500/12000 lr={'backbone': 4.166666666666667e-05, 'decoder': 0.0001666666666666667}
+[engine] update 600/12000 lr={'backbone': 5e-05, 'decoder': 0.0002}
+[engine] update 700/12000 lr={'backbone': 4.9990789595550416e-05, 'decoder': 0.00019996315838220166}
+[engine] update 800/12000 lr={'backbone': 4.996279232288724e-05, 'decoder': 0.00019985116929154895}
+[engine] update 900/12000 lr={'backbone': 4.991602850294638e-05, 'decoder': 0.00019966411401178553}
+[engine] update 1000/12000 lr={'backbone': 4.98505336475157e-05, 'decoder': 0.0001994021345900628}
+[engine] update 1100/12000 lr={'backbone': 4.9766357492468195e-05, 'decoder': 0.00019906542996987278}
+[engine] update 1200/12000 lr={'backbone': 4.966356395999336e-05, 'decoder': 0.00019865425583997343}
+[engine] update 1300/12000 lr={'backbone': 4.9542231110055505e-05, 'decoder': 0.00019816892444022202}
+[engine] update 1400/12000 lr={'backbone': 4.9402451081116143e-05, 'decoder': 0.00019760980432446457}
+[engine] update 1500/12000 lr={'backbone': 4.9244330020165396e-05, 'decoder': 0.00019697732008066158}
+[engine] update 1600/12000 lr={'backbone': 4.9067988002115325e-05, 'decoder': 0.0001962719520084613}
+[engine] update 1700/12000 lr={'backbone': 4.887355893861687e-05, 'decoder': 0.00019549423575446748}
+[engine] update 1800/12000 lr={'backbone': 4.8661190476369134e-05, 'decoder': 0.00019464476190547654}
+[engine] update 1900/12000 lr={'backbone': 4.843104388499859e-05, 'decoder': 0.00019372417553999437}
+[engine] update 2000/12000 lr={'backbone': 4.81832939345932e-05, 'decoder': 0.0001927331757383728}
+[engine] update 2100/12000 lr={'backbone': 4.791812876298443e-05, 'decoder': 0.00019167251505193772}
+[engine] update 2200/12000 lr={'backbone': 4.7635749732878055e-05, 'decoder': 0.00019054299893151222}
+[engine] update 2300/12000 lr={'backbone': 4.7336371278942136e-05, 'decoder': 0.00018934548511576854}
+[engine] update 2400/12000 lr={'backbone': 4.7020220744968366e-05, 'decoder': 0.00018808088297987346}
+[engine] update 2500/12000 lr={'backbone': 4.6687538211230346e-05, 'decoder': 0.00018675015284492138}
+[engine] update 2600/12000 lr={'backbone': 4.6338576312170054e-05, 'decoder': 0.00018535430524868022}
+[engine] update 2700/12000 lr={'backbone': 4.597360004455073e-05, 'decoder': 0.00018389440017820292}
+[engine] update 2800/12000 lr={'backbone': 4.5592886566222155e-05, 'decoder': 0.00018237154626488862}
+[engine] update 2900/12000 lr={'backbone': 4.519672498565077e-05, 'decoder': 0.00018078689994260308}
+[engine] update 3000/12000 lr={'backbone': 4.4785416142374824e-05, 'decoder': 0.0001791416645694993}
+[engine] eval update=3000 mIoU_lesion4=0.3356 n_images=76
+[engine] update 3100/12000 lr={'backbone': 4.4359272378551056e-05, 'decoder': 0.00017743708951420422}
+[engine] update 3200/12000 lr={'backbone': 4.391861730176644e-05, 'decoder': 0.00017567446920706576}
+[engine] update 3300/12000 lr={'backbone': 4.3463785539295125e-05, 'decoder': 0.0001738551421571805}
+[engine] update 3400/12000 lr={'backbone': 4.2995122483987184e-05, 'decoder': 0.00017198048993594873}
+[engine] update 3500/12000 lr={'backbone': 4.251298403198214e-05, 'decoder': 0.00017005193612792857}
+[engine] update 3600/12000 lr={'backbone': 4.201773631244647e-05, 'decoder': 0.00016807094524978587}
+[engine] update 3700/12000 lr={'backbone': 4.150975540954019e-05, 'decoder': 0.00016603902163816076}
+[engine] update 3800/12000 lr={'backbone': 4.098942707682388e-05, 'decoder': 0.00016395770830729552}
+[engine] update 3900/12000 lr={'backbone': 4.045714644432286e-05, 'decoder': 0.00016182858577729143}
+[engine] update 4000/12000 lr={'backbone': 3.9913317718470947e-05, 'decoder': 0.00015965327087388379}
+[engine] update 4100/12000 lr={'backbone': 3.935835387516181e-05, 'decoder': 0.00015743341550064724}
+[engine] update 4200/12000 lr={'backbone': 3.879267634614088e-05, 'decoder': 0.00015517070538456352}
+[engine] update 4300/12000 lr={'backbone': 3.8216714698975994e-05, 'decoder': 0.00015286685879590398}
+[engine] update 4400/12000 lr={'backbone': 3.7630906310849764e-05, 'decoder': 0.00015052362524339906}
+[engine] update 4500/12000 lr={'backbone': 3.7035696036421615e-05, 'decoder': 0.00014814278414568646}
+[engine] update 4600/12000 lr={'backbone': 3.643153587001129e-05, 'decoder': 0.00014572614348004517}
+[engine] update 4700/12000 lr={'backbone': 3.581888460236077e-05, 'decoder': 0.0001432755384094431}
+[engine] update 4800/12000 lr={'backbone': 3.519820747223502e-05, 'decoder': 0.00014079282988894008}
+[engine] update 4900/12000 lr={'backbone': 3.45699758131262e-05, 'decoder': 0.0001382799032525048}
+[engine] update 5000/12000 lr={'backbone': 3.393466669532965e-05, 'decoder': 0.0001357386667813186}
+[engine] update 5100/12000 lr={'backbone': 3.329276256366339e-05, 'decoder': 0.00013317105025465356}
+[engine] update 5200/12000 lr={'backbone': 3.2644750871106314e-05, 'decoder': 0.00013057900348442526}
+[engine] update 5300/12000 lr={'backbone': 3.199112370863325e-05, 'decoder': 0.000127964494834533}
+[engine] update 5400/12000 lr={'backbone': 3.1332377431527984e-05, 'decoder': 0.00012532950972611194}
+[engine] update 5500/12000 lr={'backbone': 3.0669012282458024e-05, 'decoder': 0.0001226760491298321}
+[engine] update 5600/12000 lr={'backbone': 3.000153201159736e-05, 'decoder': 0.00012000612804638944}
+[engine] update 5700/12000 lr={'backbone': 2.933044349408566e-05, 'decoder': 0.00011732177397634264}
+[engine] update 5800/12000 lr={'backbone': 2.8656256345114384e-05, 'decoder': 0.00011462502538045754}
+[engine] update 5900/12000 lr={'backbone': 2.7979482532932195e-05, 'decoder': 0.00011191793013172878}
+[engine] update 6000/12000 lr={'backbone': 2.7300635990063463e-05, 'decoder': 0.00010920254396025385}
+[engine] eval update=6000 mIoU_lesion4=0.3692 n_images=76

@@ -1,0 +1,127 @@
+{
+  "stage": "HEALTHY_NO_INTERVENTION",
+  "observed_at": "2026-10-05T06:16:19.539683+00:00",
+  "primary": {
+    "driver": {
+      "stage": "CAMPAIGN",
+      "pid": 18787,
+      "time": "2026-10-04T21:16:20.663409+00:00"
+    },
+    "campaign": {
+      "stage": "RUNNING",
+      "current_run": "S_seed42",
+      "queue": [
+        [
+          "C",
+          42
+        ],
+        [
+          "S",
+          42
+        ],
+        [
+          "D",
+          42
+        ],
+        [
+          "SD",
+          42
+        ],
+        [
+          "PARENT_F12",
+          2024
+        ],
+        [
+          "C",
+          2024
+        ],
+        [
+          "S",
+          2024
+        ],
+        [
+          "D",
+          2024
+        ],
+        [
+          "SD",
+          2024
+        ]
+      ],
+      "updated_at": "2026-10-05T02:31:25.514043+00:00"
+    },
+    "runs": {
+      "C_seed42": {
+        "stage": "COMPLETE",
+        "completed": 32000,
+        "endpoint": 32000,
+        "updated_at": "2026-10-05T02:31:24.012530+00:00"
+      },
+      "S_seed42": {
+        "stage": "TRAINING",
+        "completed": 15840,
+        "endpoint": 32000,
+        "updated_at": "2026-10-05T06:15:28.328096+00:00",
+        "recent": {
+          "loss": 0.12804903090000153,
+          "grad_norm": 0.6957650184631348,
+          "seconds": 0.8088748909067363,
+          "data_wait_seconds": 0.0012141857296228409,
+          "peak_gpu_bytes": 11004799488
+        }
+      }
+    },
+    "free_disk_bytes": 26569793536,
+    "observed_at": "2026-10-05T06:15:29.156983+00:00"
+  },
+  "second": {
+    "driver": {
+      "stage": "PARALLEL_CAMPAIGN",
+      "pid": 3295,
+      "time": "2026-10-05T05:33:32.002303+00:00"
+    },
+    "campaign": {
+      "stage": "RUNNING",
+      "current_run": "SD_seed42",
+      "queue": [
+        [
+          "SD",
+          42
+        ]
+      ],
+      "amendment_sha256": "cae05b90a986f4d14a7c7f1e7ca25de10b9d966d905cd1ea88f5e0c2116344c3",
+      "time": "2026-10-05T05:33:32.001933+00:00"
+    },
+    "runs": {
+      "SD_seed42": {
+        "stage": "TRAINING",
+        "completed": 2060,
+        "endpoint": 32000,
+        "updated_at": "2026-10-05T06:15:23.019640+00:00",
+        "recent": {
+          "loss": 0.30157747864723206,
+          "grad_norm": 1.995073676109314,
+          "seconds": 1.2133154198527336,
+          "data_wait_seconds": 0.0023518800735473633,
+          "peak_gpu_bytes": 11005601280
+        }
+      }
+    },
+    "free_disk_bytes": 17730146304,
+    "observed_at": "2026-10-05T06:15:30.795120+00:00"
+  },
+  "boundary": {
+    "stage": "ARMED_AFTER_D42_BOUNDARY",
+    "pid": 44281,
+    "time": "2026-10-05T04:11:34.270609+00:00",
+    "process_alive": true
+  },
+  "healthy_attendants": [
+    32844,
+    8552
+  ],
+  "coordinator": 13216,
+  "duplicate_mirror_or_training_started": false,
+  "disk_cleanup_needed": false,
+  "shutdown_eligible": false
+}

@@ -1,0 +1,920 @@
+Critical review REJECTED generated core. Return JSON files full corrected fusion_core.py tests/test_core.py only. Use unittest not pytest (not installed), no dependency installs. Fix 1 label shape incorrectly compared NHW to NCHW alwaysfail; correct (N,H,W). Fix 2 DDR labels0=background,1=EX,2HE,3SE,4MA,255ignore. Exactly4 foregroundchannels, target[:,i]=(label==i+1), not F.one_hot(label,numclasses4). Validation0..4 valid and255; tests must include label4 and backgroundALLzero. Fix3 strict_initialize model contains reference.* keys! Real D full checkpoint state_dict has backbone.*,decode_head.*,detail_branch.*,detail_head.*,detail_scale,reference.backbone.*...; real student-only no reference.*. Partition keys referenceprefix from expected model and incoming fullstate, then exact student-only expectedkeys comparison, compare embedded reference to explicit B ref before ANYload, merge student+referenceprefix and model.load_state_dict(strict=True). Accept trusted PathLike with torch.load(weights_only=False) fallback older torch version. No invented {'student':...,'reference':...} required. Mutation only after ALLvalidations. Strict conflicting/missing/extra/shape rejected tests. All-ignore losszero graphconnected gradientszero. Test matched realDDR squarredDice formula EX..MA not categorical softmax. Toy BN freeze buffers only affine cantrain if in allowedmodule, fix false docclaim. Geometry originalcrop copied exact semantics and test from source with same RNG seed traces, not selfmirror.
+
+SOURCE D:\dataset\experiment\HRDecoder_FusionAware_20260917\fusion_core.py
+"""Fusion core: paired self-ensemble training/inference helpers.
+
+Pure torch + numpy + opencv (headless-safe). No mmcv/mmseg dependency.
+Python 3.8+, CPU.
+"""
+import hashlib
+import math
+
+import cv2
+import numpy as np
+import torch
+import torch.nn.functional as F
+from torch.nn.modules.batchnorm import _BatchNorm
+
+# ---------------------------------------------------------------- constants ---
+IMG_MEAN = np.array([81.205, 50.636, 21.216], dtype=np.float32)
+IMG_STD = np.array([76.252, 48.798, 21.625], dtype=np.float32)
+IGNORE_INDEX = 255
+SMOOTH = 1.0
+
+
+# ------------------------------------------------------------------- dice ---
+def dice_prob(prob, label, smooth=SMOOTH, ignore_index=IGNORE_INDEX):
+    """Squared-denominator soft Dice loss on probabilities.
+
+    Args:
+        prob: (N, C, H, W) float probabilities in [0, 1].
+        label: (N, 1, H, W) or (N, H, W) integer labels in [0, C) or ignore_index.
+        smooth: Laplace smoothing (default 1.0).
+        ignore_index: label value excluded from BOTH prediction and target.
+    Returns:
+        Scalar loss: mean of (1 - dice) over all N samples and C classes
+        (all-ignore samples contribute 0 through the smoothing term).
+    """
+    assert prob.dim() == 4, 'prob must be (N, C, H, W)'
+    if label.dim() == prob.dim():
+        label = label.squeeze(1)
+    assert label.dim() == 3, 'label must be (N, 1, H, W) or (N, H, W)'
+    assert label.shape == prob.shape[:2] + prob.shape[2:], \
+        'label spatial shape %r must match prob %r' % (tuple(label.shape), tuple(prob.shape))
+    label = label.long()
+    n, c = prob.shape[0], prob.shape[1]
+    assert bool(((label >= 0) & ((label < c) | (label == ignore_index))).all()), \
+        'labels must lie in [0, %d) or equal %d' % (c, ignore_index)
+
+    valid = (label != ignore_index).float().unsqueeze(1)          # (N,1,H,W)
+    safe = torch.where(label == ignore_index, torch.zeros_like(label), label)
+    onehot = F.one_hot(safe, num_classes=c).permute(0, 3, 1, 2).float()
+
+    p = prob.float() * valid
+    t = onehot * valid
+    dims = (2, 3)
+    num = 2.0 * (p * t).sum(dims) + smooth
+    den = (p * p).sum(dims) + (t * t).sum(dims) + smooth
+    loss = 1.0 - num / den                                        # (N, C)
+    return loss.mean()
+
+
+def _validate_ref(ref, probs):
+    if ref.shape != probs.shape:
+        raise ValueError('reference shape %r != prob shape %r' % (tuple(ref.shape), tuple(probs.shape)))
+    if not torch.isfinite(ref).all():
+        raise ValueError('reference contains non-finite values')
+    if float(ref.min()) < 0.0 or float(ref.max()) > 1.0:
+        raise ValueError('reference must be probabilities in [0, 1]')
+
+
+def loss_pair(logits, label, ref, arm):
+    """Paired loss on raw logits.
+
+    arm 'A': Dice(sigmoid(logits), label).
+    arm 'B': 0.5 * Dice(sigmoid(logits), label)
+           + 0.5 * Dice(0.5*sigmoid(logits) + 0.5*ref.detach(), label).
+    ``ref`` is validated (finite, [0,1], shape) and always detached.
+    Returns a scalar tensor.
+    """
+    if arm not in ('A', 'B'):
+        raise ValueError("arm must be 'A' or 'B', got %r" % (arm,))
+    probs = torch.sigmoid(logits)
+    ref = torch.as_tensor(ref)
+    _validate_ref(ref, probs)
+    ref = ref.detach()
+    a = dice_prob(probs, label)
+    if arm == 'A':
+        return a
+    fused = 0.5 * probs + 0.5 * ref
+    return 0.5 * a + 0.5 * dice_prob(fused, label)
+
+
+# ------------------------------------------------------------ crop helper ---
+def foreground_crop_bbox(gt, crop_size, fg_prob=0.5, rng=None, num_fg=4):
+    """Top-left corner of a crop_size x crop_size window.
+
+    With probability fg_prob (or when no lesion class 1..num_fg is present)
+    the crop is image-uniform random.  Otherwise a uniformly chosen PRESENT
+    class and a uniformly chosen pixel of it anchor the crop within the valid
+    offset range guaranteeing pixel inclusion.
+    """
+    rng = np.random if rng is None else rng
+    h, w = gt.shape[:2]
+    cs = int(crop_size)
+    cs_h, cs_w = min(cs, h), min(cs, w)
+
+    def uniform():
+        return rng.randint(0, h - cs_h + 1), rng.randint(0, w - cs_w + 1)
+
+    present = [c for c in range(1, num_fg + 1) if (gt == c).any()]
+    if not present or rng.random() < fg_prob:
+        return uniform()
+    cls = present[rng.randint(0, len(present))]
+    ys, xs = np.where(gt == cls)
+    idx = rng.randint(0, len(ys))
+    py, px = int(ys[idx]), int(xs[idx])
+    y_lo, y_hi = max(0, py - cs_h + 1), min(py, h - cs_h)
+    x_lo, x_hi = max(0, px - cs_w + 1), min(px, w - cs_w)
+    return rng.randint(y_lo, y_hi + 1), rng.randint(x_lo, x_hi + 1)
+
+
+# --------------------------------------------------------------- geometry ---
+def _resize_prob_hwc(prob, size_hw):
+    """Resize (H, W, C) float probability map with bilinear interpolation."""
+    out = np.empty((size_hw[0], size_hw[1], prob.shape[2]), dtype=np.float32)
+    for c in range(prob.shape[2]):
+        out[:, :, c] = cv2.resize(prob[:, :, c].astype(np.float32),
+                                  (size_hw[1], size_hw[0]),
+                                  interpolation=cv2.INTER_LINEAR)
+    return out
+
+
+def paired_geometry(image, label, reference, rng):
+    """Paired geometric augmentation of image / label / reference.
+
+    Pipeline: bilinear resize to 2048x2048 -> random rotation by a shared
+    matrix (angle uniform in [-45, 45]; image and reference bilinear with 0
+    border, label nearest with 255 border) -> 1024x1024 foreground-aware
+    crop -> horizontal flip (p=0.5) -> image normalization.
+
+    Args:
+        image: (H, W, 3) uint8 RGB.
+        label: (H, W) integer.
+        reference: (H, W, 4) float probabilities in [0, 1].
+        rng: np.random.RandomState.
+    Returns:
+        image (3, 1024, 1024) float32 normalized, label (1, 1024, 1024)
+        int64, reference (4, 1024, 1024) float32, trace dict.
+    """
+    assert isinstance(rng, np.random.RandomState), 'rng must be np.random.RandomState'
+    image = np.asarray(image)
+    label = np.asarray(label)
+    reference = np.asarray(reference, dtype=np.float32)
+    assert image.ndim == 3 and image.shape[2] == 3 and image.dtype == np.uint8, 'image must be HWC uint8 RGB'
+    assert label.ndim == 2 and label.shape == image.shape[:2], 'label must be HW matching image'
+    assert reference.shape == label.shape + (4,), 'reference must be HWC with 4 channels'
+    assert reference.min() >= 0.0 and reference.max() <= 1.0, 'reference must be in [0, 1]'
+    assert np.isfinite(reference).all(), 'reference must be finite'
+
+    size = (2048, 2048)
+    img_r = cv2.resize(image, (size[1], size[0]), interpolation=cv2.INTER_LINEAR)
+    lab_r = cv2.resize(label.astype(np.uint8), (size[1], size[0]),
+                       interpolation=cv2.INTER_NEAREST)
+    ref_r = _resize_prob_hwc(reference, size)
+
+    angle = float(rng.uniform(-45.0, 45.0))
+    matrix = cv2.getRotationMatrix2D((size[1] / 2.0, size[0] / 2.0), angle, 1.0)
+    img_r = cv2.warpAffine(img_r, matrix, (size[1], size[0]), flags=cv2.INTER_LINEAR,
+                           borderMode=cv2.BORDER_CONSTANT, borderValue=0)
+    lab_r = cv2.warpAffine(lab_r, matrix, (size[1], size[0]), flags=cv2.INTER_NEAREST,
+                           borderMode=cv2.BORDER_CONSTANT, borderValue=IGNORE_INDEX)
+    for c in range(4):
+        ref_r[:, :, c] = cv2.warpAffine(ref_r[:, :, c], matrix, (size[1], size[0]),
+                                        flags=cv2.INTER_LINEAR,
+                                        borderMode=cv2.BORDER_CONSTANT, borderValue=0.0)
+
+    cs = 1024
+    y0, x0 = foreground_crop_bbox(lab_r, cs, fg_prob=0.5, rng=rng, num_fg=4)
+    img_c = img_r[y0:y0 + cs, x0:x0 + cs]
+    lab_c = lab_r[y0:y0 + cs, x0:x0 + cs]
+    ref_c = ref_r[y0:y0 + cs, x0:x0 + cs]
+
+    flip = bool(rng.random() < 0.5)
+    if flip:
+        img_c = img_c[:, ::-1, :]
+        lab_c = lab_c[:, ::-1]
+        ref_c = ref_c[:, ::-1, :]
+
+    img_c = (img_c.astype(np.float32) - IMG_MEAN) / IMG_STD
+    image_out = np.ascontiguousarray(img_c.transpose(2, 0, 1))          # (3,H,W)
+    label_out = np.ascontiguousarray(lab_c.astype(np.int64))[None]       # (1,H,W)
+    ref_out = np.ascontiguousarray(ref_c.astype(np.float32).transpose(2, 0, 1))
+
+    trace = {
+        'angle': angle,
+        'y0': int(y0),
+        'x0': int(x0),
+        'flip': flip,
+        'ignore_pixels': int((lab_c == IGNORE_INDEX).sum()),
+        'crop': cs,
+        'resize': int(size[0]),
+    }
+    return image_out, label_out, ref_out, trace
+
+
+# ------------------------------------------------------------ model utils ---
+def freeze_bn(model):
+    """Put every BatchNorm layer in eval mode (running stats frozen)."""
+    for m in model.modules():
+        if isinstance(m, _BatchNorm):
+            m.eval()
+
+
+def configure_trainable(model):
+    """Only ``decode_head.*`` and ``backbone.stage4.*`` stay trainable.
+
+    All BatchNorm layers (including any reference submodule) are switched to
+    eval mode and their parameters have requires_grad=False.  Every parameter
+    of a ``model.reference`` submodule is frozen.  Returns the sorted list of
+    trainable parameter names.
+    """
+    trainable = []
+    for name, p in model.named_parameters():
+        ok = name.startswith('decode_head.') or name.startswith('backbone.stage4.')
+        if name.startswith('reference.'):
+            ok = False
+        p.requires_grad_(ok)
+        if ok:
+            trainable.append(name)
+    freeze_bn(model)
+    if hasattr(model, 'reference'):
+        for p in model.reference.parameters():
+            p.requires_grad_(False)
+        model.reference.eval()
+    return sorted(trainable)
+
+
+# -------------------------------------------------------------- checkpoints ---
+def sha256(path):
+    """Hex sha256 digest of a file, streamed in 1 MiB chunks."""
+    h = hashlib.sha256()
+    with open(path, 'rb') as f:
+        for chunk in iter(lambda: f.read(1024 * 1024), b''):
+            h.update(chunk)
+    return h.hexdigest()
+
+
+def _strip_module_prefix(state):
+    return {k[7:] if k.startswith('module.') else k: v for k, v in state.items()}
+
+
+def _load_state(obj):
+    """Accept a bare state dict, a dict with 'state_dict', or a path str.
+
+    Only trusted, locally produced torch checkpoints / plain dicts of tensors
+    are expected.  Returns the stripped state dict.
+    """
+    if isinstance(obj, str):
+        obj = torch.load(obj, map_location='cpu')
+    if isinstance(obj, dict) and 'state_dict' in obj and all(
+            not isinstance(v, torch.Tensor) for v in obj.values()):
+        obj = obj['state_dict']
+    if not isinstance(obj, dict) or not obj or not all(
+            isinstance(v, torch.Tensor) for v in obj.values()):
+        raise ValueError('checkpoint must be a trusted torch state_dict or bare tensor dict')
+    return _strip_module_prefix(obj)
+
+
+def _states_equal(a, b):
+    if set(a.keys()) != set(b.keys()):
+        return False
+    for k in a:
+        if a[k].shape != b[k].shape or a[k].dtype != b[k].dtype:
+            return False
+        if not torch.equal(a[k].cpu(), b[k].cpu()):
+            return False
+    return True
+
+
+def strict_initialize(model, student_checkpoint, reference_checkpoint=None):
+    """Strict checkpoint loading.
+
+    ``student_checkpoint`` may be a FULL dict {'student': sd, 'reference': sd}
+    or a student-only state dict.  Key sets against ``model.state_dict()`` must
+    match EXACTLY (no missing, no unexpected) with matching shapes; 'module.'
+    prefixes are stripped.  If the full dict carries a reference and
+    ``reference_checkpoint`` (checkpoint B) is also given, the two references
+    must be identical or loading is rejected.  Returns the loaded dicts.
+    """
+    raw = student_checkpoint
+    if isinstance(raw, str):
+        raw = torch.load(raw, map_location='cpu')
+    full = isinstance(raw, dict) and 'student' in raw
+    if full:
+        student = _load_state(raw['student'])
+        ref_d = _load_state(raw['reference']) if 'reference' in raw else None
+    else:
+        student = _load_state(raw)
+        ref_d = None
+
+    model_state = model.state_dict()
+    model_keys = set(model_state.keys())
+    student_keys = set(student.keys())
+    missing = model_keys - student_keys
+    unexpected = student_keys - model_keys
+    if missing or unexpected:
+        raise ValueError('strict student mismatch: missing=%d %s unexpected=%d %s' % (
+            len(missing), sorted(missing)[:5], len(unexpected), sorted(unexpected)[:5]))
+    for k in student_keys:
+        if tuple(student[k].shape) != tuple(model_state[k].shape):
+            raise ValueError('strict shape mismatch for %r: ckpt %r vs model %r' % (
+                k, tuple(student[k].shape), tuple(model_state[k].shape)))
+    model.load_state_dict(student, strict=True)
+
+    reference = None
+    if reference_checkpoint is not None:
+        reference = _load_state(reference_checkpoint)
+        if ref_d is not None and not _states_equal(ref_d, reference):
+            raise ValueError('full-D embedded reference differs from checkpoint B reference; rejected')
+    elif ref_d is not None:
+        reference = ref_d
+
+    if reference is not None and hasattr(model, 'reference'):
+        ref_state = model.reference.state_dict()
+        r_missing = set(ref_state.keys()) - set(reference.keys())
+        r_unexpected = set(reference.keys()) - set(ref_state.keys())
+        if r_missing or r_unexpected:
+            raise ValueError('strict reference mismatch: missing=%d unexpected=%d' % (
+                len(r_missing), len(r_unexpected)))
+        for k in reference:
+            if tuple(reference[k].shape) != tuple(ref_state[k].shape):
+                raise ValueError('strict reference shape mismatch for %r' % (k,))
+        model.reference.load_state_dict(reference, strict=True)
+
+    return {'student': student, 'reference': reference}
+
+SOURCE D:\dataset\experiment\HRDecoder_FusionAware_20260917\tests\test_core.py
+"""CPU tests for fusion_core (pytest).  No GPU, no network, no secrets."""
+import copy
+import hashlib
+import os
+
+import numpy as np
+import pytest
+import torch
+import torch.nn as nn
+
+import fusion_core
+from fusion_core import (configure_trainable, dice_prob, freeze_bn,
+                         loss_pair, paired_geometry, sha256,
+                         strict_initialize)
+
+
+# ------------------------------------------------------------------ toy model ---
+class ToyStage(nn.Module):
+    def __init__(self, cin, cout):
+        super().__init__()
+        self.conv = nn.Conv2d(cin, cout, 3, padding=1)
+        self.bn = nn.BatchNorm2d(cout)
+        self.relu = nn.ReLU(inplace=True)
+
+    def forward(self, x):
+        return self.relu(self.bn(self.conv(x)))
+
+
+class ToyBackbone(nn.Module):
+    def __init__(self):
+        super().__init__()
+        self.stage1 = ToyStage(3, 8)
+        self.stage2 = ToyStage(8, 8)
+        self.stage3 = ToyStage(8, 8)
+        self.stage4 = ToyStage(8, 8)
+
+    def forward(self, x):
+        return self.stage4(self.stage3(self.stage2(self.stage1(x))))
+
+
+class ToyDecodeHead(nn.Module):
+    def __init__(self):
+        super().__init__()
+        self.conv = nn.Conv2d(8, 4, 3, padding=1)
+        self.bn = nn.BatchNorm2d(4)
+
+    def forward(self, x):
+        return self.bn(self.conv(x))
+
+
+class ToyModel(nn.Module):
+    def __init__(self):
+        super().__init__()
+        self.backbone = ToyBackbone()
+        self.decode_head = ToyDecodeHead()
+        self.reference = copy.deepcopy(ToyModel())
+        # remove nested reference to keep the toy flat
+        del self.reference.reference
+
+    def forward(self, x):
+        return self.decode_head(self.backbone(x))
+
+
+def _batch(n=2, seed=0):
+    g = torch.Generator().manual_seed(seed)
+    img = torch.rand(n, 3, 32, 32, generator=g)
+    label = torch.randint(0, 4, (n, 32, 32), generator=g)
+    label[0, :4, :] = 255
+    return img, label
+
+
+# ------------------------------------------------------------------- dice ---
+def _manual_dice(prob, label, smooth=1.0, ignore=255):
+    n, c = prob.shape[0], prob.shape[1]
+    vals = []
+    for i in range(n):
+        for k in range(c):
+            m = label[i] != ignore
+            p = prob[i, k][m]
+            t = (label[i][m] == k).float()
+            vals.append(1.0 - (2 * (p * t).sum() + smooth) /
+                        ((p * p).sum() + (t * t).sum() + smooth))
+    return float(np.mean(vals))
+
+
+def test_dice_numeric_parity_vs_manual():
+    torch.manual_seed(1)
+    prob = torch.rand(3, 4, 16, 16)
+    label = torch.randint(0, 5, (3, 16, 16))
+    label[0, 0, 0] = 255
+    label[1] = 255  # all-ignore sample
+    assert abs(dice_prob(prob, label).item() - _manual_dice(prob, label)) < 1e-6
+
+
+def test_dice_all_ignore_is_zero():
+    prob = torch.rand(2, 4, 8, 8)
+    label = torch.full((2, 8, 8), 255, dtype=torch.long)
+    assert dice_prob(prob, label).item() == pytest.approx(0.0, abs=1e-7)
+
+
+def test_dice_all_background_perfect_prediction():
+    # label all background and prob exactly one-hot background -> loss 0
+    prob = torch.zeros(1, 4, 8, 8)
+    label = torch.zeros(1, 8, 8, dtype=torch.long)
+    assert dice_prob(prob, label).item() == pytest.approx(0.0, abs=1e-7)
+
+
+def test_dice_empty_vs_informative_differ():
+    prob = torch.rand(1, 4, 8, 8)
+    empty = torch.zeros(1, 8, 8, dtype=torch.long)
+    full = torch.randint(0, 4, (1, 8, 8))
+    assert dice_prob(prob, full).item() > dice_prob(prob, empty).item()
+
+
+def test_dice_accepts_label_with_channel_dim():
+    torch.manual_seed(2)
+    prob = torch.rand(2, 4, 8, 8)
+    label = torch.randint(0, 4, (2, 1, 8, 8))
+    assert dice_prob(prob, label).item() == pytest.approx(
+        dice_prob(prob, label.squeeze(1)).item())
+
+
+def test_dice_is_differentiable():
+    prob = torch.rand(1, 4, 8, 8, requires_grad=True)
+    label = torch.randint(0, 4, (1, 8, 8))
+    dice_prob(prob, label).backward()
+    assert prob.grad is not None and torch.isfinite(prob.grad).all()
+
+
+# -------------------------------------------------------------- loss_pair ---
+def test_loss_pair_arm_a_matches_plain_dice():
+    torch.manual_seed(3)
+    logits = torch.randn(2, 4, 8, 8)
+    label = torch.randint(0, 4, (2, 8, 8))
+    ref = torch.rand(2, 4, 8, 8)
+    a = loss_pair(logits, label, ref, 'A')
+    assert a.item() == pytest.approx(dice_prob(torch.sigmoid(logits), label).item())
+
+
+def test_loss_pair_arm_b_composition():
+    torch.manual_seed(4)
+    logits = torch.randn(1, 4, 8, 8)
+    label = torch.randint(0, 4, (1, 8, 8))
+    ref = torch.rand(1, 4, 8, 8)
+    b = loss_pair(logits, label, ref, 'B')
+    probs = torch.sigmoid(logits)
+    expect = 0.5 * dice_prob(probs, label) + \
+        0.5 * dice_prob(0.5 * probs + 0.5 * ref, label)
+    assert b.item() == pytest.approx(expect.item(), rel=1e-6)
+
+
+def test_loss_pair_reference_is_detached():
+    torch.manual_seed(5)
+    logits = torch.randn(1, 4, 8, 8)
+    label = torch.randint(0, 4, (1, 8, 8))
+    ref = torch.rand(1, 4, 8, 8, requires_grad=True)
+    loss_pair(logits, label, ref, 'B').backward()
+    assert ref.grad is None
+
+
+def test_loss_pair_reference_validation():
+    logits = torch.randn(1, 4, 8, 8)
+    label = torch.randint(0, 4, (1, 8, 8))
+    with pytest.raises(ValueError):
+        loss_pair(logits, label, torch.rand(1, 4, 4, 4), 'B')          # shape
+    bad = torch.rand(1, 4, 8, 8)
+    bad[0, 0, 0, 0] = float('nan')
+    with pytest.raises(ValueError):
+        loss_pair(logits, label, bad, 'B')                              # non-finite
+    with pytest.raises(ValueError):
+        loss_pair(logits, label, torch.rand(1, 4, 8, 8) * 2.0, 'B')     # out of range
+    with pytest.raises(ValueError):
+        loss_pair(logits, label, torch.rand(1, 4, 8, 8), 'C')           # arm
+
+
+# ------------------------------------------------- trainable configuration ---
+def _prepared_model():
+    torch.manual_seed(0)
+    model = ToyModel().train()
+    names = configure_trainable(model)
+    return model, names
+
+
+def test_only_authorized_params_trainable():
+    model, names = _prepared_model()
+    for n, p in model.named_parameters():
+        if n.startswith('decode_head.') or n.startswith('backbone.stage4.'):
+            assert p.requires_grad, n
+        else:
+            assert not p.requires_grad, n
+    assert all(n.startswith(('decode_head.', 'backbone.stage4.')) for n in names)
+
+
+def test_gradients_and_updates_only_authorized():
+    model, _ = _prepared_model()
+    opt = torch.optim.SGD([p for p in model.parameters() if p.requires_grad], lr=0.1)
+    before = {n: p.detach().clone() for n, p in model.named_parameters()}
+    bn_stats = {m_name: (m.running_mean.clone(), m.running_var.clone())
+                for m_name, m in model.named_modules() if isinstance(m, nn.BatchNorm2d)}
+    img, label = _batch()
+    loss = loss_pair(model(img), label, torch.rand(2, 4, 32, 32), 'B')
+    opt.zero_grad()
+    loss.backward()
+    # grads present only on authorized params (and at least one of each group)
+    auth_grad = [n for n, p in model.named_parameters()
+                 if p.grad is not None and p.grad.abs().sum() > 0]
+    assert auth_grad and all(n.startswith(('decode_head.', 'backbone.stage4.'))
+                             for n in auth_grad)
+    ref_grads = [n for n, p in model.reference.named_parameters() if p.grad is not None]
+    assert not ref_grads
+    opt.step()
+    changed = [n for n, p in model.named_parameters()
+               if not torch.equal(before[n], p.detach())]
+    assert changed and all(n.startswith(('decode_head.', 'backbone.stage4.'))
+                           for n in changed)
+    # BN running stats untouched everywhere
+    for m_name, m in model.named_modules():
+        if isinstance(m, nn.BatchNorm2d):
+            assert torch.equal(m.running_mean, bn_stats[m_name][0])
+            assert torch.equal(m.running_var, bn_stats[m_name][1])
+
+
+def test_bn_eval_even_in_train_mode():
+    model, _ = _prepared_model()
+    model.train()
+    for m in model.modules():
+        if isinstance(m, nn.BatchNorm2d):
+            assert not m.training
+    if hasattr(model, 'reference'):
+        model.reference.train()
+        assert not any(m.training for m in model.reference.modules()
+                       if isinstance(m, nn.BatchNorm2d))
+
+
+def test_freeze_bn_covers_all():
+    model = ToyModel().train()
+    freeze_bn(model)
+    assert not any(m.training for m in model.modules() if isinstance(m, nn.BatchNorm2d))
+
+
+# --------------------------------------------------------- strict loading ---
+def test_sha256_matches_hashlib():
+    path = os.path.join('/tmp', 'fusion_core_sha_test.bin')
+    data = b'fusion-core-sha256-check'
+    with open(path, 'wb') as f:
+        f.write(data)
+    try:
+        assert sha256(path) == hashlib.sha256(data).hexdigest()
+    finally:
+        os.remove(path)
+
+
+def test_strict_initialize_student_only_ok():
+    model = ToyModel()
+    sd = {k: v.clone() for k, v in model.state_dict().items()}
+    model2 = ToyModel()
+    with torch.no_grad():
+        model2.decode_head.conv.weight.fill_(0.5)
+    strict_initialize(model2, sd)
+    assert torch.equal(model2.decode_head.conv.weight,
+                       model.decode_head.conv.weight)
+
+
+def test_strict_initialize_module_prefix_stripped():
+    model = ToyModel()
+    sd = {'module.' + k: v.clone() for k, v in model.state_dict().items()}
+    strict_initialize(model, sd)  # must not raise
+
+
+def test_strict_initialize_full_dict_with_matching_reference():
+    model = ToyModel()
+    full = {'student': {k: v.clone() for k, v in model.state_dict().items()},
+            'reference': {k: v.clone() for k, v in model.reference.state_dict().items()}}
+    strict_initialize(model, full, full['reference'])
+
+
+def test_strict_initialize_full_dict_reference_mismatch_rejected():
+    model = ToyModel()
+    full = {'student': {k: v.clone() for k, v in model.state_dict().items()},
+            'reference': {k: v.clone() for k, v in model.reference.state_dict().items()}}
+    other = {k: v.clone() for k, v in model.reference.state_dict().items()}
+    with torch.no_grad():
+        first = next(iter(other.values()))
+        first.fill_(first.fill_(0).new_zeros(first.shape))
+    with pytest.raises(ValueError):
+        strict_initialize(model, full, other)
+
+
+def test_strict_missing_key_rejected():
+    model = ToyModel()
+    sd = {k: v.clone() for k, v in model.state_dict().items()}
+    del sd['decode_head.conv.weight']
+    with pytest.raises(ValueError):
+        strict_initialize(model, sd)
+
+
+def test_strict_extra_key_rejected():
+    model = ToyModel()
+    sd = {k: v.clone() for k, v in model.state_dict().items()}
+    sd['bonus.weight'] = torch.zeros(1)
+    with pytest.raises(ValueError):
+        strict_initialize(model, sd)
+
+
+def test_strict_shape_mismatch_rejected():
+    model = ToyModel()
+    sd = {k: v.clone() for k, v in model.state_dict().items()}
+    sd['decode_head.conv.weight'] = torch.zeros(4, 7, 3, 3)
+    with pytest.raises(ValueError):
+        strict_initialize(model, sd)
+
+
+def test_strict_rejects_non_dict_payload():
+    model = ToyModel()
+    with pytest.raises(ValueError):
+        strict_initialize(model, [1, 2, 3])
+
+
+# -------------------------------------------------------- paired geometry ---
+def _marker_scene(size=512):
+    img = np.zeros((size, size, 3), dtype=np.uint8)
+    label = np.zeros((size, size), dtype=np.int64)
+    y0, y1, x0, x1 = 100, 220, 130, 300
+    img[y0:y1, x0:x1] = 200
+    label[y0:y1, x0:x1] = 3
+    reference = np.eye(4, dtype=np.float32)[label]     # (H, W, 4) one-hot
+    return img, label, reference
+
+
+def _interior_mask(mask, k=3):
+    m = mask.copy()
+    for _ in range(k):
+        m = m & np.roll(m, 1, 0) & np.roll(m, -1, 0) & np.roll(m, 1, 1) & np.roll(m, -1, 1)
+    return m
+
+
+def test_paired_geometry_marker_alignment():
+    img, label, reference = _marker_scene()
+    out_img, out_label, out_ref, trace = paired_geometry(
+        img, label, reference, np.random.RandomState(7))
+    assert out_img.shape == (3, 1024, 1024)
+    assert out_label.shape == (1, 1024, 1024) and out_label.dtype == np.int64
+    assert out_ref.shape == (4, 1024, 1024) and out_ref.dtype == np.float32
+    lab = out_label[0]
+    cls3 = (lab == 3)
+    assert cls3.any(), 'rotated marker class must survive crop'
+    interior = _interior_mask(cls3)
+    assert interior.any()
+    ref_c = out_ref
+    assert (ref_c[3][interior] > 0.99).all()
+    others = np.concatenate([ref_c[0][interior], ref_c[1][interior], ref_c[2][interior]])
+    assert (others < 0.01).all()
+    # border pixels: label 255 and reference fully faded
+    border = (lab == 255)
+    if border.any():
+        assert ref_c.max(axis=0)[border].max() <= 1e-6
+    assert trace['crop'] == 1024 and trace['resize'] == 2048
+    assert -45.0 <= trace['angle'] <= 45.0
+    # image normalization matches the published constants
+    img_again, *_ = paired_geometry(img, label, reference, np.random.RandomState(7))
+    assert np.array_equal(img_again, out_img)
+
+
+def test_paired_geometry_seed_reproducibility():
+    img, label, reference = _marker_scene()
+    r1 = [np.array_equal(a, b) for a, b in zip(
+        paired_geometry(img, label, reference, np.random.RandomState(11))[:3],
+        paired_geometry(img, label, reference, np.random.RandomState(11))[:3])]
+    assert all(r1)
+    t1 = paired_geometry(img, label, reference, np.random.RandomState(11))[3]
+    t2 = paired_geometry(img, label, reference, np.random.RandomState(11))[3]
+    assert t1 == t2
+    t3 = paired_geometry(img, label, reference, np.random.RandomState(12))[3]
+    assert t1 != t3
+
+
+def test_paired_geometry_rejects_bad_reference():
+    img, label, _ = _marker_scene(64)
+    bad = np.zeros((64, 64, 4), dtype=np.float32)
+    bad[0, 0, 0] = 1.5
+    with pytest.raises(AssertionError):
+        paired_geometry(img, label, bad, np.random.RandomState(0))
+
+SOURCE D:\dataset\experiment\hrdecoder_plus3\repo\hrplus_core.py
+"""Dependency-light helpers for the HR+ patch (torch + numpy only).
+
+Used by hrplus_patch.py (model / pipeline) and by tests/test_core.py.
+"""
+import numpy as np
+import torch
+import torch.nn.functional as F
+
+
+# ---------------------------------------------------------------- tiling ---
+def _axis_positions(total, tile, stride):
+    """Tile start positions along one axis: complete coverage of [0, total)."""
+    assert 0 < stride <= tile, 'stride must satisfy 0 < stride <= tile'
+    if total <= tile:
+        return [0]
+    pos = list(range(0, total - tile + 1, stride))
+    if pos[-1] != total - tile:
+        pos.append(total - tile)
+    return pos
+
+
+def tiled_forward(img, forward_fn, tile_size, stride, num_classes):
+    """Tiled inference with complete overlap coverage.
+
+    Logits are accumulated in float32 and divided by per-pixel counts so
+    overlapping tiles are exactly averaged.  Images smaller than the tile are
+    right/bottom padded before ``forward_fn`` and the padding is cropped away
+    afterwards, so irregular / small sizes are handled correctly.
+
+    Args:
+        img: (B, 3, H, W) tensor (already normalized).
+        forward_fn: callable (B,3,th,tw) -> (B, C, th, tw) logits tensor.
+        tile_size: int or (tile_h, tile_w).
+        stride: int, tile stride (0 < stride <= min(tile_h, tile_w)).
+        num_classes: number of logit channels C.
+    Returns:
+        (B, C, H, W) float32 averaged logits.
+    """
+    if isinstance(tile_size, (tuple, list)):
+        tile_h, tile_w = int(tile_size[0]), int(tile_size[1])
+    else:
+        tile_h = tile_w = int(tile_size)
+    assert 0 < stride <= min(tile_h, tile_w), \
+        'require 0 < stride <= min(tile_h, tile_w)'
+    b, _, h, w = img.shape
+    sums = torch.zeros((b, num_classes, h, w), dtype=torch.float32,
+                       device=img.device)
+    counts = torch.zeros((b, 1, h, w), dtype=torch.float32,
+                         device=img.device)
+    th, tw = min(tile_h, h), min(tile_w, w)
+    for y in _axis_positions(h, tile_h, stride):
+        for x in _axis_positions(w, tile_w, stride):
+            patch = img[:, :, y:y + th, x:x + tw]
+            if patch.shape[2] < tile_h or patch.shape[3] < tile_w:
+                patch = F.pad(patch, (0, tile_w - patch.shape[3],
+                                      0, tile_h - patch.shape[2]))
+            out = forward_fn(patch)
+            assert out.shape[0] == patch.shape[0] and out.shape[1] == num_classes
+            out = out[:, :, :th, :tw].float()
+            sums[:, :, y:y + th, x:x + tw] += out
+            counts[:, :, y:y + th, x:x + tw] += 1.0
+    assert bool((counts > 0).all()), 'tiling left uncovered pixels'
+    return sums / counts
+
+
+# ---------------------------------------------------------------- blending ---
+def blend_probs(prob_a, prob_b, weight_a=0.5):
+    """Fixed probability-space fusion: weight_a * a + (1 - weight_a) * b.
+
+    prompt §7.4: 非有限或越界的融合权重必须拒绝（0<=w<=1）。
+    模型内部固定用 0.5，此断言对既有行为零影响。
+    """
+    import math
+    assert prob_a.shape == prob_b.shape, \
+        'blend shapes must match exactly (no implicit broadcasting)'
+    assert (isinstance(weight_a, (int, float)) and math.isfinite(weight_a)
+            and 0.0 <= float(weight_a) <= 1.0), \
+        'blend weight must be a finite probability in [0,1], got %r' % (weight_a,)
+    return weight_a * prob_a + (1.0 - weight_a) * prob_b
+
+
+def resize_logit(logits, size, align_corners=False):
+    """Bilinear logit resize with explicit align_corners."""
+    return F.interpolate(logits, size=size, mode='bilinear',
+                         align_corners=align_corners)
+
+
+# ------------------------------------------------------------ crop helpers ---
+def pad_to_size(img, gt, size, img_pad=0, seg_pad=255):
+    """Pad (H,W,3) image with ``img_pad`` and (H,W) label with ``seg_pad``
+    at bottom/right up to ``size``=(H,W). Pure numpy. ``img_pad`` is honored
+    for the image and ``seg_pad`` for the label."""
+    th, tw = int(size[0]), int(size[1])
+    h, w = gt.shape[:2]
+    if h >= th and w >= tw:
+        return img, gt
+    pad_img = np.full((max(th, h), max(tw, w)) + img.shape[2:], int(img_pad),
+                      dtype=img.dtype)
+    pad_img[:h, :w] = img
+    pad_gt = np.full((max(th, h), max(tw, w)) + gt.shape[2:], int(seg_pad),
+                     dtype=gt.dtype)
+    pad_gt[:h, :w] = gt
+    return pad_img, pad_gt
+
+
+def crop_arrays(img, gt, y0, x0, h, w):
+    """Aligned numpy crop of image and label (no resizing)."""
+    return img[y0:y0 + h, x0:x0 + w], gt[y0:y0 + h, x0:x0 + w]
+
+
+def foreground_crop_bbox(gt, crop_size, fg_prob=0.5, rng=None, num_fg=4):
+    """Choose top-left corner (y0, x0) of a crop_size x crop_size window.
+
+    With probability ``fg_prob`` the crop is image-uniform random.  Otherwise
+    a uniformly chosen PRESENT lesion class (1..num_fg) and a uniformly chosen
+    pixel of that class are picked, and the anchor offset is drawn from the
+    valid range that guarantees pixel inclusion.  If no lesion class is
+    present the crop falls back to image-uniform random.  Uses the given
+    ``rng`` (np.random module or np.random.RandomState) for seeding.
+    Assumes H, W >= crop_size (pad first if not).
+    """
+    rng = np.random if rng is None else rng
+    h, w = gt.shape[:2]
+    cs = int(crop_size)
+    cs_h, cs_w = min(cs, h), min(cs, w)
+
+    def uniform():
+        y0 = rng.randint(0, h - cs_h + 1)
+        x0 = rng.randint(0, w - cs_w + 1)
+        return y0, x0
+
+    present = [c for c in range(1, num_fg + 1) if (gt == c).any()]
+    if not present or rng.random() < fg_prob:
+        return uniform()
+    cls = present[rng.randint(0, len(present))]
+    ys, xs = np.where(gt == cls)
+    idx = rng.randint(0, len(ys))
+    py, px = int(ys[idx]), int(xs[idx])
+    y_lo, y_hi = max(0, py - cs_h + 1), min(py, h - cs_h)
+    x_lo, x_hi = max(0, px - cs_w + 1), min(px, w - cs_w)
+    y0 = rng.randint(y_lo, y_hi + 1)
+    x0 = rng.randint(x_lo, x_hi + 1)
+    return y0, x0
+
+
+# ---------------------------------------------------------------- lovasz ---
+def lovasz_grad(gt_sorted):
+    """Gradient of the Lovasz extension w.r.t. sorted errors.
+
+    The differencing step uses torch.cat instead of overlapping in-place
+    slice assignment (jacc[1:] = jacc[1:] - jacc[:-1]), which is unsafe
+    under PyTorch's memory-aliasing rules.
+    """
+    p = len(gt_sorted)
+    gts = gt_sorted.sum()
+    intersection = gts - gt_sorted.float().cumsum(0)
+    union = gts + (1 - gt_sorted).float().cumsum(0)
+    jacc = 1 - intersection / union
+    if p > 1:
+        jacc = torch.cat([jacc[:1], jacc[1:] - jacc[:-1]])
+    return jacc
+
+
+def lovasz_hinge_flat(logits, labels):
+    """Binary Lovasz hinge loss on flattened, already-valid tensors.
+    Graph-safe for empty inputs (returns 0 connected to the graph)."""
+    if logits.numel() == 0:
+        return logits.sum() * 0
+    logits = logits.float()
+    labels = labels.float()
+    signs = 2.0 * labels - 1.0
+    errors = 1.0 - logits * signs
+    errors_sorted, perm = torch.sort(errors, descending=True)
+    gt_sorted = labels[perm]
+    return torch.dot(F.relu(errors_sorted), lovasz_grad(gt_sorted))
+
+
+def multiclass_lovasz_hinge(logits, target, ignore_index=255):
+    """Binary Lovasz hinge applied separately to each of the EXACTLY 4
+    FOREGROUND channels (channel c <-> target label c+1; 0=EX, 1=HE,
+    2=SE, 3=MA; NO background channel).  Batch-flattened,
+    ignore_index (255) excluded, averaged over ALL 4 classes including
+    classes absent from the batch.  Applied on raw logits: NO softmax /
+    sigmoid.  Full-crop usage expected.
+    """
+    assert logits.shape[1] == 4, 'model must output exactly 4 fg channels'
+    tgt = target.squeeze(1) if target.dim() == 4 else target
+    flat_t = tgt.reshape(-1)
+    num_classes = 4
+    total = logits.sum() * 0
+    for c in range(num_classes):
+        lc = logits[:, c].reshape(-1)
+        valid = flat_t != ignore_index
+        if bool(valid.sum()) == 0:
+            total = total + lc.sum() * 0
+            continue
+        labels = (flat_t[valid] == (c + 1)).float()
+        total = total + lovasz_hinge_flat(lc[valid], labels)
+    return total / num_classes

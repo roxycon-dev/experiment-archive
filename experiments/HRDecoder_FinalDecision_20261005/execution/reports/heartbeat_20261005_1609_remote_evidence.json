@@ -1,0 +1,80 @@
+{
+  "time": "2026-10-05T16:11:55.939590+00:00",
+  "primary": {
+    "run": "D_seed42",
+    "validation_curve": [
+      {
+        "update": 4000,
+        "n_images": 76,
+        "per_image_count": 76,
+        "scores": {
+          "single": 40.845137169176596,
+          "fixed_fusion": 44.81903825796121,
+          "half_fusion": 42.69589728421687
+        },
+        "metric_sha256": "c27d573e99b9a8ffe3b339fbac730f9016a1bd7f798b3611665420598e4efec6"
+      },
+      {
+        "update": 8000,
+        "n_images": 76,
+        "per_image_count": 76,
+        "scores": {
+          "single": 41.587832157303886,
+          "fixed_fusion": 44.98818933537731,
+          "half_fusion": 43.2479783032601
+        },
+        "metric_sha256": "a42fcc9d604c40ab559e6e4d8b793ba3ffd969d87a0da54f0ff3df94a10fdbc7"
+      },
+      {
+        "update": 12000,
+        "n_images": 76,
+        "per_image_count": 76,
+        "scores": {
+          "single": 40.98629369907318,
+          "fixed_fusion": 44.83109978124305,
+          "half_fusion": 42.91118134437835
+        },
+        "metric_sha256": "efaf60ba21af097269866d0ccbdca262ec4c84a10cee214eb5f9153c0cbd1b36"
+      },
+      {
+        "update": 16000,
+        "n_images": 76,
+        "per_image_count": 76,
+        "scores": {
+          "single": 41.74529041735106,
+          "fixed_fusion": 45.13379698396544,
+          "half_fusion": 43.51934893893609
+        },
+        "metric_sha256": "194d1e29ba22fa7cc65182cd0363b5e97fc9d353502eefe2162c339027238eed"
+      },
+      {
+        "update": 20000,
+        "n_images": 76,
+        "per_image_count": 76,
+        "scores": {
+          "single": 41.90817108639014,
+          "fixed_fusion": 45.10097806563186,
+          "half_fusion": 43.488406812370975
+        },
+        "metric_sha256": "99e95939094367760d1ec0c077c08cbedf5138a7671994b3b19c4daa836df46c"
+      },
+      {
+        "update": 24000,
+        "n_images": 76,
+        "per_image_count": 76,
+        "scores": {
+          "single": 41.56825397258711,
+          "fixed_fusion": 45.0660515021911,
+          "half_fusion": 43.35280231443162
+        },
+        "metric_sha256": "af78fceb9340c09fd76ec0d4c955471b9188a01bc83bf7f2349572320260df17"
+      }
+    ],
+    "boundary": {
+      "stage": "ARMED_AFTER_D42_BOUNDARY",
+      "pid": 44281,
+      "time": "2026-10-05T04:11:34.270609+00:00",
+      "process_alive": true
+    }
+  }
+}

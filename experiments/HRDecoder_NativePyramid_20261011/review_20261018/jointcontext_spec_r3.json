@@ -1,0 +1,288 @@
+{
+  "schema_version": 3,
+  "architecture": "HRDecoder-JointContext",
+  "design_date": "2026-10-18",
+  "status": "DESIGN_REVISED_NOT_IMPLEMENTED",
+  "launchable": false,
+  "constraints": {
+    "updates": 40000,
+    "global_batch": 2,
+    "physical_batch_per_view": 2,
+    "execution": "single_device_two_phase_encoder_recompute",
+    "seed": 42,
+    "head_seed": 42,
+    "m4_rng_seed": 42,
+    "pretrained_sha256": "d2186c55782308392ae14cf179ac4840143b09abdbba81aa3f9274c795ebc960",
+    "data_identity_sha256": "7c53b86bcb27ccd121042f667cc58e39b98716a8c477bfd1f1657fa126575719",
+    "split_sizes": {
+      "train": 454,
+      "val": 76,
+      "test": 227
+    },
+    "teacher": false,
+    "task_trained_initialization": false
+  },
+  "input": {
+    "canvas": 2048,
+    "global_view": 1024,
+    "native_view": 2048,
+    "channels": 3,
+    "augmentation": "existing data.py byte-identified geometry; no new copy-paste or class oversampling",
+    "data_py_sha256": "479cd6d3922f81fc17744551b30ba422ee003c15eb97e71823aad506943424ed",
+    "interpolation": {
+      "mode": "bilinear",
+      "align_corners": false,
+      "antialias": false
+    },
+    "feature_grid_interpretation": "Keep ordinary bilinear align_corners=False. No claim of exact receptive-field-center equivalence between scales; no new grid_sample correction."
+  },
+  "backbone": {
+    "name": "hrnet_w48",
+    "shared_trainable_parameters": true,
+    "expected_parameters": 65325120,
+    "pretrained_backbone_tensors": 1830,
+    "excluded_classification_tensors": 126,
+    "fusion_bilinear_resizes": 31,
+    "stage_channels": [
+      48,
+      96,
+      192,
+      384
+    ],
+    "global_grids": [
+      256,
+      128,
+      64,
+      32
+    ],
+    "native_grids": [
+      512,
+      256,
+      128,
+      64
+    ],
+    "bn_banks": [
+      "G",
+      "N"
+    ],
+    "running_stats": "training_batch_statistics_update_once_per_real_view_forward"
+  },
+  "decoder": {
+    "projection": {
+      "in_channels": 720,
+      "out_channels": 64,
+      "kernel": 1,
+      "bias": false,
+      "norm": "BN",
+      "activation": "ReLU",
+      "shared_weights": false,
+      "branches": {
+        "G_aux": {
+          "weights": "P_G",
+          "bn_banks": [
+            "G",
+            "aux"
+          ],
+          "affine_shared_within_branch": true
+        },
+        "N": {
+          "weights": "P_N",
+          "bn_banks": [
+            "N"
+          ],
+          "affine_independent_from_G": true
+        }
+      },
+      "native_initialization": "copy P_G convolution and affine values without aliasing parameters or consuming RNG; initialize N buffers to the old N-bank values"
+    },
+    "aligned_grid": 512,
+    "aligned_features": "G=U512(P_G(FG720)); N=P_N(FN720), both at 512x512",
+    "common_feature": "C=(N+G)/sqrt(2)",
+    "difference_feature": "D=(N-G)/sqrt(2)",
+    "common_kernel": {
+      "in_channels": 64,
+      "out_channels": 64,
+      "kernel": 7,
+      "padding": 3,
+      "dilation": 1,
+      "bias": false,
+      "init": "kaiming_normal_fan_out_relu"
+    },
+    "difference_kernel": {
+      "in_channels": 64,
+      "out_channels": 64,
+      "kernel": 7,
+      "padding": 3,
+      "dilation": 1,
+      "bias": false,
+      "init": "zeros"
+    },
+    "fusion": "A=conv(C,Kc)+conv(D,Kd); H=ReLU(BN_main(A)); Z=upsample(conv1x1(H),2048)",
+    "fused_bn_banks": [
+      "main",
+      "aux"
+    ],
+    "classifier": {
+      "in_channels": 64,
+      "out_channels": 4,
+      "bias": true,
+      "weight_init_normal_std": 0.01,
+      "bias_init": 0
+    },
+    "projection_init": "kaiming_normal_fan_out_relu",
+    "dropout": 0,
+    "expected_parameters": 494212,
+    "expected_total_parameters": 65819332,
+    "aux": "crop_resize(FG720,256)->P_G using aux BN bank->Kc->BN_aux->ReLU->same_classifier; Kd and P_N not used",
+    "initialization_order": [
+      "load_backbone",
+      "seed_head_42",
+      "initialize_P_G",
+      "initialize_common_kernel",
+      "initialize_classifier",
+      "allocate_zero_difference_kernel_without_rng",
+      "copy_P_N_parameters_from_P_G_without_rng_or_alias",
+      "copy_bn_buffers_without_rng"
+    ],
+    "view_basis": "orthonormal; energy, gradient norm and isotropic optimizer geometry preserved relative to concatenation coordinates"
+  },
+  "bn": {
+    "eps": 1e-05,
+    "momentum": 0.1,
+    "affine": "one gamma/beta per BN instance shared across its banks; P_G G/aux share affine, P_N affine independent; backbone G/N affine remain shared",
+    "normalization_variance": "biased batch variance",
+    "running_variance": "unbiased batch estimate",
+    "recompute": "training batch statistics; no buffer or counter writes",
+    "ordinary_microbatch1_accumulation": false
+  },
+  "main_loss": {
+    "name": "class_macro_batch_squared_dice",
+    "reduce_before_ratio": [
+      "batch",
+      "height",
+      "width"
+    ],
+    "epsilon": 1e-05,
+    "if_class_gt_positive": "1-(2*sum(v*p*y)+eps)/(sum(v*p*p)+sum(v*y)+eps)",
+    "if_class_gt_zero": "1-eps/(sum_valid(p*p)+eps); same Dice expression, no BCE fallback",
+    "class_reduction": "mean over exactly EX HE SE MA",
+    "all_ignore": "reject before model forward",
+    "ohem": false,
+    "class_frequency_weights": false,
+    "positive_group_bce": false,
+    "all_class_gt_cases": "1-(2*sum(v*p*y)+eps)/(sum(v*p*p)+sum(v*y)+eps)",
+    "empty_class_bce": false,
+    "empty_class_supervision_limitation": "epsilon-only gradient if both originals lack class; no claimed direct strong empty-class FP correction"
+  },
+  "aux_loss": {
+    "name": "original_per_valid_crop_per_class_squared_dice",
+    "epsilon": 1e-05,
+    "weight": 0.1,
+    "crops_per_original": 4,
+    "crop_base": 1024,
+    "scale_range": [
+      0.75,
+      1.25
+    ],
+    "divisible": 8,
+    "scale_draws_per_update": 1,
+    "boxes_shared_across_two_images": true,
+    "box_rule": "offset=8*randint(0,floor((2048-crop_size+1)/8)); upper bound exclusive",
+    "filtering": "drop fully ignored crop instances before aux head; keep all-background valid instances",
+    "reduction": "mean over four classes then valid crop instances; no extra division by four",
+    "all_ignore_crops": "zero aux loss and skip aux forward/BN update, retain valid main update",
+    "feature_box": "divide all 2048-canvas box coordinates by 8, crop FG720 at 256 grid, then bilinear resize features to 256",
+    "logits_and_labels": "bilinear resize auxiliary logits from 256 to crop_size in FP32; compare to unresized nearest-indexed label crop",
+    "aux_head_batch": "concatenate all valid instances and call the aux head once; no per-crop head loop",
+    "rng": "dedicated persistent numpy RandomState(42); save and restore its state"
+  },
+  "optimizer": {
+    "type": "SGD",
+    "lr": 0.005,
+    "momentum": 0.9,
+    "weight_decay": 0.0005,
+    "dampening": 0,
+    "nesterov": false,
+    "parameter_groups": "all trainable parameters exactly once; no multipliers",
+    "clip_global_norm": 5,
+    "clip_timing": "after decoder and both encoder VJPs, before the one optimizer step"
+  },
+  "schedule": {
+    "zero_based_update": "t=0..39999",
+    "formula": "0.005*(1-t/40000)*(1e-6+(1-1e-6)*t/1500 if t<1500 else 1)",
+    "warmup_updates": 1500,
+    "power": 1
+  },
+  "precision": {
+    "convolutions": "BF16 autocast(cache_enabled=False)",
+    "master_parameters": "FP32",
+    "bn_statistics": "FP32",
+    "feature_mean_difference_and_branch_sum": "FP32 then cast to convolution input dtype as specified",
+    "final_logits_interpolation_and_loss": "FP32",
+    "fp16_scaler": false,
+    "autocast_cache_enabled": false,
+    "autocast_scope": "fresh context for each encoder forward, decoder forward and recompute; exit before backward; no enclosing autocast spanning no_grad and grad phases",
+    "bn_input_calculation": "disable autocast, calculate BN from FP32 input with FP32 affine and buffers, cast output back to incoming activation dtype"
+  },
+  "recompute": {
+    "cache": [
+      "four G output features",
+      "four N output features"
+    ],
+    "initial_encoder_forward": "no_grad but train BN, write each bank once",
+    "decoder_backward": "feature leaves require gradients; preserve all leaf adjoints",
+    "encoder_vjp": "recompute each view with identical parameters/input and suppressed BN buffer writes; accumulate J_G^T g_G + J_N^T g_N",
+    "steps_per_update": 1,
+    "bn_readonly_implementation": "F.batch_norm with local clones of the current domain running buffers, training=True, momentum=0.1; discard clone writes and never increment persistent counter",
+    "no_grad_api": "torch.no_grad only; not inference_mode; validate gradient ownership on recompute",
+    "amp_weight_cache": false,
+    "gradient_ownership_check": "check every expected trainable backbone parameter gradient; output.requires_grad alone is insufficient because BN affine can mask missing convolution gradients"
+  },
+  "evaluation": {
+    "primary_checkpoint": "raw_update_40000",
+    "threshold": "sigmoid(native_size_logits)>0.5",
+    "classes": [
+      "EX",
+      "HE",
+      "SE",
+      "MA"
+    ],
+    "metric": "global accumulated per-class TP FP FN then mean IoU; background excluded",
+    "val_target_percent": 45.32183122738841,
+    "test_target_percent": 45.860383832668,
+    "exceeded": "strictly greater",
+    "EMA": false,
+    "TTA": false,
+    "threshold_search": false
+  },
+  "expected_budget": {
+    "original_image_occurrences": 80000,
+    "semantic_encoder_view_occurrences": 160000,
+    "actual_encoder_forward_pass_image_occurrences_with_recompute": 320000
+  },
+  "revision": "20261018_root_architecture_r3",
+  "supersedes_spec_sha256": "2632a431d0464aaa81d38c26decb2e0fed26dc162f9cb433dbf1c96e7f5d46a3",
+  "evidence_status": {
+    "full_model_implemented": false,
+    "full_model_executed": false,
+    "new_training_updates": 0,
+    "new_val_test_metrics": false,
+    "performance_guaranteed": false,
+    "v2_execution_fixture_not_r3_certification": true
+  },
+  "architecture_claims": {
+    "prediction_family_contains_v2": true,
+    "construction": "tie P_N=P_G including affine and map old G/N/aux buffers to corresponding new banks; all other paths unchanged",
+    "same_initial_predictions_as_v2": "mathematical identity under same numeric execution and initialization, not full-model runtime measured",
+    "same_optimization_trajectory_as_v2": false,
+    "uniform_weight_decay_on_two_projections_duplicates_penalty_on_tied_subspace": true,
+    "removed_restriction": "shared 64-dimensional projection row space across both 720-channel view inputs",
+    "remaining_bottlenecks": [
+      "64 channels per view",
+      "shared W48",
+      "joint 64-channel nonlinear readout",
+      "bilinear stride-4 output"
+    ],
+    "metric_guarantee_from_containment": false
+  }
+}

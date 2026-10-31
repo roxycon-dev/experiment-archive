@@ -1,0 +1,117 @@
+{
+  "schema": "hrdecoder-refiner-manifest/v1",
+  "root": "/root/autodl-tmp/HRDecoder_FullCompetition_20260920/refiner_v1",
+  "created_at": "2026-09-21T00:22:12",
+  "n_files": 27,
+  "files": {
+    "refiner/__init__.py": {
+      "sha256": "92925fc54ea6c6734e8f941bb200f34bbca509a8ffe0a7c84f06e66ee7a5e59c",
+      "bytes": 1068
+    },
+    "refiner/assemble.py": {
+      "sha256": "7e044cc4b118c103b3074b2e43f34f48605e3dc45f2cbd6488bb8edc7f80128c",
+      "bytes": 5043
+    },
+    "refiner/candidate.py": {
+      "sha256": "ca0aa1f97a84804ab514a5817cd86cb27522d9449bcc2e7084adb18b5c353d74",
+      "bytes": 10464
+    },
+    "refiner/dataset.py": {
+      "sha256": "92ee5c68d49cfb520f6de895428f5a464a79fe12c43c4e5ed1dd6ed3757eb4b0",
+      "bytes": 8930
+    },
+    "refiner/guards.py": {
+      "sha256": "83a57beeb3690f575d0574a95fad28a408a972457efd63674f2b0da5a2fe4ce7",
+      "bytes": 2775
+    },
+    "refiner/haar.py": {
+      "sha256": "7085dc1ae43f86e654333c7f808ebdc8e106502351fc9160256900086e3bf9d0",
+      "bytes": 3321
+    },
+    "refiner/losses.py": {
+      "sha256": "d798d48f28236a8381a9564e22c4d7279386980cd8c231eaeae96fde28a94839",
+      "bytes": 7092
+    },
+    "refiner/model.py": {
+      "sha256": "0e4ade255e487d2b2f627e5f8ca45885424f8ea3881149134fbbcfa620d434d6",
+      "bytes": 6692
+    },
+    "refiner/reference.py": {
+      "sha256": "0c93e703ddcfbbb450f5fc6380f176acbd3dadbf9b63d777d634386f43f24ebc",
+      "bytes": 5935
+    },
+    "tests/test_candidate_rules.py": {
+      "sha256": "e13b236d20e6cb28b2f493333fdc30857d85ad86283444a915e49dac6db703b7",
+      "bytes": 7481
+    },
+    "tests/test_refiner_units.py": {
+      "sha256": "43fc4cb30d516983cf0e2112706e2a91ac07b006d9a6d9fa6ab8f0275b6cb084",
+      "bytes": 22678
+    },
+    "configs/refiner_v1.json": {
+      "sha256": "1319aba66e9505b7e09d446c0c7a31a581736709ab555b29c3d72690b2a28905",
+      "bytes": 10192
+    },
+    "configs/stage1.json": {
+      "sha256": "195a846904d4990efeb6c1bd23b185187853f84e617907496ee4a22767ffa43e",
+      "bytes": 1632
+    },
+    "configs/stage2.json": {
+      "sha256": "41646989a60746a0ff2260b03e07357c75dd0c5af9ec031ad5a87cc285626de6",
+      "bytes": 1853
+    },
+    "audit/audit_candidate_rules.py": {
+      "sha256": "d15d9e2058d2082615a0d4d57b30bff45ee2ea4cfc7968a328ab5f4d75439954",
+      "bytes": 17291
+    },
+    "audit/candidate_audit.json": {
+      "sha256": "eef8a6bdc04170f86857fa47accd7d24ef5d08f674e39083beb21e842f216153",
+      "bytes": 205136
+    },
+    "audit/candidate_audit_shipping.json": {
+      "sha256": "377b333f7dc2e49041272680687fcf440074fd14f9c44fbf0c566b42ba798312",
+      "bytes": 205137
+    },
+    "audit/input_stats.json": {
+      "sha256": "ab00d86b47dfc55dff53806052f6ad599706ff1cb0f41675779ee4d6a3277a94",
+      "bytes": 10539
+    },
+    "audit/probe_dims.py": {
+      "sha256": "1eb872ea37d7acd7e953d07d985f09ac60f9c148ba3ef4168dc740a64b31881b",
+      "bytes": 5499
+    },
+    "audit/smoke_audit.json": {
+      "sha256": "7a7fa34254bcce9b5f5d9157263184dc52e68ed2acd7d3c76ba4997fdd920460",
+      "bytes": 17553
+    },
+    "audit/smoke_audit_v2.json": {
+      "sha256": "fa0eb7ca5dd35ea95a99d782e83c5e36f0756e9decbbe6e9252de7da69bff654",
+      "bytes": 17553
+    },
+    "tools/make_manifest.py": {
+      "sha256": "4dbafe7b89ed3d15994b7733179348085c083d276c342ba828e6b233e502516f",
+      "bytes": 3703
+    },
+    "build_patch_cache.py": {
+      "sha256": "0a5e3587184f2350e0ae84630c4dffc7d11982a412fb8ce90fb9e9c895e3f01e",
+      "bytes": 13759
+    },
+    "train_refiner.py": {
+      "sha256": "d87d7fc7de95d08c7c17772802f5bfa70c874bd8ac3e0404e32f3957428ef7ba",
+      "bytes": 22704
+    },
+    "eval_refiner.py": {
+      "sha256": "d14f0e99c28ce685474ab47b48b6befe1deaac0083bcde19fdd633b869340b46",
+      "bytes": 10455
+    },
+    "README.md": {
+      "sha256": "7f74442cf6a84629c3ed2b5c84de0dea0b5bb482b2a8dcdf34fb00b1e0d636cd",
+      "bytes": 7539
+    },
+    "GO_NO_GO.md": {
+      "sha256": "5567af0bab81a3428102157093265318bf078a76b3b78b670e109246e3516074",
+      "bytes": 28912
+    }
+  },
+  "artifacts": {}
+}

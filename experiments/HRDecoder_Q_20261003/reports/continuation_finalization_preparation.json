@@ -1,0 +1,41 @@
+{
+  "stage": "PREPARED_DEPLOYED_DEPENDENCY_EXPLICIT_RESUME_REVIEWED",
+  "recorded_at": "2026-10-04T03:31:14.232661+00:00",
+  "expected_remaining_formal_run": "Q_MIX_seed2024",
+  "common_endpoint": 24000,
+  "selection_dependency": "Four registered runs COMPLETE at common24k; original qlib.decision.lock_selection and campaign selection agree",
+  "paths_must_be_separate": [
+    "reports/continuation_final_selection.json",
+    "reports/continuation_final_test/",
+    "reports/continuation_final_evaluation_state.json"
+  ],
+  "old_files_immutable": [
+    "reports/final_selection.json",
+    "reports/final_evaluation.py",
+    "reports/final_test/"
+  ],
+  "test_identity_branch": "Exact old arm/update/formula, both checkpoint SHAs and identities match: reuse old per-image test evidence; new selected identity: once-only test after eligibility gate; ineligible: no test",
+  "evaluation_math": "Reuse the original frozen P0 and Q inference/counting pipeline with identical geometry/runtime resources; no thresholds/TTA/new formulas",
+  "next_preparation": "Read reports/final_evaluation.py, run_locked_test.py and qlib/decision.py to prepare an operational adapter and separate freeze/test runner while training continues; do not freeze before complete paired evidence",
+  "model_training_added": false,
+  "selection_or_test_executed": false,
+  "prepared_at": "2026-10-04T04:24:32.164857+00:00",
+  "deployed_files": {
+    "reports/continuation_final_evaluation.py": "75f0cca79c7c3ebeaf3852fccae7cdb64107ede35143224d9a5d252aa1378e08",
+    "reports/run_continuation_locked_test.py": "491f31cce94c025195efd387d938331d2ca3aeed5d2480611b7bc3366935d77f",
+    "reports/final_evidence_backup_receipt.json": "a8c9d2cc209e1cbd1ac9ab2621827b1900d74dfaeeff239d43b20b6203301ab5"
+  },
+  "local_dependency_worker": "reports/queue_continuation_final_after_mix24.py",
+  "local_dependency_worker_sha256": "69cf6bcbdaf749853e82800a9446be1c5625ddf3eeb6297ee854465cff89eda4",
+  "validation": {
+    "new_sources_AST": 3,
+    "both_remote_environment_AST_and_SHA": true,
+    "meaningful_identity_and_completion_guards": 11
+  },
+  "original_final_driver_SHA_unchanged": true,
+  "dependency_worker_pid": 16036,
+  "dependency_state": "reports/continuation_final_handoff_state.json",
+  "dependency_wait_minutes": 180,
+  "dependency_dispatched_at": "2026-10-04T05:06:30.080933+00:00",
+  "dependency_repair": "reports/continuation_final_handoff_repair_receipt.json"
+}

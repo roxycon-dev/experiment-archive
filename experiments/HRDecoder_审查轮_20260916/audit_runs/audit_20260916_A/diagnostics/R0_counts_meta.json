@@ -1,0 +1,71 @@
+{
+  "purpose": "R0 paired bootstrap counts",
+  "n_val": 76,
+  "tau": 0.5,
+  "comparison": "strict_>",
+  "aggregation": "dataset_cumulative",
+  "base0_identity": {
+    "members": [
+      {
+        "cfg": "configs/lesion/exp/hrplus_patch_dice.py",
+        "ckpt": "/root/autodl-tmp/hrplus/D_0913_retry/best_mIoU_iter_2000.pth",
+        "w": 3.0
+      },
+      {
+        "cfg": "configs/lesion/exp/hrplus_mares.py",
+        "ckpt": "/root/autodl-tmp/hrplus/results/E_0916/best_mIoU_iter_1500.pth",
+        "w": 2.0
+      },
+      {
+        "cfg": "configs/lesion/exp/hr100_b.py",
+        "ckpt": "/root/autodl-tmp/hr100/trial_b/best_mIoU_iter_3000.pth",
+        "w": 1.0
+      },
+      {
+        "cfg": "configs/lesion/exp/e4_detail_split613.py",
+        "ckpt": "/root/HRDecoder/work_dirs/exp_e4_detail_split613/best_mIoU_iter_36000.pth",
+        "w": 1.0
+      }
+    ],
+    "flip_tta": true,
+    "forward_passes_per_image": 8
+  },
+  "h4_head": "/root/autodl-tmp/audit/audit_20260916_A/h4_best.pth",
+  "h4_step": 1600,
+  "student_ref_source": "D@2000 (hrplus_patch_dice) 的 _student_prob / _reference_prob",
+  "feature_order": [
+    "R",
+    "G",
+    "B",
+    "logit(P_BASE0_MA)",
+    "logit(P_student_MA)",
+    "logit(P_reference_MA)",
+    "P_student_MA-P_reference_MA"
+  ],
+  "logit_clamp": "clamp(1e-4, 1-1e-4)  ← 旧 H4 实际实现；契约要求 1e-6 的差异已登记 DEVIATIONS",
+  "aggregate": {
+    "base0": {
+      "mIoU": 0.41796267336729404,
+      "per_class": {
+        "EX": 0.4577047841571581,
+        "HE": 0.4375516601740191,
+        "SE": 0.5518055058991777,
+        "MA": 0.2247887432388212
+      }
+    },
+    "h4": {
+      "mIoU": 0.4266857717990218,
+      "per_class": {
+        "EX": 0.4577047841571581,
+        "HE": 0.4375516601740191,
+        "SE": 0.5518055058991777,
+        "MA": 0.25968113696573225
+      }
+    },
+    "delta_mIoU": 0.00872309843172775,
+    "delta_MA": 0.03489239372691105
+  },
+  "non_MA_bit_identical": true,
+  "patient_id": "UNAVAILABLE -> 图像级重采样，未处理患者相关性",
+  "status": "PASS"
+}

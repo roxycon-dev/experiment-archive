@@ -1,0 +1,57 @@
+{"time": "2026-10-05T04:13:00.231499+00:00", "driver_stage": null, "run": null, "run_stage": null, "completed": null, "free_disk_bytes": 22962962432}
+Traceback (most recent call last):
+  File "D:\dataset\experiment\HRDecoder_FinalDecision_20261005\execution\ops\attendant.py", line 22, in main
+    mirror(endpoints=True)
+    ~~~~~~^^^^^^^^^^^^^^^^
+  File "D:\dataset\experiment\HRDecoder_FinalDecision_20261005\execution\ops\mirror.py", line 60, in main
+    with ThreadPoolExecutor(max_workers=2) as pool:
+         ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\GuanXingRen\Miniconda3\Lib\concurrent\futures\_base.py", line 647, in __exit__
+    self.shutdown(wait=True)
+    ~~~~~~~~~~~~~^^^^^^^^^^^
+  File "D:\dataset\experiment\HRDecoder_FinalDecision_20261005\execution\reports\parallel_node2_attendant.py", line 74, in shutdown
+    'negotiated_compression':compressions,'max_file_receivers':2,'original_mirror_sha256':sha(ROOT/'ops/mirror.py'),
+                                                                                          ~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\dataset\experiment\HRDecoder_FinalDecision_20261005\execution\qlib\common.py", line 32, in sha
+    with Path(path).open('rb') as f:
+         ~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\GuanXingRen\Miniconda3\Lib\pathlib\_local.py", line 537, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\execution\\parallel\\node2\\ops\\mirror.py'
+{"time": "2026-10-05T04:14:05.510351+00:00", "driver_stage": null, "run": null, "run_stage": null, "completed": null, "free_disk_bytes": 22903382016}
+{"stage": "SNAPSHOT", "files": 104, "campaign_stage": null}
+{"time": "2026-10-05T04:14:38.221716+00:00", "driver_stage": null, "run": null, "run_stage": null, "completed": null, "free_disk_bytes": 22873370624}
+{"stage": "SNAPSHOT", "files": 104, "campaign_stage": null}
+{"time": "2026-10-05T04:15:10.635023+00:00", "driver_stage": null, "run": null, "run_stage": null, "completed": null, "free_disk_bytes": 22837673984}
+{"stage": "SNAPSHOT", "files": 104, "campaign_stage": null}
+{"time": "2026-10-05T04:15:42.945664+00:00", "driver_stage": null, "run": null, "run_stage": null, "completed": null, "free_disk_bytes": 22803365888}
+{"stage": "SNAPSHOT", "files": 104, "campaign_stage": null}
+{"time": "2026-10-05T04:16:15.366945+00:00", "driver_stage": null, "run": null, "run_stage": null, "completed": null, "free_disk_bytes": 22771642368}
+{"stage": "SNAPSHOT", "files": 104, "campaign_stage": null}
+{"time": "2026-10-05T04:16:48.401738+00:00", "driver_stage": null, "run": null, "run_stage": null, "completed": null, "free_disk_bytes": 22734733312}
+{"stage": "SNAPSHOT", "files": 104, "campaign_stage": null}
+{"time": "2026-10-05T04:17:20.891778+00:00", "driver_stage": null, "run": null, "run_stage": null, "completed": null, "free_disk_bytes": 22705958912}
+{"stage": "SNAPSHOT", "files": 104, "campaign_stage": null}
+{"time": "2026-10-05T04:17:53.358766+00:00", "driver_stage": null, "run": null, "run_stage": null, "completed": null, "free_disk_bytes": 22671200256}
+{"stage": "SNAPSHOT", "files": 104, "campaign_stage": null}
+{"time": "2026-10-05T04:18:25.969404+00:00", "driver_stage": null, "run": null, "run_stage": null, "completed": null, "free_disk_bytes": 22642307072}
+{"stage": "SNAPSHOT", "files": 104, "campaign_stage": null}
+{"time": "2026-10-05T04:18:58.688291+00:00", "driver_stage": null, "run": null, "run_stage": null, "completed": null, "free_disk_bytes": 22602891264}
+{"stage": "SNAPSHOT", "files": 104, "campaign_stage": null}
+{"time": "2026-10-05T04:19:31.097596+00:00", "driver_stage": null, "run": null, "run_stage": null, "completed": null, "free_disk_bytes": 22572802048}
+{"stage": "SNAPSHOT", "files": 104, "campaign_stage": null}
+{"time": "2026-10-05T04:20:03.715402+00:00", "driver_stage": null, "run": null, "run_stage": null, "completed": null, "free_disk_bytes": 22531350528}
+{"stage": "SNAPSHOT", "files": 104, "campaign_stage": null}
+{"time": "2026-10-05T04:20:36.117333+00:00", "driver_stage": null, "run": null, "run_stage": null, "completed": null, "free_disk_bytes": 22500708352}
+{"stage": "SNAPSHOT", "files": 104, "campaign_stage": null}
+{"time": "2026-10-05T04:21:08.590482+00:00", "driver_stage": null, "run": null, "run_stage": null, "completed": null, "free_disk_bytes": 22468222976}
+{"stage": "SNAPSHOT", "files": 104, "campaign_stage": null}
+{"time": "2026-10-05T04:21:40.993815+00:00", "driver_stage": null, "run": null, "run_stage": null, "completed": null, "free_disk_bytes": 22433173504}
+{"stage": "SNAPSHOT", "files": 104, "campaign_stage": null}
+{"time": "2026-10-05T04:22:13.556813+00:00", "driver_stage": null, "run": null, "run_stage": null, "completed": null, "free_disk_bytes": 22391242752}
+{"stage": "SNAPSHOT", "files": 104, "campaign_stage": null}
+{"time": "2026-10-05T04:22:46.128567+00:00", "driver_stage": "SECOND_NODE_GPU_ACCEPTANCE", "run": null, "run_stage": null, "completed": null, "free_disk_bytes": 22363684864}
+{"stage": "SNAPSHOT", "files": 109, "campaign_stage": null}
+{"time": "2026-10-05T04:23:21.446355+00:00", "driver_stage": "TECHNICAL_PAUSE", "run": null, "run_stage": null, "completed": null, "free_disk_bytes": 20697243648}
+{"stage": "SNAPSHOT", "files": 109, "campaign_stage": null}

@@ -1,0 +1,39 @@
+{
+  "status": "ALL_FOUR_FIXED_TRAINING_ENDPOINTS_REACHED_FINAL_EVALUATION_PENDING",
+  "checked_at_UTC": "2026-10-24T08:26:48.293688+00:00",
+  "S3407_log_finiteness": {
+    "records": 1000,
+    "last": {
+      "update": 20000,
+      "loss": 0.14258593320846558,
+      "grad_norm": 1.148624062538147,
+      "seconds": 1.140206995420158,
+      "data_wait_seconds": 0.0014815302565693855
+    },
+    "nonfinite": []
+  },
+  "S3407_completion": {
+    "status": "COMPLETE",
+    "completed": 20000,
+    "schedule_horizon": 32000,
+    "EMA_completed": 20000,
+    "endpoint_checkpoint_sha256": "3967757a712413ebc68b868ccb81d52cbdcf624863aced71bcdd9a77405a0380"
+  },
+  "S3407_evaluation": {
+    "progress": {
+      "stage": "GPU_INFERENCE",
+      "arm": "S",
+      "seed": 3407,
+      "cohort": "ddr",
+      "completed": 50,
+      "expected": 227,
+      "elapsed_seconds": 231.48075423900445
+    },
+    "completion": null,
+    "failure": null
+  },
+  "backup_stage": "WAITING_FIXED_TERMINAL_ARTIFACTS",
+  "full_checkpoint_local_receipt_exists": true,
+  "EMA_local_receipt_exists": false,
+  "overall_campaign_complete": false
+}

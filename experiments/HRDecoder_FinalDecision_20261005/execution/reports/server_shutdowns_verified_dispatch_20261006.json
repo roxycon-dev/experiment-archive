@@ -1,0 +1,25 @@
+{
+  "stage": "ALL_TRAINING_AND_LOCKED_TEST_COMPLETE_BOTH_FULL_BACKUPS_VERIFIED_BOTH_SHUTDOWN_DISPATCHED",
+  "time": "2026-10-05T19:00:10.225753+00:00",
+  "primary_backup": "2026-10-05T18:47:37.387695+00:00",
+  "primary_shutdown": {
+    "stage": "SHUTDOWN_DISPATCHED",
+    "worker_pid": 81077,
+    "platform_OFF_verified": false,
+    "dispatched_at": "2026-10-05T18:56:59.840092+00:00",
+    "backup_SHA_verified": true,
+    "note": "Verify platformOFF through available authenticated platform UI/API or direct user observation. SSH loss is not proof."
+  },
+  "second_backup": "2026-10-05T18:30:37.540505+00:00",
+  "second_shutdown": {
+    "stage": "SHUTDOWN_DISPATCHED",
+    "worker_pid": 32548,
+    "platform_OFF_verified": false,
+    "dispatched_at": "2026-10-05T18:34:47.623227+00:00",
+    "backup_SHA_verified": true,
+    "note": "Verify platformOFF through available authenticated platform UI/API or direct user observation. SSH loss is not proof."
+  },
+  "platform_OFF_confirmed": false,
+  "report_writing": "LOCAL_ONLY",
+  "no_new_training_or_test_selection": true
+}

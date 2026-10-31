@@ -1,0 +1,31 @@
+{
+  "status": "GOAL_NOT_ACHIEVED",
+  "experiment_closeout_status": "VERIFIED_REGISTERED_SCREEN_REJECTION_AND_SHUTDOWN_OBSERVED",
+  "audited_at": "2026-10-10T17:21:55.393203+08:00",
+  "identity_SHA": "49ee0537d2802450284844a32405a6da0116ee9b77c2ab519aa9f985d15d47d4",
+  "counts_verified": true,
+  "registered_criteria_independently_recomputed": {
+    "4k_floor": false,
+    "private_net_gain_at_least1pp": false,
+    "all_classes_nonzero": true,
+    "no_class_IoU_loss_over2pp": false,
+    "HE_MA_FN_FP_tradeoff": true
+  },
+  "criteria_sealed_before_results_verified": true,
+  "pinned_core_identity_CPU19_GPU12_verified": true,
+  "terminal_status": "SCREEN_REJECTED",
+  "completed_updates": 4000,
+  "saved_update_receipt": 4000,
+  "fixed40k_completed": false,
+  "fixed40k_val": null,
+  "fixed40k_test": null,
+  "goal_achieved": false,
+  "test_accessed": false,
+  "own_training_controller_workers_RAM_ended_before_shutdown": true,
+  "shutdown_command_exit_code": 0,
+  "SSH_disconnected_and_reconnect_failed": true,
+  "platform_power_state_or_billing_verified": false,
+  "checkpoint_download": false,
+  "old_goal_chain_audit_status": "CONTRADICTED",
+  "old_goal_chain_note": "The complete40k success-only audit correctly refuses success: measured4k numerical gate false and terminal outcome is SCREEN_REJECTED, so it labels the success chain CONTRADICTED. This closeout audit separately verifies compliance and recognizes legitimate early rejection, not corruption of counts."
+}

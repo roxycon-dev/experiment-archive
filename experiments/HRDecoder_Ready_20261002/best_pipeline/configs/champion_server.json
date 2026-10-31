@@ -1,0 +1,52 @@
+{
+  "repo": "/root/autodl-tmp/HRDecoder_Ready_20261002/vendor/champion_repo",
+  "config": "configs/lesion/exp/hrplus_patch_dice.py",
+  "data_root": "/root/HRDecoder/data/DDR_split_613",
+  "student_checkpoint": "/root/autodl-tmp/HRDecoder_Ready_20261002/assets/champion/D_student_2000.pth",
+  "reference_checkpoint": "/root/autodl-tmp/HRDecoder_Ready_20261002/assets/champion/B_weights.pth",
+  "cache_dir": "/root/autodl-tmp/hr_exec_20260919/cache/reference",
+  "champion": {
+    "head": "/root/autodl-tmp/HRDecoder_Ready_20261002/assets/champion/H4_best.pth",
+    "members": [
+      {
+        "name": "D",
+        "config": "configs/lesion/exp/hrplus_patch_dice.py",
+        "checkpoint": "/root/autodl-tmp/HRDecoder_Ready_20261002/assets/champion/D_student_2000.pth",
+        "load": "student_only",
+        "weight": 3
+      },
+      {
+        "name": "E",
+        "config": "configs/lesion/exp/hrplus_mares.py",
+        "checkpoint": "/root/autodl-tmp/HRDecoder_Ready_20261002/assets/champion/E_1500.pth",
+        "load": "full",
+        "weight": 2
+      },
+      {
+        "name": "B",
+        "config": "configs/lesion/exp/hr100_b.py",
+        "checkpoint": "/root/autodl-tmp/HRDecoder_Ready_20261002/assets/champion/B_weights.pth",
+        "load": "full",
+        "weight": 1
+      },
+      {
+        "name": "E4",
+        "config": "configs/lesion/exp/e4_detail_split613.py",
+        "checkpoint": "/root/autodl-tmp/HRDecoder_Ready_20261002/assets/champion/E4_weights.pth",
+        "load": "full",
+        "weight": 1
+      }
+    ]
+  },
+  "expected_sha256": {
+    "configs/lesion/exp/hrplus_patch_dice.py": "2d687086e28533d4bb080f31c12c4abb802d5293fc4f2a463f9f0bd8f36452f9",
+    "configs/lesion/exp/hrplus_mares.py": "591e4786abaa35b8dfc9a6476c45a8c9eb387544c37e0d56b6a499b683e100b4",
+    "configs/lesion/exp/hr100_b.py": "556e7c2f1557c6658f6233f1fe1601b8d0b1c8382cc6bdaaaf108a712da3ed54",
+    "configs/lesion/exp/e4_detail_split613.py": "65b2c5eb88db2790c1e00dbcb6e18deaf8fc6abc5bf3f148be9ae70d2f06fc1c",
+    "/root/autodl-tmp/HRDecoder_Ready_20261002/assets/champion/D_student_2000.pth": "5fe18717b62d8fc3ab4846a50c046588e2af05abbbfdb3a958f4794018b319ea",
+    "/root/autodl-tmp/HRDecoder_Ready_20261002/assets/champion/B_weights.pth": "0b3cd72e740fc5c69242994c12cfd71a49ac892aff37d09c50bb9fb6931a8626",
+    "/root/autodl-tmp/HRDecoder_Ready_20261002/assets/champion/E_1500.pth": "a18ff92b4da24d870554f17856983d4be042386cacbcaba0d4e13f3f248ed5e5",
+    "/root/autodl-tmp/HRDecoder_Ready_20261002/assets/champion/E4_weights.pth": "c5a3d0f0b990d2430e545146745bc809538bbe764979baf54f62b450785268e0",
+    "/root/autodl-tmp/HRDecoder_Ready_20261002/assets/champion/H4_best.pth": "14757e02de49f6f065d4ef82cb8b1c4ee8a6a7f3f66cb1867276993950f80c50"
+  }
+}

@@ -1,0 +1,144 @@
+# ==========================================================================
+# U1 — ConvNeXt-Small + U-Net decoder，外部预训练 → DDR 适配（锁定意图配置 / locked intent）
+# 与 U0 唯一差异：external_pretrain_checkpoint 与 pretrain_stage 的存在。
+# 其余全部与 U0 逐字段一致（equivalence_lock 由 preflight 强制）。
+# ==========================================================================
+schema_version: "1.0"
+arm_id: U1
+role: "external-lesion-pretrained convnext_unet arm"
+status: locked-intent
+
+structure:
+  family: convnext_unet
+  paired_group: convnext_unet
+  definition_ref: "主方案第三节；DP-UNet 仅借鉴结构思想，不声称复现其官方源码"
+  encoder: convnext_small
+  encoder_weights_source: REQUIRED
+  encoder_weights_file: REQUIRED
+  encoder_weights_sha256: REQUIRED
+  training_entry: train.py            # 统一训练入口（--stage external_pretrain|ddr_finetune）
+  library: builtin                    # v1 用本工作区纯 torch ConvNeXt-S（消除不可离线核实的 smp 依赖）
+  library_version: REQUIRED
+  decoder: unet
+  output_heads: 4
+  detail_branch: false                 # v1 未实现且无 shape test ⇒ U0/U1 一律 false
+  full_input_resolution_decode: true
+
+initialization:
+  imagenet_weights:
+    source: REQUIRED
+    file: REQUIRED
+    sha256: REQUIRED
+  external_pretrain_checkpoint: REQUIRED   # 外部预训练产出；注意编码器接口与本结构一致
+
+# ---- 与 U0 逐字段一致的数据节（equivalence_lock 强制深度相等） ----
+data:
+  ddr_root: "D:/HRDecoder/data/DDR_split_613"
+  ddr_train_split: train
+  ddr_val_split: val
+  ddr_test_split: test
+  channel_order: [EX, HE, SE, MA]
+  input_fov: 2048
+  train_crop: 1024
+  ddr_normalization:                    # ConvNeXt 归一化按其官方预处理；实测编码器接口后锁定
+    mean: REQUIRED
+    std: REQUIRED
+
+pretrain_stage:
+  external_manifest: REQUIRED              # 与 H1 共用同一份外部 manifest（由 preflight 校验）
+  allowed_splits: [train]                  # 预训练池只允许官方 train
+  forbidden_splits: [test]
+  dev_ratio: 0.1                           # 节点选择用外部 train 派生的 dev（绝不碰官方 val/test）
+                                           # 划分 = sha256(seed:sample_id) 的纯函数，可复现
+  source_mixing: source_balanced_sampling
+  updates: 8000
+  effective_batch: 8
+  micro_batch: REQUIRED
+  grad_accum: REQUIRED
+  optimizer: adamw
+  weight_decay: 1.0e-2
+  warmup_ratio: 0.05
+  lr_schedule: cosine
+  cosine_min_ratio: 0.01
+  backbone_lr: 1.0e-4
+  decoder_lr: 3.0e-4
+  channel_order: [EX, HE, SE, MA]
+  valid_mask_handling: per_class_valid_masking
+  node_selection: external_train_derived_dev_only
+  overfit_monitor: REQUIRED
+  init_checkpoint_output: REQUIRED
+
+ddr_finetune_stage:
+  seed: 42
+  updates: 12000
+  effective_batch: 8
+  micro_batch: REQUIRED
+  grad_accum: REQUIRED
+  eval_progress_points: [0.25, 0.5, 0.75, 1.0]
+  optimizer: adamw
+  weight_decay: 1.0e-2
+  warmup_ratio: 0.05
+  lr_schedule: cosine
+  cosine_min_ratio: 0.01
+  backbone_lr: 1.0e-4
+  decoder_lr: 3.0e-4
+  augmentation:
+    resize_ratio_range: [0.5, 2.0]
+    random_crop_cat_max_ratio: 0.75
+    flip_ratio: 0.5
+    rotate_degrees: [-45, 45]
+    photometric: light
+  sampling: random_plus_foreground_mixed
+  norm_policy: layernorm_native
+  mixed_precision: true
+  gradient_checkpointing: REQUIRED
+
+loss:
+  type: binary_per_class
+  recipe: ce_dice
+  smooth: 1.0e-5
+  per_class_valid_masking: true       # trainer.loss 已实现 valid=0 整类屏蔽（缺类绝不当阴性）
+  ce_weight: 1.0
+  dice_weight: 1.0
+
+metrics:
+  protocol: whole_image_accumulated_counts
+  threshold: 0.5
+  primary: mIoU_lesion4
+  reported: [mF1, mPPV, mRecall, mAUPR]
+
+checkpoint_selection:
+  allowed_splits: [val]
+  test_forbidden: true
+
+test_usage:
+  train_on_test: forbidden
+  select_checkpoint_on_test: forbidden
+  final_single_eval: allowed_only_after_full_lock
+
+equivalence_lock:
+  identical_with: U0
+  fields:
+    - data
+    - ddr_finetune_stage
+    - loss
+    - metrics
+    - checkpoint_selection
+    - test_usage
+    - structure.family
+    - structure.paired_group
+    - structure.encoder
+    - structure.detail_branch
+    - structure.library
+    - structure.encoder_weights_source   # 编码器初始化字段规范：纳入配对锁（与 initialization.imagenet_weights 同权重）
+    - structure.encoder_weights_file
+    - structure.encoder_weights_sha256
+    - initialization.imagenet_weights
+
+notes: >
+  U1 回答"新结构是否更能利用新增监督"。预训练产出 checkpoint 的编码器结构必须与本臂
+  完全一致；不一致时 preflight/加载期必须失败，不得静默部分加载。
+
+  与 U0 同步的两处修正（equivalence_lock 要求逐字段一致）：
+  1) structure.library: segmentation_models_pytorch -> builtin（v1 用纯 torch ConvNeXt-S）；
+  2) structure.detail_branch: true -> false（v1 未实现且无 shape test）。

@@ -1,0 +1,58 @@
+{
+  "status": "PASS",
+  "server_CPU_PASS": true,
+  "control_full2048_batch2_GPU_SMOKE_PASS": true,
+  "control_identity_SHA": "a61b2d550a5530b7941f44eb66e6f37ea33d646587048245620ffe9e948e8225",
+  "actual_probe_updates": 50,
+  "runtime": {
+    "server_online": true,
+    "checked_at_unix": 1791566980.7404687,
+    "shutdown_command_issued": false,
+    "external_diagnostics_controlled": false,
+    "RUNNING.json": {
+      "status": "PAIRED_DIAGNOSTIC_RUNNING",
+      "arm": "control",
+      "pid": 37726,
+      "controller_pid": 37655,
+      "time_unix": 1791566853.6020484,
+      "own_stop_unix": 1791568620,
+      "server_kept_running": true
+    },
+    "DISPATCHED.json": {
+      "status": "CPU_GATE_THEN_PAIRED_PROBE",
+      "controller_pid": 37655,
+      "time_unix": 1791566851.5834277,
+      "parent_immutable_hardlink": "/root/autodl-tmp/HRDecoder_v3_20261008/training_runs/residual_normalization/parent_08000.pt",
+      "own_stop_unix": 1791568620,
+      "automatic_fresh_training": false,
+      "deadline_extension": false,
+      "server_kept_running": true,
+      "shutdown_command_issued": false
+    },
+    "own_process_checks": {
+      "pid": {
+        "pid": 37726,
+        "alive": true,
+        "cmdline": "/root/miniconda3/bin/python -u probe.py --arm control ",
+        "matches_task": true
+      },
+      "controller_pid": {
+        "pid": 37655,
+        "alive": true,
+        "cmdline": "/root/miniconda3/bin/python -u controller.py ",
+        "matches_task": true
+      }
+    },
+    "own_RAM": {
+      "pid": 25079,
+      "bytes": 103079171144,
+      "alive": true,
+      "matches_own_RAM": true
+    },
+    "GPU_status": "utilization.gpu [%], memory.used [MiB], power.draw [W]\n100 %, 17501 MiB, 306.21 W\n"
+  },
+  "checked_at": "2026-10-10T01:29:29.741913+08:00",
+  "not_fresh_training": true,
+  "no_automatic_extension": true,
+  "parent_checkpoint_download": false
+}

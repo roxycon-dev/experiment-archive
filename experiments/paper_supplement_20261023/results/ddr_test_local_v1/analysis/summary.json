@@ -1,0 +1,238 @@
+{
+  "status": "COMPLETE",
+  "split": "test",
+  "n_images": 227,
+  "pixel_table": [
+    {
+      "method": "full",
+      "description": "Full system",
+      "n_images": 227,
+      "miou_pct": 45.86088631351919,
+      "EX_IoU_pct": 55.10779587009915,
+      "HE_IoU_pct": 46.20820873690813,
+      "SE_IoU_pct": 52.88237714511699,
+      "MA_IoU_pct": 29.245163501952486,
+      "MA_precision_pct": 50.049100879989794,
+      "MA_recall_pct": 41.299600616702534,
+      "miou_ci_low_pct": 42.53108035798785,
+      "miou_ci_high_pct": 48.68575890909595,
+      "full_minus_row_pp": 0.0
+    },
+    {
+      "method": "no_h4",
+      "description": "Without H4",
+      "n_images": 227,
+      "miou_pct": 45.093134407312604,
+      "EX_IoU_pct": 55.10779587009915,
+      "HE_IoU_pct": 46.20820873690813,
+      "SE_IoU_pct": 52.88237714511699,
+      "MA_IoU_pct": 26.174155877126175,
+      "MA_precision_pct": 47.39685093667394,
+      "MA_recall_pct": 36.89059844351015,
+      "miou_ci_low_pct": 41.79065596370172,
+      "miou_ci_high_pct": 47.9239396037653,
+      "full_minus_row_pp": 0.7677519062065841
+    },
+    {
+      "method": "no_convnext",
+      "description": "Without ConvNeXt",
+      "n_images": 227,
+      "miou_pct": 45.321533853931086,
+      "EX_IoU_pct": 54.77483902942338,
+      "HE_IoU_pct": 44.42797328092606,
+      "SE_IoU_pct": 52.88567027245183,
+      "MA_IoU_pct": 29.197652832923087,
+      "MA_precision_pct": 50.15591515135961,
+      "MA_recall_pct": 41.132796261898626,
+      "miou_ci_low_pct": 42.13858670044458,
+      "miou_ci_high_pct": 48.12298080373838,
+      "full_minus_row_pp": 0.5393524595881019
+    },
+    {
+      "method": "matched_c20",
+      "description": "Replace S20 with C20",
+      "n_images": 227,
+      "miou_pct": 45.7968590911655,
+      "EX_IoU_pct": 54.96632538651439,
+      "HE_IoU_pct": 46.25508590300652,
+      "SE_IoU_pct": 52.936949830985746,
+      "MA_IoU_pct": 29.02907524415535,
+      "MA_precision_pct": 49.81789370103896,
+      "MA_recall_pct": 41.025452134516925,
+      "miou_ci_low_pct": 42.43627662810524,
+      "miou_ci_high_pct": 48.7080730342046,
+      "full_minus_row_pp": 0.06402722235368685
+    }
+  ],
+  "pixel_comparisons": {
+    "no_h4": {
+      "full_minus_row_pp": 0.7677519062065841,
+      "paired_image_ci95_pp": [
+        0.6180940928219943,
+        0.9118138786416947
+      ]
+    },
+    "no_convnext": {
+      "full_minus_row_pp": 0.5393524595881019,
+      "paired_image_ci95_pp": [
+        0.14549124464653557,
+        0.9364698605897434
+      ]
+    },
+    "matched_c20": {
+      "full_minus_row_pp": 0.06402722235368685,
+      "paired_image_ci95_pp": [
+        -0.18547994012029925,
+        0.31371836718146784
+      ]
+    }
+  },
+  "lesion_table": [
+    {
+      "method": "full",
+      "n_images": 227,
+      "MA_positive_images": 173,
+      "gt_lesions": 2513,
+      "pred_lesions": 2278,
+      "detected_lesions": 1323,
+      "false_lesions": 955,
+      "missed_lesions": 1190,
+      "detection_pct": 52.64623955431755,
+      "FP_per_image": 4.20704845814978,
+      "lesion_precision_pct": 58.077260755048286,
+      "detection_ci95_pct": [
+        49.21563870999279,
+        56.10144437174117
+      ],
+      "FP_per_image_ci95": [
+        3.2555066079295156,
+        5.246696035242291
+      ],
+      "size_groups": {
+        "small": {
+          "gt": 891,
+          "detected": 338,
+          "detection_pct": 37.93490460157127,
+          "ci95_pct": [
+            33.543148005110844,
+            42.3505282287412
+          ]
+        },
+        "medium": {
+          "gt": 752,
+          "detected": 445,
+          "detection_pct": 59.17553191489362,
+          "ci95_pct": [
+            54.315484344795046,
+            63.73964235127479
+          ]
+        },
+        "large": {
+          "gt": 870,
+          "detected": 540,
+          "detection_pct": 62.06896551724138,
+          "ci95_pct": [
+            57.5124011536544,
+            66.50269217550692
+          ]
+        }
+      }
+    },
+    {
+      "method": "no_h4",
+      "n_images": 227,
+      "MA_positive_images": 173,
+      "gt_lesions": 2513,
+      "pred_lesions": 1992,
+      "detected_lesions": 1209,
+      "false_lesions": 783,
+      "missed_lesions": 1304,
+      "detection_pct": 48.10982888977318,
+      "FP_per_image": 3.449339207048458,
+      "lesion_precision_pct": 60.69277108433735,
+      "detection_ci95_pct": [
+        44.71719143441958,
+        51.21879732699266
+      ],
+      "FP_per_image_ci95": [
+        2.616519823788546,
+        4.3701541850220265
+      ],
+      "size_groups": {
+        "small": {
+          "gt": 891,
+          "detected": 294,
+          "detection_pct": 32.996632996633,
+          "ci95_pct": [
+            28.76159187287385,
+            37.45906650598265
+          ]
+        },
+        "medium": {
+          "gt": 752,
+          "detected": 415,
+          "detection_pct": 55.18617021276596,
+          "ci95_pct": [
+            50.24305378319976,
+            59.875946370891945
+          ]
+        },
+        "large": {
+          "gt": 870,
+          "detected": 500,
+          "detection_pct": 57.47126436781609,
+          "ci95_pct": [
+            52.72345852652658,
+            62.05897035181036
+          ]
+        }
+      }
+    }
+  ],
+  "MA_full_minus_no_h4_paired_intervals": {
+    "detection_pct": {
+      "full_minus_no_h4_ci95": [
+        3.5497559765075675,
+        5.534506701439772
+      ]
+    },
+    "FP_per_image": {
+      "full_minus_no_h4_ci95": [
+        0.5506607929515415,
+        0.9779735682819384
+      ]
+    },
+    "small_detection_pct": {
+      "full_minus_no_h4_ci95": [
+        3.4570841471114035,
+        6.463072923309896
+      ]
+    },
+    "medium_detection_pct": {
+      "full_minus_no_h4_ci95": [
+        2.374773264984234,
+        5.692256093291019
+      ]
+    },
+    "large_detection_pct": {
+      "full_minus_no_h4_ci95": [
+        2.918862612612613,
+        6.477592564720039
+      ]
+    }
+  },
+  "bins_pixels": [
+    32,
+    74
+  ],
+  "matching": "8-connected, IoU>=0.10, maximum-cardinality then maximum-IoU, one-to-one",
+  "bootstrap": {
+    "unit": "image",
+    "draws": 2000,
+    "seed": 20261023,
+    "training_seed_variance_included": false
+  },
+  "baseline": "UNAVAILABLE: historical split613 seed42 u32000 checkpoint not recovered; no new baseline training",
+  "independent_generalization": "NOT_ESTABLISHED",
+  "runtime": "new local replay; see manifest and runtime amendment"
+}

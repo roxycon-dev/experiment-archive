@@ -1,0 +1,42 @@
+{
+  "status": "PASS",
+  "identity_SHA": "96cd1bc0ce79e9e5f5f8247958f868a4e00023f072bc6fea920092ad5a5003ec",
+  "batch": 2,
+  "canvas": 2048,
+  "backbone_calls_per_step": 1,
+  "measured_backbone_calls": 12,
+  "discarded_optimizer_steps": 12,
+  "formal_updates": 0,
+  "fresh_initialization_verified": true,
+  "new_parameters": 6415232,
+  "total_parameters": 71987652,
+  "optimizer_momentum_allocated": true,
+  "losses_FP32": true,
+  "all_gradients_finite": true,
+  "second_step_private_nonzero_gradients": {
+    "local": true,
+    "global": true,
+    "head": true
+  },
+  "step_seconds": [
+    9.56686107814312,
+    0.9177225232124329,
+    0.9127194285392761,
+    0.9226969853043556,
+    0.9270762577652931,
+    0.9162268713116646,
+    0.9170570597052574,
+    0.916833221912384,
+    0.9197453856468201,
+    0.9111946299672127,
+    0.9287680983543396,
+    0.9216415286064148
+  ],
+  "median_warm_step_seconds": 0.9184012226760387,
+  "mean_warm_step_seconds": 0.9193959467113018,
+  "peak_allocated_bytes": 16469750272,
+  "peak_reserved_bytes": 17681088512,
+  "seconds": 25.985952645540237,
+  "device": "NVIDIA GeForce RTX 4090",
+  "accuracy_validated": false
+}

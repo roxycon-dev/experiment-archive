@@ -1,0 +1,581 @@
+Supervisor review: REJECT initialdraft pending corrections. Output JSON files replacements ONLY 3files repo/hrplus_core.py repo/hrplus_patch.py repo/tests/test_core.py plus config ONLYifneeded. Do not execute. Must fix:
+1 reference=deepcopy(self) produces HRPlusRefinement with no reference attribute; calling reference.inference recursively accesses missingreference. Construct ordinary HR100Refinement with deepcopy(kwargs) BEFOREsupermutates hr_settings; strictload B separately into student beforeattach andplainreference. NEVER deepcopy subclass as teacher. Check source_checkpoint requirednotNone, force hard_weight0/freezebnTrue/semanticFalse/pretrainedNone, strict load_state_dict strictTrue (B hasNOma_refinerkeys: known1877tensors!). Do not tolerate A weights understrictlabel. init_weights no-op valid onlyafterrequiredload. Referenceinit handled no download.
+2 Pipeline crop_arrays isn't imported ->NameError. Must crop/pad EVERY results.seg_fields identically, preservechannel in img_shape/pad_shape = img.shape. pad_to_size honorsimg_pad. Add integrationtest actual ForegroundMixedCrop using mockedregistries/base onlyif mmcvunavailable; NOT reimplementedpipeline. Testmultiple segfields, smallimage, exactalignment, correctshape.
+3 Model outputs EXACTLY4foregroundchannels 0=EX(label1),1=HE(label2),2=SE(label3),3=MA(label4); NObackgroundchannel. CurrentLovasz iter1..C-1 wrong skipsEXandMA mapswrong. Forchannel c0..3 use target==(c+1) andaverage4 ALLclassesinclabsent. Assert4channels, targetbg0 ignore255. Existingtests wronglyassume5channels and duplicatebug. Replace with deterministic handexamples: perfect4classlogitsloss0, wrongclassloss>0, eachclass gradientnonzero independently; ignoretest perturbLOGITS onlyatignoredpixel notreplaceignorelabelwithclass (currenttestinvalid); no gradignored. Optional0.1 only.
+4 lovasz_grad inplaceoverlapslices canraise memoryalias inTorch; clone RHS orcatdiff. Test singleton andempty.
+5 tiled helpers assert0<stride<=min(tileh,tilew), no zerocounts, shape agreement; blendshapeequalprevents broadcasting. No unnecessaryoptions. Remove arbitrarynew photometric distortion from config (baselineoff) and use RandomRotate seg_pad_val255 and finalPad255 toavoidteaching fabricatedbackground. Same transform forD/L. Note cropbeforeRotatepositive mayrotateout; switch rotatebefore ForegroundMixedCrop to ensurecenter supervision; fixed2048resize thenrotate thenmixedcrop flip normalize. Keepbothsame. No more extraaug/architecture variables.
+6 Add GPU smoke tool repo/tools/hrplus_smoke.py (ONLYifcanconcise): cfgload buildtrainmodel initweights called, exactstudent/reference equalitytoB and BN frozen aftertrain;3realtrainsteps with genuinepipeline trainonly checkingfinitegradloss; referenceparamsandBNunchanged; eval firstVALimage via simple_test assertlistlen1 tupleprobs shape4xoriginalH/W andrange0..1, no testdataever. RecordJSONmemory/elapsed + requires_gpu_checks, failfast, checkpointnoinitdrift. Uses realmmcvframeworkserveronly; no downloads/shutdownhere. Semanticrefinement false. Don'trequire fullreferencegrad loopcost; snapshotselectedtensors and alldirtygradassert. This is preflightnot scientificeval.
+
+FILE repo/hrplus_core.py
+"""Dependency-light helpers for the HR+ patch (torch + numpy only).
+
+Used by hrplus_patch.py (model / pipeline) and by tests/test_core.py.
+"""
+import numpy as np
+import torch
+import torch.nn.functional as F
+
+
+# ---------------------------------------------------------------- tiling ---
+def _axis_positions(total, tile, stride):
+    """Tile start positions along one axis: complete coverage of [0, total)."""
+    if total <= tile:
+        return [0]
+    pos = list(range(0, total - tile + 1, stride))
+    if pos[-1] != total - tile:
+        pos.append(total - tile)
+    return pos
+
+
+def tiled_forward(img, forward_fn, tile_size, stride, num_classes):
+    """Tiled inference with complete overlap coverage.
+
+    Logits are accumulated in float32 and divided by per-pixel counts so
+    overlapping tiles are exactly averaged.  Images smaller than the tile are
+    right/bottom padded before ``forward_fn`` and the padding is cropped away
+    afterwards, so irregular / small sizes are handled correctly.
+
+    Args:
+        img: (B, 3, H, W) tensor (already normalized).
+        forward_fn: callable (B,3,th,tw) -> (B, C, th, tw) logits tensor.
+        tile_size: int or (tile_h, tile_w).
+        stride: int, tile stride (< tile gives overlap averaging).
+        num_classes: number of logit channels C.
+    Returns:
+        (B, C, H, W) float32 averaged logits.
+    """
+    if isinstance(tile_size, (tuple, list)):
+        tile_h, tile_w = int(tile_size[0]), int(tile_size[1])
+    else:
+        tile_h = tile_w = int(tile_size)
+    b, _, h, w = img.shape
+    sums = torch.zeros((b, num_classes, h, w), dtype=torch.float32,
+                       device=img.device)
+    counts = torch.zeros((b, 1, h, w), dtype=torch.float32,
+                         device=img.device)
+    th, tw = min(tile_h, h), min(tile_w, w)
+    for y in _axis_positions(h, tile_h, stride):
+        for x in _axis_positions(w, tile_w, stride):
+            patch = img[:, :, y:y + th, x:x + tw]
+            if patch.shape[2] < tile_h or patch.shape[3] < tile_w:
+                patch = F.pad(patch, (0, tile_w - patch.shape[3],
+                                      0, tile_h - patch.shape[2]))
+            out = forward_fn(patch)
+            out = out[:, :, :th, :tw].float()
+            sums[:, :, y:y + th, x:x + tw] += out
+            counts[:, :, y:y + th, x:x + tw] += 1.0
+    return sums / counts
+
+
+# ---------------------------------------------------------------- blending ---
+def blend_probs(prob_a, prob_b, weight_a=0.5):
+    """Fixed probability-space fusion: weight_a * a + (1 - weight_a) * b."""
+    return weight_a * prob_a + (1.0 - weight_a) * prob_b
+
+
+def resize_logit(logits, size, align_corners=False):
+    """Bilinear logit resize with explicit align_corners."""
+    return F.interpolate(logits, size=size, mode='bilinear',
+                         align_corners=align_corners)
+
+
+# ------------------------------------------------------------ crop helpers ---
+def pad_to_size(img, gt, size, img_pad=0, seg_pad=255):
+    """Pad (H,W,3) image with ``img_pad`` and (H,W) label with ``seg_pad``
+    at bottom/right up to ``size``=(H,W). Pure numpy."""
+    th, tw = int(size[0]), int(size[1])
+    h, w = gt.shape[:2]
+    if h >= th and w >= tw:
+        return img, gt
+    pad_img = np.zeros((max(th, h), max(tw, w), img.shape[2]),
+                       dtype=img.dtype)
+    pad_img[:h, :w] = img
+    pad_gt = np.full((max(th, h), max(tw, w)), int(seg_pad), dtype=gt.dtype)
+    pad_gt[:h, :w] = gt
+    return pad_img, pad_gt
+
+
+def crop_arrays(img, gt, y0, x0, h, w):
+    """Aligned numpy crop of image and label (no resizing)."""
+    return img[y0:y0 + h, x0:x0 + w], gt[y0:y0 + h, x0:x0 + w]
+
+
+def foreground_crop_bbox(gt, crop_size, fg_prob=0.5, rng=None, num_fg=4):
+    """Choose top-left corner (y0, x0) of a crop_size x crop_size window.
+
+    With probability ``fg_prob`` the crop is image-uniform random.  Otherwise
+    a uniformly chosen PRESENT lesion class (1..num_fg) and a uniformly chosen
+    pixel of that class are picked, and the anchor offset is drawn from the
+    valid range that guarantees pixel inclusion.  If no lesion class is
+    present the crop falls back to image-uniform random.  Uses the given
+    ``rng`` (np.random module or np.random.RandomState) for seeding.
+    Assumes H, W >= crop_size (pad first if not).
+    """
+    rng = np.random if rng is None else rng
+    h, w = gt.shape[:2]
+    cs = int(crop_size)
+    cs_h, cs_w = min(cs, h), min(cs, w)
+
+    def uniform():
+        y0 = rng.randint(0, h - cs_h + 1)
+        x0 = rng.randint(0, w - cs_w + 1)
+        return y0, x0
+
+    present = [c for c in range(1, num_fg + 1) if (gt == c).any()]
+    if not present or rng.random() < fg_prob:
+        return uniform()
+    cls = present[rng.randint(0, len(present))]
+    ys, xs = np.where(gt == cls)
+    idx = rng.randint(0, len(ys))
+    py, px = int(ys[idx]), int(xs[idx])
+    y_lo, y_hi = max(0, py - cs_h + 1), min(py, h - cs_h)
+    x_lo, x_hi = max(0, px - cs_w + 1), min(px, w - cs_w)
+    y0 = rng.randint(y_lo, y_hi + 1)
+    x0 = rng.randint(x_lo, x_hi + 1)
+    return y0, x0
+
+
+# ---------------------------------------------------------------- lovasz ---
+def lovasz_grad(gt_sorted):
+    """Gradient of the Lovasz extension w.r.t. sorted errors."""
+    p = len(gt_sorted)
+    gts = gt_sorted.sum()
+    intersection = gts - gt_sorted.float().cumsum(0)
+    union = gts + (1 - gt_sorted).float().cumsum(0)
+    jacc = 1 - intersection / union
+    if p > 1:
+        jacc[1:] = jacc[1:] - jacc[:-1]
+    return jacc
+
+
+def lovasz_hinge_flat(logits, labels):
+    """Binary Lovasz hinge loss on flattened, already-valid tensors.
+    Graph-safe for empty inputs (returns 0 connected to the graph)."""
+    if logits.numel() == 0:
+        return logits.sum() * 0
+    signs = 2.0 * labels - 1.0
+    errors = 1.0 - logits * signs
+    errors_sorted, perm = torch.sort(errors, descending=True)
+    gt_sorted = labels[perm]
+    return torch.dot(F.relu(errors_sorted), lovasz_grad(gt_sorted))
+
+
+def multiclass_lovasz_hinge(logits, target, ignore_index=255):
+    """Binary Lovasz hinge applied separately to each foreground class
+    (channels 1..C-1), batch-flattened, ignore_index excluded, and averaged
+    over ALL foreground classes (including classes absent from the batch).
+    Applied on raw logits: NO softmax / sigmoid.  Full-crop usage expected.
+    """
+    num_classes = logits.shape[1]
+    tgt = target.squeeze(1) if target.dim() == 4 else target
+    flat_t = tgt.reshape(-1)
+    total = logits.sum() * 0
+    for c in range(1, num_classes):
+        lc = logits[:, c].reshape(-1)
+        valid = flat_t != ignore_index
+        if bool(valid.sum()) == 0:
+            total = total + lc.sum() * 0
+            continue
+        labels = (flat_t[valid] == c).float()
+        total = total + lovasz_hinge_flat(lc[valid], labels)
+    return total / (num_classes - 1)
+
+FILE repo/hrplus_patch.py
+"""HR+ patch: distillation-free self-ensemble on top of HR100Refinement.
+
+Student: HRPlusRefinement (inherits HR100Refinement.encode_decode on the
+actual 1024x1024 crop).  A frozen deepcopy of the same module (initialized
+from the SAME B checkpoint, strict-loaded BEFORE the reference is attached)
+acts as reference at inference; probabilities are fused 0.5/0.5.
+"""
+import copy
+
+import numpy as np
+import torch
+
+from mmseg.models.builder import SEGMENTORS
+from mmseg.datasets.builder import PIPELINES
+from mmseg.ops import resize
+
+from hr100_refinement import HR100Refinement
+from hrplus_core import (tiled_forward, blend_probs, resize_logit,
+                         pad_to_size, foreground_crop_bbox,
+                         multiclass_lovasz_hinge)
+
+
+def _strict_load_state(module, path):
+    """Load checkpoint into ``module``; strict w.r.t. all student params.
+
+    Keys belonging to the disabled semantic refiner (``ma_refiner.*``) are
+    tolerated as unexpected, anything else raises.  Missing keys raise.
+    """
+    ckpt = torch.load(path, map_location='cpu')
+    state = ckpt.get('state_dict', ckpt)
+    state = {k[7:] if k.startswith('module.') else k: v for k, v in state.items()}
+    missing, unexpected = module.load_state_dict(state, strict=False)
+    if missing:
+        raise RuntimeError(
+            'HRPlusRefinement strict checkpoint load failed; missing keys: %s'
+            % missing[:10])
+    real_unexpected = [k for k in unexpected if not k.startswith('ma_refiner.')]
+    if real_unexpected:
+        raise RuntimeError(
+            'HRPlusRefinement strict checkpoint load failed; unexpected '
+            'keys: %s' % real_unexpected[:10])
+    if unexpected:
+        print('[HRPlusRefinement] ignored unexpected (disabled module) keys: '
+              '%s ...' % unexpected[:5])
+
+
+@SEGMENTORS.register_module()
+class HRPlusRefinement(HR100Refinement):
+    """Student = inherited crop model; reference = frozen deepcopy.
+
+    * forward_train: ONLY the student's crop logits + original
+      decode_head.losses (optionally + weighted binary Lovasz hinge).
+      No MA hard loss, no HR crop auxiliary, no fuse losses.
+    * inference: tiled student logits (tile 1024, stride 768) on the
+      normalized 2048 image, overlap-averaged, resized to original with the
+      baseline align_corners, sigmoid, flip-undo; fused 0.5/0.5 with the
+      reference whole-image probabilities.
+    """
+
+    def __init__(self, source_checkpoint=None, lovasz_weight=0.0, **kwargs):
+        kwargs['semantic_refinement'] = False
+        kwargs.setdefault('hard_weight', 0)
+        kwargs.setdefault('freeze_bn', True)
+        super(HRPlusRefinement, self).__init__(**kwargs)
+        self.lovasz_weight = float(lovasz_weight)
+        # One-time, explicit post-init checkpoint loading: build order in
+        # tools/train.py may call init_weights() later, which is overridden
+        # as a no-op below so the loaded weights are never re-initialized.
+        if source_checkpoint is not None:
+            _strict_load_state(self, source_checkpoint)
+        # Frozen reference, attached strictly AFTER loading.
+        reference = copy.deepcopy(self)
+        for p in reference.parameters():
+            p.requires_grad_(False)
+        reference.eval()
+        self.reference = reference
+
+    # ---- checkpoint lifecycle guards -------------------------------------
+    def init_weights(self):
+        """No-op: both student and reference already hold the strict-loaded
+        B checkpoint.  Prevents nested backbone/decode_head init_weights from
+        resetting trained weights after build."""
+        pass
+
+    def train(self, mode=True):
+        super(HRPlusRefinement, self).train(mode)
+        if hasattr(self, 'reference'):
+            self.reference.eval()  # reference is never trained
+        return self
+
+    # ---- training ---------------------------------------------------------
+    def forward_train(self, img, img_metas, gt_semantic_seg,
+                      seg_weight=None, return_feat=False, **kwargs):
+        logits = self.encode_decode(img, img_metas)  # inherited crop logits
+        losses = self.decode_head.losses(logits, gt_semantic_seg)
+        if self.lovasz_weight > 0:
+            losses['loss_lovasz'] = self.lovasz_weight * multiclass_lovasz_hinge(
+                logits, gt_semantic_seg)
+        return losses
+
+    # ---- inference --------------------------------------------------------
+    def _student_prob(self, img, img_meta, rescale):
+        """Tiled student logits -> overlap-average -> (crop pad) ->
+        resize to original (same align_corners as baseline) -> sigmoid ->
+        flip undo."""
+        logits = tiled_forward(
+            img,
+            lambda patch: self.encode_decode(patch, img_meta),
+            self.hr_scale, stride=768, num_classes=self.num_classes)
+        img_shape = img_meta[0]['img_shape']
+        logits = logits[:, :, :img_shape[0], :img_shape[1]]
+        if rescale:
+            logits = resize_logit(logits, img_meta[0]['ori_shape'][:2],
+                                  align_corners=self.align_corners)
+        prob = torch.sigmoid(logits)
+        if img_meta[0]['flip']:
+            direction = img_meta[0]['flip_direction']
+            if direction == 'horizontal':
+                prob = prob.flip(dims=(3,))
+            elif direction == 'vertical':
+                prob = prob.flip(dims=(2,))
+            else:
+                raise NotImplementedError(direction)
+        return prob
+
+    def inference(self, img, img_meta, rescale):
+        assert img.size(0) == 1, 'eval batch size must be 1'
+        prob_s = self._student_prob(img, img_meta, rescale)
+        self.reference.eval()
+        with torch.no_grad():
+            prob_r = self.reference.inference(img, img_meta, rescale)
+        # Fixed global fusion: 0.5 reference + 0.5 student, all classes.
+        return blend_probs(prob_r, prob_s, weight_a=0.5)
+
+
+@PIPELINES.register_module()
+class ForegroundMixedCrop(object):
+    """Train-only crop after Resize(2048x2048, keep_ratio=False).
+
+    With probability fg_prob: image-uniform random crop.  Otherwise: a
+    PRESENT lesion class (1..num_fg) is chosen uniformly, a pixel of it is
+    chosen uniformly, and a valid anchor offset guaranteeing pixel inclusion
+    is sampled.  Falls back to uniform when no lesion class is present.
+    Image and all seg fields are cropped identically; small images are padded
+    (image 0, label 255) first.  Uses numpy random for seeding.
+    """
+
+    def __init__(self, crop_size, fg_prob=0.5, num_fg=4):
+        self.crop_size = int(crop_size)
+        self.fg_prob = float(fg_prob)
+        self.num_fg = int(num_fg)
+
+    def __call__(self, results):
+        img = results['img']
+        gt = results['gt_semantic_seg']
+        cs = self.crop_size
+        h, w = gt.shape[:2]
+        if h < cs or w < cs:
+            img, gt = pad_to_size(img, gt, (max(cs, h), max(cs, w)),
+                                  img_pad=0, seg_pad=255)
+            results['img'] = img
+            results['gt_semantic_seg'] = gt
+        y0, x0 = foreground_crop_bbox(gt, cs, self.fg_prob, np.random,
+                                      self.num_fg)
+        img, gt = crop_arrays(img, gt, y0, x0, cs, cs)
+        results['img'] = img
+        results['gt_semantic_seg'] = gt
+        results['img_shape'] = (cs, cs)
+        results['pad_shape'] = (cs, cs)
+        return results
+
+    def __repr__(self):
+        return self.__class__.__name__ + \
+            '(crop_size={}, fg_prob={}, num_fg={})'.format(
+                self.crop_size, self.fg_prob, self.num_fg)
+
+FILE repo/tests/test_core.py
+"""CPU unittests for hrplus_core (standalone: torch + numpy only)."""
+import os
+import sys
+import unittest
+
+import numpy as np
+import torch
+
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+from hrplus_core import (tiled_forward, blend_probs, resize_logit,
+                         pad_to_size, crop_arrays, foreground_crop_bbox,
+                         lovasz_hinge_flat, multiclass_lovasz_hinge)
+
+
+class TestTiling(unittest.TestCase):
+    def test_full_coverage_irregular(self):
+        torch.manual_seed(0)
+        img = torch.randn(1, 3, 500, 700)
+        fn = lambda x: x.sum(1, keepdim=True) / 3.0
+        out = tiled_forward(img, fn, 256, 128, num_classes=1)
+        expected = fn(img)
+        self.assertEqual(out.shape, (1, 1, 500, 700))
+        self.assertTrue(torch.allclose(out, expected, atol=1e-5))
+
+    def test_small_image(self):
+        img = torch.randn(1, 3, 100, 80)
+        fn = lambda x: x.sum(1, keepdim=True)
+        out = tiled_forward(img, fn, 256, 128, num_classes=1)
+        self.assertTrue(torch.allclose(out, fn(img), atol=1e-5))
+
+    def test_overlap_constant_preservation(self):
+        img = torch.randn(2, 3, 600, 800)
+        fn = lambda x: torch.ones(x.shape[0], 4, x.shape[2], x.shape[3])
+        out = tiled_forward(img, fn, 256, 128, num_classes=4)
+        self.assertTrue(torch.all(out == 1.0))
+
+    def test_rectangle_tile(self):
+        img = torch.randn(1, 3, 300, 500)
+        fn = lambda x: x.mean(1, keepdim=True)
+        out = tiled_forward(img, fn, (256, 128), 64, num_classes=1)
+        self.assertTrue(torch.allclose(out, fn(img), atol=1e-5))
+
+
+class TestCrop(unittest.TestCase):
+    def test_crop_alignment_and_padding(self):
+        rng = np.random.RandomState(0)
+        img = rng.randint(0, 255, (20, 30, 3)).astype(np.uint8)
+        gt = rng.randint(0, 5, (20, 30)).astype(np.uint8)
+        small_img, small_gt = pad_to_size(img, gt, (20, 30))
+        self.assertTrue(np.array_equal(small_img, img))
+        self.assertTrue(np.array_equal(small_gt, gt))
+        img_p, gt_p = pad_to_size(img[:5], gt[:5], (10, 10))
+        self.assertTrue((img_p[5:, :, :] == 0).all())
+        self.assertTrue((gt_p[5:, :] == 255).all())
+        cimg, cgt = crop_arrays(img_p, gt_p, 2, 3, 5, 7)
+        self.assertTrue(np.array_equal(cimg, img_p[2:7, 3:10]))
+        self.assertTrue(np.array_equal(cgt, gt_p[2:7, 3:10]))
+
+    def test_each_present_class_reachable(self):
+        cs = 16
+        for cls, (py, px) in zip(range(1, 5), [(0, 0), (31, 31), (0, 31),
+                                               (31, 0)]):
+            gt = np.zeros((32, 32), dtype=np.uint8)
+            gt[py, px] = cls
+            for seed in range(20):
+                rng = np.random.RandomState(seed)
+                y0, x0 = foreground_crop_bbox(gt, cs, fg_prob=0.0, rng=rng)
+                self.assertGreaterEqual(y0, 0)
+                self.assertLessEqual(y0, 32 - cs)
+                self.assertGreaterEqual(x0, 0)
+                self.assertLessEqual(x0, 32 - cs)
+                self.assertEqual(int(gt[y0:y0 + cs, x0:x0 + cs, ].max()), cls)
+
+    def test_uniform_fallback_and_fg_prob(self):
+        gt = np.zeros((64, 64), dtype=np.uint8)  # no lesion -> fallback
+        rng = np.random.RandomState(3)
+        y0, x0 = foreground_crop_bbox(gt, 32, fg_prob=0.0, rng=rng)
+        self.assertLessEqual(y0, 32)
+        self.assertLessEqual(x0, 32)
+        gt2 = np.full((64, 64), 2, dtype=np.uint8)
+        y1, x1 = foreground_crop_bbox(gt2, 32, fg_prob=1.0, rng=rng)
+        self.assertLessEqual(y1, 32)
+        self.assertLessEqual(x1, 32)
+
+
+class TestLovasz(unittest.TestCase):
+    def _rand_batch(self, n=32, c=5, seed=0):
+        g = torch.Generator().manual_seed(seed)
+        return torch.randn(1, c, n, n, generator=g)
+
+    def test_ignore_index(self):
+        logits = self._rand_batch()
+        tgt = torch.zeros(1, 1, 32, 32, dtype=torch.long)
+        tgt[0, 0, 5, 5] = 255
+        l1 = multiclass_lovasz_hinge(logits, tgt)
+        tgt2 = tgt.clone()
+        tgt2[0, 0, 5, 5] = 3
+        l2 = multiclass_lovasz_hinge(logits, tgt2)
+        self.assertAlmostEqual(float(l1), float(l2), places=6)
+
+    def test_empty_all_ignore_finite_graphsafe(self):
+        logits = self._rand_batch().clone().requires_grad_(True)
+        tgt = torch.full((1, 1, 32, 32), 255, dtype=torch.long)
+        loss = multiclass_lovasz_hinge(logits, tgt)
+        self.assertTrue(torch.isfinite(loss))
+        self.assertEqual(float(loss), 0.0)
+        loss.backward()
+        self.assertTrue(torch.isfinite(logits.grad).all())
+
+    def test_gradient_finite_nonzero(self):
+        logits = self._rand_batch(seed=1).clone().requires_grad_(True)
+        tgt = torch.randint(0, 5, (1, 1, 32, 32))
+        loss = multiclass_lovasz_hinge(logits, tgt)
+        loss.backward()
+        self.assertTrue(torch.isfinite(logits.grad).all())
+        self.assertGreater(float(logits.grad.abs().sum()), 0.0)
+
+    def test_absent_class_averaged(self):
+        # classes 1 and 2 exist as channel logits; batch contains only class 1
+        logits = torch.randn(1, 3, 8, 8, generator=torch.manual_seed(2))
+        tgt = torch.zeros(1, 1, 8, 8, dtype=torch.long)
+        tgt[0, 0, :4, :] = 1
+        got = float(multiclass_lovasz_hinge(logits, tgt))
+        flat_t = tgt.reshape(-1)
+        per = []
+        for c in (1, 2):
+            lc = logits[0, c].reshape(-1)
+            labels = (flat_t == c).float()
+            per.append(float(lovasz_hinge_flat(lc, labels)))
+        expected = sum(per) / 2.0
+        self.assertAlmostEqual(got, expected, places=6)
+
+    def test_no_softmax_applied(self):
+        # scaling all logits by -1 must change the hinge loss
+        logits = self._rand_batch(seed=4)
+        tgt = torch.randint(0, 5, (1, 1, 32, 32))
+        l_pos = float(multiclass_lovasz_hinge(logits, tgt))
+        l_neg = float(multiclass_lovasz_hinge(-logits, tgt))
+        self.assertNotAlmostEqual(l_pos, l_neg, places=3)
+
+
+class TestFusionResize(unittest.TestCase):
+    def test_blend_consistency(self):
+        a = torch.rand(1, 5, 8, 8)
+        b = torch.rand(1, 5, 8, 8)
+        self.assertTrue(torch.allclose(blend_probs(a, b, 0.5), (a + b) / 2))
+        self.assertTrue(torch.allclose(blend_probs(a, b, 0.3), 0.3 * a + 0.7 * b))
+
+    def test_resize_logit_align_corners(self):
+        x = torch.randn(1, 4, 6, 6)
+        y = resize_logit(x, (12, 12), align_corners=False)
+        self.assertEqual(y.shape, (1, 4, 12, 12))
+        self.assertTrue(torch.isfinite(y).all())
+
+
+if __name__ == '__main__':
+    unittest.main()
+
+FILE repo/configs/lesion/exp/hrplus_patch_dice.py
+_base_ = '../exp/hr100_a.py'
+
+# HR+ patch (dice-only): student + frozen reference both strict-loaded from
+# the B checkpoint inside the model constructor; load_from stays None.
+custom_imports = dict(imports=['hrplus_patch'], allow_failed_imports=False)
+
+img_norm_cfg = dict(
+    mean=[81.205, 50.636, 21.216], std=[76.252, 48.798, 21.625], to_rgb=True)
+image_scale = (2048, 2048)
+crop_size = (1024, 1024)
+
+train_pipeline = [
+    dict(type='LoadImageFromFile'),
+    dict(type='LoadAnnotations'),
+    dict(type='Resize', img_scale=image_scale, keep_ratio=False),
+    dict(type='ForegroundMixedCrop', crop_size=1024, fg_prob=0.5),
+    dict(type='RandomFlip', flip_ratio=0.5),
+    dict(type='RandomRotate', prob=1.0, pad_val=0, seg_pad_val=0,
+         degree=(-45, 45), auto_bound=False),
+    dict(type='PhotoMetricDistortion'),
+    dict(type='Normalize', **img_norm_cfg),
+    dict(type='Pad', size=crop_size, pad_val=0, seg_pad_val=0),
+    dict(type='DefaultFormatBundle'),
+    dict(type='Collect', keys=['img', 'gt_semantic_seg']),
+]
+
+model = dict(
+    type='HRPlusRefinement',
+    pretrained=None,
+    backbone=dict(pretrained=None),
+    semantic_refinement=False,
+    hard_weight=0,
+    freeze_bn=True,
+    source_checkpoint='weights/b_weights.pth',
+    lovasz_weight=0.0,
+    test_cfg=dict(compute_aupr=True))
+
+data = dict(
+    samples_per_gpu=2,
+    workers_per_gpu=4,
+    train=dict(
+        data_root='./data/DDR_split_613',
+        pipeline=train_pipeline),
+    val=dict(data_root='./data/DDR_split_613'),
+    test=dict(data_root='./data/DDR_split_613'))
+
+# Both weights come from source_checkpoint strict-loaded in the constructor.
+load_from = None
+resume_from = None
+
+optimizer = dict(type='SGD', lr=0.0005, momentum=0.9, weight_decay=0.0005)
+optimizer_config = dict(grad_clip=dict(max_norm=5.0, norm_type=2))
+lr_config = dict(policy='poly', warmup='linear', warmup_iters=200,
+                 warmup_ratio=0.1, power=1.0, min_lr=0.00005, by_epoch=False)
+runner = dict(type='IterBasedRunner', max_iters=20000)
+checkpoint_config = dict(by_epoch=False, interval=2000, max_keep_ckpts=2)
+evaluation = dict(interval=2000, metric='mIoU', priority='LOW',
+                  save_best='mIoU')
+log_config = dict(interval=20,
+                  hooks=[dict(type='TextLoggerHook', by_epoch=False)])
+seed = 42

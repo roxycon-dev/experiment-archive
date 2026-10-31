@@ -1,0 +1,73 @@
+#!/usr/bin/env bash
+# run_guarded.sh: deadline-guarded run. Linux-only real shutdown.
+set -euo pipefail
+
+SETTINGS_FILE="${1:?usage: run_guarded.sh <settings-file> <run-dir> [backup-seconds]}"
+RUN_DIR="${2:?usage: run_guarded.sh <settings-file> <run-dir> [backup-seconds]}"
+BACKUP_SECONDS="${3:-600}"
+
+mkdir -p "$RUN_DIR"
+
+if [ ! -f "$RUN_DIR/budget_ledger.json" ]; then
+  echo "ledger missing; run: python ops.py init --started-at <UTC ISO8601> --other-cost <float> --run-dir $RUN_DIR" >&2
+  exit 2
+fi
+
+# Start watchdog (nohup, background) before workload.
+nohup python3 ops.py watchdog --run-dir "$RUN_DIR" \
+  >"$RUN_DIR/watchdog.log" 2>&1 &
+WATCHDOG_PID=$!
+echo "watchdog pid=$WATCHDOG_PID"
+
+cleanup_success() {
+  kill "$WATCHDOG_PID" 2>/dev/null || true
+  shutdown -h now
+}
+cleanup_error() {
+  kill "$WATCHDOG_PID" 2>/dev/null || true
+  shutdown -h now
+}
+trap cleanup_success EXIT
+trap 'cleanup_error' ERR INT TERM
+
+# Deadline-bounded backup: capped so it cannot exceed remaining budget window.
+DEADLINE_EPOCH=$(python3 - <<'PY'
+import json, sys, os
+sys.path.insert(0, os.path.dirname(os.path.abspath("ops.py")))
+import ops
+led = ops.load_ledger(os.environ.get("RUN_DIR", "."))
+print(int(ops.deadline_of(led).timestamp()))
+PY
+)
+RUN_DIR="$RUN_DIR" DEADLINE_EPOCH="$DEADLINE_EPOCH" python3 - <<'PY'
+import os, sys, time
+import ops
+led = ops.load_ledger(os.environ["RUN_DIR"])
+remaining = ops.deadline_of(led).timestamp() - time.time()
+if remaining <= 0:
+    sys.exit(3)
+print("seconds remaining:", int(remaining))
+PY
+
+declare -f run_backup >/dev/null 2>&1 || run_backup() {
+  echo "[backup] default no-op backup (bounded by timeout)"
+}
+
+REMAINING=$(( DEADLINE_EPOCH - $(date +%s) ))
+if [ "$REMAINING" -le 0 ]; then
+  echo "deadline already passed" >&2
+  exit 3
+fi
+# Backup bounded: min(BACKUP_SECONDS, REMAINING - 60s reserve for workload)
+BACKUP_CAP=$(( REMAINING - 60 ))
+if [ "$BACKUP_CAP" -gt "$BACKUP_SECONDS" ]; then BACKUP_CAP="$BACKUP_SECONDS"; fi
+timeout "$BACKUP_CAP" bash -c 'run_backup' || echo "[backup] bounded exit"
+
+# Verify time remains for workload; watchdog will hard-cut at deadline.
+REMAINING=$(( DEADLINE_EPOCH - $(date +%s) ))
+if [ "$REMAINING" -le 0 ]; then
+  echo "no time remaining for workload" >&2
+  exit 3
+fi
+
+python3 run_protocol.py --settings "$SETTINGS_FILE" --run-dir "$RUN_DIR"

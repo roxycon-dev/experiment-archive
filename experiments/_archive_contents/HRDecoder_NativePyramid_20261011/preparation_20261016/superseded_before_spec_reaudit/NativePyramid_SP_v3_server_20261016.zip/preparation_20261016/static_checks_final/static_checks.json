@@ -1,0 +1,62 @@
+{
+  "version": 3,
+  "protocol_version": 3,
+  "source_sha256": "a498a9470414044c65909067d8f590d142da7fa5ec9e36aa165eef032551d3ed",
+  "source_files": {
+    "model.py": "418768083907bf7890068df2af239b94eeaa3aa0935d047a432489ed5576d944",
+    "data.py": "479cd6d3922f81fc17744551b30ba422ee003c15eb97e71823aad506943424ed",
+    "losses.py": "7fbca98e62f6db79627217acab773065f157bfa36f41558278ab07038a657482",
+    "metrics.py": "bf1101bf38c64b5888f70c8d3979fd29efc30904e81a5bdbcf16701eef7925a8",
+    "monitoring.py": "d16259d167cf119623500fc825c9077119e0687bdfa407924662c1ecb3923488",
+    "train.py": "77af2199ef9a95a2a28d9766cf90501122ea0ec7f8e9f2fef926aa41723204d6",
+    "evaluate.py": "14db3415956ae9ef8d350822ea86af11693e39889e1777ae66c30033468bdb97",
+    "verify.py": "50b9bd2d1376a92c3bd7fc318f95906d56251cbaa20493ec2b6af189297144f9",
+    "protocol.json": "de6171d8a0186166b0e1aca25d5d5391b8c8f6344ad70ff79840793c0121deee",
+    "requirements.txt": "88cafddfe4c5cdc04fa8e4b85be5c1b73f7237f2fb69fbed0753b1daf7de1f46",
+    "tests.py": "b565e23a40ebeb759016d0d57a01a22a0cbca78458216888e9b6ac6f9f18d1ba",
+    "test_model_v3.py": "5edbcb591d57f2430ab64c49000cb4eb4e111d1137c9fd0dcc24294f9a407dc2",
+    "test_train_v3.py": "d713375730b6d0125ec6accd1a4bce8ffa336e920cd1b7a620e17cf93b017078",
+    "00_\u6700\u7ec8\u67b6\u6784\u65b9\u6848.md": "71d4179359dc8a631f51f313b1f38a850ab071feb6d8cd7e4a3d60989b7bfec6",
+    "02_v3_\u6700\u7ec8\u67b6\u6784\u8bbe\u8ba1_20261016.md": "9247fd2d2a6b54fcc3467cd92a7c726d606c62da9739b50b704e9f7237e7865b"
+  },
+  "formal_updates": 0,
+  "test_accessed": false,
+  "environment": {
+    "python": "3.13.11",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "dependencies": {
+      "torch": "2.6.0+cu124",
+      "torchvision": "0.21.0+cu124",
+      "timm": "1.0.27",
+      "numpy": "2.4.1",
+      "opencv-python": "4.13.0.90",
+      "Pillow": "12.1.0"
+    },
+    "torch_cuda": "12.4",
+    "cudnn": 90100,
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "compute_capability": [
+      8,
+      9
+    ],
+    "bf16_supported": true,
+    "cudnn_benchmark": false,
+    "cudnn_deterministic": false,
+    "matmul_allow_tf32": false,
+    "cudnn_allow_tf32": true,
+    "deterministic_algorithms": false,
+    "precision": "BF16_forward_FP32_loss_and_master_weights"
+  },
+  "mode": "static_only",
+  "unit_tests": {
+    "status": "PASS",
+    "tests": 62,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "status": "STATIC_CHECKS_PASSED_SERVER_GATES_PENDING",
+  "discarded_real_data_updates": 0,
+  "architecture": "NativePyramid-SP_v3",
+  "server_gates_completed": false
+}

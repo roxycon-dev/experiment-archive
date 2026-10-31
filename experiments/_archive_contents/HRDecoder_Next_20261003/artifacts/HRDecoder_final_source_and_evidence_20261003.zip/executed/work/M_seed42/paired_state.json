@@ -1,0 +1,20 @@
+{
+  "node": 2000,
+  "stop": true,
+  "reason": "Both complete arms remain over 1 percentage point below old deployment; no recent rise; paired-image 95% upper bounds below old deployment",
+  "best": {
+    "M0": {
+      "update": 1000,
+      "output": "fixed_half",
+      "score": 0.42355241147194167,
+      "arm": "M0"
+    },
+    "M1": {
+      "update": 1000,
+      "output": "fixed_half",
+      "score": 0.4234589432855201,
+      "arm": "M1"
+    }
+  },
+  "adaptive_budget_decision": "/root/autodl-tmp/HRDecoder_Next_20261003/reports/adaptive_budget_decision.json"
+}

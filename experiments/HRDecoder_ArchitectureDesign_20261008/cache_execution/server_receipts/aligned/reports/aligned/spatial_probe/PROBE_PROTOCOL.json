@@ -1,0 +1,14 @@
+{
+  "status": "REGISTERED_BEFORE_RUN",
+  "parent": 4000,
+  "train_batches": 8,
+  "SGD_updates": 0,
+  "comparisons": [
+    "nativeprivate",
+    "constant spatial mean residual",
+    "zero private semantics input"
+  ],
+  "purpose": "Identify nearconstant calibration or lost semantic use on train-only pairs; no resultguarantee",
+  "test_or_val_used": false,
+  "registered_unix": 1791612180.7704415
+}

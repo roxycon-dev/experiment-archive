@@ -1,0 +1,82 @@
+{
+  "identity_SHA": "a42c0c6bbb0449e9bc8e04ed106158062697bc5272554937b4e8048abc55bff3",
+  "identity": {
+    "protocol": {
+      "design_version": 3,
+      "seed": 42,
+      "private_seed": 20261008,
+      "canvas": 2048,
+      "updates": 40000,
+      "global_batch": 2,
+      "optimizer": {
+        "type": "SGD",
+        "lr": 0.005,
+        "momentum": 0.9,
+        "weight_decay": 0.0005
+      },
+      "lr": {
+        "type": "poly",
+        "power": 1,
+        "warmup": 1500,
+        "warmup_ratio": 1e-06
+      },
+      "lambda_k": [
+        [
+          0,
+          0
+        ],
+        [
+          1500,
+          0
+        ],
+        [
+          4000,
+          0.5
+        ],
+        [
+          32000,
+          0.5
+        ],
+        [
+          40000,
+          0.1
+        ]
+      ],
+      "lambda_d": ".2 * lambda_k",
+      "precision": "bf16",
+      "validation_interval": 4000,
+      "classes": [
+        "EX",
+        "HE",
+        "SE",
+        "MA"
+      ],
+      "threshold": "strictly > .5",
+      "single_GPU_only": true,
+      "student_TTA": false,
+      "student_teacher_or_H4": false,
+      "train_probabilities_in_sample": true,
+      "OOF": false
+    },
+    "mode": "v3",
+    "code": {
+      "model.py": "14e266e9ff0d49f8638c5079226e42ef5a1bd1c544efa85b02474749e3697c30",
+      "private_modules.py": "08541136cd72e039a02f145adba9410b404f6852bc226ab716639e43cc82ec60",
+      "objectives.py": "5ce6a2c15cbae4aef280cc2911fcef2e3d9a69f8fd34f16f146e63867941e64c",
+      "data.py": "dc23b825acf55dcf326ffe3b8fd316ed893f1506eb890522b5c760aeddf3302e",
+      "train.py": "534a32ad018aed7cac7032e458b8bb35de8ec07610779fed45bb018de5976b23"
+    },
+    "cache_identity": {
+      "A": "0674eb8fd875187e92bc4369e6fc41eb906339acb1f2057bd1d2dcd6c6933ec1",
+      "U": "1696b6eed682e116e98b6630bd429bd49986c24323010215fa8a0b4364952aa5",
+      "S": "b9f9886b393b14c2a25863d56fdbc1f6667bfab1200410d83fd0eb223471207a"
+    },
+    "data_identity_SHA": "7c53b86bcb27ccd121042f667cc58e39b98716a8c477bfd1f1657fa126575719",
+    "baseline_config_SHA": "b1bc3a6fb349d4e04f33ea4c8325852e5859b9ac46ddc04c922909e409040d08",
+    "source_manifest_SHA": "7e7d3ec907b3660e1fe3c46137719f4ede7b24efa639a0d2eca8f69c2e926398",
+    "ImageNet_W48_SHA": "d2186c55782308392ae14cf179ac4840143b09abdbba81aa3f9274c795ebc960",
+    "torch": "2.0.1+cu117"
+  },
+  "baseline_initial_state_SHA": "e180ed1738b5cde6797e60a124aaf75b3cc78309463bb358a240cbddf0480f00",
+  "historical_B0_initial_snapshot_available": false
+}

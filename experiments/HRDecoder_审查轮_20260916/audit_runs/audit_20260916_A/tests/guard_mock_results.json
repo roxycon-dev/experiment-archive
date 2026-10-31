@@ -1,0 +1,68 @@
+{
+  "suite": "hard_deadline_guard_self_test",
+  "n_total": 10,
+  "n_pass": 10,
+  "overall_status": "PASS",
+  "results": [
+    {
+      "test_id": "T1",
+      "desc": "提前完成时宽限 sleep 被 min(grace, remaining, poll) 限住",
+      "status": "PASS",
+      "detail": "sleep=20.0 rem=100.0"
+    },
+    {
+      "test_id": "T2",
+      "desc": "刚好截止时判定为到点",
+      "status": "PASS",
+      "detail": "rem=0.0"
+    },
+    {
+      "test_id": "T3",
+      "desc": "启动时已过期即视为到点",
+      "status": "PASS",
+      "detail": "rem=-3600.0"
+    },
+    {
+      "test_id": "T4",
+      "desc": "state 损坏时返回 None 且 deadline 保护不受影响",
+      "status": "PASS",
+      "detail": "why=corrupt:JSONDecodeError rem=1"
+    },
+    {
+      "test_id": "T5",
+      "desc": "state 缺失返回 missing",
+      "status": "PASS",
+      "detail": "missing"
+    },
+    {
+      "test_id": "T6",
+      "desc": "state 为空文件返回 empty",
+      "status": "PASS",
+      "detail": "empty"
+    },
+    {
+      "test_id": "T7",
+      "desc": "关机连续失败时持续重试且保护不消失",
+      "status": "PASS",
+      "detail": "attempts=2"
+    },
+    {
+      "test_id": "T8",
+      "desc": "实例标识不匹配即拒绝关机",
+      "status": "PASS",
+      "detail": "拒绝条件成立"
+    },
+    {
+      "test_id": "T9",
+      "desc": "回收宽限被 remaining 截断",
+      "status": "PASS",
+      "detail": "sleep=5.0 rem=5.0"
+    },
+    {
+      "test_id": "T10",
+      "desc": "run 主循环无 break/return（训练被杀不影响 guard）",
+      "status": "PASS",
+      "detail": "while True=True, 无 break/return=True"
+    }
+  ]
+}

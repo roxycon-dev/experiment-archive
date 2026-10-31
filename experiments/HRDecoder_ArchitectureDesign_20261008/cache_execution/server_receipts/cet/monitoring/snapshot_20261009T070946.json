@@ -1,0 +1,72 @@
+{
+  "checked_at": "2026-10-09T07:09:46.177284+08:00",
+  "runtime": {
+    "checked_at_unix": 1791500996.752416,
+    "server_online": true,
+    "training_alive": true,
+    "training_cmdline": "/root/miniconda3/bin/python -u train.py --train ",
+    "controller_alive": true,
+    "controller_cmdline": "/root/miniconda3/bin/python -u /root/autodl-tmp/HRDecoder_v3_20261008/cet_execution/controller.py ",
+    "RAM_owner_alive": true,
+    "RAM_bytes": 103079171144,
+    "RAM_files": 1362,
+    "memory_current_bytes": 122901069824,
+    "gpu_status": "utilization.gpu [%], memory.used [MiB], memory.total [MiB], power.draw [W]\n100 %, 20455 MiB, 24564 MiB, 307.78 W\n"
+  },
+  "downloaded": [
+    "reports/cet/GPU_CAMPAIGN_RUNNING.json",
+    "training_runs/cet/progress.json",
+    "training_runs/cet/performance.json",
+    "training_runs/cet/protocol.json",
+    "training_runs/cet/GPU_SMOKE_PASS.json",
+    "training_runs/cet/validation_progress.json",
+    "cet_execution/CPU_CET_PASS.json",
+    "cet_execution/CHECKPOINT_RESUME_PASS.json",
+    "training_runs/cet/val_04000.json",
+    "training_runs/cet/val_08000.json",
+    "training_runs/cet/val_12000.json",
+    "training_runs/cet/val_16000.json"
+  ],
+  "missing": [
+    "reports/cet/GPU_CAMPAIGN_OUTCOME.json",
+    "reports/cet/CONTROLLER_ERROR.json",
+    "training_runs/cet/TRAINING_COMPLETE.json",
+    "training_runs/cet/val_20000.json",
+    "training_runs/cet/val_24000.json",
+    "training_runs/cet/val_28000.json",
+    "training_runs/cet/val_32000.json",
+    "training_runs/cet/val_36000.json",
+    "training_runs/cet/val_40000.json"
+  ],
+  "progress": {
+    "status": "TRAINING",
+    "completed": 18400,
+    "expected": 40000,
+    "saved_update": 18000,
+    "best_val_mIoU": 38.72786209577323,
+    "time_unix": 1791500956.9960308
+  },
+  "performance": {
+    "completed_update": 18430,
+    "mean_batch_seconds": 1.0491965410113335,
+    "mean_step_compute_seconds": 1.0491696115583182,
+    "mean_data_wait_seconds": 2.6929453015327453e-05,
+    "window_batches": 100,
+    "warmup_batches_excluded": 12,
+    "workers": 12,
+    "prefetch_factor": 1,
+    "CUDA_future_batches": 1,
+    "shared_RAM_cache_bytes": 103079171144,
+    "channels_last": false,
+    "peak_allocated_bytes": 18693719040,
+    "peak_reserved_bytes": 20889731072,
+    "estimated_remaining_train_hours_excluding_validation": 6.286435941559573,
+    "time_unix": 1791500988.5231893,
+    "protocol_unchanged": true
+  },
+  "outcome": null,
+  "new_validation_steps": [
+    16000
+  ],
+  "server_shutdown_authorized": false
+}

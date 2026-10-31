@@ -1,0 +1,111 @@
+{
+  "mIoU_percent": 38.209167157535916,
+  "IoU_percent": [
+    36.023709950716416,
+    43.226858581203246,
+    51.64225590884898,
+    21.943844189375017
+  ],
+  "precision_percent": [
+    46.949991230261446,
+    67.48367285861289,
+    71.48868355991682,
+    29.92298493183449
+  ],
+  "recall_percent": [
+    60.752468165734186,
+    54.59896311873717,
+    65.03743719091975,
+    45.14317880030021
+  ],
+  "counts": [
+    [
+      176670,
+      199624,
+      114133
+    ],
+    [
+      658422,
+      317254,
+      547502
+    ],
+    [
+      130988,
+      52241,
+      70416
+    ],
+    [
+      31277,
+      73248,
+      38007
+    ]
+  ],
+  "class_order": [
+    "EX",
+    "HE",
+    "SE",
+    "MA"
+  ],
+  "undefined_precision_convention": "zero when TP+FP=0; inspect counts",
+  "images": 76,
+  "threshold": "strictly > .5",
+  "base_head_metrics": {
+    "mIoU_percent": 36.15351607262859,
+    "IoU_percent": [
+      33.21790131589078,
+      43.40654185329444,
+      48.31045909402905,
+      19.679162027300094
+    ],
+    "precision_percent": [
+      39.799555981033876,
+      59.71550713612077,
+      58.79618526867796,
+      23.437538370865155
+    ],
+    "recall_percent": [
+      66.76306640577985,
+      61.3800703858618,
+      73.03777482075827,
+      55.10074476069511
+    ],
+    "counts": [
+      [
+        194149,
+        293668,
+        96654
+      ],
+      [
+        740197,
+        499342,
+        465727
+      ],
+      [
+        147101,
+        103087,
+        54303
+      ],
+      [
+        38176,
+        124708,
+        31108
+      ]
+    ],
+    "class_order": [
+      "EX",
+      "HE",
+      "SE",
+      "MA"
+    ],
+    "undefined_precision_convention": "zero when TP+FP=0; inspect counts",
+    "images": 76,
+    "threshold": "strictly > .5"
+  },
+  "seconds": 27.197852589190006,
+  "deployment_inference_verified": true,
+  "teacher_or_GT_input": false,
+  "parent_completed": 20000,
+  "probe_updates": 500,
+  "arm": "feature_isolated",
+  "identity_SHA": "77556f6fa88c89083bf9acd0e7c50f0135e0fd8f5438ca495a5d68695bc6144a"
+}

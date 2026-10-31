@@ -1,0 +1,17 @@
+[train] objective = L = 30.0*focal_bce(alpha=0.75,gamma=2) + 1.0*soft_dice (frozen at 2026-09-21)
+[train] stage=stage2_main images=454/454 patches=10608 roles={'background': 908, 'candidate_neg_fp': 613, 'candidate_neg_plain': 2544, 'candidate_pos': 6543}
+[train] refiner trainable params=25394 (non-refiner trainable=0)
+[train] identity guard OK: refiner == champion bitwise at init (max|d|=0.0e+00, batch=16)
+[train] ep=1 step=1 lr=3.00e-06 loss=1.1813 focal=0.0238 dice=0.4668 focal_share=0.605 gnorm=95.89 5.3s
+[train] ep=1 step=20 lr=6.00e-05 loss=0.9573 focal=0.0141 dice=0.5332 focal_share=0.443 gnorm=16.61 14.8s
+[train] ep=1 step=40 lr=1.20e-04 loss=0.7592 focal=0.0059 dice=0.5808 focal_share=0.235 gnorm=54.98 28.0s
+Traceback (most recent call last):
+  File "/root/autodl-tmp/HRDecoder_FullCompetition_20260920/refiner_v1/train_refiner.py", line 471, in <module>
+    sys.exit(main())
+  File "/root/autodl-tmp/HRDecoder_FullCompetition_20260920/refiner_v1/train_refiner.py", line 348, in main
+    loss.backward()
+  File "/root/miniconda3/lib/python3.8/site-packages/torch/_tensor.py", line 487, in backward
+    torch.autograd.backward(
+  File "/root/miniconda3/lib/python3.8/site-packages/torch/autograd/__init__.py", line 200, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 2.85 GiB (GPU 0; 23.57 GiB total capacity; 18.49 GiB already allocated; 1.95 GiB free; 21.29 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF

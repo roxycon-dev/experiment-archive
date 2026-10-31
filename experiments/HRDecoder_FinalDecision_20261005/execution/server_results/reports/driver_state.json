@@ -1,0 +1,49 @@
+{
+  "stage": "READY_FOR_LOCAL_BACKUP_AND_SHUTDOWN",
+  "queue": [
+    [
+      "C",
+      42
+    ],
+    [
+      "S",
+      42
+    ],
+    [
+      "D",
+      42
+    ],
+    [
+      "SD",
+      42
+    ]
+  ],
+  "seed_scope": [
+    42
+  ],
+  "amendment_sha256": "cae05b90a986f4d14a7c7f1e7ca25de10b9d966d905cd1ea88f5e0c2116344c3",
+  "final_selection": {
+    "arm": "S",
+    "update": 20000,
+    "formula": "fixed_fusion",
+    "scores": {
+      "42": 45.32183122738841
+    },
+    "checkpoints": {
+      "42": {
+        "path": "runs/S_seed42/checkpoint_u20000.pth",
+        "sha256": "c933256b07556689a7fd199dd80e50d4d0c27eb6b9ea782713d95ec51e6d8d62"
+      }
+    },
+    "gains_pp": {
+      "42": 0.9661388888500326
+    },
+    "mean_gain_pp": 0.9661388888500326,
+    "mean_score": 45.32183122738841,
+    "eligible": true,
+    "seed_count": 1
+  },
+  "test_authorized": true,
+  "test_complete": true,
+  "time": "2026-10-05T18:34:27.856753+00:00"
+}

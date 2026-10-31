@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "D:\dataset\experiment\HRDecoder_FinalDecision_20261005\execution\ops\import_tjdr_zip.py", line 47, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "D:\dataset\experiment\HRDecoder_FinalDecision_20261005\execution\ops\import_tjdr_zip.py", line 45, in main
+    subprocess.run([sys.executable,'-u','ops/accept_tjdr.py'],cwd=ROOT,check=True)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GuanXingRen\Miniconda3\Lib\subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['C:\\Users\\GuanXingRen\\Miniconda3\\python.exe', '-u', 'ops/accept_tjdr.py']' returned non-zero exit status 4294967295.

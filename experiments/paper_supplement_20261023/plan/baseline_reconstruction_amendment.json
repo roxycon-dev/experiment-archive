@@ -1,0 +1,23 @@
+{
+  "status": "FROZEN_TECHNICAL_CORRECTION_BEFORE_BASELINE_V2_TRAINING",
+  "reason": "Baseline_v1 reconstructed from post-constructor log omitted original random HR crop scale (.75,1.25)",
+  "original_saved_config": "D:\\dataset\\lesion_segmentation\\01_板块一_baseline实验配置.py",
+  "original_saved_config_sha256": "553654f1879c6558fa0363794be011a67b9935728350df93465b611f50acb9a8",
+  "initialization_audit_sha256": "acc6700f27924f71e7c086bba580f79f998ec84ebbf594db5e070389b748f8cd",
+  "corrected_config_sha256": "d8b5c8f311952c17aff5eccb642f4f0d0a5554862deb36f399e5fbd2730207dc",
+  "corrected_source_bundle_sha256": "be9a13d4a4481de75145b5e0451213c7e6b29af8a1497c9782a03d597da5a6d0",
+  "restored_hr_scale_ratio": [
+    0.75,
+    1.25
+  ],
+  "restored_crop_num": 4,
+  "pretraining": "Original ImageNet HRNet-W48;1830backbone tensors bitwise equal after full initialization",
+  "training": "Fresh seed42,original40k SGD/poly/1500warmup;all10validationnodes;originalhookbest;no test selection",
+  "resource_difference_retained": "Two2080Ti FP32 globalbatch2 SyncBN;not bitwise original single4090 BN2 replay",
+  "baseline_v1_status": "CONFIG_MISMATCH_NOT_ACCEPTED_AS_FAITHFUL_ORIGINAL_BASELINE;retain all weights/logs/predictions/costs",
+  "training_attempt_budget": "Four adaptation runs plus two baseline40k attempts,including the rejected v1 attempt; disclose both",
+  "adaptation_protocol_changed": false,
+  "threshold_or_fusion_search": false,
+  "expected_historical_score": "No guaranteed42.20; exact cause of score gap cannot be attributed solely to the restored setting",
+  "overall_campaign_complete": false
+}

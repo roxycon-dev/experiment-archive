@@ -1,0 +1,48 @@
+=== SUMMARY (independent recompute) ===
+hrplus/BASE_0      n=76 mIoU=0.417973149  EX=0.457715 HE=0.437583 SE=0.551807 MA=0.224788
+    contract mIoU=0.4179731494431753 delta=0.000e+00 sha_mismatch=0 counts_diff=[]
+hrplus/C2000       n=76 mIoU=0.397973900  EX=0.446415 HE=0.429644 SE=0.496322 MA=0.219515
+    contract mIoU=0.3979739003932351 delta=0.000e+00 sha_mismatch=0 counts_diff=[]
+hrplus/D_blend     n=76 mIoU=0.416148959  EX=0.440397 HE=0.447262 SE=0.550758 MA=0.226179
+    contract mIoU=0.4161489586241723 delta=0.000e+00 sha_mismatch=0 counts_diff=[]
+hrplus/MIX_C2000   n=76 mIoU=0.428656901  EX=0.461442 HE=0.441510 SE=0.554204 MA=0.257471
+    contract mIoU=0.4286569005579753 delta=0.000e+00 sha_mismatch=0 counts_diff=[]
+hrplus/S4000       n=76 mIoU=0.398319829  EX=0.430961 HE=0.407203 SE=0.525842 MA=0.229273
+    contract mIoU=0.39831982892663487 delta=0.000e+00 sha_mismatch=0 counts_diff=[]
+hrplus/champion    n=76 mIoU=0.426694285  EX=0.457715 HE=0.437583 SE=0.551807 MA=0.259672
+    contract mIoU=0.42669428454584546 delta=0.000e+00 sha_mismatch=0 counts_diff=[]
+fullmodel/H0       n=76 mIoU=0.369226424  EX=0.418771 HE=0.435195 SE=0.414545 MA=0.208394
+    contract mIoU=0.36922642429539565 delta=0.000e+00 sha_mismatch=0 counts_diff=[]
+fullmodel/U0       n=76 mIoU=0.384464126  EX=0.436760 HE=0.384266 SE=0.509362 MA=0.207468
+    contract mIoU=0.3844641257662971 delta=0.000e+00 sha_mismatch=0 counts_diff=[]
+
+=== cross vs analysis JSON ===
+  BASE_0       json=0.4179731494431753 recomputed=0.4179731494431753 delta=0.000e+00
+  C2000        json=0.3979739003932351 recomputed=0.3979739003932351 delta=0.000e+00
+  D_blend      json=0.4161489586241723 recomputed=0.4161489586241723 delta=0.000e+00
+  MIX_C2000    json=0.4286569005579753 recomputed=0.4286569005579753 delta=0.000e+00
+  S4000        json=0.39831982892663487 recomputed=0.39831982892663487 delta=0.000e+00
+  champion     json=0.42669428454584546 recomputed=0.42669428454584546 delta=0.000e+00
+  H0           json=0.36922642429539565 recomputed=0.36922642429539565 delta=0.000e+00
+  U0           json=0.3844641257662971 recomputed=0.3844641257662971 delta=0.000e+00
+
+=== overwrite check (spot) ===
+  hrplus/BASE_0|hrplus/C2000               nonMA_diff_stems=75 identical_all=0
+  hrplus/BASE_0|hrplus/D_blend             nonMA_diff_stems=74 identical_all=0
+  hrplus/BASE_0|hrplus/MIX_C2000           nonMA_diff_stems=74 identical_all=0
+  hrplus/BASE_0|hrplus/S4000               nonMA_diff_stems=75 identical_all=0
+  hrplus/BASE_0|hrplus/champion            nonMA_diff_stems=0 identical_all=4
+  hrplus/BASE_0|fullmodel/H0               nonMA_diff_stems=74 identical_all=0
+  hrplus/BASE_0|fullmodel/U0               nonMA_diff_stems=76 identical_all=0
+  hrplus/C2000|hrplus/D_blend              nonMA_diff_stems=75 identical_all=0
+
+=== single-class replacement mIoU (scalar, vs champion 0.426694) ===
+  BASE_0       EX=0.426694(Δ+0.000000)  HE=0.426694(Δ+0.000000)  SE=0.426694(Δ+0.000000)  MA=0.417973(Δ-0.008721)
+  C2000        EX=0.423869(Δ-0.002825)  HE=0.424710(Δ-0.001985)  SE=0.412823(Δ-0.013871)  MA=0.416655(Δ-0.010039)
+  D_blend      EX=0.422365(Δ-0.004330)  HE=0.429114(Δ+0.002420)  SE=0.426432(Δ-0.000262)  MA=0.418321(Δ-0.008373)
+  MIX_C2000    EX=0.427626(Δ+0.000932)  HE=0.427676(Δ+0.000982)  SE=0.427293(Δ+0.000599)  MA=0.426144(Δ-0.000550)
+  S4000        EX=0.420006(Δ-0.006689)  HE=0.419099(Δ-0.007595)  SE=0.420203(Δ-0.006491)  MA=0.419094(Δ-0.007600)
+  H0           EX=0.416958(Δ-0.009736)  HE=0.426098(Δ-0.000597)  SE=0.392379(Δ-0.034315)  MA=0.413875(Δ-0.012820)
+  U0           EX=0.421456(Δ-0.005239)  HE=0.413365(Δ-0.013329)  SE=0.416083(Δ-0.010611)  MA=0.413643(Δ-0.013051)
+
+wrote /root/logs_run/independent_recompute.json

@@ -1,0 +1,18 @@
+{
+  "arm": "Q_DDR",
+  "seed": 42,
+  "protocol_sha256": "ad83409138bdf23ddcb2273112b3c79c54d8ad51731f2cfd817ff6f0addde46f",
+  "source_sha256": "d0fc4e0478835131cf3b731302174395d6827260bdae78bfa276b8e9851c9a3f",
+  "data_sha256": "a0a69afd241d96a6a239f6745b13d0bd9129652ea25d607b354ecb0314bd2b76",
+  "pretraining_sha256": "73cec8be7427c8655ceced13ce62f6e20a1fa90d1b4d4a550df17a1144081a7c",
+  "stream_sha256": "aa95f47b6a967db5e175da8b216859477d0e6746006693d15e8176a80836359f",
+  "resources": {
+    "micro_batch": 2,
+    "accumulation": 4,
+    "dtype": "bfloat16",
+    "workers": 4,
+    "prefetch_factor": 2,
+    "pin_memory": true
+  },
+  "p0_identity_sha256": "9468a4d2a8d9a1344a21358698a427fdc5ce9950d3603ce91ea9258a15a648db"
+}

@@ -1,0 +1,107 @@
+{
+  "status": "COMPLETE",
+  "hardware": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "torch": "1.10.0+cu113",
+  "mmcv": "1.7.2",
+  "mmengine": "0.10.7",
+  "numpy": "1.24.4",
+  "OpenCV": "4.13.0",
+  "sample_ids": [
+    "007-1774-100",
+    "007-1782-100",
+    "007-1829-100"
+  ],
+  "registered_parameters": 65572420,
+  "inference_weight_artifact_bytes": 263334238,
+  "checkpoint_artifact_bytes_with_optimizer": 525855050,
+  "warmup_images_excluded": 1,
+  "pipeline_to_native_binary_mask_seconds": {
+    "per_image": [
+      0.3282665999999992,
+      0.32233030000000085,
+      0.3084434000000016
+    ],
+    "mean": 0.3196801000000005,
+    "minimum": 0.3084434000000016,
+    "maximum": 0.3282665999999992
+  },
+  "max_single_process_allocated_peak_bytes": 2159913984,
+  "sampled_whole_GPU_maximum_MiB": 5287.0,
+  "sampled_whole_GPU_scope": "Whole GPU includes contexts/apps,200ms sample may miss peaks",
+  "includes": "image read/transform,CPU-GPU transfers,whole forward,native alignment,sigmoid/threshold,return to CPU",
+  "excludes": "model loading/startup,warmup,GT evaluation,result persistence",
+  "timing_limit": "Three fixed val images, descriptive same-machine cost",
+  "source_checkpoint_sha256": "446fc7b598e9680a1470059d2aba3a6f9c2222b66658a5eccef6059b1362850f",
+  "source_config_sha256": "2277468e6ddbe1fcae8ed75965a2881a3b8e747d480688dacbbca0bcf35a6ceb",
+  "profile_script_sha256": "a31242499143f73e74f003a9e48302d6c7047a3723a570241f6b3f99c58b1074",
+  "rows": [
+    {
+      "sid": "007-1774-100",
+      "warmup": true,
+      "hw": [
+        1728,
+        2592
+      ],
+      "image_sha256": "7714411398671092bf447824296ce8aaf8addec3d9cde7794e0b67e1dc37c99f",
+      "pipeline_to_native_mask_seconds": 7.975996500000001,
+      "GPU_peak_allocated_bytes": 2159913984,
+      "predicted_positive_pixels": [
+        0,
+        0,
+        0,
+        346
+      ]
+    },
+    {
+      "sid": "007-1774-100",
+      "warmup": false,
+      "hw": [
+        1728,
+        2592
+      ],
+      "image_sha256": "7714411398671092bf447824296ce8aaf8addec3d9cde7794e0b67e1dc37c99f",
+      "pipeline_to_native_mask_seconds": 0.3282665999999992,
+      "GPU_peak_allocated_bytes": 2159913984,
+      "predicted_positive_pixels": [
+        0,
+        0,
+        0,
+        346
+      ]
+    },
+    {
+      "sid": "007-1782-100",
+      "warmup": false,
+      "hw": [
+        1728,
+        2592
+      ],
+      "image_sha256": "15d252c30f68f3f231452dd65640055fa260274cec855c217c35f3f1106b5e7e",
+      "pipeline_to_native_mask_seconds": 0.32233030000000085,
+      "GPU_peak_allocated_bytes": 2159913984,
+      "predicted_positive_pixels": [
+        0,
+        524,
+        0,
+        0
+      ]
+    },
+    {
+      "sid": "007-1829-100",
+      "warmup": false,
+      "hw": [
+        1934,
+        1956
+      ],
+      "image_sha256": "f2c5b9687f472a5d58e6e22ad2ac2913dc26904291a0ad37a6ded96f09a12435",
+      "pipeline_to_native_mask_seconds": 0.3084434000000016,
+      "GPU_peak_allocated_bytes": 2159913984,
+      "predicted_positive_pixels": [
+        805,
+        370,
+        0,
+        128
+      ]
+    }
+  ]
+}

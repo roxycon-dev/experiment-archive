@@ -1,0 +1,57 @@
+{
+  "sid": "007-1782-100",
+  "warmup": false,
+  "hw": [
+    1728,
+    2592
+  ],
+  "counts": {
+    "full": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        362,
+        366,
+        214
+      ],
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ]
+    ]
+  },
+  "image_sha256": "15d252c30f68f3f231452dd65640055fa260274cec855c217c35f3f1106b5e7e",
+  "mask_sha256": "ab6f0699ee9b3dc6b173c7924c1bf30448ba93b60cd081705bd6e582382bf325",
+  "prediction_path": "D:\\dataset\\experiment\\paper_supplement_20261023\\results\\full_system_profile_v1\\predictions\\007-1782-100.npz",
+  "timing": {
+    "image_read_and_transform_seconds": 0.13371200000000272,
+    "A_including_transfer_seconds": 10.701469799999998,
+    "U_including_transfer_seconds": 0.8598659000000026,
+    "modern": {
+      "S": {
+        "seconds_including_GPU_transfer": 2.896716200004448,
+        "seconds_including_transfer_and_output": 3.087170099999639,
+        "peak_allocated_bytes": 1526459904,
+        "peak_reserved_bytes": 2088763392
+      }
+    },
+    "pipeline_to_fused_mask_seconds": 15.153450300000003,
+    "GT_counts_and_mask_persistence_seconds": 0.130490199999997,
+    "pipeline_through_persistence_seconds": 15.28394329999999
+  },
+  "GPU_memory": {
+    "A_parent_peak_allocated": 3834679808,
+    "U_parent_peak_allocated": 1342358016,
+    "parent_peak_reserved": 1598029824,
+    "note": "Per-process allocated/reserved. Parent weights CPU before worker CUDA; CUDA contexts/driver not included."
+  }
+}

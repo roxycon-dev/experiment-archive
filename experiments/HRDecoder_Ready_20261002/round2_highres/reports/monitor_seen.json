@@ -1,0 +1,43 @@
+{
+  "round": "round2_highres",
+  "notified_validation_updates": {
+    "U0_continuation2048": 2000,
+    "U0_highres": 4000
+  },
+  "last_notified_phase": "closed_backups_verified_shutdown_dispatched_ssh_unreachable",
+  "notified_start": true,
+  "notified_at_epoch": 1790957220.450515,
+  "observed_update": 300,
+  "observed_gpu_utilization_percent": 94,
+  "monitor_frequency": "hourly",
+  "background_health_frequency_seconds": 60,
+  "repair_notified_at_cst": "2026-10-03T00:04:14.892609+08:00",
+  "restarted_supervisor_pid": 43073,
+  "first_val_complete": true,
+  "last_notified_epoch": 1790963307.3135319,
+  "control_2000_result": {
+    "solo_miou": 0.3780079617917798,
+    "fixed_fusion_miou": 0.4333828198845408,
+    "fixed_fusion_baseline_miou": 0.43487703221036567,
+    "stop_reason": "paired_no_gain_or_learning",
+    "saved_updates": 2000
+  },
+  "highres_validation_notified": {
+    "best_update": 1000,
+    "best_fixed_fusion_miou": 0.437327634300698,
+    "gain_pp": 0.2450602090332321,
+    "update2000_fusion_miou": 0.4333288719566418
+  },
+  "training_complete_notified": true,
+  "final_validation_4000": {
+    "solo_miou": 0.38493732233318023,
+    "fusion_miou": 0.43395522888794646,
+    "best_update": 1000,
+    "best_fusion_miou": 0.437327634300698,
+    "new_updates": 6000,
+    "saved_updates": 2000,
+    "wall_minutes": 69.94851487477621
+  },
+  "completion_notified": true,
+  "monitor_status": "PAUSED"
+}

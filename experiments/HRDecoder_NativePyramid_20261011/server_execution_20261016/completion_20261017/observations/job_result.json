@@ -1,0 +1,46 @@
+{
+  "controller_version": 2,
+  "started_at": "2026-10-16T16:32:24.747893+00:00",
+  "source_sha256": "ddb4cafb36503788f5dac8b24f1320b1bbe28aa8e014187f16d8aa847a3c6c3c",
+  "shutdown_policy": "confirmed_formal_start_then_successful_completion_only",
+  "shutdown_armed": false,
+  "status": "JOB_FINISHED",
+  "formal_training_started": false,
+  "stage_started_at": "2026-10-16T16:36:50.009585+00:00",
+  "child_exit_code": -15,
+  "child_pid": 1752,
+  "observed_at": "2026-10-16T16:42:35.362054+00:00",
+  "diagnostic_progress": {
+    "stage": "real_2048",
+    "completed_updates": 8,
+    "in_flight_update": null,
+    "crop_updates": 256,
+    "weights_discarded": true,
+    "formal_updates": 0
+  },
+  "stage_finished_at": "2026-10-16T16:42:40.365441+00:00",
+  "formal_progress": {
+    "status": "TRAINING",
+    "completed": 0,
+    "executed_updates": 0,
+    "checkpoint_persisted_updates": 0,
+    "in_flight_update": null
+  },
+  "outcome": "FORMAL_TRAINING_FAILED",
+  "finished_at": "2026-10-16T16:42:40.369008+00:00",
+  "preflight": {
+    "status": "PASS",
+    "source_sha256": "ddb4cafb36503788f5dac8b24f1320b1bbe28aa8e014187f16d8aa847a3c6c3c",
+    "formal_updates": 0,
+    "test_accessed": false,
+    "error_type": null,
+    "error": null
+  },
+  "training_result": {
+    "status": "TRAINING",
+    "completed": 0,
+    "test_accessed": false,
+    "target_achieved": false
+  },
+  "test_result": null
+}

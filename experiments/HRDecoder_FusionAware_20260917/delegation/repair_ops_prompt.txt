@@ -1,0 +1,632 @@
+Return ONLY a Python block starting with # delegation/repair_ops.py. This is a bounded patch script to run ONCE in currentroot using pathlib. Modify only named files inside currentroot, no shell/network/secret/deletes. Use exact replacements with counts asserted or replace wholefunction between known markers. Do NOT emit whole2000linefiles. Script <=220lines. Changes authored by you(GLM), caller reviews andexecutes. Existing sources appended. 
+Fix ops.py choose_checkpoint tiebreakearliest currentlymissing; validate stepseconds>0, nongarbagenan. asset_inventory unwrapraw.images dict plusdirectmapping, knownD/B/E4/MA present Eremotemissingflagkeep. dataaudit labels directpng notEXfolders, compare IDs viafilenames. Rewrite run_guarded.sh via scriptliteral safe Linux-only set-e trap installedbeforeledgercheck, absoluteSCRIPT_DIR cwd, 3 required argssettings run_dir backup_dir, watchdog nohuppython ops watchdog --run-dir healthcheck, timeout remainingglobaldeadline work. EXIT trap bounded tar realarchive(run_dir) tobackup_dir separatefromrun_dir withreserve10s beforedeadline; neverkillwatchdog; shutdown checkedretryindependent; no backuploop indefinite; malformedledger attempts shutdown. Shell --dry-run optional notneeded neverexecutedlocal. Avoidshell syntaxbad quoting multiline Python passargvexplicit. storage_preflight production image_bytes given --data-root should scan images/train direct only notrgloball labels/test; missinginputs reportjsonexit2, noempty454 falseReady, tests tiny expectedcountparameter? acceptheadersatleast1 standalone but productionflags expectedcount454 default test canmock. Disk same filesystem determined stat.st_dev nearestexisting parent notpathstring. Mocktests updateindependently maybefocusminimum. Donot changeotherproductionmodules.
+ROOT current workingdirectory D:/dataset/experiment/HRDecoder_FusionAware_20260917
+
+SOURCE ops.py
+"""ops.py: budget ledger, watchdog, step planner, gating, metrics."""
+from __future__ import annotations
+import argparse, json, math, os, sys, time
+from datetime import datetime, timedelta, timezone
+
+LEDGER_NAME = "budget_ledger.json"
+RATE = 1.98
+BUDGET = 50.0
+CAP_HOURS = 24.0
+CLASSES = ("EX", "HE", "SE", "MA")
+
+
+def _utcnow():
+    return datetime.now(timezone.utc)
+
+
+def _finite(x, name):
+    if not isinstance(x, (int, float)) or isinstance(x, bool):
+        raise ValueError(f"{name} must be a real number")
+    v = float(x)
+    if not math.isfinite(v):
+        raise ValueError(f"{name} must be finite (got {x!r})")
+    return v
+
+
+def parse_utc(s) -> datetime:
+    dt = datetime.fromisoformat(str(s))
+    if dt.tzinfo is None:
+        raise ValueError("timestamp must include timezone offset (UTC required)")
+    return dt.astimezone(timezone.utc)
+
+
+def validate_other_cost(v) -> float:
+    c = _finite(v, "other_cost")
+    if c < 0:
+        raise ValueError("other_cost must be nonnegative")
+    if c >= BUDGET:
+        raise ValueError("other_cost must be < budget (50)")
+    return c
+
+
+def ledger_path(run_dir: str) -> str:
+    return os.path.join(run_dir, LEDGER_NAME)
+
+
+def load_ledger(run_dir: str) -> dict:
+    with open(ledger_path(run_dir), "r", encoding="utf-8") as f:
+        led = json.load(f)
+    parse_utc(led["billing_started_at"])
+    validate_other_cost(led["other_cost"])
+    return led
+
+
+def deadline_of(ledger: dict) -> datetime:
+    """Aware UTC datetime: min(budget exhaustion, 24h cap) from billing start."""
+    start = parse_utc(ledger["billing_started_at"])
+    cost = validate_other_cost(ledger["other_cost"])
+    by_budget = start + timedelta(hours=(BUDGET - cost) / RATE)
+    by_cap = start + timedelta(hours=CAP_HOURS)
+    return min(by_budget, by_cap)
+
+
+def _write_json(path: str, obj) -> None:
+    tmp = path + ".tmp"
+    with open(tmp, "w", encoding="utf-8") as f:
+        json.dump(obj, f, indent=2)
+    os.replace(tmp, path)
+
+
+def cmd_init(args):
+    os.makedirs(args.run_dir, exist_ok=True)
+    path = ledger_path(args.run_dir)
+    started = parse_utc(args.started_at)
+    if started > _utcnow():
+        raise ValueError("future billing_started_at is forbidden")
+    cost = validate_other_cost(args.other_cost)
+    if os.path.exists(path):
+        old = load_ledger(args.run_dir)
+        old_start = parse_utc(old["billing_started_at"])
+        old_cost = float(old["other_cost"])
+        if started != old_start:
+            raise ValueError("restart-reset forbidden: billing_started_at is immutable")
+        if cost < old_cost:
+            raise ValueError("re-init may only increase other_cost (only shorten remaining time)")
+        if cost == old_cost:
+            print("existing ledger preserved; deadline:", deadline_of(old).isoformat())
+            return
+        old["other_cost"] = cost
+        _write_json(path, old)
+        print("other_cost updated; deadline:", deadline_of(old).isoformat())
+        return
+    ledger = {
+        "billing_started_at": started.isoformat(),
+        "other_cost": cost,
+        "run_dir": os.path.abspath(args.run_dir),
+    }
+    _write_json(path, ledger)
+    print("deadline:", deadline_of(ledger).isoformat())
+
+
+def shutdown_system(dry_run: bool) -> bool:
+    """True if shutdown issued (or would be, in dry-run). Real shutdown is Linux-only."""
+    if dry_run:
+        print("[dry-run] would invoke: shutdown -h now")
+        return True
+    if not sys.platform.startswith("linux"):
+        raise RuntimeError("real shutdown forbidden off Linux")
+    return os.system("shutdown -h now") == 0
+
+
+def cmd_watchdog(args):
+    try:
+        ledger = load_ledger(args.run_dir)
+        dl = deadline_of(ledger)
+    except Exception as exc:
+        # Fail closed: guard launch implies an authorized paid server; a malformed
+        # ledger must still attempt shutdown, not crash open.
+        print(f"[fail-closed] unusable ledger in {args.run_dir}: {exc}", flush=True)
+        try:
+            shutdown_system(args.dry_run)
+        finally:
+            sys.exit(5)
+    print("watchdog armed; deadline", dl.isoformat(), flush=True)
+    while True:
+        now = _utcnow()
+        if now >= dl:
+            if args.dry_run:
+                print("[dry-run] deadline reached; no shutdown issued")
+                return
+            if shutdown_system(False):
+                return  # host is halting
+            print("[watchdog] shutdown failed; retrying in 5s", flush=True)
+            time.sleep(5)
+            continue
+        time.sleep(min(60, max(1, (dl - now).total_seconds())))
+
+
+def choose_steps(train_seconds_per_step, eval_seconds, overhead_seconds=600.0) -> int:
+    t = _finite(train_seconds_per_step, "train_seconds_per_step")
+    e = _finite(eval_seconds, "eval_seconds")
+    o = _finite(overhead_seconds, "overhead_seconds")
+    if t < 0 or e < 0 or o < 0:
+        raise ValueError("choose_steps arguments must be nonnegative")
+    for T in range(4000, 999, -4):
+        if 2 * T * t + 8 * e + o <= 21600:
+            return T
+    raise ValueError("no feasible T in [1000,4000] (multiple of 4)")
+
+
+def gate_first(a4, b4, start_miou) -> bool:
+    for pts, name in ((a4, "a4"), (b4, "b4")):
+        if len(pts) != 4:
+            raise ValueError(f"{name}: gate_first requires exactly 4 points")
+        for x in pts:
+            _finite(x, name)
+    _finite(start_miou, "start_miou")
+    maxA, maxB = max(a4), max(b4)
+    if not (maxB - maxA >= 0.003):
+        return False
+    if sum(1 for x, y in zip(a4, b4) if y > x) < 2:
+        return False
+    return maxB >= start_miou
+
+
+def choose_checkpoint(points):
+    """Returns (step, miou); ties resolved to the EARLIEST step regardless of input order."""
+    best = None
+    for step, miou in points:
+        m = _finite(miou, "miou")
+        if best is None or m > best[1]:
+            best = (step, m)
+    if best is None:
+        raise ValueError("no checkpoints supplied")
+    return best
+
+
+def metrics_from_counts(counts) -> dict:
+    """Accepts {class:{tp,fp,fn}} (exactly EX/HE/SE/MA) or Nx4x3 nested lists.
+    Returns {'mIoU':.., 'per_class':{EX:..,...}, 'counts':{...}}. Rejects zero union."""
+    per = {c: {"tp": 0, "fp": 0, "fn": 0} for c in CLASSES}
+
+    def _count(v, name):
+        x = _finite(v, name)
+        if x < 0:
+            raise ValueError(f"{name} must be nonnegative")
+        return x
+
+    def add(cls, tp, fp, fn):
+        if cls not in per:
+            raise ValueError(f"unexpected class {cls!r}; expected exactly {CLASSES}")
+        per[cls]["tp"] += _count(tp, "tp")
+        per[cls]["fp"] += _count(fp, "fp")
+        per[cls]["fn"] += _count(fn, "fn")
+
+    if isinstance(counts, dict):
+        extra = set(counts) - set(CLASSES)
+        missing = set(CLASSES) - set(counts)
+        if extra or missing:
+            raise ValueError(f"expected exactly classes {CLASSES}; missing={sorted(missing)} extra={sorted(extra)}")
+        for cls, c in counts.items():
+            add(cls, c["tp"], c["fp"], c["fn"])
+    elif isinstance(counts, (list, tuple)):
+        for img in counts:
+            if len(img) != 4:
+                raise ValueError("each image must have exactly 4 class entries")
+            for i, trio in enumerate(img):
+                if len(trio) != 3:
+                    raise ValueError("each class entry must be [tp, fp, fn]")
+                add(CLASSES[i], trio[0], trio[1], trio[2])
+    else:
+        raise TypeError("counts must be dict {class:{tp,fp,fn}} or Nx4x3 list")
+
+    per_class = {}
+    for cls in CLASSES:
+        tp, fp, fn = per[cls]["tp"], per[cls]["fp"], per[cls]["fn"]
+        denom = tp + fp + fn
+        if denom == 0:
+            raise ValueError(f"class {cls}: union is zero; rejecting")
+        per_class[cls] = tp / denom
+    return {
+        "mIoU": sum(per_class.values()) / len(CLASSES),
+        "per_class": per_class,
+        "counts": per,
+    }
+
+
+def main(argv=None):
+    p = argparse.ArgumentParser(prog="ops")
+    sub = p.add_subparsers(dest="cmd", required=True)
+    pi = sub.add_parser("init")
+    pi.add_argument("--started-at", required=True)
+    pi.add_argument("--other-cost", type=float, required=True)
+    pi.add_argument("--run-dir", required=True)
+    pi.set_defaults(func=cmd_init)
+    pw = sub.add_parser("watchdog")
+    pw.add_argument("--run-dir", required=True)
+    pw.add_argument("--dry-run", action="store_true")
+    pw.set_defaults(func=cmd_watchdog)
+    args = p.parse_args(argv)
+    args.func(args)
+
+
+if __name__ == "__main__":
+    main()
+
+SOURCE asset_inventory.py
+"""asset_inventory.py: scoped asset audit + data split audit.
+Asset audit only (never invents file paths, hashes, or success).
+Top status is LOCAL_READY_REMOTE_ASSET_PENDING until the remote E champion
+checkpoint is actually recovered and hashed; it blocks the champion claim.
+"""
+from __future__ import annotations
+import argparse, hashlib, json, os
+from typing import Dict, List
+
+DATA_ROOT = "D:/HRDecoder/data/DDR_split_613"
+SPLITS = ("train", "val", "test")
+EXPECTED = {"train": 454, "val": 76, "test": 227}
+
+# Actual asset paths (verified list; no invented files).
+STUDENT_D = "D:/dataset/experiment/hrdecoder_plus3/results/D_0913_retry/backup_student_2000.pth"
+B_LOCAL = "D:/dataset/experiment/hrdecoder_plus3/repo/weights/b_weights.pth"
+B_REMOTE_COPY = "D:/dataset/experiment/autodl100/results/trial_b/selected_weights_only.pth"
+E4 = "D:/dataset/experiment/autodl100/results/e4_reference_weights.pth"
+MA = "D:/dataset/experiment/HRDecoder_审查轮_20260916/audit_runs/audit_20260916_A/h4_best.pth"
+H5 = "D:/dataset/experiment/HRDecoder_审查轮_20260916/audit_runs/audit_20260916_A/experiments/h5_test.json"
+H7 = "D:/dataset/experiment/HRDecoder_审查轮_20260916/audit_runs/audit_20260916_A/experiments/h7_test.json"
+
+E_REMOTE = "/root/autodl-tmp/hrplus/results/E_0916/best_mIoU_iter_1500.pth"
+D_REMOTE = "/root/autodl-tmp/hrplus/D_0913_retry/best_mIoU_iter_2000.pth"
+
+
+def sha256(path: str) -> str:
+    h = hashlib.sha256()
+    with open(path, "rb") as f:
+        for chunk in iter(lambda: f.read(1 << 20), b""):
+            h.update(chunk)
+    return h.hexdigest()
+
+
+def hash_asset(path: str) -> dict:
+    if not os.path.isfile(path):
+        return {"path": path, "exists": False, "sha256": None}
+    return {"path": path, "exists": True, "sha256": sha256(path)}
+
+
+def json_load_safe(path: str):
+    """Parse JSON text only; never unpickle."""
+    with open(path, "r", encoding="utf-8") as f:
+        return json.load(f)
+
+
+def extract_metrics(obj) -> dict:
+    """Find mIoU (numeric) and per_class (numeric dict) anywhere in a result JSON,
+    ignoring schema differences between h5 and h7 exports."""
+    found = {}
+
+    def walk(o):
+        if isinstance(o, dict):
+            for k, v in o.items():
+                if k in ("mIoU", "miou", "mean_iou", "m_iou") and isinstance(v, (int, float)) and "mIoU" not in found:
+                    found["mIoU"] = float(v)
+                if k == "per_class" and isinstance(v, dict) and "per_class" not in found:
+                    found["per_class"] = {str(kk): float(vv) for kk, vv in v.items() if isinstance(vv, (int, float))}
+                walk(v)
+        elif isinstance(o, list):
+            for x in o:
+                walk(x)
+
+    walk(obj)
+    return found
+
+
+def compare_h5_h7_metrics(h5_path: str, h7_path: str) -> dict:
+    a = extract_metrics(json_load_safe(h5_path))
+    b = extract_metrics(json_load_safe(h7_path))
+    res = {"h5": h5_path, "h7": h7_path, "h5_metrics": a, "h7_metrics": b}
+    if "mIoU" not in a or "mIoU" not in b:
+        res["metrics_equal"] = False
+        res["reason"] = "mIoU key missing in one of the files"
+        return res
+    miou_eq = abs(a["mIoU"] - b["mIoU"]) <= 1e-9
+    pa, pb = a.get("per_class"), b.get("per_class")
+    pc_eq = False
+    if isinstance(pa, dict) and isinstance(pb, dict) and set(pa) == set(pb):
+        pc_eq = all(abs(pa[k] - pb[k]) <= 1e-9 for k in pa)
+    res["miou_equal"] = miou_eq
+    res["per_class_equal"] = pc_eq
+    res["metrics_equal"] = bool(miou_eq and pc_eq)
+    return res
+
+
+def build_manifest() -> dict:
+    b1 = hash_asset(B_LOCAL)
+    b2 = hash_asset(B_REMOTE_COPY)
+    b_match = bool(b1["exists"] and b2["exists"] and b1["sha256"] == b2["sha256"])
+    h5h7 = compare_h5_h7_metrics(H5, H7) if (os.path.isfile(H5) and os.path.isfile(H7)) else None
+    manifest = {
+        "scope_note": "asset audit only; reads fixed scoped paths; never invents paths or hashes",
+        "assets": {
+            "D_student_only_2000": {**hash_asset(STUDENT_D), "role": "student-only checkpoint (D config)"},
+            "B_local": {**b1, "role": "B weights (local)"},
+            "B_remote_copy": {**b2, "role": "B weights (remote trial_b copy)"},
+            "E4_reference": {**hash_asset(E4), "role": "E4 reference weights"},
+            "MA_audit_champion": {**hash_asset(MA), "role": "MA audit champion"},
+            "D_full_remote": {
+                "path": D_REMOTE, "exists": False, "sha256": "UNKNOWN",
+                "status": "REMOTE_ASSET_PENDING", "blocks_champion": False,
+                "reconstructable": True,
+                "reconstruction_from": ["D_student_only_2000", "B_local (hash-verified)"],
+                "note": "reconstruction is config-level, not a fake weight hash",
+            },
+            "E_champion": {
+                "path": E_REMOTE, "exists": False, "sha256": "UNKNOWN",
+                "status": "REMOTE_ASSET_PENDING", "blocks_champion": True,
+                "note": "remote recovery pending; champion claim blocked until real hash obtained",
+            },
+        },
+        "B_hash_match": b_match,
+        "h5_h7": h5h7,
+        "status": "LOCAL_READY_REMOTE_ASSET_PENDING",
+    }
+    return manifest
+
+
+def _read_lines(path: str) -> List[str]:
+    if not os.path.isfile(path):
+        return []
+    with open(path, "r", encoding="utf-8") as f:
+        return [ln.strip() for ln in f if ln.strip()]
+
+
+def audit_split(data_root: str = DATA_ROOT, do_hash: bool = False) -> dict:
+    """Structural audit of images/<split>, labels/<split>/<stem>.png,
+    split_assignment.json (dict filename.jpg -> {split: ...}) and txt lists.
+    Class subfolders under labels/ (EX/HE/SE/MA) are ignored for the aggregate mask.
+    """
+    report = {
+        "data_root": data_root, "expected": EXPECTED, "status": "BLOCKED",
+        "splits": {}, "cross_split_stem_overlaps": {},
+        "duplicate_bytes_across_splits": [],
+    }
+    assign_path = os.path.join(data_root, "split_assignment.json")
+    assignment: Dict[str, str] = {}
+    if os.path.isfile(assign_path):
+        raw = json_load_safe(assign_path)
+        if isinstance(raw, dict):
+            for fname, meta in raw.items():
+                if isinstance(meta, dict) and "split" in meta:
+                    assignment[str(fname)] = str(meta["split"])
+    hash_index = {}
+    overall_ok = True
+    for split in SPLITS:
+        txt = _read_lines(os.path.join(data_root, split + ".txt"))
+        img_dir = os.path.join(data_root, "images", split)
+        disk = sorted(f for f in os.listdir(img_dir) if os.path.isfile(os.path.join(img_dir, f))) \
+            if os.path.isdir(img_dir) else []
+        assigned = sorted(f for f, s in assignment.items() if s == split)
+        s_txt, s_disk, s_assign = set(txt), set(disk), set(assigned)
+        agreement = (s_txt == s_disk == s_assign)
+        stems = [os.path.splitext(f)[0] for f in txt]
+        dup_stems = sorted({s for s in stems if stems.count(s) > 1})
+        labels_ok = all(
+            os.path.isfile(os.path.join(data_root, "labels", split, st + ".png")) for st in stems
+        )
+        count_ok = len(txt) == EXPECTED[split]
+        rep = {
+            "count": len(txt), "count_ok": count_ok,
+            "agreement_txt_disk_assignment": agreement,
+            "missing_on_disk": sorted(s_txt - s_disk),
+            "missing_in_txt": sorted(s_disk - s_txt),
+            "missing_in_assignment": sorted(s_txt - s_assign),
+            "duplicate_stems": dup_stems, "labels_present": labels_ok,
+        }
+        rep["ok"] = bool(agreement and count_ok and not dup_stems and labels_ok)
+        overall_ok = overall_ok and rep["ok"]
+        report["splits"][split] = rep
+        if do_hash:
+            for f in txt:
+                for sub, name in (("images", f), ("labels", os.path.splitext(f)[0] + ".png")):
+                    p = os.path.join(data_root, sub, split, name)
+                    if os.path.isfile(p):
+                        h = sha256(p)
+                        hash_index.setdefault(h, []).append({"split": split, "kind": sub, "file": name})
+    stem_sets = {
+        s: {os.path.splitext(f)[0] for f in _read_lines(os.path.join(data_root, s + ".txt"))}
+        for s in SPLITS
+    }
+    overlaps = {}
+    for i, a in enumerate(SPLITS):
+        for b in SPLITS[i + 1:]:
+            inter = sorted(stem_sets[a] & stem_sets[b])
+            if inter:
+                overlaps[f"{a}|{b}"] = inter
+    report["cross_split_stem_overlaps"] = overlaps
+    overall_ok = overall_ok and not overlaps
+    if do_hash:
+        report["duplicate_bytes_across_splits"] = [
+            {"sha256": h, "occurrences": occ}
+            for h, occ in hash_index.items()
+            if len({o["split"] for o in occ}) > 1
+        ]
+        report["hash_note"] = "duplicate image/mask bytes detected across splits; recorded, NOT deduped automatically"
+    report["status"] = "OK" if overall_ok else "BLOCKED"
+    return report
+
+
+def main(argv=None):
+    p = argparse.ArgumentParser(prog="asset_inventory", description="Scoped asset + split audit (read-only on sources)")
+    p.add_argument("--out-dir", required=True, help="new directory to write asset_manifest.json and split_audit.json")
+    p.add_argument("--hash", action="store_true", help="hash all images/masks (content identity + cross-split duplicate detection)")
+    args = p.parse_args(argv)
+    os.makedirs(args.out_dir, exist_ok=True)  # only writes into the requested new dir
+    split = audit_split(DATA_ROOT, do_hash=args.hash)
+    with open(os.path.join(args.out_dir, "split_audit.json"), "w", encoding="utf-8") as f:
+        json.dump(split, f, indent=2, ensure_ascii=False)
+    manifest = build_manifest()
+    with open(os.path.join(args.out_dir, "asset_manifest.json"), "w", encoding="utf-8") as f:
+        json.dump(manifest, f, indent=2, ensure_ascii=False)
+    print(json.dumps({"manifest_status": manifest["status"], "split_status": split["status"]}, ensure_ascii=False))
+
+
+if __name__ == "__main__":
+    main()
+
+SOURCE run_guarded.sh
+#!/usr/bin/env bash
+# run_guarded.sh: deadline-guarded run. Linux-only real shutdown.
+set -euo pipefail
+
+SETTINGS_FILE="${1:?usage: run_guarded.sh <settings-file> <run-dir> [backup-seconds]}"
+RUN_DIR="${2:?usage: run_guarded.sh <settings-file> <run-dir> [backup-seconds]}"
+BACKUP_SECONDS="${3:-600}"
+
+mkdir -p "$RUN_DIR"
+
+if [ ! -f "$RUN_DIR/budget_ledger.json" ]; then
+  echo "ledger missing; run: python ops.py init --started-at <UTC ISO8601> --other-cost <float> --run-dir $RUN_DIR" >&2
+  exit 2
+fi
+
+# Start watchdog (nohup, background) before workload.
+nohup python3 ops.py watchdog --run-dir "$RUN_DIR" \
+  >"$RUN_DIR/watchdog.log" 2>&1 &
+WATCHDOG_PID=$!
+echo "watchdog pid=$WATCHDOG_PID"
+
+cleanup_success() {
+  kill "$WATCHDOG_PID" 2>/dev/null || true
+  shutdown -h now
+}
+cleanup_error() {
+  kill "$WATCHDOG_PID" 2>/dev/null || true
+  shutdown -h now
+}
+trap cleanup_success EXIT
+trap 'cleanup_error' ERR INT TERM
+
+# Deadline-bounded backup: capped so it cannot exceed remaining budget window.
+DEADLINE_EPOCH=$(python3 - <<'PY'
+import json, sys, os
+sys.path.insert(0, os.path.dirname(os.path.abspath("ops.py")))
+import ops
+led = ops.load_ledger(os.environ.get("RUN_DIR", "."))
+print(int(ops.deadline_of(led).timestamp()))
+PY
+)
+RUN_DIR="$RUN_DIR" DEADLINE_EPOCH="$DEADLINE_EPOCH" python3 - <<'PY'
+import os, sys, time
+import ops
+led = ops.load_ledger(os.environ["RUN_DIR"])
+remaining = ops.deadline_of(led).timestamp() - time.time()
+if remaining <= 0:
+    sys.exit(3)
+print("seconds remaining:", int(remaining))
+PY
+
+declare -f run_backup >/dev/null 2>&1 || run_backup() {
+  echo "[backup] default no-op backup (bounded by timeout)"
+}
+
+REMAINING=$(( DEADLINE_EPOCH - $(date +%s) ))
+if [ "$REMAINING" -le 0 ]; then
+  echo "deadline already passed" >&2
+  exit 3
+fi
+# Backup bounded: min(BACKUP_SECONDS, REMAINING - 60s reserve for workload)
+BACKUP_CAP=$(( REMAINING - 60 ))
+if [ "$BACKUP_CAP" -gt "$BACKUP_SECONDS" ]; then BACKUP_CAP="$BACKUP_SECONDS"; fi
+timeout "$BACKUP_CAP" bash -c 'run_backup' || echo "[backup] bounded exit"
+
+# Verify time remains for workload; watchdog will hard-cut at deadline.
+REMAINING=$(( DEADLINE_EPOCH - $(date +%s) ))
+if [ "$REMAINING" -le 0 ]; then
+  echo "no time remaining for workload" >&2
+  exit 3
+fi
+
+python3 run_protocol.py --settings "$SETTINGS_FILE" --run-dir "$RUN_DIR"
+
+SOURCE storage_preflight.py
+# storage_preflight.py
+"""Prep-only storage gate: estimate cache (image byte spans) + checkpoints vs free disk. No writes except --out-json."""
+import argparse, json, os, shutil, sys
+from pathlib import Path
+
+def image_bytes(data_root: Path) -> int:
+    from PIL import Image
+    total = 0
+    n = 0
+    for p in sorted(Path(data_root).rglob("*")):
+        if p.suffix.lower() not in (".png", ".jpg", ".jpeg", ".bmp", ".tif", ".tiff"):
+            continue
+        with Image.open(p) as im:
+            w, h = im.size  # header only; PIL lazy-loads
+        total += w * h * 16  # reference HWC float32 x4 channels
+        n += 1
+    return total, n
+
+def check_storage(data_root, cache_dir, run_dir, student_ckpt, reference_ckpt,
+                  num_checkpoints=24, headroom_frac=0.20, headroom_gib=2.0):
+    cache_dir = Path(cache_dir); run_dir = Path(run_dir)
+    missing = []
+    for p, label in ((data_root, "data-root"), (student_ckpt, "student-checkpoint"),
+                     (reference_ckpt, "reference-checkpoint")):
+        if not Path(p).exists():
+            missing.append(label)
+    if missing:
+        return {"status": "block", "reason": f"missing inputs: {missing}"}
+
+    img_bytes, n_imgs = image_bytes(data_root)
+    student_sz = Path(student_ckpt).stat().st_size
+    ref_sz = Path(reference_ckpt).stat().st_size
+    per_ckpt = 2 * (student_sz + ref_sz)  # student+reference, conservative
+    ckpt_bytes = per_ckpt * num_checkpoints
+
+    required = img_bytes + ckpt_bytes
+    required *= 1.0 + headroom_frac
+    required += int(headroom_gib * (1 << 30))
+
+    def free_for(d: Path) -> int:
+        d = Path(d).resolve()
+        while not d.exists():
+            d = d.parent  # nearest existing parent
+        return shutil.disk_usage(str(d)).free, str(d)
+
+    cache_free, cache_fs = free_for(cache_dir)
+    run_free, run_fs = free_for(run_dir)
+    same_fs = os.stat(cache_fs).st_dev == os.stat(run_fs).st_dev
+
+    if same_fs:
+        free = min(cache_free, run_free)
+        ok = required <= free
+    else:
+        # cache holds image spans; run holds checkpoints
+        ok = (img_bytes <= cache_free) and (ckpt_bytes <= run_free)
+        free = cache_free + run_free
+
+    return {
+        "status": "ok" if ok else "block",
+        "images": {"count": n_imgs, "bytes": img_bytes},
+        "checkpoints": {"per_ckpt_bytes": per_ckpt, "count": num_checkpoints, "bytes": ckpt_bytes},
+        "required_bytes": int(required),
+        "free_bytes": int(free),
+        "same_filesystem": same_fs,
+        "cache_free_bytes": int(cache_free), "run_free_bytes": int(run_free),
+    }
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--data-root", required=True)
+    ap.add_argument("--cache-dir", required=True)
+    ap.add_argument("--run-dir", required=True)
+    ap.add_argument("--student-checkpoint", required=True)
+    ap.add_argument("--reference-checkpoint", required=True)
+    ap.add_argument("--out-json", required=True)
+    a = ap.parse_args()
+
+    report = check_storage(a.data_root, a.cache_dir, a.run_dir,
+                           a.student_checkpoint, a.reference_checkpoint)
+    out = Path(a.out_json)
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(json.dumps(report, indent=2))
+    sys.exit(0 if report["status"] == "ok" else 2)
+
+if __name__ == "__main__":
+    main()

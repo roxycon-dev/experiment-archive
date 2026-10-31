@@ -1,0 +1,895 @@
+{
+  "created_at": "2026-10-03T16:28:46.872539+00:00",
+  "root": "D:\\dataset\\experiment",
+  "authorization": "User explicitly requested deletion of confirmed useless failed local checkpoints on 2026-10-04.",
+  "scope": "Explicit individual files only; local workspace only; preserve uncertain files and all logs/data/configs/archives.",
+  "delete": [
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_FullCompetition_20260920\\tests\\_tmp_training\\weights\\synthetic_encoder.pth",
+      "relative_path": "HRDecoder_FullCompetition_20260920\\tests\\_tmp_training\\weights\\synthetic_encoder.pth",
+      "bytes": 197918010,
+      "mtime_ns": 1789874253692535900,
+      "inode": 2251799814143976,
+      "reason": "Regenerable synthetic test fixture; never a real experiment or pretrained model.",
+      "evidence": [
+        "HRDecoder_FullCompetition_20260920/tests/run_training_smoke.py",
+        "HRDecoder_FullCompetition_20260920/tests/run_contract_smoke.py"
+      ],
+      "expected_sha256": null
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_FullCompetition_20260920\\tests\\_tmp_training\\accum\\ckpt_best.pth",
+      "relative_path": "HRDecoder_FullCompetition_20260920\\tests\\_tmp_training\\accum\\ckpt_best.pth",
+      "bytes": 32850,
+      "mtime_ns": 1789874245744028200,
+      "inode": 1970324837433325,
+      "reason": "Regenerable synthetic test fixture; never a real experiment or pretrained model.",
+      "evidence": [
+        "HRDecoder_FullCompetition_20260920/tests/run_training_smoke.py",
+        "HRDecoder_FullCompetition_20260920/tests/run_contract_smoke.py"
+      ],
+      "expected_sha256": null
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_FullCompetition_20260920\\tests\\_tmp_training\\accum\\ckpt_last.pth",
+      "relative_path": "HRDecoder_FullCompetition_20260920\\tests\\_tmp_training\\accum\\ckpt_last.pth",
+      "bytes": 32850,
+      "mtime_ns": 1789874245752758000,
+      "inode": 1970324837433326,
+      "reason": "Regenerable synthetic test fixture; never a real experiment or pretrained model.",
+      "evidence": [
+        "HRDecoder_FullCompetition_20260920/tests/run_training_smoke.py",
+        "HRDecoder_FullCompetition_20260920/tests/run_contract_smoke.py"
+      ],
+      "expected_sha256": null
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_FullCompetition_20260920\\tests\\_tmp_training\\resume\\ckpt_best.pth",
+      "relative_path": "HRDecoder_FullCompetition_20260920\\tests\\_tmp_training\\resume\\ckpt_best.pth",
+      "bytes": 32850,
+      "mtime_ns": 1789874247025715100,
+      "inode": 3377699720986620,
+      "reason": "Regenerable synthetic test fixture; never a real experiment or pretrained model.",
+      "evidence": [
+        "HRDecoder_FullCompetition_20260920/tests/run_training_smoke.py",
+        "HRDecoder_FullCompetition_20260920/tests/run_contract_smoke.py"
+      ],
+      "expected_sha256": null
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_FullCompetition_20260920\\tests\\_tmp_training\\resume\\ckpt_last.pth",
+      "relative_path": "HRDecoder_FullCompetition_20260920\\tests\\_tmp_training\\resume\\ckpt_last.pth",
+      "bytes": 32850,
+      "mtime_ns": 1789874247033233900,
+      "inode": 3377699720986617,
+      "reason": "Regenerable synthetic test fixture; never a real experiment or pretrained model.",
+      "evidence": [
+        "HRDecoder_FullCompetition_20260920/tests/run_training_smoke.py",
+        "HRDecoder_FullCompetition_20260920/tests/run_contract_smoke.py"
+      ],
+      "expected_sha256": null
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_FullCompetition_20260920\\tests\\_tmp_training\\sched\\ckpt_best.pth",
+      "relative_path": "HRDecoder_FullCompetition_20260920\\tests\\_tmp_training\\sched\\ckpt_best.pth",
+      "bytes": 32850,
+      "mtime_ns": 1789874246176002100,
+      "inode": 1970324837433331,
+      "reason": "Regenerable synthetic test fixture; never a real experiment or pretrained model.",
+      "evidence": [
+        "HRDecoder_FullCompetition_20260920/tests/run_training_smoke.py",
+        "HRDecoder_FullCompetition_20260920/tests/run_contract_smoke.py"
+      ],
+      "expected_sha256": null
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_FullCompetition_20260920\\tests\\_tmp_training\\sched\\ckpt_last.pth",
+      "relative_path": "HRDecoder_FullCompetition_20260920\\tests\\_tmp_training\\sched\\ckpt_last.pth",
+      "bytes": 32850,
+      "mtime_ns": 1789874246183523500,
+      "inode": 1970324837433332,
+      "reason": "Regenerable synthetic test fixture; never a real experiment or pretrained model.",
+      "evidence": [
+        "HRDecoder_FullCompetition_20260920/tests/run_training_smoke.py",
+        "HRDecoder_FullCompetition_20260920/tests/run_contract_smoke.py"
+      ],
+      "expected_sha256": null
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_FullCompetition_20260920\\tests\\_tmp_training\\accum\\ckpt_final.pth",
+      "relative_path": "HRDecoder_FullCompetition_20260920\\tests\\_tmp_training\\accum\\ckpt_final.pth",
+      "bytes": 31826,
+      "mtime_ns": 1789874245774376200,
+      "inode": 1970324837433327,
+      "reason": "Regenerable synthetic test fixture; never a real experiment or pretrained model.",
+      "evidence": [
+        "HRDecoder_FullCompetition_20260920/tests/run_training_smoke.py",
+        "HRDecoder_FullCompetition_20260920/tests/run_contract_smoke.py"
+      ],
+      "expected_sha256": null
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_FullCompetition_20260920\\tests\\_tmp_training\\resume\\ckpt_final.pth",
+      "relative_path": "HRDecoder_FullCompetition_20260920\\tests\\_tmp_training\\resume\\ckpt_final.pth",
+      "bytes": 31826,
+      "mtime_ns": 1789874247042752200,
+      "inode": 3377699720986621,
+      "reason": "Regenerable synthetic test fixture; never a real experiment or pretrained model.",
+      "evidence": [
+        "HRDecoder_FullCompetition_20260920/tests/run_training_smoke.py",
+        "HRDecoder_FullCompetition_20260920/tests/run_contract_smoke.py"
+      ],
+      "expected_sha256": null
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_FullCompetition_20260920\\tests\\_tmp_training\\sched\\ckpt_final.pth",
+      "relative_path": "HRDecoder_FullCompetition_20260920\\tests\\_tmp_training\\sched\\ckpt_final.pth",
+      "bytes": 31826,
+      "mtime_ns": 1789874246191555200,
+      "inode": 1970324837433333,
+      "reason": "Regenerable synthetic test fixture; never a real experiment or pretrained model.",
+      "evidence": [
+        "HRDecoder_FullCompetition_20260920/tests/run_training_smoke.py",
+        "HRDecoder_FullCompetition_20260920/tests/run_contract_smoke.py"
+      ],
+      "expected_sha256": null
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_FullCompetition_20260920\\tests\\_tmp_training\\calibck\\ckpt_calib.pth",
+      "relative_path": "HRDecoder_FullCompetition_20260920\\tests\\_tmp_training\\calibck\\ckpt_calib.pth",
+      "bytes": 20484,
+      "mtime_ns": 1789874247066062300,
+      "inode": 1970324837433344,
+      "reason": "Regenerable synthetic test fixture; never a real experiment or pretrained model.",
+      "evidence": [
+        "HRDecoder_FullCompetition_20260920/tests/run_training_smoke.py",
+        "HRDecoder_FullCompetition_20260920/tests/run_contract_smoke.py"
+      ],
+      "expected_sha256": null
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_FullCompetition_20260920\\tests\\_tmp_training\\calibck\\ckpt_formal.pth",
+      "relative_path": "HRDecoder_FullCompetition_20260920\\tests\\_tmp_training\\calibck\\ckpt_formal.pth",
+      "bytes": 20484,
+      "mtime_ns": 1789874247077849200,
+      "inode": 1970324837433345,
+      "reason": "Regenerable synthetic test fixture; never a real experiment or pretrained model.",
+      "evidence": [
+        "HRDecoder_FullCompetition_20260920/tests/run_training_smoke.py",
+        "HRDecoder_FullCompetition_20260920/tests/run_contract_smoke.py"
+      ],
+      "expected_sha256": null
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_FullCompetition_20260920\\tests\\_tmp_training\\ckfields\\ckpt_fields.pth",
+      "relative_path": "HRDecoder_FullCompetition_20260920\\tests\\_tmp_training\\ckfields\\ckpt_fields.pth",
+      "bytes": 20484,
+      "mtime_ns": 1789874247052038200,
+      "inode": 1970324837433342,
+      "reason": "Regenerable synthetic test fixture; never a real experiment or pretrained model.",
+      "evidence": [
+        "HRDecoder_FullCompetition_20260920/tests/run_training_smoke.py",
+        "HRDecoder_FullCompetition_20260920/tests/run_contract_smoke.py"
+      ],
+      "expected_sha256": null
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_FullCompetition_20260920\\tests\\_tmp_training\\pf\\ckpt_rt.pth",
+      "relative_path": "HRDecoder_FullCompetition_20260920\\tests\\_tmp_training\\pf\\ckpt_rt.pth",
+      "bytes": 20484,
+      "mtime_ns": 1789874244971952200,
+      "inode": 2251799814143957,
+      "reason": "Regenerable synthetic test fixture; never a real experiment or pretrained model.",
+      "evidence": [
+        "HRDecoder_FullCompetition_20260920/tests/run_training_smoke.py",
+        "HRDecoder_FullCompetition_20260920/tests/run_contract_smoke.py"
+      ],
+      "expected_sha256": null
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_FullCompetition_20260920\\tests\\_tmp\\weights\\imagenet_dummy.pth",
+      "relative_path": "HRDecoder_FullCompetition_20260920\\tests\\_tmp\\weights\\imagenet_dummy.pth",
+      "bytes": 91,
+      "mtime_ns": 1789874241693335100,
+      "inode": 3377699720986412,
+      "reason": "Regenerable synthetic test fixture; never a real experiment or pretrained model.",
+      "evidence": [
+        "HRDecoder_FullCompetition_20260920/tests/run_training_smoke.py",
+        "HRDecoder_FullCompetition_20260920/tests/run_contract_smoke.py"
+      ],
+      "expected_sha256": null
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_FullCompetition_20260920\\tests\\_tmp\\weights\\encoder_dummy.pth",
+      "relative_path": "HRDecoder_FullCompetition_20260920\\tests\\_tmp\\weights\\encoder_dummy.pth",
+      "bytes": 83,
+      "mtime_ns": 1789874241695333700,
+      "inode": 3377699720986414,
+      "reason": "Regenerable synthetic test fixture; never a real experiment or pretrained model.",
+      "evidence": [
+        "HRDecoder_FullCompetition_20260920/tests/run_training_smoke.py",
+        "HRDecoder_FullCompetition_20260920/tests/run_contract_smoke.py"
+      ],
+      "expected_sha256": null
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_FullCompetition_20260920\\tests\\_tmp\\weights\\external_pretrain_dummy.pth",
+      "relative_path": "HRDecoder_FullCompetition_20260920\\tests\\_tmp\\weights\\external_pretrain_dummy.pth",
+      "bytes": 76,
+      "mtime_ns": 1789874241694334000,
+      "inode": 3377699720986413,
+      "reason": "Regenerable synthetic test fixture; never a real experiment or pretrained model.",
+      "evidence": [
+        "HRDecoder_FullCompetition_20260920/tests/run_training_smoke.py",
+        "HRDecoder_FullCompetition_20260920/tests/run_contract_smoke.py"
+      ],
+      "expected_sha256": null
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_FullCompetition_20260920\\tests\\_tmp\\weights\\init_ckpt_output_dummy.pth",
+      "relative_path": "HRDecoder_FullCompetition_20260920\\tests\\_tmp\\weights\\init_ckpt_output_dummy.pth",
+      "bytes": 67,
+      "mtime_ns": 1789874241696333000,
+      "inode": 3377699720986415,
+      "reason": "Regenerable synthetic test fixture; never a real experiment or pretrained model.",
+      "evidence": [
+        "HRDecoder_FullCompetition_20260920/tests/run_training_smoke.py",
+        "HRDecoder_FullCompetition_20260920/tests/run_contract_smoke.py"
+      ],
+      "expected_sha256": null
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_FusionAware_20260917\\pulled\\final_20260918T184943\\ma_expert_r6b.pth",
+      "relative_path": "HRDecoder_FusionAware_20260917\\pulled\\final_20260918T184943\\ma_expert_r6b.pth",
+      "bytes": 7758709,
+      "mtime_ns": 1789728594684531300,
+      "inode": 844424930588324,
+      "reason": "Explicitly rejected R6/R6b head/expert; no adopted head or deployment dependency.",
+      "evidence": [
+        "HRDecoder_FusionAware_20260917/pulled/final_20260918T184943/r6b_summary.json"
+      ],
+      "expected_sha256": "4805111323e1bd5462cd5766d9beedae9de580759034816e3f36565c3e016fb7"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_FusionAware_20260917\\pulled\\final_20260918T184943\\ma_expert_r6.pth",
+      "relative_path": "HRDecoder_FusionAware_20260917\\pulled\\final_20260918T184943\\ma_expert_r6.pth",
+      "bytes": 7758277,
+      "mtime_ns": 1789728590798523300,
+      "inode": 844424930588317,
+      "reason": "Explicitly rejected R6/R6b head/expert; no adopted head or deployment dependency.",
+      "evidence": [
+        "HRDecoder_FusionAware_20260917/pulled/final_20260918T184943/r6_summary.json"
+      ],
+      "expected_sha256": "b7147284819dd2e9b21468944f5935821e2462b877fdacbd7a334027be5220de"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_FusionAware_20260917\\pulled\\final_20260918T184943\\head_HE.pth",
+      "relative_path": "HRDecoder_FusionAware_20260917\\pulled\\final_20260918T184943\\head_HE.pth",
+      "bytes": 15383,
+      "mtime_ns": 1789728588291020300,
+      "inode": 844424930588315,
+      "reason": "Explicitly rejected R6/R6b head/expert; no adopted head or deployment dependency.",
+      "evidence": [
+        "HRDecoder_FusionAware_20260917/pulled/final_20260918T184943/r6_summary.json"
+      ],
+      "expected_sha256": "d73af6ca22096a396bf623be8cfa144c72a354ca43df4f53cbd441c1c88c9487"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Next_20261003\\server_results\\work\\M_seed42\\M1\\last.pth",
+      "relative_path": "HRDecoder_Next_20261003\\server_results\\work\\M_seed42\\M1\\last.pth",
+      "bytes": 631197747,
+      "mtime_ns": 1791021166533977800,
+      "inode": 57139420272708472,
+      "reason": "Closed M experiment stopped for paired negative results; no continuation authorized. Remove obsolete optimizer/RNG recovery checkpoint, keep this arm best.pth and all evidence.",
+      "evidence": [
+        "HRDecoder_Next_20261003/reports/completion_status.json",
+        "HRDecoder_Next_20261003/server_results/work/M_seed42/selection.json"
+      ],
+      "expected_sha256": "e34e1fbd23b627d01273a4c914541f17f24da983a00416019ba95e6f7a6d1f4e"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Next_20261003\\server_results\\work\\M_seed42\\M0\\last.pth",
+      "relative_path": "HRDecoder_Next_20261003\\server_results\\work\\M_seed42\\M0\\last.pth",
+      "bytes": 631115571,
+      "mtime_ns": 1791021281207260600,
+      "inode": 2533274790840324,
+      "reason": "Closed M experiment stopped for paired negative results; no continuation authorized. Remove obsolete optimizer/RNG recovery checkpoint, keep this arm best.pth and all evidence.",
+      "evidence": [
+        "HRDecoder_Next_20261003/reports/completion_status.json",
+        "HRDecoder_Next_20261003/server_results/work/M_seed42/selection.json"
+      ],
+      "expected_sha256": "562a5ddabe596161db7e4957afb70fc1c13904bebb38173c2e24b977d138e915"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\H1_external_pretrain\\ckpt_best.pth",
+      "relative_path": "HRDecoder_Ready_20261002\\server_results\\work_dirs\\H1_external_pretrain\\ckpt_best.pth",
+      "bytes": 812859935,
+      "mtime_ns": 1790918330361939100,
+      "inode": 4222124651026145,
+      "reason": "Closed, unadopted Ready experiment: remove its obsolete full training checkpoint. Keep Next/assets/U1.pth and H1.pth as the existing model-only historical copies.",
+      "evidence": [
+        "HRDecoder_Ready_20261002/server_results/work_dirs/campaign_state.json",
+        "_全实验档案_20260920/04_本轮实验补充_20261002.md",
+        "HRDecoder_Ready_20261002/best_pipeline/local_weight_manifest.json"
+      ],
+      "expected_sha256": "3aa43faa5ad38f0c6409ba8b518cb8783d319f5b8a5e4b8dce7ccfd25cfaf408"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\H1_ddr_finetune\\ckpt_best.pth",
+      "relative_path": "HRDecoder_Ready_20261002\\server_results\\work_dirs\\H1_ddr_finetune\\ckpt_best.pth",
+      "bytes": 812859871,
+      "mtime_ns": 1790935140557463000,
+      "inode": 3377699720894341,
+      "reason": "Closed, unadopted Ready experiment: remove its obsolete full training checkpoint. Keep Next/assets/U1.pth and H1.pth as the existing model-only historical copies.",
+      "evidence": [
+        "HRDecoder_Ready_20261002/server_results/work_dirs/campaign_state.json",
+        "_全实验档案_20260920/04_本轮实验补充_20261002.md",
+        "HRDecoder_Ready_20261002/best_pipeline/local_weight_manifest.json"
+      ],
+      "expected_sha256": "74fcd879ea96cbc29b1200bbba4d58166c837e87389b09e5a3860f4f2467438b"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\U1_external_pretrain\\ckpt_best.pth",
+      "relative_path": "HRDecoder_Ready_20261002\\server_results\\work_dirs\\U1_external_pretrain\\ckpt_best.pth",
+      "bytes": 636327027,
+      "mtime_ns": 1790912213310079700,
+      "inode": 2251799814051374,
+      "reason": "Closed, unadopted Ready experiment: remove its obsolete full training checkpoint. Keep Next/assets/U1.pth and H1.pth as the existing model-only historical copies.",
+      "evidence": [
+        "HRDecoder_Ready_20261002/server_results/work_dirs/campaign_state.json",
+        "_全实验档案_20260920/04_本轮实验补充_20261002.md",
+        "HRDecoder_Ready_20261002/best_pipeline/local_weight_manifest.json"
+      ],
+      "expected_sha256": "08db330000591ce7942e4d70b06017849ff0f3c03fa4e60edb7801a064da351a"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\U1_ddr_finetune\\ckpt_best.pth",
+      "relative_path": "HRDecoder_Ready_20261002\\server_results\\work_dirs\\U1_ddr_finetune\\ckpt_best.pth",
+      "bytes": 636326899,
+      "mtime_ns": 1790915095944930500,
+      "inode": 3096224744183472,
+      "reason": "Closed, unadopted Ready experiment: remove its obsolete full training checkpoint. Keep Next/assets/U1.pth and H1.pth as the existing model-only historical copies.",
+      "evidence": [
+        "HRDecoder_Ready_20261002/server_results/work_dirs/campaign_state.json",
+        "_全实验档案_20260920/04_本轮实验补充_20261002.md",
+        "HRDecoder_Ready_20261002/best_pipeline/local_weight_manifest.json"
+      ],
+      "expected_sha256": "ec5a680803f6687ebd3c7af35a30de1a92e5d5062085947762fddea3241d3b72"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\A0_ddr_finetune\\ckpt_best.pth",
+      "relative_path": "HRDecoder_Ready_20261002\\server_results\\work_dirs\\A0_ddr_finetune\\ckpt_best.pth",
+      "bytes": 307230421,
+      "mtime_ns": 1790950427735131200,
+      "inode": 4503599627737492,
+      "reason": "Closed, unadopted Ready experiment: remove its obsolete full training checkpoint. Keep Next/assets/U1.pth and H1.pth as the existing model-only historical copies.",
+      "evidence": [
+        "HRDecoder_Ready_20261002/server_results/work_dirs/campaign_state.json",
+        "_全实验档案_20260920/04_本轮实验补充_20261002.md",
+        "HRDecoder_Ready_20261002/best_pipeline/local_weight_manifest.json"
+      ],
+      "expected_sha256": "f28019907d51c330b88800b55f81a61b6a5cca0d7387eacb591828ba314debd6"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\tests\\_tmp_training\\weights\\synthetic_encoder.pth",
+      "relative_path": "HRDecoder_Ready_20261002\\tests\\_tmp_training\\weights\\synthetic_encoder.pth",
+      "bytes": 197918010,
+      "mtime_ns": 1790904142218729900,
+      "inode": 1407374883914211,
+      "reason": "Regenerable synthetic test fixture; never a real experiment or pretrained model.",
+      "evidence": [
+        "HRDecoder_Ready_20261002/tests/run_training_smoke.py",
+        "HRDecoder_Ready_20261002/tests/run_contract_smoke.py"
+      ],
+      "expected_sha256": null
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\tests\\_tmp_training\\accum\\ckpt_best.pth",
+      "relative_path": "HRDecoder_Ready_20261002\\tests\\_tmp_training\\accum\\ckpt_best.pth",
+      "bytes": 32914,
+      "mtime_ns": 1790904096636042200,
+      "inode": 1407374883914216,
+      "reason": "Regenerable synthetic test fixture; never a real experiment or pretrained model.",
+      "evidence": [
+        "HRDecoder_Ready_20261002/tests/run_training_smoke.py",
+        "HRDecoder_Ready_20261002/tests/run_contract_smoke.py"
+      ],
+      "expected_sha256": null
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\tests\\_tmp_training\\accum\\ckpt_last.pth",
+      "relative_path": "HRDecoder_Ready_20261002\\tests\\_tmp_training\\accum\\ckpt_last.pth",
+      "bytes": 32914,
+      "mtime_ns": 1790904096840365300,
+      "inode": 1407374883914217,
+      "reason": "Regenerable synthetic test fixture; never a real experiment or pretrained model.",
+      "evidence": [
+        "HRDecoder_Ready_20261002/tests/run_training_smoke.py",
+        "HRDecoder_Ready_20261002/tests/run_contract_smoke.py"
+      ],
+      "expected_sha256": null
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\tests\\_tmp_training\\resume\\ckpt_best.pth",
+      "relative_path": "HRDecoder_Ready_20261002\\tests\\_tmp_training\\resume\\ckpt_best.pth",
+      "bytes": 32914,
+      "mtime_ns": 1790904126117597100,
+      "inode": 1688849860624891,
+      "reason": "Regenerable synthetic test fixture; never a real experiment or pretrained model.",
+      "evidence": [
+        "HRDecoder_Ready_20261002/tests/run_training_smoke.py",
+        "HRDecoder_Ready_20261002/tests/run_contract_smoke.py"
+      ],
+      "expected_sha256": null
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\tests\\_tmp_training\\resume\\ckpt_last.pth",
+      "relative_path": "HRDecoder_Ready_20261002\\tests\\_tmp_training\\resume\\ckpt_last.pth",
+      "bytes": 32914,
+      "mtime_ns": 1790904126172778100,
+      "inode": 1688849860624887,
+      "reason": "Regenerable synthetic test fixture; never a real experiment or pretrained model.",
+      "evidence": [
+        "HRDecoder_Ready_20261002/tests/run_training_smoke.py",
+        "HRDecoder_Ready_20261002/tests/run_contract_smoke.py"
+      ],
+      "expected_sha256": null
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\tests\\_tmp_training\\sched\\ckpt_best.pth",
+      "relative_path": "HRDecoder_Ready_20261002\\tests\\_tmp_training\\sched\\ckpt_best.pth",
+      "bytes": 32914,
+      "mtime_ns": 1790904103227935400,
+      "inode": 1407374883914224,
+      "reason": "Regenerable synthetic test fixture; never a real experiment or pretrained model.",
+      "evidence": [
+        "HRDecoder_Ready_20261002/tests/run_training_smoke.py",
+        "HRDecoder_Ready_20261002/tests/run_contract_smoke.py"
+      ],
+      "expected_sha256": null
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\tests\\_tmp_training\\sched\\ckpt_last.pth",
+      "relative_path": "HRDecoder_Ready_20261002\\tests\\_tmp_training\\sched\\ckpt_last.pth",
+      "bytes": 32914,
+      "mtime_ns": 1790904103276250700,
+      "inode": 1407374883914225,
+      "reason": "Regenerable synthetic test fixture; never a real experiment or pretrained model.",
+      "evidence": [
+        "HRDecoder_Ready_20261002/tests/run_training_smoke.py",
+        "HRDecoder_Ready_20261002/tests/run_contract_smoke.py"
+      ],
+      "expected_sha256": null
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\tests\\_tmp_training\\accum\\ckpt_final.pth",
+      "relative_path": "HRDecoder_Ready_20261002\\tests\\_tmp_training\\accum\\ckpt_final.pth",
+      "bytes": 31826,
+      "mtime_ns": 1790904097052728000,
+      "inode": 1407374883914219,
+      "reason": "Regenerable synthetic test fixture; never a real experiment or pretrained model.",
+      "evidence": [
+        "HRDecoder_Ready_20261002/tests/run_training_smoke.py",
+        "HRDecoder_Ready_20261002/tests/run_contract_smoke.py"
+      ],
+      "expected_sha256": null
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\tests\\_tmp_training\\resume\\ckpt_final.pth",
+      "relative_path": "HRDecoder_Ready_20261002\\tests\\_tmp_training\\resume\\ckpt_final.pth",
+      "bytes": 31826,
+      "mtime_ns": 1790904126216233400,
+      "inode": 1688849860624892,
+      "reason": "Regenerable synthetic test fixture; never a real experiment or pretrained model.",
+      "evidence": [
+        "HRDecoder_Ready_20261002/tests/run_training_smoke.py",
+        "HRDecoder_Ready_20261002/tests/run_contract_smoke.py"
+      ],
+      "expected_sha256": null
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\tests\\_tmp_training\\sched\\ckpt_final.pth",
+      "relative_path": "HRDecoder_Ready_20261002\\tests\\_tmp_training\\sched\\ckpt_final.pth",
+      "bytes": 31826,
+      "mtime_ns": 1790904103339381900,
+      "inode": 1407374883914226,
+      "reason": "Regenerable synthetic test fixture; never a real experiment or pretrained model.",
+      "evidence": [
+        "HRDecoder_Ready_20261002/tests/run_training_smoke.py",
+        "HRDecoder_Ready_20261002/tests/run_contract_smoke.py"
+      ],
+      "expected_sha256": null
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\tests\\_tmp_training\\ckfields\\ckpt_fields.pth",
+      "relative_path": "HRDecoder_Ready_20261002\\tests\\_tmp_training\\ckfields\\ckpt_fields.pth",
+      "bytes": 20548,
+      "mtime_ns": 1790904126294522800,
+      "inode": 1407374883914237,
+      "reason": "Regenerable synthetic test fixture; never a real experiment or pretrained model.",
+      "evidence": [
+        "HRDecoder_Ready_20261002/tests/run_training_smoke.py",
+        "HRDecoder_Ready_20261002/tests/run_contract_smoke.py"
+      ],
+      "expected_sha256": null
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\tests\\_tmp_training\\pf\\ckpt_rt.pth",
+      "relative_path": "HRDecoder_Ready_20261002\\tests\\_tmp_training\\pf\\ckpt_rt.pth",
+      "bytes": 20548,
+      "mtime_ns": 1790904087356016700,
+      "inode": 1407374883914191,
+      "reason": "Regenerable synthetic test fixture; never a real experiment or pretrained model.",
+      "evidence": [
+        "HRDecoder_Ready_20261002/tests/run_training_smoke.py",
+        "HRDecoder_Ready_20261002/tests/run_contract_smoke.py"
+      ],
+      "expected_sha256": null
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\tests\\_tmp_training\\calibck\\ckpt_calib.pth",
+      "relative_path": "HRDecoder_Ready_20261002\\tests\\_tmp_training\\calibck\\ckpt_calib.pth",
+      "bytes": 20484,
+      "mtime_ns": 1790904126388609800,
+      "inode": 1407374883914239,
+      "reason": "Regenerable synthetic test fixture; never a real experiment or pretrained model.",
+      "evidence": [
+        "HRDecoder_Ready_20261002/tests/run_training_smoke.py",
+        "HRDecoder_Ready_20261002/tests/run_contract_smoke.py"
+      ],
+      "expected_sha256": null
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\tests\\_tmp_training\\calibck\\ckpt_formal.pth",
+      "relative_path": "HRDecoder_Ready_20261002\\tests\\_tmp_training\\calibck\\ckpt_formal.pth",
+      "bytes": 20484,
+      "mtime_ns": 1790904126444584600,
+      "inode": 1407374883914240,
+      "reason": "Regenerable synthetic test fixture; never a real experiment or pretrained model.",
+      "evidence": [
+        "HRDecoder_Ready_20261002/tests/run_training_smoke.py",
+        "HRDecoder_Ready_20261002/tests/run_contract_smoke.py"
+      ],
+      "expected_sha256": null
+    }
+  ],
+  "keep": [
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_FullCompetition_20260920\\runs\\ckpt_best.pth",
+      "relative_path": "HRDecoder_FullCompetition_20260920\\runs\\ckpt_best.pth",
+      "bytes": 636326835,
+      "mtime_ns": 1789894849351252600,
+      "inode": 844424930590752,
+      "reason": "Retain: potentially useful historical, selected, pretrained, or diagnostic checkpoint."
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_FullCompetition_20260920\\refiner_v1\\logs\\formal_20260921_remote\\failure_20260921_122218\\stage2__last_opt.pth",
+      "relative_path": "HRDecoder_FullCompetition_20260920\\refiner_v1\\logs\\formal_20260921_remote\\failure_20260921_122218\\stage2__last_opt.pth",
+      "bytes": 217409,
+      "mtime_ns": 1789966034249775900,
+      "inode": 844424930593878,
+      "reason": "Retain: potentially useful historical, selected, pretrained, or diagnostic checkpoint."
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_FullCompetition_20260920\\refiner_v1\\runs\\smoke_w30_20260921\\refiner_last.pth",
+      "relative_path": "HRDecoder_FullCompetition_20260920\\refiner_v1\\runs\\smoke_w30_20260921\\refiner_last.pth",
+      "bytes": 108049,
+      "mtime_ns": 1789921263404093000,
+      "inode": 844424930593393,
+      "reason": "Retain: potentially useful historical, selected, pretrained, or diagnostic checkpoint."
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_FullCompetition_20260920\\refiner_v1\\runs\\smoke\\refiner_last.pth",
+      "relative_path": "HRDecoder_FullCompetition_20260920\\refiner_v1\\runs\\smoke\\refiner_last.pth",
+      "bytes": 107857,
+      "mtime_ns": 1789919390869570500,
+      "inode": 844424930593368,
+      "reason": "Retain: potentially useful historical, selected, pretrained, or diagnostic checkpoint."
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_FullCompetition_20260920\\refiner_v1\\logs\\formal_20260921_remote\\failure_20260921_122218\\stage2__last.pth",
+      "relative_path": "HRDecoder_FullCompetition_20260920\\refiner_v1\\logs\\formal_20260921_remote\\failure_20260921_122218\\stage2__last.pth",
+      "bytes": 106873,
+      "mtime_ns": 1789966033384002700,
+      "inode": 844424930593877,
+      "reason": "Retain: potentially useful historical, selected, pretrained, or diagnostic checkpoint."
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_FusionAware_20260917\\execution_20260919\\remote_recovery_20260920\\runs\\cs4000_v2\\S_step_4000.pth",
+      "relative_path": "HRDecoder_FusionAware_20260917\\execution_20260919\\remote_recovery_20260920\\runs\\cs4000_v2\\S_step_4000.pth",
+      "bytes": 718620823,
+      "mtime_ns": 1789838656525910400,
+      "inode": 1970324837263054,
+      "reason": "Retain historically selected/complementary model referenced by class shortlist."
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_FusionAware_20260917\\execution_20260919\\remote_recovery_20260920\\runs\\cs4000_v2\\C_step_2000.pth",
+      "relative_path": "HRDecoder_FusionAware_20260917\\execution_20260919\\remote_recovery_20260920\\runs\\cs4000_v2\\C_step_2000.pth",
+      "bytes": 718620759,
+      "mtime_ns": 1789838548356930100,
+      "inode": 1970324837263050,
+      "reason": "Retain historically selected/complementary model referenced by class shortlist."
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_FusionAware_20260917\\assets\\E_1500.pth",
+      "relative_path": "HRDecoder_FusionAware_20260917\\assets\\E_1500.pth",
+      "bytes": 527412743,
+      "mtime_ns": 1789655959620697700,
+      "inode": 9570149208362690,
+      "reason": "Protected: historical champion/P0 constituent or its source copy."
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Next_20261003\\assets\\E_1500.pth",
+      "relative_path": "HRDecoder_Next_20261003\\assets\\E_1500.pth",
+      "bytes": 527412743,
+      "mtime_ns": 1790953071336482800,
+      "inode": 2533274790765864,
+      "reason": "Protected: historical champion/P0 constituent or its source copy."
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Next_20261003\\assets\\H1.pth",
+      "relative_path": "HRDecoder_Next_20261003\\assets\\H1.pth",
+      "bytes": 271148642,
+      "mtime_ns": 1791006589573521100,
+      "inode": 2533274790765870,
+      "reason": "Retain compact historical model copy; obsolete full training checkpoint is deleted."
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Next_20261003\\assets\\B_weights.pth",
+      "relative_path": "HRDecoder_Next_20261003\\assets\\B_weights.pth",
+      "bytes": 263479238,
+      "mtime_ns": 1790953062392116000,
+      "inode": 3377699720897831,
+      "reason": "Protected: historical champion/P0 constituent or its source copy."
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Next_20261003\\assets\\E4_weights.pth",
+      "relative_path": "HRDecoder_Next_20261003\\assets\\E4_weights.pth",
+      "bytes": 263477167,
+      "mtime_ns": 1790953077126273400,
+      "inode": 3377699720897833,
+      "reason": "Protected: historical champion/P0 constituent or its source copy."
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Next_20261003\\assets\\D_student_2000.pth",
+      "relative_path": "HRDecoder_Next_20261003\\assets\\D_student_2000.pth",
+      "bytes": 263419124,
+      "mtime_ns": 1790953057768669400,
+      "inode": 2533274790765862,
+      "reason": "Protected: historical champion/P0 constituent or its source copy."
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Next_20261003\\server_results\\work\\M_seed42\\M1\\best.pth",
+      "relative_path": "HRDecoder_Next_20261003\\server_results\\work\\M_seed42\\M1\\best.pth",
+      "bytes": 212288195,
+      "mtime_ns": 1791018194380922200,
+      "inode": 3096224744193770,
+      "reason": "Retain best model for M architecture diagnosis; only obsolete last is deleted."
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Next_20261003\\server_results\\work\\M_seed42\\M0\\best.pth",
+      "relative_path": "HRDecoder_Next_20261003\\server_results\\work\\M_seed42\\M0\\best.pth",
+      "bytes": 212261439,
+      "mtime_ns": 1791016880778749700,
+      "inode": 1407374883930104,
+      "reason": "Retain best model for M architecture diagnosis; only obsolete last is deleted."
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Next_20261003\\assets\\U0_historical_best.pth",
+      "relative_path": "HRDecoder_Next_20261003\\assets\\U0_historical_best.pth",
+      "bytes": 212065428,
+      "mtime_ns": 1791006585573482900,
+      "inode": 3940649674319147,
+      "reason": "Protected: historical champion/P0 constituent or its source copy."
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Next_20261003\\assets\\U0_highres.pth",
+      "relative_path": "HRDecoder_Next_20261003\\assets\\U0_highres.pth",
+      "bytes": 212062404,
+      "mtime_ns": 1791006591265182800,
+      "inode": 3096224744187183,
+      "reason": "Retain selected high-resolution model and paired control for reproduction."
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Next_20261003\\assets\\U1.pth",
+      "relative_path": "HRDecoder_Next_20261003\\assets\\U1.pth",
+      "bytes": 212034676,
+      "mtime_ns": 1791006587234435000,
+      "inode": 2533274790765868,
+      "reason": "Retain compact historical model copy; obsolete full training checkpoint is deleted."
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Next_20261003\\assets\\H4_best.pth",
+      "relative_path": "HRDecoder_Next_20261003\\assets\\H4_best.pth",
+      "bytes": 15447,
+      "mtime_ns": 1790953077934222300,
+      "inode": 2533274790765866,
+      "reason": "Protected: historical champion/P0 constituent or its source copy."
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\server_results\\runs\\Q_DDR_seed42\\checkpoint_u12000.pth",
+      "relative_path": "HRDecoder_Q_20261003\\server_results\\runs\\Q_DDR_seed42\\checkpoint_u12000.pth",
+      "bytes": 601023387,
+      "mtime_ns": 1791041517389042000,
+      "inode": 562949953869407,
+      "reason": "Protected: active Q campaign and official DINOv3 source weights."
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\server_results\\runs\\Q_DDR_seed42\\checkpoint_u16000.pth",
+      "relative_path": "HRDecoder_Q_20261003\\server_results\\runs\\Q_DDR_seed42\\checkpoint_u16000.pth",
+      "bytes": 601023387,
+      "mtime_ns": 1791041682673590100,
+      "inode": 562949953869412,
+      "reason": "Protected: active Q campaign and official DINOv3 source weights."
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\server_results\\runs\\Q_DDR_seed42\\last.pth",
+      "relative_path": "HRDecoder_Q_20261003\\server_results\\runs\\Q_DDR_seed42\\last.pth",
+      "bytes": 600980705,
+      "mtime_ns": 1791041837441858500,
+      "inode": 1125899907290725,
+      "reason": "Protected: active Q campaign and official DINOv3 source weights."
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\dinov3_vitb16_pretrain_lvd1689m-73cec8be.pth",
+      "relative_path": "HRDecoder_Q_20261003\\assets\\dinov3_vitb16_pretrain_lvd1689m-73cec8be.pth",
+      "bytes": 342860279,
+      "mtime_ns": 1791029734723607400,
+      "inode": 562949953869154,
+      "reason": "Protected: active Q campaign and official DINOv3 source weights."
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\round2_highres\\server_results\\work_dirs\\U0_continuation2048\\ckpt_best.pth",
+      "relative_path": "HRDecoder_Ready_20261002\\round2_highres\\server_results\\work_dirs\\U0_continuation2048\\ckpt_best.pth",
+      "bytes": 636327411,
+      "mtime_ns": 1790960044759945900,
+      "inode": 3096224744185466,
+      "reason": "Retain selected high-resolution model and paired control for reproduction."
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\round2_highres\\server_results\\work_dirs\\U0_highres\\ckpt_best.pth",
+      "relative_path": "HRDecoder_Ready_20261002\\round2_highres\\server_results\\work_dirs\\U0_highres\\ckpt_best.pth",
+      "bytes": 636327347,
+      "mtime_ns": 1790962640444050700,
+      "inode": 4222124651028121,
+      "reason": "Retain selected high-resolution model and paired control for reproduction."
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\best_pipeline\\weights\\U0_historical_best.pth",
+      "relative_path": "HRDecoder_Ready_20261002\\best_pipeline\\weights\\U0_historical_best.pth",
+      "bytes": 636326835,
+      "mtime_ns": 1790953087600674300,
+      "inode": 6192449488002588,
+      "reason": "Protected: historical champion/P0 constituent or its source copy."
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\best_pipeline\\weights\\E_1500.pth",
+      "relative_path": "HRDecoder_Ready_20261002\\best_pipeline\\weights\\E_1500.pth",
+      "bytes": 527412743,
+      "mtime_ns": 1790953071336482800,
+      "inode": 9570149208530324,
+      "reason": "Protected: historical champion/P0 constituent or its source copy."
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\assets\\hrnetv2_w48-d2186c55.pth",
+      "relative_path": "HRDecoder_Ready_20261002\\assets\\hrnetv2_w48-d2186c55.pth",
+      "bytes": 310659148,
+      "mtime_ns": 1780484820002829700,
+      "inode": 1407374883913853,
+      "reason": "Retain: potentially useful historical, selected, pretrained, or diagnostic checkpoint."
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\best_pipeline\\weights\\B_weights.pth",
+      "relative_path": "HRDecoder_Ready_20261002\\best_pipeline\\weights\\B_weights.pth",
+      "bytes": 263479238,
+      "mtime_ns": 1790953062392116000,
+      "inode": 4503599627738504,
+      "reason": "Protected: historical champion/P0 constituent or its source copy."
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\best_pipeline\\weights\\E4_weights.pth",
+      "relative_path": "HRDecoder_Ready_20261002\\best_pipeline\\weights\\E4_weights.pth",
+      "bytes": 263477167,
+      "mtime_ns": 1790953077126273400,
+      "inode": 5910974511291917,
+      "reason": "Protected: historical champion/P0 constituent or its source copy."
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\best_pipeline\\weights\\D_student_2000.pth",
+      "relative_path": "HRDecoder_Ready_20261002\\best_pipeline\\weights\\D_student_2000.pth",
+      "bytes": 263419124,
+      "mtime_ns": 1790953057768669400,
+      "inode": 7036874418134407,
+      "reason": "Protected: historical champion/P0 constituent or its source copy."
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\assets\\convnext_small_1k_224_ema.pth",
+      "relative_path": "HRDecoder_Ready_20261002\\assets\\convnext_small_1k_224_ema.pth",
+      "bytes": 201005191,
+      "mtime_ns": 1790903605402650500,
+      "inode": 1407374883912130,
+      "reason": "Retain: potentially useful historical, selected, pretrained, or diagnostic checkpoint."
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\best_pipeline\\weights\\H4_best.pth",
+      "relative_path": "HRDecoder_Ready_20261002\\best_pipeline\\weights\\H4_best.pth",
+      "bytes": 15447,
+      "mtime_ns": 1790953077934222300,
+      "inode": 3377699720896022,
+      "reason": "Protected: historical champion/P0 constituent or its source copy."
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_审查轮_20260916\\audit_runs\\audit_20260916_A\\h4_best.pth",
+      "relative_path": "HRDecoder_审查轮_20260916\\audit_runs\\audit_20260916_A\\h4_best.pth",
+      "bytes": 15447,
+      "mtime_ns": 1789569328442843000,
+      "inode": 7599824371643468,
+      "reason": "Protected: historical champion/P0 constituent or its source copy."
+    },
+    {
+      "path": "D:\\dataset\\experiment\\autodl100\\results\\trial_a\\selected_weights_only.pth",
+      "relative_path": "autodl100\\results\\trial_a\\selected_weights_only.pth",
+      "bytes": 263709987,
+      "mtime_ns": 1789153228801980400,
+      "inode": 1970324837263316,
+      "reason": "Retain: potentially useful historical, selected, pretrained, or diagnostic checkpoint."
+    },
+    {
+      "path": "D:\\dataset\\experiment\\autodl100\\results\\trial_b\\selected_weights_only.pth",
+      "relative_path": "autodl100\\results\\trial_b\\selected_weights_only.pth",
+      "bytes": 263479238,
+      "mtime_ns": 1789153152860606700,
+      "inode": 3659174697527246,
+      "reason": "Retain: potentially useful historical, selected, pretrained, or diagnostic checkpoint."
+    },
+    {
+      "path": "D:\\dataset\\experiment\\autodl100\\results\\e4_reference_weights.pth",
+      "relative_path": "autodl100\\results\\e4_reference_weights.pth",
+      "bytes": 263477167,
+      "mtime_ns": 1789154505228049300,
+      "inode": 1688849860552671,
+      "reason": "Protected: historical champion/P0 constituent or its source copy."
+    },
+    {
+      "path": "D:\\dataset\\experiment\\hrdecoder_plus3\\repo\\weights\\b_weights.pth",
+      "relative_path": "hrdecoder_plus3\\repo\\weights\\b_weights.pth",
+      "bytes": 263479238,
+      "mtime_ns": 1789153152860606700,
+      "inode": 1970324837264337,
+      "reason": "Protected: historical champion/P0 constituent or its source copy."
+    },
+    {
+      "path": "D:\\dataset\\experiment\\hrdecoder_plus3\\results\\D_0913_retry\\backup_student_2000.pth",
+      "relative_path": "hrdecoder_plus3\\results\\D_0913_retry\\backup_student_2000.pth",
+      "bytes": 263419124,
+      "mtime_ns": 1789232184746503300,
+      "inode": 5629499534502911,
+      "reason": "Protected: historical champion/P0 constituent or its source copy."
+    }
+  ],
+  "critical_expected_sha256": {
+    "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\best_pipeline\\weights\\D_student_2000.pth": "5fe18717b62d8fc3ab4846a50c046588e2af05abbbfdb3a958f4794018b319ea",
+    "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\best_pipeline\\weights\\B_weights.pth": "0b3cd72e740fc5c69242994c12cfd71a49ac892aff37d09c50bb9fb6931a8626",
+    "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\best_pipeline\\weights\\E_1500.pth": "a18ff92b4da24d870554f17856983d4be042386cacbcaba0d4e13f3f248ed5e5",
+    "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\best_pipeline\\weights\\E4_weights.pth": "c5a3d0f0b990d2430e545146745bc809538bbe764979baf54f62b450785268e0",
+    "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\best_pipeline\\weights\\H4_best.pth": "14757e02de49f6f065d4ef82cb8b1c4ee8a6a7f3f66cb1867276993950f80c50",
+    "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\best_pipeline\\weights\\U0_historical_best.pth": "98d98a5d02dc2615062c3c31cd15d061daf3d7ab41cb8f25cd90b062cd53bb34",
+    "D:\\dataset\\experiment\\HRDecoder_Next_20261003\\assets\\D_student_2000.pth": "5fe18717b62d8fc3ab4846a50c046588e2af05abbbfdb3a958f4794018b319ea",
+    "D:\\dataset\\experiment\\HRDecoder_Next_20261003\\assets\\B_weights.pth": "0b3cd72e740fc5c69242994c12cfd71a49ac892aff37d09c50bb9fb6931a8626",
+    "D:\\dataset\\experiment\\HRDecoder_Next_20261003\\assets\\E_1500.pth": "a18ff92b4da24d870554f17856983d4be042386cacbcaba0d4e13f3f248ed5e5",
+    "D:\\dataset\\experiment\\HRDecoder_Next_20261003\\assets\\E4_weights.pth": "c5a3d0f0b990d2430e545146745bc809538bbe764979baf54f62b450785268e0",
+    "D:\\dataset\\experiment\\HRDecoder_Next_20261003\\assets\\H4_best.pth": "14757e02de49f6f065d4ef82cb8b1c4ee8a6a7f3f66cb1867276993950f80c50",
+    "D:\\dataset\\experiment\\HRDecoder_Next_20261003\\assets\\U0_historical_best.pth": "b491899a784892b85b81a22a455dde18dcce31e02698a248d385c67e4e17bdf6",
+    "D:\\dataset\\experiment\\HRDecoder_Next_20261003\\assets\\U1.pth": "f9c5bc46c6634f8c7be85ad5fcc30d7522589f2182cb1081725c5b9a504e8930",
+    "D:\\dataset\\experiment\\HRDecoder_Next_20261003\\assets\\H1.pth": "0f313fd47f4844c1e5e2c35df13f09589a959fb2c70210f6359d12964d00b284",
+    "D:\\dataset\\experiment\\HRDecoder_Next_20261003\\assets\\U0_highres.pth": "445c45af1abf2dee66e13ab5ed6c9599047e4dd5b519e9aac5f2ff696849f34d",
+    "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\server_results\\runs\\Q_DDR_seed42\\checkpoint_u12000.pth": "131263eae5b20d12e4937f710e0af4378ee68889090c62f44ac3a4a61163efc6",
+    "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\server_results\\runs\\Q_DDR_seed42\\checkpoint_u16000.pth": "0c525c901c8d4d6e4192c9de40c63a6d12710b76494f0c552dc39cbf6b67cb71",
+    "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\server_results\\runs\\Q_DDR_seed42\\last.pth": "4471ec431f66db36393e129dd2d2024b92f82d91af80df6d6ab1933ec03afca0",
+    "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\dinov3_vitb16_pretrain_lvd1689m-73cec8be.pth": "73cec8be7427c8655ceced13ce62f6e20a1fa90d1b4d4a550df17a1144081a7c",
+    "D:\\dataset\\experiment\\HRDecoder_Next_20261003\\server_results\\work\\M_seed42\\M0\\best.pth": "564732d8122f97b1a4e105fc5a222a3c8b09ac05e5a5ed9c940a1a7744c61808",
+    "D:\\dataset\\experiment\\HRDecoder_Next_20261003\\server_results\\work\\M_seed42\\M1\\best.pth": "72c67bf2ad027e94766957582a65d98aef7d0b707334bbbb766095c3b2ae596f"
+  },
+  "delete_count": 42,
+  "delete_bytes": 4880035717
+}

@@ -1,0 +1,72 @@
+building shared decoded cache
+{'decoded_images': 50, 'expected_images': 646, 'decoded_bytes': 2809081528}
+{'decoded_images': 100, 'expected_images': 646, 'decoded_bytes': 5192895752}
+{'decoded_images': 150, 'expected_images': 646, 'decoded_bytes': 7850174200}
+{'decoded_images': 200, 'expected_images': 646, 'decoded_bytes': 10496805880}
+{'decoded_images': 250, 'expected_images': 646, 'decoded_bytes': 13796702315}
+{'decoded_images': 300, 'expected_images': 646, 'decoded_bytes': 16309039395}
+{'decoded_images': 350, 'expected_images': 646, 'decoded_bytes': 19212052827}
+{'decoded_images': 400, 'expected_images': 646, 'decoded_bytes': 22349514220}
+{'decoded_images': 450, 'expected_images': 646, 'decoded_bytes': 25502135956}
+{'decoded_images': 500, 'expected_images': 646, 'decoded_bytes': 31923375792}
+{'decoded_images': 550, 'expected_images': 646, 'decoded_bytes': 34205061066}
+{'decoded_images': 600, 'expected_images': 646, 'decoded_bytes': 35292960714}
+{'decoded_images': 646, 'expected_images': 646, 'decoded_bytes': 36593276874}
+equivalence E_NEG
+Traceback (most recent call last):
+  File "/root/autodl-tmp/HRDecoder_Finetune_20261004/ops/probe_performance.py", line 100, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/root/autodl-tmp/HRDecoder_Finetune_20261004/ops/probe_performance.py", line 71, in main
+    baseline=snapshot(model,optimizer,scheduler,audit,timing);close(loader);del loader,baseline_datasets;gc.collect()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/HRDecoder_Finetune_20261004/ops/probe_performance.py", line 35, in snapshot
+    'optimizer_tensors':tensor_hash(opt),'optimizer_metadata':metadata,'scheduler':scheduler.state_dict(),
+                        ^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/HRDecoder_Finetune_20261004/ops/probe_performance.py", line 24, in tensor_hash
+    h.update(b.view(torch.uint8).numpy().tobytes())
+             ^^^^^^^^^^^^^^^^^^^
+RuntimeError: self.dim() cannot be 0 to view Float as Byte (different element sizes)
+building shared decoded cache
+{'decoded_images': 50, 'expected_images': 646, 'decoded_bytes': 2809081528}
+{'decoded_images': 100, 'expected_images': 646, 'decoded_bytes': 5192895752}
+{'decoded_images': 150, 'expected_images': 646, 'decoded_bytes': 7850174200}
+{'decoded_images': 200, 'expected_images': 646, 'decoded_bytes': 10496805880}
+{'decoded_images': 250, 'expected_images': 646, 'decoded_bytes': 13796702315}
+{'decoded_images': 300, 'expected_images': 646, 'decoded_bytes': 16309039395}
+{'decoded_images': 350, 'expected_images': 646, 'decoded_bytes': 19212052827}
+{'decoded_images': 400, 'expected_images': 646, 'decoded_bytes': 22349514220}
+{'decoded_images': 450, 'expected_images': 646, 'decoded_bytes': 25502135956}
+{'decoded_images': 500, 'expected_images': 646, 'decoded_bytes': 31923375792}
+{'decoded_images': 550, 'expected_images': 646, 'decoded_bytes': 34205061066}
+{'decoded_images': 600, 'expected_images': 646, 'decoded_bytes': 35292960714}
+{'decoded_images': 646, 'expected_images': 646, 'decoded_bytes': 36593276874}
+equivalence E_NEG
+Traceback (most recent call last):
+  File "/root/autodl-tmp/HRDecoder_Finetune_20261004/ops/probe_performance.py", line 100, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/root/autodl-tmp/HRDecoder_Finetune_20261004/ops/probe_performance.py", line 80, in main
+    raise ValueError('Acceleration changed training state: '+str(equal))
+ValueError: Acceleration changed training state: {'model': False, 'gradients': False, 'optimizer_tensors': False, 'optimizer_metadata': True, 'scheduler': True, 'rng_torch': True, 'audit': True, 'loss_grad_rows': False}
+building shared decoded cache
+{'decoded_images': 50, 'expected_images': 646, 'decoded_bytes': 2809081528}
+{'decoded_images': 100, 'expected_images': 646, 'decoded_bytes': 5192895752}
+{'decoded_images': 150, 'expected_images': 646, 'decoded_bytes': 7850174200}
+{'decoded_images': 200, 'expected_images': 646, 'decoded_bytes': 10496805880}
+{'decoded_images': 250, 'expected_images': 646, 'decoded_bytes': 13796702315}
+{'decoded_images': 300, 'expected_images': 646, 'decoded_bytes': 16309039395}
+{'decoded_images': 350, 'expected_images': 646, 'decoded_bytes': 19212052827}
+{'decoded_images': 400, 'expected_images': 646, 'decoded_bytes': 22349514220}
+{'decoded_images': 450, 'expected_images': 646, 'decoded_bytes': 25502135956}
+{'decoded_images': 500, 'expected_images': 646, 'decoded_bytes': 31923375792}
+{'decoded_images': 550, 'expected_images': 646, 'decoded_bytes': 34205061066}
+{'decoded_images': 600, 'expected_images': 646, 'decoded_bytes': 35292960714}
+{'decoded_images': 646, 'expected_images': 646, 'decoded_bytes': 36593276874}
+equivalence E_NEG
+{'equivalence_updates': 20, 'exact_checks': {'model': True, 'gradients': True, 'optimizer_tensors': True, 'optimizer_metadata': True, 'scheduler': True, 'rng_torch': True, 'audit': True, 'loss_grad_rows': True}, 'baseline_update_mean_seconds': 0.5557345189154148, 'baseline_data_wait_mean_seconds': 0.07857886739075184, 'optimized_steady_updates': 60, 'optimized_update_mean_seconds': 0.2583713222295046, 'optimized_update_p90_seconds': 0.2646644003689289, 'optimized_data_wait_mean_seconds': 0.0009528895219167074, 'peak_allocated_bytes': 2181791232}
+equivalence F4
+{'equivalence_updates': 5, 'exact_checks': {'model': True, 'gradients': True, 'optimizer_tensors': True, 'optimizer_metadata': True, 'scheduler': True, 'rng_torch': True, 'audit': True, 'loss_grad_rows': True}, 'baseline_update_mean_seconds': 0.6905309051275254, 'baseline_data_wait_mean_seconds': 0.12760506123304366, 'optimized_steady_updates': 60, 'optimized_update_mean_seconds': 0.3530300633360942, 'optimized_update_p90_seconds': 0.3594879493117332, 'optimized_data_wait_mean_seconds': 0.0011123508214950562, 'peak_allocated_bytes': 3869532672}
+equivalence F12
+{'equivalence_updates': 5, 'exact_checks': {'model': True, 'gradients': True, 'optimizer_tensors': True, 'optimizer_metadata': True, 'scheduler': True, 'rng_torch': True, 'audit': True, 'loss_grad_rows': True}, 'baseline_update_mean_seconds': 0.9476236909627914, 'baseline_data_wait_mean_seconds': 0.12930808812379838, 'optimized_steady_updates': 60, 'optimized_update_mean_seconds': 0.5333650102217992, 'optimized_update_p90_seconds': 0.5370739825069905, 'optimized_data_wait_mean_seconds': 0.0013796334465344747, 'peak_allocated_bytes': 7003138048}
+PERFORMANCE_PASS

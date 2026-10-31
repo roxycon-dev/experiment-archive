@@ -1,0 +1,31 @@
+{
+  "_comment": "Template copied to settings.json at deploy time; sha256 values are filled in by the deployment script from the REAL files (never hand-typed). Champion member spec mirrors audit h5_test.json exactly: D=hrplus_patch_dice/D@2000 w3, E=hrplus_mares/E@1500 w2, B=hr100_b/B w1, E4=e4_detail_split613/E4 w1, horizontal-flip TTA, single MA correction head (h4_best).",
+  "repo": "/root/autodl-tmp/hrplus/repo",
+  "config": "configs/lesion/exp/hrplus_patch_dice.py",
+  "data_root": "/root/autodl-tmp/hrplus/data/DDR_split_613",
+  "student_checkpoint": "weights/D_student_only_2000.pth",
+  "reference_checkpoint": "weights/b_weights.pth",
+  "cache_dir": "/root/autodl-tmp/hrplus/cache/ref_train_v3",
+  "champion": {
+    "head": "weights/h4_best.pth",
+    "members": [
+      {"name": "D",  "config": "configs/lesion/exp/hrplus_patch_dice.py", "checkpoint": "weights/D_student_only_2000.pth", "load": "student_only", "weight": 3},
+      {"name": "E",  "config": "configs/lesion/exp/hrplus_mares.py",      "checkpoint": "weights/E_1500.pth",           "load": "full",        "weight": 2},
+      {"name": "B",  "config": "configs/lesion/exp/hr100_b.py",           "checkpoint": "weights/b_weights.pth",       "load": "full",        "weight": 1},
+      {"name": "E4", "config": "configs/lesion/exp/e4_detail_split613.py","checkpoint": "weights/E4_best_36000.pth",   "load": "full",        "weight": 1}
+    ]
+  },
+  "expected_sha256": {
+    "configs/lesion/exp/hrplus_patch_dice.py": "<sha256-of-config-file>",
+    "configs/lesion/exp/hrplus_mares.py": "<sha256>",
+    "configs/lesion/exp/hr100_b.py": "<sha256>",
+    "configs/lesion/exp/e4_detail_split613.py": "<sha256>",
+    "weights/D_student_only_2000.pth": "<sha256>",
+    "weights/b_weights.pth": "<sha256>",
+    "weights/E_1500.pth": "<sha256>",
+    "weights/E4_best_36000.pth": "<sha256>",
+    "weights/h4_best.pth": "<sha256>"
+  },
+  "final_reserve_hours": 2.5,
+  "gpu_id": 0
+}

@@ -1,0 +1,12 @@
+继续上一个被 1800 秒超时中断的任务。只在 D:\dataset\experiment\HRDecoder_FullCompetition_20260920 工作，不连接服务器，不训练，不改旧仓库。请直接补文件并运行测试，少解释。
+
+已完成主体：tools/contract_common.py、build_external_manifest.py、audit_manifest.py、inspect_ddr_contract.py、data_contract/*、configs/H0/H1/U0/U1、docs/ASSET_AND_INTERFACE_AUDIT.md。py_compile 已通过，但 build_external_manifest.py docstring 有 invalid escape SyntaxWarning。
+
+必须完成：
+1. 修复 SyntaxWarning。
+2. 审核并修复四配置的配对公平性。已发现 U1 缺少与 U0 完全相同的 data 节，请补上；H0/H1、U0/U1 的 equivalence_lock 指定字段必须实际深度相等。结构初始化字段如果放在不同位置导致无法比对，也要规范。
+3. 实现 tools/preflight_contract.py：加载四 YAML，检查 schema、REQUIRED/TBD、配对字段深度一致、H0/U0 无外部预训练、H1/U1 有且只含允许的 external train manifest、类序严格 EX/HE/SE/MA、DDR split 互斥、训练与 checkpoint 选择不含 test、effective_batch=micro_batch*grad_accum。支持 `--allow-placeholders` 仅用于结构/合成测试；正式默认遇到占位符必须失败。若 PyYAML 缺失，明确报错，不静默跳过。
+4. 用 tests/run_contract_smoke.py 生成临时合成 PNG/manifest/四配置副本，运行 build/audit/preflight 正例；再至少覆盖 missing file、official test 泄漏、valid_mode=none 却有 mask、配对配置不一致四个负例，断言均非零。禁止触碰真实 test 像素。
+5. 对 tools 与 tests 所有 Python 文件运行 py_compile，再运行合成测试。修到通过。
+6. 写 docs/PREFLIGHT_TEST_REPORT.md（准确记录命令、退出码、测试覆盖与任何未覆盖项）和 docs/IMPLEMENTATION_STATUS.md（完成项、真实资产缺口、开 GPU 前唯一放行条件、下一次任务）。真实资产未到位时正式 preflight 必须保持 FAIL，这不是 bug。
+7. 最终回复只需列：改动文件、测试结果、阻塞项、给 Codex 审核的最高 5 风险。

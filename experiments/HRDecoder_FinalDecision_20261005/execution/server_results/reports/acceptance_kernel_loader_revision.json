@@ -1,0 +1,22 @@
+{
+  "stage": "EXPLICIT_REMAINING_GPU_ACCEPTANCE",
+  "time": "2026-10-04T21:00:44.494484+00:00",
+  "pid": 18787,
+  "source_sha256": "937565a59a9d65f46d891cdf456a8bc75141434e2815bb875dce316b5d5d8629",
+  "operational_helper_sha256": "fce9902b5d0e38a4f307f6f56d9f0236fdc0970092f26c1d9d4a0f8b11c05090",
+  "cause": "Early gates ran in another process; full benchmark reused their receipt without importing the compiled extension into this process.",
+  "repair": "Call the already verified kernel loader before native S/SD benchmarking. Main train_run already does this.",
+  "already_passed_not_repeated": [
+    "both76-image historical R controls",
+    "native parent76-image counts",
+    "all early kernel/model/state/routing gates",
+    "C100updates/fullval/checkpoint timing"
+  ],
+  "remaining_arms": [
+    "S",
+    "D",
+    "SD"
+  ],
+  "formal_updates_lost": 0,
+  "frozen_source_and_scientific_settings_changed": false
+}

@@ -1,0 +1,53 @@
+{
+  "status": "TRAINING_HEALTHY_EXTERNAL_EVALUATION_GPUS_CURRENTLY_OCCUPIED",
+  "checked_at_UTC": "2026-10-24T05:26:01.391131+00:00",
+  "S3407": {
+    "records": 539,
+    "last": {
+      "update": 10780,
+      "loss": 0.18984824419021606,
+      "grad_norm": 0.5563034415245056,
+      "seconds": 1.122516461648047,
+      "data_wait_seconds": 0.0017372006550431252
+    },
+    "nonfinite": []
+  },
+  "GPU59_process_owners": [
+    {
+      "gpu_uuid": "GPU-c3528b81-9106-7bc7-f6dc-eeea0fbb945c",
+      "pid": 1701298,
+      "user": "studentuser003",
+      "process": "python",
+      "memory_MiB": "1456",
+      "script_basenames": []
+    },
+    {
+      "gpu_uuid": "GPU-511f4d4d-af80-47c6-f710-7045c76edc64",
+      "pid": 1701299,
+      "user": "studentuser003",
+      "process": "python",
+      "memory_MiB": "7672",
+      "script_basenames": []
+    },
+    {
+      "gpu_uuid": "GPU-7c7ede26-df5b-a3e0-4342-6e54bd3f53d4",
+      "pid": 1701300,
+      "user": "studentuser003",
+      "process": "python",
+      "memory_MiB": "8136",
+      "script_basenames": []
+    },
+    {
+      "gpu_uuid": "GPU-96c659d1-9d13-f76b-cd85-58f97292e717",
+      "pid": 1701301,
+      "user": "studentuser003",
+      "process": "python",
+      "memory_MiB": "8130",
+      "script_basenames": []
+    }
+  ],
+  "our_evaluation_dispatcher_running_jobs": {},
+  "action": "Leave other tasks untouched; existing queue waits for actually idle GPU; no duplicate workers or changed evaluation runtime",
+  "current_training_not_blocked": true,
+  "overall_campaign_complete": false
+}

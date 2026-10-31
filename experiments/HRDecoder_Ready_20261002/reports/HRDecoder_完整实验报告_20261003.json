@@ -1,0 +1,1731 @@
+{
+  "report_type": "completed_task_local_evidence_only",
+  "generated_at_cst": "2026-10-03T02:09:29.226415+08:00",
+  "data": {
+    "ddr": {
+      "train": 454,
+      "val": 76,
+      "test": 227
+    },
+    "external": {
+      "train": 48,
+      "dev": 6,
+      "annotation": "user polygon rasterization, not original official pixel masks",
+      "test_used_for_training": false
+    },
+    "channel_order": [
+      "EX",
+      "HE",
+      "SE",
+      "MA"
+    ]
+  },
+  "main_campaign": {
+    "started_at_cst": "2026-10-02 10:09:01",
+    "training_finished_at_cst": "2026-10-02 20:25:03",
+    "completed_at_cst": "2026-10-02 22:19:17",
+    "wall_seconds": 43816.18393397331,
+    "stage_elapsed_seconds_including_eval_save": 36766.10713636689,
+    "new_updates": 34997,
+    "jobs": {
+      "U1_external_pretrain": {
+        "status": "complete",
+        "started_at_epoch": 1790906941.645659,
+        "config_sha256": "0ed6fb25f1e81aa79815a3e2bba55ec42011739150035d01eaca8b9ba8df2e99",
+        "exit_code": 0,
+        "finished_at_epoch": 1790908345.5982351,
+        "summary": {
+          "status": "complete",
+          "stop_reason": null,
+          "elapsed_seconds": 1399.5731031559408,
+          "stage": "external_pretrain",
+          "mode": "formal",
+          "updates_done": 2400,
+          "micro_steps": 9600,
+          "best": {
+            "mIoU_lesion4": 0.27160511927790537,
+            "update": 2400
+          },
+          "resume_warnings": [],
+          "checkpoints": {
+            "last": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/U1_external_pretrain/ckpt_last.pth",
+            "best": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/U1_external_pretrain/ckpt_best.pth",
+            "final": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/U1_external_pretrain/ckpt_final.pth"
+          },
+          "generated_at": "2026-10-02T02:32:24.250407+00:00"
+        }
+      },
+      "U1_ddr_finetune": {
+        "status": "complete",
+        "started_at_epoch": 1790908346.2194698,
+        "config_sha256": "b44967b823f6e6a2cf04b246a15ca37f766dd76209bcee5a69e8fe0254bab4ef",
+        "exit_code": 0,
+        "finished_at_epoch": 1790914382.2453682,
+        "summary": {
+          "status": "complete",
+          "stop_reason": null,
+          "elapsed_seconds": 6029.805540608009,
+          "stage": "ddr_finetune",
+          "mode": "formal",
+          "updates_done": 12000,
+          "micro_steps": 24016,
+          "best": {
+            "mIoU_lesion4": 0.3669342309981436,
+            "update": 12000
+          },
+          "resume_warnings": [],
+          "checkpoints": {
+            "last": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/U1_ddr_finetune/ckpt_last.pth",
+            "best": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/U1_ddr_finetune/ckpt_best.pth",
+            "final": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/U1_ddr_finetune/ckpt_final.pth"
+          },
+          "generated_at": "2026-10-02T04:13:01.074989+00:00"
+        }
+      },
+      "H1_external_pretrain": {
+        "status": "complete",
+        "started_at_epoch": 1790914382.2892206,
+        "config_sha256": "97bf76e9d68c6dae493d318a80da21f5c2de7415cd037c0428b8b65cfd1be649",
+        "exit_code": 0,
+        "finished_at_epoch": 1790918162.5453734,
+        "summary": {
+          "status": "complete",
+          "stop_reason": null,
+          "elapsed_seconds": 3762.144079893944,
+          "stage": "external_pretrain",
+          "mode": "formal",
+          "updates_done": 2400,
+          "micro_steps": 4804,
+          "best": {
+            "mIoU_lesion4": 0.42999768710592823,
+            "update": 2400
+          },
+          "config_file_sha256": "97bf76e9d68c6dae493d318a80da21f5c2de7415cd037c0428b8b65cfd1be649",
+          "resume_warnings": [],
+          "checkpoints": {
+            "last": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/H1_external_pretrain/ckpt_last.pth",
+            "best": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/H1_external_pretrain/ckpt_best.pth",
+            "final": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/H1_external_pretrain/ckpt_final.pth"
+          },
+          "generated_at": "2026-10-02T05:16:00.962970+00:00"
+        }
+      },
+      "H1_ddr_finetune": {
+        "status": "stopped",
+        "started_at_epoch": 1790918163.322156,
+        "config_sha256": "2bf116be1cd68dabe78b7685d5d2afe416d1c5b781329648a036616dd9347dac",
+        "exit_code": 0,
+        "finished_at_epoch": 1790934934.1426003,
+        "summary": {
+          "status": "stopped",
+          "stop_reason": "low_priority: best=0.355950, recent_gain=-0.001919, no_class_advantage",
+          "elapsed_seconds": 16609.185342184966,
+          "stage": "ddr_finetune",
+          "mode": "formal",
+          "updates_done": 12000,
+          "micro_steps": 12008,
+          "best": {
+            "mIoU_lesion4": 0.3559504929505182,
+            "update": 9000
+          },
+          "config_file_sha256": "1b2de9719d17d9ba1a1ea9b9ba20c2dc839f0ea1f2e573ad1f5b0d4a1c5965f5",
+          "resume_warnings": [],
+          "checkpoints": {
+            "last": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/H1_ddr_finetune/ckpt_last.pth",
+            "best": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/H1_ddr_finetune/ckpt_best.pth",
+            "final": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/H1_ddr_finetune/ckpt_final.pth"
+          },
+          "generated_at": "2026-10-02T09:55:32.580880+00:00"
+        }
+      },
+      "A0_ddr_finetune": {
+        "status": "stopped",
+        "started_at_epoch": 1790934934.1772797,
+        "config_sha256": "6ae617369dbd53a8c609fffd08a329c928c8e8bf2b31c5f08e5de3f443dd5535",
+        "exit_code": 0,
+        "finished_at_epoch": 1790943903.065582,
+        "summary": {
+          "status": "stopped",
+          "stop_reason": "operator_stop_at_update_boundary",
+          "elapsed_seconds": 8965.399070524029,
+          "stage": "ddr_finetune",
+          "mode": "formal",
+          "updates_done": 6197,
+          "micro_steps": 6200,
+          "best": {
+            "mIoU_lesion4": 0.09678075116594265,
+            "update": 6000
+          },
+          "config_file_sha256": "6ae617369dbd53a8c609fffd08a329c928c8e8bf2b31c5f08e5de3f443dd5535",
+          "resume_warnings": [],
+          "checkpoints": {
+            "last": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/A0_ddr_finetune/ckpt_last.pth",
+            "best": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/A0_ddr_finetune/ckpt_best.pth",
+            "final": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/A0_ddr_finetune/ckpt_final.pth"
+          },
+          "generated_at": "2026-10-02T12:25:01.611528+00:00"
+        }
+      }
+    },
+    "validation_nodes": [
+      {
+        "tag": "U1_external_pretrain",
+        "update": 300,
+        "n_images": 6,
+        "miou": 0.018337383072043932,
+        "iou": {
+          "EX": 0.03975522523430511,
+          "HE": 0.033334716590225154,
+          "SE": 7.971326414222005e-06,
+          "MA": 0.0002516191372312291
+        },
+        "inference": "sliding_window(window=1024,stride=768)",
+        "resize_to": [
+          2048,
+          2048
+        ]
+      },
+      {
+        "tag": "U1_external_pretrain",
+        "update": 600,
+        "n_images": 6,
+        "miou": 0.0892221829033622,
+        "iou": {
+          "EX": 0.1483811807680428,
+          "HE": 0.139533761056714,
+          "SE": 0.06412701177777508,
+          "MA": 0.004846778010916935
+        },
+        "inference": "sliding_window(window=1024,stride=768)",
+        "resize_to": [
+          2048,
+          2048
+        ]
+      },
+      {
+        "tag": "U1_external_pretrain",
+        "update": 1200,
+        "n_images": 6,
+        "miou": 0.2198237873060289,
+        "iou": {
+          "EX": 0.33956513061223087,
+          "HE": 0.24836756808078778,
+          "SE": 0.27064255143339633,
+          "MA": 0.02071989909770059
+        },
+        "inference": "sliding_window(window=1024,stride=768)",
+        "resize_to": [
+          2048,
+          2048
+        ]
+      },
+      {
+        "tag": "U1_external_pretrain",
+        "update": 2400,
+        "n_images": 6,
+        "miou": 0.27160511927790537,
+        "iou": {
+          "EX": 0.4134347887263086,
+          "HE": 0.25851956384947106,
+          "SE": 0.3837374677365547,
+          "MA": 0.030728656799286977
+        },
+        "inference": "sliding_window(window=1024,stride=768)",
+        "resize_to": [
+          2048,
+          2048
+        ]
+      },
+      {
+        "tag": "U1_ddr_finetune",
+        "update": 3000,
+        "n_images": 76,
+        "miou": 0.24799255853903063,
+        "iou": {
+          "EX": 0.27232508194537364,
+          "HE": 0.35728860522902645,
+          "SE": 0.2470078519349411,
+          "MA": 0.11534869504678134
+        },
+        "inference": "sliding_window(window=1024,stride=768)",
+        "resize_to": [
+          2048,
+          2048
+        ]
+      },
+      {
+        "tag": "U1_ddr_finetune",
+        "update": 6000,
+        "n_images": 76,
+        "miou": 0.31498365193007494,
+        "iou": {
+          "EX": 0.34717863592808823,
+          "HE": 0.3823028112374682,
+          "SE": 0.371717572525296,
+          "MA": 0.1587355880294475
+        },
+        "inference": "sliding_window(window=1024,stride=768)",
+        "resize_to": [
+          2048,
+          2048
+        ]
+      },
+      {
+        "tag": "U1_ddr_finetune",
+        "update": 9000,
+        "n_images": 76,
+        "miou": 0.3427876959605083,
+        "iou": {
+          "EX": 0.4050369372661906,
+          "HE": 0.34083447274691514,
+          "SE": 0.43966259698303745,
+          "MA": 0.18561677684588995
+        },
+        "inference": "sliding_window(window=1024,stride=768)",
+        "resize_to": [
+          2048,
+          2048
+        ]
+      },
+      {
+        "tag": "U1_ddr_finetune",
+        "update": 12000,
+        "n_images": 76,
+        "miou": 0.3669342309981436,
+        "iou": {
+          "EX": 0.43039604005112525,
+          "HE": 0.3680077355656772,
+          "SE": 0.46992513747379433,
+          "MA": 0.19940801090197746
+        },
+        "inference": "sliding_window(window=1024,stride=768)",
+        "resize_to": [
+          2048,
+          2048
+        ]
+      },
+      {
+        "tag": "H1_external_pretrain",
+        "update": 300,
+        "n_images": 6,
+        "miou": 0.04675075000466174,
+        "iou": {
+          "EX": 0.042426576303329085,
+          "HE": 0.14378446918409127,
+          "SE": 0.0,
+          "MA": 0.0007919545312265968
+        },
+        "inference": "whole_image",
+        "resize_to": [
+          2048,
+          2048
+        ]
+      },
+      {
+        "tag": "H1_external_pretrain",
+        "update": 600,
+        "n_images": 6,
+        "miou": 0.2623951582638007,
+        "iou": {
+          "EX": 0.39051626377750404,
+          "HE": 0.20780237370728388,
+          "SE": 0.36786317180732037,
+          "MA": 0.08339882376309449
+        },
+        "inference": "whole_image",
+        "resize_to": [
+          2048,
+          2048
+        ]
+      },
+      {
+        "tag": "H1_external_pretrain",
+        "update": 1200,
+        "n_images": 6,
+        "miou": 0.40579718471953874,
+        "iou": {
+          "EX": 0.525903554478776,
+          "HE": 0.22654913108988717,
+          "SE": 0.5717415392943843,
+          "MA": 0.2989945140151073
+        },
+        "inference": "whole_image",
+        "resize_to": [
+          2048,
+          2048
+        ]
+      },
+      {
+        "tag": "H1_external_pretrain",
+        "update": 2400,
+        "n_images": 6,
+        "miou": 0.42999768710592823,
+        "iou": {
+          "EX": 0.5578100689966111,
+          "HE": 0.25376871627766434,
+          "SE": 0.5712553552663487,
+          "MA": 0.3371566078830886
+        },
+        "inference": "whole_image",
+        "resize_to": [
+          2048,
+          2048
+        ]
+      },
+      {
+        "tag": "H1_ddr_finetune",
+        "update": 3000,
+        "n_images": 76,
+        "miou": 0.3209156967355758,
+        "iou": {
+          "EX": 0.3716297991465297,
+          "HE": 0.42977848305010924,
+          "SE": 0.33314460647157573,
+          "MA": 0.14910989827408846
+        },
+        "inference": "whole_image",
+        "resize_to": [
+          2048,
+          2048
+        ]
+      },
+      {
+        "tag": "H1_ddr_finetune",
+        "update": 6000,
+        "n_images": 76,
+        "miou": 0.33337063604127454,
+        "iou": {
+          "EX": 0.389291726503406,
+          "HE": 0.4153607447633825,
+          "SE": 0.3681875954312426,
+          "MA": 0.16064247746706725
+        },
+        "inference": "whole_image",
+        "resize_to": [
+          2048,
+          2048
+        ]
+      },
+      {
+        "tag": "H1_ddr_finetune",
+        "update": 9000,
+        "n_images": 76,
+        "miou": 0.3559504929505182,
+        "iou": {
+          "EX": 0.39612504294057027,
+          "HE": 0.430978874080356,
+          "SE": 0.4210959241651206,
+          "MA": 0.17560213061602595
+        },
+        "inference": "whole_image",
+        "resize_to": [
+          2048,
+          2048
+        ]
+      },
+      {
+        "tag": "H1_ddr_finetune",
+        "update": 12000,
+        "n_images": 76,
+        "miou": 0.3540318947983785,
+        "iou": {
+          "EX": 0.4039151442257844,
+          "HE": 0.40618258859784284,
+          "SE": 0.43220305854390795,
+          "MA": 0.1738267878259787
+        },
+        "inference": "whole_image",
+        "resize_to": [
+          2048,
+          2048
+        ]
+      },
+      {
+        "tag": "A0_ddr_finetune",
+        "update": 3000,
+        "n_images": 76,
+        "miou": 0.06948474407103411,
+        "iou": {
+          "EX": 0.17069859185605563,
+          "HE": 9.793875563147845e-05,
+          "SE": 0.10711364656637361,
+          "MA": 2.879910607574741e-05
+        },
+        "inference": "sliding_window(window=1024,stride=768)",
+        "resize_to": [
+          2048,
+          2048
+        ]
+      },
+      {
+        "tag": "A0_ddr_finetune",
+        "update": 6000,
+        "n_images": 76,
+        "miou": 0.09678075116594265,
+        "iou": {
+          "EX": 0.24135947267563637,
+          "HE": 1.614809743116066e-06,
+          "SE": 0.14576191717839107,
+          "MA": 0.0
+        },
+        "inference": "sliding_window(window=1024,stride=768)",
+        "resize_to": [
+          2048,
+          2048
+        ]
+      }
+    ],
+    "nomination": {
+      "base_miou": 0.42669122905238266,
+      "base_iou": [
+        0.45770414451745595,
+        0.4375670343060385,
+        0.5518030364420716,
+        0.2596907009439646
+      ],
+      "rows": [
+        {
+          "spec": {
+            "id": "U0",
+            "family": "convnext_unet",
+            "kind": "model",
+            "members": [
+              {
+                "config": "/root/autodl-tmp/HRDecoder_Ready_20261002/configs/resolved/U0_historical_native_export.yaml",
+                "checkpoint": "/root/autodl-tmp/HRDecoder_Ready_20261002/assets/U0_historical_best.pth",
+                "weight": 1.0
+              }
+            ],
+            "cache": "/root/autodl-tmp/HRDecoder_Ready_20261002/cache/val/U0"
+          },
+          "score": 0.008185803157983007,
+          "alone_miou": 0.38446869204975476,
+          "alone_iou": [
+            0.43677085723362574,
+            0.38426938207497247,
+            0.5093488968147359,
+            0.20748563207568488
+          ],
+          "fixed25_miou": 0.43487703221036567,
+          "fixed25_iou": [
+            0.4773652843629539,
+            0.42506225848003437,
+            0.570692469969939,
+            0.2663881160285354
+          ]
+        },
+        {
+          "spec": {
+            "id": "U1",
+            "family": "convnext_unet",
+            "kind": "model",
+            "members": [
+              {
+                "config": "/root/autodl-tmp/HRDecoder_Ready_20261002/configs/resolved/U1_convnext_unet_ext_pretrain.yaml",
+                "checkpoint": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/U1_ddr_finetune/ckpt_best.pth",
+                "weight": 1.0
+              }
+            ],
+            "cache": "/root/autodl-tmp/HRDecoder_Ready_20261002/cache/val/U1"
+          },
+          "score": 0.005713506247331385,
+          "alone_miou": 0.3669342309981436,
+          "alone_iou": [
+            0.43039604005112525,
+            0.3680077355656772,
+            0.46992513747379433,
+            0.19940801090197746
+          ],
+          "fixed25_miou": 0.4310555450491325,
+          "fixed25_iou": [
+            0.4805581695067815,
+            0.42198713317926934,
+            0.5591590774104138,
+            0.2625178001000654
+          ]
+        },
+        {
+          "spec": {
+            "id": "H1",
+            "family": "hrdecoder",
+            "kind": "model",
+            "members": [
+              {
+                "config": "/root/autodl-tmp/HRDecoder_Ready_20261002/configs/resolved/H1_hrdecoder_ext_pretrain.yaml",
+                "checkpoint": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/H1_ddr_finetune/ckpt_best.pth",
+                "weight": 1.0
+              }
+            ],
+            "cache": "/root/autodl-tmp/HRDecoder_Ready_20261002/cache/val/H1"
+          },
+          "score": 0.003322455133167798,
+          "alone_miou": 0.3559504929505182,
+          "alone_iou": [
+            0.39612504294057027,
+            0.430978874080356,
+            0.4210959241651206,
+            0.17560213061602595
+          ],
+          "fixed25_miou": 0.426424773264095,
+          "fixed25_iou": [
+            0.44987383746664633,
+            0.4508568548387097,
+            0.5486802146226698,
+            0.25628818612835425
+          ]
+        },
+        {
+          "spec": {
+            "id": "A0",
+            "family": "hacdr",
+            "kind": "model",
+            "members": [
+              {
+                "config": "/root/autodl-tmp/HRDecoder_Ready_20261002/configs/resolved/A0_hacdr_adapted.yaml",
+                "checkpoint": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/A0_ddr_finetune/ckpt_best.pth",
+                "weight": 1.0
+              }
+            ],
+            "cache": "/root/autodl-tmp/HRDecoder_Ready_20261002/cache/val/A0"
+          },
+          "score": -0.0009473246529373563,
+          "alone_miou": 0.09678085535530237,
+          "alone_iou": [
+            0.24135814597922106,
+            1.6148084393118655e-06,
+            0.14576366063354912,
+            0.0
+          ],
+          "fixed25_miou": 0.41395765876003016,
+          "fixed25_iou": [
+            0.4539148459057065,
+            0.4204697905732133,
+            0.5331251206877734,
+            0.2483208778734273
+          ]
+        }
+      ],
+      "nominated": [
+        {
+          "spec": {
+            "id": "U0",
+            "family": "convnext_unet",
+            "kind": "model",
+            "members": [
+              {
+                "config": "/root/autodl-tmp/HRDecoder_Ready_20261002/configs/resolved/U0_historical_native_export.yaml",
+                "checkpoint": "/root/autodl-tmp/HRDecoder_Ready_20261002/assets/U0_historical_best.pth",
+                "weight": 1.0
+              }
+            ],
+            "cache": "/root/autodl-tmp/HRDecoder_Ready_20261002/cache/val/U0"
+          },
+          "score": 0.008185803157983007,
+          "alone_miou": 0.38446869204975476,
+          "alone_iou": [
+            0.43677085723362574,
+            0.38426938207497247,
+            0.5093488968147359,
+            0.20748563207568488
+          ],
+          "fixed25_miou": 0.43487703221036567,
+          "fixed25_iou": [
+            0.4773652843629539,
+            0.42506225848003437,
+            0.570692469969939,
+            0.2663881160285354
+          ]
+        },
+        {
+          "spec": {
+            "id": "H1",
+            "family": "hrdecoder",
+            "kind": "model",
+            "members": [
+              {
+                "config": "/root/autodl-tmp/HRDecoder_Ready_20261002/configs/resolved/H1_hrdecoder_ext_pretrain.yaml",
+                "checkpoint": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/H1_ddr_finetune/ckpt_best.pth",
+                "weight": 1.0
+              }
+            ],
+            "cache": "/root/autodl-tmp/HRDecoder_Ready_20261002/cache/val/H1"
+          },
+          "score": 0.003322455133167798,
+          "alone_miou": 0.3559504929505182,
+          "alone_iou": [
+            0.39612504294057027,
+            0.430978874080356,
+            0.4210959241651206,
+            0.17560213061602595
+          ],
+          "fixed25_miou": 0.426424773264095,
+          "fixed25_iou": [
+            0.44987383746664633,
+            0.4508568548387097,
+            0.5486802146226698,
+            0.25628818612835425
+          ]
+        }
+      ]
+    },
+    "fusion": {
+      "fold_choices": [
+        [
+          {
+            "family": "convnext_unet",
+            "alpha": 0.25
+          },
+          {
+            "family": "hrdecoder",
+            "alpha": 0.25
+          },
+          {
+            "family": "convnext_unet",
+            "alpha": 0.25
+          },
+          {
+            "family": "convnext_unet",
+            "alpha": 0.25
+          }
+        ],
+        [
+          {
+            "family": "convnext_unet",
+            "alpha": 0.25
+          },
+          {
+            "family": "hrdecoder",
+            "alpha": 0.5
+          },
+          {
+            "family": "convnext_unet",
+            "alpha": 0.125
+          },
+          {
+            "family": "convnext_unet",
+            "alpha": 0.25
+          }
+        ],
+        [
+          {
+            "family": "convnext_unet",
+            "alpha": 0.25
+          },
+          {
+            "family": "convnext_unet",
+            "alpha": 0.25
+          },
+          {
+            "family": "convnext_unet",
+            "alpha": 0.25
+          },
+          {
+            "family": "convnext_unet",
+            "alpha": 0.25
+          }
+        ]
+      ],
+      "global_fold_choices": [
+        {
+          "family": "convnext_unet",
+          "alpha": 0.25
+        },
+        {
+          "family": "convnext_unet",
+          "alpha": 0.125
+        },
+        {
+          "family": "convnext_unet",
+          "alpha": 0.25
+        }
+      ],
+      "oof_base_iou": [
+        0.45770414451745595,
+        0.4375670343060385,
+        0.5518030364420716,
+        0.2596907009439646
+      ],
+      "oof_global_iou": [
+        0.474702005184311,
+        0.42513971783886745,
+        0.565261179272017,
+        0.2648272948946873
+      ],
+      "oof_class_iou": [
+        0.4773652843629539,
+        0.41667370605910675,
+        0.565261179272017,
+        0.2663881160285354
+      ],
+      "oof_base_miou": 0.42669122905238266,
+      "oof_global_miou": 0.43248254929747065,
+      "oof_class_miou": 0.43142207143065325,
+      "oof_class_counts": [
+        [
+          184147,
+          94954,
+          106656
+        ],
+        [
+          690570,
+          451416,
+          515354
+        ],
+        [
+          138632,
+          43849,
+          62772
+        ],
+        [
+          27670,
+          34587,
+          41614
+        ]
+      ],
+      "oof_global_counts": [
+        [
+          184229,
+          97291,
+          106574
+        ],
+        [
+          694149,
+          426831,
+          511775
+        ],
+        [
+          138632,
+          43849,
+          62772
+        ],
+        [
+          27586,
+          34882,
+          41698
+        ]
+      ],
+      "deploy": [
+        {
+          "family": "convnext_unet",
+          "alpha": 0.25
+        },
+        {
+          "family": "convnext_unet",
+          "alpha": 0.25
+        },
+        {
+          "family": "convnext_unet",
+          "alpha": 0.25
+        },
+        {
+          "family": "convnext_unet",
+          "alpha": 0.25
+        }
+      ],
+      "selected_mode": "global_fallback",
+      "unstable": false,
+      "threshold": 0.5,
+      "strict_greater": true,
+      "full_val_rescan": false,
+      "n_images": 76,
+      "nominated_families": [
+        "convnext_unet",
+        "hrdecoder"
+      ],
+      "channel_order": [
+        "EX",
+        "HE",
+        "SE",
+        "MA"
+      ],
+      "checkpoint_selection_limitation": "checkpoint already selected on val; fusion cross-fit is not fully independent outer validation",
+      "locked_val_miou": 0.43487703221036567,
+      "selected_oof_miou": 0.43248254929747065,
+      "descriptive_paired_bootstrap_delta_ci95": [
+        0.0010891693715015514,
+        0.016009089318736354
+      ],
+      "bootstrap_is_not_outer_validation": true
+    }
+  },
+  "test": {
+    "lock_sha256": "644974f4a888835f838472199dcb623e879be2d62e73dab502394759551ceac4",
+    "n_images": 227,
+    "champion_miou": 0.4421100725782683,
+    "selected_pipeline_miou": 0.44780891451100807,
+    "delta": 0.005698841932739784,
+    "champion_per_class": [
+      0.5386102960789544,
+      0.44512116607150193,
+      0.49813386683608984,
+      0.28657496132652727
+    ],
+    "selected_pipeline_per_class": [
+      0.5459774618987617,
+      0.4520205750891327,
+      0.500837572943642,
+      0.29240004811249576
+    ],
+    "champion_counts": [
+      [
+        1058087,
+        389535,
+        516854
+      ],
+      [
+        1603987,
+        550006,
+        1449491
+      ],
+      [
+        368502,
+        169247,
+        202016
+      ],
+      [
+        79103,
+        85986,
+        110940
+      ]
+    ],
+    "selected_pipeline_counts": [
+      [
+        1072861,
+        390087,
+        502080
+      ],
+      [
+        1609384,
+        506944,
+        1444094
+      ],
+      [
+        354891,
+        138077,
+        215627
+      ],
+      [
+        80222,
+        84314,
+        109821
+      ]
+    ],
+    "deployment": "selected_pipeline",
+    "threshold": 0.5,
+    "strict_greater": true,
+    "historical_test_limitation": "This split has been viewed in prior experiments; not an independent external validation."
+  },
+  "round2": {
+    "protocol": {
+      "round": "round2_highres",
+      "created_at_cst": "2026-10-02T23:40:04.987357+08:00",
+      "job_order": [
+        "U0_continuation2048",
+        "U0_highres"
+      ],
+      "config_sha256": {
+        "U0_continuation2048": "17c15fd8ffd2bc6534080467bc6bfe4821f5250ba158d90a867ee1f7669381b8",
+        "U0_highres": "10f16d28e4fbd01ce6f8249b219bf0e9aaceb472da531dd215b0fa4a480bbf08"
+      },
+      "source_sha256": {
+        "train.py": "87a0e42783903cb0e314f5bddf000a49f6fd13c7205198c88ba0e3886a043e6e",
+        "trainer/eval.py": "9578c2e46866fa3f0006a0b52a76bb653b76b5a8d373840cd8731dc864bb154e",
+        "trainer/engine.py": "8b196f9ede491877d4b08ce75a76c7c883c4f07da017610bb9e5e214d7c58cca",
+        "trainer/screening.py": "7be0cbe5a9f8721964a94f0151e5d5c59a21cc53424d5987b926133fe95d71d9",
+        "trainer/fusion_probe.py": "aefa60e852fabfad022d67cbd3757e2d7bbff841274883538c0c84f21a8974cb",
+        "campaign/run_round2.py": "347f825f9fa9d71353430418c9ce063965cb54bd9d111d540ce8bc25b9018a26"
+      },
+      "starting_checkpoint_sha256": "98d98a5d02dc2615062c3c31cd15d061daf3d7ab41cb8f25cd90b062cd53bb34",
+      "baseline_val_miou": 0.43487703221036567,
+      "selection": "Fixed old champion .75 + candidate .25, no fusion-weight search; checkpoint selected on fused full val",
+      "max_updates_per_arm": 4000,
+      "stop": "At >=2000, stop when best fused gain <.001, recent fused gain <.001 and recent standalone gain <.001",
+      "test_policy": "Closed: no further evaluation of the already completed test split; all new decisions train/val only",
+      "matching": "Same seed42, starting model, fresh optimizer, LR, crop1024, effective batch8 and planned nodes. If early stops differ, compare matched shared nodes; unequal budgets are disclosed. Resize schedules differ, including augmentation RNG consumption.",
+      "space": "Actual training needs retained best+last, no duplicated probability export; existing lossless val caches reused",
+      "engineering": "Strict unchanged-config checkpoint resume only; fault is not a negative result"
+    },
+    "validation_nodes": [
+      {
+        "tag": "U0_continuation2048",
+        "update": 1000,
+        "solo_miou": 0.3908638255464669,
+        "fusion_miou": 0.43366298706385487,
+        "gain_pp": -0.12140451465108004,
+        "solo_per_class": {
+          "EX": 0.4499883186667705,
+          "HE": 0.39686833668524873,
+          "SE": 0.5049039672544081,
+          "MA": 0.21169467957944038
+        },
+        "fusion_per_class": {
+          "EX": 0.47641141215128024,
+          "HE": 0.42668353424571603,
+          "SE": 0.5659067811314831,
+          "MA": 0.26565022072694033
+        }
+      },
+      {
+        "tag": "U0_continuation2048",
+        "update": 2000,
+        "solo_miou": 0.3780079617917798,
+        "fusion_miou": 0.4333828198845408,
+        "gain_pp": -0.14942123258248619,
+        "solo_per_class": {
+          "EX": 0.42673310565467426,
+          "HE": 0.3997216546048379,
+          "SE": 0.49435944242948304,
+          "MA": 0.19121764447812387
+        },
+        "fusion_per_class": {
+          "EX": 0.4767925703019612,
+          "HE": 0.4294215640849736,
+          "SE": 0.5635510591843197,
+          "MA": 0.26376608596690887
+        }
+      },
+      {
+        "tag": "U0_highres",
+        "update": 1000,
+        "solo_miou": 0.3960651568641143,
+        "fusion_miou": 0.437327634300698,
+        "gain_pp": 0.2450602090332321,
+        "solo_per_class": {
+          "EX": 0.45160968672182294,
+          "HE": 0.39615086052373816,
+          "SE": 0.5157618768514265,
+          "MA": 0.22073820335946953
+        },
+        "fusion_per_class": {
+          "EX": 0.47984685235905666,
+          "HE": 0.42899687520711266,
+          "SE": 0.5729765425125428,
+          "MA": 0.2674902671240797
+        }
+      },
+      {
+        "tag": "U0_highres",
+        "update": 2000,
+        "solo_miou": 0.3748741917445036,
+        "fusion_miou": 0.4333288719566418,
+        "gain_pp": -0.15481602537238404,
+        "solo_per_class": {
+          "EX": 0.40343178879518304,
+          "HE": 0.38263899778118193,
+          "SE": 0.5049850161364684,
+          "MA": 0.20844096426518102
+        },
+        "fusion_per_class": {
+          "EX": 0.4749424900998939,
+          "HE": 0.4266118600207295,
+          "SE": 0.5663709811760786,
+          "MA": 0.26539015652986525
+        }
+      },
+      {
+        "tag": "U0_highres",
+        "update": 4000,
+        "solo_miou": 0.38493732233318023,
+        "fusion_miou": 0.43395522888794646,
+        "gain_pp": -0.09218033224192013,
+        "solo_per_class": {
+          "EX": 0.44189950802975697,
+          "HE": 0.38861595702809765,
+          "SE": 0.4978801321823047,
+          "MA": 0.2113536920925617
+        },
+        "fusion_per_class": {
+          "EX": 0.47716330852072697,
+          "HE": 0.4270228430884975,
+          "SE": 0.5645717918445191,
+          "MA": 0.26706297209804225
+        }
+      }
+    ],
+    "results": {
+      "U0_continuation2048": {
+        "best_update": 1000,
+        "standalone_miou": 0.3908638255464669,
+        "fixed_fusion_miou": 0.43366298706385487,
+        "baseline_miou": 0.43487703221036567,
+        "gain": -0.0012140451465108004,
+        "updates_done": 2000
+      },
+      "U0_highres": {
+        "best_update": 1000,
+        "standalone_miou": 0.3960651568641143,
+        "fixed_fusion_miou": 0.437327634300698,
+        "baseline_miou": 0.43487703221036567,
+        "gain": 0.002450602090332321,
+        "updates_done": 4000
+      }
+    },
+    "wall_seconds": 4196.910892486572,
+    "job_wall_seconds": {
+      "U0_continuation2048": 1912.21231174469,
+      "U0_highres": 2281.6632318496704
+    },
+    "new_updates": 6000,
+    "best_candidate": {
+      "tag": "U0_highres",
+      "update": 1000,
+      "solo_miou": 0.3960651568641143,
+      "fusion_miou": 0.437327634300698,
+      "gain_pp": 0.2450602090332321,
+      "solo_per_class": {
+        "EX": 0.45160968672182294,
+        "HE": 0.39615086052373816,
+        "SE": 0.5157618768514265,
+        "MA": 0.22073820335946953
+      },
+      "fusion_per_class": {
+        "EX": 0.47984685235905666,
+        "HE": 0.42899687520711266,
+        "SE": 0.5729765425125428,
+        "MA": 0.2674902671240797
+      }
+    }
+  },
+  "training_budget": {
+    "adjusted_max_updates": 48800,
+    "actual_new_updates": 40997,
+    "saved_updates": 7803,
+    "historical_updates_excluded": true
+  },
+  "cleanup": {
+    "status": "complete",
+    "authorization": "User explicitly requested deleting unused server model weights on 2026-10-02",
+    "started_epoch": 1790954270.0857952,
+    "deleted": [
+      {
+        "path": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/U1_external_pretrain/ckpt_best.pth",
+        "bytes": 636327027,
+        "reason": "Completed unselected stage; full best checkpoint SHA-verified locally; unused last released under user cleanup instruction",
+        "local_best_backup": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\U1_external_pretrain\\ckpt_best.pth",
+        "expected_sha256": "08db330000591ce7942e4d70b06017849ff0f3c03fa4e60edb7801a064da351a",
+        "sha256": "08db330000591ce7942e4d70b06017849ff0f3c03fa4e60edb7801a064da351a",
+        "preflight_mtime_ns": 1790908341682951202
+      },
+      {
+        "path": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/U1_external_pretrain/ckpt_last.pth",
+        "bytes": 636327027,
+        "reason": "Completed unselected stage; full best checkpoint SHA-verified locally; unused last released under user cleanup instruction",
+        "local_best_backup": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\U1_external_pretrain\\ckpt_best.pth",
+        "sha256": "3d556069b2b4c3e97fb5283ff62ffbca4f2309a0fbc35e4730b3ac03dedd3357",
+        "preflight_mtime_ns": 1790908342707022751
+      },
+      {
+        "path": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/U1_ddr_finetune/ckpt_last.pth",
+        "bytes": 636326899,
+        "reason": "Completed unselected stage; full best checkpoint SHA-verified locally; unused last released under user cleanup instruction",
+        "local_best_backup": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\U1_ddr_finetune\\ckpt_best.pth",
+        "sha256": "23639d0e90fdaf619a10576d712ad76e09f05121e986785670df92171e615339",
+        "preflight_mtime_ns": 1790914379766558315
+      },
+      {
+        "path": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/U1_ddr_finetune/ckpt_best.pth",
+        "bytes": 636326899,
+        "reason": "Completed unselected stage; full best checkpoint SHA-verified locally; unused last released under user cleanup instruction",
+        "local_best_backup": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\U1_ddr_finetune\\ckpt_best.pth",
+        "expected_sha256": "ec5a680803f6687ebd3c7af35a30de1a92e5d5062085947762fddea3241d3b72",
+        "sha256": "ec5a680803f6687ebd3c7af35a30de1a92e5d5062085947762fddea3241d3b72",
+        "preflight_mtime_ns": 1790914378810514549
+      },
+      {
+        "path": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/H1_external_pretrain/ckpt_best.pth",
+        "bytes": 812859935,
+        "reason": "Completed unselected stage; full best checkpoint SHA-verified locally; unused last released under user cleanup instruction",
+        "local_best_backup": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\H1_external_pretrain\\ckpt_best.pth",
+        "expected_sha256": "3aa43faa5ad38f0c6409ba8b518cb8783d319f5b8a5e4b8dce7ccfd25cfaf408",
+        "sha256": "3aa43faa5ad38f0c6409ba8b518cb8783d319f5b8a5e4b8dce7ccfd25cfaf408",
+        "preflight_mtime_ns": 1790918156627019898
+      },
+      {
+        "path": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/H1_external_pretrain/ckpt_last.pth",
+        "bytes": 812859935,
+        "reason": "Completed unselected stage; full best checkpoint SHA-verified locally; unused last released under user cleanup instruction",
+        "local_best_backup": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\H1_external_pretrain\\ckpt_best.pth",
+        "sha256": "acfe9565f42395ade5f6a0758f45a070f4c9207d5d3e60e3880ae800a254250b",
+        "preflight_mtime_ns": 1790918158371146911
+      },
+      {
+        "path": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/H1_ddr_finetune/ckpt_last.pth",
+        "bytes": 812859871,
+        "reason": "Completed unselected stage; full best checkpoint SHA-verified locally; unused last released under user cleanup instruction",
+        "local_best_backup": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\H1_ddr_finetune\\ckpt_best.pth",
+        "sha256": "33d5afbade908ed79ba215822991ce67a8b7d31b001c5ef6885cbb231255ca3d",
+        "preflight_mtime_ns": 1790934930156167423
+      },
+      {
+        "path": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/H1_ddr_finetune/ckpt_best.pth",
+        "bytes": 812859871,
+        "reason": "Completed unselected stage; full best checkpoint SHA-verified locally; unused last released under user cleanup instruction",
+        "local_best_backup": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\H1_ddr_finetune\\ckpt_best.pth",
+        "expected_sha256": "74fcd879ea96cbc29b1200bbba4d58166c837e87389b09e5a3860f4f2467438b",
+        "sha256": "74fcd879ea96cbc29b1200bbba4d58166c837e87389b09e5a3860f4f2467438b",
+        "preflight_mtime_ns": 1790930784397179835
+      },
+      {
+        "path": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/A0_ddr_finetune/ckpt_last.pth",
+        "bytes": 307229269,
+        "reason": "Completed unselected stage; full best checkpoint SHA-verified locally; unused last released under user cleanup instruction",
+        "local_best_backup": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\A0_ddr_finetune\\ckpt_best.pth",
+        "sha256": "3a6075b594328a0bb9fcd7638a49fed5b9ecb05a8f131b52a0958d42f50ff4fb",
+        "preflight_mtime_ns": 1790943900481233451
+      },
+      {
+        "path": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/A0_ddr_finetune/ckpt_best.pth",
+        "bytes": 307230421,
+        "reason": "Completed unselected stage; full best checkpoint SHA-verified locally; unused last released under user cleanup instruction",
+        "local_best_backup": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\A0_ddr_finetune\\ckpt_best.pth",
+        "expected_sha256": "f28019907d51c330b88800b55f81a61b6a5cca0d7387eacb591828ba314debd6",
+        "sha256": "f28019907d51c330b88800b55f81a61b6a5cca0d7387eacb591828ba314debd6",
+        "preflight_mtime_ns": 1790943618477920525
+      },
+      {
+        "path": "/root/HRDecoder/work_dirs/exp_combo2_split613/best_mIoU_iter_12000.pth",
+        "bytes": 526478242,
+        "reason": "Historical unselected checkpoint; current champion uses separate verified assets; preserve configs/logs and official pretrained baseline",
+        "local_best_backup": null,
+        "sha256": "2d1edc4713dedee371fd4e37c3f44af991184a60dc2aebc6693588edf05e72bd",
+        "preflight_mtime_ns": 1787020504402384207
+      },
+      {
+        "path": "/root/HRDecoder/work_dirs/exp_combo2_split613/iter_25000.pth",
+        "bytes": 526478242,
+        "reason": "Historical unselected checkpoint; current champion uses separate verified assets; preserve configs/logs and official pretrained baseline",
+        "local_best_backup": null,
+        "sha256": "c956244b53a002b05134387b46466255a85e9f60573925ee3f3fc30a563b5e13",
+        "preflight_mtime_ns": 1787028839380527042
+      },
+      {
+        "path": "/root/HRDecoder/work_dirs/exp_combo_split613/best_mIoU_iter_32000.pth",
+        "bytes": 526178583,
+        "reason": "Historical unselected checkpoint; current champion uses separate verified assets; preserve configs/logs and official pretrained baseline",
+        "local_best_backup": null,
+        "sha256": "8071bdff26499b714fd2ebd77b4d69cf0c5c9d38d3c9d45700c5bbad7f6fc013",
+        "preflight_mtime_ns": 1786991241093971333
+      },
+      {
+        "path": "/root/HRDecoder/work_dirs/exp_combo_split613/best_mIoU_iter_4000.pth",
+        "bytes": 526178519,
+        "reason": "Historical unselected checkpoint; current champion uses separate verified assets; preserve configs/logs and official pretrained baseline",
+        "local_best_backup": null,
+        "sha256": "2cf4ab2c86cfa25079854a88a469abf845fdebb51ce9e59371139ca0097f4122",
+        "preflight_mtime_ns": 1786973539127171589
+      },
+      {
+        "path": "/root/HRDecoder/work_dirs/exp_combo_split613/iter_40000.pth",
+        "bytes": 526178583,
+        "reason": "Historical unselected checkpoint; current champion uses separate verified assets; preserve configs/logs and official pretrained baseline",
+        "local_best_backup": null,
+        "sha256": "ec13b7562aeb7ca2cb75eebcef0e1ea197b446f0e53457320fc2ebf89dc9d198",
+        "preflight_mtime_ns": 1786996157404706959
+      },
+      {
+        "path": "/root/HRDecoder/work_dirs/exp_combo_v2_split613/best_mIoU_iter_16000.pth",
+        "bytes": 526178583,
+        "reason": "Historical unselected checkpoint; current champion uses separate verified assets; preserve configs/logs and official pretrained baseline",
+        "local_best_backup": null,
+        "sha256": "bef3bee007689f1e8736cfb6cb20b3a6380fd86d830668741d7ea95c54ed066b",
+        "preflight_mtime_ns": 1787007830409881237
+      },
+      {
+        "path": "/root/HRDecoder/work_dirs/exp_combo_v2_split613/iter_23000.pth",
+        "bytes": 526178583,
+        "reason": "Historical unselected checkpoint; current champion uses separate verified assets; preserve configs/logs and official pretrained baseline",
+        "local_best_backup": null,
+        "sha256": "59420cb5632fd3a886f6241bf6cf94af4d8b29a593642a4b5f4cb341e424a3b3",
+        "preflight_mtime_ns": 1787012190213950775
+      },
+      {
+        "path": "/root/HRDecoder/work_dirs/exp_e1_cedice_split613/best_mIoU_iter_12000.pth",
+        "bytes": 525854922,
+        "reason": "Historical unselected checkpoint; current champion uses separate verified assets; preserve configs/logs and official pretrained baseline",
+        "local_best_backup": null,
+        "sha256": "edd71bd105515baff9201891249e00e685d5324ba56abc4af13e60cb29bff4c3",
+        "preflight_mtime_ns": 1786943651609442072
+      },
+      {
+        "path": "/root/HRDecoder/work_dirs/exp_e1_cedice_split613/iter_40000.pth",
+        "bytes": 525854922,
+        "reason": "Historical unselected checkpoint; current champion uses separate verified assets; preserve configs/logs and official pretrained baseline",
+        "local_best_backup": null,
+        "sha256": "7cc57a8d8742b00cf4701fd732ac1ae46ac282be0febb6439289eee63703d991",
+        "preflight_mtime_ns": 1786961371440037667
+      },
+      {
+        "path": "/root/HRDecoder/work_dirs/exp_e4_detail_split613/best_mIoU_iter_36000.pth",
+        "bytes": 526178519,
+        "reason": "Historical unselected checkpoint; current champion uses separate verified assets; preserve configs/logs and official pretrained baseline",
+        "local_best_backup": null,
+        "sha256": "ef63779928a1267c5b7e9050bf82ddb3ed88b62d830a9275d7018fd90272e112",
+        "preflight_mtime_ns": 1786932389116819341
+      },
+      {
+        "path": "/root/HRDecoder/work_dirs/exp_e4_detail_split613/iter_40000.pth",
+        "bytes": 526178519,
+        "reason": "Historical unselected checkpoint; current champion uses separate verified assets; preserve configs/logs and official pretrained baseline",
+        "local_best_backup": null,
+        "sha256": "97292a046ea4b37685480360ecf6dc02705bc1c8c0557b42c909c898967d77da",
+        "preflight_mtime_ns": 1786934800137265527
+      }
+    ],
+    "retained": [
+      {
+        "path": "/root/HRDecoder/hrdecoder_ddr_iter_40000.pth",
+        "bytes": 525855050,
+        "sha256": "baf9038cd6215f5851a01513ef4db4fbd8237252a0b951f1c47b4b15156a4661"
+      },
+      {
+        "path": "/root/autodl-tmp/HRDecoder_Ready_20261002/assets/U0_historical_best.pth",
+        "bytes": 636326835,
+        "sha256": "98d98a5d02dc2615062c3c31cd15d061daf3d7ab41cb8f25cd90b062cd53bb34"
+      },
+      {
+        "path": "/root/autodl-tmp/HRDecoder_Ready_20261002/assets/champion/B_weights.pth",
+        "bytes": 263479238,
+        "sha256": "0b3cd72e740fc5c69242994c12cfd71a49ac892aff37d09c50bb9fb6931a8626"
+      },
+      {
+        "path": "/root/autodl-tmp/HRDecoder_Ready_20261002/assets/champion/D_student_2000.pth",
+        "bytes": 263419124,
+        "sha256": "5fe18717b62d8fc3ab4846a50c046588e2af05abbbfdb3a958f4794018b319ea"
+      },
+      {
+        "path": "/root/autodl-tmp/HRDecoder_Ready_20261002/assets/champion/E4_weights.pth",
+        "bytes": 263477167,
+        "sha256": "c5a3d0f0b990d2430e545146745bc809538bbe764979baf54f62b450785268e0"
+      },
+      {
+        "path": "/root/autodl-tmp/HRDecoder_Ready_20261002/assets/champion/E_1500.pth",
+        "bytes": 527412743,
+        "sha256": "a18ff92b4da24d870554f17856983d4be042386cacbcaba0d4e13f3f248ed5e5"
+      },
+      {
+        "path": "/root/autodl-tmp/HRDecoder_Ready_20261002/assets/champion/H4_best.pth",
+        "bytes": 15447,
+        "sha256": "14757e02de49f6f065d4ef82cb8b1c4ee8a6a7f3f66cb1867276993950f80c50"
+      },
+      {
+        "path": "/root/autodl-tmp/HRDecoder_Ready_20261002/assets/convnext_small_1k_224_ema.pth",
+        "bytes": 201005191,
+        "sha256": "fe969be0ad46c62ace0981c933ff47af59b9753365d71466efa6896571a879ad"
+      },
+      {
+        "path": "/root/autodl-tmp/HRDecoder_Ready_20261002/assets/hrnetv2_w48-d2186c55.pth",
+        "bytes": 310659148,
+        "sha256": "d2186c55782308392ae14cf179ac4840143b09abdbba81aa3f9274c795ebc960"
+      }
+    ],
+    "planned_count": 21,
+    "planned_bytes": 12199123371,
+    "disk_free_before": {
+      "/root/autodl-tmp": 15163441152,
+      "/root/HRDecoder": 8468205568
+    },
+    "completed_epoch": 1790954273.5867887,
+    "deleted_count": 21,
+    "deleted_bytes": 12199123371,
+    "disk_free_after": {
+      "/root/autodl-tmp": 21574668288,
+      "/root/HRDecoder": 14256156672
+    },
+    "disk_available_gain": {
+      "/root/autodl-tmp": 6411227136,
+      "/root/HRDecoder": 5787951104
+    },
+    "no_experiment_or_test_rerun": true,
+    "logs_configs_data_preserved": true
+  },
+  "closure": {
+    "completed_at_cst": "2026-10-03 01:48:27",
+    "training_complete": true,
+    "local_best_backups_verified": true,
+    "workspace_summary_updated": true,
+    "model_monitor_status": "PAUSED",
+    "shutdown_call_repaired": "Text script without shebang; executed via /bin/bash /usr/bin/shutdown",
+    "shutdown_request_status": "shutdown_dispatched_unconfirmed",
+    "shutdown_dispatched_at_cst": "2026-10-03 01:43:21",
+    "ssh_reachable_after_shutdown": false,
+    "ssh_postcheck_at_cst": "2026-10-03 01:45:57",
+    "platform_state_independently_confirmed": false,
+    "no_instance_release": true,
+    "no_test_rerun": true,
+    "final_report_sha256": "5a38ce8890ebb757dbdcbcb7881304883a3f1697e94747aac02908c8a87c1c0f"
+  },
+  "weights": [
+    {
+      "group": "已评价部署",
+      "name": "D_student_2000.pth",
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\best_pipeline\\weights\\D_student_2000.pth",
+      "bytes": 263419124,
+      "sha256": "5fe18717b62d8fc3ab4846a50c046588e2af05abbbfdb3a958f4794018b319ea",
+      "sha_verification": "full SHA recorded at completed-task closure; existence and size checked again for this report"
+    },
+    {
+      "group": "已评价部署",
+      "name": "B_weights.pth",
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\best_pipeline\\weights\\B_weights.pth",
+      "bytes": 263479238,
+      "sha256": "0b3cd72e740fc5c69242994c12cfd71a49ac892aff37d09c50bb9fb6931a8626",
+      "sha_verification": "full SHA recorded at completed-task closure; existence and size checked again for this report"
+    },
+    {
+      "group": "已评价部署",
+      "name": "E_1500.pth",
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\best_pipeline\\weights\\E_1500.pth",
+      "bytes": 527412743,
+      "sha256": "a18ff92b4da24d870554f17856983d4be042386cacbcaba0d4e13f3f248ed5e5",
+      "sha_verification": "full SHA recorded at completed-task closure; existence and size checked again for this report"
+    },
+    {
+      "group": "已评价部署",
+      "name": "E4_weights.pth",
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\best_pipeline\\weights\\E4_weights.pth",
+      "bytes": 263477167,
+      "sha256": "c5a3d0f0b990d2430e545146745bc809538bbe764979baf54f62b450785268e0",
+      "sha_verification": "full SHA recorded at completed-task closure; existence and size checked again for this report"
+    },
+    {
+      "group": "已评价部署",
+      "name": "H4_best.pth",
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\best_pipeline\\weights\\H4_best.pth",
+      "bytes": 15447,
+      "sha256": "14757e02de49f6f065d4ef82cb8b1c4ee8a6a7f3f66cb1867276993950f80c50",
+      "sha_verification": "full SHA recorded at completed-task closure; existence and size checked again for this report"
+    },
+    {
+      "group": "已评价部署",
+      "name": "U0_historical_best.pth",
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\best_pipeline\\weights\\U0_historical_best.pth",
+      "bytes": 636326835,
+      "sha256": "98d98a5d02dc2615062c3c31cd15d061daf3d7ab41cb8f25cd90b062cd53bb34",
+      "sha_verification": "full SHA recorded at completed-task closure; existence and size checked again for this report"
+    },
+    {
+      "group": "主实验 best",
+      "name": "H1_ddr_finetune/ckpt_best.pth",
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\H1_ddr_finetune\\ckpt_best.pth",
+      "bytes": 812859871,
+      "sha256": "74fcd879ea96cbc29b1200bbba4d58166c837e87389b09e5a3860f4f2467438b",
+      "sha_verification": "full SHA recorded at completed-task closure; existence and size checked again for this report"
+    },
+    {
+      "group": "主实验 best",
+      "name": "U1_external_pretrain/ckpt_best.pth",
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\U1_external_pretrain\\ckpt_best.pth",
+      "bytes": 636327027,
+      "sha256": "08db330000591ce7942e4d70b06017849ff0f3c03fa4e60edb7801a064da351a",
+      "sha_verification": "full SHA recorded at completed-task closure; existence and size checked again for this report"
+    },
+    {
+      "group": "主实验 best",
+      "name": "U1_ddr_finetune/ckpt_best.pth",
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\U1_ddr_finetune\\ckpt_best.pth",
+      "bytes": 636326899,
+      "sha256": "ec5a680803f6687ebd3c7af35a30de1a92e5d5062085947762fddea3241d3b72",
+      "sha_verification": "full SHA recorded at completed-task closure; existence and size checked again for this report"
+    },
+    {
+      "group": "主实验 best",
+      "name": "H1_external_pretrain/ckpt_best.pth",
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\H1_external_pretrain\\ckpt_best.pth",
+      "bytes": 812859935,
+      "sha256": "3aa43faa5ad38f0c6409ba8b518cb8783d319f5b8a5e4b8dce7ccfd25cfaf408",
+      "sha_verification": "full SHA recorded at completed-task closure; existence and size checked again for this report"
+    },
+    {
+      "group": "主实验 best",
+      "name": "A0_ddr_finetune/ckpt_best.pth",
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\A0_ddr_finetune\\ckpt_best.pth",
+      "bytes": 307230421,
+      "sha256": "f28019907d51c330b88800b55f81a61b6a5cca0d7387eacb591828ba314debd6",
+      "sha_verification": "full SHA recorded at completed-task closure; existence and size checked again for this report"
+    },
+    {
+      "group": "高分辨率实验 best",
+      "name": "U0_continuation2048/ckpt_best.pth",
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\round2_highres\\server_results\\work_dirs\\U0_continuation2048\\ckpt_best.pth",
+      "bytes": 636327411,
+      "sha256": "34604f5d3e02d099e24d33cabd5a3b708cbda30c339da39a529222c2bc1d129d",
+      "sha_verification": "full SHA recorded at completed-task closure; existence and size checked again for this report"
+    },
+    {
+      "group": "高分辨率实验 best",
+      "name": "U0_highres/ckpt_best.pth",
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\round2_highres\\server_results\\work_dirs\\U0_highres\\ckpt_best.pth",
+      "bytes": 636327347,
+      "sha256": "622184c13f794938e79592cdb71b3628d2ea9d658be55fd7a9dfee29aee77cc1",
+      "sha_verification": "full SHA recorded at completed-task closure; existence and size checked again for this report"
+    }
+  ],
+  "report_verification": {
+    "test_image_counts_recomputed": 227,
+    "main_full_metric_nodes_recomputed": 18,
+    "round2_full_metric_nodes_recomputed": 5,
+    "round2_config_sha_checked": true,
+    "original_test_lock_sha_checked": true,
+    "weight_sizes_checked": 13,
+    "new_training": false,
+    "new_test_evaluation": false,
+    "server_accessed": false
+  },
+  "source_files": {
+    "server_results/work_dirs/campaign_state.json": {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\campaign_state.json",
+      "sha256": "270dc59ff72004a1b0175d92c2f3ac9dc0b3de15e30f360c6eda6a8d72ef96bc",
+      "bytes": 6101
+    },
+    "server_results/work_dirs/finish_state.json": {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\finish_state.json",
+      "sha256": "96614c5630d2847e916c2fa995fa374901403e9fcf0b5475e68057a788f9bd5f",
+      "bytes": 97372
+    },
+    "server_results/reports/finish/initial_fusion.json": {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\reports\\finish\\initial_fusion.json",
+      "sha256": "dbca08ff7aa8770cc216bb892e7d8c28a4186a7f5946d6094939ae032167c94c",
+      "bytes": 43181
+    },
+    "server_results/reports/finish/initial_nomination.json": {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\reports\\finish\\initial_nomination.json",
+      "sha256": "9ab5b1b1fc6ec966220a8cf859bd9df6e7826c8875712727a9e0009b447c046c",
+      "bytes": 5580
+    },
+    "server_results/reports/finish/final_test.json": {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\reports\\finish\\final_test.json",
+      "sha256": "49dc7e3ebae34f637c8a07ccfb70f0bd5e6bc071782ea07a3befd7ab01a9a879",
+      "bytes": 1195
+    },
+    "server_results/reports/finish/test_progress.json": {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\reports\\finish\\test_progress.json",
+      "sha256": "44944218cd32ebe66c6a3578fd9a066ba9a96992c933b5a486bcc4d68bbb5682",
+      "bytes": 136933
+    },
+    "reports/final_local_verification.json": {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\reports\\final_local_verification.json",
+      "sha256": "5fbf031d858fb53d994857929e6880ba4c50e55ea62e5f9a558c303f898db790",
+      "bytes": 506
+    },
+    "best_pipeline/local_weight_manifest.json": {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\best_pipeline\\local_weight_manifest.json",
+      "sha256": "95aded5add5db0f623f1a273ea81ab8b689b61d97008658c26e41bf21fb5a24e",
+      "bytes": 2237
+    },
+    "reports/verified_backups.json": {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\reports\\verified_backups.json",
+      "sha256": "daffe070e6d9d6f99d31fcecc136fef4b9f160af743d57e3bc1c7f0fbe03a5a3",
+      "bytes": 2148
+    },
+    "round2_highres/protocol.json": {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\round2_highres\\protocol.json",
+      "sha256": "5605d87a2a0c5dc27b9868d0f70473c4182585ecac10532fdb2109de829f7758",
+      "bytes": 1990
+    },
+    "round2_highres/server_results/work_dirs/campaign_state.json": {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\round2_highres\\server_results\\work_dirs\\campaign_state.json",
+      "sha256": "d0b1734bfc8a827d06fa28065992956d6156710ff0273792b56ab058064ad78d",
+      "bytes": 2816
+    },
+    "round2_highres/server_results/work_dirs/finish_state.json": {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\round2_highres\\server_results\\work_dirs\\finish_state.json",
+      "sha256": "f977d37a20e40050e56301a47afdb83dd39782d48d74e0919209e914723f443e",
+      "bytes": 688
+    },
+    "round2_highres/reports/validation_completion_audit.json": {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\round2_highres\\reports\\validation_completion_audit.json",
+      "sha256": "99e20fcaf58842f76840747bbba76a1b1bc1b702dcbd292a2298293864d2e0cf",
+      "bytes": 1340
+    },
+    "round2_highres/reports/verified_backups.json": {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\round2_highres\\reports\\verified_backups.json",
+      "sha256": "7ad4b9b6363766d44ca0e52eeec7f502412b8499acb9c37e0aa0bcd9ca05218d",
+      "bytes": 958
+    },
+    "round2_highres/reports/task_closure.json": {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\round2_highres\\reports\\task_closure.json",
+      "sha256": "dabab1263c9147022869b4466f3eb5bbb2517368478a87c7f1e6e97636d76c38",
+      "bytes": 715
+    },
+    "reports/server_weight_cleanup_result.json": {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\reports\\server_weight_cleanup_result.json",
+      "sha256": "ebd12a529370b9790dcbbe53a5aec60c07275f5437b6c3055dc2f0b9a3c861ab",
+      "bytes": 13762
+    },
+    "reports/server_cleanup_final_verification.json": {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\reports\\server_cleanup_final_verification.json",
+      "sha256": "2f16769f61def25c1344fd9a2b1539523c926aa56865b13970eb05614f35b608",
+      "bytes": 183
+    },
+    "reports/duplicates/duplicates.json": {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\reports\\duplicates\\duplicates.json",
+      "sha256": "6781c52f92461669ff610184e31f3b6b9295788501cebac1eda941391353fc69",
+      "bytes": 11940
+    },
+    "reports/external_partition.json": {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\reports\\external_partition.json",
+      "sha256": "a1e4531ae8c3fdd1182fa6e9302031ed782072434af22f8de0d8865b0b9235cc",
+      "bytes": 1712
+    },
+    "reports/auxiliary_pool_audit.json": {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\reports\\auxiliary_pool_audit.json",
+      "sha256": "2b5f4a64f4079b49cd90edc5186a7be2214f1a239aa6d24bdb60eed005bddb70",
+      "bytes": 2168
+    },
+    "reports/incident_gpu_idle_repair.json": {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\reports\\incident_gpu_idle_repair.json",
+      "sha256": "876e6d847569acd14e97790ae3db3891920773a97be86c0c05389151734830e5",
+      "bytes": 3673
+    },
+    "round2_highres/reports/engineering_repair_1000.json": {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\round2_highres\\reports\\engineering_repair_1000.json",
+      "sha256": "ec7b4d007e33d174c74b0db7b969f4fd69c622c57b4fc4146b88c52ba6428951",
+      "bytes": 1585
+    },
+    "round2_highres/reports/shutdown_state.json": {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\round2_highres\\reports\\shutdown_state.json",
+      "sha256": "6d083d5393af92a83254271f486855152e2dfcac8dbce20c9260952d463b9b37",
+      "bytes": 463
+    },
+    "server_results/configs/resolved/U1_convnext_unet_ext_pretrain.yaml": {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\configs\\resolved\\U1_convnext_unet_ext_pretrain.yaml",
+      "sha256": "b44967b823f6e6a2cf04b246a15ca37f766dd76209bcee5a69e8fe0254bab4ef",
+      "bytes": 5502
+    },
+    "server_results/configs/resolved/H1_hrdecoder_ext_pretrain.yaml": {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\configs\\resolved\\H1_hrdecoder_ext_pretrain.yaml",
+      "sha256": "1b2de9719d17d9ba1a1ea9b9ba20c2dc839f0ea1f2e573ad1f5b0d4a1c5965f5",
+      "bytes": 4842
+    },
+    "server_results/configs/resolved/A0_hacdr_adapted.yaml": {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\configs\\resolved\\A0_hacdr_adapted.yaml",
+      "sha256": "6ae617369dbd53a8c609fffd08a329c928c8e8bf2b31c5f08e5de3f443dd5535",
+      "bytes": 3500
+    },
+    "round2_highres/configs/U0_highres.yaml": {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\round2_highres\\configs\\U0_highres.yaml",
+      "sha256": "10f16d28e4fbd01ce6f8249b219bf0e9aaceb472da531dd215b0fa4a480bbf08",
+      "bytes": 5485
+    },
+    "round2_highres/configs/U0_continuation2048.yaml": {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\round2_highres\\configs\\U0_continuation2048.yaml",
+      "sha256": "17c15fd8ffd2bc6534080467bc6bfe4821f5250ba158d90a867ee1f7669381b8",
+      "bytes": 5473
+    },
+    "server_results/work_dirs/U1_external_pretrain/eval_u300.json": {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\U1_external_pretrain\\eval_u300.json",
+      "sha256": "851b14414af60e2c9be6455cde52015c93470716ea4e51d67eacfd15b1002b92",
+      "bytes": 1870
+    },
+    "server_results/work_dirs/U1_external_pretrain/eval_u600.json": {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\U1_external_pretrain\\eval_u600.json",
+      "sha256": "8783d2c7221333804fa4a4f10dca9484e570bf0d64ea1f90ab9c7644f742506d",
+      "bytes": 1845
+    },
+    "server_results/work_dirs/U1_external_pretrain/eval_u1200.json": {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\U1_external_pretrain\\eval_u1200.json",
+      "sha256": "1f53c44bac2621dff391e76a63190736f652779a2c7a138f3468f41a26b67986",
+      "bytes": 1837
+    },
+    "server_results/work_dirs/U1_external_pretrain/eval_u2400.json": {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\U1_external_pretrain\\eval_u2400.json",
+      "sha256": "a6f7a7088f811e4671fcf3cdd7d3232135fcd57d9fe2a3da3597d3903f8ba94d",
+      "bytes": 1841
+    },
+    "server_results/work_dirs/U1_ddr_finetune/eval_u3000.json": {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\U1_ddr_finetune\\eval_u3000.json",
+      "sha256": "9f5d048a77a674b3799d6941936d584e87cf1ba2f6d73bf6f4d6196ea29d3a13",
+      "bytes": 1811
+    },
+    "server_results/work_dirs/U1_ddr_finetune/eval_u6000.json": {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\U1_ddr_finetune\\eval_u6000.json",
+      "sha256": "8d08936e3aa7f43395c08ccacd79d2a8dbb18a899955c8d1eff9ae6005ff27dd",
+      "bytes": 1806
+    },
+    "server_results/work_dirs/U1_ddr_finetune/eval_u9000.json": {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\U1_ddr_finetune\\eval_u9000.json",
+      "sha256": "f0fb591604b83cf801dbdf1cd71f8f703cfc9c5a0178537e6622d6ef98e142dd",
+      "bytes": 1807
+    },
+    "server_results/work_dirs/U1_ddr_finetune/eval_u12000.json": {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\U1_ddr_finetune\\eval_u12000.json",
+      "sha256": "8c518a88aa2749d534a44905de3bba2d33d7f4d54f1550dcab3e46508d403c9d",
+      "bytes": 1807
+    },
+    "server_results/work_dirs/H1_external_pretrain/eval_u300.json": {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\H1_external_pretrain\\eval_u300.json",
+      "sha256": "4e8e6c40bac1e916cf2910dd2583e4214bf3de5b163d810bb957fd69c9a08b4c",
+      "bytes": 1756
+    },
+    "server_results/work_dirs/H1_external_pretrain/eval_u600.json": {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\H1_external_pretrain\\eval_u600.json",
+      "sha256": "a8b1b07a13330a663a9323e9566e469a120ae6306b86f76d02b952502106eb29",
+      "bytes": 1808
+    },
+    "server_results/work_dirs/H1_external_pretrain/eval_u1200.json": {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\H1_external_pretrain\\eval_u1200.json",
+      "sha256": "a6c536aab4ecdf61e8cd16d989ffba17ded6e952faacd9418523e7e55917b4f7",
+      "bytes": 1799
+    },
+    "server_results/work_dirs/H1_external_pretrain/eval_u2400.json": {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\H1_external_pretrain\\eval_u2400.json",
+      "sha256": "0949e9b6e5aa4dffa47a0f6830fd8b8219fb84be73242f6f31711891e02284bb",
+      "bytes": 1797
+    },
+    "server_results/work_dirs/H1_ddr_finetune/eval_u3000.json": {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\H1_ddr_finetune\\eval_u3000.json",
+      "sha256": "c286cbffbc9bdd8519c83d0d4d5c26906b3df9990f30c6d030fb7c2a614e7cb3",
+      "bytes": 1781
+    },
+    "server_results/work_dirs/H1_ddr_finetune/eval_u6000.json": {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\H1_ddr_finetune\\eval_u6000.json",
+      "sha256": "d07fba01a4a9b5a7322b767533e4f1deff18e52647273efeaf69a02f1e024437",
+      "bytes": 1775
+    },
+    "server_results/work_dirs/H1_ddr_finetune/eval_u9000.json": {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\H1_ddr_finetune\\eval_u9000.json",
+      "sha256": "23edb84b8f4266dc2229cfa19594b7ca2073b32f2b9559dd9b10475c2854d8f8",
+      "bytes": 1775
+    },
+    "server_results/work_dirs/H1_ddr_finetune/eval_u12000.json": {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\H1_ddr_finetune\\eval_u12000.json",
+      "sha256": "78c530bfd6ba2a72d3f5478bb57eb33ef7e4ed17f09381d7b4a301ef0c675619",
+      "bytes": 1776
+    },
+    "server_results/work_dirs/A0_ddr_finetune/eval_u3000.json": {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\A0_ddr_finetune\\eval_u3000.json",
+      "sha256": "a2a2e00ab65f16157f2a6c97fd753b3f83542be4326278854a26b8ce9c2652c9",
+      "bytes": 1841
+    },
+    "server_results/work_dirs/A0_ddr_finetune/eval_u6000.json": {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\A0_ddr_finetune\\eval_u6000.json",
+      "sha256": "676661a2a0fa647387a8e9639b44167c00093fbbadc0ad20aa1e1e53922ff6f1",
+      "bytes": 1761
+    },
+    "round2_highres/server_results/work_dirs/U0_continuation2048/eval_u1000.json": {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\round2_highres\\server_results\\work_dirs\\U0_continuation2048\\eval_u1000.json",
+      "sha256": "bdc59f2e356928d61e52686aabfd0be559f64de79e2c7cdaac58c1f956f2a5ff",
+      "bytes": 2299
+    },
+    "round2_highres/server_results/work_dirs/U0_continuation2048/eval_u2000.json": {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\round2_highres\\server_results\\work_dirs\\U0_continuation2048\\eval_u2000.json",
+      "sha256": "96a1d27f70eb337a7c95632f31d88117e43b6740551391a31a5647d1082ea3a7",
+      "bytes": 2297
+    },
+    "round2_highres/server_results/work_dirs/U0_highres/eval_u1000.json": {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\round2_highres\\server_results\\work_dirs\\U0_highres\\eval_u1000.json",
+      "sha256": "f3bc071fd3ab8fe915e758bf5e9832f15c32c2ebdbdc0962f6c8c66e8c676abd",
+      "bytes": 2293
+    },
+    "round2_highres/server_results/work_dirs/U0_highres/eval_u2000.json": {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\round2_highres\\server_results\\work_dirs\\U0_highres\\eval_u2000.json",
+      "sha256": "671c78dd9528f9da55ca6ce062322db2cf6b72307c58fa788a1a823912264be8",
+      "bytes": 2298
+    },
+    "round2_highres/server_results/work_dirs/U0_highres/eval_u4000.json": {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\round2_highres\\server_results\\work_dirs\\U0_highres\\eval_u4000.json",
+      "sha256": "7a9ef2a876ef39e4505e20d0ef29d2d98c73bc7777b26a5139fdce54ab5687e6",
+      "bytes": 2298
+    }
+  }
+}

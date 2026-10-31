@@ -1,0 +1,5 @@
+{
+  "exit_code": 0,
+  "stdout": "{\n  \"status\": \"waiting_for_main_training\",\n  \"rules\": {\n    \"highres\": \"OOF and locked-val gain >0.001; best fixed25 nominee only; paired 4000-update continuation\",\n    \"second_seed\": \"OOF gain >=0.005 and standalone >= champion-0.015; ensemble exploration, not confirmation\",\n    \"final_test\": \"one locked pipeline only if OOF and locked-val gain >0.001; otherwise retain champion\"\n  }\n}\n7970\n\nauxsize 431030272\n",
+  "stderr": ""
+}

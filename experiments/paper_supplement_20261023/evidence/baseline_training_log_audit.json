@@ -1,0 +1,12 @@
+{
+  "status": "PASS_ALL_RECORDED_BASELINE_TRAINING_LOSSES_FINITE",
+  "recorded_training_nodes": 2000,
+  "last_training_node": 40000,
+  "loss_fields": [
+    "fuse.loss_seg",
+    "hr.loss_seg",
+    "loss"
+  ],
+  "bg_nan_in_class_table": "Unused background channel; excluded from four foreground classes, not a nonfinite training loss",
+  "checkpoint_selection": "Original hook selected16000 among10fixedvalidationnodes"
+}

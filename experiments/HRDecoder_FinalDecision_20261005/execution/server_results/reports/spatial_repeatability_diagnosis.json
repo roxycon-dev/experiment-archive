@@ -1,0 +1,230 @@
+{
+  "time": "2026-10-04T20:03:17.155218+00:00",
+  "synthetic_only_no_scientific_updates": true,
+  "results": {
+    "BF16": {
+      "forward_exact": true,
+      "forward_max_abs": 0.0,
+      "mismatch_tensors": 264,
+      "largest_differences": [
+        {
+          "path": "snapshot/0/spatial.pyramid.1.1.weight",
+          "shape": [
+            64
+          ],
+          "max_abs": 5.960464477539063e-08,
+          "mismatch_values": 1,
+          "max_reference_abs": 1.000000238418579
+        },
+        {
+          "path": "snapshot/0/spatial.pyramid.0.0.weight",
+          "shape": [
+            32,
+            3,
+            3,
+            3
+          ],
+          "max_abs": 1.4901161193847656e-08,
+          "mismatch_values": 97,
+          "max_reference_abs": 0.19174298644065857
+        },
+        {
+          "path": "snapshot/0/spatial.pyramid.2.0.weight",
+          "shape": [
+            128,
+            64,
+            3,
+            3
+          ],
+          "max_abs": 1.1175870895385742e-08,
+          "mismatch_values": 5345,
+          "max_reference_abs": 0.041666336357593536
+        },
+        {
+          "path": "snapshot/0/spatial.pyramid.1.0.weight",
+          "shape": [
+            64,
+            32,
+            3,
+            3
+          ],
+          "max_abs": 9.313225746154785e-09,
+          "mismatch_values": 2624,
+          "max_reference_abs": 0.0589255765080452
+        },
+        {
+          "path": "snapshot/1/state/41/exp_avg",
+          "shape": [
+            768,
+            768
+          ],
+          "max_abs": 5.365336619433947e-09,
+          "mismatch_values": 3,
+          "max_reference_abs": 0.0016771761002019048
+        },
+        {
+          "path": "snapshot/0/spatial.pyramid.3.0.weight",
+          "shape": [
+            256,
+            128,
+            3,
+            3
+          ],
+          "max_abs": 4.045432433485985e-09,
+          "mismatch_values": 6010,
+          "max_reference_abs": 0.029462678357958794
+        },
+        {
+          "path": "snapshot/0/spatial.input_projection.1.weight",
+          "shape": [
+            768,
+            256,
+            1,
+            1
+          ],
+          "max_abs": 3.725290298461914e-09,
+          "mismatch_values": 89,
+          "max_reference_abs": 0.06249983236193657
+        },
+        {
+          "path": "snapshot/0/spatial.input_projection.1.bias",
+          "shape": [
+            768
+          ],
+          "max_abs": 3.725290298461914e-09,
+          "mismatch_values": 1,
+          "max_reference_abs": 0.06244548410177231
+        },
+        {
+          "path": "snapshot/0/spatial.interactions.0.extractor.value.weight",
+          "shape": [
+            768,
+            768
+          ],
+          "max_abs": 3.725290298461914e-09,
+          "mismatch_values": 1233,
+          "max_reference_abs": 0.06249987334012985
+        },
+        {
+          "path": "snapshot/0/spatial.interactions.0.extractor.output.weight",
+          "shape": [
+            768,
+            768
+          ],
+          "max_abs": 3.725290298461914e-09,
+          "mismatch_values": 165,
+          "max_reference_abs": 0.062499918043613434
+        }
+      ],
+      "global_max_abs": 5.960464477539063e-08
+    },
+    "FP32": {
+      "forward_exact": true,
+      "forward_max_abs": 0.0,
+      "mismatch_tensors": 940,
+      "largest_differences": [
+        {
+          "path": "snapshot/1/state/0/exp_avg",
+          "shape": [
+            1,
+            1,
+            768
+          ],
+          "max_abs": 4.272806108929217e-07,
+          "mismatch_values": 768,
+          "max_reference_abs": 0.005082136485725641
+        },
+        {
+          "path": "snapshot/1/state/2/exp_avg",
+          "shape": [
+            768,
+            3,
+            16,
+            16
+          ],
+          "max_abs": 1.4209217624738812e-07,
+          "mismatch_values": 586655,
+          "max_reference_abs": 0.004476572386920452
+        },
+        {
+          "path": "snapshot/1/state/1/exp_avg",
+          "shape": [
+            1,
+            4,
+            768
+          ],
+          "max_abs": 9.167706593871117e-08,
+          "mismatch_values": 3059,
+          "max_reference_abs": 0.0029596786480396986
+        },
+        {
+          "path": "snapshot/0/spatial.interactions.0.injector.output.weight",
+          "shape": [
+            768,
+            768
+          ],
+          "max_abs": 4.681746190726699e-08,
+          "mismatch_values": 547293,
+          "max_reference_abs": 6.005399200148531e-07
+        },
+        {
+          "path": "snapshot/1/state/3/exp_avg",
+          "shape": [
+            768
+          ],
+          "max_abs": 3.2974639907479286e-08,
+          "mismatch_values": 767,
+          "max_reference_abs": 0.0006290138117037714
+        },
+        {
+          "path": "snapshot/1/state/239/exp_avg",
+          "shape": [
+            768
+          ],
+          "max_abs": 3.2974639907479286e-08,
+          "mismatch_values": 767,
+          "max_reference_abs": 0.0006290138117037714
+        },
+        {
+          "path": "snapshot/1/state/4/exp_avg",
+          "shape": [
+            768
+          ],
+          "max_abs": 3.259629011154175e-08,
+          "mismatch_values": 768,
+          "max_reference_abs": 0.0005119016277603805
+        },
+        {
+          "path": "snapshot/1/state/186/exp_avg",
+          "shape": [
+            768,
+            768
+          ],
+          "max_abs": 2.74376361630857e-08,
+          "mismatch_values": 586688,
+          "max_reference_abs": 0.0007729266071692109
+        },
+        {
+          "path": "snapshot/1/state/5/exp_avg",
+          "shape": [
+            768
+          ],
+          "max_abs": 2.1354139789764304e-08,
+          "mismatch_values": 768,
+          "max_reference_abs": 0.0001680143759585917
+        },
+        {
+          "path": "snapshot/0/backbone.blocks.6.attn.proj.weight",
+          "shape": [
+            768,
+            768
+          ],
+          "max_abs": 1.4901161193847656e-08,
+          "mismatch_values": 2,
+          "max_reference_abs": 0.5361129641532898
+        }
+      ],
+      "global_max_abs": 4.272806108929217e-07
+    }
+  }
+}

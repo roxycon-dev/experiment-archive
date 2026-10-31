@@ -1,0 +1,77 @@
+test_background_label_no_channel (test_core.TestDice.test_background_label_no_channel) ... ok
+test_matches_formula (test_core.TestDice.test_matches_formula) ... ok
+test_pair_armB_ref_detached_grad_flows (test_core.TestDice.test_pair_armB_ref_detached_grad_flows) ... ok
+test_perfect_uniform_probs_zero_loss (test_core.TestDice.test_perfect_uniform_probs_zero_loss) ... ok
+test_marker_alignment_via_shared_warp (test_core.TestGeometry.test_marker_alignment_via_shared_warp) ... ok
+test_shapes_ranges_trace (test_core.TestGeometry.test_shapes_ranges_trace) ... ok
+test_shared_rng_reproducible (test_core.TestGeometry.test_shared_rng_reproducible) ... ok
+test_bad_key_and_shape_no_mutation (test_core.TestStrictInit.test_bad_key_and_shape_no_mutation) ... ok
+test_conflicting_reference_rejected (test_core.TestStrictInit.test_conflicting_reference_rejected) ... ok
+test_full_embedded_ok (test_core.TestStrictInit.test_full_embedded_ok) ... ok
+test_module_prefix_stripped (test_core.TestStrictInit.test_module_prefix_stripped) ... ok
+test_student_only_missing_ref_raises (test_core.TestStrictInit.test_student_only_missing_ref_raises) ... ok
+test_student_only_with_B_ok (test_core.TestStrictInit.test_student_only_with_B_ok) ... ok
+test_configure_trainable (test_core.TestTrainableAndBN.test_configure_trainable) ... ok
+test_train_then_freeze_bn (test_core.TestTrainableAndBN.test_train_then_freeze_bn) ... ok
+test_deadline_min_of_cap_and_budget (test_ops.TestBudget.test_deadline_min_of_cap_and_budget) ... ok
+test_init_persists_and_rejects_naive (test_ops.TestBudget.test_init_persists_and_rejects_naive) ... ok
+test_invalid_budget_rejected (test_ops.TestBudget.test_invalid_budget_rejected) ... ok
+test_restart_never_resets_ledger (test_ops.TestBudget.test_restart_never_resets_ledger) ... ok
+test_tie_prefers_earlier_regardless_of_order (test_ops.TestChooseCheckpoint.test_tie_prefers_earlier_regardless_of_order) ... ok
+test_feasible_and_multiple_of_four (test_ops.TestChooseSteps.test_feasible_and_multiple_of_four) ... ok
+test_infeasible_raises (test_ops.TestChooseSteps.test_infeasible_raises) ... ok
+test_gate_four_timepoints (test_ops.TestGates.test_gate_four_timepoints) ... ok
+test_reject_zero_union (test_ops.TestMetrics.test_reject_zero_union) ... ok
+test_true_aggregates_across_images (test_ops.TestMetrics.test_true_aggregates_across_images) ... ok
+test_wrapper_and_direct (test_ops.TestSplitAssignment.test_wrapper_and_direct) ... ok
+deadline: 2026-09-16T22:28:29.090909+00:00
+deadline: 2026-09-17T00:00:00+00:00
+other_cost updated; deadline: 2026-09-17T00:00:00+00:00
+deadline: 2020-01-02T00:00:00+00:00
+watchdog armed; deadline 2020-01-02T00:00:00+00:00
+test_dry_run_deadline_expired_no_shutdown (test_ops.TestWatchdog.test_dry_run_deadline_expired_no_shutdown) ... ok
+test_windows_real_shutdown_forbidden (test_ops.TestWatchdog.test_windows_real_shutdown_forbidden) ... ok
+test_higher_seed43_wins_over_42 (test_protocol.TestChooseBestTie.test_higher_seed43_wins_over_42) ... ok
+test_tie_prefers_seed42_with_explicit_file (test_protocol.TestChooseBestTie.test_tie_prefers_seed42_with_explicit_file) ... ok
+test_import_needs_no_mmcv (test_protocol.TestDryRunImportable.test_import_needs_no_mmcv) ... ok
+test_gate_rejects_insufficient_gain (test_protocol.TestGateUsesHistories.test_gate_rejects_insufficient_gain) ... ok
+test_gate_uses_four_timepoint_mious_not_perclass (test_protocol.TestGateUsesHistories.test_gate_uses_four_timepoint_mious_not_perclass) ... ok
+test_no_perclass_helper_exists (test_protocol.TestGateUsesHistories.test_no_perclass_helper_exists) ... ok
+test_lock_immutable_mismatch_fails (test_protocol.TestLockImmutability.test_lock_immutable_mismatch_fails) ... ok
+test_lock_written_before_test_marker (test_protocol.TestLockImmutability.test_lock_written_before_test_marker) ... ok
+test_no_ledger_json_required (test_protocol.TestOpsLedger.test_no_ledger_json_required) ... ok
+test_ops_load_ledger_and_deadline (test_protocol.TestOpsLedger.test_ops_load_ledger_and_deadline) ... ok
+test_deadline_never_extended_on_restart (test_protocol.TestPhaseBudget.test_deadline_never_extended_on_restart) ... ok
+test_final_reserve_fits_global (test_protocol.TestPhaseBudget.test_final_reserve_fits_global) ... ok
+test_phase_caps_sum_24h_with_prep_shared (test_protocol.TestPhaseBudget.test_phase_caps_sum_24h_with_prep_shared) ... ok
+test_restore_makes_next_sample_equal_uninterrupted (test_protocol.TestRngRestore.test_restore_makes_next_sample_equal_uninterrupted) ... ok
+test_done_marker_skips (test_protocol.TestTestMarkers.test_done_marker_skips) ... ok
+test_incomplete_test_fails_closed_no_rerun (test_protocol.TestTestMarkers.test_incomplete_test_fails_closed_no_rerun) ... ok
+test_noop_when_no_markers_and_no_models_raises_gracefully (test_protocol.TestTestMarkers.test_noop_when_no_markers_and_no_models_raises_gracefully) ... ok
+test_audit_tiny (test_runtime.TestAuditSplit.test_audit_tiny) ... ok
+test_flat_head_load_and_shape (test_runtime.TestCorrectionHead.test_flat_head_load_and_shape) ... ok
+test_flat_head_rejects_bad_state (test_runtime.TestCorrectionHead.test_flat_head_rejects_bad_state) ... ok
+test_global_miou_and_union_zero (test_runtime.TestCounts.test_global_miou_and_union_zero) ... ok
+test_per_image_counts_exact (test_runtime.TestCounts.test_per_image_counts_exact) ... ok
+test_predictor_alignment_nonMA_exact (test_runtime.TestEvaluateSplit.test_predictor_alignment_nonMA_exact) ... ok
+test_predictor_shape_strict (test_runtime.TestEvaluateSplit.test_predictor_shape_strict) ... ok
+test_evidence (test_runtime.TestFirstUpdateEvidence.test_evidence) ... ok
+test_frozen_changed_fails (test_runtime.TestFirstUpdateEvidence.test_frozen_changed_fails) ... ok
+test_flip_undo_once (test_runtime.TestMemberProbNoDoubleFlip.test_flip_undo_once) ... ok
+test_mix_probs (test_runtime.TestMisc.test_mix_probs) ... ok
+test_parse_deadline (test_runtime.TestMisc.test_parse_deadline) ... ok
+test_corruption_raises (test_runtime.TestReferenceCache.test_corruption_raises) ... ok
+test_get_validates (test_runtime.TestReferenceCache.test_get_validates) ... ok
+test_missing_cache_returns_false (test_runtime.TestReferenceCache.test_missing_cache_returns_false) ... ok
+test_block_below_headroom (test_storage.TestStoragePreflight.test_block_below_headroom) ... ok
+test_cli_writes_only_out_json (test_storage.TestStoragePreflight.test_cli_writes_only_out_json) ... ok
+test_headroom_applied (test_storage.TestStoragePreflight.test_headroom_applied) ... ok
+test_missing_inputs_block (test_storage.TestStoragePreflight.test_missing_inputs_block) ... ok
+test_nearest_existing_dir_stat (test_storage.TestStoragePreflight.test_nearest_existing_dir_stat) ... ok
+test_ok_with_2gib_headroom (test_storage.TestStoragePreflight.test_ok_with_2gib_headroom) ... ok
+
+----------------------------------------------------------------------
+Ran 66 tests in 11.190s
+
+OK
+[dry-run] deadline reached; no shutdown issued

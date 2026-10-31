@@ -1,0 +1,67 @@
+{
+  "notified_at_epoch": 1790953179.1898215,
+  "active_job": null,
+  "notified_validation_updates": {
+    "U1_external_pretrain": 2400,
+    "U1_ddr_finetune": 12000,
+    "H1_external_pretrain": 2400,
+    "H1_ddr_finetune": 12000,
+    "A0_ddr_finetune": 6000
+  },
+  "notified_hr_ddr_micro_batch": 8,
+  "latest_H_ddr_miou": 0.3540318947983785,
+  "H1_halfway_decision": {
+    "action": "continue_to_next_planned_9000_node",
+    "gain_from_3000": 0.012454939305698742,
+    "reason": "Both full-val nodes inspected. Still improving above the preselected 0.003 gain threshold; HE precision/recall tradeoff also changed. Retain for the next planned node and constrained fusion screening, without claiming standalone superiority.",
+    "next_stop_rule": "Low priority if recent gain <0.003, no class advantage, and still below the competitive global gap."
+  },
+  "H1_9000_decision": {
+    "action": "continue_to_final_12000_node",
+    "gain_from_6000": 0.022579856909243634,
+    "reason": "Gain remains well above the preselected plateau threshold; all four class IoUs rose from the preceding node."
+  },
+  "H1_best_miou": 0.3559504929505182,
+  "H1_budget_completed": 12000,
+  "A0_3000_decision": {
+    "validation_update": 3000,
+    "miou": 0.06948474407103411,
+    "action": "continue_to_planned_6000_full_val_then_reassess",
+    "engineering_diagnosis_checkpoint_update": 4000,
+    "diagnosis_evidence": "A0_train_diagnosis.json",
+    "diagnosis_split": "train_only",
+    "summary_zh": "HACDR首个完整val（3k、76图）mIoU为6.9485%，HE/MA几乎未检出。核查未发现标注通道、滑窗覆盖/归一、训练参数更新或训练/验证模式切换错误。4k checkpoint的骨干和分类头已明显更新，BN缓冲区有限且持续更新；三个固定训练crop的AMP/FP32阈值预测一致，两个由训练标签选定的病灶训练图中，改用批内BN统计也没有恢复HE/MA检出。诊断只使用train，不参与验证选点；不能据此声称已排除全部工程问题。",
+    "decision_zh": "先保留至计划中的6k完整验证，查看增长及类别互补性后决定是否中止，不只凭首个3k低值停掉新骨干。若仍整体极弱、HE/MA持续接近零且没有类别优势，可按已授权的有限自适应探索提前终止；不要因微小正增长机械耗尽12k。没有确认工程故障，暂不重启或改动正式配置。实际HACDR骨干有BN并正常更新，其配置中继承的layernorm_native文字标签不代表执行策略，后续结论以源代码和运行证据为准。"
+  },
+  "A0_6000_decision": {
+    "validation_update": 6000,
+    "miou": 0.09678075116594265,
+    "gain_from_3000": 0.02729600709490854,
+    "action": "operator_stop_after_second_complete_val_low_priority",
+    "reason": "Persistent HE/MA collapse; EX/SE also far below all existing champions. Bright-lesion improvement does not justify another 6000 updates in this bounded exploration. No confirmed engineering fault; not a general negative claim about the architecture.",
+    "diagnosis_evidence": "reports/A0_train_diagnosis.json",
+    "checkpoint_policy": "Preserve full best plus last optimizer/RNG; no config mutation or restart. Retain for finite fusion screening only if nominated by the locked procedure.",
+    "decision_epoch": 1790943898.9433324,
+    "summary_zh": "HACDR 6k完整val（76图）mIoU为9.6781%，相比3k增加2.7296个百分点，但HE IoU仅0.0001615%、TP=2，MA IoU/TP均为0；EX为24.1359%、SE为14.5762%，所有类别都明显落后于历史冠军。先前训练图诊断未确认工程故障。",
+    "decision_zh": "按用户要求节省时间，自适应停止当前HACDR配置，不再机械跑满12k；亮病灶的改善不足以抵消持续红病灶检出失败及巨大整体差距。通过更新边界STOP保存完整状态，保留best及可恢复last，不修改配置、不从头重训。主队列结束后进入原先锁定的冠军复现、有限提名和三折融合；不会为了更高test分改挑候选。"
+  },
+  "finish_stage": "complete",
+  "A0_updates_done": 6197,
+  "A0_stop_reason": "operator_stop_at_update_boundary",
+  "gpu_idle_incident_repair_notified": true,
+  "U0_full_reproduction_miou": 0.38446869204975476,
+  "champion_reproduction_miou": 0.42669122905238266,
+  "last_checked_at_epoch": 1790953090.897169,
+  "last_checked_finish_stage": "exporting",
+  "last_checked_export": "H1",
+  "last_checked_export_progress": "30/76",
+  "last_check_health": "complete; no training/evaluation processes; 6 deployment weights and 5 new best backups SHA256 verified",
+  "completed_at_epoch": 1790950757.8119168,
+  "final_lock_sha256": "644974f4a888835f838472199dcb623e879be2d62e73dab502394759551ceac4",
+  "final_test_miou": 0.44780891451100807,
+  "local_final_report": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\reports\\最终结果.md",
+  "local_best_pipeline": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\best_pipeline",
+  "completion_ready_to_notify": false,
+  "completion_notified": true,
+  "monitor_status": "PAUSED"
+}

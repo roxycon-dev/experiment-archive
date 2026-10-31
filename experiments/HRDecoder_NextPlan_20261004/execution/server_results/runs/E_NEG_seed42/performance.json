@@ -1,0 +1,31 @@
+{
+  "accepted_at": "2026-10-04T09:08:16.407491+00:00",
+  "cache": {
+    "decoded_bytes": 36593276874,
+    "images": 646,
+    "seconds": 20.658286094665527,
+    "storage": "read-only parent RAM shared by fork workers; no data-disk copy",
+    "estimated_bytes": 36593276874
+  },
+  "execution_io": {
+    "version": 1,
+    "workers": 8,
+    "prefetch_factor": 4,
+    "decode_threads": 8,
+    "decoded_cache_limit_bytes": 51539607552,
+    "micro_batch_changed": false,
+    "model_math_changed": false,
+    "sampling_changed": false,
+    "precision_changed": false,
+    "user_authorized": "2026-10-04: optimize training throughput; preserve registered experiment"
+  },
+  "algorithmic_resources": {
+    "micro_batch": 2,
+    "accumulation": 4,
+    "dtype": "bfloat16",
+    "workers": 4,
+    "prefetch_factor": 2,
+    "pin_memory": true
+  },
+  "historical_training_math_unchanged": true
+}

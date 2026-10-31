@@ -1,0 +1,827 @@
+{
+  "source_sha256": "31866685cbc51549e7407f59ba74aab519c78910fa84d9d4d58f7104736f02d8",
+  "source_files": {
+    "model.py": "ca1a2bb4b45773fa13c1b1aa5931402176ba7bbd6ff550e512d8a7d7fa1f0723",
+    "data.py": "78e2e26ecb22d360c3c04e23544b16ca77f05dceeb75f496c5fd25b7afc2945b",
+    "losses.py": "521a9b7424328547968f29b658724e2b9a20b0449f001dc6996d3ca9a5fc1321",
+    "metrics.py": "c231fc546ac57dc5c528ef9898b1fcd31ce86c13e2330090d5a7b3db4f74e551",
+    "train.py": "0e37befca74989704f4307573707d6b8f1b96a2aaf761a63f65b8c70303ffacd",
+    "evaluate.py": "98fd0d67cfd322712eb2aad744e998b756ab65ef92bf955cf6baf36a2f3b93ab",
+    "protocol.json": "09356bf4269d71f6a19229b398a652be739ee5a72154746ad8a2162e214553da"
+  },
+  "formal_updates": 0,
+  "test_accessed": false,
+  "torch": "2.6.0+cu124",
+  "unit_tests": {
+    "status": "PASS",
+    "tests": 20,
+    "failures": 0,
+    "errors": 0
+  },
+  "data_audit": {
+    "status": "PASS",
+    "checks": {
+      "train": {
+        "images_and_labels_sha256_verified": 454
+      },
+      "val": {
+        "images_and_labels_sha256_verified": 76
+      }
+    },
+    "train_probe_sids": [
+      "007-4847-300",
+      "007-4679-200",
+      "007-7014-400",
+      "007-6361-400",
+      "007-4885-300",
+      "007-5169-300",
+      "007-6612-400",
+      "007-5885-300"
+    ],
+    "test_pixels_read": false,
+    "test_metadata_only": true,
+    "identity_sha256": "7c53b86bcb27ccd121042f667cc58e39b98716a8c477bfd1f1657fa126575719"
+  },
+  "train_probe_sids": [
+    "007-4847-300",
+    "007-4679-200",
+    "007-7014-400",
+    "007-6361-400",
+    "007-4885-300",
+    "007-5169-300",
+    "007-6612-400",
+    "007-5885-300"
+  ],
+  "backbone_integration": {
+    "status": "PASS",
+    "scope": "full W48, FP32 CUDA, 128 grid; no SGD",
+    "records": [
+      {
+        "checkpointing": false,
+        "loss": 2.6122100353240967,
+        "nonzero_gradient_parameters": 1003
+      },
+      {
+        "checkpointing": true,
+        "loss": 2.6122100353240967,
+        "nonzero_gradient_parameters": 1003
+      }
+    ],
+    "selected_gradient_parity": [
+      "backbone.net.conv1.weight",
+      "backbone.net.stage2.0.branches.0.0.conv1.weight",
+      "backbone.net.stage4.2.branches.3.3.conv2.weight",
+      "decoder.readout.weight"
+    ],
+    "all_BN_buffers_unchanged": true,
+    "initialization": {
+      "file_sha256": "d2186c55782308392ae14cf179ac4840143b09abdbba81aa3f9274c795ebc960",
+      "verified_backbone_tensors": 1830,
+      "ignored_classification_tensors": 126,
+      "fusion_bilinear_modules": 31,
+      "timm_version": "1.0.27"
+    },
+    "parameters": 65569364,
+    "decoder_parameters": 244244
+  },
+  "real_crop_learning": {
+    "status": "NOT_PASSED",
+    "scope": "256x256 fixed REAL TRAINING crops, learnability diagnostic only",
+    "not_validation_accuracy": true,
+    "not_formal_40k": true,
+    "discarded_updates": 128,
+    "sampling": "same uniform epoch-shuffled sampler as main training, eight crop indices",
+    "initial": {
+      "mIoU_percent": 0.0,
+      "IoU_percent": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "precision_percent": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "recall_percent": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "counts": [
+        [
+          0,
+          0,
+          1672
+        ],
+        [
+          0,
+          0,
+          2017
+        ],
+        [
+          0,
+          0,
+          6004
+        ],
+        [
+          0,
+          0,
+          545
+        ]
+      ],
+      "images": 8,
+      "classes": [
+        "EX",
+        "HE",
+        "SE",
+        "MA"
+      ],
+      "threshold": "strictly > 0.5",
+      "undefined_precision_classes": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "loss": 0.8056712001562119
+    },
+    "final": {
+      "mIoU_percent": 33.98290152780004,
+      "IoU_percent": [
+        17.10016602102933,
+        66.7563412759416,
+        0.0,
+        52.07509881422925
+      ],
+      "precision_percent": [
+        69.5945945945946,
+        74.8062015503876,
+        0.0,
+        53.01810865191147
+      ],
+      "recall_percent": [
+        18.480861244019138,
+        86.11799702528508,
+        0.0,
+        96.69724770642202
+      ],
+      "counts": [
+        [
+          309,
+          135,
+          1363
+        ],
+        [
+          1737,
+          585,
+          280
+        ],
+        [
+          0,
+          5,
+          6004
+        ],
+        [
+          527,
+          467,
+          18
+        ]
+      ],
+      "images": 8,
+      "classes": [
+        "EX",
+        "HE",
+        "SE",
+        "MA"
+      ],
+      "threshold": "strictly > 0.5",
+      "undefined_precision_classes": [],
+      "loss": 0.30090563371777534
+    },
+    "trajectory": [
+      {
+        "update": 16,
+        "mIoU_percent": 7.168141592920355,
+        "IoU_percent": [
+          0.0,
+          0.0,
+          0.0,
+          28.67256637168142
+        ],
+        "precision_percent": [
+          0.0,
+          0.0,
+          0.0,
+          89.01098901098901
+        ],
+        "recall_percent": [
+          0.0,
+          0.0,
+          0.0,
+          29.724770642201836
+        ],
+        "counts": [
+          [
+            0,
+            0,
+            1672
+          ],
+          [
+            0,
+            0,
+            2017
+          ],
+          [
+            0,
+            0,
+            6004
+          ],
+          [
+            162,
+            20,
+            383
+          ]
+        ],
+        "images": 8,
+        "classes": [
+          "EX",
+          "HE",
+          "SE",
+          "MA"
+        ],
+        "threshold": "strictly > 0.5",
+        "undefined_precision_classes": [
+          0,
+          1,
+          2
+        ],
+        "loss": 0.6476998329162598
+      },
+      {
+        "update": 32,
+        "mIoU_percent": 8.643457382953182,
+        "IoU_percent": [
+          0.0,
+          0.0,
+          0.0,
+          34.57382953181273
+        ],
+        "precision_percent": [
+          0.0,
+          0.0,
+          0.0,
+          50.0
+        ],
+        "recall_percent": [
+          0.0,
+          0.0,
+          0.0,
+          52.84403669724771
+        ],
+        "counts": [
+          [
+            0,
+            44,
+            1672
+          ],
+          [
+            0,
+            2,
+            2017
+          ],
+          [
+            0,
+            0,
+            6004
+          ],
+          [
+            288,
+            288,
+            257
+          ]
+        ],
+        "images": 8,
+        "classes": [
+          "EX",
+          "HE",
+          "SE",
+          "MA"
+        ],
+        "threshold": "strictly > 0.5",
+        "undefined_precision_classes": [
+          2
+        ],
+        "loss": 0.5959730073809624
+      },
+      {
+        "update": 48,
+        "mIoU_percent": 11.146890450169138,
+        "IoU_percent": [
+          3.3146591970121384,
+          0.0,
+          0.0,
+          41.27290260366442
+        ],
+        "precision_percent": [
+          13.123844731977819,
+          0.0,
+          0.0,
+          46.52173913043478
+        ],
+        "recall_percent": [
+          4.246411483253588,
+          0.0,
+          0.0,
+          78.53211009174312
+        ],
+        "counts": [
+          [
+            71,
+            470,
+            1601
+          ],
+          [
+            0,
+            0,
+            2017
+          ],
+          [
+            0,
+            0,
+            6004
+          ],
+          [
+            428,
+            492,
+            117
+          ]
+        ],
+        "images": 8,
+        "classes": [
+          "EX",
+          "HE",
+          "SE",
+          "MA"
+        ],
+        "threshold": "strictly > 0.5",
+        "undefined_precision_classes": [
+          1,
+          2
+        ],
+        "loss": 0.5238218642771244
+      },
+      {
+        "update": 64,
+        "mIoU_percent": 10.816604738095654,
+        "IoU_percent": [
+          3.4537725823591923,
+          0.0,
+          0.0,
+          39.812646370023415
+        ],
+        "precision_percent": [
+          23.636363636363637,
+          0.0,
+          0.0,
+          52.38828967642527
+        ],
+        "recall_percent": [
+          3.8875598086124405,
+          0.0,
+          0.0,
+          62.38532110091744
+        ],
+        "counts": [
+          [
+            65,
+            210,
+            1607
+          ],
+          [
+            0,
+            33,
+            2017
+          ],
+          [
+            0,
+            0,
+            6004
+          ],
+          [
+            340,
+            309,
+            205
+          ]
+        ],
+        "images": 8,
+        "classes": [
+          "EX",
+          "HE",
+          "SE",
+          "MA"
+        ],
+        "threshold": "strictly > 0.5",
+        "undefined_precision_classes": [
+          2
+        ],
+        "loss": 0.47196123003959656
+      },
+      {
+        "update": 80,
+        "mIoU_percent": 13.445228895827,
+        "IoU_percent": [
+          5.039193729003359,
+          0.0,
+          0.0,
+          48.741721854304636
+        ],
+        "precision_percent": [
+          44.11764705882353,
+          0.0,
+          0.0,
+          63.667820069204154
+        ],
+        "recall_percent": [
+          5.382775119617225,
+          0.0,
+          0.0,
+          67.52293577981652
+        ],
+        "counts": [
+          [
+            90,
+            114,
+            1582
+          ],
+          [
+            0,
+            0,
+            2017
+          ],
+          [
+            0,
+            0,
+            6004
+          ],
+          [
+            368,
+            210,
+            177
+          ]
+        ],
+        "images": 8,
+        "classes": [
+          "EX",
+          "HE",
+          "SE",
+          "MA"
+        ],
+        "threshold": "strictly > 0.5",
+        "undefined_precision_classes": [
+          1,
+          2
+        ],
+        "loss": 0.42110970988869667
+      },
+      {
+        "update": 96,
+        "mIoU_percent": 27.801678341069767,
+        "IoU_percent": [
+          0.11926058437686345,
+          64.37692646411273,
+          0.0,
+          46.71052631578947
+        ],
+        "precision_percent": [
+          28.57142857142857,
+          85.19813519813519,
+          0.0,
+          81.84438040345822
+        ],
+        "recall_percent": [
+          0.11961722488038277,
+          72.48388696083292,
+          0.0,
+          52.11009174311927
+        ],
+        "counts": [
+          [
+            2,
+            5,
+            1670
+          ],
+          [
+            1462,
+            254,
+            555
+          ],
+          [
+            0,
+            0,
+            6004
+          ],
+          [
+            284,
+            63,
+            261
+          ]
+        ],
+        "images": 8,
+        "classes": [
+          "EX",
+          "HE",
+          "SE",
+          "MA"
+        ],
+        "threshold": "strictly > 0.5",
+        "undefined_precision_classes": [
+          2
+        ],
+        "loss": 0.3777514472603798
+      },
+      {
+        "update": 112,
+        "mIoU_percent": 31.867141693345392,
+        "IoU_percent": [
+          7.897793263646922,
+          66.98113207547169,
+          0.0,
+          52.589641434262944
+        ],
+        "precision_percent": [
+          73.11827956989248,
+          76.37830569251457,
+          0.0,
+          53.49544072948328
+        ],
+        "recall_percent": [
+          8.133971291866029,
+          84.48190381755082,
+          0.0,
+          96.88073394495413
+        ],
+        "counts": [
+          [
+            136,
+            50,
+            1536
+          ],
+          [
+            1704,
+            527,
+            313
+          ],
+          [
+            0,
+            0,
+            6004
+          ],
+          [
+            528,
+            459,
+            17
+          ]
+        ],
+        "images": 8,
+        "classes": [
+          "EX",
+          "HE",
+          "SE",
+          "MA"
+        ],
+        "threshold": "strictly > 0.5",
+        "undefined_precision_classes": [
+          2
+        ],
+        "loss": 0.31639789417386055
+      },
+      {
+        "update": 128,
+        "mIoU_percent": 33.98290152780004,
+        "IoU_percent": [
+          17.10016602102933,
+          66.7563412759416,
+          0.0,
+          52.07509881422925
+        ],
+        "precision_percent": [
+          69.5945945945946,
+          74.8062015503876,
+          0.0,
+          53.01810865191147
+        ],
+        "recall_percent": [
+          18.480861244019138,
+          86.11799702528508,
+          0.0,
+          96.69724770642202
+        ],
+        "counts": [
+          [
+            309,
+            135,
+            1363
+          ],
+          [
+            1737,
+            585,
+            280
+          ],
+          [
+            0,
+            5,
+            6004
+          ],
+          [
+            527,
+            467,
+            18
+          ]
+        ],
+        "images": 8,
+        "classes": [
+          "EX",
+          "HE",
+          "SE",
+          "MA"
+        ],
+        "threshold": "strictly > 0.5",
+        "undefined_precision_classes": [],
+        "loss": 0.30090563371777534
+      }
+    ],
+    "crops": [
+      {
+        "sid": "007-2200-100",
+        "target_class": 1,
+        "crop_yxhw": [
+          1344,
+          1088,
+          256,
+          256
+        ],
+        "class_positive_pixels": [
+          1564,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "sid": "007-2383-100",
+        "target_class": 1,
+        "crop_yxhw": [
+          576,
+          1344,
+          256,
+          256
+        ],
+        "class_positive_pixels": [
+          108,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "sid": "007-1853-100",
+        "target_class": 2,
+        "crop_yxhw": [
+          1088,
+          192,
+          256,
+          256
+        ],
+        "class_positive_pixels": [
+          0,
+          790,
+          0,
+          174
+        ]
+      },
+      {
+        "sid": "007-1889-100",
+        "target_class": 2,
+        "crop_yxhw": [
+          1088,
+          448,
+          256,
+          256
+        ],
+        "class_positive_pixels": [
+          0,
+          1227,
+          0,
+          0
+        ]
+      },
+      {
+        "sid": "007-2452-100",
+        "target_class": 3,
+        "crop_yxhw": [
+          320,
+          1216,
+          256,
+          256
+        ],
+        "class_positive_pixels": [
+          0,
+          0,
+          1812,
+          24
+        ]
+      },
+      {
+        "sid": "007-2466-100",
+        "target_class": 3,
+        "crop_yxhw": [
+          960,
+          1600,
+          256,
+          256
+        ],
+        "class_positive_pixels": [
+          0,
+          0,
+          4192,
+          0
+        ]
+      },
+      {
+        "sid": "007-1811-100",
+        "target_class": 4,
+        "crop_yxhw": [
+          1344,
+          832,
+          256,
+          256
+        ],
+        "class_positive_pixels": [
+          0,
+          0,
+          0,
+          241
+        ]
+      },
+      {
+        "sid": "007-1824-100",
+        "target_class": 4,
+        "crop_yxhw": [
+          1088,
+          832,
+          256,
+          256
+        ],
+        "class_positive_pixels": [
+          0,
+          0,
+          0,
+          106
+        ]
+      }
+    ],
+    "weights_retained": false
+  },
+  "full_resolution_smoke": {
+    "status": "PASS",
+    "canvas": 2048,
+    "global_batch": 2,
+    "micro_batch": 1,
+    "discarded_updates": 2,
+    "mean_seconds_per_update": 7.286533250000048,
+    "peak_allocated_GiB": 6.802856922149658,
+    "peak_reserved_GiB": 7.3359375,
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "metrics": [
+      {
+        "ohem_bce": 0.5768072605133057,
+        "squared_dice": 0.24803533405065536,
+        "dense_bce": 0.010346431285142899,
+        "main_loss": 0.5369562804698944,
+        "aux_loss": 0.5563791990280151,
+        "loss": 0.648232102394104,
+        "grad_norm_before_clip": 1.7902196645736694
+      },
+      {
+        "ohem_bce": 0.5532179772853851,
+        "squared_dice": 0.24765143543481827,
+        "dense_bce": 0.010419206693768501,
+        "main_loss": 0.5247813761234283,
+        "aux_loss": 0.5596478879451752,
+        "loss": 0.6367109715938568,
+        "grad_norm_before_clip": 2.3288919925689697
+      }
+    ],
+    "train_sids": [
+      "007-1811-100",
+      "007-1824-100"
+    ],
+    "weights_retained": false,
+    "not_formal_40k": true
+  },
+  "status": "INCOMPLETE_OR_FAILED"
+}

@@ -1,0 +1,397 @@
+{
+  "created_at": "2026-10-06T03:53:20.071877+00:00",
+  "tables": {
+    "milestones": {
+      "caption": "表1 主要成果形成过程",
+      "columns": [
+        "阶段",
+        "实际改动",
+        "测试mIoU %",
+        "提高百分点"
+      ],
+      "rows": [
+        [
+          "原HRDecoder",
+          "HRNet-W48与高分辨率解码",
+          "42.20",
+          "—"
+        ],
+        [
+          "四路局部与细节融合",
+          "局部学生、MA残差、B、E4和翻转平均",
+          "43.2289",
+          "+1.0289"
+        ],
+        [
+          "MA修正后的旧系统",
+          "H4修正融合结果的MA通道",
+          "44.2110",
+          "+0.9821"
+        ],
+        [
+          "P0",
+          "加入25%的ConvNeXt预测",
+          "44.7809",
+          "+0.5699"
+        ],
+        [
+          "R",
+          "加入25%的DINO Q16预测",
+          "45.7216",
+          "+0.9407"
+        ],
+        [
+          "最终最佳系统",
+          "改用空间交互S20的EMA预测",
+          "45.8604",
+          "+0.1388"
+        ]
+      ],
+      "weights": [
+        1.45,
+        3.1,
+        1.15,
+        1.2
+      ]
+    },
+    "detail_results": {
+      "caption": "表2 原图细节与低学习率训练的结果",
+      "columns": [
+        "方案",
+        "实际改动",
+        "验证mIoU %",
+        "测试mIoU %"
+      ],
+      "rows": [
+        [
+          "原HRDecoder",
+          "原始对照",
+          "39.3900",
+          "42.20"
+        ],
+        [
+          "E4",
+          "增加原图stride4细节分支",
+          "38.7660",
+          "41.6260"
+        ],
+        [
+          "B",
+          "从E4低学习率继续训练",
+          "39.2050",
+          "41.9180"
+        ],
+        [
+          "E4与B各50%",
+          "融合两路病灶概率",
+          "39.5400",
+          "42.3500"
+        ]
+      ],
+      "weights": [
+        1.2,
+        3.1,
+        1.3,
+        1.3
+      ]
+    },
+    "dino_results": {
+      "caption": "表3 DINO训练阶段与微调范围",
+      "columns": [
+        "模型",
+        "训练方式",
+        "单分支验证 %",
+        "与P0融合验证 %"
+      ],
+      "rows": [
+        [
+          "Q16",
+          "先训头2,000步，再训最后4块至16,000步",
+          "37.8937",
+          "44.3557"
+        ],
+        [
+          "F4",
+          "从Q16追加12,000步，只训最后4块",
+          "38.7411",
+          "44.3069"
+        ],
+        [
+          "F12",
+          "从Q16追加12,000步，微调全部12块",
+          "40.2418",
+          "44.5888"
+        ]
+      ],
+      "weights": [
+        0.8,
+        3.2,
+        1.5,
+        1.6
+      ]
+    },
+    "arms": {
+      "caption": "表4 最后一轮四个方案",
+      "columns": [
+        "方案",
+        "空间交互",
+        "TJDR监督",
+        "DDR训练设置"
+      ],
+      "rows": [
+        [
+          "C继续训练",
+          "无",
+          "无",
+          "同一父模型，相同32k日程"
+        ],
+        [
+          "S空间交互",
+          "有",
+          "无",
+          "同一父模型，相同32k日程"
+        ],
+        [
+          "D外部监督",
+          "无",
+          "前20k",
+          "同一父模型，相同32k日程"
+        ],
+        [
+          "SD联合",
+          "有",
+          "前20k",
+          "同一父模型，相同32k日程"
+        ]
+      ],
+      "weights": [
+        1.6,
+        1.15,
+        1.15,
+        2.8
+      ]
+    },
+    "ablation": {
+      "caption": "表5 同条件对照的完整保留节点",
+      "columns": [
+        "方案",
+        "训练步数",
+        "单分支验证 %",
+        "75%P0加25%分支 %"
+      ],
+      "rows": [
+        [
+          "C",
+          "20,000",
+          "41.0244",
+          "45.1762"
+        ],
+        [
+          "S",
+          "20,000",
+          "42.2703",
+          "45.3218"
+        ],
+        [
+          "D",
+          "20,000",
+          "41.9082",
+          "45.1010"
+        ],
+        [
+          "SD",
+          "20,000",
+          "41.3796",
+          "44.8832"
+        ],
+        [
+          "C",
+          "32,000",
+          "41.1071",
+          "45.1949"
+        ],
+        [
+          "S",
+          "32,000",
+          "42.1521",
+          "45.2922"
+        ],
+        [
+          "D",
+          "32,000",
+          "41.6133",
+          "45.1045"
+        ],
+        [
+          "SD",
+          "32,000",
+          "42.0312",
+          "45.1389"
+        ]
+      ],
+      "weights": [
+        0.8,
+        1.35,
+        1.8,
+        2.65
+      ]
+    },
+    "final_classes": {
+      "caption": "表6 最佳模型相对原基线的类别提升",
+      "columns": [
+        "病灶类别",
+        "原基线IoU %",
+        "最佳模型IoU %",
+        "提高百分点"
+      ],
+      "rows": [
+        [
+          "硬性渗出EX",
+          "51.56",
+          "55.1213",
+          "3.5613"
+        ],
+        [
+          "出血HE",
+          "43.13",
+          "46.1978",
+          "3.0678"
+        ],
+        [
+          "软性渗出SE",
+          "49.98",
+          "52.8789",
+          "2.8989"
+        ],
+        [
+          "微动脉瘤MA",
+          "24.11",
+          "29.2435",
+          "5.1335"
+        ],
+        [
+          "四类平均mIoU",
+          "42.20",
+          "45.8604",
+          "3.6604"
+        ]
+      ],
+      "weights": [
+        1.8,
+        1.55,
+        1.65,
+        1.3
+      ]
+    },
+    "not_kept": {
+      "caption": "表7 主要未采纳方向及实际结果",
+      "columns": [
+        "改动",
+        "结果",
+        "后续处理"
+      ],
+      "rows": [
+        [
+          "加入Lovasz损失",
+          "测试41.7770%，低于保留成员",
+          "不进入最终融合"
+        ],
+        [
+          "U0高分辨率继续训练G",
+          "融合测试44.6345%，低于P0的44.7809%",
+          "保留原U0"
+        ],
+        [
+          "IDRiD和MAPLES混合监督",
+          "24,000步单分支比DDR方案低1.3530个百分点",
+          "DINO父链采用DDR方案"
+        ],
+        [
+          "负类语义修订E_NEG",
+          "融合验证44.1643%，低于R的44.3557%",
+          "未替换R分支"
+        ],
+        [
+          "本轮TJDR监督D",
+          "20,000步融合45.1010%，低于C的45.1762%",
+          "不进入最佳模型"
+        ],
+        [
+          "空间与TJDR联合SD",
+          "20,000步融合44.8832%；32,000步45.1389%",
+          "最终选择S"
+        ]
+      ],
+      "weights": [
+        1.75,
+        3.3,
+        1.25
+      ]
+    }
+  },
+  "final_test": 45.86038383266797,
+  "gain_vs_baseline_approx_pp": 3.660383832667968,
+  "gain_vs_R_pp": 0.1388267262402607,
+  "space_effect_20k_single_pp": 1.2459498985952138,
+  "space_effect_32k_single_pp": 1.0450595416663901,
+  "sources": [
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\结题报告\\evidence\\original_HRDecoder_baseline_evidence.json",
+      "sha256": "485ecb0e98412305172b07b29bfe8d221fc4f767d621c4407ee8aa6938a97a34"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\结题报告\\evidence\\four_arm_saved_validation.json",
+      "sha256": "dbd1dea13e5e1f9e0d4cc787a0c9571b7862e6d207cd5a854cb2ca952533df12"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\结题报告\\evidence\\final_locked_test_evidence.json",
+      "sha256": "8ebb5d1f4836598a8a3615e5ba7a82e9b972dff380a3504afafd53ad8df05f5b"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\结题报告\\evidence\\historical_experiment_ledger.json",
+      "sha256": "2d96a5648081ef4ea3a04956f8755439b5491be9481f8b4a26d344d524a0987e"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\execution\\spatial.py",
+      "sha256": "f152d1040359f3083b4c8ae6f29f6f195eb377b4ef7bb0f881145a678f1fe178"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\execution\\final_model.py",
+      "sha256": "c2bee6580c5f6d47f74e8df9b3726d3b67c3324bcf2439c82240c7acc8192d07"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\execution\\qlib\\model.py",
+      "sha256": "f68a07f604248575df6db8553c554aa3d9eb718d112a9488c42780695ab9710f"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\execution\\qlib\\loss.py",
+      "sha256": "87379d9e58619f1cf89e351cda71348a38c44af233881998e7d0a830e4a4e879"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\hrdecoder_plus3\\repo\\mmseg\\models\\necks\\detail_branch.py",
+      "sha256": "d71d616fc876b3753596f839e3bc05c42e355ce9e52b4e1de6298634d57e1d3e"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_MA残差头与集成_20260915-16\\03_代码\\ma_residual.py",
+      "sha256": "95438df2b26df31a0c29e4933afa482d44072e5be42524177586fb18c165c1ed"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_审查轮_20260916\\tools\\h4_post_fusion_corrector.py",
+      "sha256": "a4361c1ab10a7dc8f706416c5ffd5cbd298ce9b2302f708ad5971b19d2466fda"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_FullCompetition_20260920\\trainer\\models\\convnext_unet.py",
+      "sha256": "696667a0ed33be9966988337099dd7d3d54ba6b730086f166ccdfe26e0cf0aae"
+    },
+    {
+      "path": "D:\\HRDecoder\\mmseg\\models\\segmentors\\HRDecoder.py",
+      "sha256": "81d7755fcbb1411a272cd21967781cca13a6aeb389a3abdfebe5e4cba47d073c"
+    },
+    {
+      "path": "D:\\HRDecoder\\mmseg\\models\\decode_heads\\fcn_head.py",
+      "sha256": "71da7bd06c5501126020e3b9eb433eaaa1d3271238085f0e03dd46a558a13b6f"
+    }
+  ],
+  "no_new_model_training_or_inference": true,
+  "prior_report_untouched": true
+}

@@ -1,0 +1,72 @@
+{
+  "status": "PASS",
+  "source_sha256": "0dc17cf13e331d2d5a12a4b28fe67db75422547f0c078305b95e543a8d9f50d4",
+  "data_sha256": "9d98e740527f3d38a45e60027a5c43d2409673475fcd247038cf4eecf79765af",
+  "settings_sha256": "104f4f2beb36d63de8da5172d004367c8a081ac3bcefae5f7ebfd7a74a6e06ce",
+  "protocol_sha256": "4c2f9c7f04a5278ee18363c5674e8af9b3fee7c0721fe52734edc0b1668fc682",
+  "D_exact_load": true,
+  "D_preclassifier_export_equal": true,
+  "zero_step_parity_max_error": 0.0,
+  "checked_assets": [
+    "D",
+    "B",
+    "E",
+    "E4",
+    "H4",
+    "U0",
+    "U1",
+    "H1",
+    "U0_highres"
+  ],
+  "G_weights_strictly_checked_on_use": true,
+  "frozen_global_cache_exact": true,
+  "frozen_global_cache_acceptance": {
+    "hits": 1,
+    "misses": 2,
+    "entries": 2,
+    "bytes": 33554432,
+    "storage": "bounded_RAM_exact_float32",
+    "input_identity": "SHA256 of actual augmented normalized full input"
+  },
+  "D_buffers_unchanged": true,
+  "true_window": [
+    1024,
+    1024
+  ],
+  "micro_batch": 4,
+  "grad_accum": 2,
+  "gradient_checks": [
+    {
+      "decoder": 0.019935807213187218,
+      "stage2": 0.0022223852574825287,
+      "stage3": 0.00012244547542650253,
+      "global_adapter_last": 0.0064468602649867535,
+      "detail_projection": 0.0018442458240315318,
+      "detail_stem": 0.0,
+      "D_no_gradient": true
+    },
+    {
+      "decoder": 0.017331767827272415,
+      "stage2": 0.002395524876192212,
+      "stage3": 0.00012152803537901491,
+      "global_adapter_last": 0.005831575021147728,
+      "detail_projection": 0.00162743020337075,
+      "detail_stem": 1.3408408449322451e-05,
+      "D_no_gradient": true
+    }
+  ],
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "peak_allocated_GiB": 10.970378875732422,
+  "acceptance_seconds": 2.977522611618042,
+  "environment": {
+    "python": "3.8.10 (default, Jun  4 2021, 15:09:15) \n[GCC 7.5.0]",
+    "torch": "2.0.1+cu117"
+  },
+  "note": "Acceptance updates discarded; formal M always reloads immutable historical tensors",
+  "statistics_compatibility_revision": {
+    "original_numerical_acceptance_source": "56fa846972da1fbf4acb366892eb5b038dd5999d12b1fbb53e00d4d3c77fea9d",
+    "reduction_exact": true,
+    "training_updates_before_revision": 0,
+    "model_loss_optimizer_data_geometry_unchanged": true
+  }
+}

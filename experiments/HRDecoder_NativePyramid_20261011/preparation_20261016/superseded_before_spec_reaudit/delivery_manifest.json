@@ -1,0 +1,46 @@
+{
+  "version": 3,
+  "date": "2026-10-16",
+  "source_sha256": "a498a9470414044c65909067d8f590d142da7fa5ec9e36aa165eef032551d3ed",
+  "status": "STATIC_PREPARATION_COMPLETE_SERVER_PREFLIGHT_PENDING",
+  "formal_updates": 0,
+  "test_accessed": false,
+  "files": {
+    "00_最终架构方案.md": "71d4179359dc8a631f51f313b1f38a850ab071feb6d8cd7e4a3d60989b7bfec6",
+    "02_v3_最终架构设计_20261016.md": "9247fd2d2a6b54fcc3467cd92a7c726d606c62da9739b50b704e9f7237e7865b",
+    "README.md": "b5589756df6d3dd5bdb6d66790fcca22c5d7eb55ffb66e67669d054dd4dbd010",
+    "USER_SCOPE_AND_STOP.json": "4cf74f07097ab7e82ed4f159bcadfca2dd980084fa94c0ccf6d808f9803c5669",
+    "data.py": "479cd6d3922f81fc17744551b30ba422ee003c15eb97e71823aad506943424ed",
+    "evaluate.py": "14db3415956ae9ef8d350822ea86af11693e39889e1777ae66c30033468bdb97",
+    "losses.py": "7fbca98e62f6db79627217acab773065f157bfa36f41558278ab07038a657482",
+    "metrics.py": "bf1101bf38c64b5888f70c8d3979fd29efc30904e81a5bdbcf16701eef7925a8",
+    "model.py": "418768083907bf7890068df2af239b94eeaa3aa0935d047a432489ed5576d944",
+    "monitoring.py": "d16259d167cf119623500fc825c9077119e0687bdfa407924662c1ecb3923488",
+    "preparation_20261016/data_identity.json": "7c53b86bcb27ccd121042f667cc58e39b98716a8c477bfd1f1657fa126575719",
+    "preparation_20261016/review_final.md": "421736101441943b7a53a8025f3f1ea0b99e8b60b7a219883e4f163e41aae398",
+    "preparation_20261016/review_initial.md": "044656a9cec963c5a8e19933f460e139ef7da83eeb260347818295a9d4258d66",
+    "preparation_20261016/static_checks_final/static_checks.json": "af5c46fb41f143a454f87611ecbad27c0be73d2b959161ff6403773674dd6209",
+    "preparation_20261016/static_checks_final/unit_tests.json": "783bf71c23855871f350bc7a6f6df04df2acf0accf6d706eb6352afd2982ec8f",
+    "preparation_20261016/static_checks_final/unit_tests.txt": "5dfd0249a9848089501aed6e9ad4b988f3ab66520e2983231b2c2c4e201a235a",
+    "preparation_20261016/准备完成与服务器交接.md": "913051b0ce7938ec1b55a9f48aa972ee8682aee0834b0ffb3526c366e42d1414",
+    "prepare_delivery.py": "53bda2f13fcbb72eb3b4cb9f1024adcf1d9b98031754a6118b67a9be65db02b9",
+    "protocol.json": "de6171d8a0186166b0e1aca25d5d5391b8c8f6344ad70ff79840793c0121deee",
+    "requirements.txt": "88cafddfe4c5cdc04fa8e4b85be5c1b73f7237f2fb69fbed0753b1daf7de1f46",
+    "run_checks.ps1": "d94a8ddb642454360e283861af6634b427ebd4d31a26f3c055862fe4b7a431bd",
+    "test_model_v3.py": "5edbcb591d57f2430ab64c49000cb4eb4e111d1137c9fd0dcc24294f9a407dc2",
+    "test_train_v3.py": "d713375730b6d0125ec6accd1a4bce8ffa336e920cd1b7a620e17cf93b017078",
+    "tests.py": "b565e23a40ebeb759016d0d57a01a22a0cbca78458216888e9b6ac6f9f18d1ba",
+    "train.py": "77af2199ef9a95a2a28d9766cf90501122ea0ec7f8e9f2fef926aa41723204d6",
+    "verify.py": "50b9bd2d1376a92c3bd7fc318f95906d56251cbaa20493ec2b6af189297144f9"
+  },
+  "external_assets": {
+    "pretrained_sha256": "d2186c55782308392ae14cf179ac4840143b09abdbba81aa3f9274c795ebc960",
+    "data": "accepted fused-label DDR_split_613, train454/val76/test227"
+  },
+  "excludes": [
+    "pretrained weight bytes",
+    "image/label data",
+    "legacy v1 evidence",
+    "training outputs"
+  ]
+}

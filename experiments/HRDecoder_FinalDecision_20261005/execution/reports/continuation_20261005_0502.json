@@ -1,0 +1,104 @@
+{
+  "stage": "HEALTHY_PROGRESS",
+  "observed_at": "2026-10-05T05:06:19.328384+00:00",
+  "seed_scope": [
+    42
+  ],
+  "primary": {
+    "driver": {
+      "stage": "CAMPAIGN",
+      "pid": 18787,
+      "time": "2026-10-04T21:16:20.663409+00:00"
+    },
+    "campaign": {
+      "stage": "RUNNING",
+      "current_run": "S_seed42",
+      "queue": [
+        [
+          "C",
+          42
+        ],
+        [
+          "S",
+          42
+        ],
+        [
+          "D",
+          42
+        ],
+        [
+          "SD",
+          42
+        ],
+        [
+          "PARENT_F12",
+          2024
+        ],
+        [
+          "C",
+          2024
+        ],
+        [
+          "S",
+          2024
+        ],
+        [
+          "D",
+          2024
+        ],
+        [
+          "SD",
+          2024
+        ]
+      ],
+      "updated_at": "2026-10-05T02:31:25.514043+00:00"
+    },
+    "runs": {
+      "C_seed42": {
+        "stage": "COMPLETE",
+        "completed": 32000,
+        "endpoint": 32000,
+        "updated_at": "2026-10-05T02:31:24.012530+00:00"
+      },
+      "S_seed42": {
+        "stage": "TRAINING",
+        "completed": 10620,
+        "endpoint": 32000,
+        "updated_at": "2026-10-05T05:01:41.686186+00:00",
+        "recent": {
+          "loss": 0.1923639476299286,
+          "grad_norm": 5.310976028442383,
+          "seconds": 0.8077724690083414,
+          "data_wait_seconds": 0.0013695110101252794,
+          "peak_gpu_bytes": 11004799488
+        }
+      }
+    },
+    "free_disk_bytes": 26571649024,
+    "observed_at": "2026-10-05T05:01:45.595975+00:00"
+  },
+  "second": {
+    "driver": {
+      "stage": "SECOND_NODE_GPU_ACCEPTANCE",
+      "pid": 3295,
+      "overlaps_TRAIN_transfer": true,
+      "time": "2026-10-05T04:39:32.024698+00:00"
+    },
+    "campaign": null,
+    "runs": {},
+    "free_disk_bytes": 19897323520,
+    "observed_at": "2026-10-05T05:01:46.727139+00:00"
+  },
+  "secondary_R_controls": "PASS at04:46UTC, unchanged per-image counts",
+  "TRAIN_transfer": {
+    "stage": "TRANSFERRING_TRAIN_ONLY",
+    "bytes": 3976200192,
+    "time": "2026-10-05T05:06:16.446028+00:00"
+  },
+  "receiver_PIDs": [
+    32844,
+    8552
+  ],
+  "coordinator_PID": 13216,
+  "no_duplicate_job_or_mirror": true
+}

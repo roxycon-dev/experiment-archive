@@ -1,0 +1,33 @@
+{
+  "version": 16,
+  "name": "HRDecoder-IoUCorrection",
+  "private_parameters": 284496,
+  "total_parameters": 65856916,
+  "network": "F1-F4project64/concat256->128/DW3e2x2/project64 at1/8; RGBunshuffle2to32+mix96to64/DW13e2x2 at1/2; rawdetachlogit16 bypass; zero80to16/shuffle2",
+  "base_supervision": "original squared Dice + .25 GT-positive/negative balanced BCE + .1 original HRcrop Dice",
+  "teacher_route": "Same fixed GT-consistent teacherKL fullGTposneg denominators, base.5lambda_K/private lambda_K",
+  "normalization": "original BN unchanged; no BN buffer transplantation or per-image BN inference",
+  "gradient_clip": "base/private separately L2max5 after complete finite-check; exactlyoneSGD; private gradient norm cannot scale base step",
+  "critical_stop": {
+    "after_update_at_least": 8000,
+    "mIoU_drop_from_best_at_least_pp": 15.0,
+    "or_drop_at_least_pp": 8.0,
+    "with_previous_class_IoU_at_least": 5.0,
+    "and_current_class_IoU_zero": true,
+    "action": "save own current checkpoint and stop before another update; not an overfitting claim"
+  },
+  "evidence": "Semantic4k final32.88897/base33.25499; eight train batches logit gradients: old objective weakFP mass; Lovasz raises SE FP gradient mass ~61x; not parameter-space or finalaccuracy proof",
+  "hypothesis_not_guarantee": "Direct IoU margin correction may improve precision while retaining FN gradients; exactloss not a guarantee",
+  "budget": [
+    2048,
+    2,
+    40000
+  ],
+  "inference": "no GT/teacher/TTA/H4; native FP32 logit resize then sigmoid",
+  "fresh_own_run": true,
+  "old_weights_used": false,
+  "accuracy_guaranteed": false,
+  "private_supervision": "Per-image/class Lovasz hinge + .25 fullGTpositive/negative balanced BCE; same fixed stratified KD",
+  "gradient_diagnostic_source": "server_receipts/semantic/reports/semantic/loss_probe/LOSS_GRADIENT_DIAGNOSTIC.json",
+  "changes_relative_to_semantic": "Only private squared Dice replaced by binary Lovasz hinge; network/teacher/base/lr/sampler/SGD/clipping unchanged"
+}

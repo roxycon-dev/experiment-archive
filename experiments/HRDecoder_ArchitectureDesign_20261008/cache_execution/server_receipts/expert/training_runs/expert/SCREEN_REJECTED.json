@@ -1,0 +1,36 @@
+{
+  "status": "REJECTED",
+  "decisions": {
+    "4k_floor_previous_residual4k_plus1pp": false,
+    "2k_to4k_gain": true,
+    "private_net_gain_over_base": false,
+    "no_class_collapse": true,
+    "no_class_IoU_loss_over_registered_margin": true,
+    "HE_MA_FN_FP_tradeoff": true,
+    "within_original_deadline": true
+  },
+  "identity_SHA": "4fa9d6cf18c806475d4877c34154ed15cb8e45500efe7f1e79e8dabd767758c9",
+  "time_unix": 1791565721.0635476,
+  "full_val_counts_verified": true,
+  "screen_updates": 4000,
+  "mIoU_2k": 5.054378012019821,
+  "mIoU_4k": 27.737652600543726,
+  "base_mIoU_4k": 27.783389382517942,
+  "calibration": {
+    "HE": {
+      "FN_ratio_final_vs_base": 0.9814073368871138,
+      "FP_ratio_final_vs_base": 1.0497169143665959,
+      "pass": true
+    },
+    "MA": {
+      "FN_ratio_final_vs_base": 0.6837811558801906,
+      "FP_ratio_final_vs_base": 0.9056260430300777,
+      "pass": true
+    }
+  },
+  "criterion_registered_before_results": true,
+  "test_accessed": false,
+  "accuracy_guaranteed": false,
+  "goal_achieved": false,
+  "reject_next_action": "autonomous evidence-based revision within remaining authorized time"
+}

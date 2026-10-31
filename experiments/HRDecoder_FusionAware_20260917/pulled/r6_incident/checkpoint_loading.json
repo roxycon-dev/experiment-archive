@@ -1,0 +1,113 @@
+{
+  "probe": "load_checkpoint_return_unpack",
+  "items": {
+    "b_weights": {
+      "path": "/root/autodl-tmp/hrplus/repo/weights/b_weights.pth",
+      "exists": true,
+      "raw_type": "dict",
+      "raw_top_keys": [
+        "meta",
+        "optimizer",
+        "state_dict"
+      ],
+      "raw_n_top_keys": 3,
+      "load_checkpoint_return_type": "dict",
+      "load_checkpoint_return_keys": [
+        "meta",
+        "optimizer",
+        "state_dict"
+      ],
+      "is_tuple": false,
+      "old_unpack": {
+        "raised": true,
+        "exc": "ValueError: too many values to unpack (expected 2)",
+        "then_miss_becomes": "[]",
+        "then_nunet_len": 0
+      }
+    },
+    "d_full": {
+      "path": "/root/autodl-tmp/hrplus/D_0913_retry/best_mIoU_iter_2000.pth",
+      "exists": true,
+      "raw_type": "dict",
+      "raw_top_keys": [
+        "meta",
+        "optimizer",
+        "state_dict"
+      ],
+      "raw_n_top_keys": 3,
+      "load_checkpoint_return_type": "dict",
+      "load_checkpoint_return_keys": [
+        "meta",
+        "optimizer",
+        "state_dict"
+      ],
+      "is_tuple": false,
+      "old_unpack": {
+        "raised": true,
+        "exc": "ValueError: too many values to unpack (expected 2)",
+        "then_miss_becomes": "[]",
+        "then_nunet_len": 0
+      }
+    },
+    "d_student_only": {
+      "path": "/root/autodl-tmp/hrplus/D_0913_retry/backup_student_2000.pth",
+      "exists": true,
+      "raw_type": "dict",
+      "raw_top_keys": [
+        "meta",
+        "state_dict"
+      ],
+      "raw_n_top_keys": 2,
+      "load_checkpoint_return_type": "dict",
+      "load_checkpoint_return_keys": [
+        "meta",
+        "state_dict"
+      ],
+      "is_tuple": false,
+      "old_unpack": {
+        "raised": false,
+        "miss_type": "str",
+        "miss_repr": "'state_dict'",
+        "unexp_repr": "'meta'",
+        "nunet_len": 10
+      }
+    },
+    "e_full": {
+      "path": "/root/autodl-tmp/hrplus/results/E_0916/best_mIoU_iter_1500.pth",
+      "exists": true,
+      "raw_type": "dict",
+      "raw_top_keys": [
+        "meta",
+        "optimizer",
+        "state_dict"
+      ],
+      "raw_n_top_keys": 3,
+      "load_checkpoint_return_type": "dict",
+      "load_checkpoint_return_keys": [
+        "meta",
+        "optimizer",
+        "state_dict"
+      ],
+      "is_tuple": false,
+      "old_unpack": {
+        "raised": true,
+        "exc": "ValueError: too many values to unpack (expected 2)",
+        "then_miss_becomes": "[]",
+        "then_nunet_len": 0
+      }
+    }
+  },
+  "conclusion": {
+    "load_checkpoint_returns": "checkpoint 本身（dict），不是 (missing, unexpected)",
+    "old_code_semantics": "旧评估器 `miss, unexp = load_checkpoint(...)` 与 API 真实契约不符：若容器恰好可解包成两个元素，会把键名/内容误当 missing/unexpected；否则抛异常并被 except 吞掉，记为 []、[]。两种情况下都不是加载审计。",
+    "ckpts_where_unpack_raised": [
+      "b_weights",
+      "d_full",
+      "e_full"
+    ],
+    "ckpts_where_unpack_succeeded": [
+      "d_student_only"
+    ],
+    "verdict_for_history": "历史 eval JSON 的 load_report.missing/unexpected 不能作为『权重完整加载』的证据（prompt §5.1、审查结论 §3.4）。本轮必须改用逐键 shape/dtype 契约做加载审计。"
+  }
+}

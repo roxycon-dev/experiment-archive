@@ -1,0 +1,250 @@
+{
+  "schema": "hrdecoder-v3-module-checks/v1",
+  "status": "PASS",
+  "scope": {
+    "cpu_only": true,
+    "real_hrnet_weights_loaded": false,
+    "real_model_inference": false,
+    "optimizer_created_or_step": false,
+    "canvas_2048_forward_run": false,
+    "prototype_note": "The feature provider is a random shape stub, not HRNet; all reported structural checks use random tensors.",
+    "design_source": "05_v3_机制重构与反驳审查.md sections 4 and 6"
+  },
+  "small_canvas": {
+    "input_hw": [
+      128,
+      128
+    ],
+    "shapes": {
+      "R": [
+        1,
+        48,
+        32,
+        32
+      ],
+      "F1": [
+        1,
+        48,
+        16,
+        16
+      ],
+      "F2": [
+        1,
+        96,
+        8,
+        8
+      ],
+      "F3": [
+        1,
+        192,
+        4,
+        4
+      ],
+      "F4": [
+        1,
+        384,
+        2,
+        2
+      ],
+      "H_L": [
+        1,
+        32,
+        32,
+        32
+      ],
+      "H_G": [
+        1,
+        32,
+        32,
+        32
+      ],
+      "B_U": [
+        1,
+        64,
+        32,
+        32
+      ],
+      "B_S": [
+        1,
+        64,
+        32,
+        32
+      ],
+      "d_hat_U": [
+        1,
+        4,
+        128,
+        128
+      ],
+      "d_hat_S": [
+        1,
+        4,
+        128,
+        128
+      ],
+      "residual": [
+        1,
+        4,
+        128,
+        128
+      ],
+      "logits": [
+        1,
+        4,
+        128,
+        128
+      ]
+    },
+    "shared_feature_provider_calls": 1,
+    "shared_once_interface_pass": true,
+    "private_module_has_no_internal_backbone": true
+  },
+  "parameters": {
+    "actual": {
+      "L": 2918816,
+      "G": 3459872,
+      "fusion": 36736,
+      "contrast": 4224
+    },
+    "analytic_expected": {
+      "L": 2918816,
+      "G": 3459872,
+      "fusion": 36736,
+      "contrast": 4224
+    },
+    "sum_new_parameters": 6419648,
+    "contrast_each_head": 2112,
+    "groups": {
+      "L": "private local encoder/decoder; excludes signed readout",
+      "G": "private global encoder/decoder and four transformer blocks; excludes signed readout",
+      "contrast": "both independent 32->64 signed readout convolutions",
+      "fusion": "P(240,64), B(64,3,2), final zero-init Conv(64,64)"
+    }
+  },
+  "initialization_and_gradients": {
+    "zero_final_classifier_emits_zero_residual": true,
+    "zero_init_output_is_identity_z0_plus_zero": true,
+    "contrast_hidden_first_probe_grad_norm": 0.002540082670748234,
+    "contrast_readout_weight_first_probe_grad_norm": 0.1849253922700882,
+    "classifier_final_weight_first_task_grad_norm": 0.018632814288139343,
+    "classifier_project_first_task_grad_norm": 0.0,
+    "classifier_upstream_first_step_blocked_by_zero_output": true
+  },
+  "pixel_rearrangement": {
+    "pixel_unshuffle4_shuffle4_exact_inverse": true,
+    "final_pixel_shuffle4_checkerboard_representable": true,
+    "checker_pattern": [
+      [
+        0,
+        1,
+        0,
+        1
+      ],
+      [
+        1,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        1
+      ],
+      [
+        1,
+        0,
+        1,
+        0
+      ]
+    ]
+  },
+  "gradient_route": {
+    "routed_aux_gradient_extracted_only_for_private_L_G_contrast": true,
+    "unrouted_aux_theta_gradient_inspected_without_accumulating": true,
+    "diagnostic_copy_final_conv_seeded_nonzero_weight_norm": 1.2991875410079956,
+    "z0_detached_for_private_path_probe": true,
+    "task_gradient_to_shared_feature_activations_norm": 0.0017857857523364427,
+    "task_gradient_to_shared_theta_via_private_paths_norm": 0.00203629052087875,
+    "task_reaches_shared_theta_through_private": true,
+    "unrouted_aux_gradient_to_shared_theta_norm": 0.0087672137696406,
+    "unrouted_aux_would_change_shared_theta": true,
+    "private_task_gradient_norm": 0.005489015777586486,
+    "private_scaled_aux_gradient_norm": 0.02814347937765829,
+    "private_combined_gradient_norm": 0.027669060115335858,
+    "both_private_gradient_components_nonzero": true,
+    "main_grad_matches_task_only_max_abs": 0.0,
+    "classifier_grad_matches_task_only_max_abs": 0.0,
+    "private_grad_matches_task_plus_scaled_aux_max_abs": 0.0,
+    "all_parameters_unchanged_no_optimizer_step": true,
+    "original_zero_init_preserved": true,
+    "diagnostic_only_assigned_parameter_names": [
+      "fusion.final_conv.weight",
+      "fusion.final_conv.bias"
+    ],
+    "lambda_D_synthetic_probe": 0.1
+  },
+  "mac_2048_analytic": {
+    "conv_linear_by_group": {
+      "L": 24083693568,
+      "G": 7845445632,
+      "contrast": 1073741824,
+      "fusion": 9546235904
+    },
+    "conv_linear_total": 42549116928,
+    "small_128_conv_linear_by_group_from_hooks": {
+      "L": 94076928,
+      "G": 30646272,
+      "fusion": 37289984,
+      "contrast": 4194304
+    },
+    "small_hook_area_scale_to_2048": 256,
+    "scaled_small_hooks_match_analytic": true,
+    "attention_qk_mac": 1073741824,
+    "attention_av_mac": 1073741824,
+    "attention_qk_plus_av_mac": 2147483648,
+    "all_new_forward_mac": 44696600576,
+    "attention_details": [
+      {
+        "block": "G.Transformer1",
+        "tokens": 1024,
+        "heads": 8,
+        "head_dim": 32,
+        "qk_mac": 268435456,
+        "av_mac": 268435456
+      },
+      {
+        "block": "G.Transformer2",
+        "tokens": 1024,
+        "heads": 8,
+        "head_dim": 32,
+        "qk_mac": 268435456,
+        "av_mac": 268435456
+      },
+      {
+        "block": "G.Transformer3",
+        "tokens": 1024,
+        "heads": 8,
+        "head_dim": 32,
+        "qk_mac": 268435456,
+        "av_mac": 268435456
+      },
+      {
+        "block": "G.Transformer4",
+        "tokens": 1024,
+        "heads": 8,
+        "head_dim": 32,
+        "qk_mac": 268435456,
+        "av_mac": 268435456
+      }
+    ],
+    "conv_linear_entry_count": 83,
+    "notes": [
+      "Counts are analytic for 2048 canvas feature grids; no 2048 forward was run.",
+      "QK and AV use 1024 tokens per block and are counted as N^2*embed_dim each.",
+      "Bias adds, LN, GELU, softmax, positional encoding, interpolation, Pixel(Un)Shuffle and elementwise adds are excluded.",
+      "Original HRNet/HRDecoder MAC and backward MAC are excluded."
+    ]
+  }
+}

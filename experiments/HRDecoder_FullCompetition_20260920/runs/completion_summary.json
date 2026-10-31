@@ -1,0 +1,42 @@
+{
+  "arm": "U0",
+  "status": "complete",
+  "exit_code": 0,
+  "start_epoch": 1789879618,
+  "end_epoch": 1789893376,
+  "elapsed_seconds": 13758,
+  "runtime_overrides": {
+    "micro_batch": 4,
+    "grad_accum": 2,
+    "effective_batch": 8,
+    "num_workers": 4
+  },
+  "best_update": 12000,
+  "best_mIoU_lesion4": 0.3844641257662971,
+  "best_per_class_iou": {
+    "EX": 0.43676013403629266,
+    "HE": 0.3842662751606068,
+    "SE": 0.5093623706425702,
+    "MA": 0.20746772322571896
+  },
+  "checkpoint_best_sha256": "98d98a5d02dc2615062c3c31cd15d061daf3d7ab41cb8f25cd90b062cd53bb34",
+  "checkpoint_best_size": 636326835,
+  "eval_curve": [
+    {
+      "update": 3000,
+      "mIoU_lesion4": 0.1747592280310516
+    },
+    {
+      "update": 6000,
+      "mIoU_lesion4": 0.3500054425872542
+    },
+    {
+      "update": 9000,
+      "mIoU_lesion4": 0.37435898404454215
+    },
+    {
+      "update": 12000,
+      "mIoU_lesion4": 0.3844641257662971
+    }
+  ]
+}

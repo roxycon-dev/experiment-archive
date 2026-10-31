@@ -1,0 +1,248 @@
+{
+  "checked_at": "2026-10-10T17:18:26.404398+08:00",
+  "run": "iou",
+  "records": [
+    {
+      "step": 4000,
+      "mIoU": 26.269022697070994,
+      "classes": [
+        {
+          "name": "EX",
+          "counts": [
+            122479,
+            69154,
+            168324
+          ],
+          "IoU": 34.026008662145756,
+          "precision": 63.91331346897455,
+          "recall": 42.11751598160954,
+          "precision_undefined": false
+        },
+        {
+          "name": "HE",
+          "counts": [
+            464831,
+            88986,
+            741093
+          ],
+          "IoU": 35.89678047122966,
+          "precision": 83.93223754417073,
+          "recall": 38.54562974117772,
+          "precision_undefined": false
+        },
+        {
+          "name": "SE",
+          "counts": [
+            46755,
+            7599,
+            154649
+          ],
+          "IoU": 22.37049228958436,
+          "precision": 86.01942819295728,
+          "recall": 23.21453397151993,
+          "precision_undefined": false
+        },
+        {
+          "name": "MA",
+          "counts": [
+            11023,
+            16949,
+            58261
+          ],
+          "IoU": 12.78280936532418,
+          "precision": 39.40726440726441,
+          "recall": 15.90987818255297,
+          "precision_undefined": false
+        }
+      ],
+      "counts_verified": true,
+      "base_head_mIoU": 32.518165701262426,
+      "base_head_metrics": {
+        "mIoU_percent": 32.518165701262426,
+        "IoU_percent": [
+          36.457500290978174,
+          43.72926616407566,
+          32.124626059542706,
+          17.761270290453172
+        ],
+        "precision_percent": [
+          44.533315599868835,
+          67.20217397187909,
+          36.146948165081085,
+          28.059260363112536
+        ],
+        "recall_percent": [
+          66.7819795531683,
+          55.59413362699473,
+          74.2726063037477,
+          32.61214710467063
+        ],
+        "counts": [
+          [
+            194204,
+            241883,
+            96599
+          ],
+          [
+            670423,
+            327198,
+            535501
+          ],
+          [
+            149588,
+            264245,
+            51816
+          ],
+          [
+            22595,
+            57931,
+            46689
+          ]
+        ],
+        "class_order": [
+          "EX",
+          "HE",
+          "SE",
+          "MA"
+        ],
+        "undefined_precision_convention": "zero when TP+FP=0; inspect counts",
+        "images": 76,
+        "threshold": "strictly > .5"
+      },
+      "delta_mIoU_pp": null,
+      "delta_class_IoU_pp": null,
+      "versus_original_HRDecoder_pp": 4.712022697070992,
+      "versus_CET_same_step_pp": -2.7837214309377174,
+      "versus_original_SACD_same_step_pp": -1.5566263227675385,
+      "versus_residual_same_step_pp": -3.2067896310480037,
+      "versus_adapter_same_step_pp": -4.175184002042148,
+      "versus_detail_same_step_pp": -5.764796880102033,
+      "versus_foundation_same_step_pp": -5.410469588228267,
+      "versus_aligned_same_step_pp": -5.5133170321046165,
+      "versus_semantic_same_step_pp": -6.619948873128578
+    }
+  ],
+  "counts_verified": true,
+  "best_val": {
+    "step": 4000,
+    "mIoU": 26.269022697070994,
+    "classes": [
+      {
+        "name": "EX",
+        "counts": [
+          122479,
+          69154,
+          168324
+        ],
+        "IoU": 34.026008662145756,
+        "precision": 63.91331346897455,
+        "recall": 42.11751598160954,
+        "precision_undefined": false
+      },
+      {
+        "name": "HE",
+        "counts": [
+          464831,
+          88986,
+          741093
+        ],
+        "IoU": 35.89678047122966,
+        "precision": 83.93223754417073,
+        "recall": 38.54562974117772,
+        "precision_undefined": false
+      },
+      {
+        "name": "SE",
+        "counts": [
+          46755,
+          7599,
+          154649
+        ],
+        "IoU": 22.37049228958436,
+        "precision": 86.01942819295728,
+        "recall": 23.21453397151993,
+        "precision_undefined": false
+      },
+      {
+        "name": "MA",
+        "counts": [
+          11023,
+          16949,
+          58261
+        ],
+        "IoU": 12.78280936532418,
+        "precision": 39.40726440726441,
+        "recall": 15.90987818255297,
+        "precision_undefined": false
+      }
+    ],
+    "counts_verified": true,
+    "base_head_mIoU": 32.518165701262426,
+    "base_head_metrics": {
+      "mIoU_percent": 32.518165701262426,
+      "IoU_percent": [
+        36.457500290978174,
+        43.72926616407566,
+        32.124626059542706,
+        17.761270290453172
+      ],
+      "precision_percent": [
+        44.533315599868835,
+        67.20217397187909,
+        36.146948165081085,
+        28.059260363112536
+      ],
+      "recall_percent": [
+        66.7819795531683,
+        55.59413362699473,
+        74.2726063037477,
+        32.61214710467063
+      ],
+      "counts": [
+        [
+          194204,
+          241883,
+          96599
+        ],
+        [
+          670423,
+          327198,
+          535501
+        ],
+        [
+          149588,
+          264245,
+          51816
+        ],
+        [
+          22595,
+          57931,
+          46689
+        ]
+      ],
+      "class_order": [
+        "EX",
+        "HE",
+        "SE",
+        "MA"
+      ],
+      "undefined_precision_convention": "zero when TP+FP=0; inspect counts",
+      "images": 76,
+      "threshold": "strictly > .5"
+    },
+    "delta_mIoU_pp": null,
+    "delta_class_IoU_pp": null,
+    "versus_original_HRDecoder_pp": 4.712022697070992,
+    "versus_CET_same_step_pp": -2.7837214309377174,
+    "versus_original_SACD_same_step_pp": -1.5566263227675385,
+    "versus_residual_same_step_pp": -3.2067896310480037,
+    "versus_adapter_same_step_pp": -4.175184002042148,
+    "versus_detail_same_step_pp": -5.764796880102033,
+    "versus_foundation_same_step_pp": -5.410469588228267,
+    "versus_aligned_same_step_pp": -5.5133170321046165,
+    "versus_semantic_same_step_pp": -6.619948873128578
+  },
+  "unreported_steps": [],
+  "primary_endpoint": 40000,
+  "test_for_selection": false
+}

@@ -1,0 +1,26 @@
+{
+  "stage": "FIRST_REGISTERED_RECOVERY_CHECKPOINT_WRITTEN",
+  "run": "SD_seed42",
+  "valid_audit_sources": [
+    "DDR",
+    "TJDR"
+  ],
+  "observed_status": {
+    "stage": "TRAINING",
+    "completed": 460,
+    "endpoint": 32000,
+    "updated_at": "2026-10-05T05:42:59.626032+00:00",
+    "recent": {
+      "loss": 0.27048951387405396,
+      "grad_norm": 2.6602602005004883,
+      "seconds": 1.2075036093592644,
+      "data_wait_seconds": 0.002514265477657318,
+      "peak_gpu_bytes": 11005601280
+    }
+  },
+  "proof_scope": "The200-update audit proves the first scheduled save completed; an active recoverable last.pth exists, and may already have advanced to400. No full tensor reload or repeated acceptance was performed.",
+  "time": "2026-10-05T05:43:05.199713+00:00",
+  "first_checkpoint_update_evidenced_by_completed_audit": 200,
+  "active_checkpoint_bytes_observed": 1667858013,
+  "active_checkpoint_exact_update_not_loaded": true
+}

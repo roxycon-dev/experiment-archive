@@ -1,0 +1,181 @@
+{
+  "status": "COMPLETE",
+  "mode": "independent_heldout_subset",
+  "n_images": 27,
+  "pixel_table": [
+    {
+      "method": "full",
+      "n_images": 27,
+      "miou_pct": 40.90733347359697,
+      "EX_IoU_pct": 57.80621610098492,
+      "HE_IoU_pct": 42.7989704929395,
+      "SE_IoU_pct": 41.32228098328001,
+      "MA_IoU_pct": 21.701866317183445,
+      "MA_precision_pct": 65.4232721141289,
+      "MA_recall_pct": 24.51346563599425,
+      "miou_ci_low_pct": 36.9219120784701,
+      "miou_ci_high_pct": 43.128753210518454
+    },
+    {
+      "method": "no_h4",
+      "n_images": 27,
+      "miou_pct": 39.90297738523024,
+      "EX_IoU_pct": 57.80621610098492,
+      "HE_IoU_pct": 42.7989704929395,
+      "SE_IoU_pct": 41.32228098328001,
+      "MA_IoU_pct": 17.68444196371652,
+      "MA_precision_pct": 67.50375826006079,
+      "MA_recall_pct": 19.330062930479166,
+      "miou_ci_low_pct": 35.83651416721132,
+      "miou_ci_high_pct": 42.13052625050166
+    },
+    {
+      "method": "no_convnext",
+      "n_images": 27,
+      "miou_pct": 41.21233435496942,
+      "EX_IoU_pct": 57.37587472557198,
+      "HE_IoU_pct": 43.16946721976539,
+      "SE_IoU_pct": 41.50202056127635,
+      "MA_IoU_pct": 22.801974913263944,
+      "MA_precision_pct": 62.25381258060521,
+      "MA_recall_pct": 26.460222486497198,
+      "miou_ci_low_pct": 36.53449634477808,
+      "miou_ci_high_pct": 43.80896812033317
+    },
+    {
+      "method": "matched_c20",
+      "n_images": 27,
+      "miou_pct": 40.28765977923507,
+      "EX_IoU_pct": 57.61186782766819,
+      "HE_IoU_pct": 41.28800218253107,
+      "SE_IoU_pct": 40.589458847161275,
+      "MA_IoU_pct": 21.66131025957973,
+      "MA_precision_pct": 65.7084291570843,
+      "MA_recall_pct": 24.422104950200684,
+      "miou_ci_low_pct": 36.622590847515866,
+      "miou_ci_high_pct": 42.3145880763715
+    }
+  ],
+  "pixel_comparisons": {
+    "no_h4": {
+      "full_minus_row_pp": 1.004356088366734,
+      "paired_image_ci95_pp": [
+        0.6958802164516742,
+        1.3845095314014013
+      ]
+    },
+    "no_convnext": {
+      "full_minus_row_pp": -0.3050008813724503,
+      "paired_image_ci95_pp": [
+        -1.5299889192443872,
+        1.1642611189879166
+      ]
+    },
+    "matched_c20": {
+      "full_minus_row_pp": 0.6196736943619001,
+      "paired_image_ci95_pp": [
+        0.04746351426411728,
+        1.0443057593824003
+      ]
+    }
+  },
+  "MA_lesion_table": [
+    {
+      "method": "full",
+      "n_images": 27,
+      "MA_positive_images": 27,
+      "tp": 463,
+      "fp": 204,
+      "fn": 622,
+      "detection_pct": 42.672811059907836,
+      "FP_per_image": 7.555555555555555,
+      "lesion_precision_pct": 69.41529235382309,
+      "detection_ci95_pct": [
+        37.57183288114025,
+        47.45200675299359
+      ],
+      "FP_per_image_ci95": [
+        5.2212962962962965,
+        10.296296296296296
+      ]
+    },
+    {
+      "method": "no_h4",
+      "n_images": 27,
+      "MA_positive_images": 27,
+      "tp": 375,
+      "fp": 127,
+      "fn": 710,
+      "detection_pct": 34.56221198156682,
+      "FP_per_image": 4.703703703703703,
+      "lesion_precision_pct": 74.7011952191235,
+      "detection_ci95_pct": [
+        28.152141414343426,
+        39.8888711611356
+      ],
+      "FP_per_image_ci95": [
+        3.037037037037037,
+        6.667592592592587
+      ]
+    },
+    {
+      "method": "matched_c20",
+      "n_images": 27,
+      "MA_positive_images": 27,
+      "tp": 462,
+      "fp": 202,
+      "fn": 623,
+      "detection_pct": 42.58064516129032,
+      "FP_per_image": 7.481481481481482,
+      "lesion_precision_pct": 69.57831325301204,
+      "detection_ci95_pct": [
+        37.376454033771104,
+        47.49320884247986
+      ],
+      "FP_per_image_ci95": [
+        5.148148148148148,
+        10.148148148148149
+      ]
+    }
+  ],
+  "MA_paired_intervals": {
+    "no_h4": {
+      "detection_pct": [
+        5.725081663667964,
+        11.061084338991057
+      ],
+      "FP_per_image": [
+        1.7037037037037037,
+        4.037037037037037
+      ]
+    },
+    "matched_c20": {
+      "detection_pct": [
+        -0.4572562986413386,
+        0.6883725514185149
+      ],
+      "FP_per_image": [
+        -0.37037037037037024,
+        0.518518518518519
+      ]
+    }
+  },
+  "inference_geometry": "stored image native coordinates; U native whole-image, S/C 1024-center768; HRDecoder archived preprocessing",
+  "bootstrap": {
+    "unit": "image",
+    "draws": 2000,
+    "seed": 20261023,
+    "training_seed_variance_included": false
+  },
+  "history_authority": "Direct user confirmation in current chat: never trained, selected, tuned or used to compare schemes",
+  "dataset_training_exposure": "Other project Q_MIX/E_NEG explorations used IDRiD training54; selected S20 and matched C20 follow DDR-only Q_DDR->F12->S/C lineage, not those mixed-data parents; these27 testing images isolated by direct user confirmation",
+  "annotation_authority": "historical user-confirmed official-GT lossless conversion, stored coordinate masks reverified",
+  "limits": [
+    "Other project explorations used IDRiD training54, but selected S/C lineage is DDR-only; testing27 holdout history based on user confirmation",
+    "patient IDs unavailable; no patient-level independence or bootstrap",
+    "stored square geometry and user-provided converted annotation, no independent official-native GT comparison",
+    "single seed; no original HRDecoder baseline checkpoint; separate remote reference-MSDA runtime, unlike the local DDR runtime"
+  ],
+  "no_external_tuning": true,
+  "runtime": "RTX4080 SUPER remote; A/U torch2.0.1, S/C torch2.7.1; BF16 reference MSDA; see per-branch manifests"
+}

@@ -1,0 +1,29 @@
+{
+  "driver": {
+    "stage": "TECHNICAL_PAUSE",
+    "reason": "No module named 'MultiScaleDeformableAttention'",
+    "automatic_restart": false,
+    "updated_at": "2026-10-04T20:52:00.332753+00:00"
+  },
+  "campaign": null,
+  "gate_status": "RUNNING",
+  "benchmarks": {
+    "C": {
+      "complete_updates": 100,
+      "seconds_per_update": 0.5632033744989894,
+      "data_wait_seconds_per_update": 0.004513519967440515,
+      "full_val_seconds": 153.2427820409648,
+      "checkpoint_seconds": 1.1513189859688282,
+      "checkpoint_bytes": 1412876767,
+      "peak_gpu_bytes": 7318949376
+    }
+  },
+  "C_progress": {
+    "completed_images": 76,
+    "expected": 76,
+    "update": 100
+  },
+  "S_progress": null,
+  "log_tail": "ib/python3.11/site-packages/torch/nn/modules/module.py\", line 1751, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/torch/nn/modules/module.py\", line 1762, in _call_impl\n    return forward_call(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/autodl-tmp/HRDecoder_FinalDecision_20261005/spatial.py\", line 113, in forward\n    sampled = CUDAAttention.apply(value.float(), shapes, starts, locations, weights)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/torch/autograd/function.py\", line 575, in apply\n    return super().apply(*args, **kwargs)  # type: ignore[misc]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/torch/amp/autocast_mode.py\", line 521, in decorate_fwd\n    return fwd(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^\n  File \"/root/autodl-tmp/HRDecoder_FinalDecision_20261005/spatial.py\", line 34, in forward\n    import MultiScaleDeformableAttention as kernel\nModuleNotFoundError: No module named 'MultiScaleDeformableAttention'\n",
+  "observed_at": "2026-10-04T20:56:01.701316+00:00"
+}

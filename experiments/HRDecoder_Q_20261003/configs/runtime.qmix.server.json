@@ -1,0 +1,32 @@
+{
+  "ddr_root": "/root/HRDecoder/data/DDR_split_613",
+  "historical_root": "D:/dataset/experiment/HRDecoder_Next_20261003",
+  "dinov3_repo": "/root/autodl-tmp/HRDecoder_Q_20261003/vendor/dinov3",
+  "pretrained_checkpoint": "/root/autodl-tmp/HRDecoder_Q_20261003/assets/dinov3_vitb16_pretrain_lvd1689m-73cec8be.pth",
+  "pretrained_source": "https://github.com/facebookresearch/dinov3",
+  "license_acceptance_evidence": "reports/pretraining_download.json",
+  "external_manifest": "/root/autodl-tmp/HRDecoder_Q_20261003/reports/external_acceptance/manifest.server.accepted.json",
+  "server": {
+    "host": "connect.nmb1.seetacloud.com",
+    "port": 26494,
+    "instance_id": null,
+    "remote_root": "/root/autodl-tmp/HRDecoder_Q_20261003",
+    "ssh_key": "C:/Users/GuanXingRen/.ssh/codex_hrdecoder_next_20261003"
+  },
+  "resources": {
+    "micro_batch": 2,
+    "accumulation": 4,
+    "dtype": "bfloat16",
+    "workers": 4,
+    "prefetch_factor": 2,
+    "pin_memory": true
+  },
+  "budget": {
+    "approved_total_cny": null,
+    "hourly_rate_cny": null,
+    "approval": "unlimited_explicit_user_authorization_20261003"
+  },
+  "stage": "Q_MIX_ACCEPTED_FIXED_PAIRED_PROTOCOL",
+  "p0_c_cache": "/root/autodl-tmp/HRDecoder_Ready_20261002/cache/val/champion",
+  "p0_u_cache": "/root/autodl-tmp/HRDecoder_Ready_20261002/cache/val/U0"
+}

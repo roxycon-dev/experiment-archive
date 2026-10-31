@@ -1,0 +1,68 @@
+{
+  "design_version": 8,
+  "name": "HRDecoder-DecoupledResidual",
+  "seed": 42,
+  "private_seed": 20261008,
+  "canvas": 2048,
+  "updates": 40000,
+  "global_batch": 2,
+  "precision": "BF16 network; FP32 residual composition/probabilities/losses",
+  "optimizer": {
+    "type": "SGD",
+    "lr": 0.005,
+    "momentum": 0.9,
+    "weight_decay": 0.0005
+  },
+  "lr": {
+    "type": "poly",
+    "power": 1,
+    "warmup": 1500,
+    "warmup_ratio": 1e-06
+  },
+  "lambda_k": [
+    [
+      0,
+      0
+    ],
+    [
+      1500,
+      0
+    ],
+    [
+      4000,
+      0.5
+    ],
+    [
+      32000,
+      0.5
+    ],
+    [
+      40000,
+      0.1
+    ]
+  ],
+  "GT": "base original-formula Dice + .1 HRcrop Dice; private Dice + .25 ordinary all-valid BCE",
+  "mask": "Existing geometry-valid and ignore255 masking retained; not claiming every original training detail identical",
+  "KD": "private only fixed GT-consistent train teacher T*, all-valid normalization; no moving student targets",
+  "readout": "four independent continuous residual readouts conv32->16+pixelshuffle4; exactly zero initialized",
+  "gradient_route": "all four HRNet feature inputs and p0 detached; final=z0.float().detach()+r.float(); no private gradient into base",
+  "inference": "resize final FP32 logits then sigmoid; no teacher or GT",
+  "classes": [
+    "EX",
+    "HE",
+    "SE",
+    "MA"
+  ],
+  "threshold": "strictly > .5",
+  "validation_images": 76,
+  "validation_interval": 4000,
+  "student_TTA": false,
+  "inference_teacher": false,
+  "inference_online_H4": false,
+  "test_selection": false,
+  "shutdown_after_completion": false,
+  "data_cache_hash_rescan": false,
+  "initialization": "fresh ImageNet W48 seed42; no warm task weights",
+  "screen_updates": 8000,
+  "accuracy_guaranteed": false
+}

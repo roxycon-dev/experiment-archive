@@ -1,0 +1,44 @@
+{
+  "original_lock_sha256": "644974f4a888835f838472199dcb623e879be2d62e73dab502394759551ceac4",
+  "recipe": "p_final = 0.75 * p_historical_champion + 0.25 * p_U0, for all EX/HE/SE/MA channels",
+  "active_candidate": "U0",
+  "threshold": 0.5,
+  "strict_greater": true,
+  "weights": {
+    "D_student_2000.pth": {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\best_pipeline\\weights\\D_student_2000.pth",
+      "bytes": 263419124,
+      "sha256": "5fe18717b62d8fc3ab4846a50c046588e2af05abbbfdb3a958f4794018b319ea"
+    },
+    "B_weights.pth": {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\best_pipeline\\weights\\B_weights.pth",
+      "bytes": 263479238,
+      "sha256": "0b3cd72e740fc5c69242994c12cfd71a49ac892aff37d09c50bb9fb6931a8626"
+    },
+    "E_1500.pth": {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\best_pipeline\\weights\\E_1500.pth",
+      "bytes": 527412743,
+      "sha256": "a18ff92b4da24d870554f17856983d4be042386cacbcaba0d4e13f3f248ed5e5"
+    },
+    "E4_weights.pth": {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\best_pipeline\\weights\\E4_weights.pth",
+      "bytes": 263477167,
+      "sha256": "c5a3d0f0b990d2430e545146745bc809538bbe764979baf54f62b450785268e0"
+    },
+    "H4_best.pth": {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\best_pipeline\\weights\\H4_best.pth",
+      "bytes": 15447,
+      "sha256": "14757e02de49f6f065d4ef82cb8b1c4ee8a6a7f3f66cb1867276993950f80c50"
+    },
+    "U0_historical_best.pth": {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\best_pipeline\\weights\\U0_historical_best.pth",
+      "bytes": 636326835,
+      "sha256": "98d98a5d02dc2615062c3c31cd15d061daf3d7ab41cb8f25cd90b062cd53bb34"
+    }
+  },
+  "champion_source_archive": "D:\\dataset\\experiment\\HRDecoder_champion_restore.tar.gz",
+  "source_root": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002",
+  "server_source_root": "/root/autodl-tmp/HRDecoder_Ready_20261002",
+  "original_lock_kept_byte_identical": true,
+  "note": "Original lock contains server paths. Relocation requires a recorded path map; do not overwrite the evaluated lock or retune on test."
+}

@@ -1,0 +1,106 @@
+{
+  "stage": "COMPLETE_BACKUP_VERIFIED_NEXT_RUN_QUEUED",
+  "updated_at": "2026-10-04T01:15:44.895800+00:00",
+  "automatic_retry": false,
+  "verified_files": 327,
+  "offloaded_files": 152,
+  "next_launch": {
+    "stage": "REGISTERED_24K_RESUME_QUEUED",
+    "launcher_pid": 76367,
+    "arm": "Q_DDR",
+    "seed": 2024,
+    "endpoint": 24000,
+    "resume": true,
+    "free_bytes": 14328463360,
+    "campaign": {
+      "arms": [
+        "Q_DDR",
+        "Q_MIX"
+      ],
+      "common_endpoint": 24000,
+      "architecture_stopped": false,
+      "discovery_complete": true,
+      "promotion_signals": [
+        {
+          "arm": "Q_DDR",
+          "formula": "fixed_fusion",
+          "nodes": [
+            12000,
+            16000
+          ]
+        },
+        {
+          "arm": "Q_DDR",
+          "formula": "fixed_fusion",
+          "nodes": [
+            16000,
+            20000
+          ]
+        },
+        {
+          "arm": "Q_DDR",
+          "formula": "fixed_fusion",
+          "nodes": [
+            20000,
+            24000
+          ]
+        },
+        {
+          "arm": "Q_MIX",
+          "formula": "fixed_fusion",
+          "nodes": [
+            12000,
+            16000
+          ]
+        },
+        {
+          "arm": "Q_MIX",
+          "formula": "fixed_fusion",
+          "nodes": [
+            16000,
+            20000
+          ]
+        },
+        {
+          "arm": "Q_MIX",
+          "formula": "fixed_fusion",
+          "nodes": [
+            20000,
+            24000
+          ]
+        }
+      ],
+      "review_seed_authorized": true,
+      "automatic_extra_experiments": false,
+      "statuses": {
+        "Q_DDR_seed42": {
+          "stage": "COMPLETE",
+          "completed": 24000,
+          "endpoint": 24000,
+          "total_seconds_this_invocation": 4334.4805862642825,
+          "identity_sha256": "b3e4cea88c5eeda8923a9c3950c0f67e74f02c28057730f2dd2d19154c500396",
+          "updated_at": "2026-10-03T23:47:29.768528+00:00"
+        },
+        "Q_DDR_seed2024": {
+          "stage": "COMPLETE",
+          "completed": 16000,
+          "endpoint": 16000,
+          "total_seconds_this_invocation": 8445.277330346406,
+          "identity_sha256": "c25584777fd2ded929bce248f6fc0e05d954ce9ba200f62d3066dbad41cdd252",
+          "updated_at": "2026-10-03T17:49:17.609674+00:00"
+        },
+        "Q_MIX_seed42": {
+          "stage": "COMPLETE",
+          "completed": 24000,
+          "endpoint": 24000,
+          "total_seconds_this_invocation": 4316.887467782944,
+          "identity_sha256": "9803ad79aecd9c3d7a426fda0053ae0e43f1afc663933e30d35364be38800a3e",
+          "updated_at": "2026-10-04T01:05:05.406450+00:00"
+        }
+      },
+      "updated_at": "2026-10-04T01:10:47.292427+00:00",
+      "next_action": "REVIEW_ALL_AVAILABLE_ARMS_WITH_SEED_2024"
+    }
+  },
+  "seconds": 2440.3001005000006
+}

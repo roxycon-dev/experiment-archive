@@ -1,0 +1,152 @@
+{
+  "jobs": {
+    "U1_external_pretrain": {
+      "status": "complete",
+      "started_at_epoch": 1790906941.645659,
+      "config_sha256": "0ed6fb25f1e81aa79815a3e2bba55ec42011739150035d01eaca8b9ba8df2e99",
+      "exit_code": 0,
+      "finished_at_epoch": 1790908345.5982351,
+      "summary": {
+        "status": "complete",
+        "stop_reason": null,
+        "elapsed_seconds": 1399.5731031559408,
+        "stage": "external_pretrain",
+        "mode": "formal",
+        "updates_done": 2400,
+        "micro_steps": 9600,
+        "best": {
+          "mIoU_lesion4": 0.27160511927790537,
+          "update": 2400
+        },
+        "resume_warnings": [],
+        "checkpoints": {
+          "last": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/U1_external_pretrain/ckpt_last.pth",
+          "best": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/U1_external_pretrain/ckpt_best.pth",
+          "final": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/U1_external_pretrain/ckpt_final.pth"
+        },
+        "generated_at": "2026-10-02T02:32:24.250407+00:00"
+      }
+    },
+    "U1_ddr_finetune": {
+      "status": "complete",
+      "started_at_epoch": 1790908346.2194698,
+      "config_sha256": "b44967b823f6e6a2cf04b246a15ca37f766dd76209bcee5a69e8fe0254bab4ef",
+      "exit_code": 0,
+      "finished_at_epoch": 1790914382.2453682,
+      "summary": {
+        "status": "complete",
+        "stop_reason": null,
+        "elapsed_seconds": 6029.805540608009,
+        "stage": "ddr_finetune",
+        "mode": "formal",
+        "updates_done": 12000,
+        "micro_steps": 24016,
+        "best": {
+          "mIoU_lesion4": 0.3669342309981436,
+          "update": 12000
+        },
+        "resume_warnings": [],
+        "checkpoints": {
+          "last": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/U1_ddr_finetune/ckpt_last.pth",
+          "best": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/U1_ddr_finetune/ckpt_best.pth",
+          "final": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/U1_ddr_finetune/ckpt_final.pth"
+        },
+        "generated_at": "2026-10-02T04:13:01.074989+00:00"
+      }
+    },
+    "H1_external_pretrain": {
+      "status": "complete",
+      "started_at_epoch": 1790914382.2892206,
+      "config_sha256": "97bf76e9d68c6dae493d318a80da21f5c2de7415cd037c0428b8b65cfd1be649",
+      "exit_code": 0,
+      "finished_at_epoch": 1790918162.5453734,
+      "summary": {
+        "status": "complete",
+        "stop_reason": null,
+        "elapsed_seconds": 3762.144079893944,
+        "stage": "external_pretrain",
+        "mode": "formal",
+        "updates_done": 2400,
+        "micro_steps": 4804,
+        "best": {
+          "mIoU_lesion4": 0.42999768710592823,
+          "update": 2400
+        },
+        "config_file_sha256": "97bf76e9d68c6dae493d318a80da21f5c2de7415cd037c0428b8b65cfd1be649",
+        "resume_warnings": [],
+        "checkpoints": {
+          "last": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/H1_external_pretrain/ckpt_last.pth",
+          "best": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/H1_external_pretrain/ckpt_best.pth",
+          "final": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/H1_external_pretrain/ckpt_final.pth"
+        },
+        "generated_at": "2026-10-02T05:16:00.962970+00:00"
+      }
+    },
+    "H1_ddr_finetune": {
+      "status": "stopped",
+      "started_at_epoch": 1790918163.322156,
+      "config_sha256": "2bf116be1cd68dabe78b7685d5d2afe416d1c5b781329648a036616dd9347dac",
+      "exit_code": 0,
+      "finished_at_epoch": 1790934934.1426003,
+      "summary": {
+        "status": "stopped",
+        "stop_reason": "low_priority: best=0.355950, recent_gain=-0.001919, no_class_advantage",
+        "elapsed_seconds": 16609.185342184966,
+        "stage": "ddr_finetune",
+        "mode": "formal",
+        "updates_done": 12000,
+        "micro_steps": 12008,
+        "best": {
+          "mIoU_lesion4": 0.3559504929505182,
+          "update": 9000
+        },
+        "config_file_sha256": "1b2de9719d17d9ba1a1ea9b9ba20c2dc839f0ea1f2e573ad1f5b0d4a1c5965f5",
+        "resume_warnings": [],
+        "checkpoints": {
+          "last": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/H1_ddr_finetune/ckpt_last.pth",
+          "best": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/H1_ddr_finetune/ckpt_best.pth",
+          "final": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/H1_ddr_finetune/ckpt_final.pth"
+        },
+        "generated_at": "2026-10-02T09:55:32.580880+00:00"
+      }
+    },
+    "A0_ddr_finetune": {
+      "status": "stopped",
+      "started_at_epoch": 1790934934.1772797,
+      "config_sha256": "6ae617369dbd53a8c609fffd08a329c928c8e8bf2b31c5f08e5de3f443dd5535",
+      "exit_code": 0,
+      "finished_at_epoch": 1790943903.065582,
+      "summary": {
+        "status": "stopped",
+        "stop_reason": "operator_stop_at_update_boundary",
+        "elapsed_seconds": 8965.399070524029,
+        "stage": "ddr_finetune",
+        "mode": "formal",
+        "updates_done": 6197,
+        "micro_steps": 6200,
+        "best": {
+          "mIoU_lesion4": 0.09678075116594265,
+          "update": 6000
+        },
+        "config_file_sha256": "6ae617369dbd53a8c609fffd08a329c928c8e8bf2b31c5f08e5de3f443dd5535",
+        "resume_warnings": [],
+        "checkpoints": {
+          "last": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/A0_ddr_finetune/ckpt_last.pth",
+          "best": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/A0_ddr_finetune/ckpt_best.pth",
+          "final": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/A0_ddr_finetune/ckpt_final.pth"
+        },
+        "generated_at": "2026-10-02T12:25:01.611528+00:00"
+      }
+    }
+  },
+  "pid": 4040,
+  "status": "main_training_done",
+  "started_at_epoch": 1790906941.6279829,
+  "skipped_historical": [
+    "U0_complete_12000",
+    "H0_partial_6000_no_local_restart"
+  ],
+  "active_job": null,
+  "finished_at_epoch": 1790943903.0679934,
+  "next_action": "nominate at most two families; export probabilities; constrained cross-fit; promote only useful candidates"
+}

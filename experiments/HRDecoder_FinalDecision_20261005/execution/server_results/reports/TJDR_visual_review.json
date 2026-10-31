@@ -1,0 +1,38 @@
+{
+  "status": "PASS",
+  "reviewed_sids": [
+    "TJDR_train_273",
+    "TJDR_train_247",
+    "TJDR_train_260",
+    "TJDR_train_276",
+    "TJDR_train_309",
+    "TJDR_train_330",
+    "TJDR_train_351",
+    "TJDR_train_363",
+    "TJDR_train_377",
+    "TJDR_train_393",
+    "TJDR_train_429",
+    "TJDR_train_002",
+    "TJDR_train_004",
+    "TJDR_train_001",
+    "TJDR_train_005",
+    "TJDR_train_014",
+    "TJDR_train_023",
+    "TJDR_train_040",
+    "TJDR_train_081",
+    "TJDR_train_118",
+    "TJDR_train_152",
+    "TJDR_train_185",
+    "TJDR_train_222"
+  ],
+  "reviewed_count": 23,
+  "reviewer": "Codex image inspection of all six original/overlay contact sheets",
+  "time": "2026-10-04T18:45:20.168284+00:00",
+  "checks": [
+    "Both Topcon and Clarus images inspected",
+    "All four annotation colors align with corresponding original pixels",
+    "Normal/negative cases retained",
+    "No whole-image resizing in training; display thumbnails only"
+  ],
+  "limitations": "Visual alignment and class/color audit, not a new clinical annotation adjudication."
+}

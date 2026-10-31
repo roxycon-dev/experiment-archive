@@ -1,0 +1,45 @@
+{
+  "sid": "IDRiD_56",
+  "cohort": "idrid",
+  "hw": [
+    3665,
+    3665
+  ],
+  "image_sha256": "0b6f90c8098fa0407aafe13868a74344baa1eb8b988def51003fe96e6206dd8e",
+  "label_sha256": null,
+  "external_GT_sha256": {
+    "EX": "ea3915a3b0f23bc468d1c6b01e4537a02513395edb8cd2fe192039b9b5cc7b75",
+    "HE": "9f8f83c3183c0effd3cd33a73f602a3a5735b322832a1b8176b0dc052c90a377",
+    "SE": "b1d29b6359cf9e7fd0e1538016e896a3ac3a6219c5d8d32bdae15ef6f59ab54a",
+    "MA": "ac3d900f4b96fc731e77c005e2febe2bde010e3f630ca0dcaebdb038f748d167"
+  },
+  "counts": {
+    "baseline": [
+      [
+        6744,
+        3505,
+        6569
+      ],
+      [
+        77801,
+        31293,
+        121908
+      ],
+      [
+        41450,
+        11528,
+        15182
+      ],
+      [
+        2323,
+        291,
+        8360
+      ]
+    ]
+  },
+  "mask_sha256": "ba21f94464c6671b7de936085fce06198b4c6c08510706fa881db742159498ed",
+  "timing": {
+    "pipeline_to_native_binary_mask_seconds": 0.41058280000001446,
+    "GPU_peak_allocated_bytes": 2159913984
+  }
+}

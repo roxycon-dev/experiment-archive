@@ -1,0 +1,22 @@
+{
+  "generated_at": "2026-09-20T03:17:24.031731+00:00",
+  "manifest": "D:\\dataset\\experiment\\HRDecoder_FullCompetition_20260920\\tests\\_tmp\\manifests\\audit_negative_missing_mask.jsonl",
+  "errors": [
+    "E1 exists: IDRiD_train_IDRiD_001/EX: mask missing: D:\\dataset\\experiment\\HRDecoder_FullCompetition_20260920\\tests\\_tmp\\external_data/IDRiD/labels/train/EX/GHOST_EX.png"
+  ],
+  "warnings": [],
+  "degradations": [
+    "jsonschema 未安装：使用内置最小校验器（覆盖 required/type/enum/pattern）"
+  ],
+  "counts": {
+    "records": 2,
+    "by_source_split": {
+      "IDRiD/train": 1,
+      "MAPLES-DR/train": 1
+    },
+    "exact_dup_pairs": 0,
+    "near_dup_pairs": 0,
+    "ddr_images_compared": 0,
+    "phash_threshold": 6
+  }
+}

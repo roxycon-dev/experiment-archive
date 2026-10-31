@@ -1,0 +1,20 @@
+{
+  "run_id": "audit_20260916_A",
+  "authorization_status": "NOT_GRANTED",
+  "paid_instance_started": false,
+  "cost_incurred_cny": 0.0,
+  "note": "本轮严格遵守 prompt §0.1：未获当前预算与开机授权，不启动付费实例。全部工作为本地非付费。",
+  "required_before_any_paid_work": [
+    "实例标识",
+    "允许任务范围",
+    "总预算或最长用时",
+    "绝对截止时间（含时区）",
+    "关机方式",
+    "云平台侧停止计费的独立确认手段"
+  ],
+  "historical_budget_used_as_reference_only": {
+    "note": "以下为历史记录，按 prompt §3.2 不是当前事实，不得当作当前授权的依据",
+    "prior_instance_hourly_cny": 1.98,
+    "prior_instance_state": "已关机（TCP 拒绝连接，2026-09-16 探测）"
+  }
+}

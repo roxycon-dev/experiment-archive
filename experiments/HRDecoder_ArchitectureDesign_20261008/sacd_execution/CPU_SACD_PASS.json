@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "checks": [
+    "initialization_and_detached_condition",
+    "architecture_parameter_counts",
+    "complementary_regions_endpoints_unknown_and_invalid",
+    "action_fixed_three_regions_and_all_invalid",
+    "extreme_probabilities_and_action_recovery_gradient",
+    "GT_class_recovery_ignore_and_KD_trust",
+    "vectorized_objectives_match_reference_values_and_gradients",
+    "auxiliary_private_only_gradient_routing",
+    "native_resolution_inference_and_schedules",
+    "student_errors_receive_directional_targets_and_correct_student_is_preserved",
+    "per_class_output_parameters_do_not_receive_other_class_readout_loss",
+    "packed_class_kernels_match_separate_values_and_gradients"
+  ],
+  "torch": "2.6.0+cu124",
+  "formal_updates": 0
+}

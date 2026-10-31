@@ -1,0 +1,70 @@
+{
+  "utc": "2026-10-24T01:46:37.065487+00:00",
+  "root": {
+    "pids": "  6157 /root/miniconda3/envs/hrdecoder_q_20261003/bin/python -u /root/autodl-tmp/paper_supplement_20261023_run/paper_supplement_20261023/scripts/additional_training_queue.py\n  8854 /root/miniconda3/envs/hrdecoder_q_20261003/bin/python -u /root/autodl-tmp/paper_supplement_20261023_run/paper_supplement_20261023/scripts/publish_paired_evaluation_jobs.py\n",
+    "training_logs": []
+  },
+  "59": {
+    "dispatcher": " 453129 /usr/bin/python3 -u /home/studentuser001/paper_supplement_20261023/evaluation_workspace/paper_supplement_20261023/scripts/queue_supplement_evaluation59.py --adopt-state /home/studentuser001/paper_supplement_20261023/logs/evaluation_dispatcher_adopt_20261023T131537Z.json\n",
+    "queue": {
+      "stage": "RUNNING_OR_WAITING_READY_ENDPOINTS",
+      "running": {},
+      "finished": {
+        "C_seed42": {
+          "GPU": 1,
+          "exit_code": 0
+        },
+        "S_seed42": {
+          "GPU": 1,
+          "exit_code": 0
+        },
+        "C_seed2024": {
+          "GPU": 0,
+          "exit_code": 0
+        },
+        "baseline_seed42": {
+          "GPU": 0,
+          "exit_code": 0
+        },
+        "S_seed2024": {
+          "GPU": 0,
+          "exit_code": 0
+        }
+      },
+      "failed": {},
+      "waiting": [
+        {
+          "name": "C_seed3407",
+          "reason": "fixed training endpoint not ready"
+        },
+        {
+          "name": "S_seed3407",
+          "reason": "fixed training endpoint not ready"
+        }
+      ],
+      "resources": {
+        "0": {
+          "memory_used_MiB": 6,
+          "utilization_pct": 0
+        },
+        "1": {
+          "memory_used_MiB": 6,
+          "utilization_pct": 0
+        },
+        "2": {
+          "memory_used_MiB": 6,
+          "utilization_pct": 0
+        },
+        "3": {
+          "memory_used_MiB": 6,
+          "utilization_pct": 0
+        }
+      },
+      "updated_unix": 1792806383.9250746,
+      "controller": "supplement_v2_with_baseline_and_adopted_workers"
+    },
+    "baseline_v2_processes": "1406943 /bin/sh -c pgrep -af /home/studentuser001/paper_supplement_20261023/baseline_v2_supervisor59.py"
+  },
+  "backup_err_log": "",
+  "overall_campaign_complete": false
+}

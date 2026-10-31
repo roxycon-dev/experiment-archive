@@ -1,0 +1,24 @@
+{
+  "models": [
+    {
+      "config": "configs/lesion/exp/hr100_b.py",
+      "ckpt": "/root/autodl-tmp/hr100/trial_b/best_mIoU_iter_3000.pth",
+      "weight": 1.0
+    }
+  ],
+  "load_report": [
+    {
+      "ckpt": "best_mIoU_iter_3000.pth",
+      "missing": [],
+      "unexpected": []
+    }
+  ],
+  "flip_tta": false,
+  "split": "test",
+  "n_images": 227,
+  "mIoU": 0.41918324772598525,
+  "mF1": 0.5796486106370985,
+  "mPPV": 0.6203672339248486,
+  "mS": 0.5508196082405775,
+  "mAUPR": 0.5971670861979173
+}

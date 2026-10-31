@@ -1,0 +1,26 @@
+{
+  "kind": "registered fresh4k screen; same fresh run conditional40k",
+  "screen_updates": 4000,
+  "registered_before_results": true,
+  "criteria": {
+    "4k_mIoU_at_least": 30.475812328119,
+    "final_minus_base_4k_pp_at_least": 1.0,
+    "max_class_IoU_loss_final_vs_base_pp": 2.0,
+    "all_classes_nonzero": true,
+    "HE_MA_reject_if_FN_growth_over": 1.05,
+    "HE_MA_requires_FP_ratio_when_FN_grows_at_most": 0.95
+  },
+  "warm_probe_can_pass_this_screen": false,
+  "test_used": false,
+  "old_failed_gates_modified": false,
+  "user_latest_available_server_statement": "服务器还开着 一直空转；快开始",
+  "no_old_checkpoint_initialization": true,
+  "accuracy_guaranteed": false,
+  "candidate": "half-resolution detail, unchanged numerical gate",
+  "predecessor_rejected": {
+    "mIoU4k": 30.444206699113142,
+    "failed_only": "4k absolute floor",
+    "private_gain_pp": 3.635997894339006
+  },
+  "architecture_hypothesis": "1/2 grid and phase2 readout improve local small-lesion representation; DW13 keeps roughly comparable original-pixel support; unproven"
+}

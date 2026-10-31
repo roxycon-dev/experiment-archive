@@ -1,0 +1,137 @@
+schema_version: '1.0'
+arm_id: H0
+role: DDR-only control for hrdecoder family
+status: locked-intent
+structure:
+  family: hrdecoder
+  paired_group: hrdecoder
+  definition_ref: docs/ASSET_AND_INTERFACE_AUDIT.md 第4节
+  training_entry: train.py
+  reference_root: D:\dataset\experiment\HRDecoder_Ready_20261002\vendor\HRDecoder
+  open_all_stages: true
+  keep_frozen_b_copy: false
+initialization:
+  imagenet_weights:
+    source: https://download.openmmlab.com/pretrain/third_party/hrnetv2_w48-d2186c55.pth
+    file: D:\dataset\experiment\HRDecoder_Ready_20261002\assets\hrnetv2_w48-d2186c55.pth
+    sha256: d2186c55782308392ae14cf179ac4840143b09abdbba81aa3f9274c795ebc960
+  external_pretrain_checkpoint: null
+data:
+  ddr_root: D:\HRDecoder\data\DDR_split_613
+  ddr_train_split: train
+  ddr_val_split: val
+  ddr_test_split: test
+  channel_order:
+  - EX
+  - HE
+  - SE
+  - MA
+  input_fov: 2048
+  train_crop: 1024
+  ddr_normalization:
+    mean:
+    - 81.205
+    - 50.636
+    - 21.216
+    std:
+    - 76.252
+    - 48.798
+    - 21.625
+ddr_finetune_stage:
+  seed: 42
+  updates: 12000
+  effective_batch: 8
+  micro_batch: 2
+  grad_accum: 4
+  eval_progress_points:
+  - 0.25
+  - 0.5
+  - 0.75
+  - 1.0
+  optimizer: adamw
+  weight_decay: 0.01
+  warmup_ratio: 0.05
+  lr_schedule: cosine
+  cosine_min_ratio: 0.01
+  backbone_lr: 5.0e-05
+  decoder_lr: 0.0002
+  augmentation:
+    resize_ratio_range:
+    - 0.5
+    - 2.0
+    random_crop_cat_max_ratio: 0.75
+    flip_ratio: 0.5
+    rotate_degrees:
+    - -45
+    - 45
+    photometric: light
+  sampling: random_plus_foreground_mixed
+  bn_policy:
+    backbone_norm_eval: true
+    affine_trainable: true
+  mixed_precision: true
+  gradient_checkpointing: false
+  log_every: 100
+  num_workers: 0
+  periodic_save_updates: 1000
+  screening:
+    enabled: true
+    min_progress: 0.5
+    minimum_gain: 0.003
+    gap: 0.015
+    reference_miou: 0.426694
+    reference_class_iou:
+      EX: 0.457715
+      HE: 0.437583
+      SE: 0.551807
+      MA: 0.259672
+    class_margin: 0.005
+loss:
+  type: binary_per_class
+  recipe: ce_dice
+  smooth: 1.0e-05
+  per_class_valid_masking: true
+  ce_weight: 1.0
+  dice_weight: 1.0
+metrics:
+  protocol: whole_image_accumulated_counts
+  threshold: 0.5
+  primary: mIoU_lesion4
+  reported:
+  - mF1
+  - mPPV
+  - mRecall
+  - mAUPR
+  eval_mode: sliding_window
+  window_size: 1024
+  window_stride: 768
+  resize_to:
+  - 2048
+  - 2048
+checkpoint_selection:
+  allowed_splits:
+  - val
+  test_forbidden: true
+test_usage:
+  train_on_test: forbidden
+  select_checkpoint_on_test: forbidden
+  final_single_eval: allowed_only_after_full_lock
+equivalence_lock:
+  identical_with: H1
+  fields:
+  - data
+  - ddr_finetune_stage
+  - loss
+  - metrics
+  - checkpoint_selection
+  - test_usage
+  - structure.family
+  - structure.paired_group
+  - initialization.imagenet_weights
+notes: 'H0 回答"HRDecoder 的可比较完整训练基准"。本配置是意图锁定，不代表已验证超参； micro_batch/grad_accum/gradient_checkpointing
+  由开机测速确定后一次性填写并重新过 preflight。
+
+  '
+execution_revision: '20261002: fp32 loss, real transfer, source sampling, explicit
+  geometry'
+historical_comparison: 'descriptive_only: historical controls used an earlier implementation'

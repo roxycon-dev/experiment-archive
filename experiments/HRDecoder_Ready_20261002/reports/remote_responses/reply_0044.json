@@ -1,0 +1,5 @@
+{
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "Traceback (most recent call last):\n  File \"tests/test_finish_fusion.py\", line 48, in <module>\n    if __name__=='__main__':main()\n  File \"tests/test_finish_fusion.py\", line 18, in main\n    root=Path(tmp).resolve();assert root.is_relative_to(ROOT.resolve())\nAttributeError: 'PosixPath' object has no attribute 'is_relative_to'\nTraceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/root/miniconda3/lib/python3.8/subprocess.py\", line 516, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError: Command '['/root/miniconda3/bin/python', 'tests/test_finish_fusion.py']' returned non-zero exit status 1.\n"
+}

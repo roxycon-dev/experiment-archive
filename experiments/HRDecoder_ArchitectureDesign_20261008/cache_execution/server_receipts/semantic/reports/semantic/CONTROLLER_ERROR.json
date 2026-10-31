@@ -1,0 +1,8 @@
+{
+  "status": "FAILED",
+  "error": "Candidate GPU smoke failed",
+  "traceback": "Traceback (most recent call last):\n  File \"/root/autodl-tmp/HRDecoder_v3_20261008/semantic_execution/controller.py\", line 151, in <module>\n    main()\n  File \"/root/autodl-tmp/HRDecoder_v3_20261008/semantic_execution/controller.py\", line 65, in main\n    assert code == 0, 'Candidate GPU smoke failed'\nAssertionError: Candidate GPU smoke failed\n",
+  "time_unix": 1791612625.3283565,
+  "server_kept_running": true,
+  "external_diagnostics_controlled": false
+}

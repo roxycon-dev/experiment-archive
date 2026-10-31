@@ -1,0 +1,95 @@
+{
+  "status": "INCOMPLETE",
+  "goal_achieved": false,
+  "checks": [
+    {
+      "requirement": "fresh ImageNet W48 seed42 private20261008 fixed2048/batch2/40000",
+      "status": "PASS"
+    },
+    {
+      "requirement": "actual model/loss/data/training source and registered spec identity",
+      "status": "PASS"
+    },
+    {
+      "requirement": "deployment without teacher/GT/TTA/H4",
+      "status": "PASS"
+    },
+    {
+      "requirement": "audited custom student454/76/227 image-disjoint splits, no official-split claim",
+      "status": "PASS"
+    },
+    {
+      "requirement": "pinned original-env CPU gradient/deployment/optimizer invariants",
+      "status": "PASS"
+    },
+    {
+      "requirement": "new identity real2048/b2 nonzero auxiliary GPU smoke",
+      "status": "PASS"
+    },
+    {
+      "requirement": "original fresh identity recomputes through unchanged scientific material",
+      "status": "PASS"
+    },
+    {
+      "requirement": "own1000 checkpoint resume with source-only worker RAM equivalence",
+      "status": "PASS"
+    },
+    {
+      "requirement": "real spawned worker same A/U/S input tensors",
+      "status": "PASS"
+    },
+    {
+      "requirement": "original fresh registration identity bridged, no prior-task warm weights",
+      "status": "PASS"
+    },
+    {
+      "requirement": "pre-result validator/reference small-code identity sealed",
+      "status": "PENDING"
+    },
+    {
+      "requirement": "4k screen sealed before actual results under renewed server authorization",
+      "status": "PENDING"
+    },
+    {
+      "requirement": "4k screen PASS same current identity",
+      "status": "PENDING"
+    },
+    {
+      "requirement": "full76 fresh4k screen evidence",
+      "status": "PENDING"
+    },
+    {
+      "requirement": "same fresh run conditional full40k continuation, renewed server availability",
+      "status": "PENDING"
+    },
+    {
+      "requirement": "fixed40000 durable own model/optimizer/RNG checkpoint loaded",
+      "status": "PENDING"
+    },
+    {
+      "requirement": "fixed40k full76 counts/metrics",
+      "status": "PENDING"
+    },
+    {
+      "requirement": "full76 GT counts equal independent label reference",
+      "status": "PENDING"
+    },
+    {
+      "requirement": "terminal own controller outcome, serverON and external diagnostics untouched",
+      "status": "PENDING"
+    },
+    {
+      "requirement": "actual post-completion SSH online and own training/controller/RAM ended",
+      "status": "PENDING"
+    }
+  ],
+  "fixed40k_val_mIoU": null,
+  "fixed40k_test_mIoU": null,
+  "val_target_exceeded": null,
+  "test_target_exceeded": null,
+  "audited_at": "2026-10-10T03:37:51.340021+08:00",
+  "checkpoint_download": false,
+  "data_cache_hash_rescan": false,
+  "test_for_tuning": false,
+  "scope": "audited custom student454/76/227; no official teacher-split independence or never-previously-used dataset claim"
+}

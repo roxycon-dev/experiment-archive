@@ -1,0 +1,98 @@
+{
+  "protocol": "whole_image_accumulated_counts",
+  "threshold": 0.5,
+  "n_images": 76,
+  "per_class": {
+    "EX": {
+      "iou": 0.44189950802975697,
+      "f1": 0.612940784803482,
+      "ppv": 0.6283215242717746,
+      "recall": 0.598295065731784,
+      "aupr": 0.44592040844851777,
+      "tp": 173986,
+      "fp": 102920,
+      "fn": 116817,
+      "gt_positive_pixels": 290803
+    },
+    "HE": {
+      "iou": 0.38861595702809765,
+      "f1": 0.5597169686279707,
+      "ppv": 0.5506937238634749,
+      "recall": 0.5690408350775007,
+      "aupr": 0.39920579136731493,
+      "tp": 686220,
+      "fp": 559881,
+      "fn": 519704,
+      "gt_positive_pixels": 1205924
+    },
+    "SE": {
+      "iou": 0.4978801321823047,
+      "f1": 0.664779672932745,
+      "ppv": 0.7047140743706967,
+      "recall": 0.6291285178050089,
+      "aupr": 0.4772118075111943,
+      "tp": 126709,
+      "fp": 53093,
+      "fn": 74695,
+      "gt_positive_pixels": 201404
+    },
+    "MA": {
+      "iou": 0.2113536920925617,
+      "f1": 0.3489545513787261,
+      "ppv": 0.30609845061681346,
+      "recall": 0.40576467871370014,
+      "aupr": 0.15901739664379866,
+      "tp": 28113,
+      "fp": 63730,
+      "fn": 41171,
+      "gt_positive_pixels": 69284
+    }
+  },
+  "mIoU_lesion4": 0.38493732233318023,
+  "mF1": 0.546597994435731,
+  "mPPV": 0.54745694328069,
+  "mRecall": 0.5505572743319984,
+  "mAUPR": 0.3703388509927064,
+  "excluded_classes": {
+    "iou": [],
+    "aupr": []
+  },
+  "aupr_note": "256-bin histogram approximation of PR curve",
+  "fixed_fusion_miou": 0.43395522888794646,
+  "fixed_fusion_counts": [
+    [
+      183653,
+      94082,
+      107150
+    ],
+    [
+      692921,
+      416755,
+      513003
+    ],
+    [
+      136763,
+      40838,
+      64641
+    ],
+    [
+      27719,
+      34508,
+      41565
+    ]
+  ],
+  "fixed_fusion_baseline_miou": 0.43487703221036567,
+  "fixed_fusion_gain": -0.0009218033224192013,
+  "fixed_fusion_alpha": 0.25,
+  "fixed_fusion_images": 76,
+  "fixed_fusion_cache_identity": "5a3f1ef143f31d32984e3e177e632685738bd388d978a4ae3ad9735ca51163d4",
+  "split": "val",
+  "mode": "formal",
+  "eval_images": 76,
+  "resize_to": null,
+  "dataset_size": 76,
+  "eval_inference": "whole_image",
+  "update": 4000,
+  "stage": "ddr_finetune",
+  "generated_at": "2026-10-02T16:52:01.870075+00:00"
+}

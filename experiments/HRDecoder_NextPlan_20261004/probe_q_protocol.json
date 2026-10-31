@@ -1,0 +1,21 @@
+{
+  "split": "val",
+  "n_images": 76,
+  "seeds": [
+    42,
+    2024
+  ],
+  "checkpoint": 16000,
+  "current_formula": ".75*P0+.25*Q",
+  "P0_formula": ".75*C+.25*U0",
+  "diagnostic_only_q_thresholds": [
+    0.25,
+    0.5,
+    0.75
+  ],
+  "oracle": "GT chooses P0 or Q binary expert, not deployable",
+  "purpose": "error partition and fixed sensitivity probes, no winner selection",
+  "test_read": false,
+  "gpu": false,
+  "server": false
+}

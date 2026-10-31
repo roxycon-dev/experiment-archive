@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "D:\dataset\experiment\HRDecoder_Next_20261003\ops\mirror_remote.py", line 189, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "D:\dataset\experiment\HRDecoder_Next_20261003\ops\mirror_remote.py", line 175, in main
+    path=ROOT/'reports/mirror_manifest.json';manifest=json.loads(path.read_text()) if path.exists() else {}
+                                                                 ~~~~~~~~~~~~~~^^
+  File "C:\Users\GuanXingRen\Miniconda3\Lib\pathlib\_local.py", line 546, in read_text
+    return PathBase.read_text(self, encoding, errors, newline)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GuanXingRen\Miniconda3\Lib\pathlib\_abc.py", line 633, in read_text
+    return f.read()
+           ~~~~~~^^
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xae in position 72914: illegal multibyte sequence

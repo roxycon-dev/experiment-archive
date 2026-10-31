@@ -1,0 +1,9 @@
+{
+  "date": "2026-10-23",
+  "attempt": 1,
+  "error": "The older source ZIP predates exact_weight_transport.py; decoder helper absent in the new isolated staging directory.",
+  "stage": "CPU-only source staging before evaluation GPU launch or any new prediction",
+  "training_affected": false,
+  "existing_fail_log_preserved": "/root/autodl-tmp/paper_supplement_20261023_run/paper_supplement_20261023/log_stage_evaluation59.txt",
+  "repair": "Explicitly include the unchanged exact decoder helper and resume staging with a separate timestamped log; source archives and model tensors unchanged."
+}

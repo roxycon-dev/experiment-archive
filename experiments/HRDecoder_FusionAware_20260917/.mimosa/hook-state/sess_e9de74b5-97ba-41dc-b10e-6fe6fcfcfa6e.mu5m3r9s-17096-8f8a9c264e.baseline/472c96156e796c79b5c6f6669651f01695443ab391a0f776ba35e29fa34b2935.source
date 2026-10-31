@@ -1,0 +1,131 @@
+"""Tests: budgets, restart persistence, gates, counts. No real shutdown."""
+import json, os, sys
+from datetime import datetime, timedelta, timezone
+import pytest
+
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+import ops
+
+
+class TestBudget:
+    def test_deadline_min_of_cap_and_budget(self):
+        start = datetime(2026, 9, 16, 0, 0, tzinfo=timezone.utc)
+        led = {"billing_started_at": start.isoformat(), "other_cost": 0.0}
+        assert ops.deadline_of(led) == start + timedelta(hours=ops.CAP_HOURS)
+        led["other_cost"] = 40.0  # (50-40)/1.98 = 5.05h < 24h
+        assert ops.deadline_of(led) == start + timedelta(hours=10 / 1.98)
+
+    def test_init_persists_and_rejects_naive(self, tmp_path):
+        rd = str(tmp_path / "run")
+        ops.main(["init", "--started-at", "2026-09-16T00:00:00+00:00",
+                  "--other-cost", "5.5", "--run-dir", rd])
+        led = ops.load_ledger(rd)
+        assert led["billing_started_at"].startswith("2026-09-16T00:00:00+00:00")
+        with pytest.raises(ValueError):
+            ops.main(["init", "--started-at", "2026-09-16T00:00:00",
+                      "--other-cost", "0", "--run-dir", str(tmp_path / "r2")])
+
+    def test_restart_never_resets_ledger(self, tmp_path):
+        rd = str(tmp_path / "run")
+        ops.main(["init", "--started-at", "2026-09-16T00:00:00+00:00",
+                  "--other-cost", "1.0", "--run-dir", rd])
+        ops.main(["init", "--started-at", "2030-01-01T00:00:00+00:00",
+                  "--other-cost", "0.0", "--run-dir", rd])
+        led = ops.load_ledger(rd)
+        assert led["billing_started_at"].startswith("2026-09-16")
+        assert led["other_cost"] == 1.0
+
+
+class TestWatchdog:
+    def test_dry_run_deadline_expired_no_shutdown(self, tmp_path, capsys):
+        rd = str(tmp_path / "run")
+        ops.main(["init", "--started-at", "2020-01-01T00:00:00+00:00",
+                  "--other-cost", "0", "--run-dir", rd])
+        ops.main(["watchdog", "--run-dir", rd, "--dry-run"])
+        out = capsys.readouterr().out
+        assert "dry-run" in out
+
+    def test_windows_real_shutdown_forbidden(self):
+        # function must raise on Windows for non-dry-run, regardless of platform test host
+        import unittest.mock as mock
+        orig = ops.sys.platform
+        ops.sys.platform = "win32"
+        try:
+            with pytest.raises(RuntimeError):
+                ops.shutdown_system(False)
+        finally:
+            ops.sys.platform = orig
+
+
+class TestChooseSteps:
+    def test_feasible(self):
+        # 2*4000*0.001 + 8*100 + 600 = 8800 <= 21600
+        assert ops.choose_steps(0.001, 100.0) == 4000
+
+    def test_infeasible_raises(self):
+        with pytest.raises(ValueError):
+            ops.choose_steps(1.0, 100.0)
+
+    def test_result_multiple_of_four(self):
+        t = ops.choose_steps(0.002, 50.0)
+        assert 1000 <= t <= 4000 and t % 4 == 0
+
+
+class TestGates:
+    def test_gate_pass(self):
+        assert ops.gate_first([0.50, 0.51, 0.52, 0.52], [0.525, 0.526, 0.53, 0.53], 0.50)
+
+    def test_gate_fail_small_delta(self):
+        assert not ops.gate_first([0.50, 0.51, 0.52, 0.52], [0.522, 0.522, 0.522, 0.522], 0.50)
+
+    def test_gate_fail_few_paired(self):
+        assert not ops.gate_first([0.52, 0.52, 0.52, 0.52], [0.53, 0.50, 0.50, 0.50], 0.50)
+
+    def test_gate_fail_below_start(self):
+        assert not ops.gate_first([0.40, 0.40, 0.40, 0.40], [0.45, 0.45, 0.45, 0.45], 0.50)
+
+    def test_checkpoint_tie_earlier(self):
+        pts = [(100, 0.60), (200, 0.62), (300, 0.62)]
+        assert ops.choose_checkpoint(pts) == 200
+
+
+class TestMetrics:
+    def test_sums_and_iou(self):
+        counts = {"background": {"tp": 10, "fp": 5, "fn": 5},
+                  "hard_exudate": {"tp": 4, "fp": 4, "fn": 2}}
+        m = ops.metrics_from_counts(counts)
+        assert m["background"]["iou"] == 0.5
+        assert m["hard_exudate"]["iou"] == 0.4
+
+    def test_reject_zero_union(self):
+        with pytest.raises(ValueError):
+            ops.metrics_from_counts({"retina": {"tp": 0, "fp": 0, "fn": 0}})
+
+
+class TestSplitAssignment:
+    def test_read_assignment_shapes(self, tmp_path):
+        data = {"train": ["a", "b"], "val": {"ids": ["c"]}, "test": []}
+        p = tmp_path / "split_assignment.json"
+        p.write_text(json.dumps(data))
+        import asset_inventory as ai
+        old = ai.SPLIT_ASSIGNMENT
+        ai.SPLIT_ASSIGNMENT = str(p)
+        try:
+            got = ai.read_split_assignment()
+        finally:
+            ai.SPLIT_ASSIGNMENT = old
+        assert got["train"] == ["a", "b"]
+        assert got["val"] == ["c"]
+
+    def test_list_shape(self, tmp_path):
+        data = [{"id": "a", "split": "train"}, {"id": "b", "split": "test"}]
+        p = tmp_path / "split_assignment.json"
+        p.write_text(json.dumps(data))
+        import asset_inventory as ai
+        old = ai.SPLIT_ASSIGNMENT
+        ai.SPLIT_ASSIGNMENT = str(p)
+        try:
+            got = ai.read_split_assignment()
+        finally:
+            ai.SPLIT_ASSIGNMENT = old
+        assert got["train"] == ["a"] and got["test"] == ["b"]

@@ -1,0 +1,670 @@
+{
+  "norm_cfg": {
+    "type": "SyncBN",
+    "requires_grad": true
+  },
+  "model": {
+    "type": "HRPlusRefinement",
+    "use_sigmoid": true,
+    "pretrained": null,
+    "backbone": {
+      "type": "HRNet",
+      "norm_cfg": {
+        "type": "BN",
+        "requires_grad": true
+      },
+      "norm_eval": false,
+      "extra": {
+        "stage1": {
+          "num_modules": 1,
+          "num_branches": 1,
+          "block": "BOTTLENECK",
+          "num_blocks": [
+            4
+          ],
+          "num_channels": [
+            64
+          ]
+        },
+        "stage2": {
+          "num_modules": 1,
+          "num_branches": 2,
+          "block": "BASIC",
+          "num_blocks": [
+            4,
+            4
+          ],
+          "num_channels": [
+            48,
+            96
+          ]
+        },
+        "stage3": {
+          "num_modules": 4,
+          "num_branches": 3,
+          "block": "BASIC",
+          "num_blocks": [
+            4,
+            4,
+            4
+          ],
+          "num_channels": [
+            48,
+            96,
+            192
+          ]
+        },
+        "stage4": {
+          "num_modules": 3,
+          "num_branches": 4,
+          "block": "BASIC",
+          "num_blocks": [
+            4,
+            4,
+            4,
+            4
+          ],
+          "num_channels": [
+            48,
+            96,
+            192,
+            384
+          ]
+        }
+      },
+      "pretrained": null
+    },
+    "hr_settings": {
+      "hr_scale": [
+        1024,
+        1024
+      ],
+      "scale_ratio": [
+        0.75,
+        1.25
+      ],
+      "divisible": 8,
+      "lr_loss_weight": 0,
+      "hr_loss_weight": 0.1,
+      "fuse_mode": "simple",
+      "crop_num": 4
+    },
+    "decode_head": {
+      "type": "FCNHead",
+      "in_channels": 720,
+      "in_index": 0,
+      "channels": 64,
+      "kernel_size": 7,
+      "num_convs": 1,
+      "compress": true,
+      "concat_input": false,
+      "dropout_ratio": -1,
+      "num_classes": 4,
+      "norm_cfg": {
+        "type": "BN",
+        "requires_grad": true
+      },
+      "align_corners": false,
+      "loss_decode": {
+        "type": "BinaryLoss",
+        "loss_type": "dice",
+        "loss_weight": 1.0,
+        "smooth": 1e-05
+      }
+    },
+    "train_cfg": {},
+    "test_cfg": {
+      "mode": "whole",
+      "compute_aupr": true
+    },
+    "detail_branch": {
+      "type": "DetailBranch",
+      "mid_channels": 32,
+      "out_channels": 32,
+      "norm_cfg": {
+        "type": "BN",
+        "requires_grad": true
+      },
+      "act_cfg": {
+        "type": "ReLU"
+      }
+    },
+    "detail_head": {
+      "type": "DetailHead",
+      "in_channels": 32,
+      "mid_channels": 32,
+      "num_classes": 4,
+      "norm_cfg": {
+        "type": "BN",
+        "requires_grad": true
+      },
+      "act_cfg": {
+        "type": "ReLU"
+      }
+    },
+    "semantic_refinement": false,
+    "hard_weight": 0,
+    "freeze_bn": true,
+    "source_checkpoint": "weights/b_weights.pth",
+    "lovasz_weight": 0.0
+  },
+  "dataset_type": "LesionDataset",
+  "data_root": "./data/DDR",
+  "img_norm_cfg": {
+    "mean": [
+      81.205,
+      50.636,
+      21.216
+    ],
+    "std": [
+      76.252,
+      48.798,
+      21.625
+    ],
+    "to_rgb": true
+  },
+  "image_scale": [
+    2048,
+    2048
+  ],
+  "crop_size": [
+    1024,
+    1024
+  ],
+  "palette": [
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      128,
+      0,
+      0
+    ],
+    [
+      0,
+      128,
+      0
+    ],
+    [
+      128,
+      128,
+      0
+    ],
+    [
+      0,
+      0,
+      128
+    ]
+  ],
+  "classes": [
+    "bg",
+    "EX",
+    "HE",
+    "SE",
+    "MA"
+  ],
+  "train_pipeline": [
+    {
+      "type": "LoadImageFromFile"
+    },
+    {
+      "type": "LoadAnnotations"
+    },
+    {
+      "type": "Resize",
+      "img_scale": [
+        2048,
+        2048
+      ],
+      "keep_ratio": false
+    },
+    {
+      "type": "RandomRotate",
+      "prob": 1.0,
+      "pad_val": 0,
+      "seg_pad_val": 255,
+      "degree": [
+        -45,
+        45
+      ],
+      "auto_bound": false
+    },
+    {
+      "type": "ForegroundMixedCrop",
+      "crop_size": 1024,
+      "fg_prob": 0.5
+    },
+    {
+      "type": "RandomFlip",
+      "flip_ratio": 0.5
+    },
+    {
+      "type": "Normalize",
+      "mean": [
+        81.205,
+        50.636,
+        21.216
+      ],
+      "std": [
+        76.252,
+        48.798,
+        21.625
+      ],
+      "to_rgb": true
+    },
+    {
+      "type": "Pad",
+      "size": [
+        1024,
+        1024
+      ],
+      "pad_val": 0,
+      "seg_pad_val": 255
+    },
+    {
+      "type": "DefaultFormatBundle"
+    },
+    {
+      "type": "Collect",
+      "keys": [
+        "img",
+        "gt_semantic_seg"
+      ]
+    }
+  ],
+  "test_pipeline": [
+    {
+      "type": "LoadImageFromFile"
+    },
+    {
+      "type": "MultiScaleFlipAug",
+      "img_scale": [
+        2048,
+        2048
+      ],
+      "flip": false,
+      "transforms": [
+        {
+          "type": "Resize",
+          "keep_ratio": false
+        },
+        {
+          "type": "Normalize",
+          "mean": [
+            81.205,
+            50.636,
+            21.216
+          ],
+          "std": [
+            76.252,
+            48.798,
+            21.625
+          ],
+          "to_rgb": true
+        },
+        {
+          "type": "ImageToTensor",
+          "keys": [
+            "img"
+          ]
+        },
+        {
+          "type": "Collect",
+          "keys": [
+            "img"
+          ]
+        }
+      ]
+    }
+  ],
+  "data": {
+    "samples_per_gpu": 2,
+    "workers_per_gpu": 4,
+    "train": {
+      "img_dir": "images/train",
+      "ann_dir": "labels/train",
+      "data_root": "./data/DDR_split_613",
+      "classes": [
+        "bg",
+        "EX",
+        "HE",
+        "SE",
+        "MA"
+      ],
+      "palette": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          128,
+          0,
+          0
+        ],
+        [
+          0,
+          128,
+          0
+        ],
+        [
+          128,
+          128,
+          0
+        ],
+        [
+          0,
+          0,
+          128
+        ]
+      ],
+      "type": "LesionDataset",
+      "pipeline": [
+        {
+          "type": "LoadImageFromFile"
+        },
+        {
+          "type": "LoadAnnotations"
+        },
+        {
+          "type": "Resize",
+          "img_scale": [
+            2048,
+            2048
+          ],
+          "keep_ratio": false
+        },
+        {
+          "type": "RandomRotate",
+          "prob": 1.0,
+          "pad_val": 0,
+          "seg_pad_val": 255,
+          "degree": [
+            -45,
+            45
+          ],
+          "auto_bound": false
+        },
+        {
+          "type": "ForegroundMixedCrop",
+          "crop_size": 1024,
+          "fg_prob": 0.5
+        },
+        {
+          "type": "RandomFlip",
+          "flip_ratio": 0.5
+        },
+        {
+          "type": "Normalize",
+          "mean": [
+            81.205,
+            50.636,
+            21.216
+          ],
+          "std": [
+            76.252,
+            48.798,
+            21.625
+          ],
+          "to_rgb": true
+        },
+        {
+          "type": "Pad",
+          "size": [
+            1024,
+            1024
+          ],
+          "pad_val": 0,
+          "seg_pad_val": 255
+        },
+        {
+          "type": "DefaultFormatBundle"
+        },
+        {
+          "type": "Collect",
+          "keys": [
+            "img",
+            "gt_semantic_seg"
+          ]
+        }
+      ]
+    },
+    "val": {
+      "img_dir": "images/val",
+      "ann_dir": "labels/val",
+      "data_root": "./data/DDR_split_613",
+      "classes": [
+        "bg",
+        "EX",
+        "HE",
+        "SE",
+        "MA"
+      ],
+      "palette": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          128,
+          0,
+          0
+        ],
+        [
+          0,
+          128,
+          0
+        ],
+        [
+          128,
+          128,
+          0
+        ],
+        [
+          0,
+          0,
+          128
+        ]
+      ],
+      "type": "LesionDataset",
+      "pipeline": [
+        {
+          "type": "LoadImageFromFile"
+        },
+        {
+          "type": "MultiScaleFlipAug",
+          "img_scale": [
+            2048,
+            2048
+          ],
+          "flip": false,
+          "transforms": [
+            {
+              "type": "Resize",
+              "keep_ratio": false
+            },
+            {
+              "type": "Normalize",
+              "mean": [
+                81.205,
+                50.636,
+                21.216
+              ],
+              "std": [
+                76.252,
+                48.798,
+                21.625
+              ],
+              "to_rgb": true
+            },
+            {
+              "type": "ImageToTensor",
+              "keys": [
+                "img"
+              ]
+            },
+            {
+              "type": "Collect",
+              "keys": [
+                "img"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "test": {
+      "img_dir": "images/test",
+      "ann_dir": "labels/test",
+      "data_root": "./data/DDR_split_613",
+      "classes": [
+        "bg",
+        "EX",
+        "HE",
+        "SE",
+        "MA"
+      ],
+      "palette": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          128,
+          0,
+          0
+        ],
+        [
+          0,
+          128,
+          0
+        ],
+        [
+          128,
+          128,
+          0
+        ],
+        [
+          0,
+          0,
+          128
+        ]
+      ],
+      "type": "LesionDataset",
+      "pipeline": [
+        {
+          "type": "LoadImageFromFile"
+        },
+        {
+          "type": "MultiScaleFlipAug",
+          "img_scale": [
+            2048,
+            2048
+          ],
+          "flip": false,
+          "transforms": [
+            {
+              "type": "Resize",
+              "keep_ratio": false
+            },
+            {
+              "type": "Normalize",
+              "mean": [
+                81.205,
+                50.636,
+                21.216
+              ],
+              "std": [
+                76.252,
+                48.798,
+                21.625
+              ],
+              "to_rgb": true
+            },
+            {
+              "type": "ImageToTensor",
+              "keys": [
+                "img"
+              ]
+            },
+            {
+              "type": "Collect",
+              "keys": [
+                "img"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "log_config": {
+    "interval": 20,
+    "hooks": [
+      {
+        "type": "TextLoggerHook",
+        "by_epoch": false
+      }
+    ]
+  },
+  "dist_params": {
+    "backend": "nccl"
+  },
+  "log_level": "INFO",
+  "load_from": null,
+  "resume_from": null,
+  "workflow": [
+    [
+      "train",
+      1
+    ]
+  ],
+  "cudnn_benchmark": true,
+  "optimizer": {
+    "type": "SGD",
+    "lr": 0.0005,
+    "momentum": 0.9,
+    "weight_decay": 0.0005
+  },
+  "optimizer_config": {
+    "grad_clip": {
+      "max_norm": 5.0,
+      "norm_type": 2
+    }
+  },
+  "lr_config": {
+    "policy": "poly",
+    "warmup": "linear",
+    "warmup_iters": 200,
+    "warmup_ratio": 0.1,
+    "power": 1.0,
+    "min_lr": 5e-05,
+    "by_epoch": false
+  },
+  "seed": 42,
+  "runner": {
+    "type": "IterBasedRunner",
+    "max_iters": 20000
+  },
+  "checkpoint_config": {
+    "by_epoch": false,
+    "interval": 2000,
+    "max_keep_ckpts": 2
+  },
+  "evaluation": {
+    "interval": 2000,
+    "metric": "mIoU",
+    "priority": "LOW",
+    "save_best": "mIoU"
+  },
+  "custom_imports": {
+    "imports": [
+      "hrplus_patch"
+    ],
+    "allow_failed_imports": false
+  }
+}

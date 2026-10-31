@@ -1,0 +1,94 @@
+{
+  "status": "APPLIED",
+  "time": "2026-10-04T09:10:05.013727+00:00",
+  "user_authorized": true,
+  "run": "E_NEG_seed42",
+  "resume_completed": 1600,
+  "old_source_sha256": "0eb2edcf046ddcf7ef984d8834fa1e3ec6c53191c02ac45fc2cfdc4343601452",
+  "new_source_sha256": "c3ec266ff0d497a02e13c6516dfec7279738dfd463f9a1762e93950c483675c7",
+  "original_checkpoint_sha256": "2bc69b7cb2fbd54d4e10dd2dd2a6e43648c236d130248966156221c33069094f",
+  "migrated_checkpoint_sha256": "bf61fdb04738b3e61097d828fd58ce557731162d1542e083cfab06b61aeb3102",
+  "checkpoint_mutation_only": [
+    "identity.source_sha256",
+    "identity.performance_config_sha256",
+    "identity_sha256"
+  ],
+  "model_optimizer_scheduler_RNG_cursor_unchanged": true,
+  "old_identity": {
+    "arm": "E_NEG",
+    "seed": 42,
+    "endpoint": 24000,
+    "source_sha256": "0eb2edcf046ddcf7ef984d8834fa1e3ec6c53191c02ac45fc2cfdc4343601452",
+    "protocol_sha256": "388480f0d6560c0722d0762e80f83525c3a6bdf5295025e1bbee16f827e8f169",
+    "runtime_sha256": "389d9dbe55b5e015872b3f4fb244acf93879c0ef916d5e2298ccd7ea97c8f4db",
+    "resources": {
+      "micro_batch": 2,
+      "accumulation": 4,
+      "dtype": "bfloat16",
+      "workers": 4,
+      "prefetch_factor": 2,
+      "pin_memory": true
+    },
+    "stream_sha256": "7a0e4a655726f4ec76a9d46abec508132bb5c4999846d4d48181838faa1fddf8",
+    "data_sha256": "a0a69afd241d96a6a239f6745b13d0bd9129652ea25d607b354ecb0314bd2b76",
+    "initialization": {
+      "model": "dinov3_vitb16",
+      "pretraining": "LVD1689M",
+      "missing_keys": [],
+      "unexpected_keys": [],
+      "mode": "strict_pretrained",
+      "sha256": "73cec8be7427c8655ceced13ce62f6e20a1fa90d1b4d4a550df17a1144081a7c",
+      "backbone_parameters": 85669632,
+      "total_parameters": 88263748,
+      "initial_Q_state_sha256": "cd12ffb57aac89b002560f30b0dbcc42d36c1c74f4a6feecb0948b5d212a70e3"
+    },
+    "external_manifest_sha256": "ec7712c4128d8f7be938216a18995931ee9b68b7dfd3c68ad4415d0368cc215c",
+    "p0_identity_sha256": "9468a4d2a8d9a1344a21358698a427fdc5ce9950d3603ce91ea9258a15a648db"
+  },
+  "new_identity": {
+    "arm": "E_NEG",
+    "seed": 42,
+    "endpoint": 24000,
+    "source_sha256": "c3ec266ff0d497a02e13c6516dfec7279738dfd463f9a1762e93950c483675c7",
+    "protocol_sha256": "388480f0d6560c0722d0762e80f83525c3a6bdf5295025e1bbee16f827e8f169",
+    "runtime_sha256": "389d9dbe55b5e015872b3f4fb244acf93879c0ef916d5e2298ccd7ea97c8f4db",
+    "resources": {
+      "micro_batch": 2,
+      "accumulation": 4,
+      "dtype": "bfloat16",
+      "workers": 4,
+      "prefetch_factor": 2,
+      "pin_memory": true
+    },
+    "stream_sha256": "7a0e4a655726f4ec76a9d46abec508132bb5c4999846d4d48181838faa1fddf8",
+    "data_sha256": "a0a69afd241d96a6a239f6745b13d0bd9129652ea25d607b354ecb0314bd2b76",
+    "initialization": {
+      "model": "dinov3_vitb16",
+      "pretraining": "LVD1689M",
+      "missing_keys": [],
+      "unexpected_keys": [],
+      "mode": "strict_pretrained",
+      "sha256": "73cec8be7427c8655ceced13ce62f6e20a1fa90d1b4d4a550df17a1144081a7c",
+      "backbone_parameters": 85669632,
+      "total_parameters": 88263748,
+      "initial_Q_state_sha256": "cd12ffb57aac89b002560f30b0dbcc42d36c1c74f4a6feecb0948b5d212a70e3"
+    },
+    "external_manifest_sha256": "ec7712c4128d8f7be938216a18995931ee9b68b7dfd3c68ad4415d0368cc215c",
+    "p0_identity_sha256": "9468a4d2a8d9a1344a21358698a427fdc5ce9950d3603ce91ea9258a15a648db",
+    "performance_config_sha256": "2fc8294b44eaba18b32e298402f11efd2b59ae20c0b5d6d806218cb5a6f510b0"
+  },
+  "changed_existing_files": [
+    "report.py",
+    "train.py"
+  ],
+  "performance_acceptance_sha256": "3276e79fbb35a48c135d576cc6f91991048dc759514531bcf8106286f8197efd",
+  "discarded_uncheckpointed_updates": 0,
+  "old_logs_preserved": true,
+  "new_gate_estimate": {
+    "discovery_hours": 7.9018114414491185,
+    "all_promoted_hours": 15.803622882898237,
+    "E_after2k_uses_F4_compute_estimate": true,
+    "validation_unchanged": true,
+    "final_test_compression_not_included": true
+  }
+}

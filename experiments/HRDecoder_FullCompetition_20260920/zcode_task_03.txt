@@ -1,0 +1,9 @@
+继续完成 D:\dataset\experiment\HRDecoder_FullCompetition_20260920 的开机前工程。前两次调用超时，但主体和 tools/preflight_contract.py 已落盘。禁止连接服务器、训练或修改旧仓库。直接完成文件和测试，不要长篇思考。
+
+1. 先检查 preflight_contract.py、四个 configs 和现有工具。确认 U1 与 U0 的 data 段及 equivalence_lock 字段深度相等；H0/H1 同理。
+2. 新建 tests/run_contract_smoke.py：在 tests/_tmp 生成最小合成 RGB PNG、四类二值 mask、train-only manifest 和四配置副本。跑正例并断言成功；再覆盖并断言失败：missing image/mask、official_split=test 泄漏、valid_mode=none 却仍带 mask、H0/H1 或 U0/U1 配对字段不一致、默认正式模式遇到 REQUIRED/TBD。
+3. 测试不得读取真实 DDR test 像素，不得依赖网络，不得安装全局依赖。缺 PyYAML/Pillow 时明确报告。
+4. 对 tools/*.py 与 tests/*.py 运行 py_compile，再运行 smoke test，修到全部断言通过。
+5. 运行一次正式真实工作区 preflight；因为资产未齐，预期必须非零。确认失败原因是明确的缺资产/占位符，而不是代码异常。
+6. 写 docs/PREFLIGHT_TEST_REPORT.md，记录实际命令、退出码、各正反例和未覆盖项；写 docs/IMPLEMENTATION_STATUS.md，列出完成项、真实资产缺口、开 GPU 前唯一放行条件、下一步训练入口任务。
+7. 最终只输出文件清单、测试结果、真实 preflight 阻塞项、五个高风险点。控制在本次 15 分钟内完成；若时间不足，优先测试和修 bug，再写简短报告。

@@ -1,0 +1,131 @@
+{
+  "checked_at": "2026-10-09T23:53:40.875892+08:00",
+  "runtime": {
+    "server_online": true,
+    "checked_at_unix": 1791561248.6520116,
+    "shutdown_command_issued": false,
+    "external_processes_controlled": false,
+    "GPU_CAMPAIGN_RUNNING.json": {
+      "status": "SCREEN_REJECTED",
+      "pid": 33845,
+      "controller_pid": 33638,
+      "identity_SHA": "96cd1bc0ce79e9e5f5f8247958f868a4e00023f072bc6fea920092ad5a5003ec",
+      "start_unix": 1791553242.347969,
+      "canvas": 2048,
+      "batch": 2,
+      "screen_updates": 8000,
+      "max_conditional_updates": 40000,
+      "shutdown_after_completion": false,
+      "shutdown_after_failure": false,
+      "further_revisions_user_authorized": true,
+      "processes_alive": false,
+      "end_unix": 1791560914.4882739
+    },
+    "GPU_CAMPAIGN_OUTCOME.json": {
+      "status": "SCREEN_REJECTED",
+      "exit_code": 0,
+      "time_unix": 1791560914.4882739,
+      "start_unix": 1791553242.347969,
+      "completion": null,
+      "final_validation": null,
+      "fresh_screen_rejection": {
+        "status": "REJECTED",
+        "decisions": {
+          "4k_mIoU_floor": true,
+          "8k_mIoU_floor": true,
+          "4k_to8k_gain": true,
+          "private_net_gain_over_base": false,
+          "no_class_collapse": true,
+          "no_class_IoU_loss_over_registered_margin": true,
+          "HE_MA_FN_FP_tradeoff": true,
+          "within_original_deadline": true
+        },
+        "identity_SHA": "96cd1bc0ce79e9e5f5f8247958f868a4e00023f072bc6fea920092ad5a5003ec",
+        "time_unix": 1791560848.343919,
+        "full_val_counts_verified": true,
+        "screen_updates": 8000,
+        "mIoU_4k": 29.475812328118998,
+        "mIoU_8k": 37.212350205968065,
+        "base_mIoU_8k": 36.93416792984321,
+        "calibration": {
+          "HE": {
+            "FN_ratio_final_vs_base": 0.982988632855145,
+            "FP_ratio_final_vs_base": 1.043401380335871,
+            "pass": true
+          },
+          "MA": {
+            "FN_ratio_final_vs_base": 0.970690701490189,
+            "FP_ratio_final_vs_base": 1.0340767616405222,
+            "pass": true
+          }
+        },
+        "criterion_registered_before_results": true,
+        "test_accessed": false,
+        "accuracy_guaranteed": false,
+        "goal_achieved": false,
+        "reject_next_action": "autonomous evidence-based revision within remaining authorized time"
+      },
+      "test_evaluation": {
+        "status": "NOT_RUN",
+        "reason": "Fresh screen rejected or training incomplete"
+      },
+      "server_kept_running": true,
+      "shutdown_command_issued": false,
+      "external_diagnostics_controlled": false,
+      "own_RAM_retained_for_authorized_next_revision": true
+    },
+    "DEADLINE_GATE.json": {
+      "status": "PASS",
+      "measured_screen_estimate_seconds": 7955.167573690414,
+      "checked_unix": 1791553242.3472204,
+      "original_deadline_unix": 1791568800,
+      "reserve_seconds": 180,
+      "full40k_conditional_on_screen": true
+    },
+    "own_process_checks": {
+      "pid": {
+        "pid": 33845,
+        "alive": false,
+        "cmdline": "",
+        "matches_current_task": false
+      },
+      "controller_pid": {
+        "pid": 33638,
+        "alive": false,
+        "cmdline": "",
+        "matches_current_task": false
+      }
+    },
+    "own_RAM": {
+      "pid": 25079,
+      "bytes": 103079171144,
+      "alive": true,
+      "matches_own_RAM": true
+    },
+    "GPU_status": "utilization.gpu [%], memory.used [MiB], power.draw [W]\n0 %, 1 MiB, 19.41 W\n"
+  },
+  "downloaded": [
+    "reports/residual/launch.log",
+    "reports/residual/DISPATCHED.json",
+    "reports/residual/smoke.log",
+    "reports/residual/DEADLINE_GATE.json",
+    "reports/residual/SCREEN_STARTED.json",
+    "reports/residual/training.log",
+    "reports/residual/GPU_CAMPAIGN_RUNNING.json",
+    "reports/residual/METRIC_VALIDATOR_REPAIR.json",
+    "reports/residual/GPU_CAMPAIGN_OUTCOME.json",
+    "training_runs/residual/GPU_SMOKE_PASS.json",
+    "training_runs/residual/protocol.json",
+    "training_runs/residual/performance.json",
+    "training_runs/residual/progress.json",
+    "training_runs/residual/validation_progress.json",
+    "training_runs/residual/val_04000.json",
+    "training_runs/residual/val_08000.json",
+    "training_runs/residual/SCREEN_REJECTED.json",
+    "residual_execution/architecture_spec.json",
+    "residual_execution/screen_protocol.json",
+    "residual_execution/SEALED_LOCAL_SOURCE.json",
+    "residual_execution/CPU_RESIDUAL_PASS.json",
+    "residual_execution/METRIC_ADAPTER_CPU_PASS.json"
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "identity_SHA": "046abab773f7cb7a9e4f0a0f9cc44c4ad32d48431b971f22720dc8bd7936168a",
+  "decisions": {
+    "4k_floor": true,
+    "private_net_gain_at_least1pp": true,
+    "all_classes_nonzero": true,
+    "no_class_IoU_loss_over2pp": true,
+    "HE_MA_FN_FP_tradeoff": true
+  },
+  "time_unix": 1791581314.075647,
+  "screen_updates": 4000,
+  "full_val_counts_verified": true,
+  "mIoU_4k": 32.03381957717303,
+  "base_mIoU_4k": 27.34992885694575,
+  "private_gain_pp": 4.683890720227279,
+  "calibration": {
+    "HE": {
+      "FN_ratio_final_vs_base": 1.0042367869619944,
+      "FP_ratio_final_vs_base": 0.9490050878866232,
+      "pass": true
+    },
+    "MA": {
+      "FN_ratio_final_vs_base": 1.0779990462998705,
+      "FP_ratio_final_vs_base": 0.04772031892926583,
+      "pass": true
+    }
+  },
+  "criterion_registered_before_results": true,
+  "test_accessed": false,
+  "accuracy_guaranteed": false,
+  "goal_achieved": false
+}

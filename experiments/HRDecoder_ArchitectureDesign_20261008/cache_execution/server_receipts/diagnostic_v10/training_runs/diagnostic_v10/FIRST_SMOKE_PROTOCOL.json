@@ -1,0 +1,44 @@
+{
+  "identity_SHA": "e7a2b259b5f93a64827d616c173cf2407cc352e86c5cc3000f4a98a9d593c5a3",
+  "identity": {
+    "kind": "frozen-provider warm8k+500, not fresh40k",
+    "parent_identity_SHA": "96cd1bc0ce79e9e5f5f8247958f868a4e00023f072bc6fea920092ad5a5003ec",
+    "protocol": {
+      "kind": "frozen-provider paired warm diagnostic; not fresh training or extension",
+      "parent_identity_SHA": "96cd1bc0ce79e9e5f5f8247958f868a4e00023f072bc6fea920092ad5a5003ec",
+      "parent_completed": 8000,
+      "warm_updates_per_arm": 500,
+      "canvas": 2048,
+      "batch": 2,
+      "arms": [
+        "control",
+        "gt_stratified"
+      ],
+      "private_GT": "original residual Dice + .25 ordinary all-valid BCE",
+      "only_arm_difference": "teacher KL all-valid vs fixed .5/.5 GT-positive/negative normalization",
+      "provider": "immutable same8k base checkpoint; all parameters frozen; persistent eval BN/dropout; no random HRcrop supervision",
+      "optimizer": "same parent private-only SGD momentum, lr sampled at original8k-8.5k position of 40k schedule",
+      "inputs": "both arms sequentially consume the same real CUDA batch objects; all six tensor inputs checked unchanged",
+      "alignment_gate": "bitwise provider logits equality every real update; all base state tensors unchanged and native76val provider counts identical at0/250/500; initial final counts identical",
+      "determinism": "benchmark false; cudnn deterministic; TF32 false; deterministic_algorithms true; unsupported operations fail smoke",
+      "accuracy_guaranteed": false,
+      "formal_fresh_updates": 0,
+      "test_accessed": false,
+      "automatic_full_training": false,
+      "shutdown_after_completion": false
+    },
+    "torch": "2.0.1+cu117",
+    "code": {
+      "run_paired.py": "fd3427788b127437a705de635b853d3a0ed3cbf53830a4d51cc1f4bf0acbb8e3",
+      "diagnostic_invariants.py": "7f9884b235ada4d6a4cfe2ba395d03813268fe787eb8088ba340c4ea4f71d9e0",
+      "probe_protocol.json": "1764d17e6c6eacb2e0ff2751df898419a2a9b4c398aca43571f77f4e56a6b736"
+    },
+    "benchmark": false,
+    "cudnn_deterministic": true,
+    "deterministic_algorithms": true,
+    "TF32": false,
+    "precision": "BF16 network, FP32 residual and losses"
+  },
+  "same_model_private_optimizer_RNG_parent": true,
+  "RAM_pid": 39434
+}

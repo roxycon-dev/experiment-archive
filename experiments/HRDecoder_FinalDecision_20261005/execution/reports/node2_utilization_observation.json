@@ -1,0 +1,39 @@
+{
+  "time": "2026-10-05T05:26:03.951938+00:00",
+  "stage": "GPU_ACCEPTANCE_BEFORE_FORMAL_SD",
+  "sample_seconds": 10,
+  "GPU_percent_samples": [
+    98,
+    97,
+    99,
+    98,
+    99,
+    99,
+    97,
+    99,
+    98,
+    99
+  ],
+  "GPU_used_MiB_samples": [
+    8053,
+    8053,
+    8053,
+    8053,
+    8053,
+    8053,
+    8053,
+    8053,
+    8053,
+    8053
+  ],
+  "completed_acceptance_paths": [
+    "C",
+    "S"
+  ],
+  "S_update_seconds": 0.8103155118227005,
+  "S_data_wait_seconds": 0.004415283128619194,
+  "formal_SD_started": false,
+  "healthy_training_not_restarted": true,
+  "scientific_settings_changed": false,
+  "interpretation": "This ten-second compute-phase sample is near saturation; initialization, validation, checkpoint and phase transitions can create troughs in the longer graph."
+}

@@ -1,0 +1,211 @@
+{
+  "stage": "PREDECLARED_SAVED_VAL_FP32_CROP_EVIDENCE_ONLY",
+  "time": "2026-10-05T17:57:08.775152+00:00",
+  "lock_sha256": "3146ca1edafdffdae7bf4987524bddc502209929e5d6d5b0e7ba49f12b6bd66e",
+  "selection_and_threshold_unchanged": true,
+  "no_test_inference_or_training": true,
+  "case_selection_basis": "Saved validation integer counts only before viewing pixel examples. Include gains, losses, median and MA errors; exploratory illustrations, not statistical sampling. Per-image score uses classes with positive TP+FP+FN.",
+  "metric_sha256": "41d492ec19114055da41c90bfbf3dc6d692afb2e191483fe348d4b6d4e4fd441",
+  "R_counts_sha256": "c90dcc14eb0379f5bf9487cbf8b3a96517be51b47b2b16220bc3a73e9c7ca160",
+  "cases": [
+    {
+      "rule": "largest_positive_image_miou_difference_vs_saved_R",
+      "sid": "007-1900-100",
+      "delta_image_miou_pp": 31.165217391304346,
+      "ma_fn_change_pixels": 0,
+      "ma_gt_pixels": 179,
+      "crop_xyxy": [
+        718,
+        137,
+        1486,
+        905
+      ],
+      "crop_lesion_class": "MA",
+      "crop_rule": "768 original-pixel square centered on largest GT connected component of the named class, before pixel prediction inspection.",
+      "label_sha256": "7480255f0d0a0154485550ea6d6cd6453e4f9ce8bf7e45e30f8d23d4ea4f6c1d",
+      "p0_expected_global_counts": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          33,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          150,
+          68,
+          29
+        ]
+      ]
+    },
+    {
+      "rule": "largest_negative_image_miou_difference_vs_saved_R",
+      "sid": "007-5869-300",
+      "delta_image_miou_pp": -11.645876667948528,
+      "ma_fn_change_pixels": 24,
+      "ma_gt_pixels": 888,
+      "crop_xyxy": [
+        1241,
+        0,
+        2009,
+        768
+      ],
+      "crop_lesion_class": "MA",
+      "crop_rule": "768 original-pixel square centered on largest GT connected component of the named class, before pixel prediction inspection.",
+      "label_sha256": "07d78fb007a839d40cfb800e7f45f8fd58201b6679c57aeab06603cfe0778ed5",
+      "p0_expected_global_counts": [
+        [
+          0,
+          161,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          2265,
+          83,
+          107
+        ],
+        [
+          469,
+          114,
+          419
+        ]
+      ]
+    },
+    {
+      "rule": "nearest_median_image_difference",
+      "sid": "007-3500-200",
+      "delta_image_miou_pp": 0.13708911459660555,
+      "ma_fn_change_pixels": 0,
+      "ma_gt_pixels": 0,
+      "crop_xyxy": [
+        815,
+        396,
+        1583,
+        1164
+      ],
+      "crop_lesion_class": "EX",
+      "crop_rule": "768 original-pixel square centered on largest GT connected component of the named class, before pixel prediction inspection.",
+      "label_sha256": "0ac7d273075c5e285b77bafb0f9580506ecaf6ea41728c76b780d792a26e3977",
+      "p0_expected_global_counts": [
+        [
+          9064,
+          2142,
+          1023
+        ],
+        [
+          0,
+          40,
+          0
+        ],
+        [
+          0,
+          68,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "rule": "largest_MA_false_negative_pixel_reduction",
+      "sid": "007-3727-200",
+      "delta_image_miou_pp": 1.8174756912754937,
+      "ma_fn_change_pixels": -53,
+      "ma_gt_pixels": 3552,
+      "crop_xyxy": [
+        1142,
+        895,
+        1910,
+        1663
+      ],
+      "crop_lesion_class": "MA",
+      "crop_rule": "768 original-pixel square centered on largest GT connected component of the named class, before pixel prediction inspection.",
+      "label_sha256": "24dc602201dc47e94e782dd932f803735628fae20e3d3068631bf78e52296d70",
+      "p0_expected_global_counts": [
+        [
+          602,
+          1829,
+          798
+        ],
+        [
+          3710,
+          7440,
+          434
+        ],
+        [
+          0,
+          1387,
+          0
+        ],
+        [
+          1567,
+          1044,
+          1985
+        ]
+      ]
+    },
+    {
+      "rule": "largest_MA_false_negative_pixel_increase",
+      "sid": "007-5470-300",
+      "delta_image_miou_pp": -1.202430363255182,
+      "ma_fn_change_pixels": 323,
+      "ma_gt_pixels": 1952,
+      "crop_xyxy": [
+        627,
+        0,
+        1395,
+        768
+      ],
+      "crop_lesion_class": "MA",
+      "crop_rule": "768 original-pixel square centered on largest GT connected component of the named class, before pixel prediction inspection.",
+      "label_sha256": "391ac970e2853cca1227119be799024b1735e77e92ee68ae89fba8c0324a97ab",
+      "p0_expected_global_counts": [
+        [
+          6205,
+          1555,
+          2135
+        ],
+        [
+          5337,
+          3159,
+          3863
+        ],
+        [
+          2991,
+          408,
+          209
+        ],
+        [
+          1177,
+          883,
+          775
+        ]
+      ]
+    }
+  ],
+  "p0_source_directories": {
+    "champion": "/root/autodl-tmp/HRDecoder_Ready_20261002/cache/val/champion",
+    "U0": "/root/autodl-tmp/HRDecoder_Ready_20261002/cache/val/U0"
+  },
+  "max_file_downloads": 5,
+  "later_report_writing_only_after_servers_closed": true,
+  "source_files_unchanged": true,
+  "no_endpoint_quantization": true,
+  "cause_of_size_revision": "Ten native full-probability files exceeded the 600MiB local-footprint guard before any download; recover only lossless FP32 GT-defined figure crops after complete source-SHA and original P0 count verification."
+}

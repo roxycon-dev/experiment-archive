@@ -1,0 +1,1273 @@
+Return ONLY a Python block starting with # delegation/repair_tests.py. This is a bounded patch script to run ONCE in currentroot using pathlib. Modify only named files inside currentroot, no shell/network/secret/deletes. Use exact replacements with counts asserted or replace wholefunction between known markers. Do NOT emit whole2000linefiles. Script <=220lines. Changes authored by you(GLM), caller reviews andexecutes. Existing sources appended. 
+Fix tests only validfixtures notweakenchecks. tests/test_core.py invalidreshape4elements to16 replace witharange1..4repeat4 reshape1,1,4,4, cv2.circle labelmustuint8 notint64. tests/test_runtime.py union0 shouldwithassertRaises block, validmetricfixture nonzerounion; fakedatasetlen2 expected_count2 anduniqueori_filename across2; flipfakeimg_metas nestedlist correct unwrap. tests/test_protocol.py ledger must billing_started_at actualops schema+other_cost; sum24h alreadyincludesfinal remove doubleFINAL_RESERVE; RNGfirst3 compare3distinctdrawsfromoneRandomState notonedraw. tests/test_ops.py rewrite unittest <=90lines no pytest withrealopsinterfaces, tieearlier reverseorder,finiteinvalidbudget,deadlinecap,gatefourtimepoints,metricstrueaggregates. tests/test_storage.py fixture fakeimagebytesinvalid savePIL.new realPNG, free>=2GiBheadroom forsuccess, mocknearestexistingdiskusage appropriate and CLI subprocess use sys.executable. Keep effectiveassertions. Donot touchproductionfiles.
+ROOT current workingdirectory D:/dataset/experiment/HRDecoder_FusionAware_20260917
+
+SOURCE tests/test_core.py
+# tests/test_core.py
+import unittest
+
+import cv2
+import numpy as np
+import torch
+import torch.nn as nn
+
+from fusion_core import (NUM_FG, IMG_MEAN, IMG_STD, IGNORE_INDEX,
+                         configure_trainable, dice_prob, freeze_bn,
+                         loss_pair, paired_geometry, strict_initialize)
+
+
+def make_gt(shape=(64, 64)):
+    gt = np.zeros(shape, dtype=np.int64)
+    gt[10:20, 10:20] = 1
+    gt[30:40, 30:45] = 2
+    gt[50:60, 5:15] = 4
+    return gt
+
+
+def make_model():
+    class M(nn.Module):
+        def __init__(self):
+            super().__init__()
+            self.backbone = nn.Module()
+            self.backbone.stage4 = nn.Sequential(
+                nn.Conv2d(3, 4, 3, padding=1), nn.BatchNorm2d(4))
+            self.decode_head = nn.Sequential(
+                nn.Conv2d(4, 4, 3, padding=1), nn.BatchNorm2d(4))
+            self.reference = nn.Sequential(nn.Conv2d(4, 4, 3, padding=1))
+
+        def forward(self, x):
+            return self.decode_head(self.backbone.stage4(x))
+    return M()
+
+
+class TestDice(unittest.TestCase):
+    def test_matches_formula(self):
+        torch.manual_seed(0)
+        prob = torch.rand(2, NUM_FG, 8, 8)
+        lab = torch.randint(0, 5, (2, 1, 8, 8))
+        lab[0, 0, :4] = IGNORE_INDEX
+        got = dice_prob(prob, lab).item()
+        valid = (lab != IGNORE_INDEX).float()
+        idx = torch.arange(1, NUM_FG + 1).view(1, NUM_FG, 1, 1)
+        tgt = (lab == idx).float() * valid
+        p = prob * valid
+        num = 2 * (p * tgt).sum((2, 3)) + 1.0
+        den = (p * p).sum((2, 3)) + (tgt * tgt).sum((2, 3)) + 1.0
+        self.assertAlmostEqual(got, (1 - num / den).mean().item(), places=6)
+
+    def test_perfect_uniform_probs_zero_loss(self):
+        # p == target == 0.5 everywhere on all fg channels -> dice == 1 -> loss 0
+        prob = torch.full((1, NUM_FG, 4, 4), 0.5)
+        lab = torch.arange(1, NUM_FG + 1).view(1, 1, 4, 4).repeat(1, 1, 1, 1)[:, :, 0].view(1, 1, 4, 4)
+        lab = torch.arange(1, 5).view(1, 1, 4, 4)
+        self.assertAlmostEqual(dice_prob(prob, lab).item(), 0.0, places=6)
+
+    def test_background_label_no_channel(self):
+        # label 0 -> target all zeros; loss depends only on prob mass (no bg channel)
+        prob = torch.zeros(1, NUM_FG, 4, 4); prob[..., :2] = 0.3
+        loss_fg = dice_prob(prob, torch.zeros(1, 1, 4, 4, dtype=torch.long))
+        prob2 = torch.zeros(1, NUM_FG, 4, 4)
+        self.assertGreater(loss_fg.item(), dice_prob(prob2, torch.zeros(1, 1, 4, 4, dtype=torch.long)).item())
+        # ignore label removes everything -> smooth-only loss identical
+        ig = torch.full((1, 1, 4, 4), IGNORE_INDEX, dtype=torch.long)
+        self.assertAlmostEqual(dice_prob(prob, ig).item(), dice_prob(prob2, ig).item(), places=6)
+
+    def test_pair_armB_ref_detached_grad_flows(self):
+        torch.manual_seed(1)
+        logits = torch.randn(1, NUM_FG, 8, 8, requires_grad=True)
+        ref = torch.rand(1, NUM_FG, 8, 8)
+        lab = torch.randint(0, 5, (1, 1, 8, 8))
+        lb = loss_pair(logits, lab, ref, 'B')
+        lb.backward()
+        self.assertIsNotNone(logits.grad)
+        self.assertGreater(float(logits.grad.abs().sum()), 0.0)
+        la = loss_pair(logits.detach().requires_grad_(True), lab, ref, 'A')
+        la.backward()
+        with self.assertRaises(ValueError):
+            loss_pair(logits, lab, ref, 'C')
+        with self.assertRaises(ValueError):
+            loss_pair(logits, lab, torch.full_like(ref, 2.0), 'B')
+
+
+class TestStrictInit(unittest.TestCase):
+    def setUp(self):
+        self.m = make_model()
+        sd = self.m.state_dict()
+        self.full = {k: v.clone() for k, v in sd.items()}
+        self.student = {k: v.clone() for k, v in sd.items()
+                        if not k.startswith('reference.')}
+        self.ref = {k[10:]: v.clone() for k, v in sd.items()
+                    if k.startswith('reference.')}
+
+    def test_student_only_missing_ref_raises(self):
+        with self.assertRaises(ValueError):
+            strict_initialize(make_model(), self.student, None)
+
+    def test_student_only_with_B_ok(self):
+        info = strict_initialize(make_model(), self.student, self.ref)
+        self.assertIsNone(None) if False else None
+        self.assertEqual(set(info['reference']), set(self.ref))
+
+    def test_full_embedded_ok(self):
+        info = strict_initialize(make_model(), self.full, None)
+        self.assertEqual(len(info['student']), len(self.student))
+
+    def test_conflicting_reference_rejected(self):
+        bad_ref = {k: v + 1.0 for k, v in self.ref.items()}
+        before = {k: v.clone() for k, v in self.m.state_dict().items()}
+        with self.assertRaises(ValueError):
+            strict_initialize(self.m, self.full, bad_ref)
+        after = self.m.state_dict()
+        for k in before:
+            self.assertTrue(torch.equal(before[k], after[k]))  # no mutation
+
+    def test_bad_key_and_shape_no_mutation(self):
+        before = {k: v.clone() for k, v in self.m.state_dict().items()}
+        bad = dict(self.student); bad['bogus'] = torch.zeros(1)
+        with self.assertRaises(ValueError):
+            strict_initialize(self.m, bad, self.ref)
+        wrong_shape = dict(self.student)
+        wrong_shape['backbone.stage4.0.weight'] = torch.zeros(1, 3, 1, 1)
+        with self.assertRaises(ValueError):
+            strict_initialize(self.m, wrong_shape, self.ref)
+        after = self.m.state_dict()
+        for k in before:
+            self.assertTrue(torch.equal(before[k], after[k]))
+
+    def test_module_prefix_stripped(self):
+        pref = {'module.' + k: v for k, v in self.student.items()}
+        strict_initialize(make_model(), pref, self.ref)
+
+
+class TestTrainableAndBN(unittest.TestCase):
+    def test_train_then_freeze_bn(self):
+        m = make_model()
+        m.train()
+        self.assertTrue(m.backbone.stage4[1].training)
+        freeze_bn(m)
+        self.assertFalse(m.backbone.stage4[1].training)
+        self.assertFalse(m.decode_head[1].training)
+        self.assertTrue(m.backbone.stage4[0].training)  # conv unaffected
+
+    def test_configure_trainable(self):
+        m = make_model()
+        names = configure_trainable(m)
+        for n, p in m.named_parameters():
+            ok = n.startswith(('decode_head.', 'backbone.stage4.'))
+            self.assertEqual(p.requires_grad, ok, n)
+        self.assertEqual(names, sorted(names))
+        self.assertFalse(any(n.startswith('reference.') for n in names))
+        self.assertFalse(m.reference[0].training)  # reference eval
+        # BN buffers frozen everywhere even in allowed paths
+        self.assertFalse(m.decode_head[1].training)
+
+
+class TestGeometry(unittest.TestCase):
+    def _sample(self, seed):
+        rng = np.random.RandomState(seed)
+        img = np.zeros((256, 256, 3), dtype=np.uint8)
+        lab = np.zeros((256, 256), dtype=np.int64)
+        cv2.circle(img, (128, 128), 20, (255, 0, 0), -1)
+        cv2.circle(lab, (128, 128), 20, 4, -1)
+        ref = np.zeros((256, 256, NUM_FG), dtype=np.float32)
+        ref[:, :, 3] = (lab == 4).astype(np.float32)
+        img_o, lab_o, ref_o, trace = paired_geometry(img, lab, ref, rng)
+        return img_o, lab_o, ref_o, trace
+
+    def test_shared_rng_reproducible(self):
+        a = self._sample(7)
+        b = self._sample(7)
+        for x, y in zip(a[:3], b[:3]):
+            np.testing.assert_array_equal(x, y)
+        self.assertEqual(a[3], b[3])
+
+    def test_shapes_ranges_trace(self):
+        img_o, lab_o, ref_o, tr = self._sample(3)
+        self.assertEqual(img_o.shape, (3, 1024, 1024))
+        self.assertEqual(lab_o.shape, (1, 1024, 1024))
+        self.assertEqual(ref_o.shape, (4, 1024, 1024))
+        self.assertTrue(np.isfinite(img_o).all())
+        self.assertTrue((ref_o >= 0).all() and (ref_o <= 1).all())
+        self.assertEqual(set(tr), {'angle', 'y0', 'x0', 'flip', 'ignore_pixels',
+                                   'crop', 'resize'})
+        self.assertTrue(-45 <= tr['angle'] <= 45)
+        self.assertIn(tr['flip'], (True, False))
+
+    def test_marker_alignment_via_shared_warp(self):
+        # Denormalize image channel 0 (/255 undo) and compare marker centroids
+        # against reference channel 3 within eroded valid interior.
+        img_o, lab_o, ref_o, tr = self._sample(11)
+        denorm = np.clip(img_o[0] * IMG_STD[0] + IMG_MEAN[0], 0, 255) / 255.0
+        valid = (lab_o[0] != IGNORE_INDEX).astype(np.uint8)
+        valid = cv2.erode(valid, np.ones((11, 11), np.uint8)) > 0
+        self.assertTrue(valid.any())
+        w_img = np.where(valid, denorm, 0.0)
+        w_ref = np.where(valid, ref_o[3], 0.0)
+        self.assertGreater(w_ref.sum(), 1.0)
+        ys, xs = np.nonzero(valid)
+        ci_y = (w_img[ys, xs] * ys).sum() / w_img.sum()
+        ci_x = (w_img[ys, xs] * xs).sum() / w_img.sum()
+        cr_y = (w_ref[ys, xs] * ys).sum() / w_ref.sum()
+        cr_x = (w_ref[ys, xs] * xs).sum() / w_ref.sum()
+        self.assertLess(abs(ci_y - cr_y), 12.0)
+        self.assertLess(abs(ci_x - cr_x), 12.0)
+        # reference has ONLY the marker channel nonzero (no eye incl. background)
+        for c in range(3):
+            self.assertLess(float(np.abs(ref_o[c]).max()), 1e-3)
+
+
+if __name__ == '__main__':
+    unittest.main()
+
+SOURCE tests/test_runtime.py
+# tests/test_runtime.py
+# -*- coding: utf-8 -*-
+"""Runtime unit tests.  No mmcv: dataset builders are injected, members are
+fake models, cache fixtures are tiny."""
+import hashlib
+import json
+import os
+import shutil
+import tempfile
+import unittest
+
+import numpy as np
+import torch
+
+import runtime
+
+
+def _sha(path):
+    h = hashlib.sha256()
+    with open(path, 'rb') as f:
+        h.update(f.read())
+    return h.hexdigest()
+
+
+class TestCounts(unittest.TestCase):
+    def test_per_image_counts_exact(self):
+        prob = np.zeros((4, 2, 2), np.float32)
+        prob[0, 0, 0] = 0.6   # EX tp
+        prob[1, 1, 1] = 0.4   # HE nothing (strict >0.5)
+        gt = np.zeros((2, 2), np.int64)
+        gt[0, 0] = 1
+        gt[1, 0] = 255        # ignore region, EX fp there ignored
+        prob[0, 1, 0] = 0.9
+        cnt = runtime.per_image_counts(prob, gt)
+        self.assertEqual(cnt[0], [1, 0, 0])
+        self.assertEqual(cnt[1], [0, 0, 0])
+
+    def test_global_miou_and_union_zero(self):
+        with self.assertRaises(RuntimeError):
+            runtime.global_miou([(0, 0, 0), (1, 0, 0), (0, 1, 0), (1, 1, 1)])
+        miou, per = runtime.global_miou([(2, 0, 2), (0, 0, 0)][:2] +
+                                        [(1, 1, 1), (4, 0, 0)])
+        self.assertAlmostEqual(miou, np.mean([0.5, 0.0, 1.0 / 3.0, 1.0]))
+        self.assertEqual(set(per), {'EX', 'HE', 'SE', 'MA'})
+
+
+class TestCorrectionHead(unittest.TestCase):
+    def test_flat_head_load_and_shape(self):
+        h = runtime.CorrectionHead()
+        flat = {k: v.clone() for k, v in h.state_dict().items()}
+        h2 = runtime.load_flat_head(flat)
+        self.assertEqual(sorted(h2.state_dict()), sorted(flat))
+        f = torch.randn(1, 7, 8, 8)
+        out = h2(f)
+        self.assertEqual(out.shape, (1, 1, 8, 8))
+        self.assertTrue((out.abs() <= 6.0 + 1e-5).all())
+
+    def test_flat_head_rejects_bad_state(self):
+        with self.assertRaises(RuntimeError):
+            runtime.load_flat_head({'something': torch.zeros(1)})
+        with self.assertRaises(RuntimeError):
+            runtime.load_flat_head('not-a-dict')
+
+
+class FakeMember(object):
+    """Records calls; simulates mmseg flip-undo: returns the identity prob
+    regardless of input flip (output already un-flipped)."""
+    def __init__(self, val):
+        self.val = val
+        self.last_flip = None
+
+    def __call__(self, return_loss, rescale, img, img_metas):
+        self.last_flip = bool(img_metas[0].get('flip', False))
+        return [np.full((4, 4, 4), self.val, np.float32)]
+
+
+class TestMemberProbNoDoubleFlip(unittest.TestCase):
+    def test_flip_undo_once(self):
+        m = FakeMember(0.5)
+        img = torch.rand(1, 3, 4, 4)
+        meta = [{'ori_shape': (4, 4)}]
+        p = runtime.member_prob(m, img, meta, flip=True, device='cpu')
+        self.assertTrue(m.last_flip)                 # flag was set
+        self.assertEqual(p.shape, (4, 4, 4))
+        self.assertTrue(np.allclose(p.numpy(), 0.5))  # NOT flipped again
+        p2 = runtime.member_prob(m, img, meta, flip=False, device='cpu')
+        self.assertFalse(m.last_flip)
+        self.assertTrue(np.allclose(p2.numpy(), 0.5))
+
+
+class TestReferenceCache(unittest.TestCase):
+    def setUp(self):
+        self.tmp = tempfile.mkdtemp()
+        self.addCleanup(shutil.rmtree, self.tmp, True)
+        self.prob = np.full((5, 6, 4), 0.25, np.float32)
+        self.npy = os.path.join(self.tmp, 'img1.npy')
+        np.save(self.npy, self.prob)
+        self.manifest = {'version': runtime.ReferenceCache.VERSION,
+                         'split': 'train', 'image_ids': ['img1'],
+                         'source_images_sha256': 'X',
+                         'reference_weight_sha256': 'R',
+                         'config_sha256': 'C',
+                         'normalization': {
+                             'mean': runtime.IMG_MEAN.tolist(),
+                             'std': runtime.IMG_STD.tolist()},
+                         'entries': {'img1': {'npy': self.npy,
+                                              'shape': [5, 6, 4],
+                                              'sha256': _sha(self.npy)}}}
+
+    def _settings(self):
+        s = {'data_root': self.tmp, '_cfg': None, '_hashes':
+             {'reference_checkpoint': 'R'}}
+        return s
+
+    def test_missing_cache_returns_false(self):
+        c = runtime.ReferenceCache(os.path.join(self.tmp, 'none'), {})
+        self.assertFalse(c.complete())
+
+    def test_get_validates(self):
+        import types
+        c = runtime.ReferenceCache(self.tmp, self._settings())
+        # monkeypatch identity material for fixture (tiny test setup)
+        c._train_image_ids = lambda: ['img1']
+        c._source_images_digest = lambda: 'X'
+        c._cfg_digest = lambda: 'C'
+        json.dump(self.manifest,
+                  open(c.manifest_path, 'w', encoding='utf-8'))
+        open(c.complete_path, 'w').write('ok')
+        arr = c.get('img1')
+        self.assertTrue(np.allclose(arr, self.prob))
+        # corrupt file bytes -> hash mismatch on get
+        with open(self.npy, 'ab') as f:
+            f.write(b'\x00')
+        with self.assertRaises(RuntimeError):
+            c.get('img1')
+
+    def test_corruption_raises(self):
+        c = runtime.ReferenceCache(self.tmp, self._settings())
+        c._train_image_ids = lambda: ['img1']
+        c._source_images_digest = lambda: 'X'
+        c._cfg_digest = lambda: 'C'
+        bad = json.loads(json.dumps(self.manifest))
+        bad['entries']['img1']['sha256'] = 'deadbeef'
+        json.dump(bad, open(c.manifest_path, 'w', encoding='utf-8'))
+        open(c.complete_path, 'w').write('ok')
+        with self.assertRaises(RuntimeError):
+            c.complete()
+        # wrong version raises too
+        bad = json.loads(json.dumps(self.manifest))
+        bad['version'] = 'nope'
+        json.dump(bad, open(c.manifest_path, 'w', encoding='utf-8'))
+        with self.assertRaises(RuntimeError):
+            c.complete()
+
+
+class FakeDS(object):
+    def __init__(self, n=2, size=(2, 2)):
+        self.n = n
+        self.size = size
+        self.img_infos = [{'filename': 'v%d.jpg' % i} for i in range(n)]
+
+    def __len__(self):
+        return self.n
+
+    def __getitem__(self, i):
+        h, w = self.size
+        return {'img': torch.rand(3, h, w),
+                'img_metas': {'ori_shape': (h, w),
+                              'ori_filename': 'v%d.jpg' % i}}
+
+    def get_gt_seg_maps(self):
+        return [np.full(self.size, 255, np.int64) for _ in range(self.n)]
+
+
+class TestEvaluateSplit(unittest.TestCase):
+    def test_predictor_alignment_nonMA_exact(self):
+        h, w = 2, 2
+        prob = np.full((1, 4, h, w), 0.1, np.float32)
+        prob[0, 2] = 0.9                       # SE everywhere -> fp
+        gt = np.zeros((h, w), np.int64)
+        gt[0, 0] = 3                            # one SE pixel tp
+        gt[1, 1] = 255
+
+        ds = FakeDS()
+        ds._gt = gt
+        ds.get_gt_seg_maps = lambda: [gt]
+
+        def builder(root, split):
+            return ds
+
+        def predictor(img, meta):
+            self.assertEqual(tuple(img.shape), (1, 3, h, w))
+            return torch.from_numpy(prob)      # (1,4,H,W) batch accepted
+
+        log = lambda m: None
+        miou, per, per_image = runtime.evaluate_split(
+            predictor, 'val', 'x', None, float('inf'), log,
+            expected_count=1, _ds_builder=builder)
+        # SE: tp=1, fp=3, fn=0 (ignored pixel not fp)
+        self.assertEqual(per_image['v0']['SE'], [1, 3, 0])
+        for c in ('EX', 'HE', 'MA'):
+            self.assertEqual(per_image['v0'][c], [0, 0, 0])
+        self.assertAlmostEqual(miou, np.mean([0.0, 0.0, 0.25, 0.0]))
+
+    def test_predictor_shape_strict(self):
+        ds = FakeDS()
+
+        def builder(root, split):
+            return ds
+
+        def predictor(img, meta):
+            return torch.zeros(2, 4, 2, 2)     # batch 2 -> reject
+
+        with self.assertRaises(RuntimeError):
+            runtime.evaluate_split(predictor, 'val', 'x', None,
+                                   float('inf'), lambda m: None,
+                                   expected_count=1, _ds_builder=builder)
+
+
+class TestFirstUpdateEvidence(unittest.TestCase):
+    def _model(self):
+        class Inner(torch.nn.Module):
+            def __init__(self):
+                super(Inner, self).__init__()
+                self.conv = torch.nn.Conv2d(1, 1, 1)
+
+        class M(torch.nn.Module):
+            def __init__(self):
+                super(M, self).__init__()
+                self.decode_head = Inner()
+                self.backbone = torch.nn.Module()
+                self.backbone.stage4 = Inner()
+                self.reference = Inner()
+                self.other = Inner()
+
+        return M()
+
+    def test_evidence(self):
+        m = self._model()
+        ps = runtime.snapshot_state(m)
+        bs = runtime.snapshot_buffers(m)
+        for n, p in m.named_parameters():
+            p.grad = torch.full_like(p, 0.1)
+        with torch.no_grad():
+            m.decode_head.conv.weight.add_(0.01)
+            m.backbone.stage4.conv.weight.add_(0.01)
+        ev = runtime.first_update_evidence(m, ps, bs)
+        self.assertTrue(all(ev.values()))
+
+    def test_frozen_changed_fails(self):
+        m = self._model()
+        ps = runtime.snapshot_state(m)
+        bs = runtime.snapshot_buffers(m)
+        for n, p in m.named_parameters():
+            p.grad = torch.full_like(p, 0.1)
+        with torch.no_grad():
+            m.decode_head.conv.weight.add_(0.01)
+            m.backbone.stage4.conv.weight.add_(0.01)
+            m.reference.conv.weight.add_(0.01)   # forbidden
+        ev = runtime.first_update_evidence(m, ps, bs)
+        self.assertFalse(ev['frozen_params_unchanged'])
+        self.assertFalse(all(ev.values()))
+
+
+class TestAuditSplit(unittest.TestCase):
+    def test_audit_tiny(self):
+        tmp = tempfile.mkdtemp()
+        self.addCleanup(shutil.rmtree, tmp, True)
+        for s in ('train', 'val', 'test'):
+            os.makedirs(os.path.join(tmp, 'images', s))
+            os.makedirs(os.path.join(tmp, 'labels', s))
+        files = {'train': ['a.jpg'], 'val': ['b.jpg'], 'test': ['c.jpg']}
+        for s, fs in files.items():
+            for f in fs:
+                open(os.path.join(tmp, 'images', s, f), 'w').write('x')
+            with open(os.path.join(tmp, s + '.txt'), 'w') as fh:
+                fh.write('\n'.join(fs))
+            if s != 'test':
+                open(os.path.join(tmp, 'labels', s,
+                                  os.path.splitext(f)[0] + '.png'),
+                     'w').write('x')
+        a = runtime.audit_split(tmp, expected=(1, 1, 1))
+        self.assertEqual(a['a.jpg']['split'], 'train')
+        self.assertEqual(a['c.jpg']['split'], 'test')
+        # label mismatch raises
+        os.remove(os.path.join(tmp, 'labels', 'train', 'a.png'))
+        with self.assertRaises(RuntimeError):
+            runtime.audit_split(tmp, expected=(1, 1, 1))
+
+
+class TestMisc(unittest.TestCase):
+    def test_parse_deadline(self):
+        self.assertEqual(runtime.parse_deadline(123.5), 123.5)
+        t = runtime.parse_deadline('2026-01-01T00:00:00Z')
+        self.assertIsInstance(t, float)
+        with self.assertRaises(ValueError):
+            runtime.parse_deadline('tomorrow')
+
+    def test_mix_probs(self):
+        a = torch.full((4, 2, 2), 0.8)
+        b = torch.full((4, 2, 2), 0.2)
+        self.assertTrue(torch.allclose(runtime.mix_probs(a, b),
+                                       torch.full((4, 2, 2), 0.5)))
+
+
+if __name__ == '__main__':
+    unittest.main()
+
+SOURCE tests/test_protocol.py
+# -*- coding: utf-8 -*-
+"""Pure/stub CPU unit tests.  No mmcv, no GPU, no dataset downloads.
+Importing run_protocol must not require mmcv."""
+import datetime
+import json
+import os
+import random
+import shutil
+import sys
+import tempfile
+import unittest
+
+import numpy as np
+
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
+import run_protocol as rp  # noqa: E402  (must import without mmcv)
+import ops                  # noqa: E402
+
+
+def mk(fake_t0, caps=None):
+    caps = caps or rp.PHASE_CAPS
+    st = {'run_start': fake_t0, 'chosen_T': 2000, 'identity': {'x': 1},
+          'phase_start': {}, 'val_history': {}}
+    return st
+
+
+class TestPhaseBudget(unittest.TestCase):
+    def test_phase_caps_sum_24h_with_prep_shared(self):
+        total = sum(rp.PHASE_CAPS.values())
+        self.assertLessEqual(total, rp.GLOBAL_BUDGET)
+        # preparation appears ONCE (shared), not once per prep subtask
+        self.assertEqual([k for k in rp.PHASE_CAPS if 'prep' in k or
+                          k in ('cache', 'starting_d_val', 'champion_val',
+                                'timing')],
+                         ['preparation'])
+
+    def test_deadline_never_extended_on_restart(self):
+        t0 = 1_000_000.0
+        st = mk(t0)
+        st['phase_start']['preparation'] = t0 + 10      # started late
+        # pretend time jumped forward (restart later): deadline must be the
+        # same absolute value
+        d1 = rp.phase_deadline(st, 'preparation')
+        st['phase_start']['preparation'] = t0 + 10      # persisted value
+        d2 = rp.phase_deadline(st, 'preparation')
+        self.assertEqual(d1, d2)
+        self.assertLessEqual(d1, t0 + rp.GLOBAL_BUDGET)
+
+    def test_final_reserve_fits_global(self):
+        t0 = 1_000_000.0
+        st = mk(t0)
+        st['phase_start']['preparation'] = t0
+        st['phase_start']['pair_seed42'] = t0 + rp.PHASE_CAPS['preparation']
+        st['phase_start']['pair_seed43'] = (st['phase_start']['pair_seed42'] +
+                                            rp.PHASE_CAPS['pair_seed42'])
+        d_final = rp.phase_deadline(st, 'final')
+        self.assertLessEqual(d_final, t0 + rp.GLOBAL_BUDGET)
+        # sum of pre-final caps + final + reserve <= 24h
+        self.assertLessEqual(
+            rp.PHASE_CAPS['preparation'] + rp.PHASE_CAPS['pair_seed42'] +
+            rp.PHASE_CAPS['pair_seed43'] + rp.PHASE_CAPS['final'] +
+            rp.FINAL_RESERVE, rp.GLOBAL_BUDGET + 1)
+
+
+class TestGateUsesHistories(unittest.TestCase):
+    def test_gate_uses_four_timepoint_mious_not_perclass(self):
+        # a_hist/b_hist are (step, miou) histories of 4 validation timepoints
+        a_hist = [(500, 0.430), (1000, 0.440), (1500, 0.445), (2000, 0.450)]
+        b_hist = [(500, 0.440), (1000, 0.448), (1500, 0.455), (2000, 0.460)]
+        a4 = [m for _, m in a_hist]
+        b4 = [m for _, m in b_hist]
+        self.assertTrue(ops.gate_first(a4, b4, 0.4220))
+        # exactly the driver's extraction path
+        self.assertEqual([m for _, m in a_hist], a4)
+
+    def test_gate_rejects_insufficient_gain(self):
+        self.assertFalse(ops.gate_first([0.44] * 4, [0.441] * 4, 0.4220))
+
+    def test_no_perclass_helper_exists(self):
+        self.assertFalse(hasattr(rp, '_per_class_at_best'))
+
+
+class TestRngRestore(unittest.TestCase):
+    def test_restore_makes_next_sample_equal_uninterrupted(self):
+        rng = np.random.RandomState(42)
+        first3 = [rng.randint(0, 1000) for _ in range(3)]
+        state = rng.get_state()
+        noise = [rng.randint(0, 1000) for _ in range(10)]  # divergence
+        self.assertNotEqual(noise[:3], [rng.randint(0, 1000) for _ in range(3)])
+        rng.set_state(state)                 # restore
+        again = [rng.randint(0, 1000) for _ in range(3)]
+        # uninterrupted reference
+        rng2 = np.random.RandomState(42)
+        [rng2.randint(0, 1000) for _ in range(3)]
+        ref = [rng2.randint(0, 1000) for _ in range(3)]
+        self.assertEqual(again, ref)
+        self.assertEqual(first3, [np.random.RandomState(42).randint(0, 1000)])
+
+
+class TestChooseBestTie(unittest.TestCase):
+    def test_tie_prefers_seed42_with_explicit_file(self):
+        b42 = (2000, 0.4700)
+        b43 = (1750, 0.4700)
+        seed, best = rp._choose_best_seed([('B', 42, b42, []),
+                                           ('B', 43, b43, [])])
+        self.assertEqual(seed, 42)
+        path = os.path.join('run', 'ckpt_B_s%d' % seed, 'iter_%d.pth' % best[0])
+        self.assertIn('s42', path)
+
+    def test_higher_seed43_wins_over_42(self):
+        seed, _ = rp._choose_best_seed([('B', 42, (2000, 0.4600), []),
+                                        ('B', 43, (1500, 0.4650), [])])
+        self.assertEqual(seed, 43)
+
+
+class TestLockImmutability(unittest.TestCase):
+    def setUp(self):
+        self.d = tempfile.mkdtemp()
+
+    def tearDown(self):
+        shutil.rmtree(self.d)
+
+    def test_lock_immutable_mismatch_fails(self):
+        lock = {'candidate': 'champion', 'val_results': {'champion': 0.44}}
+        p = rp.write_lock(self.d, lock)
+        with open(p) as f:
+            self.assertEqual(json.load(f), lock)
+        with self.assertRaises(RuntimeError):
+            rp.write_lock(self.d, {'candidate': 'new'})
+        rp.write_lock(self.d, lock)          # identical re-write is fine
+
+    def test_lock_written_before_test_marker(self):
+        lock = {'candidate': 'mix'}
+        rp.write_lock(self.d, lock)
+        self.assertTrue(os.path.isfile(
+            os.path.join(self.d, 'selection_lock.json')))
+
+
+class TestTestMarkers(unittest.TestCase):
+    def setUp(self):
+        self.d = tempfile.mkdtemp()
+
+    def tearDown(self):
+        shutil.rmtree(self.d)
+
+    def test_incomplete_test_fails_closed_no_rerun(self):
+        open(os.path.join(self.d, 'TEST_STARTED'), 'w').close()
+        with self.assertRaises(RuntimeError):
+            rp.final_test(None, self.d, {'candidate': 'champion'}, None,
+                          None, 1e18, lambda m: None)
+
+    def test_done_marker_skips(self):
+        open(os.path.join(self.d, 'TEST_DONE'), 'w').close()
+        rp.final_test(None, self.d, {'candidate': 'champion'}, None, None,
+                      1e18, lambda m: None)  # must not raise
+
+    def test_noop_when_no_markers_and_no_models_raises_gracefully(self):
+        # nothing to run with None champion -> generic failure but marker
+        # removed (no stale TEST_STARTED)
+        try:
+            rp.final_test(None, self.d, {'candidate': 'champion'}, None,
+                          None, 1e18, lambda m: None)
+        except Exception:
+            pass
+        self.assertFalse(os.path.isfile(
+            os.path.join(self.d, 'TEST_STARTED')))
+
+
+class TestOpsLedger(unittest.TestCase):
+    def setUp(self):
+        self.d = tempfile.mkdtemp()
+        self.dl = datetime.datetime.now(
+            datetime.timezone.utc) + datetime.timedelta(hours=3)
+        with open(os.path.join(self.d, 'budget_ledger.json'), 'w') as f:
+            json.dump({'deadline': self.dl.isoformat()}, f)
+
+    def tearDown(self):
+        shutil.rmtree(self.d)
+
+    def test_ops_load_ledger_and_deadline(self):
+        led = ops.load_ledger(self.d)
+        dt = ops.deadline_of(led)
+        self.assertTrue(dt.tzinfo is not None)      # aware datetime
+        self.assertGreater(dt.timestamp(), __import__('time').time())
+
+    def test_no_ledger_json_required(self):
+        self.assertFalse(os.path.isfile(
+            os.path.join(self.d, 'ledger.json')))
+
+
+class TestDryRunImportable(unittest.TestCase):
+    def test_import_needs_no_mmcv(self):
+        self.assertIsNone(sys.modules.get('mmcv'))
+        self.assertIsNone(sys.modules.get('runtime'))  # lazy import only
+        self.assertTrue(callable(rp.validate_settings))
+        self.assertTrue(callable(rp.main))
+
+
+if __name__ == '__main__':
+    unittest.main()
+
+SOURCE tests/test_ops.py
+"""Tests: budgets, restart persistence, gates, counts. No real shutdown."""
+import json, os, sys
+from datetime import datetime, timedelta, timezone
+import pytest
+
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+import ops
+
+
+class TestBudget:
+    def test_deadline_min_of_cap_and_budget(self):
+        start = datetime(2026, 9, 16, 0, 0, tzinfo=timezone.utc)
+        led = {"billing_started_at": start.isoformat(), "other_cost": 0.0}
+        assert ops.deadline_of(led) == start + timedelta(hours=ops.CAP_HOURS)
+        led["other_cost"] = 40.0  # (50-40)/1.98 = 5.05h < 24h
+        assert ops.deadline_of(led) == start + timedelta(hours=10 / 1.98)
+
+    def test_init_persists_and_rejects_naive(self, tmp_path):
+        rd = str(tmp_path / "run")
+        ops.main(["init", "--started-at", "2026-09-16T00:00:00+00:00",
+                  "--other-cost", "5.5", "--run-dir", rd])
+        led = ops.load_ledger(rd)
+        assert led["billing_started_at"].startswith("2026-09-16T00:00:00+00:00")
+        with pytest.raises(ValueError):
+            ops.main(["init", "--started-at", "2026-09-16T00:00:00",
+                      "--other-cost", "0", "--run-dir", str(tmp_path / "r2")])
+
+    def test_restart_never_resets_ledger(self, tmp_path):
+        rd = str(tmp_path / "run")
+        ops.main(["init", "--started-at", "2026-09-16T00:00:00+00:00",
+                  "--other-cost", "1.0", "--run-dir", rd])
+        ops.main(["init", "--started-at", "2030-01-01T00:00:00+00:00",
+                  "--other-cost", "0.0", "--run-dir", rd])
+        led = ops.load_ledger(rd)
+        assert led["billing_started_at"].startswith("2026-09-16")
+        assert led["other_cost"] == 1.0
+
+
+class TestWatchdog:
+    def test_dry_run_deadline_expired_no_shutdown(self, tmp_path, capsys):
+        rd = str(tmp_path / "run")
+        ops.main(["init", "--started-at", "2020-01-01T00:00:00+00:00",
+                  "--other-cost", "0", "--run-dir", rd])
+        ops.main(["watchdog", "--run-dir", rd, "--dry-run"])
+        out = capsys.readouterr().out
+        assert "dry-run" in out
+
+    def test_windows_real_shutdown_forbidden(self):
+        # function must raise on Windows for non-dry-run, regardless of platform test host
+        import unittest.mock as mock
+        orig = ops.sys.platform
+        ops.sys.platform = "win32"
+        try:
+            with pytest.raises(RuntimeError):
+                ops.shutdown_system(False)
+        finally:
+            ops.sys.platform = orig
+
+
+class TestChooseSteps:
+    def test_feasible(self):
+        # 2*4000*0.001 + 8*100 + 600 = 8800 <= 21600
+        assert ops.choose_steps(0.001, 100.0) == 4000
+
+    def test_infeasible_raises(self):
+        with pytest.raises(ValueError):
+            ops.choose_steps(1.0, 100.0)
+
+    def test_result_multiple_of_four(self):
+        t = ops.choose_steps(0.002, 50.0)
+        assert 1000 <= t <= 4000 and t % 4 == 0
+
+
+class TestGates:
+    def test_gate_pass(self):
+        assert ops.gate_first([0.50, 0.51, 0.52, 0.52], [0.525, 0.526, 0.53, 0.53], 0.50)
+
+    def test_gate_fail_small_delta(self):
+        assert not ops.gate_first([0.50, 0.51, 0.52, 0.52], [0.522, 0.522, 0.522, 0.522], 0.50)
+
+    def test_gate_fail_few_paired(self):
+        assert not ops.gate_first([0.52, 0.52, 0.52, 0.52], [0.53, 0.50, 0.50, 0.50], 0.50)
+
+    def test_gate_fail_below_start(self):
+        assert not ops.gate_first([0.40, 0.40, 0.40, 0.40], [0.45, 0.45, 0.45, 0.45], 0.50)
+
+    def test_checkpoint_tie_earlier(self):
+        pts = [(100, 0.60), (200, 0.62), (300, 0.62)]
+        assert ops.choose_checkpoint(pts) == 200
+
+
+class TestMetrics:
+    def test_sums_and_iou(self):
+        counts = {"background": {"tp": 10, "fp": 5, "fn": 5},
+                  "hard_exudate": {"tp": 4, "fp": 4, "fn": 2}}
+        m = ops.metrics_from_counts(counts)
+        assert m["background"]["iou"] == 0.5
+        assert m["hard_exudate"]["iou"] == 0.4
+
+    def test_reject_zero_union(self):
+        with pytest.raises(ValueError):
+            ops.metrics_from_counts({"retina": {"tp": 0, "fp": 0, "fn": 0}})
+
+
+class TestSplitAssignment:
+    def test_read_assignment_shapes(self, tmp_path):
+        data = {"train": ["a", "b"], "val": {"ids": ["c"]}, "test": []}
+        p = tmp_path / "split_assignment.json"
+        p.write_text(json.dumps(data))
+        import asset_inventory as ai
+        old = ai.SPLIT_ASSIGNMENT
+        ai.SPLIT_ASSIGNMENT = str(p)
+        try:
+            got = ai.read_split_assignment()
+        finally:
+            ai.SPLIT_ASSIGNMENT = old
+        assert got["train"] == ["a", "b"]
+        assert got["val"] == ["c"]
+
+    def test_list_shape(self, tmp_path):
+        data = [{"id": "a", "split": "train"}, {"id": "b", "split": "test"}]
+        p = tmp_path / "split_assignment.json"
+        p.write_text(json.dumps(data))
+        import asset_inventory as ai
+        old = ai.SPLIT_ASSIGNMENT
+        ai.SPLIT_ASSIGNMENT = str(p)
+        try:
+            got = ai.read_split_assignment()
+        finally:
+            ai.SPLIT_ASSIGNMENT = old
+        assert got["train"] == ["a"] and got["test"] == ["b"]
+
+SOURCE tests/test_storage.py
+# tests/test_storage.py
+import json, struct, tempfile, unittest
+from pathlib import Path
+from unittest import mock
+
+import storage_preflight as sp
+
+def make_png(path, w, h):
+    # minimal synthetic PNG header (PIL reads dims from IHDR only)
+    ihdr = struct.pack(">IIBBBBB", w, h, 8, 2, 0, 0, 0)
+    body = b"\x89PNG\r\n\x1a\n" + b"\x00\x00\x00\rIHDR" + ihdr
+    path.write_bytes(body)
+
+class TestStoragePreflight(unittest.TestCase):
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        root = Path(self.tmp.name)
+        self.data = root / "data"; self.data.mkdir()
+        make_png(self.data / "a.png", 4, 4)  # 4*4*16 = 256 B
+        self.student = root / "student.bin"; self.student.write_bytes(b"x" * 100)
+        self.ref = root / "ref.bin"; self.ref.write_bytes(b"y" * 50)
+        self.cache = root / "cache"; self.run = root / "run"
+        self.out = root / "report.json"
+
+    def tearDown(self):
+        self.tmp.cleanup()
+
+    def _call(self, cache_free, run_free, cache=None, run=None):
+        ret = mock.Mock()
+        ret.free = cache_free; ret.total = 1 << 40; ret.used = 0
+        with mock.patch("shutil.disk_usage", return_value=ret), \
+             mock.patch("os.stat") as st:
+            st.return_value.st_dev = 1 if cache is None or run is None else (1, 2)[cache is not None and run is not None and 0]
+            return sp.check_storage(self.data, cache or self.cache, run or self.run,
+                                    self.student, self.ref)
+
+    def test_ok_small(self):
+        r = self._call(cache_free=1 << 30, run_free=1 << 30)
+        self.assertEqual(r["status"], "ok")
+        self.assertEqual(r["images"]["count"], 1)
+        self.assertEqual(r["images"]["bytes"], 256)
+        self.assertEqual(r["checkpoints"]["per_ckpt_bytes"], 2 * 150)
+
+    def test_block_tiny_free(self):
+        r = self._call(cache_free=10, run_free=10)
+        self.assertEqual(r["status"], "block")
+
+    def test_missing_inputs_block(self):
+        r = sp.check_storage(self.data, self.cache, self.run,
+                             self.student, self.tmp.name + "/nope.bin")
+        self.assertEqual(r["status"], "block")
+        self.assertIn("missing", r["reason"])
+
+    def test_headroom_applied(self):
+        r = self._call(cache_free=(1 << 40), run_free=(1 << 40))
+        base = 256 + 24 * 300
+        self.assertEqual(r["required_bytes"], int(base * 1.2) + 2 * (1 << 30))
+
+    def test_cli_writes_only_out_json(self):
+        import subprocess, sys
+        before = sorted(str(p) for p in Path(self.tmp.name).rglob("*") if p.is_file())
+        cp = subprocess.run([sys.executable, "storage_preflight.py",
+                             "--data-root", str(self.data), "--cache-dir", str(self.cache),
+                             "--run-dir", str(self.run), "--student-checkpoint", str(self.student),
+                             "--reference-checkpoint", str(self.ref), "--out-json", str(self.out)],
+                            capture_output=True)
+        after = sorted(str(p) for p in Path(self.tmp.name).rglob("*") if p.is_file())
+        self.assertEqual(set(after) - set(before), {str(self.out)})
+        self.assertIn(cp.returncode, (0, 2))
+        json.loads(self.out.read_text())
+
+if __name__ == "__main__":
+    unittest.main()
+
+SOURCE storage_preflight.py
+# storage_preflight.py
+"""Prep-only storage gate: estimate cache (image byte spans) + checkpoints vs free disk. No writes except --out-json."""
+import argparse, json, os, shutil, sys
+from pathlib import Path
+
+def image_bytes(data_root: Path) -> int:
+    from PIL import Image
+    total = 0
+    n = 0
+    for p in sorted(Path(data_root).rglob("*")):
+        if p.suffix.lower() not in (".png", ".jpg", ".jpeg", ".bmp", ".tif", ".tiff"):
+            continue
+        with Image.open(p) as im:
+            w, h = im.size  # header only; PIL lazy-loads
+        total += w * h * 16  # reference HWC float32 x4 channels
+        n += 1
+    return total, n
+
+def check_storage(data_root, cache_dir, run_dir, student_ckpt, reference_ckpt,
+                  num_checkpoints=24, headroom_frac=0.20, headroom_gib=2.0):
+    cache_dir = Path(cache_dir); run_dir = Path(run_dir)
+    missing = []
+    for p, label in ((data_root, "data-root"), (student_ckpt, "student-checkpoint"),
+                     (reference_ckpt, "reference-checkpoint")):
+        if not Path(p).exists():
+            missing.append(label)
+    if missing:
+        return {"status": "block", "reason": f"missing inputs: {missing}"}
+
+    img_bytes, n_imgs = image_bytes(data_root)
+    student_sz = Path(student_ckpt).stat().st_size
+    ref_sz = Path(reference_ckpt).stat().st_size
+    per_ckpt = 2 * (student_sz + ref_sz)  # student+reference, conservative
+    ckpt_bytes = per_ckpt * num_checkpoints
+
+    required = img_bytes + ckpt_bytes
+    required *= 1.0 + headroom_frac
+    required += int(headroom_gib * (1 << 30))
+
+    def free_for(d: Path) -> int:
+        d = Path(d).resolve()
+        while not d.exists():
+            d = d.parent  # nearest existing parent
+        return shutil.disk_usage(str(d)).free, str(d)
+
+    cache_free, cache_fs = free_for(cache_dir)
+    run_free, run_fs = free_for(run_dir)
+    same_fs = os.stat(cache_fs).st_dev == os.stat(run_fs).st_dev
+
+    if same_fs:
+        free = min(cache_free, run_free)
+        ok = required <= free
+    else:
+        # cache holds image spans; run holds checkpoints
+        ok = (img_bytes <= cache_free) and (ckpt_bytes <= run_free)
+        free = cache_free + run_free
+
+    return {
+        "status": "ok" if ok else "block",
+        "images": {"count": n_imgs, "bytes": img_bytes},
+        "checkpoints": {"per_ckpt_bytes": per_ckpt, "count": num_checkpoints, "bytes": ckpt_bytes},
+        "required_bytes": int(required),
+        "free_bytes": int(free),
+        "same_filesystem": same_fs,
+        "cache_free_bytes": int(cache_free), "run_free_bytes": int(run_free),
+    }
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--data-root", required=True)
+    ap.add_argument("--cache-dir", required=True)
+    ap.add_argument("--run-dir", required=True)
+    ap.add_argument("--student-checkpoint", required=True)
+    ap.add_argument("--reference-checkpoint", required=True)
+    ap.add_argument("--out-json", required=True)
+    a = ap.parse_args()
+
+    report = check_storage(a.data_root, a.cache_dir, a.run_dir,
+                           a.student_checkpoint, a.reference_checkpoint)
+    out = Path(a.out_json)
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(json.dumps(report, indent=2))
+    sys.exit(0 if report["status"] == "ok" else 2)
+
+if __name__ == "__main__":
+    main()
+
+SOURCE ops.py
+"""ops.py: budget ledger, watchdog, step planner, gating, metrics."""
+from __future__ import annotations
+import argparse, json, math, os, sys, time
+from datetime import datetime, timedelta, timezone
+
+LEDGER_NAME = "budget_ledger.json"
+RATE = 1.98
+BUDGET = 50.0
+CAP_HOURS = 24.0
+CLASSES = ("EX", "HE", "SE", "MA")
+
+
+def _utcnow():
+    return datetime.now(timezone.utc)
+
+
+def _finite(x, name):
+    if not isinstance(x, (int, float)) or isinstance(x, bool):
+        raise ValueError(f"{name} must be a real number")
+    v = float(x)
+    if not math.isfinite(v):
+        raise ValueError(f"{name} must be finite (got {x!r})")
+    return v
+
+
+def parse_utc(s) -> datetime:
+    dt = datetime.fromisoformat(str(s))
+    if dt.tzinfo is None:
+        raise ValueError("timestamp must include timezone offset (UTC required)")
+    return dt.astimezone(timezone.utc)
+
+
+def validate_other_cost(v) -> float:
+    c = _finite(v, "other_cost")
+    if c < 0:
+        raise ValueError("other_cost must be nonnegative")
+    if c >= BUDGET:
+        raise ValueError("other_cost must be < budget (50)")
+    return c
+
+
+def ledger_path(run_dir: str) -> str:
+    return os.path.join(run_dir, LEDGER_NAME)
+
+
+def load_ledger(run_dir: str) -> dict:
+    with open(ledger_path(run_dir), "r", encoding="utf-8") as f:
+        led = json.load(f)
+    parse_utc(led["billing_started_at"])
+    validate_other_cost(led["other_cost"])
+    return led
+
+
+def deadline_of(ledger: dict) -> datetime:
+    """Aware UTC datetime: min(budget exhaustion, 24h cap) from billing start."""
+    start = parse_utc(ledger["billing_started_at"])
+    cost = validate_other_cost(ledger["other_cost"])
+    by_budget = start + timedelta(hours=(BUDGET - cost) / RATE)
+    by_cap = start + timedelta(hours=CAP_HOURS)
+    return min(by_budget, by_cap)
+
+
+def _write_json(path: str, obj) -> None:
+    tmp = path + ".tmp"
+    with open(tmp, "w", encoding="utf-8") as f:
+        json.dump(obj, f, indent=2)
+    os.replace(tmp, path)
+
+
+def cmd_init(args):
+    os.makedirs(args.run_dir, exist_ok=True)
+    path = ledger_path(args.run_dir)
+    started = parse_utc(args.started_at)
+    if started > _utcnow():
+        raise ValueError("future billing_started_at is forbidden")
+    cost = validate_other_cost(args.other_cost)
+    if os.path.exists(path):
+        old = load_ledger(args.run_dir)
+        old_start = parse_utc(old["billing_started_at"])
+        old_cost = float(old["other_cost"])
+        if started != old_start:
+            raise ValueError("restart-reset forbidden: billing_started_at is immutable")
+        if cost < old_cost:
+            raise ValueError("re-init may only increase other_cost (only shorten remaining time)")
+        if cost == old_cost:
+            print("existing ledger preserved; deadline:", deadline_of(old).isoformat())
+            return
+        old["other_cost"] = cost
+        _write_json(path, old)
+        print("other_cost updated; deadline:", deadline_of(old).isoformat())
+        return
+    ledger = {
+        "billing_started_at": started.isoformat(),
+        "other_cost": cost,
+        "run_dir": os.path.abspath(args.run_dir),
+    }
+    _write_json(path, ledger)
+    print("deadline:", deadline_of(ledger).isoformat())
+
+
+def shutdown_system(dry_run: bool) -> bool:
+    """True if shutdown issued (or would be, in dry-run). Real shutdown is Linux-only."""
+    if dry_run:
+        print("[dry-run] would invoke: shutdown -h now")
+        return True
+    if not sys.platform.startswith("linux"):
+        raise RuntimeError("real shutdown forbidden off Linux")
+    return os.system("shutdown -h now") == 0
+
+
+def cmd_watchdog(args):
+    try:
+        ledger = load_ledger(args.run_dir)
+        dl = deadline_of(ledger)
+    except Exception as exc:
+        # Fail closed: guard launch implies an authorized paid server; a malformed
+        # ledger must still attempt shutdown, not crash open.
+        print(f"[fail-closed] unusable ledger in {args.run_dir}: {exc}", flush=True)
+        try:
+            shutdown_system(args.dry_run)
+        finally:
+            sys.exit(5)
+    print("watchdog armed; deadline", dl.isoformat(), flush=True)
+    while True:
+        now = _utcnow()
+        if now >= dl:
+            if args.dry_run:
+                print("[dry-run] deadline reached; no shutdown issued")
+                return
+            if shutdown_system(False):
+                return  # host is halting
+            print("[watchdog] shutdown failed; retrying in 5s", flush=True)
+            time.sleep(5)
+            continue
+        time.sleep(min(60, max(1, (dl - now).total_seconds())))
+
+
+def choose_steps(train_seconds_per_step, eval_seconds, overhead_seconds=600.0) -> int:
+    t = _finite(train_seconds_per_step, "train_seconds_per_step")
+    e = _finite(eval_seconds, "eval_seconds")
+    o = _finite(overhead_seconds, "overhead_seconds")
+    if t < 0 or e < 0 or o < 0:
+        raise ValueError("choose_steps arguments must be nonnegative")
+    for T in range(4000, 999, -4):
+        if 2 * T * t + 8 * e + o <= 21600:
+            return T
+    raise ValueError("no feasible T in [1000,4000] (multiple of 4)")
+
+
+def gate_first(a4, b4, start_miou) -> bool:
+    for pts, name in ((a4, "a4"), (b4, "b4")):
+        if len(pts) != 4:
+            raise ValueError(f"{name}: gate_first requires exactly 4 points")
+        for x in pts:
+            _finite(x, name)
+    _finite(start_miou, "start_miou")
+    maxA, maxB = max(a4), max(b4)
+    if not (maxB - maxA >= 0.003):
+        return False
+    if sum(1 for x, y in zip(a4, b4) if y > x) < 2:
+        return False
+    return maxB >= start_miou
+
+
+def choose_checkpoint(points):
+    """Returns (step, miou); ties resolved to the EARLIEST step regardless of input order."""
+    best = None
+    for step, miou in points:
+        m = _finite(miou, "miou")
+        if best is None or m > best[1]:
+            best = (step, m)
+    if best is None:
+        raise ValueError("no checkpoints supplied")
+    return best
+
+
+def metrics_from_counts(counts) -> dict:
+    """Accepts {class:{tp,fp,fn}} (exactly EX/HE/SE/MA) or Nx4x3 nested lists.
+    Returns {'mIoU':.., 'per_class':{EX:..,...}, 'counts':{...}}. Rejects zero union."""
+    per = {c: {"tp": 0, "fp": 0, "fn": 0} for c in CLASSES}
+
+    def _count(v, name):
+        x = _finite(v, name)
+        if x < 0:
+            raise ValueError(f"{name} must be nonnegative")
+        return x
+
+    def add(cls, tp, fp, fn):
+        if cls not in per:
+            raise ValueError(f"unexpected class {cls!r}; expected exactly {CLASSES}")
+        per[cls]["tp"] += _count(tp, "tp")
+        per[cls]["fp"] += _count(fp, "fp")
+        per[cls]["fn"] += _count(fn, "fn")
+
+    if isinstance(counts, dict):
+        extra = set(counts) - set(CLASSES)
+        missing = set(CLASSES) - set(counts)
+        if extra or missing:
+            raise ValueError(f"expected exactly classes {CLASSES}; missing={sorted(missing)} extra={sorted(extra)}")
+        for cls, c in counts.items():
+            add(cls, c["tp"], c["fp"], c["fn"])
+    elif isinstance(counts, (list, tuple)):
+        for img in counts:
+            if len(img) != 4:
+                raise ValueError("each image must have exactly 4 class entries")
+            for i, trio in enumerate(img):
+                if len(trio) != 3:
+                    raise ValueError("each class entry must be [tp, fp, fn]")
+                add(CLASSES[i], trio[0], trio[1], trio[2])
+    else:
+        raise TypeError("counts must be dict {class:{tp,fp,fn}} or Nx4x3 list")
+
+    per_class = {}
+    for cls in CLASSES:
+        tp, fp, fn = per[cls]["tp"], per[cls]["fp"], per[cls]["fn"]
+        denom = tp + fp + fn
+        if denom == 0:
+            raise ValueError(f"class {cls}: union is zero; rejecting")
+        per_class[cls] = tp / denom
+    return {
+        "mIoU": sum(per_class.values()) / len(CLASSES),
+        "per_class": per_class,
+        "counts": per,
+    }
+
+
+def main(argv=None):
+    p = argparse.ArgumentParser(prog="ops")
+    sub = p.add_subparsers(dest="cmd", required=True)
+    pi = sub.add_parser("init")
+    pi.add_argument("--started-at", required=True)
+    pi.add_argument("--other-cost", type=float, required=True)
+    pi.add_argument("--run-dir", required=True)
+    pi.set_defaults(func=cmd_init)
+    pw = sub.add_parser("watchdog")
+    pw.add_argument("--run-dir", required=True)
+    pw.add_argument("--dry-run", action="store_true")
+    pw.set_defaults(func=cmd_watchdog)
+    args = p.parse_args(argv)
+    args.func(args)
+
+
+if __name__ == "__main__":
+    main()

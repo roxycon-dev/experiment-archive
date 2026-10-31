@@ -1,0 +1,12 @@
+[2026-09-18 08:48:07] round5 global deadline: 2026-09-18T06:47:49.090909+00:00 (5.99h remaining)
+[2026-09-18 08:52:28] round5 global deadline: 2026-09-18T06:47:49.090909+00:00 (5.92h remaining)
+[2026-09-18 08:53:29] split audit OK (454/76/227 expected)
+[2026-09-18 08:54:21] labels OK for train (454 files)
+[2026-09-18 08:54:23] bnew ckpt iter3000 sha256 458bcb3b507442c9
+[2026-09-18 08:54:23] bnew ckpt iter4000 sha256 3e09a0cd29f547f1
+[2026-09-18 08:54:23] smoke: build base champion
+[2026-09-18 08:54:44] smoke gate1: 5-member predict OK (4, 1944, 2592) finite in [0,1]
+[2026-09-18 08:54:49] smoke gate2 V1: one step OK (w(2500)=1.0 loss 0.6318)
+[2026-09-18 08:54:50] smoke gate2 V2: one step OK (w(2500)=1.0 loss 0.6192)
+[2026-09-18 08:54:50] SMOKE OK (5 gates: settings/ledger/cache implied, predict, V1, V2)
+[2026-09-18 08:54:56] round5 global deadline: 2026-09-18T06:47:49.090909+00:00 (5.88h remaining)

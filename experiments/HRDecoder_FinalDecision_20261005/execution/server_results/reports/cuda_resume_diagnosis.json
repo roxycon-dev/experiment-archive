@@ -1,0 +1,258 @@
+{
+  "time": "2026-10-04T19:45:49.288930+00:00",
+  "comparison_only_no_scientific_updates": true,
+  "results": {
+    "SDPBackend.FLASH_ATTENTION": {
+      "mismatch_tensors": 18,
+      "examples": [
+        {
+          "path": "snapshot/1/state/208/exp_avg",
+          "shape": [
+            128
+          ],
+          "dtype": "torch.float32",
+          "max_abs": 5.820766091346741e-11,
+          "mismatch_values": 22,
+          "max_reference_abs": 0.0014170570066198707
+        },
+        {
+          "path": "snapshot/1/state/208/exp_avg_sq",
+          "shape": [
+            128
+          ],
+          "dtype": "torch.float32",
+          "max_abs": 3.552713678800501e-15,
+          "mismatch_values": 20,
+          "max_reference_abs": 1.1765892793391686e-07
+        },
+        {
+          "path": "snapshot/1/state/209/exp_avg",
+          "shape": [
+            128
+          ],
+          "dtype": "torch.float32",
+          "max_abs": 2.9103830456733704e-11,
+          "mismatch_values": 16,
+          "max_reference_abs": 0.0006406697211787105
+        },
+        {
+          "path": "snapshot/1/state/209/exp_avg_sq",
+          "shape": [
+            128
+          ],
+          "dtype": "torch.float32",
+          "max_abs": 8.881784197001252e-16,
+          "mismatch_values": 21,
+          "max_reference_abs": 2.3653235814435902e-08
+        },
+        {
+          "path": "snapshot/1/state/211/exp_avg",
+          "shape": [
+            128
+          ],
+          "dtype": "torch.float32",
+          "max_abs": 3.637978807091713e-12,
+          "mismatch_values": 14,
+          "max_reference_abs": 0.0006849178462289274
+        },
+        {
+          "path": "snapshot/1/state/211/exp_avg_sq",
+          "shape": [
+            128
+          ],
+          "dtype": "torch.float32",
+          "max_abs": 1.3877787807814457e-17,
+          "mismatch_values": 13,
+          "max_reference_abs": 2.751528960232008e-08
+        },
+        {
+          "path": "snapshot/1/state/212/exp_avg",
+          "shape": [
+            128
+          ],
+          "dtype": "torch.float32",
+          "max_abs": 2.9103830456733704e-11,
+          "mismatch_values": 14,
+          "max_reference_abs": 0.0004376266442704946
+        },
+        {
+          "path": "snapshot/1/state/212/exp_avg_sq",
+          "shape": [
+            128
+          ],
+          "dtype": "torch.float32",
+          "max_abs": 8.881784197001252e-16,
+          "mismatch_values": 17,
+          "max_reference_abs": 1.0937637462404837e-08
+        },
+        {
+          "path": "snapshot/1/state/223/exp_avg",
+          "shape": [
+            128
+          ],
+          "dtype": "torch.float32",
+          "max_abs": 9.094947017729282e-13,
+          "mismatch_values": 1,
+          "max_reference_abs": 0.0008653320837765932
+        },
+        {
+          "path": "snapshot/1/state/223/exp_avg_sq",
+          "shape": [
+            128
+          ],
+          "dtype": "torch.float32",
+          "max_abs": 1.3552527156068805e-19,
+          "mismatch_values": 1,
+          "max_reference_abs": 4.404295239623934e-08
+        },
+        {
+          "path": "snapshot/1/state/229/exp_avg",
+          "shape": [
+            128
+          ],
+          "dtype": "torch.float32",
+          "max_abs": 2.3283064365386963e-10,
+          "mismatch_values": 29,
+          "max_reference_abs": 0.0020540093537420034
+        },
+        {
+          "path": "snapshot/1/state/229/exp_avg_sq",
+          "shape": [
+            128
+          ],
+          "dtype": "torch.float32",
+          "max_abs": 2.842170943040401e-14,
+          "mismatch_values": 29,
+          "max_reference_abs": 2.4755675553933543e-07
+        }
+      ],
+      "global_max_abs": 2.3283064365386963e-10
+    },
+    "SDPBackend.MATH": {
+      "mismatch_tensors": 20,
+      "examples": [
+        {
+          "path": "snapshot/1/state/205/exp_avg",
+          "shape": [
+            128
+          ],
+          "dtype": "torch.float32",
+          "max_abs": 4.3655745685100555e-11,
+          "mismatch_values": 3,
+          "max_reference_abs": 0.001661672256886959
+        },
+        {
+          "path": "snapshot/1/state/205/exp_avg_sq",
+          "shape": [
+            128
+          ],
+          "dtype": "torch.float32",
+          "max_abs": 1.1102230246251565e-15,
+          "mismatch_values": 3,
+          "max_reference_abs": 1.6877068276244245e-07
+        },
+        {
+          "path": "snapshot/1/state/206/exp_avg",
+          "shape": [
+            128
+          ],
+          "dtype": "torch.float32",
+          "max_abs": 2.9103830456733704e-11,
+          "mismatch_values": 3,
+          "max_reference_abs": 0.0012243158416822553
+        },
+        {
+          "path": "snapshot/1/state/206/exp_avg_sq",
+          "shape": [
+            128
+          ],
+          "dtype": "torch.float32",
+          "max_abs": 4.440892098500626e-16,
+          "mismatch_values": 3,
+          "max_reference_abs": 8.879361956815046e-08
+        },
+        {
+          "path": "snapshot/1/state/211/exp_avg",
+          "shape": [
+            128
+          ],
+          "dtype": "torch.float32",
+          "max_abs": 1.7053025658242404e-13,
+          "mismatch_values": 1,
+          "max_reference_abs": 0.0006843365263193846
+        },
+        {
+          "path": "snapshot/1/state/211/exp_avg_sq",
+          "shape": [
+            128
+          ],
+          "dtype": "torch.float32",
+          "max_abs": 1.0164395367051604e-20,
+          "mismatch_values": 1,
+          "max_reference_abs": 2.7481215525426705e-08
+        },
+        {
+          "path": "snapshot/1/state/212/exp_avg",
+          "shape": [
+            128
+          ],
+          "dtype": "torch.float32",
+          "max_abs": 7.105427357601002e-14,
+          "mismatch_values": 1,
+          "max_reference_abs": 0.0004353610856924206
+        },
+        {
+          "path": "snapshot/1/state/212/exp_avg_sq",
+          "shape": [
+            128
+          ],
+          "dtype": "torch.float32",
+          "max_abs": 8.470329472543003e-22,
+          "mismatch_values": 1,
+          "max_reference_abs": 1.0846870956982002e-08
+        },
+        {
+          "path": "snapshot/1/state/223/exp_avg",
+          "shape": [
+            128
+          ],
+          "dtype": "torch.float32",
+          "max_abs": 9.094947017729282e-13,
+          "mismatch_values": 3,
+          "max_reference_abs": 0.000874500023201108
+        },
+        {
+          "path": "snapshot/1/state/223/exp_avg_sq",
+          "shape": [
+            128
+          ],
+          "dtype": "torch.float32",
+          "max_abs": 4.440892098500626e-16,
+          "mismatch_values": 7,
+          "max_reference_abs": 4.472629200336087e-08
+        },
+        {
+          "path": "snapshot/1/state/224/exp_avg",
+          "shape": [
+            128
+          ],
+          "dtype": "torch.float32",
+          "max_abs": 1.4551915228366852e-11,
+          "mismatch_values": 3,
+          "max_reference_abs": 0.000921199272852391
+        },
+        {
+          "path": "snapshot/1/state/224/exp_avg_sq",
+          "shape": [
+            128
+          ],
+          "dtype": "torch.float32",
+          "max_abs": 2.220446049250313e-16,
+          "mismatch_values": 5,
+          "max_reference_abs": 4.989449564618553e-08
+        }
+      ],
+      "global_max_abs": 4.3655745685100555e-11
+    }
+  }
+}

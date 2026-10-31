@@ -1,0 +1,4483 @@
+[
+  {
+    "path": "autodl100/监控记录.jsonl",
+    "ext": ".jsonl",
+    "bytes": 6956,
+    "sha256": "1e397065c7685b85bbd3d4f1849528d928bcbf4455fa63b49f331e994b914919",
+    "line_count": 13,
+    "valid_json_lines": 13,
+    "invalid_json_lines": 0,
+    "top_key_counts": [
+      [
+        "checked_at",
+        13
+      ],
+      [
+        "training_cost_estimate_rmb",
+        13
+      ],
+      [
+        "unused_machine_reserve_rmb",
+        13
+      ],
+      [
+        "total_estimate_with_reserve_rmb",
+        13
+      ],
+      [
+        "decision",
+        13
+      ],
+      [
+        "active_instances",
+        12
+      ],
+      [
+        "trial_b_last_observed_iter",
+        7
+      ],
+      [
+        "trial_a_last_observed_iter",
+        4
+      ],
+      [
+        "trial_b_best_val_mIoU",
+        4
+      ],
+      [
+        "trial_a_best_val_mIoU",
+        2
+      ],
+      [
+        "cost_basis",
+        1
+      ],
+      [
+        "val_mIoU_at_1000",
+        1
+      ],
+      [
+        "val_mIoU_at_2000",
+        1
+      ],
+      [
+        "validation_mIoU",
+        1
+      ],
+      [
+        "validation_mIoU_at_4000",
+        1
+      ],
+      [
+        "validation_mIoU_at_6000",
+        1
+      ],
+      [
+        "validation_mIoU_at_7000",
+        1
+      ],
+      [
+        "trial_a_status",
+        1
+      ],
+      [
+        "trial_a_final_val_mIoU",
+        1
+      ],
+      [
+        "trial_b_val_mIoU_at_1000",
+        1
+      ],
+      [
+        "trial_b_val_mIoU_at_2000",
+        1
+      ],
+      [
+        "trial_b_val_mIoU_at_3000",
+        1
+      ],
+      [
+        "trial_b_val_mIoU_at_4000",
+        1
+      ],
+      [
+        "trial_b_val_mIoU_at_5000",
+        1
+      ],
+      [
+        "trial_b_val_mIoU_at_6000",
+        1
+      ],
+      [
+        "phase",
+        1
+      ],
+      [
+        "test_B_mIoU_percent",
+        1
+      ],
+      [
+        "historical_baseline_test_percent",
+        1
+      ]
+    ],
+    "step_min": null,
+    "step_max": null,
+    "metric_key_counts": [
+      [
+        "trial_b_best_val_mIoU",
+        4
+      ],
+      [
+        "trial_a_best_val_mIoU",
+        2
+      ],
+      [
+        "val_mIoU_at_1000",
+        1
+      ],
+      [
+        "val_mIoU_at_2000",
+        1
+      ],
+      [
+        "validation_mIoU_at_4000",
+        1
+      ],
+      [
+        "validation_mIoU_at_6000",
+        1
+      ],
+      [
+        "validation_mIoU_at_7000",
+        1
+      ],
+      [
+        "trial_a_final_val_mIoU",
+        1
+      ],
+      [
+        "trial_b_val_mIoU_at_1000",
+        1
+      ],
+      [
+        "trial_b_val_mIoU_at_2000",
+        1
+      ],
+      [
+        "trial_b_val_mIoU_at_3000",
+        1
+      ],
+      [
+        "trial_b_val_mIoU_at_4000",
+        1
+      ],
+      [
+        "trial_b_val_mIoU_at_5000",
+        1
+      ],
+      [
+        "trial_b_val_mIoU_at_6000",
+        1
+      ],
+      [
+        "test_B_mIoU_percent",
+        1
+      ]
+    ],
+    "outcome_counts": [],
+    "first_record_metrics": null,
+    "last_record_metrics": null
+  },
+  {
+    "path": "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/diagnostic_v10/training_runs/diagnostic_v10/batch_alignment.jsonl",
+    "ext": ".jsonl",
+    "bytes": 22964,
+    "sha256": "e46d74d0b299a738481eede8e9e9161f60ac7abb8dedb084ebe5dc6667240ac2",
+    "line_count": 128,
+    "valid_json_lines": 128,
+    "invalid_json_lines": 0,
+    "top_key_counts": [
+      [
+        "update",
+        128
+      ],
+      [
+        "sid",
+        128
+      ],
+      [
+        "augmentation_seeds",
+        128
+      ],
+      [
+        "same_real_input_objects_unchanged",
+        128
+      ],
+      [
+        "provider_logits_bitwise_equal",
+        128
+      ]
+    ],
+    "step_min": 8001,
+    "step_max": 8128,
+    "metric_key_counts": [],
+    "outcome_counts": [],
+    "first_record_metrics": {
+      "update": 8001
+    },
+    "last_record_metrics": {
+      "update": 8128
+    }
+  },
+  {
+    "path": "HRDecoder_FinalDecision_20261005/execution/parallel/node2/server_results/reports/stream_DDR_seed2024.jsonl",
+    "ext": ".jsonl",
+    "bytes": 53275297,
+    "sha256": "0833423fe9d9d94105d3144fb522c66c34ed08cd08545a4dde6363d8b180e7ef",
+    "line_count": 256000,
+    "valid_json_lines": 256000,
+    "invalid_json_lines": 0,
+    "top_key_counts": [
+      [
+        "sid",
+        256000
+      ],
+      [
+        "source",
+        256000
+      ],
+      [
+        "update",
+        256000
+      ],
+      [
+        "slot",
+        256000
+      ],
+      [
+        "rotation",
+        256000
+      ],
+      [
+        "flip_h",
+        256000
+      ],
+      [
+        "flip_v",
+        256000
+      ],
+      [
+        "foreground_class",
+        256000
+      ],
+      [
+        "brightness",
+        256000
+      ],
+      [
+        "contrast",
+        256000
+      ],
+      [
+        "y",
+        256000
+      ],
+      [
+        "x",
+        256000
+      ],
+      [
+        "hw",
+        256000
+      ]
+    ],
+    "step_min": 1,
+    "step_max": 32000,
+    "metric_key_counts": [],
+    "outcome_counts": [],
+    "first_record_metrics": {
+      "update": 1
+    },
+    "last_record_metrics": {
+      "update": 32000
+    }
+  },
+  {
+    "path": "HRDecoder_FinalDecision_20261005/execution/parallel/node2/server_results/reports/stream_DDR_seed42.jsonl",
+    "ext": ".jsonl",
+    "bytes": 53259228,
+    "sha256": "7bb867a5f771960a7256a2b471823687d20b61c2e18d8cd65d3a368ee93c21c8",
+    "line_count": 256000,
+    "valid_json_lines": 256000,
+    "invalid_json_lines": 0,
+    "top_key_counts": [
+      [
+        "sid",
+        256000
+      ],
+      [
+        "source",
+        256000
+      ],
+      [
+        "update",
+        256000
+      ],
+      [
+        "slot",
+        256000
+      ],
+      [
+        "rotation",
+        256000
+      ],
+      [
+        "flip_h",
+        256000
+      ],
+      [
+        "flip_v",
+        256000
+      ],
+      [
+        "foreground_class",
+        256000
+      ],
+      [
+        "brightness",
+        256000
+      ],
+      [
+        "contrast",
+        256000
+      ],
+      [
+        "y",
+        256000
+      ],
+      [
+        "x",
+        256000
+      ],
+      [
+        "hw",
+        256000
+      ]
+    ],
+    "step_min": 1,
+    "step_max": 32000,
+    "metric_key_counts": [],
+    "outcome_counts": [],
+    "first_record_metrics": {
+      "update": 1
+    },
+    "last_record_metrics": {
+      "update": 32000
+    }
+  },
+  {
+    "path": "HRDecoder_FinalDecision_20261005/execution/parallel/node2/server_results/reports/stream_PARENT_seed2024.jsonl",
+    "ext": ".jsonl",
+    "bytes": 19910251,
+    "sha256": "982fb514bf8cd165a09fe787bc9ba64d2806214f5d8dc7ae016a64bbed182698",
+    "line_count": 96000,
+    "valid_json_lines": 96000,
+    "invalid_json_lines": 0,
+    "top_key_counts": [
+      [
+        "brightness",
+        96000
+      ],
+      [
+        "contrast",
+        96000
+      ],
+      [
+        "flip_h",
+        96000
+      ],
+      [
+        "flip_v",
+        96000
+      ],
+      [
+        "foreground_class",
+        96000
+      ],
+      [
+        "hw",
+        96000
+      ],
+      [
+        "rotation",
+        96000
+      ],
+      [
+        "sid",
+        96000
+      ],
+      [
+        "slot",
+        96000
+      ],
+      [
+        "source",
+        96000
+      ],
+      [
+        "update",
+        96000
+      ],
+      [
+        "x",
+        96000
+      ],
+      [
+        "y",
+        96000
+      ]
+    ],
+    "step_min": 12001,
+    "step_max": 24000,
+    "metric_key_counts": [],
+    "outcome_counts": [],
+    "first_record_metrics": {
+      "update": 12001
+    },
+    "last_record_metrics": {
+      "update": 24000
+    }
+  },
+  {
+    "path": "HRDecoder_FinalDecision_20261005/execution/parallel/node2/server_results/reports/stream_TJDR_seed2024.jsonl",
+    "ext": ".jsonl",
+    "bytes": 23895858,
+    "sha256": "00dae26f7eeefd0b41987a5e2506774901828939df652e065956a1501d6877ce",
+    "line_count": 80000,
+    "valid_json_lines": 80000,
+    "invalid_json_lines": 0,
+    "top_key_counts": [
+      [
+        "sid",
+        80000
+      ],
+      [
+        "source",
+        80000
+      ],
+      [
+        "update",
+        80000
+      ],
+      [
+        "slot",
+        80000
+      ],
+      [
+        "camera_draw",
+        80000
+      ],
+      [
+        "camera_actual",
+        80000
+      ],
+      [
+        "image_draw_attempts",
+        80000
+      ],
+      [
+        "fallback",
+        80000
+      ],
+      [
+        "rotation",
+        80000
+      ],
+      [
+        "flip_h",
+        80000
+      ],
+      [
+        "flip_v",
+        80000
+      ],
+      [
+        "foreground_class",
+        80000
+      ],
+      [
+        "brightness",
+        80000
+      ],
+      [
+        "contrast",
+        80000
+      ],
+      [
+        "y",
+        80000
+      ],
+      [
+        "x",
+        80000
+      ],
+      [
+        "hw",
+        80000
+      ]
+    ],
+    "step_min": 1,
+    "step_max": 20000,
+    "metric_key_counts": [],
+    "outcome_counts": [],
+    "first_record_metrics": {
+      "update": 1
+    },
+    "last_record_metrics": {
+      "update": 20000
+    }
+  },
+  {
+    "path": "HRDecoder_FinalDecision_20261005/execution/parallel/node2/server_results/reports/stream_TJDR_seed42.jsonl",
+    "ext": ".jsonl",
+    "bytes": 23889361,
+    "sha256": "7990174a5b5c3791a0aad746f4301edc8d69cf80d8f98f444308fc079f4824f6",
+    "line_count": 80000,
+    "valid_json_lines": 80000,
+    "invalid_json_lines": 0,
+    "top_key_counts": [
+      [
+        "sid",
+        80000
+      ],
+      [
+        "source",
+        80000
+      ],
+      [
+        "update",
+        80000
+      ],
+      [
+        "slot",
+        80000
+      ],
+      [
+        "camera_draw",
+        80000
+      ],
+      [
+        "camera_actual",
+        80000
+      ],
+      [
+        "image_draw_attempts",
+        80000
+      ],
+      [
+        "fallback",
+        80000
+      ],
+      [
+        "rotation",
+        80000
+      ],
+      [
+        "flip_h",
+        80000
+      ],
+      [
+        "flip_v",
+        80000
+      ],
+      [
+        "foreground_class",
+        80000
+      ],
+      [
+        "brightness",
+        80000
+      ],
+      [
+        "contrast",
+        80000
+      ],
+      [
+        "y",
+        80000
+      ],
+      [
+        "x",
+        80000
+      ],
+      [
+        "hw",
+        80000
+      ]
+    ],
+    "step_min": 1,
+    "step_max": 20000,
+    "metric_key_counts": [],
+    "outcome_counts": [],
+    "first_record_metrics": {
+      "update": 1
+    },
+    "last_record_metrics": {
+      "update": 20000
+    }
+  },
+  {
+    "path": "HRDecoder_FinalDecision_20261005/execution/parallel/node2/server_results/runs/SD_seed42/train.jsonl",
+    "ext": ".jsonl",
+    "bytes": 365453,
+    "sha256": "888796f187f0c9fa9145a2f91d95aef6bc81d307ec46953f913e50b23799a52e",
+    "line_count": 1600,
+    "valid_json_lines": 1600,
+    "invalid_json_lines": 0,
+    "top_key_counts": [
+      [
+        "update",
+        1600
+      ],
+      [
+        "time",
+        1600
+      ],
+      [
+        "loss",
+        1600
+      ],
+      [
+        "grad_norm",
+        1600
+      ],
+      [
+        "seconds",
+        1600
+      ],
+      [
+        "data_wait_seconds",
+        1600
+      ],
+      [
+        "peak_gpu_bytes",
+        1600
+      ]
+    ],
+    "step_min": 20,
+    "step_max": 32000,
+    "metric_key_counts": [
+      [
+        "loss",
+        1600
+      ]
+    ],
+    "outcome_counts": [],
+    "first_record_metrics": {
+      "update": 20,
+      "loss": 0.24188095331192017
+    },
+    "last_record_metrics": {
+      "update": 32000,
+      "loss": 0.17110899090766907
+    }
+  },
+  {
+    "path": "HRDecoder_FinalDecision_20261005/execution/reports/stream_DDR_seed2024.jsonl",
+    "ext": ".jsonl",
+    "bytes": 53275297,
+    "sha256": "0833423fe9d9d94105d3144fb522c66c34ed08cd08545a4dde6363d8b180e7ef",
+    "line_count": 256000,
+    "valid_json_lines": 256000,
+    "invalid_json_lines": 0,
+    "top_key_counts": [
+      [
+        "sid",
+        256000
+      ],
+      [
+        "source",
+        256000
+      ],
+      [
+        "update",
+        256000
+      ],
+      [
+        "slot",
+        256000
+      ],
+      [
+        "rotation",
+        256000
+      ],
+      [
+        "flip_h",
+        256000
+      ],
+      [
+        "flip_v",
+        256000
+      ],
+      [
+        "foreground_class",
+        256000
+      ],
+      [
+        "brightness",
+        256000
+      ],
+      [
+        "contrast",
+        256000
+      ],
+      [
+        "y",
+        256000
+      ],
+      [
+        "x",
+        256000
+      ],
+      [
+        "hw",
+        256000
+      ]
+    ],
+    "step_min": 1,
+    "step_max": 32000,
+    "metric_key_counts": [],
+    "outcome_counts": [],
+    "first_record_metrics": {
+      "update": 1
+    },
+    "last_record_metrics": {
+      "update": 32000
+    }
+  },
+  {
+    "path": "HRDecoder_FinalDecision_20261005/execution/reports/stream_DDR_seed42.jsonl",
+    "ext": ".jsonl",
+    "bytes": 53259228,
+    "sha256": "7bb867a5f771960a7256a2b471823687d20b61c2e18d8cd65d3a368ee93c21c8",
+    "line_count": 256000,
+    "valid_json_lines": 256000,
+    "invalid_json_lines": 0,
+    "top_key_counts": [
+      [
+        "sid",
+        256000
+      ],
+      [
+        "source",
+        256000
+      ],
+      [
+        "update",
+        256000
+      ],
+      [
+        "slot",
+        256000
+      ],
+      [
+        "rotation",
+        256000
+      ],
+      [
+        "flip_h",
+        256000
+      ],
+      [
+        "flip_v",
+        256000
+      ],
+      [
+        "foreground_class",
+        256000
+      ],
+      [
+        "brightness",
+        256000
+      ],
+      [
+        "contrast",
+        256000
+      ],
+      [
+        "y",
+        256000
+      ],
+      [
+        "x",
+        256000
+      ],
+      [
+        "hw",
+        256000
+      ]
+    ],
+    "step_min": 1,
+    "step_max": 32000,
+    "metric_key_counts": [],
+    "outcome_counts": [],
+    "first_record_metrics": {
+      "update": 1
+    },
+    "last_record_metrics": {
+      "update": 32000
+    }
+  },
+  {
+    "path": "HRDecoder_FinalDecision_20261005/execution/reports/stream_PARENT_seed2024.jsonl",
+    "ext": ".jsonl",
+    "bytes": 19910251,
+    "sha256": "982fb514bf8cd165a09fe787bc9ba64d2806214f5d8dc7ae016a64bbed182698",
+    "line_count": 96000,
+    "valid_json_lines": 96000,
+    "invalid_json_lines": 0,
+    "top_key_counts": [
+      [
+        "brightness",
+        96000
+      ],
+      [
+        "contrast",
+        96000
+      ],
+      [
+        "flip_h",
+        96000
+      ],
+      [
+        "flip_v",
+        96000
+      ],
+      [
+        "foreground_class",
+        96000
+      ],
+      [
+        "hw",
+        96000
+      ],
+      [
+        "rotation",
+        96000
+      ],
+      [
+        "sid",
+        96000
+      ],
+      [
+        "slot",
+        96000
+      ],
+      [
+        "source",
+        96000
+      ],
+      [
+        "update",
+        96000
+      ],
+      [
+        "x",
+        96000
+      ],
+      [
+        "y",
+        96000
+      ]
+    ],
+    "step_min": 12001,
+    "step_max": 24000,
+    "metric_key_counts": [],
+    "outcome_counts": [],
+    "first_record_metrics": {
+      "update": 12001
+    },
+    "last_record_metrics": {
+      "update": 24000
+    }
+  },
+  {
+    "path": "HRDecoder_FinalDecision_20261005/execution/reports/stream_TJDR_seed2024.jsonl",
+    "ext": ".jsonl",
+    "bytes": 23895858,
+    "sha256": "00dae26f7eeefd0b41987a5e2506774901828939df652e065956a1501d6877ce",
+    "line_count": 80000,
+    "valid_json_lines": 80000,
+    "invalid_json_lines": 0,
+    "top_key_counts": [
+      [
+        "sid",
+        80000
+      ],
+      [
+        "source",
+        80000
+      ],
+      [
+        "update",
+        80000
+      ],
+      [
+        "slot",
+        80000
+      ],
+      [
+        "camera_draw",
+        80000
+      ],
+      [
+        "camera_actual",
+        80000
+      ],
+      [
+        "image_draw_attempts",
+        80000
+      ],
+      [
+        "fallback",
+        80000
+      ],
+      [
+        "rotation",
+        80000
+      ],
+      [
+        "flip_h",
+        80000
+      ],
+      [
+        "flip_v",
+        80000
+      ],
+      [
+        "foreground_class",
+        80000
+      ],
+      [
+        "brightness",
+        80000
+      ],
+      [
+        "contrast",
+        80000
+      ],
+      [
+        "y",
+        80000
+      ],
+      [
+        "x",
+        80000
+      ],
+      [
+        "hw",
+        80000
+      ]
+    ],
+    "step_min": 1,
+    "step_max": 20000,
+    "metric_key_counts": [],
+    "outcome_counts": [],
+    "first_record_metrics": {
+      "update": 1
+    },
+    "last_record_metrics": {
+      "update": 20000
+    }
+  },
+  {
+    "path": "HRDecoder_FinalDecision_20261005/execution/reports/stream_TJDR_seed42.jsonl",
+    "ext": ".jsonl",
+    "bytes": 23889361,
+    "sha256": "7990174a5b5c3791a0aad746f4301edc8d69cf80d8f98f444308fc079f4824f6",
+    "line_count": 80000,
+    "valid_json_lines": 80000,
+    "invalid_json_lines": 0,
+    "top_key_counts": [
+      [
+        "sid",
+        80000
+      ],
+      [
+        "source",
+        80000
+      ],
+      [
+        "update",
+        80000
+      ],
+      [
+        "slot",
+        80000
+      ],
+      [
+        "camera_draw",
+        80000
+      ],
+      [
+        "camera_actual",
+        80000
+      ],
+      [
+        "image_draw_attempts",
+        80000
+      ],
+      [
+        "fallback",
+        80000
+      ],
+      [
+        "rotation",
+        80000
+      ],
+      [
+        "flip_h",
+        80000
+      ],
+      [
+        "flip_v",
+        80000
+      ],
+      [
+        "foreground_class",
+        80000
+      ],
+      [
+        "brightness",
+        80000
+      ],
+      [
+        "contrast",
+        80000
+      ],
+      [
+        "y",
+        80000
+      ],
+      [
+        "x",
+        80000
+      ],
+      [
+        "hw",
+        80000
+      ]
+    ],
+    "step_min": 1,
+    "step_max": 20000,
+    "metric_key_counts": [],
+    "outcome_counts": [],
+    "first_record_metrics": {
+      "update": 1
+    },
+    "last_record_metrics": {
+      "update": 20000
+    }
+  },
+  {
+    "path": "HRDecoder_FinalDecision_20261005/execution/server_results/reports/stream_DDR_seed2024.jsonl",
+    "ext": ".jsonl",
+    "bytes": 53275297,
+    "sha256": "0833423fe9d9d94105d3144fb522c66c34ed08cd08545a4dde6363d8b180e7ef",
+    "line_count": 256000,
+    "valid_json_lines": 256000,
+    "invalid_json_lines": 0,
+    "top_key_counts": [
+      [
+        "sid",
+        256000
+      ],
+      [
+        "source",
+        256000
+      ],
+      [
+        "update",
+        256000
+      ],
+      [
+        "slot",
+        256000
+      ],
+      [
+        "rotation",
+        256000
+      ],
+      [
+        "flip_h",
+        256000
+      ],
+      [
+        "flip_v",
+        256000
+      ],
+      [
+        "foreground_class",
+        256000
+      ],
+      [
+        "brightness",
+        256000
+      ],
+      [
+        "contrast",
+        256000
+      ],
+      [
+        "y",
+        256000
+      ],
+      [
+        "x",
+        256000
+      ],
+      [
+        "hw",
+        256000
+      ]
+    ],
+    "step_min": 1,
+    "step_max": 32000,
+    "metric_key_counts": [],
+    "outcome_counts": [],
+    "first_record_metrics": {
+      "update": 1
+    },
+    "last_record_metrics": {
+      "update": 32000
+    }
+  },
+  {
+    "path": "HRDecoder_FinalDecision_20261005/execution/server_results/reports/stream_DDR_seed42.jsonl",
+    "ext": ".jsonl",
+    "bytes": 53259228,
+    "sha256": "7bb867a5f771960a7256a2b471823687d20b61c2e18d8cd65d3a368ee93c21c8",
+    "line_count": 256000,
+    "valid_json_lines": 256000,
+    "invalid_json_lines": 0,
+    "top_key_counts": [
+      [
+        "sid",
+        256000
+      ],
+      [
+        "source",
+        256000
+      ],
+      [
+        "update",
+        256000
+      ],
+      [
+        "slot",
+        256000
+      ],
+      [
+        "rotation",
+        256000
+      ],
+      [
+        "flip_h",
+        256000
+      ],
+      [
+        "flip_v",
+        256000
+      ],
+      [
+        "foreground_class",
+        256000
+      ],
+      [
+        "brightness",
+        256000
+      ],
+      [
+        "contrast",
+        256000
+      ],
+      [
+        "y",
+        256000
+      ],
+      [
+        "x",
+        256000
+      ],
+      [
+        "hw",
+        256000
+      ]
+    ],
+    "step_min": 1,
+    "step_max": 32000,
+    "metric_key_counts": [],
+    "outcome_counts": [],
+    "first_record_metrics": {
+      "update": 1
+    },
+    "last_record_metrics": {
+      "update": 32000
+    }
+  },
+  {
+    "path": "HRDecoder_FinalDecision_20261005/execution/server_results/reports/stream_PARENT_seed2024.jsonl",
+    "ext": ".jsonl",
+    "bytes": 19910251,
+    "sha256": "982fb514bf8cd165a09fe787bc9ba64d2806214f5d8dc7ae016a64bbed182698",
+    "line_count": 96000,
+    "valid_json_lines": 96000,
+    "invalid_json_lines": 0,
+    "top_key_counts": [
+      [
+        "brightness",
+        96000
+      ],
+      [
+        "contrast",
+        96000
+      ],
+      [
+        "flip_h",
+        96000
+      ],
+      [
+        "flip_v",
+        96000
+      ],
+      [
+        "foreground_class",
+        96000
+      ],
+      [
+        "hw",
+        96000
+      ],
+      [
+        "rotation",
+        96000
+      ],
+      [
+        "sid",
+        96000
+      ],
+      [
+        "slot",
+        96000
+      ],
+      [
+        "source",
+        96000
+      ],
+      [
+        "update",
+        96000
+      ],
+      [
+        "x",
+        96000
+      ],
+      [
+        "y",
+        96000
+      ]
+    ],
+    "step_min": 12001,
+    "step_max": 24000,
+    "metric_key_counts": [],
+    "outcome_counts": [],
+    "first_record_metrics": {
+      "update": 12001
+    },
+    "last_record_metrics": {
+      "update": 24000
+    }
+  },
+  {
+    "path": "HRDecoder_FinalDecision_20261005/execution/server_results/reports/stream_TJDR_seed2024.jsonl",
+    "ext": ".jsonl",
+    "bytes": 23895858,
+    "sha256": "00dae26f7eeefd0b41987a5e2506774901828939df652e065956a1501d6877ce",
+    "line_count": 80000,
+    "valid_json_lines": 80000,
+    "invalid_json_lines": 0,
+    "top_key_counts": [
+      [
+        "sid",
+        80000
+      ],
+      [
+        "source",
+        80000
+      ],
+      [
+        "update",
+        80000
+      ],
+      [
+        "slot",
+        80000
+      ],
+      [
+        "camera_draw",
+        80000
+      ],
+      [
+        "camera_actual",
+        80000
+      ],
+      [
+        "image_draw_attempts",
+        80000
+      ],
+      [
+        "fallback",
+        80000
+      ],
+      [
+        "rotation",
+        80000
+      ],
+      [
+        "flip_h",
+        80000
+      ],
+      [
+        "flip_v",
+        80000
+      ],
+      [
+        "foreground_class",
+        80000
+      ],
+      [
+        "brightness",
+        80000
+      ],
+      [
+        "contrast",
+        80000
+      ],
+      [
+        "y",
+        80000
+      ],
+      [
+        "x",
+        80000
+      ],
+      [
+        "hw",
+        80000
+      ]
+    ],
+    "step_min": 1,
+    "step_max": 20000,
+    "metric_key_counts": [],
+    "outcome_counts": [],
+    "first_record_metrics": {
+      "update": 1
+    },
+    "last_record_metrics": {
+      "update": 20000
+    }
+  },
+  {
+    "path": "HRDecoder_FinalDecision_20261005/execution/server_results/reports/stream_TJDR_seed42.jsonl",
+    "ext": ".jsonl",
+    "bytes": 23889361,
+    "sha256": "7990174a5b5c3791a0aad746f4301edc8d69cf80d8f98f444308fc079f4824f6",
+    "line_count": 80000,
+    "valid_json_lines": 80000,
+    "invalid_json_lines": 0,
+    "top_key_counts": [
+      [
+        "sid",
+        80000
+      ],
+      [
+        "source",
+        80000
+      ],
+      [
+        "update",
+        80000
+      ],
+      [
+        "slot",
+        80000
+      ],
+      [
+        "camera_draw",
+        80000
+      ],
+      [
+        "camera_actual",
+        80000
+      ],
+      [
+        "image_draw_attempts",
+        80000
+      ],
+      [
+        "fallback",
+        80000
+      ],
+      [
+        "rotation",
+        80000
+      ],
+      [
+        "flip_h",
+        80000
+      ],
+      [
+        "flip_v",
+        80000
+      ],
+      [
+        "foreground_class",
+        80000
+      ],
+      [
+        "brightness",
+        80000
+      ],
+      [
+        "contrast",
+        80000
+      ],
+      [
+        "y",
+        80000
+      ],
+      [
+        "x",
+        80000
+      ],
+      [
+        "hw",
+        80000
+      ]
+    ],
+    "step_min": 1,
+    "step_max": 20000,
+    "metric_key_counts": [],
+    "outcome_counts": [],
+    "first_record_metrics": {
+      "update": 1
+    },
+    "last_record_metrics": {
+      "update": 20000
+    }
+  },
+  {
+    "path": "HRDecoder_FinalDecision_20261005/execution/server_results/runs/C_seed42/train.jsonl",
+    "ext": ".jsonl",
+    "bytes": 365819,
+    "sha256": "13bd60c4dde0a5f75a50bef2bd3b7c6736d02bd9d422ee49478ff443946b32d2",
+    "line_count": 1600,
+    "valid_json_lines": 1600,
+    "invalid_json_lines": 0,
+    "top_key_counts": [
+      [
+        "update",
+        1600
+      ],
+      [
+        "time",
+        1600
+      ],
+      [
+        "loss",
+        1600
+      ],
+      [
+        "grad_norm",
+        1600
+      ],
+      [
+        "seconds",
+        1600
+      ],
+      [
+        "data_wait_seconds",
+        1600
+      ],
+      [
+        "peak_gpu_bytes",
+        1600
+      ]
+    ],
+    "step_min": 20,
+    "step_max": 32000,
+    "metric_key_counts": [
+      [
+        "loss",
+        1600
+      ]
+    ],
+    "outcome_counts": [],
+    "first_record_metrics": {
+      "update": 20,
+      "loss": 0.18589238822460175
+    },
+    "last_record_metrics": {
+      "update": 32000,
+      "loss": 0.16995924711227417
+    }
+  },
+  {
+    "path": "HRDecoder_FinalDecision_20261005/execution/server_results/runs/D_seed42/train.jsonl",
+    "ext": ".jsonl",
+    "bytes": 365464,
+    "sha256": "2a1e743ee0ed55ab1d70401f9a2f5779811fa65180ee9e5882da57ef2656e882",
+    "line_count": 1600,
+    "valid_json_lines": 1600,
+    "invalid_json_lines": 0,
+    "top_key_counts": [
+      [
+        "update",
+        1600
+      ],
+      [
+        "time",
+        1600
+      ],
+      [
+        "loss",
+        1600
+      ],
+      [
+        "grad_norm",
+        1600
+      ],
+      [
+        "seconds",
+        1600
+      ],
+      [
+        "data_wait_seconds",
+        1600
+      ],
+      [
+        "peak_gpu_bytes",
+        1600
+      ]
+    ],
+    "step_min": 20,
+    "step_max": 32000,
+    "metric_key_counts": [
+      [
+        "loss",
+        1600
+      ]
+    ],
+    "outcome_counts": [],
+    "first_record_metrics": {
+      "update": 20,
+      "loss": 0.23713740706443787
+    },
+    "last_record_metrics": {
+      "update": 32000,
+      "loss": 0.17429545521736145
+    }
+  },
+  {
+    "path": "HRDecoder_FinalDecision_20261005/execution/server_results/runs/SD_seed42/train.jsonl",
+    "ext": ".jsonl",
+    "bytes": 365453,
+    "sha256": "888796f187f0c9fa9145a2f91d95aef6bc81d307ec46953f913e50b23799a52e",
+    "line_count": 1600,
+    "valid_json_lines": 1600,
+    "invalid_json_lines": 0,
+    "top_key_counts": [
+      [
+        "update",
+        1600
+      ],
+      [
+        "time",
+        1600
+      ],
+      [
+        "loss",
+        1600
+      ],
+      [
+        "grad_norm",
+        1600
+      ],
+      [
+        "seconds",
+        1600
+      ],
+      [
+        "data_wait_seconds",
+        1600
+      ],
+      [
+        "peak_gpu_bytes",
+        1600
+      ]
+    ],
+    "step_min": 20,
+    "step_max": 32000,
+    "metric_key_counts": [
+      [
+        "loss",
+        1600
+      ]
+    ],
+    "outcome_counts": [],
+    "first_record_metrics": {
+      "update": 20,
+      "loss": 0.24188095331192017
+    },
+    "last_record_metrics": {
+      "update": 32000,
+      "loss": 0.17110899090766907
+    }
+  },
+  {
+    "path": "HRDecoder_FinalDecision_20261005/execution/server_results/runs/S_seed42/train.jsonl",
+    "ext": ".jsonl",
+    "bytes": 365923,
+    "sha256": "8f29f46e6ffb316b825768d8aa9e005694e1dde39f3cc9ed65128dd6efb11114",
+    "line_count": 1600,
+    "valid_json_lines": 1600,
+    "invalid_json_lines": 0,
+    "top_key_counts": [
+      [
+        "update",
+        1600
+      ],
+      [
+        "time",
+        1600
+      ],
+      [
+        "loss",
+        1600
+      ],
+      [
+        "grad_norm",
+        1600
+      ],
+      [
+        "seconds",
+        1600
+      ],
+      [
+        "data_wait_seconds",
+        1600
+      ],
+      [
+        "peak_gpu_bytes",
+        1600
+      ]
+    ],
+    "step_min": 20,
+    "step_max": 32000,
+    "metric_key_counts": [
+      [
+        "loss",
+        1600
+      ]
+    ],
+    "outcome_counts": [],
+    "first_record_metrics": {
+      "update": 20,
+      "loss": 0.18996362388134003
+    },
+    "last_record_metrics": {
+      "update": 32000,
+      "loss": 0.17329441010951996
+    }
+  },
+  {
+    "path": "HRDecoder_FullCompetition_20260920/data_contract/example_manifest.jsonl",
+    "ext": ".jsonl",
+    "bytes": 5064,
+    "sha256": "1c6685131221580c7d41cea5d91e58d671b4ce4fed7c076b705bde3cb9b0efbd",
+    "line_count": 3,
+    "valid_json_lines": 3,
+    "invalid_json_lines": 0,
+    "top_key_counts": [
+      [
+        "schema_version",
+        3
+      ],
+      [
+        "sample_id",
+        3
+      ],
+      [
+        "source",
+        3
+      ],
+      [
+        "source_version",
+        3
+      ],
+      [
+        "official_split",
+        3
+      ],
+      [
+        "patient_id",
+        3
+      ],
+      [
+        "patient_id_source",
+        3
+      ],
+      [
+        "image_id",
+        3
+      ],
+      [
+        "original_width",
+        3
+      ],
+      [
+        "original_height",
+        3
+      ],
+      [
+        "image",
+        3
+      ],
+      [
+        "lesions",
+        3
+      ],
+      [
+        "perceptual_hash",
+        3
+      ],
+      [
+        "notes",
+        3
+      ]
+    ],
+    "step_min": null,
+    "step_max": null,
+    "metric_key_counts": [],
+    "outcome_counts": [],
+    "first_record_metrics": null,
+    "last_record_metrics": null
+  },
+  {
+    "path": "HRDecoder_FullCompetition_20260920/tests/_tmp/manifests/audit_negative_missing_image.jsonl",
+    "ext": ".jsonl",
+    "bytes": 3250,
+    "sha256": "1c4ecbae9b5af1fb190f411a497392623c2b04f635f54a71ff4a3fca1552d022",
+    "line_count": 2,
+    "valid_json_lines": 2,
+    "invalid_json_lines": 0,
+    "top_key_counts": [
+      [
+        "schema_version",
+        2
+      ],
+      [
+        "sample_id",
+        2
+      ],
+      [
+        "source",
+        2
+      ],
+      [
+        "source_version",
+        2
+      ],
+      [
+        "official_split",
+        2
+      ],
+      [
+        "patient_id",
+        2
+      ],
+      [
+        "patient_id_source",
+        2
+      ],
+      [
+        "image_id",
+        2
+      ],
+      [
+        "original_width",
+        2
+      ],
+      [
+        "original_height",
+        2
+      ],
+      [
+        "image",
+        2
+      ],
+      [
+        "lesions",
+        2
+      ],
+      [
+        "perceptual_hash",
+        2
+      ],
+      [
+        "notes",
+        2
+      ]
+    ],
+    "step_min": null,
+    "step_max": null,
+    "metric_key_counts": [],
+    "outcome_counts": [],
+    "first_record_metrics": null,
+    "last_record_metrics": null
+  },
+  {
+    "path": "HRDecoder_FullCompetition_20260920/tests/_tmp/manifests/audit_negative_missing_mask.jsonl",
+    "ext": ".jsonl",
+    "bytes": 3253,
+    "sha256": "0157b3a5131b95e1b6f6c546907a24b800a1f6f9fd7e31c993ffae93ad5cb9d6",
+    "line_count": 2,
+    "valid_json_lines": 2,
+    "invalid_json_lines": 0,
+    "top_key_counts": [
+      [
+        "schema_version",
+        2
+      ],
+      [
+        "sample_id",
+        2
+      ],
+      [
+        "source",
+        2
+      ],
+      [
+        "source_version",
+        2
+      ],
+      [
+        "official_split",
+        2
+      ],
+      [
+        "patient_id",
+        2
+      ],
+      [
+        "patient_id_source",
+        2
+      ],
+      [
+        "image_id",
+        2
+      ],
+      [
+        "original_width",
+        2
+      ],
+      [
+        "original_height",
+        2
+      ],
+      [
+        "image",
+        2
+      ],
+      [
+        "lesions",
+        2
+      ],
+      [
+        "perceptual_hash",
+        2
+      ],
+      [
+        "notes",
+        2
+      ]
+    ],
+    "step_min": null,
+    "step_max": null,
+    "metric_key_counts": [],
+    "outcome_counts": [],
+    "first_record_metrics": null,
+    "last_record_metrics": null
+  },
+  {
+    "path": "HRDecoder_FullCompetition_20260920/tests/_tmp/manifests/audit_negative_valid_none_with_mask.jsonl",
+    "ext": ".jsonl",
+    "bytes": 3380,
+    "sha256": "ab83b47bb6b02db7e9e37c81b517fcb849b41ed7536a0a4603553706c7e034f3",
+    "line_count": 2,
+    "valid_json_lines": 2,
+    "invalid_json_lines": 0,
+    "top_key_counts": [
+      [
+        "schema_version",
+        2
+      ],
+      [
+        "sample_id",
+        2
+      ],
+      [
+        "source",
+        2
+      ],
+      [
+        "source_version",
+        2
+      ],
+      [
+        "official_split",
+        2
+      ],
+      [
+        "patient_id",
+        2
+      ],
+      [
+        "patient_id_source",
+        2
+      ],
+      [
+        "image_id",
+        2
+      ],
+      [
+        "original_width",
+        2
+      ],
+      [
+        "original_height",
+        2
+      ],
+      [
+        "image",
+        2
+      ],
+      [
+        "lesions",
+        2
+      ],
+      [
+        "perceptual_hash",
+        2
+      ],
+      [
+        "notes",
+        2
+      ]
+    ],
+    "step_min": null,
+    "step_max": null,
+    "metric_key_counts": [],
+    "outcome_counts": [],
+    "first_record_metrics": null,
+    "last_record_metrics": null
+  },
+  {
+    "path": "HRDecoder_FullCompetition_20260920/tests/_tmp/manifests/external_train_manifest.jsonl",
+    "ext": ".jsonl",
+    "bytes": 3254,
+    "sha256": "07253015decb6b79b5ca43250476e149b16bfe7f56cfbc6fd9ad077a65702391",
+    "line_count": 2,
+    "valid_json_lines": 2,
+    "invalid_json_lines": 0,
+    "top_key_counts": [
+      [
+        "schema_version",
+        2
+      ],
+      [
+        "sample_id",
+        2
+      ],
+      [
+        "source",
+        2
+      ],
+      [
+        "source_version",
+        2
+      ],
+      [
+        "official_split",
+        2
+      ],
+      [
+        "patient_id",
+        2
+      ],
+      [
+        "patient_id_source",
+        2
+      ],
+      [
+        "image_id",
+        2
+      ],
+      [
+        "original_width",
+        2
+      ],
+      [
+        "original_height",
+        2
+      ],
+      [
+        "image",
+        2
+      ],
+      [
+        "lesions",
+        2
+      ],
+      [
+        "perceptual_hash",
+        2
+      ],
+      [
+        "notes",
+        2
+      ]
+    ],
+    "step_min": null,
+    "step_max": null,
+    "metric_key_counts": [],
+    "outcome_counts": [],
+    "first_record_metrics": null,
+    "last_record_metrics": null
+  },
+  {
+    "path": "HRDecoder_FusionAware_20260917/pulled/20260918T082557/protocol_amendments.jsonl",
+    "ext": ".jsonl",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "line_count": 0,
+    "valid_json_lines": 0,
+    "invalid_json_lines": 0,
+    "top_key_counts": [],
+    "step_min": null,
+    "step_max": null,
+    "metric_key_counts": [],
+    "outcome_counts": [],
+    "first_record_metrics": null,
+    "last_record_metrics": null
+  },
+  {
+    "path": "HRDecoder_FusionAware_20260917/pulled/20260918T102225/protocol_amendments.jsonl",
+    "ext": ".jsonl",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "line_count": 0,
+    "valid_json_lines": 0,
+    "invalid_json_lines": 0,
+    "top_key_counts": [],
+    "step_min": null,
+    "step_max": null,
+    "metric_key_counts": [],
+    "outcome_counts": [],
+    "first_record_metrics": null,
+    "last_record_metrics": null
+  },
+  {
+    "path": "HRDecoder_FusionAware_20260917/pulled/20260918T102757/protocol_amendments.jsonl",
+    "ext": ".jsonl",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "line_count": 0,
+    "valid_json_lines": 0,
+    "invalid_json_lines": 0,
+    "top_key_counts": [],
+    "step_min": null,
+    "step_max": null,
+    "metric_key_counts": [],
+    "outcome_counts": [],
+    "first_record_metrics": null,
+    "last_record_metrics": null
+  },
+  {
+    "path": "HRDecoder_FusionAware_20260917/pulled/final_20260918T184943/r6b_DEVIATIONS.jsonl",
+    "ext": ".jsonl",
+    "bytes": 623,
+    "sha256": "2672bd42e6d6e75c5e8ce8620e8d4263c4f35835c09a20be3c185043a0db8a2c",
+    "line_count": 1,
+    "valid_json_lines": 1,
+    "invalid_json_lines": 0,
+    "top_key_counts": [
+      [
+        "detail",
+        1
+      ],
+      [
+        "kind",
+        1
+      ],
+      [
+        "time",
+        1
+      ]
+    ],
+    "step_min": null,
+    "step_max": null,
+    "metric_key_counts": [],
+    "outcome_counts": [],
+    "first_record_metrics": null,
+    "last_record_metrics": null
+  },
+  {
+    "path": "HRDecoder_FusionAware_20260917/pulled/final_20260918T184943/r6_DEVIATIONS.jsonl",
+    "ext": ".jsonl",
+    "bytes": 1476,
+    "sha256": "e31ee6ca517acf4f046d8ae9e8d166749e31a35c2c503996dd723110a82d4dd7",
+    "line_count": 5,
+    "valid_json_lines": 5,
+    "invalid_json_lines": 0,
+    "top_key_counts": [
+      [
+        "detail",
+        5
+      ],
+      [
+        "kind",
+        5
+      ],
+      [
+        "time",
+        5
+      ]
+    ],
+    "step_min": null,
+    "step_max": null,
+    "metric_key_counts": [],
+    "outcome_counts": [],
+    "first_record_metrics": null,
+    "last_record_metrics": null
+  },
+  {
+    "path": "HRDecoder_FusionAware_20260917/pulled/r5_final_20260918T131631/DEVIATIONS.jsonl",
+    "ext": ".jsonl",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "line_count": 0,
+    "valid_json_lines": 0,
+    "invalid_json_lines": 0,
+    "top_key_counts": [],
+    "step_min": null,
+    "step_max": null,
+    "metric_key_counts": [],
+    "outcome_counts": [],
+    "first_record_metrics": null,
+    "last_record_metrics": null
+  },
+  {
+    "path": "HRDecoder_FusionAware_20260917/pulled/r5_final_20260918T131639/DEVIATIONS.jsonl",
+    "ext": ".jsonl",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "line_count": 0,
+    "valid_json_lines": 0,
+    "invalid_json_lines": 0,
+    "top_key_counts": [],
+    "step_min": null,
+    "step_max": null,
+    "metric_key_counts": [],
+    "outcome_counts": [],
+    "first_record_metrics": null,
+    "last_record_metrics": null
+  },
+  {
+    "path": "HRDecoder_NextPlan_20261004/execution/reports/affected_windows_seed2024.jsonl",
+    "ext": ".jsonl",
+    "bytes": 2730393,
+    "sha256": "79ff9805e10f43d1d1d34554eb7a40f90b9bbb72e50552738b25caf569750bf5",
+    "line_count": 11098,
+    "valid_json_lines": 11098,
+    "invalid_json_lines": 0,
+    "top_key_counts": [
+      [
+        "brightness",
+        11098
+      ],
+      [
+        "class",
+        11098
+      ],
+      [
+        "contrast",
+        11098
+      ],
+      [
+        "flip_h",
+        11098
+      ],
+      [
+        "flip_v",
+        11098
+      ],
+      [
+        "foreground_class",
+        11098
+      ],
+      [
+        "hw",
+        11098
+      ],
+      [
+        "rotation",
+        11098
+      ],
+      [
+        "sid",
+        11098
+      ],
+      [
+        "slot",
+        11098
+      ],
+      [
+        "source",
+        11098
+      ],
+      [
+        "update",
+        11098
+      ],
+      [
+        "x",
+        11098
+      ],
+      [
+        "y",
+        11098
+      ]
+    ],
+    "step_min": 2,
+    "step_max": 12000,
+    "metric_key_counts": [],
+    "outcome_counts": [],
+    "first_record_metrics": {
+      "update": 2
+    },
+    "last_record_metrics": {
+      "update": 12000
+    }
+  },
+  {
+    "path": "HRDecoder_NextPlan_20261004/execution/reports/affected_windows_seed42.jsonl",
+    "ext": ".jsonl",
+    "bytes": 2731369,
+    "sha256": "6807554c9944b6864674cd71e54575fb81dee9625d16e9aec1c1714ad9e995f2",
+    "line_count": 11115,
+    "valid_json_lines": 11115,
+    "invalid_json_lines": 0,
+    "top_key_counts": [
+      [
+        "brightness",
+        11115
+      ],
+      [
+        "class",
+        11115
+      ],
+      [
+        "contrast",
+        11115
+      ],
+      [
+        "flip_h",
+        11115
+      ],
+      [
+        "flip_v",
+        11115
+      ],
+      [
+        "foreground_class",
+        11115
+      ],
+      [
+        "hw",
+        11115
+      ],
+      [
+        "rotation",
+        11115
+      ],
+      [
+        "sid",
+        11115
+      ],
+      [
+        "slot",
+        11115
+      ],
+      [
+        "source",
+        11115
+      ],
+      [
+        "update",
+        11115
+      ],
+      [
+        "x",
+        11115
+      ],
+      [
+        "y",
+        11115
+      ]
+    ],
+    "step_min": 2,
+    "step_max": 11999,
+    "metric_key_counts": [],
+    "outcome_counts": [],
+    "first_record_metrics": {
+      "update": 2
+    },
+    "last_record_metrics": {
+      "update": 11999
+    }
+  },
+  {
+    "path": "HRDecoder_NextPlan_20261004/execution/reports/stream_E_NEG_seed2024.jsonl",
+    "ext": ".jsonl",
+    "bytes": 39962702,
+    "sha256": "288eb05725024f807a85ca028ad2d356650063d098d8e219f5b4ed06fcaac0cd",
+    "line_count": 192000,
+    "valid_json_lines": 192000,
+    "invalid_json_lines": 0,
+    "top_key_counts": [
+      [
+        "brightness",
+        192000
+      ],
+      [
+        "contrast",
+        192000
+      ],
+      [
+        "flip_h",
+        192000
+      ],
+      [
+        "flip_v",
+        192000
+      ],
+      [
+        "foreground_class",
+        192000
+      ],
+      [
+        "hw",
+        192000
+      ],
+      [
+        "rotation",
+        192000
+      ],
+      [
+        "sid",
+        192000
+      ],
+      [
+        "slot",
+        192000
+      ],
+      [
+        "source",
+        192000
+      ],
+      [
+        "update",
+        192000
+      ],
+      [
+        "x",
+        192000
+      ],
+      [
+        "y",
+        192000
+      ]
+    ],
+    "step_min": 1,
+    "step_max": 24000,
+    "metric_key_counts": [],
+    "outcome_counts": [],
+    "first_record_metrics": {
+      "update": 1
+    },
+    "last_record_metrics": {
+      "update": 24000
+    }
+  },
+  {
+    "path": "HRDecoder_NextPlan_20261004/execution/reports/stream_E_NEG_seed42.jsonl",
+    "ext": ".jsonl",
+    "bytes": 39935521,
+    "sha256": "7a0e4a655726f4ec76a9d46abec508132bb5c4999846d4d48181838faa1fddf8",
+    "line_count": 192000,
+    "valid_json_lines": 192000,
+    "invalid_json_lines": 0,
+    "top_key_counts": [
+      [
+        "brightness",
+        192000
+      ],
+      [
+        "contrast",
+        192000
+      ],
+      [
+        "flip_h",
+        192000
+      ],
+      [
+        "flip_v",
+        192000
+      ],
+      [
+        "foreground_class",
+        192000
+      ],
+      [
+        "hw",
+        192000
+      ],
+      [
+        "rotation",
+        192000
+      ],
+      [
+        "sid",
+        192000
+      ],
+      [
+        "slot",
+        192000
+      ],
+      [
+        "source",
+        192000
+      ],
+      [
+        "update",
+        192000
+      ],
+      [
+        "x",
+        192000
+      ],
+      [
+        "y",
+        192000
+      ]
+    ],
+    "step_min": 1,
+    "step_max": 24000,
+    "metric_key_counts": [],
+    "outcome_counts": [],
+    "first_record_metrics": {
+      "update": 1
+    },
+    "last_record_metrics": {
+      "update": 24000
+    }
+  },
+  {
+    "path": "HRDecoder_NextPlan_20261004/execution/reports/stream_F_seed2024.jsonl",
+    "ext": ".jsonl",
+    "bytes": 19910251,
+    "sha256": "982fb514bf8cd165a09fe787bc9ba64d2806214f5d8dc7ae016a64bbed182698",
+    "line_count": 96000,
+    "valid_json_lines": 96000,
+    "invalid_json_lines": 0,
+    "top_key_counts": [
+      [
+        "brightness",
+        96000
+      ],
+      [
+        "contrast",
+        96000
+      ],
+      [
+        "flip_h",
+        96000
+      ],
+      [
+        "flip_v",
+        96000
+      ],
+      [
+        "foreground_class",
+        96000
+      ],
+      [
+        "hw",
+        96000
+      ],
+      [
+        "rotation",
+        96000
+      ],
+      [
+        "sid",
+        96000
+      ],
+      [
+        "slot",
+        96000
+      ],
+      [
+        "source",
+        96000
+      ],
+      [
+        "update",
+        96000
+      ],
+      [
+        "x",
+        96000
+      ],
+      [
+        "y",
+        96000
+      ]
+    ],
+    "step_min": 12001,
+    "step_max": 24000,
+    "metric_key_counts": [],
+    "outcome_counts": [],
+    "first_record_metrics": {
+      "update": 12001
+    },
+    "last_record_metrics": {
+      "update": 24000
+    }
+  },
+  {
+    "path": "HRDecoder_NextPlan_20261004/execution/reports/stream_F_seed42.jsonl",
+    "ext": ".jsonl",
+    "bytes": 19905050,
+    "sha256": "bfe3bb8d725e5cc317ec44501f4baedaf76e6ced767e751789968fca5cb253da",
+    "line_count": 96000,
+    "valid_json_lines": 96000,
+    "invalid_json_lines": 0,
+    "top_key_counts": [
+      [
+        "brightness",
+        96000
+      ],
+      [
+        "contrast",
+        96000
+      ],
+      [
+        "flip_h",
+        96000
+      ],
+      [
+        "flip_v",
+        96000
+      ],
+      [
+        "foreground_class",
+        96000
+      ],
+      [
+        "hw",
+        96000
+      ],
+      [
+        "rotation",
+        96000
+      ],
+      [
+        "sid",
+        96000
+      ],
+      [
+        "slot",
+        96000
+      ],
+      [
+        "source",
+        96000
+      ],
+      [
+        "update",
+        96000
+      ],
+      [
+        "x",
+        96000
+      ],
+      [
+        "y",
+        96000
+      ]
+    ],
+    "step_min": 12001,
+    "step_max": 24000,
+    "metric_key_counts": [],
+    "outcome_counts": [],
+    "first_record_metrics": {
+      "update": 12001
+    },
+    "last_record_metrics": {
+      "update": 24000
+    }
+  },
+  {
+    "path": "HRDecoder_NextPlan_20261004/execution/reports/performance_revision_20261004/train.before.jsonl",
+    "ext": ".jsonl",
+    "bytes": 16462,
+    "sha256": "001eb01ea7f852d07b4a5fc1903ee96a3ab5e75b2aa013e2411a862addd2b38d",
+    "line_count": 80,
+    "valid_json_lines": 80,
+    "invalid_json_lines": 0,
+    "top_key_counts": [
+      [
+        "update",
+        80
+      ],
+      [
+        "loss",
+        80
+      ],
+      [
+        "seconds_per_update",
+        80
+      ],
+      [
+        "data_wait_seconds",
+        80
+      ],
+      [
+        "grad_norm",
+        80
+      ],
+      [
+        "time",
+        80
+      ]
+    ],
+    "step_min": 20,
+    "step_max": 1600,
+    "metric_key_counts": [
+      [
+        "loss",
+        80
+      ]
+    ],
+    "outcome_counts": [],
+    "first_record_metrics": {
+      "update": 20,
+      "loss": 0.5931832790374756
+    },
+    "last_record_metrics": {
+      "update": 1600,
+      "loss": 0.24047549441456795
+    }
+  },
+  {
+    "path": "HRDecoder_NextPlan_20261004/execution/server_results/reports/affected_windows_seed2024.jsonl",
+    "ext": ".jsonl",
+    "bytes": 2730393,
+    "sha256": "79ff9805e10f43d1d1d34554eb7a40f90b9bbb72e50552738b25caf569750bf5",
+    "line_count": 11098,
+    "valid_json_lines": 11098,
+    "invalid_json_lines": 0,
+    "top_key_counts": [
+      [
+        "brightness",
+        11098
+      ],
+      [
+        "class",
+        11098
+      ],
+      [
+        "contrast",
+        11098
+      ],
+      [
+        "flip_h",
+        11098
+      ],
+      [
+        "flip_v",
+        11098
+      ],
+      [
+        "foreground_class",
+        11098
+      ],
+      [
+        "hw",
+        11098
+      ],
+      [
+        "rotation",
+        11098
+      ],
+      [
+        "sid",
+        11098
+      ],
+      [
+        "slot",
+        11098
+      ],
+      [
+        "source",
+        11098
+      ],
+      [
+        "update",
+        11098
+      ],
+      [
+        "x",
+        11098
+      ],
+      [
+        "y",
+        11098
+      ]
+    ],
+    "step_min": 2,
+    "step_max": 12000,
+    "metric_key_counts": [],
+    "outcome_counts": [],
+    "first_record_metrics": {
+      "update": 2
+    },
+    "last_record_metrics": {
+      "update": 12000
+    }
+  },
+  {
+    "path": "HRDecoder_NextPlan_20261004/execution/server_results/reports/affected_windows_seed42.jsonl",
+    "ext": ".jsonl",
+    "bytes": 2731369,
+    "sha256": "6807554c9944b6864674cd71e54575fb81dee9625d16e9aec1c1714ad9e995f2",
+    "line_count": 11115,
+    "valid_json_lines": 11115,
+    "invalid_json_lines": 0,
+    "top_key_counts": [
+      [
+        "brightness",
+        11115
+      ],
+      [
+        "class",
+        11115
+      ],
+      [
+        "contrast",
+        11115
+      ],
+      [
+        "flip_h",
+        11115
+      ],
+      [
+        "flip_v",
+        11115
+      ],
+      [
+        "foreground_class",
+        11115
+      ],
+      [
+        "hw",
+        11115
+      ],
+      [
+        "rotation",
+        11115
+      ],
+      [
+        "sid",
+        11115
+      ],
+      [
+        "slot",
+        11115
+      ],
+      [
+        "source",
+        11115
+      ],
+      [
+        "update",
+        11115
+      ],
+      [
+        "x",
+        11115
+      ],
+      [
+        "y",
+        11115
+      ]
+    ],
+    "step_min": 2,
+    "step_max": 11999,
+    "metric_key_counts": [],
+    "outcome_counts": [],
+    "first_record_metrics": {
+      "update": 2
+    },
+    "last_record_metrics": {
+      "update": 11999
+    }
+  },
+  {
+    "path": "HRDecoder_NextPlan_20261004/execution/server_results/reports/stream_E_NEG_seed2024.jsonl",
+    "ext": ".jsonl",
+    "bytes": 39962702,
+    "sha256": "288eb05725024f807a85ca028ad2d356650063d098d8e219f5b4ed06fcaac0cd",
+    "line_count": 192000,
+    "valid_json_lines": 192000,
+    "invalid_json_lines": 0,
+    "top_key_counts": [
+      [
+        "brightness",
+        192000
+      ],
+      [
+        "contrast",
+        192000
+      ],
+      [
+        "flip_h",
+        192000
+      ],
+      [
+        "flip_v",
+        192000
+      ],
+      [
+        "foreground_class",
+        192000
+      ],
+      [
+        "hw",
+        192000
+      ],
+      [
+        "rotation",
+        192000
+      ],
+      [
+        "sid",
+        192000
+      ],
+      [
+        "slot",
+        192000
+      ],
+      [
+        "source",
+        192000
+      ],
+      [
+        "update",
+        192000
+      ],
+      [
+        "x",
+        192000
+      ],
+      [
+        "y",
+        192000
+      ]
+    ],
+    "step_min": 1,
+    "step_max": 24000,
+    "metric_key_counts": [],
+    "outcome_counts": [],
+    "first_record_metrics": {
+      "update": 1
+    },
+    "last_record_metrics": {
+      "update": 24000
+    }
+  },
+  {
+    "path": "HRDecoder_NextPlan_20261004/execution/server_results/reports/stream_E_NEG_seed42.jsonl",
+    "ext": ".jsonl",
+    "bytes": 39935521,
+    "sha256": "7a0e4a655726f4ec76a9d46abec508132bb5c4999846d4d48181838faa1fddf8",
+    "line_count": 192000,
+    "valid_json_lines": 192000,
+    "invalid_json_lines": 0,
+    "top_key_counts": [
+      [
+        "brightness",
+        192000
+      ],
+      [
+        "contrast",
+        192000
+      ],
+      [
+        "flip_h",
+        192000
+      ],
+      [
+        "flip_v",
+        192000
+      ],
+      [
+        "foreground_class",
+        192000
+      ],
+      [
+        "hw",
+        192000
+      ],
+      [
+        "rotation",
+        192000
+      ],
+      [
+        "sid",
+        192000
+      ],
+      [
+        "slot",
+        192000
+      ],
+      [
+        "source",
+        192000
+      ],
+      [
+        "update",
+        192000
+      ],
+      [
+        "x",
+        192000
+      ],
+      [
+        "y",
+        192000
+      ]
+    ],
+    "step_min": 1,
+    "step_max": 24000,
+    "metric_key_counts": [],
+    "outcome_counts": [],
+    "first_record_metrics": {
+      "update": 1
+    },
+    "last_record_metrics": {
+      "update": 24000
+    }
+  },
+  {
+    "path": "HRDecoder_NextPlan_20261004/execution/server_results/reports/stream_F_seed2024.jsonl",
+    "ext": ".jsonl",
+    "bytes": 19910251,
+    "sha256": "982fb514bf8cd165a09fe787bc9ba64d2806214f5d8dc7ae016a64bbed182698",
+    "line_count": 96000,
+    "valid_json_lines": 96000,
+    "invalid_json_lines": 0,
+    "top_key_counts": [
+      [
+        "brightness",
+        96000
+      ],
+      [
+        "contrast",
+        96000
+      ],
+      [
+        "flip_h",
+        96000
+      ],
+      [
+        "flip_v",
+        96000
+      ],
+      [
+        "foreground_class",
+        96000
+      ],
+      [
+        "hw",
+        96000
+      ],
+      [
+        "rotation",
+        96000
+      ],
+      [
+        "sid",
+        96000
+      ],
+      [
+        "slot",
+        96000
+      ],
+      [
+        "source",
+        96000
+      ],
+      [
+        "update",
+        96000
+      ],
+      [
+        "x",
+        96000
+      ],
+      [
+        "y",
+        96000
+      ]
+    ],
+    "step_min": 12001,
+    "step_max": 24000,
+    "metric_key_counts": [],
+    "outcome_counts": [],
+    "first_record_metrics": {
+      "update": 12001
+    },
+    "last_record_metrics": {
+      "update": 24000
+    }
+  },
+  {
+    "path": "HRDecoder_NextPlan_20261004/execution/server_results/reports/stream_F_seed42.jsonl",
+    "ext": ".jsonl",
+    "bytes": 19905050,
+    "sha256": "bfe3bb8d725e5cc317ec44501f4baedaf76e6ced767e751789968fca5cb253da",
+    "line_count": 96000,
+    "valid_json_lines": 96000,
+    "invalid_json_lines": 0,
+    "top_key_counts": [
+      [
+        "brightness",
+        96000
+      ],
+      [
+        "contrast",
+        96000
+      ],
+      [
+        "flip_h",
+        96000
+      ],
+      [
+        "flip_v",
+        96000
+      ],
+      [
+        "foreground_class",
+        96000
+      ],
+      [
+        "hw",
+        96000
+      ],
+      [
+        "rotation",
+        96000
+      ],
+      [
+        "sid",
+        96000
+      ],
+      [
+        "slot",
+        96000
+      ],
+      [
+        "source",
+        96000
+      ],
+      [
+        "update",
+        96000
+      ],
+      [
+        "x",
+        96000
+      ],
+      [
+        "y",
+        96000
+      ]
+    ],
+    "step_min": 12001,
+    "step_max": 24000,
+    "metric_key_counts": [],
+    "outcome_counts": [],
+    "first_record_metrics": {
+      "update": 12001
+    },
+    "last_record_metrics": {
+      "update": 24000
+    }
+  },
+  {
+    "path": "HRDecoder_NextPlan_20261004/execution/server_results/reports/performance_revision_20261004/train.before.jsonl",
+    "ext": ".jsonl",
+    "bytes": 16462,
+    "sha256": "001eb01ea7f852d07b4a5fc1903ee96a3ab5e75b2aa013e2411a862addd2b38d",
+    "line_count": 80,
+    "valid_json_lines": 80,
+    "invalid_json_lines": 0,
+    "top_key_counts": [
+      [
+        "update",
+        80
+      ],
+      [
+        "loss",
+        80
+      ],
+      [
+        "seconds_per_update",
+        80
+      ],
+      [
+        "data_wait_seconds",
+        80
+      ],
+      [
+        "grad_norm",
+        80
+      ],
+      [
+        "time",
+        80
+      ]
+    ],
+    "step_min": 20,
+    "step_max": 1600,
+    "metric_key_counts": [
+      [
+        "loss",
+        80
+      ]
+    ],
+    "outcome_counts": [],
+    "first_record_metrics": {
+      "update": 20,
+      "loss": 0.5931832790374756
+    },
+    "last_record_metrics": {
+      "update": 1600,
+      "loss": 0.24047549441456795
+    }
+  },
+  {
+    "path": "HRDecoder_NextPlan_20261004/execution/server_results/runs/E_NEG_seed42/train.jsonl",
+    "ext": ".jsonl",
+    "bytes": 251139,
+    "sha256": "0c546550d58ef608e1303956d5b6c47245adfce6bb3413e64d81fc2d252f7c2b",
+    "line_count": 1200,
+    "valid_json_lines": 1200,
+    "invalid_json_lines": 0,
+    "top_key_counts": [
+      [
+        "update",
+        1200
+      ],
+      [
+        "loss",
+        1200
+      ],
+      [
+        "seconds_per_update",
+        1200
+      ],
+      [
+        "data_wait_seconds",
+        1200
+      ],
+      [
+        "grad_norm",
+        1200
+      ],
+      [
+        "time",
+        1200
+      ]
+    ],
+    "step_min": 20,
+    "step_max": 24000,
+    "metric_key_counts": [
+      [
+        "loss",
+        1200
+      ]
+    ],
+    "outcome_counts": [],
+    "first_record_metrics": {
+      "update": 20,
+      "loss": 0.5931832790374756
+    },
+    "last_record_metrics": {
+      "update": 24000,
+      "loss": 0.2160930559039116
+    }
+  },
+  {
+    "path": "HRDecoder_NextPlan_20261004/execution/server_results/runs/F12_seed42/train.jsonl",
+    "ext": ".jsonl",
+    "bytes": 124827,
+    "sha256": "b688d35be7a99011bf8eb5e9f4c951c23b54fda4718ccca8ff95a4db17ce06ab",
+    "line_count": 600,
+    "valid_json_lines": 600,
+    "invalid_json_lines": 0,
+    "top_key_counts": [
+      [
+        "update",
+        600
+      ],
+      [
+        "loss",
+        600
+      ],
+      [
+        "seconds_per_update",
+        600
+      ],
+      [
+        "data_wait_seconds",
+        600
+      ],
+      [
+        "grad_norm",
+        600
+      ],
+      [
+        "time",
+        600
+      ]
+    ],
+    "step_min": 20,
+    "step_max": 12000,
+    "metric_key_counts": [
+      [
+        "loss",
+        600
+      ]
+    ],
+    "outcome_counts": [],
+    "first_record_metrics": {
+      "update": 20,
+      "loss": 0.17793461121618748
+    },
+    "last_record_metrics": {
+      "update": 12000,
+      "loss": 0.20351702719926834
+    }
+  },
+  {
+    "path": "HRDecoder_NextPlan_20261004/execution/server_results/runs/F4_seed42/train.jsonl",
+    "ext": ".jsonl",
+    "bytes": 125397,
+    "sha256": "f233aa242bf7027e3e8729a54c62d1b5fc21b2a0312976786e58f36adf3cfa75",
+    "line_count": 600,
+    "valid_json_lines": 600,
+    "invalid_json_lines": 0,
+    "top_key_counts": [
+      [
+        "update",
+        600
+      ],
+      [
+        "loss",
+        600
+      ],
+      [
+        "seconds_per_update",
+        600
+      ],
+      [
+        "data_wait_seconds",
+        600
+      ],
+      [
+        "grad_norm",
+        600
+      ],
+      [
+        "time",
+        600
+      ]
+    ],
+    "step_min": 20,
+    "step_max": 12000,
+    "metric_key_counts": [
+      [
+        "loss",
+        600
+      ]
+    ],
+    "outcome_counts": [],
+    "first_record_metrics": {
+      "update": 20,
+      "loss": 0.17798514105379581
+    },
+    "last_record_metrics": {
+      "update": 12000,
+      "loss": 0.2161988839507103
+    }
+  },
+  {
+    "path": "HRDecoder_Q_20261003/reports/stream_Q_DDR_seed42.jsonl",
+    "ext": ".jsonl",
+    "bytes": 39730012,
+    "sha256": "aa95f47b6a967db5e175da8b216859477d0e6746006693d15e8176a80836359f",
+    "line_count": 192000,
+    "valid_json_lines": 192000,
+    "invalid_json_lines": 0,
+    "top_key_counts": [
+      [
+        "brightness",
+        192000
+      ],
+      [
+        "contrast",
+        192000
+      ],
+      [
+        "flip_h",
+        192000
+      ],
+      [
+        "flip_v",
+        192000
+      ],
+      [
+        "foreground_class",
+        192000
+      ],
+      [
+        "hw",
+        192000
+      ],
+      [
+        "rotation",
+        192000
+      ],
+      [
+        "sid",
+        192000
+      ],
+      [
+        "slot",
+        192000
+      ],
+      [
+        "source",
+        192000
+      ],
+      [
+        "update",
+        192000
+      ],
+      [
+        "x",
+        192000
+      ],
+      [
+        "y",
+        192000
+      ]
+    ],
+    "step_min": 1,
+    "step_max": 24000,
+    "metric_key_counts": [],
+    "outcome_counts": [],
+    "first_record_metrics": {
+      "update": 1
+    },
+    "last_record_metrics": {
+      "update": 24000
+    }
+  },
+  {
+    "path": "HRDecoder_Q_20261003/server_results/reports/stream_Q_DDR_seed2024.jsonl",
+    "ext": ".jsonl",
+    "bytes": 39739165,
+    "sha256": "097d6d2401a6541dd97e914ff4929abb86d73edb0cbcbce66ae35b015f0bb90f",
+    "line_count": 192000,
+    "valid_json_lines": 192000,
+    "invalid_json_lines": 0,
+    "top_key_counts": [
+      [
+        "brightness",
+        192000
+      ],
+      [
+        "contrast",
+        192000
+      ],
+      [
+        "flip_h",
+        192000
+      ],
+      [
+        "flip_v",
+        192000
+      ],
+      [
+        "foreground_class",
+        192000
+      ],
+      [
+        "hw",
+        192000
+      ],
+      [
+        "rotation",
+        192000
+      ],
+      [
+        "sid",
+        192000
+      ],
+      [
+        "slot",
+        192000
+      ],
+      [
+        "source",
+        192000
+      ],
+      [
+        "update",
+        192000
+      ],
+      [
+        "x",
+        192000
+      ],
+      [
+        "y",
+        192000
+      ]
+    ],
+    "step_min": 1,
+    "step_max": 24000,
+    "metric_key_counts": [],
+    "outcome_counts": [],
+    "first_record_metrics": {
+      "update": 1
+    },
+    "last_record_metrics": {
+      "update": 24000
+    }
+  },
+  {
+    "path": "HRDecoder_Q_20261003/server_results/reports/stream_Q_DDR_seed42.jsonl",
+    "ext": ".jsonl",
+    "bytes": 39730012,
+    "sha256": "aa95f47b6a967db5e175da8b216859477d0e6746006693d15e8176a80836359f",
+    "line_count": 192000,
+    "valid_json_lines": 192000,
+    "invalid_json_lines": 0,
+    "top_key_counts": [
+      [
+        "brightness",
+        192000
+      ],
+      [
+        "contrast",
+        192000
+      ],
+      [
+        "flip_h",
+        192000
+      ],
+      [
+        "flip_v",
+        192000
+      ],
+      [
+        "foreground_class",
+        192000
+      ],
+      [
+        "hw",
+        192000
+      ],
+      [
+        "rotation",
+        192000
+      ],
+      [
+        "sid",
+        192000
+      ],
+      [
+        "slot",
+        192000
+      ],
+      [
+        "source",
+        192000
+      ],
+      [
+        "update",
+        192000
+      ],
+      [
+        "x",
+        192000
+      ],
+      [
+        "y",
+        192000
+      ]
+    ],
+    "step_min": 1,
+    "step_max": 24000,
+    "metric_key_counts": [],
+    "outcome_counts": [],
+    "first_record_metrics": {
+      "update": 1
+    },
+    "last_record_metrics": {
+      "update": 24000
+    }
+  },
+  {
+    "path": "HRDecoder_Q_20261003/server_results/reports/stream_Q_MIX_seed2024.jsonl",
+    "ext": ".jsonl",
+    "bytes": 39962702,
+    "sha256": "288eb05725024f807a85ca028ad2d356650063d098d8e219f5b4ed06fcaac0cd",
+    "line_count": 192000,
+    "valid_json_lines": 192000,
+    "invalid_json_lines": 0,
+    "top_key_counts": [
+      [
+        "brightness",
+        192000
+      ],
+      [
+        "contrast",
+        192000
+      ],
+      [
+        "flip_h",
+        192000
+      ],
+      [
+        "flip_v",
+        192000
+      ],
+      [
+        "foreground_class",
+        192000
+      ],
+      [
+        "hw",
+        192000
+      ],
+      [
+        "rotation",
+        192000
+      ],
+      [
+        "sid",
+        192000
+      ],
+      [
+        "slot",
+        192000
+      ],
+      [
+        "source",
+        192000
+      ],
+      [
+        "update",
+        192000
+      ],
+      [
+        "x",
+        192000
+      ],
+      [
+        "y",
+        192000
+      ]
+    ],
+    "step_min": 1,
+    "step_max": 24000,
+    "metric_key_counts": [],
+    "outcome_counts": [],
+    "first_record_metrics": {
+      "update": 1
+    },
+    "last_record_metrics": {
+      "update": 24000
+    }
+  },
+  {
+    "path": "HRDecoder_Q_20261003/server_results/reports/stream_Q_MIX_seed42.jsonl",
+    "ext": ".jsonl",
+    "bytes": 39935521,
+    "sha256": "7a0e4a655726f4ec76a9d46abec508132bb5c4999846d4d48181838faa1fddf8",
+    "line_count": 192000,
+    "valid_json_lines": 192000,
+    "invalid_json_lines": 0,
+    "top_key_counts": [
+      [
+        "brightness",
+        192000
+      ],
+      [
+        "contrast",
+        192000
+      ],
+      [
+        "flip_h",
+        192000
+      ],
+      [
+        "flip_v",
+        192000
+      ],
+      [
+        "foreground_class",
+        192000
+      ],
+      [
+        "hw",
+        192000
+      ],
+      [
+        "rotation",
+        192000
+      ],
+      [
+        "sid",
+        192000
+      ],
+      [
+        "slot",
+        192000
+      ],
+      [
+        "source",
+        192000
+      ],
+      [
+        "update",
+        192000
+      ],
+      [
+        "x",
+        192000
+      ],
+      [
+        "y",
+        192000
+      ]
+    ],
+    "step_min": 1,
+    "step_max": 24000,
+    "metric_key_counts": [],
+    "outcome_counts": [],
+    "first_record_metrics": {
+      "update": 1
+    },
+    "last_record_metrics": {
+      "update": 24000
+    }
+  },
+  {
+    "path": "HRDecoder_Q_20261003/server_results/runs/Q_DDR_seed2024/train.jsonl",
+    "ext": ".jsonl",
+    "bytes": 373365,
+    "sha256": "a1e13db6dd3a61ff6c705eb62d30960c4d1c19f314bf025eaf7ecaffc1f0979c",
+    "line_count": 1200,
+    "valid_json_lines": 1200,
+    "invalid_json_lines": 0,
+    "top_key_counts": [
+      [
+        "update",
+        1200
+      ],
+      [
+        "loss",
+        1200
+      ],
+      [
+        "seconds_per_update",
+        1200
+      ],
+      [
+        "data_wait_seconds",
+        1200
+      ],
+      [
+        "grad_norm",
+        1200
+      ],
+      [
+        "next_lr",
+        1200
+      ],
+      [
+        "time",
+        1200
+      ]
+    ],
+    "step_min": 20,
+    "step_max": 24000,
+    "metric_key_counts": [
+      [
+        "loss",
+        1200
+      ]
+    ],
+    "outcome_counts": [],
+    "first_record_metrics": {
+      "update": 20,
+      "loss": 0.608023464679718
+    },
+    "last_record_metrics": {
+      "update": 24000,
+      "loss": 0.1510148150846362
+    }
+  },
+  {
+    "path": "HRDecoder_Q_20261003/server_results/runs/Q_DDR_seed42/train.jsonl",
+    "ext": ".jsonl",
+    "bytes": 373393,
+    "sha256": "bdd6d5aa21b3a43be57a740ee91abf4dfeb22a83564cf180271d3c28d930e05a",
+    "line_count": 1200,
+    "valid_json_lines": 1200,
+    "invalid_json_lines": 0,
+    "top_key_counts": [
+      [
+        "update",
+        1200
+      ],
+      [
+        "loss",
+        1200
+      ],
+      [
+        "seconds_per_update",
+        1200
+      ],
+      [
+        "data_wait_seconds",
+        1200
+      ],
+      [
+        "grad_norm",
+        1200
+      ],
+      [
+        "next_lr",
+        1200
+      ],
+      [
+        "time",
+        1200
+      ]
+    ],
+    "step_min": 20,
+    "step_max": 24000,
+    "metric_key_counts": [
+      [
+        "loss",
+        1200
+      ]
+    ],
+    "outcome_counts": [],
+    "first_record_metrics": {
+      "update": 20,
+      "loss": 0.5937856882810593
+    },
+    "last_record_metrics": {
+      "update": 24000,
+      "loss": 0.21952304616570473
+    }
+  },
+  {
+    "path": "HRDecoder_Q_20261003/server_results/runs/Q_MIX_seed2024/train.jsonl",
+    "ext": ".jsonl",
+    "bytes": 372854,
+    "sha256": "38d08465d2ed27505fcd793e972b1ac2f90b6e6e13a519c97a9e3581daad36c0",
+    "line_count": 1200,
+    "valid_json_lines": 1200,
+    "invalid_json_lines": 0,
+    "top_key_counts": [
+      [
+        "update",
+        1200
+      ],
+      [
+        "loss",
+        1200
+      ],
+      [
+        "seconds_per_update",
+        1200
+      ],
+      [
+        "data_wait_seconds",
+        1200
+      ],
+      [
+        "grad_norm",
+        1200
+      ],
+      [
+        "next_lr",
+        1200
+      ],
+      [
+        "time",
+        1200
+      ]
+    ],
+    "step_min": 20,
+    "step_max": 24000,
+    "metric_key_counts": [
+      [
+        "loss",
+        1200
+      ]
+    ],
+    "outcome_counts": [],
+    "first_record_metrics": {
+      "update": 20,
+      "loss": 0.6072761565446854
+    },
+    "last_record_metrics": {
+      "update": 24000,
+      "loss": 0.1583862779662013
+    }
+  },
+  {
+    "path": "HRDecoder_Q_20261003/server_results/runs/Q_MIX_seed42/train.jsonl",
+    "ext": ".jsonl",
+    "bytes": 372917,
+    "sha256": "aacdec559a662b75b5f6a302712971c59401d821f40f371afe6ff32264e6ff38",
+    "line_count": 1200,
+    "valid_json_lines": 1200,
+    "invalid_json_lines": 0,
+    "top_key_counts": [
+      [
+        "update",
+        1200
+      ],
+      [
+        "loss",
+        1200
+      ],
+      [
+        "seconds_per_update",
+        1200
+      ],
+      [
+        "data_wait_seconds",
+        1200
+      ],
+      [
+        "grad_norm",
+        1200
+      ],
+      [
+        "next_lr",
+        1200
+      ],
+      [
+        "time",
+        1200
+      ]
+    ],
+    "step_min": 20,
+    "step_max": 24000,
+    "metric_key_counts": [
+      [
+        "loss",
+        1200
+      ]
+    ],
+    "outcome_counts": [],
+    "first_record_metrics": {
+      "update": 20,
+      "loss": 0.5935862064361572
+    },
+    "last_record_metrics": {
+      "update": 24000,
+      "loss": 0.21696532890200615
+    }
+  },
+  {
+    "path": "HRDecoder_Q_20261003/server_results/stage_backups/Q_DDR_seed2024_16000/runs/Q_DDR_seed2024/train.jsonl",
+    "ext": ".jsonl",
+    "bytes": 247451,
+    "sha256": "99efe3e5b6204d498af4bf69ef36d68b22ad7b90059c40bb347530cbc065b525",
+    "line_count": 800,
+    "valid_json_lines": 800,
+    "invalid_json_lines": 0,
+    "top_key_counts": [
+      [
+        "update",
+        800
+      ],
+      [
+        "loss",
+        800
+      ],
+      [
+        "seconds_per_update",
+        800
+      ],
+      [
+        "data_wait_seconds",
+        800
+      ],
+      [
+        "grad_norm",
+        800
+      ],
+      [
+        "next_lr",
+        800
+      ],
+      [
+        "time",
+        800
+      ]
+    ],
+    "step_min": 20,
+    "step_max": 16000,
+    "metric_key_counts": [
+      [
+        "loss",
+        800
+      ]
+    ],
+    "outcome_counts": [],
+    "first_record_metrics": {
+      "update": 20,
+      "loss": 0.608023464679718
+    },
+    "last_record_metrics": {
+      "update": 16000,
+      "loss": 0.19109149649739265
+    }
+  },
+  {
+    "path": "HRDecoder_Q_20261003/server_results/stage_backups/Q_DDR_seed42_16000/runs/Q_DDR_seed42/train.jsonl",
+    "ext": ".jsonl",
+    "bytes": 247410,
+    "sha256": "22acbf68189d1cf954ed4e4030de860d6bb5b34a1a2c942bc4e9f7cbbcb9a58e",
+    "line_count": 800,
+    "valid_json_lines": 800,
+    "invalid_json_lines": 0,
+    "top_key_counts": [
+      [
+        "update",
+        800
+      ],
+      [
+        "loss",
+        800
+      ],
+      [
+        "seconds_per_update",
+        800
+      ],
+      [
+        "data_wait_seconds",
+        800
+      ],
+      [
+        "grad_norm",
+        800
+      ],
+      [
+        "next_lr",
+        800
+      ],
+      [
+        "time",
+        800
+      ]
+    ],
+    "step_min": 20,
+    "step_max": 16000,
+    "metric_key_counts": [
+      [
+        "loss",
+        800
+      ]
+    ],
+    "outcome_counts": [],
+    "first_record_metrics": {
+      "update": 20,
+      "loss": 0.5937856882810593
+    },
+    "last_record_metrics": {
+      "update": 16000,
+      "loss": 0.19611216336488724
+    }
+  },
+  {
+    "path": "HRDecoder_Q_20261003/server_results/stage_backups/Q_MIX_seed42_16000/runs/Q_MIX_seed42/train.jsonl",
+    "ext": ".jsonl",
+    "bytes": 246938,
+    "sha256": "82bf56274502b396cab0aba092fb19dfbeb665ec07ebf0f15b1da00b51ac51e7",
+    "line_count": 800,
+    "valid_json_lines": 800,
+    "invalid_json_lines": 0,
+    "top_key_counts": [
+      [
+        "update",
+        800
+      ],
+      [
+        "loss",
+        800
+      ],
+      [
+        "seconds_per_update",
+        800
+      ],
+      [
+        "data_wait_seconds",
+        800
+      ],
+      [
+        "grad_norm",
+        800
+      ],
+      [
+        "next_lr",
+        800
+      ],
+      [
+        "time",
+        800
+      ]
+    ],
+    "step_min": 20,
+    "step_max": 16000,
+    "metric_key_counts": [
+      [
+        "loss",
+        800
+      ]
+    ],
+    "outcome_counts": [],
+    "first_record_metrics": {
+      "update": 20,
+      "loss": 0.5935862064361572
+    },
+    "last_record_metrics": {
+      "update": 16000,
+      "loss": 0.23080594465136528
+    }
+  },
+  {
+    "path": "HRDecoder_Ready_20261002/assets/auxiliary/train_manifest.jsonl",
+    "ext": ".jsonl",
+    "bytes": 294900,
+    "sha256": "83cada08acc625ca161708de3f824f4b4f942fd13cdadd387a95de0ab44a23a8",
+    "line_count": 1000,
+    "valid_json_lines": 1000,
+    "invalid_json_lines": 0,
+    "top_key_counts": [
+      [
+        "sample_id",
+        1000
+      ],
+      [
+        "image",
+        1000
+      ],
+      [
+        "sha256",
+        1000
+      ],
+      [
+        "original",
+        1000
+      ],
+      [
+        "grading_class",
+        1000
+      ],
+      [
+        "split",
+        1000
+      ],
+      [
+        "source",
+        1000
+      ]
+    ],
+    "step_min": null,
+    "step_max": null,
+    "metric_key_counts": [],
+    "outcome_counts": [],
+    "first_record_metrics": null,
+    "last_record_metrics": null
+  },
+  {
+    "path": "HRDecoder_Ready_20261002/assets/external/external_train.jsonl",
+    "ext": ".jsonl",
+    "bytes": 104247,
+    "sha256": "d48ad8be0bfa40f4d34d7948b0b5cd9f7cac3618bd87b77c79e1d6076217c2c6",
+    "line_count": 54,
+    "valid_json_lines": 54,
+    "invalid_json_lines": 0,
+    "top_key_counts": [
+      [
+        "schema_version",
+        54
+      ],
+      [
+        "sample_id",
+        54
+      ],
+      [
+        "source",
+        54
+      ],
+      [
+        "source_version",
+        54
+      ],
+      [
+        "official_split",
+        54
+      ],
+      [
+        "patient_id",
+        54
+      ],
+      [
+        "patient_id_source",
+        54
+      ],
+      [
+        "image_id",
+        54
+      ],
+      [
+        "original_width",
+        54
+      ],
+      [
+        "original_height",
+        54
+      ],
+      [
+        "image",
+        54
+      ],
+      [
+        "lesions",
+        54
+      ],
+      [
+        "perceptual_hash",
+        54
+      ],
+      [
+        "notes",
+        54
+      ]
+    ],
+    "step_min": null,
+    "step_max": null,
+    "metric_key_counts": [],
+    "outcome_counts": [],
+    "first_record_metrics": null,
+    "last_record_metrics": null
+  },
+  {
+    "path": "HRDecoder_Ready_20261002/assets/external/external_train_dedup.jsonl",
+    "ext": ".jsonl",
+    "bytes": 104247,
+    "sha256": "d48ad8be0bfa40f4d34d7948b0b5cd9f7cac3618bd87b77c79e1d6076217c2c6",
+    "line_count": 54,
+    "valid_json_lines": 54,
+    "invalid_json_lines": 0,
+    "top_key_counts": [
+      [
+        "schema_version",
+        54
+      ],
+      [
+        "sample_id",
+        54
+      ],
+      [
+        "source",
+        54
+      ],
+      [
+        "source_version",
+        54
+      ],
+      [
+        "official_split",
+        54
+      ],
+      [
+        "patient_id",
+        54
+      ],
+      [
+        "patient_id_source",
+        54
+      ],
+      [
+        "image_id",
+        54
+      ],
+      [
+        "original_width",
+        54
+      ],
+      [
+        "original_height",
+        54
+      ],
+      [
+        "image",
+        54
+      ],
+      [
+        "lesions",
+        54
+      ],
+      [
+        "perceptual_hash",
+        54
+      ],
+      [
+        "notes",
+        54
+      ]
+    ],
+    "step_min": null,
+    "step_max": null,
+    "metric_key_counts": [],
+    "outcome_counts": [],
+    "first_record_metrics": null,
+    "last_record_metrics": null
+  },
+  {
+    "path": "HRDecoder_Ready_20261002/data_contract/example_manifest.jsonl",
+    "ext": ".jsonl",
+    "bytes": 5064,
+    "sha256": "1c6685131221580c7d41cea5d91e58d671b4ce4fed7c076b705bde3cb9b0efbd",
+    "line_count": 3,
+    "valid_json_lines": 3,
+    "invalid_json_lines": 0,
+    "top_key_counts": [
+      [
+        "schema_version",
+        3
+      ],
+      [
+        "sample_id",
+        3
+      ],
+      [
+        "source",
+        3
+      ],
+      [
+        "source_version",
+        3
+      ],
+      [
+        "official_split",
+        3
+      ],
+      [
+        "patient_id",
+        3
+      ],
+      [
+        "patient_id_source",
+        3
+      ],
+      [
+        "image_id",
+        3
+      ],
+      [
+        "original_width",
+        3
+      ],
+      [
+        "original_height",
+        3
+      ],
+      [
+        "image",
+        3
+      ],
+      [
+        "lesions",
+        3
+      ],
+      [
+        "perceptual_hash",
+        3
+      ],
+      [
+        "notes",
+        3
+      ]
+    ],
+    "step_min": null,
+    "step_max": null,
+    "metric_key_counts": [],
+    "outcome_counts": [],
+    "first_record_metrics": null,
+    "last_record_metrics": null
+  },
+  {
+    "path": "HRDecoder_审查轮_20260916/audit_runs/audit_20260916_A/DEVIATIONS.jsonl",
+    "ext": ".jsonl",
+    "bytes": 3247,
+    "sha256": "73b9ac22593f8a5d294421eb1eff825e076495c413a14d36112b038c43db25fc",
+    "line_count": 5,
+    "valid_json_lines": 5,
+    "invalid_json_lines": 0,
+    "top_key_counts": [
+      [
+        "id",
+        5
+      ],
+      [
+        "time",
+        5
+      ],
+      [
+        "item",
+        5
+      ],
+      [
+        "spec",
+        5
+      ],
+      [
+        "evidence",
+        5
+      ],
+      [
+        "proposal",
+        5
+      ],
+      [
+        "impact",
+        5
+      ],
+      [
+        "status",
+        5
+      ],
+      [
+        "needs_approval",
+        5
+      ]
+    ],
+    "step_min": null,
+    "step_max": null,
+    "metric_key_counts": [],
+    "outcome_counts": [
+      [
+        "REGISTERED_NOT_YET_RESOLVED",
+        1
+      ],
+      [
+        "FIXED",
+        1
+      ],
+      [
+        "IN_PROGRESS",
+        1
+      ],
+      [
+        "DONE",
+        1
+      ],
+      [
+        "PATCHED_FOR_T1",
+        1
+      ]
+    ],
+    "first_record_metrics": {
+      "status": "REGISTERED_NOT_YET_RESOLVED"
+    },
+    "last_record_metrics": {
+      "status": "PATCHED_FOR_T1"
+    }
+  },
+  {
+    "path": "HRDecoder_重新诊断与三点提升方案_20260926/local_file_catalog.jsonl",
+    "ext": ".jsonl",
+    "bytes": 512369,
+    "sha256": "2b64910ee63acbbc3ca9960b71e31a7ba0809ce701b7647f21be89b5798e7fcf",
+    "line_count": 3862,
+    "valid_json_lines": 3862,
+    "invalid_json_lines": 0,
+    "top_key_counts": [
+      [
+        "path",
+        3862
+      ],
+      [
+        "bytes",
+        3862
+      ]
+    ],
+    "step_min": null,
+    "step_max": null,
+    "metric_key_counts": [],
+    "outcome_counts": [],
+    "first_record_metrics": null,
+    "last_record_metrics": null
+  }
+]

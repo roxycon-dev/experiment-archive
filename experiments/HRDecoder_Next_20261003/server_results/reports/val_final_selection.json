@@ -1,0 +1,113 @@
+{
+  "winner": {
+    "kind": "G_fixed25",
+    "asset": "U0_highres",
+    "canvas": "native",
+    "inference": "slide",
+    "score": 0.4386790869927479,
+    "cache": "/root/autodl-tmp/HRDecoder_Next_20261003/work/G/highres_fixed25",
+    "key": "U0_highres_native_slide"
+  },
+  "candidates": [
+    {
+      "kind": "G_fixed25",
+      "asset": "U0",
+      "canvas": "native",
+      "inference": "whole",
+      "score": 0.43487703221036567,
+      "cache": "/root/autodl-tmp/HRDecoder_Next_20261003/work/G/U0_native_whole_fixed25",
+      "key": "U0_native_whole"
+    },
+    {
+      "kind": "G_fixed25",
+      "asset": "U0",
+      "canvas": "native",
+      "inference": "slide",
+      "score": 0.4356958018590438,
+      "cache": "/root/autodl-tmp/HRDecoder_Next_20261003/work/G/U0_native_slide_fixed25",
+      "key": "U0_native_slide"
+    },
+    {
+      "kind": "G_fixed25",
+      "asset": "U0",
+      "canvas": "long2048",
+      "inference": "whole",
+      "score": 0.4364737489643856,
+      "cache": "/root/autodl-tmp/HRDecoder_Next_20261003/work/G/U0_long2048_whole_fixed25",
+      "key": "U0_long2048_whole"
+    },
+    {
+      "kind": "G_fixed25",
+      "asset": "U0",
+      "canvas": "long2048",
+      "inference": "slide",
+      "score": 0.4338952997870936,
+      "cache": "/root/autodl-tmp/HRDecoder_Next_20261003/work/G/U0_long2048_slide_fixed25",
+      "key": "U0_long2048_slide"
+    },
+    {
+      "kind": "G_fixed25",
+      "asset": "U1",
+      "canvas": "native",
+      "inference": "whole",
+      "score": 0.43314686113542555,
+      "cache": "/root/autodl-tmp/HRDecoder_Next_20261003/work/G/U1_native_whole_fixed25",
+      "key": "U1_native_whole"
+    },
+    {
+      "kind": "G_fixed25",
+      "asset": "U1",
+      "canvas": "native",
+      "inference": "slide",
+      "score": 0.43349993113814084,
+      "cache": "/root/autodl-tmp/HRDecoder_Next_20261003/work/G/U1_native_slide_fixed25",
+      "key": "U1_native_slide"
+    },
+    {
+      "kind": "G_fixed25",
+      "asset": "U1",
+      "canvas": "long2048",
+      "inference": "whole",
+      "score": 0.4344162928121451,
+      "cache": "/root/autodl-tmp/HRDecoder_Next_20261003/work/G/U1_long2048_whole_fixed25",
+      "key": "U1_long2048_whole"
+    },
+    {
+      "kind": "G_fixed25",
+      "asset": "U1",
+      "canvas": "long2048",
+      "inference": "slide",
+      "score": 0.4325119821827101,
+      "cache": "/root/autodl-tmp/HRDecoder_Next_20261003/work/G/U1_long2048_slide_fixed25",
+      "key": "U1_long2048_slide"
+    },
+    {
+      "kind": "G_fixed25",
+      "asset": "U0_highres",
+      "canvas": "native",
+      "inference": "slide",
+      "score": 0.4386790869927479,
+      "cache": "/root/autodl-tmp/HRDecoder_Next_20261003/work/G/highres_fixed25",
+      "key": "U0_highres_native_slide"
+    },
+    {
+      "kind": "M",
+      "seed": 42,
+      "arm": "M1",
+      "update": 1000,
+      "output": "fixed_half",
+      "score": 0.4234589432855201
+    },
+    {
+      "kind": "M",
+      "seed": 42,
+      "arm": "M0",
+      "update": 1000,
+      "output": "fixed_half",
+      "score": 0.42355241147194167
+    }
+  ],
+  "basis": "Complete 76-image val only",
+  "baseline": 0.43487703221036567,
+  "original_winner_retained": true
+}

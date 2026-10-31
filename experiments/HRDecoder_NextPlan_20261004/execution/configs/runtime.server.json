@@ -1,0 +1,48 @@
+{
+  "ddr_root": "/root/HRDecoder/data/DDR_split_613",
+  "historical_root": "D:/dataset/experiment/HRDecoder_Next_20261003",
+  "dinov3_repo": "/root/autodl-tmp/HRDecoder_Q_20261003/vendor/dinov3",
+  "pretrained_checkpoint": "/root/autodl-tmp/HRDecoder_Q_20261003/assets/dinov3_vitb16_pretrain_lvd1689m-73cec8be.pth",
+  "pretrained_source": "https://github.com/facebookresearch/dinov3",
+  "license_acceptance_evidence": "reports/pretraining_download.json",
+  "external_manifest": "/root/autodl-tmp/HRDecoder_Finetune_20261004/reports/manifest.server.negative_fixed.json",
+  "server": {
+    "host": "connect.nmb1.seetacloud.com",
+    "port": 40920,
+    "instance_id": null,
+    "remote_root": "/root/autodl-tmp/HRDecoder_Finetune_20261004",
+    "ssh_key": "C:/Users/GuanXingRen/.ssh/codex_hrdecoder_next_20261003"
+  },
+  "resources": {
+    "micro_batch": 2,
+    "accumulation": 4,
+    "dtype": "bfloat16",
+    "workers": 4,
+    "prefetch_factor": 2,
+    "pin_memory": true
+  },
+  "budget": {
+    "hourly_rate_cny": null,
+    "approval": "User requested execution 2026-10-04; server startup by user"
+  },
+  "stage": "LOCAL_PREPARATION_ONLY_GPU_GATE_PENDING",
+  "p0_c_cache": "/root/autodl-tmp/HRDecoder_Ready_20261002/cache/val/champion",
+  "p0_u_cache": "/root/autodl-tmp/HRDecoder_Ready_20261002/cache/val/U0",
+  "old_root": "/root/autodl-tmp/HRDecoder_Q_20261003",
+  "execution_root": "/root/autodl-tmp/HRDecoder_Finetune_20261004",
+  "historical_init_weights_file": "configs/initial_weights.json",
+  "final_test_authorized": false,
+  "f_resources": {
+    "micro_batch": 2,
+    "accumulation": 4,
+    "dtype": "bfloat16",
+    "workers": 4,
+    "prefetch_factor": 2,
+    "pin_memory": true
+  },
+  "server_python": "/root/miniconda3/envs/hrdecoder_q_20261003/bin/python",
+  "legacy_python": "/root/miniconda3/bin/python",
+  "test_p0_cache": "/dev/shm/hrdecoder_finetune_p0_20261004",
+  "old_p0_driver_sha256": "fddfcf5d3b1a6293ed9d9950055c11087ae02f6092b6a3fcb860ca60e08115d0",
+  "old_p0_lock_sha256": "644974f4a888835f838472199dcb623e879be2d62e73dab502394759551ceac4"
+}

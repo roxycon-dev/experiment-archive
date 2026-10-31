@@ -1,0 +1,206 @@
+"""HR+ patch: distillation-free self-ensemble on top of HR100Refinement.
+
+Student: HRPlusRefinement (inherits HR100Refinement.encode_decode on the
+1024x1024 crop).  A separately built frozen HR100Refinement (constructed from
+a deepcopy of the kwargs taken BEFORE super() mutates them, strict-loaded
+from the SAME 4-class B checkpoint) acts as reference at inference;
+probabilities are fused 0.5/0.5.
+"""
+import copy
+
+import numpy as np
+import torch
+
+from mmseg.models.builder import SEGMENTORS
+from mmseg.datasets.builder import PIPELINES
+from mmseg.ops import resize
+
+from hr100_refinement import HR100Refinement
+from hrplus_core import (tiled_forward, blend_probs, resize_logit,
+                         pad_to_size, foreground_crop_bbox, crop_arrays,
+                         multiclass_lovasz_hinge)
+
+
+def _strict_load_state(module, path):
+    """Load checkpoint into ``module``; STRICT w.r.t. all 4-class B tensors.
+
+    The source checkpoint contains NO ``ma_refiner.*`` keys, so missing or
+    unexpected keys of any kind are errors.
+    """
+    ckpt = torch.load(path, map_location='cpu')
+    state = ckpt.get('state_dict', ckpt)
+    state = {k[7:] if k.startswith('module.') else k: v for k, v in state.items()}
+    module.load_state_dict(state, strict=True)
+
+
+def _assert_config(model):
+    """Assert the EXACT-4-class sigmoid HR config (1024 crop scale)."""
+    assert model.num_classes == 4, 'model must have exactly 4 classes'
+    assert tuple(model.hr_scale) == (1024, 1024), 'hr_scale must be 1024x1024'
+    assert model.use_sigmoid, 'model inference must use sigmoid'
+
+
+def _freeze_all_bn(model):
+    """Freeze ALL BatchNorm layers and keep them frozen."""
+    from torch.nn.modules.batchnorm import _BatchNorm
+    for m in model.modules():
+        if isinstance(m, _BatchNorm):
+            m.eval()
+
+
+@SEGMENTORS.register_module()
+class HRPlusRefinement(HR100Refinement):
+    """Student = inherited crop model; reference = frozen sibling module.
+
+    * forward_train: ONLY the student's crop logits + decode_head.losses
+      (optionally + weighted 4-class binary Lovasz hinge).  No MA hard loss,
+      no HR crop auxiliary, no fuse losses.
+    * inference: fixed 0.5 native whole-image reference probabilities +
+      0.5 student tiled logits (tile 1024, stride 768) overlap-averaged,
+      resized to original with align_corners, sigmoid, flip-undo.
+      Does NOT recurse into reference.inference.
+    """
+
+    def __init__(self, source_checkpoint, lovasz_weight=0.0, **kwargs):
+        assert source_checkpoint, 'source_checkpoint is REQUIRED'
+        kwargs['semantic_refinement'] = False
+        kwargs['hard_weight'] = 0
+        kwargs['freeze_bn'] = True
+        # Snapshot kwargs BEFORE super() mutates them; the reference is built
+        # independently from the same pristine configuration.
+        ref_kwargs = copy.deepcopy(kwargs)
+        super(HRPlusRefinement, self).__init__(**kwargs)
+        _assert_config(self)
+        self.lovasz_weight = float(lovasz_weight)
+        # Student: strict-load the 4-class B checkpoint right after the
+        # constructor; init_weights() is overridden as a no-op so later
+        # build-time calls never re-initialize the loaded weights.
+        _strict_load_state(self, source_checkpoint)
+        _freeze_all_bn(self)
+        # Reference: built SEPARATELY from the pre-super kwargs deepcopy
+        # (no deepcopy of the student module), then strict-loaded itself.
+        reference = HR100Refinement(**ref_kwargs)
+        _strict_load_state(reference, source_checkpoint)
+        for p in reference.parameters():
+            p.requires_grad_(False)
+        _freeze_all_bn(reference)
+        reference.eval()
+        self.reference = reference
+
+    # ---- lifecycle guards -------------------------------------------------
+    def init_weights(self):
+        """No-op: student and reference both hold the strict-loaded B
+        checkpoint; never re-initialize."""
+        pass
+
+    def train(self, mode=True):
+        super(HRPlusRefinement, self).train(mode)
+        if hasattr(self, 'reference'):
+            self.reference.eval()  # reference is never trained
+        return self
+
+    # ---- training ---------------------------------------------------------
+    def forward_train(self, img, img_metas, gt_semantic_seg,
+                      seg_weight=None, return_feat=False, **kwargs):
+        logits = self.encode_decode(img, img_metas)  # inherited crop logits
+        # Legacy BinaryLoss maps ignore labels to zeros but does not mask predictions.
+        # Constant zero probability removes ignored pixels from squared-Dice terms.
+        dice_logits = torch.where(gt_semantic_seg == 255, logits.new_tensor(-1e4), logits)
+        losses = self.decode_head.losses(dice_logits, gt_semantic_seg)
+        if self.lovasz_weight > 0:
+            losses['loss_lovasz'] = self.lovasz_weight * multiclass_lovasz_hinge(
+                logits, gt_semantic_seg)
+        return losses
+
+    # ---- inference --------------------------------------------------------
+    def _student_prob(self, img, img_meta, rescale):
+        """Tiled student logits -> overlap-average -> resize to original
+        (same align_corners as baseline) -> sigmoid -> flip undo."""
+        logits = tiled_forward(
+            img,
+            lambda patch: self.encode_decode(patch, img_meta),
+            self.hr_scale, stride=768, num_classes=self.num_classes)
+        img_shape = img_meta[0]['img_shape']
+        logits = logits[:, :, :img_shape[0], :img_shape[1]]
+        if rescale:
+            logits = resize_logit(logits, img_meta[0]['ori_shape'][:2],
+                                  align_corners=self.align_corners)
+        prob = torch.sigmoid(logits)
+        if img_meta[0]['flip']:
+            direction = img_meta[0]['flip_direction']
+            if direction == 'horizontal':
+                prob = prob.flip(dims=(3,))
+            elif direction == 'vertical':
+                prob = prob.flip(dims=(2,))
+            else:
+                raise NotImplementedError(direction)
+        return prob
+
+    def _reference_prob(self, img, img_meta, rescale):
+        """Native whole-image reference probabilities, computed directly
+        (no recursion into reference.inference)."""
+        self.reference.eval()
+        with torch.no_grad():
+            return self.reference.inference(img, img_meta, rescale)
+
+    def inference(self, img, img_meta, rescale):
+        assert img.size(0) == 1, 'eval batch size must be 1'
+        prob_s = self._student_prob(img, img_meta, rescale)
+        prob_r = self._reference_prob(img, img_meta, rescale)
+        # Fixed global fusion: 0.5 reference + 0.5 student, all classes.
+        return blend_probs(prob_r, prob_s, weight_a=0.5)
+
+
+@PIPELINES.register_module()
+class ForegroundMixedCrop(object):
+    """Train-only crop after Resize(2048x2048, keep_ratio=False).
+
+    With probability fg_prob: image-uniform random crop.  Otherwise: a
+    PRESENT lesion class (1..num_fg) is chosen uniformly, a pixel of it is
+    chosen uniformly, and a valid anchor offset guaranteeing pixel inclusion
+    is sampled.  Falls back to uniform when no lesion class is present.
+    The image (primary ``gt_semantic_seg`` and every extra field listed in
+    ``seg_fields``) is padded/cropped with IDENTICAL coordinates; small
+    images are padded first (image 0, labels 255).
+    """
+
+    def __init__(self, crop_size, fg_prob=0.5, num_fg=4, seg_fields=()):
+        self.crop_size = int(crop_size)
+        self.fg_prob = float(fg_prob)
+        self.num_fg = int(num_fg)
+        self.seg_fields = list(seg_fields)
+
+    def _seg_targets(self, results):
+        """All label fields cropped together, primary first."""
+        fields = ['gt_semantic_seg'] + [f for f in dict.fromkeys(results.get('seg_fields', []) + self.seg_fields)
+                                        if f != 'gt_semantic_seg']
+        return fields, [results[f] for f in fields]
+
+    def __call__(self, results):
+        img = results['img']
+        fields, gts = self._seg_targets(results)
+        gt = gts[0]
+        cs = self.crop_size
+        h, w = gt.shape[:2]
+        if h < cs or w < cs:
+            th, tw = max(cs, h), max(cs, w)
+            original_img = img
+            img = pad_to_size(original_img, gt, (th, tw), img_pad=0, seg_pad=255)[0]
+            padded = []
+            for g in gts:
+                padded.append(pad_to_size(original_img, g, (th, tw), 0, 255)[1])
+            gts = padded
+            gt = gts[0]
+        y0, x0 = foreground_crop_bbox(gt, cs, self.fg_prob, np.random,
+                                      self.num_fg)
+        results['img'] = img[y0:y0 + cs, x0:x0 + cs]
+        for f, g in zip(fields, gts):
+            results[f] = crop_arrays(g, g, y0, x0, cs, cs)[0]
+        results['img_shape'] = results['img'].shape  # 3D (H, W, C)
+        results['pad_shape'] = results['img'].shape  # 3D (H, W, C)
+        return results
+
+    def __repr__(self):
+        return self.__class__.__name__ + \
+            '(crop_size={}, fg_prob={}, num_fg={})'.format(
+                self.crop_size, self.fg_prob, self.num_fg)

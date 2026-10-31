@@ -1,0 +1,16 @@
+[2026-09-20 00:48:42] split audit OK; val stems = 76
+[2026-09-20 00:48:48] candidate C_step_4000 loaded: arm=C steps=4000 seed=42
+[HRPlusMAResidual] 可训练 0.058M / 冻结 131.221M
+[2026-09-20 00:48:53] champion built: members=['D', 'E', 'B', 'E4'] head=/root/autodl-tmp/hr_exec_20260919/assets/H4_best.pth
+/root/miniconda3/lib/python3.8/site-packages/mmcv/__init__.py:20: UserWarning: On January 1, 2023, MMCV will release v2.0.0, in which it will remove components related to the training process and add a data transformation module. In addition, it will rename the package names mmcv to mmcv-lite and mmcv-full to mmcv. See https://github.com/open-mmlab/mmcv/blob/master/docs/en/compatibility.md for more details.
+  warnings.warn(
+2026-09-20 00:48:54,715 - mmseg - INFO - Loaded 76 images from /root/autodl-tmp/hr_exec_20260919/data/DDR_split_613/images/val
+[2026-09-20 00:49:06] champion cache mode: reuse (/root/autodl-tmp/hr_exec_20260919/runs/champ_prob_cache_val)
+[2026-09-20 00:49:45] eval val 25/76 (48.7s)
+[2026-09-20 00:50:19] eval val 50/76 (83.2s)
+[2026-09-20 00:50:53] eval val 75/76 (116.6s)
+[2026-09-20 00:50:54] eval val 76/76 (117.9s)
+[2026-09-20 00:50:54] val champion mIoU 0.426694
+[2026-09-20 00:50:54] val cand_C_step_4000 mIoU 0.391729
+[2026-09-20 00:50:54] val mix_C_step_4000 mIoU 0.425644
+[2026-09-20 00:50:55] DONE split=val mious={'champion': 0.426694, 'cand_C_step_4000': 0.391729, 'mix_C_step_4000': 0.425644}

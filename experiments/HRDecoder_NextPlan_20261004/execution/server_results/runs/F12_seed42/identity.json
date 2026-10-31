@@ -1,0 +1,36 @@
+{
+  "arm": "F12",
+  "seed": 42,
+  "endpoint": 12000,
+  "source_sha256": "c3ec266ff0d497a02e13c6516dfec7279738dfd463f9a1762e93950c483675c7",
+  "protocol_sha256": "388480f0d6560c0722d0762e80f83525c3a6bdf5295025e1bbee16f827e8f169",
+  "runtime_sha256": "389d9dbe55b5e015872b3f4fb244acf93879c0ef916d5e2298ccd7ea97c8f4db",
+  "resources": {
+    "micro_batch": 2,
+    "accumulation": 4,
+    "dtype": "bfloat16",
+    "workers": 4,
+    "prefetch_factor": 2,
+    "pin_memory": true
+  },
+  "stream_sha256": "bfe3bb8d725e5cc317ec44501f4baedaf76e6ced767e751789968fca5cb253da",
+  "data_sha256": "a0a69afd241d96a6a239f6745b13d0bd9129652ea25d607b354ecb0314bd2b76",
+  "initialization": {
+    "model": "dinov3_vitb16",
+    "pretraining": "LVD1689M",
+    "missing_keys": [],
+    "unexpected_keys": [],
+    "mode": "strict_pretrained",
+    "sha256": "73cec8be7427c8655ceced13ce62f6e20a1fa90d1b4d4a550df17a1144081a7c",
+    "backbone_parameters": 85669632,
+    "total_parameters": 88263748,
+    "initial_Q_state_sha256": "cd12ffb57aac89b002560f30b0dbcc42d36c1c74f4a6feecb0948b5d212a70e3",
+    "start_weights_sha256": "0c525c901c8d4d6e4192c9de40c63a6d12710b76494f0c552dc39cbf6b67cb71",
+    "loaded_model_state_sha256": "8d4aabfbb27a0b46cc13987844403b3fbe462e3c4079cb28b50a2dedaccc454a",
+    "checkpoint_completed": 16000,
+    "old_optimizer_loaded": false
+  },
+  "external_manifest_sha256": null,
+  "p0_identity_sha256": "9468a4d2a8d9a1344a21358698a427fdc5ce9950d3603ce91ea9258a15a648db",
+  "performance_config_sha256": "2fc8294b44eaba18b32e298402f11efd2b59ae20c0b5d6d806218cb5a6f510b0"
+}

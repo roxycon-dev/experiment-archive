@@ -1,0 +1,62 @@
+# local run 2026-09-21T02:17:21+08:00  python Python 3.13.11
+# torch/device: 2.6.0+cu124 True
+[PASS] threshold_is_strict_gt
+[PASS] seed_is_union_of_classes
+[PASS] grow_radius_is_exact
+[PASS] tiles_cover_the_box
+[PASS] small_box_single_tile
+[PASS] candidate_tiles_end_to_end
+[PASS] hann_weights_positive_and_symmetric
+[PASS] stitch_single_tile_identity
+[PASS] stitch_overlap_weighted_mean
+[PASS] stitch_normalises_constant
+[PASS] stitch_uniform_weights_average
+[PASS] stitch_rejects_undersized_patch
+[PASS] stitch_nan_free
+[PASS] forbidden_path_guard
+[PASS] prob_shape_mismatch_rejected
+
+15 passed, 0 failed
+candidate_exit=0
+[PASS] identity_is_bitwise
+[PASS] identity_from_zero_head_only
+[PASS] residual_is_bounded
+[PASS] gradients_reach_head
+[PASS] haar_level_invertible
+[PASS] haar_invertible_odd_sizes
+[PASS] haar_hf_shape
+[PASS] haar_hf_no_params
+[PASS] build_input_11ch
+[PASS] assemble_outside_bitwise
+[PASS] assemble_identity_inside
+[PASS] assemble_context_alignment
+[PASS] assemble_rejects_undersized
+[PASS] assemble_empty_tiles
+[PASS] assemble_overlap_weighted
+[PASS] binarize_fixed_threshold
+[PASS] e2e_refiner_roundtrip_bitwise
+[PASS] ragged_windows_exact
+[PASS] ragged_buckets_no_padding
+[PASS] ragged_bucketed_equals_per_patch
+[PASS] ragged_e2e_identity_bitwise
+[PASS] ragged_assemble_placement
+[PASS] ragged_overlap_weighted
+[PASS] ignore_pixels_excluded
+[PASS] fully_ignored_zero
+[PASS] empty_lesion_finite
+[PASS] perfect_prediction_low_loss
+[PASS] loss_is_two_terms
+[PASS] objective_30focal_1dice
+[PASS] objective_frozen_fail_closed
+[PASS] loss_total_and_focal_share
+[PASS] validation_nodes_frozen
+[PASS] dice_rewards_overlap
+[PASS] only_refiner_grads
+[PASS] frozen_reference_guard
+[PASS] no_test_paths
+[PASS] checkpoint_strict_load
+      [info] trainable params = 25394
+[PASS] param_count_small
+
+38 passed, 0 failed
+units_exit=0

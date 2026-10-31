@@ -1,0 +1,51 @@
+{
+  "stage": "REPORT_EVIDENCE_PLAN_WAITING_FOR_LOCKED_EXPERIMENTAL_RESULT",
+  "time": "2026-10-05T16:25:23.218055+00:00",
+  "retained_node_only": "connect.nmb2.seetacloud.com:36431",
+  "scope_sha256": "9a936d4ea5d2f21d7233c469d1024a7e2bde44902d0c5c7853976e430dda8e6d",
+  "no_new_training_or_selection_or_threshold_scan": true,
+  "server_work_after_global_ack_only": [
+    {
+      "task": "Reconcile actual final selection lock, weight custody, locked test227 per-image counts and final report with canonical local evidence",
+      "gate": "All four authorized runs terminal; existing one-test and lock gates remain intact",
+      "outputs": "SHA manifest and exact-count evidence ledger"
+    },
+    {
+      "task": "Resolve image-level examples from saved validation probabilities only, under the final locked formula and .5 threshold",
+      "sampling_rule": "Predeclare representative validation cases using saved per-image improvement/error counts; include success and failure; no checkpoint or threshold reselection",
+      "source_note": "Current locked test does not save probabilities. Use validation for detailed pixel illustrations and existing locked test counts for quantitative test analysis; do not repeat the whole test for figures."
+    },
+    {
+      "task": "Recover only necessary frozen P0 validation probability files if matching canonical historical local files are unavailable",
+      "source_paths": {
+        "p0_combined_cache": null,
+        "p0_c_cache": "/root/autodl-tmp/HRDecoder_Ready_20261002/cache/val/champion",
+        "p0_u_cache": "/root/autodl-tmp/HRDecoder_Ready_20261002/cache/val/U0"
+      },
+      "custody": "Read-only exact bytes; verify SHA and P0 formula/data identity; retain one canonical copy. Prefer already saved local evidence."
+    },
+    {
+      "task": "Verify all server-dependent report evidence SHA recovery and write truthful authenticated PRIMARY publication_report_server_release.json",
+      "gate": "Required evidence complete and all outputs verified locally; no report prose/rendering delay on the server"
+    }
+  ],
+  "local_work": [
+    "Audit historical original baseline training/test logs and split/config identity; treat rounded historical report values as such until original evidence is located.",
+    "Build training ancestry separately from inference fusion composition; audit H4 as learned residual rather than scalar.",
+    "Complete exact endpoint/curve/count/class/error comparison from already saved results; explain D as data plus domain head plus compute.",
+    "Generate figures and source data, evidence-linked Markdown and editable DOCX/PDF; render and inspect layouts locally."
+  ],
+  "reviewed_implementation_evidence": {
+    "validation.py": {
+      "sha256": "4336f2d2f1175b8565af520f83c7d0ac2fc204f0f4cd197a9fbe1fea979bc5a9",
+      "mechanism_scope": "HE/MA connected-component counts are computed on the standalone q prediction at .5; they are not fusion-mechanism counts."
+    },
+    "reports/single_seed_test.py": {
+      "sha256": "ffa1605fbb9354016d4f21172525707496d4d4f6ebe875be2e48fae9cc8d9036",
+      "test_probability_retention": false,
+      "only_locked_formula_is_evaluated": true
+    }
+  },
+  "release_not_yet_authorized_by_evidence": true,
+  "final_result_or_breakthrough_not_asserted": true
+}

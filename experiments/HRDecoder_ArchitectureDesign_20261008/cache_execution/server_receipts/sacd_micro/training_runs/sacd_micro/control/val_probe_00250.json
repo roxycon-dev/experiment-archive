@@ -1,0 +1,111 @@
+{
+  "mIoU_percent": 38.15233685800647,
+  "IoU_percent": [
+    38.49259324442079,
+    40.31340434702297,
+    51.993684401247585,
+    21.809665439334537
+  ],
+  "precision_percent": [
+    50.595819110220894,
+    61.023985325834694,
+    79.85595780769638,
+    32.692399389662405
+  ],
+  "recall_percent": [
+    61.67302263044054,
+    54.29280783863659,
+    59.842406307719806,
+    39.58345361122337
+  ],
+  "counts": [
+    [
+      179347,
+      175123,
+      111456
+    ],
+    [
+      654730,
+      418176,
+      551194
+    ],
+    [
+      120525,
+      30403,
+      80879
+    ],
+    [
+      27425,
+      56463,
+      41859
+    ]
+  ],
+  "class_order": [
+    "EX",
+    "HE",
+    "SE",
+    "MA"
+  ],
+  "undefined_precision_convention": "zero when TP+FP=0; inspect counts",
+  "images": 76,
+  "threshold": "strictly > .5",
+  "base_head_metrics": {
+    "mIoU_percent": 36.40505067639276,
+    "IoU_percent": [
+      34.011879644458006,
+      39.20513269803615,
+      51.49224929649766,
+      20.910941066579237
+    ],
+    "precision_percent": [
+      40.14132537036407,
+      52.84574765737076,
+      67.72993193590837,
+      26.790936541525
+    ],
+    "recall_percent": [
+      69.01545032203931,
+      60.29957111725117,
+      68.23201128080872,
+      48.7904855377865
+    ],
+    "counts": [
+      [
+        200699,
+        299282,
+        90104
+      ],
+      [
+        727167,
+        648851,
+        478757
+      ],
+      [
+        137422,
+        65475,
+        63982
+      ],
+      [
+        33804,
+        92373,
+        35480
+      ]
+    ],
+    "class_order": [
+      "EX",
+      "HE",
+      "SE",
+      "MA"
+    ],
+    "undefined_precision_convention": "zero when TP+FP=0; inspect counts",
+    "images": 76,
+    "threshold": "strictly > .5"
+  },
+  "seconds": 32.24284875392914,
+  "deployment_inference_verified": true,
+  "teacher_or_GT_input": false,
+  "parent_completed": 20000,
+  "probe_updates": 250,
+  "arm": "control",
+  "identity_SHA": "58056baf70f90f0b947f5cc4de77e0d676ab637c8e36805ac1738fe5d67b8ec9"
+}

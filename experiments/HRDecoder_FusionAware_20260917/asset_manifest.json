@@ -1,0 +1,83 @@
+{
+  "scope_note": "asset audit only; reads fixed scoped paths; never invents paths or hashes",
+  "assets": {
+    "D_student_only_2000": {
+      "path": "D:/dataset/experiment/hrdecoder_plus3/results/D_0913_retry/backup_student_2000.pth",
+      "exists": true,
+      "sha256": "5fe18717b62d8fc3ab4846a50c046588e2af05abbbfdb3a958f4794018b319ea",
+      "role": "student-only checkpoint (D config)"
+    },
+    "B_local": {
+      "path": "D:/dataset/experiment/hrdecoder_plus3/repo/weights/b_weights.pth",
+      "exists": true,
+      "sha256": "0b3cd72e740fc5c69242994c12cfd71a49ac892aff37d09c50bb9fb6931a8626",
+      "role": "B weights (local)"
+    },
+    "B_remote_copy": {
+      "path": "D:/dataset/experiment/autodl100/results/trial_b/selected_weights_only.pth",
+      "exists": true,
+      "sha256": "0b3cd72e740fc5c69242994c12cfd71a49ac892aff37d09c50bb9fb6931a8626",
+      "role": "B weights (remote trial_b copy)"
+    },
+    "E4_reference": {
+      "path": "D:/dataset/experiment/autodl100/results/e4_reference_weights.pth",
+      "exists": true,
+      "sha256": "c5a3d0f0b990d2430e545146745bc809538bbe764979baf54f62b450785268e0",
+      "role": "E4 reference weights"
+    },
+    "MA_audit_champion": {
+      "path": "D:/dataset/experiment/HRDecoder_审查轮_20260916/audit_runs/audit_20260916_A/h4_best.pth",
+      "exists": true,
+      "sha256": "14757e02de49f6f065d4ef82cb8b1c4ee8a6a7f3f66cb1867276993950f80c50",
+      "role": "MA audit champion"
+    },
+    "D_full_remote": {
+      "path": "/root/autodl-tmp/hrplus/D_0913_retry/best_mIoU_iter_2000.pth",
+      "exists": false,
+      "sha256": "UNKNOWN",
+      "status": "REMOTE_ASSET_PENDING",
+      "blocks_champion": false,
+      "reconstructable": true,
+      "reconstruction_from": [
+        "D_student_only_2000",
+        "B_local (hash-verified)"
+      ],
+      "note": "reconstruction is config-level, not a fake weight hash"
+    },
+    "E_champion": {
+      "path": "/root/autodl-tmp/hrplus/results/E_0916/best_mIoU_iter_1500.pth",
+      "exists": false,
+      "sha256": "UNKNOWN",
+      "status": "REMOTE_ASSET_PENDING",
+      "blocks_champion": true,
+      "note": "remote recovery pending; champion claim blocked until real hash obtained"
+    }
+  },
+  "B_hash_match": true,
+  "h5_h7": {
+    "h5": "D:/dataset/experiment/HRDecoder_审查轮_20260916/audit_runs/audit_20260916_A/experiments/h5_test.json",
+    "h7": "D:/dataset/experiment/HRDecoder_审查轮_20260916/audit_runs/audit_20260916_A/experiments/h7_test.json",
+    "h5_metrics": {
+      "mIoU": 0.43228924245323747,
+      "per_class": {
+        "EX": 0.5386111922725695,
+        "HE": 0.4451296131641197,
+        "SE": 0.4981614515880462,
+        "MA": 0.2472547127882145
+      }
+    },
+    "h7_metrics": {
+      "mIoU": 0.43228924245323747,
+      "per_class": {
+        "EX": 0.5386111922725695,
+        "HE": 0.4451296131641197,
+        "SE": 0.4981614515880462,
+        "MA": 0.2472547127882145
+      }
+    },
+    "miou_equal": true,
+    "per_class_equal": true,
+    "metrics_equal": true
+  },
+  "status": "LOCAL_READY_REMOTE_ASSET_PENDING"
+}

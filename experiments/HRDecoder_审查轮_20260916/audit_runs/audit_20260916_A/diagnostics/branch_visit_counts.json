@@ -1,0 +1,11 @@
+{
+  "bn_visit_counts_total": 314,
+  "by_scope": {
+    "student": 314,
+    "reference": 0
+  },
+  "student_bn_modules": 312,
+  "reference_bn_modules": 312,
+  "verdict": "reference 分支未被访问",
+  "implication": "旧重估只调 encode_decode；若 reference BN 被选中重估却未被访问，则该干预不成立（prompt §9.3）"
+}

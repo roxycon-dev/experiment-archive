@@ -1,0 +1,106 @@
+{
+  "created": "2026-09-18T18:09:44",
+  "gate": {
+    "G2_ma_delta": 0.01
+  },
+  "recipe_revision": {
+    "authorised_by_user_at": "2026-09-18T16:34:00+08:00",
+    "changed": {
+      "loss": "Dice + 0.5*BCE -> Tversky(0.3, 0.7)",
+      "patch": "512 -> 256",
+      "steps": "3000 -> 2000"
+    },
+    "reason": "R6 P2 (512 patches, Dice+0.5*BCE) collapsed to the null solution: loss ~1.00 and val patch IoU 0.0000 for 1000+ steps; the BCE gradient is dominated by ~1e5 negative pixels per patch",
+    "unchanged": [
+      "U-Net topology",
+      "native-resolution patch plan with a positive-pixel floor",
+      "alpha fusion sweep {0.3,0.5,0.7,1.0}",
+      "gate: MA val IoU >= champion + 0.010 -> test"
+    ]
+  },
+  "round": "6b",
+  "status": "rejected",
+  "sweep": {
+    "best_alpha": 0.3,
+    "best_ma_iou": 0.24305823784386937,
+    "champion_ma_val_iou": 0.25968113696573225,
+    "champion_val_miou": 0.4266857717990218,
+    "decision": "reject",
+    "delta_vs_champion": -0.016622899121862877,
+    "sweep": {
+      "0.3": {
+        "counts": [
+          22654,
+          23920,
+          46630
+        ],
+        "ma_iou": 0.24305823784386937
+      },
+      "0.5": {
+        "counts": [
+          2056,
+          15480,
+          67228
+        ],
+        "ma_iou": 0.024255580199141143
+      },
+      "0.7": {
+        "counts": [
+          1629,
+          37533,
+          67655
+        ],
+        "ma_iou": 0.015250381493582483
+      },
+      "1.0": {
+        "counts": [
+          1441,
+          55835,
+          67843
+        ],
+        "ma_iou": 0.011517035781935598
+      }
+    }
+  },
+  "test": null,
+  "train": {
+    "best_step": 1000,
+    "curve": [
+      {
+        "step": 250,
+        "val_patch_iou": 0.00813138973940123
+      },
+      {
+        "step": 500,
+        "val_patch_iou": 0.004533182898819358
+      },
+      {
+        "step": 750,
+        "val_patch_iou": 0.001541070528107895
+      },
+      {
+        "step": 1000,
+        "val_patch_iou": 0.056339352896914975
+      },
+      {
+        "step": 1250,
+        "val_patch_iou": 0.003776410098318782
+      },
+      {
+        "step": 1500,
+        "val_patch_iou": 0.006595953293519922
+      },
+      {
+        "step": 1750,
+        "val_patch_iou": 0.04318936877076412
+      },
+      {
+        "step": 2000,
+        "val_patch_iou": 0.0402149273780539
+      }
+    ],
+    "path": "/root/autodl-tmp/hrplus/glm/runs/r6b/expert/ma_expert_r6b.pth",
+    "sha256": "4805111323e1bd5462cd5766d9beedae9de580759034816e3f36565c3e016fb7",
+    "val_patch_iou": 0.056339352896914975
+  }
+}

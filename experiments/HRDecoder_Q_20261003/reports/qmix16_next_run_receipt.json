@@ -1,0 +1,66 @@
+{
+  "stage": "REGISTERED_NEXT_RUN_QUEUED",
+  "launcher_pid": 40399,
+  "arm": "Q_DDR",
+  "seed": 42,
+  "endpoint": 24000,
+  "resume": true,
+  "free_bytes": 10549743616,
+  "campaign": {
+    "arms": [
+      "Q_DDR",
+      "Q_MIX"
+    ],
+    "common_endpoint": 24000,
+    "architecture_stopped": false,
+    "discovery_complete": false,
+    "promotion_signals": [
+      {
+        "arm": "Q_DDR",
+        "formula": "fixed_fusion",
+        "nodes": [
+          12000,
+          16000
+        ]
+      },
+      {
+        "arm": "Q_MIX",
+        "formula": "fixed_fusion",
+        "nodes": [
+          12000,
+          16000
+        ]
+      }
+    ],
+    "review_seed_authorized": false,
+    "automatic_extra_experiments": false,
+    "statuses": {
+      "Q_DDR_seed42": {
+        "stage": "COMPLETE",
+        "completed": 16000,
+        "endpoint": 16000,
+        "total_seconds_this_invocation": 8352.324739255011,
+        "identity_sha256": "b3e4cea88c5eeda8923a9c3950c0f67e74f02c28057730f2dd2d19154c500396",
+        "updated_at": "2026-10-03T15:23:51.631883+00:00"
+      },
+      "Q_DDR_seed2024": {
+        "stage": "COMPLETE",
+        "completed": 16000,
+        "endpoint": 16000,
+        "total_seconds_this_invocation": 8445.277330346406,
+        "identity_sha256": "c25584777fd2ded929bce248f6fc0e05d954ce9ba200f62d3066dbad41cdd252",
+        "updated_at": "2026-10-03T17:49:17.609674+00:00"
+      },
+      "Q_MIX_seed42": {
+        "stage": "COMPLETE",
+        "completed": 16000,
+        "endpoint": 16000,
+        "total_seconds_this_invocation": 8982.998515225947,
+        "identity_sha256": "9803ad79aecd9c3d7a426fda0053ae0e43f1afc663933e30d35364be38800a3e",
+        "updated_at": "2026-10-03T22:24:57.854891+00:00"
+      }
+    },
+    "updated_at": "2026-10-03T22:35:09.133719+00:00",
+    "next_action": "COMPLETE_DISCOVERY_AT_COMMON_ENDPOINT"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "scope": "Correct stale total-parameter assertion before optimizer or formal updates",
+  "old_train_SHA": "0c49f8322762a9deddabb29ed3e665544111ec0c6bd70f53de75d9f7bcdeccdf",
+  "new_train_SHA": "32ec590eb21f8bc5b5caa6264dbc1a6d73367feff21fb684984810d7e633ba94",
+  "expected_total_parameters": 65856916,
+  "private_parameters": 284496,
+  "model_loss_optimizer_unchanged": true,
+  "CPU_and_GPU_gates_repeated": true,
+  "old_failure_preserved_remote": "reports/semantic/failed_parameter_assertion_before_updates",
+  "safe_to_repair": true,
+  "formal_updates": 0,
+  "prior_session_empty": true,
+  "old_pipeline_pid": 60263,
+  "status": "CPU_TO_REAL_GPU_PIPELINE_DISPATCHED",
+  "pipeline_pid": 60493,
+  "time_unix": 1791612815.8430195,
+  "fresh_run_count": 1,
+  "formal_updates_before_repair": 0,
+  "gate_repair": true,
+  "server_kept_running": true,
+  "external_diagnostics_controlled": false
+}

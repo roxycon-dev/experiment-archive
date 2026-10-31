@@ -1,0 +1,35 @@
+{
+  "status": "PREPARATION_COMPLETE_SERVER_ACCEPTANCE_PENDING",
+  "date": "2026-10-03",
+  "original_plan": "D:\\dataset\\experiment\\HRDecoder_严格复诊_20261003\\01_严格诊断与下一轮主方案.md",
+  "workspace": "D:\\dataset\\experiment\\HRDecoder_Next_20261003",
+  "source_sha256": "a28b56310d5d548c6fc2efa2aab3f5692b12f91ce12c2e11898de52d4909f8a5",
+  "assets": {
+    "n": 9,
+    "total_bytes": 2225114869,
+    "each_SHA256_verified": true,
+    "U_H_optimizer_stripping_all_tensors_verified_equal": true
+  },
+  "checks": {
+    "protocol_unit_tests": 9,
+    "small_real_trainer_resume_test": "PASS",
+    "actual_U0_zero_step_parity": "max_abs_error=0",
+    "synthetic_two_update_gradient_check": "PASS",
+    "active_source_compile": "PASS"
+  },
+  "full_D_server_acceptance": "PENDING_actual_mmcv_mmengine_environment",
+  "server_connection": "NOT_ATTEMPTED",
+  "DDR_formal_training": "NOT_STARTED",
+  "test_access": "NONE",
+  "conditional_E": "Official pixel-GT and paired-original asset gate pending; curated polygons rejected",
+  "G_and_M_runner": "IMPLEMENTED",
+  "final_lock_and_single_test_runner": "IMPLEMENTED",
+  "resource_basis": {
+    "val_pixels": 401111888,
+    "single_val_fp32_raw_GiB": 5.977032899856567,
+    "suggested_writable_disk_GiB": 120,
+    "suggested_GPU_memory_GiB": 24
+  },
+  "original_lock_SHA256": "644974f4a888835f838472199dcb623e879be2d62e73dab502394759551ceac4",
+  "handoff": "D:\\dataset\\experiment\\HRDecoder_Next_20261003\\README_准备与执行.md"
+}

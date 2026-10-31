@@ -1,0 +1,148 @@
+{
+  "_comment": [
+    "HRDecoder 历史类别专家 — val 二值掩膜导出/互补性分析 的统一配置模板。",
+    "用法：复制本文件为 expert_eval_settings.json，把所有 REQUIRED 值替换为服务器上的真实绝对路径，",
+    "并填满 expected_sha256（每一项都必须与文件实际 sha256 完全一致；缺失或不符一律 fail closed）。",
+    "严禁在此文件写入账号/密码/密钥；本工具不联网、不登录、不上传。",
+    "HRPlus 导出需要：repo / data_root / config / student_checkpoint / reference_checkpoint / cache_dir /",
+    "champion / expected_sha256 / fusionaware_src_dir / fusionaware_exec_dir / cs_candidates / export。",
+    "整模导出需要：ddr_root / export / fullmodel；分析需要：export.out_root（analysis 段可选）。"
+  ],
+  "schema_version": "hrdecoder-expert-eval/v1",
+  "repo": "/root/autodl-tmp/hr_exec_20260919/repo",
+  "fusionaware_src_dir": "/root/autodl-tmp/hr_exec_20260919/code",
+  "fusionaware_exec_dir": "/root/autodl-tmp/hr_exec_20260919/code",
+  "config": "configs/lesion/exp/hrplus_patch_dice.py",
+  "data_root": "/root/autodl-tmp/hr_exec_20260919/data/DDR_split_613",
+  "ddr_root": "/root/autodl-tmp/hr_exec_20260919/data/DDR_split_613",
+  "student_checkpoint": "/root/autodl-tmp/hr_exec_20260919/assets/D_student_2000.pth",
+  "reference_checkpoint": "/root/autodl-tmp/hr_exec_20260919/assets/B_weights.pth",
+  "cache_dir": "/root/autodl-tmp/hr_exec_20260919/cache/reference",
+  "_cache_dir_note": "本工具**不写任何概率缓存**（禁止 fp32/fp16 概率落盘）；该键仅因 run_protocol.validate_settings 把它列为必填而保留。",
+  "champion": {
+    "head": "/root/autodl-tmp/hr_exec_20260919/assets/H4_best.pth",
+    "members": [
+      {
+        "name": "D",
+        "config": "configs/lesion/exp/hrplus_patch_dice.py",
+        "checkpoint": "/root/autodl-tmp/hr_exec_20260919/assets/D_student_2000.pth",
+        "load": "student_only",
+        "weight": 3
+      },
+      {
+        "name": "E",
+        "config": "configs/lesion/exp/hrplus_mares.py",
+        "checkpoint": "/root/autodl-tmp/hr_exec_20260919/assets/E_1500.pth",
+        "load": "full",
+        "weight": 2
+      },
+      {
+        "name": "B",
+        "config": "configs/lesion/exp/hr100_b.py",
+        "checkpoint": "/root/autodl-tmp/hr_exec_20260919/assets/B_weights.pth",
+        "load": "full",
+        "weight": 1
+      },
+      {
+        "name": "E4",
+        "config": "configs/lesion/exp/e4_detail_split613.py",
+        "checkpoint": "/root/autodl-tmp/hr_exec_20260919/assets/E4_weights.pth",
+        "load": "full",
+        "weight": 1
+      }
+    ]
+  },
+  "expected_sha256": {
+    "configs/lesion/exp/hrplus_patch_dice.py": "2d687086e28533d4bb080f31c12c4abb802d5293fc4f2a463f9f0bd8f36452f9",
+    "configs/lesion/exp/hrplus_mares.py": "591e4786abaa35b8dfc9a6476c45a8c9eb387544c37e0d56b6a499b683e100b4",
+    "configs/lesion/exp/hr100_b.py": "556e7c2f1557c6658f6233f1fe1601b8d0b1c8382cc6bdaaaf108a712da3ed54",
+    "configs/lesion/exp/e4_detail_split613.py": "65b2c5eb88db2790c1e00dbcb6e18deaf8fc6abc5bf3f148be9ae70d2f06fc1c",
+    "/root/autodl-tmp/hr_exec_20260919/assets/D_student_2000.pth": "5fe18717b62d8fc3ab4846a50c046588e2af05abbbfdb3a958f4794018b319ea",
+    "/root/autodl-tmp/hr_exec_20260919/assets/B_weights.pth": "0b3cd72e740fc5c69242994c12cfd71a49ac892aff37d09c50bb9fb6931a8626",
+    "/root/autodl-tmp/hr_exec_20260919/assets/E_1500.pth": "a18ff92b4da24d870554f17856983d4be042386cacbcaba0d4e13f3f248ed5e5",
+    "/root/autodl-tmp/hr_exec_20260919/assets/E4_weights.pth": "c5a3d0f0b990d2430e545146745bc809538bbe764979baf54f62b450785268e0",
+    "/root/autodl-tmp/hr_exec_20260919/assets/H4_best.pth": "14757e02de49f6f065d4ef82cb8b1c4ee8a6a7f3f66cb1867276993950f80c50"
+  },
+  "cs_candidates": [
+    {
+      "name": "C2000",
+      "path": "/root/autodl-tmp/hr_exec_20260919/runs/cs4000_v2/C_step_2000.pth",
+      "arm": "C",
+      "steps": 2000,
+      "sha256": "119793766067d872ecc8d420cda4f2ed36d359480ee4581f85d3cd37b74f928e",
+      "_definition": "C 臂（class-balanced 采样续训）在 step 2000 的 node checkpoint；概率只取 _student_prob",
+      "_history_val_miou": 0.3979739003932351
+    },
+    {
+      "name": "S4000",
+      "path": "/root/autodl-tmp/hr_exec_20260919/runs/cs4000_v2/S_step_4000.pth",
+      "arm": "S",
+      "steps": 4000,
+      "sha256": "abb2f078e57fed2444b74f2d81d3aa22049fbc17ea5d7fc4e8fd5f1a94c52179",
+      "_definition": "S 臂（class→image→instance 条件采样）在 step 4000 的 node checkpoint；概率只取 _student_prob",
+      "_history_val_miou": 0.39831982892663487
+    }
+  ],
+  "export": {
+    "out_root": "/root/autodl-tmp/HRDecoder_FullCompetition_20260920/expert_outputs",
+    "_note": "两个导出脚本必须共用同一个 out_root：共享 GT 写在 <out_root>/_shared/gt，HRPlus 写在 <out_root>/hrplus，整模写在 <out_root>/fullmodel。",
+    "pipelines": [
+      "champion",
+      "BASE_0",
+      "D_blend",
+      "C2000",
+      "MIX_C2000",
+      "S4000"
+    ]
+  },
+  "fullmodel": {
+    "_note": "U0/H0 走本工程 trainer 的整图/滑窗评测路径；config 相对本工程根目录（或用 config_base 给绝对基准）。",
+    "eval_mode": "whole_image",
+    "window_size": null,
+    "window_stride": null,
+    "imagenet_weights": {
+      "file": null,
+      "sha256": null
+    },
+    "models": [
+      {
+        "name": "U0",
+        "config": "configs/U0_convnext_unet_ddr_only.yaml",
+        "checkpoint": "/root/autodl-tmp/HRDecoder_FullCompetition_20260920/runs/U0_full_fast_seed42/ckpt_best.pth",
+        "sha256": "98d98a5d02dc2615062c3c31cd15d061daf3d7ab41cb8f25cd90b062cd53bb34",
+        "expected_miou": 0.3844641257662971,
+        "_note": "expected_miou 为历史 val 复现目标；不符（>1e-6）即拒绝出图。不需要时删除该键。"
+      },
+      {
+        "name": "H0",
+        "config": "configs/H0_hrdecoder_ddr_only.yaml",
+        "checkpoint": "/root/autodl-tmp/HRDecoder_FullCompetition_20260920/runs/H0_full_fast_seed42/ckpt_best.pth",
+        "sha256": "0c4b303f35b1281a7378a953a459b26a58e08def86920660a2eea898c058ab1f",
+        "reference_root": "/root/HRDecoder",
+        "_note": "H0 本地只有 6000 步的元数据（无 .pth）；权重必须由服务器提供，否则本模型阻塞（见 README 阻塞清单）。",
+        "expected_miou": 0.36922642429539565
+      }
+    ]
+  },
+  "analysis": {
+    "champion": "champion",
+    "models": [
+      "champion",
+      "BASE_0",
+      "D_blend",
+      "C2000",
+      "MIX_C2000",
+      "S4000",
+      "U0",
+      "H0"
+    ],
+    "out_dir": null,
+    "area_mode": "tertile",
+    "area_thresholds": null,
+    "_area_note": "tertile = 逐类按 GT 连通域面积的三分位切小/中/大；absolute 时给出 [small_max, medium_max] 像素阈值。"
+  },
+  "known_blockers": [
+    "H0：本地仅有 runs/H0_stopped6000_metadata.tar.gz（元数据，无 .pth）→ H0 需服务器权重；缺失时 export_fullmodel_masks.py 以 BLOCKED(exit 3) 退出。",
+    "C2000/S4000：需要 phase_cs.py 产出的 node checkpoint（payload 含 state_dict/arm/steps）；缺则 HRPlus 导出 BLOCKED。"
+  ]
+}

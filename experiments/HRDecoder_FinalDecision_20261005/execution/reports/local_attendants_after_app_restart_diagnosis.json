@@ -1,0 +1,141 @@
+{
+  "time": "2026-10-05T11:27:40.825866+00:00",
+  "nodes": {
+    "primary": {
+      "attendant_pid.json": {
+        "pid": 32844,
+        "time": "2026-10-05T04:13:41.940043+00:00",
+        "helper": "reports/primary_parallel_attendant.py"
+      },
+      "attendant_state.json": {
+        "stage": "WAITING",
+        "time": "2026-10-05T11:19:01.947957+00:00"
+      },
+      "persistent_receiver_state.json": {
+        "stage": "POOL_COMPLETED",
+        "time": "2026-10-05T11:19:01.919798+00:00",
+        "receiver_connections_opened": 2,
+        "files_received": 5,
+        "seconds": 25.13090980000561,
+        "negotiated_compression": [
+          "zlib@openssh.com",
+          "zlib@openssh.com"
+        ],
+        "max_file_receivers": 2,
+        "original_mirror_sha256": "28492fcdbd64ae0e08145274af70368726275e2bdc52dbc99fa9177b6c0e366b",
+        "all_original_SHA_and_custody_gates_used": true
+      },
+      "transfer_progress.json": {
+        "stage": "TRANSFERRING",
+        "full": false,
+        "verified_files": 6416,
+        "expected_files": 6419,
+        "verified_bytes": 268608536,
+        "expected_bytes": 269292467,
+        "updated_at": "2026-10-05T11:19:01.917288+00:00"
+      },
+      "mirror.lock": {
+        "pid": 32844,
+        "time": "2026-10-05T11:19:34.445873+00:00"
+      },
+      "recorded_pid_alive": false,
+      "logs": [
+        {
+          "path": "reports\\primary_parallel_attendant.log",
+          "mtime": 1791199174.4428945,
+          "tail": [
+            "{\"stage\": \"SNAPSHOT\", \"files\": 6273, \"campaign_stage\": \"RUNNING\"}",
+            "{\"time\": \"2026-10-05T11:13:23.252013+00:00\", \"driver_stage\": \"CAMPAIGN\", \"run\": \"D_seed42\", \"run_stage\": \"TRAINING\", \"completed\": 4460, \"free_disk_bytes\": 26726662144}",
+            "{\"stage\": \"SNAPSHOT\", \"files\": 6414, \"campaign_stage\": \"RUNNING\"}",
+            "{\"time\": \"2026-10-05T11:18:34.789080+00:00\", \"driver_stage\": \"CAMPAIGN\", \"run\": \"D_seed42\", \"run_stage\": \"TRAINING\", \"completed\": 4840, \"free_disk_bytes\": 26727161856}",
+            "{\"stage\": \"SNAPSHOT\", \"files\": 6416, \"campaign_stage\": \"RUNNING\"}",
+            "{\"time\": \"2026-10-05T11:19:34.443046+00:00\", \"driver_stage\": \"CAMPAIGN\", \"run\": \"D_seed42\", \"run_stage\": \"TRAINING\", \"completed\": 4920, \"free_disk_bytes\": 26726649856}"
+          ]
+        }
+      ]
+    },
+    "second": {
+      "attendant_pid.json": {
+        "pid": 8552,
+        "helper": "reports/parallel_node2_attendant.py",
+        "replaced_paused_pid": 24868,
+        "reason": "New-node native atomic comparison diagnosed; early gates passed and driver is healthy waiting for data",
+        "time": "2026-10-05T04:31:40.152738+00:00"
+      },
+      "attendant_state.json": {
+        "stage": "WAITING",
+        "time": "2026-10-05T11:18:59.415373+00:00"
+      },
+      "persistent_receiver_state.json": {
+        "stage": "POOL_COMPLETED",
+        "time": "2026-10-05T11:18:59.402876+00:00",
+        "receiver_connections_opened": 2,
+        "files_received": 3,
+        "seconds": 12.175111599994125,
+        "negotiated_compression": [
+          "zlib@openssh.com",
+          "zlib@openssh.com"
+        ],
+        "max_file_receivers": 2,
+        "original_mirror_sha256": "28492fcdbd64ae0e08145274af70368726275e2bdc52dbc99fa9177b6c0e366b",
+        "all_original_SHA_and_custody_gates_used": true
+      },
+      "transfer_progress.json": {
+        "stage": "TRANSFERRING",
+        "full": false,
+        "verified_files": 77,
+        "expected_files": 2879,
+        "verified_bytes": 175491352,
+        "expected_bytes": 188495650,
+        "updated_at": "2026-10-05T11:19:38.080738+00:00"
+      },
+      "mirror.lock": {
+        "pid": 8552,
+        "time": "2026-10-05T11:19:31.730212+00:00"
+      },
+      "recorded_pid_alive": false,
+      "logs": [
+        {
+          "path": "parallel\\node2\\reports\\attendant_atomic_recovery.log",
+          "mtime": 1791199171.7272096,
+          "tail": [
+            "{\"stage\": \"SNAPSHOT\", \"files\": 2876, \"campaign_stage\": \"RUNNING\"}",
+            "{\"time\": \"2026-10-05T11:17:53.623273+00:00\", \"driver_stage\": \"PARALLEL_CAMPAIGN\", \"run\": \"SD_seed42\", \"run_stage\": \"TRAINING\", \"completed\": 16440, \"free_disk_bytes\": 17722667008}",
+            "{\"stage\": \"SNAPSHOT\", \"files\": 2879, \"campaign_stage\": \"RUNNING\"}",
+            "{\"time\": \"2026-10-05T11:18:45.485113+00:00\", \"driver_stage\": \"PARALLEL_CAMPAIGN\", \"run\": \"SD_seed42\", \"run_stage\": \"TRAINING\", \"completed\": 16480, \"free_disk_bytes\": 17722667008}",
+            "{\"stage\": \"SNAPSHOT\", \"files\": 2879, \"campaign_stage\": \"RUNNING\"}",
+            "{\"time\": \"2026-10-05T11:19:31.727243+00:00\", \"driver_stage\": \"PARALLEL_CAMPAIGN\", \"run\": \"SD_seed42\", \"run_stage\": \"TRAINING\", \"completed\": 16520, \"free_disk_bytes\": 17722667008}"
+          ]
+        },
+        {
+          "path": "parallel\\node2\\reports\\attendant_atomic_recovery.err.log",
+          "mtime": 1791198635.126295,
+          "tail": [
+            "  File \"C:\\Users\\GuanXingRen\\Miniconda3\\Lib\\concurrent\\futures\\thread.py\", line 59, in run",
+            "    result = self.fn(*self.args, **self.kwargs)",
+            "  File \"D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\execution\\ops\\mirror.py\", line 50, in recover",
+            "    target=(output/item['path']).resolve();assert target.is_relative_to(output.resolve());target.parent.mkdir(parents=True,exist_ok=True)",
+            "                                                  ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^",
+            "AssertionError"
+          ]
+        }
+      ]
+    }
+  },
+  "matching_live_python": [],
+  "coordinator": {
+    "recorded_pid_alive": false,
+    "state": {
+      "stage": "WAITING_SD_COMPLETE_SHA_CUSTODY",
+      "time": "2026-10-05T11:19:08.286794+00:00"
+    },
+    "parallel_coordinator_barrier.log": {
+      "mtime": 1791174225.0373144,
+      "tail": []
+    },
+    "parallel_coordinator_barrier.err.log": {
+      "mtime": 1791174225.0373144,
+      "tail": []
+    }
+  }
+}

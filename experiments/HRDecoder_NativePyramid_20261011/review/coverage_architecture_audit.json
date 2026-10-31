@@ -1,0 +1,618 @@
+{
+  "reviewer": "architecture_audit",
+  "as_of": "2026-10-11",
+  "scope": "历史Markdown只读复核；未训练，未执行SGD，未读新test像素",
+  "manifest": "review/reading_architecture_audit.json",
+  "sha256_source": "分配清单原记录；本轮未再次计算文件哈希",
+  "assigned": 67,
+  "full_read": 63,
+  "partial": 1,
+  "index_only": 3,
+  "stop_reason": "已补读清单中9份科学正文；3份运维/交接记录保留index_only。3671行交接文档的科学正文已读完，仅2条非科研SSH连接调用未读，故保留partial。",
+  "reading_method": "按清单顺序分批全文读取；发生输出截断的8-10及50-51批次已补读遗漏；目录、操作记录和合成夹具不当作科学实验结果。 后续补读清单索引55–61（62除外）、63、66共9份科学正文；62、64、65运维类正文未读并保留index_only。 闭环复核index 40：科学正文已覆盖至末尾，没有剩余实验正文；只跳过2条非科研SSH连接调用，状态保持partial。",
+  "entries": [
+    {
+      "index": 0,
+      "primary_path": "HRDecoder_FullCompetition_20260920/analysis/README_EXPERT_COMPLEMENTARITY.md",
+      "sha256": "88f1a4754a5481f4ce2b12255c1c45d9767460ace8159749e05e9459148a8931",
+      "actual_read_status": "full_read",
+      "document_kind": "analysis_protocol",
+      "key_finding": "方法/接口文档：同val原尺寸FP32严格阈值packbits互补分析；D_blend为学生与reference各半，H4仅改MA，合成与单模型必须区分。",
+      "read_limitation": null
+    },
+    {
+      "index": 1,
+      "primary_path": "HRDecoder_FullCompetition_20260920/analysis/historical_class_shortlist.md",
+      "sha256": "08cb3bbe1fee87d3af5fe5345db1a1202fb78ad74673d12c97e6742259e08845",
+      "actual_read_status": "full_read",
+      "document_kind": "historical_result_summary",
+      "key_finding": "历史盘点发现类别最优不等于总冠军；MIX_C2000 val增而test退，旧BN重估和checkpoint误装存在评估伪影，八月逐图平均不可直接比较。",
+      "read_limitation": null
+    },
+    {
+      "index": 2,
+      "primary_path": "HRDecoder_FullCompetition_20260920/analysis_results/expert_complementarity_20260920/EXECUTION_REPORT_20260920.md",
+      "sha256": "bf81c5415ff337ffc98290158198148e3920f21b55ee4e94a90bfe6727c6b2e5",
+      "actual_read_status": "full_read",
+      "document_kind": "historical_result_report",
+      "key_finding": "互补性执行报告复现8模型和计数；存在错误解释：OR可直接由预测构造而非GT oracle，负OR/替换不能推出候选无任何互补价值。",
+      "read_limitation": null
+    },
+    {
+      "index": 3,
+      "primary_path": "HRDecoder_FullCompetition_20260920/analysis_results/expert_complementarity_20260920/analysis_outputs/EXPERT_COMPLEMENTARITY.md",
+      "sha256": "aa53c1d887a45925403d5be09d6344ac788f69e0984f1027d9afb1820b395fc4",
+      "actual_read_status": "full_read",
+      "document_kind": "historical_result_report",
+      "key_finding": "逐像素结果显示小EX/HE/SE召回仅约13–16%，MA约32%；更强小目标召回常同时伴随大量独有FP，逐类argmax组合仅val选择结果。",
+      "read_limitation": null
+    },
+    {
+      "index": 4,
+      "primary_path": "HRDecoder_FullCompetition_20260920/data_contract/README.md",
+      "sha256": "d8b529549e6b310a2303b0451c61f84fdb92d7c33dcd71886924f262a9819ae7",
+      "actual_read_status": "full_read",
+      "document_kind": "data_contract",
+      "key_finding": "数据契约设计：EX/HE/SE/MA独立valid掩码，未标注绝不可当负类；非模型性能报告。",
+      "read_limitation": null
+    },
+    {
+      "index": 5,
+      "primary_path": "HRDecoder_FullCompetition_20260920/docs/ASSET_AND_INTERFACE_AUDIT.md",
+      "sha256": "070dc26d0e948e5462f36af6ae06f1ee2cd017122c6b0342ffc7901598e60c49",
+      "actual_read_status": "full_read",
+      "document_kind": "source_audit",
+      "key_finding": "源码审计确认HRDecoder旧255按负类、base val默认test需覆盖，DDR自定义归一化及稀疏SE/MA；融合PNG为认可真值。",
+      "read_limitation": null
+    },
+    {
+      "index": 6,
+      "primary_path": "HRDecoder_FullCompetition_20260920/docs/IMPLEMENTATION_STATUS.md",
+      "sha256": "60601e060373fed6c69981c0a5143b98185483cf55b300d878469ea6a9d178b2",
+      "actual_read_status": "full_read",
+      "document_kind": "implementation_status",
+      "key_finding": "工程状态：12项合成测试通过但真实配置有60个占位blocker，代码测试通过不能当训练放行。",
+      "read_limitation": null
+    },
+    {
+      "index": 7,
+      "primary_path": "HRDecoder_FullCompetition_20260920/docs/PREFLIGHT_TEST_REPORT.md",
+      "sha256": "9d6cbc1e8d0e76864987304b5c65a0afe78693dd888a155bc50f01ee0cc97c14",
+      "actual_read_status": "full_read",
+      "document_kind": "synthetic_test_report",
+      "key_finding": "测试报告为契约工具的合成正负例12/12，并非模型精度或稳定性证据。",
+      "read_limitation": null
+    },
+    {
+      "index": 8,
+      "primary_path": "HRDecoder_FullCompetition_20260920/docs/TRAINING_IMPLEMENTATION_STATUS.md",
+      "sha256": "917eb6ff3be7c76bdda099c4f6e544bad954489082dca4c1748f026ba1146a90",
+      "actual_read_status": "full_read",
+      "document_kind": "implementation_status",
+      "key_finding": "实现审查记录15项实际工程缺陷，H0/H1为HRNet+FCN、冻结统计affine训练；合成预检不能代替真实模型适配。",
+      "read_limitation": null
+    },
+    {
+      "index": 9,
+      "primary_path": "HRDecoder_FullCompetition_20260920/docs/TRAINING_OBJECTIVE.md",
+      "sha256": "0e604a4fe651fd2c755085393f566481d22658158ba8f82830bcea192f1ed8c1",
+      "actual_read_status": "full_read",
+      "document_kind": "design_proposal",
+      "key_finding": "历史H/U配方已采用masked BCE+Dice、冻结HRNet BN并以原生整图/滑窗评估，因此这些并非本轮首次提出；目标文档非效果证据。",
+      "read_limitation": null
+    },
+    {
+      "index": 10,
+      "primary_path": "HRDecoder_FullCompetition_20260920/docs/champion_asset_inventory_workbuddy.md",
+      "sha256": "0585df55ce22fd5f4d7293e9363804d863663ac59d7e844850bd17ab290580dd",
+      "actual_read_status": "full_read",
+      "document_kind": "asset_inventory",
+      "key_finding": "资产盘点分清val与test/H4最佳1600步；由全类较弱便排除U0互补的论证过强，不可从旧盘点沿用。",
+      "read_limitation": null
+    },
+    {
+      "index": 11,
+      "primary_path": "HRDecoder_FullCompetition_20260920/refiner_v1/GO_NO_GO.md",
+      "sha256": "5567af0bab81a3428102157093265318bf078a76b3b78b670e109246e3516074",
+      "actual_read_status": "full_read",
+      "document_kind": "design_and_diagnostic_report",
+      "key_finding": "refiner候选覆盖率MA/HE≈93%只是可达上限，25k参数Haar/GN/概率残差smoke降loss不等于实际改善；文中GN尺寸无关和固定规则不可能分离FP的断言过强。",
+      "read_limitation": null
+    },
+    {
+      "index": 12,
+      "primary_path": "HRDecoder_FullCompetition_20260920/refiner_v1/LAUNCH_REPORT.md",
+      "sha256": "ed638000af9e82bfcac6290b27692e7e7eaf1b14cf5d43197b5cc84ce4fd7215",
+      "actual_read_status": "full_read",
+      "document_kind": "operations_and_smoke",
+      "key_finding": "运维启动报告：47/47测试和40步smoke只能说明链路，focal权重由数值占比选30并记录大梯度裁剪，尚无正式胜负。",
+      "read_limitation": null
+    },
+    {
+      "index": 13,
+      "primary_path": "HRDecoder_FullCompetition_20260920/refiner_v1/README.md",
+      "sha256": "7f74442cf6a84629c3ed2b5c84de0dea0b5bb482b2a8dcdf34fb00b1e0d636cd",
+      "actual_read_status": "full_read",
+      "document_kind": "implementation_readme",
+      "key_finding": "refiner说明书明确概率clip残差/Haar/GN；“GN padding不能改预测”是错误保证，identity起步和首步头梯度不代表后续可恢复。",
+      "read_limitation": null
+    },
+    {
+      "index": 14,
+      "primary_path": "HRDecoder_FullCompetition_20260920/refiner_v1/RESUME_REPORT.md",
+      "sha256": "4b3c530c07e2f182e8d752b6a5ccc51e8554699a159c89938d4456ee2e0298c6",
+      "actual_read_status": "full_read",
+      "document_kind": "operations_and_failure_report",
+      "key_finding": "实际修复记录：ragged stack与边界中心裁错位、混尺寸训练padding导致OOM；推理无padding而训练仍pad，GN分布问题未被该运维修复解决。",
+      "read_limitation": null
+    },
+    {
+      "index": 15,
+      "primary_path": "HRDecoder_FullCompetition_20260920/tests/_tmp/reports/audit_negative_missing_image.md",
+      "sha256": "670ce93e358ce88b15b98c89db5e3f5594aab415908d4d19eb78995cfebdc23d",
+      "actual_read_status": "full_read",
+      "document_kind": "synthetic_test_fixture",
+      "key_finding": "合成负例：缺图被正确拒绝；非模型实验。",
+      "read_limitation": null
+    },
+    {
+      "index": 16,
+      "primary_path": "HRDecoder_FullCompetition_20260920/tests/_tmp/reports/audit_negative_missing_mask.md",
+      "sha256": "a08222e8e1381e3995c3140bc798be0fad0294f88dec1bcfb9aa19a2df0b9594",
+      "actual_read_status": "full_read",
+      "document_kind": "synthetic_test_fixture",
+      "key_finding": "合成负例：缺掩膜被正确拒绝；非模型实验。",
+      "read_limitation": null
+    },
+    {
+      "index": 17,
+      "primary_path": "HRDecoder_FullCompetition_20260920/tests/_tmp/reports/audit_negative_valid_none_with_mask.md",
+      "sha256": "72d4db986a99fa52f1e46100317250880cb0fca6c0cb9505a249684fabd33be6",
+      "actual_read_status": "full_read",
+      "document_kind": "synthetic_test_fixture",
+      "key_finding": "合成负例：valid=none仍挂mask被拒绝；非模型实验。",
+      "read_limitation": null
+    },
+    {
+      "index": 18,
+      "primary_path": "HRDecoder_FullCompetition_20260920/tests/_tmp/reports/audit_positive.md",
+      "sha256": "a5bcd544f14b35c0901fdbf4251eabf33287484b787b69830d7fef19eea7e6bf",
+      "actual_read_status": "full_read",
+      "document_kind": "synthetic_test_fixture",
+      "key_finding": "合成正例manifest通过；非真实外部数据训练证据。",
+      "read_limitation": null
+    },
+    {
+      "index": 19,
+      "primary_path": "HRDecoder_FullCompetition_20260920/tests/_tmp_expert_contract/e2e/out/analysis/EXPERT_COMPLEMENTARITY.md",
+      "sha256": "2c85e8214bac761df2e7fc5db1dfa2af3e0b869eb0c6dcf6cc4ca8bda112ab9c",
+      "actual_read_status": "full_read",
+      "document_kind": "synthetic_test_fixture",
+      "key_finding": "端到端合成夹具的100%mIoU，不能混入DDR成绩或历史科学结果。",
+      "read_limitation": null
+    },
+    {
+      "index": 20,
+      "primary_path": "HRDecoder_FusionAware_20260917/EXECUTION_PLAN_CURRENT.md",
+      "sha256": "ed6a765e9c6756f721c394e79fc60f481346d61e51e9a4c288e89bf7c44d6f57",
+      "actual_read_status": "full_read",
+      "document_kind": "operations_index",
+      "key_finding": "运维方案索引：旧NEXT稿失效，后续须先核实初始化和真实调用链；非实验结果。",
+      "read_limitation": null
+    },
+    {
+      "index": 21,
+      "primary_path": "HRDecoder_FusionAware_20260917/HRDecoder-DDR-阶段成果报告-20260917至0918.md",
+      "sha256": "aa5d844eee97901cfb5f19b02244767f16ee9ef43bd2b98fcbb7aa59fd92962a",
+      "actual_read_status": "full_read",
+      "document_kind": "historical_result_report",
+      "key_finding": "R1/R5纯融合监督仅小幅改善student且未传导冠军；MA随机U-Net两配方均弱，不能由此断言从RGB学习永远不可行或HE语义已充分覆盖。",
+      "read_limitation": null
+    },
+    {
+      "index": 22,
+      "primary_path": "HRDecoder_FusionAware_20260917/NEXT_ROUND_PLAN_20260918.md",
+      "sha256": "6604d219cafd5a4694a689100cd3aed7972edb258405362d033c212e68f31a8f",
+      "actual_read_status": "full_read",
+      "document_kind": "design_proposal",
+      "key_finding": "R5计划的短点门槛/多次test流程属于历史设计，不构成已验证普适噪声界；应与实际结果分开。",
+      "read_limitation": null
+    },
+    {
+      "index": 23,
+      "primary_path": "HRDecoder_FusionAware_20260917/NEXT_ROUND_PLAN_20260918_R6.md",
+      "sha256": "54127bf8fd8f0f931860eaa3d283b9aa2d435e85a20ab1768e0ad907ab6655ef",
+      "actual_read_status": "full_read",
+      "document_kind": "design_proposal",
+      "key_finding": "R6计划把MA头成功外推其他类并预估叠加收益，实际失败显示不可把模块收益线性累加或称保底提升。",
+      "read_limitation": null
+    },
+    {
+      "index": 24,
+      "primary_path": "HRDecoder_FusionAware_20260917/NEXT_ROUND_PLAN_20260919.md",
+      "sha256": "3ff1129fcc5f4b8a8f643d9dcef21fa5e973107d39640fcff13b55cdd91a0489",
+      "actual_read_status": "full_read",
+      "document_kind": "superseded_design_proposal",
+      "key_finding": "被替代的MA残差/阈值/FOV计划：FN-share≈0.5不能称纯漏检，动态阈值有循环偏差；无执行效果证据。",
+      "read_limitation": null
+    },
+    {
+      "index": 25,
+      "primary_path": "HRDecoder_FusionAware_20260917/NEXT_ROUND_PLAN_20260919_REVISED.md",
+      "sha256": "357550008aa08ef4e2b08d4565dee3caba33be321d89f58b5f2c97b6f1279e65",
+      "actual_read_status": "full_read",
+      "document_kind": "superseded_design_proposal",
+      "key_finding": "被替代同域预训练/HACDR计划并非实际验证，宣称454张表征上限和唯一路线证据不足，本次同预训约束也排除额外初始化。",
+      "read_limitation": null
+    },
+    {
+      "index": 26,
+      "primary_path": "HRDecoder_FusionAware_20260917/README.md",
+      "sha256": "b184de0621f1bcfc14dcfb11e2b4c2557a6c94aff2df72aa8eb477b2a6dd81b1",
+      "actual_read_status": "full_read",
+      "document_kind": "implementation_readme",
+      "key_finding": "历史FusionAware runner限定stage4+head、冻结BN/reference，以配对控制和严格权重哈希评估，非fresh40k设计。",
+      "read_limitation": null
+    },
+    {
+      "index": 27,
+      "primary_path": "HRDecoder_FusionAware_20260917/README_OPERATIONS.md",
+      "sha256": "b309095dad48c5be6c1b6cd4b1449a6e42cb14bc4b25932859542159ff3119c2",
+      "actual_read_status": "full_read",
+      "document_kind": "operations",
+      "key_finding": "预算/看门狗/资产审计操作指南，非模型增益或稳定性结果。",
+      "read_limitation": null
+    },
+    {
+      "index": 28,
+      "primary_path": "HRDecoder_FusionAware_20260917/ROUND5_RESULT_20260918.md",
+      "sha256": "a9c77675ce28d15d70e9925f00dffe347e0bf7e93c765dac3ee477dd5fcf329c",
+      "actual_read_status": "full_read",
+      "document_kind": "historical_result_report",
+      "key_finding": "R5最佳V1 41.87%而入融合仅约+0.06pp，seed43没有配对A对照，不能称严格种子复现；延长无益也是越界解释。",
+      "read_limitation": null
+    },
+    {
+      "index": 29,
+      "primary_path": "HRDecoder_FusionAware_20260917/ROUND6_RESULT_20260918.md",
+      "sha256": "36ad72398d167f740f1a71688547e001459d64a3d7a6e4fb3ea000bddffbf175",
+      "actual_read_status": "full_read",
+      "document_kind": "historical_result_report",
+      "key_finding": "R6/R6b未获增益且MA专家0–5.6%振荡，后续“注入先验后退化自动消失”是假设性过度保证，正是应避免的旧错。",
+      "read_limitation": null
+    },
+    {
+      "index": 30,
+      "primary_path": "HRDecoder_FusionAware_20260917/execution_20260919/MODEL_IDENTITY_AUDIT.md",
+      "sha256": "f4362dc2f445feeae308fab23cc1af613016204e0091f44252963b5fb4a3c0e2",
+      "actual_read_status": "full_read",
+      "document_kind": "source_audit",
+      "key_finding": "代码身份审计确认旧HRPlus源checkpoint覆盖所有初始化、推理自带reference各半；同预训练和单模型必须在真实调用链核验。",
+      "read_limitation": null
+    },
+    {
+      "index": 31,
+      "primary_path": "HRDecoder_FusionAware_20260917/execution_20260919/README_RUN_NEXT.md",
+      "sha256": "86980b532afcefc1529aaa0b563d9e961e94bbb2c87f6511509df4826f0a63f1",
+      "actual_read_status": "full_read",
+      "document_kind": "operations",
+      "key_finding": "C/S收尾操作指南要求核验产物、串行val、锁定后单次test；非独立性能结果。",
+      "read_limitation": null
+    },
+    {
+      "index": 32,
+      "primary_path": "HRDecoder_FusionAware_20260917/execution_20260919/ROUND_CS_FINAL_REPORT_20260920.md",
+      "sha256": "1f78c3682e66790f1768446298d60bea7ab08bce56d1e15417232cc3928be651",
+      "actual_read_status": "full_read",
+      "document_kind": "historical_result_report",
+      "key_finding": "C/S matched4k采样S−C +0.6591pp但融合不升；锁定C2k融合val+0.1963、test−0.4052，较弱HE被融入后损伤，不能从采样覆盖率推导全面增益。",
+      "read_limitation": null
+    },
+    {
+      "index": 33,
+      "primary_path": "HRDecoder_FusionAware_20260917/服务器文件交接文档-20260918.md",
+      "sha256": "fa57901e97955a79a7fec81beaea3884229080010135a993da204397cd757028",
+      "actual_read_status": "full_read",
+      "document_kind": "operations_handover",
+      "key_finding": "运维交接清楚列出E4仅原2048浅层stride4、主干1024，D/E实际嵌套融合和旧任务权重谱系；不是同ImageNet fresh全2048的结果。",
+      "read_limitation": null
+    },
+    {
+      "index": 34,
+      "primary_path": "HRDecoder_MA残差头与集成_20260915-16/01_结果报告/Codex会话研读报告.md",
+      "sha256": "29ffcf35b67894a39037bc6c95db9058445494b1182c95f6af7fd57033733e8e",
+      "actual_read_status": "full_read",
+      "document_kind": "conversation_review",
+      "key_finding": "会话研读复盘证实监督错误copy-paste、CE+Dice39.97@12k被漏报、D真实高分1024裁块仅小test增益且HE退步；路线不能仅归因分辨率。",
+      "read_limitation": null
+    },
+    {
+      "index": 35,
+      "primary_path": "HRDecoder_MA残差头与集成_20260915-16/01_结果报告/工作产物索引.md",
+      "sha256": "db8ce06c2c7e3a23201675a57da0192e5670353b2c0b7ce5fa2b9d0acd9c511f",
+      "actual_read_status": "full_read",
+      "document_kind": "artifact_index",
+      "key_finding": "工作产物索引，列旧43.229结果及文件路径，无独立科学证据；D等称单模型需按实际融合身份复核。",
+      "read_limitation": null
+    },
+    {
+      "index": 36,
+      "primary_path": "HRDecoder_MA残差头与集成_20260915-16/01_结果报告/方案论证_Codex设计补齐.md",
+      "sha256": "133eac4819c0ba06de2b6da9eb64dc3fe2a5fa625ebc4b09230650f5daf5071d",
+      "actual_read_status": "full_read",
+      "document_kind": "design_proposal",
+      "key_finding": "方案论证揭示A缺基准MA输入且未冻结主干；但将零初始化恒等推为训练后最坏等于基线、以及单P/R点推整条PR曲线，均无证据且逻辑不成立。",
+      "read_limitation": null
+    },
+    {
+      "index": 37,
+      "primary_path": "HRDecoder_MA残差头与集成_20260915-16/01_结果报告/最终报告_两轮实验汇总.md",
+      "sha256": "56829d27708e6630ae37b7142b0ee69e3e0aecdd6083749ddebedbf6cbf3012d",
+      "actual_read_status": "full_read",
+      "document_kind": "historical_result_report",
+      "key_finding": "两轮汇总最好test43.229来自多模型多次测试选择；MA头弱基底增益不叠加至D，BN重估差异需结合后续加载/参考分支审计。",
+      "read_limitation": null
+    },
+    {
+      "index": 38,
+      "primary_path": "HRDecoder_MA残差头与集成_20260915-16/01_结果报告/目标可行性评估.md",
+      "sha256": "ad6c2c095a15989f80a609312c0270b10449e5e4d3dfbd3f9a1c112d5baefac6",
+      "actual_read_status": "full_read",
+      "document_kind": "feasibility_opinion",
+      "key_finding": "可行性文档的43.6天花板和收益预估为主观假设；空类Dice梯度弱有代码依据，两项子代理阻断被实际checkpoint和执行模式证伪。",
+      "read_limitation": null
+    },
+    {
+      "index": 39,
+      "primary_path": "HRDecoder_MA残差头与集成_20260915-16/01_结果报告/第一轮_L对照与TTA结果.md",
+      "sha256": "108484988bdd45a18af04c5a9d2c422f4c88483bb7a6f6523afb8da8802b6703",
+      "actual_read_status": "full_read",
+      "document_kind": "historical_result_report",
+      "key_finding": "L=Dice+0.1Lovasz较D的val/test均差，翻转TTA对D微增对L反降，多模型增益主要HE；结论只适用该起点和训练配方。",
+      "read_limitation": null
+    },
+    {
+      "index": 40,
+      "primary_path": "HRDecoder_MA残差头与集成_20260915-16/HANDOVER_完整交接文档.md",
+      "sha256": "57e247a50511fad0bf670082ffe571a30855a7146e6332ff82f2ee2ef9fe8ecb",
+      "actual_read_status": "partial",
+      "document_kind": "report_with_source_and_operations",
+      "key_finding": "3671行科学/配置/评估正文已覆盖到末尾；确认D/E含冻结B融合、E2仅改MA仍使MA及总分下降等边界，43.2天花板说法越证据。无剩余实验正文待补读。",
+      "read_limitation": "保留partial：2条非科研SSH连接调用整行未读；它们是唯一覆盖缺口，不属于实验正文。"
+    },
+    {
+      "index": 41,
+      "primary_path": "HRDecoder_MA残差头与集成_20260915-16/README_接手说明.md",
+      "sha256": "fdbf3d0333438fcfe9bec894504f765573c1002111cc848a7bd8601d33a6b7b1",
+      "actual_read_status": "full_read",
+      "document_kind": "handover_report",
+      "key_finding": "接手文档重复强MA头无增量与HE补回的真实现象，但把零初始化写成不会下降、43.2当架构天花板、BN重估负结果当普遍证伪均不成立。",
+      "read_limitation": null
+    },
+    {
+      "index": 42,
+      "primary_path": "HRDecoder_MA残差头与集成_20260915-16/prompt.md",
+      "sha256": "3d78bb41a95f2d3653308bebf6b95d77d645bf0336902384f46c61556a57f1f0",
+      "actual_read_status": "full_read",
+      "document_kind": "historical_audit_prompt_not_current_instruction",
+      "key_finding": "后续审查执行提示全文纠正天花板、零初始化、加载、BN、训练部署错位和test窥视推断；属于审计规范及假设清单，不能算已执行科学结果。",
+      "read_limitation": null
+    },
+    {
+      "index": 43,
+      "primary_path": "HRDecoder_MA残差头与集成_20260915-16/审查结论.md",
+      "sha256": "292266ac805729c02570af3b401222082ad6cbcc814c7c1b1d8d9e6a8cea8d12",
+      "actual_read_status": "full_read",
+      "document_kind": "static_audit",
+      "key_finding": "静态审查明确指出旧冻结指纹漏buffers且在step前、finite漏验、load返回值误用、BN未访问分支reset等漏洞，正确撤回能力天花板和零初始化保底推断。",
+      "read_limitation": null
+    },
+    {
+      "index": 44,
+      "primary_path": "HRDecoder_审查轮_20260916/audit_runs/audit_20260916_A/FINAL_本轮最终报告.md",
+      "sha256": "b72aa9aa879acbc8784152b4729a67d02837682704aecacd6f418a7e1931ec47",
+      "actual_read_status": "full_read",
+      "document_kind": "historical_result_report",
+      "key_finding": "H4融合后MA头历史test43.23→44.21是真实待回查增益；但RGB首层40%权重能量不证明使用新视觉信息、融合类净增就必然不能纠错和val不可用均无据。",
+      "read_limitation": null
+    },
+    {
+      "index": 45,
+      "primary_path": "HRDecoder_审查轮_20260916/audit_runs/audit_20260916_A/README.md",
+      "sha256": "a0b59a8e0272dada49f4e247b7bfac139d2f0b3acc7dcf9b689c2b30282341a1",
+      "actual_read_status": "full_read",
+      "document_kind": "staged_audit_status",
+      "key_finding": "早期Phase A审计仅源码/合成oracle，ignore形参未实际排除已证实；患者前缀审计曾撤回，运行验证多数尚BLOCKED，不能混作H4终局验证。",
+      "read_limitation": null
+    },
+    {
+      "index": 46,
+      "primary_path": "HRDecoder_审查轮_20260916/audit_runs/audit_20260916_A/diagnostics/train_inference_contract.md",
+      "sha256": "21292b8c1cd7e3b05dfdef88c29d52aed22e3b8a7cc9286b20d133d4119c16e5",
+      "actual_read_status": "full_read",
+      "document_kind": "train_inference_contract",
+      "key_finding": "真实train1024单tile无reference、部署2048多tile+0.5reference不一致；70.9%MA FN需student≥0.9但无严格不可达像素，不能把约束说成已证主因。",
+      "read_limitation": null
+    },
+    {
+      "index": 47,
+      "primary_path": "HRDecoder_审查轮_20260916/audit_runs/audit_20260916_A/experiments/experiment_decision.md",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "actual_read_status": "full_read",
+      "document_kind": "empty",
+      "key_finding": "文件为空，已完整读取但无科学内容或GO/NO-GO证据。",
+      "read_limitation": null
+    },
+    {
+      "index": 48,
+      "primary_path": "HRDecoder_审查轮_20260916/audit_runs/audit_20260916_A/final_report.md",
+      "sha256": "ab12e23c537430ca25aa89b9d3f63b676a1f16b2591358cd6e8a94e20b0fd157",
+      "actual_read_status": "full_read",
+      "document_kind": "historical_result_report",
+      "key_finding": "后续实测定位BN-all重置reference312层却访问0次，崩塌是无效干预；student-only重估负结果仍有效，冻结/加载/几何补审保留历史分数。",
+      "read_limitation": null
+    },
+    {
+      "index": 49,
+      "primary_path": "HRDecoder_审查轮_20260916/audit_runs/audit_20260916_A/missing_dependencies.md",
+      "sha256": "da2b1ba18aec47ac8dd481557f3ac478fe4d85be2c864268af453e33aa9b1d3d",
+      "actual_read_status": "full_read",
+      "document_kind": "historical_dependency_inventory",
+      "key_finding": "早期资产/环境缺失清单，为时点性运维状态而非性能结论；weights-only与完整模型/reference身份不能混同。",
+      "read_limitation": null
+    },
+    {
+      "index": 50,
+      "primary_path": "HRDecoder_审查轮_20260916/audit_runs/audit_20260916_A/protocol.md",
+      "sha256": "c95f26331ede0ee93344f0dd88295758e74369fc4b6483c0c1a691215f059003",
+      "actual_read_status": "full_read",
+      "document_kind": "evaluation_protocol",
+      "key_finding": "源码协议确认为4独立sigmoid/严格>0.5/累计计数/背景不计/空类0；早期文档仍把ignore存在性记待核，须以后续审计限定影响。",
+      "read_limitation": null
+    },
+    {
+      "index": 51,
+      "primary_path": "HRDecoder_诊断调研_20260910/HRDecoder_诊断与押注建议.md",
+      "sha256": "17f255f20be090c90a99549581fa3b710b9b444e694439599384c8e8387dc976",
+      "actual_read_status": "full_read",
+      "document_kind": "historical_research_audit",
+      "key_finding": "9/10诊断已纠正原生尺寸面积误当2048、copy-paste标签覆盖、CE+Dice39.97@12k漏报等；E4浅层缺语义、原HR仅1024编码是机制线索而非唯一分辨率瓶颈证明。",
+      "read_limitation": null
+    },
+    {
+      "index": 52,
+      "primary_path": "HRDecoder_诊断调研_20260910/证据/代码证据摘录.md",
+      "sha256": "571c2bad30763f7e56cd28935225baee9240426ebe98104ce9ad53246d42815a",
+      "actual_read_status": "full_read",
+      "document_kind": "source_excerpts",
+      "key_finding": "带来源SHA的代码摘录直接支持E4浅stride4/零标量、主干输入resize到hr_scale、平方Dice、增强图像/标签覆盖不一致及面积统计单位缺陷；未包含full2048-W48训练结果。",
+      "read_limitation": null
+    },
+    {
+      "index": 53,
+      "primary_path": "HRDecoder_诊断调研_20260910/调研记录与证据分级.md",
+      "sha256": "bf2934cc01710638528f3ec62d7c64f039e29a274ee3ad7914de56d1c53fc88f",
+      "actual_read_status": "full_read",
+      "document_kind": "research_evidence_ledger",
+      "key_finding": "9/10研究范围与证据等级明示：BN和语义细节收益仅假说，报告纠错有日志佐证；不同代码版本、配置pop缺字段不能直接当bug。",
+      "read_limitation": null
+    },
+    {
+      "index": 54,
+      "primary_path": "HRDecoder_诊断调研_20260910/阅读说明.md",
+      "sha256": "0f7275fec948a408fd5ccb0c7d21c5074184fe7228d1f7a4b27d424329383c04",
+      "actual_read_status": "full_read",
+      "document_kind": "reading_index",
+      "key_finding": "阅读与交付索引，无新增性能证据。",
+      "read_limitation": null
+    },
+    {
+      "index": 55,
+      "primary_path": "autodl100/复现说明.md",
+      "sha256": "9893f75d3e38191d1f514e94bdbcb2071df93220cb2f406c06b066c0e65bcbe1",
+      "actual_read_status": "full_read",
+      "document_kind": "reproduction_instructions",
+      "key_finding": "复现说明固定E4@36000与B@3000的50/50概率集成；val39.54、test42.35（相对历史42.20仅+0.15pp），不能代表新单模型，且test已有探索性使用。",
+      "read_limitation": null
+    },
+    {
+      "index": 56,
+      "primary_path": "autodl100/实施记录.md",
+      "sha256": "9b8c66d2683c63de30e508db2da35801e4905aaf8d360bb524fd299e670194d0",
+      "actual_read_status": "full_read",
+      "document_kind": "historical_implementation_and_result",
+      "key_finding": "A@8k最佳val38.632且未赢E4；B@3k val39.205，B test41.92。评估曾因compute_aupr关闭而失效，已修复；各训练措施混杂，不能单因果归因。",
+      "read_limitation": null
+    },
+    {
+      "index": 57,
+      "primary_path": "autodl100/执行方案.md",
+      "sha256": "661a44af2e22d938359b72f31552fe9d084536f119bcea4eb5cae30f48f04bdf",
+      "actual_read_status": "full_read",
+      "document_kind": "historical_experiment_plan",
+      "key_finding": "2026-09-11计划将A/B作为低预算筛选；明确不重训baseline、不预承诺提升、test仅在锁定方案后使用。属于计划，不是执行效果证据。",
+      "read_limitation": null
+    },
+    {
+      "index": 58,
+      "primary_path": "autodl100/最终实验结论.md",
+      "sha256": "02426745d2a64108031a201848e1ce377998c5e81e4d2f3232fe2f0639ec3e7b",
+      "actual_read_status": "full_read",
+      "document_kind": "historical_result_report",
+      "key_finding": "固定概率集成val39.54/test42.35，相对报告baseline42.20仅+0.15pp；A未改善，B总体收益来自EX/SE而非MA。单次、已多次接触test，无显著性或稳健性证明。",
+      "read_limitation": null
+    },
+    {
+      "index": 59,
+      "primary_path": "autodl100/阶段2_判断.md",
+      "sha256": "7cedf8e49ba300ac1d64a2b4b57847df531bd2d96d196e6ca5904363707941f9",
+      "actual_read_status": "full_read",
+      "document_kind": "historical_selection_plan",
+      "key_finding": "阶段2拟按val固定类别路由、无训练与权重搜索；实施记录后续报告该路由test41.82，val排序未迁移，不能用已见test重拼。",
+      "read_limitation": null
+    },
+    {
+      "index": 60,
+      "primary_path": "hrdecoder_plus3/D方案_测试集补充报告.md",
+      "sha256": "03711f41b443800ac334c851aea62ed642da23ea1a272c25da3e2d3156b68323",
+      "actual_read_status": "full_read",
+      "document_kind": "historical_test_result",
+      "key_finding": "D@2000固定规则test42.58（较42.20+0.38pp、较42.35+0.23pp），仍低于45.35目标；这是后补测试结果，不是原定达到val门槛后的锁定测试。",
+      "read_limitation": null
+    },
+    {
+      "index": 61,
+      "primary_path": "hrdecoder_plus3/D阶段结论.md",
+      "sha256": "79cd43eb9fe4b6fb16ddc4255c2d3d1d98da0acf31f4a404fc29521cbd2212e2",
+      "actual_read_status": "full_read",
+      "document_kind": "historical_phase_conclusion",
+      "key_finding": "D主方案best val41.62@2000、末值40.48；结论文本记录未达到连续42.4门槛且当时未test。后续补充测试报告改变了该轮test状态，须按时间顺序解释。",
+      "read_limitation": null
+    },
+    {
+      "index": 62,
+      "primary_path": "hrdecoder_plus3/ops/PREFLIGHT.md",
+      "sha256": "1962a6c3f51dcdc52d0a14440a3b2566b2969edfb91c14c2bf74794ab7ce898d",
+      "actual_read_status": "index_only",
+      "document_kind": "non_scientific_operations_unread",
+      "key_finding": "未读正文；按文件名属preflight/开机交接/启动记录，未用于科学判断。",
+      "read_limitation": "依本轮范围仅补读未全文读的科学正文；本项运维记录正文未读。"
+    },
+    {
+      "index": 63,
+      "primary_path": "hrdecoder_plus3/实验方案.md",
+      "sha256": "177556f0b74a195bcc43b81f115b8f7c9137ae2d52e856b44365d55fc3eb1dee",
+      "actual_read_status": "full_read",
+      "document_kind": "historical_experiment_proposal",
+      "key_finding": "D计划以1024真实裁块从2048画布编码，和冻结B参考各半融合；20k、定向采样等多项同时变化。它并非全2048 W48单模型，不能作为NativePyramid同配置实证。",
+      "read_limitation": null
+    },
+    {
+      "index": 64,
+      "primary_path": "hrdecoder_plus3/开机交接.md",
+      "sha256": "0c0d927ad47e2791e12e921f14aa19267893ca10185452ed4cb5797497727656",
+      "actual_read_status": "index_only",
+      "document_kind": "non_scientific_operations_unread",
+      "key_finding": "未读正文；按文件名属preflight/开机交接/启动记录，未用于科学判断。",
+      "read_limitation": "依本轮范围仅补读未全文读的科学正文；本项运维记录正文未读。"
+    },
+    {
+      "index": 65,
+      "primary_path": "hrdecoder_plus3/本轮启动记录.md",
+      "sha256": "dd22c9196ae746a7f17a6657b6fe14e5e94f23a7a26f40a19d46f5e15f229c19",
+      "actual_read_status": "index_only",
+      "document_kind": "non_scientific_operations_unread",
+      "key_finding": "未读正文；按文件名属preflight/开机交接/启动记录，未用于科学判断。",
+      "read_limitation": "依本轮范围仅补读未全文读的科学正文；本项运维记录正文未读。"
+    },
+    {
+      "index": 66,
+      "primary_path": "hrdecoder_plus3/本轮实验报告_20260913.md",
+      "sha256": "9ba8d445330a7cf1a7af000b2ded5c9b9696bf78b3acba1a0ea5618f86c7c6bc",
+      "actual_read_status": "full_read",
+      "document_kind": "historical_result_report",
+      "key_finding": "D训练20k的best val41.62@2k、末值40.48；后补test42.58，目标45.35未达。局部裁块+冻结B融合、训练措施混杂，L对照未训练，单次val无显著性证据。",
+      "read_limitation": null
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "time": "2026-10-05T13:06:08.592155+00:00",
+  "nodes": [
+    {
+      "run": "D_seed42",
+      "validation_curve": [
+        {
+          "update": 4000,
+          "metric_sha256": "c27d573e99b9a8ffe3b339fbac730f9016a1bd7f798b3611665420598e4efec6",
+          "n_images": 76,
+          "per_image_count": 76,
+          "scores": {
+            "single": 40.845137169176596,
+            "fixed_fusion": 44.81903825796121,
+            "half_fusion": 42.69589728421687
+          },
+          "probability_files": 0
+        },
+        {
+          "update": 8000,
+          "metric_sha256": "a42fcc9d604c40ab559e6e4d8b793ba3ffd969d87a0da54f0ff3df94a10fdbc7",
+          "n_images": 76,
+          "per_image_count": 76,
+          "scores": {
+            "single": 41.587832157303886,
+            "fixed_fusion": 44.98818933537731,
+            "half_fusion": 43.2479783032601
+          },
+          "probability_files": 0
+        },
+        {
+          "update": 12000,
+          "metric_sha256": "efaf60ba21af097269866d0ccbdca262ec4c84a10cee214eb5f9153c0cbd1b36",
+          "n_images": 76,
+          "per_image_count": 76,
+          "scores": {
+            "single": 40.98629369907318,
+            "fixed_fusion": 44.83109978124305,
+            "half_fusion": 42.91118134437835
+          },
+          "probability_files": 0
+        }
+      ],
+      "boundary": {
+        "stage": "ARMED_AFTER_D42_BOUNDARY",
+        "pid": 44281,
+        "time": "2026-10-05T04:11:34.270609+00:00",
+        "process_alive": true
+      }
+    },
+    {
+      "run": "SD_seed42",
+      "validation_curve": [
+        {
+          "update": 4000,
+          "metric_sha256": "08a9ecb510881d909bdf6abdd4fe6614f5e637967371f5c36907d93855cd20d9",
+          "n_images": 76,
+          "per_image_count": 76,
+          "scores": {
+            "single": 39.65700941327202,
+            "fixed_fusion": 45.06749663241366,
+            "half_fusion": 43.318394842689585
+          },
+          "probability_files": 0
+        },
+        {
+          "update": 8000,
+          "metric_sha256": "5754d1bbb8a2c1cef274ad0d04acf6fe7d191ec793226969ef6c54efdc8a9a6d",
+          "n_images": 76,
+          "per_image_count": 76,
+          "scores": {
+            "single": 41.27487871289849,
+            "fixed_fusion": 44.5898536602842,
+            "half_fusion": 43.25308579485186
+          },
+          "probability_files": 0
+        },
+        {
+          "update": 12000,
+          "metric_sha256": "3a2ba2607061b3d0933c73e6d2a941455de657c65477ce5bd42978abc82a0107",
+          "n_images": 76,
+          "per_image_count": 76,
+          "scores": {
+            "single": 40.59472560667222,
+            "fixed_fusion": 44.698779675420255,
+            "half_fusion": 42.98117676693797
+          },
+          "probability_files": 0
+        },
+        {
+          "update": 16000,
+          "metric_sha256": "51ea9588377b580b8a3139d9f1d80b9a54dfb2f2c8ee2eabb0c44f0b32152f6f",
+          "n_images": 76,
+          "per_image_count": 76,
+          "scores": {
+            "single": 41.64948052112553,
+            "fixed_fusion": 44.918844562947655,
+            "half_fusion": 43.36007037860048
+          },
+          "probability_files": 0
+        },
+        {
+          "update": 20000,
+          "metric_sha256": "19a6126481f6c02ba04c9910741cb5ac79f1e00f3b0d1e35e862fd2e9f48bd0c",
+          "n_images": 76,
+          "per_image_count": 76,
+          "scores": {
+            "single": 41.37961502605747,
+            "fixed_fusion": 44.88324597144078,
+            "half_fusion": 43.23014357793865
+          },
+          "probability_files": 76
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,935 @@
+{
+  "run": "Q_MIX_seed42",
+  "status": {
+    "stage": "COMPLETE",
+    "completed": 16000,
+    "endpoint": 16000,
+    "total_seconds_this_invocation": 8982.998515225947,
+    "identity_sha256": "9803ad79aecd9c3d7a426fda0053ae0e43f1afc663933e30d35364be38800a3e",
+    "updated_at": "2026-10-03T22:24:57.854891+00:00"
+  },
+  "files": [
+    {
+      "path": "runs/Q_MIX_seed42/checkpoint_u12000.pth",
+      "bytes": 601023387,
+      "sha256": "88d6fe1e197aac911775beb213b991a86c31b7a309363fcfbdd2e186f47b03d9"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/checkpoint_u16000.pth",
+      "bytes": 601023387,
+      "sha256": "c61a49f2cbd2d0cc010373dd3884f8f7e49de643960acd2108ce0897c4b80299"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/identity.json",
+      "bytes": 725,
+      "sha256": "e834ada804783501f16e92f1dcd35f40e1ee5bbb703a5cc558c3c326391f04b6"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/initialization.json",
+      "bytes": 284,
+      "sha256": "6e43bfe25127c8972ed65199a49a25648f8d2b05b40f5490b0a5414da77576c1"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/last.pth",
+      "bytes": 600980705,
+      "sha256": "2fd832577d75df40cca60c2241fb8b570e4e85656bf9521d9c6ca5f02425e420"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/status.json",
+      "bytes": 263,
+      "sha256": "9847758f1fa2a7b5d05c73e4b6c5e2328ab38f134f981473841307a29102464d"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/train.jsonl",
+      "bytes": 246938,
+      "sha256": "82bf56274502b396cab0aba092fb19dfbeb665ec07ebf0f15b1da00b51ac51e7"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u12000/007-1774-100.npz",
+      "bytes": 25766853,
+      "sha256": "62d0b81f7cc1f9c10c904e1680498d2429c977f9f462fc4bae4fa30da694047f",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u12000/007-1782-100.npz",
+      "bytes": 25981244,
+      "sha256": "4aeeedbb289976d6e45079b63dbbc0b4b840feba5e8fd3df7dd68fa36f7fbb6b",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u12000/007-1829-100.npz",
+      "bytes": 31544205,
+      "sha256": "6143fe3486c12cc9b0495fdcab21672f7001b4daf197f2d7a23de33bc33f8886",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u12000/007-1900-100.npz",
+      "bytes": 24675359,
+      "sha256": "a95c5477caddabc0f5ca1b7210185d504f52ddfa21f800a03ce21f694722913f",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u12000/007-2167-100.npz",
+      "bytes": 72128547,
+      "sha256": "4769c285c8f82de91dfc4c9d532d8a093110fc018a04afa6d859665179f95068",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u12000/007-2210-100.npz",
+      "bytes": 73934595,
+      "sha256": "f5d5ea182bd149a4a3fc86bed14d38a89ee6c14b654863d92be455a5a7896a7d",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u12000/007-2345-100.npz",
+      "bytes": 106661942,
+      "sha256": "1a2b56654937caed3b3c751134bc205eebd210dcbb1fe779ec78f25ac75016dc",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u12000/007-2369-100.npz",
+      "bytes": 25901111,
+      "sha256": "91b7341e5ed63b313bd25d78e69df3fbdc7dd1e97ddf18e1e3a7ff44efed6ff5",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u12000/007-2371-100.npz",
+      "bytes": 25795349,
+      "sha256": "01b08a2ba7ae0ba2f8ab9ddcb8074cc9d56dc4a61f520a3b6a3adb34418c3c02",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u12000/007-2460-100.npz",
+      "bytes": 37788750,
+      "sha256": "2010b428c6dbcf6dfae298cd2432be8c0982786ba9c4b70312391afb9f3e6b75",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u12000/007-2525-100.npz",
+      "bytes": 28881705,
+      "sha256": "0afcb7549ceaaa0a0340b6c6bc5b6e874f18d8c8cfecca343b582054419d9a1b",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u12000/007-2697-100.npz",
+      "bytes": 56136636,
+      "sha256": "2a027f1ac02b9d31506b433e0cde5b7e4325ae74b9d1dcf8915707246c517dab",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u12000/007-2704-100.npz",
+      "bytes": 54095447,
+      "sha256": "f968e814408aaf194bb2d7a57ce52dfb42e52f0bcbe18cf9ccb84bd4d4ae10df",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u12000/007-2769-100.npz",
+      "bytes": 25692244,
+      "sha256": "00a33c17fdc4548403fa8b95d7f10c7d3285d36ace02b2ce83e3cac906feebd0",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u12000/007-2809-100.npz",
+      "bytes": 25994381,
+      "sha256": "db4e6307cc110ba848cf096d91f9d08f4b832a85edb2d1ef2301250124f341fb",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u12000/007-2983-100.npz",
+      "bytes": 63666867,
+      "sha256": "f9e87f8e5548a8b343a99eced457213921d3559f8b8ddfdc1a31840b4a7a5121",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u12000/007-3413-200.npz",
+      "bytes": 23055444,
+      "sha256": "9b257a977cbf176ec4ddc3ab623f5118681088d9b2f34bf94e3cc26e4f1d49c5",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u12000/007-3414-200.npz",
+      "bytes": 26706571,
+      "sha256": "928968e18e4178b4a837b1b6171b77d4117ed78ea3bb2459a5c717da0b2f43c2",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u12000/007-3420-200.npz",
+      "bytes": 26350584,
+      "sha256": "506a49813518333b261d134d6731c2b02cda0b6ae16b161b853c6cfb92e73504",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u12000/007-3500-200.npz",
+      "bytes": 26028887,
+      "sha256": "ea3a9be1a9edf5a8a59c77d4b3b28d411e1303a97d832c3a482f230d399a93ec",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u12000/007-3541-200.npz",
+      "bytes": 54104603,
+      "sha256": "7a8ce7df5f4afa8c1bd15990e7c105a91ca563f07592c3ac6adc751943c9ab8d",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u12000/007-3567-200.npz",
+      "bytes": 59175804,
+      "sha256": "40bcf76b7be47d32f339b066215c25de7f9badb31026cd410da74d17aa09eaf1",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u12000/007-3628-200.npz",
+      "bytes": 48373518,
+      "sha256": "b4b265d3339c60a1fc35b223d6b8930dce3f3e1149ba6d13d0183fb59bc13911",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u12000/007-3727-200.npz",
+      "bytes": 73309831,
+      "sha256": "9cfebc81a13da7e270a70fcdfb56b644da27161bc89873e311bc8c127c2e78c1",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u12000/007-3873-200.npz",
+      "bytes": 27003491,
+      "sha256": "e0eddcb1fe8c110f38f8ece12091a5af6fc31f72f933bb22f3590571e68f2285",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u12000/007-3921-200.npz",
+      "bytes": 21657454,
+      "sha256": "987770cf0ae6090f8da1d4db4b257fc1fe6769ab4c9322063d9bee6f3d428960",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u12000/007-4007-200.npz",
+      "bytes": 38601476,
+      "sha256": "2f467c7a4bce1bc1522bd0fbcb214e3d8193b344090e6102937b2cf1a7d6ab11",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u12000/007-4033-200.npz",
+      "bytes": 54795726,
+      "sha256": "dea7c80bcdf8a163dc9a7e41a8c729d1b332a20c8aedb481d3a5a3fbf302fcb5",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u12000/007-4034-200.npz",
+      "bytes": 56381114,
+      "sha256": "baf8844282ef678c19cba286fb37e4aba7dcaa979b754b9fb0482ab4cfcfeeb9",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u12000/007-4035-200.npz",
+      "bytes": 52780519,
+      "sha256": "2f77f96d01357f772de488c083fa901e38d4bdd6102bca0d94e81da0015d3730",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u12000/007-4145-200.npz",
+      "bytes": 31785002,
+      "sha256": "234b9fa2c40ad79313b31628593f9db469971c730f4c05f1b2ac328ece44f6c8",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u12000/007-4171-200.npz",
+      "bytes": 28988313,
+      "sha256": "75efaa1edda3f54ffb1a0b8d0590305746b90ffada82c24f0e6e9ec3f3b7addd",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u12000/007-4203-200.npz",
+      "bytes": 27355159,
+      "sha256": "222bef6140f703e724f4f36e083cb30aadf09bf75a4b0430f66792a2d7e0dd74",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u12000/007-4224-200.npz",
+      "bytes": 26467577,
+      "sha256": "b093c4e86ebf11667d517ad9b27356eef271fd18cf18fa4071ef039ca4d81811",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u12000/007-4479-200.npz",
+      "bytes": 58478028,
+      "sha256": "fce0cb8c37b2360a7ba55b4e22bfd7086441973583275c6dad47349174a29416",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u12000/007-4482-200.npz",
+      "bytes": 37098080,
+      "sha256": "8874d96923d603668a3fb16479c357f41832c44371ed827cc339c68056c305fa",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u12000/007-4548-200.npz",
+      "bytes": 47425538,
+      "sha256": "1dad3607d886998b3189c84ba142e776a82f8940ee0cc082c316e49cc53a93d2",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u12000/007-4576-200.npz",
+      "bytes": 26100444,
+      "sha256": "8230e3d6a1cdf7a994f580487d8694a28e15b7a4d89c8f074252fe887dff46c3",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u12000/007-4743-200.npz",
+      "bytes": 29352381,
+      "sha256": "d489c04da8dff44bdc4880fa76de3826be7405e41adef22b64008c49b8d6d51e",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u12000/007-4960-300.npz",
+      "bytes": 27048330,
+      "sha256": "b4dc58d3117a5cf57d37ffdbcfcc48160d0d10785673c8510cc35a3e1791c090",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u12000/007-4980-300.npz",
+      "bytes": 60653305,
+      "sha256": "821a2d6ea928033851e9a289522e54e665eca6e5a4a10bf779d446c5d006eabb",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u12000/007-5063-300.npz",
+      "bytes": 24458296,
+      "sha256": "e914f1129225b837d18663a74a4fc3a1a410d0dcf0b00a8541d1ce2e76df34f9",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u12000/007-5172-300.npz",
+      "bytes": 29127002,
+      "sha256": "26061090628523c423e4d32df1cd48397be46cfcd862073511422c30618df272",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u12000/007-5269-300.npz",
+      "bytes": 30057433,
+      "sha256": "a0d6ba73cd22344b8cbc6ece87227ca796f07c278e928a4a1f9e394906f7cee2",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u12000/007-5434-300.npz",
+      "bytes": 26648300,
+      "sha256": "8b7acb2d8623b471d8a19d8a32b5cb409617fd443bd7147c71c3071145997bd8",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u12000/007-5443-300.npz",
+      "bytes": 29056890,
+      "sha256": "6cc52f2ec3f441668cf155ca18f49d16bcc23ec6ae4929d485976edb5fdf44e1",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u12000/007-5470-300.npz",
+      "bytes": 28141859,
+      "sha256": "0ae2fbbf216b233b25eced7541ad213c8d5f4cadc39bae76c597262480aacb18",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u12000/007-5474-300.npz",
+      "bytes": 26312386,
+      "sha256": "b0af6845068b9b6833a8c02dcb3bbae9d83c0ec7fbf6ac66f7188a0ab0f26215",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u12000/007-5504-300.npz",
+      "bytes": 37918729,
+      "sha256": "50032a04c75f80f0263a366ec3a9e648e1f8aaf1c7b14d5a90a601ff690ec844",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u12000/007-5506-300.npz",
+      "bytes": 39188827,
+      "sha256": "7bf5643c9d50526d093946c76aafc43d65fdbff0d6588699c1cd772b3641074c",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u12000/007-5672-300.npz",
+      "bytes": 56827702,
+      "sha256": "5fb295e98f28360974aa449805c7707e0b6a854a80a13fcc4f8be77c014fe2da",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u12000/007-5869-300.npz",
+      "bytes": 26271949,
+      "sha256": "3997facb3d3122d796cefc1e37b757f0849dfdba2f912fcfbbace875aae55e65",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u12000/007-5938-300.npz",
+      "bytes": 30081275,
+      "sha256": "945bbd688efddd36d22e06eb7878b4992cc84c046173ff869dc436208e79671f",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u12000/007-6054-300.npz",
+      "bytes": 65479196,
+      "sha256": "56a0e14c08b56c12f6a4d1cdf3a7e9e7f2669defa1b9a50175fc0b1d64839ee4",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u12000/007-6148-300.npz",
+      "bytes": 31690900,
+      "sha256": "e76a270d7d0ad893721e48698007b660605c201ff61361a8d82936f9fe58d884",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u12000/007-6220-300.npz",
+      "bytes": 53113876,
+      "sha256": "9a136ef5aa1a56e5199478893edfb9efc7f6c80ee34aecefa5ff99ea9e526aaa",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u12000/007-6519-400.npz",
+      "bytes": 31520227,
+      "sha256": "ee175353855c787f3219506c039981d0a60619546c70731cd28ffe91fe7f89cb",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u12000/007-6520-400.npz",
+      "bytes": 31021228,
+      "sha256": "f10b927414a540a35dc05790d73759bdb210482370e4464c434c2a622b822865",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u12000/007-6551-400.npz",
+      "bytes": 28892190,
+      "sha256": "24951e5d803fee4590af7517733178bba7d4e9bf46da4e36d1537cb630fcfb57",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u12000/007-6577-400.npz",
+      "bytes": 29121140,
+      "sha256": "bf4fc07102a7e800ba854419169d45b3d0379da834df4e10661ec57fc2de0486",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u12000/007-6686-400.npz",
+      "bytes": 17834680,
+      "sha256": "ee0bb071cbc040599930dbb68b3e133bd2d2d1487393e8f77f26ab324197c201",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u12000/007-6722-400.npz",
+      "bytes": 17542857,
+      "sha256": "9b93198461f6f7e6352ace0804b37148d00f499ea3c2f4d85afdba6f86b29c0f",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u12000/007-6734-400.npz",
+      "bytes": 62116951,
+      "sha256": "834a7625e47153a6234cc4e9d15ef057c59d0fa0e8b5c6c3678cacfca83da874",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u12000/007-6811-400.npz",
+      "bytes": 27081815,
+      "sha256": "9f925f8a45962ff916ca9b9535dd4fa09e2ca026b62b71455587fbdeb6150192",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u12000/007-6815-400.npz",
+      "bytes": 27944669,
+      "sha256": "f732c43a20cbd4ebeea31c261e9bbd9a1adcafee2957aab084f8fb2f91f208cf",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u12000/007-6847-400.npz",
+      "bytes": 27942020,
+      "sha256": "e28c0098f73220bee54528ade9670a3d19e20279f4170eb5fe8624a5aeb1126e",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u12000/007-6894-400.npz",
+      "bytes": 34199819,
+      "sha256": "eb46ccda1aed0d0d638b206c49f07d39e7b8726d710122a511586feb957c5659",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u12000/007-6912-400.npz",
+      "bytes": 25217810,
+      "sha256": "204e0759ee662ee7f1dd3cfad1e5848731658f1e769bffeb364f8718d74f9392",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u12000/20170503161702100.npz",
+      "bytes": 25721555,
+      "sha256": "d6f0ddd83f69c865f8cce99cae919ceadc186a7963c8cc621b95d4e2db902076",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u12000/20170503161702278.npz",
+      "bytes": 25445044,
+      "sha256": "222376f7f5c9631b9815b870141db5c8a0793ef89e0b37d3bd18adfa4f2ee2c0",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u12000/20170509100155767.npz",
+      "bytes": 20414461,
+      "sha256": "c7351e9a4024a0d06d7a8a8f607b712a738fe18c87763880d0cf57bb3b6272fe",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u12000/20170510152714920.npz",
+      "bytes": 27306902,
+      "sha256": "c66de61c9e076f09408750b1e77df9f89820948c91cac3ea4ed8bbfb4508264c",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u12000/20170518142454730.npz",
+      "bytes": 25096413,
+      "sha256": "44768c81dacb6fc4d56513c8a039e45e17091b27648f99a877a12763c1655d49",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u12000/20170522100404106.npz",
+      "bytes": 29775425,
+      "sha256": "ea3ee7ed0513ba0001b3ada41a1ff59131bdbc405ef1fa71ed2dc2a9284befa9",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u12000/20170609154552424.npz",
+      "bytes": 36166964,
+      "sha256": "eccf7850e52905796188ed2e2274639d67fb675e0eaa00279876eb5cbc4d7dd6",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u12000/20170629163635747.npz",
+      "bytes": 28380657,
+      "sha256": "06eff5d461ab756658abce8aaf61e7b8f9e4d515b90301db0ffd5086ef2b9ad4",
+      "reason": "Completed formal validation FP32 cache; local SHA verified before remote-only offload"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u12000/metrics.json",
+      "bytes": 91267,
+      "sha256": "a4dd7f80bf303efd1f87cbc0751f41174f7b7882706abd53993d86267f4d6556"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u12000/progress.json",
+      "bytes": 65,
+      "sha256": "e07503d42c041cbcb489a1976e3d90bbc8b1f777ecd1891a74240b2ea9c179d4"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u16000/007-1774-100.npz",
+      "bytes": 27793899,
+      "sha256": "38cd0ae292363b119862ab504506e8d8f52cbc18753392860433d54383ace029"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u16000/007-1782-100.npz",
+      "bytes": 27890515,
+      "sha256": "3cf83f1a68618b69a272f2ebc063dff90ab69f49d3abf361d1eb299863146542"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u16000/007-1829-100.npz",
+      "bytes": 32676070,
+      "sha256": "22789d49cb372fb7b3f84bf767be7a0c7fdad15b075b37d7e7e287351e6c820a"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u16000/007-1900-100.npz",
+      "bytes": 27150152,
+      "sha256": "7665a886716d1a806eb5fb8c1d4a2000adccd213505e851876db4058033069bb"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u16000/007-2167-100.npz",
+      "bytes": 76065751,
+      "sha256": "4fe12a2a6b36f6e09008f471e05c9e7a781097dbff7feb228010363a6d7f9262"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u16000/007-2210-100.npz",
+      "bytes": 75906694,
+      "sha256": "87c7723bc62256f330df4b8c948d3e67bf067cb245029c923b687d4efc122b5c"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u16000/007-2345-100.npz",
+      "bytes": 109668870,
+      "sha256": "4ee841449d1872051b6d6b73caaa015292d549ba4b27f46161a0fd2e6dcfacbd"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u16000/007-2369-100.npz",
+      "bytes": 27839305,
+      "sha256": "784d9677ed78fd63fb043152853a29ba0717b8d44e1784f91bfed4c67f7343a6"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u16000/007-2371-100.npz",
+      "bytes": 27871212,
+      "sha256": "7f4be43c04ec5c38e72ca0cd774282044d541b72875fee9375c03970dfdc45e0"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u16000/007-2460-100.npz",
+      "bytes": 39470203,
+      "sha256": "fa78ebfeaf261d0a7b68992d88b240404e12b02b62a27d16e1fb3156f8730ba4"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u16000/007-2525-100.npz",
+      "bytes": 30927623,
+      "sha256": "76f17f8e56be0e2c0c72ce7b8dfc6d2b423517c3cf6f2eb3baa14f4a975e4eb7"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u16000/007-2697-100.npz",
+      "bytes": 58703719,
+      "sha256": "9bdcb0885658eec8719d85058ce0ce41f92f3ea2e47eaa6330b564bd675c75a0"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u16000/007-2704-100.npz",
+      "bytes": 58607502,
+      "sha256": "cd5b51c48e52b16dba5ebf2573fcfe7822b5d837e45618e230374a75cedd8361"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u16000/007-2769-100.npz",
+      "bytes": 27266049,
+      "sha256": "565a379ddac6825532511e07a87067d232f1b326d695b2f3dba4a49b28914e12"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u16000/007-2809-100.npz",
+      "bytes": 27900341,
+      "sha256": "964e43e0567e35eae57df54c7fa2b033c5123277c8bdcfcfeb9177105e76882c"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u16000/007-2983-100.npz",
+      "bytes": 66397022,
+      "sha256": "356dd69b844d0f65bd98c0ab62a3746564e8fa62cfe1b89c76f37d029dc7f41e"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u16000/007-3413-200.npz",
+      "bytes": 24748139,
+      "sha256": "605a56d5d8b47ae5256339f851d479a3f1ecf5dc079db2fbea3186e82730f9cf"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u16000/007-3414-200.npz",
+      "bytes": 28575426,
+      "sha256": "3fb125dff555c7ef24dd5e1bf37be23b6faab2542bd0836e7c6052f4b54edb0b"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u16000/007-3420-200.npz",
+      "bytes": 27712336,
+      "sha256": "751ab6865e8e22ce85e5fffb631f41196dea101cd7b1e95ec1d6be20f0b4be87"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u16000/007-3500-200.npz",
+      "bytes": 27954297,
+      "sha256": "9c9b4f736c5031fb47b6547d2db7b8b28e77405b1f54749e80ae1f5244200328"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u16000/007-3541-200.npz",
+      "bytes": 56930534,
+      "sha256": "b76d94fb1be8f69d9eb7342820d3e1f01627d1626f094333c3c838c7438a0b6d"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u16000/007-3567-200.npz",
+      "bytes": 60875433,
+      "sha256": "9bf608c940facf7fa2fa26bb70b5dc814f4cfd63e462d668e53730c1ad845bb8"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u16000/007-3628-200.npz",
+      "bytes": 48185137,
+      "sha256": "fa4133e4b3d048ad5f156fec7e8b7e4488ad05e4946798e1cc570a248ff3704d"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u16000/007-3727-200.npz",
+      "bytes": 74622662,
+      "sha256": "6e6fe6aa9b4a3d636ca8d05aaf6ad32257957943bc66fca6a21eb6a834c0ffbb"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u16000/007-3873-200.npz",
+      "bytes": 28673833,
+      "sha256": "0884e9fbd62e232a05593d500b48b32eb802de3dfe6199392a61894dbab697d0"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u16000/007-3921-200.npz",
+      "bytes": 23190542,
+      "sha256": "9507a7d3d425b807f0a7bf48a78f9b201614df8b858be88ec6e9884f41a6ff87"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u16000/007-4007-200.npz",
+      "bytes": 40726406,
+      "sha256": "4aa984d981a293e80fd5e5ba0f32007ccb05fc79d4daf717ba2ae424d64a53e5"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u16000/007-4033-200.npz",
+      "bytes": 56554705,
+      "sha256": "35514da78cfd26f771532acc7e988aff02fb830b18836fea46b27514314a3900"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u16000/007-4034-200.npz",
+      "bytes": 58788950,
+      "sha256": "963b47c1798c6c69091d1bbb63d59ffc098ee7ddd7c2d8b501f55b2808c6b627"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u16000/007-4035-200.npz",
+      "bytes": 55058827,
+      "sha256": "ff42549bdcabd84183adffe8b327aa447fefd071315cbe9cbb81f6578b885794"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u16000/007-4145-200.npz",
+      "bytes": 33722711,
+      "sha256": "8275c93bd02e17e1434606ec96f83999aa55a0508174a37548268f5a955518f0"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u16000/007-4171-200.npz",
+      "bytes": 30695954,
+      "sha256": "b335c9b2521caa974068902536bced611a9cfc92d5e679ca8ad9f5ac4175c377"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u16000/007-4203-200.npz",
+      "bytes": 28494798,
+      "sha256": "4ac973deb4e04a0736b32a4899be81832c4e401414470cbc91dac26f473755cb"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u16000/007-4224-200.npz",
+      "bytes": 27538248,
+      "sha256": "fa9e65c84557fb318c417200540ced97ce7b5ecbf4d01b99af5587fad9311f03"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u16000/007-4479-200.npz",
+      "bytes": 58855919,
+      "sha256": "21048f5abfea8bcf8b1464e639a84d8e7fd8998a3f80d4115650ffc17548c3ea"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u16000/007-4482-200.npz",
+      "bytes": 38439337,
+      "sha256": "8b01ab1da9467730a0bc7f448ecbef479d1377e26681fc2fad9e675ff57eeb1b"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u16000/007-4548-200.npz",
+      "bytes": 48476219,
+      "sha256": "038399e8b5edb86d3cef66ccf45bb4378d8f724fa5732050d8663b1651355699"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u16000/007-4576-200.npz",
+      "bytes": 27313122,
+      "sha256": "fcb042890ca714a0c591a3805055fb1bfb7970d3c00769e55419929fd36afc16"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u16000/007-4743-200.npz",
+      "bytes": 31017040,
+      "sha256": "7b9c97c832f2c901b87ae4abbb978bbe761c81b871f08c1eb74061c6d840b597"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u16000/007-4960-300.npz",
+      "bytes": 27757043,
+      "sha256": "c3df2fafbf9752aea6ed146b34cd97f1a8301453a84c2df5bc912ce876e6b32d"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u16000/007-4980-300.npz",
+      "bytes": 60535247,
+      "sha256": "cc00540d3c51f8b66d53fb4fb77902d745f675aa6daa731edd5eb89c802619d3"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u16000/007-5063-300.npz",
+      "bytes": 26650731,
+      "sha256": "f188b25f4aa0ef4289e1cbf7ae4818f4e08472c492877937129c388d02e76959"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u16000/007-5172-300.npz",
+      "bytes": 30797145,
+      "sha256": "4980ce5b3e12397299f56cd4a5f6aa56fa42b5fd3b4eaf6d8590e399a68e7f6a"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u16000/007-5269-300.npz",
+      "bytes": 31968513,
+      "sha256": "5b74ccb56b36f143c0de5b8f2465726699888224a6b7709bb2038ea97dbb1173"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u16000/007-5434-300.npz",
+      "bytes": 28329030,
+      "sha256": "bed05ed63dd0c7bd02985f932aa77644eff4841c5b1ab39f758121bf937d062d"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u16000/007-5443-300.npz",
+      "bytes": 30951875,
+      "sha256": "a99b0cb6ab97892a77917f6e3fbf07f389d353db89adf0fcd0a5b84a81ab9bcd"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u16000/007-5470-300.npz",
+      "bytes": 30152896,
+      "sha256": "5fa36003fc82820003e158e443f295f6dd59bf621cd6793c7096861560e2fc12"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u16000/007-5474-300.npz",
+      "bytes": 28447050,
+      "sha256": "34fa4dcf144020bc41a4bf5f4cd92a2c462470dc4bd9a1677ebff3c10602f106"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u16000/007-5504-300.npz",
+      "bytes": 39318967,
+      "sha256": "b3e292ffcd7b94e1948e0f6994ea787a3c71ca1a01be78062e1e720f4e28edbb"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u16000/007-5506-300.npz",
+      "bytes": 40910071,
+      "sha256": "84e72d917ab6d5d1986d6e501d3e115eac8ea5b27c9193472216c3282020423d"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u16000/007-5672-300.npz",
+      "bytes": 59194566,
+      "sha256": "44575d43ddcc4ac3affe777906e077d11c15987f49ddc052dc07943dfb69a07f"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u16000/007-5869-300.npz",
+      "bytes": 27846100,
+      "sha256": "a1ccde88093b255421ef257a0013f0148922b26529fc510be44c349133f154a3"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u16000/007-5938-300.npz",
+      "bytes": 32306590,
+      "sha256": "a9890ef02e5ef6fc9632a622f951fc8cfffb8e17247f0a4c303b5ad7fd279097"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u16000/007-6054-300.npz",
+      "bytes": 67635449,
+      "sha256": "56cdd0904b9593eefa522ecd0a338f8641f5de9bc7888ff45f7206f3e0c14d3c"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u16000/007-6148-300.npz",
+      "bytes": 32428229,
+      "sha256": "cc2dad6d8fd9d9851372f1632332c855a6ccad5ac342c57865099eacb9b9379e"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u16000/007-6220-300.npz",
+      "bytes": 54409204,
+      "sha256": "5b38c43da15ba29b71eb67fbde72a760d9f0f29167d2aef25ccb51afbd4fd42d"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u16000/007-6519-400.npz",
+      "bytes": 33675891,
+      "sha256": "b0d1b41d2935c38f379e033301804c3a1af318d1cecb8cc3fb8a54a8b9bd006e"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u16000/007-6520-400.npz",
+      "bytes": 32873475,
+      "sha256": "dc0c3c2b5b0427c06598d53ade06d270896267cbf897d4fe038c4b96de2bbd0d"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u16000/007-6551-400.npz",
+      "bytes": 30038182,
+      "sha256": "7a3d95a5336c3672a1f63b51a64e52da3f4a914e254f8e976d12177a68a8989c"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u16000/007-6577-400.npz",
+      "bytes": 30847539,
+      "sha256": "ff08973e931687d4321d02046ee0f2b1338756163ca3b864226f6f12bfdf91b7"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u16000/007-6686-400.npz",
+      "bytes": 18103472,
+      "sha256": "118a3fb6e12be760ff7cea43f80fa4d0a86409635bb9e3e6352143752ad0b1dc"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u16000/007-6722-400.npz",
+      "bytes": 18447258,
+      "sha256": "665e3b198554899bf45dffe2a00a80e7ce4c52682efc56d2f077237afdd11ec0"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u16000/007-6734-400.npz",
+      "bytes": 62900097,
+      "sha256": "9665065bad16a9a0dfa61056100e6faa2951d7645ff32073ac2c26573bc0d132"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u16000/007-6811-400.npz",
+      "bytes": 28693239,
+      "sha256": "230737cbb094d21ce795b2d69cbbd7221e0ab540d0ccacd30b3bd528cbcbada3"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u16000/007-6815-400.npz",
+      "bytes": 29140080,
+      "sha256": "461e4c143553bcd48907f83f6c2fd39c0c0aa85d12ab06f2838c772df287db36"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u16000/007-6847-400.npz",
+      "bytes": 28944787,
+      "sha256": "4b5956cff717e383af3a16bcac5476a2ce03192446367ec81e0bd40c4c1a1a24"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u16000/007-6894-400.npz",
+      "bytes": 35647033,
+      "sha256": "070460b777a8d6bfa94ca8e48fb8582fa88aef0bda1b78ab268c5870bd713341"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u16000/007-6912-400.npz",
+      "bytes": 25406874,
+      "sha256": "828ae9fa756b9d8eb8f59e68240aa15e8ca8fec6cb6cebc53e06d010351f474b"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u16000/20170503161702100.npz",
+      "bytes": 27883011,
+      "sha256": "dc40ca6550971a72555e1955edcfb223bb51e4204b3ea19668578762879ac8d4"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u16000/20170503161702278.npz",
+      "bytes": 27508910,
+      "sha256": "fe250ad5e741184d0087cc24b8e9b6d1d27162c961aafa5b317d6e5e45884180"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u16000/20170509100155767.npz",
+      "bytes": 21333103,
+      "sha256": "8e1f93585bcd26f6846464b43d847662a3d812fb25e1f39c8453e68916b4484c"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u16000/20170510152714920.npz",
+      "bytes": 29308528,
+      "sha256": "ee2ce1f24cc20218817e2cfe7fc7b28ff1f3ff3f12b3f2173982fe13170a9455"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u16000/20170518142454730.npz",
+      "bytes": 27320446,
+      "sha256": "4920020c25565aa3fa5fe0e776acc17e77de00f70b99b041e68f2c9bb02114b8"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u16000/20170522100404106.npz",
+      "bytes": 31992250,
+      "sha256": "6fb76e2f859e58ddde7696891bd741a7dee6c9ac7a23db821ca1f81b61dc8ee8"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u16000/20170609154552424.npz",
+      "bytes": 37115876,
+      "sha256": "b24fb67a17e66b70967e997214632e7c445fe165ff6ece19e3ed327942ed4432"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u16000/20170629163635747.npz",
+      "bytes": 29697854,
+      "sha256": "8188f9a650db671e0709ea9dcfc8e5a4e1605ea2801505c801d27ef11ab46939"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u16000/metrics.json",
+      "bytes": 91277,
+      "sha256": "e45695f8c01354e7a80757f6f7cd765a571170c316c809f5715309e7ca27deb5"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u16000/progress.json",
+      "bytes": 65,
+      "sha256": "ef7bec31526980bd4f4352b6a5ab60f4a68739f692733ac238443f54ab0ee35f"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u2000/metrics.json",
+      "bytes": 74887,
+      "sha256": "0ba12c286084f1e056b80dc3a248de18cd4f894200cf4d15c6be452bda74529d"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u2000/progress.json",
+      "bytes": 64,
+      "sha256": "e336ab3bad3ff3e574a597ad63f57337c9d3c79412b6ce29274ad5cd31fad831"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u4000/metrics.json",
+      "bytes": 74865,
+      "sha256": "d257dfcdd2633c238148bd9225aa29d23b20f98554f228167f7c487449c452e8"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u4000/progress.json",
+      "bytes": 64,
+      "sha256": "5a81b58976c75ffaf78c68a853c5c91829ca0fc8650b5378f677e04dba7c92bf"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u8000/metrics.json",
+      "bytes": 74901,
+      "sha256": "21e7b2598e1584342660c5789ae061a48dd4d6a6595162b15f39721304d594cf"
+    },
+    {
+      "path": "runs/Q_MIX_seed42/val_u8000/progress.json",
+      "bytes": 64,
+      "sha256": "482fc08af7cdcfaf6274ccba83467ac6208ae33bba2a6697040acc355db563f7"
+    }
+  ],
+  "created_at": "2026-10-03T22:29:48.007087+00:00"
+}

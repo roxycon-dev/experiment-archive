@@ -1,0 +1,279 @@
+{
+  "scope": "CPU arithmetic and files only; no GPU, SSH, training, or new test evaluation",
+  "evaluation_nodes_recomputed": 23,
+  "metric_errors": [],
+  "missing_local_report_links": [],
+  "source_files": [
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\assets\\external\\PROVENANCE.json",
+      "sha256": "1152e3ac04662eab4bbfcdcf41987734e244540db7ec0a2e36097681ad031a9f"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\reports\\HRDecoder_完整实验报告_20261003.md",
+      "sha256": "d2db1e289a350d053fb7d7981a1fca9c80d83505a6dc87f29d93cf8354021d38"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\round2_highres\\server_results\\work_dirs\\U0_continuation2048\\eval_u1000.json",
+      "sha256": "bdc59f2e356928d61e52686aabfd0be559f64de79e2c7cdaac58c1f956f2a5ff"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\round2_highres\\server_results\\work_dirs\\U0_continuation2048\\eval_u2000.json",
+      "sha256": "96a1d27f70eb337a7c95632f31d88117e43b6740551391a31a5647d1082ea3a7"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\round2_highres\\server_results\\work_dirs\\U0_highres\\eval_u1000.json",
+      "sha256": "f3bc071fd3ab8fe915e758bf5e9832f15c32c2ebdbdc0962f6c8c66e8c676abd"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\round2_highres\\server_results\\work_dirs\\U0_highres\\eval_u2000.json",
+      "sha256": "671c78dd9528f9da55ca6ce062322db2cf6b72307c58fa788a1a823912264be8"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\round2_highres\\server_results\\work_dirs\\U0_highres\\eval_u4000.json",
+      "sha256": "7a9ef2a876ef39e4505e20d0ef29d2d98c73bc7777b26a5139fdce54ab5687e6"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\reports\\finish\\campaign_result.json",
+      "sha256": "96614c5630d2847e916c2fa995fa374901403e9fcf0b5475e68057a788f9bd5f"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\reports\\finish\\deployment_lock.json",
+      "sha256": "644974f4a888835f838472199dcb623e879be2d62e73dab502394759551ceac4"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\reports\\finish\\final_test.json",
+      "sha256": "49dc7e3ebae34f637c8a07ccfb70f0bd5e6bc071782ea07a3befd7ab01a9a879"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\reports\\finish\\initial_fusion.json",
+      "sha256": "dbca08ff7aa8770cc216bb892e7d8c28a4186a7f5946d6094939ae032167c94c"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\reports\\finish\\initial_nomination.json",
+      "sha256": "9ab5b1b1fc6ec966220a8cf859bd9df6e7826c8875712727a9e0009b447c046c"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\reports\\finish\\space_recovery.json",
+      "sha256": "604405ec058701417783ce5579a66b897bb759f32190639a314f21d6203009d4"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\reports\\finish\\test_progress.json",
+      "sha256": "44944218cd32ebe66c6a3578fd9a066ba9a96992c933b5a486bcc4d68bbb5682"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\A0_ddr_finetune\\eval_u3000.json",
+      "sha256": "a2a2e00ab65f16157f2a6c97fd753b3f83542be4326278854a26b8ce9c2652c9"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\A0_ddr_finetune\\eval_u6000.json",
+      "sha256": "676661a2a0fa647387a8e9639b44167c00093fbbadc0ad20aa1e1e53922ff6f1"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\H1_ddr_finetune\\eval_u12000.json",
+      "sha256": "78c530bfd6ba2a72d3f5478bb57eb33ef7e4ed17f09381d7b4a301ef0c675619"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\H1_ddr_finetune\\eval_u3000.json",
+      "sha256": "c286cbffbc9bdd8519c83d0d4d5c26906b3df9990f30c6d030fb7c2a614e7cb3"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\H1_ddr_finetune\\eval_u6000.json",
+      "sha256": "d07fba01a4a9b5a7322b767533e4f1deff18e52647273efeaf69a02f1e024437"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\H1_ddr_finetune\\eval_u9000.json",
+      "sha256": "23edb84b8f4266dc2229cfa19594b7ca2073b32f2b9559dd9b10475c2854d8f8"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\H1_external_pretrain\\eval_u1200.json",
+      "sha256": "a6c536aab4ecdf61e8cd16d989ffba17ded6e952faacd9418523e7e55917b4f7"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\H1_external_pretrain\\eval_u2400.json",
+      "sha256": "0949e9b6e5aa4dffa47a0f6830fd8b8219fb84be73242f6f31711891e02284bb"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\H1_external_pretrain\\eval_u300.json",
+      "sha256": "4e8e6c40bac1e916cf2910dd2583e4214bf3de5b163d810bb957fd69c9a08b4c"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\H1_external_pretrain\\eval_u600.json",
+      "sha256": "a8b1b07a13330a663a9323e9566e469a120ae6306b86f76d02b952502106eb29"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\U1_ddr_finetune\\eval_u12000.json",
+      "sha256": "8c518a88aa2749d534a44905de3bba2d33d7f4d54f1550dcab3e46508d403c9d"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\U1_ddr_finetune\\eval_u3000.json",
+      "sha256": "9f5d048a77a674b3799d6941936d584e87cf1ba2f6d73bf6f4d6196ea29d3a13"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\U1_ddr_finetune\\eval_u6000.json",
+      "sha256": "8d08936e3aa7f43395c08ccacd79d2a8dbb18a899955c8d1eff9ae6005ff27dd"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\U1_ddr_finetune\\eval_u9000.json",
+      "sha256": "f0fb591604b83cf801dbdf1cd71f8f703cfc9c5a0178537e6622d6ef98e142dd"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\U1_external_pretrain\\eval_u1200.json",
+      "sha256": "1f53c44bac2621dff391e76a63190736f652779a2c7a138f3468f41a26b67986"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\U1_external_pretrain\\eval_u2400.json",
+      "sha256": "a6f7a7088f811e4671fcf3cdd7d3232135fcd57d9fe2a3da3597d3903f8ba94d"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\U1_external_pretrain\\eval_u300.json",
+      "sha256": "851b14414af60e2c9be6455cde52015c93470716ea4e51d67eacfd15b1002b92"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\U1_external_pretrain\\eval_u600.json",
+      "sha256": "8783d2c7221333804fa4a4f10dca9484e570bf0d64ea1f90ab9c7644f742506d"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\trainer\\__init__.py",
+      "sha256": "7cb3b1e6f7b2e597b83d0f89baec85e33e335f2b798aa778b243b15d5c06be37"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\trainer\\checkpoint.py",
+      "sha256": "99981eeb30642351bd005411ba52838629a62dc4621a967624bffc720f58ac88"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\trainer\\config.py",
+      "sha256": "63624875f70841a27e18d83c6b4bee79e061a862f74df2762a38ecdce6f51c62"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\trainer\\data\\__init__.py",
+      "sha256": "93270c3caef9d17ecbb879ef43b37cc7b0bb499ed75ae42deeb3a8d1b1e6393e"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\trainer\\data\\augment.py",
+      "sha256": "d8cbab6cb835ffe2c58845ff769529f7c4481377de8c44da9efcb063c111dc0c"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\trainer\\data\\common.py",
+      "sha256": "e360c33d46eea48224e5585101969a34f9977d783573c50d52f2290359a8d178"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\trainer\\data\\ddr_dataset.py",
+      "sha256": "4f1f940dc71aef620fb4bb32afbd03ffcc8778ce80ec46ad220a7b67fb16b61c"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\trainer\\data\\external_dataset.py",
+      "sha256": "d0ff3f99fad178ffd2c891075305f4c82602e58fd0700211dbdfac17a5fba45e"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\trainer\\engine.py",
+      "sha256": "b4f3e2ea30c96a7d3bc4721ce805b917d154a9a4df6abb14a213c62263ef7ecb"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\trainer\\eval.py",
+      "sha256": "9578c2e46866fa3f0006a0b52a76bb653b76b5a8d373840cd8731dc864bb154e"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\trainer\\fusion_probe.py",
+      "sha256": "8ce4df1ac2ec4e7894fe1b412eeb5fec6f8e5e5d84c7b614a899e964629f19a9"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\trainer\\gate.py",
+      "sha256": "f2cbf1b13a60bbd966b79bb158f3132dcf31919bf59aea67d85c6c41376cb249"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\trainer\\loss.py",
+      "sha256": "fc1d9d8882a67a648b1ac64f412da4a4ec894949473784bcd1ccec2efd9fe95a"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\trainer\\metrics.py",
+      "sha256": "10af8256a7f9e1ac4a59b55c1cdffd0c04719805c82b7573fc256f23e3eaa405"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\trainer\\models\\__init__.py",
+      "sha256": "37155a22cc774ece62ec58bd2d9c426bf211b969b1bc24f73ed85a2d21b2abed"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\trainer\\models\\convnext_unet.py",
+      "sha256": "7f199310c8f866bb66094a1b9bc550bd9ca10b0ed02f7b55942579d417948dcd"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\trainer\\models\\hacdr_adapter.py",
+      "sha256": "665f8ffc4518c9284dd82db8c4896be01918474113673199adc39a36fd316599"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\trainer\\models\\hrdecoder_adapter.py",
+      "sha256": "9d4f14d1dd114b82c44126bde3ec10fd57c643bc46eb6c8d53e4c54ea3e7a787"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\trainer\\models\\weight_loading.py",
+      "sha256": "fd5a681f4624ac6ea7948b530eec977aed168e36cfb9cb3dedd8d49b46866b61"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\trainer\\optim.py",
+      "sha256": "3a97a68ed23b21151b13b43f25d16c6541547d896f13ab34e08d6d748e5c50b9"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\trainer\\paths.py",
+      "sha256": "d40d3fe62cc509c960b338709e46381f9e93914d0f4c4df74d2ee0f8cb2bced8"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\trainer\\screening.py",
+      "sha256": "7be0cbe5a9f8721964a94f0151e5d5c59a21cc53424d5987b926133fe95d71d9"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\trainer\\seed.py",
+      "sha256": "3cd3713e1ed1ed616f1df12b22ded4df9f3d94e20ae8985ebe9c69381108e82d"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\trainer\\semi.py",
+      "sha256": "20353a7ecc31fb4904093f9b1797504b7afcc79ab9f29a9e0bb89036d8e2911f"
+    }
+  ],
+  "missing_source_files": [],
+  "output_files": [
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_严格复诊_20261003\\00_阅读顺序.md",
+      "sha256": "3337adccfac0038104c3571f1286d26ea53f471ae002c20e657f7dc913befca7"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_严格复诊_20261003\\01_严格诊断与下一轮主方案.md",
+      "sha256": "204bd3de145e42dd2542911eee7fc56256954559f1065617b97bb2e9c4e9c581"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_严格复诊_20261003\\02_外部数据审查_Luna.json",
+      "sha256": "2301beb09e8836e968ee0182a2da37bbc559e005523cc99c9154e2f1c5a8fe84"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_严格复诊_20261003\\02_外部数据审查_Luna.md",
+      "sha256": "acc6467ecfcf071b6a6180b4a4fb464c82c816ffc39da560b3735a8a5e35f598"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_严格复诊_20261003\\03_运行与结果审查_Luna.compact.json",
+      "sha256": "791bf1465c88b138caf8a01529bf2a2c0167b1d34772f13ea7185c83e6087201"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_严格复诊_20261003\\03_运行与结果审查_Luna.md",
+      "sha256": "1fa72bb56e756292eefc605a229f5dd97bbdc96bd3bee224b6df6eb3122a7c8a"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_严格复诊_20261003\\04_训练实现审查_Luna.md",
+      "sha256": "82d74f08180ce4c8830a34e9f8d76bf9ba61d62ba49efa845a69ab0840797ac1"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_严格复诊_20261003\\05_文献取舍与新方案依据.md",
+      "sha256": "85e7b95bc4503d896053eb5c7912af4a292203c471c41cd27cead9ebbd534fbd"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_严格复诊_20261003\\audit_dice_accumulation.json",
+      "sha256": "4383ba6815281e85a8db0a5b3ac8e06bc5a911e317807a36c95f91aa02f84be9"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_严格复诊_20261003\\audit_dice_accumulation.py",
+      "sha256": "85d1d73f39675a560946edb59be90a53c1a6d8627416062874eeb8e68202216f"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_严格复诊_20261003\\verify_audit.py",
+      "sha256": "43eea4b67620179edf0f6897b7c5b16f2b0bd4cb3e426ffb1751c3e5d8199df7"
+    }
+  ]
+}

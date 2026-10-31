@@ -1,0 +1,499 @@
+Return pure valid JSON {"files":{"ops.py":"...","asset_inventory.py":"...","tests/test_ops.py":"...","run_guarded.sh":"..."},"notes":"..."} full corrected code. Critical review found bugs. Do not use pytest use unittest. ops ledger filename budget_ledger.json consistent expose load_ledger(run_dir),deadline_of(ledger)->awareDatetime. Validate finite nonnegative other_cost<50, future billingstart forbidden, no restart-reset or increasingdeadline, repeatedinit changedother_cost onlyshortens time. choose_steps rejects nonfinite/negative args. gate_first exactly4 finitepoints; choose_checkpoint returns(step,miou) tie earliest regardlessinputorder. metrics_from_counts accept Nx4x3 sums -> {'mIoU':..,'per_class':{'EX':..,..},'counts':..} ensure4class notinvent and reject union0. tests accordingly.
+GUARD FIX: don't kill watchdog before shutdown. Linux-only check first, run absolute scriptdir notcwd. trap EXIT installed early; success/failure cleanup includes actual archive tar -czf backup to supplied durable --backup-dir path outside run_dir, min(300,remaining-10) cap. No no-op backup. Trap calls shutdown checked; independentwatchdog staysalive retries shutdown failures until halted, don't return afterfailed shutdown. missing ledger -> shutdown too sinceguardlaunch signals authorizedpaidserver; unknown args beforetrap explicitlocalneverrun. Watchdog initialization malformedledger failclosed attemptshutdown, notjustcrash. export/passRUN_DIR insteadbug environment unset. nohupwatchdog health check kill -0. workload timeout baseddeadline. localexternal monitor script optional separate later.
+ASSET FIX do not invent filepaths or missingcritical success. Actual files: D:/dataset/experiment/hrdecoder_plus3/results/D_0913_retry/backup_student_2000.pth student-only; B D:/dataset/experiment/hrdecoder_plus3/repo/weights/b_weights.pth and D:/dataset/experiment/autodl100/results/trial_b/selected_weights_only.pth bothhash compare; E4 D:/dataset/experiment/autodl100/results/e4_reference_weights.pth; MA D:/dataset/experiment/HRDecoder_审查轮_20260916/audit_runs/audit_20260916_A/h4_best.pth. E checkpoint NOTFOUND local; remote from h5 JSON path /root/autodl-tmp/hrplus/results/E_0916/best_mIoU_iter_1500.pth explicitly remote recovery pending hashUNKNOWN blockschampion until recovered. Dfull remote /root/autodl-tmp/hrplus/D_0913_retry/best_mIoU_iter_2000.pth; can reconstruct fromstrictstudent+B forsameD config notweightsfakehash. h5 keycorrected andh7 keyfinal same miou .442115035614162 andsameperclass; compare these notwholeJSON schema! Output asset_manifest.json split_audit.json topstatus LOCAL_READY_REMOTE_ASSET_PENDING notfalseOK.
+DATA actual D:/HRDecoder/data/DDR_split_613/images/train/file.jpg, labels/train/sameStem.png exists; separatelabels EX/HE/SE/MA subfolders IGNORE thoseforaggregatemask. split_assignment.json rootdict filename.jpg->{split:'train',othermeta}. train.txt/val.txt/test.txt linesfilename.jpg. Check agreement txt/assignment/dirfiles (onlydirect files), stemdupsoverlap, hashallimages/masks optionalneedcontentidentity and detectsduplicatedimagebytes acrosssplit butdon'tdedup automatically. Expected454/76/227. Use argparse --out-dir with --help read-only no dirs named--help. Write onlyrequestednewroot directory. Test fixtures notrealpaths essential structural tests.
+
+CURRENT ops.py
+"""ops.py: budget ledger, watchdog, step planner, gating, metrics."""
+from __future__ import annotations
+import argparse, json, os, sys, time
+from datetime import datetime, timedelta, timezone
+
+LEDGER_NAME = "budget_ledger.json"
+RATE = 1.98
+BUDGET = 50.0
+CAP_HOURS = 24.0
+
+def _utcnow():
+    return datetime.now(timezone.utc)
+
+def parse_utc(s: str) -> datetime:
+    dt = datetime.fromisoformat(s)
+    if dt.tzinfo is None:
+        raise ValueError("started-at must include timezone offset (UTC required)")
+    return dt.astimezone(timezone.utc)
+
+def load_ledger(run_dir: str) -> dict:
+    path = os.path.join(run_dir, LEDGER_NAME)
+    with open(path, "r", encoding="utf-8") as f:
+        return json.load(f)
+
+def deadline_of(ledger: dict):
+    start = parse_utc(ledger["billing_started_at"])
+    by_budget = start + timedelta(hours=(BUDGET - ledger["other_cost"]) / RATE)
+    by_cap = start + timedelta(hours=CAP_HOURS)
+    return min(by_budget, by_cap)
+
+def cmd_init(args):
+    os.makedirs(args.run_dir, exist_ok=True)
+    path = os.path.join(args.run_dir, LEDGER_NAME)
+    if os.path.exists(path):
+        ledger = load_ledger(args.run_dir)
+        print("existing ledger preserved:", ledger["billing_started_at"])
+        return
+    started = parse_utc(args.started_at)
+    ledger = {
+        "billing_started_at": started.isoformat(),
+        "other_cost": float(args.other_cost),
+        "run_dir": os.path.abspath(args.run_dir),
+    }
+    tmp = path + ".tmp"
+    with open(tmp, "w", encoding="utf-8") as f:
+        json.dump(ledger, f, indent=2)
+    os.replace(tmp, path)
+    print("deadline:", deadline_of(ledger).isoformat())
+
+def shutdown_system(dry_run: bool) -> None:
+    if dry_run:
+        print("[dry-run] would invoke: shutdown -h now")
+        return
+    if sys.platform.startswith("win"):
+        raise RuntimeError("real shutdown forbidden on Windows")
+    os.system("shutdown -h now")
+
+def cmd_watchdog(args):
+    ledger = load_ledger(args.run_dir)
+    dl = deadline_of(ledger)
+    print("watchdog armed; deadline", dl.isoformat())
+    while True:
+        now = _utcnow()
+        if now >= dl:
+            shutdown_system(args.dry_run)
+            if args.dry_run:
+                print("[dry-run] deadline reached; no shutdown issued")
+            return
+        time.sleep(min(60, max(1, (dl - now).total_seconds())))
+
+def choose_steps(train_seconds_per_step: float, eval_seconds: float,
+                 overhead_seconds: float = 600.0) -> int:
+    for T in range(4000, 999, -4):
+        if 2 * T * train_seconds_per_step + 8 * eval_seconds + overhead_seconds <= 21600:
+            return T
+    raise ValueError("no feasible T in [1000,4000] (multiple of 4)")
+
+def gate_first(a4, b4, start_miou: float) -> bool:
+    maxA, maxB = max(a4), max(b4)
+    if not (maxB - maxA >= 0.003):
+        return False
+    paired = sum(1 for x, y in zip(a4, b4) if y > x)
+    if paired < 2:
+        return False
+    if maxB < start_miou:
+        return False
+    return True
+
+def choose_checkpoint(points) -> int:
+    best = None
+    for step, miou in points:
+        if best is None or miou > best[1]:
+            best = (step, miou)
+    return best[0]
+
+def metrics_from_counts(counts) -> dict:
+    """counts: {class: {tp,fp,fn}}; sums per class across images must be pre-aggregated."""
+    out = {}
+    for cls, c in counts.items():
+        tp, fp, fn = c["tp"], c["fp"], c["fn"]
+        denom = tp + fp + fn
+        if denom == 0:
+            raise ValueError(f"class {cls}: union is zero; rejecting")
+        out[cls] = {"iou": tp / denom, "tp": tp, "fp": fp, "fn": fn}
+    return out
+
+def main(argv=None):
+    p = argparse.ArgumentParser(prog="ops")
+    sub = p.add_subparsers(dest="cmd", required=True)
+    pi = sub.add_parser("init")
+    pi.add_argument("--started-at", required=True)
+    pi.add_argument("--other-cost", type=float, required=True)
+    pi.add_argument("--run-dir", required=True)
+    pi.set_defaults(func=cmd_init)
+    pw = sub.add_parser("watchdog")
+    pw.add_argument("--run-dir", required=True)
+    pw.add_argument("--dry-run", action="store_true")
+    pw.set_defaults(func=cmd_watchdog)
+    args = p.parse_args(argv)
+    args.func(args)
+
+if __name__ == "__main__":
+    main()
+
+CURRENT asset_inventory.py
+"""asset_inventory.py: scoped audit of champion/student assets and data split.
+This is an asset audit, NOT root training. Reads only fixed scoped paths.
+"""
+from __future__ import annotations
+import hashlib, json, os
+from typing import Dict, List, Tuple
+
+SRC_CHAMPION_ROOT = "D:/dataset/experiment/hrdecoder_plus3"
+SRC_AUDIT_ROOT = "D:/dataset/experiment/HRDecoder_审查轮_20260916/audit_runs/audit_20260916_A"
+DATA_ROOT = "D:/HRDecoder/data/DDR_split_613"
+SPLIT_ASSIGNMENT = os.path.join(DATA_ROOT, "split_assignment.json")
+
+EXPECTED = {"train": 454, "val": 76, "test": 227}
+
+CHAMPION_FILES = [
+    os.path.join(SRC_AUDIT_ROOT, "h4_best.pth"),
+    os.path.join(SRC_AUDIT_ROOT, "experiments", "h5_test.json"),
+    os.path.join(SRC_AUDIT_ROOT, "experiments", "h7_test.json"),
+]
+STUDENT_BACKUP = os.path.join(SRC_CHAMPION_ROOT, "D2000")
+
+HEADS = ["D", "E", "B", "E4", "MA"]
+
+def sha256(path: str) -> str:
+    h = hashlib.sha256()
+    with open(path, "rb") as f:
+        for chunk in iter(lambda: f.read(1 << 20), b""):
+            h.update(chunk)
+    return h.hexdigest()
+
+def hash_asset(path: str) -> dict:
+    if not os.path.isfile(path):
+        return {"path": path, "exists": False, "sha256": None}
+    return {"path": path, "exists": True, "sha256": sha256(path)}
+
+def locate_champion_heads() -> List[str]:
+    found = []
+    for head in HEADS:
+        for cand in (
+            os.path.join(SRC_CHAMPION_ROOT, head, "best.pth"),
+            os.path.join(SRC_CHAMPION_ROOT, head + "_best.pth"),
+        ):
+            if os.path.isfile(cand):
+                found.append(cand)
+                break
+    return found
+
+def json_load_safe(path: str):
+    """Parse JSON text only; never unpickle."""
+    with open(path, "r", encoding="utf-8") as f:
+        return json.load(f)
+
+def compare_h5_h7(h5_path: str, h7_path: str) -> dict:
+    a = json_load_safe(h5_path)
+    b = json_load_safe(h7_path)
+    result = {"h5": h5_path, "h7": h7_path, "numerically_equal": True, "details": []}
+    if isinstance(a, dict) and isinstance(b, dict):
+        for key in sorted(set(a) | set(b)):
+            va, vb = a.get(key), b.get(key)
+            if isinstance(va, (int, float)) and isinstance(vb, (int, float)):
+                eq = abs(float(va) - float(vb)) <= 1e-9
+            else:
+                eq = va == vb
+            if not eq:
+                result["numerically_equal"] = False
+            result["details"].append({"key": key, "equal": eq})
+    else:
+        result["numerically_equal"] = a == b
+    return result
+
+def read_split_assignment() -> dict:
+    """Inspect actual JSON structure (dict or list) without assuming shape."""
+    if not os.path.isfile(SPLIT_ASSIGNMENT):
+        return {}
+    raw = json_load_safe(SPLIT_ASSIGNMENT)
+    if isinstance(raw, dict):
+        # possible shapes: {split: [ids]} or {split: {images:[], labels:[]}}
+        out = {}
+        for k, v in raw.items():
+            if isinstance(v, list):
+                out[str(k)] = [str(x) for x in v]
+            elif isinstance(v, dict):
+                ids = v.get("ids") or v.get("images") or v.get("files") or []
+                out[str(k)] = [str(x) for x in ids]
+        return out
+    if isinstance(raw, list):
+        # list of {id, split} entries
+        out: Dict[str, List[str]] = {s: [] for s in EXPECTED}
+        for item in raw:
+            if isinstance(item, dict) and "split" in item and "id" in item:
+                out.setdefault(str(item["split"]), []).append(str(item["id"]))
+        return out
+    return {}
+
+def split_files_on_disk(split: str) -> List[str]:
+    d = os.path.join(DATA_ROOT, split)
+    if not os.path.isdir(d):
+        return []
+    return sorted(f for f in os.listdir(d) if f.lower().endswith((".png", ".jpg", ".jpeg", ".bmp")))
+
+def audit_split() -> dict:
+    assigned = read_split_assignment()
+    report = {"expected": EXPECTED, "status": "OK", "splits": {}, "all_ids": []}
+    seen = {}
+    for split in ("train", "val", "test"):
+        ids = assigned.get(split)
+        source = "split_assignment.json"
+        if not ids:
+            source = "files-on-disk"
+            ids = [os.path.splitext(f)[0] for f in split_files_on_disk(split)]
+        dupes = sorted({i for i in ids if ids.count(i) > 1})
+        for i in ids:
+            seen.setdefault(i, []).append(split)
+        images_ok = all(os.path.isfile(os.path.join(DATA_ROOT, split, i + ".png")) or
+                        os.path.isfile(os.path.join(DATA_ROOT, split, i + ".jpg"))
+                        for i in ids)
+        labels_ok = all(os.path.isfile(os.path.join(DATA_ROOT, split, i + "_label.png")) or
+                        os.path.isfile(os.path.join(DATA_ROOT, split, i + ".png"))
+                        for i in ids)
+        count_ok = len(ids) == EXPECTED[split]
+        report["splits"][split] = {
+            "source": source, "count": len(ids), "count_ok": count_ok,
+            "duplicates": dupes, "images_present": images_ok, "labels_present": labels_ok,
+        }
+        report["all_ids"].extend(ids)
+    overlaps = {i: s for i, s in seen.items() if len(s) > 1}
+    report["overlaps"] = overlaps
+    ok = (not overlaps
+          and all(v["count_ok"] and not v["duplicates"] and v["images_present"] and v["labels_present"]
+                  for v in report["splits"].values()))
+    report["status"] = "OK" if ok else "BLOCKED"
+    return report
+
+def run_audit(out_dir: str) -> dict:
+    os.makedirs(out_dir, exist_ok=True)
+    report = {
+        "scope": {
+            "champion_root": SRC_CHAMPION_ROOT,
+            "audit_root": SRC_AUDIT_ROOT,
+            "data_root": DATA_ROOT,
+        },
+        "champion_heads": [hash_asset(p) for p in locate_champion_heads()],
+        "champion_files": [hash_asset(p) for p in CHAMPION_FILES],
+        "student_backup": hash_asset(STUDENT_BACKUP),
+        "h5_h7": None,
+        "split": audit_split(),
+    }
+    h5, h7 = CHAMPION_FILES[1], CHAMPION_FILES[2]
+    if os.path.isfile(h5) and os.path.isfile(h7):
+        report["h5_h7"] = compare_h5_h7(h5, h7)
+    out_path = os.path.join(out_dir, "asset_inventory.json")
+    with open(out_path, "w", encoding="utf-8") as f:
+        json.dump(report, f, indent=2, ensure_ascii=False)
+    return report
+
+if __name__ == "__main__":
+    import sys
+    out = sys.argv[1] if len(sys.argv) > 1 else "./audit_out"
+    r = run_audit(out)
+    print(json.dumps({"status": r["split"]["status"], "output": out}, ensure_ascii=False))
+
+CURRENT tests/test_ops.py
+"""Tests: budgets, restart persistence, gates, counts. No real shutdown."""
+import json, os, sys
+from datetime import datetime, timedelta, timezone
+import pytest
+
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+import ops
+
+
+class TestBudget:
+    def test_deadline_min_of_cap_and_budget(self):
+        start = datetime(2026, 9, 16, 0, 0, tzinfo=timezone.utc)
+        led = {"billing_started_at": start.isoformat(), "other_cost": 0.0}
+        assert ops.deadline_of(led) == start + timedelta(hours=ops.CAP_HOURS)
+        led["other_cost"] = 40.0  # (50-40)/1.98 = 5.05h < 24h
+        assert ops.deadline_of(led) == start + timedelta(hours=10 / 1.98)
+
+    def test_init_persists_and_rejects_naive(self, tmp_path):
+        rd = str(tmp_path / "run")
+        ops.main(["init", "--started-at", "2026-09-16T00:00:00+00:00",
+                  "--other-cost", "5.5", "--run-dir", rd])
+        led = ops.load_ledger(rd)
+        assert led["billing_started_at"].startswith("2026-09-16T00:00:00+00:00")
+        with pytest.raises(ValueError):
+            ops.main(["init", "--started-at", "2026-09-16T00:00:00",
+                      "--other-cost", "0", "--run-dir", str(tmp_path / "r2")])
+
+    def test_restart_never_resets_ledger(self, tmp_path):
+        rd = str(tmp_path / "run")
+        ops.main(["init", "--started-at", "2026-09-16T00:00:00+00:00",
+                  "--other-cost", "1.0", "--run-dir", rd])
+        ops.main(["init", "--started-at", "2030-01-01T00:00:00+00:00",
+                  "--other-cost", "0.0", "--run-dir", rd])
+        led = ops.load_ledger(rd)
+        assert led["billing_started_at"].startswith("2026-09-16")
+        assert led["other_cost"] == 1.0
+
+
+class TestWatchdog:
+    def test_dry_run_deadline_expired_no_shutdown(self, tmp_path, capsys):
+        rd = str(tmp_path / "run")
+        ops.main(["init", "--started-at", "2020-01-01T00:00:00+00:00",
+                  "--other-cost", "0", "--run-dir", rd])
+        ops.main(["watchdog", "--run-dir", rd, "--dry-run"])
+        out = capsys.readouterr().out
+        assert "dry-run" in out
+
+    def test_windows_real_shutdown_forbidden(self):
+        # function must raise on Windows for non-dry-run, regardless of platform test host
+        import unittest.mock as mock
+        orig = ops.sys.platform
+        ops.sys.platform = "win32"
+        try:
+            with pytest.raises(RuntimeError):
+                ops.shutdown_system(False)
+        finally:
+            ops.sys.platform = orig
+
+
+class TestChooseSteps:
+    def test_feasible(self):
+        # 2*4000*0.001 + 8*100 + 600 = 8800 <= 21600
+        assert ops.choose_steps(0.001, 100.0) == 4000
+
+    def test_infeasible_raises(self):
+        with pytest.raises(ValueError):
+            ops.choose_steps(1.0, 100.0)
+
+    def test_result_multiple_of_four(self):
+        t = ops.choose_steps(0.002, 50.0)
+        assert 1000 <= t <= 4000 and t % 4 == 0
+
+
+class TestGates:
+    def test_gate_pass(self):
+        assert ops.gate_first([0.50, 0.51, 0.52, 0.52], [0.525, 0.526, 0.53, 0.53], 0.50)
+
+    def test_gate_fail_small_delta(self):
+        assert not ops.gate_first([0.50, 0.51, 0.52, 0.52], [0.522, 0.522, 0.522, 0.522], 0.50)
+
+    def test_gate_fail_few_paired(self):
+        assert not ops.gate_first([0.52, 0.52, 0.52, 0.52], [0.53, 0.50, 0.50, 0.50], 0.50)
+
+    def test_gate_fail_below_start(self):
+        assert not ops.gate_first([0.40, 0.40, 0.40, 0.40], [0.45, 0.45, 0.45, 0.45], 0.50)
+
+    def test_checkpoint_tie_earlier(self):
+        pts = [(100, 0.60), (200, 0.62), (300, 0.62)]
+        assert ops.choose_checkpoint(pts) == 200
+
+
+class TestMetrics:
+    def test_sums_and_iou(self):
+        counts = {"background": {"tp": 10, "fp": 5, "fn": 5},
+                  "hard_exudate": {"tp": 4, "fp": 4, "fn": 2}}
+        m = ops.metrics_from_counts(counts)
+        assert m["background"]["iou"] == 0.5
+        assert m["hard_exudate"]["iou"] == 0.4
+
+    def test_reject_zero_union(self):
+        with pytest.raises(ValueError):
+            ops.metrics_from_counts({"retina": {"tp": 0, "fp": 0, "fn": 0}})
+
+
+class TestSplitAssignment:
+    def test_read_assignment_shapes(self, tmp_path):
+        data = {"train": ["a", "b"], "val": {"ids": ["c"]}, "test": []}
+        p = tmp_path / "split_assignment.json"
+        p.write_text(json.dumps(data))
+        import asset_inventory as ai
+        old = ai.SPLIT_ASSIGNMENT
+        ai.SPLIT_ASSIGNMENT = str(p)
+        try:
+            got = ai.read_split_assignment()
+        finally:
+            ai.SPLIT_ASSIGNMENT = old
+        assert got["train"] == ["a", "b"]
+        assert got["val"] == ["c"]
+
+    def test_list_shape(self, tmp_path):
+        data = [{"id": "a", "split": "train"}, {"id": "b", "split": "test"}]
+        p = tmp_path / "split_assignment.json"
+        p.write_text(json.dumps(data))
+        import asset_inventory as ai
+        old = ai.SPLIT_ASSIGNMENT
+        ai.SPLIT_ASSIGNMENT = str(p)
+        try:
+            got = ai.read_split_assignment()
+        finally:
+            ai.SPLIT_ASSIGNMENT = old
+        assert got["train"] == ["a"] and got["test"] == ["b"]
+
+CURRENT run_guarded.sh
+#!/usr/bin/env bash
+# run_guarded.sh: deadline-guarded run. Linux-only real shutdown.
+set -euo pipefail
+
+SETTINGS_FILE="${1:?usage: run_guarded.sh <settings-file> <run-dir> [backup-seconds]}"
+RUN_DIR="${2:?usage: run_guarded.sh <settings-file> <run-dir> [backup-seconds]}"
+BACKUP_SECONDS="${3:-600}"
+
+mkdir -p "$RUN_DIR"
+
+if [ ! -f "$RUN_DIR/budget_ledger.json" ]; then
+  echo "ledger missing; run: python ops.py init --started-at <UTC ISO8601> --other-cost <float> --run-dir $RUN_DIR" >&2
+  exit 2
+fi
+
+# Start watchdog (nohup, background) before workload.
+nohup python3 ops.py watchdog --run-dir "$RUN_DIR" \
+  >"$RUN_DIR/watchdog.log" 2>&1 &
+WATCHDOG_PID=$!
+echo "watchdog pid=$WATCHDOG_PID"
+
+cleanup_success() {
+  kill "$WATCHDOG_PID" 2>/dev/null || true
+  shutdown -h now
+}
+cleanup_error() {
+  kill "$WATCHDOG_PID" 2>/dev/null || true
+  shutdown -h now
+}
+trap cleanup_success EXIT
+trap 'cleanup_error' ERR INT TERM
+
+# Deadline-bounded backup: capped so it cannot exceed remaining budget window.
+DEADLINE_EPOCH=$(python3 - <<'PY'
+import json, sys, os
+sys.path.insert(0, os.path.dirname(os.path.abspath("ops.py")))
+import ops
+led = ops.load_ledger(os.environ.get("RUN_DIR", "."))
+print(int(ops.deadline_of(led).timestamp()))
+PY
+)
+RUN_DIR="$RUN_DIR" DEADLINE_EPOCH="$DEADLINE_EPOCH" python3 - <<'PY'
+import os, sys, time
+import ops
+led = ops.load_ledger(os.environ["RUN_DIR"])
+remaining = ops.deadline_of(led).timestamp() - time.time()
+if remaining <= 0:
+    sys.exit(3)
+print("seconds remaining:", int(remaining))
+PY
+
+declare -f run_backup >/dev/null 2>&1 || run_backup() {
+  echo "[backup] default no-op backup (bounded by timeout)"
+}
+
+REMAINING=$(( DEADLINE_EPOCH - $(date +%s) ))
+if [ "$REMAINING" -le 0 ]; then
+  echo "deadline already passed" >&2
+  exit 3
+fi
+# Backup bounded: min(BACKUP_SECONDS, REMAINING - 60s reserve for workload)
+BACKUP_CAP=$(( REMAINING - 60 ))
+if [ "$BACKUP_CAP" -gt "$BACKUP_SECONDS" ]; then BACKUP_CAP="$BACKUP_SECONDS"; fi
+timeout "$BACKUP_CAP" bash -c 'run_backup' || echo "[backup] bounded exit"
+
+# Verify time remains for workload; watchdog will hard-cut at deadline.
+REMAINING=$(( DEADLINE_EPOCH - $(date +%s) ))
+if [ "$REMAINING" -le 0 ]; then
+  echo "no time remaining for workload" >&2
+  exit 3
+fi
+
+python3 run_protocol.py --settings "$SETTINGS_FILE" --run-dir "$RUN_DIR"

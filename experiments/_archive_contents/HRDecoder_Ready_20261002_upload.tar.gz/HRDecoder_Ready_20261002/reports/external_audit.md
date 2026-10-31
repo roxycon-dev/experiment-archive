@@ -1,0 +1,119 @@
+# Manifest 审计报告
+
+- 生成时间：2026-10-02T01:22:36.763207+00:00
+- Manifest：`D:\dataset\experiment\HRDecoder_Ready_20261002\assets\external\external_train.jsonl`
+- 记录数：54；来源/split 分布：{"IDRiD/train": 54}
+- 精确重复对：0；近重复对：0（阈值 6 bit）；DDR 比对图数：757
+- **结论：FAIL**（errors=54, warnings=51）
+
+## 降级记录
+- jsonschema 未安装：使用内置最小校验器（覆盖 required/type/enum/pattern）
+
+## Errors（必须修复）
+- E0 schema(degraded): record#0: $.notes: expected type ['string', 'null'], got list
+- E0 schema(degraded): record#1: $.notes: expected type ['string', 'null'], got list
+- E0 schema(degraded): record#2: $.notes: expected type ['string', 'null'], got list
+- E0 schema(degraded): record#3: $.notes: expected type ['string', 'null'], got list
+- E0 schema(degraded): record#4: $.notes: expected type ['string', 'null'], got list
+- E0 schema(degraded): record#5: $.notes: expected type ['string', 'null'], got list
+- E0 schema(degraded): record#6: $.notes: expected type ['string', 'null'], got list
+- E0 schema(degraded): record#7: $.notes: expected type ['string', 'null'], got list
+- E0 schema(degraded): record#8: $.notes: expected type ['string', 'null'], got list
+- E0 schema(degraded): record#9: $.notes: expected type ['string', 'null'], got list
+- E0 schema(degraded): record#10: $.notes: expected type ['string', 'null'], got list
+- E0 schema(degraded): record#11: $.notes: expected type ['string', 'null'], got list
+- E0 schema(degraded): record#12: $.notes: expected type ['string', 'null'], got list
+- E0 schema(degraded): record#13: $.notes: expected type ['string', 'null'], got list
+- E0 schema(degraded): record#14: $.notes: expected type ['string', 'null'], got list
+- E0 schema(degraded): record#15: $.notes: expected type ['string', 'null'], got list
+- E0 schema(degraded): record#16: $.notes: expected type ['string', 'null'], got list
+- E0 schema(degraded): record#17: $.notes: expected type ['string', 'null'], got list
+- E0 schema(degraded): record#18: $.notes: expected type ['string', 'null'], got list
+- E0 schema(degraded): record#19: $.notes: expected type ['string', 'null'], got list
+- E0 schema(degraded): record#20: $.notes: expected type ['string', 'null'], got list
+- E0 schema(degraded): record#21: $.notes: expected type ['string', 'null'], got list
+- E0 schema(degraded): record#22: $.notes: expected type ['string', 'null'], got list
+- E0 schema(degraded): record#23: $.notes: expected type ['string', 'null'], got list
+- E0 schema(degraded): record#24: $.notes: expected type ['string', 'null'], got list
+- E0 schema(degraded): record#25: $.notes: expected type ['string', 'null'], got list
+- E0 schema(degraded): record#26: $.notes: expected type ['string', 'null'], got list
+- E0 schema(degraded): record#27: $.notes: expected type ['string', 'null'], got list
+- E0 schema(degraded): record#28: $.notes: expected type ['string', 'null'], got list
+- E0 schema(degraded): record#29: $.notes: expected type ['string', 'null'], got list
+- E0 schema(degraded): record#30: $.notes: expected type ['string', 'null'], got list
+- E0 schema(degraded): record#31: $.notes: expected type ['string', 'null'], got list
+- E0 schema(degraded): record#32: $.notes: expected type ['string', 'null'], got list
+- E0 schema(degraded): record#33: $.notes: expected type ['string', 'null'], got list
+- E0 schema(degraded): record#34: $.notes: expected type ['string', 'null'], got list
+- E0 schema(degraded): record#35: $.notes: expected type ['string', 'null'], got list
+- E0 schema(degraded): record#36: $.notes: expected type ['string', 'null'], got list
+- E0 schema(degraded): record#37: $.notes: expected type ['string', 'null'], got list
+- E0 schema(degraded): record#38: $.notes: expected type ['string', 'null'], got list
+- E0 schema(degraded): record#39: $.notes: expected type ['string', 'null'], got list
+- E0 schema(degraded): record#40: $.notes: expected type ['string', 'null'], got list
+- E0 schema(degraded): record#41: $.notes: expected type ['string', 'null'], got list
+- E0 schema(degraded): record#42: $.notes: expected type ['string', 'null'], got list
+- E0 schema(degraded): record#43: $.notes: expected type ['string', 'null'], got list
+- E0 schema(degraded): record#44: $.notes: expected type ['string', 'null'], got list
+- E0 schema(degraded): record#45: $.notes: expected type ['string', 'null'], got list
+- E0 schema(degraded): record#46: $.notes: expected type ['string', 'null'], got list
+- E0 schema(degraded): record#47: $.notes: expected type ['string', 'null'], got list
+- E0 schema(degraded): record#48: $.notes: expected type ['string', 'null'], got list
+- E0 schema(degraded): record#49: $.notes: expected type ['string', 'null'], got list
+- E0 schema(degraded): record#50: $.notes: expected type ['string', 'null'], got list
+- E0 schema(degraded): record#51: $.notes: expected type ['string', 'null'], got list
+- E0 schema(degraded): record#52: $.notes: expected type ['string', 'null'], got list
+- E0 schema(degraded): record#53: $.notes: expected type ['string', 'null'], got list
+
+## Warnings（不阻塞，需人工过目）
+- W5 cross-dup: external IDRiD_train_IDRiD_05 ~ DDR 007-1789-100.jpg (2/3 hashes)
+- W5 cross-dup: external IDRiD_train_IDRiD_09 ~ DDR 007-1789-100.jpg (2/3 hashes)
+- W5 cross-dup: external IDRiD_train_IDRiD_13 ~ DDR 007-1789-100.jpg (2/3 hashes)
+- W5 cross-dup: external IDRiD_train_IDRiD_15 ~ DDR 007-1789-100.jpg (2/3 hashes)
+- W5 cross-dup: external IDRiD_train_IDRiD_17 ~ DDR 007-1789-100.jpg (2/3 hashes)
+- W5 cross-dup: external IDRiD_train_IDRiD_18 ~ DDR 007-1789-100.jpg (2/3 hashes)
+- W5 cross-dup: external IDRiD_train_IDRiD_19 ~ DDR 007-1789-100.jpg (2/3 hashes)
+- W5 cross-dup: external IDRiD_train_IDRiD_20 ~ DDR 007-1789-100.jpg (2/3 hashes)
+- W5 cross-dup: external IDRiD_train_IDRiD_22 ~ DDR 007-1789-100.jpg (2/3 hashes)
+- W5 cross-dup: external IDRiD_train_IDRiD_23 ~ DDR 007-1789-100.jpg (2/3 hashes)
+- W5 cross-dup: external IDRiD_train_IDRiD_30 ~ DDR 007-1789-100.jpg (2/3 hashes)
+- W5 cross-dup: external IDRiD_train_IDRiD_36 ~ DDR 007-1789-100.jpg (2/3 hashes)
+- W5 cross-dup: external IDRiD_train_IDRiD_39 ~ DDR 007-1789-100.jpg (2/3 hashes)
+- W5 cross-dup: external IDRiD_train_IDRiD_41 ~ DDR 007-1789-100.jpg (2/3 hashes)
+- W5 cross-dup: external IDRiD_train_IDRiD_44 ~ DDR 007-1789-100.jpg (2/3 hashes)
+- W5 cross-dup: external IDRiD_train_IDRiD_46 ~ DDR 007-1789-100.jpg (2/3 hashes)
+- W5 cross-dup: external IDRiD_train_IDRiD_49 ~ DDR 007-1789-100.jpg (2/3 hashes)
+- W5 cross-dup: external IDRiD_train_IDRiD_51 ~ DDR 007-1789-100.jpg (2/3 hashes)
+- W5 cross-dup: external IDRiD_train_IDRiD_01 ~ DDR 007-1977-100.jpg (2/3 hashes)
+- W5 cross-dup: external IDRiD_train_IDRiD_19 ~ DDR 007-2218-100.jpg (2/3 hashes)
+- W5 cross-dup: external IDRiD_train_IDRiD_49 ~ DDR 007-2218-100.jpg (2/3 hashes)
+- W5 cross-dup: external IDRiD_train_IDRiD_51 ~ DDR 007-2218-100.jpg (2/3 hashes)
+- W5 cross-dup: external IDRiD_train_IDRiD_01 ~ DDR 007-2326-100.jpg (2/3 hashes)
+- W5 cross-dup: external IDRiD_train_IDRiD_53 ~ DDR 007-2339-100.jpg (2/3 hashes)
+- W5 cross-dup: external IDRiD_train_IDRiD_42 ~ DDR 007-2607-100.jpg (2/3 hashes)
+- W5 cross-dup: external IDRiD_train_IDRiD_53 ~ DDR 007-3400-200.jpg (2/3 hashes)
+- W5 cross-dup: external IDRiD_train_IDRiD_53 ~ DDR 007-3445-200.jpg (2/3 hashes)
+- W5 cross-dup: external IDRiD_train_IDRiD_01 ~ DDR 007-3487-200.jpg (2/3 hashes)
+- W5 cross-dup: external IDRiD_train_IDRiD_05 ~ DDR 007-3487-200.jpg (2/3 hashes)
+- W5 cross-dup: external IDRiD_train_IDRiD_15 ~ DDR 007-3939-200.jpg (2/3 hashes)
+- W5 cross-dup: external IDRiD_train_IDRiD_14 ~ DDR 007-3973-200.jpg (2/3 hashes)
+- W5 cross-dup: external IDRiD_train_IDRiD_33 ~ DDR 007-3973-200.jpg (2/3 hashes)
+- W5 cross-dup: external IDRiD_train_IDRiD_43 ~ DDR 007-3973-200.jpg (2/3 hashes)
+- W5 cross-dup: external IDRiD_train_IDRiD_08 ~ DDR 007-3975-200.jpg (2/3 hashes)
+- W5 cross-dup: external IDRiD_train_IDRiD_17 ~ DDR 007-3975-200.jpg (2/3 hashes)
+- W5 cross-dup: external IDRiD_train_IDRiD_18 ~ DDR 007-3975-200.jpg (2/3 hashes)
+- W5 cross-dup: external IDRiD_train_IDRiD_19 ~ DDR 007-3975-200.jpg (2/3 hashes)
+- W5 cross-dup: external IDRiD_train_IDRiD_20 ~ DDR 007-3975-200.jpg (2/3 hashes)
+- W5 cross-dup: external IDRiD_train_IDRiD_23 ~ DDR 007-3975-200.jpg (2/3 hashes)
+- W5 cross-dup: external IDRiD_train_IDRiD_36 ~ DDR 007-3975-200.jpg (2/3 hashes)
+- W5 cross-dup: external IDRiD_train_IDRiD_41 ~ DDR 007-3975-200.jpg (2/3 hashes)
+- W5 cross-dup: external IDRiD_train_IDRiD_46 ~ DDR 007-3975-200.jpg (2/3 hashes)
+- W5 cross-dup: external IDRiD_train_IDRiD_49 ~ DDR 007-3975-200.jpg (2/3 hashes)
+- W5 cross-dup: external IDRiD_train_IDRiD_17 ~ DDR 007-3987-200.jpg (2/3 hashes)
+- W5 cross-dup: external IDRiD_train_IDRiD_41 ~ DDR 007-3987-200.jpg (2/3 hashes)
+- W5 cross-dup: external IDRiD_train_IDRiD_53 ~ DDR 007-4105-200.jpg (2/3 hashes)
+- W5 cross-dup: external IDRiD_train_IDRiD_14 ~ DDR 007-4614-200.jpg (2/3 hashes)
+- W5 cross-dup: external IDRiD_train_IDRiD_33 ~ DDR 007-4614-200.jpg (2/3 hashes)
+- W5 cross-dup: external IDRiD_train_IDRiD_42 ~ DDR 007-4614-200.jpg (2/3 hashes)
+- W5 cross-dup: external IDRiD_train_IDRiD_43 ~ DDR 007-4614-200.jpg (2/3 hashes)
+- W5 cross-dup: 达到报告上限，完整列表见 JSON

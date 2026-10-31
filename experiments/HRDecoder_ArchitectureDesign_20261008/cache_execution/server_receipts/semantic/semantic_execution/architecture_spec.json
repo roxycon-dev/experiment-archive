@@ -1,0 +1,35 @@
+{
+  "version": 15,
+  "name": "HRDecoder-ScalePreservingCorrection",
+  "private_parameters": 284496,
+  "total_parameters": 65856916,
+  "network": "F1-F4project64/concat256->128/DW3e2x2/project64 at1/8; RGBunshuffle2to32+mix96to64/DW13e2x2 at1/2; rawdetachlogit16 bypass; zero80to16/shuffle2",
+  "base_supervision": "original squared Dice + .25 GT-positive/negative balanced BCE + .1 original HRcrop Dice",
+  "teacher_route": "Same fixed GT-consistent teacherKL fullGTposneg denominators, base.5lambda_K/private lambda_K",
+  "normalization": "original BN unchanged; no BN buffer transplantation or per-image BN inference",
+  "gradient_clip": "base/private separately L2max5 after complete finite-check; exactlyoneSGD; private gradient norm cannot scale base step",
+  "critical_stop": {
+    "after_update_at_least": 8000,
+    "mIoU_drop_from_best_at_least_pp": 15.0,
+    "or_drop_at_least_pp": 8.0,
+    "with_previous_class_IoU_at_least": 5.0,
+    "and_current_class_IoU_zero": true,
+    "action": "save own current checkpoint and stop before another update; not an overfitting claim"
+  },
+  "changes_relative_to_detail": "base positive-gradient guarantee, direct semantic teacher learning in provider, fixed clipping and critical-collapse stop",
+  "evidence": "Aligned4k base32.43627/final31.78234; spatial train probe improvesTP andFP, not pureconstant bias; confirmed globalclip couplesprivate andbase optimization",
+  "hypothesis_not_guarantee": "More precise spatial correction with original confidence amplitude; prior coupling verified structurally but not soleaccuracycause; no guarantee",
+  "budget": [
+    2048,
+    2,
+    40000
+  ],
+  "inference": "no GT/teacher/TTA/H4; native FP32 logit resize then sigmoid",
+  "fresh_own_run": true,
+  "old_weights_used": false,
+  "accuracy_guaranteed": false,
+  "private_supervision": "original Dice + .25 fullGTposneg balanced BCE; no ordinary background-dominated BCE",
+  "changes_relative_to_foundation": "Only private GT BCE and private teacher KL normalization changed; base supervision/network/sampler/BN/LR/clipping/critical gate unchanged",
+  "gradient_diagnostic_source": "server_receipts/foundation/reports/foundation/private_gradient/PRIVATE_GRADIENT_DIAGNOSTIC.json",
+  "changes_relative_to_aligned": "Scale-preserving semantic capacity, rawlogit bypass replaces normalized probability, separate clipping"
+}

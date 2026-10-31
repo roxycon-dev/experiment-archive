@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "checked_at": "2026-10-10T16:16:52.793220+08:00",
+  "checks": [
+    "actual_live_run_refuses_shutdown",
+    "different_identity_refuses_shutdown",
+    "remaining_own_workers_refuse_shutdown",
+    "terminal_dry_run_never_mutates_server"
+  ],
+  "actual_training_or_workers_stopped": false,
+  "actual_shutdown_command_issued": false,
+  "training_math_or_registered_gate_changed": false,
+  "no_checkpoint_download": true
+}

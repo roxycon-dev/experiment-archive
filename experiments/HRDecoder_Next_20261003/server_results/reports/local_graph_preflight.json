@@ -1,0 +1,1841 @@
+{
+  "status": "LOCAL_GRAPH_PASS",
+  "device": "cuda",
+  "checkpoint": {
+    "checkpoint_sha256": "445c45af1abf2dee66e13ab5ed6c9599047e4dd5b519e9aac5f2ff696849f34d",
+    "loaded_keys": [
+      "decoder.c0.block.0.bias",
+      "decoder.c0.block.0.weight",
+      "decoder.c0.block.1.bias",
+      "decoder.c0.block.1.weight",
+      "decoder.c0.block.3.bias",
+      "decoder.c0.block.3.weight",
+      "decoder.c0.block.4.bias",
+      "decoder.c0.block.4.weight",
+      "decoder.c00.block.0.bias",
+      "decoder.c00.block.0.weight",
+      "decoder.c00.block.1.bias",
+      "decoder.c00.block.1.weight",
+      "decoder.c00.block.3.bias",
+      "decoder.c00.block.3.weight",
+      "decoder.c00.block.4.bias",
+      "decoder.c00.block.4.weight",
+      "decoder.c1.block.0.bias",
+      "decoder.c1.block.0.weight",
+      "decoder.c1.block.1.bias",
+      "decoder.c1.block.1.weight",
+      "decoder.c1.block.3.bias",
+      "decoder.c1.block.3.weight",
+      "decoder.c1.block.4.bias",
+      "decoder.c1.block.4.weight",
+      "decoder.c2.block.0.bias",
+      "decoder.c2.block.0.weight",
+      "decoder.c2.block.1.bias",
+      "decoder.c2.block.1.weight",
+      "decoder.c2.block.3.bias",
+      "decoder.c2.block.3.weight",
+      "decoder.c2.block.4.bias",
+      "decoder.c2.block.4.weight",
+      "decoder.c3.block.0.bias",
+      "decoder.c3.block.0.weight",
+      "decoder.c3.block.1.bias",
+      "decoder.c3.block.1.weight",
+      "decoder.c3.block.3.bias",
+      "decoder.c3.block.3.weight",
+      "decoder.c3.block.4.bias",
+      "decoder.c3.block.4.weight",
+      "decoder.c4.block.0.bias",
+      "decoder.c4.block.0.weight",
+      "decoder.c4.block.1.bias",
+      "decoder.c4.block.1.weight",
+      "decoder.c4.block.3.bias",
+      "decoder.c4.block.3.weight",
+      "decoder.c4.block.4.bias",
+      "decoder.c4.block.4.weight",
+      "decoder.cls.bias",
+      "decoder.cls.weight",
+      "encoder.downsample_layers.0.0.bias",
+      "encoder.downsample_layers.0.0.weight",
+      "encoder.downsample_layers.0.1.bias",
+      "encoder.downsample_layers.0.1.weight",
+      "encoder.downsample_layers.1.0.bias",
+      "encoder.downsample_layers.1.0.weight",
+      "encoder.downsample_layers.1.1.bias",
+      "encoder.downsample_layers.1.1.weight",
+      "encoder.downsample_layers.2.0.bias",
+      "encoder.downsample_layers.2.0.weight",
+      "encoder.downsample_layers.2.1.bias",
+      "encoder.downsample_layers.2.1.weight",
+      "encoder.downsample_layers.3.0.bias",
+      "encoder.downsample_layers.3.0.weight",
+      "encoder.downsample_layers.3.1.bias",
+      "encoder.downsample_layers.3.1.weight",
+      "encoder.stages.0.0.dwconv.bias",
+      "encoder.stages.0.0.dwconv.weight",
+      "encoder.stages.0.0.gamma",
+      "encoder.stages.0.0.norm.bias",
+      "encoder.stages.0.0.norm.weight",
+      "encoder.stages.0.0.pwconv1.bias",
+      "encoder.stages.0.0.pwconv1.weight",
+      "encoder.stages.0.0.pwconv2.bias",
+      "encoder.stages.0.0.pwconv2.weight",
+      "encoder.stages.0.1.dwconv.bias",
+      "encoder.stages.0.1.dwconv.weight",
+      "encoder.stages.0.1.gamma",
+      "encoder.stages.0.1.norm.bias",
+      "encoder.stages.0.1.norm.weight",
+      "encoder.stages.0.1.pwconv1.bias",
+      "encoder.stages.0.1.pwconv1.weight",
+      "encoder.stages.0.1.pwconv2.bias",
+      "encoder.stages.0.1.pwconv2.weight",
+      "encoder.stages.0.2.dwconv.bias",
+      "encoder.stages.0.2.dwconv.weight",
+      "encoder.stages.0.2.gamma",
+      "encoder.stages.0.2.norm.bias",
+      "encoder.stages.0.2.norm.weight",
+      "encoder.stages.0.2.pwconv1.bias",
+      "encoder.stages.0.2.pwconv1.weight",
+      "encoder.stages.0.2.pwconv2.bias",
+      "encoder.stages.0.2.pwconv2.weight",
+      "encoder.stages.1.0.dwconv.bias",
+      "encoder.stages.1.0.dwconv.weight",
+      "encoder.stages.1.0.gamma",
+      "encoder.stages.1.0.norm.bias",
+      "encoder.stages.1.0.norm.weight",
+      "encoder.stages.1.0.pwconv1.bias",
+      "encoder.stages.1.0.pwconv1.weight",
+      "encoder.stages.1.0.pwconv2.bias",
+      "encoder.stages.1.0.pwconv2.weight",
+      "encoder.stages.1.1.dwconv.bias",
+      "encoder.stages.1.1.dwconv.weight",
+      "encoder.stages.1.1.gamma",
+      "encoder.stages.1.1.norm.bias",
+      "encoder.stages.1.1.norm.weight",
+      "encoder.stages.1.1.pwconv1.bias",
+      "encoder.stages.1.1.pwconv1.weight",
+      "encoder.stages.1.1.pwconv2.bias",
+      "encoder.stages.1.1.pwconv2.weight",
+      "encoder.stages.1.2.dwconv.bias",
+      "encoder.stages.1.2.dwconv.weight",
+      "encoder.stages.1.2.gamma",
+      "encoder.stages.1.2.norm.bias",
+      "encoder.stages.1.2.norm.weight",
+      "encoder.stages.1.2.pwconv1.bias",
+      "encoder.stages.1.2.pwconv1.weight",
+      "encoder.stages.1.2.pwconv2.bias",
+      "encoder.stages.1.2.pwconv2.weight",
+      "encoder.stages.2.0.dwconv.bias",
+      "encoder.stages.2.0.dwconv.weight",
+      "encoder.stages.2.0.gamma",
+      "encoder.stages.2.0.norm.bias",
+      "encoder.stages.2.0.norm.weight",
+      "encoder.stages.2.0.pwconv1.bias",
+      "encoder.stages.2.0.pwconv1.weight",
+      "encoder.stages.2.0.pwconv2.bias",
+      "encoder.stages.2.0.pwconv2.weight",
+      "encoder.stages.2.1.dwconv.bias",
+      "encoder.stages.2.1.dwconv.weight",
+      "encoder.stages.2.1.gamma",
+      "encoder.stages.2.1.norm.bias",
+      "encoder.stages.2.1.norm.weight",
+      "encoder.stages.2.1.pwconv1.bias",
+      "encoder.stages.2.1.pwconv1.weight",
+      "encoder.stages.2.1.pwconv2.bias",
+      "encoder.stages.2.1.pwconv2.weight",
+      "encoder.stages.2.10.dwconv.bias",
+      "encoder.stages.2.10.dwconv.weight",
+      "encoder.stages.2.10.gamma",
+      "encoder.stages.2.10.norm.bias",
+      "encoder.stages.2.10.norm.weight",
+      "encoder.stages.2.10.pwconv1.bias",
+      "encoder.stages.2.10.pwconv1.weight",
+      "encoder.stages.2.10.pwconv2.bias",
+      "encoder.stages.2.10.pwconv2.weight",
+      "encoder.stages.2.11.dwconv.bias",
+      "encoder.stages.2.11.dwconv.weight",
+      "encoder.stages.2.11.gamma",
+      "encoder.stages.2.11.norm.bias",
+      "encoder.stages.2.11.norm.weight",
+      "encoder.stages.2.11.pwconv1.bias",
+      "encoder.stages.2.11.pwconv1.weight",
+      "encoder.stages.2.11.pwconv2.bias",
+      "encoder.stages.2.11.pwconv2.weight",
+      "encoder.stages.2.12.dwconv.bias",
+      "encoder.stages.2.12.dwconv.weight",
+      "encoder.stages.2.12.gamma",
+      "encoder.stages.2.12.norm.bias",
+      "encoder.stages.2.12.norm.weight",
+      "encoder.stages.2.12.pwconv1.bias",
+      "encoder.stages.2.12.pwconv1.weight",
+      "encoder.stages.2.12.pwconv2.bias",
+      "encoder.stages.2.12.pwconv2.weight",
+      "encoder.stages.2.13.dwconv.bias",
+      "encoder.stages.2.13.dwconv.weight",
+      "encoder.stages.2.13.gamma",
+      "encoder.stages.2.13.norm.bias",
+      "encoder.stages.2.13.norm.weight",
+      "encoder.stages.2.13.pwconv1.bias",
+      "encoder.stages.2.13.pwconv1.weight",
+      "encoder.stages.2.13.pwconv2.bias",
+      "encoder.stages.2.13.pwconv2.weight",
+      "encoder.stages.2.14.dwconv.bias",
+      "encoder.stages.2.14.dwconv.weight",
+      "encoder.stages.2.14.gamma",
+      "encoder.stages.2.14.norm.bias",
+      "encoder.stages.2.14.norm.weight",
+      "encoder.stages.2.14.pwconv1.bias",
+      "encoder.stages.2.14.pwconv1.weight",
+      "encoder.stages.2.14.pwconv2.bias",
+      "encoder.stages.2.14.pwconv2.weight",
+      "encoder.stages.2.15.dwconv.bias",
+      "encoder.stages.2.15.dwconv.weight",
+      "encoder.stages.2.15.gamma",
+      "encoder.stages.2.15.norm.bias",
+      "encoder.stages.2.15.norm.weight",
+      "encoder.stages.2.15.pwconv1.bias",
+      "encoder.stages.2.15.pwconv1.weight",
+      "encoder.stages.2.15.pwconv2.bias",
+      "encoder.stages.2.15.pwconv2.weight",
+      "encoder.stages.2.16.dwconv.bias",
+      "encoder.stages.2.16.dwconv.weight",
+      "encoder.stages.2.16.gamma",
+      "encoder.stages.2.16.norm.bias",
+      "encoder.stages.2.16.norm.weight",
+      "encoder.stages.2.16.pwconv1.bias",
+      "encoder.stages.2.16.pwconv1.weight",
+      "encoder.stages.2.16.pwconv2.bias",
+      "encoder.stages.2.16.pwconv2.weight",
+      "encoder.stages.2.17.dwconv.bias",
+      "encoder.stages.2.17.dwconv.weight",
+      "encoder.stages.2.17.gamma",
+      "encoder.stages.2.17.norm.bias",
+      "encoder.stages.2.17.norm.weight",
+      "encoder.stages.2.17.pwconv1.bias",
+      "encoder.stages.2.17.pwconv1.weight",
+      "encoder.stages.2.17.pwconv2.bias",
+      "encoder.stages.2.17.pwconv2.weight",
+      "encoder.stages.2.18.dwconv.bias",
+      "encoder.stages.2.18.dwconv.weight",
+      "encoder.stages.2.18.gamma",
+      "encoder.stages.2.18.norm.bias",
+      "encoder.stages.2.18.norm.weight",
+      "encoder.stages.2.18.pwconv1.bias",
+      "encoder.stages.2.18.pwconv1.weight",
+      "encoder.stages.2.18.pwconv2.bias",
+      "encoder.stages.2.18.pwconv2.weight",
+      "encoder.stages.2.19.dwconv.bias",
+      "encoder.stages.2.19.dwconv.weight",
+      "encoder.stages.2.19.gamma",
+      "encoder.stages.2.19.norm.bias",
+      "encoder.stages.2.19.norm.weight",
+      "encoder.stages.2.19.pwconv1.bias",
+      "encoder.stages.2.19.pwconv1.weight",
+      "encoder.stages.2.19.pwconv2.bias",
+      "encoder.stages.2.19.pwconv2.weight",
+      "encoder.stages.2.2.dwconv.bias",
+      "encoder.stages.2.2.dwconv.weight",
+      "encoder.stages.2.2.gamma",
+      "encoder.stages.2.2.norm.bias",
+      "encoder.stages.2.2.norm.weight",
+      "encoder.stages.2.2.pwconv1.bias",
+      "encoder.stages.2.2.pwconv1.weight",
+      "encoder.stages.2.2.pwconv2.bias",
+      "encoder.stages.2.2.pwconv2.weight",
+      "encoder.stages.2.20.dwconv.bias",
+      "encoder.stages.2.20.dwconv.weight",
+      "encoder.stages.2.20.gamma",
+      "encoder.stages.2.20.norm.bias",
+      "encoder.stages.2.20.norm.weight",
+      "encoder.stages.2.20.pwconv1.bias",
+      "encoder.stages.2.20.pwconv1.weight",
+      "encoder.stages.2.20.pwconv2.bias",
+      "encoder.stages.2.20.pwconv2.weight",
+      "encoder.stages.2.21.dwconv.bias",
+      "encoder.stages.2.21.dwconv.weight",
+      "encoder.stages.2.21.gamma",
+      "encoder.stages.2.21.norm.bias",
+      "encoder.stages.2.21.norm.weight",
+      "encoder.stages.2.21.pwconv1.bias",
+      "encoder.stages.2.21.pwconv1.weight",
+      "encoder.stages.2.21.pwconv2.bias",
+      "encoder.stages.2.21.pwconv2.weight",
+      "encoder.stages.2.22.dwconv.bias",
+      "encoder.stages.2.22.dwconv.weight",
+      "encoder.stages.2.22.gamma",
+      "encoder.stages.2.22.norm.bias",
+      "encoder.stages.2.22.norm.weight",
+      "encoder.stages.2.22.pwconv1.bias",
+      "encoder.stages.2.22.pwconv1.weight",
+      "encoder.stages.2.22.pwconv2.bias",
+      "encoder.stages.2.22.pwconv2.weight",
+      "encoder.stages.2.23.dwconv.bias",
+      "encoder.stages.2.23.dwconv.weight",
+      "encoder.stages.2.23.gamma",
+      "encoder.stages.2.23.norm.bias",
+      "encoder.stages.2.23.norm.weight",
+      "encoder.stages.2.23.pwconv1.bias",
+      "encoder.stages.2.23.pwconv1.weight",
+      "encoder.stages.2.23.pwconv2.bias",
+      "encoder.stages.2.23.pwconv2.weight",
+      "encoder.stages.2.24.dwconv.bias",
+      "encoder.stages.2.24.dwconv.weight",
+      "encoder.stages.2.24.gamma",
+      "encoder.stages.2.24.norm.bias",
+      "encoder.stages.2.24.norm.weight",
+      "encoder.stages.2.24.pwconv1.bias",
+      "encoder.stages.2.24.pwconv1.weight",
+      "encoder.stages.2.24.pwconv2.bias",
+      "encoder.stages.2.24.pwconv2.weight",
+      "encoder.stages.2.25.dwconv.bias",
+      "encoder.stages.2.25.dwconv.weight",
+      "encoder.stages.2.25.gamma",
+      "encoder.stages.2.25.norm.bias",
+      "encoder.stages.2.25.norm.weight",
+      "encoder.stages.2.25.pwconv1.bias",
+      "encoder.stages.2.25.pwconv1.weight",
+      "encoder.stages.2.25.pwconv2.bias",
+      "encoder.stages.2.25.pwconv2.weight",
+      "encoder.stages.2.26.dwconv.bias",
+      "encoder.stages.2.26.dwconv.weight",
+      "encoder.stages.2.26.gamma",
+      "encoder.stages.2.26.norm.bias",
+      "encoder.stages.2.26.norm.weight",
+      "encoder.stages.2.26.pwconv1.bias",
+      "encoder.stages.2.26.pwconv1.weight",
+      "encoder.stages.2.26.pwconv2.bias",
+      "encoder.stages.2.26.pwconv2.weight",
+      "encoder.stages.2.3.dwconv.bias",
+      "encoder.stages.2.3.dwconv.weight",
+      "encoder.stages.2.3.gamma",
+      "encoder.stages.2.3.norm.bias",
+      "encoder.stages.2.3.norm.weight",
+      "encoder.stages.2.3.pwconv1.bias",
+      "encoder.stages.2.3.pwconv1.weight",
+      "encoder.stages.2.3.pwconv2.bias",
+      "encoder.stages.2.3.pwconv2.weight",
+      "encoder.stages.2.4.dwconv.bias",
+      "encoder.stages.2.4.dwconv.weight",
+      "encoder.stages.2.4.gamma",
+      "encoder.stages.2.4.norm.bias",
+      "encoder.stages.2.4.norm.weight",
+      "encoder.stages.2.4.pwconv1.bias",
+      "encoder.stages.2.4.pwconv1.weight",
+      "encoder.stages.2.4.pwconv2.bias",
+      "encoder.stages.2.4.pwconv2.weight",
+      "encoder.stages.2.5.dwconv.bias",
+      "encoder.stages.2.5.dwconv.weight",
+      "encoder.stages.2.5.gamma",
+      "encoder.stages.2.5.norm.bias",
+      "encoder.stages.2.5.norm.weight",
+      "encoder.stages.2.5.pwconv1.bias",
+      "encoder.stages.2.5.pwconv1.weight",
+      "encoder.stages.2.5.pwconv2.bias",
+      "encoder.stages.2.5.pwconv2.weight",
+      "encoder.stages.2.6.dwconv.bias",
+      "encoder.stages.2.6.dwconv.weight",
+      "encoder.stages.2.6.gamma",
+      "encoder.stages.2.6.norm.bias",
+      "encoder.stages.2.6.norm.weight",
+      "encoder.stages.2.6.pwconv1.bias",
+      "encoder.stages.2.6.pwconv1.weight",
+      "encoder.stages.2.6.pwconv2.bias",
+      "encoder.stages.2.6.pwconv2.weight",
+      "encoder.stages.2.7.dwconv.bias",
+      "encoder.stages.2.7.dwconv.weight",
+      "encoder.stages.2.7.gamma",
+      "encoder.stages.2.7.norm.bias",
+      "encoder.stages.2.7.norm.weight",
+      "encoder.stages.2.7.pwconv1.bias",
+      "encoder.stages.2.7.pwconv1.weight",
+      "encoder.stages.2.7.pwconv2.bias",
+      "encoder.stages.2.7.pwconv2.weight",
+      "encoder.stages.2.8.dwconv.bias",
+      "encoder.stages.2.8.dwconv.weight",
+      "encoder.stages.2.8.gamma",
+      "encoder.stages.2.8.norm.bias",
+      "encoder.stages.2.8.norm.weight",
+      "encoder.stages.2.8.pwconv1.bias",
+      "encoder.stages.2.8.pwconv1.weight",
+      "encoder.stages.2.8.pwconv2.bias",
+      "encoder.stages.2.8.pwconv2.weight",
+      "encoder.stages.2.9.dwconv.bias",
+      "encoder.stages.2.9.dwconv.weight",
+      "encoder.stages.2.9.gamma",
+      "encoder.stages.2.9.norm.bias",
+      "encoder.stages.2.9.norm.weight",
+      "encoder.stages.2.9.pwconv1.bias",
+      "encoder.stages.2.9.pwconv1.weight",
+      "encoder.stages.2.9.pwconv2.bias",
+      "encoder.stages.2.9.pwconv2.weight",
+      "encoder.stages.3.0.dwconv.bias",
+      "encoder.stages.3.0.dwconv.weight",
+      "encoder.stages.3.0.gamma",
+      "encoder.stages.3.0.norm.bias",
+      "encoder.stages.3.0.norm.weight",
+      "encoder.stages.3.0.pwconv1.bias",
+      "encoder.stages.3.0.pwconv1.weight",
+      "encoder.stages.3.0.pwconv2.bias",
+      "encoder.stages.3.0.pwconv2.weight",
+      "encoder.stages.3.1.dwconv.bias",
+      "encoder.stages.3.1.dwconv.weight",
+      "encoder.stages.3.1.gamma",
+      "encoder.stages.3.1.norm.bias",
+      "encoder.stages.3.1.norm.weight",
+      "encoder.stages.3.1.pwconv1.bias",
+      "encoder.stages.3.1.pwconv1.weight",
+      "encoder.stages.3.1.pwconv2.bias",
+      "encoder.stages.3.1.pwconv2.weight",
+      "encoder.stages.3.2.dwconv.bias",
+      "encoder.stages.3.2.dwconv.weight",
+      "encoder.stages.3.2.gamma",
+      "encoder.stages.3.2.norm.bias",
+      "encoder.stages.3.2.norm.weight",
+      "encoder.stages.3.2.pwconv1.bias",
+      "encoder.stages.3.2.pwconv1.weight",
+      "encoder.stages.3.2.pwconv2.bias",
+      "encoder.stages.3.2.pwconv2.weight"
+    ],
+    "tensor_shapes": {
+      "encoder.downsample_layers.0.0.weight": [
+        96,
+        3,
+        4,
+        4
+      ],
+      "encoder.downsample_layers.0.0.bias": [
+        96
+      ],
+      "encoder.downsample_layers.0.1.weight": [
+        96
+      ],
+      "encoder.downsample_layers.0.1.bias": [
+        96
+      ],
+      "encoder.downsample_layers.1.0.weight": [
+        96
+      ],
+      "encoder.downsample_layers.1.0.bias": [
+        96
+      ],
+      "encoder.downsample_layers.1.1.weight": [
+        192,
+        96,
+        2,
+        2
+      ],
+      "encoder.downsample_layers.1.1.bias": [
+        192
+      ],
+      "encoder.downsample_layers.2.0.weight": [
+        192
+      ],
+      "encoder.downsample_layers.2.0.bias": [
+        192
+      ],
+      "encoder.downsample_layers.2.1.weight": [
+        384,
+        192,
+        2,
+        2
+      ],
+      "encoder.downsample_layers.2.1.bias": [
+        384
+      ],
+      "encoder.downsample_layers.3.0.weight": [
+        384
+      ],
+      "encoder.downsample_layers.3.0.bias": [
+        384
+      ],
+      "encoder.downsample_layers.3.1.weight": [
+        768,
+        384,
+        2,
+        2
+      ],
+      "encoder.downsample_layers.3.1.bias": [
+        768
+      ],
+      "encoder.stages.0.0.gamma": [
+        96
+      ],
+      "encoder.stages.0.0.dwconv.weight": [
+        96,
+        1,
+        7,
+        7
+      ],
+      "encoder.stages.0.0.dwconv.bias": [
+        96
+      ],
+      "encoder.stages.0.0.norm.weight": [
+        96
+      ],
+      "encoder.stages.0.0.norm.bias": [
+        96
+      ],
+      "encoder.stages.0.0.pwconv1.weight": [
+        384,
+        96
+      ],
+      "encoder.stages.0.0.pwconv1.bias": [
+        384
+      ],
+      "encoder.stages.0.0.pwconv2.weight": [
+        96,
+        384
+      ],
+      "encoder.stages.0.0.pwconv2.bias": [
+        96
+      ],
+      "encoder.stages.0.1.gamma": [
+        96
+      ],
+      "encoder.stages.0.1.dwconv.weight": [
+        96,
+        1,
+        7,
+        7
+      ],
+      "encoder.stages.0.1.dwconv.bias": [
+        96
+      ],
+      "encoder.stages.0.1.norm.weight": [
+        96
+      ],
+      "encoder.stages.0.1.norm.bias": [
+        96
+      ],
+      "encoder.stages.0.1.pwconv1.weight": [
+        384,
+        96
+      ],
+      "encoder.stages.0.1.pwconv1.bias": [
+        384
+      ],
+      "encoder.stages.0.1.pwconv2.weight": [
+        96,
+        384
+      ],
+      "encoder.stages.0.1.pwconv2.bias": [
+        96
+      ],
+      "encoder.stages.0.2.gamma": [
+        96
+      ],
+      "encoder.stages.0.2.dwconv.weight": [
+        96,
+        1,
+        7,
+        7
+      ],
+      "encoder.stages.0.2.dwconv.bias": [
+        96
+      ],
+      "encoder.stages.0.2.norm.weight": [
+        96
+      ],
+      "encoder.stages.0.2.norm.bias": [
+        96
+      ],
+      "encoder.stages.0.2.pwconv1.weight": [
+        384,
+        96
+      ],
+      "encoder.stages.0.2.pwconv1.bias": [
+        384
+      ],
+      "encoder.stages.0.2.pwconv2.weight": [
+        96,
+        384
+      ],
+      "encoder.stages.0.2.pwconv2.bias": [
+        96
+      ],
+      "encoder.stages.1.0.gamma": [
+        192
+      ],
+      "encoder.stages.1.0.dwconv.weight": [
+        192,
+        1,
+        7,
+        7
+      ],
+      "encoder.stages.1.0.dwconv.bias": [
+        192
+      ],
+      "encoder.stages.1.0.norm.weight": [
+        192
+      ],
+      "encoder.stages.1.0.norm.bias": [
+        192
+      ],
+      "encoder.stages.1.0.pwconv1.weight": [
+        768,
+        192
+      ],
+      "encoder.stages.1.0.pwconv1.bias": [
+        768
+      ],
+      "encoder.stages.1.0.pwconv2.weight": [
+        192,
+        768
+      ],
+      "encoder.stages.1.0.pwconv2.bias": [
+        192
+      ],
+      "encoder.stages.1.1.gamma": [
+        192
+      ],
+      "encoder.stages.1.1.dwconv.weight": [
+        192,
+        1,
+        7,
+        7
+      ],
+      "encoder.stages.1.1.dwconv.bias": [
+        192
+      ],
+      "encoder.stages.1.1.norm.weight": [
+        192
+      ],
+      "encoder.stages.1.1.norm.bias": [
+        192
+      ],
+      "encoder.stages.1.1.pwconv1.weight": [
+        768,
+        192
+      ],
+      "encoder.stages.1.1.pwconv1.bias": [
+        768
+      ],
+      "encoder.stages.1.1.pwconv2.weight": [
+        192,
+        768
+      ],
+      "encoder.stages.1.1.pwconv2.bias": [
+        192
+      ],
+      "encoder.stages.1.2.gamma": [
+        192
+      ],
+      "encoder.stages.1.2.dwconv.weight": [
+        192,
+        1,
+        7,
+        7
+      ],
+      "encoder.stages.1.2.dwconv.bias": [
+        192
+      ],
+      "encoder.stages.1.2.norm.weight": [
+        192
+      ],
+      "encoder.stages.1.2.norm.bias": [
+        192
+      ],
+      "encoder.stages.1.2.pwconv1.weight": [
+        768,
+        192
+      ],
+      "encoder.stages.1.2.pwconv1.bias": [
+        768
+      ],
+      "encoder.stages.1.2.pwconv2.weight": [
+        192,
+        768
+      ],
+      "encoder.stages.1.2.pwconv2.bias": [
+        192
+      ],
+      "encoder.stages.2.0.gamma": [
+        384
+      ],
+      "encoder.stages.2.0.dwconv.weight": [
+        384,
+        1,
+        7,
+        7
+      ],
+      "encoder.stages.2.0.dwconv.bias": [
+        384
+      ],
+      "encoder.stages.2.0.norm.weight": [
+        384
+      ],
+      "encoder.stages.2.0.norm.bias": [
+        384
+      ],
+      "encoder.stages.2.0.pwconv1.weight": [
+        1536,
+        384
+      ],
+      "encoder.stages.2.0.pwconv1.bias": [
+        1536
+      ],
+      "encoder.stages.2.0.pwconv2.weight": [
+        384,
+        1536
+      ],
+      "encoder.stages.2.0.pwconv2.bias": [
+        384
+      ],
+      "encoder.stages.2.1.gamma": [
+        384
+      ],
+      "encoder.stages.2.1.dwconv.weight": [
+        384,
+        1,
+        7,
+        7
+      ],
+      "encoder.stages.2.1.dwconv.bias": [
+        384
+      ],
+      "encoder.stages.2.1.norm.weight": [
+        384
+      ],
+      "encoder.stages.2.1.norm.bias": [
+        384
+      ],
+      "encoder.stages.2.1.pwconv1.weight": [
+        1536,
+        384
+      ],
+      "encoder.stages.2.1.pwconv1.bias": [
+        1536
+      ],
+      "encoder.stages.2.1.pwconv2.weight": [
+        384,
+        1536
+      ],
+      "encoder.stages.2.1.pwconv2.bias": [
+        384
+      ],
+      "encoder.stages.2.2.gamma": [
+        384
+      ],
+      "encoder.stages.2.2.dwconv.weight": [
+        384,
+        1,
+        7,
+        7
+      ],
+      "encoder.stages.2.2.dwconv.bias": [
+        384
+      ],
+      "encoder.stages.2.2.norm.weight": [
+        384
+      ],
+      "encoder.stages.2.2.norm.bias": [
+        384
+      ],
+      "encoder.stages.2.2.pwconv1.weight": [
+        1536,
+        384
+      ],
+      "encoder.stages.2.2.pwconv1.bias": [
+        1536
+      ],
+      "encoder.stages.2.2.pwconv2.weight": [
+        384,
+        1536
+      ],
+      "encoder.stages.2.2.pwconv2.bias": [
+        384
+      ],
+      "encoder.stages.2.3.gamma": [
+        384
+      ],
+      "encoder.stages.2.3.dwconv.weight": [
+        384,
+        1,
+        7,
+        7
+      ],
+      "encoder.stages.2.3.dwconv.bias": [
+        384
+      ],
+      "encoder.stages.2.3.norm.weight": [
+        384
+      ],
+      "encoder.stages.2.3.norm.bias": [
+        384
+      ],
+      "encoder.stages.2.3.pwconv1.weight": [
+        1536,
+        384
+      ],
+      "encoder.stages.2.3.pwconv1.bias": [
+        1536
+      ],
+      "encoder.stages.2.3.pwconv2.weight": [
+        384,
+        1536
+      ],
+      "encoder.stages.2.3.pwconv2.bias": [
+        384
+      ],
+      "encoder.stages.2.4.gamma": [
+        384
+      ],
+      "encoder.stages.2.4.dwconv.weight": [
+        384,
+        1,
+        7,
+        7
+      ],
+      "encoder.stages.2.4.dwconv.bias": [
+        384
+      ],
+      "encoder.stages.2.4.norm.weight": [
+        384
+      ],
+      "encoder.stages.2.4.norm.bias": [
+        384
+      ],
+      "encoder.stages.2.4.pwconv1.weight": [
+        1536,
+        384
+      ],
+      "encoder.stages.2.4.pwconv1.bias": [
+        1536
+      ],
+      "encoder.stages.2.4.pwconv2.weight": [
+        384,
+        1536
+      ],
+      "encoder.stages.2.4.pwconv2.bias": [
+        384
+      ],
+      "encoder.stages.2.5.gamma": [
+        384
+      ],
+      "encoder.stages.2.5.dwconv.weight": [
+        384,
+        1,
+        7,
+        7
+      ],
+      "encoder.stages.2.5.dwconv.bias": [
+        384
+      ],
+      "encoder.stages.2.5.norm.weight": [
+        384
+      ],
+      "encoder.stages.2.5.norm.bias": [
+        384
+      ],
+      "encoder.stages.2.5.pwconv1.weight": [
+        1536,
+        384
+      ],
+      "encoder.stages.2.5.pwconv1.bias": [
+        1536
+      ],
+      "encoder.stages.2.5.pwconv2.weight": [
+        384,
+        1536
+      ],
+      "encoder.stages.2.5.pwconv2.bias": [
+        384
+      ],
+      "encoder.stages.2.6.gamma": [
+        384
+      ],
+      "encoder.stages.2.6.dwconv.weight": [
+        384,
+        1,
+        7,
+        7
+      ],
+      "encoder.stages.2.6.dwconv.bias": [
+        384
+      ],
+      "encoder.stages.2.6.norm.weight": [
+        384
+      ],
+      "encoder.stages.2.6.norm.bias": [
+        384
+      ],
+      "encoder.stages.2.6.pwconv1.weight": [
+        1536,
+        384
+      ],
+      "encoder.stages.2.6.pwconv1.bias": [
+        1536
+      ],
+      "encoder.stages.2.6.pwconv2.weight": [
+        384,
+        1536
+      ],
+      "encoder.stages.2.6.pwconv2.bias": [
+        384
+      ],
+      "encoder.stages.2.7.gamma": [
+        384
+      ],
+      "encoder.stages.2.7.dwconv.weight": [
+        384,
+        1,
+        7,
+        7
+      ],
+      "encoder.stages.2.7.dwconv.bias": [
+        384
+      ],
+      "encoder.stages.2.7.norm.weight": [
+        384
+      ],
+      "encoder.stages.2.7.norm.bias": [
+        384
+      ],
+      "encoder.stages.2.7.pwconv1.weight": [
+        1536,
+        384
+      ],
+      "encoder.stages.2.7.pwconv1.bias": [
+        1536
+      ],
+      "encoder.stages.2.7.pwconv2.weight": [
+        384,
+        1536
+      ],
+      "encoder.stages.2.7.pwconv2.bias": [
+        384
+      ],
+      "encoder.stages.2.8.gamma": [
+        384
+      ],
+      "encoder.stages.2.8.dwconv.weight": [
+        384,
+        1,
+        7,
+        7
+      ],
+      "encoder.stages.2.8.dwconv.bias": [
+        384
+      ],
+      "encoder.stages.2.8.norm.weight": [
+        384
+      ],
+      "encoder.stages.2.8.norm.bias": [
+        384
+      ],
+      "encoder.stages.2.8.pwconv1.weight": [
+        1536,
+        384
+      ],
+      "encoder.stages.2.8.pwconv1.bias": [
+        1536
+      ],
+      "encoder.stages.2.8.pwconv2.weight": [
+        384,
+        1536
+      ],
+      "encoder.stages.2.8.pwconv2.bias": [
+        384
+      ],
+      "encoder.stages.2.9.gamma": [
+        384
+      ],
+      "encoder.stages.2.9.dwconv.weight": [
+        384,
+        1,
+        7,
+        7
+      ],
+      "encoder.stages.2.9.dwconv.bias": [
+        384
+      ],
+      "encoder.stages.2.9.norm.weight": [
+        384
+      ],
+      "encoder.stages.2.9.norm.bias": [
+        384
+      ],
+      "encoder.stages.2.9.pwconv1.weight": [
+        1536,
+        384
+      ],
+      "encoder.stages.2.9.pwconv1.bias": [
+        1536
+      ],
+      "encoder.stages.2.9.pwconv2.weight": [
+        384,
+        1536
+      ],
+      "encoder.stages.2.9.pwconv2.bias": [
+        384
+      ],
+      "encoder.stages.2.10.gamma": [
+        384
+      ],
+      "encoder.stages.2.10.dwconv.weight": [
+        384,
+        1,
+        7,
+        7
+      ],
+      "encoder.stages.2.10.dwconv.bias": [
+        384
+      ],
+      "encoder.stages.2.10.norm.weight": [
+        384
+      ],
+      "encoder.stages.2.10.norm.bias": [
+        384
+      ],
+      "encoder.stages.2.10.pwconv1.weight": [
+        1536,
+        384
+      ],
+      "encoder.stages.2.10.pwconv1.bias": [
+        1536
+      ],
+      "encoder.stages.2.10.pwconv2.weight": [
+        384,
+        1536
+      ],
+      "encoder.stages.2.10.pwconv2.bias": [
+        384
+      ],
+      "encoder.stages.2.11.gamma": [
+        384
+      ],
+      "encoder.stages.2.11.dwconv.weight": [
+        384,
+        1,
+        7,
+        7
+      ],
+      "encoder.stages.2.11.dwconv.bias": [
+        384
+      ],
+      "encoder.stages.2.11.norm.weight": [
+        384
+      ],
+      "encoder.stages.2.11.norm.bias": [
+        384
+      ],
+      "encoder.stages.2.11.pwconv1.weight": [
+        1536,
+        384
+      ],
+      "encoder.stages.2.11.pwconv1.bias": [
+        1536
+      ],
+      "encoder.stages.2.11.pwconv2.weight": [
+        384,
+        1536
+      ],
+      "encoder.stages.2.11.pwconv2.bias": [
+        384
+      ],
+      "encoder.stages.2.12.gamma": [
+        384
+      ],
+      "encoder.stages.2.12.dwconv.weight": [
+        384,
+        1,
+        7,
+        7
+      ],
+      "encoder.stages.2.12.dwconv.bias": [
+        384
+      ],
+      "encoder.stages.2.12.norm.weight": [
+        384
+      ],
+      "encoder.stages.2.12.norm.bias": [
+        384
+      ],
+      "encoder.stages.2.12.pwconv1.weight": [
+        1536,
+        384
+      ],
+      "encoder.stages.2.12.pwconv1.bias": [
+        1536
+      ],
+      "encoder.stages.2.12.pwconv2.weight": [
+        384,
+        1536
+      ],
+      "encoder.stages.2.12.pwconv2.bias": [
+        384
+      ],
+      "encoder.stages.2.13.gamma": [
+        384
+      ],
+      "encoder.stages.2.13.dwconv.weight": [
+        384,
+        1,
+        7,
+        7
+      ],
+      "encoder.stages.2.13.dwconv.bias": [
+        384
+      ],
+      "encoder.stages.2.13.norm.weight": [
+        384
+      ],
+      "encoder.stages.2.13.norm.bias": [
+        384
+      ],
+      "encoder.stages.2.13.pwconv1.weight": [
+        1536,
+        384
+      ],
+      "encoder.stages.2.13.pwconv1.bias": [
+        1536
+      ],
+      "encoder.stages.2.13.pwconv2.weight": [
+        384,
+        1536
+      ],
+      "encoder.stages.2.13.pwconv2.bias": [
+        384
+      ],
+      "encoder.stages.2.14.gamma": [
+        384
+      ],
+      "encoder.stages.2.14.dwconv.weight": [
+        384,
+        1,
+        7,
+        7
+      ],
+      "encoder.stages.2.14.dwconv.bias": [
+        384
+      ],
+      "encoder.stages.2.14.norm.weight": [
+        384
+      ],
+      "encoder.stages.2.14.norm.bias": [
+        384
+      ],
+      "encoder.stages.2.14.pwconv1.weight": [
+        1536,
+        384
+      ],
+      "encoder.stages.2.14.pwconv1.bias": [
+        1536
+      ],
+      "encoder.stages.2.14.pwconv2.weight": [
+        384,
+        1536
+      ],
+      "encoder.stages.2.14.pwconv2.bias": [
+        384
+      ],
+      "encoder.stages.2.15.gamma": [
+        384
+      ],
+      "encoder.stages.2.15.dwconv.weight": [
+        384,
+        1,
+        7,
+        7
+      ],
+      "encoder.stages.2.15.dwconv.bias": [
+        384
+      ],
+      "encoder.stages.2.15.norm.weight": [
+        384
+      ],
+      "encoder.stages.2.15.norm.bias": [
+        384
+      ],
+      "encoder.stages.2.15.pwconv1.weight": [
+        1536,
+        384
+      ],
+      "encoder.stages.2.15.pwconv1.bias": [
+        1536
+      ],
+      "encoder.stages.2.15.pwconv2.weight": [
+        384,
+        1536
+      ],
+      "encoder.stages.2.15.pwconv2.bias": [
+        384
+      ],
+      "encoder.stages.2.16.gamma": [
+        384
+      ],
+      "encoder.stages.2.16.dwconv.weight": [
+        384,
+        1,
+        7,
+        7
+      ],
+      "encoder.stages.2.16.dwconv.bias": [
+        384
+      ],
+      "encoder.stages.2.16.norm.weight": [
+        384
+      ],
+      "encoder.stages.2.16.norm.bias": [
+        384
+      ],
+      "encoder.stages.2.16.pwconv1.weight": [
+        1536,
+        384
+      ],
+      "encoder.stages.2.16.pwconv1.bias": [
+        1536
+      ],
+      "encoder.stages.2.16.pwconv2.weight": [
+        384,
+        1536
+      ],
+      "encoder.stages.2.16.pwconv2.bias": [
+        384
+      ],
+      "encoder.stages.2.17.gamma": [
+        384
+      ],
+      "encoder.stages.2.17.dwconv.weight": [
+        384,
+        1,
+        7,
+        7
+      ],
+      "encoder.stages.2.17.dwconv.bias": [
+        384
+      ],
+      "encoder.stages.2.17.norm.weight": [
+        384
+      ],
+      "encoder.stages.2.17.norm.bias": [
+        384
+      ],
+      "encoder.stages.2.17.pwconv1.weight": [
+        1536,
+        384
+      ],
+      "encoder.stages.2.17.pwconv1.bias": [
+        1536
+      ],
+      "encoder.stages.2.17.pwconv2.weight": [
+        384,
+        1536
+      ],
+      "encoder.stages.2.17.pwconv2.bias": [
+        384
+      ],
+      "encoder.stages.2.18.gamma": [
+        384
+      ],
+      "encoder.stages.2.18.dwconv.weight": [
+        384,
+        1,
+        7,
+        7
+      ],
+      "encoder.stages.2.18.dwconv.bias": [
+        384
+      ],
+      "encoder.stages.2.18.norm.weight": [
+        384
+      ],
+      "encoder.stages.2.18.norm.bias": [
+        384
+      ],
+      "encoder.stages.2.18.pwconv1.weight": [
+        1536,
+        384
+      ],
+      "encoder.stages.2.18.pwconv1.bias": [
+        1536
+      ],
+      "encoder.stages.2.18.pwconv2.weight": [
+        384,
+        1536
+      ],
+      "encoder.stages.2.18.pwconv2.bias": [
+        384
+      ],
+      "encoder.stages.2.19.gamma": [
+        384
+      ],
+      "encoder.stages.2.19.dwconv.weight": [
+        384,
+        1,
+        7,
+        7
+      ],
+      "encoder.stages.2.19.dwconv.bias": [
+        384
+      ],
+      "encoder.stages.2.19.norm.weight": [
+        384
+      ],
+      "encoder.stages.2.19.norm.bias": [
+        384
+      ],
+      "encoder.stages.2.19.pwconv1.weight": [
+        1536,
+        384
+      ],
+      "encoder.stages.2.19.pwconv1.bias": [
+        1536
+      ],
+      "encoder.stages.2.19.pwconv2.weight": [
+        384,
+        1536
+      ],
+      "encoder.stages.2.19.pwconv2.bias": [
+        384
+      ],
+      "encoder.stages.2.20.gamma": [
+        384
+      ],
+      "encoder.stages.2.20.dwconv.weight": [
+        384,
+        1,
+        7,
+        7
+      ],
+      "encoder.stages.2.20.dwconv.bias": [
+        384
+      ],
+      "encoder.stages.2.20.norm.weight": [
+        384
+      ],
+      "encoder.stages.2.20.norm.bias": [
+        384
+      ],
+      "encoder.stages.2.20.pwconv1.weight": [
+        1536,
+        384
+      ],
+      "encoder.stages.2.20.pwconv1.bias": [
+        1536
+      ],
+      "encoder.stages.2.20.pwconv2.weight": [
+        384,
+        1536
+      ],
+      "encoder.stages.2.20.pwconv2.bias": [
+        384
+      ],
+      "encoder.stages.2.21.gamma": [
+        384
+      ],
+      "encoder.stages.2.21.dwconv.weight": [
+        384,
+        1,
+        7,
+        7
+      ],
+      "encoder.stages.2.21.dwconv.bias": [
+        384
+      ],
+      "encoder.stages.2.21.norm.weight": [
+        384
+      ],
+      "encoder.stages.2.21.norm.bias": [
+        384
+      ],
+      "encoder.stages.2.21.pwconv1.weight": [
+        1536,
+        384
+      ],
+      "encoder.stages.2.21.pwconv1.bias": [
+        1536
+      ],
+      "encoder.stages.2.21.pwconv2.weight": [
+        384,
+        1536
+      ],
+      "encoder.stages.2.21.pwconv2.bias": [
+        384
+      ],
+      "encoder.stages.2.22.gamma": [
+        384
+      ],
+      "encoder.stages.2.22.dwconv.weight": [
+        384,
+        1,
+        7,
+        7
+      ],
+      "encoder.stages.2.22.dwconv.bias": [
+        384
+      ],
+      "encoder.stages.2.22.norm.weight": [
+        384
+      ],
+      "encoder.stages.2.22.norm.bias": [
+        384
+      ],
+      "encoder.stages.2.22.pwconv1.weight": [
+        1536,
+        384
+      ],
+      "encoder.stages.2.22.pwconv1.bias": [
+        1536
+      ],
+      "encoder.stages.2.22.pwconv2.weight": [
+        384,
+        1536
+      ],
+      "encoder.stages.2.22.pwconv2.bias": [
+        384
+      ],
+      "encoder.stages.2.23.gamma": [
+        384
+      ],
+      "encoder.stages.2.23.dwconv.weight": [
+        384,
+        1,
+        7,
+        7
+      ],
+      "encoder.stages.2.23.dwconv.bias": [
+        384
+      ],
+      "encoder.stages.2.23.norm.weight": [
+        384
+      ],
+      "encoder.stages.2.23.norm.bias": [
+        384
+      ],
+      "encoder.stages.2.23.pwconv1.weight": [
+        1536,
+        384
+      ],
+      "encoder.stages.2.23.pwconv1.bias": [
+        1536
+      ],
+      "encoder.stages.2.23.pwconv2.weight": [
+        384,
+        1536
+      ],
+      "encoder.stages.2.23.pwconv2.bias": [
+        384
+      ],
+      "encoder.stages.2.24.gamma": [
+        384
+      ],
+      "encoder.stages.2.24.dwconv.weight": [
+        384,
+        1,
+        7,
+        7
+      ],
+      "encoder.stages.2.24.dwconv.bias": [
+        384
+      ],
+      "encoder.stages.2.24.norm.weight": [
+        384
+      ],
+      "encoder.stages.2.24.norm.bias": [
+        384
+      ],
+      "encoder.stages.2.24.pwconv1.weight": [
+        1536,
+        384
+      ],
+      "encoder.stages.2.24.pwconv1.bias": [
+        1536
+      ],
+      "encoder.stages.2.24.pwconv2.weight": [
+        384,
+        1536
+      ],
+      "encoder.stages.2.24.pwconv2.bias": [
+        384
+      ],
+      "encoder.stages.2.25.gamma": [
+        384
+      ],
+      "encoder.stages.2.25.dwconv.weight": [
+        384,
+        1,
+        7,
+        7
+      ],
+      "encoder.stages.2.25.dwconv.bias": [
+        384
+      ],
+      "encoder.stages.2.25.norm.weight": [
+        384
+      ],
+      "encoder.stages.2.25.norm.bias": [
+        384
+      ],
+      "encoder.stages.2.25.pwconv1.weight": [
+        1536,
+        384
+      ],
+      "encoder.stages.2.25.pwconv1.bias": [
+        1536
+      ],
+      "encoder.stages.2.25.pwconv2.weight": [
+        384,
+        1536
+      ],
+      "encoder.stages.2.25.pwconv2.bias": [
+        384
+      ],
+      "encoder.stages.2.26.gamma": [
+        384
+      ],
+      "encoder.stages.2.26.dwconv.weight": [
+        384,
+        1,
+        7,
+        7
+      ],
+      "encoder.stages.2.26.dwconv.bias": [
+        384
+      ],
+      "encoder.stages.2.26.norm.weight": [
+        384
+      ],
+      "encoder.stages.2.26.norm.bias": [
+        384
+      ],
+      "encoder.stages.2.26.pwconv1.weight": [
+        1536,
+        384
+      ],
+      "encoder.stages.2.26.pwconv1.bias": [
+        1536
+      ],
+      "encoder.stages.2.26.pwconv2.weight": [
+        384,
+        1536
+      ],
+      "encoder.stages.2.26.pwconv2.bias": [
+        384
+      ],
+      "encoder.stages.3.0.gamma": [
+        768
+      ],
+      "encoder.stages.3.0.dwconv.weight": [
+        768,
+        1,
+        7,
+        7
+      ],
+      "encoder.stages.3.0.dwconv.bias": [
+        768
+      ],
+      "encoder.stages.3.0.norm.weight": [
+        768
+      ],
+      "encoder.stages.3.0.norm.bias": [
+        768
+      ],
+      "encoder.stages.3.0.pwconv1.weight": [
+        3072,
+        768
+      ],
+      "encoder.stages.3.0.pwconv1.bias": [
+        3072
+      ],
+      "encoder.stages.3.0.pwconv2.weight": [
+        768,
+        3072
+      ],
+      "encoder.stages.3.0.pwconv2.bias": [
+        768
+      ],
+      "encoder.stages.3.1.gamma": [
+        768
+      ],
+      "encoder.stages.3.1.dwconv.weight": [
+        768,
+        1,
+        7,
+        7
+      ],
+      "encoder.stages.3.1.dwconv.bias": [
+        768
+      ],
+      "encoder.stages.3.1.norm.weight": [
+        768
+      ],
+      "encoder.stages.3.1.norm.bias": [
+        768
+      ],
+      "encoder.stages.3.1.pwconv1.weight": [
+        3072,
+        768
+      ],
+      "encoder.stages.3.1.pwconv1.bias": [
+        3072
+      ],
+      "encoder.stages.3.1.pwconv2.weight": [
+        768,
+        3072
+      ],
+      "encoder.stages.3.1.pwconv2.bias": [
+        768
+      ],
+      "encoder.stages.3.2.gamma": [
+        768
+      ],
+      "encoder.stages.3.2.dwconv.weight": [
+        768,
+        1,
+        7,
+        7
+      ],
+      "encoder.stages.3.2.dwconv.bias": [
+        768
+      ],
+      "encoder.stages.3.2.norm.weight": [
+        768
+      ],
+      "encoder.stages.3.2.norm.bias": [
+        768
+      ],
+      "encoder.stages.3.2.pwconv1.weight": [
+        3072,
+        768
+      ],
+      "encoder.stages.3.2.pwconv1.bias": [
+        3072
+      ],
+      "encoder.stages.3.2.pwconv2.weight": [
+        768,
+        3072
+      ],
+      "encoder.stages.3.2.pwconv2.bias": [
+        768
+      ],
+      "decoder.c4.block.0.weight": [
+        256,
+        768,
+        3,
+        3
+      ],
+      "decoder.c4.block.0.bias": [
+        256
+      ],
+      "decoder.c4.block.1.weight": [
+        256
+      ],
+      "decoder.c4.block.1.bias": [
+        256
+      ],
+      "decoder.c4.block.3.weight": [
+        256,
+        256,
+        3,
+        3
+      ],
+      "decoder.c4.block.3.bias": [
+        256
+      ],
+      "decoder.c4.block.4.weight": [
+        256
+      ],
+      "decoder.c4.block.4.bias": [
+        256
+      ],
+      "decoder.c3.block.0.weight": [
+        128,
+        640,
+        3,
+        3
+      ],
+      "decoder.c3.block.0.bias": [
+        128
+      ],
+      "decoder.c3.block.1.weight": [
+        128
+      ],
+      "decoder.c3.block.1.bias": [
+        128
+      ],
+      "decoder.c3.block.3.weight": [
+        128,
+        128,
+        3,
+        3
+      ],
+      "decoder.c3.block.3.bias": [
+        128
+      ],
+      "decoder.c3.block.4.weight": [
+        128
+      ],
+      "decoder.c3.block.4.bias": [
+        128
+      ],
+      "decoder.c2.block.0.weight": [
+        64,
+        320,
+        3,
+        3
+      ],
+      "decoder.c2.block.0.bias": [
+        64
+      ],
+      "decoder.c2.block.1.weight": [
+        64
+      ],
+      "decoder.c2.block.1.bias": [
+        64
+      ],
+      "decoder.c2.block.3.weight": [
+        64,
+        64,
+        3,
+        3
+      ],
+      "decoder.c2.block.3.bias": [
+        64
+      ],
+      "decoder.c2.block.4.weight": [
+        64
+      ],
+      "decoder.c2.block.4.bias": [
+        64
+      ],
+      "decoder.c1.block.0.weight": [
+        32,
+        160,
+        3,
+        3
+      ],
+      "decoder.c1.block.0.bias": [
+        32
+      ],
+      "decoder.c1.block.1.weight": [
+        32
+      ],
+      "decoder.c1.block.1.bias": [
+        32
+      ],
+      "decoder.c1.block.3.weight": [
+        32,
+        32,
+        3,
+        3
+      ],
+      "decoder.c1.block.3.bias": [
+        32
+      ],
+      "decoder.c1.block.4.weight": [
+        32
+      ],
+      "decoder.c1.block.4.bias": [
+        32
+      ],
+      "decoder.c0.block.0.weight": [
+        16,
+        32,
+        3,
+        3
+      ],
+      "decoder.c0.block.0.bias": [
+        16
+      ],
+      "decoder.c0.block.1.weight": [
+        16
+      ],
+      "decoder.c0.block.1.bias": [
+        16
+      ],
+      "decoder.c0.block.3.weight": [
+        16,
+        16,
+        3,
+        3
+      ],
+      "decoder.c0.block.3.bias": [
+        16
+      ],
+      "decoder.c0.block.4.weight": [
+        16
+      ],
+      "decoder.c0.block.4.bias": [
+        16
+      ],
+      "decoder.c00.block.0.weight": [
+        8,
+        16,
+        3,
+        3
+      ],
+      "decoder.c00.block.0.bias": [
+        8
+      ],
+      "decoder.c00.block.1.weight": [
+        8
+      ],
+      "decoder.c00.block.1.bias": [
+        8
+      ],
+      "decoder.c00.block.3.weight": [
+        8,
+        8,
+        3,
+        3
+      ],
+      "decoder.c00.block.3.bias": [
+        8
+      ],
+      "decoder.c00.block.4.weight": [
+        8
+      ],
+      "decoder.c00.block.4.bias": [
+        8
+      ],
+      "decoder.cls.weight": [
+        4,
+        8,
+        1,
+        1
+      ],
+      "decoder.cls.bias": [
+        4
+      ]
+    },
+    "missing": [],
+    "unexpected": [],
+    "post_load_equal": true
+  },
+  "initialization_max_abs_error": 0.0,
+  "two_synthetic_updates": [
+    {
+      "decoder": 11.528103828430176,
+      "stage2": 0.5447403788566589,
+      "stage3": 0.0702124834060669,
+      "global_adapter_last": 0.5124859809875488,
+      "detail_projection": 0.17516101896762848,
+      "detail_stem": 0.0,
+      "D_no_gradient": true
+    },
+    {
+      "decoder": 7.934455394744873,
+      "stage2": 0.36505550146102905,
+      "stage3": 0.04580143839120865,
+      "global_adapter_last": 0.5636692047119141,
+      "detail_projection": 0.16390204429626465,
+      "detail_stem": 0.0007886296370998025,
+      "D_no_gradient": true
+    }
+  ],
+  "frozen_parameters_unchanged": true,
+  "full_D_status": "SERVER_REQUIRED",
+  "full_D_dependencies": {
+    "reference_root": "D:\\dataset\\experiment\\HRDecoder_Next_20261003\\vendor\\champion_repo",
+    "importable": false,
+    "reason": "旧仓库依赖在本机不可导入（mmcv: ModuleNotFoundError: No module named 'mmcv'; mmengine: ModuleNotFoundError: No module named 'mmengine'; mmseg: ModuleNotFoundError: No module named 'mmcv'）。HRDecoder/HRNet 的结构必须来自旧仓库，禁止用自造实现冒充。",
+    "missing_modules": [
+      "mmcv: ModuleNotFoundError: No module named 'mmcv'",
+      "mmengine: ModuleNotFoundError: No module named 'mmengine'",
+      "mmseg: ModuleNotFoundError: No module named 'mmcv'"
+    ],
+    "hrnet_class": null,
+    "sys_path_inserted": true
+  },
+  "scope": "real pretrained U0, synthetic frozen global tensor wiring; no DDR training"
+}

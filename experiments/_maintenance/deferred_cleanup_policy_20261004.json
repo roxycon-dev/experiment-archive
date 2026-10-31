@@ -1,0 +1,20 @@
+{
+  "updated_at_utc": "2026-10-04T02:18:52.754557+08:00",
+  "instruction": "User requested deferring further cleanup until the active Q experiment finishes and dependencies are confirmed unnecessary.",
+  "protected_until_campaign_complete": [
+    "D:\\dataset\\experiment\\HRDecoder_Next_20261003"
+  ],
+  "cleanup_gate": [
+    "Applicable original-plan experiments and required evaluation complete",
+    "All necessary results recovered locally and SHA verified",
+    "Check active, upcoming original-plan and final pipeline dependencies",
+    "Delete only explicitly confirmed unnecessary files; retain ambiguous assets and evidence"
+  ],
+  "past_cleanup": "checkpoint_cleanup_20261004/cleanup_result.json",
+  "latest_scope_instruction": "这个任务做完后不要关机啊，吧原方案完全做完后再关机",
+  "completion_scope": "All applicable tasks in the original two-file plan; Q_DDR-only completion is insufficient",
+  "further_cleanup_started": true,
+  "further_cleanup_complete": true,
+  "cleanup_receipt": "D:\\dataset\\experiment\\_maintenance\\next_retired_U1_cleanup_result_20261004.json",
+  "cleanup_completed_at": "2026-10-04T06:52:16.2168221Z"
+}

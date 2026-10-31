@@ -1,0 +1,85 @@
+{
+  "scope": "Analytic counterexamples and CPU float64 gradients. No training or optimizer.",
+  "version": 3,
+  "passed": 18,
+  "failed": 0,
+  "checks": {
+    "unweighted_stage_KD_shared_output_equivalence": true,
+    "v2_actual_weighted_shared_gradient_equivalence": true,
+    "initial_ordinary_KD_teacher_weights": true,
+    "v2_not_all_parameter_gradients_identical": true,
+    "mean_signed_contrasts_inverse": true,
+    "same_final_mean_different_signed_information": true,
+    "absolute_contrasts_lose_sign": true,
+    "different_readouts_do_not_prove_hidden_diversity": true,
+    "lost_input_information_has_conditional_error_floor": true,
+    "perfect_contrasts_need_not_change_final_output": true,
+    "weak_teacher_error_not_forced_into_final_label": true,
+    "actual_task_ignores_masked_positions": true,
+    "actual_aux_ignores_masked_predictions": true,
+    "all_teacher_targets_detached": true,
+    "actual_losses_finite_gradients": true,
+    "all_invalid_actual_losses_graph_zero": true,
+    "auxiliary_pixel_weights_bounded": true,
+    "schedules_match_spec": true
+  },
+  "details": {
+    "v2_actual_weighted_shared_gradient_equivalence": {
+      "effective_target": 0.7818181818181819,
+      "mass": 0.55,
+      "ordinary_mixture": 0.55
+    },
+    "initial_ordinary_KD_teacher_weights": [
+      0.71875,
+      0.15625,
+      0.125
+    ],
+    "v2_not_all_parameter_gradients_identical": [
+      0.041458978432780055,
+      -0.08140576617541496,
+      -0.15427051078360998
+    ],
+    "mean_signed_contrasts_inverse": 2.220446049250313e-16,
+    "same_final_mean_different_signed_information": {
+      "teachers": [
+        [
+          0.5,
+          0.1,
+          0.8
+        ],
+        [
+          0.5,
+          0.9,
+          0.2
+        ]
+      ],
+      "final_mean": [
+        0.5,
+        0.49999999999999994
+      ],
+      "signed": [
+        [
+          -0.4,
+          0.4
+        ],
+        [
+          0.4,
+          -0.39999999999999997
+        ]
+      ]
+    },
+    "lost_input_information_has_conditional_error_floor": 0.16000000000000003,
+    "weak_teacher_error_not_forced_into_final_label": {
+      "weak_U": 0.95,
+      "final_T": 0.21875
+    },
+    "engineering_close_requires_recovery_of_historical_gain": 0.8634023022394537
+  },
+  "does_not_validate": [
+    "capacity sufficiency",
+    "generalization",
+    "innovation",
+    "accuracy forecast",
+    "full-model integration"
+  ]
+}

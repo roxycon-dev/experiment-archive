@@ -1,0 +1,6 @@
+/root/miniconda3/lib/python3.8/site-packages/mmcv/__init__.py:20: UserWarning: On January 1, 2023, MMCV will release v2.0.0, in which it will remove components related to the training process and add a data transformation module. In addition, it will rename the package names mmcv to mmcv-lite and mmcv-full to mmcv. See https://github.com/open-mmlab/mmcv/blob/master/docs/en/compatibility.md for more details.
+  warnings.warn(
+[HRPlusMAResidual] 可训练 0.058M / 冻结 131.221M
+2026-09-21 00:19:37,886 - mmseg - INFO - Loaded 454 images from /root/autodl-tmp/hr_exec_20260919/data/DDR_split_613/images/train
+[cache] split=train n=454 limit=454 rule=(t=0.10,d=0,margin=24,tile=512) ctx=32 bg_tile=256
+[cache] 10/454 43.9s tiles=108 cand=88 bg=20 bytes=14.0MB

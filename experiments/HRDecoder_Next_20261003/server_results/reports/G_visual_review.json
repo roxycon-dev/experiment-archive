@@ -1,0 +1,12 @@
+{
+  "status": "complete",
+  "images_inspected": 24,
+  "reviewer": "Codex visual inspection",
+  "candidate": "G highres fixed25",
+  "baseline": "current complete pipeline",
+  "selection": "actual per-pixel new_FP, remaining_FN, rescued_FN; top two images per class and category",
+  "limits": "Overlay displays all candidate TP/FP/FN, not just changed pixels. Categories describe crop context; no vessel/disc ground truth or clinical judgment.",
+  "findings": "Both large residual regions and lesion-boundary errors remain. Small rescues coexist with new false positives. Does not support a guarantee from calibration or detail alone.",
+  "table": "D:\\dataset\\experiment\\HRDecoder_Next_20261003\\reports\\G_manual_review.csv",
+  "gallery": "D:\\dataset\\experiment\\HRDecoder_Next_20261003\\server_results\\reports\\G_error_gallery\\index.html"
+}

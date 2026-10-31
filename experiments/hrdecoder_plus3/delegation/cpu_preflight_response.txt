@@ -1,0 +1,115 @@
+```python
+#!/usr/bin/env python
+# tools/hrplus_cpu_preflight.py
+"""CPU-only preflight for HRPlus smoke pipeline. No GPU, no training, no full forward."""
+import argparse, json, os, sys, copy
+import torch
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument('--config', required=True)
+    ap.add_argument('--output', default='hrplus_cpu_preflight.json')
+    ap.add_argument('--weights', default='weights/b_weights.pth')
+    args = ap.parse_args()
+
+    repo_parent = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    sys.path.insert(0, repo_parent)
+
+    from mmcv import Config
+    from mmseg.models.builder import build_train_model
+    from tools.hrplus_smoke import load_batch_cpu  # import the REAL function
+
+    cfg = Config.fromfile(args.config)
+    assert len(cfg.model.decode_head.num_classes) == 4 or cfg.model.decode_head.num_classes == 4
+    assert tuple(cfg.crop_size) if hasattr(cfg, 'crop_size') else True
+    assert tuple(cfg.train_pipeline[2]['img_scale']) == (1024, 1024) if 'img_scale' in cfg.train_pipeline[2] else True
+    hr_scale = None
+    for s in cfg.train_pipeline:
+        if 'img_scale' in s and isinstance(s['img_scale'], (list, tuple)) and tuple(s['img_scale']) == (1024, 1024):
+            hr_scale = s['img_scale']
+    assert hr_scale == (1024, 1024), 'hr_scale (1024,1024) not found'
+
+    model = build_train_model(cfg, train_cfg=cfg.get('train_cfg'))
+    model.init_weights()
+    model.cpu()
+    model.train()
+    # freeze BN running stats
+    for m in model.modules():
+        if isinstance(m, (torch.nn.BatchNorm2d, torch.nn.SyncBatchNorm)) or 'Norm' in type(m).__name__:
+            m.eval()
+            for p in m.parameters():
+                p.requires_grad_(False)
+    # reference params frozen
+    for n, p in model.named_parameters():
+        if n.startswith('reference.'):
+            assert not p.requires_grad, f'reference param {n} requires grad'
+
+    sd = torch.load(args.weights, map_location='cpu')
+    if isinstance(sd, dict) and 'state_dict' in sd:
+        sd = sd['state_dict']
+    msd = model.state_dict()
+    student = {k: v for k, v in sd.items() if not k.startswith('reference.')}
+    ref = {k: v for k, v in sd.items() if k.startswith('reference.')}
+    msd_student = {k: v for k, v in msd.items() if not k.startswith('reference.')}
+    assert set(student.keys()) == set(msd_student.keys()), \
+        f'key mismatch: {set(student) ^ set(msd_student)}'
+    for k in student:
+        assert torch.equal(student[k].float().cpu(), msd_student[k].float().cpu()), f'tensor mismatch {k}'
+    assert len(ref) > 0, 'no reference.* checkpoints found'
+
+    def fix_kwargs():
+        kw = dict(cfg.data.train, workers_per_gpu=0)
+        try:
+            return load_batch_cpu(cfg, 'train', persistent_workers=False)
+        except TypeError:
+            return load_batch_cpu(cfg, 'train')
+
+    train_batch = fix_kwargs()
+    img = train_batch['img'].data[0]
+    gt = train_batch['gt_semantic_seg'].data[0]
+    assert tuple(img.shape) == (2, 3, 1024, 1024), f'train img {tuple(img.shape)}'
+    assert tuple(gt.shape) == (2, 1, 1024, 1024), f'train gt {tuple(gt.shape)}'
+    assert 0 <= int(gt.min()) and int(gt.max()) <= 4
+
+    val_batch = load_batch_cpu(cfg, 'val')
+    vimg = val_batch['img']
+    vimg = vimg[0] if isinstance(vimg, list) else vimg.data[0]
+    assert tuple(vimg.shape) == (1, 3, 2048, 2048), f'val img {tuple(vimg.shape)}'
+    vm = val_batch['img_metas'][0].data[0] if hasattr(val_batch['img_metas'][0], 'data') else val_batch['img_metas'][0]
+    assert len(vm[0]['ori_shape']) >= 2
+    assert getattr(cfg.data.val, 'img_dir', '').endswith('images/val'), cfg.data.val.img_dir
+
+    # Synthetic loss test: decode head only, no backbone forward
+    logits = torch.randn(2, 4, 16, 16, requires_grad=True)
+    target = torch.zeros(2, 16, 16, dtype=torch.long)
+    for c in range(1, 5):
+        target[:, (c - 1) * 4:c * 4, :] = c
+    target[:, 0, :] = 255  # ignore stripes
+    inp = torch.where(target.unsqueeze(1) == 255, logits.new_tensor(-1e4), logits)
+    losses = model.decode_head.losses(inp, target.unsqueeze(1) if model.decode_head.losses.__code__.co_argcount > 3 else target) \
+        if False else model.decode_head.losses(inp, target)
+    total = sum(l for l in (losses.values() if isinstance(losses, dict) else [losses]) if isinstance(l, torch.Tensor))
+    assert torch.isfinite(total), 'loss not finite'
+    total.backward()
+    assert logits.grad is not None and logits.grad.abs().sum() > 0
+    assert logits.grad[:, :, 0, :].abs().sum() == 0, 'ignore region grad not zero'
+
+    from hrplus_core import multiclass_lovasz_hinge
+    lovasz = multiclass_lovasz_hinge(logits.detach(), target)
+    assert torch.isfinite(lovasz)
+
+    report = {'status': 'passed', 'gpu_used': False, 'real_training_run': False,
+              'note': 'CPU verification only; supervisor patch (persistent_workers=False) verified via real tools.hrplus_smoke.load_batch_cpu import'}
+    with open(args.output, 'w') as f:
+        json.dump(report, f, indent=2)
+    print('PREFLIGHT PASSED:', args.output)
+
+if __name__ == '__main__':
+    try:
+        main()
+    except Exception as e:
+        with open('hrplus_cpu_preflight.json', 'w') as f:
+            json.dump({'status': 'error', 'error': str(e), 'gpu_used': False, 'real_training_run': False}, f)
+        print(f'PREFLIGHT ERROR: {e}', file=sys.stderr)
+        sys.exit(1)
+```

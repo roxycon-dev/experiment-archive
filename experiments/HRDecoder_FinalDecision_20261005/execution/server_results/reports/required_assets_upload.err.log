@@ -1,0 +1,28 @@
+Traceback (most recent call last):
+  File "D:\dataset\experiment\HRDecoder_FinalDecision_20261005\execution\ops\restore_required_assets.py", line 63, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "D:\dataset\experiment\HRDecoder_FinalDecision_20261005\execution\ops\restore_required_assets.py", line 36, in main
+    with connect() as c:before=json.loads(command(c,"/root/miniconda3/bin/python - <<'PY'\n"+code+"\nPY",300))
+                                          ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\dataset\experiment\HRDecoder_FinalDecision_20261005\execution\ops\remote.py", line 19, in command
+    _,out,err=client.exec_command(text,timeout=timeout)
+              ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GuanXingRen\AppData\Roaming\Python\Python313\site-packages\paramiko\client.py", line 566, in exec_command
+    chan.exec_command(command)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\GuanXingRen\AppData\Roaming\Python\Python313\site-packages\paramiko\channel.py", line 70, in _check
+    return func(self, *args, **kwds)
+  File "C:\Users\GuanXingRen\AppData\Roaming\Python\Python313\site-packages\paramiko\channel.py", line 255, in exec_command
+    self._wait_for_event()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\GuanXingRen\AppData\Roaming\Python\Python313\site-packages\paramiko\channel.py", line 1224, in _wait_for_event
+    raise e
+  File "C:\Users\GuanXingRen\AppData\Roaming\Python\Python313\site-packages\paramiko\transport.py", line 2201, in run
+    ptype, m = self.packetizer.read_message()
+               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\GuanXingRen\AppData\Roaming\Python\Python313\site-packages\paramiko\packet.py", line 496, in read_message
+    header = self.read_all(self.__block_size_in, check_rekey=True)
+  File "C:\Users\GuanXingRen\AppData\Roaming\Python\Python313\site-packages\paramiko\packet.py", line 324, in read_all
+    raise EOFError()
+EOFError

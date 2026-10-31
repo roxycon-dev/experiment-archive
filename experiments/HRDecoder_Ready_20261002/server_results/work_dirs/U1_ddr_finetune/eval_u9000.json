@@ -1,0 +1,73 @@
+{
+  "protocol": "whole_image_accumulated_counts",
+  "threshold": 0.5,
+  "n_images": 76,
+  "per_class": {
+    "EX": {
+      "iou": 0.4050369372661906,
+      "f1": 0.5765498778335029,
+      "ppv": 0.5013100081573738,
+      "recall": 0.6783630155122196,
+      "aupr": 0.39340165623332596,
+      "tp": 197270,
+      "fp": 196239,
+      "fn": 93533,
+      "gt_positive_pixels": 290803
+    },
+    "HE": {
+      "iou": 0.34083447274691514,
+      "f1": 0.5083915720762473,
+      "ppv": 0.4836576061896293,
+      "recall": 0.5357916419276837,
+      "aupr": 0.3511136101805041,
+      "tp": 646124,
+      "fp": 689788,
+      "fn": 559800,
+      "gt_positive_pixels": 1205924
+    },
+    "SE": {
+      "iou": 0.43966259698303745,
+      "f1": 0.6107856075505415,
+      "ppv": 0.6324237816225183,
+      "recall": 0.5905791344759787,
+      "aupr": 0.39845102620312023,
+      "tp": 118945,
+      "fp": 69133,
+      "fn": 82459,
+      "gt_positive_pixels": 201404
+    },
+    "MA": {
+      "iou": 0.18561677684588995,
+      "f1": 0.31311428864845925,
+      "ppv": 0.26924875068829024,
+      "recall": 0.37405461578430804,
+      "aupr": 0.12546921545103076,
+      "tp": 25916,
+      "fp": 70337,
+      "fn": 43368,
+      "gt_positive_pixels": 69284
+    }
+  },
+  "mIoU_lesion4": 0.3427876959605083,
+  "mF1": 0.5022103365271877,
+  "mPPV": 0.4716600366644529,
+  "mRecall": 0.5446971019250475,
+  "mAUPR": 0.31710887701699525,
+  "excluded_classes": {
+    "iou": [],
+    "aupr": []
+  },
+  "aupr_note": "256-bin histogram approximation of PR curve",
+  "split": "val",
+  "mode": "formal",
+  "eval_images": 76,
+  "resize_to": [
+    2048,
+    2048
+  ],
+  "dataset_size": 76,
+  "eval_inference": "sliding_window(window=1024,stride=768)",
+  "update": 9000,
+  "stage": "ddr_finetune",
+  "generated_at": "2026-10-02T03:47:52.208411+00:00"
+}

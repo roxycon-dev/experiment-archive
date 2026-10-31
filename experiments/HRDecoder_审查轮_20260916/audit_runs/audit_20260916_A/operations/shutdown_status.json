@@ -1,0 +1,13 @@
+{
+  "run_id": "audit_20260916_A",
+  "instance_started_this_run": false,
+  "shutdown_requested": false,
+  "shutdown_confirmed_by_cloud_api": "NOT_APPLICABLE",
+  "tcp_probe_result": {
+    "host": "connect.nmb1.seetacloud.com",
+    "port": 37047,
+    "result": "ConnectionRefusedError",
+    "interpreted_as": "辅助信号：实例当前不可达",
+    "caveat": "prompt §4.3-12：TCP 拒绝或 SSH 断开只能作为辅助信号，不能独立证明云平台已停止计费。本轮未开机，故无需计费确认。"
+  }
+}

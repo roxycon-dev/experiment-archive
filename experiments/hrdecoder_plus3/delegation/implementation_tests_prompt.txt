@@ -1,0 +1,191 @@
+Output ONLY complete Python unittest code for repo/tests/test_core.py. Testsactualcore below, no reimplementationassumptions. EXACT4logits channels0..3 correspond label1..4, bg0ignore255. Testfullirregular/small/overlaptile coverage, invalidstride, probabilityblendshapemismatch, croppadalignment/ignore/img_pad, guaranteedpositivecrop withfg_prob semantics below, allclasses reachable, Lovaszperfecthandlogits4channelsloss0, wrongclass>0, eachchannelindependentgradnonzero, ignorelogitperturbationinvarianceandzerograd (doNOTreplaceignorewithclass), allignoregraphzero, absentclassaveraged using handknownvalues, singletonloss. Use torch.set_num_threads(2). No mmcvdependency, no productionreimplementation. Scriptmust sys.pathprependparentrepo. Outputcodeonly.
+CORE:
+"""Dependency-light helpers for the HR+ patch (torch + numpy only).
+
+Used by hrplus_patch.py (model / pipeline) and by tests/test_core.py.
+"""
+import numpy as np
+import torch
+import torch.nn.functional as F
+
+
+# ---------------------------------------------------------------- tiling ---
+def _axis_positions(total, tile, stride):
+    """Tile start positions along one axis: complete coverage of [0, total)."""
+    assert 0 < stride <= tile, 'stride must satisfy 0 < stride <= tile'
+    if total <= tile:
+        return [0]
+    pos = list(range(0, total - tile + 1, stride))
+    if pos[-1] != total - tile:
+        pos.append(total - tile)
+    return pos
+
+
+def tiled_forward(img, forward_fn, tile_size, stride, num_classes):
+    """Tiled inference with complete overlap coverage.
+
+    Logits are accumulated in float32 and divided by per-pixel counts so
+    overlapping tiles are exactly averaged.  Images smaller than the tile are
+    right/bottom padded before ``forward_fn`` and the padding is cropped away
+    afterwards, so irregular / small sizes are handled correctly.
+
+    Args:
+        img: (B, 3, H, W) tensor (already normalized).
+        forward_fn: callable (B,3,th,tw) -> (B, C, th, tw) logits tensor.
+        tile_size: int or (tile_h, tile_w).
+        stride: int, tile stride (0 < stride <= min(tile_h, tile_w)).
+        num_classes: number of logit channels C.
+    Returns:
+        (B, C, H, W) float32 averaged logits.
+    """
+    if isinstance(tile_size, (tuple, list)):
+        tile_h, tile_w = int(tile_size[0]), int(tile_size[1])
+    else:
+        tile_h = tile_w = int(tile_size)
+    assert 0 < stride <= min(tile_h, tile_w), \
+        'require 0 < stride <= min(tile_h, tile_w)'
+    b, _, h, w = img.shape
+    sums = torch.zeros((b, num_classes, h, w), dtype=torch.float32,
+                       device=img.device)
+    counts = torch.zeros((b, 1, h, w), dtype=torch.float32,
+                         device=img.device)
+    th, tw = min(tile_h, h), min(tile_w, w)
+    for y in _axis_positions(h, tile_h, stride):
+        for x in _axis_positions(w, tile_w, stride):
+            patch = img[:, :, y:y + th, x:x + tw]
+            if patch.shape[2] < tile_h or patch.shape[3] < tile_w:
+                patch = F.pad(patch, (0, tile_w - patch.shape[3],
+                                      0, tile_h - patch.shape[2]))
+            out = forward_fn(patch)
+            assert out.shape[0] == patch.shape[0] and out.shape[1] == num_classes
+            out = out[:, :, :th, :tw].float()
+            sums[:, :, y:y + th, x:x + tw] += out
+            counts[:, :, y:y + th, x:x + tw] += 1.0
+    assert bool((counts > 0).all()), 'tiling left uncovered pixels'
+    return sums / counts
+
+
+# ---------------------------------------------------------------- blending ---
+def blend_probs(prob_a, prob_b, weight_a=0.5):
+    """Fixed probability-space fusion: weight_a * a + (1 - weight_a) * b."""
+    assert prob_a.shape == prob_b.shape, \
+        'blend shapes must match exactly (no implicit broadcasting)'
+    return weight_a * prob_a + (1.0 - weight_a) * prob_b
+
+
+def resize_logit(logits, size, align_corners=False):
+    """Bilinear logit resize with explicit align_corners."""
+    return F.interpolate(logits, size=size, mode='bilinear',
+                         align_corners=align_corners)
+
+
+# ------------------------------------------------------------ crop helpers ---
+def pad_to_size(img, gt, size, img_pad=0, seg_pad=255):
+    """Pad (H,W,3) image with ``img_pad`` and (H,W) label with ``seg_pad``
+    at bottom/right up to ``size``=(H,W). Pure numpy. ``img_pad`` is honored
+    for the image and ``seg_pad`` for the label."""
+    th, tw = int(size[0]), int(size[1])
+    h, w = gt.shape[:2]
+    if h >= th and w >= tw:
+        return img, gt
+    pad_img = np.full((max(th, h), max(tw, w)) + img.shape[2:], int(img_pad),
+                      dtype=img.dtype)
+    pad_img[:h, :w] = img
+    pad_gt = np.full((max(th, h), max(tw, w)) + gt.shape[2:], int(seg_pad),
+                     dtype=gt.dtype)
+    pad_gt[:h, :w] = gt
+    return pad_img, pad_gt
+
+
+def crop_arrays(img, gt, y0, x0, h, w):
+    """Aligned numpy crop of image and label (no resizing)."""
+    return img[y0:y0 + h, x0:x0 + w], gt[y0:y0 + h, x0:x0 + w]
+
+
+def foreground_crop_bbox(gt, crop_size, fg_prob=0.5, rng=None, num_fg=4):
+    """Choose top-left corner (y0, x0) of a crop_size x crop_size window.
+
+    With probability ``fg_prob`` the crop is image-uniform random.  Otherwise
+    a uniformly chosen PRESENT lesion class (1..num_fg) and a uniformly chosen
+    pixel of that class are picked, and the anchor offset is drawn from the
+    valid range that guarantees pixel inclusion.  If no lesion class is
+    present the crop falls back to image-uniform random.  Uses the given
+    ``rng`` (np.random module or np.random.RandomState) for seeding.
+    Assumes H, W >= crop_size (pad first if not).
+    """
+    rng = np.random if rng is None else rng
+    h, w = gt.shape[:2]
+    cs = int(crop_size)
+    cs_h, cs_w = min(cs, h), min(cs, w)
+
+    def uniform():
+        y0 = rng.randint(0, h - cs_h + 1)
+        x0 = rng.randint(0, w - cs_w + 1)
+        return y0, x0
+
+    present = [c for c in range(1, num_fg + 1) if (gt == c).any()]
+    if not present or rng.random() < fg_prob:
+        return uniform()
+    cls = present[rng.randint(0, len(present))]
+    ys, xs = np.where(gt == cls)
+    idx = rng.randint(0, len(ys))
+    py, px = int(ys[idx]), int(xs[idx])
+    y_lo, y_hi = max(0, py - cs_h + 1), min(py, h - cs_h)
+    x_lo, x_hi = max(0, px - cs_w + 1), min(px, w - cs_w)
+    y0 = rng.randint(y_lo, y_hi + 1)
+    x0 = rng.randint(x_lo, x_hi + 1)
+    return y0, x0
+
+
+# ---------------------------------------------------------------- lovasz ---
+def lovasz_grad(gt_sorted):
+    """Gradient of the Lovasz extension w.r.t. sorted errors.
+
+    The differencing step uses torch.cat instead of overlapping in-place
+    slice assignment (jacc[1:] = jacc[1:] - jacc[:-1]), which is unsafe
+    under PyTorch's memory-aliasing rules.
+    """
+    p = len(gt_sorted)
+    gts = gt_sorted.sum()
+    intersection = gts - gt_sorted.float().cumsum(0)
+    union = gts + (1 - gt_sorted).float().cumsum(0)
+    jacc = 1 - intersection / union
+    if p > 1:
+        jacc = torch.cat([jacc[:1], jacc[1:] - jacc[:-1]])
+    return jacc
+
+
+def lovasz_hinge_flat(logits, labels):
+    """Binary Lovasz hinge loss on flattened, already-valid tensors.
+    Graph-safe for empty inputs (returns 0 connected to the graph)."""
+    if logits.numel() == 0:
+        return logits.sum() * 0
+    signs = 2.0 * labels - 1.0
+    errors = 1.0 - logits * signs
+    errors_sorted, perm = torch.sort(errors, descending=True)
+    gt_sorted = labels[perm]
+    return torch.dot(F.relu(errors_sorted), lovasz_grad(gt_sorted))
+
+
+def multiclass_lovasz_hinge(logits, target, ignore_index=255):
+    """Binary Lovasz hinge applied separately to each of the EXACTLY 4
+    FOREGROUND channels (channel c <-> target label c+1; 0=EX, 1=HE,
+    2=SE, 3=MA; NO background channel).  Batch-flattened,
+    ignore_index (255) excluded, averaged over ALL 4 classes including
+    classes absent from the batch.  Applied on raw logits: NO softmax /
+    sigmoid.  Full-crop usage expected.
+    """
+    assert logits.shape[1] == 4, 'model must output exactly 4 fg channels'
+    tgt = target.squeeze(1) if target.dim() == 4 else target
+    flat_t = tgt.reshape(-1)
+    num_classes = 4
+    total = logits.sum() * 0
+    for c in range(num_classes):
+        lc = logits[:, c].reshape(-1)
+        valid = flat_t != ignore_index
+        if bool(valid.sum()) == 0:
+            total = total + lc.sum() * 0
+            continue
+        labels = (flat_t[valid] == (c + 1)).float()
+        total = total + lovasz_hinge_flat(lc[valid], labels)
+    return total / num_classes

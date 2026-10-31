@@ -1,0 +1,97 @@
+{
+  "stage": "DIAGNOSED_PREPARATION_RECOVERY",
+  "time": "2026-10-04T20:36:28.367652+00:00",
+  "formal_updates_lost": 0,
+  "original_source_sha256": "169c48fb058b0c8aeeb88c8b914243cb8adf540dd29f568ca73158661ee00431",
+  "source_sha256": "937565a59a9d65f46d891cdf456a8bc75141434e2815bb875dce316b5d5d8629",
+  "process_evidence": {
+    "8262": {
+      "wait_channel": "futex_wait_queue_me",
+      "ticks": [
+        "103716",
+        "11269",
+        "0",
+        "0"
+      ]
+    },
+    "9536": {
+      "wait_channel": "futex_wait_queue_me",
+      "ticks": [
+        "0",
+        "1",
+        "0",
+        "0"
+      ]
+    },
+    "9537": {
+      "wait_channel": "futex_wait_queue_me",
+      "ticks": [
+        "0",
+        "1",
+        "0",
+        "0"
+      ]
+    },
+    "9538": {
+      "wait_channel": "futex_wait_queue_me",
+      "ticks": [
+        "0",
+        "1",
+        "0",
+        "0"
+      ]
+    },
+    "9539": {
+      "wait_channel": "futex_wait_queue_me",
+      "ticks": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    },
+    "9540": {
+      "wait_channel": "futex_wait_queue_me",
+      "ticks": [
+        "0",
+        "1",
+        "0",
+        "0"
+      ]
+    },
+    "9541": {
+      "wait_channel": "futex_wait_queue_me",
+      "ticks": [
+        "0",
+        "1",
+        "0",
+        "0"
+      ]
+    },
+    "9542": {
+      "wait_channel": "futex_wait_queue_me",
+      "ticks": [
+        "0",
+        "1",
+        "0",
+        "0"
+      ]
+    },
+    "9543": {
+      "wait_channel": "futex_wait_queue_me",
+      "ticks": [
+        "1",
+        "0",
+        "0",
+        "0"
+      ]
+    }
+  },
+  "cause": "After CPU/CUDA/OpenCV work, forked workers wait in inherited thread-pool locks; real pipeline reproduces timeout with64/16threads and yields exact-shape batch with1/1threads.",
+  "change": "Initialize parent torch and OpenCV pools to1 before model/validation. Eight DDR/four source workers and all scientific settings remain unchanged.",
+  "early_gate_reuse": "Graph/kernel/routing/state code unchanged. Only decision.py and parent CPU pool startup changed since early PASS. Full100updates, native validation, and original R-count checks must complete under the corrected startup.",
+  "endpoint_policy_acceptance": "PASS; real completed paired20k retained after late scientific stop, missing32k omitted",
+  "old_source_archived": true,
+  "passed_early_gates_not_repeated": true,
+  "pid": 13293
+}

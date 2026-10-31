@@ -1,0 +1,96 @@
+{
+  "time": "2026-10-05T11:30:57.451095+00:00",
+  "helpers": {
+    "primary": {
+      "pid": 17736,
+      "alive": true,
+      "cmdline": [
+        "C:\\Users\\GuanXingRen\\Miniconda3\\python.exe",
+        "-u",
+        "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\execution\\reports\\independent_local_attendant_runner.py",
+        "primary"
+      ],
+      "parent_pid": 7760,
+      "parent_name": "WmiPrvSE.exe",
+      "helper_sha256": "f76acf364bdcd56adc290c73ab7d47c9f6641bb817d1b0262b96483d8831578e",
+      "attendant_state.json": {
+        "stage": "WAITING",
+        "time": "2026-10-05T11:19:01.947957+00:00"
+      },
+      "transfer_progress.json": {
+        "stage": "TRANSFERRING",
+        "full": false,
+        "verified_files": 981,
+        "expected_files": 6423,
+        "verified_bytes": 244893381,
+        "expected_bytes": 269312848,
+        "updated_at": "2026-10-05T11:30:57.434693+00:00"
+      },
+      "mirror.lock": {
+        "pid": 17736,
+        "time": "2026-10-05T11:30:19.549926+00:00"
+      },
+      "log": [
+        "{\"stage\": \"EXISTING_HELPER_RECOVERED\", \"role\": \"primary\", \"pid\": 17736, \"time\": \"2026-10-05T11:30:18.329844+00:00\"}",
+        "{\"time\": \"2026-10-05T11:30:19.549254+00:00\", \"driver_stage\": \"CAMPAIGN\", \"run\": \"D_seed42\", \"run_stage\": \"TRAINING\", \"completed\": 5700, \"free_disk_bytes\": 26726625280}"
+      ],
+      "err.log": []
+    },
+    "second": {
+      "pid": 31360,
+      "alive": true,
+      "cmdline": [
+        "C:\\Users\\GuanXingRen\\Miniconda3\\python.exe",
+        "-u",
+        "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\execution\\reports\\independent_local_attendant_runner.py",
+        "second"
+      ],
+      "parent_pid": 7760,
+      "parent_name": "WmiPrvSE.exe",
+      "helper_sha256": "037d0a4db1838ae991ace0d4c200a84b7ab1b6fc6d5ac1ae58ca0acc5ed7b2a5",
+      "attendant_state.json": {
+        "stage": "WAITING",
+        "time": "2026-10-05T11:18:59.415373+00:00"
+      },
+      "transfer_progress.json": {
+        "stage": "TRANSFERRING",
+        "full": false,
+        "verified_files": 1115,
+        "expected_files": 2882,
+        "verified_bytes": 180417484,
+        "expected_bytes": 188508203,
+        "updated_at": "2026-10-05T11:30:57.476655+00:00"
+      },
+      "mirror.lock": {
+        "pid": 31360,
+        "time": "2026-10-05T11:30:19.550084+00:00"
+      },
+      "log": [
+        "{\"stage\": \"EXISTING_HELPER_RECOVERED\", \"role\": \"second\", \"pid\": 31360, \"time\": \"2026-10-05T11:30:18.345692+00:00\"}",
+        "{\"time\": \"2026-10-05T11:30:19.549359+00:00\", \"driver_stage\": \"PARALLEL_CAMPAIGN\", \"run\": \"SD_seed42\", \"run_stage\": \"TRAINING\", \"completed\": 17040, \"free_disk_bytes\": 17722707968}"
+      ],
+      "err.log": []
+    },
+    "coordinator": {
+      "pid": 32432,
+      "alive": true,
+      "cmdline": [
+        "C:\\Users\\GuanXingRen\\Miniconda3\\python.exe",
+        "-u",
+        "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\execution\\reports\\independent_local_attendant_runner.py",
+        "coordinator"
+      ],
+      "parent_pid": 7760,
+      "parent_name": "WmiPrvSE.exe",
+      "helper_sha256": "267f4433f9ac5f0f886d062766a2a10057b00c1995b6ab92b48084e28f81ef5d",
+      "state": {
+        "stage": "WAITING_SD_COMPLETE_SHA_CUSTODY",
+        "time": "2026-10-05T11:30:48.475784+00:00"
+      },
+      "log": [
+        "{\"stage\": \"EXISTING_HELPER_RECOVERED\", \"role\": \"coordinator\", \"pid\": 32432, \"time\": \"2026-10-05T11:30:18.374596+00:00\"}"
+      ],
+      "err.log": []
+    }
+  }
+}

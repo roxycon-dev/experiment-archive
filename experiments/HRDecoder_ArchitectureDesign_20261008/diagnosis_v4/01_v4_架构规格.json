@@ -1,0 +1,166 @@
+{
+  "version": 4,
+  "date": "2026-10-09",
+  "status": "mechanism_checked_untrained_stability_control_superseded_as_main_proposal_by_CET",
+  "normative_document": "00_诊断结论与v4方案.md",
+  "name": "HRDecoder GT-anchored component probability distillation",
+  "classes": [
+    "EX",
+    "HE",
+    "SE",
+    "MA"
+  ],
+  "label_values": {
+    "background": 0,
+    "EX": 1,
+    "HE": 2,
+    "SE": 3,
+    "MA": 4,
+    "ignore": 255
+  },
+  "initialization": {
+    "backbone": "same ImageNet HRNet-W48",
+    "sha256": "d2186c55782308392ae14cf179ac4840143b09abdbba81aa3f9274c795ebc960",
+    "student_task_checkpoint": false,
+    "base_seed": 42,
+    "private_seed": 20261008,
+    "private_output_weights_and_bias": "zero; all other new layers random",
+    "initial_decisions_equal_anchor": true,
+    "initial_probabilities_equal_anchor": false
+  },
+  "architecture": {
+    "backbone_calls": 1,
+    "canvas": 2048,
+    "backbone_canvas": 1024,
+    "feature_channels": [
+      48,
+      96,
+      192,
+      384
+    ],
+    "private_towers": "v3 LocalPath and GlobalPath unchanged",
+    "outputs": [
+      "zA original HRDecoder",
+      "zU independent local logits",
+      "zS independent global logits"
+    ],
+    "fusion": "weighted Bernoulli probabilities",
+    "weights": [
+      0.5625,
+      0.1875,
+      0.25
+    ],
+    "learned_fusion_gate": false,
+    "unbounded_logit_residual": false,
+    "signed_auxiliary_loss": false,
+    "online_H4": false,
+    "teacher_A_includes_historical_H4": true
+  },
+  "teacher": {
+    "A": "locked old HR ensemble with H4",
+    "U": "ConvNeXt-S U0",
+    "S": "DINOv3 S20 EMA",
+    "final_weights": [
+      0.5625,
+      0.1875,
+      0.25
+    ],
+    "cache": "existing FP32 original-image train-only targets",
+    "OOF": false,
+    "val_mIoU_percent": 45.3218,
+    "test_mIoU_percent": 45.8603838
+  },
+  "loss": {
+    "GT": "macro over active valid sample/class pairs of presence-masked squared Dice + .25*(positive mean softplus(-z)+negative mean softplus(z))",
+    "dice_epsilon": 1e-05,
+    "empty_GT": "Dice contribution zero; background BCE retained; pair stays in valid macro",
+    "absent_group_renormalization": false,
+    "head_GT_weights": {
+      "fusion": 0.5,
+      "A": 0.25,
+      "U": 0.125,
+      "S": 0.125
+    },
+    "HR_aux_GT_weight": 0.1,
+    "KD": "Bernoulli KL teacher||student; masked by strict teacher >.5 matching GT; denominator all valid pixels",
+    "KD_masks_detached": true,
+    "lambda_K": [
+      [
+        0,
+        0
+      ],
+      [
+        1500,
+        0
+      ],
+      [
+        4000,
+        0.5
+      ],
+      [
+        32000,
+        0.5
+      ],
+      [
+        40000,
+        0.1
+      ]
+    ],
+    "component_KD_coefficient": ".5 * lambda_K",
+    "component_KD_member_weights": [
+      0.5625,
+      0.1875,
+      0.25
+    ],
+    "fusion_logit_math": "logsumexp(logweight+logsigmoid(z))-logsumexp(logweight+logsigmoid(-z))"
+  },
+  "gradient_routes": {
+    "shared_backbone": "all GT tasks + final teacher KD only",
+    "base_decoder_and_private": "task gradients plus component KD via autograd.grad",
+    "steps_per_update": 1
+  },
+  "training": {
+    "updates": 40000,
+    "global_batch": 2,
+    "optimizer": "SGD",
+    "lr": 0.005,
+    "momentum": 0.9,
+    "weight_decay": 0.0005,
+    "warmup": 1500,
+    "warmup_ratio": 1e-06,
+    "poly_power": 1,
+    "precision": "BF16 network / FP32 losses and mixing; one full-canvas forward/backward passed, sustained training untested",
+    "BN": "original train behavior unchanged",
+    "augmentation": "original v3 geometry, valid masks and exposure sequence",
+    "student_TTA": false,
+    "validation_interval": 4000,
+    "primary_endpoint": "40k fixed",
+    "secondary_endpoint": "best scheduled val"
+  },
+  "evaluation": "resize each member logits to original image, sigmoid each, fixed probability mixture, strictly > .5",
+  "resources": {
+    "conv_linear": 33002881024,
+    "attention_QK_AV": 2147483648,
+    "total": 35150364672
+  },
+  "new_parameters": 6382912,
+  "total_parameters": 71955332,
+  "new_MAC_scope": "excludes original HRDecoder and non-MAC operations; analytic scales validated by small-shape hooks; not measured latency",
+  "validated": [
+    "10 CPU objective tests",
+    "CPU private structure and gradient routes",
+    "actual ImageNet HRNet at128 CPU train-mode forward/backward",
+    "retained checkpoint FP32 forward interventions and true classifier gradient diagnostics",
+    "one actual2048 batch2 BF16 CUDA forward/backward without optimizer; peak allocated 19890649600 bytes"
+  ],
+  "not_validated": [
+    "40k accuracy",
+    "2048 batch2 complete new-training resource envelope",
+    "multi-seed robustness",
+    "incremental value over loss-repaired plain KD",
+    "top-journal novelty"
+  ],
+  "diagnostic_optimizer_steps": 0,
+  "supersedes": "../02_架构规格.json",
+  "superseded_as_main_proposal_by": "../research_v5/01_CET_架构规格.json"
+}

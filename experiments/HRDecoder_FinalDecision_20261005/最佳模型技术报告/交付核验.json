@@ -1,0 +1,164 @@
+{
+  "stage": "DELIVERY_VERIFIED",
+  "generated_at_utc": "2026-10-06T03:56:24.660469+00:00",
+  "pdf_pages": 11,
+  "figures": 5,
+  "equations": 17,
+  "tables": 7,
+  "all_final_pages_visually_inspected": true,
+  "visual_review": "Final 11-page render reviewed page by page; diagrams, equations, tables, Chinese text, margins and page breaks checked.",
+  "numeric_checks": {
+    "locked_test_from_saved_evidence": true,
+    "four_class_mean_from_saved_results": true,
+    "gain_vs_original_baseline_approximate": true,
+    "gain_vs_R_exact": true,
+    "matched_S_minus_C_20k_and_32k_exact": true
+  },
+  "source_checks": [
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\结题报告\\evidence\\original_HRDecoder_baseline_evidence.json",
+      "sha256": "485ecb0e98412305172b07b29bfe8d221fc4f767d621c4407ee8aa6938a97a34",
+      "verified": true
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\结题报告\\evidence\\four_arm_saved_validation.json",
+      "sha256": "dbd1dea13e5e1f9e0d4cc787a0c9571b7862e6d207cd5a854cb2ca952533df12",
+      "verified": true
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\结题报告\\evidence\\final_locked_test_evidence.json",
+      "sha256": "8ebb5d1f4836598a8a3615e5ba7a82e9b972dff380a3504afafd53ad8df05f5b",
+      "verified": true
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\结题报告\\evidence\\historical_experiment_ledger.json",
+      "sha256": "2d96a5648081ef4ea3a04956f8755439b5491be9481f8b4a26d344d524a0987e",
+      "verified": true
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\execution\\spatial.py",
+      "sha256": "f152d1040359f3083b4c8ae6f29f6f195eb377b4ef7bb0f881145a678f1fe178",
+      "verified": true
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\execution\\final_model.py",
+      "sha256": "c2bee6580c5f6d47f74e8df9b3726d3b67c3324bcf2439c82240c7acc8192d07",
+      "verified": true
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\execution\\qlib\\model.py",
+      "sha256": "f68a07f604248575df6db8553c554aa3d9eb718d112a9488c42780695ab9710f",
+      "verified": true
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\execution\\qlib\\loss.py",
+      "sha256": "87379d9e58619f1cf89e351cda71348a38c44af233881998e7d0a830e4a4e879",
+      "verified": true
+    },
+    {
+      "path": "D:\\dataset\\experiment\\hrdecoder_plus3\\repo\\mmseg\\models\\necks\\detail_branch.py",
+      "sha256": "d71d616fc876b3753596f839e3bc05c42e355ce9e52b4e1de6298634d57e1d3e",
+      "verified": true
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_MA残差头与集成_20260915-16\\03_代码\\ma_residual.py",
+      "sha256": "95438df2b26df31a0c29e4933afa482d44072e5be42524177586fb18c165c1ed",
+      "verified": true
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_审查轮_20260916\\tools\\h4_post_fusion_corrector.py",
+      "sha256": "a4361c1ab10a7dc8f706416c5ffd5cbd298ce9b2302f708ad5971b19d2466fda",
+      "verified": true
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_FullCompetition_20260920\\trainer\\models\\convnext_unet.py",
+      "sha256": "696667a0ed33be9966988337099dd7d3d54ba6b730086f166ccdfe26e0cf0aae",
+      "verified": true
+    },
+    {
+      "path": "D:\\HRDecoder\\mmseg\\models\\segmentors\\HRDecoder.py",
+      "sha256": "81d7755fcbb1411a272cd21967781cca13a6aeb389a3abdfebe5e4cba47d073c",
+      "verified": true
+    },
+    {
+      "path": "D:\\HRDecoder\\mmseg\\models\\decode_heads\\fcn_head.py",
+      "sha256": "71da7bd06c5501126020e3b9eb433eaaa1d3271238085f0e03dd46a558a13b6f",
+      "verified": true
+    }
+  ],
+  "outputs": [
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\最佳模型技术报告\\HRDecoder最佳模型训练与改进报告.docx",
+      "bytes": 1038334,
+      "sha256": "f299a5314f0c1e62b0ce455d4ff741dbab9b181af0ab1a6285ad4e2925ca8a4d"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\最佳模型技术报告\\HRDecoder最佳模型训练与改进报告.pdf",
+      "bytes": 1552637,
+      "sha256": "0c09348e384e6b44682ed08b6aaeae2839db7491ba1369925a736908d2850273"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\最佳模型技术报告\\HRDecoder最佳模型训练与改进报告.md",
+      "bytes": 24430,
+      "sha256": "aaf4d0f4cec8de3a6c95de2e888517356a829101e14353873a28ac4018efe00e"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\最佳模型技术报告\\指标与来源.json",
+      "bytes": 10202,
+      "sha256": "09561500a4bfa8d85d8da2f66c8a1dd803d4482a635102dd0b163236063f3b8e"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\最佳模型技术报告\\公式源.json",
+      "bytes": 1560,
+      "sha256": "603ade84e748c7fcc1e0b1b3a8ae6c5c8fa60ed925781994fc6f909ab9a37631"
+    }
+  ],
+  "final_render_sha256": [
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\最佳模型技术报告\\排版检查\\定稿\\page-01.png",
+      "sha256": "0a5aa14c69fc886204ad1271d081d3fe8982c30bf40590e63c22aab6ce4b69b3"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\最佳模型技术报告\\排版检查\\定稿\\page-02.png",
+      "sha256": "c27f5d794e0b117288b292ef673ff5deb2ccba50769d9b8d714056496c6173f8"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\最佳模型技术报告\\排版检查\\定稿\\page-03.png",
+      "sha256": "ef66263fcb01a8904dce142f99e75d4d51028204019a7d4079cac7a08a4f22ea"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\最佳模型技术报告\\排版检查\\定稿\\page-04.png",
+      "sha256": "d2a6816ad872ec676ad9e927f12a1b1f6b11759b84533ee0b01fc1e187889974"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\最佳模型技术报告\\排版检查\\定稿\\page-05.png",
+      "sha256": "7e5650719844d368efc50f674199a9e6548df97fbebc0c4de74a943b630f74ed"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\最佳模型技术报告\\排版检查\\定稿\\page-06.png",
+      "sha256": "5cda1d8d1d6761ede372426596f2332aadba1322aaaa388d9a73cb32e0031f0f"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\最佳模型技术报告\\排版检查\\定稿\\page-07.png",
+      "sha256": "0b52be67a84eea6adad14b93462be3e22f5556d62ae0a0d2e83a332bfbc67bec"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\最佳模型技术报告\\排版检查\\定稿\\page-08.png",
+      "sha256": "65b48daed48ac0f2bdeb23b6ed0611f79955558dca38cc49399f2f5692e00370"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\最佳模型技术报告\\排版检查\\定稿\\page-09.png",
+      "sha256": "17f13ed6369c00713e9d029eaa21210d785d49d1de1b435bad67f6c6241fdd03"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\最佳模型技术报告\\排版检查\\定稿\\page-10.png",
+      "sha256": "cd104cc93265c7f18cac8809394a1eaac0935e68833082e41f3af4aca44b2c66"
+    },
+    {
+      "path": "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\最佳模型技术报告\\排版检查\\定稿\\page-11.png",
+      "sha256": "0e75a4d3cb622af0b0d5af88fc0ad1cfd60965c048761dec2946cfdeab173a74"
+    }
+  ],
+  "no_new_model_training_or_inference": true,
+  "prior_report_untouched": true
+}

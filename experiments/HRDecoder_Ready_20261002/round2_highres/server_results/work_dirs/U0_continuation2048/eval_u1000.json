@@ -1,0 +1,98 @@
+{
+  "protocol": "whole_image_accumulated_counts",
+  "threshold": 0.5,
+  "n_images": 76,
+  "per_class": {
+    "EX": {
+      "iou": 0.4499883186667705,
+      "f1": 0.6206785432320227,
+      "ppv": 0.6473657086520076,
+      "recall": 0.5961045793887958,
+      "aupr": 0.46529421492376927,
+      "tp": 173349,
+      "fp": 94427,
+      "fn": 117454,
+      "gt_positive_pixels": 290803
+    },
+    "HE": {
+      "iou": 0.39686833668524873,
+      "f1": 0.5682258324030915,
+      "ppv": 0.5712810558095172,
+      "recall": 0.5652031139607471,
+      "aupr": 0.42404260099278973,
+      "tp": 681592,
+      "fp": 511502,
+      "fn": 524332,
+      "gt_positive_pixels": 1205924
+    },
+    "SE": {
+      "iou": 0.5049039672544081,
+      "f1": 0.6710115439134232,
+      "ppv": 0.7089112631381174,
+      "recall": 0.6369585509721754,
+      "aupr": 0.48414852126142105,
+      "tp": 128286,
+      "fp": 52676,
+      "fn": 73118,
+      "gt_positive_pixels": 201404
+    },
+    "MA": {
+      "iou": 0.21169467957944038,
+      "f1": 0.3494191781925067,
+      "ppv": 0.3265311241831705,
+      "recall": 0.375757750707234,
+      "aupr": 0.15879065357078817,
+      "tp": 26034,
+      "fp": 53695,
+      "fn": 43250,
+      "gt_positive_pixels": 69284
+    }
+  },
+  "mIoU_lesion4": 0.3908638255464669,
+  "mF1": 0.552333774435261,
+  "mPPV": 0.5635222879457031,
+  "mRecall": 0.543505998757238,
+  "mAUPR": 0.38306899768719205,
+  "excluded_classes": {
+    "iou": [],
+    "aupr": []
+  },
+  "aupr_note": "256-bin histogram approximation of PR curve",
+  "fixed_fusion_miou": 0.43366298706385487,
+  "fixed_fusion_counts": [
+    [
+      183699,
+      94786,
+      107104
+    ],
+    [
+      693787,
+      420075,
+      512137
+    ],
+    [
+      136980,
+      40650,
+      64424
+    ],
+    [
+      27320,
+      33558,
+      41964
+    ]
+  ],
+  "fixed_fusion_baseline_miou": 0.43487703221036567,
+  "fixed_fusion_gain": -0.0012140451465108004,
+  "fixed_fusion_alpha": 0.25,
+  "fixed_fusion_images": 76,
+  "fixed_fusion_cache_identity": "5a3f1ef143f31d32984e3e177e632685738bd388d978a4ae3ad9735ca51163d4",
+  "split": "val",
+  "mode": "formal",
+  "eval_images": 76,
+  "resize_to": null,
+  "dataset_size": 76,
+  "eval_inference": "whole_image",
+  "update": 1000,
+  "stage": "ddr_finetune",
+  "generated_at": "2026-10-02T16:04:03.517438+00:00"
+}

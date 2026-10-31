@@ -1,0 +1,19 @@
+{
+  "locked_at": "2026-09-11T19:38:35.801039+00:00",
+  "models": [
+    "E4 best36000",
+    "B best3000"
+  ],
+  "combination": "arithmetic mean of original-size sigmoid probabilities",
+  "weight": 0.5,
+  "same_weight_all_classes": true,
+  "threshold": 0.5,
+  "selection_split": "validation76 only",
+  "current_run": "validation only; no automatic test",
+  "advance_gate": "val mIoU >39.40 before considering a locked test",
+  "no_grid_search": true,
+  "val_measured": 39.54,
+  "gate_passed": true,
+  "test_authorized_at": "2026-09-11T19:45:58.028851+00:00",
+  "test_plan": "unchanged fixed50/50, threshold0.5, same227 test images; no tuning"
+}

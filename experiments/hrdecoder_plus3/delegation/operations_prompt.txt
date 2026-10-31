@@ -1,0 +1,69 @@
+You are delegated operations engineer. Output ONLY JSON {"files":{"relative/path":"full text",...},"notes":"short"}. Python3.8stdlib only. Create ops/guard.py and tests/test_guard.py (unittest subprocess tests), ops/PREFLIGHT.md. No actual server or shutdown now. Requirements: CLI --deadline-utc ISO timezone REQUIRED, --log, --execute-shutdown optin defaultdryrun, command remainder. Must reject missing/naive/expired deadline before launching, reject deadline >12h fromnow (each session max12h), processgroup posix start_new_session, redirectlogs, SIGTERM/SIGINT handler cleanup incl descendantSIGTERM thenSIGKILL5sec, log JSON state atomic. Actual shutdown exactly ['/bin/bash','/usr/bin/shutdown'] (scriptnotdirectexecutable). finally shutdown on success failure timeout including launcherror; never call shutdown in dryrun. Child exitcode propagate; timeout124 interrupt130, no shell=True. Machine shutsoff even if localnetwork lost. Externalplatformtimer separate mandatory preflight, SSHdisconnectnotproofOFF. Guard must not save credentials or networkcalls. Tests dryrun only: success fail timeout child process-tree cleanup linux conditional, launchfailure and invaliddeadline, signalcleanup; no realshutdown evenin tests. Use tempdir/timeouts, deadline expiration test allow1second. PREFER reuse trusted oldguard below fixingits flaws, don't rewrite needlessly.
+Userbudget total100 previous8.05 remaining91.95, rate1.98, single4090; plan cumulative44newcardhours87.12 max, but each launch max12h23.76. Platformabsoluteoff beforelaunch, stopifidle/failure, saveweightslogs beforeoff via separatebackup barrier<=90sec neverindefinite. Do not make background schedule or cloudAPI. Preflight note no paidstorage and no auto installs/paidservices. Design stage1 smoke<=15min, train D20k hard10h inclval, train L20k only iftimebudget reviewed; no test until valgate42.4 and supervisorlocks winner (targettest45.20 notguaranteed). Need detailed remaining GPUchecks.
+
+OLDGUARD:
+"""Reviewed replacement for the GLM draft. Linux; dry-run unless explicitly armed."""
+import argparse
+import json
+import os
+from pathlib import Path
+import signal
+import subprocess
+import time
+
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--deadline', type=float, required=True)
+    parser.add_argument('--log', required=True)
+    parser.add_argument('--execute-shutdown', action='store_true')
+    parser.add_argument('cmd', nargs=argparse.REMAINDER)
+    args = parser.parse_args()
+    cmd = args.cmd[1:] if args.cmd[:1] == ['--'] else args.cmd
+    state = {'started_unix': time.time(), 'deadline_unix': args.deadline,
+             'command': cmd, 'status': 'starting'}
+    proc = None
+    interrupted = []
+    for sig in (signal.SIGTERM, signal.SIGINT):
+        signal.signal(sig, lambda signum, frame: interrupted.append(signum))
+    try:
+        if not cmd or time.time() >= args.deadline:
+            raise RuntimeError('Missing command or expired deadline')
+        Path(args.log).parent.mkdir(parents=True, exist_ok=True)
+        with open(args.log, 'ab', buffering=0) as output:
+            proc = subprocess.Popen(cmd, stdout=output, stderr=output, start_new_session=True)
+            while proc.poll() is None and time.time() < args.deadline and not interrupted:
+                time.sleep(min(1, max(0, args.deadline - time.time())))
+            if proc.poll() is None:
+                state['status'] = 'interrupted' if interrupted else 'deadline'
+                os.killpg(proc.pid, signal.SIGTERM)
+                try:
+                    proc.wait(timeout=10)
+                except subprocess.TimeoutExpired:
+                    os.killpg(proc.pid, signal.SIGKILL)
+                    proc.wait(timeout=10)
+            else:
+                state['status'] = 'success' if proc.returncode == 0 else 'failure'
+            state['returncode'] = proc.returncode
+    except BaseException as exc:
+        state['status'] = 'wrapper_error'
+        state['error'] = repr(exc)
+        if proc is not None and proc.poll() is None:
+            try:
+                os.killpg(proc.pid, signal.SIGKILL)
+            except ProcessLookupError:
+                pass
+    finally:
+        state['ended_unix'] = time.time()
+        try:
+            Path(args.log + '.status.json').write_text(json.dumps(state, indent=2))
+            print(json.dumps(state), flush=True)
+        finally:
+            if args.execute_shutdown:
+                subprocess.run(['/bin/bash', '/usr/bin/shutdown'], timeout=30, check=True)
+            else:
+                print('DRY_RUN_SHUTDOWN', flush=True)
+
+
+if __name__ == '__main__':
+    main()

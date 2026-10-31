@@ -1,0 +1,141 @@
+{
+  "remote_path": "/root/autodl-tmp/nativepyramid_sp_v3_20261016/run_seed42_launch02/train.jsonl",
+  "remote_size_bytes_before": 3473259370,
+  "remote_size_bytes_after": 3473259370,
+  "remote_mtime_before": 1792220326,
+  "remote_mtime_after": 1792220326,
+  "remote_sha256": "2b286aee99ed75d894c8d60a239c92018fed158bc98d0def7eed9e61fcf3a63f",
+  "line_count": 40000,
+  "first_update": 1,
+  "last_update": 40000,
+  "unique_update_count": 40000,
+  "update_sequence_is_1_to_line_count": true,
+  "anomaly_count": 0,
+  "anomaly_samples": [],
+  "projected_jsonl_sha256": "a72d77846ace86e429fd4120689ed814aa67668e6dd627c9274216835a5ac3a9",
+  "projected_jsonl_bytes": 130856327,
+  "projected_top_keys": [
+    "checkpoint_persisted_updates",
+    "executed_updates",
+    "lr",
+    "metrics",
+    "seconds_this_process",
+    "training_sids",
+    "update"
+  ],
+  "projected_metrics_keys": [
+    "aux_loss",
+    "clip_coefficient",
+    "dense_bce",
+    "grad_norm_before_clip",
+    "gradients_after_clip",
+    "gradients_before_clip",
+    "loss",
+    "main_loss",
+    "negative_bce",
+    "positive_bce",
+    "squared_dice",
+    "supervision_positive_images",
+    "supervision_positive_pixels"
+  ],
+  "removed_fields": [
+    "metrics.gradients_before_clip.parameter_modules",
+    "metrics.gradients_after_clip.parameter_modules"
+  ],
+  "missing_field_counts": {},
+  "progress_json": {
+    "status": "COMPLETE",
+    "completed": 40000,
+    "executed_updates": 40000,
+    "checkpoint_persisted_updates": 40000,
+    "expected": 40000,
+    "in_flight_update": null,
+    "checkpoint_sha256": "1ecea4834b77aa87281eabad869ec5309464a08979418564154c98d2630a69ef",
+    "pause_id": null,
+    "pause_reasons": [],
+    "run_identity": {
+      "source_sha256": "d3032fc8b20f30a058adbcf3e6bc5a3485b83adafe9b7cdce0682a2d55d7f627",
+      "identity_sha256": "7c53b86bcb27ccd121042f667cc58e39b98716a8c477bfd1f1657fa126575719",
+      "pretrained_sha256": "d2186c55782308392ae14cf179ac4840143b09abdbba81aa3f9274c795ebc960",
+      "preflight_sha256": "08fe57048991bec81bb40aa1861be28b450a0e9bd8c8e853102e086e298e1390",
+      "environment": {
+        "python": "3.11.16",
+        "platform": "Linux-5.15.0-78-generic-x86_64-with-glibc2.31",
+        "dependencies": {
+          "torch": "2.6.0+cu124",
+          "torchvision": "0.21.0+cu124",
+          "timm": "1.0.27",
+          "numpy": "2.4.1",
+          "opencv-python": "4.13.0.90",
+          "Pillow": "12.1.0"
+        },
+        "torch_cuda": "12.4",
+        "cudnn": 90100,
+        "gpu": "NVIDIA GeForce RTX 4090",
+        "compute_capability": [
+          8,
+          9
+        ],
+        "bf16_supported": true,
+        "cudnn_benchmark": false,
+        "cudnn_deterministic": true,
+        "matmul_allow_tf32": false,
+        "cudnn_allow_tf32": false,
+        "deterministic_algorithms": false,
+        "cublas_workspace_config": ":4096:8",
+        "model_batch_execution": "independent_images_single_image_convolution_schedule",
+        "dataloader_process_policy": "spawn_when_workers_positive",
+        "precision": "BF16_forward_FP32_loss_and_master_weights"
+      },
+      "micro_batch": 1,
+      "workers": 8
+    },
+    "best": {
+      "update": 36000,
+      "mIoU_percent": 40.27704590850366
+    }
+  },
+  "remote_size_matches_sftp_stat": true,
+  "remote_mtime_matches_sftp_stat": true,
+  "compressed_gzip_sha256": "7e007ae350847ade6d46a8821731a71fd90d9de03d4492f18703aab9b45ec334",
+  "compressed_gzip_bytes": 31749245,
+  "gpu_readonly": {
+    "nvidia_smi_exit_status": 0,
+    "stdout": "",
+    "stderr": "",
+    "fallback": {
+      "exit_status": 0,
+      "stdout": "/usr/bin/nvidia-smi\nnvidia_smi_L_status:0",
+      "stderr": ""
+    }
+  },
+  "host_key_type": "ssh-ed25519",
+  "host_key_fingerprint": "SHA256:yswdgtshuc+hy/m0jR576i7Nu0Es7lZ71jIrFKXnkE0",
+  "projection_excludes_parameter_modules_only": true,
+  "projection_scope": "all original top-level fields and all metrics fields, except parameter_modules within gradients_before_clip and gradients_after_clip",
+  "raw_original_was_not_transferred_or_modified": true,
+  "local_projected_jsonl_sha256": "a72d77846ace86e429fd4120689ed814aa67668e6dd627c9274216835a5ac3a9",
+  "local_projected_jsonl_bytes": 130856327,
+  "local_projected_line_count": 40000,
+  "complete_40000_rows": true,
+  "boundaries_sidecar": "D:\\dataset\\experiment\\HRDecoder_NativePyramid_20261011\\review_20261017\\recovered_logs\\train_metrics_boundaries_full.json",
+  "boundaries_sha256": "99d66bf35d5d07e74a2c703899dbe1ee069b82137df4eda932d598f89a08406e",
+  "source_gradient_keys": [
+    "class_order",
+    "direct_scale_class",
+    "missing_gradient_parameter_modules",
+    "missing_gradient_parameters",
+    "modules",
+    "parameter_modules",
+    "scale_order"
+  ],
+  "projected_gradient_keys": [
+    "class_order",
+    "direct_scale_class",
+    "missing_gradient_parameter_modules",
+    "missing_gradient_parameters",
+    "modules",
+    "scale_order"
+  ],
+  "omitted_field_verified_absent_from_projection": "parameter_modules"
+}

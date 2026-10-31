@@ -1,0 +1,868 @@
+{
+  "created_at": "2026-10-03T18:58:28.794284+00:00",
+  "scope": "Q_DDR completed stage; original plan still continues with official external supervision",
+  "lock_sha256": "26e5852194aca66bb02062ac79b2f0f8026e33652a95133140a3824bffb38905",
+  "selection_changed": false,
+  "deployment_seed": 42,
+  "p0": {
+    "counts": [
+      [
+        1072861,
+        390087,
+        502080
+      ],
+      [
+        1609384,
+        506944,
+        1444094
+      ],
+      [
+        354891,
+        138077,
+        215627
+      ],
+      [
+        80222,
+        84314,
+        109821
+      ]
+    ],
+    "miou_pct": 44.78089145110081,
+    "per_class": {
+      "EX": {
+        "tp": 1072861,
+        "fp": 390087,
+        "fn": 502080,
+        "iou_pct": 54.597746189876176,
+        "precision": 0.7333555259653795,
+        "recall": 0.6812071055360169
+      },
+      "HE": {
+        "tp": 1609384,
+        "fp": 506944,
+        "fn": 1444094,
+        "iou_pct": 45.20205750891327,
+        "precision": 0.760460571329208,
+        "recall": 0.5270658573600334
+      },
+      "SE": {
+        "tp": 354891,
+        "fp": 138077,
+        "fn": 215627,
+        "iou_pct": 50.0837572943642,
+        "precision": 0.7199067687963518,
+        "recall": 0.6220504874517544
+      },
+      "MA": {
+        "tp": 80222,
+        "fp": 84314,
+        "fn": 109821,
+        "iou_pct": 29.240004811249577,
+        "precision": 0.487565031360918,
+        "recall": 0.4221255189614982
+      }
+    }
+  },
+  "p0_absolute_image_percentile95_pct": [
+    41.54163726832199,
+    47.699909672283674
+  ],
+  "seeds": {
+    "42": {
+      "selected": {
+        "counts": [
+          [
+            1084196,
+            391281,
+            490745
+          ],
+          [
+            1618888,
+            469878,
+            1434590
+          ],
+          [
+            373724,
+            139488,
+            196794
+          ],
+          [
+            80293,
+            85300,
+            109750
+          ]
+        ],
+        "miou_pct": 45.72155710642771,
+        "per_class": {
+          "EX": {
+            "tp": 1084196,
+            "fp": 391281,
+            "fn": 490745,
+            "iou_pct": 55.14107766061004,
+            "precision": 0.7348105053484398,
+            "recall": 0.6884042005383059
+          },
+          "HE": {
+            "tp": 1618888,
+            "fp": 469878,
+            "fn": 1434590,
+            "iou_pct": 45.94732976173852,
+            "precision": 0.7750451702105454,
+            "recall": 0.5301783736447422
+          },
+          "SE": {
+            "tp": 373724,
+            "fp": 139488,
+            "fn": 196794,
+            "iou_pct": 52.63673828108495,
+            "precision": 0.7282058876253867,
+            "recall": 0.6550608394476598
+          },
+          "MA": {
+            "tp": 80293,
+            "fp": 85300,
+            "fn": 109750,
+            "iou_pct": 29.161082722277303,
+            "precision": 0.48488160731431884,
+            "recall": 0.42249911862052275
+          }
+        }
+      },
+      "delta_vs_p0_pp": 0.940665655326903,
+      "absolute_image_percentile95_pct": [
+        42.49474324251534,
+        48.61244360548383
+      ],
+      "paired_image_percentile95_pp": [
+        0.43217148883510104,
+        1.444012036675967
+      ],
+      "q_image_inference_seconds": {
+        "mean": 0.56888137957992,
+        "median": 0.5307741388678551,
+        "p90": 1.1211999356746674,
+        "total": 129.13607316464186,
+        "scope": "Q forward and CPU probability stitching; excludes P0, disk SHA and lesion diagnostics"
+      },
+      "lesion_area_error_buckets": [
+        {
+          "class": "EX",
+          "area_upper_bound": 16,
+          "lesions": 1603,
+          "p0_whole_missed": 1323,
+          "selected_whole_missed": 1332,
+          "gt_pixels": 13504,
+          "p0_fn": 11681,
+          "selected_fn": 11774,
+          "p0_boundary_fn": 11165,
+          "selected_boundary_fn": 11251,
+          "p0_body_fn": 516,
+          "selected_body_fn": 523
+        },
+        {
+          "class": "EX",
+          "area_upper_bound": 64,
+          "lesions": 1913,
+          "p0_whole_missed": 742,
+          "selected_whole_missed": 757,
+          "gt_pixels": 70628,
+          "p0_fn": 40738,
+          "selected_fn": 41249,
+          "p0_boundary_fn": 30578,
+          "selected_boundary_fn": 30934,
+          "p0_body_fn": 10160,
+          "selected_body_fn": 10315
+        },
+        {
+          "class": "EX",
+          "area_upper_bound": 256,
+          "lesions": 1824,
+          "p0_whole_missed": 278,
+          "selected_whole_missed": 277,
+          "gt_pixels": 243269,
+          "p0_fn": 83863,
+          "selected_fn": 82979,
+          "p0_boundary_fn": 49863,
+          "selected_boundary_fn": 49554,
+          "p0_body_fn": 34000,
+          "selected_body_fn": 33425
+        },
+        {
+          "class": "EX",
+          "area_upper_bound": 1024,
+          "lesions": 915,
+          "p0_whole_missed": 68,
+          "selected_whole_missed": 64,
+          "gt_pixels": 446731,
+          "p0_fn": 105567,
+          "selected_fn": 100010,
+          "p0_boundary_fn": 51666,
+          "selected_boundary_fn": 49566,
+          "p0_body_fn": 53901,
+          "selected_body_fn": 50444
+        },
+        {
+          "class": "EX",
+          "area_upper_bound": null,
+          "lesions": 240,
+          "p0_whole_missed": 11,
+          "selected_whole_missed": 10,
+          "gt_pixels": 800809,
+          "p0_fn": 260231,
+          "selected_fn": 254733,
+          "p0_boundary_fn": 39728,
+          "selected_boundary_fn": 38476,
+          "p0_body_fn": 220503,
+          "selected_body_fn": 216257
+        },
+        {
+          "class": "HE",
+          "area_upper_bound": 16,
+          "lesions": 245,
+          "p0_whole_missed": 223,
+          "selected_whole_missed": 224,
+          "gt_pixels": 2197,
+          "p0_fn": 2041,
+          "selected_fn": 2053,
+          "p0_boundary_fn": 1921,
+          "selected_boundary_fn": 1937,
+          "p0_body_fn": 120,
+          "selected_body_fn": 116
+        },
+        {
+          "class": "HE",
+          "area_upper_bound": 64,
+          "lesions": 448,
+          "p0_whole_missed": 361,
+          "selected_whole_missed": 380,
+          "gt_pixels": 17797,
+          "p0_fn": 15243,
+          "selected_fn": 15627,
+          "p0_boundary_fn": 10294,
+          "selected_boundary_fn": 10537,
+          "p0_body_fn": 4949,
+          "selected_body_fn": 5090
+        },
+        {
+          "class": "HE",
+          "area_upper_bound": 256,
+          "lesions": 867,
+          "p0_whole_missed": 467,
+          "selected_whole_missed": 517,
+          "gt_pixels": 126750,
+          "p0_fn": 85071,
+          "selected_fn": 90759,
+          "p0_boundary_fn": 36988,
+          "selected_boundary_fn": 38940,
+          "p0_body_fn": 48083,
+          "selected_body_fn": 51819
+        },
+        {
+          "class": "HE",
+          "area_upper_bound": 1024,
+          "lesions": 752,
+          "p0_whole_missed": 194,
+          "selected_whole_missed": 206,
+          "gt_pixels": 383696,
+          "p0_fn": 168173,
+          "selected_fn": 172648,
+          "p0_boundary_fn": 50453,
+          "selected_boundary_fn": 51470,
+          "p0_body_fn": 117720,
+          "selected_body_fn": 121178
+        },
+        {
+          "class": "HE",
+          "area_upper_bound": null,
+          "lesions": 400,
+          "p0_whole_missed": 43,
+          "selected_whole_missed": 42,
+          "gt_pixels": 2523038,
+          "p0_fn": 1173566,
+          "selected_fn": 1153503,
+          "p0_boundary_fn": 101446,
+          "selected_boundary_fn": 101794,
+          "p0_body_fn": 1072120,
+          "selected_body_fn": 1051709
+        },
+        {
+          "class": "SE",
+          "area_upper_bound": 16,
+          "lesions": 22,
+          "p0_whole_missed": 19,
+          "selected_whole_missed": 20,
+          "gt_pixels": 202,
+          "p0_fn": 177,
+          "selected_fn": 184,
+          "p0_boundary_fn": 169,
+          "selected_boundary_fn": 177,
+          "p0_body_fn": 8,
+          "selected_body_fn": 7
+        },
+        {
+          "class": "SE",
+          "area_upper_bound": 64,
+          "lesions": 26,
+          "p0_whole_missed": 24,
+          "selected_whole_missed": 24,
+          "gt_pixels": 873,
+          "p0_fn": 831,
+          "selected_fn": 846,
+          "p0_boundary_fn": 567,
+          "selected_boundary_fn": 578,
+          "p0_body_fn": 264,
+          "selected_body_fn": 268
+        },
+        {
+          "class": "SE",
+          "area_upper_bound": 256,
+          "lesions": 38,
+          "p0_whole_missed": 27,
+          "selected_whole_missed": 28,
+          "gt_pixels": 5787,
+          "p0_fn": 4729,
+          "selected_fn": 4796,
+          "p0_boundary_fn": 2006,
+          "selected_boundary_fn": 1995,
+          "p0_body_fn": 2723,
+          "selected_body_fn": 2801
+        },
+        {
+          "class": "SE",
+          "area_upper_bound": 1024,
+          "lesions": 101,
+          "p0_whole_missed": 50,
+          "selected_whole_missed": 47,
+          "gt_pixels": 60825,
+          "p0_fn": 35186,
+          "selected_fn": 34339,
+          "p0_boundary_fn": 10729,
+          "selected_boundary_fn": 10252,
+          "p0_body_fn": 24457,
+          "selected_body_fn": 24087
+        },
+        {
+          "class": "SE",
+          "area_upper_bound": null,
+          "lesions": 168,
+          "p0_whole_missed": 31,
+          "selected_whole_missed": 30,
+          "gt_pixels": 502831,
+          "p0_fn": 174704,
+          "selected_fn": 156629,
+          "p0_boundary_fn": 37147,
+          "selected_boundary_fn": 34407,
+          "p0_body_fn": 137557,
+          "selected_body_fn": 122222
+        },
+        {
+          "class": "MA",
+          "area_upper_bound": 16,
+          "lesions": 416,
+          "p0_whole_missed": 286,
+          "selected_whole_missed": 304,
+          "gt_pixels": 4292,
+          "p0_fn": 3169,
+          "selected_fn": 3276,
+          "p0_boundary_fn": 2994,
+          "selected_boundary_fn": 3084,
+          "p0_body_fn": 175,
+          "selected_body_fn": 192
+        },
+        {
+          "class": "MA",
+          "area_upper_bound": 64,
+          "lesions": 1121,
+          "p0_whole_missed": 458,
+          "selected_whole_missed": 476,
+          "gt_pixels": 43372,
+          "p0_fn": 24075,
+          "selected_fn": 24557,
+          "p0_boundary_fn": 17240,
+          "selected_boundary_fn": 17558,
+          "p0_body_fn": 6835,
+          "selected_body_fn": 6999
+        },
+        {
+          "class": "MA",
+          "area_upper_bound": 256,
+          "lesions": 885,
+          "p0_whole_missed": 278,
+          "selected_whole_missed": 280,
+          "gt_pixels": 106567,
+          "p0_fn": 58868,
+          "selected_fn": 57748,
+          "p0_boundary_fn": 28903,
+          "selected_boundary_fn": 28195,
+          "p0_body_fn": 29965,
+          "selected_body_fn": 29553
+        },
+        {
+          "class": "MA",
+          "area_upper_bound": 1024,
+          "lesions": 90,
+          "p0_whole_missed": 35,
+          "selected_whole_missed": 36,
+          "gt_pixels": 34576,
+          "p0_fn": 22473,
+          "selected_fn": 22933,
+          "p0_boundary_fn": 6893,
+          "selected_boundary_fn": 7030,
+          "p0_body_fn": 15580,
+          "selected_body_fn": 15903
+        },
+        {
+          "class": "MA",
+          "area_upper_bound": null,
+          "lesions": 1,
+          "p0_whole_missed": 1,
+          "selected_whole_missed": 1,
+          "gt_pixels": 1236,
+          "p0_fn": 1236,
+          "selected_fn": 1236,
+          "p0_boundary_fn": 280,
+          "selected_boundary_fn": 280,
+          "p0_body_fn": 956,
+          "selected_body_fn": 956
+        }
+      ],
+      "evaluation_seconds_including_IO_and_diagnostics": 388.9248351417482
+    },
+    "2024": {
+      "selected": {
+        "counts": [
+          [
+            1081345,
+            384444,
+            493596
+          ],
+          [
+            1606016,
+            477795,
+            1447462
+          ],
+          [
+            367731,
+            122719,
+            202787
+          ],
+          [
+            77668,
+            77824,
+            112375
+          ]
+        ],
+        "miou_pct": 45.677066093957414,
+        "per_class": {
+          "EX": {
+            "tp": 1081345,
+            "fp": 384444,
+            "fn": 493596,
+            "iou_pct": 55.18797990185696,
+            "precision": 0.7377221414541929,
+            "recall": 0.6865939739964863
+          },
+          "HE": {
+            "tp": 1606016,
+            "fp": 477795,
+            "fn": 1447462,
+            "iou_pct": 45.47980289261125,
+            "precision": 0.7707109713884801,
+            "recall": 0.5259628528517317
+          },
+          "SE": {
+            "tp": 367731,
+            "fp": 122719,
+            "fn": 202787,
+            "iou_pct": 53.0454952635246,
+            "precision": 0.7497828524824142,
+            "recall": 0.6445563505445928
+          },
+          "MA": {
+            "tp": 77668,
+            "fp": 77824,
+            "fn": 112375,
+            "iou_pct": 28.994986317836833,
+            "precision": 0.4994983664754457,
+            "recall": 0.4086864551706719
+          }
+        }
+      },
+      "delta_vs_p0_pp": 0.8961746428566073,
+      "absolute_image_percentile95_pct": [
+        42.47267353478321,
+        48.568906979100156
+      ],
+      "paired_image_percentile95_pp": [
+        0.44823831029366074,
+        1.3717673755116617
+      ],
+      "q_image_inference_seconds": {
+        "mean": 0.5616666766515387,
+        "median": 0.5215905420482159,
+        "p90": 1.0955475218594075,
+        "total": 127.49833559989929,
+        "scope": "Q forward and CPU probability stitching; excludes P0, disk SHA and lesion diagnostics"
+      },
+      "lesion_area_error_buckets": [
+        {
+          "class": "EX",
+          "area_upper_bound": 16,
+          "lesions": 1603,
+          "p0_whole_missed": 1323,
+          "selected_whole_missed": 1341,
+          "gt_pixels": 13504,
+          "p0_fn": 11681,
+          "selected_fn": 11820,
+          "p0_boundary_fn": 11165,
+          "selected_boundary_fn": 11287,
+          "p0_body_fn": 516,
+          "selected_body_fn": 533
+        },
+        {
+          "class": "EX",
+          "area_upper_bound": 64,
+          "lesions": 1913,
+          "p0_whole_missed": 742,
+          "selected_whole_missed": 767,
+          "gt_pixels": 70628,
+          "p0_fn": 40738,
+          "selected_fn": 41373,
+          "p0_boundary_fn": 30578,
+          "selected_boundary_fn": 30985,
+          "p0_body_fn": 10160,
+          "selected_body_fn": 10388
+        },
+        {
+          "class": "EX",
+          "area_upper_bound": 256,
+          "lesions": 1824,
+          "p0_whole_missed": 278,
+          "selected_whole_missed": 292,
+          "gt_pixels": 243269,
+          "p0_fn": 83863,
+          "selected_fn": 83440,
+          "p0_boundary_fn": 49863,
+          "selected_boundary_fn": 49646,
+          "p0_body_fn": 34000,
+          "selected_body_fn": 33794
+        },
+        {
+          "class": "EX",
+          "area_upper_bound": 1024,
+          "lesions": 915,
+          "p0_whole_missed": 68,
+          "selected_whole_missed": 63,
+          "gt_pixels": 446731,
+          "p0_fn": 105567,
+          "selected_fn": 101116,
+          "p0_boundary_fn": 51666,
+          "selected_boundary_fn": 50147,
+          "p0_body_fn": 53901,
+          "selected_body_fn": 50969
+        },
+        {
+          "class": "EX",
+          "area_upper_bound": null,
+          "lesions": 240,
+          "p0_whole_missed": 11,
+          "selected_whole_missed": 11,
+          "gt_pixels": 800809,
+          "p0_fn": 260231,
+          "selected_fn": 255847,
+          "p0_boundary_fn": 39728,
+          "selected_boundary_fn": 39233,
+          "p0_body_fn": 220503,
+          "selected_body_fn": 216614
+        },
+        {
+          "class": "HE",
+          "area_upper_bound": 16,
+          "lesions": 245,
+          "p0_whole_missed": 223,
+          "selected_whole_missed": 224,
+          "gt_pixels": 2197,
+          "p0_fn": 2041,
+          "selected_fn": 2045,
+          "p0_boundary_fn": 1921,
+          "selected_boundary_fn": 1929,
+          "p0_body_fn": 120,
+          "selected_body_fn": 116
+        },
+        {
+          "class": "HE",
+          "area_upper_bound": 64,
+          "lesions": 448,
+          "p0_whole_missed": 361,
+          "selected_whole_missed": 373,
+          "gt_pixels": 17797,
+          "p0_fn": 15243,
+          "selected_fn": 15478,
+          "p0_boundary_fn": 10294,
+          "selected_boundary_fn": 10443,
+          "p0_body_fn": 4949,
+          "selected_body_fn": 5035
+        },
+        {
+          "class": "HE",
+          "area_upper_bound": 256,
+          "lesions": 867,
+          "p0_whole_missed": 467,
+          "selected_whole_missed": 499,
+          "gt_pixels": 126750,
+          "p0_fn": 85071,
+          "selected_fn": 88148,
+          "p0_boundary_fn": 36988,
+          "selected_boundary_fn": 38068,
+          "p0_body_fn": 48083,
+          "selected_body_fn": 50080
+        },
+        {
+          "class": "HE",
+          "area_upper_bound": 1024,
+          "lesions": 752,
+          "p0_whole_missed": 194,
+          "selected_whole_missed": 201,
+          "gt_pixels": 383696,
+          "p0_fn": 168173,
+          "selected_fn": 171438,
+          "p0_boundary_fn": 50453,
+          "selected_boundary_fn": 51187,
+          "p0_body_fn": 117720,
+          "selected_body_fn": 120251
+        },
+        {
+          "class": "HE",
+          "area_upper_bound": null,
+          "lesions": 400,
+          "p0_whole_missed": 43,
+          "selected_whole_missed": 41,
+          "gt_pixels": 2523038,
+          "p0_fn": 1173566,
+          "selected_fn": 1170353,
+          "p0_boundary_fn": 101446,
+          "selected_boundary_fn": 102168,
+          "p0_body_fn": 1072120,
+          "selected_body_fn": 1068185
+        },
+        {
+          "class": "SE",
+          "area_upper_bound": 16,
+          "lesions": 22,
+          "p0_whole_missed": 19,
+          "selected_whole_missed": 21,
+          "gt_pixels": 202,
+          "p0_fn": 177,
+          "selected_fn": 188,
+          "p0_boundary_fn": 169,
+          "selected_boundary_fn": 180,
+          "p0_body_fn": 8,
+          "selected_body_fn": 8
+        },
+        {
+          "class": "SE",
+          "area_upper_bound": 64,
+          "lesions": 26,
+          "p0_whole_missed": 24,
+          "selected_whole_missed": 24,
+          "gt_pixels": 873,
+          "p0_fn": 831,
+          "selected_fn": 849,
+          "p0_boundary_fn": 567,
+          "selected_boundary_fn": 581,
+          "p0_body_fn": 264,
+          "selected_body_fn": 268
+        },
+        {
+          "class": "SE",
+          "area_upper_bound": 256,
+          "lesions": 38,
+          "p0_whole_missed": 27,
+          "selected_whole_missed": 28,
+          "gt_pixels": 5787,
+          "p0_fn": 4729,
+          "selected_fn": 4761,
+          "p0_boundary_fn": 2006,
+          "selected_boundary_fn": 2001,
+          "p0_body_fn": 2723,
+          "selected_body_fn": 2760
+        },
+        {
+          "class": "SE",
+          "area_upper_bound": 1024,
+          "lesions": 101,
+          "p0_whole_missed": 50,
+          "selected_whole_missed": 50,
+          "gt_pixels": 60825,
+          "p0_fn": 35186,
+          "selected_fn": 35110,
+          "p0_boundary_fn": 10729,
+          "selected_boundary_fn": 10560,
+          "p0_body_fn": 24457,
+          "selected_body_fn": 24550
+        },
+        {
+          "class": "SE",
+          "area_upper_bound": null,
+          "lesions": 168,
+          "p0_whole_missed": 31,
+          "selected_whole_missed": 30,
+          "gt_pixels": 502831,
+          "p0_fn": 174704,
+          "selected_fn": 161879,
+          "p0_boundary_fn": 37147,
+          "selected_boundary_fn": 35694,
+          "p0_body_fn": 137557,
+          "selected_body_fn": 126185
+        },
+        {
+          "class": "MA",
+          "area_upper_bound": 16,
+          "lesions": 416,
+          "p0_whole_missed": 286,
+          "selected_whole_missed": 303,
+          "gt_pixels": 4292,
+          "p0_fn": 3169,
+          "selected_fn": 3328,
+          "p0_boundary_fn": 2994,
+          "selected_boundary_fn": 3134,
+          "p0_body_fn": 175,
+          "selected_body_fn": 194
+        },
+        {
+          "class": "MA",
+          "area_upper_bound": 64,
+          "lesions": 1121,
+          "p0_whole_missed": 458,
+          "selected_whole_missed": 483,
+          "gt_pixels": 43372,
+          "p0_fn": 24075,
+          "selected_fn": 24801,
+          "p0_boundary_fn": 17240,
+          "selected_boundary_fn": 17745,
+          "p0_body_fn": 6835,
+          "selected_body_fn": 7056
+        },
+        {
+          "class": "MA",
+          "area_upper_bound": 256,
+          "lesions": 885,
+          "p0_whole_missed": 278,
+          "selected_whole_missed": 287,
+          "gt_pixels": 106567,
+          "p0_fn": 58868,
+          "selected_fn": 59658,
+          "p0_boundary_fn": 28903,
+          "selected_boundary_fn": 29086,
+          "p0_body_fn": 29965,
+          "selected_body_fn": 30572
+        },
+        {
+          "class": "MA",
+          "area_upper_bound": 1024,
+          "lesions": 90,
+          "p0_whole_missed": 35,
+          "selected_whole_missed": 38,
+          "gt_pixels": 34576,
+          "p0_fn": 22473,
+          "selected_fn": 23352,
+          "p0_boundary_fn": 6893,
+          "selected_boundary_fn": 7220,
+          "p0_body_fn": 15580,
+          "selected_body_fn": 16132
+        },
+        {
+          "class": "MA",
+          "area_upper_bound": null,
+          "lesions": 1,
+          "p0_whole_missed": 1,
+          "selected_whole_missed": 1,
+          "gt_pixels": 1236,
+          "p0_fn": 1236,
+          "selected_fn": 1236,
+          "p0_boundary_fn": 280,
+          "selected_boundary_fn": 280,
+          "p0_body_fn": 956,
+          "selected_body_fn": 956
+        }
+      ],
+      "evaluation_seconds_including_IO_and_diagnostics": 372.2619773335755
+    }
+  },
+  "two_seed_mean": {
+    "miou_pct": 45.69931160019256,
+    "delta_vs_p0_pp": 0.9184201490917516,
+    "range_pct": [
+      45.677066093957414,
+      45.72155710642771
+    ],
+    "seed_spread_pp": 0.04449101247029574,
+    "absolute_paired_image_percentile95_pct": [
+      42.50774886041526,
+      48.59693334977274
+    ],
+    "delta_paired_image_percentile95_pp": [
+      0.4636956501592039,
+      1.3925704742316654
+    ],
+    "leave_one_image_out_delta_range_pp": [
+      0.7751909473440293,
+      0.9738249839432882
+    ]
+  },
+  "bootstrap": {
+    "draws": 2000,
+    "seed": 100303,
+    "unit": "paired image",
+    "mean_definition": "Mean of two separately aggregated seed mIoUs for the same sampled image IDs; not pooled counts",
+    "includes_seed_variance": false
+  },
+  "target": {
+    "pct": 47.2115,
+    "both_seeds_met": false,
+    "mean_met": false,
+    "mean_remaining_pp": 1.5121883998074424
+  },
+  "cost": {
+    "formal_training_invocation_seconds": {
+      "42": 8352.324739255011,
+      "2024": 8445.277330346406
+    },
+    "training_plus_val_and_checkpoint_wall_hours": 4.666000574889282,
+    "locked_final_evaluation_wall_hours": 0.49514856333333335,
+    "preflight_wall_hours": 0.09269097919886311,
+    "full_system_inference_peak_memory": "Not separately instrumented; accepted training preflight memory reported below",
+    "training_preflight_peak_allocated_bytes": 3816224256,
+    "training_preflight_peak_reserved_bytes": 4200595456,
+    "new_Q_parameters": 88263748,
+    "system_weight_count": 7,
+    "system_weights": [
+      "D",
+      "E",
+      "B",
+      "E4",
+      "H4 learned residual head",
+      "historical U0",
+      "Q seed42"
+    ],
+    "actual_charged_cny": null,
+    "actual_rate_cny": null,
+    "billing_limitation": "No platform billing receipt or rate available; process wall hours are not the final bill"
+  },
+  "backups": {
+    "42": {
+      "files": 169,
+      "bytes": 7455067588,
+      "sha_verified_at": "2026-10-03T16:08:48.760138+00:00"
+    },
+    "2024": {
+      "files": 169,
+      "bytes": 7472403948,
+      "sha_verified_at": "2026-10-03T18:18:36.786194+00:00"
+    }
+  },
+  "final_evidence_verified_files": 19,
+  "historical_limitation": "DDR val and test have been used in previous experiments; exploratory continuation.",
+  "original_plan_complete": false,
+  "shutdown_allowed": false
+}

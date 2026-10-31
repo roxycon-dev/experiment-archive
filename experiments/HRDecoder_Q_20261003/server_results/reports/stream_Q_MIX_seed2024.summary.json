@@ -1,0 +1,42 @@
+{
+  "status": "PASS",
+  "arm": "Q_MIX",
+  "seed": 2024,
+  "updates": 24000,
+  "windows": 192000,
+  "rows_sha256": "a96530c1d69f59b13354daf5e59b03f4f2a41f763c99279b8b3daa94a60f5587",
+  "file_sha256": "288eb05725024f807a85ca028ad2d356650063d098d8e219f5b4ed06fcaac0cd",
+  "data_identity_sha256": "a0a69afd241d96a6a239f6745b13d0bd9129652ea25d607b354ecb0314bd2b76",
+  "exposures": {
+    "16000": {
+      "DDR": 80000,
+      "IDRiD": 24000,
+      "MAPLES": 24000
+    },
+    "24000": {
+      "DDR": 144000,
+      "IDRiD": 24000,
+      "MAPLES": 24000
+    }
+  },
+  "foreground_positive_images": {
+    "DDR": {
+      "EX": 303,
+      "HE": 366,
+      "SE": 143,
+      "MA": 338
+    },
+    "IDRiD": {
+      "EX": 54,
+      "HE": 53,
+      "SE": 26,
+      "MA": 54
+    },
+    "MAPLES": {
+      "EX": 73,
+      "HE": 91,
+      "SE": 43,
+      "MA": 132
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "locked_at": "2026-09-11T19:16:21.036812+00:00",
+  "source": "Only per-class validation IoUs at preselected B3000 and E4best36000",
+  "classes": {
+    "EX": "B",
+    "HE": "E4",
+    "SE": "B",
+    "MA": "E4"
+  },
+  "val_E4": [
+    43.3,
+    42.79,
+    48.03,
+    20.95
+  ],
+  "val_B": [
+    44.25,
+    41.55,
+    51.62,
+    19.4
+  ],
+  "expected_val_percent_from_rounded_scores": 39.9025,
+  "threshold": 0.5,
+  "TTA": false,
+  "inference_models": 2,
+  "no_training": true,
+  "limitation": "Exploratory validation-selected ensemble; not a new single-model architecture. Prior B test observed, so subsequent combined test is not a fresh untouched external holdout."
+}

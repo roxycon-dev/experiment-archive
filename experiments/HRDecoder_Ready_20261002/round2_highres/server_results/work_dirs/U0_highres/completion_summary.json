@@ -1,0 +1,23 @@
+{
+  "status": "complete",
+  "stop_reason": null,
+  "elapsed_seconds": 2275.1102078089025,
+  "stage": "ddr_finetune",
+  "mode": "formal",
+  "updates_done": 4000,
+  "micro_steps": 8010,
+  "best": {
+    "mIoU_lesion4": 0.3960651568641143,
+    "update": 1000,
+    "selection_score": 0.437327634300698,
+    "selection_metric": "fixed_fusion_miou"
+  },
+  "config_file_sha256": "10f16d28e4fbd01ce6f8249b219bf0e9aaceb472da531dd215b0fa4a480bbf08",
+  "resume_warnings": [],
+  "checkpoints": {
+    "last": "/root/autodl-tmp/HRDecoder_Ready_20261002/round2_highres/work_dirs/U0_highres/ckpt_last.pth",
+    "best": "/root/autodl-tmp/HRDecoder_Ready_20261002/round2_highres/work_dirs/U0_highres/ckpt_best.pth",
+    "final": "/root/autodl-tmp/HRDecoder_Ready_20261002/round2_highres/work_dirs/U0_highres/ckpt_final.pth"
+  },
+  "generated_at": "2026-10-02T16:52:03.584476+00:00"
+}

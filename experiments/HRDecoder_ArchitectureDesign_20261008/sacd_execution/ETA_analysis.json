@@ -1,0 +1,32 @@
+{
+  "checked_at": "2026-10-09T19:39:04.848012+08:00",
+  "completed": 19650,
+  "mean_step_seconds": 1.0866461545228958,
+  "performance_update": 19660,
+  "remaining_validation_steps": [
+    20000,
+    24000,
+    28000,
+    32000,
+    36000,
+    40000
+  ],
+  "measured_val_seconds": [
+    33.20636159926653,
+    31.67425011843443,
+    31.739864140748978,
+    31.50406266003847
+  ],
+  "per_validation_estimate_seconds": 35.20636159926653,
+  "checkpoint_save_reserve_seconds": 120,
+  "conditional_final_test_reserve_seconds": 180,
+  "estimated_training_and_full_validation_complete": "2026-10-10T01:53:09.335426+08:00",
+  "estimated_final_evaluation_complete": "2026-10-10T01:56:09.335426+08:00",
+  "estimated_headroom_before_deadline_seconds": 230.664574,
+  "estimated_training_headroom_before_0157_cutoff_seconds": 230.664574,
+  "deadline": "2026-10-10T02:00:00+08:00",
+  "deadline_risk": false,
+  "basis": "Last measured100 routed updates; observed validation maximum plus2s; save120s/test180s. Uncertain extrapolation.",
+  "prediction_not_verified_completion": true,
+  "stale_observation_minutes_at_calculation": -0.01342405
+}

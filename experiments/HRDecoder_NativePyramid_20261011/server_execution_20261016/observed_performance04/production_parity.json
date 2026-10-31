@@ -1,0 +1,123 @@
+{
+  "source_sha256": "14e47c3749db5dd28c2938ddbb227aad66b07c40b4fb9d049fdb0564b91c95d0",
+  "SGD_updates": 0,
+  "test_accessed": false,
+  "records": [
+    {
+      "fixture": "zero_residual",
+      "BF16": false,
+      "checkpointing": false,
+      "physical_forward_batch": 1,
+      "loss_batch": 2,
+      "backward_calls": 1,
+      "all_parameter_gradients_compared": true,
+      "tolerance": {
+        "rtol": 0.0003,
+        "atol": 3e-06
+      },
+      "loss": 2.580946207046509
+    },
+    {
+      "fixture": "zero_residual",
+      "BF16": false,
+      "checkpointing": false,
+      "physical_forward_batch": 1,
+      "loss_batch": 1,
+      "backward_calls": 2,
+      "all_parameter_gradients_compared": true,
+      "tolerance": {
+        "rtol": 0.0003,
+        "atol": 3e-06
+      },
+      "loss": 2.5809459686279297
+    },
+    {
+      "fixture": "zero_residual",
+      "BF16": true,
+      "checkpointing": false,
+      "physical_forward_batch": 1,
+      "loss_batch": 2,
+      "backward_calls": 1,
+      "all_parameter_gradients_compared": true,
+      "tolerance": {
+        "rtol": 0.03,
+        "atol": 0.0005
+      },
+      "loss": 2.581576347351074
+    },
+    {
+      "fixture": "zero_residual",
+      "BF16": true,
+      "checkpointing": false,
+      "physical_forward_batch": 1,
+      "loss_batch": 1,
+      "backward_calls": 2,
+      "all_parameter_gradients_compared": true,
+      "tolerance": {
+        "rtol": 0.03,
+        "atol": 0.0005
+      },
+      "loss": 2.581576347351074
+    },
+    {
+      "fixture": "nonzero_residual",
+      "BF16": false,
+      "checkpointing": false,
+      "physical_forward_batch": 1,
+      "loss_batch": 2,
+      "backward_calls": 1,
+      "all_parameter_gradients_compared": true,
+      "tolerance": {
+        "rtol": 0.0003,
+        "atol": 3e-06
+      },
+      "loss": 2.5782971382141113
+    },
+    {
+      "fixture": "nonzero_residual",
+      "BF16": false,
+      "checkpointing": false,
+      "physical_forward_batch": 1,
+      "loss_batch": 1,
+      "backward_calls": 2,
+      "all_parameter_gradients_compared": true,
+      "tolerance": {
+        "rtol": 0.0003,
+        "atol": 3e-06
+      },
+      "loss": 2.578297257423401
+    },
+    {
+      "fixture": "nonzero_residual",
+      "BF16": true,
+      "checkpointing": false,
+      "physical_forward_batch": 1,
+      "loss_batch": 2,
+      "backward_calls": 1,
+      "all_parameter_gradients_compared": true,
+      "tolerance": {
+        "rtol": 0.03,
+        "atol": 0.0005
+      },
+      "loss": 2.578899621963501
+    },
+    {
+      "fixture": "nonzero_residual",
+      "BF16": true,
+      "checkpointing": false,
+      "physical_forward_batch": 1,
+      "loss_batch": 1,
+      "backward_calls": 2,
+      "all_parameter_gradients_compared": true,
+      "tolerance": {
+        "rtol": 0.03,
+        "atol": 0.0005
+      },
+      "loss": 2.5788995027542114
+    }
+  ],
+  "status": "PASS",
+  "all_BN_buffers_unchanged": true,
+  "actual_checkpointing": false,
+  "actual_memory_format": "channels_last"
+}

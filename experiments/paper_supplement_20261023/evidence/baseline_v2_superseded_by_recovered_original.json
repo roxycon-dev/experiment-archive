@@ -1,0 +1,95 @@
+{
+  "status": "SUPERSEDED_BY_RECOVERED_ORIGINAL_BASELINE",
+  "reason": "User recovered historical split613 seed42 best32000; local identity, finite state, exact original log and strict full-key load PASS",
+  "original_checkpoint_sha256": "446fc7b598e9680a1470059d2aba3a6f9c2222b66658a5eccef6059b1362850f",
+  "last_logged_training_update": 2980,
+  "previous_status": {
+    "stage": "BASELINE_V2_TRAINING",
+    "global_batch": 2,
+    "FP32": true,
+    "GPUs": [
+      2,
+      3
+    ],
+    "updates": 40000,
+    "restored_scale_ratio": [
+      0.75,
+      1.25
+    ],
+    "config_sha256": "d8b5c8f311952c17aff5eccb642f4f0d0a5554862deb36f399e5fbd2730207dc",
+    "attempt_v1_retained": true,
+    "updated_unix": 1792802830.1721244,
+    "no_shutdown": true,
+    "overall_campaign_complete": false
+  },
+  "owned_processes": [
+    {
+      "pid": 1327017,
+      "ppid": 1,
+      "args": "/usr/bin/python3 -u /home/studentuser001/paper_supplement_20261023/baseline_v2_supervisor59.py"
+    },
+    {
+      "pid": 1327028,
+      "ppid": 1327017,
+      "args": "/home/studentuser001/paper_supplement_20261023/legacy_env/bin/python -m torch.distributed.run --nproc_per_node=2 --master_port=44241 /home/studentuser001/paper_supplement_20261023/baseline_v2/baseline_train_entry.py /home/studentuser001/paper_supplement_20261023/baseline_v2/baseline_reproduction_ddp2.py --launcher pytorch --seed 42"
+    },
+    {
+      "pid": 1327082,
+      "ppid": 1327028,
+      "args": "/home/studentuser001/paper_supplement_20261023/legacy_env/bin/python -u /home/studentuser001/paper_supplement_20261023/baseline_v2/baseline_train_entry.py /home/studentuser001/paper_supplement_20261023/baseline_v2/baseline_reproduction_ddp2.py --launcher pytorch --seed 42"
+    },
+    {
+      "pid": 1327083,
+      "ppid": 1327028,
+      "args": "/home/studentuser001/paper_supplement_20261023/legacy_env/bin/python -u /home/studentuser001/paper_supplement_20261023/baseline_v2/baseline_train_entry.py /home/studentuser001/paper_supplement_20261023/baseline_v2/baseline_reproduction_ddp2.py --launcher pytorch --seed 42"
+    },
+    {
+      "pid": 1327474,
+      "ppid": 1327083,
+      "args": "/home/studentuser001/paper_supplement_20261023/legacy_env/bin/python -c from multiprocessing.resource_tracker import main;main(60)"
+    },
+    {
+      "pid": 1327475,
+      "ppid": 1327082,
+      "args": "/home/studentuser001/paper_supplement_20261023/legacy_env/bin/python -c from multiprocessing.resource_tracker import main;main(61)"
+    },
+    {
+      "pid": 1327476,
+      "ppid": 1327083,
+      "args": "/home/studentuser001/paper_supplement_20261023/legacy_env/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=61, pipe_handle=65) --multiprocessing-fork"
+    },
+    {
+      "pid": 1327477,
+      "ppid": 1327082,
+      "args": "/home/studentuser001/paper_supplement_20261023/legacy_env/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=62, pipe_handle=66) --multiprocessing-fork"
+    },
+    {
+      "pid": 1327478,
+      "ppid": 1327083,
+      "args": "/home/studentuser001/paper_supplement_20261023/legacy_env/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=61, pipe_handle=69) --multiprocessing-fork"
+    },
+    {
+      "pid": 1327482,
+      "ppid": 1327082,
+      "args": "/home/studentuser001/paper_supplement_20261023/legacy_env/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=62, pipe_handle=70) --multiprocessing-fork"
+    }
+  ],
+  "preserved_checkpoints": [
+    {
+      "path": "/home/studentuser001/paper_supplement_20261023/baseline_v2/runs/baseline_seed42/iter_2000.pth",
+      "bytes": 525854986
+    }
+  ],
+  "no_files_deleted": true,
+  "no_shutdown": true,
+  "other_tasks_untouched": true,
+  "updated_unix": 1792805438.0780933,
+  "initial_guard_attempt": "Refused before any mutation because legitimate DataLoader multiprocessing worker names omit baseline_v2; parent-chain verified before retry",
+  "live_owned_processes_after_initial_termination": [
+    1327474,
+    1327475,
+    1327476,
+    1327478,
+    1327482
+  ]
+}

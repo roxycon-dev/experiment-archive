@@ -1,0 +1,37 @@
+{
+  "status": "REJECTED",
+  "decisions": {
+    "4k_mIoU_floor": true,
+    "8k_mIoU_floor": true,
+    "4k_to8k_gain": true,
+    "private_net_gain_over_base": false,
+    "no_class_collapse": true,
+    "no_class_IoU_loss_over_registered_margin": true,
+    "HE_MA_FN_FP_tradeoff": true,
+    "within_original_deadline": true
+  },
+  "identity_SHA": "96cd1bc0ce79e9e5f5f8247958f868a4e00023f072bc6fea920092ad5a5003ec",
+  "time_unix": 1791560848.343919,
+  "full_val_counts_verified": true,
+  "screen_updates": 8000,
+  "mIoU_4k": 29.475812328118998,
+  "mIoU_8k": 37.212350205968065,
+  "base_mIoU_8k": 36.93416792984321,
+  "calibration": {
+    "HE": {
+      "FN_ratio_final_vs_base": 0.982988632855145,
+      "FP_ratio_final_vs_base": 1.043401380335871,
+      "pass": true
+    },
+    "MA": {
+      "FN_ratio_final_vs_base": 0.970690701490189,
+      "FP_ratio_final_vs_base": 1.0340767616405222,
+      "pass": true
+    }
+  },
+  "criterion_registered_before_results": true,
+  "test_accessed": false,
+  "accuracy_guaranteed": false,
+  "goal_achieved": false,
+  "reject_next_action": "autonomous evidence-based revision within remaining authorized time"
+}

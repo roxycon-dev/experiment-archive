@@ -1,0 +1,17 @@
+[2026-09-20 22:04:42] === H0 构建/加载 ===
+[2026-09-20 22:04:59] GT 复用已校验的共享副本: /root/autodl-tmp/HRDecoder_FullCompetition_20260920/expert_outputs/_shared/gt（76 张）
+[2026-09-20 22:05:02] H0 export 1/1 (2.7s)
+[2026-09-20 22:05:02] SMOKE: H0 只跑了 1/76 张 —— 允许 union==0 的类（不写 contract）
+[2026-09-20 22:05:02] SMOKE: H0 只跑了 1/76 张 —— 跳过 expected_miou 比对（历史期望 0.369226424295 属于整轮 val 口径）
+[2026-09-20 22:05:02] SMOKE: H0 只处理 1/76 张 —— 不写 contract
+/root/miniconda3/lib/python3.8/site-packages/mmcv/__init__.py:20: UserWarning: On January 1, 2023, MMCV will release v2.0.0, in which it will remove components related to the training process and add a data transformation module. In addition, it will rename the package names mmcv to mmcv-lite and mmcv-full to mmcv. See https://github.com/open-mmlab/mmcv/blob/master/docs/en/compatibility.md for more details.
+  warnings.warn(
+/root/miniconda3/lib/python3.8/site-packages/torch/_utils.py:776: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  return self.fget.__get__(instance, owner)()
+{
+  "smoke": true,
+  "images": 1,
+  "models": [
+    "H0"
+  ]
+}

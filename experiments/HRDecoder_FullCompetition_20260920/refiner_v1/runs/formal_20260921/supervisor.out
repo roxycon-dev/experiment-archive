@@ -1,0 +1,4 @@
+[sup] started pid=197611 run_root=/root/autodl-tmp/HRDecoder_FullCompetition_20260920/refiner_v1/runs/formal_20260921 stages=12 disk_free=15.9GB
+[sup] == stage preflight_tests (idx 0/12) /root/miniconda3/bin/python /root/autodl-tmp/HRDecoder_FullCompetition_20260920/refiner_v1/tests/test_candidate_rules.py
+[sup] DONE preflight_tests rc=0 21.4s 
+[sup] == stage cache_train (idx 1/12) /root/miniconda3/bin/python /root/autodl-tmp/HRDecoder_FullCompetition_20260920/refiner_v1/build_patch_cache.py --split train --cache-root /root/autodl-tmp/HRDecoder_FullCompetition_20260920/refiner_v1/patch_cache --config /root/autodl-tmp/HRDecoder_FullCompetition_20260920/refiner_v1/configs/refiner_v1.json

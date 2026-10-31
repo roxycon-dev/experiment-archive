@@ -1,0 +1,108 @@
+{
+  "checked_at_epoch": 1790962260.7954645,
+  "gpu": "0 %, 1 MiB, 24564 MiB, 32",
+  "memory_current_bytes": 35143319552,
+  "memory_max_bytes": 128849018880,
+  "disk_free_bytes": 19028697088,
+  "campaign": {
+    "jobs": {
+      "U0_continuation2048": {
+        "status": "stopped",
+        "started_at_epoch": 1790955728.8608077,
+        "config_sha256": "17c15fd8ffd2bc6534080467bc6bfe4821f5250ba158d90a867ee1f7669381b8",
+        "pid": 43074,
+        "resumed_at_epoch": 1790956853.6643517,
+        "summary": {
+          "status": "stopped",
+          "stop_reason": "paired_no_gain_or_learning",
+          "elapsed_seconds": 780.6715540440055,
+          "stage": "ddr_finetune",
+          "mode": "formal",
+          "updates_done": 2000,
+          "micro_steps": 4008,
+          "best": {
+            "mIoU_lesion4": 0.3908638255464669,
+            "update": 1000,
+            "selection_score": 0.43366298706385487,
+            "selection_metric": "fixed_fusion_miou"
+          },
+          "config_file_sha256": "17c15fd8ffd2bc6534080467bc6bfe4821f5250ba158d90a867ee1f7669381b8",
+          "resume_warnings": [],
+          "checkpoints": {
+            "last": "/root/autodl-tmp/HRDecoder_Ready_20261002/round2_highres/work_dirs/U0_continuation2048/ckpt_last.pth",
+            "best": "/root/autodl-tmp/HRDecoder_Ready_20261002/round2_highres/work_dirs/U0_continuation2048/ckpt_best.pth",
+            "final": "/root/autodl-tmp/HRDecoder_Ready_20261002/round2_highres/work_dirs/U0_continuation2048/ckpt_final.pth"
+          },
+          "generated_at": "2026-10-02T16:13:59.627164+00:00"
+        },
+        "finished_at_epoch": 1790957641.0731194
+      },
+      "U0_highres": {
+        "started_at_epoch": 1790957643.1839554,
+        "status": "complete",
+        "config_sha256": "10f16d28e4fbd01ce6f8249b219bf0e9aaceb472da531dd215b0fa4a480bbf08",
+        "pid": 44638,
+        "summary": {
+          "status": "complete",
+          "stop_reason": null,
+          "elapsed_seconds": 2275.1102078089025,
+          "stage": "ddr_finetune",
+          "mode": "formal",
+          "updates_done": 4000,
+          "micro_steps": 8010,
+          "best": {
+            "mIoU_lesion4": 0.3960651568641143,
+            "update": 1000,
+            "selection_score": 0.437327634300698,
+            "selection_metric": "fixed_fusion_miou"
+          },
+          "config_file_sha256": "10f16d28e4fbd01ce6f8249b219bf0e9aaceb472da531dd215b0fa4a480bbf08",
+          "resume_warnings": [],
+          "checkpoints": {
+            "last": "/root/autodl-tmp/HRDecoder_Ready_20261002/round2_highres/work_dirs/U0_highres/ckpt_last.pth",
+            "best": "/root/autodl-tmp/HRDecoder_Ready_20261002/round2_highres/work_dirs/U0_highres/ckpt_best.pth",
+            "final": "/root/autodl-tmp/HRDecoder_Ready_20261002/round2_highres/work_dirs/U0_highres/ckpt_final.pth"
+          },
+          "generated_at": "2026-10-02T16:52:03.584476+00:00"
+        },
+        "finished_at_epoch": 1790959924.8471873
+      }
+    },
+    "started_at_epoch": 1790955728.8605921,
+    "status": "complete",
+    "pid": 43073,
+    "active_job": null,
+    "finished_at_epoch": 1790959925.7714846
+  },
+  "finish": {
+    "status": "complete",
+    "results": {
+      "U0_continuation2048": {
+        "best_update": 1000,
+        "standalone_miou": 0.3908638255464669,
+        "fixed_fusion_miou": 0.43366298706385487,
+        "baseline_miou": 0.43487703221036567,
+        "gain": -0.0012140451465108004,
+        "updates_done": 2000
+      },
+      "U0_highres": {
+        "best_update": 1000,
+        "standalone_miou": 0.3960651568641143,
+        "fixed_fusion_miou": 0.437327634300698,
+        "baseline_miou": 0.43487703221036567,
+        "gain": 0.002450602090332321,
+        "updates_done": 4000
+      }
+    },
+    "completed_at_epoch": 1790959925.7711217,
+    "test_policy": "No further evaluation on the previously completed test split."
+  },
+  "processes": [],
+  "active_log_tail": [],
+  "finish_log_path": null,
+  "finish_log_tail": [],
+  "finish_log_age_seconds": null,
+  "active_eval_history_tail": [],
+  "speed_calibration_logs": {},
+  "speed_selection": null
+}

@@ -1,0 +1,129 @@
+{
+  "checked_at": "2026-10-10T10:49:24.395939+08:00",
+  "runtime": {
+    "server_online": true,
+    "checked_at_unix": 1791600581.4005692,
+    "shutdown_command_issued": false,
+    "external_processes_controlled": false,
+    "GPU_CAMPAIGN_RUNNING.json": {
+      "status": "ABORTED_BY_USER_FOR_CAUSAL_DIAGNOSIS",
+      "pid": 47081,
+      "controller_pid": 46313,
+      "identity_SHA": "046abab773f7cb7a9e4f0a0f9cc44c4ad32d48431b971f22720dc8bd7936168a",
+      "start_unix": 1791577010.532477,
+      "canvas": 2048,
+      "batch": 2,
+      "screen_updates": 4000,
+      "max_conditional_updates": 40000,
+      "shutdown_after_completion": false,
+      "shutdown_after_failure": false,
+      "further_revisions_user_authorized": true,
+      "screen_pass": {
+        "status": "PASS",
+        "identity_SHA": "046abab773f7cb7a9e4f0a0f9cc44c4ad32d48431b971f22720dc8bd7936168a",
+        "decisions": {
+          "4k_floor": true,
+          "private_net_gain_at_least1pp": true,
+          "all_classes_nonzero": true,
+          "no_class_IoU_loss_over2pp": true,
+          "HE_MA_FN_FP_tradeoff": true
+        },
+        "time_unix": 1791581314.075647,
+        "screen_updates": 4000,
+        "full_val_counts_verified": true,
+        "mIoU_4k": 32.03381957717303,
+        "base_mIoU_4k": 27.34992885694575,
+        "private_gain_pp": 4.683890720227279,
+        "calibration": {
+          "HE": {
+            "FN_ratio_final_vs_base": 1.0042367869619944,
+            "FP_ratio_final_vs_base": 0.9490050878866232,
+            "pass": true
+          },
+          "MA": {
+            "FN_ratio_final_vs_base": 1.0779990462998705,
+            "FP_ratio_final_vs_base": 0.04772031892926583,
+            "pass": true
+          }
+        },
+        "criterion_registered_before_results": true,
+        "test_accessed": false,
+        "accuracy_guaranteed": false,
+        "goal_achieved": false
+      },
+      "processes_alive": false,
+      "end_unix": 1791600539.6066337
+    },
+    "DEADLINE_GATE.json": {
+      "status": "PASS",
+      "measured_screen_estimate_seconds": 4751.680338382721,
+      "checked_unix": 1791577010.5315235,
+      "user_latest_server_available": true,
+      "reserve_seconds": 180,
+      "full40k_conditional_on_screen": true
+    },
+    "DEADLINE_EXTENSION_ACTIVATED.json": {
+      "status": "ACTIVE",
+      "user_authorization": "Through screening, server may remain available until completion",
+      "screen_identity_SHA": "046abab773f7cb7a9e4f0a0f9cc44c4ad32d48431b971f22720dc8bd7936168a",
+      "screen_pass_unix": 1791581314.075647,
+      "server_reavailability_user_confirmed": true,
+      "full40k_authorized": true,
+      "same_fresh_run_continues": true,
+      "test_only_after_locked40k": true
+    },
+    "own_process_checks": {
+      "pid": {
+        "pid": 47081,
+        "alive": false,
+        "cmdline": "",
+        "matches_current_task": false
+      },
+      "controller_pid": {
+        "pid": 46313,
+        "alive": false,
+        "cmdline": "",
+        "matches_current_task": false
+      }
+    },
+    "own_session_id": 46313,
+    "own_session_live_processes": [],
+    "own_RAM": {
+      "pid": 39434,
+      "bytes": 103079171144,
+      "alive": true,
+      "matches_own_RAM": true
+    },
+    "GPU_status": "utilization.gpu [%], memory.used [MiB], power.draw [W]\n0 %, 1 MiB, 20.76 W\n"
+  },
+  "downloaded": [
+    "reports/detail/controller.log",
+    "reports/detail/DISPATCHED.json",
+    "reports/detail/CPU_gate.log",
+    "reports/detail/CPU_TO_GPU_DISPATCH.json",
+    "reports/detail/smoke.log",
+    "reports/detail/DEADLINE_GATE.json",
+    "reports/detail/SCREEN_STARTED.json",
+    "reports/detail/training.log",
+    "reports/detail/GPU_CAMPAIGN_RUNNING.json",
+    "reports/detail/VALIDATOR_LOCK.json",
+    "reports/detail/DEADLINE_EXTENSION_ACTIVATED.json",
+    "reports/detail/USER_ABORT_RECEIPT.json",
+    "training_runs/detail/GPU_SMOKE_PASS.json",
+    "training_runs/detail/protocol.json",
+    "training_runs/detail/performance.json",
+    "training_runs/detail/progress.json",
+    "training_runs/detail/validation_progress.json",
+    "training_runs/detail/val_04000.json",
+    "training_runs/detail/SCREEN_PASS.json",
+    "training_runs/detail/val_08000.json",
+    "training_runs/detail/val_12000.json",
+    "training_runs/detail/val_16000.json",
+    "training_runs/detail/val_20000.json",
+    "detail_execution/architecture_spec.json",
+    "detail_execution/CPU_ADAPTER_PASS.json",
+    "detail_execution/screen_protocol.json",
+    "detail_execution/validation_reporting.json",
+    "detail_execution/WORKER_RAM_PASS.json"
+  ]
+}

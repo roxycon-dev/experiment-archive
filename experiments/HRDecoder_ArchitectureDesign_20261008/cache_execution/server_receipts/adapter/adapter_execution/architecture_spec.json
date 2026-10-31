@@ -1,0 +1,19 @@
+{
+  "version": 11,
+  "name": "HRDecoder-DirectMultiscaleAdapter",
+  "private_parameters": 68608,
+  "base": "unchanged original HRDecoder GT + .1 HRcrop",
+  "gradient_route": "detached features, p0 and direct base logits; private does not change provider gradients",
+  "private_GT": "final original Dice + .25 ordinary all-valid BCE",
+  "teacher": "same fixed train-GT-consistent T*; original all-valid KL normalization; same lambda schedule",
+  "initialization": "fresh ImageNet W48 seed42/private20261008; final residual exactly zero",
+  "SGD": "base .005; private .02; same warmup1500/poly40k ratios; momentum.9/wd.0005",
+  "budget": [
+    2048,
+    2,
+    40000
+  ],
+  "inference": "native logits resize then sigmoid; no GT/teacher/TTA/H4",
+  "scientific_scope": "architecture plus4x private LR changed together; not a single-variable causal comparison",
+  "accuracy_guaranteed": false
+}

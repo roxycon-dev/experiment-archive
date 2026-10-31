@@ -1,0 +1,24 @@
+{
+  "time": "2026-10-05T17:18:18.012186+00:00",
+  "primary": {
+    "reports/selected_restore_deadline_guard_state.json": {
+      "stage": "LOCKED_UPLOAD_GUARD_REVIEW_REQUIRED",
+      "time": "2026-10-05T17:16:02.705078+00:00",
+      "guard_pid": 76579,
+      "same_finalizer_pid": 44281,
+      "no_new_training_or_test_process": true,
+      "reason": "",
+      "original_owner_held": false,
+      "automatic_restart": false
+    },
+    "reports/selected_restore_deadline_guard.err.log": "Traceback (most recent call last):\n  File \"/root/autodl-tmp/HRDecoder_FinalDecision_20261005/reports/selected_restore_deadline_guard.py\", line 95, in <module>\n    main()\n  File \"/root/autodl-tmp/HRDecoder_FinalDecision_20261005/reports/selected_restore_deadline_guard.py\", line 61, in main\n    owner()\n  File \"/root/autodl-tmp/HRDecoder_FinalDecision_20261005/reports/selected_restore_deadline_guard.py\", line 39, in owner\n    assert b'primary_single_seed_boundary.py' in cmd and str(ROOT).encode() in cmd\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+    "reports/final_test_state.json": null,
+    "reports/driver_state.json": {
+      "stage": "SINGLE_SEED_FINAL_SELECTION",
+      "pid": 44281,
+      "time": "2026-10-05T16:54:11.165340+00:00"
+    },
+    "ordinary_restore_temporary_bytes": null,
+    "priority_restore_temporary_bytes": 368601256
+  }
+}

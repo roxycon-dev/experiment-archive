@@ -1,0 +1,37 @@
+{
+  "status": "PASS",
+  "canvas": 2048,
+  "global_batch": 2,
+  "micro_batch": 1,
+  "discarded_updates": 2,
+  "mean_seconds_per_update": 30.87281380000013,
+  "peak_allocated_GiB": 8.01590347290039,
+  "peak_reserved_GiB": 8.486328125,
+  "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "metrics": [
+    {
+      "ohem_bce": 0.5768072605133057,
+      "squared_dice": 0.24803533405065536,
+      "dense_bce": 0.010346431285142899,
+      "main_loss": 0.5369562804698944,
+      "aux_loss": 0.5563791990280151,
+      "loss": 0.648232102394104,
+      "grad_norm_before_clip": 1.7901701927185059
+    },
+    {
+      "ohem_bce": 0.5532198548316956,
+      "squared_dice": 0.2476508766412735,
+      "dense_bce": 0.010418755002319813,
+      "main_loss": 0.5247817039489746,
+      "aux_loss": 0.5594455599784851,
+      "loss": 0.6366707980632782,
+      "grad_norm_before_clip": 2.333094358444214
+    }
+  ],
+  "train_sids": [
+    "007-1811-100",
+    "007-1824-100"
+  ],
+  "weights_retained": false,
+  "not_formal_40k": true
+}

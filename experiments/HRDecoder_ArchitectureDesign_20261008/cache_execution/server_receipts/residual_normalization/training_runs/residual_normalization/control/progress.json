@@ -1,0 +1,19 @@
+{
+  "status": "DIAGNOSTIC_TRAINING",
+  "arm": "control",
+  "probe_updates": 500,
+  "parent_completed": 8000,
+  "expected_probe_updates": 500,
+  "identity_SHA": "a61b2d550a5530b7941f44eb66e6f37ea33d646587048245620ffe9e948e8225",
+  "losses": {
+    "gt_final": 0.6936746835708618,
+    "gt_base": 0.6918716430664062,
+    "gt_hr_crop": 0.6933275461196899,
+    "kl_final": 0.004590179305523634,
+    "lambda_k": 0.5,
+    "task_loss": 1.4571741819381714,
+    "action_kl_removed": true
+  },
+  "time_unix": 1791567409.7975116,
+  "mean_compute_seconds": 0.9367332044988871
+}

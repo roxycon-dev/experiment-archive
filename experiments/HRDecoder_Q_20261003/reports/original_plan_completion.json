@@ -1,0 +1,158 @@
+{
+  "updated_at_utc": "2026-10-04T07:00:10.680511+00:00",
+  "original_plan_complete": true,
+  "shutdown_allowed": false,
+  "scope_override": "reports/execution_scope_override.json",
+  "tasks": {
+    "pretraining_and_gpu_acceptance": {
+      "state": "COMPLETE",
+      "repeat_not_required": true
+    },
+    "Q_DDR_discovery_and_review": {
+      "state": "COMPLETE",
+      "seeds": [
+        42,
+        2024
+      ],
+      "endpoint": 16000
+    },
+    "locked_Q_DDR_final_evaluation": {
+      "state": "COMPLETE_LOCAL_SHA_VERIFIED",
+      "lock": "reports/final_selection.json",
+      "selection_changes_forbidden": true,
+      "receipt": "reports/final_evidence_backup_receipt.json",
+      "seed_scores_pct": [
+        45.72155710642771,
+        45.677066093957414
+      ]
+    },
+    "official_external_supervision": {
+      "state": "COMPLETE_ACCEPTED_WITH_DIRECT_USER_IDRID_SOURCE_OVERRIDE",
+      "readiness_evidence": "reports/external_readiness.json",
+      "local_user_asset": "D:/dataset/best_segmentation",
+      "local_asset_quality": "User-authorized stored image/polygon source; no official GT restoration claimed",
+      "user_override": "reports/external_source_user_override.json",
+      "manifest": "reports/external_acceptance/manifest.server.accepted.json",
+      "remote_SHA_receipt": "reports/qmix_remote_asset_receipt.json",
+      "visual_review_count": 20
+    },
+    "Q_MIX_paired_experiment": {
+      "state": "COMPLETE_PAIRED_24K_LOCAL_SHA_VERIFIED",
+      "preserve_original_comparison_and_cost_gates": true,
+      "protocol": "reports/qmix_continuation_protocol.json",
+      "launcher_receipt": "reports/qmix_launch_queue_receipt.json",
+      "completed_update": 24000,
+      "current_run": null,
+      "common_endpoint": 24000,
+      "discovery_complete": true,
+      "actual_training": false,
+      "discovery_comparison": "reports/discovery_seed42_common_24k_comparison.json",
+      "review_complete": true,
+      "next_handoff": null,
+      "late_export_state": "reports/mix2024_late_offload_state.json",
+      "endpoint": 24000
+    },
+    "original_plan_final_reports_and_local_SHA_backup": {
+      "state": "COMPLETE_LOCAL_SHA_VERIFIED",
+      "immutable_asset_backup_state": "reports/immutable_campaign_asset_backup_state.json",
+      "immutable_asset_backup_receipt": "reports/immutable_campaign_asset_backup_receipt.json",
+      "frozen_assets_verified": 25,
+      "source_files_verified": 251,
+      "report": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\reports\\HRDecoder_原方案完整实验报告_20261004.md",
+      "receipt": "reports/original_plan_report_receipt.json",
+      "delivery_manifest": "reports/original_plan_delivery_manifest.json"
+    },
+    "dependency_audit_and_deferred_cleanup": {
+      "state": "COMPLETE_EXACT_ALLOWLIST_DELETION_PROTECTED_ASSETS_VERIFIED",
+      "receipt": "D:\\dataset\\experiment\\_maintenance\\next_retired_U1_cleanup_result_20261004.json",
+      "deleted_bytes": 11622934560
+    },
+    "server_shutdown_and_OFF_verification": {
+      "state": "COMPLETE_OFF_CONFIRMED_BY_PLATFORM_OBSERVING_USER",
+      "reason": "User explicitly confirmed assigned instance is OFF on AutoDL",
+      "receipt": "reports/final_shutdown_receipt.json",
+      "ssh_disconnect_observed": true,
+      "platform_OFF_verified": true,
+      "evidence": "reports/platform_OFF_user_confirmation.json",
+      "completed_at": "2026-10-04T07:00:10.680511+00:00"
+    },
+    "Q_DDR_training_backups": {
+      "state": "COMPLETE_SHA_VERIFIED",
+      "receipts": [
+        "reports/run_backup_Q_DDR_seed42.json",
+        "reports/run_backup_Q_DDR_seed2024.json"
+      ]
+    },
+    "Q_DDR_stage_report": {
+      "state": "COMPLETE",
+      "report": "reports/Q_DDR_两种子阶段结果_20261004.md",
+      "receipt": "reports/Q_DDR_stage_report_receipt.json"
+    },
+    "Q_DDR_common_24k_continuation": {
+      "state": "COMPLETE_PAIRED_24K_LOCAL_SHA_VERIFIED",
+      "discovery_identity": "b3e4cea88c5eeda8923a9c3950c0f67e74f02c28057730f2dd2d19154c500396",
+      "discovery_result": "reports/discovery_ddr42_24k_result.json",
+      "discovery_backup": "reports/run_backup_Q_DDR_seed42_24k.json",
+      "review_completed_update": 24000,
+      "required_common_endpoint": 24000,
+      "review_result": "reports/review_Q_DDR_common_24k_result.json",
+      "review_backup": "reports/run_backup_Q_DDR_seed2024_24k.json",
+      "endpoint": 24000,
+      "review_complete": true,
+      "actual_training": false
+    },
+    "Q_MIX_discovery_common_24k": {
+      "state": "COMPLETE_LOCAL_SHA_VERIFIED",
+      "endpoint": 24000,
+      "comparison": "reports/discovery_seed42_common_24k_comparison.json",
+      "backup_receipt": "reports/run_backup_Q_MIX_seed42_24k.json"
+    },
+    "Q_MIX_review_common_24k": {
+      "state": "COMPLETE_PAIRED_24K_LOCAL_SHA_VERIFIED",
+      "seed": 2024,
+      "endpoint": 24000,
+      "worker": "reports/offload_mix2024_late_nodes.py",
+      "worker_state": "reports/mix2024_late_offload_state.json",
+      "late_cache_offload_required_before_12k": true,
+      "late_export_preparation": "reports/mix2024_late_export_preparation.json",
+      "worker_pid": null,
+      "completed_update": 24000,
+      "identity_sha256": "60920d33a3d85acd05f0c6637a4ec2442f21f69a6d4ca3beff46b2cb7034adac",
+      "start_acceptance": "reports/MIX2024_formal_start_acceptance.json",
+      "review_complete": true,
+      "actual_training": false,
+      "backup_receipt": "reports/run_backup_Q_MIX_seed2024_24k.json"
+    },
+    "continuation_final_selection_and_evaluation": {
+      "state": "COMPLETE_LOCAL_SHA_VERIFIED_EXACT_PRIOR_TEST_REUSE",
+      "preparation": "reports/continuation_finalization_preparation.json",
+      "dependency_worker_state": "reports/continuation_final_handoff_state.json",
+      "dependency_worker_pid": null,
+      "selection_frozen": true,
+      "test_executed": false,
+      "dependency_repair": "reports/continuation_final_handoff_repair_receipt.json",
+      "test_evidence_complete": true,
+      "test_action": "REUSE_EXACT_PRIOR_TEST_COUNTS",
+      "lock_sha256": "537f516bbdcd6517e5aca3c8a87ae9d6c2d2f9174ee6d3aeda7d3ce8ace6e8ee",
+      "evidence_receipt": "reports/continuation_final_evidence_backup_receipt.json"
+    }
+  },
+  "optional_research_not_automatically_added": [
+    "Third seed",
+    "Other model or loss search",
+    "Paper ablations before confirmed gain",
+    "External evaluation without proof of unused holdout identity"
+  ],
+  "temporary_stop_for_no_idle": false,
+  "updated_at": "2026-10-04T07:00:10.680511+00:00",
+  "scientific_scope_complete": true,
+  "delivery_complete": true,
+  "remaining_required_action": null,
+  "delivery_manifest": "reports/original_plan_delivery_manifest.json",
+  "shutdown_dispatched": true,
+  "platform_OFF_verified": true,
+  "platform_OFF_evidence": "reports/platform_OFF_user_confirmation.json",
+  "automation_id": "hrdecoder-q",
+  "automation_deleted": true,
+  "automation_deleted_at": "2026-10-04T07:00:35.552624+00:00"
+}

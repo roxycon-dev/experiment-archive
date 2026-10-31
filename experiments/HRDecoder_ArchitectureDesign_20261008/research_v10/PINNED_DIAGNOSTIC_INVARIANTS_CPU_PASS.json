@@ -1,0 +1,62 @@
+{
+  "status": "CPU_INVARIANT_PASS_GPU_PENDING",
+  "torch": "2.0.1+cu117",
+  "verified_at_UTC": "2026-10-09T18:42:38.843968+00:00",
+  "checks": [
+    "CPU_optimizer_alias_behavior_recorded_for_exact_torch_version",
+    "freeze_once_train_transition_negative_control_reproduced",
+    "safe_parent_optimizer_snapshots_immutable_across_discarded_smoke",
+    "explicit_named_private_optimizer_mapping_preserves_parent_momentum",
+    "actual_private_graph_updates_with_frozen_provider",
+    "provider_parameters_BN_and_outputs_unchanged_across16_updates_and_eval_train_cycles",
+    "paired_private_interventions_have_exact_provider_outputs_and_different_private_updates",
+    "frozen_provider_forward_has_no_random_HRcrop_even_with_training_label_arguments",
+    "unmatched_parameter_order_and_private_momentum_shape_rejected"
+  ],
+  "arms": {
+    "control": {
+      "provider_outputs_bitwise_equal_at_all16_steps": true,
+      "provider_parameters_and_BN_unchanged": true,
+      "private_updates_nonzero": true,
+      "mode_transitions_checked": [
+        0,
+        7,
+        15
+      ]
+    },
+    "gt_stratified": {
+      "provider_outputs_bitwise_equal_at_all16_steps": true,
+      "provider_parameters_and_BN_unchanged": true,
+      "private_updates_nonzero": true,
+      "mode_transitions_checked": [
+        0,
+        7,
+        15
+      ]
+    }
+  },
+  "device": "cpu",
+  "fixture_canvas": 64,
+  "batch": 2,
+  "fixture_private_parameters": 6415232,
+  "toy_updates_per_arm": 16,
+  "formal_updates": 0,
+  "unsafe_same_device_optimizer_alias_observed": false,
+  "past_GPU_divergence_root_cause_proven": false,
+  "server_access": false,
+  "dataset_or_test_or_checkpoint_read": false,
+  "full2048_GPU_verification_completed": false,
+  "real_parent_RNG_replay_verified": false,
+  "fresh_architecture_or_accuracy_verified": false,
+  "goal_achieved": false,
+  "source_SHA256": {
+    "research_v10/diagnostic_invariants.py": "7f9884b235ada4d6a4cfe2ba395d03813268fe787eb8088ba340c4ea4f71d9e0",
+    "research_v10/verify_diagnostic_invariants.py": "dc7c1a14654726ba7fd51dc943728a902c75c3100ab8fe47219d0e6451a62358",
+    "residual_execution/model.py": "b37a8c1d05d72358b6aae0c5a2e8b1703a743c125b98a812534d672a506bad67",
+    "residual_execution/private_modules.py": "08541136cd72e039a02f145adba9410b404f6852bc226ab716639e43cc82ec60",
+    "residual_execution/stable_objectives.py": "bf79135d2f756b4abcad655beee9ed24f7bde738f62588a5532917e4b881e3ae",
+    "residual_execution/fast_objectives.py": "040a52c29ee9429834a4650bd51242e60a709b9ea2b11095433c9c9e4f969f1a",
+    "residual_execution/objectives.py": "501a6fa798203f37946ae0d3e90f43a4a9aef8369a1efd7eceb7da9b056f6fbb",
+    "normalization_execution/intervention.py": "da1cd6aebe8c663b72b3ab5b3f9f6d50d172978cb091da531e027cbdde140bc0"
+  }
+}

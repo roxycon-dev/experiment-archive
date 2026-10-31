@@ -1,0 +1,5 @@
+{
+  "exit_code": 0,
+  "stdout": "{\n  \"stage\": \"M\",\n  \"status\": \"running\",\n  \"pid\": 6202,\n  \"time\": 1791015300.3010826\n}TypeError: any() received an invalid combination of arguments - got (dim=tuple, ), but expected one of:\n * ()\n      didn't match because some of the keywords were incorrect: dim\n * (int dim, bool keepdim)\n * (name dim, bool keepdim)\n\n/root/miniconda3/lib/python3.8/site-packages/mmcv/__init__.py:20: UserWarning: On January 1, 2023, MMCV will release v2.0.0, in which it will remove components related to the training process and add a data transformation module. In addition, it will rename the package names mmcv to mmcv-lite and mmcv-full to mmcv. See https://github.com/open-mmlab/mmcv/blob/master/docs/en/compatibility.md for more details.\n  warnings.warn(\n67264077824\n0 %, 4 MiB\n",
+  "stderr": "cat: /root/autodl-tmp/HRDecoder_Next_20261003/work/M_seed42/M0/gradient_update_1.json: No such file or directory\n"
+}

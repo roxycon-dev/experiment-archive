@@ -1,0 +1,19 @@
+{
+  "status": "DIAGNOSTIC_TRAINING",
+  "arm": "gt_stratified",
+  "probe_updates": 500,
+  "parent_completed": 8000,
+  "expected_probe_updates": 500,
+  "identity_SHA": "9ec0a51586cf2f49d8b8005debafa5058867d0741cc38a46ee1739a3f4b97bfa",
+  "losses": {
+    "gt_final": 0.686844527721405,
+    "gt_base": 0.6946451663970947,
+    "gt_hr_crop": 0.6920982599258423,
+    "kl_final": 0.12510859966278076,
+    "lambda_k": 0.5,
+    "task_loss": 1.513253927230835,
+    "action_kl_removed": true
+  },
+  "time_unix": 1791568009.3135662,
+  "mean_compute_seconds": 0.9395392999798059
+}

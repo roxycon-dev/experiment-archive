@@ -1,0 +1,28 @@
+{
+  "status": "LOGIN_AND_GPU_INVENTORY_CONFIRMED",
+  "observed_date_local": "2026-10-23",
+  "transport": "NetEase UU remote desktop, FinalShell",
+  "host": "192.168.3.59",
+  "port": 22,
+  "account": "studentuser001",
+  "hostname": "amax-Super-Server",
+  "os_banner": "Ubuntu 24.04.4 LTS, Linux 6.17.0-40-generic x86_64",
+  "nvidia_driver": "535.309.01",
+  "driver_reported_cuda": "12.2",
+  "gpus": {
+    "count": 4,
+    "model": "NVIDIA GeForce RTX 2080 Ti",
+    "memory_MiB_each": 11264
+  },
+  "compute_processes_at_observation": [],
+  "display_process": "Xorg, approximately 4 MiB on each GPU",
+  "memory_total_displayed_GiB": 62.8,
+  "root_available_displayed_GiB": 402.6,
+  "observation_source": "Visually read nvidia-smi and FinalShell account/IP; not a downloaded machine-readable receipt",
+  "password_saved_in_connection": false,
+  "training_started": false,
+  "inference_started": false,
+  "compatibility_note": "Turing 2080 Ti lacks native BF16. Historical S20 used BF16 on RTX4090; faithful reproduction needs runtime/precision acceptance before formal inference.",
+  "environment_tools_probe": "command -v returned python3; no conda or micromamba observed; curl result not reliably read",
+  "connection_method_limit": "No alternative SSH route known to user; continue via supplied UU/FinalShell only."
+}

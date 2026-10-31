@@ -1,0 +1,33 @@
+{
+  "status": "EXPERIMENTS_COMPLETE_BACKUP_REVIEW_PENDING",
+  "time": 1791022033.822728,
+  "winner": {
+    "kind": "G_fixed25",
+    "asset": "U0_highres",
+    "canvas": "native",
+    "inference": "slide",
+    "score": 0.4386790869927479,
+    "cache": "/root/autodl-tmp/HRDecoder_Next_20261003/work/G/highres_fixed25",
+    "key": "U0_highres_native_slide"
+  },
+  "required_files": {
+    "work/geometry_lock.json": "a5fce1a91db940d24aa939865489982d2f5d3c8a825327afb68ef0e272352786",
+    "work/campaign_complete.json": "5ba1dc093f1190c7c923f0e0db947717fb9b0f66e2d97a024aed9038e1e12f1f",
+    "configs/protocol.json": "3c9d693d6a238bcc7eca6e3985462b24160a27313c3c224e03d8f21e45dd23f0",
+    "configs/settings.json": "104f4f2beb36d63de8da5172d004367c8a081ac3bcefae5f7ebfd7a74a6e06ce",
+    "reports/val_final_selection.json": "8f9fd41646cd6d7d76dc66e67916a43963616f0010991c3203257dae591c734e",
+    "work/M_seed42/M1/best.pth": "72c67bf2ad027e94766957582a65d98aef7d0b707334bbbb766095c3b2ae596f",
+    "work/M_seed42/M0/best.pth": "564732d8122f97b1a4e105fc5a222a3c8b09ac05e5a5ed9c940a1a7744c61808",
+    "work/M_seed42/M1/last.pth": "e34e1fbd23b627d01273a4c914541f17f24da983a00416019ba95e6f7a6d1f4e",
+    "work/M_seed42/M0/last.pth": "562a5ddabe596161db7e4957afb70fc1c13904bebb38173c2e24b977d138e915",
+    "work/final_lock.json": "45397a7ae9ec377fcc6d1e2b7449c0cd4bf5c177449a02097ee8d2709a1f74d1",
+    "work/final_test.json": "5745f00527ae1810f5b18d092107ae42c1332ebc5d1a95aa375e8bdfee6aff98",
+    "work/test_progress.json": "18b0e81dfa5aaee7fa52aae05f5164f7fc48b8ec01a5aebaeab04371e4f746f3"
+  },
+  "original_winner_retained": true,
+  "E": "official assets gate not satisfied; no GPU time allocated",
+  "mechanism": "Not run: user requests discovering improvements, not repeated proof of efficacy",
+  "target": 0.472115,
+  "test_run": true,
+  "next": "Verify local backup, finish report and manual error review, then authorized shutdown"
+}

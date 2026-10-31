@@ -1,0 +1,77 @@
+Traceback (most recent call last):
+  File "D:\dataset\experiment\HRDecoder_FinalDecision_20261005\execution\ops\launch_when_ready.py", line 42, in main
+    if current['early'] and not current['early_alive'] and (current['gate'] or {}).get('status')!='PASS':raise RuntimeError('Required early GPU gate failed: '+str(current['early_tail']))
+                                                                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Required early GPU gate failed: link()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/HRDecoder_FinalDecision_20261005/tests/gpu_acceptance.py", line 53, in compare_snapshot
+    eq(a,b)
+  File "/root/autodl-tmp/HRDecoder_FinalDecision_20261005/tests/gpu_acceptance.py", line 51, in eq
+    elif isinstance(x,(list,tuple)):assert len(x)==len(y);[eq(v,w) for v,w in zip(x,y)]
+                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/HRDecoder_FinalDecision_20261005/tests/gpu_acceptance.py", line 51, in <listcomp>
+    elif isinstance(x,(list,tuple)):assert len(x)==len(y);[eq(v,w) for v,w in zip(x,y)]
+                                                           ^^^^^^^
+  File "/root/autodl-tmp/HRDecoder_FinalDecision_20261005/tests/gpu_acceptance.py", line 50, in eq
+    elif isinstance(x,dict):assert x.keys()==y.keys();[eq(x[k],y[k]) for k in x]
+                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/HRDecoder_FinalDecision_20261005/tests/gpu_acceptance.py", line 50, in <listcomp>
+    elif isinstance(x,dict):assert x.keys()==y.keys();[eq(x[k],y[k]) for k in x]
+                                                       ^^^^^^^^^^^^^
+  File "/root/autodl-tmp/HRDecoder_FinalDecision_20261005/tests/gpu_acceptance.py", line 50, in eq
+    elif isinstance(x,dict):assert x.keys()==y.keys();[eq(x[k],y[k]) for k in x]
+                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/HRDecoder_FinalDecision_20261005/tests/gpu_acceptance.py", line 50, in <listcomp>
+    elif isinstance(x,dict):assert x.keys()==y.keys();[eq(x[k],y[k]) for k in x]
+                                                       ^^^^^^^^^^^^^
+  File "/root/autodl-tmp/HRDecoder_FinalDecision_20261005/tests/gpu_acceptance.py", line 50, in eq
+    elif isinstance(x,dict):assert x.keys()==y.keys();[eq(x[k],y[k]) for k in x]
+                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/HRDecoder_FinalDecision_20261005/tests/gpu_acceptance.py", line 50, in <listcomp>
+    elif isinstance(x,dict):assert x.keys()==y.keys();[eq(x[k],y[k]) for k in x]
+                                                       ^^^^^^^^^^^^^
+  File "/root/autodl-tmp/HRDecoder_FinalDecision_20261005/tests/gpu_acceptance.py", line 49, in eq
+    if torch.is_tensor(x):assert torch.equal(x,y)
+                                 ^^^^^^^^^^^^^^^^
+AssertionError
+
+Traceback (most recent call last):
+  File "D:\dataset\experiment\HRDecoder_FinalDecision_20261005\execution\ops\launch_when_ready.py", line 56, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "D:\dataset\experiment\HRDecoder_FinalDecision_20261005\execution\ops\launch_when_ready.py", line 42, in main
+    if current['early'] and not current['early_alive'] and (current['gate'] or {}).get('status')!='PASS':raise RuntimeError('Required early GPU gate failed: '+str(current['early_tail']))
+                                                                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Required early GPU gate failed: link()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/HRDecoder_FinalDecision_20261005/tests/gpu_acceptance.py", line 53, in compare_snapshot
+    eq(a,b)
+  File "/root/autodl-tmp/HRDecoder_FinalDecision_20261005/tests/gpu_acceptance.py", line 51, in eq
+    elif isinstance(x,(list,tuple)):assert len(x)==len(y);[eq(v,w) for v,w in zip(x,y)]
+                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/HRDecoder_FinalDecision_20261005/tests/gpu_acceptance.py", line 51, in <listcomp>
+    elif isinstance(x,(list,tuple)):assert len(x)==len(y);[eq(v,w) for v,w in zip(x,y)]
+                                                           ^^^^^^^
+  File "/root/autodl-tmp/HRDecoder_FinalDecision_20261005/tests/gpu_acceptance.py", line 50, in eq
+    elif isinstance(x,dict):assert x.keys()==y.keys();[eq(x[k],y[k]) for k in x]
+                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/HRDecoder_FinalDecision_20261005/tests/gpu_acceptance.py", line 50, in <listcomp>
+    elif isinstance(x,dict):assert x.keys()==y.keys();[eq(x[k],y[k]) for k in x]
+                                                       ^^^^^^^^^^^^^
+  File "/root/autodl-tmp/HRDecoder_FinalDecision_20261005/tests/gpu_acceptance.py", line 50, in eq
+    elif isinstance(x,dict):assert x.keys()==y.keys();[eq(x[k],y[k]) for k in x]
+                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/HRDecoder_FinalDecision_20261005/tests/gpu_acceptance.py", line 50, in <listcomp>
+    elif isinstance(x,dict):assert x.keys()==y.keys();[eq(x[k],y[k]) for k in x]
+                                                       ^^^^^^^^^^^^^
+  File "/root/autodl-tmp/HRDecoder_FinalDecision_20261005/tests/gpu_acceptance.py", line 50, in eq
+    elif isinstance(x,dict):assert x.keys()==y.keys();[eq(x[k],y[k]) for k in x]
+                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/HRDecoder_FinalDecision_20261005/tests/gpu_acceptance.py", line 50, in <listcomp>
+    elif isinstance(x,dict):assert x.keys()==y.keys();[eq(x[k],y[k]) for k in x]
+                                                       ^^^^^^^^^^^^^
+  File "/root/autodl-tmp/HRDecoder_FinalDecision_20261005/tests/gpu_acceptance.py", line 49, in eq
+    if torch.is_tensor(x):assert torch.equal(x,y)
+                                 ^^^^^^^^^^^^^^^^
+AssertionError
+

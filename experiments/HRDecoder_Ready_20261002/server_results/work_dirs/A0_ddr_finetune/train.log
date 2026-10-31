@@ -1,0 +1,76 @@
+[train] gate: readiness=LOCAL_READY calibration=READY mode=formal
+[train] arm=A0 family=hacdr stage=ddr_finetune mode=formal updates=12000 train_split=train val_split=val out_dir=/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/A0_ddr_finetune
+[train] batch: effective=8 micro=8 accum=1
+/root/miniconda3/lib/python3.8/site-packages/mmcv/__init__.py:20: UserWarning: On January 1, 2023, MMCV will release v2.0.0, in which it will remove components related to the training process and add a data transformation module. In addition, it will rename the package names mmcv to mmcv-lite and mmcv-full to mmcv. See https://github.com/open-mmlab/mmcv/blob/master/docs/en/compatibility.md for more details.
+  warnings.warn(
+init cfg None
+[train] model=hacdr backbone_prefixes=('backbone',) norm_eval=False
+[train] data: train=454 eval=76 manifest_sha256=c1359e112f16…
+[train] param audit: groups={'backbone': {'lr': 6e-05, 'n_tensors': 580, 'n_params': 23527057}, 'decoder': {'lr': 0.0009, 'n_tensors': 50, 'n_params': 2002356}} frozen_tensors=0
+[engine] stage=ddr_finetune mode=formal updates 0->12000 grad_accum=1 micro_batch=8 amp=True frozen_bn=0 params=630
+[engine] update 100/12000 loss=1.663155469894409 lr={'backbone': 9.999999999999999e-06, 'decoder': 0.00015}
+[engine] update 200/12000 loss=1.616041408777237 lr={'backbone': 1.9999999999999998e-05, 'decoder': 0.0003}
+[engine] update 300/12000 loss=1.5763478350639344 lr={'backbone': 3e-05, 'decoder': 0.00045}
+[engine] update 400/12000 loss=1.5089091193675994 lr={'backbone': 3.9999999999999996e-05, 'decoder': 0.0006}
+[engine] update 500/12000 loss=1.4141928994655608 lr={'backbone': 5e-05, 'decoder': 0.00075}
+[engine] update 600/12000 loss=1.3118323194980621 lr={'backbone': 6e-05, 'decoder': 0.0009}
+[engine] update 700/12000 loss=1.2138388514518739 lr={'backbone': 5.99889475146605e-05, 'decoder': 0.0008998342127199074}
+[engine] update 800/12000 loss=1.1498665988445282 lr={'backbone': 5.995535078746468e-05, 'decoder': 0.0008993302618119702}
+[engine] update 900/12000 loss=1.1051260375976562 lr={'backbone': 5.989923420353566e-05, 'decoder': 0.0008984885130530349}
+[engine] update 1000/12000 loss=1.0851815295219422 lr={'backbone': 5.982064037701884e-05, 'decoder': 0.0008973096056552825}
+/root/miniconda3/lib/python3.8/site-packages/torch/_utils.py:776: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  return self.fget.__get__(instance, owner)()
+[engine] update 1100/12000 loss=1.0701565480232238 lr={'backbone': 5.9719628990961836e-05, 'decoder': 0.0008957944348644274}
+[engine] update 1200/12000 loss=1.0550503063201904 lr={'backbone': 5.959627675199203e-05, 'decoder': 0.0008939441512798804}
+[engine] update 1300/12000 loss=1.047658429145813 lr={'backbone': 5.94506773320666e-05, 'decoder': 0.000891760159980999}
+[engine] update 1400/12000 loss=1.0423242127895356 lr={'backbone': 5.9282941297339376e-05, 'decoder': 0.0008892441194600906}
+[engine] update 1500/12000 loss=1.0343078947067261 lr={'backbone': 5.909319602419847e-05, 'decoder': 0.0008863979403629771}
+[engine] update 1600/12000 loss=1.028658942580223 lr={'backbone': 5.8881585602538386e-05, 'decoder': 0.0008832237840380757}
+[engine] update 1700/12000 loss=1.0207459604740143 lr={'backbone': 5.864827072634024e-05, 'decoder': 0.0008797240608951035}
+[engine] update 1800/12000 loss=1.0204217302799226 lr={'backbone': 5.839342857164296e-05, 'decoder': 0.0008759014285746443}
+[engine] update 1900/12000 loss=1.0113433629274369 lr={'backbone': 5.811725266199831e-05, 'decoder': 0.0008717587899299747}
+[engine] update 2000/12000 loss=1.0059551668167115 lr={'backbone': 5.781995272151184e-05, 'decoder': 0.0008672992908226775}
+[engine] update 2100/12000 loss=0.9988972842693329 lr={'backbone': 5.750175451558132e-05, 'decoder': 0.0008625263177337197}
+[engine] update 2200/12000 loss=0.9968562948703766 lr={'backbone': 5.7162899679453664e-05, 'decoder': 0.0008574434951918049}
+[engine] update 2300/12000 loss=0.9783743435144424 lr={'backbone': 5.680364553473057e-05, 'decoder': 0.0008520546830209585}
+[engine] update 2400/12000 loss=0.9784486258029937 lr={'backbone': 5.642426489396203e-05, 'decoder': 0.0008463639734094305}
+[engine] update 2500/12000 loss=0.977705973982811 lr={'backbone': 5.602504585347642e-05, 'decoder': 0.0008403756878021462}
+[engine] update 2600/12000 loss=0.9659030455350875 lr={'backbone': 5.560629157460406e-05, 'decoder': 0.0008340943736190609}
+[engine] update 2700/12000 loss=0.9603688895702363 lr={'backbone': 5.516832005346088e-05, 'decoder': 0.0008275248008019131}
+[engine] update 2800/12000 loss=0.9570894229412079 lr={'backbone': 5.471146387946658e-05, 'decoder': 0.0008206719581919988}
+[engine] update 2900/12000 loss=0.9448561578989029 lr={'backbone': 5.423606998278092e-05, 'decoder': 0.0008135410497417138}
+[engine] update 3000/12000 loss=0.9366998571157455 lr={'backbone': 5.374249937084979e-05, 'decoder': 0.0008061374905627468}
+[engine] eval update=3000 mIoU_lesion4=0.0695 n_images=76
+[engine] update 3100/12000 loss=0.945485372543335 lr={'backbone': 5.323112685426127e-05, 'decoder': 0.000798466902813919}
+[engine] update 3200/12000 loss=0.9362651383876801 lr={'backbone': 5.2702340762119725e-05, 'decoder': 0.0007905351114317958}
+[engine] update 3300/12000 loss=0.933387296795845 lr={'backbone': 5.2156542647154154e-05, 'decoder': 0.0007823481397073122}
+[engine] update 3400/12000 loss=0.9315507590770722 lr={'backbone': 5.159414698078462e-05, 'decoder': 0.0007739122047117692}
+[engine] update 3500/12000 loss=0.9344804012775421 lr={'backbone': 5.101558083837857e-05, 'decoder': 0.0007652337125756785}
+[engine] update 3600/12000 loss=0.9237289816141129 lr={'backbone': 5.0421283574935754e-05, 'decoder': 0.0007563192536240364}
+[engine] update 3700/12000 loss=0.9304321509599686 lr={'backbone': 4.981170649144823e-05, 'decoder': 0.0007471755973717234}
+[engine] update 3800/12000 loss=0.926217303276062 lr={'backbone': 4.918731249218865e-05, 'decoder': 0.0007378096873828298}
+[engine] update 3900/12000 loss=0.9153480887413025 lr={'backbone': 4.8548575733187426e-05, 'decoder': 0.0007282286359978114}
+[engine] update 4000/12000 loss=0.915508838891983 lr={'backbone': 4.789598126216513e-05, 'decoder': 0.0007184397189324769}
+[engine] update 4100/12000 loss=0.9124125152826309 lr={'backbone': 4.723002465019417e-05, 'decoder': 0.0007084503697529125}
+[engine] update 4200/12000 loss=0.9128043717145919 lr={'backbone': 4.6551211615369056e-05, 'decoder': 0.0006982681742305359}
+[engine] update 4300/12000 loss=0.9020005619525909 lr={'backbone': 4.586005763877119e-05, 'decoder': 0.0006879008645815678}
+[engine] update 4400/12000 loss=0.8968857288360595 lr={'backbone': 4.515708757301972e-05, 'decoder': 0.0006773563135952957}
+[engine] update 4500/12000 loss=0.8981809192895889 lr={'backbone': 4.444283524370594e-05, 'decoder': 0.000666642528655589}
+[engine] update 4600/12000 loss=0.896302735209465 lr={'backbone': 4.371784304401355e-05, 'decoder': 0.0006557676456602032}
+[engine] update 4700/12000 loss=0.8860497671365738 lr={'backbone': 4.298266152283292e-05, 'decoder': 0.0006447399228424938}
+[engine] update 4800/12000 loss=0.9081250911951065 lr={'backbone': 4.223784896668202e-05, 'decoder': 0.0006335677345002303}
+[engine] update 4900/12000 loss=0.8927300840616226 lr={'backbone': 4.148397097575144e-05, 'decoder': 0.0006222595646362716}
+[engine] update 5000/12000 loss=0.8945602238178253 lr={'backbone': 4.0721600034395575e-05, 'decoder': 0.0006108240005159336}
+[engine] update 5100/12000 loss=0.8886792349815369 lr={'backbone': 3.995131507639606e-05, 'decoder': 0.0005992697261459409}
+[engine] update 5200/12000 loss=0.8937274634838104 lr={'backbone': 3.917370104532757e-05, 'decoder': 0.0005876055156799135}
+[engine] update 5300/12000 loss=0.8892293578386307 lr={'backbone': 3.8389348450359896e-05, 'decoder': 0.0005758402267553984}
+[engine] update 5400/12000 loss=0.8961546432971954 lr={'backbone': 3.759885291783358e-05, 'decoder': 0.0005639827937675036}
+[engine] update 5500/12000 loss=0.8917042124271393 lr={'backbone': 3.680281473894963e-05, 'decoder': 0.0005520422210842444}
+[engine] update 5600/12000 loss=0.8786385011672974 lr={'backbone': 3.6001838413916834e-05, 'decoder': 0.0005400275762087525}
+[engine] update 5700/12000 loss=0.8865553891658783 lr={'backbone': 3.519653219290279e-05, 'decoder': 0.0005279479828935418}
+[engine] update 5800/12000 loss=0.8870466285943985 lr={'backbone': 3.438750761413726e-05, 'decoder': 0.0005158126142120589}
+[engine] update 5900/12000 loss=0.8832128846645355 lr={'backbone': 3.3575379039518634e-05, 'decoder': 0.0005036306855927794}
+[engine] update 6000/12000 loss=0.8907783776521683 lr={'backbone': 3.276076318807615e-05, 'decoder': 0.0004914114478211422}
+[engine] eval update=6000 mIoU_lesion4=0.0968 n_images=76
+[engine] update 6100/12000 loss=0.8823641204833984 lr={'backbone': 3.194427866764214e-05, 'decoder': 0.0004791641800146321}
+[train] done: {"status": "stopped", "stop_reason": "operator_stop_at_update_boundary", "elapsed_seconds": 8965.399070524029, "stage": "ddr_finetune", "mode": "formal", "updates_done": 6197, "micro_steps": 6200, "best": {"mIoU_lesion4": 0.09678075116594265, "update": 6000}, "config_file_sha256": "6ae617369dbd53a8c609fffd08a329c928c8e8bf2b31c5f08e5de3f443dd5535", "resume_warnings": [], "checkpoints": {"last": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/A0_ddr_finetune/ckpt_last.pth", "best": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/A0_ddr_finetune/ckpt_best.pth", "final": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/A0_ddr_finetune/ckpt_final.pth"}}

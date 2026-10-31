@@ -1,0 +1,14 @@
+{
+  "default": {
+    "status": "BOUNDED_TIMEOUT",
+    "returncode": -9,
+    "seconds": 15.086322332033888,
+    "output": "parent_threads 64 16\nprimed\nforked\n"
+  },
+  "one": {
+    "status": "EXIT",
+    "returncode": 0,
+    "seconds": 2.958421248011291,
+    "output": "parent_threads 1 1\nprimed\nforked\nBATCH_READY torch.Size([2, 3, 1024, 1024])\nException in thread Thread-1 (_pin_memory_loop):\nTraceback (most recent call last):\n  File \"/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/threading.py\", line 1045, in _bootstrap_inner\n    self.run()\n  File \"/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/threading.py\", line 982, in run\n    self._target(*self._args, **self._kwargs)\n  File \"/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/torch/utils/data/_utils/pin_memory.py\", line 61, in _pin_memory_loop\n    do_one_step()\n  File \"/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/torch/utils/data/_utils/pin_memory.py\", line 37, in do_one_step\n    r = in_queue.get(timeout=MP_STATUS_CHECK_INTERVAL)\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/multiprocessing/queues.py\", line 122, in get\n    return _ForkingPickler.loads(res)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/site-packages/torch/multiprocessing/reductions.py\", line 541, in rebuild_storage_fd\n    fd = df.detach()\n         ^^^^^^^^^^^\n  File \"/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/multiprocessing/resource_sharer.py\", line 57, in detach\n    with _resource_sharer.get_connection(self._id) as conn:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/miniconda3/envs/hrdecoder_q_20261003/lib/python3.11/multiprocessing/resource_sharer.py\", line 86, in get_connection\n    c = Client(address, authkey=process.current_process().authkey)\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^"
+  }
+}

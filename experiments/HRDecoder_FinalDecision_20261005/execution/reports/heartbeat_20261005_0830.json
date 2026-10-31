@@ -1,0 +1,250 @@
+{
+  "stage": "FORMAL_TRAINING_HEALTHY_ACTIVE_RECOVERY_CONFIRMED",
+  "observed_at": "2026-10-05T08:38:42.202731+00:00",
+  "primary": {
+    "driver": {
+      "stage": "CAMPAIGN",
+      "pid": 18787,
+      "time": "2026-10-04T21:16:20.663409+00:00"
+    },
+    "campaign": {
+      "stage": "RUNNING",
+      "current_run": "S_seed42",
+      "queue": [
+        [
+          "C",
+          42
+        ],
+        [
+          "S",
+          42
+        ],
+        [
+          "D",
+          42
+        ],
+        [
+          "SD",
+          42
+        ],
+        [
+          "PARENT_F12",
+          2024
+        ],
+        [
+          "C",
+          2024
+        ],
+        [
+          "S",
+          2024
+        ],
+        [
+          "D",
+          2024
+        ],
+        [
+          "SD",
+          2024
+        ]
+      ],
+      "updated_at": "2026-10-05T02:31:25.514043+00:00"
+    },
+    "runs": {
+      "C_seed42": {
+        "stage": "COMPLETE",
+        "completed": 32000,
+        "endpoint": 32000,
+        "updated_at": "2026-10-05T02:31:24.012530+00:00"
+      },
+      "S_seed42": {
+        "stage": "TRAINING",
+        "completed": 25140,
+        "endpoint": 32000,
+        "updated_at": "2026-10-05T08:30:33.471874+00:00",
+        "recent": {
+          "loss": 0.15590810775756836,
+          "grad_norm": 2.755488395690918,
+          "seconds": 0.8091789030004293,
+          "data_wait_seconds": 0.0022358226124197245,
+          "peak_gpu_bytes": 11004799488
+        }
+      }
+    },
+    "free_disk_bytes": 21772701696,
+    "observed_at": "2026-10-05T08:30:38.815696+00:00"
+  },
+  "second": {
+    "driver": {
+      "stage": "PARALLEL_CAMPAIGN",
+      "pid": 3295,
+      "time": "2026-10-05T05:33:32.002303+00:00"
+    },
+    "campaign": {
+      "stage": "RUNNING",
+      "current_run": "SD_seed42",
+      "queue": [
+        [
+          "SD",
+          42
+        ]
+      ],
+      "amendment_sha256": "cae05b90a986f4d14a7c7f1e7ca25de10b9d966d905cd1ea88f5e0c2116344c3",
+      "time": "2026-10-05T05:33:32.001933+00:00"
+    },
+    "runs": {
+      "SD_seed42": {
+        "stage": "TRAINING",
+        "completed": 8460,
+        "endpoint": 32000,
+        "updated_at": "2026-10-05T08:30:41.645355+00:00",
+        "recent": {
+          "loss": 0.20556631684303284,
+          "grad_norm": 0.5261675119400024,
+          "seconds": 1.2066500782966614,
+          "data_wait_seconds": 0.002542451024055481,
+          "peak_gpu_bytes": 11006432768
+        }
+      }
+    },
+    "free_disk_bytes": 17727299584,
+    "observed_at": "2026-10-05T08:30:40.030701+00:00"
+  },
+  "additional_fresh_run_status_observations": {
+    "S_seed42": {
+      "stage": "TRAINING",
+      "completed": 25200,
+      "endpoint": 32000,
+      "updated_at": "2026-10-05T08:31:22.279604+00:00",
+      "recent": {
+        "loss": 0.14049892127513885,
+        "grad_norm": 1.9506534337997437,
+        "seconds": 0.8092550211586058,
+        "data_wait_seconds": 0.0013363368343561888,
+        "peak_gpu_bytes": 11004799488
+      }
+    },
+    "SD_seed42": {
+      "stage": "TRAINING",
+      "completed": 8480,
+      "endpoint": 32000,
+      "updated_at": "2026-10-05T08:31:05.820768+00:00",
+      "recent": {
+        "loss": 0.17514805495738983,
+        "grad_norm": 0.8275958895683289,
+        "seconds": 1.2014556005597115,
+        "data_wait_seconds": 0.002492554485797882,
+        "peak_gpu_bytes": 11006432768
+      }
+    }
+  },
+  "new_validation_evidence": {
+    "S_seed42": {
+      "update": 24000,
+      "n_images": 76,
+      "per_image_count": 76,
+      "scores": {
+        "single": 42.018816265387485,
+        "fixed_fusion": 45.323095776327385,
+        "half_fusion": 43.54937754768469
+      },
+      "metric_sha256": "69518a6e38be6125bbfad166b86d90ec53ca8360d798394d75db303201cb3bca",
+      "local_metric_mirror_matches": false,
+      "registered_endpoint": false,
+      "fixed25_gain_vs_R42_pp": 0.9674034377890095,
+      "single_vs_F12_parent_pp": 1.7769826648714613,
+      "node_meets_both_collapse_thresholds": false
+    },
+    "SD_seed42": {
+      "update": 8000,
+      "n_images": 76,
+      "per_image_count": 76,
+      "scores": {
+        "single": 41.27487871289849,
+        "fixed_fusion": 44.5898536602842,
+        "half_fusion": 43.25308579485186
+      },
+      "metric_sha256": "5754d1bbb8a2c1cef274ad0d04acf6fe7d191ec793226969ef6c54efdc8a9a6d",
+      "local_metric_mirror_matches": true,
+      "registered_endpoint": false,
+      "fixed25_gain_vs_R42_pp": 0.23416132174582316,
+      "single_vs_F12_parent_pp": 1.0330451123824673,
+      "node_meets_both_collapse_thresholds": false
+    }
+  },
+  "boundary": {
+    "stage": "ARMED_AFTER_D42_BOUNDARY",
+    "pid": 44281,
+    "time": "2026-10-05T04:11:34.270609+00:00",
+    "process_alive": true
+  },
+  "local_processes": [
+    {
+      "pid": 32844,
+      "alive": true,
+      "cmdline": [
+        "C:\\Users\\GuanXingRen\\Miniconda3\\python.exe",
+        "-u",
+        "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\execution\\reports\\primary_parallel_attendant.py"
+      ]
+    },
+    {
+      "pid": 8552,
+      "alive": true,
+      "cmdline": [
+        "C:\\Users\\GuanXingRen\\Miniconda3\\python.exe",
+        "-u",
+        "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\execution\\reports\\parallel_node2_attendant.py"
+      ]
+    },
+    {
+      "pid": 13216,
+      "alive": true,
+      "cmdline": [
+        "C:\\Users\\GuanXingRen\\Miniconda3\\python.exe",
+        "-u",
+        "reports/parallel_single_seed_coordinator.py"
+      ]
+    }
+  ],
+  "primary_transfer_progress": {
+    "stage": "TRANSFERRING",
+    "full": false,
+    "verified_files": 5432,
+    "expected_files": 5436,
+    "verified_bytes": 3434738668,
+    "expected_bytes": 5056826539,
+    "updated_at": "2026-10-05T08:01:27.058107+00:00"
+  },
+  "second_transfer_progress": {
+    "stage": "TRANSFERRING",
+    "full": false,
+    "verified_files": 2349,
+    "expected_files": 2349,
+    "verified_bytes": 186064291,
+    "expected_bytes": 186064291,
+    "updated_at": "2026-10-05T08:38:19.914071+00:00"
+  },
+  "coordinator_state": {
+    "stage": "WAITING_SD_COMPLETE_SHA_CUSTODY",
+    "time": "2026-10-05T08:38:29.438809+00:00"
+  },
+  "transport_diagnosis": {
+    "receipt": "reports/primary_receiver_0830_diagnosis.json",
+    "active_checkpoint_bytes_before": 888864768,
+    "active_checkpoint_bytes_after": 891944960,
+    "observation_seconds": 11.18,
+    "write_bytes_increased": 3080192,
+    "conclusion": "Receiver active; per-file aggregate progress remains unchanged until complete SHA verification. Directory listing of an open Windows temporary file was stale; direct file stat and process write counters advanced. No receiver or training restart warranted."
+  },
+  "disk_cleanup_needed": false,
+  "scientific_stop_required": false,
+  "shutdown_eligible": false,
+  "final_selection_frozen": false,
+  "new_test_run": false,
+  "authorized_seeds": [
+    42
+  ],
+  "duplicate_mirror_started": false,
+  "training_or_frozen_source_changed": false
+}

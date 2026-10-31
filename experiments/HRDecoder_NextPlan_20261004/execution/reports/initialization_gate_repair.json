@@ -1,0 +1,17 @@
+{
+  "stage": "TECHNICAL_REPAIR_BEFORE_ANY_FORMAL_UPDATE",
+  "original_source_sha256": "96bce19d48e7070a52ff89f476ea36ef577cebc40241648f2b5810ed42314f25",
+  "new_source_sha256": "0eb2edcf046ddcf7ef984d8834fa1e3ec6c53191c02ac45fc2cfdc4343601452",
+  "changed_files": [
+    "preflight_gpu.py",
+    "server_driver.py",
+    "ops/package.py"
+  ],
+  "reason": "Windows torch2.6 fingerprint cannot gate archived Linux torch2.7.1 initialization; verify actual historical CPU RNG and preserve original4-thread launch environment",
+  "unregistered_training_updates": 0,
+  "timestamp": "2026-10-04T08:35:25.110035+00:00",
+  "launch": {
+    "pid": 1750,
+    "stage": "REPAIRED_PREFLIGHT_LAUNCHED"
+  }
+}

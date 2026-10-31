@@ -1,0 +1,22 @@
+{
+  "stage": "ROOT_CAUSE_REPAIRED_EXPLICIT_ONE_TIME_RESUME_READY",
+  "recorded_at": "2026-10-04T05:05:34.526267+00:00",
+  "cause": "The second dependency worker opened SSH every30s and stopped at a TCP connect timeout before launch. Registered training and its existing export worker remained healthy.",
+  "repair": "Depend on the existing local export receipt; keep original bounded UTC deadline. Four locally SHA-backed run identities and complete statuses are checked; one remote prerequisite+source guard runs immediately before once-only final launch.",
+  "explicit_resume_once": true,
+  "prior_worker_confirmed_exited": true,
+  "prior_worker_pid": 17852,
+  "failed_state_sha256": "22ee936ff83edd09bf12e9f80725721be8776b04d78207d11282212b6c44168f",
+  "repaired_worker_sha256": "69cf6bcbdaf749853e82800a9446be1c5625ddf3eeb6297ee854465cff89eda4",
+  "original_deadline_utc": "2026-10-04T07:26:28.144739+00:00",
+  "healthy_actual_snapshot_sha256": "3ac3ec0738d749a14632e3157673e022dc54df683c98f341bb14be946dec213d",
+  "healthy_actual_checked_at": "2026-10-04T05:02:35.145846+00:00",
+  "validation": {
+    "local_AST": true,
+    "remote_launch_payload_AST": true,
+    "existing_complete_local_backups_passed": 3,
+    "missing_final_backup_rejected": true,
+    "incomplete_or_changed_identity_rejected": 2
+  },
+  "automatic_retry": false
+}

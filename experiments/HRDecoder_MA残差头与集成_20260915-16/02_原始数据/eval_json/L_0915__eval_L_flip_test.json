@@ -1,0 +1,24 @@
+{
+  "models": [
+    {
+      "config": "configs/lesion/exp/hrplus_patch_lovasz.py",
+      "ckpt": "/root/autodl-tmp/hrplus/results/L_0915/best_mIoU_iter_6000.pth",
+      "weight": 1.0
+    }
+  ],
+  "load_report": [
+    {
+      "ckpt": "best_mIoU_iter_6000.pth",
+      "missing": [],
+      "unexpected": []
+    }
+  ],
+  "flip_tta": true,
+  "split": "test",
+  "n_images": 227,
+  "mIoU": 0.41644735778268605,
+  "mF1": 0.5787176410481992,
+  "mPPV": 0.6732646515432624,
+  "mS": 0.5118308763374573,
+  "mAUPR": 0.6110390857252629
+}

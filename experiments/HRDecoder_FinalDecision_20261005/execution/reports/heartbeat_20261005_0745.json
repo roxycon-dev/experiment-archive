@@ -1,0 +1,189 @@
+{
+  "stage": "REGISTERED_20K_VALIDATION_COMPLETE_RECOVERY_ACTIVE",
+  "observed_at": "2026-10-05T07:47:55.499385+00:00",
+  "primary": {
+    "driver": {
+      "stage": "CAMPAIGN",
+      "pid": 18787,
+      "time": "2026-10-04T21:16:20.663409+00:00"
+    },
+    "campaign": {
+      "stage": "RUNNING",
+      "current_run": "S_seed42",
+      "queue": [
+        [
+          "C",
+          42
+        ],
+        [
+          "S",
+          42
+        ],
+        [
+          "D",
+          42
+        ],
+        [
+          "SD",
+          42
+        ],
+        [
+          "PARENT_F12",
+          2024
+        ],
+        [
+          "C",
+          2024
+        ],
+        [
+          "S",
+          2024
+        ],
+        [
+          "D",
+          2024
+        ],
+        [
+          "SD",
+          2024
+        ]
+      ],
+      "updated_at": "2026-10-05T02:31:25.514043+00:00"
+    },
+    "runs": {
+      "C_seed42": {
+        "stage": "COMPLETE",
+        "completed": 32000,
+        "endpoint": 32000,
+        "updated_at": "2026-10-05T02:31:24.012530+00:00"
+      },
+      "S_seed42": {
+        "stage": "TRAINING",
+        "completed": 22040,
+        "endpoint": 32000,
+        "updated_at": "2026-10-05T07:45:33.913935+00:00",
+        "recent": {
+          "loss": 0.15198442339897156,
+          "grad_norm": 0.7236286401748657,
+          "seconds": 0.8113544050138444,
+          "data_wait_seconds": 0.0014472822658717632,
+          "peak_gpu_bytes": 11004799488
+        }
+      }
+    },
+    "free_disk_bytes": 21774348288,
+    "observed_at": "2026-10-05T07:45:47.844434+00:00"
+  },
+  "second": {
+    "driver": {
+      "stage": "PARALLEL_CAMPAIGN",
+      "pid": 3295,
+      "time": "2026-10-05T05:33:32.002303+00:00"
+    },
+    "campaign": {
+      "stage": "RUNNING",
+      "current_run": "SD_seed42",
+      "queue": [
+        [
+          "SD",
+          42
+        ]
+      ],
+      "amendment_sha256": "cae05b90a986f4d14a7c7f1e7ca25de10b9d966d905cd1ea88f5e0c2116344c3",
+      "time": "2026-10-05T05:33:32.001933+00:00"
+    },
+    "runs": {
+      "SD_seed42": {
+        "stage": "TRAINING",
+        "completed": 6380,
+        "endpoint": 32000,
+        "updated_at": "2026-10-05T07:45:48.250743+00:00",
+        "recent": {
+          "loss": 0.20573222637176514,
+          "grad_norm": 0.5980322360992432,
+          "seconds": 1.1996411010622978,
+          "data_wait_seconds": 0.002416282892227173,
+          "peak_gpu_bytes": 11006432768
+        }
+      }
+    },
+    "free_disk_bytes": 17728352256,
+    "observed_at": "2026-10-05T07:45:54.296458+00:00"
+  },
+  "additional_fresh_run_status_observations": {
+    "S_seed42": {
+      "stage": "TRAINING",
+      "completed": 22120,
+      "updated_at": "2026-10-05T07:46:38.901535+00:00"
+    },
+    "SD_seed42": {
+      "stage": "TRAINING",
+      "completed": 6420,
+      "updated_at": "2026-10-05T07:46:37.973219+00:00"
+    }
+  },
+  "new_validation_evidence": {
+    "S_seed42": {
+      "update": 20000,
+      "n_images": 76,
+      "per_image_count": 76,
+      "single_val_miou_pct": 42.27032190489858,
+      "fixed25_val_miou_pct": 45.32183122738841,
+      "half_val_miou_pct": 43.58948548754201,
+      "metric_sha256": "41d492ec19114055da41c90bfbf3dc6d692afb2e191483fe348d4b6d4e4fd441",
+      "source": "PRIMARY remote runs/S_seed42/val_u20000/metrics.json",
+      "read_observed_utc": "2026-10-05T07:46",
+      "registered_endpoint": true,
+      "FP32_probability_file_count": 76,
+      "local_metric_mirror_matches_at_observation": false,
+      "local_recovery": "ACTIVE_EXPECTED_PENDING_CANONICAL_METADATA_AND_ENDPOINT_SHA_CUSTODY",
+      "fixed25_gain_vs_R42_pp": 0.9661388888500326,
+      "single_vs_F12_parent_pp": 2.028488304382556,
+      "single_seed_recipe_gain_gate_met": true,
+      "node_meets_both_collapse_thresholds": false
+    }
+  },
+  "SD4k_unchanged_and_no_collapse_thresholds": true,
+  "boundary": {
+    "stage": "ARMED_AFTER_D42_BOUNDARY",
+    "pid": 44281,
+    "process_alive": true,
+    "observed_utc": "2026-10-05T07:46"
+  },
+  "healthy_attendants": [
+    32844,
+    8552
+  ],
+  "coordinator": 13216,
+  "receiver_locks_checked_no_competing_mirror": true,
+  "primary_transfer_progress": {
+    "stage": "TRANSFERRING",
+    "full": false,
+    "verified_files": 5072,
+    "expected_files": 5436,
+    "verified_bytes": 1546613500,
+    "expected_bytes": 5056826539,
+    "updated_at": "2026-10-05T07:47:46.055253+00:00"
+  },
+  "second_transfer_progress": {
+    "stage": "TRANSFERRING",
+    "full": false,
+    "verified_files": 2093,
+    "expected_files": 2093,
+    "verified_bytes": 184933707,
+    "expected_bytes": 184933707,
+    "updated_at": "2026-10-05T07:47:43.902647+00:00"
+  },
+  "coordinator_state": {
+    "stage": "WAITING_SD_COMPLETE_SHA_CUSTODY",
+    "time": "2026-10-05T07:47:54.299590+00:00"
+  },
+  "disk_cleanup_needed": false,
+  "scientific_stop_required": false,
+  "shutdown_eligible": false,
+  "final_selection_frozen": false,
+  "new_test_run": false,
+  "authorized_seeds": [
+    42
+  ]
+}

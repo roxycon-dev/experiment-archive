@@ -1,0 +1,121 @@
+{
+  "driver": {
+    "stage": "CAMPAIGN",
+    "pid": 18787,
+    "time": "2026-10-04T21:16:20.663409+00:00"
+  },
+  "campaign": {
+    "stage": "RUNNING",
+    "current_run": "C_seed42",
+    "queue": [
+      [
+        "C",
+        42
+      ],
+      [
+        "S",
+        42
+      ],
+      [
+        "D",
+        42
+      ],
+      [
+        "SD",
+        42
+      ],
+      [
+        "PARENT_F12",
+        2024
+      ],
+      [
+        "C",
+        2024
+      ],
+      [
+        "S",
+        2024
+      ],
+      [
+        "D",
+        2024
+      ],
+      [
+        "SD",
+        2024
+      ]
+    ],
+    "updated_at": "2026-10-04T21:18:27.614444+00:00"
+  },
+  "gate_status": "READY",
+  "benchmarks": {
+    "C": {
+      "complete_updates": 100,
+      "seconds_per_update": 0.5632033744989894,
+      "data_wait_seconds_per_update": 0.004513519967440515,
+      "full_val_seconds": 153.2427820409648,
+      "checkpoint_seconds": 1.1513189859688282,
+      "checkpoint_bytes": 1412876767,
+      "peak_gpu_bytes": 7318949376
+    },
+    "S": {
+      "complete_updates": 100,
+      "seconds_per_update": 0.8339101379411296,
+      "data_wait_seconds_per_update": 0.007412156879436225,
+      "full_val_seconds": 162.582612211816,
+      "checkpoint_seconds": 1.34655702393502,
+      "checkpoint_bytes": 1621484337,
+      "peak_gpu_bytes": 10946075648
+    },
+    "D": {
+      "complete_updates": 100,
+      "seconds_per_update": 0.8173218871909194,
+      "data_wait_seconds_per_update": 0.004096904920879751,
+      "full_val_seconds": 152.24626560416073,
+      "checkpoint_seconds": 1.200697727035731,
+      "checkpoint_bytes": 1454508531,
+      "peak_gpu_bytes": 7364527616
+    },
+    "SD": {
+      "complete_updates": 100,
+      "seconds_per_update": 1.2101163232303225,
+      "data_wait_seconds_per_update": 0.002603988703340292,
+      "full_val_seconds": 162.17425642814487,
+      "checkpoint_seconds": 1.3534815029706806,
+      "checkpoint_bytes": 1667989725,
+      "peak_gpu_bytes": 11004799488
+    }
+  },
+  "caches": {
+    "training": {
+      "bytes": 27327660784,
+      "limit_bytes": 85899345920,
+      "expected_bytes": 27327660784,
+      "images": 893,
+      "seconds": 42.83688876987435,
+      "storage": "RGB uint8 + mapped label uint8; read-only pages shared by fork"
+    },
+    "P0": {
+      "bytes": 6417790208,
+      "images": 76,
+      "float32_original_probability": true
+    }
+  },
+  "runs": {
+    "C_seed42": {
+      "stage": "TRAINING",
+      "completed": 220,
+      "endpoint": 32000,
+      "updated_at": "2026-10-04T21:20:37.308628+00:00",
+      "recent": {
+        "loss": 0.16541463136672974,
+        "grad_norm": 3.532440423965454,
+        "seconds": 0.5447182110510767,
+        "data_wait_seconds": 0.0010163970291614532,
+        "peak_gpu_bytes": 11004799488
+      }
+    }
+  },
+  "tail": ", 'grad_norm': 0.9747263789176941, 'seconds': 0.5432183498051018, 'data_wait_seconds': 0.0016063491348177195, 'peak_gpu_bytes': 11004799488}\nC 42 120 {'loss': 0.19220462441444397, 'grad_norm': 0.8239240646362305, 'seconds': 0.538178222021088, 'data_wait_seconds': 0.0013329400680959225, 'peak_gpu_bytes': 11004799488}\nC 42 140 {'loss': 0.1538107693195343, 'grad_norm': 8.585896492004395, 'seconds': 0.5382506779860705, 'data_wait_seconds': 0.001303801778703928, 'peak_gpu_bytes': 11004799488}\nC 42 160 {'loss': 0.1250443458557129, 'grad_norm': 22.329126358032227, 'seconds': 0.5415355139411986, 'data_wait_seconds': 0.0013920809142291546, 'peak_gpu_bytes': 11004799488}\nC 42 180 {'loss': 0.10977374017238617, 'grad_norm': 1.0706897974014282, 'seconds': 0.5441868079360574, 'data_wait_seconds': 0.0013484170194715261, 'peak_gpu_bytes': 11004799488}\nC 42 200 {'loss': 0.16618402302265167, 'grad_norm': 12.56722354888916, 'seconds': 0.5457571409642696, 'data_wait_seconds': 0.00157150998711586, 'peak_gpu_bytes': 11004799488}\nC 42 220 {'loss': 0.16541463136672974, 'grad_norm': 3.532440423965454, 'seconds': 0.5447182110510767, 'data_wait_seconds': 0.0010163970291614532, 'peak_gpu_bytes': 11004799488}\n",
+  "observed_at": "2026-10-04T21:20:46.398792+00:00"
+}

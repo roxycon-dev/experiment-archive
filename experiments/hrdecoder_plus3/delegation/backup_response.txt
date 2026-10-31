@@ -1,0 +1,211 @@
+```python
+# ops/local_backup.py
+import os, re, json, time, hashlib, shlex
+import paramiko
+
+REMOTE_ROOT = '/root/autodl-tmp/hrplus'
+WORK = REMOTE_ROOT + '/D_0913_retry'
+SUMMARY_PATH = REMOTE_ROOT + '/D_0913_retry_summary.json'
+DEADLINE = 1789257900  # 2026-09-13 08:05 Asia/Shanghai
+POLL = 15
+PY = '/root/miniconda3/bin/python'
+LOG_REMOTE = REMOTE_ROOT + '/D_0913_retry.log'
+
+EXPORT_CODE = (
+    "import torch,os,sys,hashlib\n"
+    "p=sys.argv[1]; o=sys.argv[2]\n"
+    "ck=torch.load(p,map_location='cpu')\n"
+    "if isinstance(ck,dict) and 'state_dict' in ck:\n"
+    "    sd={k:v for k,v in ck['state_dict'].items() if not k.startswith('reference.')}\n"
+    "    out={'state_dict':sd}\n"
+    "    for k,v in ck.items():\n"
+    "        if k!='state_dict': out[k]=v\n"
+    "else:\n"
+    "    out=ck\n"
+    "tmp=o+'.tmp'\n"
+    "torch.save(out,tmp)\n"
+    "os.replace(tmp,o)\n"
+    "h=hashlib.sha256(open(o,'rb').read()).hexdigest()\n"
+    "print(json.dumps({'path':o,'size':os.path.getsize(o),'sha256':h})) if False else print(o,os.path.getsize(o),h)\n"
+    "import json\n"
+    "print(json.dumps({'path':o,'size':os.path.getsize(o),'sha256':h}))\n"
+)
+
+BEST_RE = re.compile(r'^best_mIoU_iter_(\d+)\.pth$')
+
+def _connect(connect):
+    try:
+        c = connect()
+        c.get_transport().set_keepalive(15)
+        return c
+    except Exception:
+        return None
+
+def _exec(c, cmd, timeout=120):
+    _, out, err = c.exec_command(cmd, timeout=timeout)
+    o = out.read().decode('utf-8', 'replace')
+    rc = out.channel.recv_exit_status()
+    return rc, o, err.read().decode('utf-8', 'replace')
+
+def _sftp_get(c, rpath, lpath, timeout=15):
+    try:
+        sftp = c.open_sftp()
+        sftp.get(rpath, lpath)
+        sftp.close()
+        return True
+    except IOError:
+        return False
+    except Exception:
+        return False
+
+def _local_verified(lpath, sha):
+    if not os.path.exists(lpath):
+        return False
+    h = hashlib.sha256()
+    with open(lpath, 'rb') as f:
+        for chunk in iter(lambda: f.read(1 << 20), b''):
+            h.update(chunk)
+    return h.hexdigest() == sha
+
+def _list_best(c):
+    try:
+        sftp = c.open_sftp()
+        names = sftp.listdir(WORK)
+        sftp.close()
+        return [(int(BEST_RE.match(n).group(1)), n) for n in names if BEST_RE.match(n)]
+    except Exception:
+        return []
+
+def _export_and_download(c, it, name, local_dir):
+    rck = WORK + '/' + name
+    rbk = WORK + '/backup_student_%d.pth' % it
+    lpath = os.path.join(local_dir, 'backup_student_%d.pth' % it)
+    if _local_verified(lpath, None) and os.path.getsize(lpath) > 0:
+        return True
+    code = EXPORT_CODE.replace("'path':o", "'path':o").replace("print(json.dumps({'path':o,'size':os.path.getsize(o),'sha256':h})) if False else print(o,os.path.getsize(o),h)\n", "")
+    cmd = '%s -c %s %s %s' % (PY, shlex.quote(code), shlex.quote(rck), shlex.quote(rbk))
+    rc, out, err = _exec(c, cmd, timeout=600)
+    if rc != 0:
+        print(json.dumps({'event': 'export_failure', 'iter': it}))
+        return False
+    meta = None
+    for line in out.strip().splitlines()[::-1]:
+        try:
+            meta = json.loads(line)
+            break
+        except Exception:
+            continue
+    if not meta or meta.get('sha256') is None:
+        return False
+    part = lpath + '.part'
+    try:
+        sftp = c.open_sftp()
+        with sftp.open(rbk, 'rb') as rf:
+            rf.prefetch(False)
+            with open(part, 'wb') as lf:
+                while True:
+                    d = rf.read(1 << 20)
+                    if not d:
+                        break
+                    lf.write(d)
+        sftp.close()
+    except Exception:
+        print(json.dumps({'event': 'need_nogpu_recovery', 'iter': it, 'reason': 'transfer_interrupted'}))
+        return False
+    if not _local_verified(part, meta['sha256']):
+        print(json.dumps({'event': 'need_nogpu_recovery', 'iter': it, 'reason': 'sha_mismatch'}))
+        return False
+    os.replace(part, lpath)
+    print(json.dumps({'event': 'backup_saved', 'iter': it, 'path': lpath,
+                      'size': os.path.getsize(lpath), 'sha256': meta['sha256']}))
+    return True
+
+def _status(local_dir, data):
+    p = os.path.join(local_dir, 'backup_status.json')
+    tmp = p + '.tmp'
+    with open(tmp, 'w') as f:
+        json.dump(data, f)
+    os.replace(tmp, p)
+
+def run(connect, local_dir, remote_root):
+    os.makedirs(local_dir, exist_ok=True)
+    work = remote_root + '/D_0913_retry'
+    phase = None
+    conn = _connect(connect)
+    fails = 0
+    if conn is None:
+        for _ in range(2):
+            time.sleep(5)
+            conn = _connect(connect)
+            if conn:
+                break
+    if conn is None:
+        _status(local_dir, {'phase': 'blocked', 'reason': 'connection_failed_initial'})
+        print(json.dumps({'event': 'blocked', 'reason': 'connection_failed_initial'}))
+        return
+
+    done_acks = set()
+    while time.time() < DEADLINE:
+        try:
+            t = conn.get_transport()
+            if t is None or not t.is_active():
+                conn.close()
+                conn = None
+        except Exception:
+            conn = None
+        if conn is None:
+            conn = _connect(connect)
+        if conn is None:
+            fails += 1
+            if fails >= 3 and phase in ('training complete', 'backup'):
+                print(json.dumps({'event': 'stop', 'reason': 'ssh_refused_3x', 'phase': phase}))
+                return
+            if fails >= 3 and phase is None:
+                print(json.dumps({'event': 'blocked', 'reason': 'connection_failed_initial'}))
+                _status(local_dir, {'phase': 'blocked'})
+                return
+            time.sleep(5)
+            continue
+        fails = 0
+        for r, l in ((work + '/state.json', 'state.json'),
+                     (work + '/smoke.json', 'smoke.json'),
+                     (remote_root + '/D_0913_retry_summary.json', 'D_0913_retry_summary.json'),
+                     (remote_root + '/D_0913_retry.log', 'D_0913_retry.log')):
+            _sftp_get(conn, r, os.path.join(local_dir, l))
+        try:
+            sftp = conn.open_sftp()
+            for f in sftp.listdir(work):
+                if f.endswith('.log.json'):
+                    _sftp_get(conn, work + '/' + f, os.path.join(local_dir, f))
+            sftp.close()
+        except Exception:
+            pass
+
+        state_path = os.path.join(local_dir, 'state.json')
+        cur = phase
+        if os.path.exists(state_path):
+            try:
+                st = json.load(open(state_path))
+                cur = st.get('phase', cur)
+            except Exception:
+                pass
+        if cur != phase:
+            phase = cur
+            print(json.dumps({'event': 'phase', 'phase': phase}))
+
+        for it, name in sorted(_list_best(conn)):
+            ok = _export_and_download(conn, it, name, local_dir)
+            if not ok:
+                continue
+            if phase == 'backup' or phase == 'training complete':
+                _exec(conn, 'ls %s' % shlex.quote(work + '/backup_ack'))
+                if it not in done_acks:
+                    _exec(conn, 'printf %s > %s' % (shlex.quote(str(int(time.time()))),
+                                                    shlex.quote(work + '/backup_ack')))
+                    done_acks.add(it)
+                    print(json.dumps({'event': 'backup_ack_written', 'iter': it}))
+                phase = 'backup'
+        time.sleep(POLL)
+
+    _status(local_dir, {'phase': phase, 'deadline_reached': True})
+```

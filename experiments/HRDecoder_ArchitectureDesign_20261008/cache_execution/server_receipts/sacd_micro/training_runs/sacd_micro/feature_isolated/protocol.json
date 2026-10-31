@@ -1,0 +1,74 @@
+{
+  "identity_SHA": "77556f6fa88c89083bf9acd0e7c50f0135e0fd8f5438ca495a5d68695bc6144a",
+  "identity": {
+    "kind": "paired warm diagnostic; not a fresh40k model",
+    "arm": "feature_isolated",
+    "parent_identity_SHA": "8f6fd8dfc7a032f335511168a4ae831f4c9a69f5aaaf00876842c11dc20c11cf",
+    "parent_completed": 20000,
+    "parent_hardlink_inode": 2179428821,
+    "protocol": {
+      "purpose": "Falsify shared-feature gradient interference; paired warm diagnostic does not certify fresh40k accuracy",
+      "parent_identity_SHA": "8f6fd8dfc7a032f335511168a4ae831f4c9a69f5aaaf00876842c11dc20c11cf",
+      "parent_completed": 20000,
+      "canvas": 2048,
+      "batch": 2,
+      "warm_updates_per_arm": 500,
+      "arms": [
+        "control",
+        "feature_isolated"
+      ],
+      "evaluation_points_per_arm": [
+        0,
+        250,
+        500
+      ],
+      "val_images": 76,
+      "learning_rate_and_auxiliary_schedule": "unchanged original 40k schedule at indices20000..20499",
+      "paired_conditions": "Same immutable parent weights, optimizer, RNG, exposure order and augmentation seeds; no fresh start claims",
+      "changes": [
+        "Detach four HRNet feature tensors at private L/G inputs only"
+      ],
+      "go_gate_all_required": {
+        "same_initial_val_counts_both_heads": true,
+        "finite_losses_gradients_and_complete_GPU_smoke_both_arms": true,
+        "modified_mIoU_gain_over_control_at_250_pp_at_least": 0.0,
+        "modified_mIoU_gain_over_control_at_500_pp_at_least": 1.0,
+        "modified_HE_false_positives_ratio_to_control_at_500_at_most": 0.8,
+        "modified_HE_recall_loss_to_control_at_500_pp_at_most": 2.0,
+        "any_class_IoU_loss_to_control_at_500_pp_at_most": 2.0
+      },
+      "gate_interpretation": "Practical pre-registered screening cutoffs, not calibrated significance or a guarantee; false negatives and selection bias possible",
+      "fresh_screen_if_warm_passes": {
+        "initialization": "fresh ImageNet W48 seed42/private20261008; never warm diagnostic weights",
+        "stop_before_authorized_full_continuation_at": 8000,
+        "full_val_points": [
+          4000,
+          8000
+        ],
+        "original_40k_learning_rate_and_auxiliary_schedule": true,
+        "4k_mIoU_at_least": 28.825649019809976,
+        "8k_mIoU_at_least": 34.46992121036569,
+        "8k_mIoU_gain_over_4k_pp_at_least": 3.0,
+        "every_class_IoU_at_8k_strictly_positive": true,
+        "HE_IoU_at_8k_not_below_4k": true,
+        "no_nonfinite_loss_gradient_or_persistent_collapse": true,
+        "full40k_extension_authorized_only_after_screen_passes": true,
+        "independent_test_untouched_until_locked40k": true
+      },
+      "new_candidates_authorized": 1,
+      "server_original_deadline": "2026-10-10T02:00:00+08:00",
+      "conditional_deadline_extension": "User permits extension until completion only after the short screening passes",
+      "never_shutdown": true,
+      "never_control_external_diagnostics": true,
+      "no_checkpoint_download": true,
+      "registered_before_any_probe_result": true
+    },
+    "code": {
+      "probe.py": "7065b21899fcb36c824578a5c3d49f915b295b844eeb7856970951837cd707f7",
+      "intervention.py": "f9097dd589460eb20558da9e73dae754826a73719ff19d69fc66e0e07fee6a31",
+      "micro_protocol.json": "60201eda40e6b3bdf63b9d583668f88e1c4eef2be111df89dbe5febdf20b347c"
+    }
+  },
+  "parent_model_optimizer_RNG_loaded": true,
+  "teacher_cache_bytes": 103079171144
+}

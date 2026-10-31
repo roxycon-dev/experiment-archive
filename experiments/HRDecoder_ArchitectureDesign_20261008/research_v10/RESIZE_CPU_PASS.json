@@ -1,0 +1,130 @@
+{
+  "status": "PASS",
+  "torch": "2.6.0+cu124",
+  "device": "cpu",
+  "tests": [
+    {
+      "dtype": "torch.float64",
+      "in_hw": [
+        3,
+        5
+      ],
+      "out_hw": [
+        7,
+        9
+      ],
+      "maximum_gradient_error": 8.881784197001252e-16
+    },
+    {
+      "dtype": "torch.float64",
+      "in_hw": [
+        8,
+        6
+      ],
+      "out_hw": [
+        4,
+        3
+      ],
+      "maximum_gradient_error": 0.0
+    },
+    {
+      "dtype": "torch.float64",
+      "in_hw": [
+        4,
+        4
+      ],
+      "out_hw": [
+        8,
+        8
+      ],
+      "maximum_gradient_error": 8.881784197001252e-16
+    },
+    {
+      "dtype": "torch.float64",
+      "in_hw": [
+        1,
+        2
+      ],
+      "out_hw": [
+        3,
+        5
+      ],
+      "maximum_gradient_error": 8.881784197001252e-16
+    },
+    {
+      "dtype": "torch.float64",
+      "in_hw": [
+        7,
+        9
+      ],
+      "out_hw": [
+        7,
+        9
+      ],
+      "maximum_gradient_error": 0.0
+    },
+    {
+      "dtype": "torch.float32",
+      "in_hw": [
+        3,
+        5
+      ],
+      "out_hw": [
+        7,
+        9
+      ],
+      "maximum_gradient_error": 4.76837158203125e-07
+    },
+    {
+      "dtype": "torch.float32",
+      "in_hw": [
+        8,
+        6
+      ],
+      "out_hw": [
+        4,
+        3
+      ],
+      "maximum_gradient_error": 0.0
+    },
+    {
+      "dtype": "torch.float32",
+      "in_hw": [
+        4,
+        4
+      ],
+      "out_hw": [
+        8,
+        8
+      ],
+      "maximum_gradient_error": 7.152557373046875e-07
+    },
+    {
+      "dtype": "torch.float32",
+      "in_hw": [
+        1,
+        2
+      ],
+      "out_hw": [
+        3,
+        5
+      ],
+      "maximum_gradient_error": 4.76837158203125e-07
+    },
+    {
+      "dtype": "torch.float32",
+      "in_hw": [
+        7,
+        9
+      ],
+      "out_hw": [
+        7,
+        9
+      ],
+      "maximum_gradient_error": 0.0
+    }
+  ],
+  "deterministic_algorithms": true,
+  "TF32": false,
+  "no_data_or_checkpoint_read": true
+}

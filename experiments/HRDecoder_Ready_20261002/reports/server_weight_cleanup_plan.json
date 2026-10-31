@@ -1,0 +1,150 @@
+{
+  "allowed_roots": [
+    "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs",
+    "/root/HRDecoder/work_dirs"
+  ],
+  "protected_paths": [
+    "/root/HRDecoder/hrdecoder_ddr_iter_40000.pth",
+    "/root/autodl-tmp/HRDecoder_Ready_20261002/assets/U0_historical_best.pth",
+    "/root/autodl-tmp/HRDecoder_Ready_20261002/assets/champion/B_weights.pth",
+    "/root/autodl-tmp/HRDecoder_Ready_20261002/assets/champion/D_student_2000.pth",
+    "/root/autodl-tmp/HRDecoder_Ready_20261002/assets/champion/E4_weights.pth",
+    "/root/autodl-tmp/HRDecoder_Ready_20261002/assets/champion/E_1500.pth",
+    "/root/autodl-tmp/HRDecoder_Ready_20261002/assets/champion/H4_best.pth",
+    "/root/autodl-tmp/HRDecoder_Ready_20261002/assets/convnext_small_1k_224_ema.pth",
+    "/root/autodl-tmp/HRDecoder_Ready_20261002/assets/hrnetv2_w48-d2186c55.pth"
+  ],
+  "delete": [
+    {
+      "path": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/U1_external_pretrain/ckpt_best.pth",
+      "bytes": 636327027,
+      "reason": "Completed unselected stage; full best checkpoint SHA-verified locally; unused last released under user cleanup instruction",
+      "local_best_backup": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\U1_external_pretrain\\ckpt_best.pth"
+    },
+    {
+      "path": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/U1_external_pretrain/ckpt_last.pth",
+      "bytes": 636327027,
+      "reason": "Completed unselected stage; full best checkpoint SHA-verified locally; unused last released under user cleanup instruction",
+      "local_best_backup": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\U1_external_pretrain\\ckpt_best.pth"
+    },
+    {
+      "path": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/U1_ddr_finetune/ckpt_last.pth",
+      "bytes": 636326899,
+      "reason": "Completed unselected stage; full best checkpoint SHA-verified locally; unused last released under user cleanup instruction",
+      "local_best_backup": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\U1_ddr_finetune\\ckpt_best.pth"
+    },
+    {
+      "path": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/U1_ddr_finetune/ckpt_best.pth",
+      "bytes": 636326899,
+      "reason": "Completed unselected stage; full best checkpoint SHA-verified locally; unused last released under user cleanup instruction",
+      "local_best_backup": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\U1_ddr_finetune\\ckpt_best.pth"
+    },
+    {
+      "path": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/H1_external_pretrain/ckpt_best.pth",
+      "bytes": 812859935,
+      "reason": "Completed unselected stage; full best checkpoint SHA-verified locally; unused last released under user cleanup instruction",
+      "local_best_backup": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\H1_external_pretrain\\ckpt_best.pth"
+    },
+    {
+      "path": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/H1_external_pretrain/ckpt_last.pth",
+      "bytes": 812859935,
+      "reason": "Completed unselected stage; full best checkpoint SHA-verified locally; unused last released under user cleanup instruction",
+      "local_best_backup": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\H1_external_pretrain\\ckpt_best.pth"
+    },
+    {
+      "path": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/H1_ddr_finetune/ckpt_last.pth",
+      "bytes": 812859871,
+      "reason": "Completed unselected stage; full best checkpoint SHA-verified locally; unused last released under user cleanup instruction",
+      "local_best_backup": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\H1_ddr_finetune\\ckpt_best.pth"
+    },
+    {
+      "path": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/H1_ddr_finetune/ckpt_best.pth",
+      "bytes": 812859871,
+      "reason": "Completed unselected stage; full best checkpoint SHA-verified locally; unused last released under user cleanup instruction",
+      "local_best_backup": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\H1_ddr_finetune\\ckpt_best.pth"
+    },
+    {
+      "path": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/A0_ddr_finetune/ckpt_last.pth",
+      "bytes": 307229269,
+      "reason": "Completed unselected stage; full best checkpoint SHA-verified locally; unused last released under user cleanup instruction",
+      "local_best_backup": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\A0_ddr_finetune\\ckpt_best.pth"
+    },
+    {
+      "path": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/A0_ddr_finetune/ckpt_best.pth",
+      "bytes": 307230421,
+      "reason": "Completed unselected stage; full best checkpoint SHA-verified locally; unused last released under user cleanup instruction",
+      "local_best_backup": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\server_results\\work_dirs\\A0_ddr_finetune\\ckpt_best.pth"
+    },
+    {
+      "path": "/root/HRDecoder/work_dirs/exp_combo2_split613/best_mIoU_iter_12000.pth",
+      "bytes": 526478242,
+      "reason": "Historical unselected checkpoint; current champion uses separate verified assets; preserve configs/logs and official pretrained baseline",
+      "local_best_backup": null
+    },
+    {
+      "path": "/root/HRDecoder/work_dirs/exp_combo2_split613/iter_25000.pth",
+      "bytes": 526478242,
+      "reason": "Historical unselected checkpoint; current champion uses separate verified assets; preserve configs/logs and official pretrained baseline",
+      "local_best_backup": null
+    },
+    {
+      "path": "/root/HRDecoder/work_dirs/exp_combo_split613/best_mIoU_iter_32000.pth",
+      "bytes": 526178583,
+      "reason": "Historical unselected checkpoint; current champion uses separate verified assets; preserve configs/logs and official pretrained baseline",
+      "local_best_backup": null
+    },
+    {
+      "path": "/root/HRDecoder/work_dirs/exp_combo_split613/best_mIoU_iter_4000.pth",
+      "bytes": 526178519,
+      "reason": "Historical unselected checkpoint; current champion uses separate verified assets; preserve configs/logs and official pretrained baseline",
+      "local_best_backup": null
+    },
+    {
+      "path": "/root/HRDecoder/work_dirs/exp_combo_split613/iter_40000.pth",
+      "bytes": 526178583,
+      "reason": "Historical unselected checkpoint; current champion uses separate verified assets; preserve configs/logs and official pretrained baseline",
+      "local_best_backup": null
+    },
+    {
+      "path": "/root/HRDecoder/work_dirs/exp_combo_v2_split613/best_mIoU_iter_16000.pth",
+      "bytes": 526178583,
+      "reason": "Historical unselected checkpoint; current champion uses separate verified assets; preserve configs/logs and official pretrained baseline",
+      "local_best_backup": null
+    },
+    {
+      "path": "/root/HRDecoder/work_dirs/exp_combo_v2_split613/iter_23000.pth",
+      "bytes": 526178583,
+      "reason": "Historical unselected checkpoint; current champion uses separate verified assets; preserve configs/logs and official pretrained baseline",
+      "local_best_backup": null
+    },
+    {
+      "path": "/root/HRDecoder/work_dirs/exp_e1_cedice_split613/best_mIoU_iter_12000.pth",
+      "bytes": 525854922,
+      "reason": "Historical unselected checkpoint; current champion uses separate verified assets; preserve configs/logs and official pretrained baseline",
+      "local_best_backup": null
+    },
+    {
+      "path": "/root/HRDecoder/work_dirs/exp_e1_cedice_split613/iter_40000.pth",
+      "bytes": 525854922,
+      "reason": "Historical unselected checkpoint; current champion uses separate verified assets; preserve configs/logs and official pretrained baseline",
+      "local_best_backup": null
+    },
+    {
+      "path": "/root/HRDecoder/work_dirs/exp_e4_detail_split613/best_mIoU_iter_36000.pth",
+      "bytes": 526178519,
+      "reason": "Historical unselected checkpoint; current champion uses separate verified assets; preserve configs/logs and official pretrained baseline",
+      "local_best_backup": null
+    },
+    {
+      "path": "/root/HRDecoder/work_dirs/exp_e4_detail_split613/iter_40000.pth",
+      "bytes": 526178519,
+      "reason": "Historical unselected checkpoint; current champion uses separate verified assets; preserve configs/logs and official pretrained baseline",
+      "local_best_backup": null
+    }
+  ],
+  "delete_count": 21,
+  "planned_bytes": 12199123371,
+  "authorization": "User explicitly requested deleting unused server model weights on 2026-10-02",
+  "local_deployment_weight_manifest": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\best_pipeline\\local_weight_manifest.json",
+  "local_verified_new_best_backups": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\reports\\verified_backups.json"
+}

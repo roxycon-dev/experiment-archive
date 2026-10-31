@@ -1,0 +1,24 @@
+{
+  "stage": "DISPATCHED_ONCE_ACTUAL_FORMAL_IDENTITY_VERIFIED",
+  "prepared_at": "2026-10-04T02:00:56.805734+00:00",
+  "script": "reports/offload_mix2024_late_nodes.py",
+  "script_sha256": "aecdd82e452f80ae13aa7f2d02278a6da10a530d31c3d1c25ac4a2c2985da482",
+  "embedded_remote_payloads_AST_passed": 5,
+  "run": "Q_MIX_seed2024",
+  "endpoint": 24000,
+  "nodes": [
+    12000,
+    16000,
+    20000,
+    24000
+  ],
+  "first_node_timeout_minutes": 180,
+  "later_node_timeout_minutes": 75,
+  "required_argument": "--identity actual_frozen_formal_run_SHA",
+  "duplicates_and_automatic_retry_forbidden": true,
+  "deletion_scope": "Only locally and remotely SHA-verified completed 76-image probability NPZ; all models/counts/logs retained",
+  "dispatched_at": "2026-10-04T02:45:46.912258+00:00",
+  "worker_pid": 14908,
+  "identity_sha256": "60920d33a3d85acd05f0c6637a4ec2442f21f69a6d4ca3beff46b2cb7034adac",
+  "stream_sha256": "288eb05725024f807a85ca028ad2d356650063d098d8e219f5b4ed06fcaac0cd"
+}

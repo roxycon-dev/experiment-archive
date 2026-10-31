@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "checks": {
+    "native_halo_padding_stitch_exact_once": true,
+    "all_16_rotation_flip_combinations": true,
+    "normalized_zero_padding_and_real_black_retained": true,
+    "fp32_masked_loss_empty_positive_ignore_and_background_penalty": true,
+    "strict_threshold_and_dataset_aggregation": true,
+    "warmup_unfreeze_and_fixed_24k_lr_horizon": true,
+    "stop_extension_promotion_and_two_seed_selection": true,
+    "strict_checkpoint_rng_next_draw_lr_identity": true
+  },
+  "created_at": "2026-10-03T12:07:07.792212+00:00",
+  "test_read": false,
+  "gpu_pretrained_wiring_validated": false,
+  "scope": "CPU protocol acceptance only"
+}

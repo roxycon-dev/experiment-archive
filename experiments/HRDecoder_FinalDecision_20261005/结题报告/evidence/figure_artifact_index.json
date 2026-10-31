@@ -1,0 +1,57 @@
+[
+  {
+    "report_figure": 1,
+    "artifact_stem": "F01_training_genealogy",
+    "caption": "图1 参数父链与历史预测组成。实线表示训练初始化继承；指向 C_old 的虚线表示预测组成。历史 D/E 与本轮 D/SD 名称不同。独立 U0 只在推理融合时进入系统。"
+  },
+  {
+    "report_figure": 2,
+    "artifact_stem": "F02_locked_inference_system",
+    "caption": "图2 最终锁定系统。P0 与新分支均为概率，先在原图尺度以 FP32 融合，再严格以0.5阈值二值化。外层权重可以展开，H4内部不能线性展开。历史分支的 TTA 被保留，新 S 路径没有另行加入扫描所得的 TTA 或类权重。"
+  },
+  {
+    "report_figure": 3,
+    "artifact_stem": "F03_historical_system_milestones",
+    "caption": "图3 历史记录的测试系统里程碑。早期B0、E4+B及D_old数值精度按历史记录保留；H4、P0、R及最终结果有相应计数。折线只表示项目过程，不表示等预算因果分解。47.2115%为既定目标，最终尚有1.3511个百分点差距。"
+  },
+  {
+    "report_figure": 4,
+    "artifact_stem": "F04_complete_validation_curves",
+    "caption": "图4 四臂完整学习曲线。纵线为允许部署的20k/32k；S16k空心标记为诊断最高点，未进入最终选择。左图单分支，右图固定25%融合，虚线为R。连接线只是离散正式节点之间的可视化。"
+  },
+  {
+    "report_figure": 5,
+    "artifact_stem": "F05_matched_effects",
+    "caption": "图5 注册端点的匹配效应。每个差值只在相同输出公式、相同节点内计算。交互为SD−S−D+C，是当前工程包的描述性交互，不是已检验的显著统计效应。"
+  },
+  {
+    "report_figure": 6,
+    "artifact_stem": "F06_per_class_results",
+    "caption": "图6 验证与锁定测试的四类IoU。B0类别成绩按原报告两位小数引用；R和最终结果从全图整数计数复算。总体对B0提升与本轮对R小幅变化同时展示，避免混淆比较对象。"
+  },
+  {
+    "report_figure": 7,
+    "artifact_stem": "F08_saved_component_misses",
+    "caption": "图7 单分支HE和MA零重叠GT连通域比例。使用保存的机制记录，分母分别1555和1074。该指标没有实例IoU匹配门槛，不能直接称作病灶级检测敏感性；它也不是最终融合系统的指标。"
+  },
+  {
+    "report_figure": 8,
+    "artifact_stem": "F07_image_heterogeneity",
+    "caption": "图8 相对R的逐图诊断差异。每图四类平均中零并集记零；该分布与主指标的原图像素汇总口径不同。图像级差异仅用于观察异质性，不作临床获益比例。"
+  },
+  {
+    "report_figure": 9,
+    "artifact_stem": "F10_predeclared_validation_cases",
+    "caption": "图9 预先按保存计数选择的正差最大、负差最大与中位附近验证病例。五列为原RGB、GT、P0、S20k单分支、锁定25%融合。768像素ROI与原图坐标见表9；颜色按固定类别图例，不代表置信度。"
+  },
+  {
+    "report_figure": 10,
+    "artifact_stem": "F11_predeclared_validation_cases",
+    "caption": "图10 MA漏检像素改善及退化极端验证病例。选择基于整图计数，展示使用GT确定的同坐标ROI。图中案例用于说明真实错误类型，不能从少量裁剪推广出所有病灶的因果机制。"
+  },
+  {
+    "report_figure": 11,
+    "artifact_stem": "F09_accepted_efficiency",
+    "caption": "图11 四路径验收阶段完整更新时间和GPU峰值分配。每路径100次完整更新，GPU单位GiB。D/SD额外来源计算使其与C/S不等计算；该图不是整个最终复合系统的生产推理基准。"
+  }
+]

@@ -1,0 +1,31 @@
+[2026-09-20 22:10:39] === U0 构建/加载 ===
+[2026-09-20 22:10:54] GT 复用已校验的共享副本: /root/autodl-tmp/HRDecoder_FullCompetition_20260920/expert_outputs/_shared/gt（76 张）
+[2026-09-20 22:11:11] U0 export 10/76 (16.8s)
+[2026-09-20 22:11:23] U0 export 20/76 (29.0s)
+[2026-09-20 22:11:39] U0 export 30/76 (44.7s)
+[2026-09-20 22:11:49] U0 export 40/76 (55.5s)
+[2026-09-20 22:12:01] U0 export 50/76 (66.8s)
+[2026-09-20 22:12:14] U0 export 60/76 (80.3s)
+[2026-09-20 22:12:24] U0 export 70/76 (90.0s)
+[2026-09-20 22:12:30] U0 export 76/76 (95.8s)
+[2026-09-20 22:12:30] U0 历史期望 val mIoU 0.384464125766，本次 0.384464125766，Δ=0.000e+00
+[2026-09-20 22:12:30] contract written: /root/autodl-tmp/HRDecoder_FullCompetition_20260920/expert_outputs/fullmodel/U0/contract.json
+[2026-09-20 22:12:30] U0 mIoU=0.384464125766 per_class={'EX': 0.43676, 'HE': 0.384266, 'SE': 0.509362, 'MA': 0.207468}
+[2026-09-20 22:12:30] === H0 构建/加载 ===
+[2026-09-20 22:12:43] GT 复用已校验的共享副本: /root/autodl-tmp/HRDecoder_FullCompetition_20260920/expert_outputs/_shared/gt（76 张）
+[2026-09-20 22:12:57] H0 export 10/76 (13.8s)
+[2026-09-20 22:13:09] H0 export 20/76 (25.1s)
+[2026-09-20 22:13:23] H0 export 30/76 (39.9s)
+[2026-09-20 22:13:33] H0 export 40/76 (49.6s)
+[2026-09-20 22:13:43] H0 export 50/76 (59.9s)
+[2026-09-20 22:13:56] H0 export 60/76 (72.2s)
+[2026-09-20 22:14:04] H0 export 70/76 (81.0s)
+[2026-09-20 22:14:10] H0 export 76/76 (86.3s)
+[2026-09-20 22:14:10] H0 历史期望 val mIoU 0.369226424295，本次 0.369226424295，Δ=0.000e+00
+[2026-09-20 22:14:10] contract written: /root/autodl-tmp/HRDecoder_FullCompetition_20260920/expert_outputs/fullmodel/H0/contract.json
+[2026-09-20 22:14:10] H0 mIoU=0.369226424295 per_class={'EX': 0.418771, 'HE': 0.435195, 'SE': 0.414545, 'MA': 0.208394}
+[2026-09-20 22:14:10] DONE fullmodel: /root/autodl-tmp/HRDecoder_FullCompetition_20260920/expert_outputs/fullmodel
+/root/miniconda3/lib/python3.8/site-packages/torch/_utils.py:776: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  return self.fget.__get__(instance, owner)()
+/root/miniconda3/lib/python3.8/site-packages/mmcv/__init__.py:20: UserWarning: On January 1, 2023, MMCV will release v2.0.0, in which it will remove components related to the training process and add a data transformation module. In addition, it will rename the package names mmcv to mmcv-lite and mmcv-full to mmcv. See https://github.com/open-mmlab/mmcv/blob/master/docs/en/compatibility.md for more details.
+  warnings.warn(

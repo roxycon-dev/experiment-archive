@@ -1,0 +1,31 @@
+{
+  "reason": "Fixed incorrect cache API arity and re-evaluate missing validation at resume boundary before training more updates",
+  "checkpoint_update": 1000,
+  "config_sha256": "17c15fd8ffd2bc6534080467bc6bfe4821f5250ba158d90a867ee1f7669381b8",
+  "configuration_unchanged": true,
+  "source_sha256_after": {
+    "trainer/fusion_probe.py": "8ce4df1ac2ec4e7894fe1b412eeb5fec6f8e5e5d84c7b614a899e964629f19a9",
+    "trainer/engine.py": "b4f3e2ea30c96a7d3bc4721ce805b917d154a9a4df6abb14a213c62263ef7ecb",
+    "campaign/run_round2.py": "156d106e1ffa557bfebb3b9b5f2a6a8abba5f419c6ee4c55aed6d2d7e495be86",
+    "tests/test_round2_fusion.py": "f2c3232a0716cd1a4602e5c716bb01a4feb6abff34086d99531852fb650ad09a"
+  },
+  "source_sha256_before": {
+    "trainer/fusion_probe.py": "aefa60e852fabfad022d67cbd3757e2d7bbff841274883538c0c84f21a8974cb",
+    "trainer/engine.py": "8b196f9ede491877d4b08ce75a76c7c883c4f07da017610bb9e5e214d7c58cca",
+    "campaign/run_round2.py": "347f825f9fa9d71353430418c9ce063965cb54bd9d111d540ce8bc25b9018a26",
+    "tests/test_round2_fusion.py": null
+  },
+  "test_split_not_used": true,
+  "recorded_at_cst": "2026-10-02T23:59:10.016901+08:00",
+  "restarted_supervisor_pid": 43073,
+  "restarted_epoch": 1790956853.6220744,
+  "regression_tests": "4 passed",
+  "real_cache_smoke_sid": "007-1774-100",
+  "checkpoint_update_verified": 1000,
+  "config_unchanged_verified": true,
+  "repair_closed": true,
+  "full_val_images": 76,
+  "full_val_update": 1000,
+  "baseline_reproduced_miou": 0.43487703221036567,
+  "training_resumed_beyond_1000": true
+}

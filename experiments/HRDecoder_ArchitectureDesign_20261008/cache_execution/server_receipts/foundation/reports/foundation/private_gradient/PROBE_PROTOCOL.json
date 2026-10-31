@@ -1,0 +1,10 @@
+{
+  "status": "REGISTERED_BEFORE_RUN",
+  "parent_completed": 4000,
+  "train_batches": 8,
+  "SGD_updates": 0,
+  "GT_source": "train only",
+  "comparison": "same logits old private ordinaryBCE/allvalidKL versus fullGTposneg-balancedBCE/KL",
+  "interpretation": "negative derivative increases logit under gradient descent; examine positive pixels; no fresh accuracy claim",
+  "registered_unix": 1791606850.5939407
+}

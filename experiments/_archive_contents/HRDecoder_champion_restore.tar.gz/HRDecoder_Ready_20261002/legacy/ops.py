@@ -1,0 +1,257 @@
+"""ops.py: budget ledger, watchdog, step planner, gating, metrics."""
+from __future__ import annotations
+import argparse, json, math, os, sys, time
+from datetime import datetime, timedelta, timezone
+
+LEDGER_NAME = "budget_ledger.json"
+RATE = 1.98
+BUDGET = 50.0
+CAP_HOURS = 24.0
+CLASSES = ("EX", "HE", "SE", "MA")
+
+
+def _utcnow():
+    return datetime.now(timezone.utc)
+
+
+def _finite(x, name):
+    if not isinstance(x, (int, float)) or isinstance(x, bool):
+        raise ValueError(f"{name} must be a real number")
+    v = float(x)
+    if not math.isfinite(v):
+        raise ValueError(f"{name} must be finite (got {x!r})")
+    return v
+
+
+def parse_utc(s) -> datetime:
+    dt = datetime.fromisoformat(str(s))
+    if dt.tzinfo is None:
+        raise ValueError("timestamp must include timezone offset (UTC required)")
+    return dt.astimezone(timezone.utc)
+
+
+def validate_other_cost(v) -> float:
+    c = _finite(v, "other_cost")
+    if c < 0:
+        raise ValueError("other_cost must be nonnegative")
+    if c >= BUDGET:
+        raise ValueError("other_cost must be < budget (50)")
+    return c
+
+
+def ledger_path(run_dir: str) -> str:
+    return os.path.join(run_dir, LEDGER_NAME)
+
+
+def load_ledger(run_dir: str) -> dict:
+    with open(ledger_path(run_dir), "r", encoding="utf-8") as f:
+        led = json.load(f)
+    parse_utc(led["billing_started_at"])
+    validate_other_cost(led["other_cost"])
+    return led
+
+
+def deadline_of(ledger: dict) -> datetime:
+    """Aware UTC datetime: min(budget exhaustion, 24h cap) from billing start."""
+    start = parse_utc(ledger["billing_started_at"])
+    cost = validate_other_cost(ledger["other_cost"])
+    by_budget = start + timedelta(hours=(BUDGET - cost) / RATE)
+    by_cap = start + timedelta(hours=CAP_HOURS)
+    return min(by_budget, by_cap)
+
+
+def _write_json(path: str, obj) -> None:
+    tmp = path + ".tmp"
+    with open(tmp, "w", encoding="utf-8") as f:
+        json.dump(obj, f, indent=2)
+    os.replace(tmp, path)
+
+
+def cmd_init(args):
+    os.makedirs(args.run_dir, exist_ok=True)
+    path = ledger_path(args.run_dir)
+    started = parse_utc(args.started_at)
+    if started > _utcnow():
+        raise ValueError("future billing_started_at is forbidden")
+    cost = validate_other_cost(args.other_cost)
+    if os.path.exists(path):
+        old = load_ledger(args.run_dir)
+        old_start = parse_utc(old["billing_started_at"])
+        old_cost = float(old["other_cost"])
+        if started != old_start:
+            raise ValueError("restart-reset forbidden: billing_started_at is immutable")
+        if cost < old_cost:
+            raise ValueError("re-init may only increase other_cost (only shorten remaining time)")
+        if cost == old_cost:
+            print("existing ledger preserved; deadline:", deadline_of(old).isoformat())
+            return
+        old["other_cost"] = cost
+        _write_json(path, old)
+        print("other_cost updated; deadline:", deadline_of(old).isoformat())
+        return
+    ledger = {
+        "billing_started_at": started.isoformat(),
+        "other_cost": cost,
+        "run_dir": os.path.abspath(args.run_dir),
+    }
+    _write_json(path, ledger)
+    print("deadline:", deadline_of(ledger).isoformat())
+
+
+def shutdown_system(dry_run: bool) -> bool:
+    """True if shutdown issued (or would be, in dry-run). Real shutdown is Linux-only."""
+    if dry_run:
+        print("[dry-run] would invoke: shutdown -h now")
+        return True
+    if not sys.platform.startswith("linux"):
+        raise RuntimeError("real shutdown forbidden off Linux")
+    return os.system("shutdown -h now") == 0
+
+
+def cmd_watchdog(args):
+    try:
+        ledger = load_ledger(args.run_dir)
+        dl = deadline_of(ledger)
+    except Exception as exc:
+        # Fail closed: guard launch implies an authorized paid server; a malformed
+        # ledger must still attempt shutdown, not crash open.
+        print(f"[fail-closed] unusable ledger in {args.run_dir}: {exc}", flush=True)
+        try:
+            shutdown_system(args.dry_run)
+        finally:
+            sys.exit(5)
+    print("watchdog armed; deadline", dl.isoformat(), flush=True)
+    while True:
+        now = _utcnow()
+        if now >= dl:
+            if args.dry_run:
+                print("[dry-run] deadline reached; no shutdown issued")
+                return
+            if shutdown_system(False):
+                return  # host is halting
+            print("[watchdog] shutdown failed; retrying in 5s", flush=True)
+            time.sleep(5)
+            continue
+        time.sleep(min(60, max(1, (dl - now).total_seconds())))
+
+
+def choose_steps(train_seconds_per_step, eval_seconds, overhead_seconds=600.0,
+                 budget_seconds=21600.0) -> int:
+    """Largest T in [1000, 4000] (multiple of 4) such that
+    2*T*train + 8*eval + overhead <= budget_seconds.
+
+    budget_seconds is the ACTUAL time available for the paired run (e.g.
+    global deadline minus final reserve minus now).  The historical default
+    of 21600 (6h) only applies when no explicit budget is given."""
+    t = _finite(train_seconds_per_step, "train_seconds_per_step")
+    e = _finite(eval_seconds, "eval_seconds")
+    o = _finite(overhead_seconds, "overhead_seconds")
+    b = _finite(budget_seconds, "budget_seconds")
+    if t <= 0:
+        raise ValueError("train_seconds_per_step must be > 0")
+    if e < 0 or o < 0:
+        raise ValueError("eval_seconds/overhead_seconds must be nonnegative")
+    if b <= 0:
+        raise ValueError("budget_seconds must be > 0")
+    for T in range(4000, 999, -4):
+        if 2 * T * t + 8 * e + o <= b:
+            return T
+    raise ValueError("no feasible T in [1000,4000] (multiple of 4) for "
+                     "budget %.0fs" % b)
+
+
+def gate_first(a4, b4, start_miou) -> bool:
+    for pts, name in ((a4, "a4"), (b4, "b4")):
+        if len(pts) != 4:
+            raise ValueError(f"{name}: gate_first requires exactly 4 points")
+        for x in pts:
+            _finite(x, name)
+    _finite(start_miou, "start_miou")
+    maxA, maxB = max(a4), max(b4)
+    if not (maxB - maxA >= 0.003):
+        return False
+    if sum(1 for x, y in zip(a4, b4) if y > x) < 2:
+        return False
+    return maxB >= start_miou
+
+
+def choose_checkpoint(points):
+    """Returns (step, miou); ties resolved to the EARLIEST step regardless of input order."""
+    best = None
+    for step, miou in points:
+        m = _finite(miou, "miou")
+        if best is None or m > best[1] or (m == best[1] and step < best[0]):
+            best = (step, m)
+    if best is None:
+        raise ValueError("no checkpoints supplied")
+    return best
+
+
+def metrics_from_counts(counts) -> dict:
+    """Accepts {class:{tp,fp,fn}} (exactly EX/HE/SE/MA) or Nx4x3 nested lists.
+    Returns {'mIoU':.., 'per_class':{EX:..,...}, 'counts':{...}}. Rejects zero union."""
+    per = {c: {"tp": 0, "fp": 0, "fn": 0} for c in CLASSES}
+
+    def _count(v, name):
+        x = _finite(v, name)
+        if x < 0:
+            raise ValueError(f"{name} must be nonnegative")
+        return x
+
+    def add(cls, tp, fp, fn):
+        if cls not in per:
+            raise ValueError(f"unexpected class {cls!r}; expected exactly {CLASSES}")
+        per[cls]["tp"] += _count(tp, "tp")
+        per[cls]["fp"] += _count(fp, "fp")
+        per[cls]["fn"] += _count(fn, "fn")
+
+    if isinstance(counts, dict):
+        extra = set(counts) - set(CLASSES)
+        missing = set(CLASSES) - set(counts)
+        if extra or missing:
+            raise ValueError(f"expected exactly classes {CLASSES}; missing={sorted(missing)} extra={sorted(extra)}")
+        for cls, c in counts.items():
+            add(cls, c["tp"], c["fp"], c["fn"])
+    elif isinstance(counts, (list, tuple)):
+        for img in counts:
+            if len(img) != 4:
+                raise ValueError("each image must have exactly 4 class entries")
+            for i, trio in enumerate(img):
+                if len(trio) != 3:
+                    raise ValueError("each class entry must be [tp, fp, fn]")
+                add(CLASSES[i], trio[0], trio[1], trio[2])
+    else:
+        raise TypeError("counts must be dict {class:{tp,fp,fn}} or Nx4x3 list")
+
+    per_class = {}
+    for cls in CLASSES:
+        tp, fp, fn = per[cls]["tp"], per[cls]["fp"], per[cls]["fn"]
+        denom = tp + fp + fn
+        if denom == 0:
+            raise ValueError(f"class {cls}: union is zero; rejecting")
+        per_class[cls] = tp / denom
+    return {
+        "mIoU": sum(per_class.values()) / len(CLASSES),
+        "per_class": per_class,
+        "counts": per,
+    }
+
+
+def main(argv=None):
+    p = argparse.ArgumentParser(prog="ops")
+    sub = p.add_subparsers(dest="cmd", required=True)
+    pi = sub.add_parser("init")
+    pi.add_argument("--started-at", required=True)
+    pi.add_argument("--other-cost", type=float, required=True)
+    pi.add_argument("--run-dir", required=True)
+    pi.set_defaults(func=cmd_init)
+    pw = sub.add_parser("watchdog")
+    pw.add_argument("--run-dir", required=True)
+    pw.add_argument("--dry-run", action="store_true")
+    pw.set_defaults(func=cmd_watchdog)
+    args = p.parse_args(argv)
+    args.func(args)
+
+
+if __name__ == "__main__":
+    main()

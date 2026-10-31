@@ -1,0 +1,118 @@
+{
+  "mIoU_percent": 0.14956766561740734,
+  "IoU_percent": [
+    0.0,
+    0.5926234176192107,
+    0.0,
+    0.005647244850418602
+  ],
+  "precision_percent": [
+    0.0,
+    94.61355214399153,
+    0.0,
+    0.2578981302385558
+  ],
+  "recall_percent": [
+    0.0,
+    0.5928234283420846,
+    0.0,
+    0.005773338721782807
+  ],
+  "counts": [
+    [
+      0,
+      0,
+      290803
+    ],
+    [
+      7149,
+      407,
+      1198775
+    ],
+    [
+      0,
+      0,
+      201404
+    ],
+    [
+      4,
+      1547,
+      69280
+    ]
+  ],
+  "class_order": [
+    "EX",
+    "HE",
+    "SE",
+    "MA"
+  ],
+  "undefined_precision_convention": "zero when TP+FP=0; inspect counts",
+  "images": 76,
+  "threshold": "strictly > .5",
+  "base_head_metrics": {
+    "mIoU_percent": 0.1373651425795466,
+    "IoU_percent": [
+      0.0,
+      0.5494605703181864,
+      0.0,
+      0.0
+    ],
+    "precision_percent": [
+      0.0,
+      94.98423617082258,
+      0.0,
+      0.0
+    ],
+    "recall_percent": [
+      0.0,
+      0.549620042390731,
+      0.0,
+      0.0
+    ],
+    "counts": [
+      [
+        0,
+        0,
+        290803
+      ],
+      [
+        6628,
+        350,
+        1199296
+      ],
+      [
+        0,
+        0,
+        201404
+      ],
+      [
+        0,
+        1538,
+        69284
+      ]
+    ],
+    "class_order": [
+      "EX",
+      "HE",
+      "SE",
+      "MA"
+    ],
+    "undefined_precision_convention": "zero when TP+FP=0; inspect counts",
+    "images": 76,
+    "threshold": "strictly > .5"
+  },
+  "seconds": 32.49605543166399,
+  "deployment_inference_verified": true,
+  "teacher_or_GT_input": false,
+  "arm": "W21000_BN12000",
+  "weight_step": 21000,
+  "bn_buffer_step": 12000,
+  "identity_SHA": "046abab773f7cb7a9e4f0a0f9cc44c4ad32d48431b971f22720dc8bd7936168a",
+  "diagnostic_only": true,
+  "formal_updates": 0,
+  "test_accessed": false,
+  "swapped_buffers_only": true,
+  "affine_parameters_follow_weights": true,
+  "time_unix": 1791600774.5364916,
+  "wall_seconds": 32.50307059288025
+}

@@ -1,0 +1,15 @@
+{
+  "stage": "PRESERVED_CONNECTION_TIMEOUT_BEFORE_ANY_FINAL_LAUNCH",
+  "recorded_at": "2026-10-04T05:05:34.517753+00:00",
+  "failed_state": {
+    "stage": "TECHNICAL_PAUSE_FINALIZATION_HANDOFF",
+    "updated_at": "2026-10-04T04:39:38.219610+00:00",
+    "seconds": 862.3920759999965,
+    "automatic_restart": false,
+    "reason": "TimeoutError: timed out"
+  },
+  "failed_state_sha256": "22ee936ff83edd09bf12e9f80725721be8776b04d78207d11282212b6c44168f",
+  "error_log_sha256": "47d89d8d1ad82c02eb64e4f6da3a2cca3badf4416ecee38f24c9bb2aa3dcedb0",
+  "original_worker_sha256": "bff820d74fed2cf7a824721ac3032ed0497960ea1d9221144573a87a12de7570",
+  "training_not_restarted": true
+}

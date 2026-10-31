@@ -1,0 +1,202 @@
+{
+  "stage": "HEALTHY_NEW_VALIDATION_EVIDENCE",
+  "observed_at": "2026-10-05T07:09:35.426535+00:00",
+  "primary": {
+    "driver": {
+      "stage": "CAMPAIGN",
+      "pid": 18787,
+      "time": "2026-10-04T21:16:20.663409+00:00"
+    },
+    "campaign": {
+      "stage": "RUNNING",
+      "current_run": "S_seed42",
+      "queue": [
+        [
+          "C",
+          42
+        ],
+        [
+          "S",
+          42
+        ],
+        [
+          "D",
+          42
+        ],
+        [
+          "SD",
+          42
+        ],
+        [
+          "PARENT_F12",
+          2024
+        ],
+        [
+          "C",
+          2024
+        ],
+        [
+          "S",
+          2024
+        ],
+        [
+          "D",
+          2024
+        ],
+        [
+          "SD",
+          2024
+        ]
+      ],
+      "updated_at": "2026-10-05T02:31:25.514043+00:00"
+    },
+    "runs": {
+      "C_seed42": {
+        "stage": "COMPLETE",
+        "completed": 32000,
+        "endpoint": 32000,
+        "updated_at": "2026-10-05T02:31:24.012530+00:00"
+      },
+      "S_seed42": {
+        "stage": "TRAINING",
+        "completed": 19000,
+        "endpoint": 32000,
+        "updated_at": "2026-10-05T07:01:12.866490+00:00",
+        "recent": {
+          "loss": 0.12621143460273743,
+          "grad_norm": 1.0359758138656616,
+          "seconds": 0.8132393921259791,
+          "data_wait_seconds": 0.0014039918314665556,
+          "peak_gpu_bytes": 11004799488
+        }
+      }
+    },
+    "free_disk_bytes": 26568167424,
+    "observed_at": "2026-10-05T07:01:17.567421+00:00"
+  },
+  "second": {
+    "driver": {
+      "stage": "PARALLEL_CAMPAIGN",
+      "pid": 3295,
+      "time": "2026-10-05T05:33:32.002303+00:00"
+    },
+    "campaign": {
+      "stage": "RUNNING",
+      "current_run": "SD_seed42",
+      "queue": [
+        [
+          "SD",
+          42
+        ]
+      ],
+      "amendment_sha256": "cae05b90a986f4d14a7c7f1e7ca25de10b9d966d905cd1ea88f5e0c2116344c3",
+      "time": "2026-10-05T05:33:32.001933+00:00"
+    },
+    "runs": {
+      "SD_seed42": {
+        "stage": "TRAINING",
+        "completed": 4180,
+        "endpoint": 32000,
+        "updated_at": "2026-10-05T07:01:11.087221+00:00",
+        "recent": {
+          "loss": 0.25223812460899353,
+          "grad_norm": 1.7004656791687012,
+          "seconds": 1.1997451484203339,
+          "data_wait_seconds": 0.002411201596260071,
+          "peak_gpu_bytes": 11006432768
+        }
+      }
+    },
+    "free_disk_bytes": 17729056768,
+    "observed_at": "2026-10-05T07:01:18.795253+00:00"
+  },
+  "additional_fresh_run_status_observations": {
+    "S_seed42": {
+      "stage": "TRAINING",
+      "completed": 19500,
+      "updated_at": "2026-10-05T07:08:02.014173+00:00"
+    },
+    "SD_seed42": {
+      "stage": "TRAINING",
+      "completed": 4520,
+      "updated_at": "2026-10-05T07:08:05.550018+00:00"
+    }
+  },
+  "references": {
+    "R42_fixed25_val": 44.355692338538375,
+    "F12_parent42_single_val": 40.241833600516024
+  },
+  "new_validation_evidence": {
+    "S_seed42": {
+      "update": 16000,
+      "source_path": "server_results/runs/S_seed42/val_u16000/metrics.json",
+      "sha256": "abc87d00723e1291966521e90d39cdcad2836f79da8bb5f6390f2c6a71ab8937",
+      "remote_bytes_equal_local_observed_0708UTC": true,
+      "n_images": 76,
+      "single_val_miou_pct": 42.398125211123094,
+      "fixed25_val_miou_pct": 45.530973783994924,
+      "half_val_miou_pct": 43.81826138760529,
+      "gain_fixed25_vs_R42_pp": 1.1752814454565481,
+      "single_vs_F12_parent_pp": 2.15629161060707,
+      "node_meets_both_collapse_thresholds": false,
+      "registered_product_endpoint": false
+    },
+    "SD_seed42": {
+      "update": 4000,
+      "source_path": "parallel/node2/server_results/runs/SD_seed42/val_u4000/metrics.json",
+      "sha256": "08a9ecb510881d909bdf6abdd4fe6614f5e637967371f5c36907d93855cd20d9",
+      "remote_bytes_equal_local_observed_0708UTC": true,
+      "n_images": 76,
+      "single_val_miou_pct": 39.65700941327202,
+      "fixed25_val_miou_pct": 45.06749663241366,
+      "half_val_miou_pct": 43.318394842689585,
+      "gain_fixed25_vs_R42_pp": 0.7118042938752822,
+      "single_vs_F12_parent_pp": -0.5848241872440028,
+      "node_meets_both_collapse_thresholds": false,
+      "registered_product_endpoint": false
+    }
+  },
+  "boundary": {
+    "stage": "ARMED_AFTER_D42_BOUNDARY",
+    "pid": 44281,
+    "process_alive": true,
+    "observed_utc": "2026-10-05T07:08"
+  },
+  "healthy_attendants": [
+    32844,
+    8552
+  ],
+  "coordinator": 13216,
+  "transfer_locks_owned_by_expected_attendants": true,
+  "primary_transfer_progress": {
+    "stage": "TRANSFERRING",
+    "full": false,
+    "verified_files": 146,
+    "expected_files": 5111,
+    "verified_bytes": 240092266,
+    "expected_bytes": 263324337,
+    "updated_at": "2026-10-05T07:09:35.264776+00:00"
+  },
+  "second_transfer_progress": {
+    "stage": "TRANSFERRING",
+    "full": false,
+    "verified_files": 37,
+    "expected_files": 2083,
+    "verified_bytes": 175103099,
+    "expected_bytes": 184888756,
+    "updated_at": "2026-10-05T07:09:08.730112+00:00"
+  },
+  "coordinator_state": {
+    "stage": "WAITING_SD_COMPLETE_SHA_CUSTODY",
+    "time": "2026-10-05T07:09:11.770466+00:00"
+  },
+  "mirror_or_training_duplicated": false,
+  "disk_cleanup_needed": false,
+  "scientific_stop_required": false,
+  "shutdown_eligible": false,
+  "breakthrough_claimed": false,
+  "new_test_run": false,
+  "authorized_seeds": [
+    42
+  ]
+}

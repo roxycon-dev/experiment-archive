@@ -1,0 +1,155 @@
+{
+  "stage": "SERVER_NONTRAINING_EVIDENCE_WORK_COMPLETE",
+  "time": "2026-10-05T18:34:23.364611+00:00",
+  "scope_sha256": "9a936d4ea5d2f21d7233c469d1024a7e2bde44902d0c5c7853976e430dda8e6d",
+  "all_outputs_recovered_with_SHA": true,
+  "no_new_training_or_selection_or_threshold_scan": true,
+  "selection_lock_sha256": "3146ca1edafdffdae7bf4987524bddc502209929e5d6d5b0e7ba49f12b6bd66e",
+  "selected_checkpoint_sha256": "c933256b07556689a7fd199dd80e50d4d0c27eb6b9ea782713d95ec51e6d8d62",
+  "exact_locked_test_count_recomputation_miou_pct": 45.86038383266797,
+  "recovered_evidence_files": [
+    {
+      "path": "reports/final_selection_lock.json",
+      "bytes": 4767,
+      "sha256": "19f2d89edbea2662680c48f0d81619292ac1404bc1f47d0ac6c0123d1965474f"
+    },
+    {
+      "path": "reports/decision.json",
+      "bytes": 2028327,
+      "sha256": "3e5e8c0020bcc37065686b4be9d9e75672d92326a016f42cea51c485b54786bc"
+    },
+    {
+      "path": "reports/final_test.json",
+      "bytes": 1917,
+      "sha256": "2238e73038dec8d4742eb9f8f24691d361e52390f2384ba2fd6e1f901658f9f1"
+    },
+    {
+      "path": "reports/final_test_state.json",
+      "bytes": 198,
+      "sha256": "6d5487edc1f50118e0804fde372534c1c41456c0dbfe7f8bfdd4d487792432eb"
+    },
+    {
+      "path": "reports/最终实验报告.md",
+      "bytes": 1943,
+      "sha256": "b8e2ab97b1786dd92234cf588ae02da47790bce97f5d4446c9c5c35b0db89368"
+    },
+    {
+      "path": "reports/parallel_global_final_report_mirrored.json",
+      "bytes": 889,
+      "sha256": "75cf5c166b2536b3a638a342146ad321a8273fba616dd991defc9eab2453bbb8"
+    },
+    {
+      "path": "reports/test_p0/p0_manifest.json",
+      "bytes": 111205,
+      "sha256": "ffb1641b28acc7dc803b872d99221558d9099a510a6b1fb7817a693cdb73a0e3"
+    },
+    {
+      "path": "runs/LOCKED_TEST_seed42/test_identity.json",
+      "bytes": 139,
+      "sha256": "a032c6382b7e0c54c91819e7714db40c5711336590542dfb3b1f78ba7981698d"
+    },
+    {
+      "path": "runs/LOCKED_TEST_seed42/metrics.json",
+      "bytes": 86998,
+      "sha256": "7c52d4cac004fb804fd3fdca3bc63697fbe946d0345150514f63ff5451fb8877"
+    },
+    {
+      "path": "reports/source_identity.json",
+      "bytes": 8177,
+      "sha256": "8dc25a8bc6d1096baed681c1625ce7691a99b363487b082ad72ed1ff30da4a7e"
+    },
+    {
+      "path": "reports/publication_report_scope.json",
+      "bytes": 1101,
+      "sha256": "9a936d4ea5d2f21d7233c469d1024a7e2bde44902d0c5c7853976e430dda8e6d"
+    },
+    {
+      "path": "configs/runtime.server.json",
+      "bytes": 2633,
+      "sha256": "a13151a87478a3965e053077a03cfb4aca2e418ed3e34df13714359d7d4f59e5"
+    },
+    {
+      "path": "reports/publication_server_evidence/derivation.json",
+      "bytes": 4760,
+      "sha256": "848b56133d8cc77b4966d6ecb48ffc473895b325af8efc550c08733fe0a80f70"
+    },
+    {
+      "path": "reports/publication_server_evidence/val_p0_crops/007-1900-100.npz",
+      "bytes": 8340718,
+      "sha256": "a0b0ace608565940c4614a0921a6b0dd82191242ca972e38e81ee2ac301053a1"
+    },
+    {
+      "path": "reports/publication_server_evidence/val_p0_crops/007-5869-300.npz",
+      "bytes": 8335268,
+      "sha256": "3812abd6cb1212954877a2e678ad11e44c2e071472eb2549e63f2aaaaeef2736"
+    },
+    {
+      "path": "reports/publication_server_evidence/val_p0_crops/007-3500-200.npz",
+      "bytes": 8402479,
+      "sha256": "d1fe8cf9da4811241b0fae4b21d6b588d5cdadb336f9abe1c8b0a311fe1a0bf9"
+    },
+    {
+      "path": "reports/publication_server_evidence/val_p0_crops/007-3727-200.npz",
+      "bytes": 8384265,
+      "sha256": "a85d58a54391f364c4f2a1a984e2b6611bc78b405bf8e5aaeaded95fd188cfcf"
+    },
+    {
+      "path": "reports/publication_server_evidence/val_p0_crops/007-5470-300.npz",
+      "bytes": 8375068,
+      "sha256": "f23e4fa0c18367529e76f658bf91c3891480911db90249bf5e891027255a3e9c"
+    }
+  ],
+  "sealed_endpoint_custody": [
+    {
+      "receipt": "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\execution\\reports\\storage_offload\\C_seed42_u20000.json",
+      "sha256": "bebb8296322a78857405717b174d5df3a0bd73c0304c8730626b8121e32590bd",
+      "run": "C",
+      "update": 20000
+    },
+    {
+      "receipt": "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\execution\\reports\\storage_offload\\C_seed42_u32000.json",
+      "sha256": "8469fd43547fbaa746771f7a87e2f9b1dfa167654053eb3ac6c4d5cc584e1e55",
+      "run": "C",
+      "update": 32000
+    },
+    {
+      "receipt": "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\execution\\reports\\storage_offload\\S_seed42_u20000.json",
+      "sha256": "77f86cde4f3fbae2369f43699e91ced37bc37a53fa71881634b329a73a95dbc9",
+      "run": "S",
+      "update": 20000
+    },
+    {
+      "receipt": "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\execution\\reports\\storage_offload\\S_seed42_u32000.json",
+      "sha256": "274800a4de56a1f36e1b85d717ef33ea0b0164d85368a8186468bb8ba9055590",
+      "run": "S",
+      "update": 32000
+    },
+    {
+      "receipt": "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\execution\\reports\\storage_offload\\D_seed42_u20000.json",
+      "sha256": "065f746970399c5354f98a9174826a257fe494b872fb4259941d6790442a4239",
+      "run": "D",
+      "update": 20000
+    },
+    {
+      "receipt": "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\execution\\reports\\storage_offload\\D_seed42_u32000.json",
+      "sha256": "1abe12d727e3fd8970c5c8df50bacc730c9a872bd97ed881e707c453a7872883",
+      "run": "D",
+      "update": 32000
+    },
+    {
+      "receipt": "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\execution\\reports\\storage_offload\\SD_seed42_u20000.json",
+      "sha256": "84035e313e0ad908d41a68f139259b94983b06387b3c61edc0deab9b4ccdaac4",
+      "run": "SD",
+      "update": 20000
+    },
+    {
+      "receipt": "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\execution\\reports\\storage_offload\\SD_seed42_u32000.json",
+      "sha256": "76ecb2e6c00d445866c0a3eb4f47e29bbb38d2e0cb1c14fb319f550b0f1124a2",
+      "run": "SD",
+      "update": 32000
+    }
+  ],
+  "saved_validation_evidence_recovery_sha256": "fbdbf7a7241161529f922f4c667c1dc0051c7375cb44f026121640b314d6dc5e",
+  "write_and_render_report_locally_after_servers_closed": true,
+  "existing_attendants_still_own_final_full_SHA_union_backup_and_exactly_once_shutdown": true
+}

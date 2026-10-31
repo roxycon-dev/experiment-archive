@@ -1,0 +1,159 @@
+{
+  "rule": "first three by sid and component ID per preregistered outcome",
+  "baseline_not_used_for_example_selection": true,
+  "examples": [
+    {
+      "category": "still_missed",
+      "sid": "007-1975-100",
+      "component_id": 1,
+      "crop_xyxy": [
+        1320,
+        1598,
+        1484,
+        1758
+      ],
+      "area_pixels": 404,
+      "figure": "D:\\dataset\\experiment\\paper_supplement_20261023\\results\\baseline_original_threeway\\figures\\still_missed_007-1975-100_1.png",
+      "image_sha256": "96f71d9fa527738919d14c5ce5fdfb522c9deba00963946e327a3ba54c15b4ce",
+      "mask_archive_sha256": "6a335a01121b571f613e4b89f677b627523de8e033a37dc145ddbc7950b482f2",
+      "baseline_mask_sha256": "99fe61dd285473bfdf630281d85cd49c0ff083b1e787f4302651027b146319c2",
+      "selection_repeated": false
+    },
+    {
+      "category": "still_missed",
+      "sid": "007-2112-100",
+      "component_id": 1,
+      "crop_xyxy": [
+        1112,
+        240,
+        1248,
+        376
+      ],
+      "area_pixels": 64,
+      "figure": "D:\\dataset\\experiment\\paper_supplement_20261023\\results\\baseline_original_threeway\\figures\\still_missed_007-2112-100_1.png",
+      "image_sha256": "71022f8a58a7f67c67cd40e3c0d69a5beb8c131e291d0a997fae344d581f24b1",
+      "mask_archive_sha256": "210b6b502f5f94dfd8f5169951c4311330187c48f6f67202fc2042121a9be2c1",
+      "baseline_mask_sha256": "1fa555dbc773d4077b7fe586bf6b239ab118df13699ec43b0f5342c7f518bfe6",
+      "selection_repeated": false
+    },
+    {
+      "category": "still_missed",
+      "sid": "007-2112-100",
+      "component_id": 3,
+      "crop_xyxy": [
+        1024,
+        824,
+        1160,
+        958
+      ],
+      "area_pixels": 40,
+      "figure": "D:\\dataset\\experiment\\paper_supplement_20261023\\results\\baseline_original_threeway\\figures\\still_missed_007-2112-100_3.png",
+      "image_sha256": "71022f8a58a7f67c67cd40e3c0d69a5beb8c131e291d0a997fae344d581f24b1",
+      "mask_archive_sha256": "210b6b502f5f94dfd8f5169951c4311330187c48f6f67202fc2042121a9be2c1",
+      "baseline_mask_sha256": "1fa555dbc773d4077b7fe586bf6b239ab118df13699ec43b0f5342c7f518bfe6",
+      "selection_repeated": false
+    },
+    {
+      "category": "recovered",
+      "sid": "007-2125-100",
+      "component_id": 3,
+      "crop_xyxy": [
+        888,
+        460,
+        1026,
+        602
+      ],
+      "area_pixels": 96,
+      "figure": "D:\\dataset\\experiment\\paper_supplement_20261023\\results\\baseline_original_threeway\\figures\\recovered_007-2125-100_3.png",
+      "image_sha256": "6b608bfc2a98edbfcc626e44380db78a1b3ecfa95918e876149cd9482be16569",
+      "mask_archive_sha256": "dec39f5137707cb88446f8ef5d8bdab3dae78e58c9898ba0f67867d6dec511ab",
+      "baseline_mask_sha256": "d32e446b28111c810df227920d71fdefc9117954284bfed0b7e68a68ae9e1c2c",
+      "selection_repeated": false
+    },
+    {
+      "category": "recovered",
+      "sid": "007-2160-100",
+      "component_id": 2,
+      "crop_xyxy": [
+        2256,
+        2323,
+        2394,
+        2461
+      ],
+      "area_pixels": 76,
+      "figure": "D:\\dataset\\experiment\\paper_supplement_20261023\\results\\baseline_original_threeway\\figures\\recovered_007-2160-100_2.png",
+      "image_sha256": "84a21e652318b34c7ee9e7c4b9b178422bed8c7050deafb1a8adbaa9b9d30b15",
+      "mask_archive_sha256": "7d9d13129621ffa52321000153bd9bdce9d7845ae68ef0fb31281da57ce8f553",
+      "baseline_mask_sha256": "e4821e7b431c151d2af18786f3e06b0a4466792ed7cfcb7d6bf102e60a2ff18a",
+      "selection_repeated": false
+    },
+    {
+      "category": "new_fp",
+      "sid": "007-2160-100",
+      "component_id": 5,
+      "crop_xyxy": [
+        2348,
+        1888,
+        2484,
+        2028
+      ],
+      "area_pixels": 72,
+      "figure": "D:\\dataset\\experiment\\paper_supplement_20261023\\results\\baseline_original_threeway\\figures\\new_fp_007-2160-100_5.png",
+      "image_sha256": "84a21e652318b34c7ee9e7c4b9b178422bed8c7050deafb1a8adbaa9b9d30b15",
+      "mask_archive_sha256": "7d9d13129621ffa52321000153bd9bdce9d7845ae68ef0fb31281da57ce8f553",
+      "baseline_mask_sha256": "e4821e7b431c151d2af18786f3e06b0a4466792ed7cfcb7d6bf102e60a2ff18a",
+      "selection_repeated": false
+    },
+    {
+      "category": "new_fp",
+      "sid": "007-2160-100",
+      "component_id": 6,
+      "crop_xyxy": [
+        2368,
+        1942,
+        2509,
+        2082
+      ],
+      "area_pixels": 120,
+      "figure": "D:\\dataset\\experiment\\paper_supplement_20261023\\results\\baseline_original_threeway\\figures\\new_fp_007-2160-100_6.png",
+      "image_sha256": "84a21e652318b34c7ee9e7c4b9b178422bed8c7050deafb1a8adbaa9b9d30b15",
+      "mask_archive_sha256": "7d9d13129621ffa52321000153bd9bdce9d7845ae68ef0fb31281da57ce8f553",
+      "baseline_mask_sha256": "e4821e7b431c151d2af18786f3e06b0a4466792ed7cfcb7d6bf102e60a2ff18a",
+      "selection_repeated": false
+    },
+    {
+      "category": "recovered",
+      "sid": "007-2232-100",
+      "component_id": 24,
+      "crop_xyxy": [
+        776,
+        792,
+        906,
+        924
+      ],
+      "area_pixels": 8,
+      "figure": "D:\\dataset\\experiment\\paper_supplement_20261023\\results\\baseline_original_threeway\\figures\\recovered_007-2232-100_24.png",
+      "image_sha256": "d5ef07cb1d329b35202a8ac68b6f420fd4b41e062d3c122d1919bee61d165b75",
+      "mask_archive_sha256": "9d752a9d333516fd260c77326caae948e9c70a347b3cd0d4ea5246ce683d1f75",
+      "baseline_mask_sha256": "33d1bd067cc2e587a27f85d0351deaaafe80d2eaa534e54f4e245fd85a55d705",
+      "selection_repeated": false
+    },
+    {
+      "category": "new_fp",
+      "sid": "007-2232-100",
+      "component_id": 3,
+      "crop_xyxy": [
+        1199,
+        358,
+        1329,
+        487
+      ],
+      "area_pixels": 2,
+      "figure": "D:\\dataset\\experiment\\paper_supplement_20261023\\results\\baseline_original_threeway\\figures\\new_fp_007-2232-100_3.png",
+      "image_sha256": "d5ef07cb1d329b35202a8ac68b6f420fd4b41e062d3c122d1919bee61d165b75",
+      "mask_archive_sha256": "9d752a9d333516fd260c77326caae948e9c70a347b3cd0d4ea5246ce683d1f75",
+      "baseline_mask_sha256": "33d1bd067cc2e587a27f85d0351deaaafe80d2eaa534e54f4e245fd85a55d705",
+      "selection_repeated": false
+    }
+  ]
+}

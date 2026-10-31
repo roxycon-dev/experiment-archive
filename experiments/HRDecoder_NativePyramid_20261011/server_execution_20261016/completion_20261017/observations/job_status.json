@@ -1,0 +1,30 @@
+{
+  "controller_version": 3,
+  "started_at": "2026-10-16T16:44:20.988236+00:00",
+  "source_sha256": "d3032fc8b20f30a058adbcf3e6bc5a3485b83adafe9b7cdce0682a2d55d7f627",
+  "shutdown_policy": "confirmed_formal_start_then_successful_completion_only",
+  "shutdown_armed": true,
+  "status": "FORMAL_TRAINING",
+  "formal_training_started": true,
+  "stage_started_at": "2026-10-16T16:53:36.240551+00:00",
+  "child_exit_code": null,
+  "child_pid": 2562,
+  "observed_at": "2026-10-17T06:59:18.905648+00:00",
+  "diagnostic_progress": {
+    "stage": "crop_learning",
+    "completed_updates": 239,
+    "in_flight_update": 240,
+    "weights_discarded": true,
+    "formal_updates": 0
+  },
+  "stage_finished_at": "2026-10-16T16:53:36.208951+00:00",
+  "formal_progress": {
+    "status": "TRAINING",
+    "completed": 40000,
+    "executed_updates": 40000,
+    "checkpoint_persisted_updates": 40000,
+    "in_flight_update": null
+  },
+  "formal_training_confirmed_at": "2026-10-16T16:54:01.248995+00:00",
+  "formal_start_evidence_updates": 2
+}

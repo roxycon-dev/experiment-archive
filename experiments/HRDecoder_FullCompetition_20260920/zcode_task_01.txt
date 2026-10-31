@@ -1,0 +1,29 @@
+你是本轮 HRDecoder 医学图像分割实验的工程执行者。模型必须是智谱 GLM-5.3-Flash。请直接在 Windows 本机完成文件调查与实现，不要只给建议。
+
+主方案：C:\Users\GuanXingRen\Documents\Codex\2026-09-19\d-dataset-experiment-hrdecoder-fusionaware-20260917\outputs\HRDecoder_文献驱动进取方案_20260920.md
+新工作区：D:\dataset\experiment\HRDecoder_FullCompetition_20260920
+参考仓库：D:\HRDecoder
+旧 IDRiD 转换器：D:\dataset\experiment\hrdecoder_plus3\repo\tools\convert_dataset\idrid.py
+固定 DDR split：D:\HRDecoder\data\DDR_split_613（若实际路径略有差异，先只读搜索确认）
+
+本次任务只做开机前公共工程准备，禁止启动或连接 AutoDL，禁止训练，禁止用 test 结果选型，禁止修改旧实验目录和 D:\HRDecoder 源仓库。所有新增文件只写入新工作区。
+
+请完成：
+1. 只读盘点 HRDecoder 的数据接口、标签顺序、ignore 规则、训练入口、整图验证和旧 IDRiD 转换器；把事实、文件路径和关键行号写入 docs/ASSET_AND_INTERFACE_AUDIT.md。遇到报告与代码冲突，以代码和原始结果为准并显式记录。
+2. 设计并实现统一外部病灶数据契约：四通道顺序必须由代码常量明确给出，建议 EX/HE/SE/MA，但必须与 DDR 评估顺序映射清楚；每样本保存 image、四类 mask 路径、四类 valid_mask、source、official_split、patient/image id、原始尺寸、SHA256/感知哈希字段。未标注类别 valid=0，绝不能当阴性。
+3. 在 tools/ 下实现可独立运行的 Python 工具：
+   - build_external_manifest.py：适配 IDRiD 与 MAPLES-DR 的常见官方目录结构；原图或掩膜缺失时 fail closed 并给清楚错误；不得猜颜色 class id；不得把官方 test 默认纳入 train。
+   - audit_manifest.py：检查文件存在、尺寸对齐、二值掩膜、四类有效性、split 泄漏；对 DDR 与外部数据计算精确 SHA256，并尽可能用缩略图感知哈希发现近重复；输出 JSON 和 Markdown。
+   - inspect_ddr_contract.py：只读解析固定 DDR split 和现有标签，输出类别映射、数量和交叉检查，不改数据。
+4. 在 data_contract/ 写 manifest.schema.json、README.md 和一个不引用真实私人路径的 example_manifest.jsonl。
+5. 在 configs/ 生成 H0/H1/U0/U1 四个“锁定意图配置”YAML。尚未确认的初始化权重、真实 manifest、版本写 REQUIRED/TBD，禁止伪造。必须锁定：同结构 H0/H1 或 U0/U1 的 DDR 日程、seed、采样、loss、指标完全一致；外部预训练只存在于 H1/U1；DDR test 永不用于 checkpoint 选择。配置需机器可读并带 schema_version。
+6. 添加 tools/preflight_contract.py，一条命令检查四配置、manifest、split、禁止 test 训练/选型、类序和 valid mask；缺资产应明确返回非零退出码，而不是假装通过。
+7. 写 docs/IMPLEMENTATION_STATUS.md：列出已完成、尚缺资产（尤其 IDRiD 原图/官方 train masks、MAPLES 标签与 MESSIDOR 原图）、真正开 GPU 前的唯一通过条件、建议的下一次 ZCode 任务。不要承诺指标必涨。
+8. 对所有脚本运行 `python -m py_compile`；用临时合成小数据跑 manifest/audit/preflight 的正反例。测试产物放 tests/_tmp 或可清理位置，记录命令和结果到 docs/PREFLIGHT_TEST_REPORT.md。
+
+额外约束：
+- 优先复用成熟库但不要新增全局依赖；可选依赖缺失要降级并记录。
+- 不下载需要登录、协议或账户的数据；不替用户接受许可协议。
+- 不读取 test 标签来决定阈值、模型或训练配置。
+- 代码注释与文档用中文，变量和机器字段用英文。
+- 任务结束时输出：改动文件清单、实际运行测试、阻塞项、需要 Codex 审核的 5 个最高风险点。

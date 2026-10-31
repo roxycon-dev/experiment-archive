@@ -1,0 +1,30 @@
+{
+  "time_unix": 1791451362.1523702,
+  "performance": {
+    "measured_batches": 290,
+    "workers": 12,
+    "prefetch_factor": 1,
+    "pin_memory": true,
+    "opencv_threads_per_worker": 1,
+    "completed_update": 290,
+    "warmup_batches_excluded": 5,
+    "window_batches": 100,
+    "mean_step_compute_seconds": 1.0626558361202478,
+    "mean_data_wait_seconds": 0.04768635183572769,
+    "mean_batch_seconds": 1.1103421879559756,
+    "median_compute_seconds": 1.0372794270515442,
+    "estimated_40000_train_hours_excluding_validation": 12.33713542173306,
+    "peak_allocated_bytes": 15242625536,
+    "peak_reserved_bytes": 18303942656,
+    "formal_protocol_unchanged": true,
+    "time_unix": 1791451354.3079915
+  },
+  "telemetry_window_samples": 60,
+  "telemetry_interval_seconds": 2,
+  "mean_GPU_utilization_percent": 87.35,
+  "median_GPU_utilization_percent": 99.0,
+  "mean_power_W": 275.94933333333336,
+  "data_hash_rescan": false,
+  "heartbeat_automation_id": "hrdecoder-v3",
+  "server_shutdown_after_training_enabled": true
+}

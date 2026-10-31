@@ -1,0 +1,277 @@
+{
+  "status": "LOCKED_TEST_AUTHORIZED",
+  "selection": {
+    "selected": {
+      "arm": "Q_DDR",
+      "update": 16000,
+      "formula": "fixed_fusion",
+      "seed_scores_pct": [
+        44.35569233853838,
+        44.21734429280863
+      ],
+      "mean_val_pct": 44.286518315673504,
+      "test_eligible": true,
+      "deployment_seed": 42,
+      "candidate_count": 16
+    },
+    "all_candidates": [
+      {
+        "arm": "Q_DDR",
+        "update": 16000,
+        "formula": "fixed_fusion",
+        "seed_scores_pct": [
+          44.35569233853838,
+          44.21734429280863
+        ],
+        "mean_val_pct": 44.286518315673504
+      },
+      {
+        "arm": "Q_MIX",
+        "update": 16000,
+        "formula": "fixed_fusion",
+        "seed_scores_pct": [
+          44.23652473194449,
+          44.27421385597268
+        ],
+        "mean_val_pct": 44.25536929395859
+      },
+      {
+        "arm": "Q_DDR",
+        "update": 20000,
+        "formula": "fixed_fusion",
+        "seed_scores_pct": [
+          44.50054444000122,
+          44.00900225372265
+        ],
+        "mean_val_pct": 44.25477334686194
+      },
+      {
+        "arm": "Q_MIX",
+        "update": 20000,
+        "formula": "fixed_fusion",
+        "seed_scores_pct": [
+          44.40372086902319,
+          44.09748309134313
+        ],
+        "mean_val_pct": 44.25060198018316
+      },
+      {
+        "arm": "Q_DDR",
+        "update": 24000,
+        "formula": "fixed_fusion",
+        "seed_scores_pct": [
+          44.38266194327085,
+          44.09630071531775
+        ],
+        "mean_val_pct": 44.2394813292943
+      },
+      {
+        "arm": "Q_DDR",
+        "update": 12000,
+        "formula": "fixed_fusion",
+        "seed_scores_pct": [
+          44.27597579085049,
+          44.17298119164855
+        ],
+        "mean_val_pct": 44.22447849124952
+      },
+      {
+        "arm": "Q_MIX",
+        "update": 24000,
+        "formula": "fixed_fusion",
+        "seed_scores_pct": [
+          44.30954807238056,
+          44.13242352914901
+        ],
+        "mean_val_pct": 44.22098580076478
+      },
+      {
+        "arm": "Q_MIX",
+        "update": 12000,
+        "formula": "fixed_fusion",
+        "seed_scores_pct": [
+          44.08666200293783,
+          44.22091224467842
+        ],
+        "mean_val_pct": 44.15378712380813
+      },
+      {
+        "arm": "Q_DDR",
+        "update": 24000,
+        "formula": "single",
+        "seed_scores_pct": [
+          39.01229427774314,
+          37.84379943157931
+        ],
+        "mean_val_pct": 38.428046854661225
+      },
+      {
+        "arm": "Q_DDR",
+        "update": 20000,
+        "formula": "single",
+        "seed_scores_pct": [
+          39.19208770005944,
+          37.34503201726641
+        ],
+        "mean_val_pct": 38.268559858662925
+      },
+      {
+        "arm": "Q_DDR",
+        "update": 16000,
+        "formula": "single",
+        "seed_scores_pct": [
+          37.893718646800664,
+          37.295592060779256
+        ],
+        "mean_val_pct": 37.59465535378996
+      },
+      {
+        "arm": "Q_DDR",
+        "update": 12000,
+        "formula": "single",
+        "seed_scores_pct": [
+          37.84096064019035,
+          37.11565733429797
+        ],
+        "mean_val_pct": 37.47830898724416
+      },
+      {
+        "arm": "Q_MIX",
+        "update": 24000,
+        "formula": "single",
+        "seed_scores_pct": [
+          37.51675796976994,
+          36.63332237493327
+        ],
+        "mean_val_pct": 37.075040172351606
+      },
+      {
+        "arm": "Q_MIX",
+        "update": 16000,
+        "formula": "single",
+        "seed_scores_pct": [
+          36.648693330057725,
+          37.44543006549156
+        ],
+        "mean_val_pct": 37.04706169777464
+      },
+      {
+        "arm": "Q_MIX",
+        "update": 20000,
+        "formula": "single",
+        "seed_scores_pct": [
+          37.165225699295156,
+          36.92610409649124
+        ],
+        "mean_val_pct": 37.0456648978932
+      },
+      {
+        "arm": "Q_MIX",
+        "update": 12000,
+        "formula": "single",
+        "seed_scores_pct": [
+          35.56783958776863,
+          35.70212394157796
+        ],
+        "mean_val_pct": 35.6349817646733
+      }
+    ],
+    "common_endpoint": 24000,
+    "test_selection_forbidden": true
+  },
+  "created_at": "2026-10-04T06:38:32.702491+00:00",
+  "source_sha256": "d0fc4e0478835131cf3b731302174395d6827260bdae78bfa276b8e9851c9a3f",
+  "driver_sha256": "fddfcf5d3b1a6293ed9d9950055c11087ae02f6092b6a3fcb860ca60e08115d0",
+  "runtime_sha256": "a791a59e1d180787ebcc83e2b05a1d14dbb4ba215c74f69fa913f42c87f6e187",
+  "checkpoints": {
+    "42": {
+      "path": "/root/autodl-tmp/HRDecoder_Q_20261003/runs/Q_DDR_seed42/checkpoint_u16000.pth",
+      "sha256": "0c525c901c8d4d6e4192c9de40c63a6d12710b76494f0c552dc39cbf6b67cb71",
+      "identity": {
+        "arm": "Q_DDR",
+        "seed": 42,
+        "protocol_sha256": "ad83409138bdf23ddcb2273112b3c79c54d8ad51731f2cfd817ff6f0addde46f",
+        "source_sha256": "d0fc4e0478835131cf3b731302174395d6827260bdae78bfa276b8e9851c9a3f",
+        "data_sha256": "a0a69afd241d96a6a239f6745b13d0bd9129652ea25d607b354ecb0314bd2b76",
+        "pretraining_sha256": "73cec8be7427c8655ceced13ce62f6e20a1fa90d1b4d4a550df17a1144081a7c",
+        "stream_sha256": "aa95f47b6a967db5e175da8b216859477d0e6746006693d15e8176a80836359f",
+        "resources": {
+          "micro_batch": 2,
+          "accumulation": 4,
+          "dtype": "bfloat16",
+          "workers": 4,
+          "prefetch_factor": 2,
+          "pin_memory": true
+        },
+        "p0_identity_sha256": "9468a4d2a8d9a1344a21358698a427fdc5ce9950d3603ce91ea9258a15a648db"
+      }
+    },
+    "2024": {
+      "path": "/root/autodl-tmp/HRDecoder_Q_20261003/runs/Q_DDR_seed2024/checkpoint_u16000.pth",
+      "sha256": "b064c78cc7472608c3400671267c83209defd03720b5e191443a48211ecb5168",
+      "identity": {
+        "arm": "Q_DDR",
+        "seed": 2024,
+        "protocol_sha256": "ad83409138bdf23ddcb2273112b3c79c54d8ad51731f2cfd817ff6f0addde46f",
+        "source_sha256": "d0fc4e0478835131cf3b731302174395d6827260bdae78bfa276b8e9851c9a3f",
+        "data_sha256": "a0a69afd241d96a6a239f6745b13d0bd9129652ea25d607b354ecb0314bd2b76",
+        "pretraining_sha256": "73cec8be7427c8655ceced13ce62f6e20a1fa90d1b4d4a550df17a1144081a7c",
+        "stream_sha256": "097d6d2401a6541dd97e914ff4929abb86d73edb0cbcbce66ae35b015f0bb90f",
+        "resources": {
+          "micro_batch": 2,
+          "accumulation": 4,
+          "dtype": "bfloat16",
+          "workers": 4,
+          "prefetch_factor": 2,
+          "pin_memory": true
+        },
+        "p0_identity_sha256": "9468a4d2a8d9a1344a21358698a427fdc5ce9950d3603ce91ea9258a15a648db"
+      }
+    }
+  },
+  "data_identity_sha256": "7c53b86bcb27ccd121042f667cc58e39b98716a8c477bfd1f1657fa126575719",
+  "candidate_metrics_sha256": {
+    "/root/autodl-tmp/HRDecoder_Q_20261003/runs/Q_DDR_seed42/val_u12000/metrics.json": "16c39d3ce78b8b6f4ef4e7d0f8b92c9e42b88060b3fcd06955546ec0325684c7",
+    "/root/autodl-tmp/HRDecoder_Q_20261003/runs/Q_DDR_seed42/val_u16000/metrics.json": "cb5ed0832e885af4fbd3cabec8ed09d690049ee25278de7290e0aa74219d7737",
+    "/root/autodl-tmp/HRDecoder_Q_20261003/runs/Q_DDR_seed42/val_u20000/metrics.json": "bb44b7627e9a909b3f1202eb1b74a4e899e93244ecefc061009887479691a919",
+    "/root/autodl-tmp/HRDecoder_Q_20261003/runs/Q_DDR_seed42/val_u24000/metrics.json": "97fcbf221c9781fe2eb8e9c8ddaf0e59f3983a18e892d7e37a7f79fa8ba41df9",
+    "/root/autodl-tmp/HRDecoder_Q_20261003/runs/Q_DDR_seed2024/val_u12000/metrics.json": "669ab92e31c56aac44ef8a058f1512ffb8b2261e91db9caa6e6f115c8b45ba46",
+    "/root/autodl-tmp/HRDecoder_Q_20261003/runs/Q_DDR_seed2024/val_u16000/metrics.json": "34b14378dd635a41e9b7c79910a38047e302324b253b74b0aa45b3a058d26dcc",
+    "/root/autodl-tmp/HRDecoder_Q_20261003/runs/Q_DDR_seed2024/val_u20000/metrics.json": "34a30b15a17c9749129839b4177856d37172521fb6a789c7b4fd519f58cf85ce",
+    "/root/autodl-tmp/HRDecoder_Q_20261003/runs/Q_DDR_seed2024/val_u24000/metrics.json": "3d5a7c9c6f1c8b1506be6ea3281b128bea06136f4bbcb7a5507a8ebb7528339a",
+    "/root/autodl-tmp/HRDecoder_Q_20261003/runs/Q_MIX_seed42/val_u12000/metrics.json": "a4dd7f80bf303efd1f87cbc0751f41174f7b7882706abd53993d86267f4d6556",
+    "/root/autodl-tmp/HRDecoder_Q_20261003/runs/Q_MIX_seed42/val_u16000/metrics.json": "e45695f8c01354e7a80757f6f7cd765a571170c316c809f5715309e7ca27deb5",
+    "/root/autodl-tmp/HRDecoder_Q_20261003/runs/Q_MIX_seed42/val_u20000/metrics.json": "dd1cd394365edaa248413db20542530b5a17db9c3811578e7bfd712f34a16729",
+    "/root/autodl-tmp/HRDecoder_Q_20261003/runs/Q_MIX_seed42/val_u24000/metrics.json": "f35a65af30e08c02049da1ab325af18d68fe9b87f913d6df09461a4665007a45",
+    "/root/autodl-tmp/HRDecoder_Q_20261003/runs/Q_MIX_seed2024/val_u12000/metrics.json": "41cb888664ea36f5d80c59208c5548550ae8117d40ac9130b81e2a66d7a33a37",
+    "/root/autodl-tmp/HRDecoder_Q_20261003/runs/Q_MIX_seed2024/val_u16000/metrics.json": "f0be14bf42aaaac700efb9632afd5ee5bfb4cfeaa29418b0b5024d5b9738b13c",
+    "/root/autodl-tmp/HRDecoder_Q_20261003/runs/Q_MIX_seed2024/val_u20000/metrics.json": "e5770b3fa2d6c4d81c13925ddbbcbbd1d7747e923ee07beff94505ca88640c46",
+    "/root/autodl-tmp/HRDecoder_Q_20261003/runs/Q_MIX_seed2024/val_u24000/metrics.json": "4ed6ecfbbc083590e1a2163a70b1c1d8cc90ea6aa1ca6e49c3fa648685de197a"
+  },
+  "p0_original_lock_sha256": "644974f4a888835f838472199dcb623e879be2d62e73dab502394759551ceac4",
+  "champion_settings_sha256": "2156e29a244ba4fe804317489c72111a7692410a56110a12a6943435d42630ae",
+  "p0_reference_sha256": "cd00999b05d5ba38a02cf5078473a79107fa0a0468b3fdf4841dcf8fad7f57c0",
+  "legacy_source_sha256": {
+    "/root/autodl-tmp/HRDecoder_Ready_20261002/tools/final_eval_locked.py": "0c280493459f2eafac90e63e5f2253742fd29fa458d3ed77dcc2c2eebcc8e18d",
+    "/root/autodl-tmp/HRDecoder_Ready_20261002/legacy/runtime.py": "64990a4f2806ab1f76b43352bdf86c2b1bef211ce8d137f8806f582b765ce6ff",
+    "/root/autodl-tmp/HRDecoder_Ready_20261002/legacy/fusion_core.py": "66fa5de4f4fa200b2f655ba90fd14fdb66250a2958330b67aa91b6828b6a7058",
+    "/root/autodl-tmp/HRDecoder_Ready_20261002/trainer/models/convnext_unet.py": "7f199310c8f866bb66094a1b9bc550bd9ca10b0ed02f7b55942579d417948dcd"
+  },
+  "p0_cache": "/dev/shm/hrdecoder_q_final_p0_20261003",
+  "target_test_pct": 47.2115,
+  "deployment_seed": 42,
+  "test_based_reselection_allowed": false,
+  "historical_limitation": "Exploratory continuation after historical DDR val/test use and an already completed DDR16k test. Choice uses paired validation only; test never changes it.",
+  "adapter_sha256": "75f0cca79c7c3ebeaf3852fccae7cdb64107ede35143224d9a5d252aa1378e08",
+  "runner_sha256": "491f31cce94c025195efd387d938331d2ca3aeed5d2480611b7bc3366935d77f",
+  "continuation_protocol_sha256": "240f1aafa14616ad0b011cc998bf67e8671f82a32ca4c1758ff52a3e93d226ff",
+  "runtime_qmix_sha256": "fbac1c55289be376b8efb98d1503aa57a794ffca001c0b7affb6151b3b3aee97",
+  "source_override_sha256": "3e682c81ac85eb246232759539132e821e859eeb7166c884e7d0cc6f06ce3fdb",
+  "external_manifest_sha256": "4de817deaf9a190a19badee08dccf77fa7dac6c997cca982fd5843f7d48d1bcb",
+  "prior_final_selection_sha256": "26e5852194aca66bb02062ac79b2f0f8026e33652a95133140a3824bffb38905",
+  "test_action": "REUSE_EXACT_PRIOR_TEST_COUNTS",
+  "original_inference_driver_unchanged": true,
+  "inference_runtime": "configs/runtime.server.json",
+  "selected_training_runtime": "configs/runtime.server.json",
+  "test_evidence_boundary": "Exploratory continuation after already completed Q_DDR test; new decisions use val only. Never overwrite or repeat old test selection."
+}

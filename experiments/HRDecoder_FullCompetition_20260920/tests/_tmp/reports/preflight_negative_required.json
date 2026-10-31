@@ -1,0 +1,51 @@
+{
+  "generated_at": "2026-09-20T03:17:23.012933+00:00",
+  "mode": "formal",
+  "layer": "formal",
+  "readiness": "BLOCKED",
+  "calibration": "READY",
+  "configs": {
+    "H0": "D:\\dataset\\experiment\\HRDecoder_FullCompetition_20260920\\tests\\_tmp\\configs\\H0_synthetic.yaml",
+    "H1": "D:\\dataset\\experiment\\HRDecoder_FullCompetition_20260920\\tests\\_tmp\\configs\\H1_synthetic.yaml",
+    "U0": "D:\\dataset\\experiment\\HRDecoder_FullCompetition_20260920\\tests\\_tmp\\configs\\U0_synthetic.yaml",
+    "U1": "D:\\dataset\\experiment\\HRDecoder_FullCompetition_20260920\\tests\\_tmp\\configs\\U1_synthetic.yaml"
+  },
+  "ok": false,
+  "error_count": 2,
+  "skipped_count": 1,
+  "calibration_pending_count": 0,
+  "calibration_pending": [],
+  "manifest_records": {
+    "H1@D:\\dataset\\experiment\\HRDecoder_FullCompetition_20260920\\tests\\_tmp\\manifests\\external_train_manifest.jsonl": 2,
+    "U1@D:\\dataset\\experiment\\HRDecoder_FullCompetition_20260920\\tests\\_tmp\\manifests\\external_train_manifest.jsonl": 2
+  },
+  "ddr_split_sizes": {
+    "H0": {
+      "train": 2,
+      "val": 1,
+      "test": 1
+    },
+    "H1": {
+      "train": 2,
+      "val": 1,
+      "test": 1
+    },
+    "U0": {
+      "train": 2,
+      "val": 1,
+      "test": 1
+    },
+    "U1": {
+      "train": 2,
+      "val": 1,
+      "test": 1
+    }
+  },
+  "errors": [
+    "H1: 占位符 REQUIRED @ $.initialization.imagenet_weights.file（正式模式遇到占位符必须失败）",
+    "配对 H0↔H1: 锁定字段不一致: $.initialization.imagenet_weights.file: 'D:\\\\dataset\\\\experiment\\\\HRDecoder_FullCompetition_20260920\\\\tests\\\\_tmp\\\\weights\\\\imagenet_dummy.pth' != 'REQUIRED'"
+  ],
+  "skipped": [
+    "H1: initialization.imagenet_weights 含占位符，文件存在性/SHA256 校验跳过"
+  ]
+}

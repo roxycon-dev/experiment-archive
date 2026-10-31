@@ -1,0 +1,17 @@
+{
+  "registered_before_any_new_candidate_results": true,
+  "screen_updates": 8000,
+  "original_deadline_unix": 1791568800,
+  "criteria": {
+    "4k_mIoU_at_least": 28.825649019798053,
+    "8k_mIoU_at_least": 34.469921210377,
+    "gain_4k_to8k_pp_at_least": 3.0,
+    "final_minus_base_8k_pp_at_least": 0.5,
+    "max_class_IoU_loss_final_vs_base_pp": 2.0,
+    "HE_MA_reject_if_FN_growth_over": 1.1,
+    "HE_MA_requires_FP_ratio_when_FN_grows_at_most": 0.9
+  },
+  "interpretation": "Practical early-trend and calibration screen, not proof of40k or fusion target",
+  "test_access_for_screening": false,
+  "reject_next_action": "autonomous evidence-based revision within remaining authorized time"
+}

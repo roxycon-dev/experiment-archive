@@ -1,0 +1,111 @@
+{
+  "mIoU_percent": 37.18726361835188,
+  "IoU_percent": [
+    35.22885614153613,
+    41.56020073176008,
+    51.19136918303185,
+    20.76862841707946
+  ],
+  "precision_percent": [
+    47.71361252652107,
+    61.806344117655144,
+    74.5835995867349,
+    34.7244696813675
+  ],
+  "recall_percent": [
+    57.38076979948625,
+    55.9224296058458,
+    62.00869893348692,
+    34.069915131920794
+  ],
+  "counts": [
+    [
+      166865,
+      182857,
+      123938
+    ],
+    [
+      674382,
+      416739,
+      531542
+    ],
+    [
+      124888,
+      42559,
+      76516
+    ],
+    [
+      23605,
+      44373,
+      45679
+    ]
+  ],
+  "class_order": [
+    "EX",
+    "HE",
+    "SE",
+    "MA"
+  ],
+  "undefined_precision_convention": "zero when TP+FP=0; inspect counts",
+  "images": 76,
+  "threshold": "strictly > .5",
+  "base_head_metrics": {
+    "mIoU_percent": 35.76319919077229,
+    "IoU_percent": [
+      32.71150497710919,
+      41.72457981883445,
+      47.24572985293027,
+      21.37098211421524
+    ],
+    "precision_percent": [
+      40.31040103481578,
+      55.93606130281924,
+      59.54835584188205,
+      29.689821142076177
+    ],
+    "recall_percent": [
+      63.44054222274186,
+      62.153750982648994,
+      69.57557943238466,
+      43.269730385081694
+    ],
+    "counts": [
+      [
+        184487,
+        273179,
+        106316
+      ],
+      [
+        749527,
+        590444,
+        456397
+      ],
+      [
+        140128,
+        95190,
+        61276
+      ],
+      [
+        29979,
+        70995,
+        39305
+      ]
+    ],
+    "class_order": [
+      "EX",
+      "HE",
+      "SE",
+      "MA"
+    ],
+    "undefined_precision_convention": "zero when TP+FP=0; inspect counts",
+    "images": 76,
+    "threshold": "strictly > .5"
+  },
+  "seconds": 32.43288543820381,
+  "deployment_inference_verified": true,
+  "teacher_or_GT_input": false,
+  "parent_completed": 20000,
+  "probe_updates": 0,
+  "identity_SHA": "ea5f75be5104a7734d1b20521bd45af9e23f29cdf1bf804f7b30718619e598c1",
+  "arm": "control"
+}

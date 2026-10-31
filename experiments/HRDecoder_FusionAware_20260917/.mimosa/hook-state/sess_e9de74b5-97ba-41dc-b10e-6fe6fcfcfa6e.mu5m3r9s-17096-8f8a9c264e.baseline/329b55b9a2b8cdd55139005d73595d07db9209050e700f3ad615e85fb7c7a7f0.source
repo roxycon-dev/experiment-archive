@@ -1,0 +1,389 @@
+# fusion_core.py
+"""Fusion core: paired self-ensemble training/inference helpers.
+
+Pure torch + numpy + opencv (headless-safe). No mmcv/mmseg dependency.
+Python 3.8+, CPU.
+
+Label convention (DDR): 0 = background, 1 = EX, 2 = HE, 3 = SE, 4 = MA,
+255 = ignore.  The model outputs EXACTLY 4 FOREGROUND channels
+(channel i <-> label i+1); there is NO background channel.
+"""
+import hashlib
+import math
+import os
+
+import cv2
+import numpy as np
+import torch
+import torch.nn.functional as F
+from torch.nn.modules.batchnorm import _BatchNorm
+
+# ---------------------------------------------------------------- constants ---
+IMG_MEAN = np.array([81.205, 50.636, 21.216], dtype=np.float32)
+IMG_STD = np.array([76.252, 48.798, 21.625], dtype=np.float32)
+IGNORE_INDEX = 255
+NUM_FG = 4                       # EX, HE, SE, MA -- no background channel
+REF_PREFIX = 'reference.'
+SMOOTH = 1.0
+
+
+# ------------------------------------------------------------------- dice ---
+def dice_prob(prob, label, smooth=SMOOTH, ignore_index=IGNORE_INDEX):
+    """Squared-denominator soft Dice over the 4 FOREGROUND channels.
+
+    Channel ``i`` of ``prob`` corresponds to label ``i + 1``
+    (0 = background carries no channel; 255 = ignore).
+
+    Args:
+        prob: (N, C, H, W) float probabilities in [0, 1]; C == 4.
+        label: (N, 1, H, W) or (N, H, W) integer labels in 0..4 or ignore_index.
+        smooth: Laplace smoothing (default 1.0).
+        ignore_index: label value excluded from BOTH prediction and target.
+    Returns:
+        Scalar loss: mean of (1 - dice) over all N samples and C classes
+        (all-ignore samples contribute 0 through the smoothing term).
+    """
+    assert prob.dim() == 4, 'prob must be (N, C, H, W)'
+    if label.dim() == prob.dim():
+        label = label.squeeze(1)
+    assert label.dim() == 3, 'label must be (N, 1, H, W) or (N, H, W)'
+    expected = (prob.shape[0], prob.shape[2], prob.shape[3])
+    assert tuple(label.shape) == expected, \
+        'label spatial shape %r must match prob %r' % (tuple(label.shape), expected)
+    label = label.long()
+    c = prob.shape[1]
+    assert c == NUM_FG, 'model must output exactly %d foreground channels, got %d' % (NUM_FG, c)
+    valid = label != ignore_index
+    lab_valid = label[valid]
+    assert bool(((lab_valid >= 0) & (lab_valid <= c)).all()), \
+        'labels must lie in [0, %d] (0=background, %d fg classes) or equal %d' % (
+            c, c, ignore_index)
+
+    vf = valid.float().unsqueeze(1)                                # (N,1,H,W)
+    idx = torch.arange(1, c + 1, device=prob.device).view(1, c, 1, 1)
+    target = (label.unsqueeze(1) == idx).float() * vf              # (N,C,H,W)
+    p = prob.float() * vf
+
+    dims = (2, 3)
+    num = 2.0 * (p * target).sum(dims) + smooth
+    den = (p * p).sum(dims) + (target * target).sum(dims) + smooth
+    loss = 1.0 - num / den                                         # (N, C)
+    return loss.mean()
+
+
+def _validate_ref(ref, probs):
+    if ref.shape != probs.shape:
+        raise ValueError('reference shape %r != prob shape %r' % (tuple(ref.shape), tuple(probs.shape)))
+    if not torch.isfinite(ref).all():
+        raise ValueError('reference contains non-finite values')
+    if float(ref.min()) < 0.0 or float(ref.max()) > 1.0:
+        raise ValueError('reference must be probabilities in [0, 1]')
+
+
+def loss_pair(logits, label, ref, arm):
+    """Paired loss on raw logits.
+
+    arm 'A': Dice(sigmoid(logits), label).
+    arm 'B': 0.5 * Dice(sigmoid(logits), label)
+           + 0.5 * Dice(0.5*sigmoid(logits) + 0.5*ref.detach(), label).
+    ``ref`` is validated (finite, [0,1], shape) and always detached.
+    Returns a scalar tensor.
+    """
+    if arm not in ('A', 'B'):
+        raise ValueError("arm must be 'A' or 'B', got %r" % (arm,))
+    probs = torch.sigmoid(logits)
+    ref = torch.as_tensor(ref)
+    _validate_ref(ref, probs)
+    ref = ref.detach()
+    a = dice_prob(probs, label)
+    if arm == 'A':
+        return a
+    fused = 0.5 * probs + 0.5 * ref
+    return 0.5 * a + 0.5 * dice_prob(fused, label)
+
+
+# ------------------------------------------------------------ crop helper ---
+def foreground_crop_bbox(gt, crop_size, fg_prob=0.5, rng=None, num_fg=NUM_FG):
+    """Top-left corner of a crop_size x crop_size window.
+
+    With probability fg_prob (or when no lesion class 1..num_fg is present)
+    the crop is image-uniform random.  Otherwise a uniformly chosen PRESENT
+    class and a uniformly chosen pixel of it anchor the crop within the valid
+    offset range guaranteeing pixel inclusion.
+    """
+    rng = np.random if rng is None else rng
+    h, w = gt.shape[:2]
+    cs = int(crop_size)
+    cs_h, cs_w = min(cs, h), min(cs, w)
+
+    def uniform():
+        return rng.randint(0, h - cs_h + 1), rng.randint(0, w - cs_w + 1)
+
+    present = [c for c in range(1, num_fg + 1) if (gt == c).any()]
+    if not present or rng.random() < fg_prob:
+        return uniform()
+    cls = present[rng.randint(0, len(present))]
+    ys, xs = np.where(gt == cls)
+    idx = rng.randint(0, len(ys))
+    py, px = int(ys[idx]), int(xs[idx])
+    y_lo, y_hi = max(0, py - cs_h + 1), min(py, h - cs_h)
+    x_lo, x_hi = max(0, px - cs_w + 1), min(px, w - cs_w)
+    return rng.randint(y_lo, y_hi + 1), rng.randint(x_lo, x_hi + 1)
+
+
+# --------------------------------------------------------------- geometry ---
+def _resize_prob_hwc(prob, size_hw):
+    """Resize (H, W, C) float probability map with bilinear interpolation."""
+    out = np.empty((size_hw[0], size_hw[1], prob.shape[2]), dtype=np.float32)
+    for c in range(prob.shape[2]):
+        out[:, :, c] = cv2.resize(prob[:, :, c].astype(np.float32),
+                                  (size_hw[1], size_hw[0]),
+                                  interpolation=cv2.INTER_LINEAR)
+    return out
+
+
+def paired_geometry(image, label, reference, rng):
+    """Paired geometric augmentation of image / label / reference.
+
+    Pipeline: bilinear resize to 2048x2048 -> random rotation by a shared
+    matrix (angle uniform in [-45, 45]; image and reference bilinear with 0
+    border, label nearest with 255 border) -> 1024x1024 foreground-aware
+    crop -> horizontal flip (p=0.5) -> image normalization.
+
+    Args:
+        image: (H, W, 3) uint8 RGB.
+        label: (H, W) integer.
+        reference: (H, W, 4) float probabilities in [0, 1].
+        rng: np.random.RandomState.
+    Returns:
+        image (3, 1024, 1024) float32 normalized, label (1, 1024, 1024)
+        int64, reference (4, 1024, 1024) float32, trace dict.
+    """
+    assert isinstance(rng, np.random.RandomState), 'rng must be np.random.RandomState'
+    image = np.asarray(image)
+    label = np.asarray(label)
+    reference = np.asarray(reference, dtype=np.float32)
+    assert image.ndim == 3 and image.shape[2] == 3 and image.dtype == np.uint8, 'image must be HWC uint8 RGB'
+    assert label.ndim == 2 and label.shape == image.shape[:2], 'label must be HW matching image'
+    assert reference.shape == label.shape + (NUM_FG,), 'reference must be HWC with 4 channels'
+    assert reference.min() >= 0.0 and reference.max() <= 1.0, 'reference must be in [0, 1]'
+    assert np.isfinite(reference).all(), 'reference must be finite'
+
+    size = (2048, 2048)
+    img_r = cv2.resize(image, (size[1], size[0]), interpolation=cv2.INTER_LINEAR)
+    lab_r = cv2.resize(label.astype(np.uint8), (size[1], size[0]),
+                       interpolation=cv2.INTER_NEAREST)
+    ref_r = _resize_prob_hwc(reference, size)
+
+    angle = float(rng.uniform(-45.0, 45.0))
+    matrix = cv2.getRotationMatrix2D((size[1] / 2.0, size[0] / 2.0), angle, 1.0)
+    img_r = cv2.warpAffine(img_r, matrix, (size[1], size[0]), flags=cv2.INTER_LINEAR,
+                           borderMode=cv2.BORDER_CONSTANT, borderValue=0)
+    lab_r = cv2.warpAffine(lab_r, matrix, (size[1], size[0]), flags=cv2.INTER_NEAREST,
+                           borderMode=cv2.BORDER_CONSTANT, borderValue=IGNORE_INDEX)
+    for c in range(NUM_FG):
+        ref_r[:, :, c] = cv2.warpAffine(ref_r[:, :, c], matrix, (size[1], size[0]),
+                                        flags=cv2.INTER_LINEAR,
+                                        borderMode=cv2.BORDER_CONSTANT, borderValue=0.0)
+
+    cs = 1024
+    y0, x0 = foreground_crop_bbox(lab_r, cs, fg_prob=0.5, rng=rng, num_fg=NUM_FG)
+    img_c = img_r[y0:y0 + cs, x0:x0 + cs]
+    lab_c = lab_r[y0:y0 + cs, x0:x0 + cs]
+    ref_c = ref_r[y0:y0 + cs, x0:x0 + cs]
+
+    flip = bool(rng.random() < 0.5)
+    if flip:
+        img_c = img_c[:, ::-1, :]
+        lab_c = lab_c[:, ::-1]
+        ref_c = ref_c[:, ::-1, :]
+
+    img_c = (img_c.astype(np.float32) - IMG_MEAN) / IMG_STD
+    image_out = np.ascontiguousarray(img_c.transpose(2, 0, 1))          # (3,H,W)
+    label_out = np.ascontiguousarray(lab_c.astype(np.int64))[None]       # (1,H,W)
+    ref_out = np.ascontiguousarray(ref_c.astype(np.float32).transpose(2, 0, 1))
+
+    trace = {
+        'angle': angle,
+        'y0': int(y0),
+        'x0': int(x0),
+        'flip': flip,
+        'ignore_pixels': int((lab_c == IGNORE_INDEX).sum()),
+        'crop': cs,
+        'resize': int(size[0]),
+    }
+    return image_out, label_out, ref_out, trace
+
+
+# ------------------------------------------------------------ model utils ---
+def freeze_bn(model):
+    """Put every BatchNorm layer in eval mode.
+
+    This freezes ONLY the running statistics (buffers).  Affine parameters
+    of BatchNorm layers inside allowed modules (decode_head.*, backbone.stage4.*)
+    remain trainable; buffers are never parameters.
+    """
+    for m in model.modules():
+        if isinstance(m, _BatchNorm):
+            m.eval()
+
+
+def configure_trainable(model):
+    """Only ``decode_head.*`` and ``backbone.stage4.*`` stay trainable.
+
+    All BatchNorm layers are switched to eval mode, so their running
+    statistics (buffers) are frozen everywhere, including any reference
+    submodule.  BN affine parameters stay trainable iff their owning module
+    path starts with decode_head. / backbone.stage4.  Every parameter of a
+    ``model.reference`` submodule is frozen.  Buffers are never parameters
+    and never appear in the returned list.  Returns the sorted list of
+    trainable parameter names.
+    """
+    trainable = []
+    for name, p in model.named_parameters():
+        ok = name.startswith('decode_head.') or name.startswith('backbone.stage4.')
+        if name.startswith(REF_PREFIX):
+            ok = False
+        p.requires_grad_(ok)
+        if ok:
+            trainable.append(name)
+    freeze_bn(model)
+    if hasattr(model, 'reference'):
+        for p in model.reference.parameters():
+            p.requires_grad_(False)
+        model.reference.eval()
+    return sorted(trainable)
+
+
+# -------------------------------------------------------------- checkpoints ---
+def sha256(path):
+    """Hex sha256 digest of a file, streamed in 1 MiB chunks."""
+    h = hashlib.sha256()
+    with open(path, 'rb') as f:
+        for chunk in iter(lambda: f.read(1024 * 1024), b''):
+            h.update(chunk)
+    return h.hexdigest()
+
+
+def _strip_module_prefix(state):
+    return {k[7:] if k.startswith('module.') else k: v for k, v in state.items()}
+
+
+def _torch_load_trusted(path):
+    """torch.load of a trusted, locally produced checkpoint file.
+
+    Uses weights_only=False where the kwarg exists; falls back for older
+    torch versions without it.  Accepts str / bytes / os.PathLike.
+    """
+    if not isinstance(path, (str, bytes, os.PathLike)):
+        raise ValueError('expected a trusted checkpoint path or state dict, got %r'
+                         % (type(path).__name__,))
+    try:
+        return torch.load(path, map_location='cpu', weights_only=False)
+    except TypeError:                       # older torch: no weights_only kwarg
+        return torch.load(path, map_location='cpu')
+
+
+def _load_trusted(obj):
+    """Normalize a trusted checkpoint source into a stripped tensor dict.
+
+    Accepts a bare state dict, a dict with 'state_dict', or a trusted path
+    (str / bytes / os.PathLike).  Returns the 'module.'-stripped state dict.
+    """
+    if isinstance(obj, (str, bytes, os.PathLike)):
+        obj = _torch_load_trusted(obj)
+    if isinstance(obj, dict) and 'state_dict' in obj and all(
+            not isinstance(v, torch.Tensor) for v in obj.values()):
+        obj = obj['state_dict']
+    if not isinstance(obj, dict) or not obj or not all(
+            isinstance(v, torch.Tensor) for v in obj.values()):
+        raise ValueError('checkpoint must be a trusted torch state_dict or bare tensor dict')
+    return _strip_module_prefix(obj)
+
+
+def _states_equal(a, b):
+    if set(a.keys()) != set(b.keys()):
+        return False
+    for k in a:
+        if a[k].shape != b[k].shape or a[k].dtype != b[k].dtype:
+            return False
+        if not torch.equal(a[k].cpu(), b[k].cpu()):
+            return False
+    return True
+
+
+def strict_initialize(model, student_checkpoint, reference_checkpoint=None):
+    """Strict checkpoint loading with reference.* partitioning.
+
+    A FULL checkpoint contains student keys (backbone.*, decode_head.*,
+    detail_branch.*, detail_head.*, detail_scale, ...) PLUS ``reference.*``
+    keys.  A STUDENT-ONLY checkpoint contains no ``reference.*`` keys.
+    'module.' prefixes are stripped from incoming keys.
+
+    Procedure (NO model mutation before ALL validations pass):
+      1. Partition the incoming state into student keys and embedded
+         reference keys (by the ``reference.`` prefix).
+      2. Validate student keys EXACTLY against the model's non-reference
+         keys (no missing, no unexpected, matching shapes).
+      3. If checkpoint B is given, compare the embedded reference (when
+         present) against it BEFORE any load; a mismatch is rejected.
+      4. Validate reference keys exactly against the model's reference.*
+         keys and shapes.
+      5. Merge student + ``reference.``-prefixed reference and
+         ``model.load_state_dict(merged, strict=True)``.
+
+    A model carrying reference.* keys requires a reference from somewhere
+    (embedded or checkpoint B); otherwise loading is rejected.
+    Returns {'student': sd, 'reference': sd_or_None} of what was loaded.
+    """
+    raw = _load_trusted(student_checkpoint)
+    student = {k: v for k, v in raw.items() if not k.startswith(REF_PREFIX)}
+    embedded_ref = {k[len(REF_PREFIX):]: v for k, v in raw.items()
+                    if k.startswith(REF_PREFIX)}
+
+    model_state = model.state_dict()
+    student_expected = {k for k in model_state if not k.startswith(REF_PREFIX)}
+    ref_expected = {k[len(REF_PREFIX):] for k in model_state if k.startswith(REF_PREFIX)}
+
+    # ---- student key / shape validation (no mutation yet) ----
+    missing = student_expected - set(student)
+    unexpected = set(student) - student_expected
+    if missing or unexpected:
+        raise ValueError('strict student mismatch: missing=%d %s unexpected=%d %s' % (
+            len(missing), sorted(missing)[:5], len(unexpected), sorted(unexpected)[:5]))
+    for k in sorted(student):
+        if tuple(student[k].shape) != tuple(model_state[k].shape):
+            raise ValueError('strict shape mismatch for %r: ckpt %r vs model %r' % (
+                k, tuple(student[k].shape), tuple(model_state[k].shape)))
+
+    # ---- reference resolution and cross-check (still no mutation) ----
+    reference = None
+    if reference_checkpoint is not None:
+        reference = _load_trusted(reference_checkpoint)
+    if embedded_ref:
+        if reference is not None and not _states_equal(embedded_ref, reference):
+            raise ValueError('full-D embedded reference differs from checkpoint B '
+                             'reference; rejected')
+        ref_to_load = embedded_ref
+    else:
+        ref_to_load = reference
+    if ref_to_load is not None:
+        r_missing = ref_expected - set(ref_to_load)
+        r_unexpected = set(ref_to_load) - ref_expected
+        if r_missing or r_unexpected:
+            raise ValueError('strict reference mismatch: missing=%d %s unexpected=%d %s' % (
+                len(r_missing), sorted(r_missing)[:5],
+                len(r_unexpected), sorted(r_unexpected)[:5]))
+        for k in sorted(ref_to_load):
+            if tuple(ref_to_load[k].shape) != tuple(model_state[REF_PREFIX + k].shape):
+                raise ValueError('strict reference shape mismatch for %r' % (k,))
+    elif ref_expected:
+        raise ValueError('model contains reference.* keys but no reference was '
+                         'provided (neither embedded nor checkpoint B); rejected')
+
+    # ---- ALL validations passed: mutate the model exactly once ----
+    merged = dict(student)
+    merged.update({REF_PREFIX + k: v for k, v in ref_to_load.items()} if ref_to_load else {})
+    model.load_state_dict(merged, strict=True)
+
+    return {'student': student, 'reference': ref_to_load}

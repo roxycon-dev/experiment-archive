@@ -1,0 +1,59 @@
+{
+  "schema": "hrdecoder-refiner-train-done/v1",
+  "stage": "stage1_overfit",
+  "out_dir": "/root/autodl-tmp/HRDecoder_FullCompetition_20260920/refiner_v1/runs/smoke_w30_20260921",
+  "epochs": 200,
+  "start_epoch": 0,
+  "steps": 40,
+  "steps_per_epoch": 6,
+  "elapsed_s": 9.277173280715942,
+  "roles": {
+    "candidate_pos": 20,
+    "candidate_neg_fp": 3,
+    "candidate_neg_plain": 12,
+    "background": 8
+  },
+  "objective": "L = 30.0*focal_bce(alpha=0.75,gamma=2) + 1.0*soft_dice",
+  "loss_weights": {
+    "focal_bce": 30.0,
+    "soft_dice": 1.0
+  },
+  "focal": {
+    "alpha": 0.75,
+    "gamma": 2.0
+  },
+  "identity_ok": {
+    "bitwise": true,
+    "max_abs_diff": 0.0,
+    "batch": 8
+  },
+  "checkpoint_nodes": [],
+  "args": {
+    "config": "/root/autodl-tmp/HRDecoder_FullCompetition_20260920/refiner_v1/configs/refiner_v1.json",
+    "stage_config": "/root/autodl-tmp/HRDecoder_FullCompetition_20260920/refiner_v1/configs/stage1.json",
+    "cache_root": "/root/autodl-tmp/HRDecoder_FullCompetition_20260920/refiner_v1/patch_cache_smoke_train",
+    "out_dir": "/root/autodl-tmp/HRDecoder_FullCompetition_20260920/refiner_v1/runs/smoke_w30_20260921",
+    "epochs": null,
+    "overfit_steps": 40,
+    "train_images": 4,
+    "save_every": 1,
+    "keep_recent": 3,
+    "resume": false,
+    "min_free_gb": 4.0,
+    "seed": 20260920,
+    "device": "cuda"
+  },
+  "exit_code": 0,
+  "final": {
+    "step": 40,
+    "epoch": 7,
+    "loss": 0.4623064398765564,
+    "focal": 0.003872884903103113,
+    "dice": 0.3461199104785919,
+    "focal_share": 0.2513193255040732,
+    "gnorm": 4.631528377532959
+  },
+  "final_loss_mean_last_epoch": 0.4612933397293091,
+  "focal_share_mean": 0.15694080394756033,
+  "loss_first": 0.34835532307624817
+}

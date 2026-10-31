@@ -1,0 +1,252 @@
+{
+  "root": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\round2_highres",
+  "remote_root": "/root/autodl-tmp/HRDecoder_Ready_20261002/round2_highres",
+  "jobs": {
+    "U0_continuation2048": {
+      "best": {
+        "protocol": "whole_image_accumulated_counts",
+        "threshold": 0.5,
+        "n_images": 76,
+        "per_class": {
+          "EX": {
+            "iou": 0.4499883186667705,
+            "f1": 0.6206785432320227,
+            "ppv": 0.6473657086520076,
+            "recall": 0.5961045793887958,
+            "aupr": 0.46529421492376927,
+            "tp": 173349,
+            "fp": 94427,
+            "fn": 117454,
+            "gt_positive_pixels": 290803
+          },
+          "HE": {
+            "iou": 0.39686833668524873,
+            "f1": 0.5682258324030915,
+            "ppv": 0.5712810558095172,
+            "recall": 0.5652031139607471,
+            "aupr": 0.42404260099278973,
+            "tp": 681592,
+            "fp": 511502,
+            "fn": 524332,
+            "gt_positive_pixels": 1205924
+          },
+          "SE": {
+            "iou": 0.5049039672544081,
+            "f1": 0.6710115439134232,
+            "ppv": 0.7089112631381174,
+            "recall": 0.6369585509721754,
+            "aupr": 0.48414852126142105,
+            "tp": 128286,
+            "fp": 52676,
+            "fn": 73118,
+            "gt_positive_pixels": 201404
+          },
+          "MA": {
+            "iou": 0.21169467957944038,
+            "f1": 0.3494191781925067,
+            "ppv": 0.3265311241831705,
+            "recall": 0.375757750707234,
+            "aupr": 0.15879065357078817,
+            "tp": 26034,
+            "fp": 53695,
+            "fn": 43250,
+            "gt_positive_pixels": 69284
+          }
+        },
+        "mIoU_lesion4": 0.3908638255464669,
+        "mF1": 0.552333774435261,
+        "mPPV": 0.5635222879457031,
+        "mRecall": 0.543505998757238,
+        "mAUPR": 0.38306899768719205,
+        "excluded_classes": {
+          "iou": [],
+          "aupr": []
+        },
+        "aupr_note": "256-bin histogram approximation of PR curve",
+        "fixed_fusion_miou": 0.43366298706385487,
+        "fixed_fusion_counts": [
+          [
+            183699,
+            94786,
+            107104
+          ],
+          [
+            693787,
+            420075,
+            512137
+          ],
+          [
+            136980,
+            40650,
+            64424
+          ],
+          [
+            27320,
+            33558,
+            41964
+          ]
+        ],
+        "fixed_fusion_baseline_miou": 0.43487703221036567,
+        "fixed_fusion_gain": -0.0012140451465108004,
+        "fixed_fusion_alpha": 0.25,
+        "fixed_fusion_images": 76,
+        "fixed_fusion_cache_identity": "5a3f1ef143f31d32984e3e177e632685738bd388d978a4ae3ad9735ca51163d4",
+        "split": "val",
+        "mode": "formal",
+        "eval_images": 76,
+        "resize_to": null,
+        "dataset_size": 76,
+        "eval_inference": "whole_image",
+        "update": 1000,
+        "stage": "ddr_finetune",
+        "generated_at": "2026-10-02T16:04:03.517438+00:00"
+      },
+      "updates_done": 2000,
+      "stop_reason": "paired_no_gain_or_learning",
+      "backup": {
+        "sha256": "34604f5d3e02d099e24d33cabd5a3b708cbda30c339da39a529222c2bc1d129d",
+        "bytes": 636327411,
+        "verified_at_epoch": 1790960045.3994386,
+        "remote": "/root/autodl-tmp/HRDecoder_Ready_20261002/round2_highres/work_dirs/U0_continuation2048/ckpt_best.pth",
+        "local": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\round2_highres\\server_results\\work_dirs\\U0_continuation2048\\ckpt_best.pth"
+      },
+      "config_sha256": "17c15fd8ffd2bc6534080467bc6bfe4821f5250ba158d90a867ee1f7669381b8",
+      "wall_seconds": 1912.21231174469
+    },
+    "U0_highres": {
+      "best": {
+        "protocol": "whole_image_accumulated_counts",
+        "threshold": 0.5,
+        "n_images": 76,
+        "per_class": {
+          "EX": {
+            "iou": 0.45160968672182294,
+            "f1": 0.622219169316368,
+            "ppv": 0.6558893919300011,
+            "recall": 0.5918370855871501,
+            "aupr": 0.473395421001306,
+            "tp": 172108,
+            "fp": 90296,
+            "fn": 118695,
+            "gt_positive_pixels": 290803
+          },
+          "HE": {
+            "iou": 0.39615086052373816,
+            "f1": 0.5674900495711904,
+            "ppv": 0.553793944368373,
+            "recall": 0.5818807818734846,
+            "aupr": 0.42473342144747334,
+            "tp": 701704,
+            "fp": 565381,
+            "fn": 504220,
+            "gt_positive_pixels": 1205924
+          },
+          "SE": {
+            "iou": 0.5157618768514265,
+            "f1": 0.6805315329908921,
+            "ppv": 0.7181837232130055,
+            "recall": 0.6466306528172231,
+            "aupr": 0.490049854460127,
+            "tp": 130234,
+            "fp": 51104,
+            "fn": 71170,
+            "gt_positive_pixels": 201404
+          },
+          "MA": {
+            "iou": 0.22073820335946953,
+            "f1": 0.36164708002419904,
+            "ppv": 0.326340976142356,
+            "recall": 0.40551931181802436,
+            "aupr": 0.16905450800107646,
+            "tp": 28096,
+            "fp": 57998,
+            "fn": 41188,
+            "gt_positive_pixels": 69284
+          }
+        },
+        "mIoU_lesion4": 0.3960651568641143,
+        "mF1": 0.5579719579756623,
+        "mPPV": 0.5635520089134339,
+        "mRecall": 0.5564669580239705,
+        "mAUPR": 0.3893083012274957,
+        "excluded_classes": {
+          "iou": [],
+          "aupr": []
+        },
+        "aupr_note": "256-bin histogram approximation of PR curve",
+        "fixed_fusion_miou": 0.437327634300698,
+        "fixed_fusion_counts": [
+          [
+            182730,
+            90006,
+            108073
+          ],
+          [
+            699071,
+            423624,
+            506853
+          ],
+          [
+            137959,
+            39372,
+            63445
+          ],
+          [
+            27758,
+            34488,
+            41526
+          ]
+        ],
+        "fixed_fusion_baseline_miou": 0.43487703221036567,
+        "fixed_fusion_gain": 0.002450602090332321,
+        "fixed_fusion_alpha": 0.25,
+        "fixed_fusion_images": 76,
+        "fixed_fusion_cache_identity": "5a3f1ef143f31d32984e3e177e632685738bd388d978a4ae3ad9735ca51163d4",
+        "split": "val",
+        "mode": "formal",
+        "eval_images": 76,
+        "resize_to": null,
+        "dataset_size": 76,
+        "eval_inference": "whole_image",
+        "update": 1000,
+        "stage": "ddr_finetune",
+        "generated_at": "2026-10-02T16:24:24.476337+00:00"
+      },
+      "updates_done": 4000,
+      "stop_reason": null,
+      "backup": {
+        "sha256": "622184c13f794938e79592cdb71b3628d2ea9d658be55fd7a9dfee29aee77cc1",
+        "bytes": 636327347,
+        "verified_at_epoch": 1790962641.2700489,
+        "remote": "/root/autodl-tmp/HRDecoder_Ready_20261002/round2_highres/work_dirs/U0_highres/ckpt_best.pth",
+        "local": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\round2_highres\\server_results\\work_dirs\\U0_highres\\ckpt_best.pth",
+        "backup_method": "independent_prefetch32"
+      },
+      "config_sha256": "10f16d28e4fbd01ce6f8249b219bf0e9aaceb472da531dd215b0fa4a480bbf08",
+      "wall_seconds": 2281.6632318496704
+    }
+  },
+  "finish_sha256": "f977d37a20e40050e56301a47afdb83dd39782d48d74e0919209e914723f443e",
+  "queue_wall_seconds": 4196.910892486572,
+  "completed_at_cst": "2026-10-03T00:52:05.771485+08:00",
+  "test_policy": "Closed: no further evaluation of the already completed test split; all new decisions train/val only",
+  "historical_pipeline_verified": true,
+  "final_report_sha256": "5a38ce8890ebb757dbdcbcb7881304883a3f1697e94747aac02908c8a87c1c0f",
+  "workspace_archive": "D:\\dataset\\experiment\\_全实验档案_20260920\\05_高分辨率配对续训_20261003.md",
+  "task_closure": {
+    "completed_at_cst": "2026-10-03 01:48:27",
+    "training_complete": true,
+    "local_best_backups_verified": true,
+    "workspace_summary_updated": true,
+    "model_monitor_status": "PAUSED",
+    "shutdown_call_repaired": "Text script without shebang; executed via /bin/bash /usr/bin/shutdown",
+    "shutdown_request_status": "shutdown_dispatched_unconfirmed",
+    "shutdown_dispatched_at_cst": "2026-10-03 01:43:21",
+    "ssh_reachable_after_shutdown": false,
+    "ssh_postcheck_at_cst": "2026-10-03 01:45:57",
+    "platform_state_independently_confirmed": false,
+    "no_instance_release": true,
+    "no_test_rerun": true,
+    "final_report_sha256": "5a38ce8890ebb757dbdcbcb7881304883a3f1697e94747aac02908c8a87c1c0f"
+  }
+}

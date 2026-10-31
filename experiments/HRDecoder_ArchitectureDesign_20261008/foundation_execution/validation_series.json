@@ -1,0 +1,242 @@
+{
+  "checked_at": "2026-10-10T12:32:15.511904+08:00",
+  "run": "foundation",
+  "records": [
+    {
+      "step": 4000,
+      "mIoU": 31.67949228529926,
+      "classes": [
+        {
+          "name": "EX",
+          "counts": [
+            148317,
+            98856,
+            142486
+          ],
+          "IoU": 38.06328097131082,
+          "precision": 60.00534038912018,
+          "recall": 51.00256874929075,
+          "precision_undefined": false
+        },
+        {
+          "name": "HE",
+          "counts": [
+            567338,
+            172591,
+            638586
+          ],
+          "IoU": 41.155736426516945,
+          "precision": 76.67465391949769,
+          "recall": 47.04591665809786,
+          "precision_undefined": false
+        },
+        {
+          "name": "SE",
+          "counts": [
+            131418,
+            178067,
+            69986
+          ],
+          "IoU": 34.631895454461606,
+          "precision": 42.4634473399357,
+          "recall": 65.25093841234533,
+          "precision_undefined": false
+        },
+        {
+          "name": "MA",
+          "counts": [
+            10810,
+            14729,
+            58474
+          ],
+          "IoU": 12.86705628890767,
+          "precision": 42.32742080739261,
+          "recall": 15.602447895618035,
+          "precision_undefined": false
+        }
+      ],
+      "counts_verified": true,
+      "base_head_mIoU": 31.701351577851426,
+      "base_head_metrics": {
+        "mIoU_percent": 31.701351577851426,
+        "IoU_percent": [
+          35.9502380012056,
+          43.06145141816572,
+          29.73678282909249,
+          18.056934062941917
+        ],
+        "precision_percent": [
+          47.613974231912785,
+          68.18991733143609,
+          33.46235174300446,
+          31.566986564299427
+        ],
+        "recall_percent": [
+          59.47428327768283,
+          53.885982864591796,
+          72.7587336894997,
+          29.672074360602736
+        ],
+        "counts": [
+          [
+            172953,
+            190287,
+            117850
+          ],
+          [
+            649824,
+            303138,
+            556100
+          ],
+          [
+            146539,
+            291383,
+            54865
+          ],
+          [
+            20558,
+            44567,
+            48726
+          ]
+        ],
+        "class_order": [
+          "EX",
+          "HE",
+          "SE",
+          "MA"
+        ],
+        "undefined_precision_convention": "zero when TP+FP=0; inspect counts",
+        "images": 76,
+        "threshold": "strictly > .5"
+      },
+      "delta_mIoU_pp": null,
+      "delta_class_IoU_pp": null,
+      "versus_original_HRDecoder_pp": 10.12249228529926,
+      "versus_CET_same_step_pp": 2.6267481572905496,
+      "versus_original_SACD_same_step_pp": 3.8538432654607284,
+      "versus_residual_same_step_pp": 2.203679957180263,
+      "versus_adapter_same_step_pp": 1.2352855861861194,
+      "versus_detail_same_step_pp": -0.35432729187376566
+    }
+  ],
+  "counts_verified": true,
+  "best_val": {
+    "step": 4000,
+    "mIoU": 31.67949228529926,
+    "classes": [
+      {
+        "name": "EX",
+        "counts": [
+          148317,
+          98856,
+          142486
+        ],
+        "IoU": 38.06328097131082,
+        "precision": 60.00534038912018,
+        "recall": 51.00256874929075,
+        "precision_undefined": false
+      },
+      {
+        "name": "HE",
+        "counts": [
+          567338,
+          172591,
+          638586
+        ],
+        "IoU": 41.155736426516945,
+        "precision": 76.67465391949769,
+        "recall": 47.04591665809786,
+        "precision_undefined": false
+      },
+      {
+        "name": "SE",
+        "counts": [
+          131418,
+          178067,
+          69986
+        ],
+        "IoU": 34.631895454461606,
+        "precision": 42.4634473399357,
+        "recall": 65.25093841234533,
+        "precision_undefined": false
+      },
+      {
+        "name": "MA",
+        "counts": [
+          10810,
+          14729,
+          58474
+        ],
+        "IoU": 12.86705628890767,
+        "precision": 42.32742080739261,
+        "recall": 15.602447895618035,
+        "precision_undefined": false
+      }
+    ],
+    "counts_verified": true,
+    "base_head_mIoU": 31.701351577851426,
+    "base_head_metrics": {
+      "mIoU_percent": 31.701351577851426,
+      "IoU_percent": [
+        35.9502380012056,
+        43.06145141816572,
+        29.73678282909249,
+        18.056934062941917
+      ],
+      "precision_percent": [
+        47.613974231912785,
+        68.18991733143609,
+        33.46235174300446,
+        31.566986564299427
+      ],
+      "recall_percent": [
+        59.47428327768283,
+        53.885982864591796,
+        72.7587336894997,
+        29.672074360602736
+      ],
+      "counts": [
+        [
+          172953,
+          190287,
+          117850
+        ],
+        [
+          649824,
+          303138,
+          556100
+        ],
+        [
+          146539,
+          291383,
+          54865
+        ],
+        [
+          20558,
+          44567,
+          48726
+        ]
+      ],
+      "class_order": [
+        "EX",
+        "HE",
+        "SE",
+        "MA"
+      ],
+      "undefined_precision_convention": "zero when TP+FP=0; inspect counts",
+      "images": 76,
+      "threshold": "strictly > .5"
+    },
+    "delta_mIoU_pp": null,
+    "delta_class_IoU_pp": null,
+    "versus_original_HRDecoder_pp": 10.12249228529926,
+    "versus_CET_same_step_pp": 2.6267481572905496,
+    "versus_original_SACD_same_step_pp": 3.8538432654607284,
+    "versus_residual_same_step_pp": 2.203679957180263,
+    "versus_adapter_same_step_pp": 1.2352855861861194,
+    "versus_detail_same_step_pp": -0.35432729187376566
+  },
+  "unreported_steps": [],
+  "primary_endpoint": 40000,
+  "test_for_selection": false
+}

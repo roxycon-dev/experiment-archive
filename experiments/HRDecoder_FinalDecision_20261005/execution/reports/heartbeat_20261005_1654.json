@@ -1,0 +1,515 @@
+{
+  "stage": "ALL_FOUR_TRAINING_COMPLETE_RECIPE_LOCKED_RESTORE_IN_PROGRESS",
+  "heartbeat_trigger": "2026-10-05T16:54:35.975Z",
+  "observed_at": "2026-10-05T17:33:56.266769+00:00",
+  "atomic_states": {
+    "primary": {
+      "driver": {
+        "stage": "SINGLE_SEED_FINAL_SELECTION",
+        "pid": 44281,
+        "time": "2026-10-05T16:54:11.165340+00:00"
+      },
+      "campaign": {
+        "stage": "WAITING_FOR_SELECTED_CHECKPOINT",
+        "queue": [
+          [
+            "C",
+            42
+          ],
+          [
+            "S",
+            42
+          ],
+          [
+            "D",
+            42
+          ],
+          [
+            "SD",
+            42
+          ]
+        ],
+        "time": "2026-10-05T16:54:15.675455+00:00"
+      },
+      "runs": {
+        "C_seed42": {
+          "stage": "COMPLETE",
+          "completed": 32000,
+          "endpoint": 32000,
+          "updated_at": "2026-10-05T02:31:24.012530+00:00"
+        },
+        "S_seed42": {
+          "stage": "COMPLETE",
+          "completed": 32000,
+          "endpoint": 32000,
+          "updated_at": "2026-10-05T10:09:39.504955+00:00"
+        },
+        "D_seed42": {
+          "stage": "COMPLETE",
+          "completed": 32000,
+          "endpoint": 32000,
+          "updated_at": "2026-10-05T16:54:11.071729+00:00"
+        },
+        "SD_seed42": {
+          "stage": "COMPLETE",
+          "completed": 32000,
+          "endpoint": 32000,
+          "updated_at": "2026-10-05T15:24:29.839699+00:00"
+        }
+      },
+      "free_disk_bytes": 22078009344,
+      "observed_at": "2026-10-05T16:55:49.455574+00:00"
+    },
+    "second": {
+      "driver": {
+        "stage": "PARALLEL_ASSIGNED_RUNS_COMPLETE_WAITING_FOR_GLOBAL",
+        "pid": 3295,
+        "time": "2026-10-05T15:24:31.169924+00:00"
+      },
+      "campaign": {
+        "stage": "PARALLEL_ASSIGNED_RUNS_COMPLETE_WAITING_FOR_GLOBAL",
+        "current_run": "SD_seed42",
+        "queue": [
+          [
+            "SD",
+            42
+          ]
+        ],
+        "time": "2026-10-05T15:24:31.169620+00:00"
+      },
+      "runs": {
+        "SD_seed42": {
+          "stage": "COMPLETE",
+          "completed": 32000,
+          "endpoint": 32000,
+          "updated_at": "2026-10-05T15:24:29.839699+00:00"
+        }
+      },
+      "free_disk_bytes": 19384131584,
+      "observed_at": "2026-10-05T16:55:50.889980+00:00"
+    },
+    "authorized_seed_scope": [
+      42
+    ],
+    "assigned_runs": {
+      "primary": [
+        "C_seed42",
+        "S_seed42",
+        "D_seed42"
+      ],
+      "second": [
+        "SD_seed42"
+      ]
+    },
+    "old_primary_loaded_queue_is_superseded_by_boundary_amendment": true,
+    "time": "2026-10-05T16:55:50.892527+00:00"
+  },
+  "D32_metrics": {
+    "update": 32000,
+    "split": "val",
+    "n_images": 76,
+    "single": {
+      "counts": [
+        [
+          190836,
+          113041,
+          99967
+        ],
+        [
+          647280,
+          331914,
+          558644
+        ],
+        [
+          146001,
+          47609,
+          55403
+        ],
+        [
+          20067,
+          39327,
+          49217
+        ]
+      ],
+      "miou_pct": 41.613261891982525,
+      "per_class": {
+        "EX": {
+          "tp": 190836,
+          "fp": 113041,
+          "fn": 99967,
+          "iou_pct": 47.254880597458424,
+          "precision": 0.6280040937616207,
+          "recall": 0.6562380718218175
+        },
+        "HE": {
+          "tp": 647280,
+          "fp": 331914,
+          "fn": 558644,
+          "iou_pct": 42.09025918204649,
+          "precision": 0.661033462214842,
+          "recall": 0.5367502429672185
+        },
+        "SE": {
+          "tp": 146001,
+          "fp": 47609,
+          "fn": 55403,
+          "iou_pct": 58.63187865693759,
+          "precision": 0.7540984453282372,
+          "recall": 0.7249160890548351
+        },
+        "MA": {
+          "tp": 20067,
+          "fp": 39327,
+          "fn": 49217,
+          "iou_pct": 18.476029131487604,
+          "precision": 0.3378624103444792,
+          "recall": 0.28963397032503896
+        }
+      }
+    },
+    "fixed_fusion": {
+      "counts": [
+        [
+          186978,
+          79872,
+          103825
+        ],
+        [
+          686250,
+          333996,
+          519674
+        ],
+        [
+          140666,
+          34998,
+          60738
+        ],
+        [
+          26142,
+          31617,
+          43142
+        ]
+      ],
+      "miou_pct": 45.104504709076146,
+      "per_class": {
+        "EX": {
+          "tp": 186978,
+          "fp": 79872,
+          "fn": 103825,
+          "iou_pct": 50.44257098536454,
+          "precision": 0.7006857785272625,
+          "recall": 0.6429713586173458
+        },
+        "HE": {
+          "tp": 686250,
+          "fp": 333996,
+          "fn": 519674,
+          "iou_pct": 44.564003324848045,
+          "precision": 0.6726318946606995,
+          "recall": 0.569065712267108
+        },
+        "SE": {
+          "tp": 140666,
+          "fp": 34998,
+          "fn": 60738,
+          "iou_pct": 59.502880686288606,
+          "precision": 0.8007673740777849,
+          "recall": 0.6984270421640086
+        },
+        "MA": {
+          "tp": 26142,
+          "fp": 31617,
+          "fn": 43142,
+          "iou_pct": 25.90856383980337,
+          "precision": 0.4526047888640731,
+          "recall": 0.37731655216211535
+        }
+      }
+    },
+    "half_fusion": {
+      "counts": [
+        [
+          190950,
+          88914,
+          99853
+        ],
+        [
+          653498,
+          270491,
+          552426
+        ],
+        [
+          144572,
+          43244,
+          56832
+        ],
+        [
+          20756,
+          35323,
+          48528
+        ]
+      ],
+      "miou_pct": 43.37142607477102,
+      "per_class": {
+        "EX": {
+          "tp": 190950,
+          "fp": 88914,
+          "fn": 99853,
+          "iou_pct": 50.28745091739374,
+          "precision": 0.6822956864762885,
+          "recall": 0.6566300897858688
+        },
+        "HE": {
+          "tp": 653498,
+          "fp": 270491,
+          "fn": 552426,
+          "iou_pct": 44.262487173321865,
+          "precision": 0.7072573374791258,
+          "recall": 0.5419064551331593
+        },
+        "SE": {
+          "tp": 144572,
+          "fp": 43244,
+          "fn": 56832,
+          "iou_pct": 59.09388182204637,
+          "precision": 0.7697533756442475,
+          "recall": 0.7178208973009473
+        },
+        "MA": {
+          "tp": 20756,
+          "fp": 35323,
+          "fn": 48528,
+          "iou_pct": 19.84188438632214,
+          "precision": 0.370120722552114,
+          "recall": 0.2995785462733099
+        }
+      }
+    }
+  },
+  "final_selection": {
+    "arm": "S",
+    "update": 20000,
+    "formula": "fixed_fusion",
+    "scores": {
+      "42": 45.32183122738841
+    },
+    "checkpoints": {
+      "42": {
+        "path": "runs/S_seed42/checkpoint_u20000.pth",
+        "sha256": "c933256b07556689a7fd199dd80e50d4d0c27eb6b9ea782713d95ec51e6d8d62"
+      }
+    },
+    "gains_pp": {
+      "42": 0.9661388888500326
+    },
+    "mean_gain_pp": 0.9661388888500326,
+    "mean_score": 45.32183122738841,
+    "eligible": true,
+    "seed_count": 1
+  },
+  "lock_sha256": "3146ca1edafdffdae7bf4987524bddc502209929e5d6d5b0e7ba49f12b6bd66e",
+  "candidate_count": 24,
+  "boundary": {
+    "stage": "COMPLETED_RUN_BOUNDARY_HANDOFF",
+    "old_pid": 18787,
+    "boundary": "D_seed42 sealed terminal status",
+    "lost_updates": 0,
+    "source_unchanged": true,
+    "time": "2026-10-05T16:54:11.143640+00:00"
+  },
+  "local_helpers": {
+    "primary": {
+      "attendant_pid.json": {
+        "pid": 30004,
+        "time": "2026-10-05T12:35:04.195410+00:00",
+        "role": "primary",
+        "helper": "reports/primary_parallel_attendant.py",
+        "runner": "reports/independent_local_attendant_runner.py",
+        "helper_sha256": "f76acf364bdcd56adc290c73ab7d47c9f6641bb817d1b0262b96483d8831578e",
+        "launcher": "Win32_Process.Create with hidden startup and CREATE_BREAKAWAY_FROM_JOB; WMI service parent and no kill-on-close job verified",
+        "training_unchanged": true
+      },
+      "mirror.lock": {
+        "pid": 30004,
+        "time": "2026-10-05T16:59:47.417765+00:00"
+      },
+      "attendant_state.json": {
+        "stage": "TRANSFER_OR_CONNECTION_ERROR",
+        "reason": "",
+        "automatic_restart_training": false,
+        "time": "2026-10-05T16:59:13.896947+00:00"
+      },
+      "transfer_progress.json": {
+        "stage": "TRANSFERRING",
+        "full": false,
+        "verified_files": 8243,
+        "expected_files": 12206,
+        "verified_bytes": 4890973342,
+        "expected_bytes": 4908472593,
+        "updated_at": "2026-10-05T17:33:56.087705+00:00"
+      },
+      "persistent_receiver_state.json": {
+        "stage": "POOL_COMPLETED",
+        "time": "2026-10-05T16:59:13.845426+00:00",
+        "receiver_connections_opened": 2,
+        "files_received": 25,
+        "seconds": 441.0550022000025,
+        "negotiated_compression": [
+          "zlib@openssh.com",
+          "zlib@openssh.com"
+        ],
+        "max_file_receivers": 2,
+        "original_mirror_sha256": "28492fcdbd64ae0e08145274af70368726275e2bdc52dbc99fa9177b6c0e366b",
+        "all_original_SHA_and_custody_gates_used": true
+      }
+    },
+    "second": {
+      "attendant_pid.json": {
+        "pid": 31456,
+        "time": "2026-10-05T12:35:04.208839+00:00",
+        "role": "second",
+        "helper": "reports/parallel_node2_attendant.py",
+        "runner": "reports/independent_local_attendant_runner.py",
+        "helper_sha256": "037d0a4db1838ae991ace0d4c200a84b7ab1b6fc6d5ac1ae58ca0acc5ed7b2a5",
+        "launcher": "Win32_Process.Create with hidden startup and CREATE_BREAKAWAY_FROM_JOB; WMI service parent and no kill-on-close job verified",
+        "training_unchanged": true
+      },
+      "mirror.lock": {
+        "pid": 31456,
+        "time": "2026-10-05T17:29:47.308350+00:00"
+      },
+      "attendant_state.json": {
+        "stage": "WAITING",
+        "time": "2026-10-05T17:29:10.379766+00:00"
+      },
+      "transfer_progress.json": {
+        "stage": "TRANSFERRING",
+        "full": false,
+        "verified_files": 2809,
+        "expected_files": 3929,
+        "verified_bytes": 188328132,
+        "expected_bytes": 193319495,
+        "updated_at": "2026-10-05T17:33:56.156704+00:00"
+      },
+      "persistent_receiver_state.json": {
+        "stage": "POOL_COMPLETED",
+        "time": "2026-10-05T17:29:09.944025+00:00",
+        "receiver_connections_opened": 0,
+        "files_received": 0,
+        "seconds": 408.37278490000244,
+        "negotiated_compression": [],
+        "max_file_receivers": 2,
+        "original_mirror_sha256": "28492fcdbd64ae0e08145274af70368726275e2bdc52dbc99fa9177b6c0e366b",
+        "all_original_SHA_and_custody_gates_used": true
+      }
+    }
+  },
+  "local_processes": [
+    {
+      "ProcessId": 30004,
+      "ParentProcessId": 7344,
+      "CommandLine": "\"C:\\Users\\GuanXingRen\\Miniconda3\\python.exe\" -u \"D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\execution\\reports\\independent_local_attendant_runner.py\" primary"
+    },
+    {
+      "ProcessId": 31456,
+      "ParentProcessId": 7344,
+      "CommandLine": "\"C:\\Users\\GuanXingRen\\Miniconda3\\python.exe\" -u \"D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\execution\\reports\\independent_local_attendant_runner.py\" second"
+    },
+    {
+      "ProcessId": 15752,
+      "ParentProcessId": 7344,
+      "CommandLine": "\"C:\\Users\\GuanXingRen\\Miniconda3\\python.exe\" -u \"D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\execution\\reports\\independent_local_attendant_runner.py\" coordinator"
+    },
+    {
+      "ProcessId": 28616,
+      "ParentProcessId": 7344,
+      "CommandLine": "\"C:\\Users\\GuanXingRen\\Miniconda3\\python.exe\" -u \"D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\execution\\reports\\priority_selected_restore.py\""
+    }
+  ],
+  "coordinator_state": {
+    "stage": "SD_IMPORTED_WAITING_PRIMARY",
+    "time": "2026-10-05T17:29:39.601690+00:00"
+  },
+  "selected_restore_state": {
+    "stage": "TRANSFERRING_ONLY_LOCKED_CHECKPOINT",
+    "pid": 28616,
+    "lock_sha256": "3146ca1edafdffdae7bf4987524bddc502209929e5d6d5b0e7ba49f12b6bd66e",
+    "input_bytes": 750780416,
+    "expected_input_bytes": 1621379373,
+    "compressed_bytes_sent": 698558857,
+    "seconds": 1808.9909684000013,
+    "time": "2026-10-05T17:33:31.976919+00:00",
+    "ordinary_receiver_not_restarted": true
+  },
+  "selected_restore_guard": {
+    "reports/selected_restore_deadline_guard_state.json": {
+      "stage": "WAITING_ONLY_FOR_ALREADY_LOCKED_UPLOAD",
+      "time": "2026-10-05T17:20:00.118115+00:00",
+      "guard_pid": 76720,
+      "same_finalizer_pid": 44281,
+      "no_new_training_or_test_process": true,
+      "lock_sha256": "3146ca1edafdffdae7bf4987524bddc502209929e5d6d5b0e7ba49f12b6bd66e",
+      "cause": "Measured upload is about .5MiB/s; guard prevents an operational 1h wait deadline from discarding the already locked selection. Training and test science are unchanged."
+    },
+    "reports/driver_state.json": {
+      "stage": "SINGLE_SEED_FINAL_SELECTION",
+      "pid": 44281,
+      "time": "2026-10-05T16:54:11.165340+00:00"
+    },
+    "reports/campaign.json": {
+      "stage": "WAITING_FOR_SELECTED_CHECKPOINT",
+      "queue": [
+        [
+          "C",
+          42
+        ],
+        [
+          "S",
+          42
+        ],
+        [
+          "D",
+          42
+        ],
+        [
+          "SD",
+          42
+        ]
+      ],
+      "time": "2026-10-05T16:54:15.675455+00:00"
+    },
+    "reports/final_test_state.json": null,
+    "reports/selected_restore_complete.json": null,
+    "checkpoint_exists": false,
+    "ordinary_restore_bytes": null,
+    "priority_restore_bytes": 758464429
+  },
+  "guard_repair": {
+    "original_guard_failure_before_any_signal": true,
+    "cause": "An absolute script argument was required, but the real owner uses a relative path. Repaired with exact filename plus actual/proc/cwd and atomic ownerPID.",
+    "archive": "reports/selected_restore_guard_repair_20261005",
+    "repaired_guard_pid": 76720,
+    "current_atomic_state_overrides_old_traceback": true
+  },
+  "priority_restore_only_already_locked_weights": true,
+  "ordinary_upload_active_at_priority_launch": false,
+  "endpoint_receivers_unchanged_not_duplicated": true,
+  "frozen_training_source_changed": false,
+  "new_training_started": false,
+  "locked_test_started": false,
+  "primary_non_training_report_hold_preserved": true,
+  "report_server_release_written": false,
+  "original_baseline_source_audit": {
+    "path": "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\结题报告\\evidence\\original_HRDecoder_baseline_evidence.json",
+    "sha256": "4a7d8f45d4e52b248fb375cdab6869304e640026b8e6e1fa8ea7e3dc2eadb453",
+    "raw_validation_log_found": true,
+    "val_best_miou_pct": 39.39,
+    "historical_test_report_miou_pct": 42.2,
+    "historical_test_values_have_report_precision": true
+  },
+  "full_SHA_backup_and_platform_OFF_still_required": true,
+  "shutdown_issued_this_wake": false,
+  "manual_cleanup": false,
+  "notification": "NOTIFY",
+  "reason": "All four registered training runs completed and one final recipe was actually frozen."
+}

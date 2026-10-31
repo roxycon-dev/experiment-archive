@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "start_controller.py", line 34, in <module>
+    assert gate['status']=='PASS','Full 40k does not fit measured deadline budget'
+AssertionError: Full 40k does not fit measured deadline budget
+Traceback (most recent call last):
+  File "transition.py", line 80, in <module>
+    try:main()
+  File "transition.py", line 75, in main
+    subprocess.check_call([PYTHON,'start_controller.py'],cwd=str(HERE))
+  File "/root/miniconda3/lib/python3.8/subprocess.py", line 364, in check_call
+    raise CalledProcessError(retcode, cmd)
+subprocess.CalledProcessError: Command '['/root/miniconda3/bin/python', 'start_controller.py']' returned non-zero exit status 1.

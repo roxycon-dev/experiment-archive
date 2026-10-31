@@ -1,0 +1,62 @@
+{
+  "source": "D:\\dataset\\YOLO_Grading_CLS\\train",
+  "source_script": "D:\\dataset\\dr_pipeline\\run_efficient_training.py",
+  "source_script_sha256": "60c34433dac2d2e7aee9fc787a26a1f337a492e67563465f36e2b14e66eb565f",
+  "transform_script_sha256": "6e54188cde9c1bf545703910aed749d47de61ce5f7c8df07da68053a79dc3eba",
+  "transform": "CLAHE green clip2 grid8; median filter3; no resize in preprocessing script",
+  "source_train_images": 5386,
+  "filename_excluded": 374,
+  "segmentation_audited": 757,
+  "anatomy_audited": 1300,
+  "anatomy_excluded": [
+    {
+      "image": "D:\\dataset\\YOLO_Grading_CLS\\train\\0\\20170213115649031.jpg",
+      "matches": [],
+      "auxiliary_matches": [
+        "D:\\dataset\\YOLO_Grading_CLS\\train\\0\\20170213115653996.jpg"
+      ]
+    },
+    {
+      "image": "D:\\dataset\\YOLO_Grading_CLS\\train\\0\\20170216092815706.jpg",
+      "matches": [],
+      "auxiliary_matches": [
+        "D:\\dataset\\YOLO_Grading_CLS\\train\\0\\20170215104620399.jpg"
+      ]
+    },
+    {
+      "image": "D:\\dataset\\YOLO_Grading_CLS\\train\\0\\20170221161443950.jpg",
+      "matches": [],
+      "auxiliary_matches": [
+        "D:\\dataset\\YOLO_Grading_CLS\\train\\0\\20170223094729353.jpg"
+      ]
+    },
+    {
+      "image": "D:\\dataset\\YOLO_Grading_CLS\\train\\0\\007-0448-000.jpg",
+      "matches": [],
+      "auxiliary_matches": [
+        "D:\\dataset\\YOLO_Grading_CLS\\train\\0\\007-0447-000.jpg"
+      ]
+    },
+    {
+      "image": "D:\\dataset\\YOLO_Grading_CLS\\train\\0\\20170303142400838.jpg",
+      "matches": [],
+      "auxiliary_matches": [
+        "D:\\dataset\\YOLO_Grading_CLS\\train\\0\\007-0704-000.jpg"
+      ]
+    }
+  ],
+  "kept": 1000,
+  "grading_classes": {
+    "0": 603,
+    "1": 41,
+    "2": 276,
+    "3": 12,
+    "4": 68
+  },
+  "threshold": {
+    "gray": 0.94,
+    "edge": 0.85
+  },
+  "manifest_sha256": "83cada08acc625ca161708de3f824f4b4f942fd13cdadd387a95de0ab44a23a8",
+  "limitation": "Old grading cleaned label lists are absent; provenance uses saved copy script and train folders. Patient IDs unknown; arbitrary rotations not exhaustively searched."
+}

@@ -1,0 +1,10 @@
+{
+  "kind": "REGISTERED_DIAGNOSTIC_ONLY",
+  "parent_step": 21000,
+  "intervention": "only307BN modules use per-image batch statistics; no running buffers update; dropout and student stay eval; no GT/teacher input",
+  "reference": "W21000_BN21000 complete76 native val",
+  "strong_train_eval_dependence_rule": "mIoU improvement>=10pp and EX/SE recover nonzero",
+  "not_deployment_or_formal_goal_result": true,
+  "formal_SGD_updates": 0,
+  "test_accessed": false
+}

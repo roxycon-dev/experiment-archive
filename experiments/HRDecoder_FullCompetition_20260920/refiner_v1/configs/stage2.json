@@ -1,0 +1,43 @@
+{
+  "name": "stage2_main",
+  "stage": "stage2_main",
+  "_comment": [
+    "FORMAL STAGE 2. 454 train images, 30 epochs, lr 3e-4. Model selection is",
+    "val-only and uses the frozen rule: a node may be promoted only if BOTH val",
+    "MA IoU and val HE IoU of the ASSEMBLED full-image map improve on the",
+    "champion. No per-class threshold tuning, no candidate-threshold re-scan,",
+    "no test access, no early stopping on the basis of a bad-looking curve.",
+    "checkpoint_nodes = the PRE-REGISTERED validation nodes (every 5 epochs, 6",
+    "evaluations, exactly the budget in GO_NO_GO.md R8). They are declared here",
+    "before the first epoch and are never added to or removed afterwards.",
+    "The loss block below is a verbatim mirror of configs/refiner_v1.json;",
+    "refiner.losses.assert_frozen_objective fails closed on any drift."
+  ],
+  "stages": {
+    "stage1_overfit": {"purpose": "plumbing + learning sanity check",
+                       "train_images": 8, "epochs": 200, "lr": 0.001,
+                       "checkpoint_nodes": [200]},
+    "stage2_main": {"purpose": "main candidate run",
+                    "train_images": 454, "epochs": 30, "lr": 0.0003,
+                    "eval_every_epochs": 5,
+                    "checkpoint_nodes": [5, 10, 15, 20, 25, 30],
+                    "select_on": "val MA IoU AND HE IoU of the assembled map",
+                    "select_rule": "keep the checkpoint only if both classes improve"}
+  },
+  "loss": {
+    "terms": ["focal_bce", "soft_dice"],
+    "weights": {"focal_bce": 30.0, "soft_dice": 1.0},
+    "focal": {"alpha": 0.75, "gamma": 2.0}
+  },
+  "optim": {
+    "optimizer": "AdamW",
+    "lr": 0.0003,
+    "weight_decay": 0.01,
+    "betas": [0.9, 0.999],
+    "schedule": "cosine",
+    "warmup_steps": 100,
+    "batch_size": 16,
+    "grad_clip_norm": 5.0,
+    "amp": false
+  }
+}

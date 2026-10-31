@@ -1,0 +1,29 @@
+{
+  "status": "PASS_ALL_LOGGED_LOSS_GRADIENT_VALUES_FINITE",
+  "checked_UTC": "2026-10-24T02:27:02.288111+00:00",
+  "runs": {
+    "C_seed3407": {
+      "logged_records": 1000,
+      "last": {
+        "update": 20000,
+        "loss": 0.14419949054718018,
+        "grad_norm": 1.2176636457443237,
+        "seconds": 0.7502466412261128,
+        "data_wait_seconds": 0.0009928951039910316
+      },
+      "nonfinite": []
+    },
+    "S_seed3407": {
+      "logged_records": 63,
+      "last": {
+        "update": 1260,
+        "loss": 0.1610059291124344,
+        "grad_norm": 1.273669958114624,
+        "seconds": 1.1294686011970043,
+        "data_wait_seconds": 0.0017938315868377686
+      },
+      "nonfinite": []
+    }
+  },
+  "overall_campaign_complete": false
+}

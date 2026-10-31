@@ -1,0 +1,189 @@
+{
+  "recorded_at_UTC": "2026-10-17T07:22:30.340870+00:00",
+  "source_sha256": "d3032fc8b20f30a058adbcf3e6bc5a3485b83adafe9b7cdce0682a2d55d7f627",
+  "training_status": "COMPLETE",
+  "executed_updates": 40000,
+  "checkpoint_persisted_updates": 40000,
+  "in_flight_update": null,
+  "primary": "fixed_40000_raw_weights",
+  "checkpoint_remote_path": "/root/autodl-tmp/nativepyramid_sp_v3_20261016/run_seed42_launch02/last.pt",
+  "checkpoint_sha256": "1ecea4834b77aa87281eabad869ec5309464a08979418564154c98d2630a69ef",
+  "checkpoint_downloaded_locally": false,
+  "final_validation": {
+    "update": 40000,
+    "mIoU_percent": 39.42555100502815,
+    "IoU_percent": [
+      46.621126625977915,
+      40.94398000685459,
+      49.63904106621716,
+      20.49805632106291
+    ],
+    "recall_percent": [
+      65.43226858044792,
+      57.358423913944826,
+      62.57919405771484,
+      32.4216269268518
+    ],
+    "images": 76
+  },
+  "validation_target_percent": 45.321831227388,
+  "validation_gap_percentage_points": 5.896280222359856,
+  "best_validation_secondary": {
+    "update": 36000,
+    "mIoU_percent": 40.27704590850366
+  },
+  "test_permitted": false,
+  "test_accessed": false,
+  "current_run_shutdown_request_confirmed": false,
+  "ssh_checks_after_completion_refused": 2,
+  "ssh_observation": "Connection to connect.nmb2.seetacloud.com:27443 refused after completion; this alone does not prove platform stop or billing stop.",
+  "platform_stopped_confirmed": true,
+  "billing_stopped_confirmed": false,
+  "shutdown_owner": "Existing controller v3; this inspection issued no shutdown, training, resume or test command.",
+  "user_decision": "继续当前轮，不重开",
+  "observations_manifest": [
+    {
+      "file": "observations\\run_seed42_launch02\\progress.json",
+      "bytes": 1765,
+      "sha256": "41788e9ac6d1980c674c8fab260923e34d8fb7f04fe391b07d26bc785b108d9c"
+    },
+    {
+      "file": "observations\\run_seed42_launch02\\result.json",
+      "bytes": 180,
+      "sha256": "96d0710fffe2719cee49ac325899803cf97744ca8aa996c15f284f39959a6e29"
+    },
+    {
+      "file": "observations\\run_seed42_launch02\\endpoint_lock.json",
+      "bytes": 91025,
+      "sha256": "96b03178f68bac80dbddab68e0f17cf0012c7b3eebc606fa00895496a417cfbb"
+    },
+    {
+      "file": "observations\\preflight_attempt03\\preflight.json",
+      "bytes": 991390,
+      "sha256": "08fe57048991bec81bb40aa1861be28b450a0e9bd8c8e853102e086e298e1390"
+    },
+    {
+      "file": "observations\\run_seed42_launch02\\val_02000.json",
+      "bytes": 78602,
+      "sha256": "50fc5335b1c26bba3d83e0ecfd18eb8b4c193d5bd100d4f19186209f470402f0"
+    },
+    {
+      "file": "observations\\run_seed42_launch02\\val_04000.json",
+      "bytes": 78039,
+      "sha256": "1c8c48aee974927784e7b18500741bcbbc22cd731cd69afe5d417bb20f6d3072"
+    },
+    {
+      "file": "observations\\run_seed42_launch02\\val_06000.json",
+      "bytes": 78022,
+      "sha256": "4eabb1c6161e2ff3450f277011050c4571fe66ea521d6271c411c25fb103d34e"
+    },
+    {
+      "file": "observations\\run_seed42_launch02\\val_08000.json",
+      "bytes": 77975,
+      "sha256": "0003f95747bf07bbb98a9528996d2134e218e312cf07a75a29dffc2c3c86eb72"
+    },
+    {
+      "file": "observations\\run_seed42_launch02\\val_10000.json",
+      "bytes": 78235,
+      "sha256": "d2e4a790ed641bc0841e8f7f2ae5158651d8831363eee537dd37b5db452c89d5"
+    },
+    {
+      "file": "observations\\run_seed42_launch02\\val_12000.json",
+      "bytes": 78026,
+      "sha256": "e375206eb12da85283cf6ac941e481dd4b78d7de26be26382b9ee887aa756d1b"
+    },
+    {
+      "file": "observations\\run_seed42_launch02\\val_14000.json",
+      "bytes": 77814,
+      "sha256": "73c26032e3fc0baace26e8dd041691610556e205e64d15e7399e907d7983b94e"
+    },
+    {
+      "file": "observations\\run_seed42_launch02\\val_16000.json",
+      "bytes": 77758,
+      "sha256": "153f0dfdc1733eb241806baf539710a7caa27065d9472cd0b6c11ec457acb8bf"
+    },
+    {
+      "file": "observations\\run_seed42_launch02\\val_18000.json",
+      "bytes": 77950,
+      "sha256": "1633023018320b66163b7100a14d72fd64b8092cd7e14ba13141d78e0773ac85"
+    },
+    {
+      "file": "observations\\run_seed42_launch02\\val_20000.json",
+      "bytes": 78046,
+      "sha256": "311840a5592a820842e1c469bb8b56f46b0f60b0078e4302f82d51e51fcc1cfe"
+    },
+    {
+      "file": "observations\\run_seed42_launch02\\val_22000.json",
+      "bytes": 77836,
+      "sha256": "f34959e4a72ea37eda2ecc30dc782f05c22af30a968a8c96b884babdfefa2009"
+    },
+    {
+      "file": "observations\\run_seed42_launch02\\val_24000.json",
+      "bytes": 77879,
+      "sha256": "2480501832b846261c72f44bbfbd8c8b3dc601f7ba72c6bd4d7455ea83936996"
+    },
+    {
+      "file": "observations\\run_seed42_launch02\\val_26000.json",
+      "bytes": 77584,
+      "sha256": "17285527a69a0c485ff0a2e5ed52db3c07b2eae28103ad7ba8422e8e9bbf7b81"
+    },
+    {
+      "file": "observations\\run_seed42_launch02\\val_28000.json",
+      "bytes": 77818,
+      "sha256": "77ef1d55d066c552cab7b6d016d9d3dec304772ac4dc8c9de0d1d4ea6bc277c3"
+    },
+    {
+      "file": "observations\\run_seed42_launch02\\val_30000.json",
+      "bytes": 77916,
+      "sha256": "b6b624f6cc382042061b58eb92b120e6ad67d5adbd72bff07a2d79baf0e74f80"
+    },
+    {
+      "file": "observations\\run_seed42_launch02\\val_32000.json",
+      "bytes": 77870,
+      "sha256": "cc3df9e0dc53870bde14a56ed704394a512300f3c8e1dcb597729550cbc013da"
+    },
+    {
+      "file": "observations\\run_seed42_launch02\\val_34000.json",
+      "bytes": 77843,
+      "sha256": "e66e862a286f35b5e309b135e3ae57d90519adc56a330c4a68e6fc90adf108fe"
+    },
+    {
+      "file": "observations\\run_seed42_launch02\\val_36000.json",
+      "bytes": 77846,
+      "sha256": "4342c5908b958b6b9c1a5e167bfd095d08f390b3b41172c77db42551e61c2caa"
+    },
+    {
+      "file": "observations\\run_seed42_launch02\\val_38000.json",
+      "bytes": 77838,
+      "sha256": "7fec859ad715905b9dc97c841bf211064ff8067dc32b8d3a998591567ff6dfbf"
+    },
+    {
+      "file": "observations\\job_status.json",
+      "bytes": 1023,
+      "sha256": "6523188dbcece6a4d08db8ce50262e32a2a50e3c544cbfed43810149b1903a64"
+    },
+    {
+      "file": "observations\\job_result.json",
+      "bytes": 1395,
+      "sha256": "b05aeab5e31957a176910503772c2f00996b8a7801e9f2138c62620cc0052e08"
+    },
+    {
+      "file": "observations\\receipts\\shutdown_request.json",
+      "bytes": 280,
+      "sha256": "da5d43eef278912c81824ad860dc5a69e3ea00084f0169fcbe63b6179ead1084"
+    }
+  ],
+  "platform_confirmation": {
+    "recorded_at_UTC": "2026-10-17T07:21:52+00:00",
+    "source_sha256": "d3032fc8b20f30a058adbcf3e6bc5a3485b83adafe9b7cdce0682a2d55d7f627",
+    "run": "run_seed42_launch02",
+    "host": "connect.nmb2.seetacloud.com",
+    "port": 27443,
+    "platform_state": "OFF",
+    "basis": "Explicit user report of the AutoDL console state in this conversation",
+    "user_statement": "控制台显示已关机",
+    "exact_shutdown_time_known": false,
+    "billing_details_inspected": false
+  },
+  "heartbeat_status": "PAUSED"
+}

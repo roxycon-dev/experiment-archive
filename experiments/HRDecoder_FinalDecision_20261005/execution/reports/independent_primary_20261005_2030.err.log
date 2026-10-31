@@ -1,0 +1,35 @@
+Traceback (most recent call last):
+  File "D:\dataset\experiment\HRDecoder_FinalDecision_20261005\execution\reports\independent_local_attendant_runner.py", line 23, in <module>
+    assert ok and not in_job.value,"Helper still belongs to a job object; do not report a durable recovery"
+           ^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Helper still belongs to a job object; do not report a durable recovery
+Traceback (most recent call last):
+  File "D:\dataset\experiment\HRDecoder_FinalDecision_20261005\execution\ops\attendant.py", line 22, in main
+    mirror(endpoints=True)
+    ~~~~~~^^^^^^^^^^^^^^^^
+  File "D:\dataset\experiment\HRDecoder_FinalDecision_20261005\execution\reports\parallel_union_mirror.py", line 63, in main
+    item=future.result()
+  File "C:\Users\GuanXingRen\Miniconda3\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\GuanXingRen\Miniconda3\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\GuanXingRen\Miniconda3\Lib\concurrent\futures\thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "D:\dataset\experiment\HRDecoder_FinalDecision_20261005\execution\reports\parallel_union_mirror.py", line 50, in recover
+    target=(output/item['path']).resolve();assert target.is_relative_to(output.resolve());target.parent.mkdir(parents=True,exist_ok=True)
+                                                  ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+AssertionError
+Traceback (most recent call last):
+  File "D:\dataset\experiment\HRDecoder_FinalDecision_20261005\execution\ops\attendant.py", line 22, in main
+    mirror(endpoints=True)
+    ~~~~~~^^^^^^^^^^^^^^^^
+  File "D:\dataset\experiment\HRDecoder_FinalDecision_20261005\execution\reports\parallel_union_mirror.py", line 65, in main
+    write_json(ROOT/'reports/transfer_progress.json',{'stage':'TRANSFERRING','full':full,'verified_files':len(verified),'expected_files':len(inventory['files']),
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        'verified_bytes':sum(r['bytes'] for r in verified),'expected_bytes':sum(r['bytes'] for r in inventory['files']),'updated_at':utc_now()})
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\dataset\experiment\HRDecoder_FinalDecision_20261005\execution\qlib\common.py", line 23, in write_json
+    os.replace(temporary, path)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^
+PermissionError: [WinError 5] 拒绝访问。: 'D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\execution\\reports\\transfer_progress.json.tmp' -> 'D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\execution\\reports\\transfer_progress.json'

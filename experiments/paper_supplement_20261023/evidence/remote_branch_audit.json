@@ -1,0 +1,262 @@
+{
+  "branches": {
+    "S": {
+      "manifest": {
+        "arm": "S",
+        "weight_path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_ArchitectureDesign_20261008/cache_execution/inference_weights/S20_ema_inference.pth",
+        "weight_sha256": "80c0f0250341ea65b29c23476a135d4f6020b8089e84b868b4ba185c550ec104",
+        "script_sha256": "37c95afe4f3ab1391f617dbecab5f957be612bc68cdcf95cdb235bb2559f32b0",
+        "remote_amendment_sha256": "e11ffe8d549af2939486e5f241018f2373beaab35d2840964eec9cecd7523d81",
+        "torch": "2.7.1+cu128",
+        "cuda": "12.8",
+        "GPU": "NVIDIA GeForce RTX 4080 SUPER",
+        "registered_parameters": 101288548,
+        "precision": "BF16 forward FP32 probabilities/reference sampling",
+        "external_sample_ids": [
+          "IDRiD_55",
+          "IDRiD_56",
+          "IDRiD_57",
+          "IDRiD_58",
+          "IDRiD_59",
+          "IDRiD_60",
+          "IDRiD_61",
+          "IDRiD_62",
+          "IDRiD_63",
+          "IDRiD_64",
+          "IDRiD_65",
+          "IDRiD_66",
+          "IDRiD_67",
+          "IDRiD_68",
+          "IDRiD_69",
+          "IDRiD_70",
+          "IDRiD_71",
+          "IDRiD_72",
+          "IDRiD_73",
+          "IDRiD_74",
+          "IDRiD_75",
+          "IDRiD_76",
+          "IDRiD_77",
+          "IDRiD_78",
+          "IDRiD_79",
+          "IDRiD_80",
+          "IDRiD_81"
+        ],
+        "threshold_tuning": false
+      },
+      "completion": {
+        "status": "COMPLETE",
+        "external_images": 27,
+        "validation_canary_images": 1,
+        "seconds": 89.0904902657494
+      },
+      "validation_canary": {
+        "sid": "canary_007-1774-100",
+        "arm": "S",
+        "hw": [
+          1728,
+          2592
+        ],
+        "probability_sha256": "64749571a49a2927821de3ca6be020804a4ae7a155164204ea814ce06ab3a2cc",
+        "image_sha256": "7714411398671092bf447824296ce8aaf8addec3d9cde7794e0b67e1dc37c99f",
+        "seconds": 2.0322919031605124,
+        "GPU_peak_allocated": 1527230976,
+        "validation_canary_counts": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            202,
+            239,
+            66
+          ]
+        ],
+        "external_predictions_seen_before_canary": false
+      }
+    },
+    "C": {
+      "manifest": {
+        "arm": "C",
+        "weight_path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_ArchitectureDesign_20261008/cache_execution/inference_weights/C20_ema_inference.pth",
+        "weight_sha256": "2d98335dcbd97aaceaa075e2642ae19c025d7b0ba9898a1b0426c87090d3af5e",
+        "script_sha256": "37c95afe4f3ab1391f617dbecab5f957be612bc68cdcf95cdb235bb2559f32b0",
+        "remote_amendment_sha256": "e11ffe8d549af2939486e5f241018f2373beaab35d2840964eec9cecd7523d81",
+        "torch": "2.7.1+cu128",
+        "cuda": "12.8",
+        "GPU": "NVIDIA GeForce RTX 4080 SUPER",
+        "registered_parameters": 88263748,
+        "precision": "BF16 forward FP32 probabilities/reference sampling",
+        "external_sample_ids": [
+          "IDRiD_55",
+          "IDRiD_56",
+          "IDRiD_57",
+          "IDRiD_58",
+          "IDRiD_59",
+          "IDRiD_60",
+          "IDRiD_61",
+          "IDRiD_62",
+          "IDRiD_63",
+          "IDRiD_64",
+          "IDRiD_65",
+          "IDRiD_66",
+          "IDRiD_67",
+          "IDRiD_68",
+          "IDRiD_69",
+          "IDRiD_70",
+          "IDRiD_71",
+          "IDRiD_72",
+          "IDRiD_73",
+          "IDRiD_74",
+          "IDRiD_75",
+          "IDRiD_76",
+          "IDRiD_77",
+          "IDRiD_78",
+          "IDRiD_79",
+          "IDRiD_80",
+          "IDRiD_81"
+        ],
+        "threshold_tuning": false
+      },
+      "completion": {
+        "status": "COMPLETE",
+        "external_images": 27,
+        "validation_canary_images": 1,
+        "seconds": 70.93949188943952
+      },
+      "validation_canary": {
+        "sid": "canary_007-1774-100",
+        "arm": "C",
+        "hw": [
+          1728,
+          2592
+        ],
+        "probability_sha256": "ef004d6cab608e254bfb997e1905be8d9572a129c31bb2c541f20d4ee197c715",
+        "image_sha256": "7714411398671092bf447824296ce8aaf8addec3d9cde7794e0b67e1dc37c99f",
+        "seconds": 1.5025449739769101,
+        "GPU_peak_allocated": 654603264,
+        "validation_canary_counts": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            14,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            196,
+            227,
+            72
+          ]
+        ],
+        "external_predictions_seen_before_canary": false
+      }
+    },
+    "U": {
+      "manifest": {
+        "arm": "U",
+        "weight_path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_ArchitectureDesign_20261008/cache_execution/inference_weights/U0_inference.pth",
+        "weight_sha256": "b37fc328bfbbe029d5bc83f781072254d95ff97f7f7b6559efb7f91d9b1c4e39",
+        "script_sha256": "37c95afe4f3ab1391f617dbecab5f957be612bc68cdcf95cdb235bb2559f32b0",
+        "remote_amendment_sha256": "e11ffe8d549af2939486e5f241018f2373beaab35d2840964eec9cecd7523d81",
+        "torch": "2.0.1+cu117",
+        "cuda": "11.7",
+        "GPU": "NVIDIA GeForce RTX 4080 SUPER",
+        "registered_parameters": 52985364,
+        "precision": "native-whole FP32",
+        "external_sample_ids": [
+          "IDRiD_55",
+          "IDRiD_56",
+          "IDRiD_57",
+          "IDRiD_58",
+          "IDRiD_59",
+          "IDRiD_60",
+          "IDRiD_61",
+          "IDRiD_62",
+          "IDRiD_63",
+          "IDRiD_64",
+          "IDRiD_65",
+          "IDRiD_66",
+          "IDRiD_67",
+          "IDRiD_68",
+          "IDRiD_69",
+          "IDRiD_70",
+          "IDRiD_71",
+          "IDRiD_72",
+          "IDRiD_73",
+          "IDRiD_74",
+          "IDRiD_75",
+          "IDRiD_76",
+          "IDRiD_77",
+          "IDRiD_78",
+          "IDRiD_79",
+          "IDRiD_80",
+          "IDRiD_81"
+        ],
+        "threshold_tuning": false
+      },
+      "completion": {
+        "status": "COMPLETE",
+        "external_images": 27,
+        "validation_canary_images": 1,
+        "seconds": 54.1945946700871
+      },
+      "validation_canary": {
+        "sid": "canary_007-1774-100",
+        "arm": "U",
+        "hw": [
+          1728,
+          2592
+        ],
+        "probability_sha256": "c44d44e2dd3b4644b59df568cb1c4787dc318c9a5e1385042b2a209b2f4f5cd3",
+        "image_sha256": "7714411398671092bf447824296ce8aaf8addec3d9cde7794e0b67e1dc37c99f",
+        "seconds": 1.6932207802310586,
+        "GPU_peak_allocated": 1350943232,
+        "validation_canary_counts": [
+          [
+            0,
+            38,
+            0
+          ],
+          [
+            0,
+            55,
+            0
+          ],
+          [
+            0,
+            35,
+            0
+          ],
+          [
+            236,
+            418,
+            32
+          ]
+        ],
+        "external_predictions_seen_before_canary": false
+      }
+    }
+  },
+  "GPU_query": "NVIDIA GeForce RTX 4080 SUPER, 32760 MiB, 595.71.05\n",
+  "probability_caches_retained_on_server": true,
+  "new_training": false
+}

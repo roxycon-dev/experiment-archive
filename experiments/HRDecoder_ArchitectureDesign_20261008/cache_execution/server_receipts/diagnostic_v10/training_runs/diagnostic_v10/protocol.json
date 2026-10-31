@@ -1,0 +1,46 @@
+{
+  "identity_SHA": "4b8b4cf4231b283caa67b9931bed65a9d84c35a938e3e8491f2992d5ea0b66f7",
+  "identity": {
+    "kind": "frozen-provider warm8k+500, not fresh40k",
+    "parent_identity_SHA": "96cd1bc0ce79e9e5f5f8247958f868a4e00023f072bc6fea920092ad5a5003ec",
+    "protocol": {
+      "kind": "frozen-provider paired warm diagnostic; not fresh training or extension",
+      "parent_identity_SHA": "96cd1bc0ce79e9e5f5f8247958f868a4e00023f072bc6fea920092ad5a5003ec",
+      "parent_completed": 8000,
+      "warm_updates_per_arm": 500,
+      "canvas": 2048,
+      "batch": 2,
+      "arms": [
+        "control",
+        "gt_stratified"
+      ],
+      "private_GT": "original residual Dice + .25 ordinary all-valid BCE",
+      "only_arm_difference": "teacher KL all-valid vs fixed .5/.5 GT-positive/negative normalization",
+      "provider": "immutable same8k base checkpoint; all parameters frozen; persistent eval BN/dropout; no random HRcrop supervision",
+      "optimizer": "same parent private-only SGD momentum, lr sampled at original8k-8.5k position of 40k schedule",
+      "inputs": "both arms sequentially consume the same real CUDA batch objects; all six tensor inputs checked unchanged",
+      "alignment_gate": "bitwise provider logits equality every real update; all base state tensors unchanged and native76val provider counts identical at0/250/500; initial final counts identical",
+      "determinism": "benchmark false; cudnn deterministic; TF32 false; deterministic_algorithms true; unsupported operations fail smoke",
+      "bilinear_backward": "stock forward; CPU/GPU numerically checked deterministic separable transpose-matrix backward instead of atomic scatter",
+      "accuracy_guaranteed": false,
+      "formal_fresh_updates": 0,
+      "test_accessed": false,
+      "automatic_full_training": false,
+      "shutdown_after_completion": false
+    },
+    "torch": "2.0.1+cu117",
+    "code": {
+      "run_paired.py": "a3798001fee9bc248e554b92e1a3addb75277533e517b91d4c1ee1ef66b0962c",
+      "diagnostic_invariants.py": "7f9884b235ada4d6a4cfe2ba395d03813268fe787eb8088ba340c4ea4f71d9e0",
+      "deterministic_resize.py": "937a06538f57f5afb2e1cd408eb2935ddb332d4e357280e3e72ecdc9bffb459a",
+      "probe_protocol.json": "feaa589bd99138372d847e6106579d1920dc73727b744dd786c75effab9ef76d"
+    },
+    "benchmark": false,
+    "cudnn_deterministic": true,
+    "deterministic_algorithms": true,
+    "TF32": false,
+    "precision": "BF16 network, FP32 residual and losses"
+  },
+  "same_model_private_optimizer_RNG_parent": true,
+  "RAM_pid": 39434
+}

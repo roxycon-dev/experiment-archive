@@ -1,0 +1,93 @@
+{
+  "schema": "hrdecoder-refiner-eval/v1",
+  "split": "val",
+  "n_images": 2,
+  "n_candidate_tiles": 18,
+  "candidate": {
+    "threshold": 0.1,
+    "dilate": 0,
+    "margin": 24
+  },
+  "ckpt": null,
+  "refiner_applied": false,
+  "champion": {
+    "mIoU": 0.28873260039418575,
+    "per_class": {
+      "EX": 0.0,
+      "HE": 0.37395833333333334,
+      "SE": null,
+      "MA": 0.49223946784922396
+    },
+    "counts": {
+      "EX": [
+        0,
+        150,
+        0
+      ],
+      "HE": [
+        359,
+        384,
+        217
+      ],
+      "SE": [
+        0,
+        0,
+        0
+      ],
+      "MA": [
+        222,
+        183,
+        46
+      ]
+    }
+  },
+  "refined": {
+    "mIoU": 0.28873260039418575,
+    "per_class": {
+      "EX": 0.0,
+      "HE": 0.37395833333333334,
+      "SE": null,
+      "MA": 0.49223946784922396
+    },
+    "counts": {
+      "EX": [
+        0,
+        150,
+        0
+      ],
+      "HE": [
+        359,
+        384,
+        217
+      ],
+      "SE": [
+        0,
+        0,
+        0
+      ],
+      "MA": [
+        222,
+        183,
+        46
+      ]
+    }
+  },
+  "delta": {
+    "mIoU": 0.0,
+    "per_class": {
+      "EX": 0.0,
+      "HE": 0.0,
+      "SE": null,
+      "MA": 0.0
+    }
+  },
+  "bitwise_checks": {
+    "ex_se_changed": 0,
+    "outside_cand_changed": 0,
+    "n_pixels": 8957952,
+    "n_candidate_px": 65583,
+    "images": 2
+  },
+  "elapsed_s": 9.276212930679321,
+  "accepted": true
+}

@@ -1,0 +1,40 @@
+{
+  "stage": "HEALTHY_NO_INTERVENTION",
+  "observed_at": "2026-10-05T04:46:39.183855+00:00",
+  "authorized_seeds": [
+    42
+  ],
+  "primary_run": {
+    "stage": "TRAINING",
+    "completed": 9400,
+    "endpoint": 32000,
+    "updated_at": "2026-10-05T04:45:03.846034+00:00",
+    "recent": {
+      "loss": 0.1712537407875061,
+      "grad_norm": 0.9931665658950806,
+      "seconds": 0.807982468046248,
+      "data_wait_seconds": 0.0016568475402891636,
+      "peak_gpu_bytes": 11004799488
+    }
+  },
+  "second_driver": {
+    "stage": "SECOND_NODE_GPU_ACCEPTANCE",
+    "pid": 3295,
+    "overlaps_TRAIN_transfer": true,
+    "time": "2026-10-05T04:39:32.024698+00:00"
+  },
+  "train_transfer": {
+    "stage": "TRANSFERRING_TRAIN_ONLY",
+    "bytes": 2729443328,
+    "time": "2026-10-05T04:46:30.293391+00:00"
+  },
+  "healthy_local_processes": {
+    "train_transfer": 23348,
+    "primary_attendant": 32844,
+    "second_attendant": 8552,
+    "coordinator": 13216
+  },
+  "primary_boundary_alive": true,
+  "duplicate_mirror_or_training_started": false,
+  "shutdown_not_eligible": true
+}

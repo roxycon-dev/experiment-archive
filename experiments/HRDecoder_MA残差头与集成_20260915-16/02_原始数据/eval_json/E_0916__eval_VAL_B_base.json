@@ -1,0 +1,31 @@
+{
+  "models": [
+    {
+      "config": "configs/lesion/exp/hrplus_patch_dice.py",
+      "ckpt": "weights/b_weights.pth",
+      "weight": 1.0
+    }
+  ],
+  "load_report": [
+    {
+      "ckpt": "b_weights.pth",
+      "missing": [],
+      "unexpected": []
+    }
+  ],
+  "flip_tta": false,
+  "split": "val",
+  "n_images": 76,
+  "mIoU": 0.38936952917504486,
+  "mF1": 0.5468094714454579,
+  "mPPV": 0.5910282945575033,
+  "mS": 0.5225718685751687,
+  "mAUPR": 0.5648231756323491,
+  "per_class_iou": {
+    "bg": "nan",
+    "EX": "44.98",
+    "HE": "41.39",
+    "SE": "51.84",
+    "MA": "17.54"
+  }
+}

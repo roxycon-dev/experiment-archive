@@ -1,0 +1,14 @@
+{
+  "status": "RESOLVED_WITHOUT_RERUN_OR_RESULT_CHANGE",
+  "recorded_at_UTC": "2026-10-24T09:24:28.330986+00:00",
+  "problem": "Source-to-root staging SCP exceeded 180-second control-channel timeout; own SCP process continued transferring, temporarily delaying reverse SSH banner",
+  "evidence": "Read-only size checks showed 3506176,7045120,12156928,then15008700 bytes; PID45595 naturally exited; completed zip CRC passed",
+  "repair": "Preserved the healthy copy, raised staging control timeout to600 with SSH keepalives, reused staged bytes only after full source receipt SHA/size match",
+  "final_archive_bytes": 15008700,
+  "final_archive_sha256": "9021b6d554d2163c20215eb858b3c20a1e58802b96cc16a5257414ad788b00dd",
+  "local_all_768_files_SHA": "PASS",
+  "inference_restarted": false,
+  "scientific_settings_changed": false,
+  "tunnel_reset": false,
+  "other_users_interfered": false
+}

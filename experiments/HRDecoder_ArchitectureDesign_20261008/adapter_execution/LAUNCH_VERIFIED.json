@@ -1,0 +1,97 @@
+{
+  "status": "OWN_1000_RESUME_VERIFIED",
+  "runtime": {
+    "server_online": true,
+    "checked_at_unix": 1791574042.5240338,
+    "shutdown_command_issued": false,
+    "external_processes_controlled": false,
+    "GPU_CAMPAIGN_RUNNING.json": {
+      "status": "FRESH_SCREEN_RUNNING",
+      "pid": 44808,
+      "controller_pid": 44025,
+      "identity_SHA": "4948bd7a9a745f32abf0679a5bf8026e943569392de78c086e87c0138d683fed",
+      "start_unix": 1791572651.5817645,
+      "resume_from_own_update": 1000,
+      "identity_migration": {
+        "status": "APPROVED_SOURCE_ONLY_PERFORMANCE_REPAIR",
+        "from_identity_SHA": "7527da02a7fad6366a190b366f492f92ec38f67a7a9e93f51570abf3bc1113f2",
+        "to_identity_SHA": "4948bd7a9a745f32abf0679a5bf8026e943569392de78c086e87c0138d683fed",
+        "resume_completed": 1000,
+        "scope": "spawn_worker_RAM_initialization_only",
+        "model_loss_data_schedule_unchanged": true,
+        "worker_RAM_bitwise_test_PASS": true,
+        "changed_code_files": [
+          "loader.py",
+          "train.py"
+        ],
+        "before_code_SHA": {
+          "baseline.py": "3e19781d2172a7b211f80994739b387d3235c966dd9c81b2f777e1b3c33b2aa9",
+          "model.py": "4bfcbce775ce7ea9af7d3453ec5cf6337d3cd025f541d57690abee7c759112e3",
+          "private_modules.py": "08541136cd72e039a02f145adba9410b404f6852bc226ab716639e43cc82ec60",
+          "stable_objectives.py": "bf79135d2f756b4abcad655beee9ed24f7bde738f62588a5532917e4b881e3ae",
+          "fast_objectives.py": "040a52c29ee9429834a4650bd51242e60a709b9ea2b11095433c9c9e4f969f1a",
+          "objectives.py": "501a6fa798203f37946ae0d3e90f43a4a9aef8369a1efd7eceb7da9b056f6fbb",
+          "data.py": "6145eb862cf75b895767ad627b4bac9ae6a417feacd92c909a4771765bce6545",
+          "loader.py": "fb18469db27865c3e195a23f14b363ad0374a652fddfb825552f5c320512e026",
+          "train.py": "04234aea4b190093f4427c75301e6edb31d3d48b27add7b171d653f07307702d"
+        },
+        "after_code_SHA": {
+          "baseline.py": "3e19781d2172a7b211f80994739b387d3235c966dd9c81b2f777e1b3c33b2aa9",
+          "model.py": "4bfcbce775ce7ea9af7d3453ec5cf6337d3cd025f541d57690abee7c759112e3",
+          "private_modules.py": "08541136cd72e039a02f145adba9410b404f6852bc226ab716639e43cc82ec60",
+          "stable_objectives.py": "bf79135d2f756b4abcad655beee9ed24f7bde738f62588a5532917e4b881e3ae",
+          "fast_objectives.py": "040a52c29ee9429834a4650bd51242e60a709b9ea2b11095433c9c9e4f969f1a",
+          "objectives.py": "501a6fa798203f37946ae0d3e90f43a4a9aef8369a1efd7eceb7da9b056f6fbb",
+          "data.py": "6145eb862cf75b895767ad627b4bac9ae6a417feacd92c909a4771765bce6545",
+          "loader.py": "ca9642f64c107df309127ddf5197fab5c86c46907ff5f247b5f5772d728ff74e",
+          "train.py": "6ade097741811da299734184ce196157ca98aa406095170759fe878bbb09cef9"
+        },
+        "immutable_checkpoint": "/root/autodl-tmp/HRDecoder_v3_20261008/training_runs/adapter/before_worker_RAM_resume_01000.pt",
+        "fresh_initialization_and_accepted_update_path_preserved": true,
+        "old_last_logged_completed": 1000,
+        "uncommitted_updates_may_be_replayed": true,
+        "test_accessed": false,
+        "time_unix": 1791573923.9621475
+      },
+      "canvas": 2048,
+      "batch": 2,
+      "screen_updates": 4000,
+      "max_conditional_updates": 40000,
+      "shutdown_after_completion": false,
+      "shutdown_after_failure": false,
+      "further_revisions_user_authorized": true
+    },
+    "DEADLINE_GATE.json": {
+      "status": "PASS",
+      "measured_screen_estimate_seconds": 3942.8479969501495,
+      "checked_unix": 1791573978.4705667,
+      "user_latest_server_available": true,
+      "reserve_seconds": 180,
+      "full40k_conditional_on_screen": true
+    },
+    "own_process_checks": {
+      "pid": {
+        "pid": 44808,
+        "alive": true,
+        "cmdline": "/root/miniconda3/bin/python -u train.py --train --resume ",
+        "matches_current_task": true
+      },
+      "controller_pid": {
+        "pid": 44025,
+        "alive": true,
+        "cmdline": "/root/miniconda3/bin/python -u /root/autodl-tmp/HRDecoder_v3_20261008/adapter_execution/resume_controller.py ",
+        "matches_current_task": true
+      }
+    },
+    "own_RAM": {
+      "pid": 39434,
+      "bytes": 103079171144,
+      "alive": true,
+      "matches_own_RAM": true
+    },
+    "GPU_status": "utilization.gpu [%], memory.used [MiB], power.draw [W]\n99 %, 13331 MiB, 299.94 W\n"
+  },
+  "own_only": true,
+  "no_second_fresh_run": true,
+  "checkpoint_download": false
+}

@@ -1,0 +1,22 @@
+{
+  "kind": "frozen-provider paired warm diagnostic; not fresh training or extension",
+  "parent_identity_SHA": "96cd1bc0ce79e9e5f5f8247958f868a4e00023f072bc6fea920092ad5a5003ec",
+  "parent_completed": 8000,
+  "warm_updates_per_arm": 500,
+  "canvas": 2048,
+  "batch": 2,
+  "arms": ["control", "gt_stratified"],
+  "private_GT": "original residual Dice + .25 ordinary all-valid BCE",
+  "only_arm_difference": "teacher KL all-valid vs fixed .5/.5 GT-positive/negative normalization",
+  "provider": "immutable same8k base checkpoint; all parameters frozen; persistent eval BN/dropout; no random HRcrop supervision",
+  "optimizer": "same parent private-only SGD momentum, lr sampled at original8k-8.5k position of 40k schedule",
+  "inputs": "both arms sequentially consume the same real CUDA batch objects; all six tensor inputs checked unchanged",
+  "alignment_gate": "bitwise provider logits equality every real update; all base state tensors unchanged and native76val provider counts identical at0/250/500; initial final counts identical",
+  "determinism": "benchmark false; cudnn deterministic; TF32 false; deterministic_algorithms true; unsupported operations fail smoke",
+  "bilinear_backward": "stock forward; CPU/GPU numerically checked deterministic separable transpose-matrix backward instead of atomic scatter",
+  "accuracy_guaranteed": false,
+  "formal_fresh_updates": 0,
+  "test_accessed": false,
+  "automatic_full_training": false,
+  "shutdown_after_completion": false
+}

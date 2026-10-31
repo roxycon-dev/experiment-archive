@@ -1,0 +1,159 @@
+schema_version: '1.0'
+arm_id: U1
+role: external-lesion-pretrained convnext_unet arm
+status: locked-intent
+structure:
+  family: convnext_unet
+  paired_group: convnext_unet
+  definition_ref: 主方案第三节；DP-UNet 仅借鉴结构思想，不声称复现其官方源码
+  encoder: convnext_small
+  encoder_weights_source: synthetic://convnext_small
+  encoder_weights_file: D:\dataset\experiment\HRDecoder_FullCompetition_20260920\tests\_tmp\weights\encoder_dummy.pth
+  encoder_weights_sha256: 126bde20a909b0f589cc504fd827d72600c267c414372619936c8160282c54dc
+  training_entry: train.py
+  library: builtin
+  library_version: 0.3.3-synthetic
+  decoder: unet
+  output_heads: 4
+  detail_branch: false
+  full_input_resolution_decode: true
+initialization:
+  imagenet_weights:
+    source: synthetic://imagenet_w48
+    file: D:\dataset\experiment\HRDecoder_FullCompetition_20260920\tests\_tmp\weights\imagenet_dummy.pth
+    sha256: 8f8bb2638af98484983a1ddd3adb5d886318a9cd9c8a51ce4a54aa6300c3c07a
+  external_pretrain_checkpoint:
+    file: D:\dataset\experiment\HRDecoder_FullCompetition_20260920\tests\_tmp\weights\external_pretrain_dummy.pth
+    sha256: 763ccb75ad78dd04776b61d5fb41f8bd3ca3c7583ac47aaca6ca370328d52f88
+data:
+  ddr_root: D:/dataset/experiment/HRDecoder_FullCompetition_20260920/tests/_tmp/ddr
+  ddr_train_split: train
+  ddr_val_split: val
+  ddr_test_split: test
+  channel_order:
+  - EX
+  - HE
+  - SE
+  - MA
+  input_fov: 2048
+  train_crop: 1024
+  ddr_normalization:
+    mean:
+    - 123.675
+    - 116.28
+    - 103.53
+    std:
+    - 58.395
+    - 57.12
+    - 57.375
+pretrain_stage:
+  external_manifest: D:/dataset/experiment/HRDecoder_FullCompetition_20260920/tests/_tmp/manifests/external_train_manifest.jsonl
+  allowed_splits:
+  - train
+  forbidden_splits:
+  - test
+  dev_ratio: 0.1
+  source_mixing: source_balanced_sampling
+  updates: 8000
+  effective_batch: 8
+  micro_batch: 2
+  grad_accum: 4
+  optimizer: adamw
+  weight_decay: 0.01
+  warmup_ratio: 0.05
+  lr_schedule: cosine
+  cosine_min_ratio: 0.01
+  backbone_lr: 0.0001
+  decoder_lr: 0.0003
+  channel_order:
+  - EX
+  - HE
+  - SE
+  - MA
+  valid_mask_handling: per_class_valid_masking
+  node_selection: external_train_derived_dev_only
+  overfit_monitor: dev_loss_every_1000_updates
+  init_checkpoint_output:
+    file: D:\dataset\experiment\HRDecoder_FullCompetition_20260920\tests\_tmp\weights\init_ckpt_output_dummy.pth
+    sha256: 8f3fdec9b7199e9435c380d49489c14295aa0f0b7a83c1b8dc6843bf591e39ae
+ddr_finetune_stage:
+  seed: 42
+  updates: 12000
+  effective_batch: 8
+  micro_batch: 2
+  grad_accum: 4
+  eval_progress_points:
+  - 0.25
+  - 0.5
+  - 0.75
+  - 1.0
+  optimizer: adamw
+  weight_decay: 0.01
+  warmup_ratio: 0.05
+  lr_schedule: cosine
+  cosine_min_ratio: 0.01
+  backbone_lr: 0.0001
+  decoder_lr: 0.0003
+  augmentation:
+    resize_ratio_range:
+    - 0.5
+    - 2.0
+    random_crop_cat_max_ratio: 0.75
+    flip_ratio: 0.5
+    rotate_degrees:
+    - -45
+    - 45
+    photometric: light
+  sampling: random_plus_foreground_mixed
+  norm_policy: layernorm_native
+  mixed_precision: true
+  gradient_checkpointing: false
+loss:
+  type: binary_per_class
+  recipe: ce_dice
+  smooth: 1.0e-05
+  per_class_valid_masking: true
+  ce_weight: 1.0
+  dice_weight: 1.0
+metrics:
+  protocol: whole_image_accumulated_counts
+  threshold: 0.5
+  primary: mIoU_lesion4
+  reported:
+  - mF1
+  - mPPV
+  - mRecall
+  - mAUPR
+checkpoint_selection:
+  allowed_splits:
+  - val
+  test_forbidden: true
+test_usage:
+  train_on_test: forbidden
+  select_checkpoint_on_test: forbidden
+  final_single_eval: allowed_only_after_full_lock
+equivalence_lock:
+  identical_with: U0
+  fields:
+  - data
+  - ddr_finetune_stage
+  - loss
+  - metrics
+  - checkpoint_selection
+  - test_usage
+  - structure.family
+  - structure.paired_group
+  - structure.encoder
+  - structure.detail_branch
+  - structure.library
+  - structure.encoder_weights_source
+  - structure.encoder_weights_file
+  - structure.encoder_weights_sha256
+  - initialization.imagenet_weights
+notes: 'U1 回答"新结构是否更能利用新增监督"。预训练产出 checkpoint 的编码器结构必须与本臂 完全一致；不一致时 preflight/加载期必须失败，不得静默部分加载。
+
+  与 U0 同步的两处修正（equivalence_lock 要求逐字段一致）： 1) structure.library: segmentation_models_pytorch
+  -> builtin（v1 用纯 torch ConvNeXt-S）； 2) structure.detail_branch: true -> false（v1
+  未实现且无 shape test）。
+
+  '

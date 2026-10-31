@@ -1,0 +1,99 @@
+{
+  "identity_SHA": "046abab773f7cb7a9e4f0a0f9cc44c4ad32d48431b971f22720dc8bd7936168a",
+  "identity": {
+    "protocol": {
+      "design_version": 12,
+      "name": "HRDecoder-HalfResolutionAdapter",
+      "seed": 42,
+      "private_seed": 20261008,
+      "canvas": 2048,
+      "updates": 40000,
+      "global_batch": 2,
+      "precision": "BF16 network; FP32 residual composition/probabilities/losses",
+      "optimizer": {
+        "type": "SGD",
+        "lr": 0.005,
+        "private_lr_multiplier": 4,
+        "momentum": 0.9,
+        "weight_decay": 0.0005
+      },
+      "lr": {
+        "type": "poly",
+        "power": 1,
+        "warmup": 1500,
+        "warmup_ratio": 1e-06
+      },
+      "lambda_k": [
+        [
+          0,
+          0
+        ],
+        [
+          1500,
+          0
+        ],
+        [
+          4000,
+          0.5
+        ],
+        [
+          32000,
+          0.5
+        ],
+        [
+          40000,
+          0.1
+        ]
+      ],
+      "GT": "base original-formula Dice + .1 HRcrop Dice; private Dice + .25 ordinary all-valid BCE",
+      "mask": "Existing geometry-valid and ignore255 masking retained; not claiming every original training detail identical",
+      "KD": "private only fixed GT-consistent train teacher T*, all-valid normalization; no moving student targets",
+      "readout": "W48 F1-F4 project32/sum; RGB/probability pixelunshuffle2->16 each at1/2; DW13-LN-e2 blocks64x2; zero64->16/pixelshuffle2",
+      "gradient_route": "all four HRNet feature inputs and p0 detached; final=z0.float().detach()+r.float(); no private gradient into base",
+      "inference": "resize final FP32 logits then sigmoid; no teacher or GT",
+      "classes": [
+        "EX",
+        "HE",
+        "SE",
+        "MA"
+      ],
+      "threshold": "strictly > .5",
+      "validation_images": 76,
+      "validation_interval": 4000,
+      "student_TTA": false,
+      "inference_teacher": false,
+      "inference_online_H4": false,
+      "test_selection": false,
+      "shutdown_after_completion": false,
+      "data_cache_hash_rescan": false,
+      "initialization": "fresh ImageNet W48 seed42; no warm task weights",
+      "screen_updates": 4000,
+      "accuracy_guaranteed": false
+    },
+    "code": {
+      "baseline.py": "3e19781d2172a7b211f80994739b387d3235c966dd9c81b2f777e1b3c33b2aa9",
+      "model.py": "f49e08ec2b5d3b04590813f9e13ac06ae3c52eb422e7ec379b7f93de5b2115c9",
+      "private_modules.py": "08541136cd72e039a02f145adba9410b404f6852bc226ab716639e43cc82ec60",
+      "stable_objectives.py": "bf79135d2f756b4abcad655beee9ed24f7bde738f62588a5532917e4b881e3ae",
+      "fast_objectives.py": "040a52c29ee9429834a4650bd51242e60a709b9ea2b11095433c9c9e4f969f1a",
+      "objectives.py": "501a6fa798203f37946ae0d3e90f43a4a9aef8369a1efd7eceb7da9b056f6fbb",
+      "data.py": "6145eb862cf75b895767ad627b4bac9ae6a417feacd92c909a4771765bce6545",
+      "loader.py": "ca9642f64c107df309127ddf5197fab5c86c46907ff5f247b5f5772d728ff74e",
+      "train.py": "bff69ed9a8e0c13f743425cc9c14b78e43d5e814f481188d86e5a3e405b9f644"
+    },
+    "spec_SHA": "fa5d9a08fb7436703d9ae67ee63bf1da7c933238bdd0341f82747642b9160ce3",
+    "screen_protocol_SHA": "8732b1255369ad6b853898b687dcf57f07c001634c92a1f5b47c16469ecc70e0",
+    "screen_gate_code_SHA": "d67c451bf2c29ee2600433d107f5cfe9f9dee6fa9b4ba51f627ed896c03edfbf",
+    "ImageNet_W48_SHA": "d2186c55782308392ae14cf179ac4840143b09abdbba81aa3f9274c795ebc960",
+    "data_identity_SHA": "7c53b86bcb27ccd121042f667cc58e39b98716a8c477bfd1f1657fa126575719",
+    "cache_identity": {
+      "A": "0674eb8fd875187e92bc4369e6fc41eb906339acb1f2057bd1d2dcd6c6933ec1",
+      "U": "1696b6eed682e116e98b6630bd429bd49986c24323010215fa8a0b4364952aa5",
+      "S": "b9f9886b393b14c2a25863d56fdbc1f6667bfab1200410d83fd0eb223471207a"
+    },
+    "torch": "2.0.1+cu117"
+  },
+  "baseline_initial_state_SHA": "e180ed1738b5cde6797e60a124aaf75b3cc78309463bb358a240cbddf0480f00",
+  "initialization": "fresh ImageNet seed42; no task checkpoint",
+  "resume_from_own_update": null
+}

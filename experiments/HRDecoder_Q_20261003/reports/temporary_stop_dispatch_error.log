@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "D:\dataset\experiment\HRDecoder_Q_20261003\reports\request_temporary_stop.py", line 51, in <module>
+    if out.channel.recv_exit_status():raise RuntimeError(stderr)
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError:   File "<stdin>", line 17
+    request.write_text(json.dumps(x,indent=2)+'
+                                              ^
+SyntaxError: unterminated string literal (detected at line 17)
+

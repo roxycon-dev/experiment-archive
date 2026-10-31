@@ -1,0 +1,40 @@
+{
+  "name": "stage1_overfit_smoke",
+  "stage": "stage1_overfit",
+  "_comment": [
+    "FORMAL STAGE 1 (sanity). 8 train images, 200 epochs, lr 1e-3. Purpose:",
+    "prove the model and the two-term loss actually reduce the objective and",
+    "that gradients reach every refiner parameter, BEFORE the full 454-image",
+    "run. Its single pre-registered validation node is the FINAL epoch (200):",
+    "GO_NO_GO pre-registered no mid-stage node for stage 1, and adding one now,",
+    "before any epoch is executed, would be a new declaration, so it is not",
+    "done. Stage 1 cannot be promoted on a partial curve.",
+    "The loss block below is a verbatim mirror of configs/refiner_v1.json;",
+    "refiner.losses.assert_frozen_objective fails closed on any drift."
+  ],
+  "stages": {
+    "stage1_overfit": {"purpose": "plumbing + learning sanity check",
+                       "train_images": 8, "epochs": 200, "lr": 0.001,
+                       "checkpoint_nodes": [200]},
+    "stage2_main": {"purpose": "main run (started by the supervisor after this stage)",
+                    "train_images": 454, "epochs": 30, "lr": 0.0003,
+                    "eval_every_epochs": 5,
+                    "checkpoint_nodes": [5, 10, 15, 20, 25, 30]}
+  },
+  "loss": {
+    "terms": ["focal_bce", "soft_dice"],
+    "weights": {"focal_bce": 30.0, "soft_dice": 1.0},
+    "focal": {"alpha": 0.75, "gamma": 2.0}
+  },
+  "optim": {
+    "optimizer": "AdamW",
+    "lr": 0.001,
+    "weight_decay": 0.01,
+    "betas": [0.9, 0.999],
+    "schedule": "cosine",
+    "warmup_steps": 20,
+    "batch_size": 8,
+    "grad_clip_norm": 5.0,
+    "amp": false
+  }
+}

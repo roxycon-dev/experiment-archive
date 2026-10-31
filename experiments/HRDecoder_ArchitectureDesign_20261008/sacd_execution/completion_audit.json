@@ -1,0 +1,102 @@
+{
+  "audit_time": "2026-10-09T16:23:08.227953+08:00",
+  "status": "INCOMPLETE",
+  "goal_achieved": false,
+  "primary_endpoint": 40000,
+  "checks": [
+    {
+      "requirement": "2048 batch2 40000 freshImageNet seed42 single-model protocol",
+      "status": "PASS",
+      "evidence": "training_runs/sacd/protocol.json"
+    },
+    {
+      "requirement": "current reviewed core source matches training identity",
+      "status": "PASS",
+      "evidence": "protocol.identity.code + local core files; no data hash rescan"
+    },
+    {
+      "requirement": "reviewed architecture specification matches trained identity",
+      "status": "PASS",
+      "evidence": "protocol.identity.spec_SHA + local architecture_spec.json"
+    },
+    {
+      "requirement": "exact original data identity and disjoint454/76/227 held-out splits",
+      "status": "PASS",
+      "evidence": "archived metadata/data_identity.json matches training protocol; existing metadata hashes only"
+    },
+    {
+      "requirement": "pinned-environment CPU checks and SGD/RNG resume",
+      "status": "PASS",
+      "evidence": "sacd_execution/CPU_SACD_PASS.json + CHECKPOINT_RESUME_PASS.json"
+    },
+    {
+      "requirement": "full2048/batch2 GPU gate, fresh initialization, discarded probes",
+      "status": "PASS",
+      "evidence": "training_runs/sacd/GPU_SMOKE_PASS.json"
+    },
+    {
+      "requirement": "one final full-run authorization registration",
+      "status": "PASS",
+      "evidence": "reports/sacd/FINAL_ROUND_STARTED.json"
+    },
+    {
+      "requirement": "40000 updates and persistent checkpoint loaded/verified on server",
+      "status": "PENDING",
+      "evidence": "training_runs/sacd/TRAINING_COMPLETE.json; no checkpoint download"
+    },
+    {
+      "requirement": "complete76-image fixed40k val counts and metrics",
+      "status": "PENDING",
+      "evidence": "training_runs/sacd/val_40000.json"
+    },
+    {
+      "requirement": "40k counts preserve independently verified76-label ground-truth totals",
+      "status": "PENDING",
+      "evidence": "val_label_reference.json independently counted existing local76 val labels; no test-label access"
+    },
+    {
+      "requirement": "fixed40k val strictly exceeds45.32183122738841%",
+      "status": "PENDING",
+      "evidence": "val_40000.json; best-val is secondary"
+    },
+    {
+      "requirement": "fixed40k checkpoint locked before test, exact evaluation source",
+      "status": "PENDING",
+      "evidence": "reports/sacd/LOCKED_TEST_CHECKPOINT.json"
+    },
+    {
+      "requirement": "complete227-image test counts and metrics",
+      "status": "PENDING",
+      "evidence": "training_runs/sacd/test_40000.json"
+    },
+    {
+      "requirement": "test strictly exceeds45.860383832668%",
+      "status": "PENDING",
+      "evidence": "training_runs/sacd/test_40000.json"
+    },
+    {
+      "requirement": "test on locked checkpoint, held-out images, no GT/teacher/TTA inference or selection",
+      "status": "PENDING",
+      "evidence": "locked test receipt + reviewed model/test source; custom student split, no official teacher-split independence claim"
+    },
+    {
+      "requirement": "final test completed before user deadline",
+      "status": "PENDING",
+      "evidence": "test.completed_unix < Beijing2026-10-10 02:00"
+    },
+    {
+      "requirement": "controller completed without shutdown",
+      "status": "PENDING",
+      "evidence": "reports/sacd/GPU_CAMPAIGN_OUTCOME.json"
+    },
+    {
+      "requirement": "server SSH online verified after final controller outcome",
+      "status": "PENDING",
+      "evidence": "latest_snapshot.runtime.checked_at_unix; SSH observation required, not controller intent alone"
+    }
+  ],
+  "current_val_mIoU": null,
+  "current_test_mIoU": null,
+  "data_cache_hash_rescan": false,
+  "checkpoint_download": false
+}

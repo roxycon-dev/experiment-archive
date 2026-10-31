@@ -1,0 +1,38 @@
+{
+  "status": "HEALTHY_WAITING_LAST_FIXED_ENDPOINT",
+  "checked_at_UTC": "2026-10-24T06:55:52.549246+00:00",
+  "S3407": {
+    "records": 777,
+    "last": {
+      "update": 15540,
+      "loss": 0.14012162387371063,
+      "grad_norm": 1.3410388231277466,
+      "seconds": 1.1243263455107808,
+      "data_wait_seconds": 0.0018151197582483292
+    },
+    "nonfinite": []
+  },
+  "remaining_adaptation_hours": 1.401093122979373,
+  "GPU59_resources_at_snapshot": {
+    "0": {
+      "memory_used_MiB": 1520,
+      "utilization_pct": 58
+    },
+    "1": {
+      "memory_used_MiB": 8166,
+      "utilization_pct": 93
+    },
+    "2": {
+      "memory_used_MiB": 8232,
+      "utilization_pct": 89
+    },
+    "3": {
+      "memory_used_MiB": 10,
+      "utilization_pct": 0
+    }
+  },
+  "backup_PID45360_alive": true,
+  "backup_stderr_empty": true,
+  "other_users_left_untouched": true,
+  "overall_campaign_complete": false
+}

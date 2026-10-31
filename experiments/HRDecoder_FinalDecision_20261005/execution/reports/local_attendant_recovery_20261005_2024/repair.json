@@ -1,0 +1,19 @@
+{
+  "stage": "EXPLICIT_LAUNCH_ISOLATION_REPAIR_PREPARED",
+  "time": "2026-10-05T12:24:13.815485+00:00",
+  "old_pids": [
+    17736,
+    31360,
+    32432
+  ],
+  "old_helper_functions_unchanged": true,
+  "cause": "Prior WMI launch omitted CREATE_BREAKAWAY_FROM_JOB. Microsoft documents WMI-created processes remain job-limited without it. All three ended without a Python exception; local Codex service relaunched19:36. Exact terminating event is not established.",
+  "fix": "Explicit WMI CreateFlags 16777216 and verify IsProcessInJob=False in each helper before claiming recovery.",
+  "sources": [
+    "https://learn.microsoft.com/en-us/windows/win32/cimwin32prov/create-method-in-class-win32-process",
+    "https://learn.microsoft.com/en-us/windows/win32/cimwin32prov/win32-processstartup"
+  ],
+  "training_restarted": false,
+  "all_logs_states_and_verified_files_preserved": true,
+  "no_workaround_scheduler": true
+}

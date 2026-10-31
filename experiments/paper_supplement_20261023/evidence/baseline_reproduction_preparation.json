@@ -1,0 +1,15 @@
+{
+  "status": "PREPARED_NOT_TRAINED",
+  "original_log": "D:\\dataset\\lesion_segmentation\\实验日志_json\\01_板块一_baseline.json",
+  "log_sha256": "70b5c9faddcdcf894e316ca5194b286f6f4082cd4bc70df166d4b1d826e9ada0",
+  "original_config_sha256": "b28fc1695d375809ea4b18a3b2231a3e4299060f2e3da4bf48b80d6c0d6ba143",
+  "reproduction_config_sha256": "9b06a0bf3871aeccf7f9a019a70cfe000198faecf6b8f04994583fd690f52052",
+  "bundle_sha256": "b1b73fb4c5baf1e5ad0da841ab520c0333261ead99795a87ed3595ee0ca84ebc",
+  "source_files": 151,
+  "differences": [
+    "Original40000-step schedule, seed42, global batch2, loss and geometry retained",
+    "Two2080Ti ranks with1image/rank and SyncBN instead of single-GPU BN2",
+    "New training rerun; no promise of historical42.20 score or identical random order"
+  ],
+  "no_validation_or_test_selection_change": true
+}

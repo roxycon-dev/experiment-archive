@@ -1,0 +1,84 @@
+{
+  "status": "INCOMPLETE",
+  "goal_achieved": false,
+  "checks": [
+    {
+      "requirement": "fixed2048/batch2/40000 fresh seed42 private20261008, no task weights",
+      "status": "PASS"
+    },
+    {
+      "requirement": "single-model deployment without teacher/GT/TTA/onlineH4",
+      "status": "PASS"
+    },
+    {
+      "requirement": "actual small core sources and screen specification match trained identity",
+      "status": "PASS"
+    },
+    {
+      "requirement": "original audited disjoint454/76/227 splits",
+      "status": "PASS"
+    },
+    {
+      "requirement": "strict metric helper matches preregistered trained identity",
+      "status": "PASS"
+    },
+    {
+      "requirement": "pre-result screen CPU fixtures pass without candidate/test results",
+      "status": "PASS"
+    },
+    {
+      "requirement": "pinned CPU routing/Dice/deployment/SGD-RNG verification",
+      "status": "PASS"
+    },
+    {
+      "requirement": "full-shape fresh GPU smoke and all finite gradients",
+      "status": "PASS"
+    },
+    {
+      "requirement": "new fresh screen registered before results",
+      "status": "PASS"
+    },
+    {
+      "requirement": "registered screen actually passed before original deadline",
+      "status": "PENDING"
+    },
+    {
+      "requirement": "conditional server extension on same fresh run",
+      "status": "PENDING"
+    },
+    {
+      "requirement": "distinct registered2k/4k screen, not relaxed previous8k gate",
+      "status": "PASS"
+    },
+    {
+      "requirement": "40000 completed and persistent own checkpoint loaded",
+      "status": "PENDING"
+    },
+    {
+      "requirement": "fixed40k full76 val counts/metrics",
+      "status": "PENDING"
+    },
+    {
+      "requirement": "fixed40k val GT totals match independent76-label reference",
+      "status": "PENDING"
+    },
+    {
+      "requirement": "controller terminal outcome, server kept on, no external process control",
+      "status": "PENDING"
+    },
+    {
+      "requirement": "actual post-completion SSH online and own training/controller/RAM ended",
+      "status": "PENDING"
+    }
+  ],
+  "fixed40k_val_mIoU": null,
+  "fixed40k_test_mIoU": null,
+  "val_target": 45.32183122738841,
+  "test_target": 45.860383832668,
+  "val_target_exceeded": null,
+  "test_target_exceeded": null,
+  "audited_at": "2026-10-10T00:09:35.198354+08:00",
+  "checkpoint_download": false,
+  "data_cache_hash_rescan": false,
+  "test_for_tuning": false
+}

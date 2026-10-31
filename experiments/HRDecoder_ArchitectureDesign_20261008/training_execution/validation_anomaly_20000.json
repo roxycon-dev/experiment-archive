@@ -1,0 +1,20 @@
+{
+  "step": 20000,
+  "mIoU_percent": 15.050912466184402,
+  "zero_positive_prediction_classes": [
+    "EX",
+    "SE"
+  ],
+  "checkpoint_numeric_health": "PASS",
+  "diagnostic_checkpoint": "/root/autodl-tmp/HRDecoder_v3_20261008/reports/diagnostics/checkpoint_20000.pt",
+  "CPU_FP32_positive_image_probe": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\cache_execution\\server_receipts\\reports\\diagnostics\\cpu_output_20000_positive_EX_SE.json",
+  "CPU_checkpoint_health_report": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\cache_execution\\server_receipts\\reports\\diagnostics\\checkpoint_health_20000.json",
+  "observed_suppression_on_positive_image": true,
+  "proven_implementation_defect": false,
+  "cause": "UNRESOLVED",
+  "protocol_changed": false,
+  "additional_formal_SGD_updates": 0,
+  "budget": "v3, 2048, batch2, 40000 fixed; continue authorized main run",
+  "followup": "At later scheduled validation, check restoration of EX/SE positive predictions; keep quiet if unchanged and no new validation.",
+  "created_at_UTC_plus_8": "2026-10-09T00:00:48+08:00"
+}

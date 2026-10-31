@@ -1,0 +1,368 @@
+Output ONLY complete Python code for hrplus_patch.py, no otherfiles. Fix provided module using followingrequirements. Reference MUST be ordinaryHR100Refinement(**deepcopy(kwargs before supermutates)). source_checkpoint REQUIRED. Bothstrictload EXACT4class B1877tensors, noignorema_refiner; sourceBhasNONE. No deepcopyselfteacher. init_weights no-op afterconstructor strictloads studentbeforeattachingreference, thenreference separately. AllBNfrozen teacher evalalways. Studentforwardtrain onlyself.encode_decodecrop then decode.losses +optionalweight*4classlovasz. Finalinference fixed0.5 nativewholeBprob+0.5studenttiledlogitsavg->origresize->sigmoid->flipundo; no recursionreference.inference. ForegroundMixedCrop must import/usecrop_arrays, pad/cropallseg_fields samecoordinates, padimage0labels255, img_shape/pad_shape = image.shape3D, primarylabel gt_semantic_seg. Helpersprovided. Keepconcise, no newframeworks. Zeroexternalpretrain. Assertconfigclass4 sigmoid true hr_scale1024. ModeltypeHRPlusRefinement. Allnewtestsseparatetask. You authorcode, supervisorreviews.
+ORIGINAL:
+"""HR+ patch: distillation-free self-ensemble on top of HR100Refinement.
+
+Student: HRPlusRefinement (inherits HR100Refinement.encode_decode on the
+actual 1024x1024 crop).  A frozen deepcopy of the same module (initialized
+from the SAME B checkpoint, strict-loaded BEFORE the reference is attached)
+acts as reference at inference; probabilities are fused 0.5/0.5.
+"""
+import copy
+
+import numpy as np
+import torch
+
+from mmseg.models.builder import SEGMENTORS
+from mmseg.datasets.builder import PIPELINES
+from mmseg.ops import resize
+
+from hr100_refinement import HR100Refinement
+from hrplus_core import (tiled_forward, blend_probs, resize_logit,
+                         pad_to_size, foreground_crop_bbox,
+                         multiclass_lovasz_hinge)
+
+
+def _strict_load_state(module, path):
+    """Load checkpoint into ``module``; strict w.r.t. all student params.
+
+    Keys belonging to the disabled semantic refiner (``ma_refiner.*``) are
+    tolerated as unexpected, anything else raises.  Missing keys raise.
+    """
+    ckpt = torch.load(path, map_location='cpu')
+    state = ckpt.get('state_dict', ckpt)
+    state = {k[7:] if k.startswith('module.') else k: v for k, v in state.items()}
+    missing, unexpected = module.load_state_dict(state, strict=False)
+    if missing:
+        raise RuntimeError(
+            'HRPlusRefinement strict checkpoint load failed; missing keys: %s'
+            % missing[:10])
+    real_unexpected = [k for k in unexpected if not k.startswith('ma_refiner.')]
+    if real_unexpected:
+        raise RuntimeError(
+            'HRPlusRefinement strict checkpoint load failed; unexpected '
+            'keys: %s' % real_unexpected[:10])
+    if unexpected:
+        print('[HRPlusRefinement] ignored unexpected (disabled module) keys: '
+              '%s ...' % unexpected[:5])
+
+
+@SEGMENTORS.register_module()
+class HRPlusRefinement(HR100Refinement):
+    """Student = inherited crop model; reference = frozen deepcopy.
+
+    * forward_train: ONLY the student's crop logits + original
+      decode_head.losses (optionally + weighted binary Lovasz hinge).
+      No MA hard loss, no HR crop auxiliary, no fuse losses.
+    * inference: tiled student logits (tile 1024, stride 768) on the
+      normalized 2048 image, overlap-averaged, resized to original with the
+      baseline align_corners, sigmoid, flip-undo; fused 0.5/0.5 with the
+      reference whole-image probabilities.
+    """
+
+    def __init__(self, source_checkpoint=None, lovasz_weight=0.0, **kwargs):
+        kwargs['semantic_refinement'] = False
+        kwargs.setdefault('hard_weight', 0)
+        kwargs.setdefault('freeze_bn', True)
+        super(HRPlusRefinement, self).__init__(**kwargs)
+        self.lovasz_weight = float(lovasz_weight)
+        # One-time, explicit post-init checkpoint loading: build order in
+        # tools/train.py may call init_weights() later, which is overridden
+        # as a no-op below so the loaded weights are never re-initialized.
+        if source_checkpoint is not None:
+            _strict_load_state(self, source_checkpoint)
+        # Frozen reference, attached strictly AFTER loading.
+        reference = copy.deepcopy(self)
+        for p in reference.parameters():
+            p.requires_grad_(False)
+        reference.eval()
+        self.reference = reference
+
+    # ---- checkpoint lifecycle guards -------------------------------------
+    def init_weights(self):
+        """No-op: both student and reference already hold the strict-loaded
+        B checkpoint.  Prevents nested backbone/decode_head init_weights from
+        resetting trained weights after build."""
+        pass
+
+    def train(self, mode=True):
+        super(HRPlusRefinement, self).train(mode)
+        if hasattr(self, 'reference'):
+            self.reference.eval()  # reference is never trained
+        return self
+
+    # ---- training ---------------------------------------------------------
+    def forward_train(self, img, img_metas, gt_semantic_seg,
+                      seg_weight=None, return_feat=False, **kwargs):
+        logits = self.encode_decode(img, img_metas)  # inherited crop logits
+        losses = self.decode_head.losses(logits, gt_semantic_seg)
+        if self.lovasz_weight > 0:
+            losses['loss_lovasz'] = self.lovasz_weight * multiclass_lovasz_hinge(
+                logits, gt_semantic_seg)
+        return losses
+
+    # ---- inference --------------------------------------------------------
+    def _student_prob(self, img, img_meta, rescale):
+        """Tiled student logits -> overlap-average -> (crop pad) ->
+        resize to original (same align_corners as baseline) -> sigmoid ->
+        flip undo."""
+        logits = tiled_forward(
+            img,
+            lambda patch: self.encode_decode(patch, img_meta),
+            self.hr_scale, stride=768, num_classes=self.num_classes)
+        img_shape = img_meta[0]['img_shape']
+        logits = logits[:, :, :img_shape[0], :img_shape[1]]
+        if rescale:
+            logits = resize_logit(logits, img_meta[0]['ori_shape'][:2],
+                                  align_corners=self.align_corners)
+        prob = torch.sigmoid(logits)
+        if img_meta[0]['flip']:
+            direction = img_meta[0]['flip_direction']
+            if direction == 'horizontal':
+                prob = prob.flip(dims=(3,))
+            elif direction == 'vertical':
+                prob = prob.flip(dims=(2,))
+            else:
+                raise NotImplementedError(direction)
+        return prob
+
+    def inference(self, img, img_meta, rescale):
+        assert img.size(0) == 1, 'eval batch size must be 1'
+        prob_s = self._student_prob(img, img_meta, rescale)
+        self.reference.eval()
+        with torch.no_grad():
+            prob_r = self.reference.inference(img, img_meta, rescale)
+        # Fixed global fusion: 0.5 reference + 0.5 student, all classes.
+        return blend_probs(prob_r, prob_s, weight_a=0.5)
+
+
+@PIPELINES.register_module()
+class ForegroundMixedCrop(object):
+    """Train-only crop after Resize(2048x2048, keep_ratio=False).
+
+    With probability fg_prob: image-uniform random crop.  Otherwise: a
+    PRESENT lesion class (1..num_fg) is chosen uniformly, a pixel of it is
+    chosen uniformly, and a valid anchor offset guaranteeing pixel inclusion
+    is sampled.  Falls back to uniform when no lesion class is present.
+    Image and all seg fields are cropped identically; small images are padded
+    (image 0, label 255) first.  Uses numpy random for seeding.
+    """
+
+    def __init__(self, crop_size, fg_prob=0.5, num_fg=4):
+        self.crop_size = int(crop_size)
+        self.fg_prob = float(fg_prob)
+        self.num_fg = int(num_fg)
+
+    def __call__(self, results):
+        img = results['img']
+        gt = results['gt_semantic_seg']
+        cs = self.crop_size
+        h, w = gt.shape[:2]
+        if h < cs or w < cs:
+            img, gt = pad_to_size(img, gt, (max(cs, h), max(cs, w)),
+                                  img_pad=0, seg_pad=255)
+            results['img'] = img
+            results['gt_semantic_seg'] = gt
+        y0, x0 = foreground_crop_bbox(gt, cs, self.fg_prob, np.random,
+                                      self.num_fg)
+        img, gt = crop_arrays(img, gt, y0, x0, cs, cs)
+        results['img'] = img
+        results['gt_semantic_seg'] = gt
+        results['img_shape'] = (cs, cs)
+        results['pad_shape'] = (cs, cs)
+        return results
+
+    def __repr__(self):
+        return self.__class__.__name__ + \
+            '(crop_size={}, fg_prob={}, num_fg={})'.format(
+                self.crop_size, self.fg_prob, self.num_fg)
+
+CORRECTEDCORE:
+"""Dependency-light helpers for the HR+ patch (torch + numpy only).
+
+Used by hrplus_patch.py (model / pipeline) and by tests/test_core.py.
+"""
+import numpy as np
+import torch
+import torch.nn.functional as F
+
+
+# ---------------------------------------------------------------- tiling ---
+def _axis_positions(total, tile, stride):
+    """Tile start positions along one axis: complete coverage of [0, total)."""
+    assert 0 < stride <= tile, 'stride must satisfy 0 < stride <= tile'
+    if total <= tile:
+        return [0]
+    pos = list(range(0, total - tile + 1, stride))
+    if pos[-1] != total - tile:
+        pos.append(total - tile)
+    return pos
+
+
+def tiled_forward(img, forward_fn, tile_size, stride, num_classes):
+    """Tiled inference with complete overlap coverage.
+
+    Logits are accumulated in float32 and divided by per-pixel counts so
+    overlapping tiles are exactly averaged.  Images smaller than the tile are
+    right/bottom padded before ``forward_fn`` and the padding is cropped away
+    afterwards, so irregular / small sizes are handled correctly.
+
+    Args:
+        img: (B, 3, H, W) tensor (already normalized).
+        forward_fn: callable (B,3,th,tw) -> (B, C, th, tw) logits tensor.
+        tile_size: int or (tile_h, tile_w).
+        stride: int, tile stride (0 < stride <= min(tile_h, tile_w)).
+        num_classes: number of logit channels C.
+    Returns:
+        (B, C, H, W) float32 averaged logits.
+    """
+    if isinstance(tile_size, (tuple, list)):
+        tile_h, tile_w = int(tile_size[0]), int(tile_size[1])
+    else:
+        tile_h = tile_w = int(tile_size)
+    assert 0 < stride <= min(tile_h, tile_w), \
+        'require 0 < stride <= min(tile_h, tile_w)'
+    b, _, h, w = img.shape
+    sums = torch.zeros((b, num_classes, h, w), dtype=torch.float32,
+                       device=img.device)
+    counts = torch.zeros((b, 1, h, w), dtype=torch.float32,
+                         device=img.device)
+    th, tw = min(tile_h, h), min(tile_w, w)
+    for y in _axis_positions(h, tile_h, stride):
+        for x in _axis_positions(w, tile_w, stride):
+            patch = img[:, :, y:y + th, x:x + tw]
+            if patch.shape[2] < tile_h or patch.shape[3] < tile_w:
+                patch = F.pad(patch, (0, tile_w - patch.shape[3],
+                                      0, tile_h - patch.shape[2]))
+            out = forward_fn(patch)
+            assert out.shape[0] == patch.shape[0] and out.shape[1] == num_classes
+            out = out[:, :, :th, :tw].float()
+            sums[:, :, y:y + th, x:x + tw] += out
+            counts[:, :, y:y + th, x:x + tw] += 1.0
+    assert bool((counts > 0).all()), 'tiling left uncovered pixels'
+    return sums / counts
+
+
+# ---------------------------------------------------------------- blending ---
+def blend_probs(prob_a, prob_b, weight_a=0.5):
+    """Fixed probability-space fusion: weight_a * a + (1 - weight_a) * b."""
+    assert prob_a.shape == prob_b.shape, \
+        'blend shapes must match exactly (no implicit broadcasting)'
+    return weight_a * prob_a + (1.0 - weight_a) * prob_b
+
+
+def resize_logit(logits, size, align_corners=False):
+    """Bilinear logit resize with explicit align_corners."""
+    return F.interpolate(logits, size=size, mode='bilinear',
+                         align_corners=align_corners)
+
+
+# ------------------------------------------------------------ crop helpers ---
+def pad_to_size(img, gt, size, img_pad=0, seg_pad=255):
+    """Pad (H,W,3) image with ``img_pad`` and (H,W) label with ``seg_pad``
+    at bottom/right up to ``size``=(H,W). Pure numpy. ``img_pad`` is honored
+    for the image and ``seg_pad`` for the label."""
+    th, tw = int(size[0]), int(size[1])
+    h, w = gt.shape[:2]
+    if h >= th and w >= tw:
+        return img, gt
+    pad_img = np.full((max(th, h), max(tw, w)) + img.shape[2:], int(img_pad),
+                      dtype=img.dtype)
+    pad_img[:h, :w] = img
+    pad_gt = np.full((max(th, h), max(tw, w)) + gt.shape[2:], int(seg_pad),
+                     dtype=gt.dtype)
+    pad_gt[:h, :w] = gt
+    return pad_img, pad_gt
+
+
+def crop_arrays(img, gt, y0, x0, h, w):
+    """Aligned numpy crop of image and label (no resizing)."""
+    return img[y0:y0 + h, x0:x0 + w], gt[y0:y0 + h, x0:x0 + w]
+
+
+def foreground_crop_bbox(gt, crop_size, fg_prob=0.5, rng=None, num_fg=4):
+    """Choose top-left corner (y0, x0) of a crop_size x crop_size window.
+
+    With probability ``fg_prob`` the crop is image-uniform random.  Otherwise
+    a uniformly chosen PRESENT lesion class (1..num_fg) and a uniformly chosen
+    pixel of that class are picked, and the anchor offset is drawn from the
+    valid range that guarantees pixel inclusion.  If no lesion class is
+    present the crop falls back to image-uniform random.  Uses the given
+    ``rng`` (np.random module or np.random.RandomState) for seeding.
+    Assumes H, W >= crop_size (pad first if not).
+    """
+    rng = np.random if rng is None else rng
+    h, w = gt.shape[:2]
+    cs = int(crop_size)
+    cs_h, cs_w = min(cs, h), min(cs, w)
+
+    def uniform():
+        y0 = rng.randint(0, h - cs_h + 1)
+        x0 = rng.randint(0, w - cs_w + 1)
+        return y0, x0
+
+    present = [c for c in range(1, num_fg + 1) if (gt == c).any()]
+    if not present or rng.random() < fg_prob:
+        return uniform()
+    cls = present[rng.randint(0, len(present))]
+    ys, xs = np.where(gt == cls)
+    idx = rng.randint(0, len(ys))
+    py, px = int(ys[idx]), int(xs[idx])
+    y_lo, y_hi = max(0, py - cs_h + 1), min(py, h - cs_h)
+    x_lo, x_hi = max(0, px - cs_w + 1), min(px, w - cs_w)
+    y0 = rng.randint(y_lo, y_hi + 1)
+    x0 = rng.randint(x_lo, x_hi + 1)
+    return y0, x0
+
+
+# ---------------------------------------------------------------- lovasz ---
+def lovasz_grad(gt_sorted):
+    """Gradient of the Lovasz extension w.r.t. sorted errors.
+
+    The differencing step uses torch.cat instead of overlapping in-place
+    slice assignment (jacc[1:] = jacc[1:] - jacc[:-1]), which is unsafe
+    under PyTorch's memory-aliasing rules.
+    """
+    p = len(gt_sorted)
+    gts = gt_sorted.sum()
+    intersection = gts - gt_sorted.float().cumsum(0)
+    union = gts + (1 - gt_sorted).float().cumsum(0)
+    jacc = 1 - intersection / union
+    if p > 1:
+        jacc = torch.cat([jacc[:1], jacc[1:] - jacc[:-1]])
+    return jacc
+
+
+def lovasz_hinge_flat(logits, labels):
+    """Binary Lovasz hinge loss on flattened, already-valid tensors.
+    Graph-safe for empty inputs (returns 0 connected to the graph)."""
+    if logits.numel() == 0:
+        return logits.sum() * 0
+    signs = 2.0 * labels - 1.0
+    errors = 1.0 - logits * signs
+    errors_sorted, perm = torch.sort(errors, descending=True)
+    gt_sorted = labels[perm]
+    return torch.dot(F.relu(errors_sorted), lovasz_grad(gt_sorted))
+
+
+def multiclass_lovasz_hinge(logits, target, ignore_index=255):
+    """Binary Lovasz hinge applied separately to each of the EXACTLY 4
+    FOREGROUND channels (channel c <-> target label c+1; 0=EX, 1=HE,
+    2=SE, 3=MA; NO background channel).  Batch-flattened,
+    ignore_index (255) excluded, averaged over ALL 4 classes including
+    classes absent from the batch.  Applied on raw logits: NO softmax /
+    sigmoid.  Full-crop usage expected.
+    """
+    assert logits.shape[1] == 4, 'model must output exactly 4 fg channels'
+    tgt = target.squeeze(1) if target.dim() == 4 else target
+    flat_t = tgt.reshape(-1)
+    num_classes = 4
+    total = logits.sum() * 0
+    for c in range(num_classes):
+        lc = logits[:, c].reshape(-1)
+        valid = flat_t != ignore_index
+        if bool(valid.sum()) == 0:
+            total = total + lc.sum() * 0
+            continue
+        labels = (flat_t[valid] == (c + 1)).float()
+        total = total + lovasz_hinge_flat(lc[valid], labels)
+    return total / num_classes

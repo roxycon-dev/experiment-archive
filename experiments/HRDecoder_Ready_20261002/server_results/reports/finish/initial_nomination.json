@@ -1,0 +1,193 @@
+{
+  "base_miou": 0.42669122905238266,
+  "base_iou": [
+    0.45770414451745595,
+    0.4375670343060385,
+    0.5518030364420716,
+    0.2596907009439646
+  ],
+  "rows": [
+    {
+      "spec": {
+        "id": "U0",
+        "family": "convnext_unet",
+        "kind": "model",
+        "members": [
+          {
+            "config": "/root/autodl-tmp/HRDecoder_Ready_20261002/configs/resolved/U0_historical_native_export.yaml",
+            "checkpoint": "/root/autodl-tmp/HRDecoder_Ready_20261002/assets/U0_historical_best.pth",
+            "weight": 1.0
+          }
+        ],
+        "cache": "/root/autodl-tmp/HRDecoder_Ready_20261002/cache/val/U0"
+      },
+      "score": 0.008185803157983007,
+      "alone_miou": 0.38446869204975476,
+      "alone_iou": [
+        0.43677085723362574,
+        0.38426938207497247,
+        0.5093488968147359,
+        0.20748563207568488
+      ],
+      "fixed25_miou": 0.43487703221036567,
+      "fixed25_iou": [
+        0.4773652843629539,
+        0.42506225848003437,
+        0.570692469969939,
+        0.2663881160285354
+      ]
+    },
+    {
+      "spec": {
+        "id": "U1",
+        "family": "convnext_unet",
+        "kind": "model",
+        "members": [
+          {
+            "config": "/root/autodl-tmp/HRDecoder_Ready_20261002/configs/resolved/U1_convnext_unet_ext_pretrain.yaml",
+            "checkpoint": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/U1_ddr_finetune/ckpt_best.pth",
+            "weight": 1.0
+          }
+        ],
+        "cache": "/root/autodl-tmp/HRDecoder_Ready_20261002/cache/val/U1"
+      },
+      "score": 0.005713506247331385,
+      "alone_miou": 0.3669342309981436,
+      "alone_iou": [
+        0.43039604005112525,
+        0.3680077355656772,
+        0.46992513747379433,
+        0.19940801090197746
+      ],
+      "fixed25_miou": 0.4310555450491325,
+      "fixed25_iou": [
+        0.4805581695067815,
+        0.42198713317926934,
+        0.5591590774104138,
+        0.2625178001000654
+      ]
+    },
+    {
+      "spec": {
+        "id": "H1",
+        "family": "hrdecoder",
+        "kind": "model",
+        "members": [
+          {
+            "config": "/root/autodl-tmp/HRDecoder_Ready_20261002/configs/resolved/H1_hrdecoder_ext_pretrain.yaml",
+            "checkpoint": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/H1_ddr_finetune/ckpt_best.pth",
+            "weight": 1.0
+          }
+        ],
+        "cache": "/root/autodl-tmp/HRDecoder_Ready_20261002/cache/val/H1"
+      },
+      "score": 0.003322455133167798,
+      "alone_miou": 0.3559504929505182,
+      "alone_iou": [
+        0.39612504294057027,
+        0.430978874080356,
+        0.4210959241651206,
+        0.17560213061602595
+      ],
+      "fixed25_miou": 0.426424773264095,
+      "fixed25_iou": [
+        0.44987383746664633,
+        0.4508568548387097,
+        0.5486802146226698,
+        0.25628818612835425
+      ]
+    },
+    {
+      "spec": {
+        "id": "A0",
+        "family": "hacdr",
+        "kind": "model",
+        "members": [
+          {
+            "config": "/root/autodl-tmp/HRDecoder_Ready_20261002/configs/resolved/A0_hacdr_adapted.yaml",
+            "checkpoint": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/A0_ddr_finetune/ckpt_best.pth",
+            "weight": 1.0
+          }
+        ],
+        "cache": "/root/autodl-tmp/HRDecoder_Ready_20261002/cache/val/A0"
+      },
+      "score": -0.0009473246529373563,
+      "alone_miou": 0.09678085535530237,
+      "alone_iou": [
+        0.24135814597922106,
+        1.6148084393118655e-06,
+        0.14576366063354912,
+        0.0
+      ],
+      "fixed25_miou": 0.41395765876003016,
+      "fixed25_iou": [
+        0.4539148459057065,
+        0.4204697905732133,
+        0.5331251206877734,
+        0.2483208778734273
+      ]
+    }
+  ],
+  "nominated": [
+    {
+      "spec": {
+        "id": "U0",
+        "family": "convnext_unet",
+        "kind": "model",
+        "members": [
+          {
+            "config": "/root/autodl-tmp/HRDecoder_Ready_20261002/configs/resolved/U0_historical_native_export.yaml",
+            "checkpoint": "/root/autodl-tmp/HRDecoder_Ready_20261002/assets/U0_historical_best.pth",
+            "weight": 1.0
+          }
+        ],
+        "cache": "/root/autodl-tmp/HRDecoder_Ready_20261002/cache/val/U0"
+      },
+      "score": 0.008185803157983007,
+      "alone_miou": 0.38446869204975476,
+      "alone_iou": [
+        0.43677085723362574,
+        0.38426938207497247,
+        0.5093488968147359,
+        0.20748563207568488
+      ],
+      "fixed25_miou": 0.43487703221036567,
+      "fixed25_iou": [
+        0.4773652843629539,
+        0.42506225848003437,
+        0.570692469969939,
+        0.2663881160285354
+      ]
+    },
+    {
+      "spec": {
+        "id": "H1",
+        "family": "hrdecoder",
+        "kind": "model",
+        "members": [
+          {
+            "config": "/root/autodl-tmp/HRDecoder_Ready_20261002/configs/resolved/H1_hrdecoder_ext_pretrain.yaml",
+            "checkpoint": "/root/autodl-tmp/HRDecoder_Ready_20261002/work_dirs/H1_ddr_finetune/ckpt_best.pth",
+            "weight": 1.0
+          }
+        ],
+        "cache": "/root/autodl-tmp/HRDecoder_Ready_20261002/cache/val/H1"
+      },
+      "score": 0.003322455133167798,
+      "alone_miou": 0.3559504929505182,
+      "alone_iou": [
+        0.39612504294057027,
+        0.430978874080356,
+        0.4210959241651206,
+        0.17560213061602595
+      ],
+      "fixed25_miou": 0.426424773264095,
+      "fixed25_iou": [
+        0.44987383746664633,
+        0.4508568548387097,
+        0.5486802146226698,
+        0.25628818612835425
+      ]
+    }
+  ]
+}

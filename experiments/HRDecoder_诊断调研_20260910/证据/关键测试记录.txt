@@ -1,0 +1,36 @@
+C:\Users\GuanXingRen\AppData\experment\fundus-seg-2026\hrdecoder-experiments\week2\evals\combo_test_eval.log
+2026-08-18 04:24:33,880 - mmseg - INFO - Loaded 227 images from ./data/DDR_split_613/images/test
+load checkpoint from local path: work_dirs/exp_combo_split613/best_mIoU_iter_32000.pth
+EX                   49.94      66.61      69.07      64.33      71.06       0.18
+HE                   40.01      57.16      71.52      47.60      61.09       0.32
+SE                   50.31      66.94      72.03      62.52      70.94       0.10
+MA                   24.07      38.80      42.17      35.92      35.09       0.05
+global               41.08      57.38      63.70      52.59      59.55       0.16
+C:\Users\GuanXingRen\AppData\experment\fundus-seg-2026\hrdecoder-experiments\week2\evals\e1v2_test_eval.log
+2026-08-18 03:55:55,090 - mmseg - INFO - Loaded 227 images from ./data/DDR_split_613/images/test
+load checkpoint from local path: work_dirs/exp_e1_cedice_split613/best_mIoU_iter_12000.pth
+EX                   50.08      66.73      70.82      63.10      70.28       0.18
+HE                   37.10      54.12      59.57      49.58      55.17       0.41
+SE                   47.00      63.95      67.23      60.97      66.02       0.13
+MA                   23.55      38.12      40.74      35.82      33.98       0.06
+global               39.43      55.73      59.59      52.37      56.36       0.19
+C:\Users\GuanXingRen\AppData\experment\fundus-seg-2026\hrdecoder-experiments\week2\evals\e2e3_test_eval.log
+2026-08-18 08:56:41,048 - mmseg - INFO - Loaded 227 images from ./data/DDR_split_613/images/test
+load checkpoint from local path: work_dirs/exp_e2e3_split613/best_mIoU_iter_20000.pth
+EX                   52.15      68.55      77.08      61.71      73.25       0.17
+HE                   38.45      55.55      73.65      44.59      60.34       0.32
+SE                   46.07      63.08      70.13      57.31      66.24       0.15
+MA                   23.26      37.74      47.28      31.40      35.52       0.05
+global               39.98      56.23      67.04      48.75      58.84       0.17
+C:\Users\GuanXingRen\AppData\experment\fundus-seg-2026\hrdecoder-experiments\week2\evals\e4_test_eval.log
+2026-08-17 11:18:45,847 - mmseg - INFO - Loaded 227 images from ./data/DDR_split_613/images/test
+load checkpoint from local path: work_dirs/exp_e4_detail_split613/best_mIoU_iter_36000.pth
+EX                   50.93      67.49      72.81      62.89      72.00       0.17
+HE                   41.61      58.76      69.32      51.00      62.26       0.34
+SE                   49.84      66.52      70.28      63.15      69.20       0.17
+MA                   24.13      38.88      38.44      39.32      34.10       0.06
+global               41.63      57.91      62.71      54.09      59.39       0.19
+C:\Users\GuanXingRen\AppData\experment\fundus-seg-2026\hrdecoder-experiments\week2\evals\e4v2_test_eval.log
+2026-08-18 13:00:09,968 - mmseg - INFO - Loaded 227 images from ./data/DDR_split_613/images/test
+load checkpoint from local path: work_dirs/exp_e4v2_detail_split613/best_mIoU_iter_36000.pth
+MEAN: {'IoU': 0.4006, 'F1': 0.563, 'PPV': 0.6477, 'S': 0.507, 'AUPR': 0.5881}

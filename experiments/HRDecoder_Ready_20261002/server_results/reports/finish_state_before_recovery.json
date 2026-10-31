@@ -1,0 +1,9 @@
+{
+  "status": "engineering_attention_required",
+  "rules": {
+    "highres": "OOF and locked-val gain >0.001; best fixed25 nominee only; paired 4000-update continuation",
+    "second_seed": "OOF gain >=0.005 and standalone >= champion-0.015; ensemble exploration, not confirmation",
+    "final_test": "one locked pipeline only if OOF and locked-val gain >0.001; otherwise retain champion"
+  },
+  "error": "export_U0 failed (1); inspect /root/autodl-tmp/HRDecoder_Ready_20261002/reports/finish/export_U0.log; engineering failure, not method rejection"
+}

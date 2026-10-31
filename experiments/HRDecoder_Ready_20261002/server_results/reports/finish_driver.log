@@ -1,0 +1,12 @@
+/root/miniconda3/lib/python3.8/site-packages/torch/_utils.py:776: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  return self.fget.__get__(instance, owner)()
+Traceback (most recent call last):
+  File "campaign/finish_campaign.py", line 284, in <module>
+    try:main()
+  File "campaign/finish_campaign.py", line 223, in main
+    specs.append(export(s))
+  File "campaign/finish_campaign.py", line 52, in export
+    command(['tools/export_predictions.py','--config',config,'--checkpoint',ck,'--out',cache],f'export_{spec["id"]}')
+  File "campaign/finish_campaign.py", line 36, in command
+    if rc:raise RuntimeError(f'{tag} failed ({rc}); inspect {log}; engineering failure, not method rejection')
+RuntimeError: export_U0 failed (1); inspect /root/autodl-tmp/HRDecoder_Ready_20261002/reports/finish/export_U0.log; engineering failure, not method rejection

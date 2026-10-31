@@ -1,0 +1,3179 @@
+{
+  "generated_at": "2026-10-10T17:23:56.307419+08:00",
+  "report_final": true,
+  "status": "本轮已结束，双目标未达到",
+  "goal_achieved": false,
+  "baseline": [
+    {
+      "step": 4000,
+      "line": 42,
+      "mIoU": 21.557000000000002,
+      "mF1": 31.991999999999997,
+      "mPPV": 30.573,
+      "mS": 53.690000000000005
+    },
+    {
+      "step": 8000,
+      "line": 83,
+      "mIoU": 32.132,
+      "mF1": 45.288000000000004,
+      "mPPV": 46.283,
+      "mS": 50.678
+    },
+    {
+      "step": 12000,
+      "line": 124,
+      "mIoU": 34.479,
+      "mF1": 50.412,
+      "mPPV": 50.44800000000001,
+      "mS": 51.502
+    },
+    {
+      "step": 16000,
+      "line": 165,
+      "mIoU": 38.348,
+      "mF1": 54.362,
+      "mPPV": 62.056,
+      "mS": 48.711
+    },
+    {
+      "step": 20000,
+      "line": 206,
+      "mIoU": 32.523,
+      "mF1": 47.775,
+      "mPPV": 48.482,
+      "mS": 50.052
+    },
+    {
+      "step": 24000,
+      "line": 247,
+      "mIoU": 36.192,
+      "mF1": 52.344,
+      "mPPV": 56.199,
+      "mS": 49.111
+    },
+    {
+      "step": 28000,
+      "line": 288,
+      "mIoU": 37.228,
+      "mF1": 53.445,
+      "mPPV": 59.416999999999994,
+      "mS": 49.323
+    },
+    {
+      "step": 32000,
+      "line": 329,
+      "mIoU": 39.39,
+      "mF1": 55.428,
+      "mPPV": 62.107,
+      "mS": 50.20099999999999
+    },
+    {
+      "step": 36000,
+      "line": 370,
+      "mIoU": 38.727000000000004,
+      "mF1": 54.842999999999996,
+      "mPPV": 62.163000000000004,
+      "mS": 49.217
+    },
+    {
+      "step": 40000,
+      "line": 411,
+      "mIoU": 38.834999999999994,
+      "mF1": 54.954,
+      "mPPV": 60.785,
+      "mS": 50.260000000000005
+    }
+  ],
+  "runs": {
+    "v3": {
+      "description": "机制重构v3，用户主动停止",
+      "source": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\training_execution\\validation_series.json",
+      "records": [
+        {
+          "step": 4000,
+          "mIoU": 29.485856338036395,
+          "classes": [
+            {
+              "name": "EX",
+              "counts": [
+                152842,
+                100406,
+                137961
+              ],
+              "IoU": 39.069142069839906,
+              "precision": 60.35269775082133,
+              "recall": 52.55860496624863,
+              "precision_undefined": false
+            },
+            {
+              "name": "HE",
+              "counts": [
+                500309,
+                172869,
+                705615
+              ],
+              "IoU": 36.286012476129486,
+              "precision": 74.32046204718515,
+              "recall": 41.48760618413764,
+              "precision_undefined": false
+            },
+            {
+              "name": "SE",
+              "counts": [
+                135516,
+                290314,
+                65888
+              ],
+              "IoU": 27.559698851780897,
+              "precision": 31.823967310898716,
+              "recall": 67.28565470397807,
+              "precision_undefined": false
+            },
+            {
+              "name": "MA",
+              "counts": [
+                16332,
+                39389,
+                52952
+              ],
+              "IoU": 15.028571954395296,
+              "precision": 29.310313885249727,
+              "recall": 23.5725420010392,
+              "precision_undefined": false
+            }
+          ],
+          "base_head_mIoU": null,
+          "versus_baseline_pp": 7.928856338036393
+        },
+        {
+          "step": 8000,
+          "mIoU": 37.9881967542026,
+          "classes": [
+            {
+              "name": "EX",
+              "counts": [
+                147288,
+                95934,
+                143515
+              ],
+              "IoU": 38.08479664474824,
+              "precision": 60.55702197991958,
+              "recall": 50.64872095542343,
+              "precision_undefined": false
+            },
+            {
+              "name": "HE",
+              "counts": [
+                683875,
+                311787,
+                522049
+              ],
+              "IoU": 45.05963256509309,
+              "precision": 68.68545751469877,
+              "recall": 56.70962680898631,
+              "precision_undefined": false
+            },
+            {
+              "name": "SE",
+              "counts": [
+                116412,
+                36242,
+                84992
+              ],
+              "IoU": 48.985465776827716,
+              "precision": 76.25872889016993,
+              "recall": 57.80024229906059,
+              "precision_undefined": false
+            },
+            {
+              "name": "MA",
+              "counts": [
+                25228,
+                57983,
+                44056
+              ],
+              "IoU": 19.822892030141357,
+              "precision": 30.318106981048178,
+              "recall": 36.412447318284165,
+              "precision_undefined": false
+            }
+          ],
+          "base_head_mIoU": null,
+          "versus_baseline_pp": 5.8561967542026
+        },
+        {
+          "step": 12000,
+          "mIoU": 36.91339617337359,
+          "classes": [
+            {
+              "name": "EX",
+              "counts": [
+                155709,
+                86222,
+                135094
+              ],
+              "IoU": 41.2993833300179,
+              "precision": 64.36091282225097,
+              "recall": 53.544495758296854,
+              "precision_undefined": false
+            },
+            {
+              "name": "HE",
+              "counts": [
+                632766,
+                409961,
+                573158
+              ],
+              "IoU": 39.15909857446539,
+              "precision": 60.68376478215295,
+              "recall": 52.47146586352042,
+              "precision_undefined": false
+            },
+            {
+              "name": "SE",
+              "counts": [
+                109257,
+                33627,
+                92147
+              ],
+              "IoU": 46.486208202322246,
+              "precision": 76.4655244813975,
+              "recall": 54.24768127743243,
+              "precision_undefined": false
+            },
+            {
+              "name": "MA",
+              "counts": [
+                22938,
+                41480,
+                46346
+              ],
+              "IoU": 20.708894586688817,
+              "precision": 35.60805985904561,
+              "recall": 33.10721090006351,
+              "precision_undefined": false
+            }
+          ],
+          "base_head_mIoU": null,
+          "versus_baseline_pp": 2.4343961733735924
+        },
+        {
+          "step": 16000,
+          "mIoU": 34.98486487891205,
+          "classes": [
+            {
+              "name": "EX",
+              "counts": [
+                173200,
+                124952,
+                117603
+              ],
+              "IoU": 41.659150220682854,
+              "precision": 58.09117497115565,
+              "recall": 59.55922050322727,
+              "precision_undefined": false
+            },
+            {
+              "name": "HE",
+              "counts": [
+                594859,
+                328153,
+                611065
+              ],
+              "IoU": 38.7763456462746,
+              "precision": 64.44759114724403,
+              "recall": 49.32806710870668,
+              "precision_undefined": false
+            },
+            {
+              "name": "SE",
+              "counts": [
+                92601,
+                28730,
+                108803
+              ],
+              "IoU": 40.23786141986842,
+              "precision": 76.32097320552867,
+              "recall": 45.97773629123553,
+              "precision_undefined": false
+            },
+            {
+              "name": "MA",
+              "counts": [
+                29969,
+                86269,
+                39315
+              ],
+              "IoU": 19.26610222882233,
+              "precision": 25.782446360054372,
+              "recall": 43.255297038277234,
+              "precision_undefined": false
+            }
+          ],
+          "base_head_mIoU": null,
+          "versus_baseline_pp": -3.36313512108795
+        },
+        {
+          "step": 20000,
+          "mIoU": 15.050912466184402,
+          "classes": [
+            {
+              "name": "EX",
+              "counts": [
+                0,
+                0,
+                290803
+              ],
+              "IoU": 0.0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "precision_undefined": true
+            },
+            {
+              "name": "HE",
+              "counts": [
+                579594,
+                179170,
+                626330
+              ],
+              "IoU": 41.84510220966953,
+              "precision": 76.386597150102,
+              "recall": 48.062232777521636,
+              "precision_undefined": false
+            },
+            {
+              "name": "SE",
+              "counts": [
+                0,
+                0,
+                201404
+              ],
+              "IoU": 0.0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "precision_undefined": true
+            },
+            {
+              "name": "MA",
+              "counts": [
+                19416,
+                36476,
+                49868
+              ],
+              "IoU": 18.35854765506808,
+              "precision": 34.738424103628425,
+              "recall": 28.023786155533745,
+              "precision_undefined": false
+            }
+          ],
+          "base_head_mIoU": null,
+          "versus_baseline_pp": -17.472087533815603
+        }
+      ]
+    },
+    "cet": {
+      "description": "CET训练目标；完成固定40k",
+      "source": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\cet_execution\\validation_series.json",
+      "records": [
+        {
+          "step": 4000,
+          "mIoU": 29.05274412800871,
+          "classes": [
+            {
+              "name": "EX",
+              "counts": [
+                211511,
+                392740,
+                79292
+              ],
+              "IoU": 30.943334947472216,
+              "precision": 35.00383118935674,
+              "recall": 72.7334312231992,
+              "precision_undefined": false
+            },
+            {
+              "name": "HE",
+              "counts": [
+                651088,
+                330243,
+                554836
+              ],
+              "IoU": 42.38393351764489,
+              "precision": 66.34744036415847,
+              "recall": 53.99079875680391,
+              "precision_undefined": false
+            },
+            {
+              "name": "SE",
+              "counts": [
+                150365,
+                363116,
+                51039
+              ],
+              "IoU": 26.635903068093246,
+              "precision": 29.283459368506332,
+              "recall": 74.65839804571905,
+              "precision_undefined": false
+            },
+            {
+              "name": "MA",
+              "counts": [
+                31459,
+                124336,
+                37825
+              ],
+              "IoU": 16.2478049788245,
+              "precision": 20.192560736865754,
+              "recall": 45.405865712141335,
+              "precision_undefined": false
+            }
+          ],
+          "base_head_mIoU": 28.982863018084743,
+          "versus_baseline_pp": 7.49574412800871
+        },
+        {
+          "step": 8000,
+          "mIoU": 32.80910709054168,
+          "classes": [
+            {
+              "name": "EX",
+              "counts": [
+                216644,
+                578781,
+                74159
+              ],
+              "IoU": 24.913521867927653,
+              "precision": 27.23625734670145,
+              "recall": 74.4985436876511,
+              "precision_undefined": false
+            },
+            {
+              "name": "HE",
+              "counts": [
+                811545,
+                652175,
+                394379
+              ],
+              "IoU": 43.67609045589067,
+              "precision": 55.44400568414724,
+              "recall": 67.29652946620185,
+              "precision_undefined": false
+            },
+            {
+              "name": "SE",
+              "counts": [
+                125810,
+                68960,
+                75594
+              ],
+              "IoU": 46.53356216064269,
+              "precision": 64.59413667402578,
+              "recall": 62.46648527338087,
+              "precision_undefined": false
+            },
+            {
+              "name": "MA",
+              "counts": [
+                40816,
+                184023,
+                28468
+              ],
+              "IoU": 16.11325387770571,
+              "precision": 18.15343423516383,
+              "recall": 58.91114831707176,
+              "precision_undefined": false
+            }
+          ],
+          "base_head_mIoU": 32.98744745483347,
+          "versus_baseline_pp": 0.677107090541682
+        },
+        {
+          "step": 12000,
+          "mIoU": 37.6001438169049,
+          "classes": [
+            {
+              "name": "EX",
+              "counts": [
+                197122,
+                182961,
+                93681
+              ],
+              "IoU": 41.60763586933579,
+              "precision": 51.86288258090996,
+              "recall": 67.78540799097671,
+              "precision_undefined": false
+            },
+            {
+              "name": "HE",
+              "counts": [
+                810136,
+                861193,
+                395788
+              ],
+              "IoU": 39.19158905857772,
+              "precision": 48.47256285267592,
+              "recall": 67.17968959901287,
+              "precision_undefined": false
+            },
+            {
+              "name": "SE",
+              "counts": [
+                144172,
+                84720,
+                57232
+              ],
+              "IoU": 50.38794368875033,
+              "precision": 62.986910857522325,
+              "recall": 71.5834839427221,
+              "precision_undefined": false
+            },
+            {
+              "name": "MA",
+              "counts": [
+                36688,
+                121666,
+                32596
+              ],
+              "IoU": 19.213406650955747,
+              "precision": 23.168344342422674,
+              "recall": 52.953062756191905,
+              "precision_undefined": false
+            }
+          ],
+          "base_head_mIoU": 37.69526703710427,
+          "versus_baseline_pp": 3.1211438169048975
+        },
+        {
+          "step": 16000,
+          "mIoU": 38.72786209577323,
+          "classes": [
+            {
+              "name": "EX",
+              "counts": [
+                207069,
+                206142,
+                83734
+              ],
+              "IoU": 41.668393886647415,
+              "precision": 50.11217029556328,
+              "recall": 71.20593666502752,
+              "precision_undefined": false
+            },
+            {
+              "name": "HE",
+              "counts": [
+                707291,
+                491731,
+                498633
+              ],
+              "IoU": 41.66282312955224,
+              "precision": 58.98899269571368,
+              "recall": 58.65137438180184,
+              "precision_undefined": false
+            },
+            {
+              "name": "SE",
+              "counts": [
+                130656,
+                42428,
+                70748
+              ],
+              "IoU": 53.58443518488139,
+              "precision": 75.48704675186615,
+              "recall": 64.87259438740045,
+              "precision_undefined": false
+            },
+            {
+              "name": "MA",
+              "counts": [
+                37500,
+                139098,
+                31784
+              ],
+              "IoU": 17.995796182011883,
+              "precision": 21.23466856929297,
+              "recall": 54.12505051671381,
+              "precision_undefined": false
+            }
+          ],
+          "base_head_mIoU": 39.0288566255832,
+          "versus_baseline_pp": 0.37986209577323393
+        },
+        {
+          "step": 20000,
+          "mIoU": 37.9996707685524,
+          "classes": [
+            {
+              "name": "EX",
+              "counts": [
+                194629,
+                191390,
+                96174
+              ],
+              "IoU": 40.36329851325092,
+              "precision": 50.41953893461203,
+              "recall": 66.92812660116986,
+              "precision_undefined": false
+            },
+            {
+              "name": "HE",
+              "counts": [
+                710592,
+                482135,
+                495332
+              ],
+              "IoU": 42.09521112709923,
+              "precision": 59.577086793541184,
+              "recall": 58.92510639144756,
+              "precision_undefined": false
+            },
+            {
+              "name": "SE",
+              "counts": [
+                128075,
+                62090,
+                73329
+              ],
+              "IoU": 48.60641988052859,
+              "precision": 67.34940709383956,
+              "recall": 63.59109054437846,
+              "precision_undefined": false
+            },
+            {
+              "name": "MA",
+              "counts": [
+                27100,
+                60172,
+                42184
+              ],
+              "IoU": 20.933753553330863,
+              "precision": 31.052342102850858,
+              "recall": 39.11436984007852,
+              "precision_undefined": false
+            }
+          ],
+          "base_head_mIoU": 38.10145297403501,
+          "versus_baseline_pp": 5.476670768552395
+        },
+        {
+          "step": 24000,
+          "mIoU": 36.26901559804966,
+          "classes": [
+            {
+              "name": "EX",
+              "counts": [
+                196540,
+                176914,
+                94263
+              ],
+              "IoU": 42.02113671301235,
+              "precision": 52.627632854381,
+              "recall": 67.58527250406632,
+              "precision_undefined": false
+            },
+            {
+              "name": "HE",
+              "counts": [
+                763615,
+                1125561,
+                442309
+              ],
+              "IoU": 32.75230164465995,
+              "precision": 40.42053254964069,
+              "recall": 63.321983806608046,
+              "precision_undefined": false
+            },
+            {
+              "name": "SE",
+              "counts": [
+                141157,
+                87397,
+                60247
+              ],
+              "IoU": 48.87690832095457,
+              "precision": 61.760896768378586,
+              "recall": 70.08649282040079,
+              "precision_undefined": false
+            },
+            {
+              "name": "MA",
+              "counts": [
+                30011,
+                70786,
+                39273
+              ],
+              "IoU": 21.425715713571787,
+              "precision": 29.77370358244789,
+              "recall": 43.315917094855955,
+              "precision_undefined": false
+            }
+          ],
+          "base_head_mIoU": 36.80182247314578,
+          "versus_baseline_pp": 0.07701559804966251
+        },
+        {
+          "step": 28000,
+          "mIoU": 38.722222029181026,
+          "classes": [
+            {
+              "name": "EX",
+              "counts": [
+                201274,
+                169483,
+                89529
+              ],
+              "IoU": 43.72802996397892,
+              "precision": 54.2873094776363,
+              "recall": 69.21317868110026,
+              "precision_undefined": false
+            },
+            {
+              "name": "HE",
+              "counts": [
+                693973,
+                330083,
+                511951
+              ],
+              "IoU": 45.180327954234585,
+              "precision": 67.76709476825486,
+              "recall": 57.5469930111682,
+              "precision_undefined": false
+            },
+            {
+              "name": "SE",
+              "counts": [
+                134860,
+                94179,
+                66544
+              ],
+              "IoU": 45.62508669307775,
+              "precision": 58.88080195949161,
+              "recall": 66.95994121268694,
+              "precision_undefined": false
+            },
+            {
+              "name": "MA",
+              "counts": [
+                34395,
+                99688,
+                34889
+              ],
+              "IoU": 20.355443505432852,
+              "precision": 25.652021509065282,
+              "recall": 49.64349633392991,
+              "precision_undefined": false
+            }
+          ],
+          "base_head_mIoU": 39.185580554663886,
+          "versus_baseline_pp": 1.4942220291810244
+        },
+        {
+          "step": 32000,
+          "mIoU": 40.48764299170817,
+          "classes": [
+            {
+              "name": "EX",
+              "counts": [
+                172240,
+                92248,
+                118563
+              ],
+              "IoU": 44.96529182798113,
+              "precision": 65.12204712501135,
+              "recall": 59.229100112447256,
+              "precision_undefined": false
+            },
+            {
+              "name": "HE",
+              "counts": [
+                702691,
+                421502,
+                503233
+              ],
+              "IoU": 43.178061552414675,
+              "precision": 62.506260046095285,
+              "recall": 58.269924141156494,
+              "precision_undefined": false
+            },
+            {
+              "name": "SE",
+              "counts": [
+                132887,
+                52107,
+                68517
+              ],
+              "IoU": 52.418632722051505,
+              "precision": 71.8331405342876,
+              "recall": 65.98031816647138,
+              "precision_undefined": false
+            },
+            {
+              "name": "MA",
+              "counts": [
+                29802,
+                70052,
+                39482
+              ],
+              "IoU": 21.38858586438537,
+              "precision": 29.845574538826686,
+              "recall": 43.014260146642805,
+              "precision_undefined": false
+            }
+          ],
+          "base_head_mIoU": 40.65867327971011,
+          "versus_baseline_pp": 1.0976429917081703
+        },
+        {
+          "step": 36000,
+          "mIoU": 37.81122655553632,
+          "classes": [
+            {
+              "name": "EX",
+              "counts": [
+                195743,
+                151059,
+                95060
+              ],
+              "IoU": 44.29957769620379,
+              "precision": 56.44229272034187,
+              "recall": 67.3112038046375,
+              "precision_undefined": false
+            },
+            {
+              "name": "HE",
+              "counts": [
+                661731,
+                754773,
+                544193
+              ],
+              "IoU": 33.749783877876084,
+              "precision": 46.715787601023365,
+              "recall": 54.87335852010575,
+              "precision_undefined": false
+            },
+            {
+              "name": "SE",
+              "counts": [
+                133876,
+                52676,
+                67528
+              ],
+              "IoU": 52.6904911838791,
+              "precision": 71.76336892662636,
+              "recall": 66.47137097575023,
+              "precision_undefined": false
+            },
+            {
+              "name": "MA",
+              "counts": [
+                34997,
+                101391,
+                34287
+              ],
+              "IoU": 20.505053464186318,
+              "precision": 25.65988210106461,
+              "recall": 50.51238381155822,
+              "precision_undefined": false
+            }
+          ],
+          "base_head_mIoU": 38.1998034484611,
+          "versus_baseline_pp": -0.9157734444636816
+        },
+        {
+          "step": 40000,
+          "mIoU": 38.31375888746443,
+          "classes": [
+            {
+              "name": "EX",
+              "counts": [
+                197847,
+                153919,
+                92956
+              ],
+              "IoU": 44.48779237366265,
+              "precision": 56.24392351733823,
+              "recall": 68.03471766109703,
+              "precision_undefined": false
+            },
+            {
+              "name": "HE",
+              "counts": [
+                711845,
+                699065,
+                494079
+              ],
+              "IoU": 37.367407370856206,
+              "precision": 50.45289919271959,
+              "recall": 59.02901012004073,
+              "precision_undefined": false
+            },
+            {
+              "name": "SE",
+              "counts": [
+                142594,
+                78886,
+                58810
+              ],
+              "IoU": 50.87373791430304,
+              "precision": 64.3823370055987,
+              "recall": 70.79998411153701,
+              "precision_undefined": false
+            },
+            {
+              "name": "MA",
+              "counts": [
+                33218,
+                92549,
+                36066
+              ],
+              "IoU": 20.52609789103582,
+              "precision": 26.41233391907257,
+              "recall": 47.94469141504532,
+              "precision_undefined": false
+            }
+          ],
+          "base_head_mIoU": 38.53638039120965,
+          "versus_baseline_pp": -0.5212411125355629
+        }
+      ]
+    },
+    "sacd": {
+      "description": "动作纠错；20k后转入配对诊断",
+      "source": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\sacd_execution\\validation_series.json",
+      "records": [
+        {
+          "step": 4000,
+          "mIoU": 27.825649019838533,
+          "classes": [
+            {
+              "name": "EX",
+              "counts": [
+                203531,
+                451848,
+                87272
+              ],
+              "IoU": 27.406009013655137,
+              "precision": 31.055465616078635,
+              "recall": 69.98930547484035,
+              "precision_undefined": false
+            },
+            {
+              "name": "HE",
+              "counts": [
+                644374,
+                273644,
+                561550
+              ],
+              "IoU": 43.55149611237875,
+              "precision": 70.1918698761898,
+              "recall": 53.43404725339242,
+              "precision_undefined": false
+            },
+            {
+              "name": "SE",
+              "counts": [
+                134699,
+                327297,
+                66705
+              ],
+              "IoU": 25.477349201155285,
+              "precision": 29.155880137490367,
+              "recall": 66.88000238326944,
+              "precision_undefined": false
+            },
+            {
+              "name": "MA",
+              "counts": [
+                34011,
+                159473,
+                35273
+              ],
+              "IoU": 14.86774175216496,
+              "precision": 17.578197680428357,
+              "recall": 49.08925581663876,
+              "precision_undefined": false
+            }
+          ],
+          "base_head_mIoU": 27.60807250873928,
+          "versus_baseline_pp": 6.268649019838531
+        },
+        {
+          "step": 8000,
+          "mIoU": 33.469921210401324,
+          "classes": [
+            {
+              "name": "EX",
+              "counts": [
+                180994,
+                160675,
+                109809
+              ],
+              "IoU": 40.089218079286255,
+              "precision": 52.97349188834808,
+              "recall": 62.2393854258725,
+              "precision_undefined": false
+            },
+            {
+              "name": "HE",
+              "counts": [
+                750479,
+                876508,
+                455445
+              ],
+              "IoU": 36.038583732866186,
+              "precision": 46.126920497828195,
+              "recall": 62.23269459766951,
+              "precision_undefined": false
+            },
+            {
+              "name": "SE",
+              "counts": [
+                108334,
+                51370,
+                93070
+              ],
+              "IoU": 42.85804710927548,
+              "precision": 67.83424335019787,
+              "recall": 53.78939842307005,
+              "precision_undefined": false
+            },
+            {
+              "name": "MA",
+              "counts": [
+                41982,
+                212591,
+                27302
+              ],
+              "IoU": 14.893835920177384,
+              "precision": 16.491143994060643,
+              "recall": 60.59407655447145,
+              "precision_undefined": false
+            }
+          ],
+          "base_head_mIoU": 29.81638901924685,
+          "versus_baseline_pp": 1.3379212104013263
+        },
+        {
+          "step": 12000,
+          "mIoU": 36.85382300060759,
+          "classes": [
+            {
+              "name": "EX",
+              "counts": [
+                183566,
+                156597,
+                107237
+              ],
+              "IoU": 41.029503799731785,
+              "precision": 53.96412896170365,
+              "recall": 63.123832972837285,
+              "precision_undefined": false
+            },
+            {
+              "name": "HE",
+              "counts": [
+                713898,
+                668341,
+                492026
+              ],
+              "IoU": 38.08949108050356,
+              "precision": 51.6479422154924,
+              "recall": 59.19925302092006,
+              "precision_undefined": false
+            },
+            {
+              "name": "SE",
+              "counts": [
+                122688,
+                48557,
+                78716
+              ],
+              "IoU": 49.0828569256804,
+              "precision": 71.64471955385558,
+              "recall": 60.91636710293738,
+              "precision_undefined": false
+            },
+            {
+              "name": "MA",
+              "counts": [
+                30661,
+                90297,
+                38623
+              ],
+              "IoU": 19.21344019651462,
+              "precision": 25.348468063294696,
+              "recall": 44.25408463714566,
+              "precision_undefined": false
+            }
+          ],
+          "base_head_mIoU": 32.628047722281345,
+          "versus_baseline_pp": 2.3748230006075914
+        },
+        {
+          "step": 16000,
+          "mIoU": 31.47257803671591,
+          "classes": [
+            {
+              "name": "EX",
+              "counts": [
+                208389,
+                271269,
+                82414
+              ],
+              "IoU": 37.075143397998836,
+              "precision": 43.4453297974807,
+              "recall": 71.65985220235004,
+              "precision_undefined": false
+            },
+            {
+              "name": "HE",
+              "counts": [
+                682408,
+                1881983,
+                523516
+              ],
+              "IoU": 22.099370220670504,
+              "precision": 26.610918537773685,
+              "recall": 56.58797735180658,
+              "precision_undefined": false
+            },
+            {
+              "name": "SE",
+              "counts": [
+                110111,
+                38548,
+                91293
+              ],
+              "IoU": 45.88876108555044,
+              "precision": 74.06951479560605,
+              "recall": 54.67170463347302,
+              "precision_undefined": false
+            },
+            {
+              "name": "MA",
+              "counts": [
+                30048,
+                74990,
+                39236
+              ],
+              "IoU": 20.827037442643856,
+              "precision": 28.60678992364668,
+              "recall": 43.36932047803245,
+              "precision_undefined": false
+            }
+          ],
+          "base_head_mIoU": 30.87075845812955,
+          "versus_baseline_pp": -6.87542196328409
+        },
+        {
+          "step": 20000,
+          "mIoU": 37.184797631673696,
+          "classes": [
+            {
+              "name": "EX",
+              "counts": [
+                166840,
+                182795,
+                123963
+              ],
+              "IoU": 35.228189308231876,
+              "precision": 47.71833483489925,
+              "recall": 57.37217291430969,
+              "precision_undefined": false
+            },
+            {
+              "name": "HE",
+              "counts": [
+                674539,
+                417270,
+                531385
+              ],
+              "IoU": 41.556277314972824,
+              "precision": 61.78177684924744,
+              "recall": 55.93544866840696,
+              "precision_undefined": false
+            },
+            {
+              "name": "SE",
+              "counts": [
+                124891,
+                42557,
+                76513
+              ],
+              "IoU": 51.193018556244645,
+              "precision": 74.5849457742105,
+              "recall": 62.01018847689222,
+              "precision_undefined": false
+            },
+            {
+              "name": "MA",
+              "counts": [
+                23599,
+                44382,
+                45685
+              ],
+              "IoU": 20.76170534724544,
+              "precision": 34.71411129580324,
+              "recall": 34.061255123838116,
+              "precision_undefined": false
+            }
+          ],
+          "base_head_mIoU": 35.760260657904766,
+          "versus_baseline_pp": 4.661797631673693
+        }
+      ]
+    },
+    "residual": {
+      "description": "detach连续FP32残差，移除动作KL",
+      "source": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\residual_execution\\validation_series.json",
+      "records": [
+        {
+          "step": 4000,
+          "mIoU": 29.475812328118995,
+          "classes": [
+            {
+              "name": "EX",
+              "counts": [
+                171702,
+                157916,
+                119101
+              ],
+              "IoU": 38.26492749359844,
+              "precision": 52.091208611180214,
+              "recall": 59.04409514344763,
+              "precision_undefined": false
+            },
+            {
+              "name": "HE",
+              "counts": [
+                589942,
+                289592,
+                615982
+              ],
+              "IoU": 39.44738805870348,
+              "precision": 67.07438257077042,
+              "recall": 48.92032997104295,
+              "precision_undefined": false
+            },
+            {
+              "name": "SE",
+              "counts": [
+                149127,
+                383254,
+                52277
+              ],
+              "IoU": 25.506706484816764,
+              "precision": 28.0113302315447,
+              "recall": 74.04371313380072,
+              "precision_undefined": false
+            },
+            {
+              "name": "MA",
+              "counts": [
+                20303,
+                68980,
+                48981
+              ],
+              "IoU": 14.684227275357287,
+              "precision": 22.740051297559447,
+              "recall": 29.304024017089084,
+              "precision_undefined": false
+            }
+          ],
+          "base_head_mIoU": 26.2357401784832,
+          "versus_baseline_pp": 7.918812328118992
+        },
+        {
+          "step": 8000,
+          "mIoU": 37.212350205968065,
+          "classes": [
+            {
+              "name": "EX",
+              "counts": [
+                154199,
+                151286,
+                136604
+              ],
+              "IoU": 34.879628310136646,
+              "precision": 50.47678282076043,
+              "recall": 53.02524389363246,
+              "precision_undefined": false
+            },
+            {
+              "name": "HE",
+              "counts": [
+                718803,
+                322771,
+                487121
+              ],
+              "IoU": 47.020694121456536,
+              "precision": 69.01122723877516,
+              "recall": 59.6059950709995,
+              "precision_undefined": false
+            },
+            {
+              "name": "SE",
+              "counts": [
+                107051,
+                28967,
+                94353
+              ],
+              "IoU": 46.46895659609933,
+              "precision": 78.70355394139011,
+              "recall": 53.15237036007229,
+              "precision_undefined": false
+            },
+            {
+              "name": "MA",
+              "counts": [
+                26097,
+                58142,
+                43187
+              ],
+              "IoU": 20.480121796179745,
+              "precision": 30.979712484716107,
+              "recall": 37.66670515559148,
+              "precision_undefined": false
+            }
+          ],
+          "base_head_mIoU": 36.93416792984321,
+          "versus_baseline_pp": 5.080350205968067
+        }
+      ]
+    },
+    "expert": {
+      "description": "独立私有分割与可学习logit融合",
+      "source": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\expert_execution\\validation_series.json",
+      "records": [
+        {
+          "step": 2000,
+          "mIoU": 5.054378012019821,
+          "classes": [
+            {
+              "name": "EX",
+              "counts": [
+                113085,
+                322501,
+                177718
+              ],
+              "IoU": 18.438653587780284,
+              "precision": 25.961578195809782,
+              "recall": 38.88715040766429,
+              "precision_undefined": false
+            },
+            {
+              "name": "HE",
+              "counts": [
+                0,
+                0,
+                1205924
+              ],
+              "IoU": 0.0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "precision_undefined": true
+            },
+            {
+              "name": "SE",
+              "counts": [
+                6449,
+                187601,
+                194955
+              ],
+              "IoU": 1.6578193082351127,
+              "precision": 3.323370265395517,
+              "recall": 3.2020218069154534,
+              "precision_undefined": false
+            },
+            {
+              "name": "MA",
+              "counts": [
+                1682,
+                1320349,
+                67602
+              ],
+              "IoU": 0.12103915206389025,
+              "precision": 0.1272284840521894,
+              "recall": 2.42768893250967,
+              "precision_undefined": false
+            }
+          ],
+          "base_head_mIoU": 5.19908129881757,
+          "versus_baseline_pp": null
+        },
+        {
+          "step": 4000,
+          "mIoU": 27.737652600543726,
+          "classes": [
+            {
+              "name": "EX",
+              "counts": [
+                177212,
+                171422,
+                113591
+              ],
+              "IoU": 38.33890421331603,
+              "precision": 50.83038372619997,
+              "recall": 60.938848636362074,
+              "precision_undefined": false
+            },
+            {
+              "name": "HE",
+              "counts": [
+                614208,
+                308516,
+                591716
+              ],
+              "IoU": 40.5567734608172,
+              "precision": 66.5646498844725,
+              "recall": 50.932562914412514,
+              "precision_undefined": false
+            },
+            {
+              "name": "SE",
+              "counts": [
+                132169,
+                250584,
+                69235
+              ],
+              "IoU": 29.241705532005273,
+              "precision": 34.531146718641004,
+              "recall": 65.62382077813747,
+              "precision_undefined": false
+            },
+            {
+              "name": "MA",
+              "counts": [
+                40451,
+                1368602,
+                28833
+              ],
+              "IoU": 2.8132271960364035,
+              "precision": 2.8707933626343367,
+              "recall": 58.38433115870908,
+              "precision_undefined": false
+            }
+          ],
+          "base_head_mIoU": 27.783389382517942,
+          "versus_baseline_pp": 6.1806526005437235
+        }
+      ]
+    },
+    "adapter": {
+      "description": "轻量直接多尺度纠错，1/4网格",
+      "source": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\adapter_execution\\validation_series.json",
+      "records": [
+        {
+          "step": 4000,
+          "mIoU": 30.44420669911314,
+          "classes": [
+            {
+              "name": "EX",
+              "counts": [
+                183026,
+                188226,
+                107777
+              ],
+              "IoU": 38.2077076753182,
+              "precision": 49.29966707250062,
+              "recall": 62.938140253023526,
+              "precision_undefined": false
+            },
+            {
+              "name": "HE",
+              "counts": [
+                641410,
+                324625,
+                564514
+              ],
+              "IoU": 41.90718493821498,
+              "precision": 66.39614506720771,
+              "recall": 53.18826062007224,
+              "precision_undefined": false
+            },
+            {
+              "name": "SE",
+              "counts": [
+                148453,
+                341126,
+                52951
+              ],
+              "IoU": 27.363095128379996,
+              "precision": 30.322583280737124,
+              "recall": 73.70906238207782,
+              "precision_undefined": false
+            },
+            {
+              "name": "MA",
+              "counts": [
+                17120,
+                50446,
+                52164
+              ],
+              "IoU": 14.29883905453938,
+              "precision": 25.338187845958025,
+              "recall": 24.709889729230415,
+              "precision_undefined": false
+            }
+          ],
+          "base_head_mIoU": 26.808208804774136,
+          "versus_baseline_pp": 8.887206699113136
+        }
+      ]
+    },
+    "detail": {
+      "description": "1/2细节纠错网格，后发生类别崩塌",
+      "source": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\detail_execution\\validation_series.json",
+      "records": [
+        {
+          "step": 4000,
+          "mIoU": 32.03381957717303,
+          "classes": [
+            {
+              "name": "EX",
+              "counts": [
+                183170,
+                191480,
+                107633
+              ],
+              "IoU": 37.979775360110146,
+              "precision": 48.89096490057387,
+              "recall": 62.98765831164052,
+              "precision_undefined": false
+            },
+            {
+              "name": "HE",
+              "counts": [
+                637057,
+                261691,
+                568867
+              ],
+              "IoU": 43.40763756162209,
+              "precision": 70.88271684610146,
+              "recall": 52.827292598870244,
+              "precision_undefined": false
+            },
+            {
+              "name": "SE",
+              "counts": [
+                130154,
+                228138,
+                71250
+              ],
+              "IoU": 30.300645804135566,
+              "precision": 36.32623670079153,
+              "recall": 64.62334412424778,
+              "precision_undefined": false
+            },
+            {
+              "name": "MA",
+              "counts": [
+                21810,
+                63322,
+                47474
+              ],
+              "IoU": 16.447219582824307,
+              "precision": 25.619038669360524,
+              "recall": 31.479129380520757,
+              "precision_undefined": false
+            }
+          ],
+          "base_head_mIoU": 27.34992885694575,
+          "versus_baseline_pp": 10.476819577173025
+        },
+        {
+          "step": 8000,
+          "mIoU": 34.92322192097931,
+          "classes": [
+            {
+              "name": "EX",
+              "counts": [
+                158186,
+                159570,
+                132617
+              ],
+              "IoU": 35.123331105550285,
+              "precision": 49.782222837649016,
+              "recall": 54.3962751415907,
+              "precision_undefined": false
+            },
+            {
+              "name": "HE",
+              "counts": [
+                749288,
+                526690,
+                456636
+              ],
+              "IoU": 43.246100978059744,
+              "precision": 58.72264255339826,
+              "recall": 62.1339321549285,
+              "precision_undefined": false
+            },
+            {
+              "name": "SE",
+              "counts": [
+                102084,
+                47141,
+                99320
+              ],
+              "IoU": 41.07264278098533,
+              "precision": 68.40944881889764,
+              "recall": 50.686182995372484,
+              "precision_undefined": false
+            },
+            {
+              "name": "MA",
+              "counts": [
+                28340,
+                70661,
+                40944
+              ],
+              "IoU": 20.250812819321876,
+              "precision": 28.625973475015403,
+              "recall": 40.904104843831185,
+              "precision_undefined": false
+            }
+          ],
+          "base_head_mIoU": 34.733638246063755,
+          "versus_baseline_pp": 2.7912219209793108
+        },
+        {
+          "step": 12000,
+          "mIoU": 36.73584859847754,
+          "classes": [
+            {
+              "name": "EX",
+              "counts": [
+                166740,
+                137752,
+                124063
+              ],
+              "IoU": 38.907491453839064,
+              "precision": 54.76005937758627,
+              "recall": 57.33778537360344,
+              "precision_undefined": false
+            },
+            {
+              "name": "HE",
+              "counts": [
+                646787,
+                284848,
+                559137
+              ],
+              "IoU": 43.38604427772993,
+              "precision": 69.42493573126815,
+              "recall": 53.63414278180051,
+              "precision_undefined": false
+            },
+            {
+              "name": "SE",
+              "counts": [
+                122968,
+                76240,
+                78436
+              ],
+              "IoU": 44.28980997248275,
+              "precision": 61.72844464077748,
+              "recall": 61.05539115409823,
+              "precision_undefined": false
+            },
+            {
+              "name": "MA",
+              "counts": [
+                22246,
+                39979,
+                47038
+              ],
+              "IoU": 20.360048689858417,
+              "precision": 35.750903977501004,
+              "recall": 32.10842330119508,
+              "precision_undefined": false
+            }
+          ],
+          "base_head_mIoU": 36.70183042094759,
+          "versus_baseline_pp": 2.2568485984775393
+        },
+        {
+          "step": 16000,
+          "mIoU": 13.074769744480871,
+          "classes": [
+            {
+              "name": "EX",
+              "counts": [
+                20930,
+                21551,
+                269873
+              ],
+              "IoU": 6.700730581327596,
+              "precision": 49.269085002707094,
+              "recall": 7.1973122698184,
+              "precision_undefined": false
+            },
+            {
+              "name": "HE",
+              "counts": [
+                415174,
+                172433,
+                790750
+              ],
+              "IoU": 30.120933836444404,
+              "precision": 70.65504665533255,
+              "recall": 34.427874393411194,
+              "precision_undefined": false
+            },
+            {
+              "name": "SE",
+              "counts": [
+                0,
+                0,
+                201404
+              ],
+              "IoU": 0.0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "precision_undefined": true
+            },
+            {
+              "name": "MA",
+              "counts": [
+                15203,
+                28943,
+                54081
+              ],
+              "IoU": 15.477414560151486,
+              "precision": 34.43800117790966,
+              "recall": 21.943017146816004,
+              "precision_undefined": false
+            }
+          ],
+          "base_head_mIoU": 12.792119724348606,
+          "versus_baseline_pp": -25.273230255519127
+        },
+        {
+          "step": 20000,
+          "mIoU": 15.203819416035657,
+          "classes": [
+            {
+              "name": "EX",
+              "counts": [
+                0,
+                0,
+                290803
+              ],
+              "IoU": 0.0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "precision_undefined": true
+            },
+            {
+              "name": "HE",
+              "counts": [
+                607360,
+                254422,
+                598564
+              ],
+              "IoU": 41.59014370566975,
+              "precision": 70.47722045714578,
+              "recall": 50.364699599643096,
+              "precision_undefined": false
+            },
+            {
+              "name": "SE",
+              "counts": [
+                0,
+                0,
+                201404
+              ],
+              "IoU": 0.0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "precision_undefined": true
+            },
+            {
+              "name": "MA",
+              "counts": [
+                18370,
+                26268,
+                50914
+              ],
+              "IoU": 19.225133958472874,
+              "precision": 41.15327747658945,
+              "recall": 26.514058079787542,
+              "precision_undefined": false
+            }
+          ],
+          "base_head_mIoU": 15.035621747690294,
+          "versus_baseline_pp": -17.319180583964346
+        }
+      ]
+    },
+    "foundation": {
+      "description": "基础阳性梯度保护与基础教师蒸馏",
+      "source": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\foundation_execution\\validation_series.json",
+      "records": [
+        {
+          "step": 4000,
+          "mIoU": 31.679492285299254,
+          "classes": [
+            {
+              "name": "EX",
+              "counts": [
+                148317,
+                98856,
+                142486
+              ],
+              "IoU": 38.06328097131081,
+              "precision": 60.00534038912017,
+              "recall": 51.00256874929076,
+              "precision_undefined": false
+            },
+            {
+              "name": "HE",
+              "counts": [
+                567338,
+                172591,
+                638586
+              ],
+              "IoU": 41.15573642651694,
+              "precision": 76.67465391949769,
+              "recall": 47.04591665809786,
+              "precision_undefined": false
+            },
+            {
+              "name": "SE",
+              "counts": [
+                131418,
+                178067,
+                69986
+              ],
+              "IoU": 34.631895454461606,
+              "precision": 42.4634473399357,
+              "recall": 65.25093841234533,
+              "precision_undefined": false
+            },
+            {
+              "name": "MA",
+              "counts": [
+                10810,
+                14729,
+                58474
+              ],
+              "IoU": 12.86705628890767,
+              "precision": 42.32742080739261,
+              "recall": 15.602447895618036,
+              "precision_undefined": false
+            }
+          ],
+          "base_head_mIoU": 31.701351577851426,
+          "versus_baseline_pp": 10.122492285299252
+        }
+      ]
+    },
+    "aligned": {
+      "description": "私有BCE/KL按全GT正负组平衡",
+      "source": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\aligned_execution\\validation_series.json",
+      "records": [
+        {
+          "step": 4000,
+          "mIoU": 31.78233972917561,
+          "classes": [
+            {
+              "name": "EX",
+              "counts": [
+                191872,
+                296516,
+                98931
+              ],
+              "IoU": 32.66912870177876,
+              "precision": 39.28679656338812,
+              "recall": 65.98006210389852,
+              "precision_undefined": false
+            },
+            {
+              "name": "HE",
+              "counts": [
+                687787,
+                365215,
+                518137
+              ],
+              "IoU": 43.77633042016015,
+              "precision": 65.31678002510917,
+              "recall": 57.03402536146557,
+              "precision_undefined": false
+            },
+            {
+              "name": "SE",
+              "counts": [
+                143579,
+                249235,
+                57825
+              ],
+              "IoU": 31.861201538260115,
+              "precision": 36.55139582601435,
+              "recall": 71.28905086294215,
+              "precision_undefined": false
+            },
+            {
+              "name": "MA",
+              "counts": [
+                22380,
+                49615,
+                46904
+              ],
+              "IoU": 18.82269825650342,
+              "precision": 31.085492048058892,
+              "recall": 32.301830148374805,
+              "precision_undefined": false
+            }
+          ],
+          "base_head_mIoU": 32.43627163932891,
+          "versus_baseline_pp": 10.225339729175609
+        }
+      ]
+    },
+    "semantic": {
+      "description": "尺度保留语义拼接、raw-logit旁路、分支分别裁剪",
+      "source": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\semantic_execution\\validation_series.json",
+      "records": [
+        {
+          "step": 4000,
+          "mIoU": 32.88897157019957,
+          "classes": [
+            {
+              "name": "EX",
+              "counts": [
+                194379,
+                249434,
+                96424
+              ],
+              "IoU": 35.9803197485548,
+              "precision": 43.79750029854917,
+              "recall": 66.84215774940424,
+              "precision_undefined": false
+            },
+            {
+              "name": "HE",
+              "counts": [
+                711820,
+                358965,
+                494104
+              ],
+              "IoU": 45.486932299990606,
+              "precision": 66.47646352909314,
+              "recall": 59.02693702090679,
+              "precision_undefined": false
+            },
+            {
+              "name": "SE",
+              "counts": [
+                144585,
+                264474,
+                56819
+              ],
+              "IoU": 31.03494906391802,
+              "precision": 35.345756969043585,
+              "recall": 71.78854441818434,
+              "precision_undefined": false
+            },
+            {
+              "name": "MA",
+              "counts": [
+                23034,
+                51606,
+                46250
+              ],
+              "IoU": 19.05368516833485,
+              "precision": 30.860128617363344,
+              "recall": 33.2457710293863,
+              "precision_undefined": false
+            }
+          ],
+          "base_head_mIoU": 33.25499458489966,
+          "versus_baseline_pp": 11.33197157019957
+        }
+      ]
+    },
+    "iou": {
+      "description": "同Semantic网络，私有Dice改为精确binary Lovasz hinge",
+      "source": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\iou_execution\\validation_series.json",
+      "records": [
+        {
+          "step": 4000,
+          "mIoU": 26.269022697070987,
+          "classes": [
+            {
+              "name": "EX",
+              "counts": [
+                122479,
+                69154,
+                168324
+              ],
+              "IoU": 34.026008662145756,
+              "precision": 63.91331346897455,
+              "recall": 42.11751598160954,
+              "precision_undefined": false
+            },
+            {
+              "name": "HE",
+              "counts": [
+                464831,
+                88986,
+                741093
+              ],
+              "IoU": 35.89678047122966,
+              "precision": 83.93223754417073,
+              "recall": 38.54562974117772,
+              "precision_undefined": false
+            },
+            {
+              "name": "SE",
+              "counts": [
+                46755,
+                7599,
+                154649
+              ],
+              "IoU": 22.37049228958436,
+              "precision": 86.01942819295728,
+              "recall": 23.21453397151993,
+              "precision_undefined": false
+            },
+            {
+              "name": "MA",
+              "counts": [
+                11023,
+                16949,
+                58261
+              ],
+              "IoU": 12.78280936532418,
+              "precision": 39.40726440726441,
+              "recall": 15.909878182552971,
+              "precision_undefined": false
+            }
+          ],
+          "base_head_mIoU": 32.518165701262426,
+          "versus_baseline_pp": 4.712022697070985
+        }
+      ]
+    }
+  },
+  "current_outcome": {
+    "status": "SCREEN_REJECTED",
+    "exit_code": 0,
+    "time_unix": 1791623667.7907465,
+    "start_unix": 1791618823.3007941,
+    "completion": null,
+    "final_validation": null,
+    "fresh_screen_rejection": {
+      "status": "REJECTED",
+      "identity_SHA": "49ee0537d2802450284844a32405a6da0116ee9b77c2ab519aa9f985d15d47d4",
+      "decisions": {
+        "4k_floor": false,
+        "private_net_gain_at_least1pp": false,
+        "all_classes_nonzero": true,
+        "no_class_IoU_loss_over2pp": false,
+        "HE_MA_FN_FP_tradeoff": true
+      },
+      "time_unix": 1791623622.4327273,
+      "screen_updates": 4000,
+      "full_val_counts_verified": true,
+      "mIoU_4k": 26.269022697070994,
+      "base_mIoU_4k": 32.518165701262426,
+      "private_gain_pp": -6.249143004191431,
+      "calibration": {
+        "HE": {
+          "FN_ratio_final_vs_base": 1.3839245865087086,
+          "FP_ratio_final_vs_base": 0.2719637650596886,
+          "pass": true
+        },
+        "MA": {
+          "FN_ratio_final_vs_base": 1.247852813296494,
+          "FP_ratio_final_vs_base": 0.2925721979596416,
+          "pass": true
+        }
+      },
+      "criterion_registered_before_results": true,
+      "test_accessed": false,
+      "accuracy_guaranteed": false,
+      "goal_achieved": false
+    },
+    "critical_collapse": null,
+    "test_evaluation": {
+      "status": "NOT_RUN",
+      "reason": "Fresh screen rejected or training incomplete"
+    },
+    "server_kept_running": true,
+    "shutdown_command_issued": false,
+    "external_diagnostics_controlled": false,
+    "goal_achieved": false,
+    "own_RAM_retained_for_authorized_next_revision": true
+  },
+  "current_completion": null,
+  "current_test": null,
+  "scientific_audit": {
+    "status": "CONTRADICTED",
+    "goal_achieved": false,
+    "checks": [
+      {
+        "requirement": "fresh ImageNet W48 seed42 private20261008 fixed2048/batch2/40000",
+        "status": "PASS"
+      },
+      {
+        "requirement": "actual model/loss/data/training source and registered spec identity",
+        "status": "PASS"
+      },
+      {
+        "requirement": "deployment without teacher/GT/TTA/H4",
+        "status": "PASS"
+      },
+      {
+        "requirement": "audited custom student454/76/227 image-disjoint splits, no official-split claim",
+        "status": "PASS"
+      },
+      {
+        "requirement": "pinned original-env CPU gradient/deployment/optimizer invariants",
+        "status": "PASS"
+      },
+      {
+        "requirement": "new identity real2048/b2 nonzero auxiliary GPU smoke",
+        "status": "PASS"
+      },
+      {
+        "requirement": "new fresh registration has same identity and no task checkpoint",
+        "status": "PASS"
+      },
+      {
+        "requirement": "pre-result validator/reference small-code identity sealed",
+        "status": "PENDING"
+      },
+      {
+        "requirement": "4k screen sealed before actual results under renewed server authorization",
+        "status": "PENDING"
+      },
+      {
+        "requirement": "4k screen PASS same current identity",
+        "status": "PENDING"
+      },
+      {
+        "requirement": "independently recomputed full76 screen numerical criteria",
+        "status": "FAIL"
+      },
+      {
+        "requirement": "same fresh run conditional full40k continuation, renewed server availability",
+        "status": "PENDING"
+      },
+      {
+        "requirement": "fixed40000 durable own model/optimizer/RNG checkpoint loaded",
+        "status": "PENDING"
+      },
+      {
+        "requirement": "fixed40k full76 counts/metrics",
+        "status": "PENDING"
+      },
+      {
+        "requirement": "full76 GT counts equal independent label reference",
+        "status": "PENDING"
+      },
+      {
+        "requirement": "terminal own controller outcome, serverON and external diagnostics untouched",
+        "status": "FAIL"
+      },
+      {
+        "requirement": "actual post-completion SSH online and own training/controller/RAM ended",
+        "status": "PASS"
+      }
+    ],
+    "fixed40k_val_mIoU": null,
+    "fixed40k_test_mIoU": null,
+    "val_target_exceeded": null,
+    "test_target_exceeded": null,
+    "audited_at": "2026-10-10T17:18:44.298287+08:00",
+    "checkpoint_download": false,
+    "data_cache_hash_rescan": false,
+    "test_for_tuning": false,
+    "scope": "audited custom student454/76/227; no official teacher-split independence or never-previously-used dataset claim"
+  },
+  "closeout": {
+    "status": "TERMINAL_ARCHIVED_BEFORE_AUTHORIZED_SHUTDOWN",
+    "terminal_status": "SCREEN_REJECTED",
+    "identity_SHA": "49ee0537d2802450284844a32405a6da0116ee9b77c2ab519aa9f985d15d47d4",
+    "archived_at": "2026-10-10T17:18:26.404398+08:00",
+    "own_train_controller_workers_RAM_ended": true,
+    "server_online_before_shutdown": true,
+    "scientific_goal_audit_status": "CONTRADICTED",
+    "goal_achieved": false,
+    "checkpoint_downloaded": false,
+    "cache_data_hash_rescanned": false,
+    "further_training_authorized": false,
+    "receipts": [
+      {
+        "path": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\cache_execution\\server_receipts\\iou\\iou_execution\\architecture_spec.json",
+        "bytes": 2057,
+        "SHA256": "44b17b761cba4d0d403d071aec18b05b76cd6bc0129ae1b7adc8621f02faa028"
+      },
+      {
+        "path": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\cache_execution\\server_receipts\\iou\\iou_execution\\CPU_ADAPTER_PASS.json",
+        "bytes": 1648,
+        "SHA256": "846787e8c8f51c4a6ef7e4ffc339dd9ccb939eaf1c2cb0621139a889079f0f2a"
+      },
+      {
+        "path": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\cache_execution\\server_receipts\\iou\\iou_execution\\screen_protocol.json",
+        "bytes": 1515,
+        "SHA256": "8852f3f22a22cb9cb230bf40116d9da8838420a9acfcf83de3f8a25f981ef439"
+      },
+      {
+        "path": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\cache_execution\\server_receipts\\iou\\iou_execution\\validation_reporting.json",
+        "bytes": 118,
+        "SHA256": "5d7c934b0e3c375b175bc79e16b1548fea56b990e94e54dbd9d0eb107b3006b8"
+      },
+      {
+        "path": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\cache_execution\\server_receipts\\iou\\iou_execution\\WORKER_RAM_PASS.json",
+        "bytes": 758,
+        "SHA256": "44b0d5d70fdd9f1be272086d69730fed50f8da51005d6fe968f4be15ea5147ed"
+      },
+      {
+        "path": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\cache_execution\\server_receipts\\iou\\reports\\iou\\CPU_gate.log",
+        "bytes": 1522,
+        "SHA256": "8271ade50afa2869c425378eec766e241483ecce962002f4af0dae29b8ce4c12"
+      },
+      {
+        "path": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\cache_execution\\server_receipts\\iou\\reports\\iou\\CPU_TO_GPU_DISPATCH.json",
+        "bytes": 133,
+        "SHA256": "cd9ce0433ddaaaf65598902f1aa91745fd18e45671b49c96fa1aedc276dabf19"
+      },
+      {
+        "path": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\cache_execution\\server_receipts\\iou\\reports\\iou\\DEADLINE_GATE.json",
+        "bytes": 225,
+        "SHA256": "1dfcf5af8831c3960002e7102f242d6ee591f9ddca75fc852ab8030a89b03d12"
+      },
+      {
+        "path": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\cache_execution\\server_receipts\\iou\\reports\\iou\\DEPLOYMENT_DISPATCHED.json",
+        "bytes": 212,
+        "SHA256": "8192b59810d1f17e733feeb652c35f8592cbb9f4ccc27d97c3c42c8e8c11945c"
+      },
+      {
+        "path": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\cache_execution\\server_receipts\\iou\\reports\\iou\\dispatch.log",
+        "bytes": 0,
+        "SHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\cache_execution\\server_receipts\\iou\\reports\\iou\\GPU_CAMPAIGN_OUTCOME.json",
+        "bytes": 1556,
+        "SHA256": "b820304176a82062b600b9de8b1caf8c543d80f607e34adb58a921845116d147"
+      },
+      {
+        "path": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\cache_execution\\server_receipts\\iou\\reports\\iou\\GPU_CAMPAIGN_RUNNING.json",
+        "bytes": 473,
+        "SHA256": "4f0c5c75aa19568b01daad8053baa1c281adc4ca73085dba80402f2caa036cb1"
+      },
+      {
+        "path": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\cache_execution\\server_receipts\\iou\\reports\\iou\\LAST_RUN_POLICY.json",
+        "bytes": 1336,
+        "SHA256": "b4e849064b6f915e1e7f063799be2511e4bdc49002a60e098332c145eecbf7db"
+      },
+      {
+        "path": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\cache_execution\\server_receipts\\iou\\reports\\iou\\SCREEN_STARTED.json",
+        "bytes": 492,
+        "SHA256": "e3f5a1fde92b89a4249690c219b4bf4f6d7e0d2c3bb295c10e3ad72fe9962538"
+      },
+      {
+        "path": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\cache_execution\\server_receipts\\iou\\reports\\iou\\smoke.log",
+        "bytes": 194281,
+        "SHA256": "1a847019aaa33daa4b65043569a67ef4d42fb270fbba50b4979ba4148612456d"
+      },
+      {
+        "path": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\cache_execution\\server_receipts\\iou\\reports\\iou\\training.log",
+        "bytes": 236226,
+        "SHA256": "1b72bac18ace307887c02cfccb9ac02007e53a96121adcc60a571f51b682b92e"
+      },
+      {
+        "path": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\cache_execution\\server_receipts\\iou\\reports\\iou\\VALIDATOR_LOCK.json",
+        "bytes": 291,
+        "SHA256": "daaad197f62d25ec797670ffc5ee754442eb828b9378afa84cd1c8a17529fac5"
+      },
+      {
+        "path": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\cache_execution\\server_receipts\\iou\\training_runs\\iou\\GPU_SMOKE_PASS.json",
+        "bytes": 1219,
+        "SHA256": "f6e8a698b959d90ec5187852716224a7680576a6b374c43608eb9a3ca789e760"
+      },
+      {
+        "path": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\cache_execution\\server_receipts\\iou\\training_runs\\iou\\performance.json",
+        "bytes": 590,
+        "SHA256": "ff2e0fceffacdd4dd4b6f139d64ff098535c5c07b90559e3a8f4b7b7c09c23b1"
+      },
+      {
+        "path": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\cache_execution\\server_receipts\\iou\\training_runs\\iou\\progress.json",
+        "bytes": 2273,
+        "SHA256": "3673e37591afcc1e791519eec446fc5d81c6308fbf3d70525dd9fec5c4a5bdca"
+      },
+      {
+        "path": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\cache_execution\\server_receipts\\iou\\training_runs\\iou\\protocol.json",
+        "bytes": 4758,
+        "SHA256": "77762b6b16f8b6e719f41095aea6002780c00c02ec2866ebe0f08437616fd427"
+      },
+      {
+        "path": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\cache_execution\\server_receipts\\iou\\training_runs\\iou\\SCREEN_REJECTED.json",
+        "bytes": 953,
+        "SHA256": "8e0d3037ef1292ec9c27c29d8f90c9f898c7b6e17a0eddf9dd0ad2c82b933aa5"
+      },
+      {
+        "path": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\cache_execution\\server_receipts\\iou\\training_runs\\iou\\val_04000.json",
+        "bytes": 1870,
+        "SHA256": "a5b0e947ddcb72b19e69e6c311c68a46d64cf9446c86878fc2457a10e586b590"
+      },
+      {
+        "path": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\cache_execution\\server_receipts\\iou\\training_runs\\iou\\validation_progress.json",
+        "bytes": 106,
+        "SHA256": "33650736234442b3bfd14a43eb069b4c86cb647e4ff7ba4802a3a9b963827522"
+      }
+    ]
+  },
+  "experiment_closeout_audit": {
+    "status": "GOAL_NOT_ACHIEVED",
+    "experiment_closeout_status": "VERIFIED_REGISTERED_SCREEN_REJECTION_AND_SHUTDOWN_OBSERVED",
+    "audited_at": "2026-10-10T17:21:55.393203+08:00",
+    "identity_SHA": "49ee0537d2802450284844a32405a6da0116ee9b77c2ab519aa9f985d15d47d4",
+    "counts_verified": true,
+    "registered_criteria_independently_recomputed": {
+      "4k_floor": false,
+      "private_net_gain_at_least1pp": false,
+      "all_classes_nonzero": true,
+      "no_class_IoU_loss_over2pp": false,
+      "HE_MA_FN_FP_tradeoff": true
+    },
+    "criteria_sealed_before_results_verified": true,
+    "pinned_core_identity_CPU19_GPU12_verified": true,
+    "terminal_status": "SCREEN_REJECTED",
+    "completed_updates": 4000,
+    "saved_update_receipt": 4000,
+    "fixed40k_completed": false,
+    "fixed40k_val": null,
+    "fixed40k_test": null,
+    "goal_achieved": false,
+    "test_accessed": false,
+    "own_training_controller_workers_RAM_ended_before_shutdown": true,
+    "shutdown_command_exit_code": 0,
+    "SSH_disconnected_and_reconnect_failed": true,
+    "platform_power_state_or_billing_verified": false,
+    "checkpoint_download": false,
+    "old_goal_chain_audit_status": "CONTRADICTED",
+    "old_goal_chain_note": "The complete40k success-only audit correctly refuses success: measured4k numerical gate false and terminal outcome is SCREEN_REJECTED, so it labels the success chain CONTRADICTED. This closeout audit separately verifies compliance and recognizes legitimate early rejection, not corruption of counts."
+  },
+  "shutdown_observation": {
+    "status": "SHUTDOWN_REQUESTED_SSH_UNREACHABLE",
+    "requested_at": "2026-10-10T17:18:45.235789+08:00",
+    "identity_SHA": "49ee0537d2802450284844a32405a6da0116ee9b77c2ab519aa9f985d15d47d4",
+    "terminal_status": "SCREEN_REJECTED",
+    "local_receipts_archived": true,
+    "local_report_saved": true,
+    "command": "/bin/bash /usr/bin/shutdown",
+    "shutdown_command_issued": true,
+    "platform_poweroff_verified": false,
+    "external_diagnostic_processes_individually_controlled": false,
+    "SSH_transport_active_after_command": false,
+    "command_exit_code": 0,
+    "SSH_reconnect_succeeded": false,
+    "connection_error": "NoValidConnectionsError: [Errno None] Unable to connect to port 11347 on 116.136.52.182",
+    "observed_at": "2026-10-10T17:18:49.535651+08:00"
+  },
+  "warm_diagnostics": [
+    {
+      "diagnostic": "SACD父20k：control / feature_isolated",
+      "parent_step": 20000,
+      "arm": "control",
+      "probe_updates": 0,
+      "mIoU": 37.189869588930144,
+      "classes": [
+        {
+          "name": "EX",
+          "counts": [
+            166860,
+            182706,
+            123943
+          ],
+          "IoU": 35.23903452732683,
+          "precision": 47.733475223562934,
+          "recall": 57.37905042245094,
+          "precision_undefined": false
+        },
+        {
+          "name": "HE",
+          "counts": [
+            674523,
+            417213,
+            531401
+          ],
+          "IoU": 41.55675090888816,
+          "precision": 61.78444239266636,
+          "recall": 55.93412188496124,
+          "precision_undefined": false
+        },
+        {
+          "name": "SE",
+          "counts": [
+            124906,
+            42559,
+            76498
+          ],
+          "IoU": 51.198747351032736,
+          "precision": 74.58633147224793,
+          "recall": 62.01763619391869,
+          "precision_undefined": false
+        },
+        {
+          "name": "MA",
+          "counts": [
+            23595,
+            44345,
+            45689
+          ],
+          "IoU": 20.764945568472836,
+          "precision": 34.729172799528996,
+          "recall": 34.055481785116335,
+          "precision_undefined": false
+        }
+      ]
+    },
+    {
+      "diagnostic": "SACD父20k：control / feature_isolated",
+      "parent_step": 20000,
+      "arm": "feature_isolated",
+      "probe_updates": 0,
+      "mIoU": 37.184797631673696,
+      "classes": [
+        {
+          "name": "EX",
+          "counts": [
+            166840,
+            182795,
+            123963
+          ],
+          "IoU": 35.228189308231876,
+          "precision": 47.71833483489925,
+          "recall": 57.37217291430969,
+          "precision_undefined": false
+        },
+        {
+          "name": "HE",
+          "counts": [
+            674539,
+            417270,
+            531385
+          ],
+          "IoU": 41.556277314972824,
+          "precision": 61.78177684924744,
+          "recall": 55.93544866840696,
+          "precision_undefined": false
+        },
+        {
+          "name": "SE",
+          "counts": [
+            124891,
+            42557,
+            76513
+          ],
+          "IoU": 51.193018556244645,
+          "precision": 74.5849457742105,
+          "recall": 62.01018847689222,
+          "precision_undefined": false
+        },
+        {
+          "name": "MA",
+          "counts": [
+            23599,
+            44382,
+            45685
+          ],
+          "IoU": 20.76170534724544,
+          "precision": 34.71411129580324,
+          "recall": 34.061255123838116,
+          "precision_undefined": false
+        }
+      ]
+    },
+    {
+      "diagnostic": "SACD父20k：control / feature_isolated",
+      "parent_step": 20000,
+      "arm": "control",
+      "probe_updates": 250,
+      "mIoU": 38.15233685800647,
+      "classes": [
+        {
+          "name": "EX",
+          "counts": [
+            179347,
+            175123,
+            111456
+          ],
+          "IoU": 38.49259324442079,
+          "precision": 50.595819110220894,
+          "recall": 61.67302263044054,
+          "precision_undefined": false
+        },
+        {
+          "name": "HE",
+          "counts": [
+            654730,
+            418176,
+            551194
+          ],
+          "IoU": 40.31340434702297,
+          "precision": 61.023985325834694,
+          "recall": 54.2928078386366,
+          "precision_undefined": false
+        },
+        {
+          "name": "SE",
+          "counts": [
+            120525,
+            30403,
+            80879
+          ],
+          "IoU": 51.99368440124759,
+          "precision": 79.85595780769638,
+          "recall": 59.842406307719806,
+          "precision_undefined": false
+        },
+        {
+          "name": "MA",
+          "counts": [
+            27425,
+            56463,
+            41859
+          ],
+          "IoU": 21.809665439334537,
+          "precision": 32.692399389662405,
+          "recall": 39.58345361122337,
+          "precision_undefined": false
+        }
+      ]
+    },
+    {
+      "diagnostic": "SACD父20k：control / feature_isolated",
+      "parent_step": 20000,
+      "arm": "feature_isolated",
+      "probe_updates": 250,
+      "mIoU": 36.83437700312366,
+      "classes": [
+        {
+          "name": "EX",
+          "counts": [
+            183481,
+            178728,
+            107322
+          ],
+          "IoU": 39.077504999669884,
+          "precision": 50.65611290718894,
+          "recall": 63.094603563236966,
+          "precision_undefined": false
+        },
+        {
+          "name": "HE",
+          "counts": [
+            680645,
+            686681,
+            525279
+          ],
+          "IoU": 35.96339436913672,
+          "precision": 49.77927721699141,
+          "recall": 56.44178240088098,
+          "precision_undefined": false
+        },
+        {
+          "name": "SE",
+          "counts": [
+            128304,
+            54735,
+            73100
+          ],
+          "IoU": 50.091551852704974,
+          "precision": 70.096536803632,
+          "recall": 63.7047923576493,
+          "precision_undefined": false
+        },
+        {
+          "name": "MA",
+          "counts": [
+            30615,
+            68590,
+            38669
+          ],
+          "IoU": 22.205056790983072,
+          "precision": 30.860339700619928,
+          "recall": 44.18769124184516,
+          "precision_undefined": false
+        }
+      ]
+    },
+    {
+      "diagnostic": "SACD父20k：control / feature_isolated",
+      "parent_step": 20000,
+      "arm": "control",
+      "probe_updates": 500,
+      "mIoU": 35.715165932804965,
+      "classes": [
+        {
+          "name": "EX",
+          "counts": [
+            184508,
+            421640,
+            106295
+          ],
+          "IoU": 25.8979314836415,
+          "precision": 30.439430634102564,
+          "recall": 63.44776360629017,
+          "precision_undefined": false
+        },
+        {
+          "name": "HE",
+          "counts": [
+            719658,
+            421837,
+            486266
+          ],
+          "IoU": 44.21152736796127,
+          "precision": 63.04521701803337,
+          "recall": 59.67689506138032,
+          "precision_undefined": false
+        },
+        {
+          "name": "SE",
+          "counts": [
+            123456,
+            42090,
+            77948
+          ],
+          "IoU": 50.70186534370457,
+          "precision": 74.57504258635062,
+          "recall": 61.29769021469286,
+          "precision_undefined": false
+        },
+        {
+          "name": "MA",
+          "counts": [
+            31899,
+            75387,
+            37385
+          ],
+          "IoU": 22.04933953591252,
+          "precision": 29.732677143336502,
+          "recall": 46.04093297153744,
+          "precision_undefined": false
+        }
+      ]
+    },
+    {
+      "diagnostic": "SACD父20k：control / feature_isolated",
+      "parent_step": 20000,
+      "arm": "feature_isolated",
+      "probe_updates": 500,
+      "mIoU": 38.209167157535916,
+      "classes": [
+        {
+          "name": "EX",
+          "counts": [
+            176670,
+            199624,
+            114133
+          ],
+          "IoU": 36.023709950716416,
+          "precision": 46.949991230261446,
+          "recall": 60.75246816573419,
+          "precision_undefined": false
+        },
+        {
+          "name": "HE",
+          "counts": [
+            658422,
+            317254,
+            547502
+          ],
+          "IoU": 43.226858581203246,
+          "precision": 67.4836728586129,
+          "recall": 54.59896311873717,
+          "precision_undefined": false
+        },
+        {
+          "name": "SE",
+          "counts": [
+            130988,
+            52241,
+            70416
+          ],
+          "IoU": 51.64225590884898,
+          "precision": 71.48868355991682,
+          "recall": 65.03743719091975,
+          "precision_undefined": false
+        },
+        {
+          "name": "MA",
+          "counts": [
+            31277,
+            73248,
+            38007
+          ],
+          "IoU": 21.943844189375017,
+          "precision": 29.92298493183449,
+          "recall": 45.14317880030021,
+          "precision_undefined": false
+        }
+      ]
+    },
+    {
+      "diagnostic": "Residual父8k：归一化配对诊断",
+      "parent_step": 8000,
+      "arm": "control",
+      "probe_updates": 0,
+      "mIoU": 37.20991397146012,
+      "classes": [
+        {
+          "name": "EX",
+          "counts": [
+            154202,
+            151274,
+            136601
+          ],
+          "IoU": 34.881253718243656,
+          "precision": 50.479252052534406,
+          "recall": 53.02627551985365,
+          "precision_undefined": false
+        },
+        {
+          "name": "HE",
+          "counts": [
+            718764,
+            322763,
+            487160
+          ],
+          "IoU": 47.018388983487135,
+          "precision": 69.01059694083783,
+          "recall": 59.60276103635055,
+          "precision_undefined": false
+        },
+        {
+          "name": "SE",
+          "counts": [
+            107037,
+            28976,
+            94367
+          ],
+          "IoU": 46.46106432850074,
+          "precision": 78.69615404409872,
+          "recall": 53.14541915751425,
+          "precision_undefined": false
+        },
+        {
+          "name": "MA",
+          "counts": [
+            26091,
+            58120,
+            43193
+          ],
+          "IoU": 20.47894885560893,
+          "precision": 30.982888221253756,
+          "recall": 37.6580451475088,
+          "precision_undefined": false
+        }
+      ]
+    },
+    {
+      "diagnostic": "Residual父8k：归一化配对诊断",
+      "parent_step": 8000,
+      "arm": "gt_stratified",
+      "probe_updates": 0,
+      "mIoU": 37.212350205968065,
+      "classes": [
+        {
+          "name": "EX",
+          "counts": [
+            154199,
+            151286,
+            136604
+          ],
+          "IoU": 34.879628310136646,
+          "precision": 50.47678282076043,
+          "recall": 53.02524389363246,
+          "precision_undefined": false
+        },
+        {
+          "name": "HE",
+          "counts": [
+            718803,
+            322771,
+            487121
+          ],
+          "IoU": 47.020694121456536,
+          "precision": 69.01122723877516,
+          "recall": 59.6059950709995,
+          "precision_undefined": false
+        },
+        {
+          "name": "SE",
+          "counts": [
+            107051,
+            28967,
+            94353
+          ],
+          "IoU": 46.46895659609933,
+          "precision": 78.70355394139011,
+          "recall": 53.15237036007229,
+          "precision_undefined": false
+        },
+        {
+          "name": "MA",
+          "counts": [
+            26097,
+            58142,
+            43187
+          ],
+          "IoU": 20.480121796179745,
+          "precision": 30.979712484716107,
+          "recall": 37.66670515559148,
+          "precision_undefined": false
+        }
+      ]
+    },
+    {
+      "diagnostic": "Residual父8k：归一化配对诊断",
+      "parent_step": 8000,
+      "arm": "control",
+      "probe_updates": 250,
+      "mIoU": 33.34538080811538,
+      "classes": [
+        {
+          "name": "EX",
+          "counts": [
+            149896,
+            139091,
+            140907
+          ],
+          "IoU": 34.868130283279136,
+          "precision": 51.86946125604266,
+          "recall": 51.545548017042464,
+          "precision_undefined": false
+        },
+        {
+          "name": "HE",
+          "counts": [
+            583937,
+            280256,
+            621987
+          ],
+          "IoU": 39.29113566324402,
+          "precision": 67.57020711808589,
+          "recall": 48.42237155907006,
+          "precision_undefined": false
+        },
+        {
+          "name": "SE",
+          "counts": [
+            93555,
+            27183,
+            107849
+          ],
+          "IoU": 40.92752431240622,
+          "precision": 77.4859613377727,
+          "recall": 46.45141109411928,
+          "precision_undefined": false
+        },
+        {
+          "name": "MA",
+          "counts": [
+            26881,
+            77649,
+            42403
+          ],
+          "IoU": 18.294732973532152,
+          "precision": 25.71606237443796,
+          "recall": 38.79827954506091,
+          "precision_undefined": false
+        }
+      ]
+    },
+    {
+      "diagnostic": "Residual父8k：归一化配对诊断",
+      "parent_step": 8000,
+      "arm": "gt_stratified",
+      "probe_updates": 250,
+      "mIoU": 36.72721488300781,
+      "classes": [
+        {
+          "name": "EX",
+          "counts": [
+            180347,
+            162497,
+            110456
+          ],
+          "IoU": 39.78535186410765,
+          "precision": 52.603224790283626,
+          "recall": 62.016898037503054,
+          "precision_undefined": false
+        },
+        {
+          "name": "HE",
+          "counts": [
+            674363,
+            379992,
+            531561
+          ],
+          "IoU": 42.52198729314794,
+          "precision": 63.959766871689325,
+          "recall": 55.92085405050401,
+          "precision_undefined": false
+        },
+        {
+          "name": "SE",
+          "counts": [
+            125636,
+            74097,
+            75768
+          ],
+          "IoU": 45.60273828407156,
+          "precision": 62.90197413547085,
+          "recall": 62.380091755873764,
+          "precision_undefined": false
+        },
+        {
+          "name": "MA",
+          "counts": [
+            31511,
+            96574,
+            37773
+          ],
+          "IoU": 18.998782090704097,
+          "precision": 24.60163172893001,
+          "recall": 45.48091911552451,
+          "precision_undefined": false
+        }
+      ]
+    },
+    {
+      "diagnostic": "Residual父8k：归一化配对诊断",
+      "parent_step": 8000,
+      "arm": "control",
+      "probe_updates": 500,
+      "mIoU": 34.38350190107312,
+      "classes": [
+        {
+          "name": "EX",
+          "counts": [
+            165675,
+            124369,
+            125128
+          ],
+          "IoU": 39.905147745994434,
+          "precision": 57.120643764394366,
+          "recall": 56.97155806508186,
+          "precision_undefined": false
+        },
+        {
+          "name": "HE",
+          "counts": [
+            614271,
+            303373,
+            591653
+          ],
+          "IoU": 40.69914668882268,
+          "precision": 66.94001159491044,
+          "recall": 50.93778712423005,
+          "precision_undefined": false
+        },
+        {
+          "name": "SE",
+          "counts": [
+            109525,
+            75402,
+            91879
+          ],
+          "IoU": 39.567422671473885,
+          "precision": 59.226072990964,
+          "recall": 54.3807471549721,
+          "precision_undefined": false
+        },
+        {
+          "name": "MA",
+          "counts": [
+            20242,
+            47302,
+            49042
+          ],
+          "IoU": 17.362290498001475,
+          "precision": 29.96861305223262,
+          "recall": 29.215980601581894,
+          "precision_undefined": false
+        }
+      ]
+    },
+    {
+      "diagnostic": "Residual父8k：归一化配对诊断",
+      "parent_step": 8000,
+      "arm": "gt_stratified",
+      "probe_updates": 500,
+      "mIoU": 36.01561025565543,
+      "classes": [
+        {
+          "name": "EX",
+          "counts": [
+            167597,
+            125530,
+            123206
+          ],
+          "IoU": 40.25551661770746,
+          "precision": 57.175558716870164,
+          "recall": 57.63248659745601,
+          "precision_undefined": false
+        },
+        {
+          "name": "HE",
+          "counts": [
+            605865,
+            246446,
+            600059
+          ],
+          "IoU": 41.71560965869579,
+          "precision": 71.0849678110455,
+          "recall": 50.240728271433355,
+          "precision_undefined": false
+        },
+        {
+          "name": "SE",
+          "counts": [
+            133434,
+            110017,
+            67970
+          ],
+          "IoU": 42.84682150529348,
+          "precision": 54.80938669383161,
+          "recall": 66.25191158070346,
+          "precision_undefined": false
+        },
+        {
+          "name": "MA",
+          "counts": [
+            28045,
+            76446,
+            41239
+          ],
+          "IoU": 19.244493240925,
+          "precision": 26.839632121426725,
+          "recall": 40.4783211130997,
+          "precision_undefined": false
+        }
+      ]
+    },
+    {
+      "diagnostic": "research_v10配对一致性修复（未完成）",
+      "parent_step": 8000,
+      "arm": "control",
+      "probe_updates": 0,
+      "mIoU": 37.210960658943634,
+      "classes": [
+        {
+          "name": "EX",
+          "counts": [
+            154228,
+            151339,
+            136575
+          ],
+          "IoU": 34.88200623329157,
+          "precision": 50.4727277487425,
+          "recall": 53.035216280437275,
+          "precision_undefined": false
+        },
+        {
+          "name": "HE",
+          "counts": [
+            718797,
+            322791,
+            487127
+          ],
+          "IoU": 47.01968646870084,
+          "precision": 69.00972361432736,
+          "recall": 59.605497527207355,
+          "precision_undefined": false
+        },
+        {
+          "name": "SE",
+          "counts": [
+            107045,
+            28989,
+            94359
+          ],
+          "IoU": 46.46191507554483,
+          "precision": 78.68988635194142,
+          "recall": 53.149391273261706,
+          "precision_undefined": false
+        },
+        {
+          "name": "MA",
+          "counts": [
+            26091,
+            58112,
+            43193
+          ],
+          "IoU": 20.480234858237306,
+          "precision": 30.985831858722374,
+          "recall": 37.6580451475088,
+          "precision_undefined": false
+        }
+      ]
+    },
+    {
+      "diagnostic": "research_v10配对一致性修复（未完成）",
+      "parent_step": 8000,
+      "arm": "gt_stratified",
+      "probe_updates": 0,
+      "mIoU": 37.210960658943634,
+      "classes": [
+        {
+          "name": "EX",
+          "counts": [
+            154228,
+            151339,
+            136575
+          ],
+          "IoU": 34.88200623329157,
+          "precision": 50.4727277487425,
+          "recall": 53.035216280437275,
+          "precision_undefined": false
+        },
+        {
+          "name": "HE",
+          "counts": [
+            718797,
+            322791,
+            487127
+          ],
+          "IoU": 47.01968646870084,
+          "precision": 69.00972361432736,
+          "recall": 59.605497527207355,
+          "precision_undefined": false
+        },
+        {
+          "name": "SE",
+          "counts": [
+            107045,
+            28989,
+            94359
+          ],
+          "IoU": 46.46191507554483,
+          "precision": 78.68988635194142,
+          "recall": 53.149391273261706,
+          "precision_undefined": false
+        },
+        {
+          "name": "MA",
+          "counts": [
+            26091,
+            58112,
+            43193
+          ],
+          "IoU": 20.480234858237306,
+          "precision": 30.985831858722374,
+          "recall": 37.6580451475088,
+          "precision_undefined": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+```python
+import ast
+import os
+import unittest
+from pathlib import Path
+
+import numpy as np
+
+
+def _load_class():
+    src = Path(__file__).resolve().parents[1].joinpath('hrplus_patch.py').read_text()
+    tree = ast.parse(src)
+    node = next(n for n in tree.body
+                if isinstance(n, ast.ClassDef) and n.name == 'ForegroundMixedCrop')
+    mod = ast.Module(body=[node], type_ignores=[])
+
+    class _Reg:
+        def register_module(self):
+            return lambda cls: cls
+
+    def pad_to_size(img, seg, size, img_pad=0, seg_pad=255):
+        th, tw = size
+        ph, pw = max(0, th - img.shape[0]), max(0, tw - img.shape[1])
+        img2 = np.pad(img, ((0, ph), (0, pw), (0, 0)),
+                      constant_values=img_pad) if img.ndim == 3 else np.pad(
+            img, ((0, ph), (0, pw)), constant_values=img_pad)
+        seg2 = np.pad(seg, ((0, ph), (0, pw)), constant_values=seg_pad)
+        return img2, seg2
+
+    def crop_arrays(img, seg, y0, x0, ch, cw):
+        if img.ndim == 3:
+            return [img[y0:y0 + ch, x0:x0 + cw], seg[y0:y0 + ch, x0:x0 + cw]]
+        return [seg[y0:y0 + ch, x0:x0 + cw]]
+
+    def foreground_crop_bbox(gt, cs, fg_prob, rng, num_fg):
+        h, w = gt.shape
+        if rng.rand() < fg_prob:
+            return rng.randint(0, max(h - cs, 0) + 1), rng.randint(0, max(w - cs, 0) + 1)
+        classes = [c for c in range(1, num_fg + 1) if (gt == c).any()]
+        if not classes:
+            return rng.randint(0, max(h - cs, 0) + 1), rng.randint(0, max(w - cs, 0) + 1)
+        cls = classes[rng.randint(len(classes))]
+        ys, xs = np.where(gt == cls)
+        i = rng.randint(len(ys))
+        y0 = min(max(0, int(ys[i]) - rng.randint(cs)), max(h - cs, 0))
+        x0 = min(max(0, int(xs[i]) - rng.randint(cs)), max(w - cs, 0))
+        return y0, x0
+
+    ns = {'PIPELINES': _Reg(), 'np': np, 'pad_to_size': pad_to_size,
+          'crop_arrays': crop_arrays,
+          'foreground_crop_bbox': foreground_crop_bbox}
+    code = compile(mod, '<fgmc>', 'exec')
+    exec(code, ns)
+    return ns['ForegroundMixedCrop']
+
+
+FGMC = _load_class()
+
+
+class TestForegroundMixedCrop(unittest.TestCase):
+    def _results(self, h, w, aux=True):
+        rng = np.random.RandomState(0)
+        gt = np.zeros((h, w), dtype=np.uint8)
+        flat = rng.permutation(h * w)
+        for k, c in enumerate(range(1, 5)):
+            gt.ravel()[flat[k * 10:(k + 1) * 10]] = c
+        img = rng.rand(h, w, 3).astype(np.float32)
+        r = {'img': img, 'gt_semantic_seg': gt, 'seg_fields': []}
+        if aux:
+            r['aux_mask'] = gt.copy()
+            r['seg_fields'].append('aux_mask')
+        return r
+
+    def test_large_image_crop_matches_labels_and_metadata(self):
+        c = FGMC(64, fg_prob=0.0, num_fg=4, seg_fields=['aux_mask'])
+        np.random.seed(42)
+        r = c(self._results(128, 128))
+        self.assertEqual(r['img'].shape, (64, 64, 3))
+        self.assertEqual(r['img_shape'], r['img'].shape)
+        self.assertEqual(r['pad_shape'], (64, 64, 3))
+        self.assertEqual(r['gt_semantic_seg'].shape, (64, 64))
+        self.assertEqual(r['aux_mask'].shape, (64, 64))
+
+    def test_small_image_padding_label255_image0(self):
+        c = FGMC(128, fg_prob=0.0, num_fg=4, seg_fields=['aux_mask'])
+        np.random.seed(1)
+        r = c(self._results(80, 80))
+        self.assertEqual(r['img'].shape, (128, 128, 3))
+        self.assertEqual(r['gt_semantic_seg'].shape, (128, 128))
+        self.assertEqual(r['aux_mask'].shape, (128, 128))
+        self.assertTrue((r['img'][80:, 80:] == 0).all())
+        self.assertTrue((r['gt_semantic_seg'][80:, 80:] == 255).all())
+        self.assertTrue((r['aux_mask'][80:, 80:] == 255).all())
+
+    def test_all_seg_fields_transformed_identically(self):
+        c = FGMC(64, fg_prob=1.0, num_fg=4, seg_fields=['aux_mask'])
+        np.random.seed(7)
+        r = c(self._results(128, 128))
+        m = r['gt_semantic_seg'] != 255
+        self.assertTrue(np.array_equal(r['aux_mask'][m], r['gt_semantic_seg'][m]))
+        self.assertEqual(r['aux_mask'].shape, r['gt_semantic_seg'].shape)
+
+    def test_seeded_foreground_target_included(self):
+        c = FGMC(64, fg_prob=0.0, num_fg=4, seg_fields=[])
+        np.random.seed(3)
+        src = self._results(128, 128, aux=False)['gt_semantic_seg']
+        r = c({'img': np.zeros((128, 128, 3), np.float32),
+               'gt_semantic_seg': src, 'seg_fields': []})
+        kept = np.unique(r['gt_semantic_seg'][r['gt_semantic_seg'] != 255])
+        self.assertTrue(len(kept) >= 1)
+        self.assertTrue(kept.max() <= 4)
+
+
+if __name__ == '__main__':
+    unittest.main()
+```

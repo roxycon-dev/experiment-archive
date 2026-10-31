@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "scope": "8MiB immutable already-recovered archive, four independent authorized SSH streams",
+  "bytes": 8388608,
+  "seconds_including_handshakes": 25.193637799995486,
+  "aggregate_MiB_per_second": 0.317540486352528,
+  "per_connection": [
+    {
+      "range": 2,
+      "bytes": 2097152,
+      "seconds": 21.27568489999976,
+      "SHA_verified": true
+    },
+    {
+      "range": 1,
+      "bytes": 2097152,
+      "seconds": 21.849543700009235,
+      "SHA_verified": true
+    },
+    {
+      "range": 3,
+      "bytes": 2097152,
+      "seconds": 22.28718280000612,
+      "SHA_verified": true
+    },
+    {
+      "range": 0,
+      "bytes": 2097152,
+      "seconds": 23.671221800002968,
+      "SHA_verified": true
+    }
+  ],
+  "no_model_inference_or_training": true
+}

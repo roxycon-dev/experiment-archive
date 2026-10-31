@@ -1,0 +1,51 @@
+{
+  "status": "SCREEN_REJECTED",
+  "exit_code": 0,
+  "time_unix": 1791606272.2479126,
+  "start_unix": 1791601738.1210637,
+  "completion": null,
+  "final_validation": null,
+  "fresh_screen_rejection": {
+    "status": "REJECTED",
+    "identity_SHA": "cc3a215c3e867779f4c5e2a6feedb5921c95b4cf48bfc9fe610003216be73bf8",
+    "decisions": {
+      "4k_floor": true,
+      "private_net_gain_at_least1pp": false,
+      "all_classes_nonzero": true,
+      "no_class_IoU_loss_over2pp": false,
+      "HE_MA_FN_FP_tradeoff": true
+    },
+    "time_unix": 1791606227.080085,
+    "screen_updates": 4000,
+    "full_val_counts_verified": true,
+    "mIoU_4k": 31.67949228529926,
+    "base_mIoU_4k": 31.701351577851426,
+    "private_gain_pp": -0.02185929255216479,
+    "calibration": {
+      "HE": {
+        "FN_ratio_final_vs_base": 1.1483294371515915,
+        "FP_ratio_final_vs_base": 0.5693479537372418,
+        "pass": true
+      },
+      "MA": {
+        "FN_ratio_final_vs_base": 1.2000574641874975,
+        "FP_ratio_final_vs_base": 0.33049117059707855,
+        "pass": true
+      }
+    },
+    "criterion_registered_before_results": true,
+    "test_accessed": false,
+    "accuracy_guaranteed": false,
+    "goal_achieved": false
+  },
+  "critical_collapse": null,
+  "test_evaluation": {
+    "status": "NOT_RUN",
+    "reason": "Fresh screen rejected or training incomplete"
+  },
+  "server_kept_running": true,
+  "shutdown_command_issued": false,
+  "external_diagnostics_controlled": false,
+  "goal_achieved": false,
+  "own_RAM_retained_for_authorized_next_revision": true
+}

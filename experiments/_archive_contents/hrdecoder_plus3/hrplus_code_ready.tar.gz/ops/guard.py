@@ -1,0 +1,249 @@
+#!/usr/bin/env python3
+"""Guard: run a command under a hard UTC deadline, dry-run shutdown by default.
+
+Fixes over oldguard:
+- deadline is REQUIRED ISO-8601 WITH timezone (naive/expired/>12h rejected before launch)
+- ISO 'Z' suffix accepted (parsed as UTC; compatible with Python 3.8)
+- exit codes: child propagated; timeout 124; signal-interrupt 130; preflight reject 2
+- signal handlers run full cleanup (SIGTERM group, SIGKILL after 5s) not just a flag
+- atomic JSON state write (mkdir parent + tmp + os.replace), even on preflight reject
+- ALL post-argparse outcomes (incl. preflight reject, launch failure, bad deadlines)
+  flow through one finally: process-group cleanup, state write, dry-run marker or
+  armed shutdown. Nothing is ever launched for an invalid deadline.
+- process group is ALWAYS cleaned after child exit (leader exiting normally does
+  not orphan descendants in the group)
+- armed shutdown: nonzero exit status of /usr/bin/shutdown is reported visibly
+  and recorded in state; signal handlers are restored only after all cleanup
+  and the shutdown decision
+"""
+import argparse
+import datetime
+import json
+import os
+from pathlib import Path
+import signal
+import subprocess
+import sys
+import tempfile
+import time
+
+MAX_SESSION_SECONDS = 12 * 3600
+TERMINATION_GRACE = 5  # seconds between SIGTERM and SIGKILL
+
+
+class PreflightError(Exception):
+    pass
+
+
+def parse_deadline(value):
+    # Python 3.8 fromisoformat cannot parse trailing 'Z'; normalize to +00:00.
+    normalized = value[:-1] + '+00:00' if value.endswith('Z') else value
+    try:
+        dt = datetime.datetime.fromisoformat(normalized)
+    except ValueError:
+        raise PreflightError('deadline must be ISO-8601 with timezone: %r' % value)
+    if dt.tzinfo is None or dt.tzinfo.utcoffset(dt) is None:
+        raise PreflightError('deadline must include timezone offset (naive rejected)')
+    return dt
+
+
+def preflight(deadline_str, cmd):
+    dt = parse_deadline(deadline_str)
+    now = datetime.datetime.now(dt.tzinfo)
+    delta = (dt - now).total_seconds()
+    if delta <= 0:
+        raise PreflightError('deadline already expired')
+    if delta > MAX_SESSION_SECONDS:
+        raise PreflightError('deadline more than 12h from now (max session 12h)')
+    if not cmd:
+        raise PreflightError('missing command')
+    return dt.timestamp(), delta
+
+
+def atomic_write_json(path, obj):
+    full = os.path.abspath(path)
+    os.makedirs(os.path.dirname(full), exist_ok=True)
+    fd, tmp = tempfile.mkstemp(dir=os.path.dirname(full), suffix='.tmp')
+    try:
+        with os.fdopen(fd, 'w') as f:
+            json.dump(obj, f, indent=2)
+            f.flush()
+            os.fsync(f.fileno())
+        os.replace(tmp, full)
+    except BaseException:
+        try:
+            os.unlink(tmp)
+        except OSError:
+            pass
+        raise
+
+
+def _group_gone(pgid):
+    try:
+        os.killpg(pgid, 0)
+    except ProcessLookupError:
+        return True
+    return False
+
+
+def terminate_group(pid):
+    """SIGTERM process group, then SIGKILL after grace. Returns True if gone
+    before SIGKILL was needed."""
+    if _group_gone(pid):
+        return True
+    try:
+        os.killpg(pid, signal.SIGTERM)
+    except ProcessLookupError:
+        return True
+    deadline = time.time() + TERMINATION_GRACE
+    while time.time() < deadline:
+        if _group_gone(pid):
+            return True
+        time.sleep(0.1)
+    try:
+        os.killpg(pid, signal.SIGKILL)
+    except ProcessLookupError:
+        pass
+    return False
+
+
+def sweep_group(pid):
+    """Best-effort cleanup of any remaining members of the child's process
+    group (e.g. descendants) even when the leader already exited normally."""
+    terminate_group(pid)
+
+
+def main():
+    parser = argparse.ArgumentParser(description='Deadline guard runner')
+    parser.add_argument('--deadline-utc', required=True,
+                        help='ISO-8601 UTC deadline with timezone, e.g. 2024-01-01T00:00:00+00:00')
+    parser.add_argument('--log', required=True)
+    parser.add_argument('--execute-shutdown', action='store_true',
+                        help='ARM: actually run /bin/bash /usr/bin/shutdown at the end')
+    parser.add_argument('cmd', nargs=argparse.REMAINDER)
+    args = parser.parse_args()
+    cmd = args.cmd[1:] if args.cmd[:1] == ['--'] else args.cmd
+
+    state = {'started_unix': time.time(), 'deadline': args.deadline_utc,
+             'command': cmd, 'execute_shutdown': bool(args.execute_shutdown),
+             'status': 'starting', 'returncode': None}
+    proc = None
+    logf = None
+    exit_code = 1
+    prev = {}
+
+    try:
+        # ----- preflight (no child launched on any rejection) -----
+        try:
+            deadline_unix, delta = preflight(args.deadline_utc, cmd)
+            state['deadline_unix'] = deadline_unix
+            state['preflight_seconds'] = delta
+        except PreflightError as exc:
+            state['status'] = 'preflight_rejected'
+            state['error'] = str(exc)
+            state['ended_unix'] = time.time()
+            exit_code = 2
+            # No shutdown attempt: nothing was launched, session never started.
+            # The dry-run marker / armed-shutdown decision still happens in the
+            # shared finally below, so behavior is consistent for every path.
+            raise
+
+        def on_signal(signum, frame):
+            interrupted.append(signum)
+
+        interrupted = []
+        for sig in (signal.SIGTERM, signal.SIGINT):
+            prev[sig] = signal.signal(sig, on_signal)
+
+        Path(args.log).parent.mkdir(parents=True, exist_ok=True)
+        logf = open(args.log, 'ab', buffering=0)
+        proc = subprocess.Popen(cmd, stdout=logf, stderr=logf,
+                                start_new_session=True, shell=False)
+        state['pid'] = proc.pid
+        state['status'] = 'running'
+        atomic_write_json(args.log + '.status.json', state)
+
+        while proc.poll() is None and time.time() < deadline_unix and not interrupted:
+            time.sleep(min(1.0, max(0.05, deadline_unix - time.time())))
+
+        if proc.poll() is None:
+            if interrupted:
+                state['status'] = 'interrupted'
+            else:
+                state['status'] = 'timeout'
+            killed = terminate_group(proc.pid)
+            state['killed_with_sigkill'] = not killed
+            try:
+                proc.wait(timeout=TERMINATION_GRACE + 10)
+            except subprocess.TimeoutExpired:
+                pass
+            exit_code = 124 if state['status'] == 'timeout' else 130
+        else:
+            state['status'] = 'success' if proc.returncode == 0 else 'failure'
+            exit_code = proc.returncode
+            # Leader exited on its own; still clean up any descendants left in
+            # the child's process group so nothing is orphaned.
+            sweep_group(proc.pid)
+        state['returncode'] = exit_code
+    except PreflightError:
+        exit_code = 2
+    except BaseException as exc:
+        state['status'] = 'wrapper_error'
+        state['error'] = repr(exc)
+        exit_code = 125
+    finally:
+        # Full cleanup for EVERY post-argparse outcome, including preflight
+        # rejection and launch failure.
+        if proc is not None:
+            if proc.poll() is None:
+                terminate_group(proc.pid)
+                try:
+                    proc.wait(timeout=TERMINATION_GRACE + 10)
+                except subprocess.TimeoutExpired:
+                    pass
+            else:
+                sweep_group(proc.pid)
+                try:
+                    proc.wait(timeout=10)  # reap child
+                except subprocess.TimeoutExpired:
+                    pass
+        if logf is not None:
+            try:
+                logf.close()
+            except Exception:
+                pass
+        state['ended_unix'] = time.time()
+        state['returncode'] = exit_code
+        try:
+            atomic_write_json(args.log + '.status.json', state)
+            print(json.dumps(state), flush=True)
+        finally:
+            # Shutdown on every completed session (success/failure/timeout/
+            # launch error) ONLY when explicitly armed. Never in dry-run;
+            # preflight rejection reaches this point but the machine state was
+            # never changed by us, so arming still honors the operator's
+            # explicit request consistently.
+            if args.execute_shutdown:
+                try:
+                    r = subprocess.run(['/bin/bash', '/usr/bin/shutdown'],
+                                       timeout=30, check=False, shell=False)
+                    if r.returncode != 0:
+                        state['shutdown_status'] = r.returncode
+                        print('SHUTDOWN_NONZERO_STATUS %d' % r.returncode, flush=True)
+                except Exception as exc:
+                    state['shutdown_error'] = repr(exc)
+                    print('SHUTDOWN_INVOCATION_ERROR %r' % (exc,), flush=True)
+            else:
+                print('DRY_RUN_SHUTDOWN', flush=True)
+            # Restore signal handlers only after ALL cleanup and the shutdown
+            # decision are complete.
+            for sig, handler in prev.items():
+                try:
+                    signal.signal(sig, handler)
+                except Exception:
+                    pass
+    sys.exit(exit_code)
+
+
+if __name__ == '__main__':
+    main()

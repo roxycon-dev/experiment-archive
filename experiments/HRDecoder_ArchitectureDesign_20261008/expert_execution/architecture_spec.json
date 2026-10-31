@@ -1,0 +1,70 @@
+{
+  "design_version": 9,
+  "name": "HRDecoder-PrivateExpert",
+  "seed": 42,
+  "private_seed": 20261008,
+  "canvas": 2048,
+  "updates": 40000,
+  "global_batch": 2,
+  "precision": "BF16 network; FP32 residual composition/probabilities/losses",
+  "optimizer": {
+    "type": "SGD",
+    "lr": 0.005,
+    "momentum": 0.9,
+    "weight_decay": 0.0005
+  },
+  "lr": {
+    "type": "poly",
+    "power": 1,
+    "warmup": 1500,
+    "warmup_ratio": 1e-06
+  },
+  "lambda_k": [
+    [
+      0,
+      0
+    ],
+    [
+      1500,
+      0
+    ],
+    [
+      4000,
+      0.5
+    ],
+    [
+      32000,
+      0.5
+    ],
+    [
+      40000,
+      0.1
+    ]
+  ],
+  "GT": "base original-formula Dice + .1 HRcrop; private standalone Dice + .5 fused Dice; no ordinary BCE",
+  "mask": "Existing geometry-valid and ignore255 masking retained; not claiming every original training detail identical",
+  "KD": "private standalone fixed GT-consistent T* KL; positive/negative GT strata independently normalized at fixed .5/.5",
+  "readout": "four independent private segmentation logits zero initialized; four learned per-class convex logit fusion weights initialized .5",
+  "gradient_route": "features and p0 detached; final=alpha*base.float().detach()+(1-alpha)*private.float(); base supervised independently",
+  "inference": "resize final FP32 logits then sigmoid; no teacher or GT",
+  "classes": [
+    "EX",
+    "HE",
+    "SE",
+    "MA"
+  ],
+  "threshold": "strictly > .5",
+  "validation_images": 76,
+  "validation_interval": 4000,
+  "student_TTA": false,
+  "inference_teacher": false,
+  "inference_online_H4": false,
+  "test_selection": false,
+  "shutdown_after_completion": false,
+  "data_cache_hash_rescan": false,
+  "initialization": "fresh ImageNet W48 seed42; no warm task weights",
+  "screen_updates": 4000,
+  "accuracy_guaranteed": false,
+  "initialization_parity": "At zero private logits and alpha=.5, hard decisions equal base; probabilities intentionally differ",
+  "validation_extra_screen_probe": 2000
+}

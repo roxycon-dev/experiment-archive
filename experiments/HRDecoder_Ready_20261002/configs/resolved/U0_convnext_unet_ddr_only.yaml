@@ -1,0 +1,150 @@
+schema_version: '1.0'
+arm_id: U0
+role: DDR-only control for convnext_unet family
+status: locked-intent
+structure:
+  family: convnext_unet
+  paired_group: convnext_unet
+  definition_ref: 主方案第三节；DP-UNet 仅借鉴结构思想，不声称复现其官方源码
+  encoder: convnext_small
+  encoder_weights_source: https://dl.fbaipublicfiles.com/convnext/convnext_small_1k_224_ema.pth
+  encoder_weights_file: D:\dataset\experiment\HRDecoder_Ready_20261002\assets\convnext_small_1k_224_ema.pth
+  encoder_weights_sha256: fe969be0ad46c62ace0981c933ff47af59b9753365d71466efa6896571a879ad
+  training_entry: train.py
+  library: builtin
+  library_version: builtin-source-20261002
+  decoder: unet
+  output_heads: 4
+  detail_branch: false
+  full_input_resolution_decode: true
+initialization:
+  imagenet_weights:
+    source: https://dl.fbaipublicfiles.com/convnext/convnext_small_1k_224_ema.pth
+    file: D:\dataset\experiment\HRDecoder_Ready_20261002\assets\convnext_small_1k_224_ema.pth
+    sha256: fe969be0ad46c62ace0981c933ff47af59b9753365d71466efa6896571a879ad
+  external_pretrain_checkpoint: null
+data:
+  ddr_root: D:\HRDecoder\data\DDR_split_613
+  ddr_train_split: train
+  ddr_val_split: val
+  ddr_test_split: test
+  channel_order:
+  - EX
+  - HE
+  - SE
+  - MA
+  input_fov: 2048
+  train_crop: 1024
+  ddr_normalization:
+    mean:
+    - 123.675
+    - 116.28
+    - 103.53
+    std:
+    - 58.395
+    - 57.12
+    - 57.375
+ddr_finetune_stage:
+  seed: 42
+  updates: 12000
+  effective_batch: 8
+  micro_batch: 2
+  grad_accum: 4
+  eval_progress_points:
+  - 0.25
+  - 0.5
+  - 0.75
+  - 1.0
+  optimizer: adamw
+  weight_decay: 0.01
+  warmup_ratio: 0.05
+  lr_schedule: cosine
+  cosine_min_ratio: 0.01
+  backbone_lr: 0.0001
+  decoder_lr: 0.0003
+  augmentation:
+    resize_ratio_range:
+    - 0.5
+    - 2.0
+    random_crop_cat_max_ratio: 0.75
+    flip_ratio: 0.5
+    rotate_degrees:
+    - -45
+    - 45
+    photometric: light
+  sampling: random_plus_foreground_mixed
+  norm_policy: layernorm_native
+  mixed_precision: true
+  gradient_checkpointing: false
+  log_every: 100
+  num_workers: 0
+  periodic_save_updates: 1000
+  screening:
+    enabled: true
+    min_progress: 0.5
+    minimum_gain: 0.003
+    gap: 0.015
+    reference_miou: 0.426694
+    reference_class_iou:
+      EX: 0.457715
+      HE: 0.437583
+      SE: 0.551807
+      MA: 0.259672
+    class_margin: 0.005
+loss:
+  type: binary_per_class
+  recipe: ce_dice
+  smooth: 1.0e-05
+  per_class_valid_masking: true
+  ce_weight: 1.0
+  dice_weight: 1.0
+metrics:
+  protocol: whole_image_accumulated_counts
+  threshold: 0.5
+  primary: mIoU_lesion4
+  reported:
+  - mF1
+  - mPPV
+  - mRecall
+  - mAUPR
+  eval_mode: sliding_window
+  window_size: 1024
+  window_stride: 768
+  resize_to:
+  - 2048
+  - 2048
+checkpoint_selection:
+  allowed_splits:
+  - val
+  test_forbidden: true
+test_usage:
+  train_on_test: forbidden
+  select_checkpoint_on_test: forbidden
+  final_single_eval: allowed_only_after_full_lock
+equivalence_lock:
+  identical_with: U1
+  fields:
+  - data
+  - ddr_finetune_stage
+  - loss
+  - metrics
+  - checkpoint_selection
+  - test_usage
+  - structure.family
+  - structure.paired_group
+  - structure.encoder
+  - structure.detail_branch
+  - structure.library
+  - structure.encoder_weights_source
+  - structure.encoder_weights_file
+  - structure.encoder_weights_sha256
+  - initialization.imagenet_weights
+notes: "U0 回答\"异构特征和解码路径能否提供增量\"。ConvNeXt 归一化统计在首次工程验证后 一次性填写；填写前 preflight 保持 FAIL。\n\
+  相对上一版锁定意图的两处修正（U0/U1 同步，equivalence_lock 仍要求逐字段一致）： 1) structure.library 由 segmentation_models_pytorch\
+  \ 改为 builtin：v1 使用本工作区\n   纯 torch 的 ConvNeXt-S 编码器实现，不引入无法离线核实的第三方分割库依赖；\n   \"\
+  库支持某组合\" != \"该组合已验证\"，故不保留一个不可构建的声明。\n2) structure.detail_branch 由 true 改为 false：v1\
+  \ 没有实现该支路，也没有 shape test；\n   按\"配置不得声称 true 而代码无实现\"的约束统一置 false。若后续实现并补 shape\
+  \ test，\n   再把两臂一起改回 true 并重跑 preflight。\n"
+execution_revision: '20261002: fp32 loss, real transfer, source sampling, explicit
+  geometry'
+historical_comparison: 'descriptive_only: historical controls used an earlier implementation'

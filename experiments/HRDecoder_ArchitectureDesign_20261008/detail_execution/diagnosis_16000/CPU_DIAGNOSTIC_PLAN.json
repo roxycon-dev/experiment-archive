@@ -1,0 +1,11 @@
+{
+  "purpose": "Investigate16k full-val collapse with read-only CPU checkpoint/model/BN/source checks while current training continues",
+  "best_checkpoint": "own best_val.pt@12000",
+  "latest_checkpoint": "own atomic last.pt; >=17000, not exact16k",
+  "GPU_use": false,
+  "checkpoint_download": false,
+  "training_mutation": false,
+  "code_identity_change": false,
+  "test_access": false,
+  "output": "reports/detail/diagnosis_16000/CHECKPOINT_CPU_DIAGNOSTIC.json"
+}

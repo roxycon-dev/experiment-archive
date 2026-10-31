@@ -1,0 +1,44 @@
+{
+  "branch": "A",
+  "script_sha256": "3b48765fb87705fa02ba104e9b08f3d1712acc8d51f9fbbdc1d906c56caa79f3",
+  "helper_sha256": "143c70c61c7881b0203ebb7a053dd5df115a11588c6e6af239900be5d9a3094b",
+  "protocol_sha256": "1adda5560edd53d8c6eeac42d0968b111db33bb8e94959db8fe91d082973cfbe",
+  "torch": "2.0.1+cu117",
+  "GPU": "NVIDIA GeForce RTX 2080 Ti",
+  "precision": "FP32",
+  "threshold_or_weight_search": false,
+  "weight_transport_receipt": {
+    "status": "PASS",
+    "archive_sha256": "64992291abf92fca13cacda721f02eddef0763e660179ac825c6f43848e0a0ce",
+    "files": [
+      {
+        "name": "B_weights.pth",
+        "source_file_sha256": "0b3cd72e740fc5c69242994c12cfd71a49ac892aff37d09c50bb9fb6931a8626",
+        "reconstructed_file_sha256": "59a5c963d24a54725dc517c4485f42c48c09b0b5fe8f1dbdee08389e1100e858",
+        "state_tensors": 1877,
+        "all_original_tensor_bytes_verified": true
+      },
+      {
+        "name": "D_student_2000.pth",
+        "source_file_sha256": "5fe18717b62d8fc3ab4846a50c046588e2af05abbbfdb3a958f4794018b319ea",
+        "reconstructed_file_sha256": "6f12afca5ea578fcbaf61100c658b108ff5aff682f1dcb713aaf14e6f4557f46",
+        "state_tensors": 1877,
+        "all_original_tensor_bytes_verified": true
+      },
+      {
+        "name": "E4_weights.pth",
+        "source_file_sha256": "c5a3d0f0b990d2430e545146745bc809538bbe764979baf54f62b450785268e0",
+        "reconstructed_file_sha256": "91df81f689d4022b8decc0a918ebd3ea8565cb02914b5d82780331a44b50da6d",
+        "state_tensors": 1877,
+        "all_original_tensor_bytes_verified": true
+      },
+      {
+        "name": "E_1500.pth",
+        "source_file_sha256": "a18ff92b4da24d870554f17856983d4be042386cacbcaba0d4e13f3f248ed5e5",
+        "reconstructed_file_sha256": "1520ba60daa9010ceec459a599433db00bfc5d2999b6be281449ecf3b2e77c3a",
+        "state_tensors": 3774,
+        "all_original_tensor_bytes_verified": true
+      }
+    ]
+  }
+}

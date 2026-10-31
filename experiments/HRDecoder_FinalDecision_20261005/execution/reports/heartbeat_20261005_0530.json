@@ -1,0 +1,50 @@
+{
+  "stage": "SECOND_FORMAL_SD_STARTED_BOTH_NODES_HEALTHY",
+  "observed_at": "2026-10-05T05:40:05.564526+00:00",
+  "seed_scope": [
+    42
+  ],
+  "primary_runs": {
+    "C_seed42": {
+      "stage": "COMPLETE",
+      "completed": 32000,
+      "endpoint": 32000,
+      "updated_at": "2026-10-05T02:31:24.012530+00:00"
+    },
+    "S_seed42": {
+      "stage": "TRAINING",
+      "completed": 13240,
+      "endpoint": 32000,
+      "updated_at": "2026-10-05T05:40:03.311082+00:00",
+      "recent": {
+        "loss": 0.1281086504459381,
+        "grad_norm": 0.8613573908805847,
+        "seconds": 0.8093378560151905,
+        "data_wait_seconds": 0.001363525865599513,
+        "peak_gpu_bytes": 11004799488
+      }
+    }
+  },
+  "second_run": {
+    "stage": "TRAINING",
+    "completed": 300,
+    "endpoint": 32000,
+    "updated_at": "2026-10-05T05:39:44.680250+00:00",
+    "recent": {
+      "loss": 0.2565050423145294,
+      "grad_norm": 12.179962158203125,
+      "seconds": 1.2001778483390808,
+      "data_wait_seconds": 0.0029216408729553223,
+      "peak_gpu_bytes": 11005601280
+    }
+  },
+  "second_GPU_ready": "2026-10-05T05:31:23.896370+00:00",
+  "attendants": [
+    32844,
+    8552
+  ],
+  "coordinator": 13216,
+  "no_duplicate_mirror_or_training": true,
+  "scientific_source_unchanged": true,
+  "shutdown_not_eligible": true
+}

@@ -1,0 +1,20 @@
+{
+  "status": "complete",
+  "stop_reason": null,
+  "elapsed_seconds": 4.5525296999985585,
+  "stage": "ddr_finetune",
+  "mode": "calibration",
+  "updates_done": 3,
+  "micro_steps": 9,
+  "best": {
+    "mIoU_lesion4": 0.0585579718005836,
+    "update": 3
+  },
+  "resume_warnings": [],
+  "checkpoints": {
+    "last": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\tests\\_tmp_training\\accum\\ckpt_last.pth",
+    "best": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\tests\\_tmp_training\\accum\\ckpt_best.pth",
+    "final": "D:\\dataset\\experiment\\HRDecoder_Ready_20261002\\tests\\_tmp_training\\accum\\ckpt_final.pth"
+  },
+  "generated_at": "2026-10-02T01:21:37.203404+00:00"
+}

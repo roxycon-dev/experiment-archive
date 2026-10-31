@@ -1,0 +1,47 @@
+{
+  "complete": "COMPLETE",
+  "train_batches": 8,
+  "SGD_updates": 0,
+  "classes": [
+    {
+      "name": "EX",
+      "positive_batches": 8,
+      "old_total_pos_grad": -8.553841723824007e-06,
+      "new_total_pos_grad": -2.2027900797638722e-05,
+      "old_positive_lowering_fraction": 0.0,
+      "new_positive_lowering_fraction": 0.031429800495970994,
+      "median_GT_gradient_ratio_new_to_old": 1.5778679314434902,
+      "median_KD_gradient_ratio_new_to_old": 921.8513502194879
+    },
+    {
+      "name": "HE",
+      "positive_batches": 8,
+      "old_total_pos_grad": -4.684950940969657e-06,
+      "new_total_pos_grad": -1.0436172657612985e-05,
+      "old_positive_lowering_fraction": 0.0,
+      "new_positive_lowering_fraction": 0.005119169758472708,
+      "median_GT_gradient_ratio_new_to_old": 1.7109175977475326,
+      "median_KD_gradient_ratio_new_to_old": 546.4190698210691
+    },
+    {
+      "name": "SE",
+      "positive_batches": 6,
+      "old_total_pos_grad": -1.7642324555329954e-06,
+      "new_total_pos_grad": -3.577784164339922e-06,
+      "old_positive_lowering_fraction": 0.0,
+      "new_positive_lowering_fraction": 0.1502040665363893,
+      "median_GT_gradient_ratio_new_to_old": 1.6471222944948365,
+      "median_KD_gradient_ratio_new_to_old": 481.9306690187803
+    },
+    {
+      "name": "MA",
+      "positive_batches": 6,
+      "old_total_pos_grad": -4.3882667872215585e-05,
+      "new_total_pos_grad": -9.741239500726806e-05,
+      "old_positive_lowering_fraction": 0.0,
+      "new_positive_lowering_fraction": 0.003060263581573963,
+      "median_GT_gradient_ratio_new_to_old": 1.7103754346902926,
+      "median_KD_gradient_ratio_new_to_old": 4019.862705834223
+    }
+  ]
+}

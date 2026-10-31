@@ -1,0 +1,85 @@
+{
+  "status": "REJECTED_NUMERICAL_PARITY",
+  "saved_completed": 3000,
+  "canvas": 2048,
+  "batch": 2,
+  "formal_updates": 0,
+  "checkpoint_written": false,
+  "optimizer_step_disabled": true,
+  "global_gradient_relative_L2": 0.07885053742569821,
+  "max_loss_absolute_difference": 0.0002143383026123047,
+  "gradient_tolerance": 0.05,
+  "loss_tolerance": 0.01,
+  "measurements": [
+    {
+      "layout": "NCHW",
+      "median_seconds": 0.9925650730729103,
+      "mean_seconds": 0.9924063508709272,
+      "timings": [
+        0.9925761073827744,
+        0.9955111667513847,
+        0.9884415939450264,
+        0.9916910827159882,
+        0.9936641156673431,
+        0.9925540387630463
+      ],
+      "peak_allocated_bytes": 14933168128,
+      "losses": {
+        "dice": 0.6818824410438538,
+        "hr_dice": 0.79304039478302,
+        "kl": 0.0055918339639902115,
+        "signed_aux": 0.14938844740390778,
+        "lambda_k": 0.3002,
+        "lambda_d": 0.06004000000000001
+      }
+    },
+    {
+      "layout": "channels_last",
+      "median_seconds": 1.0066603943705559,
+      "mean_seconds": 1.0080125716825326,
+      "timings": [
+        1.0074549615383148,
+        1.0158029720187187,
+        1.0006323233246803,
+        1.005865827202797,
+        1.0150381326675415,
+        1.0032812133431435
+      ],
+      "peak_allocated_bytes": 14909570048,
+      "losses": {
+        "dice": 0.6819384098052979,
+        "hr_dice": 0.7932547330856323,
+        "kl": 0.0056002018973231316,
+        "signed_aux": 0.14938291907310486,
+        "lambda_k": 0.3002,
+        "lambda_d": 0.06004000000000001
+      }
+    },
+    {
+      "layout": "NCHW",
+      "median_seconds": 0.9948358535766602,
+      "mean_seconds": 0.994836882998546,
+      "timings": [
+        0.9937545508146286,
+        0.9970677644014359,
+        0.9923034831881523,
+        0.9962237924337387,
+        0.9945590868592262,
+        0.9951126202940941
+      ],
+      "peak_allocated_bytes": 14956744704,
+      "losses": {
+        "dice": 0.6818824410438538,
+        "hr_dice": 0.79304039478302,
+        "kl": 0.0055918339639902115,
+        "signed_aux": 0.14938844740390778,
+        "lambda_k": 0.3002,
+        "lambda_d": 0.06004000000000001
+      }
+    }
+  ],
+  "speedup_percent": -1.2874183903772485,
+  "adopt_channels_last": false,
+  "RAM_cache_bytes": 103079190214,
+  "time_unix": 1791456483.815228
+}

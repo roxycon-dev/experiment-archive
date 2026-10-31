@@ -1,0 +1,2810 @@
+{
+  "status": "FINAL_RUN_CLOSED_SCREEN_REJECTED",
+  "active_run": "iou",
+  "next_run": null,
+  "max_additional_full_training_runs": 0,
+  "additional_runs_started": 1,
+  "deadline_UTC_plus_8": null,
+  "server_keep_online": "Until final terminal archive; then latest human-authorized shutdown",
+  "do_not_control_other_AI_diagnostics": true,
+  "protocol": {
+    "canvas": 2048,
+    "batch": 2,
+    "updates": 40000,
+    "initialization": "fresh ImageNet W48 seed42",
+    "private_seed": 20261008,
+    "val_images": 76,
+    "test_images": 227,
+    "no_inference_teacher": true,
+    "no_TTA": true
+  },
+  "acceptance": {
+    "fixed_40k_val_mIoU_strictly_above": 45.32183122738841,
+    "locked_40k_test_mIoU_strictly_above": 45.860383832668,
+    "test_for_architecture_or_checkpoint_selection": false,
+    "test_gate": "Only after final-round model and 40k checkpoint are locked; no test-driven tuning"
+  },
+  "next_execution_directory": null,
+  "next_plan": null,
+  "next_launch_gate": "PinnedCPU19 and real2048b2 nonzeroaux12smoke; registered4k gate then samefresh40000",
+  "early_stop": "Pre-registered severe fullval collapse protection saves checkpoint and stops before another update; no need wait for next4k",
+  "outcome_guaranteed": false,
+  "checkpoint_download_requested": false,
+  "current_CET_completed": 40000,
+  "current_CET_val_mIoU": 38.31375888746443,
+  "transition_remote_receipt": "/root/autodl-tmp/HRDecoder_v3_20261008/reports/sacd/TRANSITION_STATUS.json",
+  "current_run_start_unix": 1791618823.3007941,
+  "current_identity_SHA": "49ee0537d2802450284844a32405a6da0116ee9b77c2ab519aa9f985d15d47d4",
+  "server_controller": {
+    "status": "FRESH_SCREEN_RUNNING",
+    "pid": 64343,
+    "controller_pid": 63572,
+    "identity_SHA": "49ee0537d2802450284844a32405a6da0116ee9b77c2ab519aa9f985d15d47d4",
+    "start_unix": 1791618823.3007941,
+    "canvas": 2048,
+    "batch": 2,
+    "screen_updates": 4000,
+    "max_conditional_updates": 40000,
+    "shutdown_after_completion": false,
+    "shutdown_after_failure": false,
+    "further_revisions_user_authorized": true
+  },
+  "deadline_gate": {
+    "status": "NEW_FRESH_SCREEN_PENDING",
+    "original_deadline_superseded": true,
+    "extension_activated": false
+  },
+  "ETA_note": "Nonzero auxiliary smoke estimate, not guarantee; currentpre1500 cannot extrapolate alone",
+  "expected_full_train_and_final_evaluation_beijing": "2026-10-11T05:34:25.034769+08:00",
+  "server_still_online": true,
+  "another_full_run_authorized": "Only continuation of this same fresh iou run if registered screen PASS",
+  "active_local_monitor_session": null,
+  "next_scheduled_monitor": null,
+  "latest_ETA_analysis": {
+    "checked_at": "2026-10-10T15:54:48.021228+08:00",
+    "method": "Real nonzero auxiliary2048b2 GPU12 warm smoke",
+    "mean_warm_step_seconds": 1.1605433493852615,
+    "expected4k_CST": "2026-10-10T17:15:05.474192+08:00",
+    "expected40k_plus_final_evaluation_CST": "2026-10-11T05:34:25.034769+08:00",
+    "prediction_not_completion": true,
+    "pre1500_speed_not_used": true,
+    "note": "Post1500 formal100window must update; Lovasz active cardinality changes with confidence"
+  },
+  "current_verified_training_step": 4000,
+  "reported_validation_steps": [
+    4000
+  ],
+  "available_validation_steps": [
+    4000
+  ],
+  "active_local_monitor_PID": null,
+  "monitoring_mode": "Existing45min heartbeat; no blocking local waiting helper",
+  "last_user_status_check": "2026-10-09T15:53:09+08:00",
+  "next_scheduled_monitor_meaning": "Main45min heartbeat; no local blocking helper",
+  "last_real_monitor_at": "2026-10-10T17:18:26.404398+08:00",
+  "latest_runtime_observation": {
+    "server_online": true,
+    "checked_at_unix": 1791623924.6363847,
+    "shutdown_command_issued": false,
+    "external_processes_controlled": false,
+    "GPU_CAMPAIGN_RUNNING.json": {
+      "status": "SCREEN_REJECTED",
+      "pid": 64343,
+      "controller_pid": 63572,
+      "identity_SHA": "49ee0537d2802450284844a32405a6da0116ee9b77c2ab519aa9f985d15d47d4",
+      "start_unix": 1791618823.3007941,
+      "canvas": 2048,
+      "batch": 2,
+      "screen_updates": 4000,
+      "max_conditional_updates": 40000,
+      "shutdown_after_completion": false,
+      "shutdown_after_failure": false,
+      "further_revisions_user_authorized": true,
+      "processes_alive": false,
+      "end_unix": 1791623667.7907465
+    },
+    "GPU_CAMPAIGN_OUTCOME.json": {
+      "status": "SCREEN_REJECTED",
+      "exit_code": 0,
+      "time_unix": 1791623667.7907465,
+      "start_unix": 1791618823.3007941,
+      "completion": null,
+      "final_validation": null,
+      "fresh_screen_rejection": {
+        "status": "REJECTED",
+        "identity_SHA": "49ee0537d2802450284844a32405a6da0116ee9b77c2ab519aa9f985d15d47d4",
+        "decisions": {
+          "4k_floor": false,
+          "private_net_gain_at_least1pp": false,
+          "all_classes_nonzero": true,
+          "no_class_IoU_loss_over2pp": false,
+          "HE_MA_FN_FP_tradeoff": true
+        },
+        "time_unix": 1791623622.4327273,
+        "screen_updates": 4000,
+        "full_val_counts_verified": true,
+        "mIoU_4k": 26.269022697070994,
+        "base_mIoU_4k": 32.518165701262426,
+        "private_gain_pp": -6.249143004191431,
+        "calibration": {
+          "HE": {
+            "FN_ratio_final_vs_base": 1.3839245865087086,
+            "FP_ratio_final_vs_base": 0.2719637650596886,
+            "pass": true
+          },
+          "MA": {
+            "FN_ratio_final_vs_base": 1.247852813296494,
+            "FP_ratio_final_vs_base": 0.2925721979596416,
+            "pass": true
+          }
+        },
+        "criterion_registered_before_results": true,
+        "test_accessed": false,
+        "accuracy_guaranteed": false,
+        "goal_achieved": false
+      },
+      "critical_collapse": null,
+      "test_evaluation": {
+        "status": "NOT_RUN",
+        "reason": "Fresh screen rejected or training incomplete"
+      },
+      "server_kept_running": true,
+      "shutdown_command_issued": false,
+      "external_diagnostics_controlled": false,
+      "goal_achieved": false,
+      "own_RAM_retained_for_authorized_next_revision": true
+    },
+    "DEADLINE_GATE.json": {
+      "status": "PASS",
+      "measured_screen_estimate_seconds": 5242.173397541046,
+      "checked_unix": 1791618823.2996173,
+      "user_latest_server_available": true,
+      "reserve_seconds": 180,
+      "full40k_conditional_on_screen": true
+    },
+    "DEPLOYMENT_DISPATCHED.json": {
+      "status": "CPU_TO_REAL_GPU_PIPELINE_DISPATCHED",
+      "pipeline_pid": 63572,
+      "time_unix": 1791618759.5356238,
+      "fresh_run_count": 1,
+      "server_kept_running": true,
+      "external_diagnostics_controlled": false
+    },
+    "CPU_TO_GPU_DISPATCH.json": {
+      "status": "CPU_PASS_STARTING_REAL_GPU_GATE",
+      "controller_pid": 63572,
+      "time_unix": 1791618762.3960311,
+      "fresh_only": true
+    },
+    "own_process_checks": {
+      "pid": {
+        "pid": 64343,
+        "alive": false,
+        "cmdline": "",
+        "matches_current_task": false
+      },
+      "controller_pid": {
+        "pid": 63572,
+        "alive": false,
+        "cmdline": "",
+        "matches_current_task": false
+      }
+    },
+    "own_session_id": 63572,
+    "own_session_live_processes": [],
+    "own_RAM": {
+      "pid": 39434,
+      "bytes": 103079171144,
+      "alive": false,
+      "matches_own_RAM": false
+    },
+    "GPU_status": "utilization.gpu [%], memory.used [MiB], power.draw [W]\n0 %, 1 MiB, 19.90 W\n"
+  },
+  "latest_user_authorization": {
+    "recorded_at": "2026-10-10T16:07:34.934548+08:00",
+    "human_instructions": [
+      "最后一次架构更新跑完就关机吧，然后写完整报告",
+      "和之前一样没达到继续训练的阈值线就停下来不做了"
+    ],
+    "additional_architecture_revisions_authorized": false,
+    "last_run": "iou",
+    "shutdown_after_terminal_archive_authorized": true,
+    "registered_thresholds_unchanged": true,
+    "accuracy_guaranteed": false
+  },
+  "original_deadline_UTC_plus_8": "2026-10-10T02:00:00+08:00",
+  "conditional_extension_activated": false,
+  "screening_plan": "iou_execution/screen_protocol.json",
+  "screening_monitor": "iou_execution/monitor_iou.py",
+  "screening_staging_controller": {
+    "status": "STAGING_DISPATCHED",
+    "controller_pid": 30376,
+    "GPU_parent_continues_until20k_save": true,
+    "server_shutdown": false,
+    "full40k_restart_authorized_now": false
+  },
+  "screening_latest_observation": {
+    "server_online": true,
+    "checked_at_unix": 1791549855.4549527,
+    "sacd_micro/STAGING_STATUS.json": {
+      "status": "PAIRED_PROBE_RUNNING",
+      "arm": "feature_isolated",
+      "pid": 31648,
+      "controller_pid": 31202,
+      "loader_recovery": true,
+      "time_unix": 1791547451.6204803
+    },
+    "sacd_micro/CONTROLLER_ERROR.json": {
+      "status": "FAILED",
+      "error": "[Errno 2] No such file or directory: '/root/autodl-tmp/HRDecoder_v3_20261008/sacd_execution/val_label_reference.json'",
+      "traceback": "Traceback (most recent call last):\n  File \"/root/autodl-tmp/HRDecoder_v3_20261008/sacd_micro_execution/recovery_controller.py\", line 78, in <module>\n    main()\n  File \"/root/autodl-tmp/HRDecoder_v3_20261008/sacd_micro_execution/recovery_controller.py\", line 58, in main\n    outcome = evaluate_gate(ROOT, plan)\n  File \"/root/autodl-tmp/HRDecoder_v3_20261008/sacd_micro_execution/gate.py\", line 30, in evaluate_gate\n    ref = json.loads((Path(root) / 'sacd_execution/val_label_reference.json').read_text())\n  File \"/root/miniconda3/lib/python3.8/pathlib.py\", line 1236, in read_text\n    with self.open(mode='r', encoding=encoding, errors=errors) as f:\n  File \"/root/miniconda3/lib/python3.8/pathlib.py\", line 1222, in open\n    return io.open(self, mode, buffering, encoding, errors, newline,\n  File \"/root/miniconda3/lib/python3.8/pathlib.py\", line 1078, in _opener\n    return self._accessor.open(self, flags, mode)\nFileNotFoundError: [Errno 2] No such file or directory: '/root/autodl-tmp/HRDecoder_v3_20261008/sacd_execution/val_label_reference.json'\n",
+      "time_unix": 1791548112.317074,
+      "server_kept_running": true,
+      "external_diagnostics_controlled": false
+    },
+    "GPU_status": "utilization.gpu [%], memory.used [MiB], power.draw [W]\n0 %, 1 MiB, 19.39 W\n"
+  },
+  "micro_loader_recovery": {
+    "status": "RECOVERY_DISPATCHED",
+    "controller_pid": 31202,
+    "parent_weights_unchanged": true,
+    "registered_gates_unchanged": true,
+    "new_probe_source_SHA256": "7065b21899fcb36c824578a5c3d49f915b295b844eeb7856970951837cd707f7"
+  },
+  "micro_verified_progress": {
+    "status": "DIAGNOSTIC_TRAINING",
+    "arm": "control",
+    "probe_updates": 100,
+    "parent_completed": 20000,
+    "expected_probe_updates": 500,
+    "identity_SHA": "58056baf70f90f0b947f5cc4de77e0d676ab637c8e36805ac1738fe5d67b8ec9",
+    "losses": {
+      "gt_final": 0.3189181685447693,
+      "gt_base": 0.3000843822956085,
+      "gt_hr_crop": 0.1866738349199295,
+      "kl_final": 0.0035720039159059525,
+      "kl_base": 0.0035561886616051197,
+      "action_kl": 0.5461434721946716,
+      "lambda_k": 0.5,
+      "lambda_action": 0.125,
+      "task_loss": 0.33510762453079224,
+      "weighted_action_loss": 0.06826793402433395
+    },
+    "time_unix": 1791546949.4837427,
+    "mean_compute_seconds": 1.0894461413472891
+  },
+  "micro_verified_GPU_status": "utilization.gpu [%], memory.used [MiB], power.draw [W]\n95 %, 22015 MiB, 305.75 W\n",
+  "micro_control_GPU_smoke": {
+    "status": "PASS",
+    "arm": "control",
+    "identity_SHA": "58056baf70f90f0b947f5cc4de77e0d676ab637c8e36805ac1738fe5d67b8ec9",
+    "canvas": 2048,
+    "batch": 2,
+    "discarded_optimizer_steps": 3,
+    "formal_updates": 0,
+    "finite_losses_and_all_gradients": true,
+    "backbone_calls": 3,
+    "private_nonzero_gradients": {
+      "local": true,
+      "global": true,
+      "head": true
+    },
+    "step_seconds": [
+      7.3889854699373245,
+      1.0825143158435822,
+      1.0734240040183067
+    ],
+    "device": "NVIDIA GeForce RTX 4090",
+    "accuracy_validated": false
+  },
+  "latest_warm_gate": {
+    "status": "REJECTED",
+    "purpose": "Allow or reject one fresh8k screen, not certify40k accuracy",
+    "gate_registered_before_results": true,
+    "decisions": {
+      "same_initial_val_counts_both_heads_and_parent": false,
+      "nonnegative_gain_at250": false,
+      "gain_at500_at_least1pp": true,
+      "HE_FP_ratio_at_most_point8": true,
+      "HE_recall_loss_at_most2pp": false,
+      "no_class_IoU_loss_over2pp": true
+    },
+    "gain_at250_pp": -1.3179598548828082,
+    "gain_at500_pp": 2.494001224730951,
+    "initial_mIoU_difference_modified_minus_control_pp": -0.00507195725644749,
+    "initial_count_equality_required_not_relaxed": true,
+    "HE_false_positive_ratio": 0.7520772241410781,
+    "HE_recall_loss_pp": 5.077931942643154,
+    "class_IoU_loss_pp": [
+      -10.125778467074916,
+      0.9846687867580215,
+      -0.940390565144412,
+      0.10549534653750214
+    ],
+    "class_order": [
+      "EX",
+      "HE",
+      "SE",
+      "MA"
+    ],
+    "full_val_counts_verified": true,
+    "records": {
+      "control": {
+        "0": {
+          "mIoU_percent": 37.189869588930144,
+          "IoU_percent": [
+            35.23903452732683,
+            41.556750908888155,
+            51.198747351032736,
+            20.764945568472836
+          ],
+          "precision_percent": [
+            47.733475223562934,
+            61.784442392666364,
+            74.58633147224793,
+            34.729172799528996
+          ],
+          "recall_percent": [
+            57.37905042245094,
+            55.93412188496124,
+            62.01763619391869,
+            34.055481785116335
+          ],
+          "counts": [
+            [
+              166860,
+              182706,
+              123943
+            ],
+            [
+              674523,
+              417213,
+              531401
+            ],
+            [
+              124906,
+              42559,
+              76498
+            ],
+            [
+              23595,
+              44345,
+              45689
+            ]
+          ],
+          "class_order": [
+            "EX",
+            "HE",
+            "SE",
+            "MA"
+          ],
+          "undefined_precision_convention": "zero when TP+FP=0; inspect counts",
+          "images": 76,
+          "threshold": "strictly > .5",
+          "base_head_metrics": {
+            "mIoU_percent": 35.7597315783383,
+            "IoU_percent": [
+              32.7157384713064,
+              41.71458497513368,
+              47.24817505942647,
+              21.36042780748663
+            ],
+            "precision_percent": [
+              40.31933030250044,
+              55.91783141788178,
+              59.55114911266743,
+              29.683722404978003
+            ],
+            "recall_percent": [
+              63.43435246541473,
+              62.15408267851043,
+              69.57706897578996,
+              43.23942035679234
+            ],
+            "counts": [
+              [
+                184469,
+                273051,
+                106334
+              ],
+              [
+                749531,
+                590884,
+                456393
+              ],
+              [
+                140131,
+                95181,
+                61273
+              ],
+              [
+                29958,
+                70966,
+                39326
+              ]
+            ],
+            "class_order": [
+              "EX",
+              "HE",
+              "SE",
+              "MA"
+            ],
+            "undefined_precision_convention": "zero when TP+FP=0; inspect counts",
+            "images": 76,
+            "threshold": "strictly > .5"
+          },
+          "seconds": 30.858738027513027,
+          "deployment_inference_verified": true,
+          "teacher_or_GT_input": false,
+          "parent_completed": 20000,
+          "probe_updates": 0,
+          "identity_SHA": "58056baf70f90f0b947f5cc4de77e0d676ab637c8e36805ac1738fe5d67b8ec9",
+          "arm": "control"
+        },
+        "250": {
+          "mIoU_percent": 38.15233685800647,
+          "IoU_percent": [
+            38.49259324442079,
+            40.31340434702297,
+            51.993684401247585,
+            21.809665439334537
+          ],
+          "precision_percent": [
+            50.595819110220894,
+            61.023985325834694,
+            79.85595780769638,
+            32.692399389662405
+          ],
+          "recall_percent": [
+            61.67302263044054,
+            54.29280783863659,
+            59.842406307719806,
+            39.58345361122337
+          ],
+          "counts": [
+            [
+              179347,
+              175123,
+              111456
+            ],
+            [
+              654730,
+              418176,
+              551194
+            ],
+            [
+              120525,
+              30403,
+              80879
+            ],
+            [
+              27425,
+              56463,
+              41859
+            ]
+          ],
+          "class_order": [
+            "EX",
+            "HE",
+            "SE",
+            "MA"
+          ],
+          "undefined_precision_convention": "zero when TP+FP=0; inspect counts",
+          "images": 76,
+          "threshold": "strictly > .5",
+          "base_head_metrics": {
+            "mIoU_percent": 36.40505067639276,
+            "IoU_percent": [
+              34.011879644458006,
+              39.20513269803615,
+              51.49224929649766,
+              20.910941066579237
+            ],
+            "precision_percent": [
+              40.14132537036407,
+              52.84574765737076,
+              67.72993193590837,
+              26.790936541525
+            ],
+            "recall_percent": [
+              69.01545032203931,
+              60.29957111725117,
+              68.23201128080872,
+              48.7904855377865
+            ],
+            "counts": [
+              [
+                200699,
+                299282,
+                90104
+              ],
+              [
+                727167,
+                648851,
+                478757
+              ],
+              [
+                137422,
+                65475,
+                63982
+              ],
+              [
+                33804,
+                92373,
+                35480
+              ]
+            ],
+            "class_order": [
+              "EX",
+              "HE",
+              "SE",
+              "MA"
+            ],
+            "undefined_precision_convention": "zero when TP+FP=0; inspect counts",
+            "images": 76,
+            "threshold": "strictly > .5"
+          },
+          "seconds": 32.24284875392914,
+          "deployment_inference_verified": true,
+          "teacher_or_GT_input": false,
+          "parent_completed": 20000,
+          "probe_updates": 250,
+          "arm": "control",
+          "identity_SHA": "58056baf70f90f0b947f5cc4de77e0d676ab637c8e36805ac1738fe5d67b8ec9"
+        },
+        "500": {
+          "mIoU_percent": 35.715165932804965,
+          "IoU_percent": [
+            25.8979314836415,
+            44.21152736796127,
+            50.70186534370457,
+            22.04933953591252
+          ],
+          "precision_percent": [
+            30.43943063410256,
+            63.04521701803337,
+            74.57504258635062,
+            29.7326771433365
+          ],
+          "recall_percent": [
+            63.44776360629017,
+            59.67689506138032,
+            61.29769021469286,
+            46.040932971537444
+          ],
+          "counts": [
+            [
+              184508,
+              421640,
+              106295
+            ],
+            [
+              719658,
+              421837,
+              486266
+            ],
+            [
+              123456,
+              42090,
+              77948
+            ],
+            [
+              31899,
+              75387,
+              37385
+            ]
+          ],
+          "class_order": [
+            "EX",
+            "HE",
+            "SE",
+            "MA"
+          ],
+          "undefined_precision_convention": "zero when TP+FP=0; inspect counts",
+          "images": 76,
+          "threshold": "strictly > .5",
+          "base_head_metrics": {
+            "mIoU_percent": 33.36325745980426,
+            "IoU_percent": [
+              23.504372583023432,
+              43.5461568446986,
+              46.928915323360464,
+              19.47358508813454
+            ],
+            "precision_percent": [
+              26.175921921495473,
+              56.37480088089296,
+              59.71015869178567,
+              23.125698914981715
+            ],
+            "recall_percent": [
+              69.72417753599515,
+              65.678351206212,
+              68.67539870111816,
+              55.21909820449166
+            ],
+            "counts": [
+              [
+                202760,
+                571845,
+                88043
+              ],
+              [
+                792031,
+                612907,
+                413893
+              ],
+              [
+                138315,
+                93329,
+                63089
+              ],
+              [
+                38258,
+                127177,
+                31026
+              ]
+            ],
+            "class_order": [
+              "EX",
+              "HE",
+              "SE",
+              "MA"
+            ],
+            "undefined_precision_convention": "zero when TP+FP=0; inspect counts",
+            "images": 76,
+            "threshold": "strictly > .5"
+          },
+          "seconds": 30.45262548327446,
+          "deployment_inference_verified": true,
+          "teacher_or_GT_input": false,
+          "parent_completed": 20000,
+          "probe_updates": 500,
+          "arm": "control",
+          "identity_SHA": "58056baf70f90f0b947f5cc4de77e0d676ab637c8e36805ac1738fe5d67b8ec9"
+        }
+      },
+      "feature_isolated": {
+        "0": {
+          "mIoU_percent": 37.184797631673696,
+          "IoU_percent": [
+            35.228189308231876,
+            41.556277314972824,
+            51.19301855624464,
+            20.76170534724544
+          ],
+          "precision_percent": [
+            47.71833483489925,
+            61.781776849247436,
+            74.5849457742105,
+            34.71411129580324
+          ],
+          "recall_percent": [
+            57.37217291430968,
+            55.93544866840696,
+            62.01018847689221,
+            34.061255123838116
+          ],
+          "counts": [
+            [
+              166840,
+              182795,
+              123963
+            ],
+            [
+              674539,
+              417270,
+              531385
+            ],
+            [
+              124891,
+              42557,
+              76513
+            ],
+            [
+              23599,
+              44382,
+              45685
+            ]
+          ],
+          "class_order": [
+            "EX",
+            "HE",
+            "SE",
+            "MA"
+          ],
+          "undefined_precision_convention": "zero when TP+FP=0; inspect counts",
+          "images": 76,
+          "threshold": "strictly > .5",
+          "base_head_metrics": {
+            "mIoU_percent": 35.760260657904766,
+            "IoU_percent": [
+              32.708021963020286,
+              41.71844292200083,
+              47.24976818679929,
+              21.36480955979865
+            ],
+            "precision_percent": [
+              40.30525078541123,
+              55.92389126855098,
+              59.55367995172162,
+              29.687422598702135
+            ],
+            "recall_percent": [
+              63.4401983473348,
+              62.15516069006007,
+              69.57706897578996,
+              43.24952369955545
+            ],
+            "counts": [
+              [
+                184486,
+                273236,
+                106317
+              ],
+              [
+                749544,
+                590749,
+                456380
+              ],
+              [
+                140131,
+                95171,
+                61273
+              ],
+              [
+                29965,
+                70970,
+                39319
+              ]
+            ],
+            "class_order": [
+              "EX",
+              "HE",
+              "SE",
+              "MA"
+            ],
+            "undefined_precision_convention": "zero when TP+FP=0; inspect counts",
+            "images": 76,
+            "threshold": "strictly > .5"
+          },
+          "seconds": 27.526676520705223,
+          "deployment_inference_verified": true,
+          "teacher_or_GT_input": false,
+          "parent_completed": 20000,
+          "probe_updates": 0,
+          "identity_SHA": "77556f6fa88c89083bf9acd0e7c50f0135e0fd8f5438ca495a5d68695bc6144a",
+          "arm": "feature_isolated"
+        },
+        "250": {
+          "mIoU_percent": 36.83437700312366,
+          "IoU_percent": [
+            39.077504999669884,
+            35.96339436913672,
+            50.091551852704974,
+            22.205056790983072
+          ],
+          "precision_percent": [
+            50.65611290718894,
+            49.77927721699141,
+            70.09653680363202,
+            30.860339700619928
+          ],
+          "recall_percent": [
+            63.09460356323697,
+            56.44178240088098,
+            63.704792357649296,
+            44.18769124184516
+          ],
+          "counts": [
+            [
+              183481,
+              178728,
+              107322
+            ],
+            [
+              680645,
+              686681,
+              525279
+            ],
+            [
+              128304,
+              54735,
+              73100
+            ],
+            [
+              30615,
+              68590,
+              38669
+            ]
+          ],
+          "class_order": [
+            "EX",
+            "HE",
+            "SE",
+            "MA"
+          ],
+          "undefined_precision_convention": "zero when TP+FP=0; inspect counts",
+          "images": 76,
+          "threshold": "strictly > .5",
+          "base_head_metrics": {
+            "mIoU_percent": 33.999713878584906,
+            "IoU_percent": [
+              35.303437889036886,
+              34.017261994257936,
+              46.425124004855064,
+              20.253031626189713
+            ],
+            "precision_percent": [
+              41.69511322415339,
+              42.492599250534376,
+              56.434941891311,
+              24.71119803081903
+            ],
+            "recall_percent": [
+              69.72417753599515,
+              63.038466769050125,
+              72.35606045560168,
+              52.888112695571856
+            ],
+            "counts": [
+              [
+                202760,
+                283532,
+                88043
+              ],
+              [
+                760196,
+                1028812,
+                445728
+              ],
+              [
+                145728,
+                112495,
+                55676
+              ],
+              [
+                36643,
+                111642,
+                32641
+              ]
+            ],
+            "class_order": [
+              "EX",
+              "HE",
+              "SE",
+              "MA"
+            ],
+            "undefined_precision_convention": "zero when TP+FP=0; inspect counts",
+            "images": 76,
+            "threshold": "strictly > .5"
+          },
+          "seconds": 27.8768527880311,
+          "deployment_inference_verified": true,
+          "teacher_or_GT_input": false,
+          "parent_completed": 20000,
+          "probe_updates": 250,
+          "arm": "feature_isolated",
+          "identity_SHA": "77556f6fa88c89083bf9acd0e7c50f0135e0fd8f5438ca495a5d68695bc6144a"
+        },
+        "500": {
+          "mIoU_percent": 38.209167157535916,
+          "IoU_percent": [
+            36.023709950716416,
+            43.226858581203246,
+            51.64225590884898,
+            21.943844189375017
+          ],
+          "precision_percent": [
+            46.949991230261446,
+            67.48367285861289,
+            71.48868355991682,
+            29.92298493183449
+          ],
+          "recall_percent": [
+            60.752468165734186,
+            54.59896311873717,
+            65.03743719091975,
+            45.14317880030021
+          ],
+          "counts": [
+            [
+              176670,
+              199624,
+              114133
+            ],
+            [
+              658422,
+              317254,
+              547502
+            ],
+            [
+              130988,
+              52241,
+              70416
+            ],
+            [
+              31277,
+              73248,
+              38007
+            ]
+          ],
+          "class_order": [
+            "EX",
+            "HE",
+            "SE",
+            "MA"
+          ],
+          "undefined_precision_convention": "zero when TP+FP=0; inspect counts",
+          "images": 76,
+          "threshold": "strictly > .5",
+          "base_head_metrics": {
+            "mIoU_percent": 36.15351607262859,
+            "IoU_percent": [
+              33.21790131589078,
+              43.40654185329444,
+              48.31045909402905,
+              19.679162027300094
+            ],
+            "precision_percent": [
+              39.799555981033876,
+              59.71550713612077,
+              58.79618526867796,
+              23.437538370865155
+            ],
+            "recall_percent": [
+              66.76306640577985,
+              61.3800703858618,
+              73.03777482075827,
+              55.10074476069511
+            ],
+            "counts": [
+              [
+                194149,
+                293668,
+                96654
+              ],
+              [
+                740197,
+                499342,
+                465727
+              ],
+              [
+                147101,
+                103087,
+                54303
+              ],
+              [
+                38176,
+                124708,
+                31108
+              ]
+            ],
+            "class_order": [
+              "EX",
+              "HE",
+              "SE",
+              "MA"
+            ],
+            "undefined_precision_convention": "zero when TP+FP=0; inspect counts",
+            "images": 76,
+            "threshold": "strictly > .5"
+          },
+          "seconds": 27.197852589190006,
+          "deployment_inference_verified": true,
+          "teacher_or_GT_input": false,
+          "parent_completed": 20000,
+          "probe_updates": 500,
+          "arm": "feature_isolated",
+          "identity_SHA": "77556f6fa88c89083bf9acd0e7c50f0135e0fd8f5438ca495a5d68695bc6144a"
+        }
+      }
+    },
+    "test_accessed": false,
+    "goal_achieved": false,
+    "time_unix": 1791550514.8339105,
+    "server_kept_running": true,
+    "external_diagnostics_controlled": false,
+    "parent_checkpoint_preserved": true,
+    "loader_startup_recovery_recorded": true,
+    "reference_file_deployment_repair": true,
+    "no_optimizer_updates_during_gate_repair": true,
+    "gate_code_SHA256": "49680b210e0916c574238b01043fb3ac1fd79e2c8a468bb90812a542e95bb537"
+  },
+  "screening_terminal_observation": {
+    "server_online": true,
+    "checked_at_unix": 1791551391.1174264,
+    "shutdown_command_issued": false,
+    "process_checks_only_own_registered_PIDs": true,
+    "training_updates_added": 0,
+    "micro_controller": {
+      "pid": 31202,
+      "alive": false
+    },
+    "control": {
+      "pid": 31205,
+      "alive": false
+    },
+    "feature_isolated": {
+      "pid": 31648,
+      "alive": false
+    },
+    "own_RAM_owner": {
+      "pid": 25079,
+      "bytes": 103079171144,
+      "retained_pending_user_choice": true
+    },
+    "GPU_status": "utilization.gpu [%], memory.used [MiB], power.draw [W]\n0 %, 1 MiB, 19.69 W\n",
+    "no_fresh_run_registered": true
+  },
+  "fresh8k_started": false,
+  "current_task_training_active": false,
+  "goal_achieved": false,
+  "reason_waiting": "No currently available authorized server time for further GPU experiments",
+  "diagnostic_report": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\sacd_micro_execution\\配对短测指标与分析.md",
+  "heartbeat_automation_status": "DELETED",
+  "warm_probe_reported": true,
+  "monitoring_reason": null,
+  "active_execution_directory": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\iou_execution",
+  "active_monitor": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\iou_execution\\monitor_iou.py",
+  "heartbeat_automation_id": "hrdecoder-4",
+  "additional_architecture_revision_limit": 0,
+  "expected_screen_beijing": "2026-10-10T17:15:05.474192+08:00",
+  "diagnostic_partial_gradient_evidence": {
+    "valid_train_batches": 10,
+    "private_task_aux_cosine_mean": -0.6195923960302026,
+    "negative_cosine_batches": 10,
+    "optimizer_updates": 0,
+    "full_diagnosis_completed": false,
+    "cause_of_original_val_curve_proven": false
+  },
+  "best_val_step": 4000,
+  "best_val_mIoU": 26.269022697070994,
+  "validation_repair_changes_training_math": false,
+  "current_model": "iou",
+  "formal_training_status": "TRAINING",
+  "active_remote_execution_directory": "/root/autodl-tmp/HRDecoder_v3_20261008/iou_execution",
+  "active_remote_run": "/root/autodl-tmp/HRDecoder_v3_20261008/training_runs/iou",
+  "active_remote_reports": "/root/autodl-tmp/HRDecoder_v3_20261008/reports/iou",
+  "local_monitor_script": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\iou_execution\\monitor_iou.py",
+  "validation_reporting_ledger": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\iou_execution\\validation_reporting.json",
+  "local_monitor_ledger": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\iou_execution\\validation_reporting.json",
+  "validation_report": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\normalization_execution\\配对诊断指标与分析.md",
+  "latest_plan": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\iou_execution\\screen_protocol.json",
+  "new_training_identity_SHA": "49ee0537d2802450284844a32405a6da0116ee9b77c2ab519aa9f985d15d47d4",
+  "new_training_PID": 64343,
+  "current_controller_PID": 63572,
+  "own_RAM_PID": 39434,
+  "current_completion_receipt": null,
+  "training_complete": false,
+  "latest_validation_mIoU": 26.269022697070994,
+  "last_monitor_receipt": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\iou_execution\\latest_snapshot.json",
+  "latest_runtime_receipt": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\iou_execution\\latest_snapshot.json",
+  "estimated_screen_completion_UTC_plus_8": "2026-10-10T17:15:05.474192+08:00",
+  "deadline_rule_active": "same screened fresh run until completion",
+  "further_architecture_revisions_user_authorized": false,
+  "resume_first": "Only matching own iou last.pt/model/optimizer/RNG; no rejected task restore",
+  "latest_user_instruction": "当前IoUCorrection为最后一版；沿用既有阈值，未过停止不再改架构；终态归档后关机并写完整报告",
+  "automatic_shutdown": "After archived final terminal; no shutdown while training",
+  "server_shutdown_authorized": true,
+  "latest_performance_report": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\cache_execution\\server_receipts\\iou\\training_runs\\iou\\performance.json",
+  "completion_estimate_basis": "actual7211-7310 nonzero auxiliary100-batch steady with realRAM wait",
+  "launch_mode": "Fresh ImageNetW48 seed42/private20261008; no old task checkpoint",
+  "estimated_remaining_train_hours_excluding_validation": null,
+  "previous_residual_terminal": {
+    "status": "SCREEN_REJECTED",
+    "completed": 8000,
+    "mIoU": 37.212350205968065,
+    "delta_from4k_pp": 7.736537877849067,
+    "private_gain_pp": 0.27818227612485513,
+    "failed_criterion": "private_net_gain_over_base",
+    "registered_minimum_pp": 0.5,
+    "all_other7_criteria_passed": true,
+    "checkpoint_preserved_on_server": true,
+    "old_thresholds_unchanged": true,
+    "reported_steps": [
+      4000,
+      8000
+    ]
+  },
+  "previous_residual_monitor_fields": {
+    "validator_identity_SHA": "8593aab9918e15381fd62ff935704e18632718f7c895faca729ca2c3b4c7552b",
+    "latest_validation_repair": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\residual_execution\\METRIC_VALIDATOR_REPAIR.json"
+  },
+  "last_monitor_time_unix": 1791619366.0854862,
+  "last_routine_checked_at": "2026-10-10T16:02:31.419787+08:00",
+  "next_scheduled_monitor_UTC_plus_8": null,
+  "stage": "IOU_FRESH_4K_SCREEN_RUNNING",
+  "formal_training_started": true,
+  "current_verified_probe_updates": null,
+  "automatic_fresh_training": false,
+  "automatic_deadline_extension": true,
+  "estimated_diagnostic_completion_UTC_plus_8": null,
+  "previous_expert_terminal": {
+    "status": "SCREEN_REJECTED",
+    "completed": 4000,
+    "mIoU": 27.737652600543726,
+    "base_mIoU": 27.783389382517942,
+    "failed_decisions": [
+      "4k_floor_previous_residual4k_plus1pp",
+      "private_net_gain_over_base"
+    ],
+    "valid_weights_preserved_on_server": true,
+    "reported_steps": [
+      2000,
+      4000
+    ],
+    "test_not_run": true,
+    "no_deadline_extension": true
+  },
+  "local_report": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\iou_execution\\IoU纠错服务器训练启动记录.md",
+  "latest_ETA_note": "Observed nonzero-auxiliary100-batch steady window; estimate includes10min validation/persistence reserve, excludes conditional227test",
+  "own_RAM_process_ended": true,
+  "released_owned_RAM_bytes": 103079171144,
+  "next_scheduled_monitor_UTC_plus_8_iso": "2026-10-10T16:47:31.419787+08:00",
+  "last_heartbeat_automation_id": "hrdecoder-4",
+  "heartbeat_deleted_reason": "Last architecture screen rejected; receipts/report archived and authorized shutdown command succeeded with SSH disconnect",
+  "final_execution_directory": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\normalization_execution",
+  "final_terminal_receipt": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\final_report\\closeout_receipt.json",
+  "final_goal_audit": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\iou_execution\\FINAL_OUTCOME_AUDIT.json",
+  "final_report": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\final_report\\HRDecoder完整实验报告.md",
+  "final_diagnostic_completed_probe_updates_per_arm": 500,
+  "final_diagnostic_reported_steps": [
+    0,
+    250,
+    500
+  ],
+  "last_real_server_observation_unix": 1791619366.0854862,
+  "last_archived_at": "2026-10-10T16:02:31.419787+08:00",
+  "next_local_research_plan": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\research_v10\\00_配对一致性修复与下一轮验证计划.md",
+  "no_new_GPU_work_after_deadline": false,
+  "checkpoint_downloaded": false,
+  "final_goal_status": "GOAL_NOT_ACHIEVED",
+  "final_validation_and_test_goal_achieved": false,
+  "last_terminal_runtime": {
+    "status": "COMPLETE",
+    "checked_at_unix": 1791569432.761081,
+    "server_online": true,
+    "own_controller_training_workers_session_empty": true,
+    "own_session_id": 37655,
+    "own_RAM_pid": 25079,
+    "own_RAM_process_ended": true,
+    "released_owned_memfd_bytes": 103079171144,
+    "teacher_disk_cache_and_valid_checkpoints_preserved": true,
+    "checkpoint_download": false,
+    "shutdown_command_issued": false,
+    "external_diagnostics_controlled": false,
+    "GPU_status": "utilization.gpu [%], memory.used [MiB], power.draw [W]\n0 %, 1 MiB, 19.52 W\n",
+    "goal_achieved": false,
+    "no_new_GPU_work_after_deadline": true,
+    "cpu_state_comparison": {
+      "status": "CPU_CHECKPOINT_COMPARISON_COMPLETE",
+      "parent_completed": 8000,
+      "probe_updates": 500,
+      "model_state_comparison": {
+        "base.": {
+          "tensor_count": 1844,
+          "differing_tensors": 1537,
+          "different_elements": 65581025,
+          "total_elements": 65657079,
+          "maximum_absolute_difference": 0.407482385635376,
+          "first10_differing_names": [
+            "base.backbone.conv1.weight",
+            "base.backbone.bn1.weight",
+            "base.backbone.bn1.bias",
+            "base.backbone.bn1.running_mean",
+            "base.backbone.bn1.running_var",
+            "base.backbone.conv2.weight",
+            "base.backbone.bn2.weight",
+            "base.backbone.bn2.bias",
+            "base.backbone.bn2.running_mean",
+            "base.backbone.bn2.running_var"
+          ]
+        },
+        "private.": {
+          "tensor_count": 196,
+          "differing_tensors": 196,
+          "different_elements": 6413751,
+          "total_elements": 6415232,
+          "maximum_absolute_difference": 0.024239979684352875,
+          "first10_differing_names": [
+            "private.local.p_r.conv.weight",
+            "private.local.p_r.norm.norm.weight",
+            "private.local.p_r.norm.norm.bias",
+            "private.local.l4_blocks.0.dw.weight",
+            "private.local.l4_blocks.0.norm.norm.weight",
+            "private.local.l4_blocks.0.norm.norm.bias",
+            "private.local.l4_blocks.0.expand.weight",
+            "private.local.l4_blocks.0.project.weight",
+            "private.local.l4_blocks.1.dw.weight",
+            "private.local.l4_blocks.1.norm.norm.weight"
+          ]
+        }
+      },
+      "final_RNG_comparison": {
+        "python_equal": true,
+        "numpy_equal": true,
+        "torch_CPU_equal": true,
+        "torch_CUDA_state_bytes_equal_without_CUDA_execution": true
+      },
+      "GPU_execution": false,
+      "checkpoint_download": false,
+      "test_accessed": false,
+      "root_cause_of_provider_divergence_proven": false
+    }
+  },
+  "last_run": "normalization",
+  "final_gpu_work_ended_before_original_deadline": false,
+  "local_diagnostic_repair": {
+    "status": "LOCAL_CPU_INVARIANTS_VERIFIED_GPU_PENDING",
+    "verified_at": "2026-10-10T02:35:31.473046+08:00",
+    "execution_directory": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\research_v10",
+    "CPU_receipt": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\research_v10\\DIAGNOSTIC_INVARIANTS_CPU_PASS.json",
+    "report": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\research_v10\\01_本地配对修复验证记录.md",
+    "fixture_canvas": 64,
+    "batch": 2,
+    "private_parameters": 6415232,
+    "CPU_updates_per_arm": 16,
+    "formal_training_updates": 0,
+    "actual2048_GPU_gate_completed": false,
+    "fresh_screen_PASS": false,
+    "server_access_in_local_preparation": false,
+    "new_GPU_authorized_after_original_deadline": false,
+    "past_provider_divergence_root_cause_proven": false,
+    "goal_achieved": false,
+    "next_dependency": "New actual server availability; pinned original-env CPU and real2048/batch2 GPU gates; strict paired input/provider receipts before interpreting KL effect"
+  },
+  "historical_server_controller_at_residual_launch": {
+    "status": "FRESH_SCREEN_RUNNING",
+    "pid": 33845,
+    "controller_pid": 33638,
+    "identity_SHA": "96cd1bc0ce79e9e5f5f8247958f868a4e00023f072bc6fea920092ad5a5003ec",
+    "start_unix": 1791553242.347969,
+    "canvas": 2048,
+    "batch": 2,
+    "screen_updates": 8000,
+    "max_conditional_updates": 40000,
+    "shutdown_after_completion": false,
+    "shutdown_after_failure": false,
+    "further_revisions_user_authorized": true
+  },
+  "historical_original_deadline_gate": {
+    "status": "PASS",
+    "deadline_unix": 1791568800.0,
+    "measured_warm_step_seconds": 1.0754236988723278,
+    "projected_finish_with_20min_reserve_unix": 1791568752.457199,
+    "checked_unix": 1791524535.5092456,
+    "reserve_seconds": 1200,
+    "reserve_basis": "10x32s full-val + ~120s checkpoint/init + 180s test + 580s safety",
+    "additional_full_runs_allowed": 1,
+    "new_runs_after_this": 0
+  },
+  "server_availability_clarification": {
+    "status": "RENEWED_BY_LATEST_HUMAN_INSTRUCTION",
+    "no_question_pending": true,
+    "old_deadline_superseded": true
+  },
+  "previous_deadline_gate_before_adapter_renewal": {
+    "status": "EXPIRED_NO_QUALIFYING_FRESH_SCREEN_PASS",
+    "deadline_UTC_plus_8": "2026-10-10T02:00:00+08:00",
+    "extension_activated": false,
+    "new_GPU_work_allowed": false
+  },
+  "previous_server_controller_before_adapter_renewal": {
+    "status": "SERVER_EXPERIMENT_ENDED",
+    "pid": null,
+    "controller_pid": null,
+    "identity_SHA": null,
+    "shutdown_after_completion": false,
+    "shutdown_after_failure": false,
+    "terminal_receipt": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\normalization_execution\\FINAL_TERMINAL_RECEIPT.json"
+  },
+  "previous_server_availability_clarification_before_adapter_renewal": {
+    "status": "REQUESTED_AWAITING_USER",
+    "requested_at": "2026-10-10T02:36:27.880521+08:00",
+    "reason": "Original02:00 server availability expired; no qualifying fresh-screen extension; concrete local CPU invariant repair finished",
+    "do_not_repeat_question_while_pending": true,
+    "no_new_GPU_work_until_actual_availability_known": true
+  },
+  "previous_formal_training_status_before_adapter_renewal": "STOPPED_AFTER_SCREEN_REJECTION_NO40K_EXTENSION",
+  "previous_last_terminal_runtime_before_adapter_renewal": {
+    "status": "COMPLETE",
+    "checked_at_unix": 1791569432.761081,
+    "server_online": true,
+    "own_controller_training_workers_session_empty": true,
+    "own_session_id": 37655,
+    "own_RAM_pid": 25079,
+    "own_RAM_process_ended": true,
+    "released_owned_memfd_bytes": 103079171144,
+    "teacher_disk_cache_and_valid_checkpoints_preserved": true,
+    "checkpoint_download": false,
+    "shutdown_command_issued": false,
+    "external_diagnostics_controlled": false,
+    "GPU_status": "utilization.gpu [%], memory.used [MiB], power.draw [W]\n0 %, 1 MiB, 19.52 W\n",
+    "goal_achieved": false,
+    "no_new_GPU_work_after_deadline": true,
+    "cpu_state_comparison": {
+      "status": "CPU_CHECKPOINT_COMPARISON_COMPLETE",
+      "parent_completed": 8000,
+      "probe_updates": 500,
+      "model_state_comparison": {
+        "base.": {
+          "tensor_count": 1844,
+          "differing_tensors": 1537,
+          "different_elements": 65581025,
+          "total_elements": 65657079,
+          "maximum_absolute_difference": 0.407482385635376,
+          "first10_differing_names": [
+            "base.backbone.conv1.weight",
+            "base.backbone.bn1.weight",
+            "base.backbone.bn1.bias",
+            "base.backbone.bn1.running_mean",
+            "base.backbone.bn1.running_var",
+            "base.backbone.conv2.weight",
+            "base.backbone.bn2.weight",
+            "base.backbone.bn2.bias",
+            "base.backbone.bn2.running_mean",
+            "base.backbone.bn2.running_var"
+          ]
+        },
+        "private.": {
+          "tensor_count": 196,
+          "differing_tensors": 196,
+          "different_elements": 6413751,
+          "total_elements": 6415232,
+          "maximum_absolute_difference": 0.024239979684352875,
+          "first10_differing_names": [
+            "private.local.p_r.conv.weight",
+            "private.local.p_r.norm.norm.weight",
+            "private.local.p_r.norm.norm.bias",
+            "private.local.l4_blocks.0.dw.weight",
+            "private.local.l4_blocks.0.norm.norm.weight",
+            "private.local.l4_blocks.0.norm.norm.bias",
+            "private.local.l4_blocks.0.expand.weight",
+            "private.local.l4_blocks.0.project.weight",
+            "private.local.l4_blocks.1.dw.weight",
+            "private.local.l4_blocks.1.norm.norm.weight"
+          ]
+        }
+      },
+      "final_RNG_comparison": {
+        "python_equal": true,
+        "numpy_equal": true,
+        "torch_CPU_equal": true,
+        "torch_CUDA_state_bytes_equal_without_CUDA_execution": true
+      },
+      "GPU_execution": false,
+      "checkpoint_download": false,
+      "test_accessed": false,
+      "root_cause_of_provider_divergence_proven": false
+    }
+  },
+  "current_execution_directory": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\iou_execution",
+  "full_RAM_cache": {
+    "status": "READY",
+    "pid": 39434,
+    "bytes": 103079171144,
+    "files": 1362,
+    "hash_rescan": false
+  },
+  "updated_at": "2026-10-10T17:21:55.393203+08:00",
+  "current_runtime": {
+    "server_online": true,
+    "checked_at_unix": 1791619366.0854862,
+    "shutdown_command_issued": false,
+    "external_processes_controlled": false,
+    "GPU_CAMPAIGN_RUNNING.json": {
+      "status": "FRESH_SCREEN_RUNNING",
+      "pid": 64343,
+      "controller_pid": 63572,
+      "identity_SHA": "49ee0537d2802450284844a32405a6da0116ee9b77c2ab519aa9f985d15d47d4",
+      "start_unix": 1791618823.3007941,
+      "canvas": 2048,
+      "batch": 2,
+      "screen_updates": 4000,
+      "max_conditional_updates": 40000,
+      "shutdown_after_completion": false,
+      "shutdown_after_failure": false,
+      "further_revisions_user_authorized": true
+    },
+    "DEADLINE_GATE.json": {
+      "status": "PASS",
+      "measured_screen_estimate_seconds": 5242.173397541046,
+      "checked_unix": 1791618823.2996173,
+      "user_latest_server_available": true,
+      "reserve_seconds": 180,
+      "full40k_conditional_on_screen": true
+    },
+    "DEPLOYMENT_DISPATCHED.json": {
+      "status": "CPU_TO_REAL_GPU_PIPELINE_DISPATCHED",
+      "pipeline_pid": 63572,
+      "time_unix": 1791618759.5356238,
+      "fresh_run_count": 1,
+      "server_kept_running": true,
+      "external_diagnostics_controlled": false
+    },
+    "CPU_TO_GPU_DISPATCH.json": {
+      "status": "CPU_PASS_STARTING_REAL_GPU_GATE",
+      "controller_pid": 63572,
+      "time_unix": 1791618762.3960311,
+      "fresh_only": true
+    },
+    "own_process_checks": {
+      "pid": {
+        "pid": 64343,
+        "alive": true,
+        "cmdline": "/root/miniconda3/bin/python -u train.py --train ",
+        "matches_current_task": true
+      },
+      "controller_pid": {
+        "pid": 63572,
+        "alive": true,
+        "cmdline": "/root/miniconda3/bin/python -u /root/autodl-tmp/HRDecoder_v3_20261008/iou_execution/controller.py ",
+        "matches_current_task": true
+      }
+    },
+    "own_session_id": 63572,
+    "own_session_live_processes": [
+      {
+        "pid": 63572,
+        "cmdline": "/root/miniconda3/bin/python -u /root/autodl-tmp/HRDecoder_v3_20261008/iou_execution/controller.py "
+      },
+      {
+        "pid": 64343,
+        "cmdline": "/root/miniconda3/bin/python -u train.py --train "
+      },
+      {
+        "pid": 64424,
+        "cmdline": "/root/miniconda3/bin/python -c from multiprocessing.resource_tracker import main;main(42) "
+      },
+      {
+        "pid": 64425,
+        "cmdline": "/root/miniconda3/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=43, pipe_handle=47) --multiprocessing-fork "
+      },
+      {
+        "pid": 64496,
+        "cmdline": "/root/miniconda3/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=43, pipe_handle=51) --multiprocessing-fork "
+      },
+      {
+        "pid": 64568,
+        "cmdline": "/root/miniconda3/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=43, pipe_handle=55) --multiprocessing-fork "
+      },
+      {
+        "pid": 64639,
+        "cmdline": "/root/miniconda3/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=43, pipe_handle=59) --multiprocessing-fork "
+      },
+      {
+        "pid": 64711,
+        "cmdline": "/root/miniconda3/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=43, pipe_handle=63) --multiprocessing-fork "
+      },
+      {
+        "pid": 64783,
+        "cmdline": "/root/miniconda3/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=43, pipe_handle=67) --multiprocessing-fork "
+      },
+      {
+        "pid": 64855,
+        "cmdline": "/root/miniconda3/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=43, pipe_handle=71) --multiprocessing-fork "
+      },
+      {
+        "pid": 64926,
+        "cmdline": "/root/miniconda3/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=43, pipe_handle=75) --multiprocessing-fork "
+      }
+    ],
+    "own_RAM": {
+      "pid": 39434,
+      "bytes": 103079171144,
+      "alive": true,
+      "matches_own_RAM": true
+    },
+    "GPU_status": "utilization.gpu [%], memory.used [MiB], power.draw [W]\n100 %, 21269 MiB, 325.39 W\n"
+  },
+  "performance_tuning_in_progress": false,
+  "model_identity_SHA": "49ee0537d2802450284844a32405a6da0116ee9b77c2ab519aa9f985d15d47d4",
+  "latest_performance": {
+    "completed_update": 1080,
+    "mean_batch_seconds": 1.1852730913460254,
+    "mean_step_compute_seconds": 1.185236401706934,
+    "mean_data_wait_seconds": 3.6689639091491697e-05,
+    "window_batches": 100,
+    "warmup_batches_excluded": 12,
+    "workers": 8,
+    "prefetch_factor": 1,
+    "CUDA_future_batches": 1,
+    "shared_RAM_cache_bytes": 103079171144,
+    "channels_last": false,
+    "peak_allocated_bytes": 19650021888,
+    "peak_reserved_bytes": 22133342208,
+    "estimated_remaining_train_hours_excluding_validation": 12.81411908755203,
+    "time_unix": 1791620151.880987,
+    "protocol_unchanged": true
+  },
+  "latest_progress": {
+    "status": "TRAINING",
+    "completed": 1050,
+    "expected": 40000,
+    "saved_update": 1000,
+    "best_val_mIoU": null,
+    "time_unix": 1791620115.849857
+  },
+  "current_verified_formal_update": 4000,
+  "estimated_40k_completion_UTC_plus_8": "2026-10-10T16:19:40.903113+08:00",
+  "previous_adapter_terminal": {
+    "status": "SCREEN_REJECTED",
+    "step": 4000,
+    "mIoU": 30.444206699113142,
+    "base_mIoU": 26.808208804774136,
+    "private_gain_pp": 3.635997894339006,
+    "failed_only": "4k_floor",
+    "shortfall_pp": 0.03160562900585884,
+    "reported_steps": [
+      4000
+    ],
+    "valid_checkpoint_preserved": true
+  },
+  "screen_handoff_automation_id": "iou4k",
+  "GPU_smoke": {
+    "status": "PASS",
+    "identity_SHA": "49ee0537d2802450284844a32405a6da0116ee9b77c2ab519aa9f985d15d47d4",
+    "batch": 2,
+    "canvas": 2048,
+    "backbone_calls_per_step": 1,
+    "measured_backbone_calls": 12,
+    "discarded_optimizer_steps": 12,
+    "formal_updates": 0,
+    "fresh_initialization_verified": true,
+    "new_parameters": 284496,
+    "total_parameters": 65856916,
+    "optimizer_momentum_allocated": true,
+    "losses_FP32": true,
+    "all_gradients_finite": true,
+    "last_smoke_step_private_nonzero_gradients": {
+      "features": true,
+      "semantic": true,
+      "rgb": true,
+      "mix": true,
+      "blocks": true,
+      "readout": true
+    },
+    "step_seconds": [
+      8.930177420377731,
+      1.1685594022274017,
+      1.1592131406068802,
+      1.148701898753643,
+      1.1773145198822021,
+      1.1670354679226875,
+      1.145779199898243,
+      1.1598544046282768,
+      1.1690059155225754,
+      1.1586123928427696,
+      1.1646775677800179,
+      1.1552389860153198
+    ],
+    "median_warm_step_seconds": 1.1595337726175785,
+    "mean_warm_step_seconds": 1.1605433493852615,
+    "peak_allocated_bytes": 19625601024,
+    "peak_reserved_bytes": 21741174784,
+    "seconds": 51.532651618123055,
+    "device": "NVIDIA GeForce RTX 4090",
+    "accuracy_validated": false
+  },
+  "current_screen_pass": null,
+  "conditional_extension": null,
+  "screen_handoff_automation_deleted": true,
+  "screen_handoff_reason_ended": "4k all gates PASS, same fresh actual4200+ training verified; main45min monitor kept",
+  "latest_logged_loss_finite": true,
+  "historical_state_corrections": [
+    {
+      "corrected_at": "2026-10-10T07:11:56.116113+08:00",
+      "reason": "Replace stale normalization diagnostic current fields with authoritative fresh detail runtime; old deadline superseded by user renewed availability",
+      "previous_fields": {
+        "launch_mode": "Paired warm8k+500 diagnostic, not fresh training or screen continuation",
+        "current_completion_receipt": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\normalization_execution\\FINAL_TERMINAL_RECEIPT.json",
+        "latest_plan": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\normalization_execution\\probe_protocol.json",
+        "latest_runtime_receipt": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\normalization_execution\\latest_snapshot.json",
+        "current_run_start_unix": 1791566853.6020484,
+        "deadline_gate": {
+          "status": "EXPIRED_NO_QUALIFYING_FRESH_SCREEN_PASS",
+          "deadline_UTC_plus_8": "2026-10-10T02:00:00+08:00",
+          "extension_activated": false,
+          "new_GPU_work_allowed": false
+        },
+        "deadline_UTC_plus_8": "2026-10-10T02:00:00+08:00",
+        "latest_ETA_note": "No full40k ETA; previous candidate screening rejected",
+        "final_gpu_work_ended_before_original_deadline": true,
+        "next_launch_gate": "New actual server availability; pinned original-env CPU and real2048/batch2 GPU gates, immutable named parent/RNG, paired provider/input consistency; warm diagnostic cannot activate fresh40k deadline extension",
+        "next_scheduled_monitor_meaning": "Existing45min heartbeat performs final archive after finite remote diagnostic; no local waiting helper"
+      }
+    },
+    {
+      "corrected_at": "2026-10-10T16:02:31.419787+08:00",
+      "active_run": "iou",
+      "reason": "Synchronize inherited operational fields with current archived identity and progress; no server mutation",
+      "previous_values": {
+        "current_model": "detail",
+        "current_execution_directory": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\detail_execution",
+        "active_remote_execution_directory": null,
+        "active_remote_run": null,
+        "active_remote_reports": null,
+        "new_training_identity_SHA": "046abab773f7cb7a9e4f0a0f9cc44c4ad32d48431b971f22720dc8bd7936168a",
+        "current_controller_PID": 46313,
+        "current_verified_formal_update": 19850,
+        "local_monitor_script": null,
+        "local_monitor_ledger": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\normalization_execution\\validation_reporting.json",
+        "estimated_screen_completion_UTC_plus_8": "2026-10-10T05:29:26.954943+08:00",
+        "latest_validation_mIoU": 13.074769744480871
+      }
+    }
+  ],
+  "current_training_PID": 64343,
+  "current_progress": {
+    "status": "TRAINING",
+    "completed": 4000,
+    "expected": 40000,
+    "saved_update": 4000,
+    "best_val_mIoU": 26.269022697070994,
+    "last_validation": {
+      "mIoU_percent": 26.269022697070994,
+      "IoU_percent": [
+        34.026008662145756,
+        35.89678047122966,
+        22.37049228958436,
+        12.78280936532418
+      ],
+      "precision_percent": [
+        63.91331346897455,
+        83.93223754417073,
+        86.01942819295728,
+        39.40726440726441
+      ],
+      "recall_percent": [
+        42.11751598160954,
+        38.54562974117772,
+        23.21453397151993,
+        15.90987818255297
+      ],
+      "counts": [
+        [
+          122479,
+          69154,
+          168324
+        ],
+        [
+          464831,
+          88986,
+          741093
+        ],
+        [
+          46755,
+          7599,
+          154649
+        ],
+        [
+          11023,
+          16949,
+          58261
+        ]
+      ],
+      "class_order": [
+        "EX",
+        "HE",
+        "SE",
+        "MA"
+      ],
+      "undefined_precision_convention": "zero when TP+FP=0; inspect counts",
+      "images": 76,
+      "threshold": "strictly > .5",
+      "base_head_metrics": {
+        "mIoU_percent": 32.518165701262426,
+        "IoU_percent": [
+          36.457500290978174,
+          43.72926616407566,
+          32.124626059542706,
+          17.761270290453172
+        ],
+        "precision_percent": [
+          44.533315599868835,
+          67.20217397187909,
+          36.146948165081085,
+          28.059260363112536
+        ],
+        "recall_percent": [
+          66.7819795531683,
+          55.59413362699473,
+          74.2726063037477,
+          32.61214710467063
+        ],
+        "counts": [
+          [
+            194204,
+            241883,
+            96599
+          ],
+          [
+            670423,
+            327198,
+            535501
+          ],
+          [
+            149588,
+            264245,
+            51816
+          ],
+          [
+            22595,
+            57931,
+            46689
+          ]
+        ],
+        "class_order": [
+          "EX",
+          "HE",
+          "SE",
+          "MA"
+        ],
+        "undefined_precision_convention": "zero when TP+FP=0; inspect counts",
+        "images": 76,
+        "threshold": "strictly > .5"
+      },
+      "seconds": 38.50582963973284,
+      "deployment_inference_verified": true,
+      "teacher_or_GT_input": false,
+      "completed": 4000
+    },
+    "time_unix": 1791623622.0847692
+  },
+  "latest_validation_step": 4000,
+  "best_val": null,
+  "validation_risk": null,
+  "historical_transition_records": [
+    {
+      "at": "2026-10-10T11:10:35.078203+08:00",
+      "reason": "User-directed stop of collapsed detail; causal diagnostics completed; new fresh foundation dispatched",
+      "previous_current": {
+        "active_run": "detail",
+        "status": "ABORTED_BY_USER_FOR_CAUSAL_DIAGNOSIS",
+        "stage": "DETAIL_FULL40K_RUNNING_AFTER_SCREEN_PASS",
+        "current_identity_SHA": "046abab773f7cb7a9e4f0a0f9cc44c4ad32d48431b971f22720dc8bd7936168a",
+        "server_controller": {
+          "status": "FULL_40K_RUNNING_AFTER_SCREEN_PASS",
+          "pid": 47081,
+          "controller_pid": 46313,
+          "identity_SHA": "046abab773f7cb7a9e4f0a0f9cc44c4ad32d48431b971f22720dc8bd7936168a",
+          "start_unix": 1791577010.532477,
+          "canvas": 2048,
+          "batch": 2,
+          "screen_updates": 4000,
+          "max_conditional_updates": 40000,
+          "shutdown_after_completion": false,
+          "shutdown_after_failure": false,
+          "further_revisions_user_authorized": true,
+          "screen_pass": {
+            "status": "PASS",
+            "identity_SHA": "046abab773f7cb7a9e4f0a0f9cc44c4ad32d48431b971f22720dc8bd7936168a",
+            "decisions": {
+              "4k_floor": true,
+              "private_net_gain_at_least1pp": true,
+              "all_classes_nonzero": true,
+              "no_class_IoU_loss_over2pp": true,
+              "HE_MA_FN_FP_tradeoff": true
+            },
+            "time_unix": 1791581314.075647,
+            "screen_updates": 4000,
+            "full_val_counts_verified": true,
+            "mIoU_4k": 32.03381957717303,
+            "base_mIoU_4k": 27.34992885694575,
+            "private_gain_pp": 4.683890720227279,
+            "calibration": {
+              "HE": {
+                "FN_ratio_final_vs_base": 1.0042367869619944,
+                "FP_ratio_final_vs_base": 0.9490050878866232,
+                "pass": true
+              },
+              "MA": {
+                "FN_ratio_final_vs_base": 1.0779990462998705,
+                "FP_ratio_final_vs_base": 0.04772031892926583,
+                "pass": true
+              }
+            },
+            "criterion_registered_before_results": true,
+            "test_accessed": false,
+            "accuracy_guaranteed": false,
+            "goal_achieved": false
+          }
+        },
+        "current_progress": {
+          "status": "TRAINING",
+          "completed": 19850,
+          "expected": 40000,
+          "saved_update": 19000,
+          "best_val_mIoU": 36.73584859847754,
+          "time_unix": 1791598340.9575803
+        },
+        "validation_risk": {
+          "status": "SINGLE_FULLVAL_COLLAPSE_UNDER_DIAGNOSIS",
+          "validation_step": 16000,
+          "mIoU": 13.074769744480871,
+          "delta_mIoU_pp": -23.661078853996667,
+          "SE_predicted_positive_pixels": 0,
+          "base_head_mIoU": 12.792119724348606,
+          "first_abnormal_fullval_not_persistent_pattern": true,
+          "CPU_checkpoint_probe": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\detail_execution\\diagnosis_16000\\CHECKPOINT_CPU_DIAGNOSTIC.json",
+          "CPU_probe_steps": [
+            12000,
+            17000
+          ],
+          "exact16k_checkpoint_available": false,
+          "model_optimizer_nonfinite_detected": false,
+          "registered_source_mismatch": false,
+          "BN_causal_evidence": false,
+          "next_fullval_to_observe": 20000,
+          "training_modified": false,
+          "server_shutdown": false,
+          "test_accessed": false
+        },
+        "best_val": {
+          "step": 12000,
+          "mIoU": 36.73584859847754
+        },
+        "deadline_gate": {
+          "status": "SCREEN_PASS_RENEWED_AVAILABILITY",
+          "original_deadline_superseded": true,
+          "extension_activated": true,
+          "same_fresh_run_authorized_through_completion": true,
+          "source": "reports/detail/DEADLINE_EXTENSION_ACTIVATED.json"
+        }
+      }
+    },
+    {
+      "at": "2026-10-10T12:36:41.692846+08:00",
+      "reason": "Foundation4k registered screen REJECTED; newprivate class-balanced correction dispatched after train-only gradient evidence",
+      "previous_current": {
+        "active_run": "foundation",
+        "status": "SCREEN_REJECTED",
+        "current_identity_SHA": "cc3a215c3e867779f4c5e2a6feedb5921c95b4cf48bfc9fe610003216be73bf8",
+        "server_controller": {
+          "status": "FRESH_SCREEN_RUNNING",
+          "pid": 54823,
+          "controller_pid": 54053,
+          "identity_SHA": "cc3a215c3e867779f4c5e2a6feedb5921c95b4cf48bfc9fe610003216be73bf8",
+          "start_unix": 1791601738.1210637,
+          "canvas": 2048,
+          "batch": 2,
+          "screen_updates": 4000,
+          "max_conditional_updates": 40000,
+          "shutdown_after_completion": false,
+          "shutdown_after_failure": false,
+          "further_revisions_user_authorized": true
+        },
+        "current_progress": {
+          "status": "TRAINING",
+          "completed": 2850,
+          "expected": 40000,
+          "saved_update": 2000,
+          "best_val_mIoU": null,
+          "time_unix": 1791604921.8878934
+        }
+      }
+    },
+    {
+      "at": "2026-10-10T14:12:21.018163+08:00",
+      "reason": "Aligned4k rejected; spatialtrain probe complete; separate clipping and scale-preserving semantic candidate dispatched",
+      "previous_current": {
+        "active_run": "aligned",
+        "status": "SCREEN_REJECTED",
+        "stage": "ALIGNED_FRESH_4K_SCREEN_RUNNING",
+        "current_identity_SHA": "637a5e77db60fecb85c569b7bbbb9cdececdef317e8a62136f49a1f9ef1a5f04",
+        "current_training_PID": 57901,
+        "current_run_start_unix": 1791607043.2206042,
+        "server_controller": {
+          "status": "FRESH_SCREEN_RUNNING",
+          "pid": 57901,
+          "controller_pid": 57131,
+          "identity_SHA": "637a5e77db60fecb85c569b7bbbb9cdececdef317e8a62136f49a1f9ef1a5f04",
+          "start_unix": 1791607043.2206042,
+          "canvas": 2048,
+          "batch": 2,
+          "screen_updates": 4000,
+          "max_conditional_updates": 40000,
+          "shutdown_after_completion": false,
+          "shutdown_after_failure": false,
+          "further_revisions_user_authorized": true
+        },
+        "GPU_smoke": {
+          "status": "PASS",
+          "identity_SHA": "046abab773f7cb7a9e4f0a0f9cc44c4ad32d48431b971f22720dc8bd7936168a",
+          "batch": 2,
+          "canvas": 2048,
+          "backbone_calls_per_step": 1,
+          "measured_backbone_calls": 12,
+          "discarded_optimizer_steps": 12,
+          "formal_updates": 0,
+          "fresh_initialization_verified": true,
+          "new_parameters": 79504,
+          "total_parameters": 65651924,
+          "optimizer_momentum_allocated": true,
+          "losses_FP32": true,
+          "all_gradients_finite": true,
+          "second_step_private_nonzero_gradients": {
+            "features": true,
+            "rgb": true,
+            "probability": true,
+            "blocks": true,
+            "readout": true
+          },
+          "step_seconds": [
+            9.255010940134525,
+            1.0353612899780273,
+            1.031679630279541,
+            1.0382336005568504,
+            1.050369679927826,
+            1.0334083586931229,
+            1.0336118787527084,
+            1.0405005067586899,
+            1.0367744863033295,
+            1.0324875563383102,
+            1.0458143576979637,
+            1.0363207906484604
+          ],
+          "median_warm_step_seconds": 1.036547638475895,
+          "mean_warm_step_seconds": 1.0379200845956802,
+          "peak_allocated_bytes": 16984107008,
+          "peak_reserved_bytes": 18266193920,
+          "seconds": 48.69825457781553,
+          "device": "NVIDIA GeForce RTX 4090",
+          "accuracy_validated": false
+        },
+        "current_progress": {
+          "status": "TRAINING",
+          "completed": 2900,
+          "expected": 40000,
+          "saved_update": 2000,
+          "best_val_mIoU": null,
+          "time_unix": 1791610302.2595716
+        },
+        "latest_performance": {
+          "completed_update": 19860,
+          "mean_batch_seconds": 1.067257222905755,
+          "mean_step_compute_seconds": 1.0672070498019457,
+          "mean_data_wait_seconds": 5.017310380935669e-05,
+          "window_batches": 100,
+          "warmup_batches_excluded": 12,
+          "workers": 8,
+          "prefetch_factor": 1,
+          "CUDA_future_batches": 1,
+          "shared_RAM_cache_bytes": 103079171144,
+          "channels_last": false,
+          "peak_allocated_bytes": 17009070080,
+          "peak_reserved_bytes": 18966642688,
+          "estimated_remaining_train_hours_excluding_validation": 5.970711241478307,
+          "time_unix": 1791598351.4701724,
+          "protocol_unchanged": true
+        },
+        "latest_runtime_observation": {
+          "server_online": true,
+          "checked_at_unix": 1791612002.1495454,
+          "shutdown_command_issued": false,
+          "external_processes_controlled": false,
+          "GPU_CAMPAIGN_RUNNING.json": {
+            "status": "SCREEN_REJECTED",
+            "pid": 57901,
+            "controller_pid": 57131,
+            "identity_SHA": "637a5e77db60fecb85c569b7bbbb9cdececdef317e8a62136f49a1f9ef1a5f04",
+            "start_unix": 1791607043.2206042,
+            "canvas": 2048,
+            "batch": 2,
+            "screen_updates": 4000,
+            "max_conditional_updates": 40000,
+            "shutdown_after_completion": false,
+            "shutdown_after_failure": false,
+            "further_revisions_user_authorized": true,
+            "processes_alive": false,
+            "end_unix": 1791611602.46538
+          },
+          "GPU_CAMPAIGN_OUTCOME.json": {
+            "status": "SCREEN_REJECTED",
+            "exit_code": 0,
+            "time_unix": 1791611602.46538,
+            "start_unix": 1791607043.2206042,
+            "completion": null,
+            "final_validation": null,
+            "fresh_screen_rejection": {
+              "status": "REJECTED",
+              "identity_SHA": "637a5e77db60fecb85c569b7bbbb9cdececdef317e8a62136f49a1f9ef1a5f04",
+              "decisions": {
+                "4k_floor": true,
+                "private_net_gain_at_least1pp": false,
+                "all_classes_nonzero": true,
+                "no_class_IoU_loss_over2pp": false,
+                "HE_MA_FN_FP_tradeoff": true
+              },
+              "time_unix": 1791611558.2767994,
+              "screen_updates": 4000,
+              "full_val_counts_verified": true,
+              "mIoU_4k": 31.78233972917561,
+              "base_mIoU_4k": 32.43627163932891,
+              "private_gain_pp": -0.6539319101532968,
+              "calibration": {
+                "HE": {
+                  "FN_ratio_final_vs_base": 0.9411671746656833,
+                  "FP_ratio_final_vs_base": 1.1981883558722597,
+                  "pass": true
+                },
+                "MA": {
+                  "FN_ratio_final_vs_base": 0.9669133562844008,
+                  "FP_ratio_final_vs_base": 1.0883823981046812,
+                  "pass": true
+                }
+              },
+              "criterion_registered_before_results": true,
+              "test_accessed": false,
+              "accuracy_guaranteed": false,
+              "goal_achieved": false
+            },
+            "critical_collapse": null,
+            "test_evaluation": {
+              "status": "NOT_RUN",
+              "reason": "Fresh screen rejected or training incomplete"
+            },
+            "server_kept_running": true,
+            "shutdown_command_issued": false,
+            "external_diagnostics_controlled": false,
+            "goal_achieved": false,
+            "own_RAM_retained_for_authorized_next_revision": true
+          },
+          "DEADLINE_GATE.json": {
+            "status": "PASS",
+            "measured_screen_estimate_seconds": 5013.172107934952,
+            "checked_unix": 1791607043.2193184,
+            "user_latest_server_available": true,
+            "reserve_seconds": 180,
+            "full40k_conditional_on_screen": true
+          },
+          "DEPLOYMENT_DISPATCHED.json": {
+            "status": "CPU_TO_REAL_GPU_PIPELINE_DISPATCHED",
+            "pipeline_pid": 57131,
+            "time_unix": 1791606977.0379958,
+            "fresh_run_count": 1,
+            "server_kept_running": true,
+            "external_diagnostics_controlled": false
+          },
+          "CPU_TO_GPU_DISPATCH.json": {
+            "status": "CPU_PASS_STARTING_REAL_GPU_GATE",
+            "controller_pid": 57131,
+            "time_unix": 1791606979.2372613,
+            "fresh_only": true
+          },
+          "own_process_checks": {
+            "pid": {
+              "pid": 57901,
+              "alive": false,
+              "cmdline": "",
+              "matches_current_task": false
+            },
+            "controller_pid": {
+              "pid": 57131,
+              "alive": false,
+              "cmdline": "",
+              "matches_current_task": false
+            }
+          },
+          "own_session_id": 57131,
+          "own_session_live_processes": [],
+          "own_RAM": {
+            "pid": 39434,
+            "bytes": 103079171144,
+            "alive": true,
+            "matches_own_RAM": true
+          },
+          "GPU_status": "utilization.gpu [%], memory.used [MiB], power.draw [W]\n0 %, 1 MiB, 20.58 W\n"
+        },
+        "current_runtime": {
+          "server_online": true,
+          "checked_at_unix": 1791584827.8864417,
+          "shutdown_command_issued": false,
+          "external_processes_controlled": false,
+          "GPU_CAMPAIGN_RUNNING.json": {
+            "status": "FULL_40K_RUNNING_AFTER_SCREEN_PASS",
+            "pid": 47081,
+            "controller_pid": 46313,
+            "identity_SHA": "046abab773f7cb7a9e4f0a0f9cc44c4ad32d48431b971f22720dc8bd7936168a",
+            "start_unix": 1791577010.532477,
+            "canvas": 2048,
+            "batch": 2,
+            "screen_updates": 4000,
+            "max_conditional_updates": 40000,
+            "shutdown_after_completion": false,
+            "shutdown_after_failure": false,
+            "further_revisions_user_authorized": true,
+            "screen_pass": {
+              "status": "PASS",
+              "identity_SHA": "046abab773f7cb7a9e4f0a0f9cc44c4ad32d48431b971f22720dc8bd7936168a",
+              "decisions": {
+                "4k_floor": true,
+                "private_net_gain_at_least1pp": true,
+                "all_classes_nonzero": true,
+                "no_class_IoU_loss_over2pp": true,
+                "HE_MA_FN_FP_tradeoff": true
+              },
+              "time_unix": 1791581314.075647,
+              "screen_updates": 4000,
+              "full_val_counts_verified": true,
+              "mIoU_4k": 32.03381957717303,
+              "base_mIoU_4k": 27.34992885694575,
+              "private_gain_pp": 4.683890720227279,
+              "calibration": {
+                "HE": {
+                  "FN_ratio_final_vs_base": 1.0042367869619944,
+                  "FP_ratio_final_vs_base": 0.9490050878866232,
+                  "pass": true
+                },
+                "MA": {
+                  "FN_ratio_final_vs_base": 1.0779990462998705,
+                  "FP_ratio_final_vs_base": 0.04772031892926583,
+                  "pass": true
+                }
+              },
+              "criterion_registered_before_results": true,
+              "test_accessed": false,
+              "accuracy_guaranteed": false,
+              "goal_achieved": false
+            }
+          },
+          "DEADLINE_GATE.json": {
+            "status": "PASS",
+            "measured_screen_estimate_seconds": 4751.680338382721,
+            "checked_unix": 1791577010.5315235,
+            "user_latest_server_available": true,
+            "reserve_seconds": 180,
+            "full40k_conditional_on_screen": true
+          },
+          "DEADLINE_EXTENSION_ACTIVATED.json": {
+            "status": "ACTIVE",
+            "user_authorization": "Through screening, server may remain available until completion",
+            "screen_identity_SHA": "046abab773f7cb7a9e4f0a0f9cc44c4ad32d48431b971f22720dc8bd7936168a",
+            "screen_pass_unix": 1791581314.075647,
+            "server_reavailability_user_confirmed": true,
+            "full40k_authorized": true,
+            "same_fresh_run_continues": true,
+            "test_only_after_locked40k": true
+          },
+          "own_process_checks": {
+            "pid": {
+              "pid": 47081,
+              "alive": true,
+              "cmdline": "/root/miniconda3/bin/python -u train.py --train ",
+              "matches_current_task": true
+            },
+            "controller_pid": {
+              "pid": 46313,
+              "alive": true,
+              "cmdline": "/root/miniconda3/bin/python -u /root/autodl-tmp/HRDecoder_v3_20261008/detail_execution/controller.py ",
+              "matches_current_task": true
+            }
+          },
+          "own_session_id": 46313,
+          "own_session_live_processes": [
+            {
+              "pid": 46313,
+              "cmdline": "/root/miniconda3/bin/python -u /root/autodl-tmp/HRDecoder_v3_20261008/detail_execution/controller.py "
+            },
+            {
+              "pid": 47081,
+              "cmdline": "/root/miniconda3/bin/python -u train.py --train "
+            },
+            {
+              "pid": 47161,
+              "cmdline": "/root/miniconda3/bin/python -c from multiprocessing.resource_tracker import main;main(42) "
+            },
+            {
+              "pid": 47162,
+              "cmdline": "/root/miniconda3/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=43, pipe_handle=47) --multiprocessing-fork "
+            },
+            {
+              "pid": 47234,
+              "cmdline": "/root/miniconda3/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=43, pipe_handle=51) --multiprocessing-fork "
+            },
+            {
+              "pid": 47305,
+              "cmdline": "/root/miniconda3/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=43, pipe_handle=55) --multiprocessing-fork "
+            },
+            {
+              "pid": 47377,
+              "cmdline": "/root/miniconda3/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=43, pipe_handle=59) --multiprocessing-fork "
+            },
+            {
+              "pid": 47449,
+              "cmdline": "/root/miniconda3/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=43, pipe_handle=63) --multiprocessing-fork "
+            },
+            {
+              "pid": 47520,
+              "cmdline": "/root/miniconda3/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=43, pipe_handle=67) --multiprocessing-fork "
+            },
+            {
+              "pid": 47606,
+              "cmdline": "/root/miniconda3/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=43, pipe_handle=71) --multiprocessing-fork "
+            },
+            {
+              "pid": 47677,
+              "cmdline": "/root/miniconda3/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=43, pipe_handle=75) --multiprocessing-fork "
+            }
+          ],
+          "own_RAM": {
+            "pid": 39434,
+            "bytes": 103079171144,
+            "alive": true,
+            "matches_own_RAM": true
+          },
+          "GPU_status": "utilization.gpu [%], memory.used [MiB], power.draw [W]\n99 %, 18467 MiB, 331.02 W\n"
+        },
+        "current_verified_training_step": 2900,
+        "reported_validation_steps": [],
+        "available_validation_steps": [],
+        "best_val": null,
+        "latest_validation_step": null,
+        "validation_risk": null,
+        "current_screen_pass": null,
+        "screen_pass_receipt": null,
+        "conditional_extension_activated": false,
+        "conditional_extension": {
+          "status": "ACTIVE",
+          "user_authorization": "Through screening, server may remain available until completion",
+          "screen_identity_SHA": "046abab773f7cb7a9e4f0a0f9cc44c4ad32d48431b971f22720dc8bd7936168a",
+          "screen_pass_unix": 1791581314.075647,
+          "server_reavailability_user_confirmed": true,
+          "full40k_authorized": true,
+          "same_fresh_run_continues": true,
+          "test_only_after_locked40k": true
+        },
+        "DEADLINE_EXTENSION_ACTIVATED": null,
+        "deadline_gate": {
+          "status": "NEW_FRESH_SCREEN_PENDING",
+          "original_deadline_superseded": true,
+          "extension_activated": false
+        },
+        "deadline_UTC_plus_8": null,
+        "expected_next_screen_beijing": "2026-10-10T13:54:55.797557+08:00",
+        "expected_full_train_and_final_evaluation_beijing": "2026-10-11T01:13:54.346529+08:00",
+        "latest_ETA_analysis": {
+          "checked_at": "2026-10-10T13:31:49.629290+08:00",
+          "method": "Conservative max(nonzero auxiliary12smoke,post1500 actual100window)",
+          "performance_completed_update": 2910,
+          "window_batches": 100,
+          "mean_batch_seconds": 1.100302817374468,
+          "mean_data_wait_seconds": 3.60870361328125e-05,
+          "lambda_K": 0.28,
+          "lambda_base_KD": 0.14,
+          "nonzero_auxiliary_phase": true,
+          "expected4k_CST": "2026-10-10T13:54:55.797557+08:00",
+          "expected40k_CST_excluding_test": "2026-10-11T01:13:54.346529+08:00",
+          "prediction_not_completion": true,
+          "significant_ETA_change": false,
+          "note": "KD ramp active; update estimate again from full-coefficient post4k window"
+        },
+        "next_launch_gate": "Pinned CPU13checks and real2048b2 nonzero auxiliary12smoke mustPASS; registered4k screen then samefresh40000",
+        "latest_runtime_receipt": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\aligned_execution\\LAUNCH_VERIFIED.json",
+        "latest_startup_record": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\aligned_execution\\ClassBalanced服务器训练启动记录.md",
+        "local_report": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\detail_execution\\半分辨率细节纠错服务器训练启动记录.md",
+        "active_execution_directory": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\aligned_execution",
+        "active_monitor": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\aligned_execution\\monitor_aligned.py",
+        "screening_monitor": "aligned_execution/monitor_aligned.py",
+        "screening_plan": "aligned_execution/screen_protocol.json",
+        "latest_plan": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\aligned_execution\\00_私有纠错正负监督对齐方案.md",
+        "current_completion_receipt": null,
+        "launch_mode": "Onefresh ImageNetW48 seed42/private20261008; no old task weights",
+        "formal_training_started": true,
+        "formal_training_status": "FULL_40K_RUNNING_AFTER_SCREEN_PASS",
+        "resume_first": "Only own matching detail checkpoint on necessary failure; never restore rejected adapter or older models",
+        "server_keep_online": true,
+        "automatic_shutdown": "DISABLED",
+        "screen_handoff_automation_id": "classbalanced4k",
+        "screen_handoff_automation_deleted": true,
+        "latest_transition_at": null
+      }
+    },
+    {
+      "at": "2026-10-10T15:53:47.384365+08:00",
+      "reason": "Semantic4k rejected private gain; eighttrain logit-gradient diagnostic complete; same network directIoU objective fresh candidate dispatched",
+      "previous_current": {
+        "active_run": "semantic",
+        "status": "SCREEN_REJECTED",
+        "stage": "SEMANTIC_FRESH_4K_SCREEN_RUNNING",
+        "current_identity_SHA": "9e21de915c24dc3c16322cc39babb53cdc3754271b07e5f27ef22b10b43ddf43",
+        "current_training_PID": 61266,
+        "current_run_start_unix": 1791612880.9693184,
+        "server_controller": {
+          "status": "FRESH_SCREEN_RUNNING",
+          "pid": 61266,
+          "controller_pid": 60493,
+          "identity_SHA": "9e21de915c24dc3c16322cc39babb53cdc3754271b07e5f27ef22b10b43ddf43",
+          "start_unix": 1791612880.9693184,
+          "canvas": 2048,
+          "batch": 2,
+          "screen_updates": 4000,
+          "max_conditional_updates": 40000,
+          "shutdown_after_completion": false,
+          "shutdown_after_failure": false,
+          "further_revisions_user_authorized": true
+        },
+        "GPU_smoke": {
+          "status": "PASS",
+          "identity_SHA": "9e21de915c24dc3c16322cc39babb53cdc3754271b07e5f27ef22b10b43ddf43",
+          "batch": 2,
+          "canvas": 2048,
+          "backbone_calls_per_step": 1,
+          "measured_backbone_calls": 12,
+          "discarded_optimizer_steps": 12,
+          "formal_updates": 0,
+          "fresh_initialization_verified": true,
+          "new_parameters": 284496,
+          "total_parameters": 65856916,
+          "optimizer_momentum_allocated": true,
+          "losses_FP32": true,
+          "all_gradients_finite": true,
+          "last_smoke_step_private_nonzero_gradients": {
+            "features": true,
+            "semantic": true,
+            "rgb": true,
+            "mix": true,
+            "blocks": true,
+            "readout": true
+          },
+          "step_seconds": [
+            9.485287465155125,
+            1.1378588154911995,
+            1.1308179423213005,
+            1.1361366212368011,
+            1.1367983371019363,
+            1.1354922726750374,
+            1.1315236166119576,
+            1.1344729736447334,
+            1.1382774412631989,
+            1.1330219432711601,
+            1.1470110341906548,
+            1.147745668888092
+          ],
+          "median_warm_step_seconds": 1.1358144469559193,
+          "mean_warm_step_seconds": 1.1371297851204871,
+          "peak_allocated_bytes": 19620046848,
+          "peak_reserved_bytes": 21653094400,
+          "seconds": 51.87074887752533,
+          "device": "NVIDIA GeForce RTX 4090",
+          "accuracy_validated": false
+        },
+        "current_progress": {
+          "status": "TRAINING",
+          "completed": 2500,
+          "expected": 40000,
+          "saved_update": 2000,
+          "best_val_mIoU": null,
+          "time_unix": 1791615866.2570343
+        },
+        "latest_performance": {
+          "completed_update": 2530,
+          "mean_batch_seconds": 1.1840813665837049,
+          "mean_step_compute_seconds": 1.184026804715395,
+          "mean_data_wait_seconds": 5.456186830997467e-05,
+          "window_batches": 100,
+          "warmup_batches_excluded": 12,
+          "workers": 8,
+          "prefetch_factor": 1,
+          "CUDA_future_batches": 1,
+          "shared_RAM_cache_bytes": 103079171144,
+          "channels_last": false,
+          "peak_allocated_bytes": 19642290176,
+          "peak_reserved_bytes": 22106079232,
+          "estimated_remaining_train_hours_excluding_validation": 12.324313557192061,
+          "time_unix": 1791615901.6454554,
+          "protocol_unchanged": true
+        },
+        "latest_runtime_observation": {
+          "server_online": true,
+          "checked_at_unix": 1791618281.470266,
+          "shutdown_command_issued": false,
+          "external_processes_controlled": false,
+          "GPU_CAMPAIGN_RUNNING.json": {
+            "status": "SCREEN_REJECTED",
+            "pid": 61266,
+            "controller_pid": 60493,
+            "identity_SHA": "9e21de915c24dc3c16322cc39babb53cdc3754271b07e5f27ef22b10b43ddf43",
+            "start_unix": 1791612880.9693184,
+            "canvas": 2048,
+            "batch": 2,
+            "screen_updates": 4000,
+            "max_conditional_updates": 40000,
+            "shutdown_after_completion": false,
+            "shutdown_after_failure": false,
+            "further_revisions_user_authorized": true,
+            "processes_alive": false,
+            "end_unix": 1791617735.6966648
+          },
+          "GPU_CAMPAIGN_OUTCOME.json": {
+            "status": "SCREEN_REJECTED",
+            "exit_code": 0,
+            "time_unix": 1791617735.6966648,
+            "start_unix": 1791612880.9693184,
+            "completion": null,
+            "final_validation": null,
+            "fresh_screen_rejection": {
+              "status": "REJECTED",
+              "identity_SHA": "9e21de915c24dc3c16322cc39babb53cdc3754271b07e5f27ef22b10b43ddf43",
+              "decisions": {
+                "4k_floor": true,
+                "private_net_gain_at_least1pp": false,
+                "all_classes_nonzero": true,
+                "no_class_IoU_loss_over2pp": true,
+                "HE_MA_FN_FP_tradeoff": true
+              },
+              "time_unix": 1791617690.5151842,
+              "screen_updates": 4000,
+              "full_val_counts_verified": true,
+              "mIoU_4k": 32.88897157019957,
+              "base_mIoU_4k": 33.25499458489966,
+              "private_gain_pp": -0.36602301470009024,
+              "calibration": {
+                "HE": {
+                  "FN_ratio_final_vs_base": 0.9675583692827672,
+                  "FP_ratio_final_vs_base": 1.0673158403330112,
+                  "pass": true
+                },
+                "MA": {
+                  "FN_ratio_final_vs_base": 0.9419743782969103,
+                  "FP_ratio_final_vs_base": 1.1507380814342416,
+                  "pass": true
+                }
+              },
+              "criterion_registered_before_results": true,
+              "test_accessed": false,
+              "accuracy_guaranteed": false,
+              "goal_achieved": false
+            },
+            "critical_collapse": null,
+            "test_evaluation": {
+              "status": "NOT_RUN",
+              "reason": "Fresh screen rejected or training incomplete"
+            },
+            "server_kept_running": true,
+            "shutdown_command_issued": false,
+            "external_diagnostics_controlled": false,
+            "goal_achieved": false,
+            "own_RAM_retained_for_authorized_next_revision": true
+          },
+          "DEADLINE_GATE.json": {
+            "status": "PASS",
+            "measured_screen_estimate_seconds": 5148.519140481949,
+            "checked_unix": 1791612880.9682467,
+            "user_latest_server_available": true,
+            "reserve_seconds": 180,
+            "full40k_conditional_on_screen": true
+          },
+          "DEPLOYMENT_DISPATCHED.json": {
+            "status": "CPU_TO_REAL_GPU_PIPELINE_DISPATCHED",
+            "pipeline_pid": 60493,
+            "time_unix": 1791612815.8430195,
+            "fresh_run_count": 1,
+            "formal_updates_before_repair": 0,
+            "gate_repair": true,
+            "server_kept_running": true,
+            "external_diagnostics_controlled": false
+          },
+          "CPU_TO_GPU_DISPATCH.json": {
+            "status": "CPU_PASS_STARTING_REAL_GPU_GATE",
+            "controller_pid": 60493,
+            "time_unix": 1791612818.656031,
+            "fresh_only": true
+          },
+          "own_process_checks": {
+            "pid": {
+              "pid": 61266,
+              "alive": false,
+              "cmdline": "",
+              "matches_current_task": false
+            },
+            "controller_pid": {
+              "pid": 60493,
+              "alive": false,
+              "cmdline": "",
+              "matches_current_task": false
+            }
+          },
+          "own_session_id": 60493,
+          "own_session_live_processes": [],
+          "own_RAM": {
+            "pid": 39434,
+            "bytes": 103079171144,
+            "alive": true,
+            "matches_own_RAM": true
+          },
+          "GPU_status": "utilization.gpu [%], memory.used [MiB], power.draw [W]\n0 %, 1 MiB, 20.34 W\n"
+        },
+        "current_runtime": {
+          "server_online": true,
+          "checked_at_unix": 1791615909.344683,
+          "shutdown_command_issued": false,
+          "external_processes_controlled": false,
+          "GPU_CAMPAIGN_RUNNING.json": {
+            "status": "FRESH_SCREEN_RUNNING",
+            "pid": 61266,
+            "controller_pid": 60493,
+            "identity_SHA": "9e21de915c24dc3c16322cc39babb53cdc3754271b07e5f27ef22b10b43ddf43",
+            "start_unix": 1791612880.9693184,
+            "canvas": 2048,
+            "batch": 2,
+            "screen_updates": 4000,
+            "max_conditional_updates": 40000,
+            "shutdown_after_completion": false,
+            "shutdown_after_failure": false,
+            "further_revisions_user_authorized": true
+          },
+          "DEADLINE_GATE.json": {
+            "status": "PASS",
+            "measured_screen_estimate_seconds": 5148.519140481949,
+            "checked_unix": 1791612880.9682467,
+            "user_latest_server_available": true,
+            "reserve_seconds": 180,
+            "full40k_conditional_on_screen": true
+          },
+          "DEPLOYMENT_DISPATCHED.json": {
+            "status": "CPU_TO_REAL_GPU_PIPELINE_DISPATCHED",
+            "pipeline_pid": 60493,
+            "time_unix": 1791612815.8430195,
+            "fresh_run_count": 1,
+            "formal_updates_before_repair": 0,
+            "gate_repair": true,
+            "server_kept_running": true,
+            "external_diagnostics_controlled": false
+          },
+          "CPU_TO_GPU_DISPATCH.json": {
+            "status": "CPU_PASS_STARTING_REAL_GPU_GATE",
+            "controller_pid": 60493,
+            "time_unix": 1791612818.656031,
+            "fresh_only": true
+          },
+          "own_process_checks": {
+            "pid": {
+              "pid": 61266,
+              "alive": true,
+              "cmdline": "/root/miniconda3/bin/python -u train.py --train ",
+              "matches_current_task": true
+            },
+            "controller_pid": {
+              "pid": 60493,
+              "alive": true,
+              "cmdline": "/root/miniconda3/bin/python -u /root/autodl-tmp/HRDecoder_v3_20261008/semantic_execution/controller.py ",
+              "matches_current_task": true
+            }
+          },
+          "own_session_id": 60493,
+          "own_session_live_processes": [
+            {
+              "pid": 60493,
+              "cmdline": "/root/miniconda3/bin/python -u /root/autodl-tmp/HRDecoder_v3_20261008/semantic_execution/controller.py "
+            },
+            {
+              "pid": 61266,
+              "cmdline": "/root/miniconda3/bin/python -u train.py --train "
+            },
+            {
+              "pid": 61358,
+              "cmdline": "/root/miniconda3/bin/python -c from multiprocessing.resource_tracker import main;main(42) "
+            },
+            {
+              "pid": 61359,
+              "cmdline": "/root/miniconda3/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=43, pipe_handle=47) --multiprocessing-fork "
+            },
+            {
+              "pid": 61431,
+              "cmdline": "/root/miniconda3/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=43, pipe_handle=51) --multiprocessing-fork "
+            },
+            {
+              "pid": 61502,
+              "cmdline": "/root/miniconda3/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=43, pipe_handle=55) --multiprocessing-fork "
+            },
+            {
+              "pid": 61574,
+              "cmdline": "/root/miniconda3/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=43, pipe_handle=59) --multiprocessing-fork "
+            },
+            {
+              "pid": 61645,
+              "cmdline": "/root/miniconda3/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=43, pipe_handle=63) --multiprocessing-fork "
+            },
+            {
+              "pid": 61719,
+              "cmdline": "/root/miniconda3/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=43, pipe_handle=67) --multiprocessing-fork "
+            },
+            {
+              "pid": 61790,
+              "cmdline": "/root/miniconda3/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=43, pipe_handle=71) --multiprocessing-fork "
+            },
+            {
+              "pid": 61862,
+              "cmdline": "/root/miniconda3/bin/python -c from multiprocessing.spawn import spawn_main; spawn_main(tracker_fd=43, pipe_handle=75) --multiprocessing-fork "
+            }
+          ],
+          "own_RAM": {
+            "pid": 39434,
+            "bytes": 103079171144,
+            "alive": true,
+            "matches_own_RAM": true
+          },
+          "GPU_status": "utilization.gpu [%], memory.used [MiB], power.draw [W]\n100 %, 21593 MiB, 326.22 W\n"
+        },
+        "current_verified_training_step": 2500,
+        "reported_validation_steps": [],
+        "available_validation_steps": [],
+        "best_val": null,
+        "latest_validation_step": null,
+        "validation_risk": null,
+        "current_screen_pass": null,
+        "screen_pass_receipt": null,
+        "conditional_extension_activated": false,
+        "conditional_extension": null,
+        "DEADLINE_EXTENSION_ACTIVATED": null,
+        "deadline_gate": {
+          "status": "NEW_FRESH_SCREEN_PENDING",
+          "original_deadline_superseded": true,
+          "extension_activated": false
+        },
+        "expected_next_screen_beijing": "2026-10-10T15:38:02.245064+08:00",
+        "expected_full_train_and_final_evaluation_beijing": "2026-10-11T04:11:29.174261+08:00",
+        "latest_ETA_analysis": {
+          "checked_at": "2026-10-10T15:04:52.963315+08:00",
+          "method": "max(real nonzeroauxsmoke,post1500 actual100batch window)",
+          "performance_completed_update": 2530,
+          "window_batches": 100,
+          "mean_batch_seconds": 1.1840813665837049,
+          "mean_data_wait_seconds": 5.456186830997467e-05,
+          "lambda_K_at_last_log": 0.2,
+          "nonzero_auxiliary_phase": true,
+          "expected4k_CST": "2026-10-10T15:38:02.245064+08:00",
+          "expected40k_plus_reserved_final_evaluation_CST": "2026-10-11T04:11:29.174261+08:00",
+          "fullETA_delta_from_launch_minutes": 31.716892299999998,
+          "significant_ETA_change": false,
+          "prediction_not_completion": true,
+          "note": "KD ramp active; update again from full-coefficient post4k100window; no-KD pre1500 not extrapolated"
+        },
+        "next_launch_gate": "Pinned original torch2.0.1 CPU15 and real2048b2 nonzero12smoke; registered4k screen PASS then same fresh40000",
+        "latest_runtime_receipt": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\semantic_execution\\latest_snapshot.json",
+        "latest_startup_record": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\semantic_execution\\语义纠错服务器训练启动记录.md",
+        "local_report": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\semantic_execution\\语义纠错服务器训练启动记录.md",
+        "active_execution_directory": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\semantic_execution",
+        "active_monitor": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\semantic_execution\\monitor_semantic.py",
+        "screening_monitor": "semantic_execution/monitor_semantic.py",
+        "screening_plan": "semantic_execution/screen_protocol.json",
+        "latest_plan": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\semantic_execution\\screen_protocol.json",
+        "current_completion_receipt": null,
+        "launch_mode": "Fresh ImageNetW48 seed42/private20261008; no old task checkpoint",
+        "formal_training_started": true,
+        "formal_training_status": "FRESH_SCREEN_RUNNING",
+        "resume_first": "Only own matching semantic last.pt model/optimizer/RNG for necessary repair; never old rejected tasks",
+        "server_keep_online": true,
+        "automatic_shutdown": "DISABLED",
+        "screen_handoff_automation_id": "semantic4k",
+        "screen_handoff_automation_deleted": false,
+        "latest_transition_at": "2026-10-10T14:12:21.018163+08:00",
+        "current_gate_repair": {
+          "scope": "Correct stale total-parameter assertion before optimizer or formal updates",
+          "old_train_SHA": "0c49f8322762a9deddabb29ed3e665544111ec0c6bd70f53de75d9f7bcdeccdf",
+          "new_train_SHA": "32ec590eb21f8bc5b5caa6264dbc1a6d73367feff21fb684984810d7e633ba94",
+          "expected_total_parameters": 65856916,
+          "private_parameters": 284496,
+          "model_loss_optimizer_unchanged": true,
+          "CPU_and_GPU_gates_repeated": true,
+          "old_failure_preserved_remote": "reports/semantic/failed_parameter_assertion_before_updates",
+          "safe_to_repair": true,
+          "formal_updates": 0,
+          "prior_session_empty": true,
+          "old_pipeline_pid": 60263,
+          "status": "CPU_TO_REAL_GPU_PIPELINE_DISPATCHED",
+          "pipeline_pid": 60493,
+          "time_unix": 1791612815.8430195,
+          "fresh_run_count": 1,
+          "formal_updates_before_repair": 0,
+          "gate_repair": true,
+          "server_kept_running": true,
+          "external_diagnostics_controlled": false
+        }
+      },
+      "verified_semantic_final_outcome": {
+        "status": "SCREEN_REJECTED",
+        "exit_code": 0,
+        "time_unix": 1791617735.6966648,
+        "start_unix": 1791612880.9693184,
+        "completion": null,
+        "final_validation": null,
+        "fresh_screen_rejection": {
+          "status": "REJECTED",
+          "identity_SHA": "9e21de915c24dc3c16322cc39babb53cdc3754271b07e5f27ef22b10b43ddf43",
+          "decisions": {
+            "4k_floor": true,
+            "private_net_gain_at_least1pp": false,
+            "all_classes_nonzero": true,
+            "no_class_IoU_loss_over2pp": true,
+            "HE_MA_FN_FP_tradeoff": true
+          },
+          "time_unix": 1791617690.5151842,
+          "screen_updates": 4000,
+          "full_val_counts_verified": true,
+          "mIoU_4k": 32.88897157019957,
+          "base_mIoU_4k": 33.25499458489966,
+          "private_gain_pp": -0.36602301470009024,
+          "calibration": {
+            "HE": {
+              "FN_ratio_final_vs_base": 0.9675583692827672,
+              "FP_ratio_final_vs_base": 1.0673158403330112,
+              "pass": true
+            },
+            "MA": {
+              "FN_ratio_final_vs_base": 0.9419743782969103,
+              "FP_ratio_final_vs_base": 1.1507380814342416,
+              "pass": true
+            }
+          },
+          "criterion_registered_before_results": true,
+          "test_accessed": false,
+          "accuracy_guaranteed": false,
+          "goal_achieved": false
+        },
+        "critical_collapse": null,
+        "test_evaluation": {
+          "status": "NOT_RUN",
+          "reason": "Fresh screen rejected or training incomplete"
+        },
+        "server_kept_running": true,
+        "shutdown_command_issued": false,
+        "external_diagnostics_controlled": false,
+        "goal_achieved": false,
+        "own_RAM_retained_for_authorized_next_revision": true
+      }
+    }
+  ],
+  "screen_pass_receipt": null,
+  "DEADLINE_EXTENSION_ACTIVATED": null,
+  "current_screen_registration": null,
+  "latest_startup_record": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\iou_execution\\IoU纠错服务器训练启动记录.md",
+  "expected_next_screen_beijing": "2026-10-10T17:15:05.474192+08:00",
+  "previous_foundation4k_automation_deleted": true,
+  "screen_handoff_once_then_delete": true,
+  "latest_transition_at": "2026-10-10T15:53:47.384365+08:00",
+  "current_gate_repair": null,
+  "launch_verified_receipt": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\iou_execution\\LAUNCH_VERIFIED.json",
+  "previous_classbalanced4k_automation_deleted": true,
+  "previous_semantic4k_automation_deleted": true,
+  "authorization_history": [
+    {
+      "recorded_at": "2026-10-10T16:07:34.934548+08:00",
+      "previous": {
+        "latest_user_instruction": "Server is still available; start now, autonomously revise failed architecture without user choices, keep useful GPU work and smooth transitions; aim to train most confident candidate by morning",
+        "server_shutdown_authorized": false,
+        "further_architecture_revisions_user_authorized": true,
+        "additional_architecture_revision_limit": null
+      },
+      "new_policy": "iou_execution/LAST_RUN_POLICY.json"
+    }
+  ],
+  "last_architecture_run": "iou",
+  "last_architecture_identity_SHA": "49ee0537d2802450284844a32405a6da0116ee9b77c2ab519aa9f985d15d47d4",
+  "final_report_required": true,
+  "final_report_directory": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\final_report",
+  "last_run_policy": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\iou_execution\\LAST_RUN_POLICY.json",
+  "final_report_status": "DRAFT_PENDING_CURRENT_RUN_TERMINAL",
+  "finalizer_guard_receipt": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\iou_execution\\FINALIZER_GUARD_PASS.json",
+  "current_shutdown_observation": {
+    "status": "SHUTDOWN_REQUESTED_SSH_UNREACHABLE",
+    "requested_at": "2026-10-10T17:18:45.235789+08:00",
+    "identity_SHA": "49ee0537d2802450284844a32405a6da0116ee9b77c2ab519aa9f985d15d47d4",
+    "terminal_status": "SCREEN_REJECTED",
+    "local_receipts_archived": true,
+    "local_report_saved": true,
+    "command": "/bin/bash /usr/bin/shutdown",
+    "shutdown_command_issued": true,
+    "platform_poweroff_verified": false,
+    "external_diagnostic_processes_individually_controlled": false,
+    "SSH_transport_active_after_command": false,
+    "command_exit_code": 0,
+    "SSH_reconnect_succeeded": false,
+    "connection_error": "NoValidConnectionsError: [Errno None] Unable to connect to port 11347 on 116.136.52.182",
+    "observed_at": "2026-10-10T17:18:49.535651+08:00"
+  },
+  "heartbeat_check_interval_minutes": 45,
+  "final_closeout_audit": "D:\\dataset\\experiment\\HRDecoder_ArchitectureDesign_20261008\\final_report\\EXPERIMENT_CLOSEOUT_AUDIT.json"
+}

@@ -1,0 +1,111 @@
+{
+  "mIoU_percent": 36.01561025565543,
+  "IoU_percent": [
+    40.25551661770746,
+    41.71560965869578,
+    42.84682150529348,
+    19.244493240925
+  ],
+  "precision_percent": [
+    57.17555871687017,
+    71.0849678110455,
+    54.809386693831605,
+    26.839632121426725
+  ],
+  "recall_percent": [
+    57.63248659745601,
+    50.240728271433355,
+    66.25191158070346,
+    40.47832111309971
+  ],
+  "counts": [
+    [
+      167597,
+      125530,
+      123206
+    ],
+    [
+      605865,
+      246446,
+      600059
+    ],
+    [
+      133434,
+      110017,
+      67970
+    ],
+    [
+      28045,
+      76446,
+      41239
+    ]
+  ],
+  "class_order": [
+    "EX",
+    "HE",
+    "SE",
+    "MA"
+  ],
+  "undefined_precision_convention": "zero when TP+FP=0; inspect counts",
+  "images": 76,
+  "threshold": "strictly > .5",
+  "base_head_metrics": {
+    "mIoU_percent": 36.128163009753514,
+    "IoU_percent": [
+      39.990895470496575,
+      40.85207182623297,
+      44.467885607126114,
+      19.201799135158375
+    ],
+    "precision_percent": [
+      59.46251515534695,
+      73.53382290780756,
+      60.968863523476536,
+      31.012058167639246
+    ],
+    "recall_percent": [
+      54.98017558278284,
+      47.89414589974161,
+      62.164604476574446,
+      33.52000461867098
+    ],
+    "counts": [
+      [
+        159884,
+        108998,
+        130919
+      ],
+      [
+        577567,
+        207877,
+        628357
+      ],
+      [
+        125202,
+        80152,
+        76202
+      ],
+      [
+        23224,
+        51663,
+        46060
+      ]
+    ],
+    "class_order": [
+      "EX",
+      "HE",
+      "SE",
+      "MA"
+    ],
+    "undefined_precision_convention": "zero when TP+FP=0; inspect counts",
+    "images": 76,
+    "threshold": "strictly > .5"
+  },
+  "seconds": 32.333380579948425,
+  "deployment_inference_verified": true,
+  "teacher_or_GT_input": false,
+  "parent_completed": 8000,
+  "probe_updates": 500,
+  "arm": "gt_stratified",
+  "identity_SHA": "9ec0a51586cf2f49d8b8005debafa5058867d0741cc38a46ee1739a3f4b97bfa"
+}

@@ -1,0 +1,28 @@
+{
+  "date_local": "2026-10-23",
+  "authority": "Direct human user messages in this chat",
+  "external_holdout_history": {
+    "question": "独立验证的历史核查：IDRiD 的 27 张测试图（IDRiD_55–81）以前是否用于任何模型的训练、挑选模型、调阈值或比较方案？现有 HRDecoder 记录写的是隔离保留，但更早项目历史尚无法核实。",
+    "answer_verbatim": "确认从未用于训练、选型或调参",
+    "cohort": "IDRiD_55 through IDRiD_81 inclusive, 27 images",
+    "evidence_limit": "Human history confirmation; not an independent audit of every historical machine or patient identity"
+  },
+  "baseline_missing": {
+    "answer_verbatim": "这个问题工作区里肯定有的你能自己找找没有就不搞了没问题的",
+    "execution": "Search workspace and archives; if original split613 seed42 u32000 absent, skip without retraining or wrong-split substitution"
+  },
+  "server_keep_running": {
+    "instruction_verbatim": "你先别关，确保任务全部完成了吗",
+    "execution": "Keep rented SSH server on. Complete inference, download, independently verify and report. No shutdown or instance stop executed or scheduled. Credentials omitted from this record."
+  },
+  "additional_training_authorization": {
+    "answer_verbatim": "补四次种子训练，也重新训练缺失的原基线",
+    "additional_message_verbatim": "还有之前我给你的2080ti服务器你也可以训练，反正尽快把实验做完",
+    "baseline_search_instruction_verbatim": "\"D:\\dataset\"和\"D:\\HRDecoder\"里面找一下有没有原基线 应该是本地有备份的",
+    "execution": "Complete four paired adaptation runs and one original-configuration baseline rerun if the requested two-root backup search remains unsuccessful. Use the two authorized servers; no long training locally. Supersedes the earlier baseline-skip authorization."
+  },
+  "time_and_hardware": {
+    "instruction_verbatim": "continue   你估算那些训练超过三小时的就别再本地训练了。要是单纯验证还是少于一小时工作你就在本地搞了吧",
+    "execution": "No new training in this batch. DDR completed locally. Following the later direct SSH server provision, IDRiD27 inference moved to the rented server; local work is offline verification/analysis. Training estimated above three hours must not run locally."
+  }
+}

@@ -1,0 +1,26 @@
+Traceback (most recent call last):
+  File "D:\dataset\experiment\HRDecoder_Q_20261003\reports\queue_continuation_final_after_mix24.py", line 88, in <module>
+    main()
+    ~~~~^^
+  File "D:\dataset\experiment\HRDecoder_Q_20261003\reports\queue_continuation_final_after_mix24.py", line 31, in main
+            snapshot = remote.execute('''
+                       ~~~~~~~~~~~~~~^^^^
+    import json,pathlib
+    ^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    print(json.dumps(dict(statuses=statuses,formal_alive=p.exists() and b'train_run.py' in p.read_bytes())))
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ''')
+    ^^^^
+  File "D:\dataset\experiment\HRDecoder_Q_20261003\reports\handoff_after_qmix16.py", line 33, in execute
+    with connect() as client:
+         ~~~~~~~^^
+  File "D:\dataset\experiment\HRDecoder_Q_20261003\ops\remote.py", line 20, in connect
+    client.connect(config['host'], port=config['port'], username='root', key_filename=config['ssh_key'],
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        allow_agent=False, look_for_keys=False, timeout=20, banner_timeout=20, auth_timeout=20)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\GuanXingRen\AppData\Roaming\Python\Python313\site-packages\paramiko\client.py", line 386, in connect
+    sock.connect(addr)
+    ~~~~~~~~~~~~^^^^^^
+TimeoutError: timed out

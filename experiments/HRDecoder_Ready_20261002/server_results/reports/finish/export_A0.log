@@ -1,0 +1,115 @@
+/root/miniconda3/lib/python3.8/site-packages/torch/_utils.py:776: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  return self.fget.__get__(instance, owner)()
+/root/miniconda3/lib/python3.8/site-packages/mmcv/__init__.py:20: UserWarning: On January 1, 2023, MMCV will release v2.0.0, in which it will remove components related to the training process and add a data transformation module. In addition, it will rename the package names mmcv to mmcv-lite and mmcv-full to mmcv. See https://github.com/open-mmlab/mmcv/blob/master/docs/en/compatibility.md for more details.
+  warnings.warn(
+init cfg None
+2026-10-02 21:50:56,413 - root - INFO - ModulatedDeformConvPack backbone.block1.0.attn.spatial_gating_unit.conv0 is upgraded to version 2.
+2026-10-02 21:50:56,413 - root - INFO - ModulatedDeformConvPack backbone.block1.0.attn.spatial_gating_unit.conv3_1 is upgraded to version 2.
+2026-10-02 21:50:56,413 - root - INFO - ModulatedDeformConvPack backbone.block1.0.attn.spatial_gating_unit.conv3_2 is upgraded to version 2.
+2026-10-02 21:50:56,414 - root - INFO - ModulatedDeformConvPack backbone.block1.1.attn.spatial_gating_unit.conv0 is upgraded to version 2.
+2026-10-02 21:50:56,414 - root - INFO - ModulatedDeformConvPack backbone.block1.1.attn.spatial_gating_unit.conv3_1 is upgraded to version 2.
+2026-10-02 21:50:56,414 - root - INFO - ModulatedDeformConvPack backbone.block1.1.attn.spatial_gating_unit.conv3_2 is upgraded to version 2.
+2026-10-02 21:50:56,415 - root - INFO - ModulatedDeformConvPack backbone.block1.2.attn.spatial_gating_unit.conv0 is upgraded to version 2.
+2026-10-02 21:50:56,415 - root - INFO - ModulatedDeformConvPack backbone.block1.2.attn.spatial_gating_unit.conv3_1 is upgraded to version 2.
+2026-10-02 21:50:56,415 - root - INFO - ModulatedDeformConvPack backbone.block1.2.attn.spatial_gating_unit.conv3_2 is upgraded to version 2.
+2026-10-02 21:50:56,416 - root - INFO - ModulatedDeformConvPack backbone.patch_embed2.proj is upgraded to version 2.
+2026-10-02 21:50:56,416 - root - INFO - ModulatedDeformConvPack backbone.block2.0.attn.spatial_gating_unit.conv0 is upgraded to version 2.
+2026-10-02 21:50:56,417 - root - INFO - ModulatedDeformConvPack backbone.block2.0.attn.spatial_gating_unit.conv3_1 is upgraded to version 2.
+2026-10-02 21:50:56,417 - root - INFO - ModulatedDeformConvPack backbone.block2.0.attn.spatial_gating_unit.conv3_2 is upgraded to version 2.
+2026-10-02 21:50:56,418 - root - INFO - ModulatedDeformConvPack backbone.block2.1.attn.spatial_gating_unit.conv0 is upgraded to version 2.
+2026-10-02 21:50:56,418 - root - INFO - ModulatedDeformConvPack backbone.block2.1.attn.spatial_gating_unit.conv3_1 is upgraded to version 2.
+2026-10-02 21:50:56,418 - root - INFO - ModulatedDeformConvPack backbone.block2.1.attn.spatial_gating_unit.conv3_2 is upgraded to version 2.
+2026-10-02 21:50:56,419 - root - INFO - ModulatedDeformConvPack backbone.block2.2.attn.spatial_gating_unit.conv0 is upgraded to version 2.
+2026-10-02 21:50:56,419 - root - INFO - ModulatedDeformConvPack backbone.block2.2.attn.spatial_gating_unit.conv3_1 is upgraded to version 2.
+2026-10-02 21:50:56,420 - root - INFO - ModulatedDeformConvPack backbone.block2.2.attn.spatial_gating_unit.conv3_2 is upgraded to version 2.
+2026-10-02 21:50:56,420 - root - INFO - ModulatedDeformConvPack backbone.patch_embed3.proj is upgraded to version 2.
+2026-10-02 21:50:56,421 - root - INFO - ModulatedDeformConvPack backbone.block3.0.attn.spatial_gating_unit.conv0 is upgraded to version 2.
+2026-10-02 21:50:56,422 - root - INFO - ModulatedDeformConvPack backbone.block3.0.attn.spatial_gating_unit.conv3_1 is upgraded to version 2.
+2026-10-02 21:50:56,422 - root - INFO - ModulatedDeformConvPack backbone.block3.0.attn.spatial_gating_unit.conv3_2 is upgraded to version 2.
+2026-10-02 21:50:56,424 - root - INFO - ModulatedDeformConvPack backbone.block3.1.attn.spatial_gating_unit.conv0 is upgraded to version 2.
+2026-10-02 21:50:56,424 - root - INFO - ModulatedDeformConvPack backbone.block3.1.attn.spatial_gating_unit.conv3_1 is upgraded to version 2.
+2026-10-02 21:50:56,425 - root - INFO - ModulatedDeformConvPack backbone.block3.1.attn.spatial_gating_unit.conv3_2 is upgraded to version 2.
+2026-10-02 21:50:56,426 - root - INFO - ModulatedDeformConvPack backbone.block3.2.attn.spatial_gating_unit.conv0 is upgraded to version 2.
+2026-10-02 21:50:56,426 - root - INFO - ModulatedDeformConvPack backbone.block3.2.attn.spatial_gating_unit.conv3_1 is upgraded to version 2.
+2026-10-02 21:50:56,427 - root - INFO - ModulatedDeformConvPack backbone.block3.2.attn.spatial_gating_unit.conv3_2 is upgraded to version 2.
+2026-10-02 21:50:56,428 - root - INFO - ModulatedDeformConvPack backbone.block3.3.attn.spatial_gating_unit.conv0 is upgraded to version 2.
+2026-10-02 21:50:56,428 - root - INFO - ModulatedDeformConvPack backbone.block3.3.attn.spatial_gating_unit.conv3_1 is upgraded to version 2.
+2026-10-02 21:50:56,429 - root - INFO - ModulatedDeformConvPack backbone.block3.3.attn.spatial_gating_unit.conv3_2 is upgraded to version 2.
+2026-10-02 21:50:56,430 - root - INFO - ModulatedDeformConvPack backbone.block3.4.attn.spatial_gating_unit.conv0 is upgraded to version 2.
+2026-10-02 21:50:56,431 - root - INFO - ModulatedDeformConvPack backbone.block3.4.attn.spatial_gating_unit.conv3_1 is upgraded to version 2.
+2026-10-02 21:50:56,431 - root - INFO - ModulatedDeformConvPack backbone.block3.4.attn.spatial_gating_unit.conv3_2 is upgraded to version 2.
+2026-10-02 21:50:56,432 - root - INFO - ModulatedDeformConvPack backbone.patch_embed4.proj is upgraded to version 2.
+2026-10-02 21:50:56,433 - root - INFO - ModulatedDeformConvPack backbone.block4.0.attn.spatial_gating_unit.conv0 is upgraded to version 2.
+2026-10-02 21:50:56,433 - root - INFO - ModulatedDeformConvPack backbone.block4.0.attn.spatial_gating_unit.conv3_1 is upgraded to version 2.
+2026-10-02 21:50:56,434 - root - INFO - ModulatedDeformConvPack backbone.block4.0.attn.spatial_gating_unit.conv3_2 is upgraded to version 2.
+2026-10-02 21:50:56,435 - root - INFO - ModulatedDeformConvPack backbone.block4.1.attn.spatial_gating_unit.conv0 is upgraded to version 2.
+2026-10-02 21:50:56,436 - root - INFO - ModulatedDeformConvPack backbone.block4.1.attn.spatial_gating_unit.conv3_1 is upgraded to version 2.
+2026-10-02 21:50:56,436 - root - INFO - ModulatedDeformConvPack backbone.block4.1.attn.spatial_gating_unit.conv3_2 is upgraded to version 2.
+export 10/76
+export 20/76
+export 30/76
+export 40/76
+export 50/76
+export 60/76
+export 70/76
+{
+  "protocol": "whole_image_accumulated_counts",
+  "threshold": 0.5,
+  "n_images": 76,
+  "per_class": {
+    "EX": {
+      "iou": 0.24135814597922106,
+      "f1": 0.3888614204707706,
+      "ppv": 0.37001198675866864,
+      "recall": 0.4097344250231256,
+      "aupr": 0.19485161798777928,
+      "tp": 119152,
+      "fp": 202870,
+      "fn": 171651,
+      "gt_positive_pixels": 290803
+    },
+    "HE": {
+      "iou": 1.6148084393118655e-06,
+      "f1": 3.2296116634195613e-06,
+      "ppv": 6.132147784761612e-05,
+      "recall": 1.6584793071536847e-06,
+      "aupr": 0.008969222173320659,
+      "tp": 2,
+      "fp": 32613,
+      "fn": 1205922,
+      "gt_positive_pixels": 1205924
+    },
+    "SE": {
+      "iou": 0.14576366063354912,
+      "f1": 0.2544393152649809,
+      "ppv": 0.21953486696330457,
+      "recall": 0.30254116104943296,
+      "aupr": 0.10070714240457664,
+      "tp": 60933,
+      "fp": 216622,
+      "fn": 140471,
+      "gt_positive_pixels": 201404
+    },
+    "MA": {
+      "iou": 0.0,
+      "f1": 0.0,
+      "ppv": 0.0,
+      "recall": 0.0,
+      "aupr": 0.00017756182394817964,
+      "tp": 0,
+      "fp": 19242,
+      "fn": 69284,
+      "gt_positive_pixels": 69284
+    }
+  },
+  "mIoU_lesion4": 0.09678085535530237,
+  "mF1": 0.16082599133685374,
+  "mPPV": 0.1474020437999552,
+  "mRecall": 0.17806931113796642,
+  "mAUPR": 0.07617638609740619,
+  "excluded_classes": {
+    "iou": [],
+    "aupr": []
+  },
+  "aupr_note": "256-bin histogram approximation of PR curve"
+}

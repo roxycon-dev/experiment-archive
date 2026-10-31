@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "torch": "2.0.1+cu117",
+  "fixture_canvas": 64,
+  "batch": 2,
+  "private_parameters": 284496,
+  "checks": [
+    "zero_residual_exact_original_base_output",
+    "private_GT_KD_gradients_do_not_update_base",
+    "base_GT_gradients_do_not_update_private",
+    "all6_adapter_parts_finite_nonzero_gradients",
+    "single_SGD_two_groups4x_LR",
+    "exact_two_group_momentum_resume",
+    "empty_valid_mask_zero_loss",
+    "balanced_BCE_retains_positive_gradient_at_minus100",
+    "base_teacher_KL_updates_provider_not_private",
+    "base_KL_fullGT_group_denominators",
+    "separate_grad_clip5_resume_equivalence",
+    "actual_private_GT_retains_saturated_positive_gradient",
+    "balanced_private_KL_cannot_update_base",
+    "private_gradient_scaling_does_not_change_base_SGD_update",
+    "scale_preserving_concat_and_rawlogit_bypass"
+  ],
+  "source_SHA256": {
+    "model.py": "fda926f0e5cdb6eb04df3b312effe240942bd8df8b54346ba1747cc85246bd4c",
+    "private_modules.py": "08541136cd72e039a02f145adba9410b404f6852bc226ab716639e43cc82ec60",
+    "objectives.py": "4a57912cec38cc5bfea157fb0947c37a3f2372cfbb30115104d208d113749878",
+    "fast_objectives.py": "c83b0320c0bc4f6841f1be555453f3fde7b31458565723929ee8ea98a92544a6",
+    "verify_adapter.py": "e0090975151d17854a68ecf4253e0027ac88f256a9254a57cee9282cc61ac7da"
+  },
+  "real_W48_GPU_gate_completed": false,
+  "fresh_accuracy_verified": false,
+  "test_accessed": false
+}

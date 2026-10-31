@@ -1,0 +1,1486 @@
+[
+  {
+    "source": "HRDecoder_FinalDecision_20261005/结题报告/evidence/T5_source.csv",
+    "aliases": [
+      "HRDecoder_FinalDecision_20261005/结题报告/evidence/T5_source.csv"
+    ],
+    "sha256": "0085eb748490c4e18b0a65a177c41ddf44a07bbbe4d77933856722147c5bd1d2",
+    "bytes": 230,
+    "encoding": "utf-8-sig",
+    "headerless": false,
+    "headers": [
+      "节点",
+      "输出",
+      "S−C",
+      "D−C",
+      "SD−C",
+      "SD−S−D+C"
+    ],
+    "column_count": 6,
+    "rows": 4
+  },
+  {
+    "source": "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/reports/gpu_telemetry.csv",
+    "aliases": [
+      "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/reports/gpu_telemetry.csv",
+      "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/stopped_20261009T001430/reports/gpu_telemetry.csv"
+    ],
+    "sha256": "03f1ba892633ba325551df3d8871023681eb3360a25ec280d524f05ea8d2e9f4",
+    "bytes": 705248,
+    "encoding": "utf-8-sig",
+    "headerless": true,
+    "headers": [],
+    "column_count": 9,
+    "rows": 9761
+  },
+  {
+    "source": "HRDecoder_FullCompetition_20260920/refiner_v1/runs/smoke_w30_20260921/steps.csv",
+    "aliases": [
+      "HRDecoder_FullCompetition_20260920/refiner_v1/runs/smoke_w30_20260921/steps.csv"
+    ],
+    "sha256": "0612eb0398ea5008fdf1ddc400c8ba4be23567e35ef933091c867c111665a9f0",
+    "bytes": 3946,
+    "encoding": "utf-8-sig",
+    "headerless": false,
+    "headers": [
+      "step",
+      "epoch1",
+      "lr",
+      "loss",
+      "focal",
+      "dice",
+      "focal_weighted",
+      "dice_weighted",
+      "focal_share",
+      "gnorm",
+      "finite"
+    ],
+    "column_count": 11,
+    "rows": 40
+  },
+  {
+    "source": "HRDecoder_Ready_20261002/round2_highres/server_results/work_dirs/U0_highres/eval_history.csv",
+    "aliases": [
+      "HRDecoder_Ready_20261002/round2_highres/server_results/work_dirs/U0_highres/eval_history.csv"
+    ],
+    "sha256": "0b58df22419ac1a114acd89f6df124d6300a07eeb5c5b72197a483c9bf86e306",
+    "bytes": 561,
+    "encoding": "utf-8-sig",
+    "headerless": false,
+    "headers": [
+      "timestamp",
+      "split",
+      "update",
+      "stage",
+      "mode",
+      "mIoU_lesion4",
+      "mF1",
+      "mPPV",
+      "mRecall",
+      "mAUPR",
+      "n_images"
+    ],
+    "column_count": 11,
+    "rows": 3
+  },
+  {
+    "source": "_全实验档案_20260920/01_全目录实验清单.csv",
+    "aliases": [
+      "_全实验档案_20260920/01_全目录实验清单.csv"
+    ],
+    "sha256": "0cf80d3c641615c4e5c8489c3c2f533190d7984a52f88715aa2b9d83d9d6b781",
+    "bytes": 15870024,
+    "encoding": "utf-8-sig",
+    "headerless": false,
+    "headers": [
+      "record_type",
+      "experiment_id",
+      "path",
+      "date",
+      "purpose",
+      "dataset_split",
+      "model_initialization",
+      "changes",
+      "training",
+      "evaluation",
+      "asset_paths",
+      "status",
+      "source_refs",
+      "kind",
+      "size",
+      "preview"
+    ],
+    "column_count": 16,
+    "rows": 33155
+  },
+  {
+    "source": "HRDecoder_FullCompetition_20260920/tests/_tmp_expert_contract/e2e/out/analysis/expert_complementarity_per_image.csv",
+    "aliases": [
+      "HRDecoder_FullCompetition_20260920/tests/_tmp_expert_contract/e2e/out/analysis/expert_complementarity_per_image.csv"
+    ],
+    "sha256": "0ffc2665ed5820d82e3897e66a0c65970181ef49a9aaca20dd01940ddedc6644",
+    "bytes": 44796,
+    "encoding": "utf-8-sig",
+    "headerless": false,
+    "headers": [
+      "pair",
+      "stem",
+      "class",
+      "orig_h",
+      "orig_w",
+      "champion_tp",
+      "champion_fp",
+      "champion_fn",
+      "candidate_tp",
+      "candidate_fp",
+      "candidate_fn",
+      "or_tp",
+      "or_fp",
+      "or_fn",
+      "and_tp",
+      "and_fp",
+      "and_fn",
+      "champion_iou",
+      "candidate_iou",
+      "delta_iou",
+      "or_iou",
+      "delta_or",
+      "common_tp",
+      "champion_only_tp",
+      "candidate_only_tp",
+      "candidate_only_fp"
+    ],
+    "column_count": 26,
+    "rows": 608
+  },
+  {
+    "source": "HRDecoder_FullCompetition_20260920/tests/_tmp_expert_contract/e2e/out/analysis/expert_complementarity_area_buckets.csv",
+    "aliases": [
+      "HRDecoder_FullCompetition_20260920/tests/_tmp_expert_contract/e2e/out/analysis/expert_complementarity_area_buckets.csv"
+    ],
+    "sha256": "14aff10d1c122f3751f6043286e2dff9eb44fc3b23d2c9eaa5f182fdfc8ae147",
+    "bytes": 442,
+    "encoding": "utf-8-sig",
+    "headerless": false,
+    "headers": [
+      "class",
+      "bucket",
+      "area_lo",
+      "area_hi",
+      "n_components",
+      "gt_pixels",
+      "gt_pixel_fraction",
+      "champion_recall",
+      "BASE_0_recall",
+      "U0_recall"
+    ],
+    "column_count": 10,
+    "rows": 12
+  },
+  {
+    "source": "HRDecoder_FinalDecision_20261005/结题报告/evidence/T10_source.csv",
+    "aliases": [
+      "HRDecoder_FinalDecision_20261005/结题报告/evidence/T10_source.csv"
+    ],
+    "sha256": "1759f24f69e76c3f9284aa40a5dc881e099dbf8d23eb67722a5fc528cbc7b0b0",
+    "bytes": 206,
+    "encoding": "utf-8-sig",
+    "headerless": false,
+    "headers": [
+      "路径",
+      "秒每更新",
+      "数据等待 ms",
+      "全76图验证 s",
+      "峰值GPU GiB"
+    ],
+    "column_count": 5,
+    "rows": 4
+  },
+  {
+    "source": "HRDecoder_FinalDecision_20261005/结题报告/evidence/validation_curve_source.csv",
+    "aliases": [
+      "HRDecoder_FinalDecision_20261005/结题报告/evidence/validation_curve_source.csv"
+    ],
+    "sha256": "18c6c8a853129abe158ad4fff65c2f9ae5a349914f7e1b87b7f16a10f3dc60b8",
+    "bytes": 30855,
+    "encoding": "utf-8-sig",
+    "headerless": false,
+    "headers": [
+      "arm",
+      "update",
+      "formula",
+      "miou_pct",
+      "source_path",
+      "source_sha256"
+    ],
+    "column_count": 6,
+    "rows": 136
+  },
+  {
+    "source": "HRDecoder_FullCompetition_20260920/tests/_tmp_training/resume/eval_history.csv",
+    "aliases": [
+      "HRDecoder_FullCompetition_20260920/tests/_tmp_training/resume/eval_history.csv"
+    ],
+    "sha256": "19b078e4ad06d076d2002346e2fa8279713d016716da07632a539592f6489e27",
+    "bytes": 562,
+    "encoding": "utf-8-sig",
+    "headerless": false,
+    "headers": [
+      "timestamp",
+      "split",
+      "update",
+      "stage",
+      "mode",
+      "mIoU_lesion4",
+      "mF1",
+      "mPPV",
+      "mRecall",
+      "mAUPR",
+      "n_images"
+    ],
+    "column_count": 11,
+    "rows": 3
+  },
+  {
+    "source": "HRDecoder_FullCompetition_20260920/refiner_v1/logs/formal_20260921_remote/stage2_OOM_steps.csv",
+    "aliases": [
+      "HRDecoder_FullCompetition_20260920/refiner_v1/logs/formal_20260921_remote/stage2_OOM_steps.csv"
+    ],
+    "sha256": "1bac0d745b884b9cc1a2a4ef2381b072de0cfed2b83d8a56ba608201162e704b",
+    "bytes": 4808,
+    "encoding": "utf-8-sig",
+    "headerless": false,
+    "headers": [
+      "step",
+      "epoch1",
+      "lr",
+      "loss",
+      "focal",
+      "dice",
+      "focal_weighted",
+      "dice_weighted",
+      "focal_share",
+      "gnorm",
+      "finite"
+    ],
+    "column_count": 11,
+    "rows": 51
+  },
+  {
+    "source": "autodl100/验证轨迹汇总.csv",
+    "aliases": [
+      "autodl100/验证轨迹汇总.csv"
+    ],
+    "sha256": "1f97f845b918d7b7011e0248f4b851395af820475e777d504d7466d6abcf0a79",
+    "bytes": 704,
+    "encoding": "utf-8-sig",
+    "headerless": false,
+    "headers": [
+      "trial",
+      "train_iter",
+      "val_mIoU_percent",
+      "val_precision_percent",
+      "val_recall_percent"
+    ],
+    "column_count": 5,
+    "rows": 16
+  },
+  {
+    "source": "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/reports/before_final_tuning_1791456336_gpu_telemetry.csv",
+    "aliases": [
+      "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/reports/before_final_tuning_1791456336_gpu_telemetry.csv",
+      "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/stopped_20261009T001430/reports/before_final_tuning_1791456336_gpu_telemetry.csv"
+    ],
+    "sha256": "20e38e7cb8d02177619563eaac97495793bb69531fda04ac94f78f52675849d0",
+    "bytes": 84319,
+    "encoding": "utf-8-sig",
+    "headerless": true,
+    "headers": [],
+    "column_count": 9,
+    "rows": 1172
+  },
+  {
+    "source": "HRDecoder_FullCompetition_20260920/runs/eval_history.csv",
+    "aliases": [
+      "HRDecoder_FullCompetition_20260920/runs/eval_history.csv"
+    ],
+    "sha256": "238868774bc71aa8959aa72cb63f1901ace4153a5980867160f34d394c2c7d15",
+    "bytes": 728,
+    "encoding": "utf-8-sig",
+    "headerless": false,
+    "headers": [
+      "timestamp",
+      "split",
+      "update",
+      "stage",
+      "mode",
+      "mIoU_lesion4",
+      "mF1",
+      "mPPV",
+      "mRecall",
+      "mAUPR",
+      "n_images"
+    ],
+    "column_count": 11,
+    "rows": 4
+  },
+  {
+    "source": "HRDecoder_Ready_20261002/assets/maples_labels/test/diagnosis.csv",
+    "aliases": [
+      "HRDecoder_Ready_20261002/assets/maples_labels/test/diagnosis.csv"
+    ],
+    "sha256": "27800d3cb1629f9e5f2318beef66c98bcd41fa66d8fc0628c5cdd2860d5cb26c",
+    "bytes": 1751,
+    "encoding": "utf-8-sig",
+    "headerless": false,
+    "headers": [
+      "name",
+      "DR",
+      "ME"
+    ],
+    "column_count": 3,
+    "rows": 60
+  },
+  {
+    "source": "_全实验档案_20260920/03_证据索引.csv",
+    "aliases": [
+      "_全实验档案_20260920/03_证据索引.csv"
+    ],
+    "sha256": "2986a6fc1744189e5ee5eb8ddf940322c889fa913782b1cdb0129b220d55b870",
+    "bytes": 11265,
+    "encoding": "utf-8-sig",
+    "headerless": false,
+    "headers": [
+      "实验ID",
+      "日期或来源",
+      "状态分类",
+      "实验理由（仅明确记载）",
+      "实际执行步骤（事实）",
+      "配置与评估口径",
+      "全部可见指标",
+      "原始证据绝对路径/行号或字段",
+      "遗漏/冲突备注"
+    ],
+    "column_count": 9,
+    "rows": 26
+  },
+  {
+    "source": "HRDecoder_ArchitectureDesign_20261008/final_report/validation_metrics.csv",
+    "aliases": [
+      "HRDecoder_ArchitectureDesign_20261008/final_report/validation_metrics.csv"
+    ],
+    "sha256": "2a28e9944e85886372376c731924856b359fdf09e15832b6dd03eda0ee851571",
+    "bytes": 17420,
+    "encoding": "utf-8-sig",
+    "headerless": false,
+    "headers": [
+      "run",
+      "step",
+      "mIoU_percent",
+      "base_mIoU_percent",
+      "class",
+      "IoU_percent",
+      "precision_percent",
+      "recall_percent",
+      "TP",
+      "FP",
+      "FN",
+      "precision_undefined"
+    ],
+    "column_count": 12,
+    "rows": 136
+  },
+  {
+    "source": "HRDecoder_审查轮_20260916/audit_runs/audit_20260916_A/diagnostics/val_per_image_counts_R0.csv",
+    "aliases": [
+      "HRDecoder_审查轮_20260916/audit_runs/audit_20260916_A/diagnostics/val_per_image_counts_R0.csv"
+    ],
+    "sha256": "2bd1a55dc07f019af38da3a8477ef8363976132f77e7bbd4ca9e32987063c880",
+    "bytes": 9438,
+    "encoding": "utf-8-sig",
+    "headerless": false,
+    "headers": [
+      "idx",
+      "filename",
+      "h",
+      "w",
+      "ignore_px",
+      "base0_EX_TP",
+      "base0_EX_FP",
+      "base0_EX_FN",
+      "base0_HE_TP",
+      "base0_HE_FP",
+      "base0_HE_FN",
+      "base0_SE_TP",
+      "base0_SE_FP",
+      "base0_SE_FN",
+      "base0_MA_TP",
+      "base0_MA_FP",
+      "base0_MA_FN",
+      "h4_EX_TP",
+      "h4_EX_FP",
+      "h4_EX_FN",
+      "h4_HE_TP",
+      "h4_HE_FP",
+      "h4_HE_FN",
+      "h4_SE_TP",
+      "h4_SE_FP",
+      "h4_SE_FN",
+      "h4_MA_TP",
+      "h4_MA_FP",
+      "h4_MA_FN"
+    ],
+    "column_count": 29,
+    "rows": 76
+  },
+  {
+    "source": "HRDecoder_ArchitectureDesign_20261008/final_report/iou_training_loss.csv",
+    "aliases": [
+      "HRDecoder_ArchitectureDesign_20261008/final_report/iou_training_loss.csv"
+    ],
+    "sha256": "2d932e68503be0dd785c4a596f54c3035245dce663e984592b86478ad85ccf19",
+    "bytes": 19761,
+    "encoding": "utf-8-sig",
+    "headerless": false,
+    "headers": [
+      "step",
+      "lr",
+      "seconds",
+      "action_kl_removed",
+      "base_balanced_BCE",
+      "base_grad_norm_before_clip",
+      "gradient_clipped",
+      "gt_base",
+      "gt_final",
+      "gt_hr_crop",
+      "kl_base_stratified",
+      "kl_final",
+      "lambda_base_kd",
+      "lambda_k",
+      "private_GT_Lovasz_IoU_hinge",
+      "private_grad_norm_before_clip",
+      "private_positive_negative_balanced",
+      "task_loss"
+    ],
+    "column_count": 18,
+    "rows": 81
+  },
+  {
+    "source": "HRDecoder_Next_20261003/reports/G_manual_review.csv",
+    "aliases": [
+      "HRDecoder_Next_20261003/reports/G_manual_review.csv",
+      "HRDecoder_Next_20261003/server_results/reports/G_manual_review.csv"
+    ],
+    "sha256": "2f1a92478f8498a2410d49a1a8e2f56fd1c0fad67e7b21d6c0cb1d34ad625ca6",
+    "bytes": 3880,
+    "encoding": "utf-8-sig",
+    "headerless": false,
+    "headers": [
+      "sid",
+      "lesion_class",
+      "selection",
+      "rank",
+      "crop",
+      "error_type",
+      "notes"
+    ],
+    "column_count": 7,
+    "rows": 24
+  },
+  {
+    "source": "HRDecoder_Ready_20261002/server_results/work_dirs/U1_external_pretrain/eval_history.csv",
+    "aliases": [
+      "HRDecoder_Ready_20261002/server_results/work_dirs/U1_external_pretrain/eval_history.csv"
+    ],
+    "sha256": "390d44764714f3f59c1f5e162880b30e386dd7c77e6553f293796ed02018ca4a",
+    "bytes": 843,
+    "encoding": "utf-8-sig",
+    "headerless": false,
+    "headers": [
+      "timestamp",
+      "split",
+      "update",
+      "stage",
+      "mode",
+      "mIoU_lesion4",
+      "mF1",
+      "mPPV",
+      "mRecall",
+      "mAUPR",
+      "n_images"
+    ],
+    "column_count": 11,
+    "rows": 4
+  },
+  {
+    "source": "HRDecoder_FinalDecision_20261005/结题报告/evidence/T4_source.csv",
+    "aliases": [
+      "HRDecoder_FinalDecision_20261005/结题报告/evidence/T4_source.csv"
+    ],
+    "sha256": "574f8d0042a92fcc694c4b7b2d6296891be6e179efb64b9f6a58a34e6d53620a",
+    "bytes": 301,
+    "encoding": "utf-8-sig",
+    "headerless": true,
+    "headers": [],
+    "column_count": 5,
+    "rows": 9
+  },
+  {
+    "source": "HRDecoder_FullCompetition_20260920/analysis_results/expert_complementarity_20260920/analysis_outputs/expert_complementarity_area_buckets.csv",
+    "aliases": [
+      "HRDecoder_FullCompetition_20260920/analysis_results/expert_complementarity_20260920/analysis_outputs/expert_complementarity_area_buckets.csv"
+    ],
+    "sha256": "59d40d40267e1e935de197ffe568f9f93a88b8addc15d50013a46eb0d0ef26a0",
+    "bytes": 1440,
+    "encoding": "utf-8-sig",
+    "headerless": false,
+    "headers": [
+      "class",
+      "bucket",
+      "area_lo",
+      "area_hi",
+      "n_components",
+      "gt_pixels",
+      "gt_pixel_fraction",
+      "champion_recall",
+      "BASE_0_recall",
+      "D_blend_recall",
+      "C2000_recall",
+      "MIX_C2000_recall",
+      "S4000_recall",
+      "U0_recall",
+      "H0_recall"
+    ],
+    "column_count": 15,
+    "rows": 12
+  },
+  {
+    "source": "HRDecoder_FinalDecision_20261005/结题报告/evidence/T1_source.csv",
+    "aliases": [
+      "HRDecoder_FinalDecision_20261005/结题报告/evidence/T1_source.csv"
+    ],
+    "sha256": "5b12ea5d71bbdee97eef5bf48f598cd4dcc0d3721bbd3d95093c15e38a0e9e9f",
+    "bytes": 444,
+    "encoding": "utf-8-sig",
+    "headerless": true,
+    "headers": [],
+    "column_count": 4,
+    "rows": 7
+  },
+  {
+    "source": "HRDecoder_FullCompetition_20260920/refiner_v1/logs/formal_20260921_remote/probe/probe_epoch_full_steps.csv",
+    "aliases": [
+      "HRDecoder_FullCompetition_20260920/refiner_v1/logs/formal_20260921_remote/probe/probe_epoch_full_steps.csv"
+    ],
+    "sha256": "5e9e413e6defb21964b3faf9d7765669f9b7bab7f977aecdf8470215557eac3d",
+    "bytes": 68003,
+    "encoding": "utf-8-sig",
+    "headerless": false,
+    "headers": [
+      "step",
+      "epoch1",
+      "lr",
+      "loss",
+      "focal",
+      "dice",
+      "focal_weighted",
+      "dice_weighted",
+      "focal_share",
+      "gnorm",
+      "finite"
+    ],
+    "column_count": 11,
+    "rows": 700
+  },
+  {
+    "source": "HRDecoder_FinalDecision_20261005/结题报告/evidence/T6_source.csv",
+    "aliases": [
+      "HRDecoder_FinalDecision_20261005/结题报告/evidence/T6_source.csv"
+    ],
+    "sha256": "5fc04f0e4daa3eb934b975a4019921b32c6765252f49505312e8e0d3bde8b1ef",
+    "bytes": 306,
+    "encoding": "utf-8-sig",
+    "headerless": false,
+    "headers": [
+      "对象",
+      "验证 mIoU %",
+      "测试 mIoU %",
+      "最终测试差值 pp"
+    ],
+    "column_count": 4,
+    "rows": 6
+  },
+  {
+    "source": "HRDecoder_FinalDecision_20261005/结题报告/evidence/T3_source.csv",
+    "aliases": [
+      "HRDecoder_FinalDecision_20261005/结题报告/evidence/T3_source.csv"
+    ],
+    "sha256": "63703530b2b72260e216cb2576eec04935cad26cc041d05461fbcd520ce7c7b7",
+    "bytes": 784,
+    "encoding": "utf-8-sig",
+    "headerless": true,
+    "headers": [],
+    "column_count": 5,
+    "rows": 14
+  },
+  {
+    "source": "HRDecoder_Ready_20261002/tests/_tmp_training/accum/eval_history.csv",
+    "aliases": [
+      "HRDecoder_Ready_20261002/tests/_tmp_training/accum/eval_history.csv"
+    ],
+    "sha256": "653adcbb0e0343978f7383f8db4635eabdb5e7306e16505c14f8d834f1caeadd",
+    "bytes": 240,
+    "encoding": "utf-8-sig",
+    "headerless": false,
+    "headers": [
+      "timestamp",
+      "split",
+      "update",
+      "stage",
+      "mode",
+      "mIoU_lesion4",
+      "mF1",
+      "mPPV",
+      "mRecall",
+      "mAUPR",
+      "n_images"
+    ],
+    "column_count": 11,
+    "rows": 1
+  },
+  {
+    "source": "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/cet/reports/cet/gpu_telemetry.csv",
+    "aliases": [
+      "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/cet/reports/cet/gpu_telemetry.csv"
+    ],
+    "sha256": "6ca7abaa7d5314390e3bc53144dca2dff7494c944963c824bd2c235ed669a519",
+    "bytes": 32768,
+    "encoding": "utf-8-sig",
+    "headerless": true,
+    "headers": [],
+    "column_count": 9,
+    "rows": 454
+  },
+  {
+    "source": "HRDecoder_FullCompetition_20260920/analysis_results/expert_complementarity_20260920/analysis_outputs/expert_complementarity_per_image.csv",
+    "aliases": [
+      "HRDecoder_FullCompetition_20260920/analysis_results/expert_complementarity_20260920/analysis_outputs/expert_complementarity_per_image.csv"
+    ],
+    "sha256": "76320d28e3dc60289c4edbc3160aec1bbca145cc8a00b3b29573c305b420aced",
+    "bytes": 257853,
+    "encoding": "utf-8-sig",
+    "headerless": false,
+    "headers": [
+      "pair",
+      "stem",
+      "class",
+      "orig_h",
+      "orig_w",
+      "champion_tp",
+      "champion_fp",
+      "champion_fn",
+      "candidate_tp",
+      "candidate_fp",
+      "candidate_fn",
+      "or_tp",
+      "or_fp",
+      "or_fn",
+      "and_tp",
+      "and_fp",
+      "and_fn",
+      "champion_iou",
+      "candidate_iou",
+      "delta_iou",
+      "or_iou",
+      "delta_or",
+      "common_tp",
+      "champion_only_tp",
+      "candidate_only_tp",
+      "candidate_only_fp"
+    ],
+    "column_count": 26,
+    "rows": 2128
+  },
+  {
+    "source": "HRDecoder_FullCompetition_20260920/analysis/historical_class_leaderboard.csv",
+    "aliases": [
+      "HRDecoder_FullCompetition_20260920/analysis/historical_class_leaderboard.csv"
+    ],
+    "sha256": "78a02b71ebdc8fe3af8428e0ea5db02d73b8f25faa9739ce1cca5d92ac2530f4",
+    "bytes": 21752,
+    "encoding": "utf-8-sig",
+    "headerless": false,
+    "headers": [
+      "candidate_id",
+      "experiment_name",
+      "family",
+      "role",
+      "split",
+      "val_mIoU",
+      "EX_iou",
+      "HE_iou",
+      "SE_iou",
+      "MA_iou",
+      "step",
+      "seed",
+      "arch_loss_key_diff",
+      "evidence_path",
+      "checkpoint_path",
+      "checkpoint_exists",
+      "per_image_counts",
+      "eval_caliber_confidence",
+      "comparable",
+      "rankable_for_pool",
+      "notes"
+    ],
+    "column_count": 21,
+    "rows": 51
+  },
+  {
+    "source": "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/sacd/reports/sacd/gpu_telemetry.csv",
+    "aliases": [
+      "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/sacd/reports/sacd/gpu_telemetry.csv"
+    ],
+    "sha256": "7a80d3d939eaf4ba31118f41ff38936a1f0c6419d1ab9f3d1f473c742eb95d9c",
+    "bytes": 32768,
+    "encoding": "utf-8-sig",
+    "headerless": true,
+    "headers": [],
+    "column_count": 9,
+    "rows": 453
+  },
+  {
+    "source": "HRDecoder_诊断调研_20260910/证据/验证轨迹.csv",
+    "aliases": [
+      "HRDecoder_诊断调研_20260910/证据/验证轨迹.csv"
+    ],
+    "sha256": "7b81e20d2d209997ad385f01d11667e97311e9606f2cff0bac73cb121ed0ea7b",
+    "bytes": 4988,
+    "encoding": "utf-8-sig",
+    "headerless": false,
+    "headers": [
+      "source",
+      "train_iter",
+      "val_log_iter",
+      "mIoU",
+      "mIoU_percent"
+    ],
+    "column_count": 5,
+    "rows": 71
+  },
+  {
+    "source": "HRDecoder_Ready_20261002/round2_highres/server_results/work_dirs/U0_continuation2048/eval_history.csv",
+    "aliases": [
+      "HRDecoder_Ready_20261002/round2_highres/server_results/work_dirs/U0_continuation2048/eval_history.csv"
+    ],
+    "sha256": "81a75f48275e05040341f0640a120cd9a914626cca8aac3271ef7e8cb88ddb7b",
+    "bytes": 402,
+    "encoding": "utf-8-sig",
+    "headerless": false,
+    "headers": [
+      "timestamp",
+      "split",
+      "update",
+      "stage",
+      "mode",
+      "mIoU_lesion4",
+      "mF1",
+      "mPPV",
+      "mRecall",
+      "mAUPR",
+      "n_images"
+    ],
+    "column_count": 11,
+    "rows": 2
+  },
+  {
+    "source": "HRDecoder_Ready_20261002/assets/maples_labels/train/diagnosis.csv",
+    "aliases": [
+      "HRDecoder_Ready_20261002/assets/maples_labels/train/diagnosis.csv"
+    ],
+    "sha256": "8d5524b7c5b2fef6b52ef011a27a05694351a0a20fc79d6ae93eaff29e8119f4",
+    "bytes": 4017,
+    "encoding": "utf-8-sig",
+    "headerless": false,
+    "headers": [
+      "name",
+      "DR",
+      "ME"
+    ],
+    "column_count": 3,
+    "rows": 138
+  },
+  {
+    "source": "HRDecoder_FinalDecision_20261005/结题报告/evidence/T7_source.csv",
+    "aliases": [
+      "HRDecoder_FinalDecision_20261005/结题报告/evidence/T7_source.csv"
+    ],
+    "sha256": "90a91e609aaa63e3cece3bc63194ccffb65b61fe706ff0c48c02350a985911c1",
+    "bytes": 258,
+    "encoding": "utf-8-sig",
+    "headerless": false,
+    "headers": [
+      "类",
+      "IoU %",
+      "Dice %",
+      "Precision %",
+      "Recall %",
+      "ΔB0 pp",
+      "ΔR pp"
+    ],
+    "column_count": 7,
+    "rows": 4
+  },
+  {
+    "source": "HRDecoder_Ready_20261002/tests/_tmp_training/sched/eval_history.csv",
+    "aliases": [
+      "HRDecoder_Ready_20261002/tests/_tmp_training/sched/eval_history.csv"
+    ],
+    "sha256": "914bdbd7adf5d948b9c0c1a62b4c38b95a964a2158cb36bb656bda6a4526a727",
+    "bytes": 241,
+    "encoding": "utf-8-sig",
+    "headerless": false,
+    "headers": [
+      "timestamp",
+      "split",
+      "update",
+      "stage",
+      "mode",
+      "mIoU_lesion4",
+      "mF1",
+      "mPPV",
+      "mRecall",
+      "mAUPR",
+      "n_images"
+    ],
+    "column_count": 11,
+    "rows": 1
+  },
+  {
+    "source": "HRDecoder_FinalDecision_20261005/结题报告/evidence/T9_source.csv",
+    "aliases": [
+      "HRDecoder_FinalDecision_20261005/结题报告/evidence/T9_source.csv"
+    ],
+    "sha256": "930eeefa9b585413b16fc10deb0a55b35e1f162e6cd191e9a18806c9fa6a1016",
+    "bytes": 316,
+    "encoding": "utf-8-sig",
+    "headerless": false,
+    "headers": [
+      "SID",
+      "规则",
+      "类",
+      "ROI x0 y0 x1 y1"
+    ],
+    "column_count": 4,
+    "rows": 5
+  },
+  {
+    "source": "HRDecoder_诊断调研_20260910/证据/最佳点核对.csv",
+    "aliases": [
+      "HRDecoder_诊断调研_20260910/证据/最佳点核对.csv"
+    ],
+    "sha256": "97ce820acaa3a1d0ab89f589eabd327944da63b27d72d423f41c5d3321dc8db8",
+    "bytes": 781,
+    "encoding": "utf-8-sig",
+    "headerless": false,
+    "headers": [
+      "source",
+      "max_train_iter",
+      "n_val",
+      "best_iter",
+      "best_mIoU",
+      "best_percent"
+    ],
+    "column_count": 6,
+    "rows": 10
+  },
+  {
+    "source": "HRDecoder_FinalDecision_20261005/结题报告/evidence/T11_source.csv",
+    "aliases": [
+      "HRDecoder_FinalDecision_20261005/结题报告/evidence/T11_source.csv"
+    ],
+    "sha256": "9b2976033bd21c493e1cfd23d13ea84d7a91b8c8164431f1d93774c77480cae8",
+    "bytes": 486,
+    "encoding": "utf-8-sig",
+    "headerless": true,
+    "headers": [],
+    "column_count": 3,
+    "rows": 7
+  },
+  {
+    "source": "HRDecoder_Ready_20261002/tests/_tmp_training/resume/eval_history.csv",
+    "aliases": [
+      "HRDecoder_Ready_20261002/tests/_tmp_training/resume/eval_history.csv"
+    ],
+    "sha256": "9d0cce3e84db0589bcf7d0e48e42e1356b861323e9a69d76570e87eb522cf2c9",
+    "bytes": 562,
+    "encoding": "utf-8-sig",
+    "headerless": false,
+    "headers": [
+      "timestamp",
+      "split",
+      "update",
+      "stage",
+      "mode",
+      "mIoU_lesion4",
+      "mF1",
+      "mPPV",
+      "mRecall",
+      "mAUPR",
+      "n_images"
+    ],
+    "column_count": 11,
+    "rows": 3
+  },
+  {
+    "source": "HRDecoder_审查轮_20260916/audit_runs/audit_20260916_A/diagnostics/val_per_image_counts.csv",
+    "aliases": [
+      "HRDecoder_审查轮_20260916/audit_runs/audit_20260916_A/diagnostics/val_per_image_counts.csv"
+    ],
+    "sha256": "9fd9a6ef9b16c599aeb8b4a68a6f33233ecb8620ea709e4c8625cea62815ba1d",
+    "bytes": 13121,
+    "encoding": "utf-8-sig",
+    "headerless": false,
+    "headers": [
+      "idx",
+      "filename",
+      "h",
+      "w",
+      "ignore_px",
+      "student_EX_TP",
+      "student_EX_FP",
+      "student_EX_FN",
+      "student_HE_TP",
+      "student_HE_FP",
+      "student_HE_FN",
+      "student_SE_TP",
+      "student_SE_FP",
+      "student_SE_FN",
+      "student_MA_TP",
+      "student_MA_FP",
+      "student_MA_FN",
+      "reference_EX_TP",
+      "reference_EX_FP",
+      "reference_EX_FN",
+      "reference_HE_TP",
+      "reference_HE_FP",
+      "reference_HE_FN",
+      "reference_SE_TP",
+      "reference_SE_FP",
+      "reference_SE_FN",
+      "reference_MA_TP",
+      "reference_MA_FP",
+      "reference_MA_FN",
+      "blend_EX_TP",
+      "blend_EX_FP",
+      "blend_EX_FN",
+      "blend_HE_TP",
+      "blend_HE_FP",
+      "blend_HE_FN",
+      "blend_SE_TP",
+      "blend_SE_FP",
+      "blend_SE_FN",
+      "blend_MA_TP",
+      "blend_MA_FP",
+      "blend_MA_FN"
+    ],
+    "column_count": 41,
+    "rows": 76
+  },
+  {
+    "source": "HRDecoder_FinalDecision_20261005/结题报告/evidence/T8_source.csv",
+    "aliases": [
+      "HRDecoder_FinalDecision_20261005/结题报告/evidence/T8_source.csv"
+    ],
+    "sha256": "ab4d031636c21d1fef9d3eb864f0ceb830080187ed7b1a1ee3ee9f19235d1e02",
+    "bytes": 195,
+    "encoding": "utf-8-sig",
+    "headerless": false,
+    "headers": [
+      "类",
+      "TP",
+      "FP",
+      "FN",
+      "IoU %"
+    ],
+    "column_count": 5,
+    "rows": 4
+  },
+  {
+    "source": "HRDecoder_FinalDecision_20261005/结题报告/evidence/final_test_paired_images.csv",
+    "aliases": [
+      "HRDecoder_FinalDecision_20261005/结题报告/evidence/final_test_paired_images.csv"
+    ],
+    "sha256": "bdce50df9ff84d00b252e8202d6ea4fbfee75a0880ab6dc86d329bce7d581ba7",
+    "bytes": 16083,
+    "encoding": "utf-8-sig",
+    "headerless": false,
+    "headers": [
+      "sid",
+      "new_iou_pct",
+      "R_iou_pct",
+      "delta_image_iou_pp"
+    ],
+    "column_count": 4,
+    "rows": 227
+  },
+  {
+    "source": "HRDecoder_Ready_20261002/server_results/work_dirs/H1_ddr_finetune/eval_history.csv",
+    "aliases": [
+      "HRDecoder_Ready_20261002/server_results/work_dirs/H1_ddr_finetune/eval_history.csv"
+    ],
+    "sha256": "bf396881b3d13598c81fba65e749173f8fccf2878706fb35dabe218fc344b7b2",
+    "bytes": 729,
+    "encoding": "utf-8-sig",
+    "headerless": false,
+    "headers": [
+      "timestamp",
+      "split",
+      "update",
+      "stage",
+      "mode",
+      "mIoU_lesion4",
+      "mF1",
+      "mPPV",
+      "mRecall",
+      "mAUPR",
+      "n_images"
+    ],
+    "column_count": 11,
+    "rows": 4
+  },
+  {
+    "source": "HRDecoder_Next_20261003/reports/M_manual_review.csv",
+    "aliases": [
+      "HRDecoder_Next_20261003/reports/M_manual_review.csv"
+    ],
+    "sha256": "c0238f30efaa2c0a4b7e062afa63789248aeeaf3ce7be16660af68a6e8a1dc2b",
+    "bytes": 2175,
+    "encoding": "utf-8-sig",
+    "headerless": false,
+    "headers": [
+      "sid",
+      "lesion_class",
+      "selection",
+      "rank",
+      "crop",
+      "error_type",
+      "notes"
+    ],
+    "column_count": 7,
+    "rows": 12
+  },
+  {
+    "source": "_全实验档案_20260920/02_HRDecoder逐实验事实档案.csv",
+    "aliases": [
+      "_全实验档案_20260920/02_HRDecoder逐实验事实档案.csv"
+    ],
+    "sha256": "c295ca2ce9245b0f68d0c7ef26189b6ac05a8db869ab4656fd3acdb118cac332",
+    "bytes": 15037,
+    "encoding": "utf-8-sig",
+    "headerless": false,
+    "headers": [
+      "id",
+      "directory",
+      "status",
+      "why",
+      "split",
+      "train_steps",
+      "freeze_loss_sampling",
+      "inference_threshold_selection",
+      "val_metrics",
+      "test_metrics",
+      "elapsed_assets",
+      "source"
+    ],
+    "column_count": 12,
+    "rows": 45
+  },
+  {
+    "source": "HRDecoder_Next_20261003/server_results/reports/M_error_gallery/manual_review.csv",
+    "aliases": [
+      "HRDecoder_Next_20261003/server_results/reports/M_error_gallery/manual_review.csv"
+    ],
+    "sha256": "c2f9ab715d2e31268d6aedfd0a9d943d532b6f285a8c4d9d51bfd4247d3ccc44",
+    "bytes": 903,
+    "encoding": "utf-8-sig",
+    "headerless": false,
+    "headers": [
+      "sid",
+      "lesion_class",
+      "selection",
+      "rank",
+      "crop",
+      "error_type",
+      "notes"
+    ],
+    "column_count": 7,
+    "rows": 12
+  },
+  {
+    "source": "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/reports/gpu_startup_workers4.csv",
+    "aliases": [
+      "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/reports/gpu_startup_workers4.csv",
+      "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/stopped_20261009T001430/reports/gpu_startup_workers4.csv"
+    ],
+    "sha256": "c3d1f44e80f76ca527193f210ac0a246a0bf41e6b853471d2e8a369f88adf2ca",
+    "bytes": 9508,
+    "encoding": "utf-8-sig",
+    "headerless": true,
+    "headers": [],
+    "column_count": 9,
+    "rows": 135
+  },
+  {
+    "source": "HRDecoder_FinalDecision_20261005/结题报告/evidence/T2_source.csv",
+    "aliases": [
+      "HRDecoder_FinalDecision_20261005/结题报告/evidence/T2_source.csv"
+    ],
+    "sha256": "c7c699ec644eaf6c7678accb9d9eb590ca5b88f556e5c38b09e6144983e2359c",
+    "bytes": 702,
+    "encoding": "utf-8-sig",
+    "headerless": true,
+    "headers": [],
+    "column_count": 3,
+    "rows": 12
+  },
+  {
+    "source": "HRDecoder_FullCompetition_20260920/tests/_tmp_training/accum/eval_history.csv",
+    "aliases": [
+      "HRDecoder_FullCompetition_20260920/tests/_tmp_training/accum/eval_history.csv"
+    ],
+    "sha256": "c8fecf7dee6c44e8bfc97d16efd7788fe61a05c84737756de7c2b5d682b2b339",
+    "bytes": 240,
+    "encoding": "utf-8-sig",
+    "headerless": false,
+    "headers": [
+      "timestamp",
+      "split",
+      "update",
+      "stage",
+      "mode",
+      "mIoU_lesion4",
+      "mF1",
+      "mPPV",
+      "mRecall",
+      "mAUPR",
+      "n_images"
+    ],
+    "column_count": 11,
+    "rows": 1
+  },
+  {
+    "source": "HRDecoder_FullCompetition_20260920/tests/_tmp_training/sched/eval_history.csv",
+    "aliases": [
+      "HRDecoder_FullCompetition_20260920/tests/_tmp_training/sched/eval_history.csv"
+    ],
+    "sha256": "cb7e3ec5fd76fc782d920749f3cd973c20ed8e4ffd980af8fbe8941179e87312",
+    "bytes": 241,
+    "encoding": "utf-8-sig",
+    "headerless": false,
+    "headers": [
+      "timestamp",
+      "split",
+      "update",
+      "stage",
+      "mode",
+      "mIoU_lesion4",
+      "mF1",
+      "mPPV",
+      "mRecall",
+      "mAUPR",
+      "n_images"
+    ],
+    "column_count": 11,
+    "rows": 1
+  },
+  {
+    "source": "HRDecoder_Ready_20261002/server_results/work_dirs/U1_ddr_finetune/eval_history.csv",
+    "aliases": [
+      "HRDecoder_Ready_20261002/server_results/work_dirs/U1_ddr_finetune/eval_history.csv"
+    ],
+    "sha256": "cc5ad523699a9e7677ff03728345bc7eee48acfa5248284175db15b1da9d1ab2",
+    "bytes": 732,
+    "encoding": "utf-8-sig",
+    "headerless": false,
+    "headers": [
+      "timestamp",
+      "split",
+      "update",
+      "stage",
+      "mode",
+      "mIoU_lesion4",
+      "mF1",
+      "mPPV",
+      "mRecall",
+      "mAUPR",
+      "n_images"
+    ],
+    "column_count": 11,
+    "rows": 4
+  },
+  {
+    "source": "HRDecoder_Ready_20261002/server_results/work_dirs/A0_ddr_finetune/eval_history.csv",
+    "aliases": [
+      "HRDecoder_Ready_20261002/server_results/work_dirs/A0_ddr_finetune/eval_history.csv"
+    ],
+    "sha256": "cd8eeb27e2eb3034b6e3dfef7fa5f91c7c5bd68f26694187141defc46e1d422d",
+    "bytes": 410,
+    "encoding": "utf-8-sig",
+    "headerless": false,
+    "headers": [
+      "timestamp",
+      "split",
+      "update",
+      "stage",
+      "mode",
+      "mIoU_lesion4",
+      "mF1",
+      "mPPV",
+      "mRecall",
+      "mAUPR",
+      "n_images"
+    ],
+    "column_count": 11,
+    "rows": 2
+  },
+  {
+    "source": "HRDecoder_FullCompetition_20260920/refiner_v1/runs/smoke_w30_20260921/epochs.csv",
+    "aliases": [
+      "HRDecoder_FullCompetition_20260920/refiner_v1/runs/smoke_w30_20260921/epochs.csv"
+    ],
+    "sha256": "dcb2fd5a48d0a3f3e03ef07c1228cebf1185dee6b0560e87d56f254f316a3df8",
+    "bytes": 884,
+    "encoding": "utf-8-sig",
+    "headerless": false,
+    "headers": [
+      "epoch1",
+      "steps",
+      "lr_end",
+      "loss_mean",
+      "loss_min",
+      "loss_max",
+      "focal_mean",
+      "dice_mean",
+      "focal_share_mean",
+      "gnorm_mean",
+      "gnorm_max",
+      "elapsed_s",
+      "step_end"
+    ],
+    "column_count": 13,
+    "rows": 7
+  },
+  {
+    "source": "HRDecoder_ArchitectureDesign_20261008/final_report/warm_diagnostic_metrics.csv",
+    "aliases": [
+      "HRDecoder_ArchitectureDesign_20261008/final_report/warm_diagnostic_metrics.csv"
+    ],
+    "sha256": "ddb35bcb14c0821702909d191ec4597cffe391d5b5f711dbfc0d1210743ae365",
+    "bytes": 8919,
+    "encoding": "utf-8-sig",
+    "headerless": false,
+    "headers": [
+      "diagnostic",
+      "parent_step",
+      "arm",
+      "probe_updates",
+      "mIoU_percent",
+      "class",
+      "IoU",
+      "precision",
+      "recall",
+      "TP",
+      "FP",
+      "FN"
+    ],
+    "column_count": 12,
+    "rows": 56
+  },
+  {
+    "source": "HRDecoder_MA残差头与集成_20260915-16/02_原始数据/全部结果.csv",
+    "aliases": [
+      "HRDecoder_MA残差头与集成_20260915-16/02_原始数据/全部结果.csv"
+    ],
+    "sha256": "dfb628c6eb508c8f394c0ff3072bafa750a70a90c41947892d1b6dc2f15ddeb9",
+    "bytes": 1663,
+    "encoding": "utf-8-sig",
+    "headerless": false,
+    "headers": [
+      "split",
+      "方案",
+      "模型数",
+      "TTA",
+      "mIoU",
+      "EX",
+      "HE",
+      "SE",
+      "MA"
+    ],
+    "column_count": 9,
+    "rows": 27
+  },
+  {
+    "source": "HRDecoder_FullCompetition_20260920/tests/_tmp_expert_contract/e2e/out/analysis/expert_complementarity_per_class.csv",
+    "aliases": [
+      "HRDecoder_FullCompetition_20260920/tests/_tmp_expert_contract/e2e/out/analysis/expert_complementarity_per_class.csv"
+    ],
+    "sha256": "e5282954f518d974124760abaac266db65fd267fdfd57d5d5a20c513ef6ee079",
+    "bytes": 896,
+    "encoding": "utf-8-sig",
+    "headerless": false,
+    "headers": [
+      "pair",
+      "class",
+      "gt_positive_pixels",
+      "champion_iou",
+      "candidate_iou",
+      "delta_candidate_minus_champion",
+      "or_iou",
+      "delta_or_minus_champion",
+      "and_iou",
+      "candidate_replace_iou",
+      "common_tp",
+      "champion_only_tp",
+      "candidate_only_tp",
+      "candidate_only_fp",
+      "champion_only_fp",
+      "both_fp",
+      "both_fn",
+      "candidate_unique_activation_pixels",
+      "candidate_unique_precision",
+      "added_tp_fraction_of_gt",
+      "lost_tp_fraction_of_gt"
+    ],
+    "column_count": 21,
+    "rows": 8
+  },
+  {
+    "source": "HRDecoder_FinalDecision_20261005/结题报告/evidence/historical_experiment_ledger.csv",
+    "aliases": [
+      "HRDecoder_FinalDecision_20261005/结题报告/evidence/historical_experiment_ledger.csv"
+    ],
+    "sha256": "ed331492bca2294629f22f7cca52e2a5425b66a42a1e459193af5bf13d7315f9",
+    "bytes": 50816,
+    "encoding": "utf-8-sig",
+    "headerless": false,
+    "headers": [
+      "id",
+      "period",
+      "state",
+      "parent",
+      "purpose_change",
+      "datasets",
+      "budget",
+      "initialization_freezing",
+      "loss",
+      "optimizer",
+      "learning_rate",
+      "EMA",
+      "validation_miou_pct",
+      "test_miou_pct",
+      "inference",
+      "checkpoint_identity",
+      "source_ids",
+      "source_paths",
+      "evidence_grade"
+    ],
+    "column_count": 19,
+    "rows": 79
+  },
+  {
+    "source": "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/reports/gpu_before_ram_cache.csv",
+    "aliases": [
+      "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/reports/gpu_before_ram_cache.csv",
+      "HRDecoder_ArchitectureDesign_20261008/cache_execution/server_receipts/stopped_20261009T001430/reports/gpu_before_ram_cache.csv"
+    ],
+    "sha256": "ef7a82a5dab532e61dd197a912372c768fce354038dffaf7b6d3d4fb1a7eb2c0",
+    "bytes": 51887,
+    "encoding": "utf-8-sig",
+    "headerless": true,
+    "headers": [],
+    "column_count": 9,
+    "rows": 720
+  },
+  {
+    "source": "HRDecoder_Next_20261003/server_results/reports/G_error_gallery/manual_review.csv",
+    "aliases": [
+      "HRDecoder_Next_20261003/server_results/reports/G_error_gallery/manual_review.csv"
+    ],
+    "sha256": "f95ec3efdffd780abe84e1286ea2b5f91233c3b21aebd04fb51b9cc57b50d863",
+    "bytes": 1755,
+    "encoding": "utf-8-sig",
+    "headerless": false,
+    "headers": [
+      "sid",
+      "lesion_class",
+      "selection",
+      "rank",
+      "crop",
+      "error_type",
+      "notes"
+    ],
+    "column_count": 7,
+    "rows": 24
+  },
+  {
+    "source": "HRDecoder_Ready_20261002/server_results/work_dirs/H1_external_pretrain/eval_history.csv",
+    "aliases": [
+      "HRDecoder_Ready_20261002/server_results/work_dirs/H1_external_pretrain/eval_history.csv"
+    ],
+    "sha256": "fae7b07633eac986fe324e89f92a4abe67e9a91e75fc199cce3c3209c3d95c46",
+    "bytes": 837,
+    "encoding": "utf-8-sig",
+    "headerless": false,
+    "headers": [
+      "timestamp",
+      "split",
+      "update",
+      "stage",
+      "mode",
+      "mIoU_lesion4",
+      "mF1",
+      "mPPV",
+      "mRecall",
+      "mAUPR",
+      "n_images"
+    ],
+    "column_count": 11,
+    "rows": 4
+  },
+  {
+    "source": "HRDecoder_FullCompetition_20260920/analysis_results/expert_complementarity_20260920/analysis_outputs/expert_complementarity_per_class.csv",
+    "aliases": [
+      "HRDecoder_FullCompetition_20260920/analysis_results/expert_complementarity_20260920/analysis_outputs/expert_complementarity_per_class.csv"
+    ],
+    "sha256": "fc4d3f666b6d4d45ca8262f1fa4c4690e971c66ba0ee51c89a3a6531416b852b",
+    "bytes": 4567,
+    "encoding": "utf-8-sig",
+    "headerless": false,
+    "headers": [
+      "pair",
+      "class",
+      "gt_positive_pixels",
+      "champion_iou",
+      "candidate_iou",
+      "delta_candidate_minus_champion",
+      "or_iou",
+      "delta_or_minus_champion",
+      "and_iou",
+      "candidate_replace_iou",
+      "common_tp",
+      "champion_only_tp",
+      "candidate_only_tp",
+      "candidate_only_fp",
+      "champion_only_fp",
+      "both_fp",
+      "both_fn",
+      "candidate_unique_activation_pixels",
+      "candidate_unique_precision",
+      "added_tp_fraction_of_gt",
+      "lost_tp_fraction_of_gt"
+    ],
+    "column_count": 21,
+    "rows": 28
+  }
+]

@@ -1,0 +1,19 @@
+{
+  "stage": "LIVE_RECEIVER_NOT_RESTARTED",
+  "time": "2026-10-05T01:45:11.560108+00:00",
+  "pid": 30340,
+  "direct_stat_partial_bytes": 1320878080,
+  "guarded_stop_rejected": true,
+  "all_original_receivers_and_training_preserved": true,
+  "frozen_source_unchanged": true,
+  "finding": "Earlier directory enumeration showed zero bytes. A direct Path.stat guard found live downloaded bytes, so no stop or transport revision was performed. Use direct file stat/progress before diagnosing a stall.",
+  "transfer_progress": {
+    "stage": "TRANSFERRING",
+    "full": false,
+    "verified_files": 3315,
+    "expected_files": 3319,
+    "verified_bytes": 3402099844,
+    "expected_bytes": 4815334006,
+    "updated_at": "2026-10-05T01:07:02.696201+00:00"
+  }
+}

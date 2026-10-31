@@ -1,0 +1,13 @@
+{"started_unix": 1789153052.5237093, "deadline_unix": 1789153952.468737, "command": ["/root/miniconda3/bin/python", "tools/test.py", "configs/lesion/exp/hr100_b.py", "/root/autodl-tmp/hr100/trial_b/best_mIoU_iter_3000.pth", "--eval", "mIoU"], "status": "success", "returncode": 0, "ended_unix": 1789153272.7753937}
+Traceback (most recent call last):
+  File "/root/autodl-tmp/hr100/run_with_shutdown.py", line 65, in <module>
+    main()
+  File "/root/autodl-tmp/hr100/run_with_shutdown.py", line 59, in main
+    subprocess.run(['/usr/bin/shutdown'], timeout=30, check=True)
+  File "/root/miniconda3/lib/python3.8/subprocess.py", line 493, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "/root/miniconda3/lib/python3.8/subprocess.py", line 858, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/root/miniconda3/lib/python3.8/subprocess.py", line 1704, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+OSError: [Errno 8] Exec format error: '/usr/bin/shutdown'

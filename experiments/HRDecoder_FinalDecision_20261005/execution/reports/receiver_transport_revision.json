@@ -1,0 +1,35 @@
+{
+  "stage": "ONE_RECEIVER_HANDOFF",
+  "time": "2026-10-04T21:13:12.960954+00:00",
+  "old_pid": 35684,
+  "pid": 30340,
+  "helper": "reports/attendant_persistent_receivers.py",
+  "helper_sha256": "c1688638546904a59fdc0ddd75cff11b23eedbb49fdcfce50df5c5b868112d33",
+  "original_transfer_progress": {
+    "stage": "TRANSFERRING",
+    "full": false,
+    "verified_files": 662,
+    "expected_files": 939,
+    "verified_bytes": 242374077,
+    "expected_bytes": 244079618,
+    "updated_at": "2026-10-04T21:09:49.749420+00:00"
+  },
+  "small_unverified_partials_retained_for_original_SHA_checked_get": [
+    {
+      "path": "server_results/decision.py.download",
+      "bytes": 6436
+    },
+    {
+      "path": "server_results/reports/parent_restore_val42/metrics.json.download",
+      "bytes": 141831
+    },
+    {
+      "path": "server_results/reports/R_reconstruction_seed2024/metrics.json.download",
+      "bytes": 141844
+    }
+  ],
+  "all_verified_files_retained": true,
+  "frozen_source_and_training_unchanged": true,
+  "max_file_receivers": 2,
+  "change": "Reuse two worker SSH/SFTP connections, lossless transport compression; compact duplicate polling stdout. Original mirror, atomic SHA, custody and exactly-once shutdown checks unchanged."
+}

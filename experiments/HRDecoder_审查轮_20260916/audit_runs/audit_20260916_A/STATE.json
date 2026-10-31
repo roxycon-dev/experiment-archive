@@ -1,0 +1,83 @@
+{
+  "contract": "2026-09-17",
+  "current_item": "R0",
+  "status": "DONE_POSITIVE",
+  "champion_restored": {
+    "h4_head": "h4_best.pth",
+    "h4_test_json": "experiments/h7_test.json",
+    "test_mIoU_percent": 44.21,
+    "test_MA_percent": 28.66
+  },
+  "base0_identity_restored": {
+    "members": [
+      "D@2000 ×3",
+      "E@1500 ×2",
+      "B@3000 ×1",
+      "E4@36000 ×1"
+    ],
+    "flip_tta": true,
+    "forward_passes_per_image": 8
+  },
+  "old_cache_sampling_identity": {
+    "note": "旧 H4 的训练特征来自 D 单模型的 student/reference 概率（crop 1024 监督），非集成；部署时才接集成。据实记录，未把旧缓存改名成集成缓存。",
+    "old_h4_sampling": "数据集自带 ForegroundMixedCrop：50% 前景锚定 / 50% 均匀；未实现 1/4 基线误报引导",
+    "old_h4_geometry": "1024 crop, 整图 loss",
+    "logit_clamp_used": "1e-4 (契约要求 1e-6，已登记 DEVIATIONS)"
+  },
+  "authorization": {
+    "server": "ON (autodl-container-cb6a4f850d-6aa7b741)",
+    "test": "NOT authorized (default sealed)",
+    "budget": "用户称无预算上限；本轮自行设绝对截止 2026-09-18T20:00+08:00"
+  },
+  "guard": {
+    "process": "hard_deadline_guard.py (NEW version, sha256 423c71a1948b9037…)",
+    "pid": 1242,
+    "deadline": "2026-09-18T20:00:00+08:00",
+    "self_test": "10/10 PASS"
+  },
+  "actual_completed_updates": {
+    "R0": "n/a (no training)",
+    "T0": null,
+    "T1": null,
+    "U0": null
+  },
+  "scheduler_total_updates": {
+    "T0": 8000,
+    "T1": 8000,
+    "U0": 8000
+  },
+  "selected_checkpoint_step": {
+    "T0": null,
+    "T1": null,
+    "U0": null
+  },
+  "last": {
+    "R0": "counts generated + paired bootstrap done"
+  },
+  "best": {
+    "R0_bootstrap": {
+      "delta_mIoU": 0.0087,
+      "ci95_mIoU": [
+        0.0057,
+        0.0118
+      ],
+      "delta_MA": 0.0349,
+      "ci95_MA": [
+        0.0229,
+        0.0473
+      ],
+      "crosses_zero": false,
+      "n_boot": 2000,
+      "seed": 20260917,
+      "resampling": "image-level"
+    }
+  },
+  "next_item": "T0（代码准备即可开始：512 输入/中心 256 监督/128 halo 共同几何层 + 旧 ForegroundMixedCrop 真实规则）",
+  "blocked_reason": null,
+  "running_now": [],
+  "r0_artifacts": [
+    "diagnostics/val_per_image_counts_R0.csv",
+    "diagnostics/R0_counts_meta.json",
+    "diagnostics/paired_bootstrap.json"
+  ]
+}

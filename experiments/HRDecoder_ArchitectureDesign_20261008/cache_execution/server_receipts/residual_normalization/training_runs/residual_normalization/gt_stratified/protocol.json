@@ -1,0 +1,56 @@
+{
+  "identity_SHA": "9ec0a51586cf2f49d8b8005debafa5058867d0741cc38a46ee1739a3f4b97bfa",
+  "identity": {
+    "kind": "paired warm diagnostic; not a fresh40k model",
+    "arm": "gt_stratified",
+    "parent_identity_SHA": "96cd1bc0ce79e9e5f5f8247958f868a4e00023f072bc6fea920092ad5a5003ec",
+    "parent_completed": 8000,
+    "parent_hardlink_inode": 4533386744,
+    "protocol": {
+      "kind": "paired warm objective-normalization diagnostic; not fresh40k screen",
+      "parent_completed": 8000,
+      "parent_identity_SHA": "96cd1bc0ce79e9e5f5f8247958f868a4e00023f072bc6fea920092ad5a5003ec",
+      "canvas": 2048,
+      "batch": 2,
+      "warm_updates_per_arm": 500,
+      "arms": [
+        "control",
+        "gt_stratified"
+      ],
+      "full76_val_probe_updates": [
+        0,
+        250,
+        500
+      ],
+      "identical_model_optimizer_RNG_data_order": true,
+      "only_changed_variable": "trusted teacher KL denominator: all valid pixels versus fixed .5/.5 GT positive/negative strata",
+      "unchanged": [
+        "base original Dice +.1HRcrop",
+        "final Dice+.25 ordinary BCE",
+        "detached provider",
+        "teacher targets",
+        "40000 LR schedule"
+      ],
+      "pre_registered_interpretation": {
+        "support_background_dilution_hypothesis_if_delta_mIoU500_pp_at_least": 1.0,
+        "no_class_IoU_loss_vs_control_over_pp": 2.0,
+        "MA_precision_must_improve_without_recall_loss_over_pp": 5.0
+      },
+      "auto_fresh_training": false,
+      "auto_deadline_extension": false,
+      "accuracy_guaranteed": false,
+      "original_deadline_unix": 1791568800,
+      "own_process_stop_deadline_unix": 1791568620,
+      "test_accessed": false,
+      "server_must_stay_online": true,
+      "user_authorized_autonomous_diagnostics": true
+    },
+    "code": {
+      "probe.py": "1059c248177b608b2dbba068de9bd2f2dca5b8cb9bb6e49443be46410c919738",
+      "intervention.py": "da1cd6aebe8c663b72b3ab5b3f9f6d50d172978cb091da531e027cbdde140bc0",
+      "probe_protocol.json": "0d16a687b59442564ccf6dabc72440fb5086e6fe4fc20cea21c12ac9d5351a83"
+    }
+  },
+  "parent_model_optimizer_RNG_loaded": true,
+  "teacher_cache_bytes": 103079171144
+}

@@ -1,0 +1,30 @@
+# audit_20260916_A —— 本轮实际执行的命令（可复制运行，不含任何凭据）
+# 说明：路径中的 <REPO>/<BUNDLE>/<OUT> 为运行时参数，未把旧机器绝对路径硬编码进新脚本。
+
+# [A1/A2] 源码与资产盘点 + 身份清单
+python tools/phaseA_inventory.py \
+  --repo-root <REPO> --ckpt-root <CKPT_ROOT> \
+  --split-file <BUNDLE>/split_assignment.json \
+  --data-manifest <BUNDLE>/data_manifest.json \
+  --out-dir <OUT>/audit_runs/audit_20260916_A --run-id audit_20260916_A \
+  --extra-code-root "C:/Users/GuanXingRen/WorkBuddy/2026-09-15-22-20-12;<HANDOVER>/03_代码"
+
+# [A2] checkpoint 身份 + 逐健 shape/dtype 比对 + split 结构
+python tools/phaseA2_identity_split.py --ckpt-root <CKPT_ROOT> --out-dir <OUT>/audit_runs/audit_20260916_A \
+  --split-assignment <BUNDLE>/split_assignment.json --data-manifest <BUNDLE>/data_manifest.json \
+  --ckpts "b_weights=hrdecoder_plus3/repo/weights/b_weights.pth" \
+  --ckpts "d_student_only=hrdecoder_plus3/results/D_0913_retry/backup_student_2000.pth" \
+  --ckpts "e4_weights=autodl100/results/e4_reference_weights.pth" \
+  --ckpts "a_weights=autodl100/results/trial_a/selected_weights_only.pth"
+
+# [A4] 数据边界（454/76/227、不相交、配对、重复哈希）
+python tools/phaseA4_data_boundary.py \
+  --split-assignment <BUNDLE>/split_assignment.json \
+  --data-manifest <BUNDLE>/data_manifest.json \
+  --out-dir <OUT>/audit_runs/audit_20260916_A
+
+# [B/§8.1] 独立指标 oracle + ignore 行为实证（纯 NumPy，不 import 被测模块）
+python tools/oracle_metrics.py --out-dir <OUT>/audit_runs/audit_20260916_A/tests
+
+# [环境约定] 本地 torch 2.6 需显式 weights_only=False 才能读 mmseg checkpoint；
+#            服务器 torch 2.0.1 默认即为 False，不受影响。

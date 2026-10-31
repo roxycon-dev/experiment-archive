@@ -1,0 +1,25 @@
+{
+  "stage": "FIRST_REGISTERED_RECOVERY_CHECKPOINT_WRITTEN",
+  "run": "SD_seed42",
+  "checkpoint_update": 200,
+  "checkpoint_bytes": 1667858013,
+  "valid_audit_sources": [
+    "DDR",
+    "TJDR"
+  ],
+  "observed_status": {
+    "stage": "TRAINING",
+    "completed": 460,
+    "endpoint": 32000,
+    "updated_at": "2026-10-05T05:42:59.626032+00:00",
+    "recent": {
+      "loss": 0.27048951387405396,
+      "grad_norm": 2.6602602005004883,
+      "seconds": 1.2075036093592644,
+      "data_wait_seconds": 0.002514265477657318,
+      "peak_gpu_bytes": 11005601280
+    }
+  },
+  "proof_scope": "Atomic checkpoint and matching200-update audit exist; serialized-state correctness was already tested in required GPU gate. Active checkpoint remains on server.",
+  "time": "2026-10-05T05:43:05.199713+00:00"
+}

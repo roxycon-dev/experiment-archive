@@ -1,0 +1,50 @@
+{
+  "status": "SOURCE_PREPARED_GPU_COMPILE_PENDING",
+  "time": "2026-10-04T17:55:44.531150+00:00",
+  "author_commit": "fd64a5190f9f4530e8e5961cc87b2a3ad591190b",
+  "change": "Only deprecated ATen type().is_cuda()/dispatch type() replaced by tensor is_cuda()/scalar_type(); no algorithm change",
+  "files": [
+    {
+      "file": "cpu/ms_deform_attn_cpu.cpp",
+      "official_sha256": "2604085d41f8b07c4367a9e1f51547e284472f2142b1318287b36cf0e48c7a95",
+      "compat_sha256": "2604085d41f8b07c4367a9e1f51547e284472f2142b1318287b36cf0e48c7a95",
+      "changed": false
+    },
+    {
+      "file": "cpu/ms_deform_attn_cpu.h",
+      "official_sha256": "30debd77fbb1a672156c8df934567dc736f6bb9748a2c4251e9cecdf97ca81d1",
+      "compat_sha256": "30debd77fbb1a672156c8df934567dc736f6bb9748a2c4251e9cecdf97ca81d1",
+      "changed": false
+    },
+    {
+      "file": "cuda/ms_deform_attn_cuda.cu",
+      "official_sha256": "d05a519ade2087a63fe32a01dcc71a96c52e55191189fe96fa18cae8cbd7126c",
+      "compat_sha256": "bf04aaf3d79d51d6073f31276dca3e058910984ab2021d8c7d2e7524d1f61fb2",
+      "changed": true
+    },
+    {
+      "file": "cuda/ms_deform_attn_cuda.h",
+      "official_sha256": "8492fc438a84352f4f1fcd84e5728315731177d95a09d4950e018196e809cd8d",
+      "compat_sha256": "8492fc438a84352f4f1fcd84e5728315731177d95a09d4950e018196e809cd8d",
+      "changed": false
+    },
+    {
+      "file": "cuda/ms_deform_im2col_cuda.cuh",
+      "official_sha256": "5b374f20fedab7d566a4fa5f7a222bb3ebf14400836de072399e98e88b29df37",
+      "compat_sha256": "5b374f20fedab7d566a4fa5f7a222bb3ebf14400836de072399e98e88b29df37",
+      "changed": false
+    },
+    {
+      "file": "ms_deform_attn.h",
+      "official_sha256": "7a1f90dff15403ae8c3be6a2e7ede9f384deb57e200728469556807cc11de540",
+      "compat_sha256": "c12e20b97836336b9cdff75947aa16e975274cc5b51a1a89bd11c5eed5c9af9e",
+      "changed": true
+    },
+    {
+      "file": "vision.cpp",
+      "official_sha256": "e46b3e2aca6e47ca121d1ee1fe6e0c04ecc6e1916865d6e2a1b93f6bbec8d211",
+      "compat_sha256": "e46b3e2aca6e47ca121d1ee1fe6e0c04ecc6e1916865d6e2a1b93f6bbec8d211",
+      "changed": false
+    }
+  ]
+}

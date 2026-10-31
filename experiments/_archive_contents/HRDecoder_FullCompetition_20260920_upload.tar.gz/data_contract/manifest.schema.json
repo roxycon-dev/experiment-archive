@@ -1,0 +1,146 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "HRDecoder external lesion manifest record",
+  "description": "统一外部病灶数据契约：每行一个样本记录（JSONL）。四通道顺序由 tools/contract_common.py 的 LESION_CHANNEL_ORDER=EX/HE/SE/MA 权威定义；valid_mode=none 的类别表示未标注，消费端必须按 valid=0 处理，绝不能当阴性。",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "sample_id",
+    "source",
+    "official_split",
+    "patient_id",
+    "image_id",
+    "original_width",
+    "original_height",
+    "image",
+    "lesions"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0",
+      "description": "记录契约版本，与 manifest.schema.json 同步演进"
+    },
+    "sample_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "全局唯一样本 ID，约定 <source>_<official_split>_<image_id>"
+    },
+    "source": {
+      "type": "string",
+      "enum": ["IDRiD", "MAPLES-DR"],
+      "description": "数据来源白名单；FGADR 在取得授权前不得加入"
+    },
+    "source_version": {
+      "type": ["string", "null"],
+      "description": "数据集版本号/发布标识（如 IDRiD 1.0、MAPLES-DR v2）。未知时必须写 null，禁止编造"
+    },
+    "official_split": {
+      "type": "string",
+      "enum": ["train", "val", "test"],
+      "description": "数据集官方划分，逐字保留，禁止改写；官方 test 不得默认进入预训练池"
+    },
+    "patient_id": {
+      "type": ["string", "null"],
+      "description": "患者 ID；数据集不提供时写 null，禁止用 image_id 冒充"
+    },
+    "patient_id_source": {
+      "type": ["string", "null"],
+      "enum": ["dataset_provided", "image_basename_fallback", null],
+      "description": "patient_id 的来源说明；image_basename_fallback 表示同图同患者只能作为弱信号"
+    },
+    "image_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "图像 ID（数据集官方文件名 stem）"
+    },
+    "original_width": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "原图宽度（像素）"
+    },
+    "original_height": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "原图高度（像素）"
+    },
+    "image": {
+      "type": "object",
+      "required": ["path", "sha256", "format"],
+      "additionalProperties": false,
+      "properties": {
+        "path": {
+          "type": "string",
+          "minLength": 1,
+          "description": "原图路径（可为绝对或相对 manifest 的路径）"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$",
+          "description": "原图文件精确 SHA256"
+        },
+        "format": {
+          "type": "string",
+          "description": "文件扩展名（小写，不含点），如 jpg/png"
+        }
+      }
+    },
+    "lesions": {
+      "type": "object",
+      "description": "四类病灶，键必须恰为 EX/HE/SE/MA（=LESION_CHANNEL_ORDER），禁止增删",
+      "required": ["EX", "HE", "SE", "MA"],
+      "additionalProperties": false,
+      "patternProperties": {
+        "^(EX|HE|SE|MA)$": {
+          "type": "object",
+          "required": ["annotated", "valid_mode", "mask_path", "mask_sha256", "valid_mask_path"],
+          "additionalProperties": false,
+          "properties": {
+            "annotated": {
+              "type": "boolean",
+              "description": "该类在本图是否被官方标注"
+            },
+            "valid_mode": {
+              "type": "string",
+              "enum": ["full", "file", "none"],
+              "description": "full=全图有效；file=逐像素 valid 栅格；none=未标注（valid 全 0）"
+            },
+            "mask_path": {
+              "type": ["string", "null"],
+              "description": "该类二值掩膜路径；valid_mode=none 时必须为 null"
+            },
+            "mask_sha256": {
+              "type": ["string", "null"],
+              "pattern": "^[0-9a-f]{64}$",
+              "description": "掩膜文件 SHA256；mask_path 为 null 时必须为 null"
+            },
+            "valid_mask_path": {
+              "type": ["string", "null"],
+              "description": "valid 栅格路径；valid_mode=full 或 none 时必须为 null"
+            },
+            "positive_pixels": {
+              "type": ["integer", "null"],
+              "minimum": 0,
+              "description": "掩膜阳性像素数（可审计字段，允许 null）"
+            }
+          }
+        }
+      }
+    },
+    "perceptual_hash": {
+      "type": ["object", "null"],
+      "description": "原图感知哈希（64bit hex）；由 audit 工具补充时允许 null",
+      "additionalProperties": false,
+      "properties": {
+        "ahash": { "type": ["string", "null"], "pattern": "^[0-9a-f]{16}$" },
+        "dhash": { "type": ["string", "null"], "pattern": "^[0-9a-f]{16}$" },
+        "phash": { "type": ["string", "null"], "pattern": "^[0-9a-f]{16}$" }
+      }
+    },
+    "notes": {
+      "type": ["string", "null"],
+      "description": "自由文本备注（如官方质量标记、special caveat）"
+    }
+  }
+}

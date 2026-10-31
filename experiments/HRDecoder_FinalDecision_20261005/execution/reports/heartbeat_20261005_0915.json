@@ -1,0 +1,384 @@
+{
+  "stage": "FORMAL_TRAINING_HEALTHY_NO_ACTION_REQUIRED",
+  "observed_at": "2026-10-05T09:18:39.793347+00:00",
+  "primary": {
+    "driver": {
+      "stage": "CAMPAIGN",
+      "pid": 18787,
+      "time": "2026-10-04T21:16:20.663409+00:00"
+    },
+    "campaign": {
+      "stage": "RUNNING",
+      "current_run": "S_seed42",
+      "queue": [
+        [
+          "C",
+          42
+        ],
+        [
+          "S",
+          42
+        ],
+        [
+          "D",
+          42
+        ],
+        [
+          "SD",
+          42
+        ],
+        [
+          "PARENT_F12",
+          2024
+        ],
+        [
+          "C",
+          2024
+        ],
+        [
+          "S",
+          2024
+        ],
+        [
+          "D",
+          2024
+        ],
+        [
+          "SD",
+          2024
+        ]
+      ],
+      "updated_at": "2026-10-05T02:31:25.514043+00:00"
+    },
+    "runs": {
+      "C_seed42": {
+        "stage": "COMPLETE",
+        "completed": 32000,
+        "endpoint": 32000,
+        "updated_at": "2026-10-05T02:31:24.012530+00:00"
+      },
+      "S_seed42": {
+        "stage": "TRAINING",
+        "completed": 28260,
+        "endpoint": 32000,
+        "updated_at": "2026-10-05T09:15:48.781321+00:00",
+        "recent": {
+          "loss": 0.13028649985790253,
+          "grad_norm": 0.5059736967086792,
+          "seconds": 0.8152800570242107,
+          "data_wait_seconds": 0.001517181983217597,
+          "peak_gpu_bytes": 11004799488
+        }
+      }
+    },
+    "free_disk_bytes": 21771366400,
+    "observed_at": "2026-10-05T09:15:49.430428+00:00"
+  },
+  "second": {
+    "driver": {
+      "stage": "PARALLEL_CAMPAIGN",
+      "pid": 3295,
+      "time": "2026-10-05T05:33:32.002303+00:00"
+    },
+    "campaign": {
+      "stage": "RUNNING",
+      "current_run": "SD_seed42",
+      "queue": [
+        [
+          "SD",
+          42
+        ]
+      ],
+      "amendment_sha256": "cae05b90a986f4d14a7c7f1e7ca25de10b9d966d905cd1ea88f5e0c2116344c3",
+      "time": "2026-10-05T05:33:32.001933+00:00"
+    },
+    "runs": {
+      "SD_seed42": {
+        "stage": "TRAINING",
+        "completed": 10680,
+        "endpoint": 32000,
+        "updated_at": "2026-10-05T09:15:43.295065+00:00",
+        "recent": {
+          "loss": 0.11748859286308289,
+          "grad_norm": 1.127202033996582,
+          "seconds": 1.2065983414649963,
+          "data_wait_seconds": 0.0023671388626098633,
+          "peak_gpu_bytes": 11006432768
+        }
+      }
+    },
+    "free_disk_bytes": 17726103552,
+    "observed_at": "2026-10-05T09:15:50.556280+00:00"
+  },
+  "additional_fresh_run_status_observations": {
+    "S_seed42": {
+      "stage": "TRAINING",
+      "completed": 28340,
+      "endpoint": 32000,
+      "updated_at": "2026-10-05T09:16:53.646200+00:00",
+      "recent": {
+        "loss": 0.13011720776557922,
+        "grad_norm": 1.4718116521835327,
+        "seconds": 0.8114918239880353,
+        "data_wait_seconds": 0.0016888000536710024,
+        "peak_gpu_bytes": 11004799488
+      }
+    },
+    "SD_seed42": {
+      "stage": "TRAINING",
+      "completed": 10740,
+      "endpoint": 32000,
+      "updated_at": "2026-10-05T09:16:55.902178+00:00",
+      "recent": {
+        "loss": 0.217923104763031,
+        "grad_norm": 1.8571138381958008,
+        "seconds": 1.2092216238379478,
+        "data_wait_seconds": 0.0027759969234466553,
+        "peak_gpu_bytes": 11006432768
+      }
+    }
+  },
+  "validation_curves": {
+    "S_seed42": [
+      {
+        "update": 4000,
+        "n_images": 76,
+        "per_image_count": 76,
+        "scores": {
+          "single": 41.28424748145035,
+          "fixed_fusion": 45.050413477512585,
+          "half_fusion": 43.06775775425701
+        },
+        "metric_sha256": "7f53302b0328b52fcb5e552b25a9700f051f4aee8d5e3c78d22e98b06836e71e",
+        "mirror_matches": true,
+        "registered_endpoint": false,
+        "probability_files": 0,
+        "fixed25_gain_vs_R42_pp": 0.6947211389742094,
+        "single_vs_F12_parent_pp": 1.0424138809343262,
+        "node_meets_both_collapse_thresholds": false
+      },
+      {
+        "update": 8000,
+        "n_images": 76,
+        "per_image_count": 76,
+        "scores": {
+          "single": 41.225148798658964,
+          "fixed_fusion": 44.91937669048375,
+          "half_fusion": 43.02300822147355
+        },
+        "metric_sha256": "c6d197122a0eda8aea121bf4bd06ae32ed7367fe713fab98391ada21dd9835fb",
+        "mirror_matches": true,
+        "registered_endpoint": false,
+        "probability_files": 0,
+        "fixed25_gain_vs_R42_pp": 0.5636843519453762,
+        "single_vs_F12_parent_pp": 0.9833151981429396,
+        "node_meets_both_collapse_thresholds": false
+      },
+      {
+        "update": 12000,
+        "n_images": 76,
+        "per_image_count": 76,
+        "scores": {
+          "single": 41.540638483788044,
+          "fixed_fusion": 44.902354656390116,
+          "half_fusion": 43.11420017653772
+        },
+        "metric_sha256": "d4772fa526db35804c57e214e95af7fe0b22d80c03551e2b75b71f43cfb19599",
+        "mirror_matches": true,
+        "registered_endpoint": false,
+        "probability_files": 0,
+        "fixed25_gain_vs_R42_pp": 0.5466623178517409,
+        "single_vs_F12_parent_pp": 1.2988048832720196,
+        "node_meets_both_collapse_thresholds": false
+      },
+      {
+        "update": 16000,
+        "n_images": 76,
+        "per_image_count": 76,
+        "scores": {
+          "single": 42.398125211123094,
+          "fixed_fusion": 45.530973783994924,
+          "half_fusion": 43.81826138760529
+        },
+        "metric_sha256": "abc87d00723e1291966521e90d39cdcad2836f79da8bb5f6390f2c6a71ab8937",
+        "mirror_matches": true,
+        "registered_endpoint": false,
+        "probability_files": 0,
+        "fixed25_gain_vs_R42_pp": 1.1752814454565481,
+        "single_vs_F12_parent_pp": 2.15629161060707,
+        "node_meets_both_collapse_thresholds": false
+      },
+      {
+        "update": 20000,
+        "n_images": 76,
+        "per_image_count": 76,
+        "scores": {
+          "single": 42.27032190489858,
+          "fixed_fusion": 45.32183122738841,
+          "half_fusion": 43.58948548754201
+        },
+        "metric_sha256": "41d492ec19114055da41c90bfbf3dc6d692afb2e191483fe348d4b6d4e4fd441",
+        "mirror_matches": true,
+        "registered_endpoint": true,
+        "probability_files": 76,
+        "fixed25_gain_vs_R42_pp": 0.9661388888500326,
+        "single_vs_F12_parent_pp": 2.028488304382556,
+        "node_meets_both_collapse_thresholds": false
+      },
+      {
+        "update": 24000,
+        "n_images": 76,
+        "per_image_count": 76,
+        "scores": {
+          "single": 42.018816265387485,
+          "fixed_fusion": 45.323095776327385,
+          "half_fusion": 43.54937754768469
+        },
+        "metric_sha256": "69518a6e38be6125bbfad166b86d90ec53ca8360d798394d75db303201cb3bca",
+        "mirror_matches": false,
+        "registered_endpoint": false,
+        "probability_files": 0,
+        "fixed25_gain_vs_R42_pp": 0.9674034377890095,
+        "single_vs_F12_parent_pp": 1.7769826648714613,
+        "node_meets_both_collapse_thresholds": false
+      },
+      {
+        "update": 28000,
+        "n_images": 76,
+        "per_image_count": 76,
+        "scores": {
+          "single": 41.99065247726068,
+          "fixed_fusion": 45.31019779209142,
+          "half_fusion": 43.36410344472786
+        },
+        "metric_sha256": "16573e96271b7ff8374e331aa6655d18752ceebb372724f29ba808e2c2323c5b",
+        "mirror_matches": false,
+        "registered_endpoint": false,
+        "probability_files": 0,
+        "fixed25_gain_vs_R42_pp": 0.9545054535530468,
+        "single_vs_F12_parent_pp": 1.7488188767446573,
+        "node_meets_both_collapse_thresholds": false
+      }
+    ],
+    "SD_seed42": [
+      {
+        "update": 4000,
+        "n_images": 76,
+        "per_image_count": 76,
+        "scores": {
+          "single": 39.65700941327202,
+          "fixed_fusion": 45.06749663241366,
+          "half_fusion": 43.318394842689585
+        },
+        "metric_sha256": "08a9ecb510881d909bdf6abdd4fe6614f5e637967371f5c36907d93855cd20d9",
+        "mirror_matches": true,
+        "registered_endpoint": false,
+        "probability_files": 0,
+        "fixed25_gain_vs_R42_pp": 0.7118042938752822,
+        "single_vs_F12_parent_pp": -0.5848241872440028,
+        "node_meets_both_collapse_thresholds": false
+      },
+      {
+        "update": 8000,
+        "n_images": 76,
+        "per_image_count": 76,
+        "scores": {
+          "single": 41.27487871289849,
+          "fixed_fusion": 44.5898536602842,
+          "half_fusion": 43.25308579485186
+        },
+        "metric_sha256": "5754d1bbb8a2c1cef274ad0d04acf6fe7d191ec793226969ef6c54efdc8a9a6d",
+        "mirror_matches": true,
+        "registered_endpoint": false,
+        "probability_files": 0,
+        "fixed25_gain_vs_R42_pp": 0.23416132174582316,
+        "single_vs_F12_parent_pp": 1.0330451123824673,
+        "node_meets_both_collapse_thresholds": false
+      }
+    ]
+  },
+  "two_consecutive_combined_collapse_thresholds_met": {
+    "S_seed42": false,
+    "SD_seed42": false
+  },
+  "boundary": {
+    "stage": "ARMED_AFTER_D42_BOUNDARY",
+    "pid": 44281,
+    "time": "2026-10-05T04:11:34.270609+00:00",
+    "process_alive": true,
+    "commandline": "/root/miniconda3/envs/hrdecoder_q_20261003/bin/python -u reports/primary_single_seed_boundary.py "
+  },
+  "local_processes": [
+    {
+      "pid": 32844,
+      "alive": true,
+      "cmdline": [
+        "C:\\Users\\GuanXingRen\\Miniconda3\\python.exe",
+        "-u",
+        "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\execution\\reports\\primary_parallel_attendant.py"
+      ]
+    },
+    {
+      "pid": 8552,
+      "alive": true,
+      "cmdline": [
+        "C:\\Users\\GuanXingRen\\Miniconda3\\python.exe",
+        "-u",
+        "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\execution\\reports\\parallel_node2_attendant.py"
+      ]
+    },
+    {
+      "pid": 13216,
+      "alive": true,
+      "cmdline": [
+        "C:\\Users\\GuanXingRen\\Miniconda3\\python.exe",
+        "-u",
+        "reports/parallel_single_seed_coordinator.py"
+      ]
+    }
+  ],
+  "primary_transfer_progress": {
+    "stage": "TRANSFERRING",
+    "full": false,
+    "verified_files": 5432,
+    "expected_files": 5436,
+    "verified_bytes": 3434738668,
+    "expected_bytes": 5056826539,
+    "updated_at": "2026-10-05T08:01:27.058107+00:00"
+  },
+  "second_transfer_progress": {
+    "stage": "TRANSFERRING",
+    "full": false,
+    "verified_files": 1084,
+    "expected_files": 2358,
+    "verified_bytes": 180244822,
+    "expected_bytes": 186109892,
+    "updated_at": "2026-10-05T09:18:39.761522+00:00"
+  },
+  "coordinator_state": {
+    "stage": "WAITING_SD_COMPLETE_SHA_CUSTODY",
+    "time": "2026-10-05T09:18:30.804668+00:00"
+  },
+  "primary_open_checkpoint_recovery": {
+    "bytes_at_0837": 891944960,
+    "current_bytes": 1563754496,
+    "advanced": true,
+    "aggregate_progress_only_updates_after_whole_file_SHA": true
+  },
+  "second_old_local_transfer_permission_error": {
+    "log_updated_at_utc": "2026-10-05T08:31:28",
+    "superseded_by_successful_pool_and_WAITING_state_at": "2026-10-05T09:16:11",
+    "training_unaffected": true,
+    "no_manual_restart_warranted": true
+  },
+  "disk_cleanup_needed": false,
+  "scientific_stop_required": false,
+  "shutdown_eligible": false,
+  "final_selection_frozen": false,
+  "new_test_run": false,
+  "authorized_seeds": [
+    42
+  ],
+  "duplicate_mirror_started": false,
+  "training_or_frozen_source_changed": false
+}

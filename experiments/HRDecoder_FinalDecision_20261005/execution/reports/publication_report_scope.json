@@ -1,0 +1,21 @@
+{
+  "stage": "USER_AUTHORIZED_POSTTRAIN_REPORT_WORK",
+  "time": "2026-10-05T15:17:26.915891+00:00",
+  "prompt_path": "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\03_结题报告任务Prompt.md",
+  "prompt_sha256": "90e3c8437940ef32eaa6f91f7ee4def3a196f3ad961219c73c05e5c00a775cac",
+  "hold_primary_shutdown_for_non_training_evidence": true,
+  "retained_server_instance": "connect.nmb2.seetacloud.com:36431",
+  "secondary_follows_existing_full_SHA_and_shutdown_gate": true,
+  "non_training_only": true,
+  "no_new_training_or_selection_or_threshold_scan": true,
+  "release_condition": "All necessary server-dependent report evidence work complete and outputs SHA verified locally; write/render report locally to avoid server idle",
+  "report_deliverables": [
+    "editable_DOCX",
+    "PDF",
+    "Markdown",
+    "evidence_ledger",
+    "figure_sources_and_plot_data"
+  ],
+  "finalizer_original_sha256": "1d5b0280323279759fe4eea50c42734aad463b745582996f603bf99391b1622e",
+  "all_original_scientific_selection_test_backup_and_exactly_once_shutdown_gates_preserved": true
+}

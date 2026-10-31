@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "torch": "2.6.0+cu124",
+  "checks": [
+    "zero_residual_exact_base_initialization_and_counts",
+    "grouped_heads_equal_independent_values_and_gradients",
+    "original_Dice_equivalence_empty_classes_and_invalid_mask",
+    "fixed_detached_teacher_targets_and_KL_endpoints",
+    "GT_stratum_KL_invariant_to_easy_background_replication_value_and_gradient",
+    "independent_zero_expert_half_gate_initial_hard_decisions_preserved_not_probabilities",
+    "fusion_alpha_receives_only_fused_GT_not_private_teacher_loss",
+    "actual_student_wrapper_private_base_gradient_isolation",
+    "native_logit_inference_no_teacher_or_GT_inputs",
+    "SGD_momentum_RNG_serialization_and_uncompressed40k_schedule"
+  ],
+  "formal_updates": 0,
+  "private_parameters": 6415236,
+  "total_parameters_real_student": 71987656,
+  "dataset_or_test_read": false,
+  "accuracy_validated": false
+}

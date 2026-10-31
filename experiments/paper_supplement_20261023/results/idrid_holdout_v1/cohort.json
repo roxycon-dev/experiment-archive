@@ -1,0 +1,1707 @@
+{
+  "status": "FROZEN_BEFORE_EXTERNAL_PREDICTIONS",
+  "date": "2026-10-23",
+  "expected_images": 27,
+  "usage_history": "Direct user confirmation in current chat: never trained, selected, tuned or used to compare schemes",
+  "history_authority": "user report, consistent with archived quarantine; no external server audit of all historic runs",
+  "dataset_training_exposure": "Other project Q_MIX/E_NEG explorations used IDRiD training54; selected S20 and matched C20 follow DDR-only Q_DDR->F12->S/C lineage, not those mixed-data parents; these27 testing images isolated by direct user confirmation",
+  "lineage_evidence": {
+    "D:\\dataset\\experiment\\paper_writing_20261023\\evidence\\Q_parent_identity.json": "8282d891f025d1c5d7e06a91fa08b59cc95b73e17773512bf6300e25ecd9e08e",
+    "D:\\dataset\\experiment\\HRDecoder_NextPlan_20261004\\execution\\configs\\protocol.json": "388480f0d6560c0722d0762e80f83525c3a6bdf5295025e1bbee16f827e8f169",
+    "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\execution\\server_results\\runs\\S_seed42\\identity.json": "0311c43ab5af56f641cde35194c328c105c46fe3d49b48333d90d769d877e1ae",
+    "D:\\dataset\\experiment\\HRDecoder_FinalDecision_20261005\\execution\\server_results\\runs\\C_seed42\\identity.json": "a5eb49d12289421b274b014a98384230da97e101b3e15b425d06aa7bdd2f710c"
+  },
+  "patient_identity_available": false,
+  "official_native_geometry_claimed": false,
+  "annotation_authority": "historical user-confirmed official-GT lossless conversion, stored coordinate masks reverified",
+  "protocol_sha256": "1fdf62213ec183fcc7e90045098120a936595678efdc2e112d86c87be6c4b20a",
+  "source_manifest_sha256": "237ff02c1142df8560bb2d5962d13c36eb7a2e87e36e5f52e0b1a03c6011cc65",
+  "dedup_audit": {
+    "status": "PASS_REUSED_AFTER_ALL_RGB_FINGERPRINTS_REVERIFIED",
+    "images_reverified": 1036,
+    "candidate_pairs_involving_holdout": 10,
+    "confirmed_duplicates": 0,
+    "patient_independence_proven": false,
+    "historical_audit_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\reports\\external_acceptance\\image_dedup.final.json",
+    "historical_audit_sha256": "009aea290c3000e543862b37c83c05e5bba55b736a35e2f39527fe2b0c7f3a14",
+    "historical_fingerprints_sha256": "a352b05c72801ed4041f32afb24fd446523cb8d1e3e4f3bc2cc6915e1cdcb8b1",
+    "holdout_candidates": [
+      {
+        "a": {
+          "source": "IDRiD",
+          "sid": "IDRiD_80",
+          "split": "test",
+          "image": "D:\\dataset\\best_segmentation\\images\\testing\\IDRiD_80.jpg"
+        },
+        "b": {
+          "source": "DDR",
+          "sid": "007-6713-400",
+          "split": "train",
+          "image": "D:\\HRDecoder\\data\\DDR_split_613\\images\\train\\007-6713-400.jpg"
+        },
+        "exact_decoded_pixels": false,
+        "exact_file": false,
+        "phash_distance": 6,
+        "dhash_distance": 9,
+        "hash_view": "full_hash",
+        "scene_check": {
+          "reciprocal_ratio_matches": 0,
+          "status": "REJECTED_NO_GEOMETRIC_SCENE_MATCH"
+        }
+      },
+      {
+        "a": {
+          "source": "IDRiD",
+          "sid": "IDRiD_05",
+          "split": "train",
+          "image": "D:\\dataset\\best_segmentation\\images\\training\\IDRiD_05.jpg"
+        },
+        "b": {
+          "source": "IDRiD",
+          "sid": "IDRiD_63",
+          "split": "test",
+          "image": "D:\\dataset\\best_segmentation\\images\\testing\\IDRiD_63.jpg"
+        },
+        "exact_decoded_pixels": false,
+        "exact_file": false,
+        "phash_distance": 4,
+        "dhash_distance": 6,
+        "hash_view": "full_hash",
+        "scene_check": {
+          "reciprocal_ratio_matches": 7,
+          "status": "REJECTED_NO_GEOMETRIC_SCENE_MATCH"
+        }
+      },
+      {
+        "a": {
+          "source": "IDRiD",
+          "sid": "IDRiD_05",
+          "split": "train",
+          "image": "D:\\dataset\\best_segmentation\\images\\training\\IDRiD_05.jpg"
+        },
+        "b": {
+          "source": "IDRiD",
+          "sid": "IDRiD_70",
+          "split": "test",
+          "image": "D:\\dataset\\best_segmentation\\images\\testing\\IDRiD_70.jpg"
+        },
+        "exact_decoded_pixels": false,
+        "exact_file": false,
+        "phash_distance": 6,
+        "dhash_distance": 4,
+        "hash_view": "black_bbox_hash",
+        "scene_check": {
+          "reciprocal_ratio_matches": 8,
+          "status": "REJECTED_NO_GEOMETRIC_SCENE_MATCH",
+          "homography_inliers": 6,
+          "inlier_fraction": 0.75
+        }
+      },
+      {
+        "a": {
+          "source": "IDRiD",
+          "sid": "IDRiD_32",
+          "split": "train",
+          "image": "D:\\dataset\\best_segmentation\\images\\training\\IDRiD_32.jpg"
+        },
+        "b": {
+          "source": "IDRiD",
+          "sid": "IDRiD_64",
+          "split": "test",
+          "image": "D:\\dataset\\best_segmentation\\images\\testing\\IDRiD_64.jpg"
+        },
+        "exact_decoded_pixels": false,
+        "exact_file": false,
+        "phash_distance": 6,
+        "dhash_distance": 5,
+        "hash_view": "full_hash",
+        "scene_check": {
+          "reciprocal_ratio_matches": 6,
+          "status": "REJECTED_NO_GEOMETRIC_SCENE_MATCH"
+        }
+      },
+      {
+        "a": {
+          "source": "IDRiD",
+          "sid": "IDRiD_50",
+          "split": "train",
+          "image": "D:\\dataset\\best_segmentation\\images\\training\\IDRiD_50.jpg"
+        },
+        "b": {
+          "source": "IDRiD",
+          "sid": "IDRiD_69",
+          "split": "test",
+          "image": "D:\\dataset\\best_segmentation\\images\\testing\\IDRiD_69.jpg"
+        },
+        "exact_decoded_pixels": false,
+        "exact_file": false,
+        "phash_distance": 6,
+        "dhash_distance": 9,
+        "hash_view": "full_hash",
+        "scene_check": {
+          "reciprocal_ratio_matches": 16,
+          "status": "REQUIRES_VISUAL_SCENE_REVIEW",
+          "homography_inliers": 12,
+          "inlier_fraction": 0.75
+        },
+        "visual_review": {
+          "decision": "DISTINCT_IMAGES",
+          "basis": "Actual side-by-side inspection: different retinal vascular branches, optic-disc/macula relationships and local lesion patterns; matching camera frame alone is insufficient",
+          "reviewed_at": "2026-10-03T19:41:20.506521+00:00"
+        }
+      },
+      {
+        "a": {
+          "source": "IDRiD",
+          "sid": "IDRiD_62",
+          "split": "test",
+          "image": "D:\\dataset\\best_segmentation\\images\\testing\\IDRiD_62.jpg"
+        },
+        "b": {
+          "source": "IDRiD",
+          "sid": "IDRiD_78",
+          "split": "test",
+          "image": "D:\\dataset\\best_segmentation\\images\\testing\\IDRiD_78.jpg"
+        },
+        "exact_decoded_pixels": false,
+        "exact_file": false,
+        "phash_distance": 6,
+        "dhash_distance": 10,
+        "hash_view": "black_bbox_hash",
+        "scene_check": {
+          "reciprocal_ratio_matches": 8,
+          "status": "REJECTED_NO_GEOMETRIC_SCENE_MATCH",
+          "homography_inliers": 7,
+          "inlier_fraction": 0.875
+        }
+      },
+      {
+        "a": {
+          "source": "IDRiD",
+          "sid": "IDRiD_63",
+          "split": "test",
+          "image": "D:\\dataset\\best_segmentation\\images\\testing\\IDRiD_63.jpg"
+        },
+        "b": {
+          "source": "IDRiD",
+          "sid": "IDRiD_70",
+          "split": "test",
+          "image": "D:\\dataset\\best_segmentation\\images\\testing\\IDRiD_70.jpg"
+        },
+        "exact_decoded_pixels": false,
+        "exact_file": false,
+        "phash_distance": 6,
+        "dhash_distance": 4,
+        "hash_view": "black_bbox_hash",
+        "scene_check": {
+          "reciprocal_ratio_matches": 5,
+          "status": "REJECTED_NO_GEOMETRIC_SCENE_MATCH"
+        }
+      },
+      {
+        "a": {
+          "source": "IDRiD",
+          "sid": "IDRiD_68",
+          "split": "test",
+          "image": "D:\\dataset\\best_segmentation\\images\\testing\\IDRiD_68.jpg"
+        },
+        "b": {
+          "source": "IDRiD",
+          "sid": "IDRiD_80",
+          "split": "test",
+          "image": "D:\\dataset\\best_segmentation\\images\\testing\\IDRiD_80.jpg"
+        },
+        "exact_decoded_pixels": false,
+        "exact_file": false,
+        "phash_distance": 4,
+        "dhash_distance": 12,
+        "hash_view": "full_hash",
+        "scene_check": {
+          "reciprocal_ratio_matches": 6,
+          "status": "REJECTED_NO_GEOMETRIC_SCENE_MATCH"
+        }
+      },
+      {
+        "a": {
+          "source": "IDRiD",
+          "sid": "IDRiD_70",
+          "split": "test",
+          "image": "D:\\dataset\\best_segmentation\\images\\testing\\IDRiD_70.jpg"
+        },
+        "b": {
+          "source": "IDRiD",
+          "sid": "IDRiD_71",
+          "split": "test",
+          "image": "D:\\dataset\\best_segmentation\\images\\testing\\IDRiD_71.jpg"
+        },
+        "exact_decoded_pixels": false,
+        "exact_file": false,
+        "phash_distance": 4,
+        "dhash_distance": 5,
+        "hash_view": "black_bbox_hash",
+        "scene_check": {
+          "reciprocal_ratio_matches": 10,
+          "status": "REJECTED_NO_GEOMETRIC_SCENE_MATCH",
+          "homography_inliers": 7,
+          "inlier_fraction": 0.7
+        }
+      },
+      {
+        "a": {
+          "source": "IDRiD",
+          "sid": "IDRiD_70",
+          "split": "test",
+          "image": "D:\\dataset\\best_segmentation\\images\\testing\\IDRiD_70.jpg"
+        },
+        "b": {
+          "source": "IDRiD",
+          "sid": "IDRiD_73",
+          "split": "test",
+          "image": "D:\\dataset\\best_segmentation\\images\\testing\\IDRiD_73.jpg"
+        },
+        "exact_decoded_pixels": false,
+        "exact_file": false,
+        "phash_distance": 6,
+        "dhash_distance": 5,
+        "hash_view": "full_hash",
+        "scene_check": {
+          "reciprocal_ratio_matches": 4,
+          "status": "REJECTED_NO_GEOMETRIC_SCENE_MATCH"
+        }
+      }
+    ]
+  },
+  "samples": [
+    {
+      "sid": "IDRiD_55",
+      "image_path": "/root/autodl-tmp/paper_supplement_20261023_run/data/idrid/images/testing/IDRiD_55.jpg",
+      "image_sha256": "58f0eb26127aa2765f55d401a13115f82654d4feb3c90ab2db7bdf0b787d1405",
+      "polygon_path": "/root/autodl-tmp/paper_supplement_20261023_run/data/idrid/labels/testing/IDRiD_55.txt",
+      "polygon_sha256": "1e85247d99c79ed601950657f4c98ab6ccf579eb41f8c25cd878632a77c4a25c",
+      "hw": [
+        3416,
+        3416
+      ],
+      "decoded_rgb_sha256": "2265b2eff19555ffc0752e9dbefdaa56bca84b1a29dbc5a99943227e793a093d",
+      "masks": {
+        "EX": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/EX/IDRiD_55_EX.png",
+          "sha256": "5361cc8daa5ced743f94c07a8aa273747d0416bee383e805c06b35fd264392c2",
+          "positive_pixels": 476110,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\EX\\IDRiD_55_EX.png"
+        },
+        "HE": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/HE/IDRiD_55_HE.png",
+          "sha256": "a4fac9abc5a446651cfc57af0f713650154640be355c8a6963c0cfa8b044b24d",
+          "positive_pixels": 100200,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\HE\\IDRiD_55_HE.png"
+        },
+        "SE": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/SE/IDRiD_55_SE.png",
+          "sha256": "dc0ff26e53b3adf0e8fe4400299d80951837379582ae997389d435aa3dc07df3",
+          "positive_pixels": 2833,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\SE\\IDRiD_55_SE.png"
+        },
+        "MA": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/MA/IDRiD_55_MA.png",
+          "sha256": "683b16071a42e07fa6a7f305381204bfdeef1fb62dbdfb267f77f568ca3011a6",
+          "positive_pixels": 10323,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\MA\\IDRiD_55_MA.png"
+        }
+      },
+      "overlapping_GT_pixels": 24,
+      "client_image_path": "D:\\dataset\\best_segmentation\\images\\testing\\IDRiD_55.jpg",
+      "client_polygon_path": "D:\\dataset\\best_segmentation\\labels\\testing\\IDRiD_55.txt"
+    },
+    {
+      "sid": "IDRiD_56",
+      "image_path": "/root/autodl-tmp/paper_supplement_20261023_run/data/idrid/images/testing/IDRiD_56.jpg",
+      "image_sha256": "0b6f90c8098fa0407aafe13868a74344baa1eb8b988def51003fe96e6206dd8e",
+      "polygon_path": "/root/autodl-tmp/paper_supplement_20261023_run/data/idrid/labels/testing/IDRiD_56.txt",
+      "polygon_sha256": "4032a5bca28fe8439e675d30951e19521732403a82209c3cb6170aa499537e9e",
+      "hw": [
+        3665,
+        3665
+      ],
+      "decoded_rgb_sha256": "bb7ca003139ccb8618a3ae19afa2def32919d9a2ba68557fcb93690a717915be",
+      "masks": {
+        "EX": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/EX/IDRiD_56_EX.png",
+          "sha256": "ea3915a3b0f23bc468d1c6b01e4537a02513395edb8cd2fe192039b9b5cc7b75",
+          "positive_pixels": 13313,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\EX\\IDRiD_56_EX.png"
+        },
+        "HE": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/HE/IDRiD_56_HE.png",
+          "sha256": "9f8f83c3183c0effd3cd33a73f602a3a5735b322832a1b8176b0dc052c90a377",
+          "positive_pixels": 199709,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\HE\\IDRiD_56_HE.png"
+        },
+        "SE": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/SE/IDRiD_56_SE.png",
+          "sha256": "b1d29b6359cf9e7fd0e1538016e896a3ac3a6219c5d8d32bdae15ef6f59ab54a",
+          "positive_pixels": 56632,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\SE\\IDRiD_56_SE.png"
+        },
+        "MA": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/MA/IDRiD_56_MA.png",
+          "sha256": "ac3d900f4b96fc731e77c005e2febe2bde010e3f630ca0dcaebdb038f748d167",
+          "positive_pixels": 10683,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\MA\\IDRiD_56_MA.png"
+        }
+      },
+      "overlapping_GT_pixels": 1255,
+      "client_image_path": "D:\\dataset\\best_segmentation\\images\\testing\\IDRiD_56.jpg",
+      "client_polygon_path": "D:\\dataset\\best_segmentation\\labels\\testing\\IDRiD_56.txt"
+    },
+    {
+      "sid": "IDRiD_57",
+      "image_path": "/root/autodl-tmp/paper_supplement_20261023_run/data/idrid/images/testing/IDRiD_57.jpg",
+      "image_sha256": "2283229f17c6d34bba9ba2910850fca38b1fcccf20367b59c75bb33bca4bbc4a",
+      "polygon_path": "/root/autodl-tmp/paper_supplement_20261023_run/data/idrid/labels/testing/IDRiD_57.txt",
+      "polygon_sha256": "f48a4e93648fda219c5f4828a877db3c598c5783ec3c4526f883e849166a9d80",
+      "hw": [
+        3804,
+        3804
+      ],
+      "decoded_rgb_sha256": "e1e4b1698b16ca88bf196a94cf5364d07c691f396380d3518447c0c610cb30b9",
+      "masks": {
+        "EX": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/EX/IDRiD_57_EX.png",
+          "sha256": "1934debfbca633202859558be7dc8fc215aab192b193137701776fbe296840be",
+          "positive_pixels": 43162,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\EX\\IDRiD_57_EX.png"
+        },
+        "HE": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/HE/IDRiD_57_HE.png",
+          "sha256": "e87ad5eda1695166de5863451630913c924c282c7eb8b5940d1cf929cc9ee22e",
+          "positive_pixels": 2762,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\HE\\IDRiD_57_HE.png"
+        },
+        "SE": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/SE/IDRiD_57_SE.png",
+          "sha256": "3e77dbf81118884ba6e939cc3c07068035b6c87f103d6a614e4555d494674b3f",
+          "positive_pixels": 0,
+          "valid_entire_image": true,
+          "empty_is_negative": true,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\SE\\IDRiD_57_SE.png"
+        },
+        "MA": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/MA/IDRiD_57_MA.png",
+          "sha256": "78eee814ed8c9f171b9c55a5b3081bfd0c73c15c2a9595dfd058b9c17f077bab",
+          "positive_pixels": 2101,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\MA\\IDRiD_57_MA.png"
+        }
+      },
+      "overlapping_GT_pixels": 0,
+      "client_image_path": "D:\\dataset\\best_segmentation\\images\\testing\\IDRiD_57.jpg",
+      "client_polygon_path": "D:\\dataset\\best_segmentation\\labels\\testing\\IDRiD_57.txt"
+    },
+    {
+      "sid": "IDRiD_58",
+      "image_path": "/root/autodl-tmp/paper_supplement_20261023_run/data/idrid/images/testing/IDRiD_58.jpg",
+      "image_sha256": "1fd617b88904fa30e70eee6fe333b1caf5d5fe877b175aa2d3b432fe634060ce",
+      "polygon_path": "/root/autodl-tmp/paper_supplement_20261023_run/data/idrid/labels/testing/IDRiD_58.txt",
+      "polygon_sha256": "a42bc7dcdadcc293ab8b5efb3f218f1b3c716235116407cbe1daf93868dffdfd",
+      "hw": [
+        3600,
+        3600
+      ],
+      "decoded_rgb_sha256": "de5c9302ef14b4b71c346d7338725bda5757d0353569e263a7be45c6430b6347",
+      "masks": {
+        "EX": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/EX/IDRiD_58_EX.png",
+          "sha256": "2aff98eaabd8d9405f58032ad924089a48fb71ce6bb7ad4725837b6be33ce1ee",
+          "positive_pixels": 67878,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\EX\\IDRiD_58_EX.png"
+        },
+        "HE": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/HE/IDRiD_58_HE.png",
+          "sha256": "cbc7f2dd24d415f0b94751443ae2a58dedb0200567630abbe8a021c752ab3f20",
+          "positive_pixels": 78914,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\HE\\IDRiD_58_HE.png"
+        },
+        "SE": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/SE/IDRiD_58_SE.png",
+          "sha256": "3407b5ae8bfa7028ea728bbbf768c583e45dab2d60cd1c8d9a60c38cba2fbff0",
+          "positive_pixels": 0,
+          "valid_entire_image": true,
+          "empty_is_negative": true,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\SE\\IDRiD_58_SE.png"
+        },
+        "MA": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/MA/IDRiD_58_MA.png",
+          "sha256": "89b913340baae2f64087d003eace780be7175aa3c8cea8fe43456a960caee4de",
+          "positive_pixels": 7391,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\MA\\IDRiD_58_MA.png"
+        }
+      },
+      "overlapping_GT_pixels": 0,
+      "client_image_path": "D:\\dataset\\best_segmentation\\images\\testing\\IDRiD_58.jpg",
+      "client_polygon_path": "D:\\dataset\\best_segmentation\\labels\\testing\\IDRiD_58.txt"
+    },
+    {
+      "sid": "IDRiD_59",
+      "image_path": "/root/autodl-tmp/paper_supplement_20261023_run/data/idrid/images/testing/IDRiD_59.jpg",
+      "image_sha256": "722a5cceeb1bfd90b15332c0b443eb502cc4326959797c09d082cdd421af1612",
+      "polygon_path": "/root/autodl-tmp/paper_supplement_20261023_run/data/idrid/labels/testing/IDRiD_59.txt",
+      "polygon_sha256": "047c3eea1967262978d95e973e89775c2a193006937053c07e99901b1d60a266",
+      "hw": [
+        3646,
+        3646
+      ],
+      "decoded_rgb_sha256": "56e84187b64c9788e5f245dc6540e9ab59f1ee5fdc7b0164c67cd0657c50014f",
+      "masks": {
+        "EX": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/EX/IDRiD_59_EX.png",
+          "sha256": "e2f6ebec91602b293be4725606917accdd9eda98537a471d74ac43a162144c06",
+          "positive_pixels": 88049,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\EX\\IDRiD_59_EX.png"
+        },
+        "HE": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/HE/IDRiD_59_HE.png",
+          "sha256": "df89d7bd87f9269264287fd367512761390bcc69ed5372127cfa6bd03c2a5d84",
+          "positive_pixels": 71355,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\HE\\IDRiD_59_HE.png"
+        },
+        "SE": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/SE/IDRiD_59_SE.png",
+          "sha256": "4e82b650b129a43b7b524a24ced8255e56520ecb219d86e73a2c0223b20027e7",
+          "positive_pixels": 173826,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\SE\\IDRiD_59_SE.png"
+        },
+        "MA": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/MA/IDRiD_59_MA.png",
+          "sha256": "2f5d6fd5f4371b8971835e95b81cb0aa9cbbddf174a128c53d3f93ce1fc4feb9",
+          "positive_pixels": 11521,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\MA\\IDRiD_59_MA.png"
+        }
+      },
+      "overlapping_GT_pixels": 23,
+      "client_image_path": "D:\\dataset\\best_segmentation\\images\\testing\\IDRiD_59.jpg",
+      "client_polygon_path": "D:\\dataset\\best_segmentation\\labels\\testing\\IDRiD_59.txt"
+    },
+    {
+      "sid": "IDRiD_60",
+      "image_path": "/root/autodl-tmp/paper_supplement_20261023_run/data/idrid/images/testing/IDRiD_60.jpg",
+      "image_sha256": "e3a58c0a3f37452566bfb71d73654fdf27e1dce207fa924463aac9b1c07166fb",
+      "polygon_path": "/root/autodl-tmp/paper_supplement_20261023_run/data/idrid/labels/testing/IDRiD_60.txt",
+      "polygon_sha256": "84ccc1cfe4589dcc675c8949bd61a5ad8695c001995e1220fb37eeb5f06418a0",
+      "hw": [
+        3544,
+        3544
+      ],
+      "decoded_rgb_sha256": "9bbc44e2edd00f8947460468352b867ada7c93aa2347df4205a8e686b3543b2b",
+      "masks": {
+        "EX": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/EX/IDRiD_60_EX.png",
+          "sha256": "f2af3317f6270e11fbdcc15a2dd4bc5adc5c4705d67be750810f04eba3f23a60",
+          "positive_pixels": 52143,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\EX\\IDRiD_60_EX.png"
+        },
+        "HE": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/HE/IDRiD_60_HE.png",
+          "sha256": "67e059fbdbb1c08dd4239688c732e4641efc88952543ee286e220aa0e843aa1b",
+          "positive_pixels": 39233,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\HE\\IDRiD_60_HE.png"
+        },
+        "SE": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/SE/IDRiD_60_SE.png",
+          "sha256": "30bed52421758e49168be9b189ca56b9da1ec80812f9b261d06215aece7de23f",
+          "positive_pixels": 78084,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\SE\\IDRiD_60_SE.png"
+        },
+        "MA": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/MA/IDRiD_60_MA.png",
+          "sha256": "f10cde71cf5fa17175ac70271f25bf8abc1afa4d8a5dc47133d39ccd3f057bfa",
+          "positive_pixels": 10140,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\MA\\IDRiD_60_MA.png"
+        }
+      },
+      "overlapping_GT_pixels": 27,
+      "client_image_path": "D:\\dataset\\best_segmentation\\images\\testing\\IDRiD_60.jpg",
+      "client_polygon_path": "D:\\dataset\\best_segmentation\\labels\\testing\\IDRiD_60.txt"
+    },
+    {
+      "sid": "IDRiD_61",
+      "image_path": "/root/autodl-tmp/paper_supplement_20261023_run/data/idrid/images/testing/IDRiD_61.jpg",
+      "image_sha256": "dd981e9ee30d11a5cf2440d32ba96361812fe56a84c52480caddb60248c64db4",
+      "polygon_path": "/root/autodl-tmp/paper_supplement_20261023_run/data/idrid/labels/testing/IDRiD_61.txt",
+      "polygon_sha256": "f2d36dfb2b3913d5ce164e091cdef24899c10ba93e541c2181390282dd398a52",
+      "hw": [
+        3589,
+        3589
+      ],
+      "decoded_rgb_sha256": "80011817f7b073c500d349c22b266e21c6d892e824ddad5fb14d3e1e408ebb95",
+      "masks": {
+        "EX": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/EX/IDRiD_61_EX.png",
+          "sha256": "edbcdc5a0a3171a604b9f0db24257c2fac24c4f5abff8b9cfba985a0012ad11b",
+          "positive_pixels": 32592,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\EX\\IDRiD_61_EX.png"
+        },
+        "HE": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/HE/IDRiD_61_HE.png",
+          "sha256": "b4d5f3a92ca04c5d38c64e719a9f4f72b0cbe41d8be34ea057718baa11d8f11a",
+          "positive_pixels": 1094416,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\HE\\IDRiD_61_HE.png"
+        },
+        "SE": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/SE/IDRiD_61_SE.png",
+          "sha256": "166de892838ea6818ca3421cab674b190ce13fc76f740406845b0fb60e591eda",
+          "positive_pixels": 17279,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\SE\\IDRiD_61_SE.png"
+        },
+        "MA": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/MA/IDRiD_61_MA.png",
+          "sha256": "4c410971340ba6338a6b2042dfb5897f7f5b55fb93c8b7864c2abe49bb67e399",
+          "positive_pixels": 18409,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\MA\\IDRiD_61_MA.png"
+        }
+      },
+      "overlapping_GT_pixels": 0,
+      "client_image_path": "D:\\dataset\\best_segmentation\\images\\testing\\IDRiD_61.jpg",
+      "client_polygon_path": "D:\\dataset\\best_segmentation\\labels\\testing\\IDRiD_61.txt"
+    },
+    {
+      "sid": "IDRiD_62",
+      "image_path": "/root/autodl-tmp/paper_supplement_20261023_run/data/idrid/images/testing/IDRiD_62.jpg",
+      "image_sha256": "c39d94bd76eab5662257173a74bb7229dde0139af704b1720daaf4e26bf4f1bc",
+      "polygon_path": "/root/autodl-tmp/paper_supplement_20261023_run/data/idrid/labels/testing/IDRiD_62.txt",
+      "polygon_sha256": "0daf009b258df2f7589662d77de10069b67ddf56cb16c030e0453f6f7cc33f97",
+      "hw": [
+        3795,
+        3795
+      ],
+      "decoded_rgb_sha256": "000c08022382ba7bf38b56e1c315441abc4fe2fb09e000aed0f9c582e5164a19",
+      "masks": {
+        "EX": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/EX/IDRiD_62_EX.png",
+          "sha256": "48424e108e4cc68bee99045e5f196360778c66903d4d2f9350acd2290bf3ebe3",
+          "positive_pixels": 43647,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\EX\\IDRiD_62_EX.png"
+        },
+        "HE": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/HE/IDRiD_62_HE.png",
+          "sha256": "5d1f17ae475d55d6ec746463bf182d4299c060449af67044a511ba711d2a7500",
+          "positive_pixels": 10865,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\HE\\IDRiD_62_HE.png"
+        },
+        "SE": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/SE/IDRiD_62_SE.png",
+          "sha256": "79c4521810cc95d7d068bba1e8ca0da4c76cdb3d625375fc11b05e408af1fb46",
+          "positive_pixels": 0,
+          "valid_entire_image": true,
+          "empty_is_negative": true,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\SE\\IDRiD_62_SE.png"
+        },
+        "MA": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/MA/IDRiD_62_MA.png",
+          "sha256": "3137a0eda7d305016e16740d340f71a1169b8f263b72453c343e85fce26bdd03",
+          "positive_pixels": 3228,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\MA\\IDRiD_62_MA.png"
+        }
+      },
+      "overlapping_GT_pixels": 0,
+      "client_image_path": "D:\\dataset\\best_segmentation\\images\\testing\\IDRiD_62.jpg",
+      "client_polygon_path": "D:\\dataset\\best_segmentation\\labels\\testing\\IDRiD_62.txt"
+    },
+    {
+      "sid": "IDRiD_63",
+      "image_path": "/root/autodl-tmp/paper_supplement_20261023_run/data/idrid/images/testing/IDRiD_63.jpg",
+      "image_sha256": "53e902eea75246b2bfc85768c3d5fe0e3395aff370b0f69454828f77229cd017",
+      "polygon_path": "/root/autodl-tmp/paper_supplement_20261023_run/data/idrid/labels/testing/IDRiD_63.txt",
+      "polygon_sha256": "f896e4cba3dc7db4c96e5091c9907b1486af3ab0d6e218109a6c3c3caf87a41d",
+      "hw": [
+        3626,
+        3626
+      ],
+      "decoded_rgb_sha256": "f364c374929c879c0a0672f351c5339bb24d5ce16db114758c9331fef4d54ae6",
+      "masks": {
+        "EX": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/EX/IDRiD_63_EX.png",
+          "sha256": "ce13350b541615c1a082ba61055a1912e507179bbb096ee57c4ce88969d8ae9d",
+          "positive_pixels": 91071,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\EX\\IDRiD_63_EX.png"
+        },
+        "HE": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/HE/IDRiD_63_HE.png",
+          "sha256": "338739f9c7ba7d45c183b05bb60836bcfdb3a19d1668338bd2151d95f6ae16f0",
+          "positive_pixels": 12346,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\HE\\IDRiD_63_HE.png"
+        },
+        "SE": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/SE/IDRiD_63_SE.png",
+          "sha256": "e5b3ebf7e10602c26594c6d87374092ddc8eee6514ace1520019b83e05c5046c",
+          "positive_pixels": 0,
+          "valid_entire_image": true,
+          "empty_is_negative": true,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\SE\\IDRiD_63_SE.png"
+        },
+        "MA": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/MA/IDRiD_63_MA.png",
+          "sha256": "65c04bc17803951cf32780ff73206909074e95c81742ddd56dfdec3f92b963fa",
+          "positive_pixels": 2138,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\MA\\IDRiD_63_MA.png"
+        }
+      },
+      "overlapping_GT_pixels": 0,
+      "client_image_path": "D:\\dataset\\best_segmentation\\images\\testing\\IDRiD_63.jpg",
+      "client_polygon_path": "D:\\dataset\\best_segmentation\\labels\\testing\\IDRiD_63.txt"
+    },
+    {
+      "sid": "IDRiD_64",
+      "image_path": "/root/autodl-tmp/paper_supplement_20261023_run/data/idrid/images/testing/IDRiD_64.jpg",
+      "image_sha256": "968578e03bbe44301ffb01bc0afe483df7f412ca9fe62fadfb16371b1ac882a4",
+      "polygon_path": "/root/autodl-tmp/paper_supplement_20261023_run/data/idrid/labels/testing/IDRiD_64.txt",
+      "polygon_sha256": "8401d56c190b93c1a8239969493debf1c39136763465062f9900c85342b12b95",
+      "hw": [
+        3431,
+        3431
+      ],
+      "decoded_rgb_sha256": "36c2ed71ddb60845e905cfda56a2a1066f33712bad6c5f417a7963648ca37776",
+      "masks": {
+        "EX": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/EX/IDRiD_64_EX.png",
+          "sha256": "d9fdf762307a5800f2b668d6a33f4c21a7298c6a22f2f14a5a5ef0cd2e2fe777",
+          "positive_pixels": 66951,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\EX\\IDRiD_64_EX.png"
+        },
+        "HE": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/HE/IDRiD_64_HE.png",
+          "sha256": "cef21fbd6ae796719cf41d1ad73a2576c51e1294fba704d029522cb6c6df6673",
+          "positive_pixels": 23410,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\HE\\IDRiD_64_HE.png"
+        },
+        "SE": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/SE/IDRiD_64_SE.png",
+          "sha256": "2fd3157ec9b4d473e3fd50a9fa60d2734886137f5f367e10a591fca6eacf8a3b",
+          "positive_pixels": 39577,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\SE\\IDRiD_64_SE.png"
+        },
+        "MA": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/MA/IDRiD_64_MA.png",
+          "sha256": "a3edc21d4b0024adf27f3831f21200d74671e1c8094b33a08a06fb4a51e2264b",
+          "positive_pixels": 12320,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\MA\\IDRiD_64_MA.png"
+        }
+      },
+      "overlapping_GT_pixels": 114,
+      "client_image_path": "D:\\dataset\\best_segmentation\\images\\testing\\IDRiD_64.jpg",
+      "client_polygon_path": "D:\\dataset\\best_segmentation\\labels\\testing\\IDRiD_64.txt"
+    },
+    {
+      "sid": "IDRiD_65",
+      "image_path": "/root/autodl-tmp/paper_supplement_20261023_run/data/idrid/images/testing/IDRiD_65.jpg",
+      "image_sha256": "014a1b986db81cef3d4b1fdd48b1a5b04bc5186aacb168607ccba5079e63b196",
+      "polygon_path": "/root/autodl-tmp/paper_supplement_20261023_run/data/idrid/labels/testing/IDRiD_65.txt",
+      "polygon_sha256": "0c2951f655ed0842771b1e856772731c78c082d48f9ef2b4ef7c6018a90858cb",
+      "hw": [
+        3805,
+        3805
+      ],
+      "decoded_rgb_sha256": "58a3b074c6ac2d63d788ad01ace2d95fe582b9615891f5e07d97e987810c56a8",
+      "masks": {
+        "EX": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/EX/IDRiD_65_EX.png",
+          "sha256": "b257e144298ab0d0cdbd39c76dbecac7982e52bf8fc103e4f9cad79609448326",
+          "positive_pixels": 69984,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\EX\\IDRiD_65_EX.png"
+        },
+        "HE": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/HE/IDRiD_65_HE.png",
+          "sha256": "7f6b6296d26ebfe5161375325ae26c61e705af51764f5a68c95c6c82805acc05",
+          "positive_pixels": 41869,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\HE\\IDRiD_65_HE.png"
+        },
+        "SE": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/SE/IDRiD_65_SE.png",
+          "sha256": "c55740923e1f94e3bd55a51416e3dbca757e27960e87fba94aedf3bb0ce5c017",
+          "positive_pixels": 0,
+          "valid_entire_image": true,
+          "empty_is_negative": true,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\SE\\IDRiD_65_SE.png"
+        },
+        "MA": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/MA/IDRiD_65_MA.png",
+          "sha256": "d450ae476f9b01b1cde95890cead175ae97ad94d531823e15b2fb96ab3d79177",
+          "positive_pixels": 16918,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\MA\\IDRiD_65_MA.png"
+        }
+      },
+      "overlapping_GT_pixels": 0,
+      "client_image_path": "D:\\dataset\\best_segmentation\\images\\testing\\IDRiD_65.jpg",
+      "client_polygon_path": "D:\\dataset\\best_segmentation\\labels\\testing\\IDRiD_65.txt"
+    },
+    {
+      "sid": "IDRiD_66",
+      "image_path": "/root/autodl-tmp/paper_supplement_20261023_run/data/idrid/images/testing/IDRiD_66.jpg",
+      "image_sha256": "dac64b7303885a0b933a71c218c748f790a253bd5e5c17460fd89fbebc1d79cf",
+      "polygon_path": "/root/autodl-tmp/paper_supplement_20261023_run/data/idrid/labels/testing/IDRiD_66.txt",
+      "polygon_sha256": "73f93d94a78b0d51b461e249ebd1d3e990840e3b73e3cbac57523fb1740ed478",
+      "hw": [
+        4033,
+        4033
+      ],
+      "decoded_rgb_sha256": "8dd84382cd5a8f45355c3d440b4a7b9bb16aa101224b6617b24d97dcea556974",
+      "masks": {
+        "EX": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/EX/IDRiD_66_EX.png",
+          "sha256": "845650dbf36f07e79d3e3a6b52ff6caf96ef4f1ea661396249a08f8ed7c96088",
+          "positive_pixels": 875884,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\EX\\IDRiD_66_EX.png"
+        },
+        "HE": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/HE/IDRiD_66_HE.png",
+          "sha256": "8b2847d091d7d0793f033594a84675f4ef8aa5a1e262564e50d916eb869814d7",
+          "positive_pixels": 23973,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\HE\\IDRiD_66_HE.png"
+        },
+        "SE": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/SE/IDRiD_66_SE.png",
+          "sha256": "1e0c69f3e49062aea2e6944f3d8f0ec3e25eff820877c9a186b1508a4b541355",
+          "positive_pixels": 0,
+          "valid_entire_image": true,
+          "empty_is_negative": true,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\SE\\IDRiD_66_SE.png"
+        },
+        "MA": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/MA/IDRiD_66_MA.png",
+          "sha256": "cbd04f37c3c8417fdede0d1dae9392c42dfd66c98b49b359adad9931d18ef6a0",
+          "positive_pixels": 9133,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\MA\\IDRiD_66_MA.png"
+        }
+      },
+      "overlapping_GT_pixels": 7,
+      "client_image_path": "D:\\dataset\\best_segmentation\\images\\testing\\IDRiD_66.jpg",
+      "client_polygon_path": "D:\\dataset\\best_segmentation\\labels\\testing\\IDRiD_66.txt"
+    },
+    {
+      "sid": "IDRiD_67",
+      "image_path": "/root/autodl-tmp/paper_supplement_20261023_run/data/idrid/images/testing/IDRiD_67.jpg",
+      "image_sha256": "891993a7d8d3314635af385efa6db1d34fa84899fe5f3159137f7d985390221b",
+      "polygon_path": "/root/autodl-tmp/paper_supplement_20261023_run/data/idrid/labels/testing/IDRiD_67.txt",
+      "polygon_sha256": "7f50fc7068a020efdf7427a471334d616089cdcbfa256df6a32017fdce070b3a",
+      "hw": [
+        3481,
+        3481
+      ],
+      "decoded_rgb_sha256": "4191d4d58d407ac4762de9f627b9cf053eba1db7cff067f597460616760775d0",
+      "masks": {
+        "EX": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/EX/IDRiD_67_EX.png",
+          "sha256": "52f2721037e3e51980ae7eca36b1fcef47b1213b40dae97b11dda8c047acec8a",
+          "positive_pixels": 31516,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\EX\\IDRiD_67_EX.png"
+        },
+        "HE": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/HE/IDRiD_67_HE.png",
+          "sha256": "3cc0594800c6ba558ac8bc988d55653d72a8f402a5deebf6def1d4a334be21ac",
+          "positive_pixels": 321563,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\HE\\IDRiD_67_HE.png"
+        },
+        "SE": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/SE/IDRiD_67_SE.png",
+          "sha256": "b1f2341f28b3e0ca15f98b0d5165ed305174ed61733c7677195229b290519894",
+          "positive_pixels": 38064,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\SE\\IDRiD_67_SE.png"
+        },
+        "MA": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/MA/IDRiD_67_MA.png",
+          "sha256": "b258e473d8896a00d492557dcf91142f44148338bcbbf41bc6e506c9e81ea278",
+          "positive_pixels": 13136,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\MA\\IDRiD_67_MA.png"
+        }
+      },
+      "overlapping_GT_pixels": 0,
+      "client_image_path": "D:\\dataset\\best_segmentation\\images\\testing\\IDRiD_67.jpg",
+      "client_polygon_path": "D:\\dataset\\best_segmentation\\labels\\testing\\IDRiD_67.txt"
+    },
+    {
+      "sid": "IDRiD_68",
+      "image_path": "/root/autodl-tmp/paper_supplement_20261023_run/data/idrid/images/testing/IDRiD_68.jpg",
+      "image_sha256": "46e1f67f427696c2531411f774ad14b08cf9f72414abba78ca335f58bf7b5c6b",
+      "polygon_path": "/root/autodl-tmp/paper_supplement_20261023_run/data/idrid/labels/testing/IDRiD_68.txt",
+      "polygon_sha256": "c90b608090a2b8957d64f649bd37b242c5b337513c65e53b5fd3c6487a321809",
+      "hw": [
+        3507,
+        3507
+      ],
+      "decoded_rgb_sha256": "b5ddf88025d37ec5195054bf7bdc38be1177f9985183817b41840b4cda874cf8",
+      "masks": {
+        "EX": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/EX/IDRiD_68_EX.png",
+          "sha256": "8e96ebea7bcd2ef79711f7eb9745606e95daa22abb0e8f3d67ec51c93408e0bd",
+          "positive_pixels": 18429,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\EX\\IDRiD_68_EX.png"
+        },
+        "HE": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/HE/IDRiD_68_HE.png",
+          "sha256": "b9bb8bb6671390e4d8164e237b22c250ae4fc291c22bdf2b166d13548578cf0e",
+          "positive_pixels": 291356,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\HE\\IDRiD_68_HE.png"
+        },
+        "SE": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/SE/IDRiD_68_SE.png",
+          "sha256": "c002709e98255b05fff2a877dad7b305bd211bf263c79b8f2f23e89dbd5c7a50",
+          "positive_pixels": 66382,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\SE\\IDRiD_68_SE.png"
+        },
+        "MA": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/MA/IDRiD_68_MA.png",
+          "sha256": "9788a569cd0efcbd57ddc5086fbab51b052fd23472d913b899012a4de64bd086",
+          "positive_pixels": 7370,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\MA\\IDRiD_68_MA.png"
+        }
+      },
+      "overlapping_GT_pixels": 0,
+      "client_image_path": "D:\\dataset\\best_segmentation\\images\\testing\\IDRiD_68.jpg",
+      "client_polygon_path": "D:\\dataset\\best_segmentation\\labels\\testing\\IDRiD_68.txt"
+    },
+    {
+      "sid": "IDRiD_69",
+      "image_path": "/root/autodl-tmp/paper_supplement_20261023_run/data/idrid/images/testing/IDRiD_69.jpg",
+      "image_sha256": "ecdb4d3227379efaab291396d9023755c59c2a27ed74c2fc2060ec5b52f502ba",
+      "polygon_path": "/root/autodl-tmp/paper_supplement_20261023_run/data/idrid/labels/testing/IDRiD_69.txt",
+      "polygon_sha256": "9dde3a20929be989a5a383f78fa13c1c4886246b6bc253eb06503fd7eafaa5d0",
+      "hw": [
+        3440,
+        3440
+      ],
+      "decoded_rgb_sha256": "15ec61349c523024a79f046bdbf5f508e997184faa11e5f2306394acacdeae11",
+      "masks": {
+        "EX": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/EX/IDRiD_69_EX.png",
+          "sha256": "0253f13862a0a11761f14c5685fd3ec80a26cf717b9bdf01e7eb438a6ab17928",
+          "positive_pixels": 56028,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\EX\\IDRiD_69_EX.png"
+        },
+        "HE": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/HE/IDRiD_69_HE.png",
+          "sha256": "f5d3671124234cfcb4c9503695be877dc127b15aed3a95e1a5e2b7aac89ba815",
+          "positive_pixels": 287436,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\HE\\IDRiD_69_HE.png"
+        },
+        "SE": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/SE/IDRiD_69_SE.png",
+          "sha256": "83df3f550ad102b68018cde07cb2fe3192c35ee88e0d188c3ce653c6bc333664",
+          "positive_pixels": 0,
+          "valid_entire_image": true,
+          "empty_is_negative": true,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\SE\\IDRiD_69_SE.png"
+        },
+        "MA": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/MA/IDRiD_69_MA.png",
+          "sha256": "1d10a807dc39f457caa02b4c1f3febdfc197d55d45acd909451f2124ff474345",
+          "positive_pixels": 10742,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\MA\\IDRiD_69_MA.png"
+        }
+      },
+      "overlapping_GT_pixels": 0,
+      "client_image_path": "D:\\dataset\\best_segmentation\\images\\testing\\IDRiD_69.jpg",
+      "client_polygon_path": "D:\\dataset\\best_segmentation\\labels\\testing\\IDRiD_69.txt"
+    },
+    {
+      "sid": "IDRiD_70",
+      "image_path": "/root/autodl-tmp/paper_supplement_20261023_run/data/idrid/images/testing/IDRiD_70.jpg",
+      "image_sha256": "33d945e4e77906d16b4ee83e4d62f07611cac518a438d4da5d83e6e19bf4e6f4",
+      "polygon_path": "/root/autodl-tmp/paper_supplement_20261023_run/data/idrid/labels/testing/IDRiD_70.txt",
+      "polygon_sha256": "d6dcaa5bf26a52a4f736d33a89dbb5f5fbc006dc8be5330a27d5922d58403769",
+      "hw": [
+        3806,
+        3806
+      ],
+      "decoded_rgb_sha256": "c861c035e1e15e09f06ed74f46e18f50a7228532e07d698708821efee56606a5",
+      "masks": {
+        "EX": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/EX/IDRiD_70_EX.png",
+          "sha256": "b8e192d35ebad9a2bbf9ad4d475d3dc53589749197cf63f2c1d5291f66e80473",
+          "positive_pixels": 60833,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\EX\\IDRiD_70_EX.png"
+        },
+        "HE": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/HE/IDRiD_70_HE.png",
+          "sha256": "ed1081b6fbfee54709b917dcab50a9eefd10651b498c4e4aae0936d1b5a5d674",
+          "positive_pixels": 99173,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\HE\\IDRiD_70_HE.png"
+        },
+        "SE": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/SE/IDRiD_70_SE.png",
+          "sha256": "72cb41df0c52e5f6ebeb070d23b0c87d7b12734d098ca66a4d8c6218691505e5",
+          "positive_pixels": 21542,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\SE\\IDRiD_70_SE.png"
+        },
+        "MA": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/MA/IDRiD_70_MA.png",
+          "sha256": "d2c4bcab51fe74de1c4f1ae6313c27e546579e7db46fe20341c33dfe86fe2974",
+          "positive_pixels": 8652,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\MA\\IDRiD_70_MA.png"
+        }
+      },
+      "overlapping_GT_pixels": 0,
+      "client_image_path": "D:\\dataset\\best_segmentation\\images\\testing\\IDRiD_70.jpg",
+      "client_polygon_path": "D:\\dataset\\best_segmentation\\labels\\testing\\IDRiD_70.txt"
+    },
+    {
+      "sid": "IDRiD_71",
+      "image_path": "/root/autodl-tmp/paper_supplement_20261023_run/data/idrid/images/testing/IDRiD_71.jpg",
+      "image_sha256": "8ab16fe86126abe62d5b21c8e46b8dbc1d9f2e91783a9e557b8de004c67fcd0d",
+      "polygon_path": "/root/autodl-tmp/paper_supplement_20261023_run/data/idrid/labels/testing/IDRiD_71.txt",
+      "polygon_sha256": "e4d362011dae06c86e00d97dbb4a279d4c7767935581b0bb1e86ff60a138c269",
+      "hw": [
+        3821,
+        3821
+      ],
+      "decoded_rgb_sha256": "15e072fcca5ec517c3b4f6a56e579e3a4c77b1fd853e9c2cb40b837b223532af",
+      "masks": {
+        "EX": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/EX/IDRiD_71_EX.png",
+          "sha256": "49c7af2218cf8d1d7ac675e457f10c671b841bcf56930922d29f2e01791892d7",
+          "positive_pixels": 273049,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\EX\\IDRiD_71_EX.png"
+        },
+        "HE": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/HE/IDRiD_71_HE.png",
+          "sha256": "327db6aa503d7bc5597426f1cd04df22ba3aebd4b6dfee53747fe4c8c0d2f389",
+          "positive_pixels": 50303,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\HE\\IDRiD_71_HE.png"
+        },
+        "SE": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/SE/IDRiD_71_SE.png",
+          "sha256": "0e3dfed51013bcf36f49af56fab86d54bcf081cc63ad2865946e5db37b538b61",
+          "positive_pixels": 17625,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\SE\\IDRiD_71_SE.png"
+        },
+        "MA": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/MA/IDRiD_71_MA.png",
+          "sha256": "a066fde9de4b1eedc347313d9866f59aeec93b654e8324eef5563f79d4beff66",
+          "positive_pixels": 21122,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\MA\\IDRiD_71_MA.png"
+        }
+      },
+      "overlapping_GT_pixels": 27,
+      "client_image_path": "D:\\dataset\\best_segmentation\\images\\testing\\IDRiD_71.jpg",
+      "client_polygon_path": "D:\\dataset\\best_segmentation\\labels\\testing\\IDRiD_71.txt"
+    },
+    {
+      "sid": "IDRiD_72",
+      "image_path": "/root/autodl-tmp/paper_supplement_20261023_run/data/idrid/images/testing/IDRiD_72.jpg",
+      "image_sha256": "46abbdb232514722fa4eaa7f1bac4685f1e422a37469a2f8b944156477d7515e",
+      "polygon_path": "/root/autodl-tmp/paper_supplement_20261023_run/data/idrid/labels/testing/IDRiD_72.txt",
+      "polygon_sha256": "8223ad9c22770f31318e1a1a057497c893f6fb0586bf2c9a0a99c97ae07bb13e",
+      "hw": [
+        3482,
+        3482
+      ],
+      "decoded_rgb_sha256": "6b86d7c147be933cd684861da25b5b678da00d1fafd1c945ca936238f7c7fe09",
+      "masks": {
+        "EX": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/EX/IDRiD_72_EX.png",
+          "sha256": "c2aa40bd83af483fa182822c0e4f7cb14407b79513c29eb92dc6115264062c92",
+          "positive_pixels": 159825,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\EX\\IDRiD_72_EX.png"
+        },
+        "HE": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/HE/IDRiD_72_HE.png",
+          "sha256": "df58ead85e3fae1911b5600ba16f0f9e3eae546a70047f94d6f4762b8d3c33e0",
+          "positive_pixels": 8453,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\HE\\IDRiD_72_HE.png"
+        },
+        "SE": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/SE/IDRiD_72_SE.png",
+          "sha256": "cebc05a5557f1026747cdb548e208ff1496d0be84c5c7f0be84dba6e3c532542",
+          "positive_pixels": 15574,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\SE\\IDRiD_72_SE.png"
+        },
+        "MA": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/MA/IDRiD_72_MA.png",
+          "sha256": "bd78d7b0cd1946b9d2a447343ccbc19b17902e7c373624bd3a90808b28aadd30",
+          "positive_pixels": 8360,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\MA\\IDRiD_72_MA.png"
+        }
+      },
+      "overlapping_GT_pixels": 0,
+      "client_image_path": "D:\\dataset\\best_segmentation\\images\\testing\\IDRiD_72.jpg",
+      "client_polygon_path": "D:\\dataset\\best_segmentation\\labels\\testing\\IDRiD_72.txt"
+    },
+    {
+      "sid": "IDRiD_73",
+      "image_path": "/root/autodl-tmp/paper_supplement_20261023_run/data/idrid/images/testing/IDRiD_73.jpg",
+      "image_sha256": "1b6a6a8527a4c1ea46c88553719b82d941d7c8a3b1c7d50f346f07c7d3aa1ac4",
+      "polygon_path": "/root/autodl-tmp/paper_supplement_20261023_run/data/idrid/labels/testing/IDRiD_73.txt",
+      "polygon_sha256": "1a482d10a1f9e72a180340aba3cb2031855a8acd288e1956516f4f65d2e1d1b0",
+      "hw": [
+        3808,
+        3808
+      ],
+      "decoded_rgb_sha256": "499458c3f8944068cd8d9f2ffd654d90e6fb5900aac795928df98035708a73f9",
+      "masks": {
+        "EX": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/EX/IDRiD_73_EX.png",
+          "sha256": "c4f318f933093d420b6494cfce17f2591df2fd255a33b3d75daa23d98a3de350",
+          "positive_pixels": 10700,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\EX\\IDRiD_73_EX.png"
+        },
+        "HE": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/HE/IDRiD_73_HE.png",
+          "sha256": "d5a00f50795b9137c772092b906c37e81d5f905eafc3805c7e2dfa59e04a2001",
+          "positive_pixels": 25335,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\HE\\IDRiD_73_HE.png"
+        },
+        "SE": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/SE/IDRiD_73_SE.png",
+          "sha256": "72dd0f9a119200e900951d335486034424104134b73c39ee2cb09d0e8bd671b8",
+          "positive_pixels": 31295,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\SE\\IDRiD_73_SE.png"
+        },
+        "MA": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/MA/IDRiD_73_MA.png",
+          "sha256": "42672f37a16a7d71326fc060e7b874ac62be6c501d0c13d26ec48e663b8f848e",
+          "positive_pixels": 10280,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\MA\\IDRiD_73_MA.png"
+        }
+      },
+      "overlapping_GT_pixels": 0,
+      "client_image_path": "D:\\dataset\\best_segmentation\\images\\testing\\IDRiD_73.jpg",
+      "client_polygon_path": "D:\\dataset\\best_segmentation\\labels\\testing\\IDRiD_73.txt"
+    },
+    {
+      "sid": "IDRiD_74",
+      "image_path": "/root/autodl-tmp/paper_supplement_20261023_run/data/idrid/images/testing/IDRiD_74.jpg",
+      "image_sha256": "7d9d87d048954304b299b8d3ec0ff99fe8e500ca08e659f24daacd09f8a7b91a",
+      "polygon_path": "/root/autodl-tmp/paper_supplement_20261023_run/data/idrid/labels/testing/IDRiD_74.txt",
+      "polygon_sha256": "35892f4ab4958fa70305038dce0eaecb9b5ef74b6093ed2c07ce9f510afc6daf",
+      "hw": [
+        3705,
+        3705
+      ],
+      "decoded_rgb_sha256": "b35752a66376e47eaaafe4cc0a33f9a12c8b3ac62084d4096076f5cce3b4552d",
+      "masks": {
+        "EX": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/EX/IDRiD_74_EX.png",
+          "sha256": "f35910809dd19e631523eed781231bf69db2eec345e2e7e69e56e3706ef7812a",
+          "positive_pixels": 25791,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\EX\\IDRiD_74_EX.png"
+        },
+        "HE": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/HE/IDRiD_74_HE.png",
+          "sha256": "0905b3894f90b7de508227d91bd3a80169bd9754168cae900cbed76e6c0ee4e0",
+          "positive_pixels": 99523,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\HE\\IDRiD_74_HE.png"
+        },
+        "SE": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/SE/IDRiD_74_SE.png",
+          "sha256": "75cc91f556571d36311a6289572fc0b3da61f681f930a90649603008cbf13d72",
+          "positive_pixels": 10994,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\SE\\IDRiD_74_SE.png"
+        },
+        "MA": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/MA/IDRiD_74_MA.png",
+          "sha256": "5c859c343eaf86cae991d59b20f07543850ecff99ed48513cc10a4741e375941",
+          "positive_pixels": 17326,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\MA\\IDRiD_74_MA.png"
+        }
+      },
+      "overlapping_GT_pixels": 24,
+      "client_image_path": "D:\\dataset\\best_segmentation\\images\\testing\\IDRiD_74.jpg",
+      "client_polygon_path": "D:\\dataset\\best_segmentation\\labels\\testing\\IDRiD_74.txt"
+    },
+    {
+      "sid": "IDRiD_75",
+      "image_path": "/root/autodl-tmp/paper_supplement_20261023_run/data/idrid/images/testing/IDRiD_75.jpg",
+      "image_sha256": "eb77012cd021f0c287f179833dbfaa76f9f12f61a15cbd40a8d366064983a34b",
+      "polygon_path": "/root/autodl-tmp/paper_supplement_20261023_run/data/idrid/labels/testing/IDRiD_75.txt",
+      "polygon_sha256": "6389441d4edeb5289dd25fd4b761d317603c91d95b5f736b9dcb517d4f1ac097",
+      "hw": [
+        3525,
+        3525
+      ],
+      "decoded_rgb_sha256": "76f9a252a8bdd0357d93db274c23591f56ab1e94b50156da14ad081a9779bd23",
+      "masks": {
+        "EX": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/EX/IDRiD_75_EX.png",
+          "sha256": "6a829e972baa040876efbdc2d68cc77e154cb569c7dcd20ed8bc03c5994366e7",
+          "positive_pixels": 20257,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\EX\\IDRiD_75_EX.png"
+        },
+        "HE": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/HE/IDRiD_75_HE.png",
+          "sha256": "9d1ec8669bfb5abe6f2b19698214b6d6c8126a68f5234fd3a4e6c16ee4b07cb0",
+          "positive_pixels": 143383,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\HE\\IDRiD_75_HE.png"
+        },
+        "SE": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/SE/IDRiD_75_SE.png",
+          "sha256": "bab1ebebc3459c45ab487d66f184265377a2c86da69fdd8a63cddf496c8fee5f",
+          "positive_pixels": 13685,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\SE\\IDRiD_75_SE.png"
+        },
+        "MA": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/MA/IDRiD_75_MA.png",
+          "sha256": "82b0786be63e903a716102c825459580ae8492cbe9a9bdeafecc4a488a399e28",
+          "positive_pixels": 25438,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\MA\\IDRiD_75_MA.png"
+        }
+      },
+      "overlapping_GT_pixels": 0,
+      "client_image_path": "D:\\dataset\\best_segmentation\\images\\testing\\IDRiD_75.jpg",
+      "client_polygon_path": "D:\\dataset\\best_segmentation\\labels\\testing\\IDRiD_75.txt"
+    },
+    {
+      "sid": "IDRiD_76",
+      "image_path": "/root/autodl-tmp/paper_supplement_20261023_run/data/idrid/images/testing/IDRiD_76.jpg",
+      "image_sha256": "bb24b7eb545aef09ff418023cbd89fe43c7478d28e3f9fd6af43d8513f129a33",
+      "polygon_path": "/root/autodl-tmp/paper_supplement_20261023_run/data/idrid/labels/testing/IDRiD_76.txt",
+      "polygon_sha256": "b812ca812231741a730621698d182edf3b7581c3fe426fe1a3a332cdf345b8ef",
+      "hw": [
+        3415,
+        3415
+      ],
+      "decoded_rgb_sha256": "98b1836330fcd00fcd52c1822edf731e52792d75043c54cb7d41f5edf7a2c2f8",
+      "masks": {
+        "EX": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/EX/IDRiD_76_EX.png",
+          "sha256": "83b478e044935e73bb112f765a7c99587bf4e1ff9054555ccb69372b84f9d0cf",
+          "positive_pixels": 70113,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\EX\\IDRiD_76_EX.png"
+        },
+        "HE": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/HE/IDRiD_76_HE.png",
+          "sha256": "16225db0127b079364624a4ba5a08fc40b450137506928108744bab8bfe45754",
+          "positive_pixels": 79576,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\HE\\IDRiD_76_HE.png"
+        },
+        "SE": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/SE/IDRiD_76_SE.png",
+          "sha256": "f1e6e8a9c3d37a441df5072d10da9dea04d94b38b50784b88a020118934753a3",
+          "positive_pixels": 0,
+          "valid_entire_image": true,
+          "empty_is_negative": true,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\SE\\IDRiD_76_SE.png"
+        },
+        "MA": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/MA/IDRiD_76_MA.png",
+          "sha256": "2936ab5b6117b2d61e16c649f82bddb030ae34cab83f7a7b41440a53c46200c7",
+          "positive_pixels": 25122,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\MA\\IDRiD_76_MA.png"
+        }
+      },
+      "overlapping_GT_pixels": 0,
+      "client_image_path": "D:\\dataset\\best_segmentation\\images\\testing\\IDRiD_76.jpg",
+      "client_polygon_path": "D:\\dataset\\best_segmentation\\labels\\testing\\IDRiD_76.txt"
+    },
+    {
+      "sid": "IDRiD_77",
+      "image_path": "/root/autodl-tmp/paper_supplement_20261023_run/data/idrid/images/testing/IDRiD_77.jpg",
+      "image_sha256": "af4152ea411d0bf0d4f41821234a7c8893e1194cbd0ecffb82ef583c09d4cf14",
+      "polygon_path": "/root/autodl-tmp/paper_supplement_20261023_run/data/idrid/labels/testing/IDRiD_77.txt",
+      "polygon_sha256": "20f471a809a1b128791933a49a80cdd2e06169a1302b517c111c0477b6ec7bc7",
+      "hw": [
+        3904,
+        3904
+      ],
+      "decoded_rgb_sha256": "4b47a6b9d2200f355e8b97db6885e23b8f24609bd31c41c29a72bdafc68a7385",
+      "masks": {
+        "EX": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/EX/IDRiD_77_EX.png",
+          "sha256": "0694e7cec03a5ca909a9ff1d45b8ac0d4fa2b2da5776592afd8da79ca714a233",
+          "positive_pixels": 98058,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\EX\\IDRiD_77_EX.png"
+        },
+        "HE": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/HE/IDRiD_77_HE.png",
+          "sha256": "9bdd1d0f6ed5abdcf1a3562009ab4e9a3abdf0309a9d04b6b484eb69296bc74f",
+          "positive_pixels": 35877,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\HE\\IDRiD_77_HE.png"
+        },
+        "SE": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/SE/IDRiD_77_SE.png",
+          "sha256": "a95cdd5b6e8e4ae277de16d00110b4668bbab3913e49416788c030699a6f2fbd",
+          "positive_pixels": 0,
+          "valid_entire_image": true,
+          "empty_is_negative": true,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\SE\\IDRiD_77_SE.png"
+        },
+        "MA": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/MA/IDRiD_77_MA.png",
+          "sha256": "901e22f6562b9c97e1a1e5a8fc87b1464477b0748ec558e15476e80906a4a642",
+          "positive_pixels": 12852,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\MA\\IDRiD_77_MA.png"
+        }
+      },
+      "overlapping_GT_pixels": 57,
+      "client_image_path": "D:\\dataset\\best_segmentation\\images\\testing\\IDRiD_77.jpg",
+      "client_polygon_path": "D:\\dataset\\best_segmentation\\labels\\testing\\IDRiD_77.txt"
+    },
+    {
+      "sid": "IDRiD_78",
+      "image_path": "/root/autodl-tmp/paper_supplement_20261023_run/data/idrid/images/testing/IDRiD_78.jpg",
+      "image_sha256": "9b7fb326dc0437229d0c77505c91862e973defc56fe9604ab1151837a2de42b8",
+      "polygon_path": "/root/autodl-tmp/paper_supplement_20261023_run/data/idrid/labels/testing/IDRiD_78.txt",
+      "polygon_sha256": "6ae2126d8231154a51035a1b2ed7ac6acdbb596dd2dac73ecb172e575edccdfb",
+      "hw": [
+        3545,
+        3545
+      ],
+      "decoded_rgb_sha256": "10a2954b1a24281e0220ec7d369119b4c15fde0b7401a4000c18ea5ba9d380c5",
+      "masks": {
+        "EX": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/EX/IDRiD_78_EX.png",
+          "sha256": "6a24cfd89d8450a06a1ebc96b2814066bace31368cbd5b1e1c0c8cdeeeb551b6",
+          "positive_pixels": 92997,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\EX\\IDRiD_78_EX.png"
+        },
+        "HE": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/HE/IDRiD_78_HE.png",
+          "sha256": "eb9cf46ad5c99a93e4b597221a5d7029d767f087ca299035a519e4b69a4abd80",
+          "positive_pixels": 64012,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\HE\\IDRiD_78_HE.png"
+        },
+        "SE": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/SE/IDRiD_78_SE.png",
+          "sha256": "a8d2319c9d4caaba93a40a151da205b2a8f32153ab0aa9c5e870246456fecea0",
+          "positive_pixels": 0,
+          "valid_entire_image": true,
+          "empty_is_negative": true,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\SE\\IDRiD_78_SE.png"
+        },
+        "MA": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/MA/IDRiD_78_MA.png",
+          "sha256": "a7477b362ebf890dd5297f03552e2a4c6cd73309cd3490b481f56e346d96f39e",
+          "positive_pixels": 14355,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\MA\\IDRiD_78_MA.png"
+        }
+      },
+      "overlapping_GT_pixels": 439,
+      "client_image_path": "D:\\dataset\\best_segmentation\\images\\testing\\IDRiD_78.jpg",
+      "client_polygon_path": "D:\\dataset\\best_segmentation\\labels\\testing\\IDRiD_78.txt"
+    },
+    {
+      "sid": "IDRiD_79",
+      "image_path": "/root/autodl-tmp/paper_supplement_20261023_run/data/idrid/images/testing/IDRiD_79.jpg",
+      "image_sha256": "86c9ab0e8ce275ddb0379d3f555fa7bbc06d0cced6ec07702c7f77c69ae99139",
+      "polygon_path": "/root/autodl-tmp/paper_supplement_20261023_run/data/idrid/labels/testing/IDRiD_79.txt",
+      "polygon_sha256": "7c6f6c338e6a1c555bbda078338cc0b77e3da43998c32438295f932056979795",
+      "hw": [
+        3415,
+        3415
+      ],
+      "decoded_rgb_sha256": "eeae717057d735eb24537e8b007a9b6778a67e2557e0476eed55b65b2e917bc7",
+      "masks": {
+        "EX": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/EX/IDRiD_79_EX.png",
+          "sha256": "d5fd1107b912210227a8bee988d7dcde23c7cac1cfc53d90f391200206799028",
+          "positive_pixels": 319141,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\EX\\IDRiD_79_EX.png"
+        },
+        "HE": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/HE/IDRiD_79_HE.png",
+          "sha256": "d80dd2eab223dfb34879bfe93d665aade01b9a4b81ef08fce8ef815a0dc0ee26",
+          "positive_pixels": 112028,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\HE\\IDRiD_79_HE.png"
+        },
+        "SE": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/SE/IDRiD_79_SE.png",
+          "sha256": "f1e6e8a9c3d37a441df5072d10da9dea04d94b38b50784b88a020118934753a3",
+          "positive_pixels": 0,
+          "valid_entire_image": true,
+          "empty_is_negative": true,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\SE\\IDRiD_79_SE.png"
+        },
+        "MA": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/MA/IDRiD_79_MA.png",
+          "sha256": "6d2df907a0f1e2299114c82830a6377a6d9551e934a73b8bd4423119b484f0bb",
+          "positive_pixels": 20882,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\MA\\IDRiD_79_MA.png"
+        }
+      },
+      "overlapping_GT_pixels": 0,
+      "client_image_path": "D:\\dataset\\best_segmentation\\images\\testing\\IDRiD_79.jpg",
+      "client_polygon_path": "D:\\dataset\\best_segmentation\\labels\\testing\\IDRiD_79.txt"
+    },
+    {
+      "sid": "IDRiD_80",
+      "image_path": "/root/autodl-tmp/paper_supplement_20261023_run/data/idrid/images/testing/IDRiD_80.jpg",
+      "image_sha256": "dd34b89899209ceb0206b576fe35831cf261df845eedb737bd1b9cf1302f7a95",
+      "polygon_path": "/root/autodl-tmp/paper_supplement_20261023_run/data/idrid/labels/testing/IDRiD_80.txt",
+      "polygon_sha256": "b7e96d34b211e721884a9f50add6bee0244dc39573101199ad4dbcd897aa50d8",
+      "hw": [
+        3416,
+        3416
+      ],
+      "decoded_rgb_sha256": "19ea9805e8b485c95e87eadf9f6c86e38b666430508fc7225eaa998a852deb4a",
+      "masks": {
+        "EX": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/EX/IDRiD_80_EX.png",
+          "sha256": "10bed79f5875d6129eb59d924f140a48886fee7bfaf89d90e7e48a35cddce8f0",
+          "positive_pixels": 6895,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\EX\\IDRiD_80_EX.png"
+        },
+        "HE": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/HE/IDRiD_80_HE.png",
+          "sha256": "049e17badd6b90fa1897a3c4037dd7ae8cfe435ed723305dc914d8af262d698a",
+          "positive_pixels": 16627,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\HE\\IDRiD_80_HE.png"
+        },
+        "SE": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/SE/IDRiD_80_SE.png",
+          "sha256": "c694d57f9ac16ad654bc874cddb91a59b3c0d66a03bcb35c87731eccb336fb2b",
+          "positive_pixels": 0,
+          "valid_entire_image": true,
+          "empty_is_negative": true,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\SE\\IDRiD_80_SE.png"
+        },
+        "MA": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/MA/IDRiD_80_MA.png",
+          "sha256": "2b5a257b7d6115b4b338a5210079ddcbe31458506abd3d0118c298b8e56f0b3b",
+          "positive_pixels": 693,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\MA\\IDRiD_80_MA.png"
+        }
+      },
+      "overlapping_GT_pixels": 0,
+      "client_image_path": "D:\\dataset\\best_segmentation\\images\\testing\\IDRiD_80.jpg",
+      "client_polygon_path": "D:\\dataset\\best_segmentation\\labels\\testing\\IDRiD_80.txt"
+    },
+    {
+      "sid": "IDRiD_81",
+      "image_path": "/root/autodl-tmp/paper_supplement_20261023_run/data/idrid/images/testing/IDRiD_81.jpg",
+      "image_sha256": "37f423bacc591f2c9493272fbac4f2646cac7f8c358c310b1411f8bb05150340",
+      "polygon_path": "/root/autodl-tmp/paper_supplement_20261023_run/data/idrid/labels/testing/IDRiD_81.txt",
+      "polygon_sha256": "320b29fe7b2c6c8919408c951a427f8fb0976863474490b0689a3595e7d15a28",
+      "hw": [
+        3429,
+        3429
+      ],
+      "decoded_rgb_sha256": "8842f223480be324a9589db4361a55e8e4f6859f9b6badd521d3d276baf1261c",
+      "masks": {
+        "EX": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/EX/IDRiD_81_EX.png",
+          "sha256": "9c0bb629e7dc3398e227ba37d3c6fa478021a233e499e9ee76205862aff54d0d",
+          "positive_pixels": 317559,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\EX\\IDRiD_81_EX.png"
+        },
+        "HE": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/HE/IDRiD_81_HE.png",
+          "sha256": "17303cae3c01fdfbaa4fec64e2f0faf65f1ac269dc3114e0e57dafd51569071a",
+          "positive_pixels": 45536,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\HE\\IDRiD_81_HE.png"
+        },
+        "SE": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/SE/IDRiD_81_SE.png",
+          "sha256": "da1ffd77b47e9a87d8bcb515f31d2be4cb1f50d52c6c791d35f5f0d15530db4d",
+          "positive_pixels": 0,
+          "valid_entire_image": true,
+          "empty_is_negative": true,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\SE\\IDRiD_81_SE.png"
+        },
+        "MA": {
+          "path": "/root/autodl-tmp/paper_supplement_20261023_run/HRDecoder_Q_20261003/assets/external_derived/IDRiD_best_segmentation_pixel_masks/testing/MA/IDRiD_81_MA.png",
+          "sha256": "6bd63bfaf3e40aa3de99c0b77cf5b4ef89b376cf9cf2ea2925103da02d5fe9a4",
+          "positive_pixels": 12261,
+          "valid_entire_image": true,
+          "empty_is_negative": false,
+          "completeness_authority": "historical user confirmation of official-GT lossless conversion; not independently compared to original GT",
+          "client_path": "D:\\dataset\\experiment\\HRDecoder_Q_20261003\\assets\\external_derived\\IDRiD_best_segmentation_pixel_masks\\testing\\MA\\IDRiD_81_MA.png"
+        }
+      },
+      "overlapping_GT_pixels": 197,
+      "client_image_path": "D:\\dataset\\best_segmentation\\images\\testing\\IDRiD_81.jpg",
+      "client_polygon_path": "D:\\dataset\\best_segmentation\\labels\\testing\\IDRiD_81.txt"
+    }
+  ]
+}

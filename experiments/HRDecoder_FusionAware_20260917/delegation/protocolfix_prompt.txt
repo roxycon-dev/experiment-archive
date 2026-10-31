@@ -1,0 +1,1192 @@
+Return JSON files full run_protocol.py ONLY + tests/test_protocol.py using unittest. Fix critical protocol review. You have runtime.py existing attached (beingfixed independently) plus ops API below. DO NOT duplicate core or runtime.
+ledger: import ops.load_ledger(run_dir) from budget_ledger.json and ops.deadline_of returnsawareDatetime; no ledger.json nonexistent. Preparation(cache,Dval,champval,timing) SHARED3h noteach3h. Persist phase-start times in protocol_state.json and chosenT/initidentity before training; restarts cannotextendphases. phase1pair<=10h phase2pair<=6h final<=5h, everycap globaldeadline, reserve5h forfinal. Final earlystart okay notwaitforwindow. dryrun validates files/splits/settings withoutmmcv/GPU/ledgerneeded; no torchheavybuild; printpendingmissing nofakepass.
+build_student patch model.source_checkpoint=settings absoluteB before constructing HRPlusRefinement, initcorestrictD2000+B; only initonce modelconstructorB thenloadD; cuda device. Full cfg configfingerprint recursivelyresolvedcfg+allsourcefiles importantinclude.
+Seed all random python,np,torch,cuda BEFORE eacharm construction; cudnnbenchmarkFalse deterministicTrue. Local np.RandomState(seed) geometry/order state persist correctly, restore resume after modelinit. val save/restore allrng ANDmodeltrain/eval state; call evaluate_split lambda _d_inf once/no tripleinfer; _d_inf squeeze batch only1N. val model.eval under no_grad; backtrain thenfreezeBN.
+Checkpoints atomic and include fullmodel optimizer iter seed T arm identityhashes settingsallweights/splitactualIDs + samplingRNGstates + validationhistory. lastsaveevery100, quarteraftervalsave so resumeexactlyknowsdoneval; crashafter100beforequarterdon'tlosepastvals. Histories fromcheckpoint notempty onresumeTdone. Load torchtrustedweights_onlyFalse oldfallback, strict. Firstupdate snapshot CPUmodel allparams/buffers thenafterupdate verify frozen unchanged authorizedchanged includingdecoder/stage4 gradients beforezero; free snapshotsafterpass. Do not preload454fullrescache RAM (terabytes). Batch2 imagefilesonlylegal jpg/png knownsplit; labels pngread checkshape0..4/255; eachiterboundscheck. save tracefirstbatch eacharmforpairproof.
+gate MUST take [miou of four validation TIMEPOINTS] froma_hist/b_hist, NOT perclassIoU frombestcheckpoint! no redundant _per_class_at_best. ops.gate_first a4b4start. Secondseedreversal maxB<=maxA reject. Bestnew Bseed42vs43 tie42 usingcheckpoint(step,miou) andfileexplicit.
+timingpilot separateA/B50updates each propercuda.synchronize walltime incldataprep/checkpointoverhead margin10%; noeval RNG effects. Can reuserealDfullval duration fromprep avoidextraeval. pilotdoesnotmutateinit. modelobjectsreleased inclchampion/modelD beforetrain tokeepmem; rebuildchampion finalonly. phase reserve predictedtimes andfinal, T usingops.choose_steps(maxstep*1.1,evaltime*1.1), min1000/max4000. snapshot/evalcheckpoints timeexcludedifpilot needoverheadreserve.
+Final functions 3predictors champion,new,.5sum; single image pass evaluate all3 (not3datasetpasses/recomputingchampion). Use runtime build valdataset/pipeline via a new runtime helper? existing evaluate_split onlysinglepred; implement evaluate_candidates locally shared datasetloop withrt._unwrap_img/meta/per_image_counts/global_miou and dataset override. Cacheval championpredsondiskoptional notneeded. Counttruefourchannels noconstants. Final newmodeltrainFalse. Selection basedonlyval, tiechampion/new/mix; selection_lock.json withchosencheckpointSHA and allasset/config/splitcodehashes, namedcandidatepaths, exactvalidationresults, createdbeforetest; locks immutable ifexistsmustmatch. TEST_STARTED/DONE marker, incompleteexisting failclosed (noautomaticrerun). testwinner stayslock evenifanotherhigher; print all results notclaimselectionsuccess. Reportbaseline42.20historical champion44.2115 verifiedhistorical, target47.20; no fabricated data ifgatestop.
+Unit tests pure helpers andstubCPU (notmmcv): phasesum24h/prepshared3h/resumedeadlineneverextends, gateuseshistoriesnotperclass, RNGrestore nextsampleequal uninterrupted, choosebesttie42, lockimmutability andtestmarkernorerun. Importdriver shouldnotrequiremmcv.
+
+
+SOURCE run_protocol.py
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""Baseline42.20 -> champion44.21 -> target47.20 protocol driver.
+
+Usage:
+  run_guarded.sh launches:  python3 run_protocol.py --settings S.json --run-dir R
+  Local config validation:  python3 run_protocol.py --settings S.json --run-dir R --dry-run
+"""
+import argparse
+import json
+import os
+import shutil
+import sys
+import time
+
+import numpy as np
+import torch
+
+import runtime as rt
+
+PHASE_CAPS = {  # seconds
+    'cache': 3 * 3600,
+    'starting_d_val': 3 * 3600,
+    'champion_val': 3 * 3600,
+    'timing': 3 * 3600,
+    'pair_seed42': 10 * 3600,
+    'pair_seed43': 6 * 3600,
+    'final': 5 * 3600,
+}
+FINAL_RESERVE = 5 * 3600
+GLOBAL_BUDGET = 24 * 3600
+
+
+class Ledger(object):
+    def __init__(self, path):
+        self.path = path
+        if os.path.isfile(path):
+            with open(path, 'r', encoding='utf-8') as f:
+                self.data = json.load(f)
+        else:
+            self.data = {}
+        if 'deadline' not in self.data:
+            raise RuntimeError('ledger.json missing deadline; refuse to run')
+        self.deadline = rt.parse_deadline(self.data['deadline'])
+
+    def check(self, what):
+        if time.time() >= self.deadline:
+            raise ShutdownGraceful('deadline reached before %s' % what)
+        return time.time()
+
+    def remaining(self):
+        return self.deadline - time.time()
+
+    def write(self, run_dir):
+        rt.atomic_json(os.path.join(run_dir, 'ledger.json'), self.data)
+
+
+class ShutdownGraceful(Exception):
+    pass
+
+
+class Log(object):
+    def __init__(self, run_dir):
+        self.path = os.path.join(run_dir, 'protocol.log')
+
+    def __call__(self, msg):
+        line = '[%s] %s' % (time.strftime('%Y-%m-%d %H:%M:%S'), msg)
+        print(line, flush=True)
+        with open(self.path, 'a', encoding='utf-8') as f:
+            f.write(line + '\n')
+
+
+def validate_settings(path):
+    with open(path, 'r', encoding='utf-8') as f:
+        s = json.load(f)
+    required = ['repo', 'config', 'data_root', 'student_checkpoint',
+                'reference_checkpoint', 'cache_dir', 'champion',
+                'expected_sha256']
+    for k in required:
+        if k not in s:
+            raise RuntimeError('settings missing key: %s' % k)
+    hashes = {}
+    # hash config + all checkpoints; fail closed on missing/unexpected hash
+    targets = {'config': s['config'],
+               'student_checkpoint': s['student_checkpoint'],
+               'reference_checkpoint': s['reference_checkpoint']}
+    for m in s['champion']['members']:
+        targets['member_%s_cfg' % m['name']] = m['config']
+        targets['member_%s_ckpt' % m['name']] = m['checkpoint']
+    targets['champion_head'] = s['champion']['head']
+    for key, rel in targets.items():
+        full = os.path.join(s['repo'], rel) if not os.path.isabs(rel) else rel
+        if not os.path.isfile(full):
+            raise RuntimeError('missing asset (fail closed): %s' % full)
+        h = rt.sha256(full)
+        exp = s['expected_sha256'].get(rel)
+        if exp is None:
+            raise RuntimeError('no expected_sha256 for %s; no unhashed fallback' % rel)
+        if exp != h:
+            raise RuntimeError('sha256 mismatch for %s' % rel)
+        hashes[key] = h
+    s['_hashes'] = hashes
+    s['_abs'] = {k: (os.path.join(s['repo'], v) if not os.path.isabs(v) else v)
+                 for k, v in targets.items()}
+    return s
+
+
+def build_student(settings, init=True):
+    cfg = rt.load_config(settings['repo'], settings['config'])
+    settings['_cfg'] = cfg
+    model = rt.build_model(cfg)
+    if init:
+        rt.strict_initialize(model,
+                             settings['_abs']['student_checkpoint'],
+                             settings['_abs']['reference_checkpoint'])
+        rt.configure_trainable(model)
+    return model, cfg
+
+
+def save_checkpoint(path, model, optimizer, iter_idx, seed, T, arm, extra):
+    torch.save({'state_dict': model.state_dict(),
+                'optimizer': optimizer.state_dict(),
+                'iter': iter_idx, 'seed': seed, 'T': T, 'arm': arm,
+                'rng': rt.get_rng_state(),
+                'extra': extra}, path)
+
+
+def resume_checkpoint(path, model, optimizer, expect_seed, expect_T, expect_arm,
+                      hashes):
+    ck = torch.load(path, map_location='cpu')
+    if ck['seed'] != expect_seed or ck['T'] != expect_T or ck['arm'] != expect_arm:
+        raise RuntimeError('resume validation failed: seed/T/arm mismatch')
+    if ck['extra'].get('hashes') != hashes:
+        raise RuntimeError('resume validation failed: config/split hash mismatch')
+    model.load_state_dict(ck['state_dict'])
+    optimizer.load_state_dict(ck['optimizer'])
+    rt.set_rng_state(ck['rng'])
+    return ck['iter']
+
+
+def train_arm(settings, run_dir, arm, seed, T, deadline, log, ref_cache,
+              split_hashes, start_iter=None):
+    """Manual training loop: batch2 FP32 SGD 5e-5 m0.9 wd5e-4 clip5,
+    BN frozen, val at quarters, best-val checkpoint choice."""
+    model, cfg = build_student(settings)
+    model = model.cuda().train()
+    rt.freeze_bn(model)
+    opt = torch.optim.SGD([p for n, p in model.named_parameters()
+                           if p.requires_grad],
+                          lr=5e-5, momentum=0.9, weight_decay=0.0005)
+    ckpt_dir = os.path.join(run_dir, 'ckpt_%s_s%d' % (arm, seed))
+    os.makedirs(ckpt_dir, exist_ok=True)
+    last_path = os.path.join(ckpt_dir, 'last.pth')
+    start = 0
+    if start_iter is None and os.path.isfile(last_path):
+        start = resume_checkpoint(last_path, model, opt, seed, T, arm, split_hashes)
+        log('%s s%d resumed at iter %d' % (arm, seed, start))
+    quarters = [T * q // 4 for q in (1, 2, 3, 4)]
+    val_entries = []
+    ref_probs = {k: ref_cache.get(k) for k in ref_cache.list_stems()} \
+        if hasattr(ref_cache, 'list_stems') else None
+    stems = sorted(os.path.splitext(f)[0] for f in
+                   os.listdir(os.path.join(settings['data_root'], 'images', 'train')))
+    image_files = {os.path.splitext(f)[0]: f for f in
+                   os.listdir(os.path.join(settings['data_root'], 'images', 'train'))}
+    import cv2
+    # first-update evidence
+    ref_snap, bn_snap = rt.snapshot_state(model), rt.snapshot_buffers(model)
+    first_checked = start > 0
+    rng = np.random.RandomState(seed)
+    order_rng = np.random.RandomState(seed)
+    for it in range(start, T):
+        ledger_check = deadline  # deadline checked below per iteration
+        if time.time() > deadline:
+            raise ShutdownGraceful('deadline during %s s%d training' % (arm, seed))
+        model.train()
+        rt.freeze_bn(model)
+        opt.zero_grad()
+        # paired batch of 2
+        idxs = order_rng.permutation(len(stems))[:2]
+        imgs, labs, refs = [], [], []
+        for i in idxs:
+            stem = stems[i]
+            f = image_files[stem]
+            img = cv2.imread(os.path.join(settings['data_root'], 'images', 'train', f), 1)
+            img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+            lab = cv2.imread(os.path.join(settings['data_root'], 'labels', 'train',
+                                          stem + '.png'), 0).astype(np.int64)
+            r = ref_cache.get(stem)
+            im2, la2, rf2, _ = rt.paired_geometry(img, lab, r, rng)
+            imgs.append(torch.from_numpy(im2))
+            labs.append(torch.from_numpy(la2))
+            refs.append(torch.from_numpy(rf2))
+        img_b = torch.stack(imgs).cuda()
+        lab_b = torch.stack(labs).cuda()
+        ref_b = torch.stack(refs).cuda()
+        logits = model.encode_decode(img_b, [{}])
+        loss = rt.loss_pair(logits, lab_b, ref_b, arm)
+        loss.backward()
+        torch.nn.utils.clip_grad_norm_([p for p in model.parameters()
+                                        if p.requires_grad], 5.0)
+        opt.step()
+        rt.freeze_bn(model)
+        if not first_checked:
+            ev = rt.first_update_evidence(model, ref_snap, bn_snap)
+            if not all(ev.values()):
+                raise RuntimeError('first update violated constraints: %s' % ev)
+            rt.atomic_json(os.path.join(run_dir, 'first_update_%s_s%d.json' %
+                                        (arm, seed)), ev)
+            first_checked = True
+        if (it + 1) % 100 == 0 or (it + 1) == T:
+            save_checkpoint(last_path, model, opt, it + 1, seed, T, arm,
+                            {'hashes': split_hashes})
+        if (it + 1) in quarters:
+            st = rt.get_rng_state()
+            miou, _, _ = rt.evaluate_split(
+                lambda i_, m_: model.inference(i_, m_, True)[0]
+                if isinstance(model.inference(i_, m_, True), tuple)
+                else model.inference(i_, m_, True)[0] if False else _d_inf(model, i_, m_),
+                'val', settings['data_root'], settings['_cfg'], deadline, log)
+            rt.set_rng_state(st)
+            val_entries.append((it + 1, miou))
+            save_checkpoint(os.path.join(ckpt_dir, 'iter_%d.pth' % (it + 1)),
+                            model, opt, it + 1, seed, T, arm, {'hashes': split_hashes})
+            log('%s s%d iter %d val mIoU %.4f' % (arm, seed, it + 1, miou))
+    if not val_entries:
+        raise RuntimeError('no val evaluations recorded for %s s%d' % (arm, seed))
+    best = rt.choose_checkpoint(val_entries)
+    return best, val_entries
+
+
+def _d_inf(model, img, meta):
+    """D-model inference: student+tiled, no flip — the arm's own inference."""
+    out = model.inference(img, meta, True)
+    return out[0] if isinstance(out, (tuple, list)) else out
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument('--settings', required=True)
+    ap.add_argument('--run-dir', required=True)
+    ap.add_argument('--dry-run', action='store_true')
+    args = ap.parse_args()
+
+    settings = validate_settings(args.settings)
+    rt.inject_repo(settings['repo'])
+    os.makedirs(args.run_dir, exist_ok=True)
+    log = Log(args.run_dir)
+
+    split = rt.audit_split(os.path.join(settings['repo'], settings['data_root'])
+                           if not os.path.isabs(settings['data_root'])
+                           else settings['data_root'])
+    split_hashes = {'config': settings['_hashes']['config'],
+                    'split': rt._arr_sha(np.array(sorted(split.keys())))}
+    log('split audit OK: 454/76/227')
+
+    ledger_path = os.path.join(args.run_dir, 'ledger.json')
+    if not os.path.isfile(ledger_path):
+        raise RuntimeError('ledger.json with deadline required in run-dir')
+    ledger = Ledger(ledger_path)
+    t_start = time.time()
+    log('global deadline: %.0f (%.2fh remaining)' %
+        (ledger.deadline, ledger.remaining() / 3600.0))
+
+    if args.dry_run:
+        # validate config builds, no GPU work, no shutdown
+        model, cfg = build_student(settings, init=False)
+        log('dry-run: settings + config + split validated; NOT executed on GPU')
+        rt.atomic_json(os.path.join(args.run_dir, 'dry_run.json'),
+                       {'ok': True, 'split_counts': {'train': 454, 'val': 76, 'test': 227}})
+        return
+
+    device = 'cuda'
+    torch.backends.cudnn.benchmark = True
+
+    def phase_deadline(name):
+        return min(t_start + sum(PHASE_CAPS[k] for k in list(PHASE_CAPS)[:
+                                 list(PHASE_CAPS).index(name) + 1]), ledger.deadline)
+
+    # ---- phase: reference cache -----------------------------------------
+    d_cache = min(t_start + PHASE_CAPS['cache'], ledger.deadline)
+    cache = rt.ReferenceCache(settings['cache_dir'], settings)
+    stems = sorted(os.path.splitext(f)[0] for f in
+                   os.listdir(os.path.join(settings['repo'], settings['data_root'],
+                                           'images', 'train')))
+    if not cache.complete():
+        if ledger.remaining() < FINAL_RESERVE + PHASE_CAPS['cache']:
+            raise ShutdownGraceful('cannot reserve final 5h; abort before cache')
+        model, _ = build_student(settings)
+        cache.build(model, stems, d_cache, log)
+        del model
+        torch.cuda.empty_cache()
+    ledger.check('cache complete')
+
+    # ---- phase: starting D val ------------------------------------------
+    d_dval = phase_deadline('starting_d_val')
+    model_d, cfg = build_student(settings)
+    model_d = model_d.cuda().eval()
+    starting_d_val, d_per, _ = rt.evaluate_split(
+        lambda i_, m_: _d_inf(model_d, i_, m_), 'val', settings['data_root'],
+        cfg, d_dval, log,
+        dump_counts=os.path.join(args.run_dir, 'baseline_D_val_counts.json'))
+    log('starting D val mIoU %.4f (historical baseline 42.20)' % starting_d_val)
+
+    # ---- phase: champion val + timing pilot ------------------------------
+    d_champ = phase_deadline('champion_val')
+    champion = rt.ChampionEnsemble(settings, settings['champion'])
+    champ_val, champ_per, _ = rt.evaluate_split(
+        champion.predict, 'val', settings['data_root'], cfg, d_champ, log,
+        dump_counts=os.path.join(args.run_dir, 'champion_val_counts.json'))
+    log('champion val mIoU %.4f (historical 44.21)' % champ_val)
+
+    # pilot: 50 updates per arm separately, reinit each; measure timings
+    d_time = phase_deadline('timing')
+    t_step, t_eval = _pilot_timing(settings, run_dir=args.run_dir,
+                                   deadline=d_time, log=log)
+    T = rt.choose_steps(t_step, t_eval)
+    if T < 1000:
+        raise ShutdownGraceful('T<1000; not starting main training')
+    if ledger.remaining() < FINAL_RESERVE + 2 * (2 * T * t_step + 8 * t_eval):
+        raise ShutdownGraceful('insufficient time before main phases')
+    log('pilot: %.3fs/step, %.1fs/eval -> T=%d steps per arm' % (t_step, t_eval, T))
+
+    # ---- phase: pair seed42 ---------------------------------------------
+    d_p42 = phase_deadline('pair_seed42')
+    a_best, a_hist = train_arm(settings, args.run_dir, 'A', 42, T, d_p42,
+                               log, cache, split_hashes)
+    b_best, b_hist = train_arm(settings, args.run_dir, 'B', 42, T, d_p42,
+                               log, cache, split_hashes)
+    a4 = _per_class_at_best(settings, args.run_dir, 'A', 42, a_best, cfg, log)
+    b4 = _per_class_at_best(settings, args.run_dir, 'B', 42, b_best, cfg, log)
+    go = rt.gate_first(a4, b4, starting_d_val)
+    log('seed42 gate: A=%.4f B=%.4f go=%s' % (np.mean(a4), np.mean(b4), go))
+    if not go:
+        log('gate failed; stop direction, retain champion, no test run')
+        _write_summary(args.run_dir, starting_d_val, champ_val, None)
+        return
+
+    # ---- phase: pair seed43 ---------------------------------------------
+    d_p43 = phase_deadline('pair_seed43')
+    a43, _ = train_arm(settings, args.run_dir, 'A', 43, T, d_p43, log,
+                       cache, split_hashes)
+    b43, _ = train_arm(settings, args.run_dir, 'B', 43, T, d_p43, log,
+                       cache, split_hashes)
+    if b43[1] <= a43[1]:
+        log('seed43 reversed (B<=A); reject new adoption, retain champion')
+        _write_summary(args.run_dir, starting_d_val, champ_val, None,
+                       seed43_reversed=True)
+        return
+    new_val = b43[1] if b43[1] >= b_best[1] else b_best[1]
+    best_b_ckpt = (b43 if b43[1] >= b_best[1] else b_best)
+
+    # champion vs new vs mix on val only
+    new_model, _ = build_student(settings)
+    new_model.load_state_dict(torch.load(
+        os.path.join(args.run_dir, 'ckpt_B_s%d' % best_b_ckpt[0] if False else
+                     os.path.join(args.run_dir,
+                                  'ckpt_B_s%d' % (43 if b43[1] >= b_best[1] else 42),
+                                  'iter_%d.pth' % best_b_ckpt[0]),
+                     map_location='cpu'))['state_dict'])
+    new_model = new_model.cuda().eval()
+    new_v, _, _ = rt.evaluate_split(lambda i_, m_: _d_inf(new_model, i_, m_),
+                                    'val', settings['data_root'], cfg, d_p43,
+                                    log)
+    d_final_start = ledger.deadline - FINAL_RESERVE
+    mix_fn = lambda i_, m_: rt.mix_probs(champion.predict(i_, m_),
+                                         _d_inf(new_model, i_, m_))
+    mix_v, _, _ = rt.evaluate_split(mix_fn, 'val', settings['data_root'], cfg,
+                                    min(d_p43, d_final_start), log)
+    # ties -> champion
+    best_val = max(champ_val, new_v, mix_v)
+    if best_val <= champ_val + 1e-12:
+        locked = ('champion', None)
+    elif best_val <= new_v + 1e-12 and new_v >= mix_v:
+        locked = ('new', new_model)
+    else:
+        locked = ('mix', new_model)
+    log('locked candidate: %s (champ %.4f new %.4f mix %.4f)' %
+        (locked[0], champ_val, new_v, mix_v))
+
+    # selection lock BEFORE test
+    lock = {'candidate': locked[0],
+            'config_hashes': settings['_hashes'],
+            'weights': {'champion_head': settings['_abs']['champion_head'],
+                        'new_ckpt': best_b_ckpt},
+            'val': {'champion': champ_val, 'new': new_v, 'mix': mix_v}}
+    rt.atomic_json(os.path.join(args.run_dir, 'selection_lock.json'), lock)
+
+    # ---- final: one batched test ----------------------------------------
+    d_final = ledger.deadline
+    if ledger.remaining() < 600:
+        raise ShutdownGraceful('not enough time for final test')
+    _final_test(settings, args.run_dir, locked, champion, new_model, cfg,
+                d_final, log)
+    _write_summary(args.run_dir, starting_d_val, champ_val, locked)
+
+
+def _per_class_at_best(settings, run_dir, arm, seed, best, cfg, log):
+    """Re-evaluate best ckpt to get per-class ious (paired-node gate)."""
+    ck = os.path.join(run_dir, 'ckpt_%s_s%d' % (arm, seed), 'iter_%d.pth' % best[0])
+    m, _ = build_student(settings)
+    m.load_state_dict(torch.load(ck, map_location='cpu')['state_dict'])
+    m = m.cuda().eval()
+    _, per, _ = rt.evaluate_split(lambda i_, m_: _d_inf(m, i_, m_), 'val',
+                                  settings['data_root'], cfg,
+                                  time.time() + 3600, log)
+    del m
+    torch.cuda.empty_cache()
+    return [per['class%d' % (c + 1)] for c in range(4)]
+
+
+def _pilot_timing(settings, run_dir, deadline, log):
+    """50 updates per arm, separately reinit; measure max step time and a full
+    val eval; returns (max_step_seconds, eval_seconds)."""
+    import cv2
+    cache = rt.ReferenceCache(settings['cache_dir'], settings)
+    stems = sorted(os.path.splitext(f)[0] for f in
+                   os.listdir(os.path.join(settings['repo'], settings['data_root'],
+                                           'images', 'train')))
+    files = {os.path.splitext(f)[0]: f for f in
+             os.listdir(os.path.join(settings['repo'], settings['data_root'],
+                                     'images', 'train'))}
+    max_step = 0.0
+    for arm in ('A', 'B'):
+        model, _ = build_student(settings)
+        model = model.cuda().train()
+        rt.freeze_bn(model)
+        opt = torch.optim.SGD([p for p in model.parameters() if p.requires_grad],
+                              lr=5e-5, momentum=0.9, weight_decay=0.0005)
+        rng = np.random.RandomState(42)
+        for it in range(50):
+            if time.time() > deadline:
+                raise ShutdownGraceful('deadline during pilot')
+            idxs = rng.permutation(len(stems))[:2]
+            imgs, labs, refs = [], [], []
+            for i in idxs:
+                s = stems[i]
+                img = cv2.imread(os.path.join(settings['repo'], settings['data_root'],
+                                              'images', 'train', files[s]), 1)
+                img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+                lab = cv2.imread(os.path.join(settings['repo'], settings['data_root'],
+                                              'labels', 'train', s + '.png'),
+                                 0).astype(np.int64)
+                im2, la2, rf2, _ = rt.paired_geometry(img, lab, cache.get(s), rng)
+                imgs.append(torch.from_numpy(im2))
+                labs.append(torch.from_numpy(la2))
+                refs.append(torch.from_numpy(rf2))
+            t0 = time.time()
+            opt.zero_grad()
+            logits = model.encode_decode(torch.stack(imgs).cuda(), [{}])
+            loss = rt.loss_pair(logits, torch.stack(labs).cuda(),
+                                torch.stack(refs).cuda(), arm)
+            loss.backward()
+            torch.nn.utils.clip_grad_norm_([p for p in model.parameters()
+                                            if p.requires_grad], 5.0)
+            opt.step()
+            torch.cuda.synchronize()
+            max_step = max(max_step, time.time() - t0)
+        del model, opt
+        torch.cuda.empty_cache()
+    model, cfg = build_student(settings)
+    model = model.cuda().eval()
+    t0 = time.time()
+    rt.evaluate_split(lambda i_, m_: _d_inf(model, i_, m_), 'val',
+                      settings['data_root'], cfg, deadline, log)
+    t_eval = time.time() - t0
+    del model
+    torch.cuda.empty_cache()
+    return max_step, t_eval
+
+
+def _final_test(settings, run_dir, locked, champion, new_model, cfg,
+                deadline, log):
+    tag = os.path.join(run_dir, 'TEST_STARTED')
+    done = os.path.join(run_dir, 'TEST_DONE')
+    if os.path.isfile(done):
+        log('test already complete; skip')
+        return
+    if os.path.isfile(tag):
+        raise RuntimeError('TEST_STARTED exists without TEST_DONE; previous test '
+                           'interrupted — manual resolution required')
+    with open(tag, 'w') as f:
+        f.write(time.strftime('%Y-%m-%dT%H:%M:%S'))
+    cands = [('champion', champion.predict)]
+    if locked[0] in ('new', 'mix'):
+        cands.append(('new', lambda i, m: _d_inf(new_model, i, m)))
+    if locked[0] == 'mix':
+        cands.append(('mix', lambda i, m: rt.mix_probs(champion.predict(i, m),
+                                                       _d_inf(new_model, i, m))))
+    results = {}
+    for name, fn in cands:
+        ledger.deadline_check = None
+        if time.time() > deadline:
+            raise ShutdownGraceful('deadline during test batch')
+        miou, per, perimg = rt.evaluate_split(
+            fn, 'test', settings['data_root'], cfg, deadline, log,
+            dump_counts=os.path.join(run_dir, 'test_%s_counts.json' % name))
+        results[name] = {'miou': miou, 'per_class': per}
+        log('test %s mIoU %.4f' % (name, miou))
+    # winner decided on val lock, never by test
+    results['locked_winner'] = locked[0]
+    results['exploratory_note'] = 'test results are exploratory; winner from val lock'
+    rt.atomic_json(os.path.join(run_dir, 'test_report.json'), results)
+    with open(done, 'w') as f:
+        f.write('ok')
+    os.remove(tag)
+
+
+def _write_summary(run_dir, d_val, champ_val, locked, seed43_reversed=False):
+    rt.atomic_json(os.path.join(run_dir, 'summary.json'), {
+        'baseline_D_val': d_val, 'champion_val': champ_val,
+        'locked': locked[0] if locked else None,
+        'seed43_reversed': seed43_reversed,
+        'target': 47.20, 'status': 'stopped_no_gate' if locked is None else
+        ('seed43_rejected' if seed43_reversed else 'tested')})
+
+
+if __name__ == '__main__':
+    try:
+        main()
+    except ShutdownGraceful as e:
+        print('[shutdown-guard] %s' % e, flush=True)
+        sys.exit(0)
+
+SOURCE runtime.py
+# -*- coding: utf-8 -*-
+"""Runtime layer: repo injection, model init, caching, geometry, losses,
+evaluation and small protocol helpers.  Python 3.8+, legacy mmcv/mmseg."""
+import copy
+import hashlib
+import json
+import os
+import random
+import shutil
+import sys
+import time
+
+import numpy as np
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+
+
+# ---------------------------------------------------------------------------
+# repo injection
+# ---------------------------------------------------------------------------
+def inject_repo(repo):
+    repo = os.path.abspath(repo)
+    if not os.path.isdir(repo):
+        raise RuntimeError('repo directory does not exist: %s' % repo)
+    os.chdir(repo)
+    if repo not in sys.path:
+        sys.path.insert(0, repo)
+    return repo
+
+
+def sha256(path):
+    h = hashlib.sha256()
+    with open(path, 'rb') as f:
+        for chunk in iter(lambda: f.read(1 << 20), b''):
+            h.update(chunk)
+    return h.hexdigest()
+
+
+def atomic_json(path, obj):
+    tmp = path + '.tmp'
+    with open(tmp, 'w', encoding='utf-8') as f:
+        json.dump(obj, f, indent=2, ensure_ascii=False)
+    os.replace(tmp, path)
+
+
+def load_config(repo, config_rel):
+    from mmcv import Config
+    cfg = Config.fromfile(os.path.join(repo, config_rel))
+    return cfg
+
+
+def _register_imports(cfg):
+    imports = cfg.get('custom_imports', None)
+    if imports:
+        from mmseg.utils import register_custom_imports
+        register_custom_imports(cfg)
+
+
+def build_model(cfg):
+    _register_imports(cfg)
+    from mmseg.models import build_segmentor
+    model = build_segmentor(cfg.model)
+    return model
+
+
+# ---------------------------------------------------------------------------
+# strict initialization
+# ---------------------------------------------------------------------------
+def _load_state(path):
+    ckpt = torch.load(path, map_location='cpu')
+    state = ckpt.get('state_dict', ckpt)
+    return {k[7:] if k.startswith('module.') else k: v for k, v in state.items()}
+
+
+def strict_initialize(model, student_checkpoint, reference_checkpoint):
+    """Strict D2000-style init.  Accepts a full-D checkpoint (student+ref)
+    or a student-only checkpoint; ``reference_checkpoint`` must be a FULL
+    checkpoint whose reference tensors must be present and whose student
+    tensors (when present) must be byte-equal to the student checkpoint
+    (equal-B validation).  No unhashed fallback: caller hashes files first."""
+    if not (os.path.isfile(student_checkpoint) and os.path.isfile(reference_checkpoint)):
+        raise RuntimeError('missing checkpoint file(s); fail closed')
+    s_state = _load_state(student_checkpoint)
+    r_state = _load_state(reference_checkpoint)
+    ref_keys = [k for k in r_state if k.startswith('reference.')]
+    if not ref_keys:
+        raise RuntimeError('reference checkpoint has no reference.* tensors')
+    # validate ref checkpoint self-consistency: student part equals student ckpt
+    s_in_r = {k: v for k, v in r_state.items() if not k.startswith('reference.')}
+    for k, v in s_in_r.items():
+        if k in s_state and not torch.equal(v, s_state[k]):
+            raise RuntimeError('reference checkpoint student tensor differs from B: %s' % k)
+    missing, unexpected = model.load_state_dict(s_state, strict=False)
+    # student-only checkpoints legitimately miss reference.*; anything else fails
+    bad_missing = [k for k in missing if not k.startswith('reference.')]
+    if bad_missing or unexpected:
+        raise RuntimeError('strict init failed; missing=%s unexpected=%s' %
+                           (bad_missing, unexpected))
+    if hasattr(model, 'reference'):
+        ref_sd = {k[len('reference.'):]: v for k, v in r_state.items()
+                  if k.startswith('reference.')}
+        model.reference.load_state_dict(ref_sd, strict=True)
+    for p in model.reference.parameters():
+        p.requires_grad_(False)
+    model.reference.eval()
+    freeze_bn(model)
+    return model
+
+
+def freeze_bn(model):
+    from torch.nn.modules.batchnorm import _BatchNorm
+    for m in model.modules():
+        if isinstance(m, _BatchNorm):
+            m.eval()
+            m.weight.requires_grad_(False)
+            m.bias.requires_grad_(False)
+
+
+def configure_trainable(model):
+    """Only decode_head and backbone.stage4 are trainable; everything else
+    frozen (incl. BN and the reference).  Returns list of trainable names."""
+    allowed = ('decode_head', 'backbone.stage4')
+    names = []
+    for name, p in model.named_parameters():
+        if name.startswith('reference.'):
+            p.requires_grad_(False)
+            continue
+        ok = any(name.startswith(a) for a in allowed)
+        p.requires_grad_(ok)
+        if ok:
+            names.append(name)
+    freeze_bn(model)
+    return names
+
+
+def authorized_param(name):
+    if name.startswith('reference.'):
+        return False
+    return name.startswith('decode_head') or name.startswith('backbone.stage4')
+
+
+def first_update_evidence(model, ref_snapshot, bn_snapshot):
+    """Verify: only authorized grads/params changed; reference params and BN
+    running stats unchanged.  Returns dict of booleans."""
+    ev = {'authorized_only': True, 'reference_frozen': True, 'bn_frozen': True}
+    for n, p in model.named_parameters():
+        changed = not torch.equal(p.detach().cpu(), ref_snapshot.get(n, p.detach().cpu()))
+        if changed and not authorized_param(n):
+            ev['authorized_only'] = False
+    for n, b in model.named_buffers():
+        cur = b.detach().cpu()
+        if not torch.equal(cur, bn_snapshot.get(n, cur)):
+            if 'running_mean' in n or 'running_var' in n or n.endswith('num_batches_tracked'):
+                ev['bn_frozen'] = False
+            if n.startswith('reference.'):
+                ev['reference_frozen'] = False
+    return ev
+
+
+def snapshot_state(model):
+    return {n: p.detach().cpu().clone() for n, p in model.named_parameters()}
+
+
+def snapshot_buffers(model):
+    return {n: b.detach().cpu().clone() for n, b in model.named_buffers()}
+
+
+# ---------------------------------------------------------------------------
+# paired geometry
+# ---------------------------------------------------------------------------
+IMG_MEAN = np.array([81.205, 50.636, 21.216], dtype=np.float32)
+IMG_STD = np.array([76.252, 48.798, 21.625], dtype=np.float32)
+CROP = 1024
+SCALE = 2048
+
+
+def paired_geometry(image, label, ref, rng):
+    """image RGB HWC uint8, label HW (1..4/255), ref HWC4 float32 (cached
+    native-resolution reference probability).  Deterministic under rng.
+    Returns (img CHW float32 normalized, label 1HW int64, ref CHW float32,
+    trace dict)."""
+    import cv2
+    h, w = label.shape
+    image = cv2.resize(image.astype(np.float32), (SCALE, SCALE),
+                       interpolation=cv2.INTER_LINEAR)
+    label = cv2.resize(label.astype(np.uint8), (SCALE, SCALE),
+                       interpolation=cv2.INTER_NEAREST)
+    ref = cv2.resize(ref.astype(np.float32), (SCALE, SCALE),
+                     interpolation=cv2.INTER_LINEAR)
+    flip = bool(rng.rand() < 0.5)
+    if flip:
+        image = image[:, ::-1, :]
+        label = label[:, ::-1]
+        ref = ref[:, ::-1, :]
+    y0 = int(rng.randint(0, SCALE - CROP + 1))
+    x0 = int(rng.randint(0, SCALE - CROP + 1))
+    image = image[y0:y0 + CROP, x0:x0 + CROP]
+    label = label[y0:y0 + CROP, x0:x0 + CROP]
+    ref = ref[y0:y0 + CROP, x0:x0 + CROP]
+    image = (image - IMG_MEAN) / IMG_STD
+    img = np.ascontiguousarray(image.transpose(2, 0, 1))
+    refc = np.ascontiguousarray(ref.transpose(2, 0, 1))
+    lab = label[None, :, :].astype(np.int64)
+    trace = {'y0': y0, 'x0': x0, 'flip': flip, 'scale': SCALE, 'crop': CROP}
+    return img, lab, refc, trace
+
+
+def identity_of(img, lab, ref):
+    return hashlib.sha256(np.ascontiguousarray(img).tobytes() +
+                          np.ascontiguousarray(lab).tobytes() +
+                          np.ascontiguousarray(ref).tobytes()).hexdigest()
+
+
+# ---------------------------------------------------------------------------
+# loss
+# ---------------------------------------------------------------------------
+def _dice(prob, target):
+    """prob (C,H,W) in [0,1], target (H,W) long with 255 ignore."""
+    valid = (target != 255).float()
+    C = prob.shape[0]
+    inter = 0.0
+    card = 0.0
+    for c in range(C):
+        t = ((target == (c + 1)).float()) * valid
+        inter = inter + (prob[c] * t).sum()
+        card = card + prob[c].sum() * valid + t.sum()
+    return 1.0 - (2.0 * inter + 1.0) / (card + 1.0)
+
+
+def loss_pair(logits, label, ref, arm):
+    """A: student dice.  B: 0.5*student dice + 0.5*fused dice where
+    fused prob = 0.5*sigmoid(logits) + 0.5*ref."""
+    prob_s = torch.sigmoid(logits)
+    if arm == 'A':
+        return _dice(prob_s, label)
+    if arm != 'B':
+        raise ValueError('arm must be A or B, got %r' % arm)
+    prob_f = 0.5 * prob_s + 0.5 * ref
+    return 0.5 * _dice(prob_s, label) + 0.5 * _dice(prob_f, label)
+
+
+# ---------------------------------------------------------------------------
+# protocol helpers
+# ---------------------------------------------------------------------------
+def choose_steps(train_seconds_per_step, eval_seconds, overhead_seconds=600):
+    budget = 21600
+    best = None
+    for step in range(4000, 996, -4):
+        if 2 * step * train_seconds_per_step + 8 * eval_seconds + overhead_seconds <= budget:
+            best = step
+            break
+    if best is None:
+        raise RuntimeError('no feasible step count in [1000,4000]; pilot too slow')
+    return best
+
+
+def gate_first(a4, b4, start_miou):
+    a4 = [float(x) for x in a4]
+    b4 = [float(x) for x in b4]
+    ma, mb = float(np.mean(a4)), float(np.mean(b4))
+    paired = sum(1 for x, y in zip(a4, b4) if y > x)
+    return (mb - ma >= 0.003) and paired >= 2 and mb >= start_miou
+
+
+def choose_checkpoint(entries):
+    """entries: list of (step, miou).  Returns (step, miou) best, ties ->
+    earlier step."""
+    if not entries:
+        raise ValueError('empty checkpoint list')
+    best = entries[0]
+    for step, miou in entries[1:]:
+        if miou > best[1] + 1e-12:
+            best = (step, miou)
+    return best
+
+
+# ---------------------------------------------------------------------------
+# reference probability cache
+# ---------------------------------------------------------------------------
+class ReferenceCache(object):
+    VERSION = 'refcache-v1'
+
+    def __init__(self, cache_dir, settings):
+        self.dir = os.path.abspath(cache_dir)
+        os.makedirs(self.dir, exist_ok=True)
+        self.manifest_path = os.path.join(self.dir, 'manifest.json')
+        self.complete_path = os.path.join(self.dir, 'COMPLETE')
+        self.settings = settings
+
+    def complete(self):
+        return os.path.isfile(self.complete_path)
+
+    def get(self, stem):
+        if not self.complete():
+            raise RuntimeError('reference cache incomplete')
+        with open(self.manifest_path, 'r', encoding='utf-8') as f:
+            man = json.load(f)
+        e = man['entries'][stem]
+        arr = np.load(e['npy'])['prob']
+        if arr.dtype != np.float32 or arr.ndim != 3 or arr.shape[2] != 4:
+            raise RuntimeError('bad cache entry %s' % stem)
+        if not np.isfinite(arr).all() or arr.min() < 0 or arr.max() > 1:
+            raise RuntimeError('cache entry out of range: %s' % stem)
+        if identity_of(arr[:1, :1, :1], np.zeros((1, 1), np.int64),
+                       arr[:1, :1, :1]) != e['id']:  # lightweight identity probe
+            pass  # full identity revalidated by caller via shape/dtype checks
+        return arr
+
+    def build(self, model, image_ids, deadline, log):
+        """Full train-set reference probabilities via the TRUE eval pipeline
+        (model._reference_prob before any crop), stored native HWC4 f32."""
+        from mmseg.datasets import build_dataset
+        cfg = self.settings['_cfg']
+        d = copy.deepcopy(cfg.data.val)
+        d.test_mode = True
+        d.img_dir = os.path.join(self.settings['data_root'], 'images', 'train')
+        d.ann_dir = os.path.join(self.settings['data_root'], 'labels', 'train')
+        ds = build_dataset(d)
+        model = model.cuda().eval()
+        entries = {}
+        for i in range(len(ds)):
+            if time.time() > deadline:
+                raise RuntimeError('deadline hit during reference cache')
+            s = ds[i]
+            img = _unwrap_img(s['img']).unsqueeze(0).cuda()
+            meta = _unwrap_meta(s['img_metas'])
+            with torch.no_grad():
+                prob = model._reference_prob(img, meta, True)
+            prob = prob[0].detach().cpu().numpy().astype(np.float32)  # 4,H,W
+            prob = np.ascontiguousarray(prob.transpose(1, 2, 0))      # H,W,4
+            stem = meta[0].get('ori_filename', 'img_%06d' % i)
+            stem = os.path.splitext(os.path.basename(stem))[0]
+            npy = os.path.join(self.dir, stem + '.npz')
+            np.savez_compressed(npy, prob=prob)
+            entries[stem] = {
+                'npy': npy,
+                'id': identity_of(prob[:1, :1, :1], np.zeros((1, 1), np.int64),
+                                  prob[:1, :1, :1]),
+                'shape': list(prob.shape),
+                'sha256': _arr_sha(prob),
+            }
+            if (i + 1) % 25 == 0:
+                log('refcache %d/%d' % (i + 1, len(ds)))
+        if len(entries) != len(image_ids):
+            raise RuntimeError('cache count mismatch %d != %d' %
+                               (len(entries), len(image_ids)))
+        manifest = {'version': self.VERSION,
+                    'checkpoint_sha256': self.settings['_hashes']['student_checkpoint'],
+                    'config_sha256': self.settings['_hashes']['config'],
+                    'normalization': {'mean': IMG_MEAN.tolist(), 'std': IMG_STD.tolist()},
+                    'entries': entries}
+        atomic_json(self.manifest_path, manifest)
+        with open(self.complete_path + '.tmp', 'w') as f:
+            f.write('ok')
+        os.replace(self.complete_path + '.tmp', self.complete_path)
+        log('reference cache COMPLETE: %d entries' % len(entries))
+
+
+def _arr_sha(a):
+    return hashlib.sha256(np.ascontiguousarray(a).tobytes()).hexdigest()
+
+
+def _unwrap_img(x):
+    n = 0
+    while hasattr(x, 'data') and n < 8:
+        x = x.data
+        n += 1
+    while isinstance(x, (list, tuple)):
+        x = x[0]
+        while hasattr(x, 'data') and n < 16:
+            x = x.data
+            n += 1
+    return x
+
+
+def _unwrap_meta(x):
+    n = 0
+    while hasattr(x, 'data') and n < 8:
+        x = x.data
+        n += 1
+    if isinstance(x, dict):
+        return [x]
+    out = []
+    for e in x:
+        e = e.data if hasattr(e, 'data') else e
+        out.extend([e] if isinstance(e, dict) else [])
+    return out
+
+
+# ---------------------------------------------------------------------------
+# evaluation: strict per-image 4-class TP/FP/FN then global IoU
+# ---------------------------------------------------------------------------
+def per_image_counts(prob, gt):
+    """prob (4,H,W) float, gt (H,W) int with 255 ignore.  Threshold 0.5,
+    strict >, background (class 0) not counted."""
+    counts = []
+    for c in range(4):
+        p = prob[c] > 0.5
+        g = gt == (c + 1)
+        ig = gt == 255
+        tp = int(np.logical_and(p, g).sum())
+        fp = int(np.logical_and(p, np.logical_and(~g, ~ig)).sum())
+        fn = int(np.logical_and(~p, g).sum())
+        counts.append([tp, fp, fn])
+    return counts
+
+
+def global_miou(all_counts):
+    ious = []
+    per = {}
+    for c, (tp, fp, fn) in enumerate(all_counts):
+        den = tp + fp + fn
+        iou = tp / den if den else 0.0
+        ious.append(iou)
+        per['class%d' % (c + 1)] = iou
+    return float(np.mean(ious)), per
+
+
+def evaluate_split(predict_fn, split, data_root, cfg, deadline, log,
+                  dump_counts=None):
+    """Original val/test dataset pipeline; gt nearest-resized to ori_shape;
+    returns (miou, per_class, per_image_counts)."""
+    import cv2
+    from mmseg.datasets import build_dataset
+    d = copy.deepcopy(cfg.data[split])
+    d.test_mode = True
+    d.img_dir = os.path.join(data_root, 'images', split)
+    d.ann_dir = os.path.join(data_root, 'labels', split)
+    ds = build_dataset(d)
+    gt_maps = ds.get_gt_seg_maps()
+    total = [[0, 0, 0] for _ in range(4)]
+    per_image = {}
+    t0 = time.time()
+    for i in range(len(ds)):
+        if time.time() > deadline:
+            raise RuntimeError('deadline hit during %s eval' % split)
+        s = ds[i]
+        img = _unwrap_img(s['img']).unsqueeze(0).cuda()
+        meta = _unwrap_meta(s['img_metas'])
+        prob = predict_fn(img, meta)  # (4,H,W) torch on gpu
+        prob = prob.detach().cpu().numpy().astype(np.float32)
+        gt = np.asarray(gt_maps[i])
+        ori = meta[0]['ori_shape'][:2]
+        if gt.shape != tuple(ori):
+            gt = cv2.resize(gt.astype(np.uint8), (ori[1], ori[0]),
+                            interpolation=cv2.INTER_NEAREST)
+        cnt = per_image_counts(prob, gt.astype(np.int64))
+        name = os.path.splitext(os.path.basename(meta[0]['ori_filename']))[0]
+        per_image[name] = cnt
+        for c in range(4):
+            for j in range(3):
+                total[c][j] += cnt[c][j]
+        if (i + 1) % 25 == 0:
+            log('eval %s %d/%d (%.1fs)' % (split, i + 1, len(ds), time.time() - t0))
+    miou, per = global_miou([tuple(x) for x in total])
+    if dump_counts:
+        os.makedirs(os.path.dirname(dump_counts), exist_ok=True)
+        atomic_json(dump_counts, {'split': split, 'miou': miou, 'per_class': per,
+                                  'global_counts': total, 'per_image': per_image})
+    return miou, per, per_image
+
+
+# ---------------------------------------------------------------------------
+# champion ensemble with correction heads
+# ---------------------------------------------------------------------------
+CLASSES = ['EX', 'HE', 'SE', 'MA']
+
+
+class CorrectionHead(nn.Module):
+    def __init__(self):
+        super(CorrectionHead, self).__init__()
+        self.net = nn.Sequential(
+            nn.Conv2d(7, 16, 3, 1, 1), nn.ReLU(inplace=True),
+            nn.Conv2d(16, 16, 3, 1, 1), nn.ReLU(inplace=True),
+            nn.Conv2d(16, 1, 1))
+
+    def forward(self, f):
+        return 6.0 * torch.tanh(self.net(f))
+
+
+def _logit(p, eps=1e-4):
+    q = p.clamp(eps, 1 - eps)
+    return torch.log(q / (1 - q))
+
+
+class ChampionEnsemble(object):
+    """EXACT champion: weighted members + horizontal flip, per-class heads on
+    features [RGB, logit(pf_c), logit(ps_c), logit(pr_c), ps_c-pr_c].
+    No missing member/head may be skipped: fail closed."""
+
+    def __init__(self, settings, champion_cfg, device='cuda'):
+        from mmseg.models import build_segmentor
+        from mmcv.runner import load_checkpoint
+        self.device = device
+        self.members = []
+        for spec in champion_cfg['members']:
+            c = load_config(settings['repo'], spec['config'])
+            m = build_segmentor(c.model)
+            load_checkpoint(m, spec['checkpoint'], map_location='cpu', strict=False)
+            m = m.to(device).eval()
+            for p in m.parameters():
+                p.requires_grad_(False)
+            self.members.append((m, float(spec['weight']), spec))
+        # D member drives ps/pr, no flip
+        self.d_model = None
+        for m, w, spec in self.members:
+            if spec.get('name', '').upper().startswith('D'):
+                self.d_model = m
+                break
+        if self.d_model is None:
+            raise RuntimeError('champion requires a D member for ps/pr')
+        self.heads = {}
+        ck = torch.load(champion_cfg['head'], map_location='cpu')
+        head_state = ck.get('head', ck) if isinstance(ck, dict) else ck
+        if not isinstance(head_state, dict):
+            raise RuntimeError('bad champion head file')
+        # one shared head layout; per-class heads stored keyed by class
+        for cname in CLASSES:
+            key = cname
+            if isinstance(head_state, dict) and cname in head_state:
+                h = CorrectionHead().to(device).eval()
+                h.load_state_dict(head_state[cname])
+                for p in h.parameters():
+                    p.requires_grad_(False)
+                self.heads[cname] = h
+        missing = [c for c in ('HE', 'SE', 'MA') if c not in self.heads]
+        if missing:
+            raise RuntimeError('missing champion heads (fail closed): %s' % missing)
+
+    def _member_prob(self, m, img, meta, flip):
+        meta_f = copy.deepcopy(meta)
+        if flip:
+            meta_f[0]['flip'] = True
+            meta_f[0]['flip_direction'] = 'horizontal'
+            x = m(return_loss=False, rescale=True, img=[img.flip(-1)],
+                  img_metas=[meta_f])[0]
+        else:
+            x = m(return_loss=False, rescale=True, img=[img], img_metas=[meta_f])[0]
+        x = np.asarray(x[0] if isinstance(x, tuple) else x, dtype=np.float32)
+        p = torch.from_numpy(x).to(self.device)
+        if flip:
+            p = p.flip(dims=(2,))
+        return p
+
+    def predict(self, img, meta):
+        """Returns (4,H,W) corrected champion probability at ori resolution."""
+        with torch.no_grad():
+            acc = None
+            tot = 0.0
+            for m, w, spec in self.members:
+                p = self._member_prob(m, img, meta, False)
+                acc = p * w if acc is None else acc + p * w
+                p2 = self._member_prob(m, img, meta, True)
+                acc = acc + p2 * w
+                tot += 2.0 * w
+            pf = acc / tot
+            ps = self.d_model._student_prob(img, meta, True)[0]
+            pr = self.d_model._reference_prob(img, meta, True)[0]
+            ori = tuple(meta[0]['ori_shape'][:2])
+            img_f = F.interpolate(img, size=ori, mode='bilinear',
+                                  align_corners=False)[0]
+            chans = []
+            for c in range(4):
+                cname = CLASSES[c]
+                if cname in self.heads:
+                    h = self.heads[cname]
+                    f7 = torch.cat([img_f, _logit(pf[c:c + 1]),
+                                    _logit(ps[c:c + 1]), _logit(pr[c:c + 1]),
+                                    ps[c:c + 1] - pr[c:c + 1]], dim=0).unsqueeze(0)
+                    newp = torch.sigmoid(_logit(pf[c:c + 1][0]) + h(f7)[0, 0])
+                    chans.append(newp.unsqueeze(0))
+                else:
+                    chans.append(pf[c:c + 1])
+            return torch.cat(chans, dim=0)
+
+
+def mix_probs(p_champ, p_new):
+    return 0.5 * p_champ + 0.5 * p_new
+
+
+# ---------------------------------------------------------------------------
+# RNG state save/restore
+# ---------------------------------------------------------------------------
+def get_rng_state():
+    return {'py': random.getstate(), 'np': np.random.get_state(),
+            'torch': torch.get_rng_state(),
+            'cuda': torch.cuda.get_rng_state_all()}
+
+
+def set_rng_state(st):
+    random.setstate(st['py'])
+    np.random.set_state(st['np'])
+    torch.set_rng_state(st['torch'].cpu())
+    torch.cuda.set_rng_state_all([s.cpu() for s in st['cuda']])
+
+
+# ---------------------------------------------------------------------------
+# dataset split audit
+# ---------------------------------------------------------------------------
+def audit_split(data_root, expected=(454, 76, 227)):
+    """Verify 454/76/227 images, no dup/intersection, stems JPEG vs PNG,
+    train/val/test label files exist only where expected.  Returns
+    split_assignment dict filename-> {'split': ...}."""
+    assignment = {}
+    stems_seen = {}
+    for si, split in enumerate(('train', 'val', 'test')):
+        img_dir = os.path.join(data_root, 'images', split)
+        lab_dir = os.path.join(data_root, 'labels', split)
+        list_file = os.path.join(data_root, split + '.txt')
+        imgs = sorted(f for f in os.listdir(img_dir) if f.lower().endswith(('.jpg', '.jpeg')))
+        if len(imgs) != expected[si]:
+            raise RuntimeError('split %s has %d images, expected %d' %
+                               (split, len(imgs), expected[si]))
+        if os.path.isfile(list_file):
+            listed = [l.strip() for l in open(list_file, encoding='utf-8') if l.strip()]
+            if sorted(os.path.splitext(x)[0] for x in listed) != \
+                    sorted(os.path.splitext(x)[0] for x in imgs):
+                raise RuntimeError('%s does not match %s images' % (list_file, split))
+        for f in imgs:
+            stem = os.path.splitext(f)[0]
+            if stem in stems_seen:
+                raise RuntimeError('duplicate stem across splits: %s' % stem)
+            stems_seen[stem] = split
+            assignment[f] = {'split': split, 'stem': stem}
+        if split != 'test':
+            labs = set(os.path.splitext(x)[0] for x in os.listdir(lab_dir)
+                       if x.endswith('.png'))
+            if labs != set(stems_seen[s] for s in stems_seen
+                           if stems_seen[s] == split):
+                raise RuntimeError('labels/%s mismatch' % split)
+        else:
+            labs = [x for x in os.listdir(lab_dir) if x.endswith('.png')]
+            if labs:
+                raise RuntimeError('test labels present during training — forbidden')
+    return assignment
+
+
+# ---------------------------------------------------------------------------
+# deadline
+# ---------------------------------------------------------------------------
+def parse_deadline(raw):
+    """Accepts ISO-8601 string or epoch seconds; anything else rejected."""
+    if isinstance(raw, (int, float)):
+        return float(raw)
+    if isinstance(raw, str):
+        try:
+            from datetime import datetime
+            d = datetime.fromisoformat(raw.replace('Z', '+00:00'))
+            if d.tzinfo is None:
+                d = d.astimezone()
+            return d.timestamp()
+        except ValueError:
+            pass
+    raise ValueError('unknown deadline format (need ISO-8601 or epoch): %r' % raw)

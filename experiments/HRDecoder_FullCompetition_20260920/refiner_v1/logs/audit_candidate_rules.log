@@ -1,0 +1,35 @@
+/root/miniconda3/lib/python3.8/site-packages/mmcv/__init__.py:20: UserWarning: On January 1, 2023, MMCV will release v2.0.0, in which it will remove components related to the training process and add a data transformation module. In addition, it will rename the package names mmcv to mmcv-lite and mmcv-full to mmcv. See https://github.com/open-mmlab/mmcv/blob/master/docs/en/compatibility.md for more details.
+  warnings.warn(
+2026-09-20 23:13:11,711 - mmseg - INFO - Loaded 76 images from /root/autodl-tmp/hr_exec_20260919/data/DDR_split_613/images/val
+[audit] val dataset ok n=76
+[HRPlusMAResidual] 可训练 0.058M / 冻结 131.221M
+[audit] champion built
+[audit] 5/76 24.0s
+[audit] 10/76 49.9s
+[audit] 15/76 74.8s
+[audit] 20/76 97.4s
+[audit] 25/76 122.7s
+[audit] 30/76 146.9s
+[audit] 35/76 170.2s
+[audit] 40/76 192.6s
+[audit] 45/76 215.7s
+[audit] 50/76 238.5s
+[audit] 55/76 263.2s
+[audit] 60/76 286.7s
+[audit] 65/76 309.4s
+[audit] 70/76 332.0s
+[audit] 75/76 354.6s
+[audit] 76/76 359.2s
+[audit] wrote /root/autodl-tmp/HRDecoder_FullCompetition_20260920/refiner_v1/audit/candidate_audit.json (359.2s)
+  t0.05_d0   MA=0.9572 HE=0.9390 candfrac=0.0595 clust/img=23.7 tiles/img=24.4
+  t0.05_d8   MA=0.9635 HE=0.9610 candfrac=0.0818 clust/img=20.0 tiles/img=21.1
+  t0.05_d16  MA=0.9666 HE=0.9751 candfrac=0.1063 clust/img=16.9 tiles/img=18.6
+  t0.05_d32  MA=0.9780 HE=0.9829 candfrac=0.1548 clust/img=12.4 tiles/img=15.5
+  t0.10_d0   MA=0.9335 HE=0.9302 candfrac=0.0487 clust/img=20.6 tiles/img=21.0
+  t0.10_d8   MA=0.9424 HE=0.9552 candfrac=0.0673 clust/img=17.4 tiles/img=18.2
+  t0.10_d16  MA=0.9458 HE=0.9615 candfrac=0.0868 clust/img=15.0 tiles/img=16.2
+  t0.10_d32  MA=0.9635 HE=0.9768 candfrac=0.1296 clust/img=11.2 tiles/img=13.7
+  t0.20_d0   MA=0.8815 HE=0.9083 candfrac=0.0393 clust/img=17.9 tiles/img=18.3
+  t0.20_d8   MA=0.8976 HE=0.9213 candfrac=0.0536 clust/img=15.3 tiles/img=15.8
+  t0.20_d16  MA=0.9103 HE=0.9505 candfrac=0.0703 clust/img=13.3 tiles/img=14.1
+  t0.20_d32  MA=0.9341 HE=0.9668 candfrac=0.1077 clust/img=10.1 tiles/img=11.9

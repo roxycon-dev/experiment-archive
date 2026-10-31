@@ -1,0 +1,16 @@
+{
+  "checked_at": "2026-10-10T13:31:49.629290+08:00",
+  "method": "Conservative max(nonzero auxiliary12smoke,post1500 actual100window)",
+  "performance_completed_update": 2910,
+  "window_batches": 100,
+  "mean_batch_seconds": 1.100302817374468,
+  "mean_data_wait_seconds": 3.60870361328125e-05,
+  "lambda_K": 0.28,
+  "lambda_base_KD": 0.14,
+  "nonzero_auxiliary_phase": true,
+  "expected4k_CST": "2026-10-10T13:54:55.797557+08:00",
+  "expected40k_CST_excluding_test": "2026-10-11T01:13:54.346529+08:00",
+  "prediction_not_completion": true,
+  "significant_ETA_change": false,
+  "note": "KD ramp active; update estimate again from full-coefficient post4k window"
+}

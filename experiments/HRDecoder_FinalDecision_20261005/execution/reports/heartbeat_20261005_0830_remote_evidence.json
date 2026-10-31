@@ -1,0 +1,93 @@
+[
+  {
+    "node": "primary",
+    "run": "S_seed42",
+    "update": 24000,
+    "metric_sha256": "69518a6e38be6125bbfad166b86d90ec53ca8360d798394d75db303201cb3bca",
+    "mirror_matches": false,
+    "status": {
+      "stage": "TRAINING",
+      "completed": 25200,
+      "endpoint": 32000,
+      "updated_at": "2026-10-05T08:31:22.279604+00:00",
+      "recent": {
+        "loss": 0.14049892127513885,
+        "grad_norm": 1.9506534337997437,
+        "seconds": 0.8092550211586058,
+        "data_wait_seconds": 0.0013363368343561888,
+        "peak_gpu_bytes": 11004799488
+      }
+    },
+    "n_images": 76,
+    "per_image_count": 76,
+    "scores": {
+      "single": 42.018816265387485,
+      "fixed_fusion": 45.323095776327385,
+      "half_fusion": 43.54937754768469
+    },
+    "per_class": {
+      "single": {
+        "EX": 47.69762390407,
+        "HE": 41.66085770571299,
+        "SE": 60.432920968205025,
+        "MA": 18.2838624835619
+      },
+      "fixed_fusion": {
+        "EX": 50.44270318437525,
+        "HE": 44.787899804574195,
+        "SE": 60.282941357707706,
+        "MA": 25.778838758652377
+      }
+    },
+    "probability_files": 0,
+    "endpoint_custody": null,
+    "boundary": {
+      "stage": "ARMED_AFTER_D42_BOUNDARY",
+      "pid": 44281,
+      "time": "2026-10-05T04:11:34.270609+00:00",
+      "process_alive": true
+    }
+  },
+  {
+    "node": "second",
+    "run": "SD_seed42",
+    "update": 8000,
+    "metric_sha256": "5754d1bbb8a2c1cef274ad0d04acf6fe7d191ec793226969ef6c54efdc8a9a6d",
+    "mirror_matches": true,
+    "status": {
+      "stage": "TRAINING",
+      "completed": 8480,
+      "endpoint": 32000,
+      "updated_at": "2026-10-05T08:31:05.820768+00:00",
+      "recent": {
+        "loss": 0.17514805495738983,
+        "grad_norm": 0.8275958895683289,
+        "seconds": 1.2014556005597115,
+        "data_wait_seconds": 0.002492554485797882,
+        "peak_gpu_bytes": 11006432768
+      }
+    },
+    "n_images": 76,
+    "per_image_count": 76,
+    "scores": {
+      "single": 41.27487871289849,
+      "fixed_fusion": 44.5898536602842,
+      "half_fusion": 43.25308579485186
+    },
+    "per_class": {
+      "single": {
+        "EX": 47.267628618687034,
+        "HE": 38.11648943031658,
+        "SE": 59.05114690933581,
+        "MA": 20.664249893254524
+      },
+      "fixed_fusion": {
+        "EX": 50.329724488538666,
+        "HE": 43.095460534491934,
+        "SE": 58.649703908243076,
+        "MA": 26.284525709863104
+      }
+    },
+    "probability_files": 0
+  }
+]

@@ -1,0 +1,29 @@
+{
+  "trigger_time_utc": "2026-10-05T20:33:44.869Z",
+  "checked_at_utc": "2026-10-05T20:34:03.8897050Z",
+  "stage": "WAITING_ACTUAL_BOTH_OFF_CONFIRMATION",
+  "report_stage": "REPORT_RENDERED_AND_VERIFIED_LOCAL_DELIVERY_READY",
+  "report_QA": "PASS_RENDERED_AND_VISUALLY_VERIFIED",
+  "receipts": [
+    {
+      "path": "execution\\reports\\final_backup_receipt.json",
+      "stage": "FULL_BACKUP_VERIFIED"
+    },
+    {
+      "path": "execution\\reports\\shutdown_receipt.json",
+      "stage": "SHUTDOWN_DISPATCHED"
+    },
+    {
+      "path": "execution\\parallel\\node2\\reports\\final_backup_receipt.json",
+      "stage": "FULL_BACKUP_VERIFIED"
+    },
+    {
+      "path": "execution\\parallel\\node2\\reports\\shutdown_receipt.json",
+      "stage": "SHUTDOWN_DISPATCHED"
+    }
+  ],
+  "platform_OFF_confirmed": false,
+  "servers_contacted": false,
+  "report_artifacts_unchanged": true,
+  "notification": "DONT_NOTIFY"
+}

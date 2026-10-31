@@ -1,0 +1,54 @@
+[train] gate: readiness=LOCAL_READY calibration=READY mode=formal
+[train] arm=U0 family=convnext_unet stage=ddr_finetune mode=formal updates=4000 train_split=train val_split=val out_dir=/root/autodl-tmp/HRDecoder_Ready_20261002/round2_highres/work_dirs/U0_highres
+[train] batch: effective=8 micro=4 accum=2
+/root/miniconda3/lib/python3.8/site-packages/torch/_utils.py:776: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  return self.fget.__get__(instance, owner)()
+[train] model=convnext_unet backbone_prefixes=('encoder.',) norm_eval=False
+[train] weight_report(convnext_encoder_official): loaded=340 missing=[] unexpected=['norm.weight', 'norm.bias', 'head.weight', 'head.bias'] remapped={}
+[train] data: train=454 eval=76 manifest_sha256=c1359e112f16…
+[train] param audit: groups={'backbone': {'lr': 2e-05, 'n_tensors': 340, 'n_params': 49453152}, 'decoder': {'lr': 5.9999999999999995e-05, 'n_tensors': 50, 'n_params': 3532212}} frozen_tensors=0
+[engine] stage=ddr_finetune mode=formal updates 0->4000 grad_accum=2 micro_batch=4 amp=True frozen_bn=0 params=390
+[engine] update 100/4000 loss=0.5014245694875717 lr={'backbone': 1e-05, 'decoder': 2.9999999999999997e-05}
+[engine] update 200/4000 loss=0.5168763670325279 lr={'backbone': 2e-05, 'decoder': 5.9999999999999995e-05}
+[engine] update 300/4000 loss=0.4942163595557213 lr={'backbone': 1.996685899412007e-05, 'decoder': 5.9900576982360204e-05}
+[engine] update 400/4000 loss=0.5051969027519226 lr={'backbone': 1.9866320719725228e-05, 'decoder': 5.959896215917567e-05}
+[engine] update 500/4000 loss=0.5195407629013061 lr={'backbone': 1.9699068571895726e-05, 'decoder': 5.9097205715687174e-05}
+[engine] update 600/4000 loss=0.504414721429348 lr={'backbone': 1.94662450523927e-05, 'decoder': 5.839873515717809e-05}
+[engine] update 700/4000 loss=0.5054180206358433 lr={'backbone': 1.9169440581934287e-05, 'decoder': 5.750832174580285e-05}
+[engine] update 800/4000 loss=0.5149941611289978 lr={'backbone': 1.88106826360095e-05, 'decoder': 5.6432047908028494e-05}
+[engine] update 900/4000 loss=0.5275684505701065 lr={'backbone': 1.8392421895164772e-05, 'decoder': 5.5177265685494307e-05}
+[engine] update 1000/4000 loss=0.5092259779572487 lr={'backbone': 1.7917515504370885e-05, 'decoder': 5.375254651311265e-05}
+[engine] eval update=1000 mIoU_lesion4=0.3961 n_images=76
+[engine] update 1100/4000 loss=0.5049197566509247 lr={'backbone': 1.7389207555825705e-05, 'decoder': 5.2167622667477106e-05}
+[engine] update 1200/4000 loss=0.4990515078604221 lr={'backbone': 1.6811106928515012e-05, 'decoder': 5.043332078554503e-05}
+[engine] update 1300/4000 loss=0.5238678213953972 lr={'backbone': 1.618716263590966e-05, 'decoder': 4.856148790772897e-05}
+[engine] update 1400/4000 loss=0.5105521801114082 lr={'backbone': 1.5521636850199328e-05, 'decoder': 4.656491055059798e-05}
+[engine] update 1500/4000 loss=0.5126660758256912 lr={'backbone': 1.4819075787334699e-05, 'decoder': 4.4457227362004086e-05}
+[engine] update 1600/4000 loss=0.5073687614500523 lr={'backbone': 1.4084278651762672e-05, 'decoder': 4.225283595528801e-05}
+[engine] update 1700/4000 loss=0.5034156891703606 lr={'backbone': 1.3322264852993705e-05, 'decoder': 3.9966794558981106e-05}
+[engine] update 1800/4000 loss=0.5170765641331673 lr={'backbone': 1.2538239717945209e-05, 'decoder': 3.761471915383562e-05}
+[engine] update 1900/4000 loss=0.5077232122421265 lr={'backbone': 1.1737558933280604e-05, 'decoder': 3.5212676799841804e-05}
+[engine] update 2000/4000 loss=0.493888201713562 lr={'backbone': 1.0925691960638778e-05, 'decoder': 3.2777075881916325e-05}
+[engine] eval update=2000 mIoU_lesion4=0.3749 n_images=76
+[engine] update 2100/4000 loss=0.499918045848608 lr={'backbone': 1.0108184674665153e-05, 'decoder': 3.0324554023995456e-05}
+[engine] update 2200/4000 loss=0.5031568741798401 lr={'backbone': 9.290621479064416e-06, 'decoder': 2.7871864437193245e-05}
+[engine] update 2300/4000 loss=0.49675989836454393 lr={'backbone': 8.478587159460691e-06, 'decoder': 2.543576147838207e-05}
+[engine] update 2400/4000 loss=0.5021512830257415 lr={'backbone': 7.677628733648842e-06, 'decoder': 2.303288620094652e-05}
+[engine] update 2500/4000 loss=0.49893177777528763 lr={'backbone': 6.893217559838323e-06, 'decoder': 2.0679652679514967e-05}
+[engine] update 2600/4000 loss=0.5143916687369346 lr={'backbone': 6.130711961728724e-06, 'decoder': 1.8392135885186166e-05}
+[engine] update 2700/4000 loss=0.5115643888711929 lr={'backbone': 5.395320625725638e-06, 'decoder': 1.6185961877176912e-05}
+[engine] update 2800/4000 loss=0.5055663913488389 lr={'backbone': 4.692067020330971e-06, 'decoder': 1.407620106099291e-05}
+[engine] update 2900/4000 loss=0.5097831892967224 lr={'backbone': 4.025755080759349e-06, 'decoder': 1.2077265242278046e-05}
+[engine] update 3000/4000 loss=0.4919017542898655 lr={'backbone': 3.40093639318946e-06, 'decoder': 1.0202809179568379e-05}
+[engine] update 3100/4000 loss=0.5051710346341133 lr={'backbone': 2.821879102815217e-06, 'decoder': 8.46563730844565e-06}
+[engine] update 3200/4000 loss=0.4944066134095192 lr={'backbone': 2.2925387580862486e-06, 'decoder': 6.877616274258744e-06}
+[engine] update 3300/4000 loss=0.4917410957813263 lr={'backbone': 1.8165312903011032e-06, 'decoder': 5.4495938709033084e-06}
+[engine] update 3400/4000 loss=0.5246152980625629 lr={'backbone': 1.397108313129972e-06, 'decoder': 4.1913249393899155e-06}
+[engine] update 3500/4000 loss=0.4988031649589539 lr={'backbone': 1.037134910796243e-06, 'decoder': 3.111404732388728e-06}
+[engine] update 3600/4000 loss=0.4744208651781082 lr={'backbone': 7.390700666460784e-07, 'decoder': 2.217210199938235e-06}
+[engine] update 3700/4000 loss=0.5012138497829437 lr={'backbone': 5.049498657988e-07, 'decoder': 1.5148495973963997e-06}
+[engine] update 3800/4000 loss=0.5096362093091011 lr={'backbone': 3.363735866209573e-07, 'decoder': 1.0091207598628716e-06}
+[engine] update 3900/4000 loss=0.5067350536584854 lr={'backbone': 2.3449277603343426e-07, 'decoder': 7.034783281003026e-07}
+[engine] update 4000/4000 loss=0.48942492008209226 lr={'backbone': 2.0000338327832442e-07, 'decoder': 6.000101498349732e-07}
+[engine] eval update=4000 mIoU_lesion4=0.3849 n_images=76
+[train] done: {"status": "complete", "stop_reason": null, "elapsed_seconds": 2275.1102078089025, "stage": "ddr_finetune", "mode": "formal", "updates_done": 4000, "micro_steps": 8010, "best": {"mIoU_lesion4": 0.3960651568641143, "update": 1000, "selection_score": 0.437327634300698, "selection_metric": "fixed_fusion_miou"}, "config_file_sha256": "10f16d28e4fbd01ce6f8249b219bf0e9aaceb472da531dd215b0fa4a480bbf08", "resume_warnings": [], "checkpoints": {"last": "/root/autodl-tmp/HRDecoder_Ready_20261002/round2_highres/work_dirs/U0_highres/ckpt_last.pth", "best": "/root/autodl-tmp/HRDecoder_Ready_20261002/round2_highres/work_dirs/U0_highres/ckpt_best.pth", "final": "/root/autodl-tmp/HRDecoder_Ready_20261002/round2_highres/work_dirs/U0_highres/ckpt_final.pth"}}

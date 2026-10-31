@@ -1,0 +1,1475 @@
+{
+  "status": "COMPLETE",
+  "checkpoint": 20000,
+  "device": "cuda",
+  "precision": "FP32_TF32_disabled",
+  "formal_updates": 0,
+  "teacher_geometry": "actual TrainCacheDataset augmentation",
+  "limitation": "Six deliberately selected training images, fixed augmentations; output gradients, not full-parameter causal replay.",
+  "records": [
+    {
+      "kind": "both_positive",
+      "sid": "007-3396-200",
+      "augmentation_seed": 42000,
+      "valid_pixels": 1157156,
+      "classes": [
+        {
+          "class": "EX",
+          "GT_positive": 367,
+          "probability_max": 0.3038039207458496,
+          "positive_probability_mean": 1.130181459529922e-07,
+          "sum_probability_squared": 4.955015064922463e-09,
+          "objectives": {
+            "old_dice": {
+              "loss": 0.9999997615814209,
+              "common_shift_gradient": -2.2603622085171082e-07,
+              "positive_gradient_sum": -2.2603622085171082e-07,
+              "negative_gradient_sum": 6.82465529822998e-18,
+              "L1_gradient": 2.2603622085171082e-07
+            },
+            "weighted_old_KL": {
+              "loss": 0.003887986531481147,
+              "common_shift_gradient": -0.0002985713363159448,
+              "positive_gradient_sum": -0.00012063109898008406,
+              "negative_gradient_sum": -0.00017794023733586073,
+              "L1_gradient": 0.0002985713363159448
+            },
+            "old_main_without_hr": {
+              "loss": 1.0038877725601196,
+              "common_shift_gradient": -0.00029879738576710224,
+              "positive_gradient_sum": -0.00012085713387932628,
+              "negative_gradient_sum": -0.00017794023733586073,
+              "L1_gradient": 0.00029879738576710224
+            },
+            "repaired_GT": {
+              "loss": 5.179059028625488,
+              "common_shift_gradient": -0.2500001788139343,
+              "positive_gradient_sum": -0.2500001788139343,
+              "negative_gradient_sum": 6.802884922052499e-09,
+              "L1_gradient": 0.2500001788139343
+            }
+          },
+          "teachers": {
+            "A": {
+              "GT_positive_mean": 0.7788727879524231,
+              "GT_negative_mean": 0.0005778436898253858,
+              "GT_recall_at_half": 0.8283378481864929
+            },
+            "U": {
+              "GT_positive_mean": 0.7481641173362732,
+              "GT_negative_mean": 8.7526066636201e-05,
+              "GT_recall_at_half": 0.7629427909851074
+            },
+            "S": {
+              "GT_positive_mean": 0.7292255759239197,
+              "GT_negative_mean": 5.828945722896606e-05,
+              "GT_recall_at_half": 0.7302452325820923
+            },
+            "T": {
+              "GT_positive_mean": 0.7607030868530273,
+              "GT_negative_mean": 0.0003560205805115402,
+              "GT_recall_at_half": 0.7901907563209534
+            }
+          }
+        },
+        {
+          "class": "HE",
+          "GT_positive": 10771,
+          "probability_max": 0.999515175819397,
+          "positive_probability_mean": 0.6252943873405457,
+          "sum_probability_squared": 6777.96044921875,
+          "objectives": {
+            "old_dice": {
+              "loss": 0.2324279546737671,
+              "common_shift_gradient": -0.029422331601381302,
+              "positive_gradient_sum": -0.07185361534357071,
+              "negative_gradient_sum": 0.042431287467479706,
+              "L1_gradient": 0.11428490281105042
+            },
+            "weighted_old_KL": {
+              "loss": 0.001830665161833167,
+              "common_shift_gradient": -0.0001843212085077539,
+              "positive_gradient_sum": -0.0003278205113019794,
+              "negative_gradient_sum": 0.00014349930279422551,
+              "L1_gradient": 0.0018182552885264158
+            },
+            "old_main_without_hr": {
+              "loss": 0.23425862193107605,
+              "common_shift_gradient": -0.0296066515147686,
+              "positive_gradient_sum": -0.07218144088983536,
+              "negative_gradient_sum": 0.04257478564977646,
+              "L1_gradient": 0.11512598395347595
+            },
+            "repaired_GT": {
+              "loss": 0.4825955629348755,
+              "common_shift_gradient": -0.12226971983909607,
+              "positive_gradient_sum": -0.1655300110578537,
+              "negative_gradient_sum": 0.04326029494404793,
+              "L1_gradient": 0.20879031717777252
+            }
+          },
+          "teachers": {
+            "A": {
+              "GT_positive_mean": 0.6791996955871582,
+              "GT_negative_mean": 0.003629948478192091,
+              "GT_recall_at_half": 0.6861944198608398
+            },
+            "U": {
+              "GT_positive_mean": 0.7160815000534058,
+              "GT_negative_mean": 0.002410039072856307,
+              "GT_recall_at_half": 0.7168322205543518
+            },
+            "S": {
+              "GT_positive_mean": 0.7176659107208252,
+              "GT_negative_mean": 0.0021304446272552013,
+              "GT_recall_at_half": 0.7213814854621887
+            },
+            "T": {
+              "GT_positive_mean": 0.6957315802574158,
+              "GT_negative_mean": 0.003026339691132307,
+              "GT_recall_at_half": 0.7020703554153442
+            }
+          }
+        },
+        {
+          "class": "SE",
+          "GT_positive": 777,
+          "probability_max": 0.010623669251799583,
+          "positive_probability_mean": 5.77895882258872e-08,
+          "sum_probability_squared": 4.009426679552064e-10,
+          "objectives": {
+            "old_dice": {
+              "loss": 0.9999998807907104,
+              "common_shift_gradient": -1.1557916934634704e-07,
+              "positive_gradient_sum": -1.1557916934634704e-07,
+              "negative_gradient_sum": 1.3161462011847876e-19,
+              "L1_gradient": 1.1557916934634704e-07
+            },
+            "weighted_old_KL": {
+              "loss": 0.007896006107330322,
+              "common_shift_gradient": -0.0005692833801731467,
+              "positive_gradient_sum": -0.0002645936328917742,
+              "negative_gradient_sum": -0.00030468974728137255,
+              "L1_gradient": 0.0005692833801731467
+            },
+            "old_main_without_hr": {
+              "loss": 1.0078959465026855,
+              "common_shift_gradient": -0.0005693989805877209,
+              "positive_gradient_sum": -0.0002647092333063483,
+              "negative_gradient_sum": -0.00030468974728137255,
+              "L1_gradient": 0.0005693989805877209
+            },
+            "repaired_GT": {
+              "loss": 5.18117618560791,
+              "common_shift_gradient": -0.25000011920928955,
+              "positive_gradient_sum": -0.25000011920928955,
+              "negative_gradient_sum": 2.354720640695973e-09,
+              "L1_gradient": 0.25000011920928955
+            }
+          },
+          "teachers": {
+            "A": {
+              "GT_positive_mean": 0.756864070892334,
+              "GT_negative_mean": 0.0009387267637066543,
+              "GT_recall_at_half": 0.8095238208770752
+            },
+            "U": {
+              "GT_positive_mean": 0.818242073059082,
+              "GT_negative_mean": 0.00011787196126533672,
+              "GT_recall_at_half": 0.8198198080062866
+            },
+            "S": {
+              "GT_positive_mean": 0.8357669711112976,
+              "GT_negative_mean": 0.00023865395633038133,
+              "GT_recall_at_half": 0.8404118418693542
+            },
+            "T": {
+              "GT_positive_mean": 0.7880982160568237,
+              "GT_negative_mean": 0.0006097982986830175,
+              "GT_recall_at_half": 0.8275418281555176
+            }
+          }
+        },
+        {
+          "class": "MA",
+          "GT_positive": 249,
+          "probability_max": 0.9828998446464539,
+          "positive_probability_mean": 0.3518165349960327,
+          "sum_probability_squared": 244.12734985351562,
+          "objectives": {
+            "old_dice": {
+              "loss": 0.6447070837020874,
+              "common_shift_gradient": -0.005328452214598656,
+              "positive_gradient_sum": -0.10355331003665924,
+              "negative_gradient_sum": 0.09822486340999603,
+              "L1_gradient": 0.20177817344665527
+            },
+            "weighted_old_KL": {
+              "loss": 0.0003869861538987607,
+              "common_shift_gradient": 0.00012096208956791088,
+              "positive_gradient_sum": -1.4139580343908165e-05,
+              "negative_gradient_sum": 0.00013510166900232434,
+              "L1_gradient": 0.00027408654568716884
+            },
+            "old_main_without_hr": {
+              "loss": 0.645094096660614,
+              "common_shift_gradient": -0.005207493901252747,
+              "positive_gradient_sum": -0.1035674437880516,
+              "negative_gradient_sum": 0.09835995733737946,
+              "L1_gradient": 0.20197466015815735
+            },
+            "repaired_GT": {
+              "loss": 1.253232479095459,
+              "common_shift_gradient": -0.16724273562431335,
+              "positive_gradient_sum": -0.26559919118881226,
+              "negative_gradient_sum": 0.09835643321275711,
+              "L1_gradient": 0.36395561695098877
+            }
+          },
+          "teachers": {
+            "A": {
+              "GT_positive_mean": 0.5533896088600159,
+              "GT_negative_mean": 0.0003453271056059748,
+              "GT_recall_at_half": 0.5060241222381592
+            },
+            "U": {
+              "GT_positive_mean": 0.4360973536968231,
+              "GT_negative_mean": 0.00019085707026533782,
+              "GT_recall_at_half": 0.4417670667171478
+            },
+            "S": {
+              "GT_positive_mean": 0.3607436418533325,
+              "GT_negative_mean": 0.00010402474435977638,
+              "GT_recall_at_half": 0.3453815281391144
+            },
+            "T": {
+              "GT_positive_mean": 0.48323580622673035,
+              "GT_negative_mean": 0.0002560383582022041,
+              "GT_recall_at_half": 0.4658634662628174
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "both_positive",
+      "sid": "007-3448-200",
+      "augmentation_seed": 42000,
+      "valid_pixels": 1157156,
+      "classes": [
+        {
+          "class": "EX",
+          "GT_positive": 3573,
+          "probability_max": 0.2994978725910187,
+          "positive_probability_mean": 1.3896351447328925e-07,
+          "sum_probability_squared": 2.1217982926202694e-09,
+          "objectives": {
+            "old_dice": {
+              "loss": 0.9999997019767761,
+              "common_shift_gradient": -2.7792680157290306e-07,
+              "positive_gradient_sum": -2.7792680157290306e-07,
+              "negative_gradient_sum": 2.7668180778587812e-19,
+              "L1_gradient": 2.7792680157290306e-07
+            },
+            "weighted_old_KL": {
+              "loss": 0.02596222050487995,
+              "common_shift_gradient": -0.001714356942102313,
+              "positive_gradient_sum": -0.0009816901292651892,
+              "negative_gradient_sum": -0.0007326668710447848,
+              "L1_gradient": 0.001714356942102313
+            },
+            "old_main_without_hr": {
+              "loss": 1.0259618759155273,
+              "common_shift_gradient": -0.0017146349418908358,
+              "positive_gradient_sum": -0.0009819681290537119,
+              "negative_gradient_sum": -0.0007326668710447848,
+              "L1_gradient": 0.0017146349418908358
+            },
+            "repaired_GT": {
+              "loss": 5.122580051422119,
+              "common_shift_gradient": -0.2500002384185791,
+              "positive_gradient_sum": -0.2500002384185791,
+              "negative_gradient_sum": 4.45554082517674e-09,
+              "L1_gradient": 0.2500002384185791
+            }
+          },
+          "teachers": {
+            "A": {
+              "GT_positive_mean": 0.6257184743881226,
+              "GT_negative_mean": 0.0016688506584614515,
+              "GT_recall_at_half": 0.6451161503791809
+            },
+            "U": {
+              "GT_positive_mean": 0.6557549834251404,
+              "GT_negative_mean": 0.0010956843616440892,
+              "GT_recall_at_half": 0.664427638053894
+            },
+            "S": {
+              "GT_positive_mean": 0.643768310546875,
+              "GT_negative_mean": 0.0013028837274760008,
+              "GT_recall_at_half": 0.6484746932983398
+            },
+            "T": {
+              "GT_positive_mean": 0.6358627676963806,
+              "GT_negative_mean": 0.0014698902377858758,
+              "GT_recall_at_half": 0.6540722250938416
+            }
+          }
+        },
+        {
+          "class": "HE",
+          "GT_positive": 2826,
+          "probability_max": 0.9949073195457458,
+          "positive_probability_mean": 0.3387162983417511,
+          "sum_probability_squared": 953.6376342773438,
+          "objectives": {
+            "old_dice": {
+              "loss": 0.49348992109298706,
+              "common_shift_gradient": -0.07964405417442322,
+              "positive_gradient_sum": -0.10719015449285507,
+              "negative_gradient_sum": 0.027546094730496407,
+              "L1_gradient": 0.13473625481128693
+            },
+            "weighted_old_KL": {
+              "loss": 0.0011022180551663041,
+              "common_shift_gradient": -0.00030562630854547024,
+              "positive_gradient_sum": -0.00027806678554043174,
+              "negative_gradient_sum": -2.7559519367059693e-05,
+              "L1_gradient": 0.0007957600173540413
+            },
+            "old_main_without_hr": {
+              "loss": 0.4945921301841736,
+              "common_shift_gradient": -0.07994968444108963,
+              "positive_gradient_sum": -0.10746821761131287,
+              "negative_gradient_sum": 0.027518535032868385,
+              "L1_gradient": 0.1351328194141388
+            },
+            "repaired_GT": {
+              "loss": 1.0769484043121338,
+              "common_shift_gradient": -0.24472308158874512,
+              "positive_gradient_sum": -0.2725110650062561,
+              "negative_gradient_sum": 0.027787990868091583,
+              "L1_gradient": 0.3002990484237671
+            }
+          },
+          "teachers": {
+            "A": {
+              "GT_positive_mean": 0.5632925033569336,
+              "GT_negative_mean": 0.001209834823384881,
+              "GT_recall_at_half": 0.6068648099899292
+            },
+            "U": {
+              "GT_positive_mean": 0.5181242227554321,
+              "GT_negative_mean": 0.0005746237584389746,
+              "GT_recall_at_half": 0.5201698541641235
+            },
+            "S": {
+              "GT_positive_mean": 0.6097391843795776,
+              "GT_negative_mean": 0.0009382378775626421,
+              "GT_recall_at_half": 0.6107572317123413
+            },
+            "T": {
+              "GT_positive_mean": 0.5664350986480713,
+              "GT_negative_mean": 0.0010228336323052645,
+              "GT_recall_at_half": 0.5888181328773499
+            }
+          }
+        },
+        {
+          "class": "SE",
+          "GT_positive": 355,
+          "probability_max": 0.010872334241867065,
+          "positive_probability_mean": 2.536592269564153e-08,
+          "sum_probability_squared": 1.6384194001517471e-10,
+          "objectives": {
+            "old_dice": {
+              "loss": 0.9999999403953552,
+              "common_shift_gradient": -5.073184539128306e-08,
+              "positive_gradient_sum": -5.073184539128306e-08,
+              "negative_gradient_sum": 7.272456915762286e-20,
+              "L1_gradient": 5.073184539128306e-08
+            },
+            "weighted_old_KL": {
+              "loss": 0.0045829471200704575,
+              "common_shift_gradient": -0.0003424880560487509,
+              "positive_gradient_sum": -0.000118410331197083,
+              "negative_gradient_sum": -0.00022407769574783742,
+              "L1_gradient": 0.0003424880560487509
+            },
+            "old_main_without_hr": {
+              "loss": 1.0045828819274902,
+              "common_shift_gradient": -0.0003425387549214065,
+              "positive_gradient_sum": -0.0001184610664495267,
+              "negative_gradient_sum": -0.00022407769574783742,
+              "L1_gradient": 0.0003425387549214065
+            },
+            "repaired_GT": {
+              "loss": 5.377864360809326,
+              "common_shift_gradient": -0.2500000596046448,
+              "positive_gradient_sum": -0.2500000596046448,
+              "negative_gradient_sum": 1.6134031888270783e-09,
+              "L1_gradient": 0.2500000596046448
+            }
+          },
+          "teachers": {
+            "A": {
+              "GT_positive_mean": 0.7264453172683716,
+              "GT_negative_mean": 0.0007517758058384061,
+              "GT_recall_at_half": 0.7633802890777588
+            },
+            "U": {
+              "GT_positive_mean": 0.8012449741363525,
+              "GT_negative_mean": 7.300869037862867e-05,
+              "GT_recall_at_half": 0.794366180896759
+            },
+            "S": {
+              "GT_positive_mean": 0.8523217439651489,
+              "GT_negative_mean": 4.694556264439598e-05,
+              "GT_recall_at_half": 0.8619718551635742
+            },
+            "T": {
+              "GT_positive_mean": 0.7719392776489258,
+              "GT_negative_mean": 0.00044829933904111385,
+              "GT_recall_at_half": 0.811267614364624
+            }
+          }
+        },
+        {
+          "class": "MA",
+          "GT_positive": 179,
+          "probability_max": 0.995411217212677,
+          "positive_probability_mean": 0.5474323034286499,
+          "sum_probability_squared": 116.68840026855469,
+          "objectives": {
+            "old_dice": {
+              "loss": 0.3372049927711487,
+              "common_shift_gradient": 0.0036176834255456924,
+              "positive_gradient_sum": -0.06976890563964844,
+              "negative_gradient_sum": 0.07338659465312958,
+              "L1_gradient": 0.14315548539161682
+            },
+            "weighted_old_KL": {
+              "loss": 0.0001441358181182295,
+              "common_shift_gradient": 1.0367497452534735e-05,
+              "positive_gradient_sum": -2.2856042960484046e-06,
+              "negative_gradient_sum": 1.265310220333049e-05,
+              "L1_gradient": 8.19291963125579e-05
+            },
+            "old_main_without_hr": {
+              "loss": 0.3373491168022156,
+              "common_shift_gradient": 0.0036280564963817596,
+              "positive_gradient_sum": -0.0697711929678917,
+              "negative_gradient_sum": 0.07339924573898315,
+              "L1_gradient": 0.14319565892219543
+            },
+            "repaired_GT": {
+              "loss": 0.8892728686332703,
+              "common_shift_gradient": -0.10948693007230759,
+              "positive_gradient_sum": -0.18291082978248596,
+              "negative_gradient_sum": 0.07342389225959778,
+              "L1_gradient": 0.25633472204208374
+            }
+          },
+          "teachers": {
+            "A": {
+              "GT_positive_mean": 0.638812243938446,
+              "GT_negative_mean": 0.00013632903574034572,
+              "GT_recall_at_half": 0.6536312699317932
+            },
+            "U": {
+              "GT_positive_mean": 0.5142270922660828,
+              "GT_negative_mean": 0.0001494665048085153,
+              "GT_recall_at_half": 0.5251396894454956
+            },
+            "S": {
+              "GT_positive_mean": 0.48493480682373047,
+              "GT_negative_mean": 7.679822010686621e-05,
+              "GT_recall_at_half": 0.46927374601364136
+            },
+            "T": {
+              "GT_positive_mean": 0.5769831538200378,
+              "GT_negative_mean": 0.00012390960182528943,
+              "GT_recall_at_half": 0.5698323845863342
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "both_positive",
+      "sid": "007-3520-200",
+      "augmentation_seed": 42000,
+      "valid_pixels": 1157156,
+      "classes": [
+        {
+          "class": "EX",
+          "GT_positive": 2212,
+          "probability_max": 0.2960408329963684,
+          "positive_probability_mean": 1.2226850287788693e-07,
+          "sum_probability_squared": 3.2007809736001036e-09,
+          "objectives": {
+            "old_dice": {
+              "loss": 0.9999997615814209,
+              "common_shift_gradient": -2.44536948912355e-07,
+              "positive_gradient_sum": -2.44536948912355e-07,
+              "negative_gradient_sum": 7.039880869376224e-19,
+              "L1_gradient": 2.44536948912355e-07
+            },
+            "weighted_old_KL": {
+              "loss": 0.018921559676527977,
+              "common_shift_gradient": -0.0012619937770068645,
+              "positive_gradient_sum": -0.0007119827205315232,
+              "negative_gradient_sum": -0.0005500111146830022,
+              "L1_gradient": 0.0012619937770068645
+            },
+            "old_main_without_hr": {
+              "loss": 1.0189213752746582,
+              "common_shift_gradient": -0.0012622384820133448,
+              "positive_gradient_sum": -0.0007122272509150207,
+              "negative_gradient_sum": -0.0005500111146830022,
+              "L1_gradient": 0.0012622384820133448
+            },
+            "repaired_GT": {
+              "loss": 5.083430290222168,
+              "common_shift_gradient": -0.2500002384185791,
+              "positive_gradient_sum": -0.2500002384185791,
+              "negative_gradient_sum": 5.8625078125373875e-09,
+              "L1_gradient": 0.2500002384185791
+            }
+          },
+          "teachers": {
+            "A": {
+              "GT_positive_mean": 0.7381372451782227,
+              "GT_negative_mean": 0.0012819282710552216,
+              "GT_recall_at_half": 0.771699845790863
+            },
+            "U": {
+              "GT_positive_mean": 0.7893359065055847,
+              "GT_negative_mean": 0.0009015657124109566,
+              "GT_recall_at_half": 0.800632894039154
+            },
+            "S": {
+              "GT_positive_mean": 0.7268465757369995,
+              "GT_negative_mean": 0.0008480970282107592,
+              "GT_recall_at_half": 0.7341772317886353
+            },
+            "T": {
+              "GT_positive_mean": 0.7449143528938293,
+              "GT_negative_mean": 0.0011021526297554374,
+              "GT_recall_at_half": 0.7707956433296204
+            }
+          }
+        },
+        {
+          "class": "HE",
+          "GT_positive": 2729,
+          "probability_max": 0.9982008934020996,
+          "positive_probability_mean": 0.6811342835426331,
+          "sum_probability_squared": 2855.650634765625,
+          "objectives": {
+            "old_dice": {
+              "loss": 0.33431267738342285,
+              "common_shift_gradient": 0.02439281716942787,
+              "positive_gradient_sum": -0.06634890288114548,
+              "negative_gradient_sum": 0.09074171632528305,
+              "L1_gradient": 0.15709061920642853
+            },
+            "weighted_old_KL": {
+              "loss": 0.0013005794025957584,
+              "common_shift_gradient": 0.0005101008573547006,
+              "positive_gradient_sum": -9.053127723746002e-05,
+              "negative_gradient_sum": 0.0006006320472806692,
+              "L1_gradient": 0.0012568377424031496
+            },
+            "old_main_without_hr": {
+              "loss": 0.3356132507324219,
+              "common_shift_gradient": 0.024902917444705963,
+              "positive_gradient_sum": -0.0664394274353981,
+              "negative_gradient_sum": 0.09134234488010406,
+              "L1_gradient": 0.15787139534950256
+            },
+            "repaired_GT": {
+              "loss": 0.5041500926017761,
+              "common_shift_gradient": -0.054587386548519135,
+              "positive_gradient_sum": -0.14606530964374542,
+              "negative_gradient_sum": 0.09147793054580688,
+              "L1_gradient": 0.2375432550907135
+            }
+          },
+          "teachers": {
+            "A": {
+              "GT_positive_mean": 0.7494471073150635,
+              "GT_negative_mean": 0.002171820495277643,
+              "GT_recall_at_half": 0.7933309078216553
+            },
+            "U": {
+              "GT_positive_mean": 0.8158544301986694,
+              "GT_negative_mean": 0.0016554277390241623,
+              "GT_recall_at_half": 0.8226456642150879
+            },
+            "S": {
+              "GT_positive_mean": 0.7334886193275452,
+              "GT_negative_mean": 0.0008348316769115627,
+              "GT_recall_at_half": 0.7376328110694885
+            },
+            "T": {
+              "GT_positive_mean": 0.757908821105957,
+              "GT_negative_mean": 0.0017407494597136974,
+              "GT_recall_at_half": 0.796995222568512
+            }
+          }
+        },
+        {
+          "class": "SE",
+          "GT_positive": 3126,
+          "probability_max": 0.010784333571791649,
+          "positive_probability_mean": 1.1149475653837726e-07,
+          "sum_probability_squared": 2.666656617744678e-10,
+          "objectives": {
+            "old_dice": {
+              "loss": 0.9999997615814209,
+              "common_shift_gradient": -2.229894846550451e-07,
+              "positive_gradient_sum": -2.229894846550451e-07,
+              "negative_gradient_sum": 3.0997174969921154e-20,
+              "L1_gradient": 2.229894846550451e-07
+            },
+            "weighted_old_KL": {
+              "loss": 0.026595301926136017,
+              "common_shift_gradient": -0.0017635124968364835,
+              "positive_gradient_sum": -0.0011772694997489452,
+              "negative_gradient_sum": -0.0005862431135028601,
+              "L1_gradient": 0.0017635124968364835
+            },
+            "old_main_without_hr": {
+              "loss": 1.026595115661621,
+              "common_shift_gradient": -0.0017637355485931039,
+              "positive_gradient_sum": -0.0011774924350902438,
+              "negative_gradient_sum": -0.0005862431135028601,
+              "L1_gradient": 0.0017637355485931039
+            },
+            "repaired_GT": {
+              "loss": 5.084247589111328,
+              "common_shift_gradient": -0.2500001788139343,
+              "positive_gradient_sum": -0.2500001788139343,
+              "negative_gradient_sum": 1.8454137107326574e-09,
+              "L1_gradient": 0.2500001788139343
+            }
+          },
+          "teachers": {
+            "A": {
+              "GT_positive_mean": 0.8384694457054138,
+              "GT_negative_mean": 0.0017872139578685164,
+              "GT_recall_at_half": 0.9081893563270569
+            },
+            "U": {
+              "GT_positive_mean": 0.8862909078598022,
+              "GT_negative_mean": 0.00041949457954615355,
+              "GT_recall_at_half": 0.8880358338356018
+            },
+            "S": {
+              "GT_positive_mean": 0.9350584149360657,
+              "GT_negative_mean": 0.000366826105164364,
+              "GT_recall_at_half": 0.9373000860214233
+            },
+            "T": {
+              "GT_positive_mean": 0.8715832829475403,
+              "GT_negative_mean": 0.0011756694875657558,
+              "GT_recall_at_half": 0.9129878282546997
+            }
+          }
+        },
+        {
+          "class": "MA",
+          "GT_positive": 450,
+          "probability_max": 0.9928746223449707,
+          "positive_probability_mean": 0.5462897419929504,
+          "sum_probability_squared": 390.2734375,
+          "objectives": {
+            "old_dice": {
+              "loss": 0.41488003730773926,
+              "common_shift_gradient": 0.021212304010987282,
+              "positive_gradient_sum": -0.10020099580287933,
+              "negative_gradient_sum": 0.12141331285238266,
+              "L1_gradient": 0.2216143012046814
+            },
+            "weighted_old_KL": {
+              "loss": 0.00033781168167479336,
+              "common_shift_gradient": 0.00015305832494050264,
+              "positive_gradient_sum": -1.5809831893420778e-05,
+              "negative_gradient_sum": 0.00016886816592887044,
+              "L1_gradient": 0.00027845133445225656
+            },
+            "old_main_without_hr": {
+              "loss": 0.4152178466320038,
+              "common_shift_gradient": 0.021365363150835037,
+              "positive_gradient_sum": -0.100216805934906,
+              "negative_gradient_sum": 0.12158216536045074,
+              "L1_gradient": 0.22182577848434448
+            },
+            "repaired_GT": {
+              "loss": 0.7853196859359741,
+              "common_shift_gradient": -0.09207382798194885,
+              "positive_gradient_sum": -0.21362856030464172,
+              "negative_gradient_sum": 0.12155473232269287,
+              "L1_gradient": 0.335183322429657
+            }
+          },
+          "teachers": {
+            "A": {
+              "GT_positive_mean": 0.6764713525772095,
+              "GT_negative_mean": 0.00026598494150675833,
+              "GT_recall_at_half": 0.7044444680213928
+            },
+            "U": {
+              "GT_positive_mean": 0.6362593173980713,
+              "GT_negative_mean": 0.00022558016644325107,
+              "GT_recall_at_half": 0.6422222256660461
+            },
+            "S": {
+              "GT_positive_mean": 0.5111386179924011,
+              "GT_negative_mean": 0.00014371826546266675,
+              "GT_recall_at_half": 0.5288888812065125
+            },
+            "T": {
+              "GT_positive_mean": 0.6275984048843384,
+              "GT_negative_mean": 0.0002278423635289073,
+              "GT_recall_at_half": 0.644444465637207
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "both_absent",
+      "sid": "007-1811-100",
+      "augmentation_seed": 42000,
+      "valid_pixels": 1567800,
+      "classes": [
+        {
+          "class": "EX",
+          "GT_positive": 0,
+          "probability_max": 0.2582351863384247,
+          "positive_probability_mean": null,
+          "sum_probability_squared": 1.1643594977073235e-09,
+          "objectives": {
+            "old_dice": {
+              "loss": 0.00011640787124633789,
+              "common_shift_gradient": 0.0002328176487935707,
+              "positive_gradient_sum": 0.0,
+              "negative_gradient_sum": 0.0002328176487935707,
+              "L1_gradient": 0.0002328176487935707
+            },
+            "weighted_old_KL": {
+              "loss": 0.0016057572793215513,
+              "common_shift_gradient": -0.0001410874247085303,
+              "positive_gradient_sum": 0.0,
+              "negative_gradient_sum": -0.0001410874247085303,
+              "L1_gradient": 0.0001410874247085303
+            },
+            "old_main_without_hr": {
+              "loss": 0.0017221651505678892,
+              "common_shift_gradient": 9.173022408504039e-05,
+              "positive_gradient_sum": 0.0,
+              "negative_gradient_sum": 9.173022408504039e-05,
+              "L1_gradient": 0.0002810700098052621
+            },
+            "repaired_GT": {
+              "loss": 4.880698956100105e-09,
+              "common_shift_gradient": 4.8806994001893145e-09,
+              "positive_gradient_sum": 0.0,
+              "negative_gradient_sum": 4.8806994001893145e-09,
+              "L1_gradient": 4.8806994001893145e-09
+            }
+          },
+          "teachers": {
+            "A": {
+              "GT_positive_mean": null,
+              "GT_negative_mean": 0.00037713776691816747,
+              "GT_recall_at_half": null
+            },
+            "U": {
+              "GT_positive_mean": null,
+              "GT_negative_mean": 0.0003736227808985859,
+              "GT_recall_at_half": null
+            },
+            "S": {
+              "GT_positive_mean": null,
+              "GT_negative_mean": 3.137563819866074e-10,
+              "GT_recall_at_half": null
+            },
+            "T": {
+              "GT_positive_mean": null,
+              "GT_negative_mean": 0.0002821943780872971,
+              "GT_recall_at_half": null
+            }
+          }
+        },
+        {
+          "class": "HE",
+          "GT_positive": 0,
+          "probability_max": 0.7212169170379639,
+          "positive_probability_mean": null,
+          "sum_probability_squared": 44.070526123046875,
+          "objectives": {
+            "old_dice": {
+              "loss": 0.9999997615814209,
+              "common_shift_gradient": 2.571245261151489e-07,
+              "positive_gradient_sum": 0.0,
+              "negative_gradient_sum": 2.571245261151489e-07,
+              "L1_gradient": 2.571245261151489e-07
+            },
+            "weighted_old_KL": {
+              "loss": 0.00016069352568592876,
+              "common_shift_gradient": 6.363408465404063e-05,
+              "positive_gradient_sum": 0.0,
+              "negative_gradient_sum": 6.363408465404063e-05,
+              "L1_gradient": 0.00018407418974675238
+            },
+            "old_main_without_hr": {
+              "loss": 1.0001604557037354,
+              "common_shift_gradient": 6.389121699612588e-05,
+              "positive_gradient_sum": 0.0,
+              "negative_gradient_sum": 6.389121699612588e-05,
+              "L1_gradient": 0.00018415656813886017
+            },
+            "repaired_GT": {
+              "loss": 0.00012786916340701282,
+              "common_shift_gradient": 0.00012256567424628884,
+              "positive_gradient_sum": 0.0,
+              "negative_gradient_sum": 0.00012256567424628884,
+              "L1_gradient": 0.00012256567424628884
+            }
+          },
+          "teachers": {
+            "A": {
+              "GT_positive_mean": null,
+              "GT_negative_mean": 0.0005358817288652062,
+              "GT_recall_at_half": null
+            },
+            "U": {
+              "GT_positive_mean": null,
+              "GT_negative_mean": 0.00032815063605085015,
+              "GT_recall_at_half": null
+            },
+            "S": {
+              "GT_positive_mean": null,
+              "GT_negative_mean": 1.3102651053031877e-07,
+              "GT_recall_at_half": null
+            },
+            "T": {
+              "GT_positive_mean": null,
+              "GT_negative_mean": 0.0003629944985732436,
+              "GT_recall_at_half": null
+            }
+          }
+        },
+        {
+          "class": "SE",
+          "GT_positive": 0,
+          "probability_max": 0.0068292985670268536,
+          "positive_probability_mean": null,
+          "sum_probability_squared": 2.2035928637365032e-10,
+          "objectives": {
+            "old_dice": {
+              "loss": 2.199411392211914e-05,
+              "common_shift_gradient": 4.406991502037272e-05,
+              "positive_gradient_sum": 0.0,
+              "negative_gradient_sum": 4.406991502037272e-05,
+              "L1_gradient": 4.406991502037272e-05
+            },
+            "weighted_old_KL": {
+              "loss": 0.0019680624827742577,
+              "common_shift_gradient": -0.00018771173199638724,
+              "positive_gradient_sum": 0.0,
+              "negative_gradient_sum": -0.00018771173199638724,
+              "L1_gradient": 0.00018771173199638724
+            },
+            "old_main_without_hr": {
+              "loss": 0.001990056596696377,
+              "common_shift_gradient": -0.00014364182425197214,
+              "positive_gradient_sum": 0.0,
+              "negative_gradient_sum": -0.00014364182425197214,
+              "L1_gradient": 0.00017234773258678615
+            },
+            "repaired_GT": {
+              "loss": 2.0546113699282387e-09,
+              "common_shift_gradient": 2.0546115919728436e-09,
+              "positive_gradient_sum": 0.0,
+              "negative_gradient_sum": 2.0546115919728436e-09,
+              "L1_gradient": 2.0546115919728436e-09
+            }
+          },
+          "teachers": {
+            "A": {
+              "GT_positive_mean": null,
+              "GT_negative_mean": 0.0006522812764160335,
+              "GT_recall_at_half": null
+            },
+            "U": {
+              "GT_positive_mean": null,
+              "GT_negative_mean": 4.545849878923036e-05,
+              "GT_recall_at_half": null
+            },
+            "S": {
+              "GT_positive_mean": null,
+              "GT_negative_mean": 2.6620365634055787e-11,
+              "GT_recall_at_half": null
+            },
+            "T": {
+              "GT_positive_mean": null,
+              "GT_negative_mean": 0.00037543170037679374,
+              "GT_recall_at_half": null
+            }
+          }
+        },
+        {
+          "class": "MA",
+          "GT_positive": 114,
+          "probability_max": 0.9914440512657166,
+          "positive_probability_mean": 0.8052418231964111,
+          "sum_probability_squared": 93.47715759277344,
+          "objectives": {
+            "old_dice": {
+              "loss": 0.11510664224624634,
+              "common_shift_gradient": 0.01982591673731804,
+              "positive_gradient_sum": -0.047925326973199844,
+              "negative_gradient_sum": 0.06775124371051788,
+              "L1_gradient": 0.11567655950784683
+            },
+            "weighted_old_KL": {
+              "loss": 5.6589386076666415e-05,
+              "common_shift_gradient": 1.6351568774553016e-05,
+              "positive_gradient_sum": -7.179419299063738e-07,
+              "negative_gradient_sum": 1.7069512978196144e-05,
+              "L1_gradient": 4.029821138828993e-05
+            },
+            "old_main_without_hr": {
+              "loss": 0.11516322940587997,
+              "common_shift_gradient": 0.019842270761728287,
+              "positive_gradient_sum": -0.04792603850364685,
+              "negative_gradient_sum": 0.06776830554008484,
+              "L1_gradient": 0.1157073974609375
+            },
+            "repaired_GT": {
+              "loss": 0.18561004102230072,
+              "common_shift_gradient": -0.028838980942964554,
+              "positive_gradient_sum": -0.09661483764648438,
+              "negative_gradient_sum": 0.06777587532997131,
+              "L1_gradient": 0.1643907129764557
+            }
+          },
+          "teachers": {
+            "A": {
+              "GT_positive_mean": 0.8466962575912476,
+              "GT_negative_mean": 7.128515426302329e-05,
+              "GT_recall_at_half": 0.9035087823867798
+            },
+            "U": {
+              "GT_positive_mean": 0.8864667415618896,
+              "GT_negative_mean": 0.00010619139357004315,
+              "GT_recall_at_half": 0.8947368264198303
+            },
+            "S": {
+              "GT_positive_mean": 0.7300394773483276,
+              "GT_negative_mean": 1.7541935449116863e-05,
+              "GT_recall_at_half": 0.719298243522644
+            },
+            "T": {
+              "GT_positive_mean": 0.8249890804290771,
+              "GT_negative_mean": 6.43942694296129e-05,
+              "GT_recall_at_half": 0.8771929740905762
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "both_absent",
+      "sid": "007-1824-100",
+      "augmentation_seed": 42000,
+      "valid_pixels": 1567800,
+      "classes": [
+        {
+          "class": "EX",
+          "GT_positive": 0,
+          "probability_max": 0.2531966269016266,
+          "positive_probability_mean": null,
+          "sum_probability_squared": 9.147387847185939e-10,
+          "objectives": {
+            "old_dice": {
+              "loss": 9.149312973022461e-05,
+              "common_shift_gradient": 0.00018291428568772972,
+              "positive_gradient_sum": 0.0,
+              "negative_gradient_sum": 0.00018291428568772972,
+              "L1_gradient": 0.00018291428568772972
+            },
+            "weighted_old_KL": {
+              "loss": 0.0009310239111073315,
+              "common_shift_gradient": -9.161888738162816e-05,
+              "positive_gradient_sum": 0.0,
+              "negative_gradient_sum": -9.161888738162816e-05,
+              "L1_gradient": 9.161888738162816e-05
+            },
+            "old_main_without_hr": {
+              "loss": 0.0010225169826298952,
+              "common_shift_gradient": 9.129538375418633e-05,
+              "positive_gradient_sum": 0.0,
+              "negative_gradient_sum": 9.129538375418633e-05,
+              "L1_gradient": 0.0001917137997224927
+            },
+            "repaired_GT": {
+              "loss": 4.458688085406948e-09,
+              "common_shift_gradient": 4.4586885294961576e-09,
+              "positive_gradient_sum": 0.0,
+              "negative_gradient_sum": 4.4586885294961576e-09,
+              "L1_gradient": 4.4586885294961576e-09
+            }
+          },
+          "teachers": {
+            "A": {
+              "GT_positive_mean": null,
+              "GT_negative_mean": 0.00022971043654251844,
+              "GT_recall_at_half": null
+            },
+            "U": {
+              "GT_positive_mean": null,
+              "GT_negative_mean": 0.0002882317057810724,
+              "GT_recall_at_half": null
+            },
+            "S": {
+              "GT_positive_mean": null,
+              "GT_negative_mean": 1.5262287267336916e-10,
+              "GT_recall_at_half": null
+            },
+            "T": {
+              "GT_positive_mean": null,
+              "GT_negative_mean": 0.00018325560085941106,
+              "GT_recall_at_half": null
+            }
+          }
+        },
+        {
+          "class": "HE",
+          "GT_positive": 0,
+          "probability_max": 0.12496557086706161,
+          "positive_probability_mean": null,
+          "sum_probability_squared": 2.0375125408172607,
+          "objectives": {
+            "old_dice": {
+              "loss": 0.9999951124191284,
+              "common_shift_gradient": 9.282590326620266e-06,
+              "positive_gradient_sum": 0.0,
+              "negative_gradient_sum": 9.282590326620266e-06,
+              "L1_gradient": 9.282590326620266e-06
+            },
+            "weighted_old_KL": {
+              "loss": 0.0001426984090358019,
+              "common_shift_gradient": 5.6605946156196296e-05,
+              "positive_gradient_sum": 0.0,
+              "negative_gradient_sum": 5.6605946156196296e-05,
+              "L1_gradient": 0.00015470800281036645
+            },
+            "old_main_without_hr": {
+              "loss": 1.0001378059387207,
+              "common_shift_gradient": 6.588854012079537e-05,
+              "positive_gradient_sum": 0.0,
+              "negative_gradient_sum": 6.588854012079537e-05,
+              "L1_gradient": 0.00016358550055883825
+            },
+            "repaired_GT": {
+              "loss": 9.377130481880158e-05,
+              "common_shift_gradient": 9.36025389819406e-05,
+              "positive_gradient_sum": 0.0,
+              "negative_gradient_sum": 9.36025389819406e-05,
+              "L1_gradient": 9.36025389819406e-05
+            }
+          },
+          "teachers": {
+            "A": {
+              "GT_positive_mean": null,
+              "GT_negative_mean": 0.0004179392126388848,
+              "GT_recall_at_half": null
+            },
+            "U": {
+              "GT_positive_mean": null,
+              "GT_negative_mean": 0.0001392386620864272,
+              "GT_recall_at_half": null
+            },
+            "S": {
+              "GT_positive_mean": null,
+              "GT_negative_mean": 7.267467183602605e-10,
+              "GT_recall_at_half": null
+            },
+            "T": {
+              "GT_positive_mean": null,
+              "GT_negative_mean": 0.0002611982636153698,
+              "GT_recall_at_half": null
+            }
+          }
+        },
+        {
+          "class": "SE",
+          "GT_positive": 0,
+          "probability_max": 0.0068413312546908855,
+          "positive_probability_mean": null,
+          "sum_probability_squared": 2.351646655185391e-10,
+          "objectives": {
+            "old_dice": {
+              "loss": 2.3543834686279297e-05,
+              "common_shift_gradient": 4.7030713176354766e-05,
+              "positive_gradient_sum": 0.0,
+              "negative_gradient_sum": 4.7030713176354766e-05,
+              "L1_gradient": 4.7030713176354766e-05
+            },
+            "weighted_old_KL": {
+              "loss": 0.0019561978988349438,
+              "common_shift_gradient": -0.00018706329865381122,
+              "positive_gradient_sum": 0.0,
+              "negative_gradient_sum": -0.00018706329865381122,
+              "L1_gradient": 0.00018706329865381122
+            },
+            "old_main_without_hr": {
+              "loss": 0.001979741733521223,
+              "common_shift_gradient": -0.00014003258547745645,
+              "positive_gradient_sum": 0.0,
+              "negative_gradient_sum": -0.00014003258547745645,
+              "L1_gradient": 0.00017117949028033763
+            },
+            "repaired_GT": {
+              "loss": 2.121906428342868e-09,
+              "common_shift_gradient": 2.121906650387473e-09,
+              "positive_gradient_sum": 0.0,
+              "negative_gradient_sum": 2.121906650387473e-09,
+              "L1_gradient": 2.121906650387473e-09
+            }
+          },
+          "teachers": {
+            "A": {
+              "GT_positive_mean": null,
+              "GT_negative_mean": 0.0006483674515038729,
+              "GT_recall_at_half": null
+            },
+            "U": {
+              "GT_positive_mean": null,
+              "GT_negative_mean": 5.028469968237914e-05,
+              "GT_recall_at_half": null
+            },
+            "S": {
+              "GT_positive_mean": null,
+              "GT_negative_mean": 2.6124052573961443e-11,
+              "GT_recall_at_half": null
+            },
+            "T": {
+              "GT_positive_mean": null,
+              "GT_negative_mean": 0.00037413506652228534,
+              "GT_recall_at_half": null
+            }
+          }
+        },
+        {
+          "class": "MA",
+          "GT_positive": 53,
+          "probability_max": 0.9136220216751099,
+          "positive_probability_mean": 0.5839617848396301,
+          "sum_probability_squared": 44.58953857421875,
+          "objectives": {
+            "old_dice": {
+              "loss": 0.3657110929489136,
+              "common_shift_gradient": 0.011915454640984535,
+              "positive_gradient_sum": -0.12614846229553223,
+              "negative_gradient_sum": 0.1380639225244522,
+              "L1_gradient": 0.26421236991882324
+            },
+            "weighted_old_KL": {
+              "loss": 6.95612034178339e-05,
+              "common_shift_gradient": 1.8411916244076565e-05,
+              "positive_gradient_sum": -1.6820770269987406e-06,
+              "negative_gradient_sum": 2.0093995772185735e-05,
+              "L1_gradient": 4.5473218051483855e-05
+            },
+            "old_main_without_hr": {
+              "loss": 0.36578065156936646,
+              "common_shift_gradient": 0.011933861300349236,
+              "positive_gradient_sum": -0.12615014612674713,
+              "negative_gradient_sum": 0.13808400928974152,
+              "L1_gradient": 0.2642476558685303
+            },
+            "repaired_GT": {
+              "loss": 0.5329580903053284,
+              "common_shift_gradient": -0.09206804633140564,
+              "positive_gradient_sum": -0.2301580160856247,
+              "negative_gradient_sum": 0.13808998465538025,
+              "L1_gradient": 0.36824798583984375
+            }
+          },
+          "teachers": {
+            "A": {
+              "GT_positive_mean": 0.7039807438850403,
+              "GT_negative_mean": 7.042159995762631e-05,
+              "GT_recall_at_half": 0.7924528121948242
+            },
+            "U": {
+              "GT_positive_mean": 0.8272743821144104,
+              "GT_negative_mean": 0.00010181693505728617,
+              "GT_recall_at_half": 0.849056601524353
+            },
+            "S": {
+              "GT_positive_mean": 0.5294966697692871,
+              "GT_negative_mean": 2.1462823497131467e-05,
+              "GT_recall_at_half": 0.5283018946647644
+            },
+            "T": {
+              "GT_positive_mean": 0.6834772825241089,
+              "GT_negative_mean": 6.406853208318353e-05,
+              "GT_recall_at_half": 0.7547169923782349
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "both_absent",
+      "sid": "007-1831-100",
+      "augmentation_seed": 42000,
+      "valid_pixels": 1567800,
+      "classes": [
+        {
+          "class": "EX",
+          "GT_positive": 0,
+          "probability_max": 0.25928735733032227,
+          "positive_probability_mean": null,
+          "sum_probability_squared": 1.17270726462948e-09,
+          "objectives": {
+            "old_dice": {
+              "loss": 0.00011724233627319336,
+              "common_shift_gradient": 0.00023448643332812935,
+              "positive_gradient_sum": 0.0,
+              "negative_gradient_sum": 0.00023448643332812935,
+              "L1_gradient": 0.00023448643332812935
+            },
+            "weighted_old_KL": {
+              "loss": 0.0015143841737881303,
+              "common_shift_gradient": -0.00013649032916873693,
+              "positive_gradient_sum": 0.0,
+              "negative_gradient_sum": -0.00013649032916873693,
+              "L1_gradient": 0.00013649032916873693
+            },
+            "old_main_without_hr": {
+              "loss": 0.0016316265100613236,
+              "common_shift_gradient": 9.799610415939242e-05,
+              "positive_gradient_sum": 0.0,
+              "negative_gradient_sum": 9.799610415939242e-05,
+              "L1_gradient": 0.0002657524892129004
+            },
+            "repaired_GT": {
+              "loss": 5.058961249915228e-09,
+              "common_shift_gradient": 5.058960805826018e-09,
+              "positive_gradient_sum": 0.0,
+              "negative_gradient_sum": 5.058960805826018e-09,
+              "L1_gradient": 5.058960805826018e-09
+            }
+          },
+          "teachers": {
+            "A": {
+              "GT_positive_mean": null,
+              "GT_negative_mean": 0.00041190002229996026,
+              "GT_recall_at_half": null
+            },
+            "U": {
+              "GT_positive_mean": null,
+              "GT_negative_mean": 0.0002203040785389021,
+              "GT_recall_at_half": null
+            },
+            "S": {
+              "GT_positive_mean": null,
+              "GT_negative_mean": 4.688788801665567e-10,
+              "GT_recall_at_half": null
+            },
+            "T": {
+              "GT_positive_mean": null,
+              "GT_negative_mean": 0.0002730008854996413,
+              "GT_recall_at_half": null
+            }
+          }
+        },
+        {
+          "class": "HE",
+          "GT_positive": 0,
+          "probability_max": 0.7177122831344604,
+          "positive_probability_mean": null,
+          "sum_probability_squared": 35.04019546508789,
+          "objectives": {
+            "old_dice": {
+              "loss": 0.9999997019767761,
+              "common_shift_gradient": 3.3533228815940674e-07,
+              "positive_gradient_sum": 0.0,
+              "negative_gradient_sum": 3.3533228815940674e-07,
+              "L1_gradient": 3.3533228815940674e-07
+            },
+            "weighted_old_KL": {
+              "loss": 0.00018407856987323612,
+              "common_shift_gradient": 1.1803226698248181e-05,
+              "positive_gradient_sum": 0.0,
+              "negative_gradient_sum": 1.1803226698248181e-05,
+              "L1_gradient": 0.00019158038776367903
+            },
+            "old_main_without_hr": {
+              "loss": 1.0001838207244873,
+              "common_shift_gradient": 1.2138560123275965e-05,
+              "positive_gradient_sum": 0.0,
+              "negative_gradient_sum": 1.2138560123275965e-05,
+              "L1_gradient": 0.00019166863057762384
+            },
+            "repaired_GT": {
+              "loss": 0.00011388980055926368,
+              "common_shift_gradient": 0.0001097728090826422,
+              "positive_gradient_sum": 0.0,
+              "negative_gradient_sum": 0.0001097728090826422,
+              "L1_gradient": 0.0001097728090826422
+            }
+          },
+          "teachers": {
+            "A": {
+              "GT_positive_mean": null,
+              "GT_negative_mean": 0.0006645914982073009,
+              "GT_recall_at_half": null
+            },
+            "U": {
+              "GT_positive_mean": null,
+              "GT_negative_mean": 0.00022214313503354788,
+              "GT_recall_at_half": null
+            },
+            "S": {
+              "GT_positive_mean": null,
+              "GT_negative_mean": 7.800891599352155e-10,
+              "GT_recall_at_half": null
+            },
+            "T": {
+              "GT_positive_mean": null,
+              "GT_negative_mean": 0.00041548474109731615,
+              "GT_recall_at_half": null
+            }
+          }
+        },
+        {
+          "class": "SE",
+          "GT_positive": 0,
+          "probability_max": 0.0069129751063883305,
+          "positive_probability_mean": null,
+          "sum_probability_squared": 2.4904156514793385e-10,
+          "objectives": {
+            "old_dice": {
+              "loss": 2.491474151611328e-05,
+              "common_shift_gradient": 4.980582889402285e-05,
+              "positive_gradient_sum": 0.0,
+              "negative_gradient_sum": 4.980582889402285e-05,
+              "L1_gradient": 4.980582889402285e-05
+            },
+            "weighted_old_KL": {
+              "loss": 0.0018852364737540483,
+              "common_shift_gradient": -0.00018074818945024163,
+              "positive_gradient_sum": 0.0,
+              "negative_gradient_sum": -0.00018074818945024163,
+              "L1_gradient": 0.00018074818945024163
+            },
+            "old_main_without_hr": {
+              "loss": 0.0019101512152701616,
+              "common_shift_gradient": -0.00013094235328026116,
+              "positive_gradient_sum": 0.0,
+              "negative_gradient_sum": -0.00013094235328026116,
+              "L1_gradient": 0.00016905521624721587
+            },
+            "repaired_GT": {
+              "loss": 2.1250563531083344e-09,
+              "common_shift_gradient": 2.1250563531083344e-09,
+              "positive_gradient_sum": 0.0,
+              "negative_gradient_sum": 2.1250563531083344e-09,
+              "L1_gradient": 2.1250563531083344e-09
+            }
+          },
+          "teachers": {
+            "A": {
+              "GT_positive_mean": null,
+              "GT_negative_mean": 0.0006272498867474496,
+              "GT_recall_at_half": null
+            },
+            "U": {
+              "GT_positive_mean": null,
+              "GT_negative_mean": 4.6276272769318894e-05,
+              "GT_recall_at_half": null
+            },
+            "S": {
+              "GT_positive_mean": null,
+              "GT_negative_mean": 5.377958842145425e-11,
+              "GT_recall_at_half": null
+            },
+            "T": {
+              "GT_positive_mean": null,
+              "GT_negative_mean": 0.0003615048772189766,
+              "GT_recall_at_half": null
+            }
+          }
+        },
+        {
+          "class": "MA",
+          "GT_positive": 95,
+          "probability_max": 0.982988178730011,
+          "positive_probability_mean": 0.44147899746894836,
+          "sum_probability_squared": 151.13380432128906,
+          "objectives": {
+            "old_dice": {
+              "loss": 0.6592055559158325,
+              "common_shift_gradient": 0.019852058961987495,
+              "positive_gradient_sum": -0.05620667710900307,
+              "negative_gradient_sum": 0.07605873048305511,
+              "L1_gradient": 0.13226541876792908
+            },
+            "weighted_old_KL": {
+              "loss": 0.00015465624164789915,
+              "common_shift_gradient": 2.210971615568269e-05,
+              "positive_gradient_sum": -7.162091606005561e-06,
+              "negative_gradient_sum": 2.9271808671182953e-05,
+              "L1_gradient": 7.054756861180067e-05
+            },
+            "old_main_without_hr": {
+              "loss": 0.6593602299690247,
+              "common_shift_gradient": 0.01987416110932827,
+              "positive_gradient_sum": -0.05621383711695671,
+              "negative_gradient_sum": 0.07608799636363983,
+              "L1_gradient": 0.1323280781507492
+            },
+            "repaired_GT": {
+              "loss": 1.2868094444274902,
+              "common_shift_gradient": -0.11973504722118378,
+              "positive_gradient_sum": -0.19583693146705627,
+              "negative_gradient_sum": 0.0761018693447113,
+              "L1_gradient": 0.2719388008117676
+            }
+          },
+          "teachers": {
+            "A": {
+              "GT_positive_mean": 0.607376754283905,
+              "GT_negative_mean": 0.00010728775669122115,
+              "GT_recall_at_half": 0.6526315808296204
+            },
+            "U": {
+              "GT_positive_mean": 0.8307517766952515,
+              "GT_negative_mean": 0.0001769052614690736,
+              "GT_recall_at_half": 0.8315789699554443
+            },
+            "S": {
+              "GT_positive_mean": 0.721831738948822,
+              "GT_negative_mean": 8.205212361644953e-05,
+              "GT_recall_at_half": 0.7368420958518982
+            },
+            "T": {
+              "GT_positive_mean": 0.6778733134269714,
+              "GT_negative_mean": 0.00011403212556615472,
+              "GT_recall_at_half": 0.7368420958518982
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

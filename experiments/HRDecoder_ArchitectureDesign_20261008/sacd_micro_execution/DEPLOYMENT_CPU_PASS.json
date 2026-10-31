@@ -1,0 +1,55 @@
+{
+  "status": "CPU_DEPLOYMENT_PASS",
+  "checks": [
+    {
+      "directory": "sacd_micro_execution",
+      "check": "verify_feature_isolation.py",
+      "status": "PASS"
+    },
+    {
+      "directory": "sacd_isolated_execution",
+      "check": "verify_sacd.py",
+      "status": "PASS"
+    },
+    {
+      "directory": "sacd_isolated_execution",
+      "check": "verify_checkpoint.py",
+      "status": "PASS"
+    },
+    {
+      "directory": "sacd_isolated_execution",
+      "check": "verify_feature_isolation.py",
+      "status": "PASS"
+    }
+  ],
+  "GPU_used": false,
+  "training_process_changed": false,
+  "source_files": {
+    "sacd_micro_execution": {
+      "controller.py": "e516d2d9be6b77834413275279ba0de983771e188fa3cd82f7de63186c6f48e3",
+      "gate.py": "65ea07ad25220c9b727ea8349a4429e64cdcdbcc6ba8a3e7629adf8e8e43b492",
+      "intervention.py": "f9097dd589460eb20558da9e73dae754826a73719ff19d69fc66e0e07fee6a31",
+      "monitor_screening.py": "ae963da7d834d53450294afc8d0c175a95490b9c14554a8fc212518e58d0d950",
+      "probe.py": "3e5abeb8360c49880130a933c41fd68f84dae777325346bd8af69a73d24d9175",
+      "register_and_start.py": "ccf2704b53b2be84ddbaabe7d571197d60ff45e451f89483c5c82a247bdd22fb",
+      "verify_feature_isolation.py": "3ebfcf151c42187a5eabdd83e9d400f8596a60ec4d15f02477fbeaed79837346"
+    },
+    "sacd_isolated_execution": {
+      "baseline.py": "3e19781d2172a7b211f80994739b387d3235c966dd9c81b2f777e1b3c33b2aa9",
+      "controller.py": "6ba4c00f89c145bf63733762aca58d42fe18862e130f0a3e1c3f5c42dfc17eec",
+      "data.py": "6145eb862cf75b895767ad627b4bac9ae6a417feacd92c909a4771765bce6545",
+      "fast_objectives.py": "b90c236dc6727b746e6e7e424f417479a10670d27a8c9c196b357f72a69684c6",
+      "loader.py": "353674fbe260e9232540283bd4198b0b24642950309edfdbc3ecb7475d498533",
+      "model.py": "1dc7b72a8ab7857d963b789344be8068ec327ff616f582c5fbb58e9d70095ee1",
+      "objectives.py": "9f67cf16211f3abc10d79521dd27d6783026a62db0d15a0287fe0bc4a3cd60d1",
+      "private_modules.py": "08541136cd72e039a02f145adba9410b404f6852bc226ab716639e43cc82ec60",
+      "screen_gate.py": "d336c59060e135387ba81fe6e690ec94f4b98a3243543c9bf1ebf9fa4e07a35e",
+      "stable_objectives.py": "bf79135d2f756b4abcad655beee9ed24f7bde738f62588a5532917e4b881e3ae",
+      "test_eval.py": "27f001aa7fa3b71de5bd643a503b2a95c602cce0e357b7550009c56e26e9705f",
+      "train.py": "9619a401e2c034dca03fc3afba076f17240493ac6bc8e814caa51b6bc3801f2c",
+      "verify_checkpoint.py": "33ec25d5100ecfaeb0c2a0640ee9a0fc138545b0c564a750cf36496913621cd6",
+      "verify_feature_isolation.py": "5720ddd0882c160d0219854e0d1b01c7144649ed40f099cc3a8192f244ec9e70",
+      "verify_sacd.py": "037caf86fc1d91a5f0ed0d85c3b2ee2b2d8e6baec9c79486d1abf172cfd38447"
+    }
+  }
+}

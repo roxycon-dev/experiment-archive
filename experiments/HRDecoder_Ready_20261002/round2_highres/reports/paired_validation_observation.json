@@ -1,0 +1,23 @@
+{
+  "matched_nodes": [
+    {
+      "update": 1000,
+      "control_solo_miou": 0.3908638255464669,
+      "highres_solo_miou": 0.3960651568641143,
+      "control_fixed_fusion_miou": 0.43366298706385487,
+      "highres_fixed_fusion_miou": 0.437327634300698,
+      "highres_minus_control_fusion_pp": 0.36646472368431215
+    },
+    {
+      "update": 2000,
+      "control_solo_miou": 0.3780079617917798,
+      "highres_solo_miou": 0.3748741917445036,
+      "control_fixed_fusion_miou": 0.4333828198845408,
+      "highres_fixed_fusion_miou": 0.4333288719566418,
+      "highres_minus_control_fusion_pp": -0.005394792789897851
+    }
+  ],
+  "baseline_fusion_val": 0.43487703221036567,
+  "test_policy": "Closed, validation-only exploration; previous evaluated pipeline unchanged",
+  "generated_at_epoch": 1790959945.0388503
+}

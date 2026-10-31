@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/root/autodl-tmp/HRDecoder_Ready_20261002/campaign/run_round2.py", line 101, in <module>
+    main()
+  File "/root/autodl-tmp/HRDecoder_Ready_20261002/campaign/run_round2.py", line 64, in main
+    raise RuntimeError('Training engineering failure '+tag+' exit='+str(rc))
+RuntimeError: Training engineering failure U0_continuation2048 exit=1
